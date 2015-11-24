@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-R-mor.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-R-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TAN-1-dev/schemas/TAN-R-mor.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../TAN-1-dev/schemas/TAN-R-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<!--<?xml-model href="../../schemas/TAN-R-mor.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../schemas/TAN-R-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
+<!--<?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-R-mor.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-R-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
 <TAN-R-mor TAN-version="1" id="tag:kalvesmaki.com,2014:tan-r-mor:grc:perseus"
    xmlns="tag:textalign.net,2015:ns">
    <head>
@@ -26,6 +30,52 @@
       </source>
       <declarations ed-when="2015-03-03" ed-who="kalvesmaki">
          <for-lang>grc</for-lang>
+         <!-- MAJOR CATEGORIES -->
+         <feature xml:id="majorcat">
+            <IRI>http://purl.org/olia/olia#MorphosyntacticCategory</IRI>
+            <comment who="kalvesmaki" when="2015-02-28">Is there any value in providing the dbpedia
+               URL as a synonym? Or is that just plain wrong? Or treacherous?</comment>
+            <name>Morphosyntactic Category</name>
+         </feature>
+         <feature xml:id="minorcat">
+            <IRI>tag:textalign.net,2015:morphology:category:morphosyntactic-secondary</IRI>
+            <name>secondary morphosyntactic category</name>
+         </feature>
+         <feature xml:id="person">
+            <IRI>http://purl.org/olia/olia.owl#PersonFeature</IRI>
+            <IRI>http://dbpedia.org/resource/Grammatical_person</IRI>
+            <name>person</name>
+         </feature>
+         <feature xml:id="number">
+            <IRI>http://purl.org/olia/olia.owl#NumberFeature</IRI>
+            <IRI>http://dbpedia.org/resource/Grammatical_number</IRI>
+            <name>number</name>
+         </feature>
+         <feature xml:id="tense">
+            <IRI>http://purl.org/olia/olia.owl#TenseFeature</IRI>
+            <name>tense</name>
+         </feature>
+         <feature xml:id="mood">
+            <IRI>http://purl.org/olia/olia-top.owl#MoodFeature</IRI>
+            <name>mood</name>
+         </feature>
+         <feature xml:id="voice">
+            <IRI>http://dbpedia.org/resource/VoiceFeature</IRI>
+            <name>voice</name>
+         </feature>
+         <feature xml:id="gender">
+            <IRI>http://dbpedia.org/resource/GenderFeature</IRI>
+            <name>gender</name>
+         </feature>
+         <feature xml:id="case">
+            <IRI>http://dbpedia.org/resource/CaseFeature</IRI>
+            <name>case</name>
+         </feature>
+         <feature xml:id="degree">
+            <IRI>http://dbpedia.org/resource/DegreeFeature</IRI>
+            <name>degree</name>
+         </feature>
+         <!-- SPECIFIC OPTIONS -->
          <feature xml:id="adjective">
             <IRI>http://purl.org/olia/olia.owl#Adjective</IRI>
             <name>adjective</name>
@@ -300,23 +350,22 @@
    </head>
    <body>
       <!-- 1st category -->
-      <report code-regex-test="^c[^ -]+">A conjunction has no other inflectional properties.</report>
-      <report cert="high" code-regex-test="^e">Code e has been deprecated. It was used in some cases for ὦ
-         voc., to be distinguished from ὦ as exclamation </report>
-      <report code-regex-test="^g [^-m]+">A particle is either qualified as modal (g m) or has no other
-         inflectional properties.</report>
-      <report code-regex-test="^i[^ -]+">An interjection has no other inflectional properties.</report>
-      <report code-regex-test="^r[^ -]+">A preposition has no other inflectional properties.</report>
+      <report code-regex-test="^c[^ -]+">A conjunction has no other inflectional
+         properties.</report>
+      <report cert="high" code-regex-test="^e">Code e has been deprecated. It was used in some cases
+         for ὦ voc., to be distinguished from ὦ as exclamation </report>
+      <report code-regex-test="^g [^-m]+">A particle is either qualified as modal (g m) or has no
+         other inflectional properties.</report>
+      <report code-regex-test="^i[^ -]+">An interjection has no other inflectional
+         properties.</report>
+      <report code-regex-test="^r[^ -]+">A preposition has no other inflectional
+         properties.</report>
       <report code-regex-test="^y[^ -]+">An acronym has no other inflectional properties.</report>
       <!-- 2nd category -->
-      <report code-regex-test="^[^dp] i">The category interrogative may be applied only to determiners and
-         pronouns.</report>
+      <report code-regex-test="^[^dp] i">The category interrogative may be applied only to
+         determiners and pronouns.</report>
       <report cert="high" code-regex-test="^. v">Code v for verbal adjective has been deprecated. </report>
-      <category>
-         <IRI>http://purl.org/olia/olia.owl#MorphosyntacticCategory</IRI>
-         <comment who="kalvesmaki" when="2015-02-28">Is there any value in providing the dbpedia URL
-            as a synonym? Or is that just plain wrong? Or treacherous?</comment>
-         <name>Morphosyntactic Category</name>
+      <category feature="majorcat">
          <option feature="adjective" code="a"/>
          <option feature="conjunction" code="c"/>
          <option feature="adverb" code="d"/>
@@ -330,9 +379,7 @@
          <option feature="verb" code="v"/>
          <option feature="acronym" code="y"/>
       </category>
-      <category>
-         <IRI>tag:textalign.net,2015:morphology:category:morphosyntactic-secondary</IRI>
-         <name>secondary morphosyntactic category</name>
+      <category feature="minorcat">
          <comment who="kalvesmaki" when="2015-05-05">I am uncertain if this approach to naming is
             sound</comment>
          <option feature="article" code="a"/>
@@ -348,25 +395,18 @@
          <option feature="verbal" code="v"/>
          <option feature="indefinite" code="x"/>
       </category>
-      <category>
-         <IRI>http://purl.org/olia/olia.owl#PersonFeature</IRI>
-         <IRI>http://dbpedia.org/resource/Grammatical_person</IRI>
-         <name>person</name>
+      <category feature="person">
+
          <option feature="first" code="1"/>
          <option feature="second" code="2"/>
          <option feature="third" code="3"/>
       </category>
-      <category>
-         <IRI>http://purl.org/olia/olia.owl#NumberFeature</IRI>
-         <IRI>http://dbpedia.org/resource/Grammatical_number</IRI>
-         <name>number</name>
+      <category feature="number">
          <option feature="dual" code="d"/>
          <option feature="plural" code="p"/>
          <option feature="singular" code="s"/>
       </category>
-      <category>
-         <IRI>http://purl.org/olia/olia.owl#TenseFeature</IRI>
-         <name>tense</name>
+      <category feature="tense">
          <option feature="aorist" code="a"/>
          <option feature="future" code="f"/>
          <option feature="imperfect" code="i"/>
@@ -375,9 +415,7 @@
          <option feature="perfect" code="r"/>
          <option feature="future-perfect" code="t"/>
       </category>
-      <category>
-         <IRI>http://purl.org/olia/olia-top.owl#MoodFeature</IRI>
-         <name>mood</name>
+      <category feature="mood">
          <option feature="indicative" code="i"/>
          <option feature="imperative" code="m"/>
          <option feature="infinitive" code="n"/>
@@ -385,34 +423,26 @@
          <option feature="participle" code="p"/>
          <option feature="subjunctive" code="s"/>
       </category>
-      <category>
-         <IRI>http://dbpedia.org/resource/VoiceFeature</IRI>
-         <name>voice</name>
+      <category feature="voice">
          <option feature="active" code="a"/>
          <option feature="middle-passive" code="e"/>
          <option feature="middle" code="m"/>
          <option feature="passive" code="p"/>
       </category>
-      <category>
-         <IRI>http://dbpedia.org/resource/GenderFeature</IRI>
-         <name>gender</name>
+      <category feature="gender">
          <option feature="common" code="c"/>
          <option feature="feminine" code="f"/>
          <option feature="masculine" code="m"/>
          <option feature="neuter" code="n"/>
       </category>
-      <category>
-         <IRI>http://dbpedia.org/resource/CaseFeature</IRI>
-         <name>case</name>
+      <category feature="case">
          <option feature="accusative" code="a"/>
          <option feature="dative" code="d"/>
          <option feature="genitive" code="g"/>
          <option feature="nominative" code="n"/>
          <option feature="vocative" code="v"/>
       </category>
-      <category>
-         <IRI>http://dbpedia.org/resource/DegreeFeature</IRI>
-         <name>degree</name>
+      <category feature="degree">
          <option feature="comparative" code="c"/>
          <option feature="superlative" code="s"/>
       </category>
