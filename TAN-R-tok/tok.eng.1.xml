@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-R-tok.rnc" type="application/relax-ng-compact-syntax"?>
 <?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-R-tok.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TAN-R-tok xmlns="tag:textalign.net,2015:ns" TAN-version="1"
-   id="tag:kalvesmaki.com,2015:tokenization:eng.1">
+<TAN-R-tok xmlns="tag:textalign.net,2015:ns" TAN-version="1" id="tag:kalvesmaki.com,2015:tokenization:eng.1">
    <head>
       <name>Tokenization pattern for English, in Penn Treebank style</name>
       <desc>This tokenization pattern is designed to imitate the tokenization process followed by
          the Penn Treebank project on modern English texts. Expected input: raw text, one sentence
          at a time.</desc>
-      <master-location>https://raw.githubusercontent.com/Arithmeticus/TAN-class-3/master/TAN-R-tok/tok.eng.1.xml</master-location>
+      <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-class-3/master/TAN-R-tok/tok.eng.1.xml"/>
       <rights-excluding-sources rights-holder="kalvesmaki">
          <IRI>http://creativecommons.org/licenses/by/4.0/deed.en_US</IRI>
          <name>Creative Commons Attribution 4.0 International License</name>
@@ -16,12 +15,11 @@
             source. </desc>
       </rights-excluding-sources>
       <see-also>
-         <relationship which="auxiliary" />
+         <relationship which="auxiliary"/>
          <IRI>tag:kalvesmaki@gmail.com,2014:auxiliary:tokenizing-sed-script-1</IRI>
          <name>sed tokenizing script, by Robert MacIntyre</name>
          <desc>Written ca. 1995 at the University of Pennsylvania</desc>
-         <location when-accessed="2015-03-17"
-            >http://www.cis.upenn.edu/~treebank/tokenizer.sed</location>
+         <location href="http://www.cis.upenn.edu/~treebank/tokenizer.sed" when-accessed="2015-03-17"/>
       </see-also>
       <declarations>
          <for-lang>en</for-lang>
@@ -59,13 +57,13 @@
       </replace>
       <replace>
          <comment when="2015-03-17" who="kalvesmaki">Offset final periods</comment>
-         <pattern>([^.])([.])([\]\)}>"']*)$</pattern>
+         <pattern>([^.])([.])([\]\)}&gt;"']*)$</pattern>
          <replacement>$1 $2$3</replacement>
       </replace>
       <replace>
          <comment when="2015-03-17" who="kalvesmaki">Offset question marks, exclamation marks, other
             punctuation</comment>
-         <pattern>([?!\]\[\(\){}&lt;>—–])</pattern>
+         <pattern>([?!\]\[\(\){}&lt;&gt;—–])</pattern>
          <replacement> $1 </replacement>
       </replace>
       <replace>
@@ -181,7 +179,7 @@
          <pattern>\s+</pattern>
       </tokenize>
       <example>
-         <input>"I said, ["Wanna play ping-pong?"></input>
+         <input>"I said, ["Wanna play ping-pong?"&gt;</input>
          <output-token>``</output-token>
          <output-token>I</output-token>
          <output-token>said</output-token>
@@ -194,7 +192,7 @@
          <output-token>ping-pong</output-token>
          <output-token>?</output-token>
          <output-token>''</output-token>
-         <output-token>></output-token>
+         <output-token>&gt;</output-token>
       </example>
    </body>
 </TAN-R-tok>
