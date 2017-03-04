@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../TAN-1-dev/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../TAN-1-dev/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../TAN-1-dev/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../TAN-1-dev/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <!--<?xml-model href="../../schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
 <?xml-model href="../../schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
-<!--<?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="http://textalign.net/release/1/dev/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
-<TAN-mor xmlns="tag:textalign.net,2015:ns" TAN-version="1" id="tag:kalvesmaki.com,2014:tan-r-mor:cop:copticscriptorium">
+<!--<?xml-model href="http://textalign.net/release/TAN-1-dev/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="http://textalign.net/release/TAN-1-dev/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
+<TAN-mor xmlns="tag:textalign.net,2015:ns"
+         TAN-version="1 dev"
+         id="tag:kalvesmaki.com,2014:tan-r-mor:cop:copticscriptorium">
    <head>
       <name>Coptic Scriptorium rules for Coptic morphology</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/TAN-mor/cop.kalvesmaki.com%2C2014.1.xml"/>
@@ -28,9 +30,24 @@
          <IRI>tag:kalvesmaki.com,2014:source:olia</IRI>
          <name>Ontologies of Linguistic Annotation (OLiA)</name>
       </source>
-      <declarations>
-         <for-lang>cop</for-lang>
-         <feature xml:id="A">
+      <declarations/>
+      <agent xml:id="kalvesmaki" roles="editor">
+         <IRI>http://viaf.org/viaf/299582703</IRI>
+         <IRI>tag:kalvesmaki.com,2014:self</IRI>
+         <name>Joel Kalvesmaki</name>
+      </agent>
+      <role xml:id="editor">
+         <IRI>http://schema.org/editor</IRI>
+         <name>Editor</name>
+      </role>
+      <change who="kalvesmaki" when="2015-05-05">Started file.</change>
+   </head>
+   <body>
+      <for-lang>cop</for-lang>
+      <assert context="ppers" feature-test="ppers aopt acond aconj anegpst apst ccirc cfoc cpret crel">PPERS may stand alone, or if it is joined, it must be to AOPT, ACOND, ACONJ, ANEGPST,
+         APST, CCIRC, CFOC, CPRET, or CREL</assert>
+      <assert context="ppero" feature-test="imod prep v">PPERO may stand alone, or if it is joined, it must be to IMOD, PREP, or V</assert>
+      <feature code="A">
             <IRI>http://purl.org/olia/olia.owl#AuxiliaryVerb</IRI>
             <comment when="2015-05-05" who="kalvesmaki">Not sure about this mapping</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-tripartite-base</IRI>
@@ -46,27 +63,27 @@
                (optative and 3rd pers. masc. pronoun) (5) ⲉϥϣⲁⲛ/ACOND_PPERS ⲥⲱⲧⲙ̄ (conditional and
                3rd pers. masc. pronoun) </desc>
          </feature>
-         <feature xml:id="AAOR">
+      <feature code="AAOR">
             <comment when="2015-05-05" who="kalvesmaki">Why can't this be
                http://purl.org/olia/olia.owl#Aorist?</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-aorist</IRI>
             <name>Auxiliary, aorist</name>
             <desc>Extended tag. Examples: ϣⲁ, ϣⲁⲣⲉ</desc>
          </feature>
-         <feature xml:id="ACAUS">
+      <feature code="ACAUS">
             <IRI>http://purl.org/olia/olia.owl#Causative</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-causative</IRI>
             <name>Auxiliary, causative</name>
             <desc>Extended tag. Examples: ⲧⲣⲉ</desc>
          </feature>
-         <feature xml:id="ACOND">
+      <feature code="ACOND">
             <comment when="2015-05-05" who="kalvesmaki">Not sure which of the many OLiA options to
                choose. http://purl.org/olia/olia.owl#AuxiliaryVerb?</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-conditional</IRI>
             <name>Auxiliary, conditional</name>
             <desc>Extended tag. Examples: ⲉ[ϥ]ϣⲁⲛ, ⲉⲣϣⲁⲛ</desc>
          </feature>
-         <feature xml:id="ACONJ">
+      <feature code="ACONJ">
             <comment when="2015-05-05" who="kalvesmaki">Not sure which of the many OLiA options to
                choose http://purl.org/olia/olia.owl#CoordinationParticle
                http://purl.org/olia/olia.owl#Coordination </comment>
@@ -74,7 +91,7 @@
             <name>Auxiliary, conjunctive</name>
             <desc>Extended tag. Examples: ⲛ̄(ⲧⲉ)</desc>
          </feature>
-         <feature xml:id="ADV">
+      <feature code="ADV">
             <IRI>http://purl.org/olia/olia.owl#Adverb</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:adverb</IRI>
             <name>Adverb</name>
@@ -89,61 +106,61 @@
                initial ⲉ in words such as ⲉⲃⲟⲗ separated from the adverb (see segmentation
                guidelines). </desc>
          </feature>
-         <feature xml:id="AFUTCONJ">
+      <feature code="AFUTCONJ">
             <comment when="2015-05-05" who="kalvesmaki">This has three separate features. An
                argument for breaking the tagging into three categories. </comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-future-conjunctive</IRI>
             <name>Auxiliary, future conjunctive</name>
             <desc>Extended tag. Examples: ⲧⲁⲣ(ⲉ)</desc>
          </feature>
-         <feature xml:id="AJUS">
+      <feature code="AJUS">
             <comment when="2015-05-05" who="kalvesmaki">How does this differ from imperative?
                "Jussive" does not feature in OLiA. </comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-jussive</IRI>
             <name>Auxiliary, jussive</name>
             <desc>Extended tag. Examples: ⲙⲁⲣ(ⲉ)</desc>
          </feature>
-         <feature xml:id="ALIM">
+      <feature code="ALIM">
             <comment when="2015-05-05" who="kalvesmaki">Limitative not an OLiA category</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-limitative-until</IRI>
             <name>Auxiliary, limitative (‘until’)</name>
             <desc>Extended tag. Examples: ϣⲁⲛⲧ(ⲉ)</desc>
          </feature>
-         <feature xml:id="ANEGAOR">
+      <feature code="ANEGAOR">
             <comment when="2015-05-05" who="kalvesmaki">This has three separate features. An
                argument for breaking the tagging into three categories. </comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-negated-aorist</IRI>
             <name>Auxiliary, negated aorist</name>
             <desc>Extended tag. Examples: ⲙⲉ(ⲣⲉ)</desc>
          </feature>
-         <feature xml:id="ANEGJUS">
+      <feature code="ANEGJUS">
             <comment when="2015-05-05" who="kalvesmaki">This has three separate features. An
                argument for breaking the tagging into three categories. </comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-negated-jussive</IRI>
             <name>Auxiliary, negated jussive</name>
             <desc>Extended tag. Examples: ⲙ̄ⲡⲣ̄ⲧⲣⲉ</desc>
          </feature>
-         <feature xml:id="ANEGOPT">
+      <feature code="ANEGOPT">
             <comment when="2015-05-05" who="kalvesmaki">This has three separate features. An
                argument for breaking the tagging into three categories. </comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-negated-optative</IRI>
             <name>Auxiliary, negated optative</name>
             <desc>Extended tag. Examples: ⲛ̄ⲛⲉ</desc>
          </feature>
-         <feature xml:id="ANEGPST">
+      <feature code="ANEGPST">
             <comment when="2015-05-05" who="kalvesmaki">This has three separate features. An
                argument for breaking the tagging into three categories. </comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-negated-past</IRI>
             <name>Auxiliary, negated past</name>
             <desc>Extended tag. Examples: ⲙ̄ⲡ(ⲉ)</desc>
          </feature>
-         <feature xml:id="ANY">
+      <feature code="ANY">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-not-yet</IRI>
             <name>Auxiliary, ‘not yet’</name>
             <desc>Extended tag. Examples: ⲙ̄ⲡⲁⲧ(ⲉ)</desc>
          </feature>
-         <feature xml:id="AOPT">
+      <feature code="AOPT">
             <comment when="2015-05-05" who="kalvesmaki">What about
                http://purl.org/olia/olia.owl#OptativeMood or
                http://purl.org/olia/olia.owl#OptativeModality?</comment>
@@ -151,20 +168,20 @@
             <name>Auxiliary, optative</name>
             <desc>Extended tag. Examples: ⲉ[ϥ]ⲉ, ⲉⲣⲉ</desc>
          </feature>
-         <feature xml:id="APREC">
+      <feature code="APREC">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-precursive-after</IRI>
             <name>Auxiliary, precursive (‘after’)</name>
             <desc>Extended tag. Examples: ⲛ̄ⲧⲉⲣ(ⲉ)</desc>
          </feature>
-         <feature xml:id="APST">
+      <feature code="APST">
             <comment when="2015-05-05" who="kalvesmaki">What about
                http://purl.org/olia/olia.owl#Past?</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:auxiliary-past</IRI>
             <name>Auxiliary, past</name>
             <desc>Extended tag. Examples: ⲁ</desc>
          </feature>
-         <feature xml:id="ART">
+      <feature code="ART">
             <IRI>http://purl.org/olia/olia.owl#Article</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:article</IRI>
             <name>Article</name>
@@ -179,7 +196,7 @@
                as ⲧ and ϩⲉ before part-of-speech tagging, so that ⲧ etc. can be tagged as an article
                alone (see segmentation guidelines). </desc>
          </feature>
-         <feature xml:id="C">
+      <feature code="C">
             <comment when="2015-05-05" who="kalvesmaki">This is a major category seemingly absent
                from OLiA.</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:converter</IRI>
@@ -197,19 +214,19 @@
                (cf. segmentation guidelines), e.g.: (16) ⲛⲧ/CREL ⲁ/APST ϥ|ⲥⲙⲟⲩ ‘which he blessed’
                The converter includes only ⲛⲧ, while ⲁ is a separate auxiliary base. </desc>
          </feature>
-         <feature xml:id="CCIRC">
+      <feature code="CCIRC">
             <comment when="2015-05-05" who="kalvesmaki">See comment for code C.</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:converter-circumstantial</IRI>
             <name>Converter, circumstantial</name>
             <desc>Extended tag. Examples: ⲉ, ⲉ[ⲁ], ⲉⲣⲉ</desc>
          </feature>
-         <feature xml:id="CFOC">
+      <feature code="CFOC">
             <comment when="2015-05-05" who="kalvesmaki">See comment for code C.</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:converter-focalizing-a.k.a-2nd-tenses)</IRI>
             <name>Converter, focalizing (a.k.a. 2nd tenses)</name>
             <desc>Extended tag. Examples: ⲉ, ⲉⲣⲉ, ⲉⲧⲉ, ⲛ̄ⲧ[ⲁ], ⲉⲛⲧ[ⲁ]</desc>
          </feature>
-         <feature xml:id="CONJ">
+      <feature code="CONJ">
             <IRI>http://purl.org/olia/olia.owl#Conjunction</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:conjunction</IRI>
             <name>Conjunction</name>
@@ -225,7 +242,7 @@
                ‘lest’ is a conjunction within the direct speech clause. Also note that the word ϫⲉ,
                originally derived from ϫⲱ ‘say’ is not considered a verb in this usage. </desc>
          </feature>
-         <feature xml:id="COP">
+      <feature code="COP">
             <IRI>http://purl.org/olia/olia.owl#Copula</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:copula</IRI>
             <name>Copula</name>
@@ -240,19 +257,19 @@
                copula adequately, these types of cases are still tagged as COP (see Layton
                2004:223). </desc>
          </feature>
-         <feature xml:id="CPRET">
+      <feature code="CPRET">
             <comment when="2015-05-05" who="kalvesmaki">See comment for code C.</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:converter-preterite</IRI>
             <name>Converter, preterite</name>
             <desc>Extended tag. Examples: ⲛⲉ, ⲛⲉⲣⲉ</desc>
          </feature>
-         <feature xml:id="CREL">
+      <feature code="CREL">
             <comment when="2015-05-05" who="kalvesmaki">See comment for code C.</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:converter-relative</IRI>
             <name>Converter, relative</name>
             <desc>Extended tag. Examples: ⲉⲧⲉ, ⲉⲧ, ⲛ̄ⲧ[ⲁ], ⲉⲛⲧ[ⲁ], ⲉⲧⲉⲣⲉ</desc>
          </feature>
-         <feature xml:id="EXIST">
+      <feature code="EXIST">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:existential/possessive</IRI>
             <name>Existential/possessive</name>
@@ -267,7 +284,7 @@
                possessor pronoun is segmented apart from ⲟⲩⲛⲧⲁ and tagged as a pronoun, and the
                accompanying ⲙ̄ⲙⲁⲩ is an adverb. </desc>
          </feature>
-         <feature xml:id="FM">
+      <feature code="FM">
             <IRI>http://purl.org/olia/olia.owl#ForeignPhrase</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:foreign-material</IRI>
             <name>Foreign material</name>
@@ -279,7 +296,7 @@
                languages rather than embedded a loan word into a Coptic construction (25) ⲟⲩ ⲡⲁⲣⲁ
                ⲧⲟⲩⲧⲟ/FM ⲛⲟⲩ ⲉⲃⲟⲗ ⲁⲛ ϩⲙⲡⲥⲱⲙⲁ ⲧⲉ ‘it is therefore not part of the body’ </desc>
          </feature>
-         <feature xml:id="FUT">
+      <feature code="FUT">
             <IRI>http://purl.org/olia/olia.owl#Future</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:future</IRI>
             <name>Future</name>
@@ -292,7 +309,7 @@
                diplomatic sequence like ⲧⲉⲧⲛⲁⲣⲡⲙⲉⲉⲩⲉ ‘you will think’ are usually normalized and
                only then tagged as follows: (28) ⲧⲉⲧⲛ/PPERS ⲛⲁ/FUT ⲣ/V </desc>
          </feature>
-         <feature xml:id="IMOD">
+      <feature code="IMOD">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:inflected-modifier</IRI>
             <name>Inflected modifier</name>
@@ -306,7 +323,7 @@
                realized as zero, a portmanteau tag is assigned: (31) ⲙⲙⲓⲛⲙⲙⲟ/IMOD_PPERO ‘yourself
                (2nd pers. sg. fem.)’ </desc>
          </feature>
-         <feature xml:id="N">
+      <feature code="N">
             <IRI>http://purl.org/olia/olia.owl#Noun</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:noun</IRI>
             <name>Noun</name>
@@ -318,7 +335,7 @@
                facilitate the retrieval of verbal lexemes across constructions. (34) ϯ ⲡⲓⲥⲧⲉⲩⲉ/V
                ⲉⲡⲛⲟⲩⲧⲉ ‘I trust in God’ </desc>
          </feature>
-         <feature xml:id="NEG">
+      <feature code="NEG">
             <IRI>http://purl.org/olia/olia.owl#Negation</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:negation</IRI>
             <name>Negation</name>
@@ -329,13 +346,13 @@
                from the verb and surrounding auxiliaries. (35) ⲛ︤/NEG ϥ︥ⲛⲁⲕⲗⲏⲣⲟⲛⲟⲙⲉⲓ ⲙ̄ⲙⲟⲕ ⲁⲛ/NEG
                ‘he will not inherit you’ (36) ⲉⲩϣⲁⲛ ⲧⲙ̄/NEG ⲥⲱⲧⲙ̄ ‘if they do not listen’ </desc>
          </feature>
-         <feature xml:id="NPROP">
+      <feature code="NPROP">
             <IRI>http://purl.org/olia/olia.owl#ProperNoun</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:noun-proper</IRI>
             <name>Noun, Proper</name>
             <desc>Extended tag. Examples: ⲁⲛⲧⲱⲛⲓⲟⲥ</desc>
          </feature>
-         <feature xml:id="NUM">
+      <feature code="NUM">
             <IRI>http://purl.org/olia/olia.owl#CardinalNumber</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:numeral</IRI>
             <name>Numeral</name>
@@ -346,7 +363,7 @@
                preceding a noun is tagged as ART, not NUM. Letters being used as numbers are
                considered NUM (including an alpha preceding a noun for the quantity ‘one’) </desc>
          </feature>
-         <feature xml:id="PDEM">
+      <feature code="PDEM">
             <IRI>http://purl.org/olia/olia.owl#DemonstrativePronoun</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:pronoun-demonstrative</IRI>
             <name>Pronoun, demonstrative</name>
@@ -354,7 +371,7 @@
                to the noun and substituting for a noun are tagged as PDEM. (40) ⲛ ⲧⲉⲓ/PDEM ϩⲉ ‘in
                this way’ (41) ⲧⲁⲓ/PDEM ⲧⲉ ⲧ ϩⲉ ‘this is the way’ </desc>
          </feature>
-         <feature xml:id="PINT">
+      <feature code="PINT">
             <IRI>http://purl.org/olia/olia.owl#InterrogativePronoun</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:pronoun-interrogative</IRI>
             <name>Pronoun, interrogative</name>
@@ -363,7 +380,7 @@
                in complex phrases, as in the examples below. (42) ⲉⲧⲃⲉ/PREP ⲟⲩ/PINT ‘what for, why?’
                (43) ⲉ/PREP ⲧⲱⲛ/PINT ‘where to?’ </desc>
          </feature>
-         <feature xml:id="PPER">
+      <feature code="PPER">
             <IRI>http://purl.org/olia/olia.owl#PersonalPronoun</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:pronoun-personal</IRI>
             <name>Pronoun, personal</name>
@@ -379,25 +396,25 @@
                me, I am his servant’ Also note that possessive pronouns like ⲡⲉϥ ‘his’ are not
                segmented and receive a separate tag, PPOS. </desc>
          </feature>
-         <feature xml:id="PPERI">
+      <feature code="PPERI">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:pronoun-independent</IRI>
             <name>Pronoun, independent</name>
             <desc>Extended tag. Examples: ⲁⲛⲟⲕ</desc>
          </feature>
-         <feature xml:id="PPERO">
+      <feature code="PPERO">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:pronoun-object</IRI>
             <name>Pronoun, object</name>
             <desc>Extended tag. Examples: ⲥⲱⲧⲙ̄ ⲉⲣⲟⲕ</desc>
          </feature>
-         <feature xml:id="PPERS">
+      <feature code="PPERS">
             <comment when="2015-05-05" who="kalvesmaki">Two features, no?</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:pronoun-subject</IRI>
             <name>Pronoun, subject</name>
             <desc>Extended tag. Examples: ⲁϥ</desc>
          </feature>
-         <feature xml:id="PPOS">
+      <feature code="PPOS">
             <IRI>http://purl.org/olia/olia.owl#PossessivePronoun</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:pronoun-possessive</IRI>
             <name>Pronoun, possessive</name>
@@ -408,7 +425,7 @@
                ‘mine’ etc. The following example illustrates these different types of possessives:
                (48) ⲧⲁ/PPOS ⲡⲁ/PPOS ⲥⲟⲛ ⲧⲱⲓ/PPOS ⲧⲉ ‘the one of my brother is mine’ </desc>
          </feature>
-         <feature xml:id="PREP">
+      <feature code="PREP">
             <IRI>http://purl.org/olia/olia.owl#Preposition</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:preposition</IRI>
             <name>Preposition</name>
@@ -427,7 +444,7 @@
                with the project’s tokenization module. This lexicon will be updated with future
                versions of the guidelines to accommodate dubious cases as they arise. </desc>
          </feature>
-         <feature xml:id="PTC">
+      <feature code="PTC">
             <IRI>http://purl.org/olia/olia.owl#Particle</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:particle</IRI>
             <name>Particle</name>
@@ -437,7 +454,7 @@
                modifying particles that tend to appear in the second, Wackernagel position as they
                do in Greek as well (e.g. ⲇⲉ, ⲅⲁⲣ). </desc>
          </feature>
-         <feature xml:id="PUNCT">
+      <feature code="PUNCT">
             <IRI>http://purl.org/olia/olia.owl#Punctuation</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:punctuation</IRI>
             <name>Punctuation</name>
@@ -448,7 +465,7 @@
                tagged as PUNCT, though refer to the tokenization guidelines for recommendations on
                normalizing text before tagging.</desc>
          </feature>
-         <feature xml:id="UNKNOWN">
+      <feature code="UNKNOWN">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:unknown-morph-lacuna</IRI>
             <name>Unknown morph, lacuna</name>
@@ -462,7 +479,7 @@
                even if we are certain a damaged morpheme is either an article or a possessive
                pronoun, an uncertain case is usually tagged as UNKNOWN. </desc>
          </feature>
-         <feature xml:id="V">
+      <feature code="V">
             <IRI>http://purl.org/olia/olia.owl#Verb</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:verb</IRI>
             <name>Verb</name>
@@ -488,7 +505,7 @@
                groups, morphemes, and word segmentation.) Common examples include compound verbs
                formed with ϯ-, ⲣ-, and ϫⲓ-. (60) ⲉⲧ/CREL ⲣⲛⲟⲃⲉ/V (61) ⲉ/CCIRC ⲕ/PPERS ϯⲥⲃⲱ/V </desc>
          </feature>
-         <feature xml:id="VBD">
+      <feature code="VBD">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:verboid</IRI>
             <name>Verboid</name>
@@ -499,34 +516,18 @@
                VBD is tagged as its subject, i.e. PPERS (or simply PPER in the coarse tagset). (62)
                ⲡⲉϫⲁ/VBD ϥ/PPERS ‘he said’ (63) ⲛⲁⲛⲟⲩ/VBD ⲥ/PPERS ‘she/it is good’ </desc>
          </feature>
-         <feature xml:id="VIMP">
+      <feature code="VIMP">
             <IRI>http://purl.org/olia/olia.owl#ImperativeVerb</IRI>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:verb-imperative</IRI>
             <name>Verb, imperative</name>
             <desc>Extended tag. Examples: ⲁϫⲓ</desc>
          </feature>
-         <feature xml:id="VSTAT">
+      <feature code="VSTAT">
             <comment when="2015-05-05" who="kalvesmaki">not sure how maps to OLiA, which doesn't use
                the term "stative"</comment>
             <IRI>tag:textalign.net,2015:morphology:cop:cs:verb-stative</IRI>
             <name>Verb, stative</name>
             <desc>Extended tag. Examples: ⲟⲃⲉ</desc>
          </feature>
-      </declarations>
-      <agent xml:id="kalvesmaki" roles="editor">
-         <IRI>http://viaf.org/viaf/299582703</IRI>
-         <IRI>tag:kalvesmaki.com,2014:self</IRI>
-         <name>Joel Kalvesmaki</name>
-      </agent>
-      <role xml:id="editor">
-         <IRI>http://schema.org/editor</IRI>
-         <name>Editor</name>
-      </role>
-      <change who="kalvesmaki" when="2015-05-05">Started file.</change>
-   </head>
-   <body>
-      <assert feature-filter="ppers" feature-test="() | aopt | acond | aconj | anegpst | apst | ccirc | cfoc | cpret | crel">PPERS may stand alone, or if it is joined, it must be to AOPT, ACOND, ACONJ, ANEGPST,
-         APST, CCIRC, CFOC, CPRET, or CREL</assert>
-      <assert feature-filter="ppero" feature-test="() | imod | prep | v">PPERO may stand alone, or if it is joined, it must be to IMOD, PREP, or V</assert>
    </body>
 </TAN-mor>
