@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusero">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ero">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ero</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ero.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ERO</tok-starts-with>
       <tok-starts-with>Ero</tok-starts-with>
@@ -38,22 +15,62 @@
       <tok-starts-with>eró</tok-starts-with>
       <tok-starts-with>éro</tok-starts-with>
       <tok-starts-with>Eró</tok-starts-with>
-      <ana><!--ERODO Erodo-->
-         <tok val="E(rodo|RODO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:22:26.834-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:22:26.834-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ero.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ERODO"/>
+         <tok val="Erodo"/>
+         <tok val="erodo"/>
          <lm>
             <l>erodo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ero ero eroque eró éro Eró-->
-         <tok val="[eEé]r[o]?(que|ó|o)?"/>
+      <ana>
+         <tok val="Ero"/>
+         <tok val="Eró"/>
+         <tok val="ero"/>
+         <tok val="eroque"/>
+         <tok val="eró"/>
+         <tok val="éro"/>
          <lm>
             <l>aero</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ero ero eroque-->
-         <tok val="[eE]ro(que)?"/>
+      <ana>
+         <tok val="Ero"/>
+         <tok val="ero"/>
+         <tok val="eroque"/>
          <lm cert="0.333333333333333333">
             <l>erus</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -68,8 +85,9 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Erodere erodere-->
-         <tok val="[eE]rodere"/>
+      <ana>
+         <tok val="Erodere"/>
+         <tok val="erodere"/>
          <lm>
             <l>erodo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -78,15 +96,18 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Erodit erodit eroditque-->
-         <tok val="[eE]rodit(que)?"/>
+      <ana>
+         <tok val="Erodit"/>
+         <tok val="erodit"/>
+         <tok val="eroditque"/>
          <lm>
             <l>erodo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Eroduntur eroduntur-->
-         <tok val="[eE]roduntur"/>
+      <ana>
+         <tok val="Eroduntur"/>
+         <tok val="eroduntur"/>
          <lm>
             <l>erodo</l>
             <m>v - 3 p p i p</m>
@@ -94,6 +115,7 @@
       </ana>
       <ana>
          <tok val="Erogare"/>
+         <tok val="erogare"/>
          <lm>
             <l>exrogare</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -101,8 +123,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Erogatio erogatio-->
-         <tok val="[eE]rogatio"/>
+      <ana>
+         <tok val="Erogatio"/>
+         <tok val="erogatio"/>
          <lm>
             <l>erogatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -111,13 +134,15 @@
       </ana>
       <ana>
          <tok val="Erogatus"/>
+         <tok val="erogatus"/>
          <lm>
             <l>exrogare</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Erogitare erogitare-->
-         <tok val="[eE]rogitare"/>
+      <ana>
+         <tok val="Erogitare"/>
+         <tok val="erogitare"/>
          <lm>
             <l>erogito</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -127,6 +152,7 @@
       </ana>
       <ana>
          <tok val="Erogito"/>
+         <tok val="erogito"/>
          <lm>
             <l>erogito</l>
             <m>v - 1 s p i a</m>
@@ -134,6 +160,7 @@
       </ana>
       <ana>
          <tok val="Erogo"/>
+         <tok val="erogo"/>
          <lm>
             <l>exrogare</l>
             <m>v - 1 s p i a</m>
@@ -141,20 +168,19 @@
       </ana>
       <ana>
          <tok val="Eros"/>
-         <lm>
+         <tok val="eros"/>
+         <lm cert="0.5">
             <l>Eros</l>
             <m>n e - s - - - m n</m>
          </lm>
-      </ana>
-      <ana><!--Eros eros-->
-         <tok val="[eE]ros"/>
-         <lm>
+         <lm cert="0.5">
             <l>erus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Erosi erosi-->
-         <tok val="[eE]rosi"/>
+      <ana>
+         <tok val="Erosi"/>
+         <tok val="erosi"/>
          <lm>
             <l>erodo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -165,13 +191,15 @@
       </ana>
       <ana>
          <tok val="Erosione"/>
+         <tok val="erosione"/>
          <lm>
             <l>erosio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Erosus erosus-->
-         <tok val="[eE]rosus"/>
+      <ana>
+         <tok val="Erosus"/>
+         <tok val="erosus"/>
          <lm>
             <l>erodo</l>
             <m>v - - s r p p m n</m>
@@ -179,6 +207,7 @@
       </ana>
       <ana>
          <tok val="Erote"/>
+         <tok val="erote"/>
          <lm>
             <l>Eros</l>
             <m>n e - s - - - m b</m>
@@ -186,13 +215,15 @@
       </ana>
       <ana>
          <tok val="Erotem"/>
+         <tok val="erotem"/>
          <lm>
             <l>Eros</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Erotema erotema-->
-         <tok val="[eE]rotema"/>
+      <ana>
+         <tok val="Erotema"/>
+         <tok val="erotema"/>
          <lm>
             <l>erotema</l>
             <m>n - - s - - - n n</m>
@@ -200,6 +231,7 @@
       </ana>
       <ana>
          <tok val="Erotemata"/>
+         <tok val="erotemata"/>
          <lm>
             <l>erotema</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -207,8 +239,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Erotes Erotis-->
-         <tok val="Erot[ie]s"/>
+      <ana>
+         <tok val="Erotes"/>
+         <tok val="Erotis"/>
+         <tok val="erotes"/>
+         <tok val="erotis"/>
          <lm>
             <l>Eros</l>
             <m>n e - p - - - m a</m>
@@ -216,14 +251,18 @@
       </ana>
       <ana>
          <tok val="Erotes"/>
+         <tok val="erotes"/>
          <lm>
             <l>Eros</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Eroti Erotique-->
-         <tok val="Eroti(que)?"/>
+      <ana>
+         <tok val="Eroti"/>
+         <tok val="Erotique"/>
+         <tok val="eroti"/>
+         <tok val="erotique"/>
          <lm>
             <l>Eros</l>
             <m>n e - s - - - m d</m>
@@ -231,6 +270,7 @@
       </ana>
       <ana>
          <tok val="Erotis"/>
+         <tok val="erotis"/>
          <lm>
             <l>Eros</l>
             <m>n e - s - - - m g</m>
@@ -238,6 +278,7 @@
       </ana>
       <ana>
          <tok val="Erotium"/>
+         <tok val="erotium"/>
          <lm>
             <l>Eros</l>
             <m>n e - p - - - m g</m>
@@ -245,6 +286,7 @@
       </ana>
       <ana>
          <tok val="Erotopaegnia"/>
+         <tok val="erotopaegnia"/>
          <lm>
             <l>Erotopaegnion</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -254,6 +296,7 @@
       </ana>
       <ana>
          <tok val="Erotopaegniis"/>
+         <tok val="erotopaegniis"/>
          <lm>
             <l>Erotopaegnion</l>
             <m cert="0.5">n e - p - - - n d</m>
@@ -262,14 +305,16 @@
       </ana>
       <ana>
          <tok val="Erotopaegnion"/>
+         <tok val="erotopaegnion"/>
          <lm>
             <l>Erotopaegnion</l>
             <m cert="0.5">n e - s - - - n b</m>
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Erotylos erotylos-->
-         <tok val="[eE]rotylos"/>
+      <ana>
+         <tok val="Erotylos"/>
+         <tok val="erotylos"/>
          <lm>
             <l>erotylus</l>
             <m>n - - p - - - m a</m>
@@ -424,8 +469,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--erodunt eroduntque-->
-         <tok val="erodunt(que)?"/>
+      <ana>
+         <tok val="erodunt"/>
+         <tok val="eroduntque"/>
          <lm>
             <l>erodo</l>
             <m>v - 3 p p i a</m>
@@ -559,16 +605,19 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--erogare erogaren-->
-         <tok val="erogare[n]?"/>
+      <ana>
+         <tok val="erogare"/>
+         <tok val="erogaren"/>
          <lm>
             <l>erogo</l>
             <m cert="0.5">v - - - p n a</m>
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--erogare erogaren erogarisne-->
-         <tok val="erogar(isn)?e[n]?"/>
+      <ana>
+         <tok val="erogare"/>
+         <tok val="erogaren"/>
+         <tok val="erogarisne"/>
          <lm>
             <l>erogo</l>
             <m>v - 2 s p i p</m>
@@ -602,8 +651,9 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--erogarisne erogaueris-->
-         <tok val="eroga(ue)?ris(ne)?"/>
+      <ana>
+         <tok val="erogarisne"/>
+         <tok val="erogaueris"/>
          <lm>
             <l>erogo</l>
             <m>v - 2 s r s a</m>
@@ -616,8 +666,10 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--erogasse erogauisse erogavisse-->
-         <tok val="eroga[vu]?(i|)sse"/>
+      <ana>
+         <tok val="erogasse"/>
+         <tok val="erogauisse"/>
+         <tok val="erogavisse"/>
          <lm>
             <l>erogo</l>
             <m>v - - - r n a</m>
@@ -848,8 +900,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--erogauerat erogaverat-->
-         <tok val="eroga[vu]erat"/>
+      <ana>
+         <tok val="erogauerat"/>
+         <tok val="erogaverat"/>
          <lm>
             <l>erogo</l>
             <m>v - 3 s l i a</m>
@@ -862,8 +915,9 @@
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--erogauerit erogaverit-->
-         <tok val="eroga[vu]erit"/>
+      <ana>
+         <tok val="erogauerit"/>
+         <tok val="erogaverit"/>
          <lm>
             <l>erogo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -877,8 +931,9 @@
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--erogauit erogavit-->
-         <tok val="eroga[vu]it"/>
+      <ana>
+         <tok val="erogauit"/>
+         <tok val="erogavit"/>
          <lm>
             <l>erogo</l>
             <m>v - 3 s r i a</m>

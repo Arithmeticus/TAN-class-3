@@ -1,58 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusbas">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:bas">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to bas</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-bas.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>BAS</tok-starts-with>
       <tok-starts-with>Bas</tok-starts-with>
       <tok-starts-with>bas</tok-starts-with>
       <tok-starts-with>bás</tok-starts-with>
       <tok-starts-with>Bás</tok-starts-with>
-      <ana><!--BASILE Basile-->
-         <tok val="B(asile|ASILE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:12:34.911-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:12:34.911-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-bas.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="BASILE"/>
+         <tok val="Basile"/>
+         <tok val="basile"/>
          <lm>
             <l>Basilus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--BASILE Basile Basili-->
-         <tok val="B(asil)?(i|e|ASILE)"/>
+      <ana>
+         <tok val="BASILE"/>
+         <tok val="Basile"/>
+         <tok val="Basili"/>
+         <tok val="basile"/>
+         <tok val="basili"/>
          <lm>
             <l>Basilis</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--BASILEAE Basileae-->
-         <tok val="B(asileae|ASILEAE)"/>
+      <ana>
+         <tok val="BASILEAE"/>
+         <tok val="Basileae"/>
+         <tok val="basileae"/>
          <lm>
             <l>Basilea</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -61,8 +77,10 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--BASILICA Basilica basilica-->
-         <tok val="[bB]?(asilica|BASILICA)"/>
+      <ana>
+         <tok val="BASILICA"/>
+         <tok val="Basilica"/>
+         <tok val="basilica"/>
          <lm cert="0.333333333333333333">
             <l>basilica</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -85,8 +103,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--BASILICAE Basilicae basilicae-->
-         <tok val="[bB]?(asilicae|BASILICAE)"/>
+      <ana>
+         <tok val="BASILICAE"/>
+         <tok val="Basilicae"/>
+         <tok val="basilicae"/>
          <lm cert="0.5">
             <l>basilicus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -102,23 +122,33 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--BASILII Basili Basilii basili-->
-         <tok val="[Bb]?(asili)?(i|BASILII)?"/>
+      <ana>
+         <tok val="BASILII"/>
+         <tok val="Basili"/>
+         <tok val="Basilii"/>
+         <tok val="basili"/>
+         <tok val="basilii"/>
          <lm>
             <l>basilium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--BASILO Basilo-->
-         <tok val="B(asilo|ASILO)"/>
+      <ana>
+         <tok val="BASILO"/>
+         <tok val="Basilo"/>
+         <tok val="basilo"/>
          <lm>
             <l>Basilus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--BASIVM Basium basium basiumque-->
-         <tok val="[bB]?(asium)?(que|BASIVM)?"/>
+      <ana>
+         <tok val="BASIVM"/>
+         <tok val="Basium"/>
+         <tok val="basium"/>
+         <tok val="basiumque"/>
+         <tok val="basivm"/>
          <lm>
             <l>basium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -126,15 +156,22 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--BASIVM Basium basiorum basium basiumque-->
-         <tok val="[bB]?(asi)?(or)?(um)?(que|BASIVM)?"/>
+      <ana>
+         <tok val="BASIVM"/>
+         <tok val="Basium"/>
+         <tok val="basiorum"/>
+         <tok val="basium"/>
+         <tok val="basiumque"/>
+         <tok val="basivm"/>
          <lm>
             <l>basium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--BASSO Basso-->
-         <tok val="B(asso|ASSO)"/>
+      <ana>
+         <tok val="BASSO"/>
+         <tok val="Basso"/>
+         <tok val="basso"/>
          <lm>
             <l>Bassus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -143,6 +180,7 @@
       </ana>
       <ana>
          <tok val="Basaboiates"/>
+         <tok val="basaboiates"/>
          <lm>
             <l>Basaboiates</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -150,8 +188,9 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Basaltes basaltes-->
-         <tok val="[bB]asaltes"/>
+      <ana>
+         <tok val="Basaltes"/>
+         <tok val="basaltes"/>
          <lm>
             <l>basaltes</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -162,20 +201,26 @@
       </ana>
       <ana>
          <tok val="Basculus"/>
+         <tok val="basculus"/>
          <lm>
             <l>Basculus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Basi basi basii basiin basin-->
-         <tok val="[bB]asi[i]?[n]?"/>
+      <ana>
+         <tok val="Basi"/>
+         <tok val="basi"/>
+         <tok val="basii"/>
+         <tok val="basiin"/>
+         <tok val="basin"/>
          <lm>
             <l>basium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Basia basia-->
-         <tok val="[bB]asia"/>
+      <ana>
+         <tok val="Basia"/>
+         <tok val="basia"/>
          <lm cert="0.5">
             <l>basium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -187,8 +232,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Basiare basiare-->
-         <tok val="[bB]asiare"/>
+      <ana>
+         <tok val="Basiare"/>
+         <tok val="basiare"/>
          <lm>
             <l>basio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -196,8 +242,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Basiator basiator-->
-         <tok val="[bB]asiator"/>
+      <ana>
+         <tok val="Basiator"/>
+         <tok val="basiator"/>
          <lm>
             <l>basiator</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -206,6 +253,7 @@
       </ana>
       <ana>
          <tok val="Basiatus"/>
+         <tok val="basiatus"/>
          <lm>
             <l>basio</l>
             <m>v - - s r p p m n</m>
@@ -213,6 +261,7 @@
       </ana>
       <ana>
          <tok val="Basilea"/>
+         <tok val="basilea"/>
          <lm>
             <l>Basilea</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -222,6 +271,7 @@
       </ana>
       <ana>
          <tok val="Basileam"/>
+         <tok val="basileam"/>
          <lm>
             <l>Basilea</l>
             <m>n e - s - - - f a</m>
@@ -229,6 +279,7 @@
       </ana>
       <ana>
          <tok val="Basili"/>
+         <tok val="basili"/>
          <lm cert="0.5">
             <l>Basilis</l>
             <m>n e - s - - - m d</m>
@@ -242,16 +293,14 @@
       </ana>
       <ana>
          <tok val="Basilia"/>
-         <lm>
+         <tok val="basilia"/>
+         <lm cert="0.5">
             <l>Basilia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Basilia basilia-->
-         <tok val="[bB]asilia"/>
-         <lm>
+         <lm cert="0.5">
             <l>basilium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
             <m cert="0.333333333333333333">n - - p - - - n n</m>
@@ -260,6 +309,7 @@
       </ana>
       <ana>
          <tok val="Basiliadae"/>
+         <tok val="basiliadae"/>
          <lm>
             <l>Basiliadae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -268,6 +318,7 @@
       </ana>
       <ana>
          <tok val="Basiliae"/>
+         <tok val="basiliae"/>
          <lm>
             <l>Basilia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -278,13 +329,16 @@
       </ana>
       <ana>
          <tok val="Basiliam"/>
+         <tok val="basiliam"/>
          <lm>
             <l>Basilia</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Basilicam basilicam basilicamque-->
-         <tok val="[bB]asilicam(que)?"/>
+      <ana>
+         <tok val="Basilicam"/>
+         <tok val="basilicam"/>
+         <tok val="basilicamque"/>
          <lm cert="0.5">
             <l>basilicus</l>
             <m>a - - s - - - f a</m>
@@ -294,8 +348,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Basilicarum basilicarum-->
-         <tok val="[bB]asilicarum"/>
+      <ana>
+         <tok val="Basilicarum"/>
+         <tok val="basilicarum"/>
          <lm cert="0.5">
             <l>basilica</l>
             <m>n - - p - - - f g</m>
@@ -305,8 +360,10 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Basilicas basilicas basilicasque-->
-         <tok val="[bB]asilicas(que)?"/>
+      <ana>
+         <tok val="Basilicas"/>
+         <tok val="basilicas"/>
+         <tok val="basilicasque"/>
          <lm cert="0.5">
             <l>basilicus</l>
             <m>a - - p - - - f a</m>
@@ -316,15 +373,21 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Basilice basilice básilice Básilice-->
-         <tok val="[bB]?(a|bá|Bá)silice"/>
+      <ana>
+         <tok val="Basilice"/>
+         <tok val="Básilice"/>
+         <tok val="basilice"/>
+         <tok val="básilice"/>
          <lm>
             <l>basilicus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Basilice Basilicum basilice basilicum-->
-         <tok val="[bB]asilic(um|e)"/>
+      <ana>
+         <tok val="Basilice"/>
+         <tok val="Basilicum"/>
+         <tok val="basilice"/>
+         <tok val="basilicum"/>
          <lm cert="0.5">
             <l>basilicum</l>
             <m>n - - s - - - n v</m>
@@ -334,23 +397,29 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Basilice basilice-->
-         <tok val="[bB]asilice"/>
+      <ana>
+         <tok val="Basilice"/>
+         <tok val="basilice"/>
          <lm>
             <l>basilicus</l>
             <m cert="0.5">a - - s - - - m v</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Basilicon basilico basilicon básilico-->
-         <tok val="[bB]?(a|bá)silico[n]?"/>
+      <ana>
+         <tok val="Basilicon"/>
+         <tok val="basilico"/>
+         <tok val="basilicon"/>
+         <tok val="básilico"/>
          <lm>
             <l>basilicus</l>
             <m>a - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Basilicon basilico basilicon-->
-         <tok val="[bB]asilico[n]?"/>
+      <ana>
+         <tok val="Basilicon"/>
+         <tok val="basilico"/>
+         <tok val="basilicon"/>
          <lm cert="0.5">
             <l>basilicum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -365,16 +434,18 @@
             <m cert="0.2">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Basilicon basilicon-->
-         <tok val="[bB]asilicon"/>
+      <ana>
+         <tok val="Basilicon"/>
+         <tok val="basilicon"/>
          <lm>
             <l>basilicus</l>
             <m cert="0.5">n - - p - - - m a</m>
             <m cert="0.5">a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Basilicum basilicum-->
-         <tok val="[bB]asilicum"/>
+      <ana>
+         <tok val="Basilicum"/>
+         <tok val="basilicum"/>
          <lm cert="0.5">
             <l>basilicus</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -392,16 +463,18 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Basilicus basilicus-->
-         <tok val="[bB]asilicus"/>
+      <ana>
+         <tok val="Basilicus"/>
+         <tok val="basilicus"/>
          <lm>
             <l>basilicus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Basilio basilio-->
-         <tok val="[bB]asilio"/>
+      <ana>
+         <tok val="Basilio"/>
+         <tok val="basilio"/>
          <lm>
             <l>basilium</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -410,6 +483,7 @@
       </ana>
       <ana>
          <tok val="Basilis"/>
+         <tok val="basilis"/>
          <lm cert="0.5">
             <l>Basilus</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -422,8 +496,9 @@
             <m cert="0.333333333333333333">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Basilisci basilisci-->
-         <tok val="[bB]asilisci"/>
+      <ana>
+         <tok val="Basilisci"/>
+         <tok val="basilisci"/>
          <lm>
             <l>basiliscus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -431,40 +506,41 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Basilisco basilisco-->
-         <tok val="[bB]asilisco"/>
+      <ana>
+         <tok val="Basilisco"/>
+         <tok val="basilisco"/>
          <lm>
             <l>basiliscus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Basiliscus basiliscus-->
-         <tok val="[bB]asiliscus"/>
+      <ana>
+         <tok val="Basiliscus"/>
+         <tok val="basiliscus"/>
          <lm>
             <l>basiliscus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Basilium basilium-->
-         <tok val="[bB]asilium"/>
-         <lm>
+      <ana>
+         <tok val="Basilium"/>
+         <tok val="basilium"/>
+         <lm cert="0.5">
             <l>basilium</l>
             <m cert="0.25">n - - s - - - n v</m>
             <m cert="0.25">n - - s - - - n a</m>
             <m cert="0.25">n - - s - - - n n</m>
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Basilium"/>
-         <lm>
+         <lm cert="0.5">
             <l>Basilis</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Basilum"/>
+         <tok val="basilum"/>
          <lm>
             <l>Basilus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -473,13 +549,16 @@
       </ana>
       <ana>
          <tok val="Basilus"/>
+         <tok val="basilus"/>
          <lm>
             <l>Basilus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Basio basio basioque-->
-         <tok val="[bB]asio(que)?"/>
+      <ana>
+         <tok val="Basio"/>
+         <tok val="basio"/>
+         <tok val="basioque"/>
          <lm cert="0.5">
             <l>basio</l>
             <m>v - 1 s p i a</m>
@@ -492,6 +571,7 @@
       </ana>
       <ana>
          <tok val="Bassania"/>
+         <tok val="bassania"/>
          <lm>
             <l>Bassania</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -501,6 +581,7 @@
       </ana>
       <ana>
          <tok val="Bassaniam"/>
+         <tok val="bassaniam"/>
          <lm>
             <l>Bassania</l>
             <m>n e - s - - - f a</m>
@@ -508,6 +589,7 @@
       </ana>
       <ana>
          <tok val="Bassanitas"/>
+         <tok val="bassanitas"/>
          <lm>
             <l>Bassanitae</l>
             <m>n e - p - - - m a</m>
@@ -515,6 +597,7 @@
       </ana>
       <ana>
          <tok val="Bassareu"/>
+         <tok val="bassareu"/>
          <lm>
             <l>Bassareus</l>
             <m>n e - s - - - m v</m>
@@ -522,6 +605,7 @@
       </ana>
       <ana>
          <tok val="Bassareus"/>
+         <tok val="bassareus"/>
          <lm>
             <l>Bassareus</l>
             <m>n e - s - - - m n</m>
@@ -529,6 +613,7 @@
       </ana>
       <ana>
          <tok val="Bassaricas"/>
+         <tok val="bassaricas"/>
          <lm>
             <l>Bassaricus</l>
             <m>a e - p - - - f a</m>
@@ -536,6 +621,7 @@
       </ana>
       <ana>
          <tok val="Bassaricum"/>
+         <tok val="bassaricum"/>
          <lm>
             <l>Bassaricus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -548,6 +634,7 @@
       </ana>
       <ana>
          <tok val="Bassaricus"/>
+         <tok val="bassaricus"/>
          <lm>
             <l>Bassaricus</l>
             <m>a e - s - - - m n</m>
@@ -555,6 +642,7 @@
       </ana>
       <ana>
          <tok val="Bassarides"/>
+         <tok val="bassarides"/>
          <lm>
             <l>Bassaris</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -564,6 +652,7 @@
       </ana>
       <ana>
          <tok val="Bassaridum"/>
+         <tok val="bassaridum"/>
          <lm>
             <l>Bassaris</l>
             <m>n e - p - - - f g</m>
@@ -571,6 +660,7 @@
       </ana>
       <ana>
          <tok val="Bassaris"/>
+         <tok val="bassaris"/>
          <lm>
             <l>Bassaris</l>
             <m>n e - s - - - f n</m>
@@ -578,13 +668,17 @@
       </ana>
       <ana>
          <tok val="Basse"/>
+         <tok val="basse"/>
          <lm>
             <l>Bassus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Bassi Bassine-->
-         <tok val="Bassi(ne)?"/>
+      <ana>
+         <tok val="Bassi"/>
+         <tok val="Bassine"/>
+         <tok val="bassi"/>
+         <tok val="bassine"/>
          <lm>
             <l>Bassus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -594,6 +688,7 @@
       </ana>
       <ana>
          <tok val="Bassum"/>
+         <tok val="bassum"/>
          <lm>
             <l>Bassus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -602,13 +697,17 @@
       </ana>
       <ana>
          <tok val="Bassus"/>
+         <tok val="bassus"/>
          <lm>
             <l>Bassus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Bastarnae Basternae-->
-         <tok val="Bast[ea]rnae"/>
+      <ana>
+         <tok val="Bastarnae"/>
+         <tok val="Basternae"/>
+         <tok val="bastarnae"/>
+         <tok val="basternae"/>
          <lm>
             <l>Bastarnae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -617,13 +716,17 @@
       </ana>
       <ana>
          <tok val="Bastarnarum"/>
+         <tok val="bastarnarum"/>
          <lm>
             <l>Bastarnae</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Bastarnas Bastarnasque-->
-         <tok val="Bastarnas(que)?"/>
+      <ana>
+         <tok val="Bastarnas"/>
+         <tok val="Bastarnasque"/>
+         <tok val="bastarnas"/>
+         <tok val="bastarnasque"/>
          <lm>
             <l>Bastarnae</l>
             <m>n e - p - - - m a</m>
@@ -631,14 +734,16 @@
       </ana>
       <ana>
          <tok val="Bastarnis"/>
+         <tok val="bastarnis"/>
          <lm>
             <l>Bastarnae</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Basterna basterna-->
-         <tok val="[bB]asterna"/>
+      <ana>
+         <tok val="Basterna"/>
+         <tok val="basterna"/>
          <lm>
             <l>basterna</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -646,8 +751,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Basternae basternae-->
-         <tok val="[bB]asternae"/>
+      <ana>
+         <tok val="Basternae"/>
+         <tok val="basternae"/>
          <lm>
             <l>basterna</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -658,6 +764,7 @@
       </ana>
       <ana>
          <tok val="Bastertini"/>
+         <tok val="bastertini"/>
          <lm>
             <l>Bastertini</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -666,6 +773,7 @@
       </ana>
       <ana>
          <tok val="Bastetania"/>
+         <tok val="bastetania"/>
          <lm>
             <l>Bastetania</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -675,6 +783,7 @@
       </ana>
       <ana>
          <tok val="Bastitani"/>
+         <tok val="bastitani"/>
          <lm>
             <l>Bastitani</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -683,6 +792,7 @@
       </ana>
       <ana>
          <tok val="Bastuli"/>
+         <tok val="bastuli"/>
          <lm>
             <l>Bastuli</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -691,6 +801,7 @@
       </ana>
       <ana>
          <tok val="Bastulorum"/>
+         <tok val="bastulorum"/>
          <lm>
             <l>Bastuli</l>
             <m>n e - p - - - m g</m>
@@ -845,8 +956,11 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--basiin basiis basiisque basis-->
-         <tok val="basi[i]?(s|in|isque)"/>
+      <ana>
+         <tok val="basiin"/>
+         <tok val="basiis"/>
+         <tok val="basiisque"/>
+         <tok val="basis"/>
          <lm>
             <l>basium</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -908,8 +1022,9 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--basiliscum Basiliscum-->
-         <tok val="[Bb]asiliscum"/>
+      <ana>
+         <tok val="Basiliscum"/>
+         <tok val="basiliscum"/>
          <lm>
             <l>basiliscus</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -943,8 +1058,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--bastaga bastagia-->
-         <tok val="bastag[i]?a"/>
+      <ana>
+         <tok val="bastaga"/>
+         <tok val="bastagia"/>
          <lm>
             <l>bastaga</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -999,6 +1115,7 @@
       </ana>
       <ana>
          <tok val="Basan"/>
+         <tok val="basan"/>
          <lm>
             <l>Bashan</l>
             <m>n - - s</m>

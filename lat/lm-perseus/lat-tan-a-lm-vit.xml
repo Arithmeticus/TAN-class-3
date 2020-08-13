@@ -1,49 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusvit">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:vit">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to vit</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-vit.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Vit</tok-starts-with>
       <tok-starts-with>vit</tok-starts-with>
       <tok-starts-with>vít</tok-starts-with>
-      <ana><!--Vita Vitan Vitaque vita vitan vitane vitaque vitast víta-->
-         <tok val="[vV]?(i|ví)ta[n]?(e|que|st)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T05:06:38.328-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T05:06:38.328-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-vit.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="Vita"/>
+         <tok val="Vitan"/>
+         <tok val="Vitaque"/>
+         <tok val="vita"/>
+         <tok val="vitan"/>
+         <tok val="vitane"/>
+         <tok val="vitaque"/>
+         <tok val="vitast"/>
+         <tok val="víta"/>
          <lm>
             <l>vita</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vita Vitan Vitaque vita vitan vitane vitaque vitast-->
-         <tok val="[vV]ita[n]?(e|que|st)?"/>
+      <ana>
+         <tok val="Vita"/>
+         <tok val="Vitan"/>
+         <tok val="Vitaque"/>
+         <tok val="vita"/>
+         <tok val="vitan"/>
+         <tok val="vitane"/>
+         <tok val="vitaque"/>
+         <tok val="vitast"/>
          <lm cert="0.5">
             <l>vita</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -54,36 +77,43 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vitabis vitabis-->
-         <tok val="[vV]itabis"/>
+      <ana>
+         <tok val="Vitabis"/>
+         <tok val="vitabis"/>
          <lm>
             <l>vito</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Vitabit vitabit-->
-         <tok val="[vV]itabit"/>
+      <ana>
+         <tok val="Vitabit"/>
+         <tok val="vitabit"/>
          <lm>
             <l>vito</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Vitabo vitabo-->
-         <tok val="[vV]itabo"/>
+      <ana>
+         <tok val="Vitabo"/>
+         <tok val="vitabo"/>
          <lm>
             <l>vito</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Vitabundus vitabundus-->
-         <tok val="[vV]itabundus"/>
+      <ana>
+         <tok val="Vitabundus"/>
+         <tok val="vitabundus"/>
          <lm>
             <l>vitabundus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitae Vitaeque vitae vitaeque-->
-         <tok val="[vV]itae(que)?"/>
+      <ana>
+         <tok val="Vitae"/>
+         <tok val="Vitaeque"/>
+         <tok val="vitae"/>
+         <tok val="vitaeque"/>
          <lm>
             <l>vita</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -91,15 +121,23 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vitae Vitaeque vitae vitaeque vitai vitaé vitáe vítae-->
-         <tok val="[vV]?(i|ví)t[a]?[e]?(que|i|é|áe|ae)?"/>
+      <ana>
+         <tok val="Vitae"/>
+         <tok val="Vitaeque"/>
+         <tok val="vitae"/>
+         <tok val="vitaeque"/>
+         <tok val="vitai"/>
+         <tok val="vitaé"/>
+         <tok val="vitáe"/>
+         <tok val="vítae"/>
          <lm>
             <l>vita</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vitale vitale-->
-         <tok val="[vV]itale"/>
+      <ana>
+         <tok val="Vitale"/>
+         <tok val="vitale"/>
          <lm>
             <l>vitalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -107,30 +145,40 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitalem vitalem vitálem-->
-         <tok val="[vV]it[aá]lem"/>
+      <ana>
+         <tok val="Vitalem"/>
+         <tok val="vitalem"/>
+         <tok val="vitálem"/>
          <lm>
             <l>vitalis</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitalem vitalem-->
-         <tok val="[vV]italem"/>
+      <ana>
+         <tok val="Vitalem"/>
+         <tok val="vitalem"/>
          <lm>
             <l>vitalis</l>
             <m>a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitales Vitalis vitales vitalesque vitalis vitalisque-->
-         <tok val="[vV]ital[ie]s(que)?"/>
+      <ana>
+         <tok val="Vitales"/>
+         <tok val="Vitalis"/>
+         <tok val="vitales"/>
+         <tok val="vitalesque"/>
+         <tok val="vitalis"/>
+         <tok val="vitalisque"/>
          <lm>
             <l>vitalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitales vitales vitalesque-->
-         <tok val="[vV]itales(que)?"/>
+      <ana>
+         <tok val="Vitales"/>
+         <tok val="vitales"/>
+         <tok val="vitalesque"/>
          <lm>
             <l>vitalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -139,8 +187,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitali vitali vitalique-->
-         <tok val="[vV]itali(que)?"/>
+      <ana>
+         <tok val="Vitali"/>
+         <tok val="vitali"/>
+         <tok val="vitalique"/>
          <lm>
             <l>vitalis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -151,8 +201,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vitalia vitalia vitaliaque-->
-         <tok val="[vV]italia(que)?"/>
+      <ana>
+         <tok val="Vitalia"/>
+         <tok val="vitalia"/>
+         <tok val="vitaliaque"/>
          <lm cert="0.5">
             <l>vitalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -166,8 +218,10 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitalis vitalis vitalisque-->
-         <tok val="[vV]italis(que)?"/>
+      <ana>
+         <tok val="Vitalis"/>
+         <tok val="vitalis"/>
+         <tok val="vitalisque"/>
          <lm>
             <l>vitalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -179,8 +233,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitalitas vitalitas-->
-         <tok val="[vV]italitas"/>
+      <ana>
+         <tok val="Vitalitas"/>
+         <tok val="vitalitas"/>
          <lm>
             <l>vitalitas</l>
             <m>n - - s - - - f n</m>
@@ -188,13 +243,15 @@
       </ana>
       <ana>
          <tok val="Vitaliter"/>
+         <tok val="vitaliter"/>
          <lm>
             <l>vitaliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Vitalium vitalium-->
-         <tok val="[vV]italium"/>
+      <ana>
+         <tok val="Vitalium"/>
+         <tok val="vitalium"/>
          <lm cert="0.5">
             <l>vitalis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -208,6 +265,7 @@
       </ana>
       <ana>
          <tok val="Vitalius"/>
+         <tok val="vitalius"/>
          <lm>
             <l>vitalis</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -216,15 +274,25 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Vitam Vitamque vitam vitamque vitám vítam vitamst-->
-         <tok val="[vV]?(i|ví)t[aá]m(que|st)?"/>
+      <ana>
+         <tok val="Vitam"/>
+         <tok val="Vitamque"/>
+         <tok val="vitam"/>
+         <tok val="vitamque"/>
+         <tok val="vitamst"/>
+         <tok val="vitám"/>
+         <tok val="vítam"/>
          <lm>
             <l>vita</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitan Vitas vitan vitas vitasque-->
-         <tok val="[Vv]ita(s|n|sque)"/>
+      <ana>
+         <tok val="Vitan"/>
+         <tok val="Vitas"/>
+         <tok val="vitan"/>
+         <tok val="vitas"/>
+         <tok val="vitasque"/>
          <lm cert="0.5">
             <l>vito</l>
             <m>v - 2 s p i a</m>
@@ -234,8 +302,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitanda vitanda-->
-         <tok val="[vV]itanda"/>
+      <ana>
+         <tok val="Vitanda"/>
+         <tok val="vitanda"/>
          <lm>
             <l>vito</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -246,8 +315,10 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Vitandi vitandi vitandique-->
-         <tok val="[vV]itandi(que)?"/>
+      <ana>
+         <tok val="Vitandi"/>
+         <tok val="vitandi"/>
+         <tok val="vitandique"/>
          <lm>
             <l>vito</l>
             <m cert="0.25">v - - p p g p m v</m>
@@ -256,15 +327,18 @@
             <m cert="0.25">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Vitandi vitandi-->
-         <tok val="[vV]itandi"/>
+      <ana>
+         <tok val="Vitandi"/>
+         <tok val="vitandi"/>
          <lm>
             <l>vito</l>
             <m>v - - s p d a n g</m>
          </lm>
       </ana>
-      <ana><!--Vitandum vitandum vitandumque-->
-         <tok val="[vV]itandum(que)?"/>
+      <ana>
+         <tok val="Vitandum"/>
+         <tok val="vitandum"/>
+         <tok val="vitandumque"/>
          <lm>
             <l>vito</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -276,59 +350,73 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Vitare vitare vitareque-->
-         <tok val="[vV]itare(que)?"/>
+      <ana>
+         <tok val="Vitare"/>
+         <tok val="vitare"/>
+         <tok val="vitareque"/>
          <lm>
             <l>vito</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Vitare vitare vitareque vitaris-->
-         <tok val="[vV]itar[e]?(que|is)?"/>
+      <ana>
+         <tok val="Vitare"/>
+         <tok val="vitare"/>
+         <tok val="vitareque"/>
+         <tok val="vitaris"/>
          <lm>
             <l>vito</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vitari vitari-->
-         <tok val="[vV]itari"/>
+      <ana>
+         <tok val="Vitari"/>
+         <tok val="vitari"/>
          <lm>
             <l>vito</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Vitarum vitarum-->
-         <tok val="[vV]itarum"/>
+      <ana>
+         <tok val="Vitarum"/>
+         <tok val="vitarum"/>
          <lm>
             <l>vita</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vitassem vitassem vitavissem-->
-         <tok val="[vV]ita(vi)?ssem"/>
+      <ana>
+         <tok val="Vitassem"/>
+         <tok val="vitassem"/>
+         <tok val="vitavissem"/>
          <lm>
             <l>vito</l>
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Vitat vitat vitatque-->
-         <tok val="[vV]itat(que)?"/>
+      <ana>
+         <tok val="Vitat"/>
+         <tok val="vitat"/>
+         <tok val="vitatque"/>
          <lm>
             <l>vito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vitatio vitatio-->
-         <tok val="[vV]itatio"/>
+      <ana>
+         <tok val="Vitatio"/>
+         <tok val="vitatio"/>
          <lm>
             <l>vitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vitationes vitationesque-->
-         <tok val="[vV]itationes(que)?"/>
+      <ana>
+         <tok val="Vitationes"/>
+         <tok val="vitationes"/>
+         <tok val="vitationesque"/>
          <lm>
             <l>vitatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -336,8 +424,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Vitatis vitatis-->
-         <tok val="[vV]itatis"/>
+      <ana>
+         <tok val="Vitatis"/>
+         <tok val="vitatis"/>
          <lm>
             <l>vito</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -349,29 +438,37 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Vitatur vitatur-->
-         <tok val="[vV]itatur"/>
+      <ana>
+         <tok val="Vitatur"/>
+         <tok val="vitatur"/>
          <lm>
             <l>vito</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vitavisse vitasse vitavisse-->
-         <tok val="[vV]ita(vi|)sse"/>
+      <ana>
+         <tok val="Vitavisse"/>
+         <tok val="vitasse"/>
+         <tok val="vitavisse"/>
          <lm>
             <l>vito</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Vite Viti vite viti vitist-->
-         <tok val="[vV]it[i]?(st|e)?"/>
+      <ana>
+         <tok val="Vite"/>
+         <tok val="Viti"/>
+         <tok val="vite"/>
+         <tok val="viti"/>
+         <tok val="vitist"/>
          <lm>
             <l>vitis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vitea vitea-->
-         <tok val="[vV]itea"/>
+      <ana>
+         <tok val="Vitea"/>
+         <tok val="vitea"/>
          <lm>
             <l>viteus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -382,8 +479,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vitella vitella-->
-         <tok val="[vV]itella"/>
+      <ana>
+         <tok val="Vitella"/>
+         <tok val="vitella"/>
          <lm>
             <l>vitellum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -393,6 +491,7 @@
       </ana>
       <ana>
          <tok val="Vitellenses"/>
+         <tok val="vitellenses"/>
          <lm>
             <l>Vitellenses</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -400,28 +499,29 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitelli vitelli-->
-         <tok val="[vV]itelli"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Vitelli"/>
+         <tok val="vitelli"/>
+         <lm cert="0.333333333333333333">
             <l>vitellus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
             <m cert="0.333333333333333333">n - - p - - - m v</m>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
+            <l>Vitellius</l>
+            <m>n e - s - - - m v</m>
+         </lm>
+         <lm cert="0.333333333333333333">
             <l>vitellum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Vitelli"/>
-         <lm>
-            <l>Vitellius</l>
-            <m>n e - s - - - m v</m>
-         </lm>
-      </ana>
-      <ana><!--Vitelli Vitellii-->
-         <tok val="Vitelli[i]?"/>
+         <tok val="Vitellii"/>
+         <tok val="vitelli"/>
+         <tok val="vitellii"/>
          <lm>
             <l>Vitellius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -430,6 +530,7 @@
       </ana>
       <ana>
          <tok val="Vitellia"/>
+         <tok val="vitellia"/>
          <lm cert="0.5">
             <l>Vitellius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -448,6 +549,7 @@
       </ana>
       <ana>
          <tok val="Vitelliam"/>
+         <tok val="vitelliam"/>
          <lm cert="0.5">
             <l>Vitellia</l>
             <m>n e - s - - - f a</m>
@@ -459,6 +561,7 @@
       </ana>
       <ana>
          <tok val="Vitelliana"/>
+         <tok val="vitelliana"/>
          <lm>
             <l>Vitellianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -471,6 +574,7 @@
       </ana>
       <ana>
          <tok val="Vitellianae"/>
+         <tok val="vitellianae"/>
          <lm>
             <l>Vitellianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -481,6 +585,7 @@
       </ana>
       <ana>
          <tok val="Vitellianam"/>
+         <tok val="vitellianam"/>
          <lm>
             <l>Vitellianus</l>
             <m>a e - s - - - f a</m>
@@ -488,6 +593,7 @@
       </ana>
       <ana>
          <tok val="Vitellianarum"/>
+         <tok val="vitellianarum"/>
          <lm>
             <l>Vitellianus</l>
             <m>a e - p - - - f g</m>
@@ -495,13 +601,17 @@
       </ana>
       <ana>
          <tok val="Vitellianas"/>
+         <tok val="vitellianas"/>
          <lm>
             <l>Vitellianus</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitelliani Vitellianique-->
-         <tok val="Vitelliani(que)?"/>
+      <ana>
+         <tok val="Vitelliani"/>
+         <tok val="Vitellianique"/>
+         <tok val="vitelliani"/>
+         <tok val="vitellianique"/>
          <lm cert="0.5">
             <l>Vitellianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -517,6 +627,7 @@
       </ana>
       <ana>
          <tok val="Vitellianis"/>
+         <tok val="vitellianis"/>
          <lm cert="0.5">
             <l>Vitelliani</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -534,6 +645,7 @@
       </ana>
       <ana>
          <tok val="Vitelliano"/>
+         <tok val="vitelliano"/>
          <lm>
             <l>Vitellianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -542,8 +654,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vitellianorum Vitellianum-->
-         <tok val="Vitellian(or)?um"/>
+      <ana>
+         <tok val="Vitellianorum"/>
+         <tok val="Vitellianum"/>
+         <tok val="vitellianorum"/>
+         <tok val="vitellianum"/>
          <lm cert="0.5">
             <l>Vitellianus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -556,6 +671,7 @@
       </ana>
       <ana>
          <tok val="Vitellianos"/>
+         <tok val="vitellianos"/>
          <lm cert="0.5">
             <l>Vitelliani</l>
             <m>n e - p - - - m a</m>
@@ -567,6 +683,7 @@
       </ana>
       <ana>
          <tok val="Vitellianum"/>
+         <tok val="vitellianum"/>
          <lm>
             <l>Vitellianus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -577,6 +694,7 @@
       </ana>
       <ana>
          <tok val="Vitellianus"/>
+         <tok val="vitellianus"/>
          <lm>
             <l>Vitellianus</l>
             <m>a e - s - - - m n</m>
@@ -584,6 +702,7 @@
       </ana>
       <ana>
          <tok val="Vitellii"/>
+         <tok val="vitellii"/>
          <lm>
             <l>Vitellius</l>
             <m cert="0.2">a e - p - - - m v</m>
@@ -595,6 +714,7 @@
       </ana>
       <ana>
          <tok val="Vitelliis"/>
+         <tok val="vitelliis"/>
          <lm cert="0.5">
             <l>Vitellia</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -612,8 +732,9 @@
             <m cert="0.125">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Vitellina vitellina-->
-         <tok val="[vV]itellina"/>
+      <ana>
+         <tok val="Vitellina"/>
+         <tok val="vitellina"/>
          <lm>
             <l>vitellina</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -621,8 +742,13 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vitellio Vitellion Vitellione-->
-         <tok val="Vitellio[n]?(e|)?"/>
+      <ana>
+         <tok val="Vitellio"/>
+         <tok val="Vitellion"/>
+         <tok val="Vitellione"/>
+         <tok val="vitellio"/>
+         <tok val="vitellion"/>
+         <tok val="vitellione"/>
          <lm>
             <l>Vitellius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -633,16 +759,22 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vitellion Vitellios-->
-         <tok val="Vitellio[sn]"/>
+      <ana>
+         <tok val="Vitellion"/>
+         <tok val="Vitellios"/>
+         <tok val="vitellion"/>
+         <tok val="vitellios"/>
          <lm>
             <l>Vitellius</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitelliorum Vitellium-->
-         <tok val="Vitelli(or)?um"/>
+      <ana>
+         <tok val="Vitelliorum"/>
+         <tok val="Vitellium"/>
+         <tok val="vitelliorum"/>
+         <tok val="vitellium"/>
          <lm>
             <l>Vitellius</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -650,8 +782,9 @@
             <m cert="0.333333333333333333">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitellis vitellis-->
-         <tok val="[vV]itellis"/>
+      <ana>
+         <tok val="Vitellis"/>
+         <tok val="vitellis"/>
          <lm cert="0.5">
             <l>vitellus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -665,6 +798,7 @@
       </ana>
       <ana>
          <tok val="Vitellium"/>
+         <tok val="vitellium"/>
          <lm>
             <l>Vitellius</l>
             <m cert="0.2">a e - s - - - n v</m>
@@ -676,42 +810,53 @@
       </ana>
       <ana>
          <tok val="Vitellius"/>
+         <tok val="vitellius"/>
          <lm>
             <l>Vitellius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitellus vitellus-->
-         <tok val="[vV]itellus"/>
+      <ana>
+         <tok val="Vitellus"/>
+         <tok val="vitellus"/>
          <lm>
             <l>vitellus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitem vitem vitemque-->
-         <tok val="[vV]item(que)?"/>
+      <ana>
+         <tok val="Vitem"/>
+         <tok val="vitem"/>
+         <tok val="vitemque"/>
          <lm>
             <l>vito</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vitem Vitim vitem vitemque-->
-         <tok val="[Vv]it[ie]m(que)?"/>
+      <ana>
+         <tok val="Vitem"/>
+         <tok val="Vitim"/>
+         <tok val="vitem"/>
+         <tok val="vitemque"/>
+         <tok val="vitim"/>
          <lm>
             <l>vitis</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitemus vitemus-->
-         <tok val="[vV]itemus"/>
+      <ana>
+         <tok val="Vitemus"/>
+         <tok val="vitemus"/>
          <lm>
             <l>vito</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Vites vites vitesque-->
-         <tok val="[vV]ites(que)?"/>
+      <ana>
+         <tok val="Vites"/>
+         <tok val="vites"/>
+         <tok val="vitesque"/>
          <lm cert="0.5">
             <l>vitis</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -722,43 +867,61 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vites Vitis vites vitesque vitis vitisque vitist-->
-         <tok val="[vV]it[ie]s(t|que)?"/>
+      <ana>
+         <tok val="Vites"/>
+         <tok val="Vitis"/>
+         <tok val="vites"/>
+         <tok val="vitesque"/>
+         <tok val="vitis"/>
+         <tok val="vitisque"/>
+         <tok val="vitist"/>
          <lm>
             <l>vitis</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Viteus viteus-->
-         <tok val="[vV]iteus"/>
+      <ana>
+         <tok val="Viteus"/>
+         <tok val="viteus"/>
          <lm>
             <l>viteus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitex vitex-->
-         <tok val="[vV]itex"/>
+      <ana>
+         <tok val="Vitex"/>
+         <tok val="vitex"/>
          <lm>
             <l>vitex</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Viti Vitii Vitiique viti vitii vitiique vitist vitiive-->
-         <tok val="[Vv]iti(i|ique|ive|st)?"/>
+      <ana>
+         <tok val="Viti"/>
+         <tok val="Vitii"/>
+         <tok val="Vitiique"/>
+         <tok val="viti"/>
+         <tok val="vitii"/>
+         <tok val="vitiique"/>
+         <tok val="vitiive"/>
+         <tok val="vitist"/>
          <lm>
             <l>vitium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Viti viti vitist-->
-         <tok val="[vV]iti(st)?"/>
+      <ana>
+         <tok val="Viti"/>
+         <tok val="viti"/>
+         <tok val="vitist"/>
          <lm>
             <l>vitis</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vitia vitia-->
-         <tok val="[vV]itia"/>
+      <ana>
+         <tok val="Vitia"/>
+         <tok val="vitia"/>
          <lm cert="0.5">
             <l>vitium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -770,8 +933,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vitians vitians-->
-         <tok val="[vV]itians"/>
+      <ana>
+         <tok val="Vitians"/>
+         <tok val="vitians"/>
          <lm>
             <l>vitio</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -783,15 +947,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Vitiantur vitiantur-->
-         <tok val="[vV]itiantur"/>
+      <ana>
+         <tok val="Vitiantur"/>
+         <tok val="vitiantur"/>
          <lm>
             <l>vitio</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Vitiare vitiare-->
-         <tok val="[vV]itiare"/>
+      <ana>
+         <tok val="Vitiare"/>
+         <tok val="vitiare"/>
          <lm>
             <l>vitio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -799,8 +965,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vitiarium vitiarium-->
-         <tok val="[vV]itiarium"/>
+      <ana>
+         <tok val="Vitiarium"/>
+         <tok val="vitiarium"/>
          <lm>
             <l>vitiarium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -809,8 +976,10 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitiata vitiata vitiataque-->
-         <tok val="[vV]itiata(que)?"/>
+      <ana>
+         <tok val="Vitiata"/>
+         <tok val="vitiata"/>
+         <tok val="vitiataque"/>
          <lm>
             <l>vitio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -821,8 +990,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Vitiatae vitiatae-->
-         <tok val="[vV]itiatae"/>
+      <ana>
+         <tok val="Vitiatae"/>
+         <tok val="vitiatae"/>
          <lm>
             <l>vitio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -831,77 +1001,84 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Vitiator vitiator-->
-         <tok val="[vV]itiator"/>
+      <ana>
+         <tok val="Vitiator"/>
+         <tok val="vitiator"/>
          <lm>
             <l>vitiator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitiatorem vitiatorem-->
-         <tok val="[vV]itiatorem"/>
+      <ana>
+         <tok val="Vitiatorem"/>
+         <tok val="vitiatorem"/>
          <lm>
             <l>vitiator</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitiatum vitiatum-->
-         <tok val="[vV]itiatum"/>
+      <ana>
+         <tok val="Vitiatum"/>
+         <tok val="vitiatum"/>
          <lm>
             <l>vitio</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - s r p p n a</m>
-            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Vitiatum vitiate vitiatum-->
-         <tok val="[vV]itiat(um|e)"/>
+      <ana>
+         <tok val="Vitiatum"/>
+         <tok val="vitiate"/>
+         <tok val="vitiatum"/>
          <lm>
             <l>vitio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Vitiatum"/>
-         <lm>
-            <l>vitio</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Vitiatur vitiatur-->
-         <tok val="[vV]itiatur"/>
+         <tok val="Vitiatur"/>
+         <tok val="vitiatur"/>
          <lm>
             <l>vitio</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vitiatus vitiatus-->
-         <tok val="[vV]itiatus"/>
+      <ana>
+         <tok val="Vitiatus"/>
+         <tok val="vitiatus"/>
          <lm>
             <l>vitio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Vitiauit Vitiavit vitiavit-->
-         <tok val="[Vv]itia[vu]it"/>
+      <ana>
+         <tok val="Vitiauit"/>
+         <tok val="Vitiavit"/>
+         <tok val="vitiauit"/>
+         <tok val="vitiavit"/>
          <lm>
             <l>vitio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Vitibus vitibus vitibusque-->
-         <tok val="[vV]itibus(que)?"/>
+      <ana>
+         <tok val="Vitibus"/>
+         <tok val="vitibus"/>
+         <tok val="vitibusque"/>
          <lm>
             <l>vitis</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Viticella viticella-->
-         <tok val="[vV]iticella"/>
+      <ana>
+         <tok val="Viticella"/>
+         <tok val="viticella"/>
          <lm>
             <l>viticella</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -911,14 +1088,17 @@
       </ana>
       <ana>
          <tok val="Viticini"/>
+         <tok val="viticini"/>
          <lm>
             <l>Viticini</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Viticula vitecula viticula-->
-         <tok val="[vV]it[ie]cula"/>
+      <ana>
+         <tok val="Viticula"/>
+         <tok val="vitecula"/>
+         <tok val="viticula"/>
          <lm>
             <l>viticula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -926,16 +1106,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vitifer vitifer-->
-         <tok val="[vV]itifer"/>
+      <ana>
+         <tok val="Vitifer"/>
+         <tok val="vitifer"/>
          <lm>
             <l>vitifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitifera vitifera-->
-         <tok val="[vV]itifera"/>
+      <ana>
+         <tok val="Vitifera"/>
+         <tok val="vitifera"/>
          <lm>
             <l>vitifer</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -946,8 +1128,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vitiferi vitiferi-->
-         <tok val="[vV]itiferi"/>
+      <ana>
+         <tok val="Vitiferi"/>
+         <tok val="vitiferi"/>
          <lm>
             <l>vitifer</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -956,8 +1139,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitigeni vitigeni-->
-         <tok val="[vV]itigeni"/>
+      <ana>
+         <tok val="Vitigeni"/>
+         <tok val="vitigeni"/>
          <lm>
             <l>vitigenus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -966,37 +1150,43 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitigenus vitigenus-->
-         <tok val="[vV]itigenus"/>
+      <ana>
+         <tok val="Vitigenus"/>
+         <tok val="vitigenus"/>
          <lm>
             <l>vitigenus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitigineus vitigineus-->
-         <tok val="[vV]itigineus"/>
+      <ana>
+         <tok val="Vitigineus"/>
+         <tok val="vitigineus"/>
          <lm>
             <l>vitigineus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitiis vitiis vitiisque-->
-         <tok val="[vV]itiis(que)?"/>
+      <ana>
+         <tok val="Vitiis"/>
+         <tok val="vitiis"/>
+         <tok val="vitiisque"/>
          <lm>
             <l>vitium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vitiligo vitiligo-->
-         <tok val="[vV]itiligo"/>
+      <ana>
+         <tok val="Vitiligo"/>
+         <tok val="vitiligo"/>
          <lm>
             <l>vitiligo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Vitilis vitilis-->
-         <tok val="[vV]itilis"/>
+      <ana>
+         <tok val="Vitilis"/>
+         <tok val="vitilis"/>
          <lm>
             <l>vitilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1008,8 +1198,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitilis vitiles vitilis-->
-         <tok val="[vV]itil[ie]s"/>
+      <ana>
+         <tok val="Vitilis"/>
+         <tok val="vitiles"/>
+         <tok val="vitilis"/>
          <lm>
             <l>vitilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -1018,50 +1210,66 @@
       </ana>
       <ana>
          <tok val="Vitiliter"/>
+         <tok val="vitiliter"/>
          <lm>
             <l>vitilis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Vitilitigator vitilitigator-->
-         <tok val="[vV]itilitigator"/>
+      <ana>
+         <tok val="Vitilitigator"/>
+         <tok val="vitilitigator"/>
          <lm>
             <l>vitilitigator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitilitigo vitilitigo-->
-         <tok val="[vV]itilitigo"/>
+      <ana>
+         <tok val="Vitilitigo"/>
+         <tok val="vitilitigo"/>
          <lm>
             <l>vitilitigo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vitio vitio vitioque vítio-->
-         <tok val="[vV]?(i|ví|vi)tio(que)?"/>
+      <ana>
+         <tok val="Vitio"/>
+         <tok val="vitio"/>
+         <tok val="vitioque"/>
+         <tok val="vítio"/>
          <lm>
             <l>vitio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vitio vitio vitioque-->
-         <tok val="[vV]itio(que)?"/>
+      <ana>
+         <tok val="Vitio"/>
+         <tok val="vitio"/>
+         <tok val="vitioque"/>
          <lm>
             <l>vitium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vitiorum Vitium vitiorum vitiorumque vitium vitiumque vitiumst vitiumve-->
-         <tok val="[vV]iti(or)?um(que|st|ve)?"/>
+      <ana>
+         <tok val="Vitiorum"/>
+         <tok val="Vitium"/>
+         <tok val="vitiorum"/>
+         <tok val="vitiorumque"/>
+         <tok val="vitium"/>
+         <tok val="vitiumque"/>
+         <tok val="vitiumst"/>
+         <tok val="vitiumve"/>
          <lm>
             <l>vitium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitiosa vitiosa-->
-         <tok val="[vV]itiosa"/>
+      <ana>
+         <tok val="Vitiosa"/>
+         <tok val="vitiosa"/>
          <lm cert="0.5">
             <l>vitiosa</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1078,36 +1286,49 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitiosam vitiosam-->
-         <tok val="[vV]itiosam"/>
+      <ana>
+         <tok val="Vitiosam"/>
+         <tok val="vitiosam"/>
          <lm>
             <l>vitiosus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitiose Vitiosus vitiose vitiosius vitiosus vitioseque-->
-         <tok val="[vV]itios[i]?(us|e|eque)"/>
+      <ana>
+         <tok val="Vitiose"/>
+         <tok val="Vitiosus"/>
+         <tok val="vitiose"/>
+         <tok val="vitioseque"/>
+         <tok val="vitiosius"/>
+         <tok val="vitiosus"/>
          <lm>
             <l>vitiosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Vitiose Vitiosum vitiose vitiosum vitioseque-->
-         <tok val="[vV]itios(um|e|eque)"/>
+      <ana>
+         <tok val="Vitiose"/>
+         <tok val="Vitiosum"/>
+         <tok val="vitiose"/>
+         <tok val="vitioseque"/>
+         <tok val="vitiosum"/>
          <lm>
             <l>vitiosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitiose vitiose vitioseque-->
-         <tok val="[vV]itiose(que)?"/>
+      <ana>
+         <tok val="Vitiose"/>
+         <tok val="vitiose"/>
+         <tok val="vitioseque"/>
          <lm>
             <l>vitiosus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitiosi vitiosi-->
-         <tok val="[vV]itiosi"/>
+      <ana>
+         <tok val="Vitiosi"/>
+         <tok val="vitiosi"/>
          <lm>
             <l>vitiosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1116,8 +1337,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitiositas vitiositas-->
-         <tok val="[vV]itiositas"/>
+      <ana>
+         <tok val="Vitiositas"/>
+         <tok val="vitiositas"/>
          <lm>
             <l>vitiositas</l>
             <m>n - - s - - - f n</m>
@@ -1125,22 +1347,18 @@
       </ana>
       <ana>
          <tok val="Vitiosius"/>
+         <tok val="vitiosius"/>
          <lm>
             <l>vitiosus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Vitiosius vitiosius-->
-         <tok val="[vV]itiosius"/>
-         <lm>
-            <l>vitiosus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Vitiosum vitiosum-->
-         <tok val="[vV]itiosum"/>
+      <ana>
+         <tok val="Vitiosum"/>
+         <tok val="vitiosum"/>
          <lm cert="0.5">
             <l>vitiosus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1154,15 +1372,19 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitiosus vitiosus-->
-         <tok val="[vV]itiosus"/>
+      <ana>
+         <tok val="Vitiosus"/>
+         <tok val="vitiosus"/>
          <lm>
             <l>vitiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitis vitis vitisque vitist-->
-         <tok val="[vV]itis(t|que)?"/>
+      <ana>
+         <tok val="Vitis"/>
+         <tok val="vitis"/>
+         <tok val="vitisque"/>
+         <tok val="vitist"/>
          <lm cert="0.5">
             <l>vitis</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1174,38 +1396,54 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vitisator vitisator-->
-         <tok val="[vV]itisator"/>
+      <ana>
+         <tok val="Vitisator"/>
+         <tok val="vitisator"/>
          <lm>
             <l>vitisator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitium vitium vitiumque vitiumst vitiumve vitiúm-->
-         <tok val="[vV]iti[uú]m(st|ve|que)?"/>
+      <ana>
+         <tok val="Vitium"/>
+         <tok val="vitium"/>
+         <tok val="vitiumque"/>
+         <tok val="vitiumst"/>
+         <tok val="vitiumve"/>
+         <tok val="vitiúm"/>
          <lm>
             <l>vitis</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vitium vitien vitium vitiumque vitiumst vitiumve-->
-         <tok val="[vV]iti(um)?(st|ve|que|en)?"/>
+      <ana>
+         <tok val="Vitium"/>
+         <tok val="vitien"/>
+         <tok val="vitium"/>
+         <tok val="vitiumque"/>
+         <tok val="vitiumst"/>
+         <tok val="vitiumve"/>
          <lm>
             <l>vitium</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitium vitium vitiumque vitiumst vitiumve-->
-         <tok val="[vV]itium(st|ve|que)?"/>
+      <ana>
+         <tok val="Vitium"/>
+         <tok val="vitium"/>
+         <tok val="vitiumque"/>
+         <tok val="vitiumst"/>
+         <tok val="vitiumve"/>
          <lm>
             <l>vitium</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Vito vito-->
-         <tok val="[vV]ito"/>
+      <ana>
+         <tok val="Vito"/>
+         <tok val="vito"/>
          <lm>
             <l>vito</l>
             <m>v - 1 s p i a</m>
@@ -1213,6 +1451,7 @@
       </ana>
       <ana>
          <tok val="Vitori"/>
+         <tok val="vitori"/>
          <lm>
             <l>vitor</l>
             <m>n - - s - - - m d</m>
@@ -1220,13 +1459,15 @@
       </ana>
       <ana>
          <tok val="Vitoris"/>
+         <tok val="vitoris"/>
          <lm>
             <l>vitor</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vitra vitra-->
-         <tok val="[vV]itra"/>
+      <ana>
+         <tok val="Vitra"/>
+         <tok val="vitra"/>
          <lm>
             <l>vitrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1234,15 +1475,20 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitre Vitrum vitre vitrum vitrumque-->
-         <tok val="[vV]itr(um|e|umque)"/>
+      <ana>
+         <tok val="Vitre"/>
+         <tok val="Vitrum"/>
+         <tok val="vitre"/>
+         <tok val="vitrum"/>
+         <tok val="vitrumque"/>
          <lm>
             <l>vitrum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitrea vitrea-->
-         <tok val="[vV]itrea"/>
+      <ana>
+         <tok val="Vitrea"/>
+         <tok val="vitrea"/>
          <lm cert="0.5">
             <l>vitrea</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1259,8 +1505,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitreae vitreae vitreaeve-->
-         <tok val="[vV]itreae(ve)?"/>
+      <ana>
+         <tok val="Vitreae"/>
+         <tok val="vitreae"/>
+         <tok val="vitreaeve"/>
          <lm>
             <l>vitreus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1269,8 +1517,10 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vitream vitream vitreamque-->
-         <tok val="[vV]itream(que)?"/>
+      <ana>
+         <tok val="Vitream"/>
+         <tok val="vitream"/>
+         <tok val="vitreamque"/>
          <lm>
             <l>vitreus</l>
             <m>a - - s - - - f a</m>
@@ -1278,6 +1528,7 @@
       </ana>
       <ana>
          <tok val="Vitreamina"/>
+         <tok val="vitreamina"/>
          <lm>
             <l>vitreamen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1287,20 +1538,24 @@
       </ana>
       <ana>
          <tok val="Vitrearum"/>
+         <tok val="vitrearum"/>
          <lm>
             <l>vitreus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vitreas vitreas vitreasque-->
-         <tok val="[vV]itreas(que)?"/>
+      <ana>
+         <tok val="Vitreas"/>
+         <tok val="vitreas"/>
+         <tok val="vitreasque"/>
          <lm>
             <l>vitreus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitrei vitrei-->
-         <tok val="[vV]itrei"/>
+      <ana>
+         <tok val="Vitrei"/>
+         <tok val="vitrei"/>
          <lm>
             <l>vitreus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1309,8 +1564,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitreis vitreis vitreisque-->
-         <tok val="[vV]itreis(que)?"/>
+      <ana>
+         <tok val="Vitreis"/>
+         <tok val="vitreis"/>
+         <tok val="vitreisque"/>
          <lm cert="0.5">
             <l>vitreus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1326,8 +1583,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vitreo vitreo vitreoque-->
-         <tok val="[vV]itreo(que)?"/>
+      <ana>
+         <tok val="Vitreo"/>
+         <tok val="vitreo"/>
+         <tok val="vitreoque"/>
          <lm>
             <l>vitreus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1336,8 +1595,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Vitreum vitreum-->
-         <tok val="[vV]itreum"/>
+      <ana>
+         <tok val="Vitreum"/>
+         <tok val="vitreum"/>
          <lm>
             <l>vitreus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1345,8 +1605,10 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitreum vitreorum vitreum-->
-         <tok val="[vV]itre(or)?um"/>
+      <ana>
+         <tok val="Vitreum"/>
+         <tok val="vitreorum"/>
+         <tok val="vitreum"/>
          <lm cert="0.5">
             <l>vitreus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1357,59 +1619,75 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitreum vitree vitreum-->
-         <tok val="[vV]itre(um|e)"/>
+      <ana>
+         <tok val="Vitreum"/>
+         <tok val="vitree"/>
+         <tok val="vitreum"/>
          <lm>
             <l>vitreus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vitreus vitreus-->
-         <tok val="[vV]itreus"/>
+      <ana>
+         <tok val="Vitreus"/>
+         <tok val="vitreus"/>
          <lm>
             <l>vitreus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitri vitri vitrique-->
-         <tok val="[vV]itri(que)?"/>
+      <ana>
+         <tok val="Vitri"/>
+         <tok val="vitri"/>
+         <tok val="vitrique"/>
          <lm>
             <l>vitrum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitricum vitricum-->
-         <tok val="[vV]itricum"/>
+      <ana>
+         <tok val="Vitricum"/>
+         <tok val="vitricum"/>
          <lm>
             <l>vitricus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitricus vitricus-->
-         <tok val="[vV]itricus"/>
+      <ana>
+         <tok val="Vitricus"/>
+         <tok val="vitricus"/>
          <lm>
             <l>vitricus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitro vitro vitroque vitroue-->
-         <tok val="[vV]itro[q]?(ue)?"/>
+      <ana>
+         <tok val="Vitro"/>
+         <tok val="vitro"/>
+         <tok val="vitroque"/>
+         <tok val="vitroue"/>
          <lm>
             <l>vitrum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vitrorum Vitrum vitrorum vitrum vitrumque-->
-         <tok val="[vV]itr(or)?um(que)?"/>
+      <ana>
+         <tok val="Vitrorum"/>
+         <tok val="Vitrum"/>
+         <tok val="vitrorum"/>
+         <tok val="vitrum"/>
+         <tok val="vitrumque"/>
          <lm>
             <l>vitrum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vitrum vitrum vitrumque-->
-         <tok val="[vV]itrum(que)?"/>
+      <ana>
+         <tok val="Vitrum"/>
+         <tok val="vitrum"/>
+         <tok val="vitrumque"/>
          <lm>
             <l>vitrum</l>
             <m cert="0.5">n - - s - - - n a</m>
@@ -1418,51 +1696,71 @@
       </ana>
       <ana>
          <tok val="Vitruui"/>
+         <tok val="vitruui"/>
          <lm>
             <l>Vitruvius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitruui Vitruuii Vitruvii-->
-         <tok val="Vitru[uv]i[i]?"/>
+      <ana>
+         <tok val="Vitruui"/>
+         <tok val="Vitruuii"/>
+         <tok val="Vitruvii"/>
+         <tok val="vitruui"/>
+         <tok val="vitruuii"/>
+         <tok val="vitruvii"/>
          <lm>
             <l>Vitruvius</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vitruuii Vitruvii-->
-         <tok val="Vitru[vu]ii"/>
+      <ana>
+         <tok val="Vitruuii"/>
+         <tok val="Vitruvii"/>
+         <tok val="vitruuii"/>
+         <tok val="vitruvii"/>
          <lm>
             <l>Vitruvius</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitruuio Vitruvio-->
-         <tok val="Vitru[vu]io"/>
+      <ana>
+         <tok val="Vitruuio"/>
+         <tok val="Vitruvio"/>
+         <tok val="vitruuio"/>
+         <tok val="vitruvio"/>
          <lm>
             <l>Vitruvius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Vitruuium Vitruvium-->
-         <tok val="Vitru[vu]ium"/>
+      <ana>
+         <tok val="Vitruuium"/>
+         <tok val="Vitruvium"/>
+         <tok val="vitruuium"/>
+         <tok val="vitruvium"/>
          <lm>
             <l>Vitruvius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitruuius Vitruvius-->
-         <tok val="Vitru[vu]ius"/>
+      <ana>
+         <tok val="Vitruuius"/>
+         <tok val="Vitruvius"/>
+         <tok val="vitruuius"/>
+         <tok val="vitruvius"/>
          <lm>
             <l>Vitruvius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitta vitta vittaque-->
-         <tok val="[vV]itta(que)?"/>
+      <ana>
+         <tok val="Vitta"/>
+         <tok val="vitta"/>
+         <tok val="vittaque"/>
          <lm>
             <l>vitta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1470,8 +1768,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vittae vittae vittaeque-->
-         <tok val="[vV]ittae(que)?"/>
+      <ana>
+         <tok val="Vittae"/>
+         <tok val="vittae"/>
+         <tok val="vittaeque"/>
          <lm>
             <l>vitta</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1480,30 +1780,37 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vittas Vittasque vittas vittasque-->
-         <tok val="[vV]ittas(que)?"/>
+      <ana>
+         <tok val="Vittas"/>
+         <tok val="Vittasque"/>
+         <tok val="vittas"/>
+         <tok val="vittasque"/>
          <lm>
             <l>vitta</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vittatus vittatus-->
-         <tok val="[vV]ittatus"/>
+      <ana>
+         <tok val="Vittatus"/>
+         <tok val="vittatus"/>
          <lm>
             <l>vittatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vittis vittis vittisque-->
-         <tok val="[vV]ittis(que)?"/>
+      <ana>
+         <tok val="Vittis"/>
+         <tok val="vittis"/>
+         <tok val="vittisque"/>
          <lm>
             <l>vitta</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vitula vitula-->
-         <tok val="[vV]itula"/>
+      <ana>
+         <tok val="Vitula"/>
+         <tok val="vitula"/>
          <lm>
             <l>vitula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1511,16 +1818,19 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vitulatio vitulatio-->
-         <tok val="[vV]itulatio"/>
+      <ana>
+         <tok val="Vitulatio"/>
+         <tok val="vitulatio"/>
          <lm>
             <l>vitulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vituli vituli vitulique-->
-         <tok val="[vV]ituli(que)?"/>
+      <ana>
+         <tok val="Vituli"/>
+         <tok val="vituli"/>
+         <tok val="vitulique"/>
          <lm>
             <l>vitulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1528,8 +1838,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vitulinam vitulinam-->
-         <tok val="[vV]itulinam"/>
+      <ana>
+         <tok val="Vitulinam"/>
+         <tok val="vitulinam"/>
          <lm cert="0.5">
             <l>vitulinus</l>
             <m>a - - s - - - f a</m>
@@ -1539,15 +1850,18 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vitulinus vitulinus-->
-         <tok val="[vV]itulinus"/>
+      <ana>
+         <tok val="Vitulinus"/>
+         <tok val="vitulinus"/>
          <lm>
             <l>vitulinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vitulis vitulis vitulisque-->
-         <tok val="[vV]itulis(que)?"/>
+      <ana>
+         <tok val="Vitulis"/>
+         <tok val="vitulis"/>
+         <tok val="vitulisque"/>
          <lm cert="0.5">
             <l>vitulus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1559,36 +1873,48 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vitulor vitulor vitulorque vítulorque-->
-         <tok val="[v]?(í|i|Vi)tulor(que)?"/>
+      <ana>
+         <tok val="Vitulor"/>
+         <tok val="vitulor"/>
+         <tok val="vitulorque"/>
+         <tok val="vítulorque"/>
          <lm>
             <l>vitulor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vitulos vitulos vitulosque-->
-         <tok val="[vV]itulos(que)?"/>
+      <ana>
+         <tok val="Vitulos"/>
+         <tok val="vitulos"/>
+         <tok val="vitulosque"/>
          <lm>
             <l>vitulus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitulum vitulorum vitulorumque vitulum-->
-         <tok val="[vV]itul(or)?um(que)?"/>
+      <ana>
+         <tok val="Vitulum"/>
+         <tok val="vitulorum"/>
+         <tok val="vitulorumque"/>
+         <tok val="vitulum"/>
          <lm>
             <l>vitulus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vitulum vitulum-->
-         <tok val="[vV]itulum"/>
+      <ana>
+         <tok val="Vitulum"/>
+         <tok val="vitulum"/>
          <lm>
             <l>vitulus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vitulus Vitulusque vitulus-->
-         <tok val="[vV]itulus(que)?"/>
+      <ana>
+         <tok val="Vitulus"/>
+         <tok val="Vitulusque"/>
+         <tok val="vitulus"/>
+         <tok val="vitulusque"/>
          <lm>
             <l>vitulus</l>
             <m>n - - s - - - m n</m>
@@ -1596,13 +1922,15 @@
       </ana>
       <ana>
          <tok val="Vitumnus"/>
+         <tok val="vitumnus"/>
          <lm>
             <l>Vitumnus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vituperabilis vituperabilis-->
-         <tok val="[vV]ituperabilis"/>
+      <ana>
+         <tok val="Vituperabilis"/>
+         <tok val="vituperabilis"/>
          <lm>
             <l>vituperabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1616,8 +1944,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vituperanda vituperanda-->
-         <tok val="[vV]ituperanda"/>
+      <ana>
+         <tok val="Vituperanda"/>
+         <tok val="vituperanda"/>
          <lm>
             <l>vitupero</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1628,8 +1957,10 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Vituperando vituperando vituperandoque-->
-         <tok val="[vV]ituperando(que)?"/>
+      <ana>
+         <tok val="Vituperando"/>
+         <tok val="vituperando"/>
+         <tok val="vituperandoque"/>
          <lm>
             <l>vitupero</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1640,8 +1971,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Vituperare vituperare-->
-         <tok val="[vV]ituperare"/>
+      <ana>
+         <tok val="Vituperare"/>
+         <tok val="vituperare"/>
          <lm>
             <l>vitupero</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1649,45 +1981,52 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vituperat vituperat-->
-         <tok val="[vV]ituperat"/>
+      <ana>
+         <tok val="Vituperat"/>
+         <tok val="vituperat"/>
          <lm>
             <l>vitupero</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vituperatio vituperatio-->
-         <tok val="[vV]ituperatio"/>
+      <ana>
+         <tok val="Vituperatio"/>
+         <tok val="vituperatio"/>
          <lm>
             <l>vituperatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vituperationem vituperationem vituperationemque-->
-         <tok val="[vV]ituperationem(que)?"/>
+      <ana>
+         <tok val="Vituperationem"/>
+         <tok val="vituperationem"/>
+         <tok val="vituperationemque"/>
          <lm>
             <l>vituperatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vituperationis vituperationis-->
-         <tok val="[vV]ituperationis"/>
+      <ana>
+         <tok val="Vituperationis"/>
+         <tok val="vituperationis"/>
          <lm>
             <l>vituperatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vituperator vituperator-->
-         <tok val="[vV]ituperator"/>
+      <ana>
+         <tok val="Vituperator"/>
+         <tok val="vituperator"/>
          <lm>
             <l>vituperator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vitupero vitupero-->
-         <tok val="[vV]itupero"/>
+      <ana>
+         <tok val="Vitupero"/>
+         <tok val="vitupero"/>
          <lm>
             <l>vitupero</l>
             <m cert="0.333333333333333333">v - 1 s p i a</m>
@@ -1697,6 +2036,7 @@
       </ana>
       <ana>
          <tok val="Vituperones"/>
+         <tok val="vituperones"/>
          <lm>
             <l>vitupero</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1859,8 +2199,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--vitandae vitandaeque-->
-         <tok val="vitandae(que)?"/>
+      <ana>
+         <tok val="vitandae"/>
+         <tok val="vitandaeque"/>
          <lm>
             <l>vito</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -1902,8 +2243,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--vitando vitandoque-->
-         <tok val="vitando(que)?"/>
+      <ana>
+         <tok val="vitando"/>
+         <tok val="vitandoque"/>
          <lm>
             <l>vito</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1941,8 +2283,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--vitant vitantque-->
-         <tok val="vitant(que)?"/>
+      <ana>
+         <tok val="vitant"/>
+         <tok val="vitantque"/>
          <lm>
             <l>vito</l>
             <m>v - 3 p p i a</m>
@@ -1956,8 +2299,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--vitantes vitantesque-->
-         <tok val="vitantes(que)?"/>
+      <ana>
+         <tok val="vitantes"/>
+         <tok val="vitantesque"/>
          <lm>
             <l>vito</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1966,8 +2310,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--vitantes vitantis vitantesque-->
-         <tok val="vitant[ie]s(que)?"/>
+      <ana>
+         <tok val="vitantes"/>
+         <tok val="vitantesque"/>
+         <tok val="vitantis"/>
          <lm>
             <l>vito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1983,8 +2329,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--vitanti vitante-->
-         <tok val="vitant[ei]"/>
+      <ana>
+         <tok val="vitante"/>
+         <tok val="vitanti"/>
          <lm>
             <l>vito</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2029,8 +2376,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--vitarat vitaverat-->
-         <tok val="vita(ve)?rat"/>
+      <ana>
+         <tok val="vitarat"/>
+         <tok val="vitaverat"/>
          <lm>
             <l>vito</l>
             <m>v - 3 s l i a</m>
@@ -2057,15 +2405,17 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--vitaris vitaveris-->
-         <tok val="vita(ve)?ris"/>
+      <ana>
+         <tok val="vitaris"/>
+         <tok val="vitaveris"/>
          <lm>
             <l>vito</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--vitarit vitaverit-->
-         <tok val="vita(ve)?rit"/>
+      <ana>
+         <tok val="vitarit"/>
+         <tok val="vitaverit"/>
          <lm>
             <l>vito</l>
             <m>v - 3 s r s a</m>
@@ -2085,15 +2435,17 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--vitasset vitavisset-->
-         <tok val="vita(vi)?sset"/>
+      <ana>
+         <tok val="vitasset"/>
+         <tok val="vitavisset"/>
          <lm>
             <l>vito</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--vitata vitataque-->
-         <tok val="vitata(que)?"/>
+      <ana>
+         <tok val="vitata"/>
+         <tok val="vitataque"/>
          <lm>
             <l>vito</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -2104,16 +2456,20 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--vitate Vitate-->
-         <tok val="[Vv]itate"/>
+      <ana>
+         <tok val="Vitate"/>
+         <tok val="vitate"/>
          <lm>
             <l>vito</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--vitate vitatum vitatumque Vitate-->
-         <tok val="[Vv]itat(umqu)?(e|um)"/>
+      <ana>
+         <tok val="Vitate"/>
+         <tok val="vitate"/>
+         <tok val="vitatum"/>
+         <tok val="vitatumque"/>
          <lm>
             <l>vito</l>
             <m>v - - s r p p n v</m>
@@ -2129,8 +2485,9 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--vitatione vitationeque-->
-         <tok val="vitatione(que)?"/>
+      <ana>
+         <tok val="vitatione"/>
+         <tok val="vitationeque"/>
          <lm>
             <l>vitatio</l>
             <m>n - - s - - - f b</m>
@@ -2150,8 +2507,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--vitato vítato-->
-         <tok val="v[íi]tato"/>
+      <ana>
+         <tok val="vitato"/>
+         <tok val="vítato"/>
          <lm>
             <l>vito</l>
             <m>v - - s r p p n d</m>
@@ -2175,8 +2533,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--vitatum vitatumque-->
-         <tok val="vitatum(que)?"/>
+      <ana>
+         <tok val="vitatum"/>
+         <tok val="vitatumque"/>
          <lm>
             <l>vito</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -2213,15 +2572,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--vitaui vitavi-->
-         <tok val="vita[vu]i"/>
+      <ana>
+         <tok val="vitaui"/>
+         <tok val="vitavi"/>
          <lm>
             <l>vito</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--vitavere vitaverunt-->
-         <tok val="vitaver(unt|e)"/>
+      <ana>
+         <tok val="vitavere"/>
+         <tok val="vitaverunt"/>
          <lm>
             <l>vito</l>
             <m>v - 3 p r i a</m>
@@ -2256,8 +2617,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--viteculas viticulas-->
-         <tok val="vit[ie]culas"/>
+      <ana>
+         <tok val="viteculas"/>
+         <tok val="viticulas"/>
          <lm>
             <l>viticula</l>
             <m>n - - p - - - f a</m>
@@ -2298,8 +2660,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--vitent vitentque-->
-         <tok val="vitent(que)?"/>
+      <ana>
+         <tok val="vitent"/>
+         <tok val="vitentque"/>
          <lm>
             <l>vito</l>
             <m>v - 3 p p s a</m>
@@ -2312,15 +2675,17 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--viter viterque-->
-         <tok val="viter(que)?"/>
+      <ana>
+         <tok val="viter"/>
+         <tok val="viterque"/>
          <lm>
             <l>vito</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--vitet vitetque-->
-         <tok val="vitet(que)?"/>
+      <ana>
+         <tok val="vitet"/>
+         <tok val="vitetque"/>
          <lm>
             <l>vito</l>
             <m>v - 3 s p s a</m>
@@ -2333,8 +2698,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--vitiabantur vitiabanturque-->
-         <tok val="vitiabantur(que)?"/>
+      <ana>
+         <tok val="vitiabantur"/>
+         <tok val="vitiabanturque"/>
          <lm>
             <l>vitio</l>
             <m>v - 3 p i i p</m>
@@ -2430,8 +2796,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--vitiarat vitiaverat-->
-         <tok val="vitia(ve)?rat"/>
+      <ana>
+         <tok val="vitiarat"/>
+         <tok val="vitiaverat"/>
          <lm>
             <l>vitio</l>
             <m>v - 3 s l i a</m>
@@ -2846,8 +3213,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--vitilibus vitilibusque-->
-         <tok val="vitilibus(que)?"/>
+      <ana>
+         <tok val="vitilibus"/>
+         <tok val="vitilibusque"/>
          <lm cert="0.5">
             <l>vitilis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2932,8 +3300,9 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--vitilium vitiliumque-->
-         <tok val="vitilium(que)?"/>
+      <ana>
+         <tok val="vitilium"/>
+         <tok val="vitiliumque"/>
          <lm cert="0.5">
             <l>vitilis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -2971,8 +3340,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--vitiosae vitiosaeque-->
-         <tok val="vitiosae(que)?"/>
+      <ana>
+         <tok val="vitiosae"/>
+         <tok val="vitiosaeque"/>
          <lm>
             <l>vitiosus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -3117,8 +3487,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--vitioso vitiosoque-->
-         <tok val="vitioso(que)?"/>
+      <ana>
+         <tok val="vitioso"/>
+         <tok val="vitiosoque"/>
          <lm>
             <l>vitiosus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -3265,8 +3636,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--vittam vittamque-->
-         <tok val="vittam(que)?"/>
+      <ana>
+         <tok val="vittam"/>
+         <tok val="vittamque"/>
          <lm>
             <l>vitta</l>
             <m>n - - s - - - f a</m>
@@ -3279,8 +3651,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--vittata vittataque-->
-         <tok val="vittata(que)?"/>
+      <ana>
+         <tok val="vittata"/>
+         <tok val="vittataque"/>
          <lm>
             <l>vittatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -3313,8 +3686,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--vittate vittatum-->
-         <tok val="vittat(um|e)"/>
+      <ana>
+         <tok val="vittate"/>
+         <tok val="vittatum"/>
          <lm>
             <l>vittatus</l>
             <m>a - - s - - - n v</m>
@@ -3459,8 +3833,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--vitulino vitulinove-->
-         <tok val="vitulino(ve)?"/>
+      <ana>
+         <tok val="vitulino"/>
+         <tok val="vitulinove"/>
          <lm>
             <l>vitulinus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -3599,8 +3974,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--vituperandi vituperandique-->
-         <tok val="vituperandi(que)?"/>
+      <ana>
+         <tok val="vituperandi"/>
+         <tok val="vituperandique"/>
          <lm>
             <l>vitupero</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -3622,8 +3998,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--vituperandorum vituperandum-->
-         <tok val="vituperand(or)?um"/>
+      <ana>
+         <tok val="vituperandorum"/>
+         <tok val="vituperandum"/>
          <lm>
             <l>vitupero</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -3711,8 +4088,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--vituperarent vituperarentne-->
-         <tok val="vituperarent(ne)?"/>
+      <ana>
+         <tok val="vituperarent"/>
+         <tok val="vituperarentne"/>
          <lm>
             <l>vitupero</l>
             <m>v - 3 p i s a</m>
@@ -3725,8 +4103,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--vituperari vituperarier-->
-         <tok val="vituperari(er)?"/>
+      <ana>
+         <tok val="vituperari"/>
+         <tok val="vituperarier"/>
          <lm>
             <l>vitupero</l>
             <m>v - - - p n p</m>
@@ -3779,8 +4158,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--vituperationes vituperationesque-->
-         <tok val="vituperationes(que)?"/>
+      <ana>
+         <tok val="vituperationes"/>
+         <tok val="vituperationesque"/>
          <lm>
             <l>vituperatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>

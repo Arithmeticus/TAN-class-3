@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusserp">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:serp">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to serp</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-serp.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SERP</tok-starts-with>
       <tok-starts-with>Serp</tok-starts-with>
       <tok-starts-with>serp</tok-starts-with>
-      <ana><!--SERPENS Serpens serpens-->
-         <tok val="[sS]?(erpens|SERPENS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:45:42.408-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:45:42.408-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-serp.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SERPENS"/>
+         <tok val="Serpens"/>
+         <tok val="serpens"/>
          <lm cert="0.5">
             <l>serpens</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -55,16 +65,26 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--SERPENTIVM Serpentium Serpentum serpentium serpentiumque serpentum-->
-         <tok val="[Ss]?(erpent)?[i]?(um)?(que|SERPENTIVM)?"/>
+      <ana>
+         <tok val="SERPENTIVM"/>
+         <tok val="Serpentium"/>
+         <tok val="Serpentum"/>
+         <tok val="serpentium"/>
+         <tok val="serpentiumque"/>
+         <tok val="serpentivm"/>
+         <tok val="serpentum"/>
          <lm>
             <l>serpens</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--SERPENTIVM Serpentium serpentium serpentiumque-->
-         <tok val="[sS]?(erpentium)?(que|SERPENTIVM)?"/>
+      <ana>
+         <tok val="SERPENTIVM"/>
+         <tok val="Serpentium"/>
+         <tok val="serpentium"/>
+         <tok val="serpentiumque"/>
+         <tok val="serpentivm"/>
          <lm>
             <l>serpo</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -72,22 +92,26 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--SERPO Serpo serpo-->
-         <tok val="[sS]?(erpo|SERPO)"/>
+      <ana>
+         <tok val="SERPO"/>
+         <tok val="Serpo"/>
+         <tok val="serpo"/>
          <lm>
             <l>serpo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Serpat serpat-->
-         <tok val="[sS]erpat"/>
+      <ana>
+         <tok val="Serpat"/>
+         <tok val="serpat"/>
          <lm>
             <l>serpo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Serpentaria serpentaria-->
-         <tok val="[sS]erpentaria"/>
+      <ana>
+         <tok val="Serpentaria"/>
+         <tok val="serpentaria"/>
          <lm>
             <l>serpentaria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -95,8 +119,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Serpentem serpentem serpentemque-->
-         <tok val="[sS]erpentem(que)?"/>
+      <ana>
+         <tok val="Serpentem"/>
+         <tok val="serpentem"/>
+         <tok val="serpentemque"/>
          <lm cert="0.5">
             <l>serpo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -108,8 +134,10 @@
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Serpentes serpentes serpentesque-->
-         <tok val="[sS]erpentes(que)?"/>
+      <ana>
+         <tok val="Serpentes"/>
+         <tok val="serpentes"/>
+         <tok val="serpentesque"/>
          <lm cert="0.5">
             <l>serpens</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -125,8 +153,12 @@
             <m cert="0.25">v - - p p p a f n</m>
          </lm>
       </ana>
-      <ana><!--Serpentes Serpentis serpentes serpentesque serpentis-->
-         <tok val="[Ss]erpent[ie]s(que)?"/>
+      <ana>
+         <tok val="Serpentes"/>
+         <tok val="Serpentis"/>
+         <tok val="serpentes"/>
+         <tok val="serpentesque"/>
+         <tok val="serpentis"/>
          <lm cert="0.5">
             <l>serpo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -138,8 +170,9 @@
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Serpenti serpenti-->
-         <tok val="[sS]erpenti"/>
+      <ana>
+         <tok val="Serpenti"/>
+         <tok val="serpenti"/>
          <lm cert="0.5">
             <l>serpo</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -152,8 +185,10 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Serpenti serpente serpenti-->
-         <tok val="[sS]erpent[ie]"/>
+      <ana>
+         <tok val="Serpenti"/>
+         <tok val="serpente"/>
+         <tok val="serpenti"/>
          <lm cert="0.5">
             <l>serpo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -166,8 +201,9 @@
             <m cert="0.5">n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Serpentia serpentia-->
-         <tok val="[sS]erpentia"/>
+      <ana>
+         <tok val="Serpentia"/>
+         <tok val="serpentia"/>
          <lm>
             <l>serpo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -175,8 +211,10 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Serpentibus serpentibus serpentibusque-->
-         <tok val="[sS]erpentibus(que)?"/>
+      <ana>
+         <tok val="Serpentibus"/>
+         <tok val="serpentibus"/>
+         <tok val="serpentibusque"/>
          <lm cert="0.5">
             <l>serpo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -196,6 +234,7 @@
       </ana>
       <ana>
          <tok val="Serpentine"/>
+         <tok val="serpentine"/>
          <lm>
             <l>serpentinus</l>
             <m cert="0.333333333333333333">d</m>
@@ -203,8 +242,9 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Serpentis serpentis-->
-         <tok val="[sS]erpentis"/>
+      <ana>
+         <tok val="Serpentis"/>
+         <tok val="serpentis"/>
          <lm cert="0.5">
             <l>serpo</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -217,8 +257,9 @@
             <m cert="0.5">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Serpere serpere-->
-         <tok val="[sS]erpere"/>
+      <ana>
+         <tok val="Serpere"/>
+         <tok val="serpere"/>
          <lm>
             <l>serpo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -227,36 +268,43 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Serpet serpet-->
-         <tok val="[sS]erpet"/>
+      <ana>
+         <tok val="Serpet"/>
+         <tok val="serpet"/>
          <lm>
             <l>serpo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Serpit Serpitque serpit serpitque-->
-         <tok val="[sS]erpit(que)?"/>
+      <ana>
+         <tok val="Serpit"/>
+         <tok val="Serpitque"/>
+         <tok val="serpit"/>
+         <tok val="serpitque"/>
          <lm>
             <l>serpo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Serpitis serpitis-->
-         <tok val="[sS]erpitis"/>
+      <ana>
+         <tok val="Serpitis"/>
+         <tok val="serpitis"/>
          <lm>
             <l>serpo</l>
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Serpsi serpsi-->
-         <tok val="[sS]erpsi"/>
+      <ana>
+         <tok val="Serpsi"/>
+         <tok val="serpsi"/>
          <lm>
             <l>serpo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Serpula serpula-->
-         <tok val="[sS]erpula"/>
+      <ana>
+         <tok val="Serpula"/>
+         <tok val="serpula"/>
          <lm>
             <l>serpula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -264,23 +312,30 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Serpylli serpylli-->
-         <tok val="[sS]erpylli"/>
+      <ana>
+         <tok val="Serpylli"/>
+         <tok val="serpylli"/>
          <lm>
             <l>serpyllum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Serpyllo serpyllo serpyllon-->
-         <tok val="[sS]erpyllo[n]?"/>
+      <ana>
+         <tok val="Serpyllo"/>
+         <tok val="serpyllo"/>
+         <tok val="serpyllon"/>
          <lm>
             <l>serpyllum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Serpyllum serpillum serpillumque serpyllum serpyllumque-->
-         <tok val="[sS]erp[yi]llum(que)?"/>
+      <ana>
+         <tok val="Serpyllum"/>
+         <tok val="serpillum"/>
+         <tok val="serpillumque"/>
+         <tok val="serpyllum"/>
+         <tok val="serpyllumque"/>
          <lm>
             <l>serpyllum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -303,8 +358,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--serpe serpen-->
-         <tok val="serpe[n]?"/>
+      <ana>
+         <tok val="serpe"/>
+         <tok val="serpen"/>
          <lm>
             <l>serpo</l>
             <m>v - 2 s p m a</m>
@@ -441,8 +497,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--serpilla serpylla-->
-         <tok val="serp[yi]lla"/>
+      <ana>
+         <tok val="serpilla"/>
+         <tok val="serpylla"/>
          <lm>
             <l>serpyllum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -472,8 +529,9 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--serpsit Serpsit-->
-         <tok val="[Ss]erpsit"/>
+      <ana>
+         <tok val="Serpsit"/>
+         <tok val="serpsit"/>
          <lm>
             <l>serpo</l>
             <m>v - 3 s r i a</m>

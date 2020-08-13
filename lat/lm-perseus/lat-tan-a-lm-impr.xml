@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusimpr">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:impr">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to impr</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-impr.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>IMPR</tok-starts-with>
       <tok-starts-with>IMpr</tok-starts-with>
       <tok-starts-with>Impr</tok-starts-with>
       <tok-starts-with>impr</tok-starts-with>
       <tok-starts-with>ímpr</tok-starts-with>
-      <ana><!--IMPRESSO Impresso impresso impressoque-->
-         <tok val="[iI]?(mpresso)?(que|IMPRESSO)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:27:50.957-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:27:50.957-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-impr.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="IMPRESSO"/>
+         <tok val="Impresso"/>
+         <tok val="impresso"/>
+         <tok val="impressoque"/>
          <lm cert="0.5">
             <l>impressus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -54,15 +65,21 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--IMPRIMATVR Imprimatur imprimatur-->
-         <tok val="[iI]?(mprimatur|IMPRIMATVR)"/>
+      <ana>
+         <tok val="IMPRIMATVR"/>
+         <tok val="Imprimatur"/>
+         <tok val="imprimatur"/>
+         <tok val="imprimatvr"/>
          <lm>
             <l>imprimo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--IMPRIMIS Imprimis imprimis imprimisque-->
-         <tok val="[iI]?(mprimis)?(que|IMPRIMIS)?"/>
+      <ana>
+         <tok val="IMPRIMIS"/>
+         <tok val="Imprimis"/>
+         <tok val="imprimis"/>
+         <tok val="imprimisque"/>
          <lm cert="0.5">
             <l>imprimis</l>
             <m>d</m>
@@ -72,29 +89,44 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--IMPRIMO Imprimo imprimo-->
-         <tok val="[iI]?(mprimo|IMPRIMO)"/>
+      <ana>
+         <tok val="IMPRIMO"/>
+         <tok val="Imprimo"/>
+         <tok val="imprimo"/>
          <lm>
             <l>imprimo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--IMPROBITATEM Improbitatem improbitatem-->
-         <tok val="[iI]?(mprobitatem|IMPROBITATEM)"/>
+      <ana>
+         <tok val="IMPROBITATEM"/>
+         <tok val="Improbitatem"/>
+         <tok val="improbitatem"/>
          <lm>
             <l>improbitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--IMPROBVS Improbus improbus improbust impróbus ímprobus-->
-         <tok val="[iIí]?(mpr)?[oó]?(bus)?(t|IMPROBVS)?"/>
+      <ana>
+         <tok val="IMPROBVS"/>
+         <tok val="Improbus"/>
+         <tok val="improbus"/>
+         <tok val="improbust"/>
+         <tok val="improbvs"/>
+         <tok val="impróbus"/>
+         <tok val="ímprobus"/>
          <lm>
             <l>improbus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--IMPRVDENS Imprudens imprudens imprudensque imprudensve-->
-         <tok val="[iI]?(mprudens)?(ve|que|IMPRVDENS)?"/>
+      <ana>
+         <tok val="IMPRVDENS"/>
+         <tok val="Imprudens"/>
+         <tok val="imprudens"/>
+         <tok val="imprudensque"/>
+         <tok val="imprudensve"/>
+         <tok val="imprvdens"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -105,37 +137,49 @@
             <m cert="0.166666666666666667">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--IMPRVDENS Imprudens imprudens imprudensque imprudensve imprúdens-->
-         <tok val="[iI]?(mpr)?[uú]?(dens)?(ve|que|IMPRVDENS)?"/>
+      <ana>
+         <tok val="IMPRVDENS"/>
+         <tok val="Imprudens"/>
+         <tok val="imprudens"/>
+         <tok val="imprudensque"/>
+         <tok val="imprudensve"/>
+         <tok val="imprvdens"/>
+         <tok val="imprúdens"/>
          <lm>
             <l>imprudens</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--IMpressio Impressio impressio impression-->
-         <tok val="[iI]?(m|IM)pressio[n]?"/>
+      <ana>
+         <tok val="IMpressio"/>
+         <tok val="Impressio"/>
+         <tok val="impressio"/>
+         <tok val="impression"/>
          <lm>
             <l>impressio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Impraesentiarum impraesentiarum-->
-         <tok val="[iI]mpraesentiarum"/>
+      <ana>
+         <tok val="Impraesentiarum"/>
+         <tok val="impraesentiarum"/>
          <lm>
             <l>impraesentiarum</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Impransus impransus-->
-         <tok val="[iI]mpransus"/>
+      <ana>
+         <tok val="Impransus"/>
+         <tok val="impransus"/>
          <lm>
             <l>impransus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Imprecantis imprecantis-->
-         <tok val="[iI]mprecantis"/>
+      <ana>
+         <tok val="Imprecantis"/>
+         <tok val="imprecantis"/>
          <lm>
             <l>imprecor</l>
             <m cert="0.2">v - - s p p a n g</m>
@@ -145,15 +189,18 @@
             <m cert="0.2">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Imprecor imprecor-->
-         <tok val="[iI]mprecor"/>
+      <ana>
+         <tok val="Imprecor"/>
+         <tok val="imprecor"/>
          <lm>
             <l>imprecor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Impressa impressa impressaque-->
-         <tok val="[iI]mpressa(que)?"/>
+      <ana>
+         <tok val="Impressa"/>
+         <tok val="impressa"/>
+         <tok val="impressaque"/>
          <lm cert="0.5">
             <l>imprimo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -173,29 +220,33 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Impressionem impressionem-->
-         <tok val="[iI]mpressionem"/>
+      <ana>
+         <tok val="Impressionem"/>
+         <tok val="impressionem"/>
          <lm>
             <l>impressio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Impressit impressit-->
-         <tok val="[iI]mpressit"/>
+      <ana>
+         <tok val="Impressit"/>
+         <tok val="impressit"/>
          <lm>
             <l>imprimo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Impressor impressor-->
-         <tok val="[iI]mpressor"/>
+      <ana>
+         <tok val="Impressor"/>
+         <tok val="impressor"/>
          <lm>
             <l>inpresso</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Impressus impressus-->
-         <tok val="[iI]mpressus"/>
+      <ana>
+         <tok val="Impressus"/>
+         <tok val="impressus"/>
          <lm cert="0.5">
             <l>impressus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -209,8 +260,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Imprimere imprimere-->
-         <tok val="[iI]mprimere"/>
+      <ana>
+         <tok val="Imprimere"/>
+         <tok val="imprimere"/>
          <lm>
             <l>imprimo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -219,29 +271,36 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Imprimeretque imprimeret-->
-         <tok val="[iI]mprimeret(que)?"/>
+      <ana>
+         <tok val="Imprimeretque"/>
+         <tok val="imprimeret"/>
+         <tok val="imprimeretque"/>
          <lm>
             <l>imprimo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Imprimi imprimi-->
-         <tok val="[iI]mprimi"/>
+      <ana>
+         <tok val="Imprimi"/>
+         <tok val="imprimi"/>
          <lm>
             <l>imprimo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Imprimitur imprimitur-->
-         <tok val="[iI]mprimitur"/>
+      <ana>
+         <tok val="Imprimitur"/>
+         <tok val="imprimitur"/>
          <lm>
             <l>imprimo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Improba improba improbaque improbast-->
-         <tok val="[iI]mproba(st|que)?"/>
+      <ana>
+         <tok val="Improba"/>
+         <tok val="improba"/>
+         <tok val="improbaque"/>
+         <tok val="improbast"/>
          <lm cert="0.5">
             <l>improbus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -256,15 +315,17 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Improbabat improbabat-->
-         <tok val="[iI]mprobabat"/>
+      <ana>
+         <tok val="Improbabat"/>
+         <tok val="improbabat"/>
          <lm>
             <l>improbo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Improbabile improbabile-->
-         <tok val="[iI]mprobabile"/>
+      <ana>
+         <tok val="Improbabile"/>
+         <tok val="improbabile"/>
          <lm>
             <l>improbabilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -272,8 +333,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Improbabilis improbabilis-->
-         <tok val="[iI]mprobabilis"/>
+      <ana>
+         <tok val="Improbabilis"/>
+         <tok val="improbabilis"/>
          <lm>
             <l>improbabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -285,23 +347,28 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Improbabilis improbabiles improbabilis-->
-         <tok val="[iI]mprobabil[ie]s"/>
+      <ana>
+         <tok val="Improbabilis"/>
+         <tok val="improbabiles"/>
+         <tok val="improbabilis"/>
          <lm>
             <l>improbabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Improbae improbae improbaé-->
-         <tok val="[iI]mproba[eé]"/>
+      <ana>
+         <tok val="Improbae"/>
+         <tok val="improbae"/>
+         <tok val="improbaé"/>
          <lm>
             <l>improbus</l>
             <m>a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Improbae improbae-->
-         <tok val="[iI]mprobae"/>
+      <ana>
+         <tok val="Improbae"/>
+         <tok val="improbae"/>
          <lm>
             <l>improbus</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
@@ -309,23 +376,27 @@
             <m cert="0.333333333333333333">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Improbare improbare-->
-         <tok val="[iI]mprobare"/>
+      <ana>
+         <tok val="Improbare"/>
+         <tok val="improbare"/>
          <lm>
             <l>improbo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Improbare improbare improbaris-->
-         <tok val="[iI]mprobar(e|is)"/>
+      <ana>
+         <tok val="Improbare"/>
+         <tok val="improbare"/>
+         <tok val="improbaris"/>
          <lm>
             <l>improbo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Improbas improbas-->
-         <tok val="[iI]mprobas"/>
+      <ana>
+         <tok val="Improbas"/>
+         <tok val="improbas"/>
          <lm cert="0.5">
             <l>improbo</l>
             <m>v - 2 s p i a</m>
@@ -335,51 +406,67 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Improbat improbat improbatque-->
-         <tok val="[iI]mprobat(que)?"/>
+      <ana>
+         <tok val="Improbat"/>
+         <tok val="improbat"/>
+         <tok val="improbatque"/>
          <lm>
             <l>improbo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Improbatio improbatio-->
-         <tok val="[iI]mprobatio"/>
+      <ana>
+         <tok val="Improbatio"/>
+         <tok val="improbatio"/>
          <lm>
             <l>improbatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Improbe improbe improbius improbiusque ímprobe-->
-         <tok val="[iIí]mprob(iusqu)?(e|ius)"/>
+      <ana>
+         <tok val="Improbe"/>
+         <tok val="improbe"/>
+         <tok val="improbius"/>
+         <tok val="improbiusque"/>
+         <tok val="ímprobe"/>
          <lm>
             <l>improbus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Improbe Improbum improbe improbum improbumque-->
-         <tok val="[iI]mprob(um|e|umque)"/>
+      <ana>
+         <tok val="Improbe"/>
+         <tok val="Improbum"/>
+         <tok val="improbe"/>
+         <tok val="improbum"/>
+         <tok val="improbumque"/>
          <lm>
             <l>improbus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Improbe improbe-->
-         <tok val="[iI]mprobe"/>
+      <ana>
+         <tok val="Improbe"/>
+         <tok val="improbe"/>
          <lm>
             <l>improbus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Improbi improbi improbí ímprobi-->
-         <tok val="[iIí]mprob[ií]"/>
+      <ana>
+         <tok val="Improbi"/>
+         <tok val="improbi"/>
+         <tok val="improbí"/>
+         <tok val="ímprobi"/>
          <lm>
             <l>improbus</l>
             <m>a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Improbi improbi-->
-         <tok val="[iI]mprobi"/>
+      <ana>
+         <tok val="Improbi"/>
+         <tok val="improbi"/>
          <lm>
             <l>improbus</l>
             <m cert="0.333333333333333333">a - - p - - - m v</m>
@@ -387,23 +474,27 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Improbiorem improbiorem-->
-         <tok val="[iI]mprobiorem"/>
+      <ana>
+         <tok val="Improbiorem"/>
+         <tok val="improbiorem"/>
          <lm>
             <l>improbus</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--Improbis improbis ímprobis-->
-         <tok val="[iIí]mprobis"/>
+      <ana>
+         <tok val="Improbis"/>
+         <tok val="improbis"/>
+         <tok val="ímprobis"/>
          <lm>
             <l>improbus</l>
             <m>a - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Improbis improbis-->
-         <tok val="[iI]mprobis"/>
+      <ana>
+         <tok val="Improbis"/>
+         <tok val="improbis"/>
          <lm>
             <l>improbus</l>
             <m cert="0.2">a - - p - - - f b</m>
@@ -413,29 +504,36 @@
             <m cert="0.2">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Improbissime improbissime-->
-         <tok val="[iI]mprobissime"/>
+      <ana>
+         <tok val="Improbissime"/>
+         <tok val="improbissime"/>
          <lm>
             <l>improbus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Improbissime improbissime improbissimus-->
-         <tok val="[iI]mprobissim(e|us)"/>
+      <ana>
+         <tok val="Improbissime"/>
+         <tok val="improbissime"/>
+         <tok val="improbissimus"/>
          <lm>
             <l>improbus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Improbissime improbissime improbissimum-->
-         <tok val="[iI]mprobissim(e|um)"/>
+      <ana>
+         <tok val="Improbissime"/>
+         <tok val="improbissime"/>
+         <tok val="improbissimum"/>
          <lm>
             <l>improbus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Improbitas improbitas improbitasque-->
-         <tok val="[iI]mprobitas(que)?"/>
+      <ana>
+         <tok val="Improbitas"/>
+         <tok val="improbitas"/>
+         <tok val="improbitasque"/>
          <lm cert="0.5">
             <l>improbitas</l>
             <m>n - - s - - - f n</m>
@@ -445,8 +543,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Improbitate improbitate-->
-         <tok val="[iI]mprobitate"/>
+      <ana>
+         <tok val="Improbitate"/>
+         <tok val="improbitate"/>
          <lm cert="0.5">
             <l>improbitas</l>
             <m>n - - s - - - f b</m>
@@ -458,8 +557,9 @@
             <m cert="0.333333333333333333">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Improbitatis improbitatis-->
-         <tok val="[iI]mprobitatis"/>
+      <ana>
+         <tok val="Improbitatis"/>
+         <tok val="improbitatis"/>
          <lm cert="0.5">
             <l>improbito</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -475,8 +575,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Improbo improbo-->
-         <tok val="[iI]mprobo"/>
+      <ana>
+         <tok val="Improbo"/>
+         <tok val="improbo"/>
          <lm cert="0.5">
             <l>improbus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -489,30 +590,40 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Improborum Improbum improborum improbum improbumque-->
-         <tok val="[iI]mprob(or)?um(que)?"/>
+      <ana>
+         <tok val="Improborum"/>
+         <tok val="Improbum"/>
+         <tok val="improborum"/>
+         <tok val="improbum"/>
+         <tok val="improbumque"/>
          <lm>
             <l>improbus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Improbos improbos improbosue ímprobos-->
-         <tok val="[iIí]mprobos(ue)?"/>
+      <ana>
+         <tok val="Improbos"/>
+         <tok val="improbos"/>
+         <tok val="improbosue"/>
+         <tok val="ímprobos"/>
          <lm>
             <l>improbus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Improbulus improbulus-->
-         <tok val="[iI]mprobulus"/>
+      <ana>
+         <tok val="Improbulus"/>
+         <tok val="improbulus"/>
          <lm>
             <l>improbulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Improbum improbum improbumque-->
-         <tok val="[iI]mprobum(que)?"/>
+      <ana>
+         <tok val="Improbum"/>
+         <tok val="improbum"/>
+         <tok val="improbumque"/>
          <lm>
             <l>improbus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -520,29 +631,33 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Improcerus improcerus-->
-         <tok val="[iI]mprocerus"/>
+      <ana>
+         <tok val="Improcerus"/>
+         <tok val="improcerus"/>
          <lm>
             <l>improcerus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Improfessus improfessus-->
-         <tok val="[iI]mprofessus"/>
+      <ana>
+         <tok val="Improfessus"/>
+         <tok val="improfessus"/>
          <lm>
             <l>improfessus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Impromptus impromptus-->
-         <tok val="[iI]mpromptus"/>
+      <ana>
+         <tok val="Impromptus"/>
+         <tok val="impromptus"/>
          <lm>
             <l>impromptus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Improperare improperare-->
-         <tok val="[iI]mproperare"/>
+      <ana>
+         <tok val="Improperare"/>
+         <tok val="improperare"/>
          <lm>
             <l>impropero</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -550,8 +665,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Improperatus improperatus-->
-         <tok val="[iI]mproperatus"/>
+      <ana>
+         <tok val="Improperatus"/>
+         <tok val="improperatus"/>
          <lm cert="0.5">
             <l>improperatus</l>
             <m>a - - s - - - m n</m>
@@ -561,25 +677,24 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Impropero impropero-->
-         <tok val="[iI]mpropero"/>
-         <lm>
+      <ana>
+         <tok val="Impropero"/>
+         <tok val="impropero"/>
+         <lm cert="0.5">
             <l>improperus</l>
             <m cert="0.25">a - - s - - - n b</m>
             <m cert="0.25">a - - s - - - m d</m>
             <m cert="0.25">a - - s - - - n d</m>
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Impropero"/>
-         <lm>
+         <lm cert="0.5">
             <l>impropero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Improprie improprie-->
-         <tok val="[iI]mproprie"/>
+      <ana>
+         <tok val="Improprie"/>
+         <tok val="improprie"/>
          <lm cert="0.5">
             <l>improprie</l>
             <m>d</m>
@@ -589,8 +704,10 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Improprie improprie improprium-->
-         <tok val="[iI]mpropri(e|um)"/>
+      <ana>
+         <tok val="Improprie"/>
+         <tok val="improprie"/>
+         <tok val="improprium"/>
          <lm cert="0.5">
             <l>improprium</l>
             <m>n - - s - - - n v</m>
@@ -600,22 +717,27 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Improprius improprius-->
-         <tok val="[iI]mproprius"/>
+      <ana>
+         <tok val="Improprius"/>
+         <tok val="improprius"/>
          <lm>
             <l>improprius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Improtectus improtectus improtectusque-->
-         <tok val="[iI]mprotectus(que)?"/>
+      <ana>
+         <tok val="Improtectus"/>
+         <tok val="improtectus"/>
+         <tok val="improtectusque"/>
          <lm>
             <l>improtectus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Improuida improuida improvida-->
-         <tok val="[iI]mpro[uv]ida"/>
+      <ana>
+         <tok val="Improuida"/>
+         <tok val="improuida"/>
+         <tok val="improvida"/>
          <lm>
             <l>improvidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -626,29 +748,32 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Improuide Improvide-->
-         <tok val="Impro[vu]ide"/>
+      <ana>
+         <tok val="Improuide"/>
+         <tok val="Improvide"/>
+         <tok val="improuide"/>
+         <tok val="improvide"/>
          <lm>
             <l>improvidus</l>
-            <m>d</m>
+            <m cert="0.5">d</m>
+            <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Improuide Improvide improuide improvide improvidum-->
-         <tok val="[Ii]mpro[vu]id(e|um)"/>
+      <ana>
+         <tok val="Improuide"/>
+         <tok val="Improvide"/>
+         <tok val="improuide"/>
+         <tok val="improvide"/>
+         <tok val="improvidum"/>
          <lm>
             <l>improvidus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Improuide Improvide improuide improvide-->
-         <tok val="[Ii]mpro[vu]ide"/>
-         <lm>
-            <l>improvidus</l>
-            <m>a - - s - - - m v</m>
-         </lm>
-      </ana>
-      <ana><!--Improuidi improuidi improvidi-->
-         <tok val="[iI]mpro[uv]idi"/>
+      <ana>
+         <tok val="Improuidi"/>
+         <tok val="improuidi"/>
+         <tok val="improvidi"/>
          <lm>
             <l>improvidus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -657,22 +782,36 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Improuidus improuidus improvidus-->
-         <tok val="[iI]mpro[uv]idus"/>
+      <ana>
+         <tok val="Improuidus"/>
+         <tok val="improuidus"/>
+         <tok val="improvidus"/>
          <lm>
             <l>improvidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Improuise Improuisus Improvisus improuisus improvise improvisus-->
-         <tok val="[Ii]mpro[vu]is(us|e)"/>
+      <ana>
+         <tok val="Improuise"/>
+         <tok val="Improuisus"/>
+         <tok val="Improvisus"/>
+         <tok val="improuise"/>
+         <tok val="improuisus"/>
+         <tok val="improvise"/>
+         <tok val="improvisus"/>
          <lm>
             <l>improvisus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Improuise Improuisum Improvisum improuisum improvise improvisum-->
-         <tok val="[Ii]mpro[vu]is(um|e)"/>
+      <ana>
+         <tok val="Improuise"/>
+         <tok val="Improuisum"/>
+         <tok val="Improvisum"/>
+         <tok val="improuise"/>
+         <tok val="improuisum"/>
+         <tok val="improvise"/>
+         <tok val="improvisum"/>
          <lm cert="0.5">
             <l>improvisum</l>
             <m>n - - s - - - n v</m>
@@ -682,8 +821,10 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Improuise improvise-->
-         <tok val="[iI]mpro[vu]ise"/>
+      <ana>
+         <tok val="Improuise"/>
+         <tok val="improuise"/>
+         <tok val="improvise"/>
          <lm>
             <l>improvisus</l>
             <m>a - - s - - - m v</m>
@@ -691,6 +832,7 @@
       </ana>
       <ana>
          <tok val="Improuisior"/>
+         <tok val="improuisior"/>
          <lm>
             <l>improvisus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -699,8 +841,11 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Improuiso improuiso improviso improvisoque-->
-         <tok val="[iI]mpro[uv]iso(que)?"/>
+      <ana>
+         <tok val="Improuiso"/>
+         <tok val="improuiso"/>
+         <tok val="improviso"/>
+         <tok val="improvisoque"/>
          <lm cert="0.333333333333333333">
             <l>improvisus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -718,21 +863,18 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Improuisum Improvisum-->
-         <tok val="Impro[vu]isum"/>
-         <lm>
-            <l>improvisus</l>
-            <m>a - - s - - - n n</m>
-         </lm>
-      </ana>
-      <ana><!--Improuisum Improvisum improuisum improvisum-->
-         <tok val="[Ii]mpro[vu]isum"/>
+      <ana>
+         <tok val="Improuisum"/>
+         <tok val="Improvisum"/>
+         <tok val="improuisum"/>
+         <tok val="improvisum"/>
          <lm cert="0.5">
             <l>improvisus</l>
-            <m cert="0.25">a - - p - - - n g</m>
-            <m cert="0.25">a - - s - - - n a</m>
-            <m cert="0.25">a - - p - - - m g</m>
-            <m cert="0.25">a - - s - - - m a</m>
+            <m cert="0.2">a - - s - - - n n</m>
+            <m cert="0.2">a - - p - - - n g</m>
+            <m cert="0.2">a - - s - - - n a</m>
+            <m cert="0.2">a - - p - - - m g</m>
+            <m cert="0.2">a - - s - - - m a</m>
          </lm>
          <lm cert="0.5">
             <l>improvisum</l>
@@ -741,15 +883,20 @@
             <m cert="0.333333333333333333">n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Improuisus Improvisus improuisus improvisus-->
-         <tok val="[Ii]mpro[vu]isus"/>
+      <ana>
+         <tok val="Improuisus"/>
+         <tok val="Improvisus"/>
+         <tok val="improuisus"/>
+         <tok val="improvisus"/>
          <lm>
             <l>improvisus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Improvisa improuisa improvisa-->
-         <tok val="[iI]mpro[vu]isa"/>
+      <ana>
+         <tok val="Improvisa"/>
+         <tok val="improuisa"/>
+         <tok val="improvisa"/>
          <lm cert="0.5">
             <l>improvisum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -766,8 +913,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Improvisi improuisi improvisi-->
-         <tok val="[iI]mpro[vu]isi"/>
+      <ana>
+         <tok val="Improvisi"/>
+         <tok val="improuisi"/>
+         <tok val="improvisi"/>
          <lm cert="0.5">
             <l>improvisus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -780,8 +929,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Imprudentem imprudentem-->
-         <tok val="[iI]mprudentem"/>
+      <ana>
+         <tok val="Imprudentem"/>
+         <tok val="imprudentem"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -790,21 +940,28 @@
       </ana>
       <ana>
          <tok val="Imprudenter"/>
+         <tok val="imprudenter"/>
          <lm>
             <l>imprudenter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Imprudentes imprudentes imprudentesque imprudentis imprudentisque-->
-         <tok val="[iI]mprudent[ie]?(squ)?[e]?(s|is)?"/>
+      <ana>
+         <tok val="Imprudentes"/>
+         <tok val="imprudentes"/>
+         <tok val="imprudentesque"/>
+         <tok val="imprudentis"/>
+         <tok val="imprudentisque"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Imprudentes imprudentes imprudentesque-->
-         <tok val="[iI]mprudentes(que)?"/>
+      <ana>
+         <tok val="Imprudentes"/>
+         <tok val="imprudentes"/>
+         <tok val="imprudentesque"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -813,8 +970,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Imprudentia imprudentia imprudentiast-->
-         <tok val="[iI]mprudentia(st)?"/>
+      <ana>
+         <tok val="Imprudentia"/>
+         <tok val="imprudentia"/>
+         <tok val="imprudentiast"/>
          <lm cert="0.5">
             <l>imprudentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1053,8 +1212,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--imprecatio imprecation-->
-         <tok val="imprecatio[n]?"/>
+      <ana>
+         <tok val="imprecatio"/>
+         <tok val="imprecation"/>
          <lm>
             <l>imprecatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1099,8 +1259,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--imprecatus imprecatusque-->
-         <tok val="imprecatus(que)?"/>
+      <ana>
+         <tok val="imprecatus"/>
+         <tok val="imprecatusque"/>
          <lm>
             <l>imprecor</l>
             <m>v - - s r p p m n</m>
@@ -1215,8 +1376,11 @@
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--impresse impressom impressum impressumque-->
-         <tok val="impress[uo]?[m]?(que|e)?"/>
+      <ana>
+         <tok val="impresse"/>
+         <tok val="impressom"/>
+         <tok val="impressum"/>
+         <tok val="impressumque"/>
          <lm cert="0.5">
             <l>impressus</l>
             <m>a - - s - - - n v</m>
@@ -1364,8 +1528,10 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--impressom impressum impressumque-->
-         <tok val="impress[uo]m(que)?"/>
+      <ana>
+         <tok val="impressom"/>
+         <tok val="impressum"/>
+         <tok val="impressumque"/>
          <lm cert="0.5">
             <l>impressus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1401,8 +1567,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--impressum impressumque-->
-         <tok val="impressum(que)?"/>
+      <ana>
+         <tok val="impressum"/>
+         <tok val="impressumque"/>
          <lm cert="0.5">
             <l>impressus</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -1466,15 +1633,17 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--imprimat imprimatque-->
-         <tok val="imprimat(que)?"/>
+      <ana>
+         <tok val="imprimat"/>
+         <tok val="imprimatque"/>
          <lm>
             <l>imprimo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--imprime imprimen-->
-         <tok val="imprime[n]?"/>
+      <ana>
+         <tok val="imprime"/>
+         <tok val="imprimen"/>
          <lm>
             <l>imprimo</l>
             <m>v - 2 s p m a</m>
@@ -1604,8 +1773,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--imprimente imprimenteque-->
-         <tok val="imprimente(que)?"/>
+      <ana>
+         <tok val="imprimente"/>
+         <tok val="imprimenteque"/>
          <lm>
             <l>imprimo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1659,8 +1829,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--imprimit imprimitque-->
-         <tok val="imprimit(que)?"/>
+      <ana>
+         <tok val="imprimit"/>
+         <tok val="imprimitque"/>
          <lm>
             <l>imprimo</l>
             <m>v - 3 s p i a</m>
@@ -1738,8 +1909,9 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--improbabiliter improbabilius-->
-         <tok val="improbabili(us|ter)"/>
+      <ana>
+         <tok val="improbabiliter"/>
+         <tok val="improbabilius"/>
          <lm>
             <l>improbabilis</l>
             <m>d</m>
@@ -1911,15 +2083,17 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--improbant ímprobant-->
-         <tok val="[íi]mprobant"/>
+      <ana>
+         <tok val="improbant"/>
+         <tok val="ímprobant"/>
          <lm>
             <l>improbo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--improbante improbanti-->
-         <tok val="improbant[ie]"/>
+      <ana>
+         <tok val="improbante"/>
+         <tok val="improbanti"/>
          <lm>
             <l>improbo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1997,8 +2171,9 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--improbaris improbaueris-->
-         <tok val="improba(ue)?ris"/>
+      <ana>
+         <tok val="improbaris"/>
+         <tok val="improbaueris"/>
          <lm>
             <l>improbo</l>
             <m>v - 2 s r s a</m>
@@ -2018,8 +2193,10 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--improbarunt improbauerunt improbaverunt-->
-         <tok val="improba[vu]?(e|)runt"/>
+      <ana>
+         <tok val="improbarunt"/>
+         <tok val="improbauerunt"/>
+         <tok val="improbaverunt"/>
          <lm>
             <l>improbo</l>
             <m>v - 3 p r i a</m>
@@ -2090,8 +2267,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--improbate improbatum-->
-         <tok val="improbat(um|e)"/>
+      <ana>
+         <tok val="improbate"/>
+         <tok val="improbatum"/>
          <lm>
             <l>improbo</l>
             <m>v - - s r p p n v</m>
@@ -2158,16 +2336,18 @@
             <m cert="0.25">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--improbatum improbatorum-->
-         <tok val="improbat(or)?um"/>
+      <ana>
+         <tok val="improbatorum"/>
+         <tok val="improbatum"/>
          <lm>
             <l>improbo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--improbatur improbaturque-->
-         <tok val="improbatur(que)?"/>
+      <ana>
+         <tok val="improbatur"/>
+         <tok val="improbaturque"/>
          <lm>
             <l>improbo</l>
             <m>v - 3 s p i p</m>
@@ -2185,8 +2365,9 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--improbatus improbatusue-->
-         <tok val="improbatus(ue)?"/>
+      <ana>
+         <tok val="improbatus"/>
+         <tok val="improbatusue"/>
          <lm>
             <l>improbo</l>
             <m>v - - s r p p m n</m>
@@ -2199,22 +2380,25 @@
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--improbaui improbavi-->
-         <tok val="improba[vu]i"/>
+      <ana>
+         <tok val="improbaui"/>
+         <tok val="improbavi"/>
          <lm>
             <l>improbo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--improbauit improbavit-->
-         <tok val="improba[vu]it"/>
+      <ana>
+         <tok val="improbauit"/>
+         <tok val="improbavit"/>
          <lm>
             <l>improbo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--improbavimus improbauimus-->
-         <tok val="improba[uv]imus"/>
+      <ana>
+         <tok val="improbauimus"/>
+         <tok val="improbavimus"/>
          <lm>
             <l>improbo</l>
             <m>v - 1 p r i a</m>
@@ -2276,8 +2460,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--improbior ímprobior-->
-         <tok val="[íi]mprobior"/>
+      <ana>
+         <tok val="improbior"/>
+         <tok val="ímprobior"/>
          <lm>
             <l>improbus</l>
             <m>a - - s - - - m v c</m>
@@ -2363,8 +2548,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--improbissimo improbissumo-->
-         <tok val="improbiss[ui]mo"/>
+      <ana>
+         <tok val="improbissimo"/>
+         <tok val="improbissumo"/>
          <lm>
             <l>improbus</l>
             <m cert="0.25">a - - s - - - n d s</m>
@@ -2373,8 +2559,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--improbissimorum improbissimum-->
-         <tok val="improbissim(or)?um"/>
+      <ana>
+         <tok val="improbissimorum"/>
+         <tok val="improbissimum"/>
          <lm>
             <l>improbus</l>
             <m cert="0.5">a - - p - - - n g s</m>
@@ -2436,8 +2623,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--improbius improbiusque-->
-         <tok val="improbius(que)?"/>
+      <ana>
+         <tok val="improbius"/>
+         <tok val="improbiusque"/>
          <lm>
             <l>improbus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -2673,8 +2861,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--impropri improprii-->
-         <tok val="impropri[i]?"/>
+      <ana>
+         <tok val="impropri"/>
+         <tok val="improprii"/>
          <lm>
             <l>improprius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -2804,8 +2993,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--improuidae improvidae-->
-         <tok val="impro[vu]idae"/>
+      <ana>
+         <tok val="improuidae"/>
+         <tok val="improvidae"/>
          <lm>
             <l>improvidus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2814,15 +3004,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--improuidam improvidam-->
-         <tok val="impro[vu]idam"/>
+      <ana>
+         <tok val="improuidam"/>
+         <tok val="improvidam"/>
          <lm>
             <l>improvidus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--improuide improvide-->
-         <tok val="impro[vu]ide"/>
+      <ana>
+         <tok val="improuide"/>
+         <tok val="improvide"/>
          <lm>
             <l>improvide</l>
             <m>d</m>
@@ -2840,8 +3032,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--improuidos improvidos-->
-         <tok val="impro[vu]idos"/>
+      <ana>
+         <tok val="improuidos"/>
+         <tok val="improvidos"/>
          <lm>
             <l>improvidus</l>
             <m>a - - p - - - m a</m>
@@ -2863,8 +3056,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--improvidorum improvidum-->
-         <tok val="improvid(or)?um"/>
+      <ana>
+         <tok val="improvidorum"/>
+         <tok val="improvidum"/>
          <lm>
             <l>improvidus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2904,8 +3098,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--imprudente imprudenti-->
-         <tok val="imprudent[ie]"/>
+      <ana>
+         <tok val="imprudente"/>
+         <tok val="imprudenti"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.333333333333333333">a - - s - - - n b</m>
@@ -2913,8 +3108,9 @@
             <m cert="0.333333333333333333">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--imprudenter imprudentius-->
-         <tok val="imprudent(ius|er)"/>
+      <ana>
+         <tok val="imprudenter"/>
+         <tok val="imprudentius"/>
          <lm>
             <l>imprudens</l>
             <m>d</m>
@@ -2929,8 +3125,9 @@
             <m cert="0.333333333333333333">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--imprudentiae imprudentiaeque-->
-         <tok val="imprudentiae(que)?"/>
+      <ana>
+         <tok val="imprudentiae"/>
+         <tok val="imprudentiaeque"/>
          <lm>
             <l>imprudentia</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -2939,15 +3136,17 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--imprudentiam imprudentiamque-->
-         <tok val="imprudentiam(que)?"/>
+      <ana>
+         <tok val="imprudentiam"/>
+         <tok val="imprudentiamque"/>
          <lm>
             <l>imprudentia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--imprudentibus imprudentibusque-->
-         <tok val="imprudentibus(que)?"/>
+      <ana>
+         <tok val="imprudentibus"/>
+         <tok val="imprudentibusque"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2976,8 +3175,9 @@
             <m cert="0.5">a - - p - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--imprudentis imprudentisque-->
-         <tok val="imprudentis(que)?"/>
+      <ana>
+         <tok val="imprudentis"/>
+         <tok val="imprudentisque"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -2997,8 +3197,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--imprudentium Imprudentium-->
-         <tok val="[Ii]mprudentium"/>
+      <ana>
+         <tok val="Imprudentium"/>
+         <tok val="imprudentium"/>
          <lm>
             <l>imprudens</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>

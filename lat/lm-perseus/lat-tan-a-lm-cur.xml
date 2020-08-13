@@ -1,51 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscur">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:cur">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to cur</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-cur.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CUR</tok-starts-with>
       <tok-starts-with>Cur</tok-starts-with>
       <tok-starts-with>cur</tok-starts-with>
       <tok-starts-with>cúr</tok-starts-with>
       <tok-starts-with>Cúr</tok-starts-with>
-      <ana><!--CURATORE Curatore curatore curatoreue-->
-         <tok val="[cC]?(uratore)?(ue|CURATORE)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:18:37.691-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:18:37.691-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-cur.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CURATORE"/>
+         <tok val="Curatore"/>
+         <tok val="curatore"/>
+         <tok val="curatoreue"/>
          <lm>
             <l>curator</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--CURIONI Curioni curioni-->
-         <tok val="[cC]?(urioni|CURIONI)"/>
+      <ana>
+         <tok val="CURIONI"/>
+         <tok val="Curioni"/>
+         <tok val="curioni"/>
          <lm cert="0.5">
             <l>curionius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -56,8 +69,13 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CURRUS Currus currus currusque currusue currusve-->
-         <tok val="[cC]?(urrus)?[q]?[uv]?(e|CURRUS)?"/>
+      <ana>
+         <tok val="CURRUS"/>
+         <tok val="Currus"/>
+         <tok val="currus"/>
+         <tok val="currusque"/>
+         <tok val="currusue"/>
+         <tok val="currusve"/>
          <lm>
             <l>currus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -66,8 +84,10 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--CURULI curuli curuline-->
-         <tok val="(curuli)?(ne|CURULI)?"/>
+      <ana>
+         <tok val="CURULI"/>
+         <tok val="curuli"/>
+         <tok val="curuline"/>
          <lm>
             <l>curulis</l>
             <m cert="0.125">a - - s - - - m d</m>
@@ -80,16 +100,20 @@
             <m cert="0.125">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CURULI curule curuli curuline-->
-         <tok val="(curul)?(in)?(e|i|CURULI)"/>
+      <ana>
+         <tok val="CURULI"/>
+         <tok val="curule"/>
+         <tok val="curuli"/>
+         <tok val="curuline"/>
          <lm>
             <l>curulis</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--CURULIBUS curulibus-->
-         <tok val="(curulibus|CURULIBUS)"/>
+      <ana>
+         <tok val="CURULIBUS"/>
+         <tok val="curulibus"/>
          <lm>
             <l>curulis</l>
             <m cert="0.1">n - - p - - - m d</m>
@@ -104,22 +128,44 @@
             <m cert="0.1">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Cur cur curn curque curue cúr Cúr-->
-         <tok val="[cC]?(u|cú|Cú)r[q]?(ue|n)?"/>
+      <ana>
+         <tok val="Cur"/>
+         <tok val="Cúr"/>
+         <tok val="cur"/>
+         <tok val="curn"/>
+         <tok val="curque"/>
+         <tok val="curue"/>
+         <tok val="cúr"/>
          <lm>
             <l>cur</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Cura Curaque cura curan curaque curast curaue curave curá cúra-->
-         <tok val="[cC]?(u|cú)r[a]?[q]?(ue|n|que|ve|st|á|a)?"/>
+      <ana>
+         <tok val="Cura"/>
+         <tok val="Curaque"/>
+         <tok val="cura"/>
+         <tok val="curan"/>
+         <tok val="curaque"/>
+         <tok val="curast"/>
+         <tok val="curaue"/>
+         <tok val="curave"/>
+         <tok val="curá"/>
+         <tok val="cúra"/>
          <lm>
             <l>cura</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Cura Curaque cura curan curaque curast curaue curave-->
-         <tok val="[cC]ura[q]?(ue|n|que|ve|st)?"/>
+      <ana>
+         <tok val="Cura"/>
+         <tok val="Curaque"/>
+         <tok val="cura"/>
+         <tok val="curan"/>
+         <tok val="curaque"/>
+         <tok val="curast"/>
+         <tok val="curaue"/>
+         <tok val="curave"/>
          <lm cert="0.5">
             <l>cura</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -132,48 +178,59 @@
       </ana>
       <ana>
          <tok val="Curabar"/>
+         <tok val="curabar"/>
          <lm>
             <l>curo</l>
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Curabat curabat-->
-         <tok val="[cC]urabat"/>
+      <ana>
+         <tok val="Curabat"/>
+         <tok val="curabat"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Curabis curabis-->
-         <tok val="[cC]urabis"/>
+      <ana>
+         <tok val="Curabis"/>
+         <tok val="curabis"/>
          <lm>
             <l>curo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Curabit curabit-->
-         <tok val="[cC]urabit"/>
+      <ana>
+         <tok val="Curabit"/>
+         <tok val="curabit"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Curabitur curabitur-->
-         <tok val="[cC]urabitur"/>
+      <ana>
+         <tok val="Curabitur"/>
+         <tok val="curabitur"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Curabo curabo cúrabo-->
-         <tok val="[cC]?(u|cú)rabo"/>
+      <ana>
+         <tok val="Curabo"/>
+         <tok val="curabo"/>
+         <tok val="cúrabo"/>
          <lm>
             <l>curo</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Curae Curaeque curae curaeque curaest-->
-         <tok val="[cC]urae(que|st)?"/>
+      <ana>
+         <tok val="Curae"/>
+         <tok val="Curaeque"/>
+         <tok val="curae"/>
+         <tok val="curaeque"/>
+         <tok val="curaest"/>
          <lm>
             <l>cura</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -181,22 +238,34 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Curae Curaeque curae curaeque curaest cúrae-->
-         <tok val="[cC]?(u|cú)rae(que|st)?"/>
+      <ana>
+         <tok val="Curae"/>
+         <tok val="Curaeque"/>
+         <tok val="curae"/>
+         <tok val="curaeque"/>
+         <tok val="curaest"/>
+         <tok val="cúrae"/>
          <lm>
             <l>cura</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Curam Curamque curam curamque curamue curamve cúram-->
-         <tok val="[cC]?(u|cú)ram[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Curam"/>
+         <tok val="Curamque"/>
+         <tok val="curam"/>
+         <tok val="curamque"/>
+         <tok val="curamue"/>
+         <tok val="curamve"/>
+         <tok val="cúram"/>
          <lm>
             <l>cura</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curando curando-->
-         <tok val="[cC]urando"/>
+      <ana>
+         <tok val="Curando"/>
+         <tok val="curando"/>
          <lm cert="0.5">
             <l>curo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -212,8 +281,11 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Curandum curandum curandumque curandumst-->
-         <tok val="[cC]urandum(st|que)?"/>
+      <ana>
+         <tok val="Curandum"/>
+         <tok val="curandum"/>
+         <tok val="curandumque"/>
+         <tok val="curandumst"/>
          <lm cert="0.5">
             <l>curo</l>
             <m cert="0.142857142857142857">v - - p p g p m g</m>
@@ -230,8 +302,10 @@
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curantes curantes curantesque-->
-         <tok val="[cC]urantes(que)?"/>
+      <ana>
+         <tok val="Curantes"/>
+         <tok val="curantes"/>
+         <tok val="curantesque"/>
          <lm>
             <l>curo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -240,16 +314,20 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Curantes curantes curantesque curantis-->
-         <tok val="[cC]urant[ei]s(que)?"/>
+      <ana>
+         <tok val="Curantes"/>
+         <tok val="curantes"/>
+         <tok val="curantesque"/>
+         <tok val="curantis"/>
          <lm>
             <l>curo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Curantia curantia-->
-         <tok val="[cC]urantia"/>
+      <ana>
+         <tok val="Curantia"/>
+         <tok val="curantia"/>
          <lm>
             <l>curo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -257,8 +335,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Curantibus curantibus-->
-         <tok val="[cC]urantibus"/>
+      <ana>
+         <tok val="Curantibus"/>
+         <tok val="curantibus"/>
          <lm>
             <l>curo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -269,79 +348,106 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Curantur curantur curanturque curantúr-->
-         <tok val="[cC]urant[uú]r(que)?"/>
+      <ana>
+         <tok val="Curantur"/>
+         <tok val="curantur"/>
+         <tok val="curanturque"/>
+         <tok val="curantúr"/>
          <lm>
             <l>curo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Curare curare-->
-         <tok val="[cC]urare"/>
+      <ana>
+         <tok val="Curare"/>
+         <tok val="curare"/>
          <lm>
             <l>curo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Curare curare curaris-->
-         <tok val="[cC]urar(e|is)"/>
+      <ana>
+         <tok val="Curare"/>
+         <tok val="curare"/>
+         <tok val="curaris"/>
          <lm>
             <l>curo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Curarem curarem-->
-         <tok val="[cC]urarem"/>
+      <ana>
+         <tok val="Curarem"/>
+         <tok val="curarem"/>
          <lm>
             <l>curo</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Curari curari curarier curarique-->
-         <tok val="[cC]urari(er|que)?"/>
+      <ana>
+         <tok val="Curari"/>
+         <tok val="curari"/>
+         <tok val="curarier"/>
+         <tok val="curarique"/>
          <lm>
             <l>curo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Curarum curarum curarumque-->
-         <tok val="[cC]urarum(que)?"/>
+      <ana>
+         <tok val="Curarum"/>
+         <tok val="curarum"/>
+         <tok val="curarumque"/>
          <lm>
             <l>cura</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Curas curan curas curasque cúras Curasque-->
-         <tok val="[Cc]?(u|cú)ra[s]?(que|n|s)?"/>
+      <ana>
+         <tok val="Curas"/>
+         <tok val="Curasque"/>
+         <tok val="curan"/>
+         <tok val="curas"/>
+         <tok val="curasque"/>
+         <tok val="cúras"/>
          <lm>
             <l>curo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Curas curan curas curasque Curasque-->
-         <tok val="[Cc]ura[s]?(que|n)?"/>
+      <ana>
+         <tok val="Curas"/>
+         <tok val="Curasque"/>
+         <tok val="curan"/>
+         <tok val="curas"/>
+         <tok val="curasque"/>
          <lm>
             <l>cura</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curasti curasti-->
-         <tok val="[cC]urasti"/>
+      <ana>
+         <tok val="Curasti"/>
+         <tok val="curasti"/>
          <lm>
             <l>curo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Curat Curatque curat curatque curatve-->
-         <tok val="[cC]urat(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Curat"/>
+         <tok val="Curatque"/>
+         <tok val="curat"/>
+         <tok val="curatque"/>
+         <tok val="curatve"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Curata curata-->
-         <tok val="[cC]urata"/>
+      <ana>
+         <tok val="Curata"/>
+         <tok val="curata"/>
          <lm>
             <l>curo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -352,45 +458,61 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Curate curate-->
-         <tok val="[cC]urate"/>
+      <ana>
+         <tok val="Curate"/>
+         <tok val="curate"/>
          <lm>
             <l>curo</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Curate Curatum Curatumst curate curatum curatumque curatumst-->
-         <tok val="[cC]urat(um)?(st|e|umque)?"/>
+      <ana>
+         <tok val="Curate"/>
+         <tok val="Curatum"/>
+         <tok val="Curatumst"/>
+         <tok val="curate"/>
+         <tok val="curatum"/>
+         <tok val="curatumque"/>
+         <tok val="curatumst"/>
          <lm>
             <l>curo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Curatio curatio curatiost curatioue curatiove curation-->
-         <tok val="[cC]uratio(n|ve|ue|st)?"/>
+      <ana>
+         <tok val="Curatio"/>
+         <tok val="curatio"/>
+         <tok val="curation"/>
+         <tok val="curatiost"/>
+         <tok val="curatioue"/>
+         <tok val="curatiove"/>
          <lm>
             <l>curatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Curatione curatione-->
-         <tok val="[cC]uratione"/>
+      <ana>
+         <tok val="Curatione"/>
+         <tok val="curatione"/>
          <lm>
             <l>curatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Curationem curationem-->
-         <tok val="[cC]urationem"/>
+      <ana>
+         <tok val="Curationem"/>
+         <tok val="curationem"/>
          <lm>
             <l>curatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curationes curationes curationesque-->
-         <tok val="[cC]urationes(que)?"/>
+      <ana>
+         <tok val="Curationes"/>
+         <tok val="curationes"/>
+         <tok val="curationesque"/>
          <lm>
             <l>curatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -398,15 +520,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Curationi curationi-->
-         <tok val="[cC]urationi"/>
+      <ana>
+         <tok val="Curationi"/>
+         <tok val="curationi"/>
          <lm>
             <l>curatio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Curationibus curationibus-->
-         <tok val="[cC]urationibus"/>
+      <ana>
+         <tok val="Curationibus"/>
+         <tok val="curationibus"/>
          <lm>
             <l>curatio</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -415,13 +539,16 @@
       </ana>
       <ana>
          <tok val="Curatius"/>
+         <tok val="curatius"/>
          <lm>
             <l>curo</l>
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Curatius curatius curatiusque-->
-         <tok val="[cC]uratius(que)?"/>
+      <ana>
+         <tok val="Curatius"/>
+         <tok val="curatius"/>
+         <tok val="curatiusque"/>
          <lm>
             <l>curo</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -429,8 +556,10 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Curato curato curatoque-->
-         <tok val="[cC]urato(que)?"/>
+      <ana>
+         <tok val="Curato"/>
+         <tok val="curato"/>
+         <tok val="curatoque"/>
          <lm>
             <l>curo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -441,23 +570,31 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Curator curator curatorue-->
-         <tok val="[cC]urator(ue)?"/>
+      <ana>
+         <tok val="Curator"/>
+         <tok val="curator"/>
+         <tok val="curatorue"/>
          <lm>
             <l>curator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curatorem curatorem curatoremque curatoremue-->
-         <tok val="[cC]uratorem[q]?(ue)?"/>
+      <ana>
+         <tok val="Curatorem"/>
+         <tok val="curatorem"/>
+         <tok val="curatoremque"/>
+         <tok val="curatoremue"/>
          <lm>
             <l>curator</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curatores curatores curatoresque curatoresue-->
-         <tok val="[cC]uratores[q]?(ue)?"/>
+      <ana>
+         <tok val="Curatores"/>
+         <tok val="curatores"/>
+         <tok val="curatoresque"/>
+         <tok val="curatoresue"/>
          <lm>
             <l>curator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -465,8 +602,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curatori curatori-->
-         <tok val="[cC]uratori"/>
+      <ana>
+         <tok val="Curatori"/>
+         <tok val="curatori"/>
          <lm cert="0.5">
             <l>curatorius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -477,8 +615,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Curatoria curatoria-->
-         <tok val="[cC]uratoria"/>
+      <ana>
+         <tok val="Curatoria"/>
+         <tok val="curatoria"/>
          <lm cert="0.5">
             <l>curatoria</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -495,23 +634,34 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Curatoris curatoris curatorisque-->
-         <tok val="[cC]uratoris(que)?"/>
+      <ana>
+         <tok val="Curatoris"/>
+         <tok val="curatoris"/>
+         <tok val="curatorisque"/>
          <lm>
             <l>curator</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Curatum Curatumst curatorum curatum curatumque curatumst-->
-         <tok val="[cC]urat(or)?um(st|que)?"/>
+      <ana>
+         <tok val="Curatum"/>
+         <tok val="Curatumst"/>
+         <tok val="curatorum"/>
+         <tok val="curatum"/>
+         <tok val="curatumque"/>
+         <tok val="curatumst"/>
          <lm>
             <l>curo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Curatum Curatumst curatum curatumque curatumst-->
-         <tok val="[cC]uratum(st|que)?"/>
+      <ana>
+         <tok val="Curatum"/>
+         <tok val="Curatumst"/>
+         <tok val="curatum"/>
+         <tok val="curatumque"/>
+         <tok val="curatumst"/>
          <lm>
             <l>curo</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -521,27 +671,34 @@
       </ana>
       <ana>
          <tok val="Curatum"/>
+         <tok val="curatum"/>
          <lm>
             <l>curo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Curatumst curatum curatumque curatumst cúratumst-->
-         <tok val="[cC]?(u|cú|cu)ratum(st|que)?"/>
+      <ana>
+         <tok val="Curatumst"/>
+         <tok val="curatum"/>
+         <tok val="curatumque"/>
+         <tok val="curatumst"/>
+         <tok val="cúratumst"/>
          <lm>
             <l>curo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Curatur curatur-->
-         <tok val="[cC]uratur"/>
+      <ana>
+         <tok val="Curatur"/>
+         <tok val="curatur"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Curatura curatura-->
-         <tok val="[cC]uratura"/>
+      <ana>
+         <tok val="Curatura"/>
+         <tok val="curatura"/>
          <lm cert="0.5">
             <l>curo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -558,65 +715,84 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Curatus curatus-->
-         <tok val="[cC]uratus"/>
+      <ana>
+         <tok val="Curatus"/>
+         <tok val="curatus"/>
          <lm>
             <l>curo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Curaui Curavi curaui curavi curavique curávi-->
-         <tok val="[Cc]ur[a]?[vu]?(i|ávi|avique)"/>
+      <ana>
+         <tok val="Curaui"/>
+         <tok val="Curavi"/>
+         <tok val="curaui"/>
+         <tok val="curavi"/>
+         <tok val="curavique"/>
+         <tok val="curávi"/>
          <lm>
             <l>curo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Curauit Curavit curauit curavit curavitque-->
-         <tok val="[Cc]ura[vu]it(que)?"/>
+      <ana>
+         <tok val="Curauit"/>
+         <tok val="Curavit"/>
+         <tok val="curauit"/>
+         <tok val="curavit"/>
+         <tok val="curavitque"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Curculio curculio-->
-         <tok val="[cC]urculio"/>
+      <ana>
+         <tok val="Curculio"/>
+         <tok val="curculio"/>
          <lm>
             <l>curculio</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curculione curculione-->
-         <tok val="[cC]urculione"/>
+      <ana>
+         <tok val="Curculione"/>
+         <tok val="curculione"/>
          <lm>
             <l>curculio</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Curculionem curculionem-->
-         <tok val="[cC]urculionem"/>
+      <ana>
+         <tok val="Curculionem"/>
+         <tok val="curculionem"/>
          <lm>
             <l>curculio</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curculiunculos curculiunculos-->
-         <tok val="[cC]urculiunculos"/>
+      <ana>
+         <tok val="Curculiunculos"/>
+         <tok val="curculiunculos"/>
          <lm>
             <l>curculiunculus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curemus curemus curemusque-->
-         <tok val="[cC]uremus(que)?"/>
+      <ana>
+         <tok val="Curemus"/>
+         <tok val="curemus"/>
+         <tok val="curemusque"/>
          <lm>
             <l>curo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Curen Cures-->
-         <tok val="Cure[sn]"/>
+      <ana>
+         <tok val="Curen"/>
+         <tok val="Cures"/>
+         <tok val="curen"/>
+         <tok val="cures"/>
          <lm>
             <l>Cures</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -625,16 +801,25 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curen Cures Curis-->
-         <tok val="Cur[e]?(s|n|is)"/>
+      <ana>
+         <tok val="Curen"/>
+         <tok val="Cures"/>
+         <tok val="Curis"/>
+         <tok val="curen"/>
+         <tok val="cures"/>
+         <tok val="curis"/>
          <lm>
             <l>Cures</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curen Cures cures curesque-->
-         <tok val="[Cc]ure(s|n|sque)"/>
+      <ana>
+         <tok val="Curen"/>
+         <tok val="Cures"/>
+         <tok val="curen"/>
+         <tok val="cures"/>
+         <tok val="curesque"/>
          <lm>
             <l>curo</l>
             <m>v - 2 s p s a</m>
@@ -642,6 +827,7 @@
       </ana>
       <ana>
          <tok val="Curense"/>
+         <tok val="curense"/>
          <lm>
             <l>Curensis</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -651,6 +837,7 @@
       </ana>
       <ana>
          <tok val="Curenses"/>
+         <tok val="curenses"/>
          <lm cert="0.5">
             <l>Curensis</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -664,8 +851,11 @@
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curenses Curensis-->
-         <tok val="Curens[ie]s"/>
+      <ana>
+         <tok val="Curenses"/>
+         <tok val="Curensis"/>
+         <tok val="curenses"/>
+         <tok val="curensis"/>
          <lm cert="0.5">
             <l>Curensis</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -678,6 +868,7 @@
       </ana>
       <ana>
          <tok val="Curensi"/>
+         <tok val="curensi"/>
          <lm>
             <l>Curensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -690,6 +881,7 @@
       </ana>
       <ana>
          <tok val="Curensibus"/>
+         <tok val="curensibus"/>
          <lm cert="0.5">
             <l>Curenses</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -707,6 +899,7 @@
       </ana>
       <ana>
          <tok val="Curensis"/>
+         <tok val="curensis"/>
          <lm>
             <l>Curensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -718,15 +911,18 @@
             <m cert="0.142857142857142857">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Curent curent curentque-->
-         <tok val="[cC]urent(que)?"/>
+      <ana>
+         <tok val="Curent"/>
+         <tok val="curent"/>
+         <tok val="curentque"/>
          <lm>
             <l>curo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Curet curet-->
-         <tok val="[cC]uret"/>
+      <ana>
+         <tok val="Curet"/>
+         <tok val="curet"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s p s a</m>
@@ -734,6 +930,7 @@
       </ana>
       <ana>
          <tok val="Curetes"/>
+         <tok val="curetes"/>
          <lm>
             <l>Curetis</l>
             <m cert="0.166666666666666667">a e - p - - - m n</m>
@@ -744,8 +941,11 @@
             <m cert="0.166666666666666667">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Curetes Curetis-->
-         <tok val="Curet[ie]s"/>
+      <ana>
+         <tok val="Curetes"/>
+         <tok val="Curetis"/>
+         <tok val="curetes"/>
+         <tok val="curetis"/>
          <lm>
             <l>Curetis</l>
             <m cert="0.333333333333333333">a e - p - - - m a</m>
@@ -755,6 +955,7 @@
       </ana>
       <ana>
          <tok val="Cureti"/>
+         <tok val="cureti"/>
          <lm>
             <l>Curetis</l>
             <m cert="0.125">a e - s - - - n d</m>
@@ -769,6 +970,7 @@
       </ana>
       <ana>
          <tok val="Curetibus"/>
+         <tok val="curetibus"/>
          <lm>
             <l>Curetis</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -783,6 +985,7 @@
       </ana>
       <ana>
          <tok val="Curetica"/>
+         <tok val="curetica"/>
          <lm>
             <l>Cureticus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -795,6 +998,7 @@
       </ana>
       <ana>
          <tok val="Curetim"/>
+         <tok val="curetim"/>
          <lm>
             <l>Curetis</l>
             <m>n e - s - - - m a</m>
@@ -802,7 +1006,8 @@
       </ana>
       <ana>
          <tok val="Curetis"/>
-         <lm>
+         <tok val="curetis"/>
+         <lm cert="0.5">
             <l>Curetis</l>
             <m cert="0.1">a e - s - - - f g</m>
             <m cert="0.1">a e - s - - - n g</m>
@@ -815,23 +1020,24 @@
             <m cert="0.1">n e - s - - - m g</m>
             <m cert="0.1">a e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Curetis curetis-->
-         <tok val="[cC]uretis"/>
-         <lm>
+         <lm cert="0.5">
             <l>curo</l>
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Curetum"/>
+         <tok val="curetum"/>
          <lm>
             <l>Curetes</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Curi Curii-->
-         <tok val="Curi[i]?"/>
+      <ana>
+         <tok val="Curi"/>
+         <tok val="Curii"/>
+         <tok val="curi"/>
+         <tok val="curii"/>
          <lm>
             <l>Curius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -840,6 +1046,7 @@
       </ana>
       <ana>
          <tok val="Curi"/>
+         <tok val="curi"/>
          <lm>
             <l>Curius</l>
             <m>n e - s - - - m g</m>
@@ -847,6 +1054,7 @@
       </ana>
       <ana>
          <tok val="Curia"/>
+         <tok val="curia"/>
          <lm>
             <l>Curius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -857,8 +1065,12 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Curia curia curiaque curiaue curiave-->
-         <tok val="[cC]uria[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Curia"/>
+         <tok val="curia"/>
+         <tok val="curiaque"/>
+         <tok val="curiaue"/>
+         <tok val="curiave"/>
          <lm>
             <l>curia</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -868,17 +1080,15 @@
       </ana>
       <ana>
          <tok val="Curiae"/>
-         <lm>
+         <tok val="curiae"/>
+         <lm cert="0.5">
             <l>Curius</l>
             <m cert="0.25">a e - s - - - f g</m>
             <m cert="0.25">a e - p - - - f v</m>
             <m cert="0.25">a e - s - - - f d</m>
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
-      </ana>
-      <ana><!--Curiae curiae-->
-         <tok val="[cC]uriae"/>
-         <lm>
+         <lm cert="0.5">
             <l>curia</l>
             <m cert="0.25">n - - s - - - f d</m>
             <m cert="0.25">n - - s - - - f g</m>
@@ -886,8 +1096,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Curiales curiales-->
-         <tok val="[cC]uriales"/>
+      <ana>
+         <tok val="Curiales"/>
+         <tok val="curiales"/>
          <lm>
             <l>curialis</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -898,8 +1109,11 @@
             <m cert="0.166666666666666667">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curiales Curialis curiales curialis-->
-         <tok val="[Cc]urial[ie]s"/>
+      <ana>
+         <tok val="Curiales"/>
+         <tok val="Curialis"/>
+         <tok val="curiales"/>
+         <tok val="curialis"/>
          <lm>
             <l>curialis</l>
             <m cert="0.333333333333333333">n - - p - - - m a</m>
@@ -907,8 +1121,9 @@
             <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curialis curialis-->
-         <tok val="[cC]urialis"/>
+      <ana>
+         <tok val="Curialis"/>
+         <tok val="curialis"/>
          <lm>
             <l>curialis</l>
             <m cert="0.111111111111111111">n - - s - - - m g</m>
@@ -924,13 +1139,16 @@
       </ana>
       <ana>
          <tok val="Curiam"/>
+         <tok val="curiam"/>
          <lm>
             <l>Curius</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curiam curiam curiamque-->
-         <tok val="[cC]uriam(que)?"/>
+      <ana>
+         <tok val="Curiam"/>
+         <tok val="curiam"/>
+         <tok val="curiamque"/>
          <lm>
             <l>curia</l>
             <m>n - - s - - - f a</m>
@@ -938,6 +1156,7 @@
       </ana>
       <ana>
          <tok val="Curiana"/>
+         <tok val="curiana"/>
          <lm>
             <l>Curianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -950,6 +1169,7 @@
       </ana>
       <ana>
          <tok val="Curiane"/>
+         <tok val="curiane"/>
          <lm>
             <l>Curianus</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -959,6 +1179,7 @@
       </ana>
       <ana>
          <tok val="Curiano"/>
+         <tok val="curiano"/>
          <lm>
             <l>Curianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -969,41 +1190,44 @@
       </ana>
       <ana>
          <tok val="Curianus"/>
+         <tok val="curianus"/>
          <lm>
             <l>Curianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curiarum curiarum-->
-         <tok val="[cC]uriarum"/>
-         <lm>
+      <ana>
+         <tok val="Curiarum"/>
+         <tok val="curiarum"/>
+         <lm cert="0.5">
             <l>curia</l>
             <m>n - - p - - - f g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Curiarum"/>
-         <lm>
+         <lm cert="0.5">
             <l>Curius</l>
             <m>a e - p - - - f g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Curias"/>
+         <tok val="curias"/>
          <lm>
             <l>Curius</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curias curias curiasque-->
-         <tok val="[cC]urias(que)?"/>
+      <ana>
+         <tok val="Curias"/>
+         <tok val="curias"/>
+         <tok val="curiasque"/>
          <lm>
             <l>curia</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curiata curiata-->
-         <tok val="[cC]uriata"/>
+      <ana>
+         <tok val="Curiata"/>
+         <tok val="curiata"/>
          <lm>
             <l>curiatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1014,25 +1238,26 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Curiati curiati-->
-         <tok val="[cC]uriati"/>
-         <lm>
+      <ana>
+         <tok val="Curiati"/>
+         <tok val="curiati"/>
+         <lm cert="0.5">
             <l>curiatus</l>
             <m cert="0.25">a - - s - - - m g</m>
             <m cert="0.25">a - - p - - - m v</m>
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Curiati"/>
-         <lm>
+         <lm cert="0.5">
             <l>Curiatius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curiati Curiatii-->
-         <tok val="Curiati[i]?"/>
+      <ana>
+         <tok val="Curiati"/>
+         <tok val="Curiatii"/>
+         <tok val="curiati"/>
+         <tok val="curiatii"/>
          <lm>
             <l>Curiatius</l>
             <m>n e - s - - - m g</m>
@@ -1040,22 +1265,27 @@
       </ana>
       <ana>
          <tok val="Curiatii"/>
+         <tok val="curiatii"/>
          <lm>
             <l>Curiatius</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curiatiis Curiatiisque-->
-         <tok val="Curiatiis(que)?"/>
+      <ana>
+         <tok val="Curiatiis"/>
+         <tok val="Curiatiisque"/>
+         <tok val="curiatiis"/>
+         <tok val="curiatiisque"/>
          <lm>
             <l>Curiatius</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Curiatim curiatim-->
-         <tok val="[cC]uriatim"/>
+      <ana>
+         <tok val="Curiatim"/>
+         <tok val="curiatim"/>
          <lm>
             <l>curiatim</l>
             <m>d</m>
@@ -1063,28 +1293,40 @@
       </ana>
       <ana>
          <tok val="Curiatio"/>
+         <tok val="curiatio"/>
          <lm>
             <l>Curiatius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Curiatiorum Curiatiorumque curiatiorumque-->
-         <tok val="[cC]uriatiorum(que|)"/>
+      <ana>
+         <tok val="Curiatiorum"/>
+         <tok val="Curiatiorumque"/>
+         <tok val="curiatiorum"/>
+         <tok val="curiatiorumque"/>
          <lm>
             <l>curiatus</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Curiatiorum Curiatiorumque Curiatium-->
-         <tok val="Curiati(or)?um(que)?"/>
+      <ana>
+         <tok val="Curiatiorum"/>
+         <tok val="Curiatiorumque"/>
+         <tok val="Curiatium"/>
+         <tok val="curiatiorum"/>
+         <tok val="curiatiorumque"/>
+         <tok val="curiatium"/>
          <lm>
             <l>Curiatius</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Curiatios Curiatiosque-->
-         <tok val="Curiatios(que)?"/>
+      <ana>
+         <tok val="Curiatios"/>
+         <tok val="Curiatiosque"/>
+         <tok val="curiatios"/>
+         <tok val="curiatiosque"/>
          <lm>
             <l>Curiatius</l>
             <m>n e - p - - - m a</m>
@@ -1092,6 +1334,7 @@
       </ana>
       <ana>
          <tok val="Curiatium"/>
+         <tok val="curiatium"/>
          <lm>
             <l>Curiatius</l>
             <m>n e - s - - - m a</m>
@@ -1099,6 +1342,7 @@
       </ana>
       <ana>
          <tok val="Curiatius"/>
+         <tok val="curiatius"/>
          <lm cert="0.5">
             <l>Curiatius</l>
             <m>n e - s - - - m n</m>
@@ -1111,15 +1355,19 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Curiatus curiatus-->
-         <tok val="[cC]uriatus"/>
+      <ana>
+         <tok val="Curiatus"/>
+         <tok val="curiatus"/>
          <lm>
             <l>curiatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curibus Curibusque-->
-         <tok val="Curibus(que)?"/>
+      <ana>
+         <tok val="Curibus"/>
+         <tok val="Curibusque"/>
+         <tok val="curibus"/>
+         <tok val="curibusque"/>
          <lm>
             <l>Cures</l>
             <m cert="0.25">n e - p - - - m b</m>
@@ -1130,6 +1378,7 @@
       </ana>
       <ana>
          <tok val="Curidio"/>
+         <tok val="curidio"/>
          <lm>
             <l>Curidius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1138,6 +1387,7 @@
       </ana>
       <ana>
          <tok val="Curidius"/>
+         <tok val="curidius"/>
          <lm>
             <l>Curidius</l>
             <m>n e - s - - - m n</m>
@@ -1145,6 +1395,7 @@
       </ana>
       <ana>
          <tok val="Curietae"/>
+         <tok val="curietae"/>
          <lm>
             <l>Curietae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1153,6 +1404,7 @@
       </ana>
       <ana>
          <tok val="Curieticus"/>
+         <tok val="curieticus"/>
          <lm>
             <l>Curieticus</l>
             <m>a e - s - - - m n</m>
@@ -1160,6 +1412,7 @@
       </ana>
       <ana>
          <tok val="Curii"/>
+         <tok val="curii"/>
          <lm cert="0.5">
             <l>Curius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -1173,12 +1426,13 @@
       </ana>
       <ana>
          <tok val="Curiis"/>
-         <lm cert="0.5">
+         <tok val="curiis"/>
+         <lm cert="0.333333333333333333">
             <l>Curiatii</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>Curius</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
             <m cert="0.166666666666666667">a e - p - - - n d</m>
@@ -1187,17 +1441,17 @@
             <m cert="0.166666666666666667">a e - p - - - m b</m>
             <m cert="0.166666666666666667">a e - p - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Curiis curiis-->
-         <tok val="[cC]uriis"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>curia</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Curio Curioque-->
-         <tok val="Curio(que)?"/>
+      <ana>
+         <tok val="Curio"/>
+         <tok val="Curioque"/>
+         <tok val="curio"/>
+         <tok val="curioque"/>
          <lm>
             <l>Curius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1206,16 +1460,21 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Curio Curioque curio curion-->
-         <tok val="[cC]urio(n|que)?"/>
+      <ana>
+         <tok val="Curio"/>
+         <tok val="Curioque"/>
+         <tok val="curio"/>
+         <tok val="curion"/>
+         <tok val="curioque"/>
          <lm>
             <l>curio</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curionatus curionatus-->
-         <tok val="[cC]urionatus"/>
+      <ana>
+         <tok val="Curionatus"/>
+         <tok val="curionatus"/>
          <lm>
             <l>curionatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1224,22 +1483,26 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curione curione-->
-         <tok val="[cC]urione"/>
+      <ana>
+         <tok val="Curione"/>
+         <tok val="curione"/>
          <lm>
             <l>curio</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Curionem curionem-->
-         <tok val="[cC]urionem"/>
+      <ana>
+         <tok val="Curionem"/>
+         <tok val="curionem"/>
          <lm>
             <l>curio</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curiones curiones curionesque-->
-         <tok val="[cC]uriones(que)?"/>
+      <ana>
+         <tok val="Curiones"/>
+         <tok val="curiones"/>
+         <tok val="curionesque"/>
          <lm>
             <l>curio</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1249,6 +1512,7 @@
       </ana>
       <ana>
          <tok val="Curioniani"/>
+         <tok val="curioniani"/>
          <lm>
             <l>Curionianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1259,6 +1523,7 @@
       </ana>
       <ana>
          <tok val="Curionianus"/>
+         <tok val="curionianus"/>
          <lm>
             <l>Curionianus</l>
             <m>a e - s - - - m n</m>
@@ -1266,14 +1531,16 @@
       </ana>
       <ana>
          <tok val="Curionibus"/>
+         <tok val="curionibus"/>
          <lm>
             <l>curio</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Curionis curionis-->
-         <tok val="[cC]urionis"/>
+      <ana>
+         <tok val="Curionis"/>
+         <tok val="curionis"/>
          <lm>
             <l>curio</l>
             <m>n - - s - - - m g</m>
@@ -1281,6 +1548,7 @@
       </ana>
       <ana>
          <tok val="Curionium"/>
+         <tok val="curionium"/>
          <lm>
             <l>curionius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1291,15 +1559,19 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curionum curionum-->
-         <tok val="[cC]urionum"/>
+      <ana>
+         <tok val="Curionum"/>
+         <tok val="curionum"/>
          <lm>
             <l>curio</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Curiorum Curium-->
-         <tok val="Curi(or)?um"/>
+      <ana>
+         <tok val="Curiorum"/>
+         <tok val="Curium"/>
+         <tok val="curiorum"/>
+         <tok val="curium"/>
          <lm cert="0.5">
             <l>Curius</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -1310,8 +1582,11 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Curios Curiosque-->
-         <tok val="Curios(que)?"/>
+      <ana>
+         <tok val="Curios"/>
+         <tok val="Curiosque"/>
+         <tok val="curios"/>
+         <tok val="curiosque"/>
          <lm cert="0.5">
             <l>Curiatii</l>
             <m>n e - p - - - m a</m>
@@ -1321,30 +1596,41 @@
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curiose curiose curioseque curiosius-->
-         <tok val="[cC]urios[e]?(que|ius)?"/>
+      <ana>
+         <tok val="Curiose"/>
+         <tok val="curiose"/>
+         <tok val="curioseque"/>
+         <tok val="curiosius"/>
          <lm>
             <l>curiosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Curiose Curiosum curiose curioseque curiosum-->
-         <tok val="[cC]urios(um|e|eque)"/>
+      <ana>
+         <tok val="Curiose"/>
+         <tok val="Curiosum"/>
+         <tok val="curiose"/>
+         <tok val="curioseque"/>
+         <tok val="curiosum"/>
          <lm>
             <l>curiosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Curiose curiose curioseque-->
-         <tok val="[cC]uriose(que)?"/>
+      <ana>
+         <tok val="Curiose"/>
+         <tok val="curiose"/>
+         <tok val="curioseque"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.5">a - - s - - - m v</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curiosis curiosis curiosisque-->
-         <tok val="[cC]uriosis(que)?"/>
+      <ana>
+         <tok val="Curiosis"/>
+         <tok val="curiosis"/>
+         <tok val="curiosisque"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -1357,8 +1643,9 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Curiositas curiositas-->
-         <tok val="[cC]uriositas"/>
+      <ana>
+         <tok val="Curiositas"/>
+         <tok val="curiositas"/>
          <lm>
             <l>curiositas</l>
             <m>n - - s - - - f n</m>
@@ -1366,22 +1653,18 @@
       </ana>
       <ana>
          <tok val="Curiosius"/>
+         <tok val="curiosius"/>
          <lm>
             <l>curiosus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Curiosius curiosius-->
-         <tok val="[cC]uriosius"/>
-         <lm>
-            <l>curiosus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Curioso curioso-->
-         <tok val="[cC]urioso"/>
+      <ana>
+         <tok val="Curioso"/>
+         <tok val="curioso"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -1394,6 +1677,7 @@
       </ana>
       <ana>
          <tok val="Curiosolites"/>
+         <tok val="curiosolites"/>
          <lm>
             <l>Curiosolites</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1401,8 +1685,9 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Curiosum curiosum-->
-         <tok val="[cC]uriosum"/>
+      <ana>
+         <tok val="Curiosum"/>
+         <tok val="curiosum"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1411,8 +1696,10 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curiosum curiosorum curiosum-->
-         <tok val="[cC]urios(or)?um"/>
+      <ana>
+         <tok val="Curiosum"/>
+         <tok val="curiosorum"/>
+         <tok val="curiosum"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -1420,16 +1707,20 @@
             <m cert="0.333333333333333333">n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Curiosus curiosus curiosusque-->
-         <tok val="[cC]uriosus(que)?"/>
+      <ana>
+         <tok val="Curiosus"/>
+         <tok val="curiosus"/>
+         <tok val="curiosusque"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curis curis curisque-->
-         <tok val="[cC]uris(que)?"/>
+      <ana>
+         <tok val="Curis"/>
+         <tok val="curis"/>
+         <tok val="curisque"/>
          <lm>
             <l>cura</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -1438,6 +1729,7 @@
       </ana>
       <ana>
          <tok val="Curitis"/>
+         <tok val="curitis"/>
          <lm>
             <l>Curitis</l>
             <m cert="0.333333333333333333">n e - s - - - f g</m>
@@ -1447,6 +1739,7 @@
       </ana>
       <ana>
          <tok val="Curium"/>
+         <tok val="curium"/>
          <lm cert="0.5">
             <l>Curius</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -1461,6 +1754,7 @@
       </ana>
       <ana>
          <tok val="Curius"/>
+         <tok val="curius"/>
          <lm cert="0.5">
             <l>Curius</l>
             <m>n e - s - - - m n</m>
@@ -1472,70 +1766,85 @@
       </ana>
       <ana>
          <tok val="Curiusque"/>
+         <tok val="curiusque"/>
          <lm>
             <l>Curius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curo curo cúro-->
-         <tok val="[cC]?(u|cú)ro"/>
+      <ana>
+         <tok val="Curo"/>
+         <tok val="curo"/>
+         <tok val="cúro"/>
          <lm>
             <l>curo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Curram curram-->
-         <tok val="[cC]urram"/>
+      <ana>
+         <tok val="Curram"/>
+         <tok val="curram"/>
          <lm>
             <l>curro</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Currant currant-->
-         <tok val="[cC]urrant"/>
+      <ana>
+         <tok val="Currant"/>
+         <tok val="currant"/>
          <lm>
             <l>curro</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Curras curras-->
-         <tok val="[cC]urras"/>
+      <ana>
+         <tok val="Curras"/>
+         <tok val="curras"/>
          <lm>
             <l>curro</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Currat currat curratque-->
-         <tok val="[cC]urrat(que)?"/>
+      <ana>
+         <tok val="Currat"/>
+         <tok val="currat"/>
+         <tok val="curratque"/>
          <lm>
             <l>curro</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Curratur curratur curraturque-->
-         <tok val="[cC]urratur(que)?"/>
+      <ana>
+         <tok val="Curratur"/>
+         <tok val="curratur"/>
+         <tok val="curraturque"/>
          <lm>
             <l>curro</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Curre curre curren-->
-         <tok val="[cC]urre[n]?"/>
+      <ana>
+         <tok val="Curre"/>
+         <tok val="curre"/>
+         <tok val="curren"/>
          <lm>
             <l>curro</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Currebam currebam-->
-         <tok val="[cC]urrebam"/>
+      <ana>
+         <tok val="Currebam"/>
+         <tok val="currebam"/>
          <lm>
             <l>curro</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Currendi currendi currendique-->
-         <tok val="[cC]urrendi(que)?"/>
+      <ana>
+         <tok val="Currendi"/>
+         <tok val="currendi"/>
+         <tok val="currendique"/>
          <lm>
             <l>curro</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1545,8 +1854,10 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Currendum currendum currendumst-->
-         <tok val="[cC]urrendum(st)?"/>
+      <ana>
+         <tok val="Currendum"/>
+         <tok val="currendum"/>
+         <tok val="currendumst"/>
          <lm>
             <l>curro</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1558,8 +1869,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Currens currens-->
-         <tok val="[cC]urrens"/>
+      <ana>
+         <tok val="Currens"/>
+         <tok val="currens"/>
          <lm>
             <l>curro</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1571,31 +1883,39 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Currentem currentem currentemue-->
-         <tok val="[cC]urrentem(ue)?"/>
+      <ana>
+         <tok val="Currentem"/>
+         <tok val="currentem"/>
+         <tok val="currentemue"/>
          <lm>
             <l>curro</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Currenti currenti-->
-         <tok val="[cC]urrenti"/>
+      <ana>
+         <tok val="Currenti"/>
+         <tok val="currenti"/>
          <lm>
             <l>curro</l>
             <m cert="0.5">v - - s p p a f d</m>
             <m cert="0.5">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Currenti currenti cúrrenti-->
-         <tok val="[cC]?(u|cú)rrenti"/>
+      <ana>
+         <tok val="Currenti"/>
+         <tok val="currenti"/>
+         <tok val="cúrrenti"/>
          <lm>
             <l>curro</l>
             <m>v - - s p p a n d</m>
          </lm>
       </ana>
-      <ana><!--Currenti currente currenteve currenti-->
-         <tok val="[cC]urrent[e]?(ve|i)?"/>
+      <ana>
+         <tok val="Currenti"/>
+         <tok val="currente"/>
+         <tok val="currenteve"/>
+         <tok val="currenti"/>
          <lm>
             <l>curro</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1603,8 +1923,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Currentia currentia-->
-         <tok val="[cC]urrentia"/>
+      <ana>
+         <tok val="Currentia"/>
+         <tok val="currentia"/>
          <lm>
             <l>curro</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -1612,8 +1933,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Currentibus currentibus-->
-         <tok val="[cC]urrentibus"/>
+      <ana>
+         <tok val="Currentibus"/>
+         <tok val="currentibus"/>
          <lm>
             <l>curro</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -1624,8 +1946,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Currere currere-->
-         <tok val="[cC]urrere"/>
+      <ana>
+         <tok val="Currere"/>
+         <tok val="currere"/>
          <lm>
             <l>curro</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1634,38 +1957,47 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Curres curren curres-->
-         <tok val="[cC]urre[sn]"/>
+      <ana>
+         <tok val="Curres"/>
+         <tok val="curren"/>
+         <tok val="curres"/>
          <lm>
             <l>curro</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Curribus curribus curribusque-->
-         <tok val="[cC]urribus(que)?"/>
+      <ana>
+         <tok val="Curribus"/>
+         <tok val="curribus"/>
+         <tok val="curribusque"/>
          <lm>
             <l>currus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Curriculi curriculi-->
-         <tok val="[cC]urriculi"/>
+      <ana>
+         <tok val="Curriculi"/>
+         <tok val="curriculi"/>
          <lm>
             <l>curriculum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Curriculo curriculo curriculoque-->
-         <tok val="[cC]urriculo(que)?"/>
+      <ana>
+         <tok val="Curriculo"/>
+         <tok val="curriculo"/>
+         <tok val="curriculoque"/>
          <lm>
             <l>curriculum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Curriculum curriculum curriculumque-->
-         <tok val="[cC]urriculum(que)?"/>
+      <ana>
+         <tok val="Curriculum"/>
+         <tok val="curriculum"/>
+         <tok val="curriculumque"/>
          <lm>
             <l>curriculum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1673,85 +2005,105 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Curriculum curriculorum curriculum curriculumque-->
-         <tok val="[cC]urricul(or)?um(que)?"/>
+      <ana>
+         <tok val="Curriculum"/>
+         <tok val="curriculorum"/>
+         <tok val="curriculum"/>
+         <tok val="curriculumque"/>
          <lm>
             <l>curriculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Currimus currimus-->
-         <tok val="[cC]urrimus"/>
+      <ana>
+         <tok val="Currimus"/>
+         <tok val="currimus"/>
          <lm>
             <l>curro</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Curris curris-->
-         <tok val="[cC]urris"/>
+      <ana>
+         <tok val="Curris"/>
+         <tok val="curris"/>
          <lm>
             <l>curro</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Currit currit curritque curritve-->
-         <tok val="[cC]urrit(ve|que)?"/>
+      <ana>
+         <tok val="Currit"/>
+         <tok val="currit"/>
+         <tok val="curritque"/>
+         <tok val="curritve"/>
          <lm>
             <l>curro</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Currite currite-->
-         <tok val="[cC]urrite"/>
+      <ana>
+         <tok val="Currite"/>
+         <tok val="currite"/>
          <lm>
             <l>curro</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Curritur curritur curriturque-->
-         <tok val="[cC]urritur(que)?"/>
+      <ana>
+         <tok val="Curritur"/>
+         <tok val="curritur"/>
+         <tok val="curriturque"/>
          <lm>
             <l>curro</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Curro curro-->
-         <tok val="[cC]urro"/>
+      <ana>
+         <tok val="Curro"/>
+         <tok val="curro"/>
          <lm>
             <l>curro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Curru curru curruque-->
-         <tok val="[cC]urru(que)?"/>
+      <ana>
+         <tok val="Curru"/>
+         <tok val="curru"/>
+         <tok val="curruque"/>
          <lm>
             <l>currus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Currum currum currumque-->
-         <tok val="[cC]urrum(que)?"/>
+      <ana>
+         <tok val="Currum"/>
+         <tok val="currum"/>
+         <tok val="currumque"/>
          <lm>
             <l>currus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Currunt currunt-->
-         <tok val="[cC]urrunt"/>
+      <ana>
+         <tok val="Currunt"/>
+         <tok val="currunt"/>
          <lm>
             <l>curro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Curruum curruum curruumque-->
-         <tok val="[cC]urruum(que)?"/>
+      <ana>
+         <tok val="Curruum"/>
+         <tok val="curruum"/>
+         <tok val="curruumque"/>
          <lm>
             <l>currus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Cursando cursando-->
-         <tok val="[cC]ursando"/>
+      <ana>
+         <tok val="Cursando"/>
+         <tok val="cursando"/>
          <lm>
             <l>curso</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1762,8 +2114,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Cursare cursare-->
-         <tok val="[cC]ursare"/>
+      <ana>
+         <tok val="Cursare"/>
+         <tok val="cursare"/>
          <lm>
             <l>curso</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1771,51 +2124,60 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cursarem cursarem-->
-         <tok val="[cC]ursarem"/>
+      <ana>
+         <tok val="Cursarem"/>
+         <tok val="cursarem"/>
          <lm>
             <l>curso</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Cursatur cursatur-->
-         <tok val="[cC]ursatur"/>
+      <ana>
+         <tok val="Cursatur"/>
+         <tok val="cursatur"/>
          <lm>
             <l>curso</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cursibus cursibus cursibusque-->
-         <tok val="[cC]ursibus(que)?"/>
+      <ana>
+         <tok val="Cursibus"/>
+         <tok val="cursibus"/>
+         <tok val="cursibusque"/>
          <lm>
             <l>cursus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Cursim cursim cursimque-->
-         <tok val="[cC]ursim(que)?"/>
+      <ana>
+         <tok val="Cursim"/>
+         <tok val="cursim"/>
+         <tok val="cursimque"/>
          <lm>
             <l>cursim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Cursitant cursitant-->
-         <tok val="[cC]ursitant"/>
+      <ana>
+         <tok val="Cursitant"/>
+         <tok val="cursitant"/>
          <lm>
             <l>cursito</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Cursito cursito-->
-         <tok val="[cC]ursito"/>
+      <ana>
+         <tok val="Cursito"/>
+         <tok val="cursito"/>
          <lm>
             <l>cursito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Curso curso-->
-         <tok val="[cC]urso"/>
+      <ana>
+         <tok val="Curso"/>
+         <tok val="curso"/>
          <lm cert="0.5">
             <l>curro</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1828,8 +2190,11 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cursor Cursorne cursor-->
-         <tok val="[Cc]ursor(ne)?"/>
+      <ana>
+         <tok val="Cursor"/>
+         <tok val="Cursorne"/>
+         <tok val="cursor"/>
+         <tok val="cursorne"/>
          <lm cert="0.5">
             <l>cursor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1840,22 +2205,26 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cursore cursore-->
-         <tok val="[cC]ursore"/>
+      <ana>
+         <tok val="Cursore"/>
+         <tok val="cursore"/>
          <lm>
             <l>cursor</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Cursorem cursorem-->
-         <tok val="[cC]ursorem"/>
+      <ana>
+         <tok val="Cursorem"/>
+         <tok val="cursorem"/>
          <lm>
             <l>cursor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cursores cursores cursoresque-->
-         <tok val="[cC]ursores(que)?"/>
+      <ana>
+         <tok val="Cursores"/>
+         <tok val="cursores"/>
+         <tok val="cursoresque"/>
          <lm>
             <l>cursor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1863,8 +2232,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cursori cursori-->
-         <tok val="[cC]ursori"/>
+      <ana>
+         <tok val="Cursori"/>
+         <tok val="cursori"/>
          <lm cert="0.333333333333333333">
             <l>cursorius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -1879,8 +2249,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Cursoria cursoria-->
-         <tok val="[cC]ursoria"/>
+      <ana>
+         <tok val="Cursoria"/>
+         <tok val="cursoria"/>
          <lm cert="0.333333333333333333">
             <l>cursoria</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1903,8 +2274,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cursorium cursorium-->
-         <tok val="[cC]ursorium"/>
+      <ana>
+         <tok val="Cursorium"/>
+         <tok val="cursorium"/>
          <lm cert="0.5">
             <l>cursorius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1922,29 +2294,39 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cursorius cursorius-->
-         <tok val="[cC]ursorius"/>
+      <ana>
+         <tok val="Cursorius"/>
+         <tok val="cursorius"/>
          <lm>
             <l>cursorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cursu Cursuque cursu cursuque-->
-         <tok val="[cC]ursu(que)?"/>
+      <ana>
+         <tok val="Cursu"/>
+         <tok val="Cursuque"/>
+         <tok val="cursu"/>
+         <tok val="cursuque"/>
          <lm>
             <l>curro</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Cursu Cursuque cursu cursuque cúrsu-->
-         <tok val="[cC]?(u|cú)rsu(que)?"/>
+      <ana>
+         <tok val="Cursu"/>
+         <tok val="Cursuque"/>
+         <tok val="cursu"/>
+         <tok val="cursuque"/>
+         <tok val="cúrsu"/>
          <lm>
             <l>cursus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Cursum cursum cursumque-->
-         <tok val="[cC]ursum(que)?"/>
+      <ana>
+         <tok val="Cursum"/>
+         <tok val="cursum"/>
+         <tok val="cursumque"/>
          <lm cert="0.5">
             <l>curro</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1957,23 +2339,30 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cursum cursorum cursum cursumque-->
-         <tok val="[cC]urs(or)?um(que)?"/>
+      <ana>
+         <tok val="Cursum"/>
+         <tok val="cursorum"/>
+         <tok val="cursum"/>
+         <tok val="cursumque"/>
          <lm>
             <l>curro</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Cursum curse cursum cursumque-->
-         <tok val="[cC]urs(um)?(que|e)?"/>
+      <ana>
+         <tok val="Cursum"/>
+         <tok val="curse"/>
+         <tok val="cursum"/>
+         <tok val="cursumque"/>
          <lm>
             <l>curro</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Cursura cursura-->
-         <tok val="[cC]ursura"/>
+      <ana>
+         <tok val="Cursura"/>
+         <tok val="cursura"/>
          <lm cert="0.5">
             <l>curro</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -1990,22 +2379,28 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cursuram cursuram cúrsuram-->
-         <tok val="[cC]?(u|cú)rsuram"/>
+      <ana>
+         <tok val="Cursuram"/>
+         <tok val="cursuram"/>
+         <tok val="cúrsuram"/>
          <lm>
             <l>curro</l>
             <m>v - - s f p a f a</m>
          </lm>
       </ana>
-      <ana><!--Cursuram cursuram-->
-         <tok val="[cC]ursuram"/>
+      <ana>
+         <tok val="Cursuram"/>
+         <tok val="cursuram"/>
          <lm>
             <l>cursura</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cursus Cursusque cursus cursusque-->
-         <tok val="[cC]ursus(que)?"/>
+      <ana>
+         <tok val="Cursus"/>
+         <tok val="Cursusque"/>
+         <tok val="cursus"/>
+         <tok val="cursusque"/>
          <lm cert="0.5">
             <l>cursus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2018,8 +2413,11 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Curta Curtaque curta-->
-         <tok val="[cC]urta(que)?"/>
+      <ana>
+         <tok val="Curta"/>
+         <tok val="Curtaque"/>
+         <tok val="curta"/>
+         <tok val="curtaque"/>
          <lm cert="0.5">
             <l>curtus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2034,8 +2432,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Curtae curtae-->
-         <tok val="[cC]urtae"/>
+      <ana>
+         <tok val="Curtae"/>
+         <tok val="curtae"/>
          <lm>
             <l>curtus</l>
             <m cert="0.333333333333333333">a - - p - - - f v</m>
@@ -2043,15 +2442,18 @@
             <m cert="0.333333333333333333">a - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Curtae curtae curtain-->
-         <tok val="[cC]urta(e|in)"/>
+      <ana>
+         <tok val="Curtae"/>
+         <tok val="curtae"/>
+         <tok val="curtain"/>
          <lm>
             <l>curtus</l>
             <m>a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Curti curti-->
-         <tok val="[cC]urti"/>
+      <ana>
+         <tok val="Curti"/>
+         <tok val="curti"/>
          <lm>
             <l>curtus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -2062,6 +2464,7 @@
       </ana>
       <ana>
          <tok val="Curtia"/>
+         <tok val="curtia"/>
          <lm>
             <l>Curtius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -2074,6 +2477,7 @@
       </ana>
       <ana>
          <tok val="Curtiam"/>
+         <tok val="curtiam"/>
          <lm>
             <l>Curtius</l>
             <m>a e - s - - - f a</m>
@@ -2081,6 +2485,7 @@
       </ana>
       <ana>
          <tok val="Curtii"/>
+         <tok val="curtii"/>
          <lm>
             <l>Curtius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2091,6 +2496,7 @@
       </ana>
       <ana>
          <tok val="Curtiis"/>
+         <tok val="curtiis"/>
          <lm>
             <l>Curtius</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2103,6 +2509,7 @@
       </ana>
       <ana>
          <tok val="Curtilio"/>
+         <tok val="curtilio"/>
          <lm>
             <l>Curtilius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -2111,6 +2518,7 @@
       </ana>
       <ana>
          <tok val="Curtilium"/>
+         <tok val="curtilium"/>
          <lm>
             <l>Curtilius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -2119,6 +2527,7 @@
       </ana>
       <ana>
          <tok val="Curtilius"/>
+         <tok val="curtilius"/>
          <lm>
             <l>Curtilius</l>
             <m>n e - s - - - m n</m>
@@ -2126,6 +2535,7 @@
       </ana>
       <ana>
          <tok val="Curtio"/>
+         <tok val="curtio"/>
          <lm>
             <l>Curtius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -2136,13 +2546,15 @@
       </ana>
       <ana>
          <tok val="Curtios"/>
+         <tok val="curtios"/>
          <lm>
             <l>Curtius</l>
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curtis curtis-->
-         <tok val="[cC]urtis"/>
+      <ana>
+         <tok val="Curtis"/>
+         <tok val="curtis"/>
          <lm>
             <l>curtus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2155,6 +2567,7 @@
       </ana>
       <ana>
          <tok val="Curtium"/>
+         <tok val="curtium"/>
          <lm>
             <l>Curtius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -2167,26 +2580,23 @@
       </ana>
       <ana>
          <tok val="Curtius"/>
+         <tok val="curtius"/>
          <lm cert="0.5">
             <l>curtus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>Curtius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curtius curtius-->
-         <tok val="[cC]urtius"/>
-         <lm>
-            <l>curtus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Curto curto curtoque-->
-         <tok val="[cC]urto(que)?"/>
+      <ana>
+         <tok val="Curto"/>
+         <tok val="curto"/>
+         <tok val="curtoque"/>
          <lm cert="0.5">
             <l>curtus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2201,13 +2611,15 @@
       </ana>
       <ana>
          <tok val="Curtos"/>
+         <tok val="curtos"/>
          <lm>
             <l>curtus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curtum curtum-->
-         <tok val="[cC]urtum"/>
+      <ana>
+         <tok val="Curtum"/>
+         <tok val="curtum"/>
          <lm>
             <l>curtus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -2217,22 +2629,30 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curtum curte curtum-->
-         <tok val="[cC]urt(um|e)"/>
+      <ana>
+         <tok val="Curtum"/>
+         <tok val="curte"/>
+         <tok val="curtum"/>
          <lm>
             <l>curtus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Curtus curtus-->
-         <tok val="[cC]urtus"/>
+      <ana>
+         <tok val="Curtus"/>
+         <tok val="curtus"/>
          <lm>
             <l>curtus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curua Curva curua curuan curva curvaque-->
-         <tok val="[cC]ur[uv]a(n|que)?"/>
+      <ana>
+         <tok val="Curua"/>
+         <tok val="Curva"/>
+         <tok val="curua"/>
+         <tok val="curuan"/>
+         <tok val="curva"/>
+         <tok val="curvaque"/>
          <lm cert="0.333333333333333333">
             <l>curvum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2253,8 +2673,13 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Curuae Curvae curuae curuaeque curvae curvaeque-->
-         <tok val="[cC]ur[vu]ae(que)?"/>
+      <ana>
+         <tok val="Curuae"/>
+         <tok val="Curvae"/>
+         <tok val="curuae"/>
+         <tok val="curuaeque"/>
+         <tok val="curvae"/>
+         <tok val="curvaeque"/>
          <lm>
             <l>curvus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2263,8 +2688,11 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Curuans curuans curvans curvansque-->
-         <tok val="[cC]ur[uv]ans(que)?"/>
+      <ana>
+         <tok val="Curuans"/>
+         <tok val="curuans"/>
+         <tok val="curvans"/>
+         <tok val="curvansque"/>
          <lm>
             <l>curvo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -2276,8 +2704,10 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Curuare curuare curvare-->
-         <tok val="[cC]ur[uv]are"/>
+      <ana>
+         <tok val="Curuare"/>
+         <tok val="curuare"/>
+         <tok val="curvare"/>
          <lm>
             <l>curvo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -2285,22 +2715,34 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Curuari curuari curvari curvarique-->
-         <tok val="[cC]ur[uv]ari(que)?"/>
+      <ana>
+         <tok val="Curuari"/>
+         <tok val="curuari"/>
+         <tok val="curvari"/>
+         <tok val="curvarique"/>
          <lm>
             <l>curvo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Curuarum Curvarum Curvarvm curuarum curvarum-->
-         <tok val="[Cc]ur[vu]ar[uv]m"/>
+      <ana>
+         <tok val="Curuarum"/>
+         <tok val="Curvarum"/>
+         <tok val="Curvarvm"/>
+         <tok val="curuarum"/>
+         <tok val="curvarum"/>
+         <tok val="curvarvm"/>
          <lm>
             <l>curvus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Curuas Curvas curuan curuas curvas-->
-         <tok val="[Cc]ur[vu]a[sn]"/>
+      <ana>
+         <tok val="Curuas"/>
+         <tok val="Curvas"/>
+         <tok val="curuan"/>
+         <tok val="curuas"/>
+         <tok val="curvas"/>
          <lm cert="0.5">
             <l>curvo</l>
             <m>v - 2 s p i a</m>
@@ -2310,8 +2752,12 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curui curui curuique curvi curvique-->
-         <tok val="[cC]ur[vu]i(que)?"/>
+      <ana>
+         <tok val="Curui"/>
+         <tok val="curui"/>
+         <tok val="curuique"/>
+         <tok val="curvi"/>
+         <tok val="curvique"/>
          <lm cert="0.5">
             <l>curvus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -2326,13 +2772,19 @@
       </ana>
       <ana>
          <tok val="Curui"/>
+         <tok val="curui"/>
          <lm>
             <l>curvus</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Curuis Curvis curuis curuisque curvis curvisque-->
-         <tok val="[cC]ur[vu]is(que)?"/>
+      <ana>
+         <tok val="Curuis"/>
+         <tok val="Curvis"/>
+         <tok val="curuis"/>
+         <tok val="curuisque"/>
+         <tok val="curvis"/>
+         <tok val="curvisque"/>
          <lm cert="0.5">
             <l>curvus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2348,8 +2800,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Curules curules-->
-         <tok val="[cC]urules"/>
+      <ana>
+         <tok val="Curules"/>
+         <tok val="curules"/>
          <lm>
             <l>curulis</l>
             <m cert="0.125">n - - p - - - m n</m>
@@ -2362,8 +2815,11 @@
             <m cert="0.125">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Curules Curulis curules curulis-->
-         <tok val="[Cc]urul[ie]s"/>
+      <ana>
+         <tok val="Curules"/>
+         <tok val="Curulis"/>
+         <tok val="curules"/>
+         <tok val="curulis"/>
          <lm>
             <l>curulis</l>
             <m cert="0.25">n - - p - - - f a</m>
@@ -2372,8 +2828,9 @@
             <m cert="0.25">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curulis curulis-->
-         <tok val="[cC]urulis"/>
+      <ana>
+         <tok val="Curulis"/>
+         <tok val="curulis"/>
          <lm>
             <l>curulis</l>
             <m cert="0.090909090909090909">n - - s - - - f n</m>
@@ -2389,8 +2846,13 @@
             <m cert="0.090909090909090909">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Curuo Curvo curuo curuoque curvo curvoque-->
-         <tok val="[cC]ur[vu]o(que)?"/>
+      <ana>
+         <tok val="Curuo"/>
+         <tok val="Curvo"/>
+         <tok val="curuo"/>
+         <tok val="curuoque"/>
+         <tok val="curvo"/>
+         <tok val="curvoque"/>
          <lm cert="0.333333333333333333">
             <l>curvus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -2408,16 +2870,22 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Curuo Curvo-->
-         <tok val="Cur[vu]o"/>
+      <ana>
+         <tok val="Curuo"/>
+         <tok val="Curvo"/>
+         <tok val="curuo"/>
+         <tok val="curvo"/>
          <lm>
             <l>curvus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Curuum curuum curvom curvum-->
-         <tok val="[cC]ur[uv]?(u|vo)m"/>
+      <ana>
+         <tok val="Curuum"/>
+         <tok val="curuum"/>
+         <tok val="curvom"/>
+         <tok val="curvum"/>
          <lm cert="0.5">
             <l>curvus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2430,8 +2898,11 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Curuum curuum curvum curvorum-->
-         <tok val="[cC]ur[v]?(or|u)?um"/>
+      <ana>
+         <tok val="Curuum"/>
+         <tok val="curuum"/>
+         <tok val="curvorum"/>
+         <tok val="curvum"/>
          <lm cert="0.5">
             <l>curvus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2442,8 +2913,13 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Curuum Curve curuum curve curvom curvum-->
-         <tok val="[cC]ur[uv]?(u|vo)?(m|ve)"/>
+      <ana>
+         <tok val="Curuum"/>
+         <tok val="Curve"/>
+         <tok val="curuum"/>
+         <tok val="curve"/>
+         <tok val="curvom"/>
+         <tok val="curvum"/>
          <lm cert="0.5">
             <l>curvum</l>
             <m>n - - s - - - n v</m>
@@ -2455,48 +2931,58 @@
       </ana>
       <ana>
          <tok val="Curuum"/>
+         <tok val="curuum"/>
          <lm>
             <l>curvus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Curuus Curvus-->
-         <tok val="Cur[vu]us"/>
+      <ana>
+         <tok val="Curuus"/>
+         <tok val="Curvus"/>
+         <tok val="curuus"/>
+         <tok val="curvus"/>
          <lm>
             <l>curvus</l>
-            <m>n - - s - - - m n</m>
+            <m cert="0.5">n - - s - - - m n</m>
+            <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Curuus Curvus curuus curvus-->
-         <tok val="[Cc]ur[vu]us"/>
-         <lm>
-            <l>curvus</l>
-            <m>a - - s - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--Curvam curuam curuamque curvam-->
-         <tok val="[cC]ur[vu]am(que)?"/>
+      <ana>
+         <tok val="Curvam"/>
+         <tok val="curuam"/>
+         <tok val="curuamque"/>
+         <tok val="curvam"/>
          <lm>
             <l>curvus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curvantur curuantur curvantur curvanturque-->
-         <tok val="[cC]ur[vu]antur(que)?"/>
+      <ana>
+         <tok val="Curvantur"/>
+         <tok val="curuantur"/>
+         <tok val="curvantur"/>
+         <tok val="curvanturque"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Curvat curuat curvat-->
-         <tok val="[cC]ur[vu]at"/>
+      <ana>
+         <tok val="Curvat"/>
+         <tok val="curuat"/>
+         <tok val="curvat"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Curvatis curuatis curuatisque curvatis curvatisque-->
-         <tok val="[cC]ur[vu]atis(que)?"/>
+      <ana>
+         <tok val="Curvatis"/>
+         <tok val="curuatis"/>
+         <tok val="curuatisque"/>
+         <tok val="curvatis"/>
+         <tok val="curvatisque"/>
          <lm>
             <l>curvo</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -2508,8 +2994,10 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Curvato curuato curvato-->
-         <tok val="[cC]ur[vu]ato"/>
+      <ana>
+         <tok val="Curvato"/>
+         <tok val="curuato"/>
+         <tok val="curvato"/>
          <lm>
             <l>curvo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -2520,8 +3008,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Curvatura curvatura-->
-         <tok val="[cC]urvatura"/>
+      <ana>
+         <tok val="Curvatura"/>
+         <tok val="curvatura"/>
          <lm cert="0.5">
             <l>curvo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -2538,8 +3027,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Curvaturas curvaturas-->
-         <tok val="[cC]urvaturas"/>
+      <ana>
+         <tok val="Curvaturas"/>
+         <tok val="curvaturas"/>
          <lm cert="0.5">
             <l>curvo</l>
             <m>v - - p f p a f a</m>
@@ -2549,26 +3039,24 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Curvavere curuauere curvaverunt-->
-         <tok val="[cC]ur[vu]a[vu]er(unt|e)"/>
+      <ana>
+         <tok val="Curvavere"/>
+         <tok val="curuauere"/>
+         <tok val="curvavere"/>
+         <tok val="curvaverunt"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Curve curve-->
-         <tok val="[cC]urve"/>
-         <lm>
-            <l>curvus</l>
-            <m cert="0.5">d</m>
-            <m cert="0.5">a - - s - - - m v</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Curve"/>
+         <tok val="curve"/>
          <lm>
             <l>curvus</l>
-            <m>n - - s - - - m v</m>
+            <m cert="0.333333333333333333">d</m>
+            <m cert="0.333333333333333333">n - - s - - - m v</m>
+            <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
       <ana>
@@ -2671,8 +3159,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--curanda curandaue-->
-         <tok val="curanda(ue)?"/>
+      <ana>
+         <tok val="curanda"/>
+         <tok val="curandaue"/>
          <lm>
             <l>curo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -2714,8 +3203,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--curandi curandiue-->
-         <tok val="curandi(ue)?"/>
+      <ana>
+         <tok val="curandi"/>
+         <tok val="curandiue"/>
          <lm cert="0.5">
             <l>curandus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2748,8 +3238,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--curandos curandosque-->
-         <tok val="curandos(que)?"/>
+      <ana>
+         <tok val="curandos"/>
+         <tok val="curandosque"/>
          <lm cert="0.5">
             <l>curo</l>
             <m>v - - p p g p m a</m>
@@ -2770,8 +3261,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--curans curansque-->
-         <tok val="curans(que)?"/>
+      <ana>
+         <tok val="curans"/>
+         <tok val="curansque"/>
          <lm>
             <l>curo</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -2790,8 +3282,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--curante curanti-->
-         <tok val="curant[ie]"/>
+      <ana>
+         <tok val="curante"/>
+         <tok val="curanti"/>
          <lm>
             <l>curo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2834,15 +3327,19 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--curarant curauerant curaverant-->
-         <tok val="cura[vu]?(e|)rant"/>
+      <ana>
+         <tok val="curarant"/>
+         <tok val="curauerant"/>
+         <tok val="curaverant"/>
          <lm>
             <l>curo</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--curarat curauerat curaverat-->
-         <tok val="cura[vu]?(e|)rat"/>
+      <ana>
+         <tok val="curarat"/>
+         <tok val="curauerat"/>
+         <tok val="curaverat"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s l i a</m>
@@ -2883,8 +3380,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--curaret curaretque-->
-         <tok val="curaret(que)?"/>
+      <ana>
+         <tok val="curaret"/>
+         <tok val="curaretque"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s i s a</m>
@@ -2897,36 +3395,48 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--curarint curauerint curaverint-->
-         <tok val="cura[vu]?(e|)rint"/>
+      <ana>
+         <tok val="curarint"/>
+         <tok val="curauerint"/>
+         <tok val="curaverint"/>
          <lm>
             <l>curo</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--curaris curaueris curaveris-->
-         <tok val="cura[vu]?(e|)ris"/>
+      <ana>
+         <tok val="curaris"/>
+         <tok val="curaueris"/>
+         <tok val="curaveris"/>
          <lm>
             <l>curo</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--curarit curauerit curaverit-->
-         <tok val="cura[vu]?(e|)rit"/>
+      <ana>
+         <tok val="curarit"/>
+         <tok val="curauerit"/>
+         <tok val="curaverit"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--curarunt curauere curauerunt curavere curaverunt-->
-         <tok val="cura[vu]?(e|ve|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="curarunt"/>
+         <tok val="curauere"/>
+         <tok val="curauerunt"/>
+         <tok val="curavere"/>
+         <tok val="curaverunt"/>
          <lm>
             <l>curo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--curasse curauisse curavisse-->
-         <tok val="cura[vu]?(i|)sse"/>
+      <ana>
+         <tok val="curasse"/>
+         <tok val="curauisse"/>
+         <tok val="curavisse"/>
          <lm>
             <l>curo</l>
             <m>v - - - r n a</m>
@@ -2946,8 +3456,9 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--curasset curavisset-->
-         <tok val="cura(vi)?sset"/>
+      <ana>
+         <tok val="curasset"/>
+         <tok val="curavisset"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s l s a</m>
@@ -2987,8 +3498,9 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--curationis curationisue-->
-         <tok val="curationis(ue)?"/>
+      <ana>
+         <tok val="curationis"/>
+         <tok val="curationisue"/>
          <lm>
             <l>curatio</l>
             <m>n - - s - - - f g</m>
@@ -3023,8 +3535,9 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--curatis Curatis-->
-         <tok val="[Cc]uratis"/>
+      <ana>
+         <tok val="Curatis"/>
+         <tok val="curatis"/>
          <lm>
             <l>curo</l>
             <m cert="0.142857142857142857">v - - p r p p f d</m>
@@ -3068,15 +3581,17 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--curatius curatiusque-->
-         <tok val="curatius(que)?"/>
+      <ana>
+         <tok val="curatius"/>
+         <tok val="curatiusque"/>
          <lm>
             <l>curo</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--curatoribus curatoribusque-->
-         <tok val="curatoribus(que)?"/>
+      <ana>
+         <tok val="curatoribus"/>
+         <tok val="curatoribusque"/>
          <lm>
             <l>curator</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -3223,37 +3738,45 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--curauerimus curaverimus-->
-         <tok val="cura[vu]erimus"/>
+      <ana>
+         <tok val="curauerimus"/>
+         <tok val="curaverimus"/>
          <lm>
             <l>curo</l>
             <m cert="0.5">v - 1 p t i a</m>
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--curauerint curaverint curassint-->
-         <tok val="cura[vu]?(er|ss)int"/>
+      <ana>
+         <tok val="curassint"/>
+         <tok val="curauerint"/>
+         <tok val="curaverint"/>
          <lm>
             <l>curo</l>
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--curaueris curaveris curassis cúrassis-->
-         <tok val="c[uú]ra[vu]?(er|ss)is"/>
+      <ana>
+         <tok val="curassis"/>
+         <tok val="curaueris"/>
+         <tok val="curaveris"/>
+         <tok val="cúrassis"/>
          <lm>
             <l>curo</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--curauerit curaverit-->
-         <tok val="cura[vu]erit"/>
+      <ana>
+         <tok val="curauerit"/>
+         <tok val="curaverit"/>
          <lm>
             <l>curo</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--curauimus curavimus-->
-         <tok val="cura[vu]imus"/>
+      <ana>
+         <tok val="curauimus"/>
+         <tok val="curavimus"/>
          <lm>
             <l>curo</l>
             <m>v - 1 p r i a</m>
@@ -3297,8 +3820,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--curem curemque-->
-         <tok val="curem(que)?"/>
+      <ana>
+         <tok val="curem"/>
+         <tok val="curemque"/>
          <lm>
             <l>curo</l>
             <m>v - 1 s p s a</m>
@@ -3404,8 +3928,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--curiatorum curiatum-->
-         <tok val="curiat(or)?um"/>
+      <ana>
+         <tok val="curiatorum"/>
+         <tok val="curiatum"/>
          <lm>
             <l>curiatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -3441,8 +3966,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--curiosa curiosaque-->
-         <tok val="curiosa(que)?"/>
+      <ana>
+         <tok val="curiosa"/>
+         <tok val="curiosaque"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -3477,8 +4003,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--curiosi curiosique-->
-         <tok val="curiosi(que)?"/>
+      <ana>
+         <tok val="curiosi"/>
+         <tok val="curiosique"/>
          <lm>
             <l>curiosus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -3542,15 +4069,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--curiosissime curiosissimus-->
-         <tok val="curiosissim(us|e)"/>
+      <ana>
+         <tok val="curiosissime"/>
+         <tok val="curiosissimus"/>
          <lm>
             <l>curiosus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--curiosissime curiosissimum-->
-         <tok val="curiosissim(um|e)"/>
+      <ana>
+         <tok val="curiosissime"/>
+         <tok val="curiosissimum"/>
          <lm>
             <l>curiosus</l>
             <m>a - - s - - - n v s</m>
@@ -3740,8 +4269,9 @@
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--currebatis Currebatis-->
-         <tok val="[Cc]urrebatis"/>
+      <ana>
+         <tok val="Currebatis"/>
+         <tok val="currebatis"/>
          <lm>
             <l>curro</l>
             <m>v - 2 p i i a</m>
@@ -3797,16 +4327,19 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--currentes currentis currentisque-->
-         <tok val="current[ie]s(que)?"/>
+      <ana>
+         <tok val="currentes"/>
+         <tok val="currentis"/>
+         <tok val="currentisque"/>
          <lm>
             <l>curro</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--currentis currentisque-->
-         <tok val="currentis(que)?"/>
+      <ana>
+         <tok val="currentis"/>
+         <tok val="currentisque"/>
          <lm>
             <l>curro</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -3888,8 +4421,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--curriculis curriculisque-->
-         <tok val="curriculis(que)?"/>
+      <ana>
+         <tok val="curriculis"/>
+         <tok val="curriculisque"/>
          <lm>
             <l>curriculum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -3944,8 +4478,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--currules currulis-->
-         <tok val="currul[ie]s"/>
+      <ana>
+         <tok val="currules"/>
+         <tok val="currulis"/>
          <lm>
             <l>currulis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -4049,8 +4584,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--cursant cursantque-->
-         <tok val="cursant(que)?"/>
+      <ana>
+         <tok val="cursant"/>
+         <tok val="cursantque"/>
          <lm>
             <l>curso</l>
             <m>v - 3 p p i a</m>
@@ -4064,8 +4600,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--cursantes cursantesque-->
-         <tok val="cursantes(que)?"/>
+      <ana>
+         <tok val="cursantes"/>
+         <tok val="cursantesque"/>
          <lm>
             <l>curso</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -4542,16 +5079,18 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--curtaueris curtaveris-->
-         <tok val="curta[vu]eris"/>
+      <ana>
+         <tok val="curtaueris"/>
+         <tok val="curtaveris"/>
          <lm>
             <l>curto</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--curte curtius-->
-         <tok val="curt(ius|e)"/>
+      <ana>
+         <tok val="curte"/>
+         <tok val="curtius"/>
          <lm>
             <l>curtus</l>
             <m>d</m>
@@ -4578,15 +5117,17 @@
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--curuabit curvabit-->
-         <tok val="cur[vu]abit"/>
+      <ana>
+         <tok val="curuabit"/>
+         <tok val="curvabit"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--curuabitur curvabitur-->
-         <tok val="cur[vu]abitur"/>
+      <ana>
+         <tok val="curuabitur"/>
+         <tok val="curvabitur"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 s f i p</m>
@@ -4605,15 +5146,17 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--curuant curvant-->
-         <tok val="cur[vu]ant"/>
+      <ana>
+         <tok val="curuant"/>
+         <tok val="curvant"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--curuantem curvantem-->
-         <tok val="cur[vu]antem"/>
+      <ana>
+         <tok val="curuantem"/>
+         <tok val="curvantem"/>
          <lm>
             <l>curvo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -4627,8 +5170,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--curuatur curvatur-->
-         <tok val="cur[vu]atur"/>
+      <ana>
+         <tok val="curuatur"/>
+         <tok val="curvatur"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 s p i p</m>
@@ -4649,29 +5193,34 @@
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--curuentur curventur-->
-         <tok val="cur[vu]entur"/>
+      <ana>
+         <tok val="curuentur"/>
+         <tok val="curventur"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--curuet curvet-->
-         <tok val="cur[vu]et"/>
+      <ana>
+         <tok val="curuet"/>
+         <tok val="curvet"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--curuetur curueturque curvetur-->
-         <tok val="cur[vu]etur(que)?"/>
+      <ana>
+         <tok val="curuetur"/>
+         <tok val="curueturque"/>
+         <tok val="curvetur"/>
          <lm>
             <l>curvo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--curuior curvior-->
-         <tok val="cur[vu]ior"/>
+      <ana>
+         <tok val="curuior"/>
+         <tok val="curvior"/>
          <lm>
             <l>curvus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -4697,24 +5246,29 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--curulem curulemque currulem-->
-         <tok val="cu[r]?rulem(que)?"/>
+      <ana>
+         <tok val="currulem"/>
+         <tok val="curulem"/>
+         <tok val="curulemque"/>
          <lm>
             <l>curulis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--curulem curulemque-->
-         <tok val="curulem(que)?"/>
+      <ana>
+         <tok val="curulem"/>
+         <tok val="curulemque"/>
          <lm>
             <l>curulis</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--curulium curuliumque Curulium-->
-         <tok val="[Cc]urulium(que)?"/>
+      <ana>
+         <tok val="Curulium"/>
+         <tok val="curulium"/>
+         <tok val="curuliumque"/>
          <lm>
             <l>curulis</l>
             <m cert="0.2">n - - p - - - m g</m>
@@ -4724,8 +5278,11 @@
             <m cert="0.2">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--curuos curuosque curvos curvosque-->
-         <tok val="cur[vu]os(que)?"/>
+      <ana>
+         <tok val="curuos"/>
+         <tok val="curuosque"/>
+         <tok val="curvos"/>
+         <tok val="curvosque"/>
          <lm>
             <l>curvus</l>
             <m>a - - p - - - m a</m>
@@ -4810,8 +5367,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--curvantis curvantes-->
-         <tok val="curvant[ei]s"/>
+      <ana>
+         <tok val="curvantes"/>
+         <tok val="curvantis"/>
          <lm>
             <l>curvo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -4832,8 +5390,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--curvata curvataque-->
-         <tok val="curvata(que)?"/>
+      <ana>
+         <tok val="curvata"/>
+         <tok val="curvataque"/>
          <lm>
             <l>curvo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -4861,8 +5420,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--curvatas Curvatas-->
-         <tok val="[Cc]urvatas"/>
+      <ana>
+         <tok val="Curvatas"/>
+         <tok val="curvatas"/>
          <lm>
             <l>curvo</l>
             <m>v - - p r p p f a</m>
@@ -4876,8 +5436,10 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--curvate curvatum curvatumque-->
-         <tok val="curvat(um)?(que|e)?"/>
+      <ana>
+         <tok val="curvate"/>
+         <tok val="curvatum"/>
+         <tok val="curvatumque"/>
          <lm>
             <l>curvo</l>
             <m>v - - s r p p n v</m>
@@ -4908,8 +5470,10 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--curvatorum curvatum curvatumque-->
-         <tok val="curvat(or)?um(que)?"/>
+      <ana>
+         <tok val="curvatorum"/>
+         <tok val="curvatum"/>
+         <tok val="curvatumque"/>
          <lm>
             <l>curvo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -4937,8 +5501,9 @@
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--curvatum curvatumque-->
-         <tok val="curvatum(que)?"/>
+      <ana>
+         <tok val="curvatum"/>
+         <tok val="curvatumque"/>
          <lm>
             <l>curvo</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -4963,8 +5528,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--curvaturam curvaturamque-->
-         <tok val="curvaturam(que)?"/>
+      <ana>
+         <tok val="curvaturam"/>
+         <tok val="curvaturamque"/>
          <lm cert="0.5">
             <l>curvo</l>
             <m>v - - s f p a f a</m>
@@ -4974,8 +5540,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--curvatus curvatusque-->
-         <tok val="curvatus(que)?"/>
+      <ana>
+         <tok val="curvatus"/>
+         <tok val="curvatusque"/>
          <lm>
             <l>curvo</l>
             <m>v - - s r p p m n</m>

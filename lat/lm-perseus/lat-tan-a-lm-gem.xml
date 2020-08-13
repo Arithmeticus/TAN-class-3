@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusgem">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:gem">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to gem</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-gem.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>GEM</tok-starts-with>
       <tok-starts-with>Gem</tok-starts-with>
       <tok-starts-with>gem</tok-starts-with>
       <tok-starts-with>gém</tok-starts-with>
-      <ana><!--GEMINO Gemino gemino geminoque-->
-         <tok val="[gG]?(emino)?(que|GEMINO)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:25:32.114-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:25:32.114-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-gem.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="GEMINO"/>
+         <tok val="Gemino"/>
+         <tok val="gemino"/>
+         <tok val="geminoque"/>
          <lm cert="0.5">
             <l>geminus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -50,8 +61,12 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--GEMINOS Geminos Geminosque geminos geminosque-->
-         <tok val="[gG]?(eminos)?(que|GEMINOS)?"/>
+      <ana>
+         <tok val="GEMINOS"/>
+         <tok val="Geminos"/>
+         <tok val="Geminosque"/>
+         <tok val="geminos"/>
+         <tok val="geminosque"/>
          <lm cert="0.5">
             <l>geminus</l>
             <m>a - - p - - - m a</m>
@@ -61,15 +76,25 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--GEMINVS Geminus geminus geminusque geminust-->
-         <tok val="[gG]?(eminus)?(t|que|GEMINVS)?"/>
+      <ana>
+         <tok val="GEMINVS"/>
+         <tok val="Geminus"/>
+         <tok val="geminus"/>
+         <tok val="geminusque"/>
+         <tok val="geminust"/>
+         <tok val="geminvs"/>
          <lm>
             <l>geminus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--GEMMA Gemma Gemmaque gemma gemmane gemmaque-->
-         <tok val="[gG]?(emma)?(qu|n)?(e|GEMMA)?"/>
+      <ana>
+         <tok val="GEMMA"/>
+         <tok val="Gemma"/>
+         <tok val="Gemmaque"/>
+         <tok val="gemma"/>
+         <tok val="gemmane"/>
+         <tok val="gemmaque"/>
          <lm cert="0.5">
             <l>gemma</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -81,29 +106,34 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--GEMO Gemo gemo-->
-         <tok val="[gG]?(emo|GEMO)"/>
+      <ana>
+         <tok val="GEMO"/>
+         <tok val="Gemo"/>
+         <tok val="gemo"/>
          <lm>
             <l>gemo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gemebant gemebant-->
-         <tok val="[gG]emebant"/>
+      <ana>
+         <tok val="Gemebant"/>
+         <tok val="gemebant"/>
          <lm>
             <l>gemo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Gemebundus gemebundus-->
-         <tok val="[gG]emebundus"/>
+      <ana>
+         <tok val="Gemebundus"/>
+         <tok val="gemebundus"/>
          <lm>
             <l>gemebundus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gemella gemella-->
-         <tok val="[gG]emella"/>
+      <ana>
+         <tok val="Gemella"/>
+         <tok val="gemella"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -114,8 +144,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Gemellae gemellae-->
-         <tok val="[gG]emellae"/>
+      <ana>
+         <tok val="Gemellae"/>
+         <tok val="gemellae"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -124,22 +155,26 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Gemellam gemellam-->
-         <tok val="[gG]emellam"/>
+      <ana>
+         <tok val="Gemellam"/>
+         <tok val="gemellam"/>
          <lm>
             <l>gemellus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gemellar gemellar gemellarn-->
-         <tok val="[gG]emellar[n]?"/>
+      <ana>
+         <tok val="Gemellar"/>
+         <tok val="gemellar"/>
+         <tok val="gemellarn"/>
          <lm>
             <l>gemellar</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Gemellaria gemellaria-->
-         <tok val="[gG]emellaria"/>
+      <ana>
+         <tok val="Gemellaria"/>
+         <tok val="gemellaria"/>
          <lm cert="0.5">
             <l>gemellaria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -153,8 +188,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Gemelle gemelle-->
-         <tok val="[gG]emelle"/>
+      <ana>
+         <tok val="Gemelle"/>
+         <tok val="gemelle"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.333333333333333333">d</m>
@@ -162,15 +198,18 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Gemelle gemelle gemellum-->
-         <tok val="[gG]emell(e|um)"/>
+      <ana>
+         <tok val="Gemelle"/>
+         <tok val="gemelle"/>
+         <tok val="gemellum"/>
          <lm>
             <l>gemellus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Gemelli gemelli-->
-         <tok val="[gG]emelli"/>
+      <ana>
+         <tok val="Gemelli"/>
+         <tok val="gemelli"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -182,8 +221,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Gemellipara gemellipara-->
-         <tok val="[gG]emellipara"/>
+      <ana>
+         <tok val="Gemellipara"/>
+         <tok val="gemellipara"/>
          <lm>
             <l>gemellipara</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -191,8 +231,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Gemellis gemellis-->
-         <tok val="[gG]emellis"/>
+      <ana>
+         <tok val="Gemellis"/>
+         <tok val="gemellis"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -205,8 +246,10 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Gemellorum gemellorum gemellum-->
-         <tok val="[gG]emell(or|)um"/>
+      <ana>
+         <tok val="Gemellorum"/>
+         <tok val="gemellorum"/>
+         <tok val="gemellum"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -214,24 +257,28 @@
             <m cert="0.333333333333333333">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Gemellos gemellos-->
-         <tok val="[gG]emellos"/>
+      <ana>
+         <tok val="Gemellos"/>
+         <tok val="gemellos"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Gemellus gemellus-->
-         <tok val="[gG]emellus"/>
+      <ana>
+         <tok val="Gemellus"/>
+         <tok val="gemellus"/>
          <lm>
             <l>gemellus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gemens gemens gemensque-->
-         <tok val="[gG]emens(que)?"/>
+      <ana>
+         <tok val="Gemens"/>
+         <tok val="gemens"/>
+         <tok val="gemensque"/>
          <lm>
             <l>gemo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -243,16 +290,18 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Gementem gementem-->
-         <tok val="[gG]ementem"/>
+      <ana>
+         <tok val="Gementem"/>
+         <tok val="gementem"/>
          <lm>
             <l>gemo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Gementibus gementibus-->
-         <tok val="[gG]ementibus"/>
+      <ana>
+         <tok val="Gementibus"/>
+         <tok val="gementibus"/>
          <lm>
             <l>gemo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -263,8 +312,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Gementis gementis-->
-         <tok val="[gG]ementis"/>
+      <ana>
+         <tok val="Gementis"/>
+         <tok val="gementis"/>
          <lm>
             <l>gemo</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -272,16 +322,19 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Gementis gementes gementis-->
-         <tok val="[gG]ement[ie]s"/>
+      <ana>
+         <tok val="Gementis"/>
+         <tok val="gementes"/>
+         <tok val="gementis"/>
          <lm>
             <l>gemo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Gemere gemere-->
-         <tok val="[gG]emere"/>
+      <ana>
+         <tok val="Gemere"/>
+         <tok val="gemere"/>
          <lm>
             <l>gemo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -290,36 +343,53 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Gemerent gemerent gemerentque-->
-         <tok val="[gG]emerent(que)?"/>
+      <ana>
+         <tok val="Gemerent"/>
+         <tok val="gemerent"/>
+         <tok val="gemerentque"/>
          <lm>
             <l>gemo</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Gemi Gemin gemi gemin-->
-         <tok val="[Gg]emi[n]?"/>
+      <ana>
+         <tok val="Gemi"/>
+         <tok val="Gemin"/>
+         <tok val="gemi"/>
+         <tok val="gemin"/>
          <lm>
             <l>gemo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Gemin Gemis gemin gemis-->
-         <tok val="[Gg]emi[sn]"/>
+      <ana>
+         <tok val="Gemin"/>
+         <tok val="Gemis"/>
+         <tok val="gemin"/>
+         <tok val="gemis"/>
          <lm>
             <l>gemo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gemina gemina geminan geminaque geminast gémina-->
-         <tok val="[gG]?(e|gé|ge)mina(n|st|que)?"/>
+      <ana>
+         <tok val="Gemina"/>
+         <tok val="gemina"/>
+         <tok val="geminan"/>
+         <tok val="geminaque"/>
+         <tok val="geminast"/>
+         <tok val="gémina"/>
          <lm>
             <l>geminus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Gemina gemina geminan geminaque geminast-->
-         <tok val="[gG]emina(n|st|que)?"/>
+      <ana>
+         <tok val="Gemina"/>
+         <tok val="gemina"/>
+         <tok val="geminan"/>
+         <tok val="geminaque"/>
+         <tok val="geminast"/>
          <lm cert="0.5">
             <l>geminus</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -333,15 +403,18 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Geminabit geminabit-->
-         <tok val="[gG]eminabit"/>
+      <ana>
+         <tok val="Geminabit"/>
+         <tok val="geminabit"/>
          <lm>
             <l>gemino</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Geminae geminae geminaeque-->
-         <tok val="[gG]eminae(que)?"/>
+      <ana>
+         <tok val="Geminae"/>
+         <tok val="geminae"/>
+         <tok val="geminaeque"/>
          <lm>
             <l>geminus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -350,15 +423,19 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Geminam geminam geminamque-->
-         <tok val="[gG]eminam(que)?"/>
+      <ana>
+         <tok val="Geminam"/>
+         <tok val="geminam"/>
+         <tok val="geminamque"/>
          <lm>
             <l>geminus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Geminare geminare geminareque-->
-         <tok val="[gG]eminare(que)?"/>
+      <ana>
+         <tok val="Geminare"/>
+         <tok val="geminare"/>
+         <tok val="geminareque"/>
          <lm>
             <l>gemino</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -366,8 +443,11 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Geminas geminan geminas geminasque-->
-         <tok val="[gG]emina(s|n|sque)"/>
+      <ana>
+         <tok val="Geminas"/>
+         <tok val="geminan"/>
+         <tok val="geminas"/>
+         <tok val="geminasque"/>
          <lm cert="0.5">
             <l>gemino</l>
             <m>v - 2 s p i a</m>
@@ -377,15 +457,19 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Geminat geminat geminatque-->
-         <tok val="[gG]eminat(que)?"/>
+      <ana>
+         <tok val="Geminat"/>
+         <tok val="geminat"/>
+         <tok val="geminatque"/>
          <lm>
             <l>gemino</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Geminata geminata geminataque-->
-         <tok val="[gG]eminata(que)?"/>
+      <ana>
+         <tok val="Geminata"/>
+         <tok val="geminata"/>
+         <tok val="geminataque"/>
          <lm>
             <l>gemino</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -396,16 +480,18 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Geminatio geminatio-->
-         <tok val="[gG]eminatio"/>
+      <ana>
+         <tok val="Geminatio"/>
+         <tok val="geminatio"/>
          <lm>
             <l>geminatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Geminato geminato-->
-         <tok val="[gG]eminato"/>
+      <ana>
+         <tok val="Geminato"/>
+         <tok val="geminato"/>
          <lm>
             <l>gemino</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -416,75 +502,87 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Geminatum geminatum-->
-         <tok val="[gG]eminatum"/>
+      <ana>
+         <tok val="Geminatum"/>
+         <tok val="geminatum"/>
          <lm>
             <l>gemino</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - s r p p n a</m>
-            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Geminatum geminate geminatum-->
-         <tok val="[gG]eminat(um|e)"/>
+      <ana>
+         <tok val="Geminatum"/>
+         <tok val="geminate"/>
+         <tok val="geminatum"/>
          <lm>
             <l>gemino</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Geminatum"/>
-         <lm>
-            <l>gemino</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Geminatur geminatur-->
-         <tok val="[gG]eminatur"/>
+         <tok val="Geminatur"/>
+         <tok val="geminatur"/>
          <lm>
             <l>gemino</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Geminatus geminatus geminatusque-->
-         <tok val="[gG]eminatus(que)?"/>
+      <ana>
+         <tok val="Geminatus"/>
+         <tok val="geminatus"/>
+         <tok val="geminatusque"/>
          <lm>
             <l>gemino</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Gemine gemine geminius-->
-         <tok val="[gG]emin(e|ius)"/>
+      <ana>
+         <tok val="Gemine"/>
+         <tok val="gemine"/>
+         <tok val="geminius"/>
          <lm>
             <l>geminus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Gemine Geminum gemine geminum geminumque-->
-         <tok val="[gG]emin(um|e|umque)"/>
+      <ana>
+         <tok val="Gemine"/>
+         <tok val="Geminum"/>
+         <tok val="gemine"/>
+         <tok val="geminum"/>
+         <tok val="geminumque"/>
          <lm>
             <l>geminus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Gemine gemine-->
-         <tok val="[gG]emine"/>
+      <ana>
+         <tok val="Gemine"/>
+         <tok val="gemine"/>
          <lm>
             <l>geminus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Geminentur geminentur-->
-         <tok val="[gG]eminentur"/>
+      <ana>
+         <tok val="Geminentur"/>
+         <tok val="geminentur"/>
          <lm>
             <l>gemino</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Gemini Geminique gemini geminique GEMINI-->
-         <tok val="[gG]?(emini)?(que|GEMINI)?"/>
+      <ana>
+         <tok val="GEMINI"/>
+         <tok val="Gemini"/>
+         <tok val="Geminique"/>
+         <tok val="gemini"/>
+         <tok val="geminique"/>
          <lm cert="0.5">
             <l>gemini</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -498,8 +596,11 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Geminis Geminisque geminis geminisque-->
-         <tok val="[gG]eminis(que)?"/>
+      <ana>
+         <tok val="Geminis"/>
+         <tok val="Geminisque"/>
+         <tok val="geminis"/>
+         <tok val="geminisque"/>
          <lm cert="0.5">
             <l>gemini</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -517,22 +618,21 @@
       </ana>
       <ana>
          <tok val="Geminius"/>
+         <tok val="geminius"/>
          <lm>
             <l>geminus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Geminius geminius-->
-         <tok val="[gG]eminius"/>
-         <lm>
-            <l>geminus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Geminorum Geminum geminorum geminum geminumque-->
-         <tok val="[gG]emin(or)?um(que)?"/>
+      <ana>
+         <tok val="Geminorum"/>
+         <tok val="Geminum"/>
+         <tok val="geminorum"/>
+         <tok val="geminum"/>
+         <tok val="geminumque"/>
          <lm cert="0.5">
             <l>gemini</l>
             <m>n - - p - - - m g</m>
@@ -543,8 +643,10 @@
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Geminum geminum geminumque-->
-         <tok val="[gG]eminum(que)?"/>
+      <ana>
+         <tok val="Geminum"/>
+         <tok val="geminum"/>
+         <tok val="geminumque"/>
          <lm>
             <l>geminus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -552,15 +654,18 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Gemisco gemisco-->
-         <tok val="[gG]emisco"/>
+      <ana>
+         <tok val="Gemisco"/>
+         <tok val="gemisco"/>
          <lm>
             <l>gemisco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gemit gemit gemitque-->
-         <tok val="[gG]emit(que)?"/>
+      <ana>
+         <tok val="Gemit"/>
+         <tok val="gemit"/>
+         <tok val="gemitque"/>
          <lm>
             <l>gemo</l>
             <m>v - 3 s p i a</m>
@@ -568,6 +673,7 @@
       </ana>
       <ana>
          <tok val="Gemite"/>
+         <tok val="gemite"/>
          <lm cert="0.5">
             <l>gemo</l>
             <m cert="0.5">v - 2 p p m a</m>
@@ -579,15 +685,21 @@
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Gemite Gemitum gemitum gemitumque-->
-         <tok val="[gG]emit(um)?(que|e)?"/>
+      <ana>
+         <tok val="Gemite"/>
+         <tok val="Gemitum"/>
+         <tok val="gemite"/>
+         <tok val="gemitum"/>
+         <tok val="gemitumque"/>
          <lm>
             <l>gemo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Gemitu gemitu gemituque-->
-         <tok val="[gG]emitu(que)?"/>
+      <ana>
+         <tok val="Gemitu"/>
+         <tok val="gemitu"/>
+         <tok val="gemituque"/>
          <lm cert="0.5">
             <l>gemitus</l>
             <m>n - - s - - - m b</m>
@@ -597,8 +709,10 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Gemitum gemitum gemitumque-->
-         <tok val="[gG]emitum(que)?"/>
+      <ana>
+         <tok val="Gemitum"/>
+         <tok val="gemitum"/>
+         <tok val="gemitumque"/>
          <lm cert="0.5">
             <l>gemo</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -614,20 +728,24 @@
       </ana>
       <ana>
          <tok val="Gemitum"/>
+         <tok val="gemitum"/>
          <lm>
             <l>gemo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Gemitur gemitur-->
-         <tok val="[gG]emitur"/>
+      <ana>
+         <tok val="Gemitur"/>
+         <tok val="gemitur"/>
          <lm>
             <l>gemo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Gemitus gemitus gemitusque-->
-         <tok val="[gG]emitus(que)?"/>
+      <ana>
+         <tok val="Gemitus"/>
+         <tok val="gemitus"/>
+         <tok val="gemitusque"/>
          <lm cert="0.5">
             <l>gemitus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -640,8 +758,10 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Gemmae gemmae gemmaeque-->
-         <tok val="[gG]emmae(que)?"/>
+      <ana>
+         <tok val="Gemmae"/>
+         <tok val="gemmae"/>
+         <tok val="gemmaeque"/>
          <lm>
             <l>gemma</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -650,15 +770,18 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Gemmam gemmam gemmamque-->
-         <tok val="[gG]emmam(que)?"/>
+      <ana>
+         <tok val="Gemmam"/>
+         <tok val="gemmam"/>
+         <tok val="gemmamque"/>
          <lm>
             <l>gemma</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gemmans gemmans-->
-         <tok val="[gG]emmans"/>
+      <ana>
+         <tok val="Gemmans"/>
+         <tok val="gemmans"/>
          <lm>
             <l>gemmo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -670,8 +793,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Gemmantes gemmantes-->
-         <tok val="[gG]emmantes"/>
+      <ana>
+         <tok val="Gemmantes"/>
+         <tok val="gemmantes"/>
          <lm>
             <l>gemmo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -680,16 +804,19 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Gemmantes gemmantes gemmantis-->
-         <tok val="[gG]emmant[ei]s"/>
+      <ana>
+         <tok val="Gemmantes"/>
+         <tok val="gemmantes"/>
+         <tok val="gemmantis"/>
          <lm>
             <l>gemmo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Gemmantia gemmantia-->
-         <tok val="[gG]emmantia"/>
+      <ana>
+         <tok val="Gemmantia"/>
+         <tok val="gemmantia"/>
          <lm>
             <l>gemmo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -697,23 +824,29 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Gemmarius gemmarius-->
-         <tok val="[gG]emmarius"/>
+      <ana>
+         <tok val="Gemmarius"/>
+         <tok val="gemmarius"/>
          <lm>
             <l>gemmarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gemmarum gemmarum gemmarumque-->
-         <tok val="[gG]emmarum(que)?"/>
+      <ana>
+         <tok val="Gemmarum"/>
+         <tok val="gemmarum"/>
+         <tok val="gemmarumque"/>
          <lm>
             <l>gemma</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Gemmas gemmas gemmasque gemmasve-->
-         <tok val="[gG]emmas(ve|que)?"/>
+      <ana>
+         <tok val="Gemmas"/>
+         <tok val="gemmas"/>
+         <tok val="gemmasque"/>
+         <tok val="gemmasve"/>
          <lm cert="0.5">
             <l>gemmo</l>
             <m>v - 2 s p i a</m>
@@ -723,15 +856,18 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gemmasco gemmasco-->
-         <tok val="[gG]emmasco"/>
+      <ana>
+         <tok val="Gemmasco"/>
+         <tok val="gemmasco"/>
          <lm>
             <l>gemmasco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gemmata gemmata gemmataque-->
-         <tok val="[gG]emmata(que)?"/>
+      <ana>
+         <tok val="Gemmata"/>
+         <tok val="gemmata"/>
+         <tok val="gemmataque"/>
          <lm cert="0.5">
             <l>gemmo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -751,8 +887,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Gemmati gemmati-->
-         <tok val="[gG]emmati"/>
+      <ana>
+         <tok val="Gemmati"/>
+         <tok val="gemmati"/>
          <lm cert="0.5">
             <l>gemmo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -770,6 +907,7 @@
       </ana>
       <ana>
          <tok val="Gemmatum"/>
+         <tok val="gemmatum"/>
          <lm cert="0.5">
             <l>gemmatus</l>
             <m cert="0.2">a - - p - - - n g</m>
@@ -789,8 +927,9 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Gemmatus gemmatus-->
-         <tok val="[gG]emmatus"/>
+      <ana>
+         <tok val="Gemmatus"/>
+         <tok val="gemmatus"/>
          <lm cert="0.5">
             <l>gemmatus</l>
             <m>a - - s - - - m n</m>
@@ -800,23 +939,26 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Gemmeus gemmeus-->
-         <tok val="[gG]emmeus"/>
+      <ana>
+         <tok val="Gemmeus"/>
+         <tok val="gemmeus"/>
          <lm>
             <l>gemmeus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gemmifer gemmifer-->
-         <tok val="[gG]emmifer"/>
+      <ana>
+         <tok val="Gemmifer"/>
+         <tok val="gemmifer"/>
          <lm>
             <l>gemmifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Gemmiferi gemmiferi-->
-         <tok val="[gG]emmiferi"/>
+      <ana>
+         <tok val="Gemmiferi"/>
+         <tok val="gemmiferi"/>
          <lm>
             <l>gemmifer</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -825,22 +967,25 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Gemmo gemmo-->
-         <tok val="[gG]emmo"/>
+      <ana>
+         <tok val="Gemmo"/>
+         <tok val="gemmo"/>
          <lm>
             <l>gemmo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gemmosus gemmosus-->
-         <tok val="[gG]emmosus"/>
+      <ana>
+         <tok val="Gemmosus"/>
+         <tok val="gemmosus"/>
          <lm>
             <l>gemmosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gemmula gemmula-->
-         <tok val="[gG]emmula"/>
+      <ana>
+         <tok val="Gemmula"/>
+         <tok val="gemmula"/>
          <lm>
             <l>gemmula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -848,8 +993,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Gemmulae gemmulae-->
-         <tok val="[gG]emmulae"/>
+      <ana>
+         <tok val="Gemmulae"/>
+         <tok val="gemmulae"/>
          <lm>
             <l>gemmula</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -860,6 +1006,7 @@
       </ana>
       <ana>
          <tok val="Gemoniae"/>
+         <tok val="gemoniae"/>
          <lm>
             <l>Gemoniae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -868,6 +1015,7 @@
       </ana>
       <ana>
          <tok val="Gemoniarum"/>
+         <tok val="gemoniarum"/>
          <lm>
             <l>Gemoniae</l>
             <m>n e - p - - - f g</m>
@@ -875,34 +1023,41 @@
       </ana>
       <ana>
          <tok val="Gemonias"/>
+         <tok val="gemonias"/>
          <lm>
             <l>Gemoniae</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gemuere gemuere gemuerunt-->
-         <tok val="[gG]emuer(e|unt)"/>
+      <ana>
+         <tok val="Gemuere"/>
+         <tok val="gemuere"/>
+         <tok val="gemuerunt"/>
          <lm>
             <l>gemo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Gemuit gemuit gemuitque-->
-         <tok val="[gG]emuit(que)?"/>
+      <ana>
+         <tok val="Gemuit"/>
+         <tok val="gemuit"/>
+         <tok val="gemuitque"/>
          <lm>
             <l>gemo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Gemunt gemunt-->
-         <tok val="[gG]emunt"/>
+      <ana>
+         <tok val="Gemunt"/>
+         <tok val="gemunt"/>
          <lm>
             <l>gemo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Gemursa gemursa-->
-         <tok val="[gG]emursa"/>
+      <ana>
+         <tok val="Gemursa"/>
+         <tok val="gemursa"/>
          <lm>
             <l>gemursa</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -939,8 +1094,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--geme gemen-->
-         <tok val="geme[n]?"/>
+      <ana>
+         <tok val="geme"/>
+         <tok val="gemen"/>
          <lm>
             <l>gemo</l>
             <m>v - 2 s p m a</m>
@@ -960,8 +1116,9 @@
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--gemebunda gemebundaque-->
-         <tok val="gemebunda(que)?"/>
+      <ana>
+         <tok val="gemebunda"/>
+         <tok val="gemebundaque"/>
          <lm>
             <l>gemebundus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1039,8 +1196,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--gemen gemes-->
-         <tok val="geme[sn]"/>
+      <ana>
+         <tok val="gemen"/>
+         <tok val="gemes"/>
          <lm>
             <l>gemo</l>
             <m>v - 2 s f i a</m>
@@ -1058,8 +1216,9 @@
             <m cert="0.166666666666666667">v - - p p g p n n</m>
          </lm>
       </ana>
-      <ana><!--gemendi gemendique-->
-         <tok val="gemendi(que)?"/>
+      <ana>
+         <tok val="gemendi"/>
+         <tok val="gemendique"/>
          <lm>
             <l>gemo</l>
             <m cert="0.25">v - - p p g p m v</m>
@@ -1102,8 +1261,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--gemente gementi-->
-         <tok val="gement[ie]"/>
+      <ana>
+         <tok val="gemente"/>
+         <tok val="gementi"/>
          <lm>
             <l>gemo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1248,8 +1408,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--geminant geminantque-->
-         <tok val="geminant(que)?"/>
+      <ana>
+         <tok val="geminant"/>
+         <tok val="geminantque"/>
          <lm>
             <l>gemino</l>
             <m>v - 3 p p i a</m>
@@ -1407,23 +1568,26 @@
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--geminauerat geminaverat-->
-         <tok val="gemina[vu]erat"/>
+      <ana>
+         <tok val="geminauerat"/>
+         <tok val="geminaverat"/>
          <lm>
             <l>gemino</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--geminauerit geminaverit-->
-         <tok val="gemina[vu]erit"/>
+      <ana>
+         <tok val="geminauerit"/>
+         <tok val="geminaverit"/>
          <lm>
             <l>gemino</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--geminauit geminavit-->
-         <tok val="gemina[vu]it"/>
+      <ana>
+         <tok val="geminauit"/>
+         <tok val="geminavit"/>
          <lm>
             <l>gemino</l>
             <m>v - 3 s r i a</m>
@@ -1472,8 +1636,9 @@
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--geminissimus geminissumus-->
-         <tok val="geminiss[ui]mus"/>
+      <ana>
+         <tok val="geminissimus"/>
+         <tok val="geminissumus"/>
          <lm>
             <l>geminus</l>
             <m>a - - s - - - m n s</m>
@@ -1545,8 +1710,9 @@
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--gemitibus gemitibusque-->
-         <tok val="gemitibus(que)?"/>
+      <ana>
+         <tok val="gemitibus"/>
+         <tok val="gemitibusque"/>
          <lm>
             <l>gemitus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -1567,15 +1733,17 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--gemitum gemitumque-->
-         <tok val="gemitum(que)?"/>
+      <ana>
+         <tok val="gemitum"/>
+         <tok val="gemitumque"/>
          <lm>
             <l>gemo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--gemmantem gemmantemque-->
-         <tok val="gemmantem(que)?"/>
+      <ana>
+         <tok val="gemmantem"/>
+         <tok val="gemmantemque"/>
          <lm>
             <l>gemmo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1740,8 +1908,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--gemmatas gemmatasque-->
-         <tok val="gemmatas(que)?"/>
+      <ana>
+         <tok val="gemmatas"/>
+         <tok val="gemmatasque"/>
          <lm cert="0.5">
             <l>gemmo</l>
             <m>v - - p r p p f a</m>
@@ -1751,8 +1920,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--gemmatis gemmatisque-->
-         <tok val="gemmatis(que)?"/>
+      <ana>
+         <tok val="gemmatis"/>
+         <tok val="gemmatisque"/>
          <lm cert="0.5">
             <l>gemmo</l>
             <m cert="0.142857142857142857">v - - p r p p n d</m>
@@ -1846,8 +2016,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--gemmei gemmeique-->
-         <tok val="gemmei(que)?"/>
+      <ana>
+         <tok val="gemmei"/>
+         <tok val="gemmeique"/>
          <lm>
             <l>gemmeus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1947,16 +2118,18 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--gemmis gemmisque-->
-         <tok val="gemmis(que)?"/>
+      <ana>
+         <tok val="gemmis"/>
+         <tok val="gemmisque"/>
          <lm>
             <l>gemma</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--gemmosis gemmosisque-->
-         <tok val="gemmosis(que)?"/>
+      <ana>
+         <tok val="gemmosis"/>
+         <tok val="gemmosisque"/>
          <lm>
             <l>gemmosus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>

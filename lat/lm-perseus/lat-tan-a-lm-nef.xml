@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusnef">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:nef">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to nef</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-nef.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>NEF</tok-starts-with>
       <tok-starts-with>Nef</tok-starts-with>
       <tok-starts-with>nef</tok-starts-with>
-      <ana><!--NEFASTA Nefasta nefasta-->
-         <tok val="[nN]?(efasta|NEFASTA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:35:02.702-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:35:02.702-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-nef.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="NEFASTA"/>
+         <tok val="Nefasta"/>
+         <tok val="nefasta"/>
          <lm cert="0.5">
             <l>nefastum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -53,15 +63,20 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--NEFASTVS Nefastus nefastus nefastust-->
-         <tok val="[nN]?(efastus)?(t|NEFASTVS)?"/>
+      <ana>
+         <tok val="NEFASTVS"/>
+         <tok val="Nefastus"/>
+         <tok val="nefastus"/>
+         <tok val="nefastust"/>
+         <tok val="nefastvs"/>
          <lm>
             <l>nefastus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nefanda nefanda-->
-         <tok val="[nN]efanda"/>
+      <ana>
+         <tok val="Nefanda"/>
+         <tok val="nefanda"/>
          <lm>
             <l>nefandus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -72,8 +87,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Nefandae nefandae-->
-         <tok val="[nN]efandae"/>
+      <ana>
+         <tok val="Nefandae"/>
+         <tok val="nefandae"/>
          <lm>
             <l>nefandus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -82,8 +98,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Nefandi nefandi-->
-         <tok val="[nN]efandi"/>
+      <ana>
+         <tok val="Nefandi"/>
+         <tok val="nefandi"/>
          <lm>
             <l>nefandus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -92,8 +109,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Nefandum nefandum-->
-         <tok val="[nN]efandum"/>
+      <ana>
+         <tok val="Nefandum"/>
+         <tok val="nefandum"/>
          <lm>
             <l>nefandus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -101,30 +119,37 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nefandum nefandorum nefandum-->
-         <tok val="[nN]efand(or)?um"/>
+      <ana>
+         <tok val="Nefandum"/>
+         <tok val="nefandorum"/>
+         <tok val="nefandum"/>
          <lm>
             <l>nefandus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Nefandum nefande nefandum-->
-         <tok val="[nN]efand(um|e)"/>
+      <ana>
+         <tok val="Nefandum"/>
+         <tok val="nefande"/>
+         <tok val="nefandum"/>
          <lm>
             <l>nefandus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Nefandus nefandus-->
-         <tok val="[nN]efandus"/>
+      <ana>
+         <tok val="Nefandus"/>
+         <tok val="nefandus"/>
          <lm>
             <l>nefandus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nefaria nefaria nefariaque-->
-         <tok val="[nN]efaria(que)?"/>
+      <ana>
+         <tok val="Nefaria"/>
+         <tok val="nefaria"/>
+         <tok val="nefariaque"/>
          <lm cert="0.5">
             <l>nefarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -141,15 +166,21 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Nefarias nefarias-->
-         <tok val="[nN]efarias"/>
+      <ana>
+         <tok val="Nefarias"/>
+         <tok val="nefarias"/>
          <lm>
             <l>nefarius</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Nefarie Nefarium nefarie nefarieque nefariom nefarium-->
-         <tok val="[nN]efari[uo]?(m|e|eque)"/>
+      <ana>
+         <tok val="Nefarie"/>
+         <tok val="Nefarium"/>
+         <tok val="nefarie"/>
+         <tok val="nefarieque"/>
+         <tok val="nefariom"/>
+         <tok val="nefarium"/>
          <lm cert="0.5">
             <l>nefarium</l>
             <m>n - - s - - - n v</m>
@@ -159,15 +190,19 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Nefarie nefarie nefarieque-->
-         <tok val="[nN]efarie(que)?"/>
+      <ana>
+         <tok val="Nefarie"/>
+         <tok val="nefarie"/>
+         <tok val="nefarieque"/>
          <lm>
             <l>nefarius</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Nefario nefario nefarioque-->
-         <tok val="[nN]efario(que)?"/>
+      <ana>
+         <tok val="Nefario"/>
+         <tok val="nefario"/>
+         <tok val="nefarioque"/>
          <lm cert="0.5">
             <l>nefarius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -181,8 +216,10 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Nefarium nefariom nefarium-->
-         <tok val="[nN]efari[uo]m"/>
+      <ana>
+         <tok val="Nefarium"/>
+         <tok val="nefariom"/>
+         <tok val="nefarium"/>
          <lm cert="0.5">
             <l>nefarius</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -195,8 +232,10 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Nefarium nefariorum nefarium-->
-         <tok val="[nN]efari(or)?um"/>
+      <ana>
+         <tok val="Nefarium"/>
+         <tok val="nefariorum"/>
+         <tok val="nefarium"/>
          <lm cert="0.5">
             <l>nefarius</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -207,22 +246,26 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Nefarius nefarius-->
-         <tok val="[nN]efarius"/>
+      <ana>
+         <tok val="Nefarius"/>
+         <tok val="nefarius"/>
          <lm>
             <l>nefarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nefas nefas nefasque-->
-         <tok val="[nN]efas(que)?"/>
+      <ana>
+         <tok val="Nefas"/>
+         <tok val="nefas"/>
+         <tok val="nefasque"/>
          <lm>
             <l>nefas</l>
             <m>n - - s - - - n</m>
          </lm>
       </ana>
-      <ana><!--Nefasti nefasti-->
-         <tok val="[nN]efasti"/>
+      <ana>
+         <tok val="Nefasti"/>
+         <tok val="nefasti"/>
          <lm cert="0.5">
             <l>nefastus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -235,8 +278,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Nefastis nefastis-->
-         <tok val="[nN]efastis"/>
+      <ana>
+         <tok val="Nefastis"/>
+         <tok val="nefastis"/>
          <lm cert="0.5">
             <l>nefastus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -252,8 +296,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Nefasto nefasto-->
-         <tok val="[nN]efasto"/>
+      <ana>
+         <tok val="Nefasto"/>
+         <tok val="nefasto"/>
          <lm cert="0.5">
             <l>nefastus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -267,15 +312,18 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Nefastos nefastos nefastosque-->
-         <tok val="[nN]efastos(que)?"/>
+      <ana>
+         <tok val="Nefastos"/>
+         <tok val="nefastos"/>
+         <tok val="nefastosque"/>
          <lm>
             <l>nefastus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nefastum nefastum-->
-         <tok val="[nN]efastum"/>
+      <ana>
+         <tok val="Nefastum"/>
+         <tok val="nefastum"/>
          <lm cert="0.5">
             <l>nefastus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -322,8 +370,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--nefandis nefandisque-->
-         <tok val="nefandis(que)?"/>
+      <ana>
+         <tok val="nefandis"/>
+         <tok val="nefandisque"/>
          <lm>
             <l>nefandus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -353,15 +402,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--nefandissime nefandissimus-->
-         <tok val="nefandissim(us|e)"/>
+      <ana>
+         <tok val="nefandissime"/>
+         <tok val="nefandissimus"/>
          <lm>
             <l>nefandus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--nefandissime nefandissimum-->
-         <tok val="nefandissim(um|e)"/>
+      <ana>
+         <tok val="nefandissime"/>
+         <tok val="nefandissimum"/>
          <lm>
             <l>nefandus</l>
             <m>a - - s - - - n v s</m>
@@ -385,8 +436,9 @@
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--nefando nefandoque-->
-         <tok val="nefando(que)?"/>
+      <ana>
+         <tok val="nefando"/>
+         <tok val="nefandoque"/>
          <lm>
             <l>nefandus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -402,8 +454,10 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--nefari nefarii nefariique-->
-         <tok val="nefari(i|ique)?"/>
+      <ana>
+         <tok val="nefari"/>
+         <tok val="nefarii"/>
+         <tok val="nefariique"/>
          <lm cert="0.5">
             <l>nefarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -414,8 +468,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--nefariae nefariaeque-->
-         <tok val="nefariae(que)?"/>
+      <ana>
+         <tok val="nefariae"/>
+         <tok val="nefariaeque"/>
          <lm>
             <l>nefarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -438,16 +493,18 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--nefarii nefariique-->
-         <tok val="nefarii(que)?"/>
+      <ana>
+         <tok val="nefarii"/>
+         <tok val="nefariique"/>
          <lm>
             <l>nefarius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--nefariis nefariisque-->
-         <tok val="nefariis(que)?"/>
+      <ana>
+         <tok val="nefariis"/>
+         <tok val="nefariisque"/>
          <lm cert="0.5">
             <l>nefarius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>

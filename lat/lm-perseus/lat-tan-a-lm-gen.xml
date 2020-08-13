@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusgen">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:gen">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to gen</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-gen.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>GEN</tok-starts-with>
       <tok-starts-with>Gen</tok-starts-with>
       <tok-starts-with>gen</tok-starts-with>
       <tok-starts-with>gén</tok-starts-with>
-      <ana><!--GENEALOGIA Genealogia genealogia-->
-         <tok val="[gG]?(enealogia|GENEALOGIA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:25:33.844-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:25:33.844-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-gen.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="GENEALOGIA"/>
+         <tok val="Genealogia"/>
+         <tok val="genealogia"/>
          <lm>
             <l>genealogia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -45,22 +55,35 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--GENER Gener gener generque-->
-         <tok val="[gG]?(ener)?(que|GENER)?"/>
+      <ana>
+         <tok val="GENER"/>
+         <tok val="Gener"/>
+         <tok val="gener"/>
+         <tok val="generque"/>
          <lm>
             <l>gener</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--GENER GENERE Gener Genere gener genere generest generque genre-->
-         <tok val="[G]?(ENER)?(E|enere|ener|genere|gener|genre|generest|generque)?"/>
+      <ana>
+         <tok val="GENER"/>
+         <tok val="GENERE"/>
+         <tok val="Gener"/>
+         <tok val="Genere"/>
+         <tok val="gener"/>
+         <tok val="genere"/>
+         <tok val="generest"/>
+         <tok val="generque"/>
+         <tok val="genre"/>
          <lm>
             <l>gener</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--GENERALE Generale generale-->
-         <tok val="[gG]?(enerale|GENERALE)"/>
+      <ana>
+         <tok val="GENERALE"/>
+         <tok val="Generale"/>
+         <tok val="generale"/>
          <lm>
             <l>generalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -68,8 +91,10 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--GENERALI Generali generali-->
-         <tok val="[gG]?(enerali|GENERALI)"/>
+      <ana>
+         <tok val="GENERALI"/>
+         <tok val="Generali"/>
+         <tok val="generali"/>
          <lm>
             <l>generalis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -80,8 +105,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--GENERALIA Generalia generalia-->
-         <tok val="[gG]?(eneralia|GENERALIA)"/>
+      <ana>
+         <tok val="GENERALIA"/>
+         <tok val="Generalia"/>
+         <tok val="generalia"/>
          <lm>
             <l>generalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -89,8 +116,10 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--GENERALIS Generalis generalis-->
-         <tok val="[gG]?(eneralis|GENERALIS)"/>
+      <ana>
+         <tok val="GENERALIS"/>
+         <tok val="Generalis"/>
+         <tok val="generalis"/>
          <lm>
             <l>generalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -102,31 +131,46 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--GENERALIS Generalis generales generalis-->
-         <tok val="[gG]?(eneral)?[ie]?(s|GENERALIS)"/>
+      <ana>
+         <tok val="GENERALIS"/>
+         <tok val="Generalis"/>
+         <tok val="generales"/>
+         <tok val="generalis"/>
          <lm>
             <l>generalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--GENERE Genere genere generest génere-->
-         <tok val="[gG]?(e|gé)?(nere)?(st|GENERE)?"/>
+      <ana>
+         <tok val="GENERE"/>
+         <tok val="Genere"/>
+         <tok val="genere"/>
+         <tok val="generest"/>
+         <tok val="génere"/>
          <lm>
             <l>genus</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--GENERIBVS Generibus generibus generibusque-->
-         <tok val="[gG]?(eneribus)?(que|GENERIBVS)?"/>
+      <ana>
+         <tok val="GENERIBVS"/>
+         <tok val="Generibus"/>
+         <tok val="generibus"/>
+         <tok val="generibusque"/>
+         <tok val="generibvs"/>
          <lm>
             <l>genus</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--GENERIS Generis generis generisque generisue-->
-         <tok val="[gG]?(eneris)?[q]?(ue|GENERIS)?"/>
+      <ana>
+         <tok val="GENERIS"/>
+         <tok val="Generis"/>
+         <tok val="generis"/>
+         <tok val="generisque"/>
+         <tok val="generisue"/>
          <lm cert="0.5">
             <l>gener</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -137,8 +181,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--GENEROSO Generoso generoso-->
-         <tok val="[gG]?(eneroso|GENEROSO)"/>
+      <ana>
+         <tok val="GENEROSO"/>
+         <tok val="Generoso"/>
+         <tok val="generoso"/>
          <lm>
             <l>generosus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -147,8 +193,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--GENIALI Geniali geniali-->
-         <tok val="[gG]?(eniali|GENIALI)"/>
+      <ana>
+         <tok val="GENIALI"/>
+         <tok val="Geniali"/>
+         <tok val="geniali"/>
          <lm>
             <l>genialis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -159,16 +207,23 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--GENIO Genio Genioque genio genioque-->
-         <tok val="[gG]?(enio)?(que|GENIO)?"/>
+      <ana>
+         <tok val="GENIO"/>
+         <tok val="Genio"/>
+         <tok val="Genioque"/>
+         <tok val="genio"/>
+         <tok val="genioque"/>
          <lm>
             <l>genius</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--GENITI Geniti geniti genitique-->
-         <tok val="[gG]?(eniti)?(que|GENITI)?"/>
+      <ana>
+         <tok val="GENITI"/>
+         <tok val="Geniti"/>
+         <tok val="geniti"/>
+         <tok val="genitique"/>
          <lm>
             <l>gigno</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -177,37 +232,61 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--GENITORI genitori-->
-         <tok val="(genitori|GENITORI)"/>
+      <ana>
+         <tok val="GENITORI"/>
+         <tok val="genitori"/>
          <lm>
             <l>genitor</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--GENIUS Genius genius geniusque geniusve-->
-         <tok val="[gG]?(enius)?(ve|que|GENIUS)?"/>
+      <ana>
+         <tok val="GENIUS"/>
+         <tok val="Genius"/>
+         <tok val="genius"/>
+         <tok val="geniusque"/>
+         <tok val="geniusve"/>
          <lm>
             <l>genius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--GENTES Gentes Gentesne gentes gentesne gentesque-->
-         <tok val="[gG]?(entes)?(ne|que|GENTES)?"/>
+      <ana>
+         <tok val="GENTES"/>
+         <tok val="Gentes"/>
+         <tok val="Gentesne"/>
+         <tok val="gentes"/>
+         <tok val="gentesne"/>
+         <tok val="gentesque"/>
          <lm>
             <l>gens</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--GENTES Gentes Gentesne Gentis Gentisque gentes gentesne gentesque gentis gentisne gentisque gentisue-->
-         <tok val="[gG]?(ent)?[ie]?[s]?[q]?(u|isn)?[e]?(sne|s|is|GENTES)?"/>
+      <ana>
+         <tok val="GENTES"/>
+         <tok val="Gentes"/>
+         <tok val="Gentesne"/>
+         <tok val="Gentis"/>
+         <tok val="Gentisque"/>
+         <tok val="gentes"/>
+         <tok val="gentesne"/>
+         <tok val="gentesque"/>
+         <tok val="gentis"/>
+         <tok val="gentisne"/>
+         <tok val="gentisque"/>
+         <tok val="gentisue"/>
          <lm>
             <l>gens</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--GENTILIS Gentilis gentilis gentilisque-->
-         <tok val="[gG]?(entilis)?(que|GENTILIS)?"/>
+      <ana>
+         <tok val="GENTILIS"/>
+         <tok val="Gentilis"/>
+         <tok val="gentilis"/>
+         <tok val="gentilisque"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.1">n - - s - - - f n</m>
@@ -222,22 +301,35 @@
             <m cert="0.1">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--GENTILIS Gentilis-->
-         <tok val="G(entilis|ENTILIS)"/>
+      <ana>
+         <tok val="GENTILIS"/>
+         <tok val="Gentilis"/>
+         <tok val="gentilis"/>
          <lm>
             <l>gentilis</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--GENTILIS Gentiles Gentilis gentilis gentilisque-->
-         <tok val="[Gg]?(entil)?[ie]?[s]?(que|GENTILIS)?"/>
+      <ana>
+         <tok val="GENTILIS"/>
+         <tok val="Gentiles"/>
+         <tok val="Gentilis"/>
+         <tok val="gentiles"/>
+         <tok val="gentilis"/>
+         <tok val="gentilisque"/>
          <lm>
             <l>gentilis</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--GENTILIS Gentiles Gentilis gentiles gentilesque gentilis gentilisque-->
-         <tok val="[gG]?(entil)?[ie]?[s]?(que|GENTILIS)?"/>
+      <ana>
+         <tok val="GENTILIS"/>
+         <tok val="Gentiles"/>
+         <tok val="Gentilis"/>
+         <tok val="gentiles"/>
+         <tok val="gentilesque"/>
+         <tok val="gentilis"/>
+         <tok val="gentilisque"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.333333333333333333">n - - p - - - f a</m>
@@ -245,15 +337,29 @@
             <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--GENTIVM Gentium Gentiumque gentium gentiumque gentiumst gentum-->
-         <tok val="[gG]?(ent)?[i]?(um)?(que|st|GENTIVM)?"/>
+      <ana>
+         <tok val="GENTIVM"/>
+         <tok val="Gentium"/>
+         <tok val="Gentiumque"/>
+         <tok val="gentium"/>
+         <tok val="gentiumque"/>
+         <tok val="gentiumst"/>
+         <tok val="gentivm"/>
+         <tok val="gentum"/>
          <lm>
             <l>gens</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--GENUS GENVS Genus Genusque genus genusque genusve-->
-         <tok val="[gG]?(enus)?(qu|v)?(e|GENVS|GENUS|Genus)?"/>
+      <ana>
+         <tok val="GENUS"/>
+         <tok val="GENVS"/>
+         <tok val="Genus"/>
+         <tok val="Genusque"/>
+         <tok val="genus"/>
+         <tok val="genusque"/>
+         <tok val="genusve"/>
+         <tok val="genvs"/>
          <lm cert="0.5">
             <l>genus</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -265,8 +371,11 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Gena Genaven gena-->
-         <tok val="[gG]ena(ven)?"/>
+      <ana>
+         <tok val="Gena"/>
+         <tok val="Genaven"/>
+         <tok val="gena"/>
+         <tok val="genaven"/>
          <lm cert="0.5">
             <l>gena</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -282,6 +391,7 @@
       </ana>
       <ana>
          <tok val="Genabenses"/>
+         <tok val="genabenses"/>
          <lm cert="0.5">
             <l>Genabensis</l>
             <m cert="0.166666666666666667">a e - p - - - m n</m>
@@ -300,6 +410,7 @@
       </ana>
       <ana>
          <tok val="Genabi"/>
+         <tok val="genabi"/>
          <lm>
             <l>Genabum</l>
             <m>n e - s - - - n g</m>
@@ -307,6 +418,7 @@
       </ana>
       <ana>
          <tok val="Genabum"/>
+         <tok val="genabum"/>
          <lm>
             <l>Genabum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -315,8 +427,10 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Genae genae genaeque-->
-         <tok val="[gG]enae(que)?"/>
+      <ana>
+         <tok val="Genae"/>
+         <tok val="genae"/>
+         <tok val="genaeque"/>
          <lm>
             <l>gena</l>
             <m cert="0.5">n - - s - - - f g</m>
@@ -325,6 +439,7 @@
       </ana>
       <ana>
          <tok val="Genae"/>
+         <tok val="genae"/>
          <lm>
             <l>genae</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -333,6 +448,7 @@
       </ana>
       <ana>
          <tok val="Genarum"/>
+         <tok val="genarum"/>
          <lm>
             <l>genae</l>
             <m>n - - p - - - f g</m>
@@ -340,6 +456,7 @@
       </ana>
       <ana>
          <tok val="Genas"/>
+         <tok val="genas"/>
          <lm>
             <l>genae</l>
             <m>n - - p - - - f a</m>
@@ -347,6 +464,7 @@
       </ana>
       <ana>
          <tok val="Genauni"/>
+         <tok val="genauni"/>
          <lm>
             <l>Genauni</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -355,13 +473,19 @@
       </ana>
       <ana>
          <tok val="Genaunos"/>
+         <tok val="genaunos"/>
          <lm>
             <l>Genauni</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Genava Geneua Geneva-->
-         <tok val="Gen[ea]?(v|eu)a"/>
+      <ana>
+         <tok val="Genava"/>
+         <tok val="Geneua"/>
+         <tok val="Geneva"/>
+         <tok val="genava"/>
+         <tok val="geneua"/>
+         <tok val="geneva"/>
          <lm>
             <l>Genava</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -371,13 +495,17 @@
       </ana>
       <ana>
          <tok val="Genavam"/>
+         <tok val="genavam"/>
          <lm>
             <l>Genava</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gene gene genen genum-->
-         <tok val="[gG]en[e]?(n|um)?"/>
+      <ana>
+         <tok val="Gene"/>
+         <tok val="gene"/>
+         <tok val="genen"/>
+         <tok val="genum"/>
          <lm>
             <l>genum</l>
             <m>n - - s - - - n v</m>
@@ -385,13 +513,16 @@
       </ana>
       <ana>
          <tok val="Genealogiarum"/>
+         <tok val="genealogiarum"/>
          <lm>
             <l>genealogia</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Genera genera generan-->
-         <tok val="[gG]enera[n]?"/>
+      <ana>
+         <tok val="Genera"/>
+         <tok val="genera"/>
+         <tok val="generan"/>
          <lm cert="0.5">
             <l>genus</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -403,8 +534,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Generabile generabile-->
-         <tok val="[gG]enerabile"/>
+      <ana>
+         <tok val="Generabile"/>
+         <tok val="generabile"/>
          <lm>
             <l>generabilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -412,8 +544,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Generabilis generabilis-->
-         <tok val="[gG]enerabilis"/>
+      <ana>
+         <tok val="Generabilis"/>
+         <tok val="generabilis"/>
          <lm>
             <l>generabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -427,8 +560,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Generabunt generabunt-->
-         <tok val="[gG]enerabunt"/>
+      <ana>
+         <tok val="Generabunt"/>
+         <tok val="generabunt"/>
          <lm>
             <l>genero</l>
             <m>v - 3 p f i a</m>
@@ -436,13 +570,16 @@
       </ana>
       <ana>
          <tok val="Generaliter"/>
+         <tok val="generaliter"/>
          <lm>
             <l>generaliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Generandi generandi generandique-->
-         <tok val="[gG]enerandi(que)?"/>
+      <ana>
+         <tok val="Generandi"/>
+         <tok val="generandi"/>
+         <tok val="generandique"/>
          <lm>
             <l>genero</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -452,8 +589,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Generans generans-->
-         <tok val="[gG]enerans"/>
+      <ana>
+         <tok val="Generans"/>
+         <tok val="generans"/>
          <lm>
             <l>genero</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -465,15 +603,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Generant generant-->
-         <tok val="[gG]enerant"/>
+      <ana>
+         <tok val="Generant"/>
+         <tok val="generant"/>
          <lm>
             <l>genero</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Generantis generantis-->
-         <tok val="[gG]enerantis"/>
+      <ana>
+         <tok val="Generantis"/>
+         <tok val="generantis"/>
          <lm>
             <l>genero</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -481,23 +621,27 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Generantis generantes generantis-->
-         <tok val="[gG]enerant[ie]s"/>
+      <ana>
+         <tok val="Generantis"/>
+         <tok val="generantes"/>
+         <tok val="generantis"/>
          <lm>
             <l>genero</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Generantur generantur-->
-         <tok val="[gG]enerantur"/>
+      <ana>
+         <tok val="Generantur"/>
+         <tok val="generantur"/>
          <lm>
             <l>genero</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Generare generare-->
-         <tok val="[gG]enerare"/>
+      <ana>
+         <tok val="Generare"/>
+         <tok val="generare"/>
          <lm>
             <l>genero</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -505,29 +649,33 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Generari generari-->
-         <tok val="[gG]enerari"/>
+      <ana>
+         <tok val="Generari"/>
+         <tok val="generari"/>
          <lm>
             <l>genero</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Generasco generasco-->
-         <tok val="[gG]enerasco"/>
+      <ana>
+         <tok val="Generasco"/>
+         <tok val="generasco"/>
          <lm>
             <l>generasco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Generat generat-->
-         <tok val="[gG]enerat"/>
+      <ana>
+         <tok val="Generat"/>
+         <tok val="generat"/>
          <lm>
             <l>genero</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Generata generata-->
-         <tok val="[gG]enerata"/>
+      <ana>
+         <tok val="Generata"/>
+         <tok val="generata"/>
          <lm>
             <l>genero</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -538,44 +686,53 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Generatim generatim generatimque-->
-         <tok val="[gG]eneratim(que)?"/>
+      <ana>
+         <tok val="Generatim"/>
+         <tok val="generatim"/>
+         <tok val="generatimque"/>
          <lm>
             <l>generatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Generatio generatio-->
-         <tok val="[gG]eneratio"/>
+      <ana>
+         <tok val="Generatio"/>
+         <tok val="generatio"/>
          <lm>
             <l>generatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Generatione generatione-->
-         <tok val="[gG]eneratione"/>
+      <ana>
+         <tok val="Generatione"/>
+         <tok val="generatione"/>
          <lm>
             <l>generatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Generationem generationem generationemque-->
-         <tok val="[gG]enerationem(que)?"/>
+      <ana>
+         <tok val="Generationem"/>
+         <tok val="generationem"/>
+         <tok val="generationemque"/>
          <lm>
             <l>generatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Generationis generationis generationisque-->
-         <tok val="[gG]enerationis(que)?"/>
+      <ana>
+         <tok val="Generationis"/>
+         <tok val="generationis"/>
+         <tok val="generationisque"/>
          <lm>
             <l>generatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Generatis generatis-->
-         <tok val="[gG]eneratis"/>
+      <ana>
+         <tok val="Generatis"/>
+         <tok val="generatis"/>
          <lm>
             <l>genero</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -587,62 +744,67 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Generator generator-->
-         <tok val="[gG]enerator"/>
+      <ana>
+         <tok val="Generator"/>
+         <tok val="generator"/>
          <lm>
             <l>generator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Generatum generatum-->
-         <tok val="[gG]eneratum"/>
+      <ana>
+         <tok val="Generatum"/>
+         <tok val="generatum"/>
          <lm>
             <l>genero</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - s r p p n a</m>
-            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Generatum generate generatum-->
-         <tok val="[gG]enerat(um|e)"/>
+      <ana>
+         <tok val="Generatum"/>
+         <tok val="generate"/>
+         <tok val="generatum"/>
          <lm>
             <l>genero</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Generatum"/>
-         <lm>
-            <l>genero</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Generatur generatur-->
-         <tok val="[gG]eneratur"/>
+         <tok val="Generatur"/>
+         <tok val="generatur"/>
          <lm>
             <l>genero</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Generatus generatus-->
-         <tok val="[gG]eneratus"/>
+      <ana>
+         <tok val="Generatus"/>
+         <tok val="generatus"/>
          <lm>
             <l>genero</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Generavit generauit generavit-->
-         <tok val="[gG]enera[vu]it"/>
+      <ana>
+         <tok val="Generavit"/>
+         <tok val="generauit"/>
+         <tok val="generavit"/>
          <lm>
             <l>genero</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Generi generi generique generiue-->
-         <tok val="[gG]eneri[q]?(ue)?"/>
+      <ana>
+         <tok val="Generi"/>
+         <tok val="generi"/>
+         <tok val="generique"/>
+         <tok val="generiue"/>
          <lm cert="0.5">
             <l>gener</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -654,8 +816,10 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Genero genero generoque-->
-         <tok val="[gG]enero(que)?"/>
+      <ana>
+         <tok val="Genero"/>
+         <tok val="genero"/>
+         <tok val="generoque"/>
          <lm cert="0.5">
             <l>genero</l>
             <m>v - 1 s p i a</m>
@@ -666,15 +830,19 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Generos generos generosque-->
-         <tok val="[gG]eneros(que)?"/>
+      <ana>
+         <tok val="Generos"/>
+         <tok val="generos"/>
+         <tok val="generosque"/>
          <lm>
             <l>gener</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Generosa generosa generosaque-->
-         <tok val="[gG]enerosa(que)?"/>
+      <ana>
+         <tok val="Generosa"/>
+         <tok val="generosa"/>
+         <tok val="generosaque"/>
          <lm>
             <l>generosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -685,8 +853,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Generosae generosae-->
-         <tok val="[gG]enerosae"/>
+      <ana>
+         <tok val="Generosae"/>
+         <tok val="generosae"/>
          <lm>
             <l>generosus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -695,36 +864,48 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Generosam generosam generosamque-->
-         <tok val="[gG]enerosam(que)?"/>
+      <ana>
+         <tok val="Generosam"/>
+         <tok val="generosam"/>
+         <tok val="generosamque"/>
          <lm>
             <l>generosus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Generose generose generosius-->
-         <tok val="[gG]eneros(e|ius)"/>
+      <ana>
+         <tok val="Generose"/>
+         <tok val="generose"/>
+         <tok val="generosius"/>
          <lm>
             <l>generosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Generose Generosum Generosvm generose generosum-->
-         <tok val="[Gg]eneros[vu]?[me]"/>
+      <ana>
+         <tok val="Generose"/>
+         <tok val="Generosum"/>
+         <tok val="Generosvm"/>
+         <tok val="generose"/>
+         <tok val="generosum"/>
+         <tok val="generosvm"/>
          <lm>
             <l>generosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Generose generose-->
-         <tok val="[gG]enerose"/>
+      <ana>
+         <tok val="Generose"/>
+         <tok val="generose"/>
          <lm>
             <l>generosus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Generosi generosi generosique-->
-         <tok val="[gG]enerosi(que)?"/>
+      <ana>
+         <tok val="Generosi"/>
+         <tok val="generosi"/>
+         <tok val="generosique"/>
          <lm>
             <l>generosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -733,8 +914,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Generosior generosior-->
-         <tok val="[gG]enerosior"/>
+      <ana>
+         <tok val="Generosior"/>
+         <tok val="generosior"/>
          <lm>
             <l>generosus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -743,8 +925,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Generosissimi generosissimi-->
-         <tok val="[gG]enerosissimi"/>
+      <ana>
+         <tok val="Generosissimi"/>
+         <tok val="generosissimi"/>
          <lm>
             <l>generosus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -753,8 +936,10 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Generosissimum generosissimum generosissumum-->
-         <tok val="[gG]enerosiss[iu]mum"/>
+      <ana>
+         <tok val="Generosissimum"/>
+         <tok val="generosissimum"/>
+         <tok val="generosissumum"/>
          <lm>
             <l>generosus</l>
             <m cert="0.166666666666666667">a - - p - - - n g s</m>
@@ -765,16 +950,18 @@
             <m cert="0.166666666666666667">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Generosissimus generosissimus-->
-         <tok val="[gG]enerosissimus"/>
+      <ana>
+         <tok val="Generosissimus"/>
+         <tok val="generosissimus"/>
          <lm>
             <l>generosus</l>
             <m cert="0.5">a - - s - - - m v s</m>
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Generositas generositas-->
-         <tok val="[gG]enerositas"/>
+      <ana>
+         <tok val="Generositas"/>
+         <tok val="generositas"/>
          <lm>
             <l>generositas</l>
             <m>n - - s - - - f n</m>
@@ -782,29 +969,29 @@
       </ana>
       <ana>
          <tok val="Generosius"/>
+         <tok val="generosius"/>
          <lm>
             <l>generosus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Generosius generosius-->
-         <tok val="[gG]enerosius"/>
-         <lm>
-            <l>generosus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Generosos generosos generososque-->
-         <tok val="[gG]enerosos(que)?"/>
+      <ana>
+         <tok val="Generosos"/>
+         <tok val="generosos"/>
+         <tok val="generososque"/>
          <lm>
             <l>generosus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Generosum Generosvm generosum-->
-         <tok val="[Gg]eneros[vu]m"/>
+      <ana>
+         <tok val="Generosum"/>
+         <tok val="Generosvm"/>
+         <tok val="generosum"/>
+         <tok val="generosvm"/>
          <lm>
             <l>generosus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -812,30 +999,46 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Generosum Generosvm generosorum generosum-->
-         <tok val="[gG]eneros(or)?[uv]m"/>
+      <ana>
+         <tok val="Generosum"/>
+         <tok val="Generosvm"/>
+         <tok val="generosorum"/>
+         <tok val="generosum"/>
+         <tok val="generosvm"/>
          <lm>
             <l>generosus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Generosus generosus-->
-         <tok val="[gG]enerosus"/>
+      <ana>
+         <tok val="Generosus"/>
+         <tok val="generosus"/>
          <lm>
             <l>generosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Generum Generumque generorum generum generumne generumque generumve-->
-         <tok val="[gG]ene(ro)?rum(qu|v|n)?[e]?"/>
+      <ana>
+         <tok val="Generum"/>
+         <tok val="Generumque"/>
+         <tok val="generorum"/>
+         <tok val="generum"/>
+         <tok val="generumne"/>
+         <tok val="generumque"/>
+         <tok val="generumve"/>
          <lm>
             <l>gener</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Generum Generumque generum generumne generumque generumve-->
-         <tok val="[gG]enerum(qu|v|n)?[e]?"/>
+      <ana>
+         <tok val="Generum"/>
+         <tok val="Generumque"/>
+         <tok val="generum"/>
+         <tok val="generumne"/>
+         <tok val="generumque"/>
+         <tok val="generumve"/>
          <lm cert="0.5">
             <l>gener</l>
             <m>n - - s - - - m a</m>
@@ -845,53 +1048,71 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Geneses geneses-->
-         <tok val="[gG]eneses"/>
+      <ana>
+         <tok val="Geneses"/>
+         <tok val="geneses"/>
          <lm>
             <l>genesis</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Geneses Genesin Genesis geneses genesin genesis-->
-         <tok val="[Gg]enes[ie]?(s|in|es|is)"/>
+      <ana>
+         <tok val="Geneses"/>
+         <tok val="Genesin"/>
+         <tok val="Genesis"/>
+         <tok val="geneses"/>
+         <tok val="genesin"/>
+         <tok val="genesis"/>
          <lm>
             <l>genesis</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Genesi Genesin genese genesi genesin-->
-         <tok val="[Gg]enes[i]?[ne]?"/>
+      <ana>
+         <tok val="Genesi"/>
+         <tok val="Genesin"/>
+         <tok val="genese"/>
+         <tok val="genesi"/>
+         <tok val="genesin"/>
          <lm>
             <l>genesis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Genesi Genesin genesi genesin-->
-         <tok val="[Gg]enesi[n]?"/>
+      <ana>
+         <tok val="Genesi"/>
+         <tok val="Genesin"/>
+         <tok val="genesi"/>
+         <tok val="genesin"/>
          <lm>
             <l>genesis</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Genesim genesim-->
-         <tok val="[gG]enesim"/>
+      <ana>
+         <tok val="Genesim"/>
+         <tok val="genesim"/>
          <lm>
             <l>genesis</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Genesin Genesis genesin genesis-->
-         <tok val="[Gg]enesi[sn]"/>
+      <ana>
+         <tok val="Genesin"/>
+         <tok val="Genesis"/>
+         <tok val="genesin"/>
+         <tok val="genesis"/>
          <lm>
             <l>genesis</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Genethliaci genethliaci-->
-         <tok val="[gG]enethliaci"/>
-         <lm>
+      <ana>
+         <tok val="Genethliaci"/>
+         <tok val="genethliaci"/>
+         <lm cert="0.5">
             <l>genethliacus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -901,32 +1122,38 @@
             <m cert="0.142857142857142857">a - - p - - - m n</m>
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Genethliaci"/>
-         <lm>
+         <lm cert="0.5">
             <l>Genethliacon</l>
             <m>n e - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Genethliacus genethliacus-->
-         <tok val="[gG]enethliacus"/>
+      <ana>
+         <tok val="Genethliacus"/>
+         <tok val="genethliacus"/>
          <lm>
             <l>genethliacus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genetive genitive-->
-         <tok val="[gG]en[ie]tive"/>
+      <ana>
+         <tok val="Genetive"/>
+         <tok val="genetive"/>
+         <tok val="genitive"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Genetive genetiuum genetivum genitiuum genitive genitivum-->
-         <tok val="[gG]en[ei]ti[vu]?(um|ve)"/>
+      <ana>
+         <tok val="Genetive"/>
+         <tok val="genetiuum"/>
+         <tok val="genetive"/>
+         <tok val="genetivum"/>
+         <tok val="genitiuum"/>
+         <tok val="genitive"/>
+         <tok val="genitivum"/>
          <lm>
             <l>genetivus</l>
             <m>a - - s - - - n v</m>
@@ -934,13 +1161,18 @@
       </ana>
       <ana>
          <tok val="Genetive"/>
+         <tok val="genetive"/>
          <lm>
             <l>genetivus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Genetivi genetiui genetivi genitiui genitivi-->
-         <tok val="[gG]en[ei]ti[vu]i"/>
+      <ana>
+         <tok val="Genetivi"/>
+         <tok val="genetiui"/>
+         <tok val="genetivi"/>
+         <tok val="genitiui"/>
+         <tok val="genitivi"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -949,8 +1181,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Genetivi genetiui genetivi-->
-         <tok val="[gG]eneti[vu]i"/>
+      <ana>
+         <tok val="Genetivi"/>
+         <tok val="genetiui"/>
+         <tok val="genetivi"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -958,43 +1192,61 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Genetivus genetiuus genetivus-->
-         <tok val="[gG]eneti[vu]us"/>
+      <ana>
+         <tok val="Genetivus"/>
+         <tok val="genetiuus"/>
+         <tok val="genetivus"/>
          <lm>
             <l>genetivus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genetivus Genitiuus Genitivus genetiuus genetivus genitiuus genitivus-->
-         <tok val="[Gg]en[ie]ti[vu]us"/>
+      <ana>
+         <tok val="Genetivus"/>
+         <tok val="Genitiuus"/>
+         <tok val="Genitivus"/>
+         <tok val="genetiuus"/>
+         <tok val="genetivus"/>
+         <tok val="genitiuus"/>
+         <tok val="genitivus"/>
          <lm>
             <l>genetivus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genetricem genetricem genitricem-->
-         <tok val="[gG]en[ei]tricem"/>
+      <ana>
+         <tok val="Genetricem"/>
+         <tok val="genetricem"/>
+         <tok val="genitricem"/>
          <lm>
             <l>genetrix</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Genetrici genetrici-->
-         <tok val="[gG]enetrici"/>
+      <ana>
+         <tok val="Genetrici"/>
+         <tok val="genetrici"/>
          <lm>
             <l>genetrix</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Genetricis Genitricis genetricis genitricis-->
-         <tok val="[Gg]en[ie]tricis"/>
+      <ana>
+         <tok val="Genetricis"/>
+         <tok val="Genitricis"/>
+         <tok val="genetricis"/>
+         <tok val="genitricis"/>
          <lm>
             <l>genetrix</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Genetrix Genitrix genetrix genetrixque genitrix-->
-         <tok val="[Gg]en[ie]trix(que)?"/>
+      <ana>
+         <tok val="Genetrix"/>
+         <tok val="Genitrix"/>
+         <tok val="genetrix"/>
+         <tok val="genetrixque"/>
+         <tok val="genitrix"/>
          <lm>
             <l>genetrix</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1003,6 +1255,7 @@
       </ana>
       <ana>
          <tok val="Genevae"/>
+         <tok val="genevae"/>
          <lm>
             <l>Genava</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1013,6 +1266,7 @@
       </ana>
       <ana>
          <tok val="Genevensi"/>
+         <tok val="genevensi"/>
          <lm>
             <l>Genavensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -1025,6 +1279,7 @@
       </ana>
       <ana>
          <tok val="Genevensia"/>
+         <tok val="genevensia"/>
          <lm>
             <l>Genavensis</l>
             <m cert="0.333333333333333333">a e - p - - - n n</m>
@@ -1034,6 +1289,7 @@
       </ana>
       <ana>
          <tok val="Genevensis"/>
+         <tok val="genevensis"/>
          <lm>
             <l>Genavensis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -1049,27 +1305,34 @@
       </ana>
       <ana>
          <tok val="Geni"/>
+         <tok val="geni"/>
          <lm>
             <l>genus</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Geni geni genique-->
-         <tok val="[gG]eni(que)?"/>
+      <ana>
+         <tok val="Geni"/>
+         <tok val="geni"/>
+         <tok val="genique"/>
          <lm>
             <l>genum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Geni geni genie genique-->
-         <tok val="[gG]eni(e|que)?"/>
+      <ana>
+         <tok val="Geni"/>
+         <tok val="geni"/>
+         <tok val="genie"/>
+         <tok val="genique"/>
          <lm>
             <l>genius</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Geniale geniale-->
-         <tok val="[gG]eniale"/>
+      <ana>
+         <tok val="Geniale"/>
+         <tok val="geniale"/>
          <lm>
             <l>genialis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1077,24 +1340,29 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Genialem genialem-->
-         <tok val="[gG]enialem"/>
+      <ana>
+         <tok val="Genialem"/>
+         <tok val="genialem"/>
          <lm>
             <l>genialis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Geniales Genialis geniales genialis-->
-         <tok val="[Gg]enial[ie]s"/>
+      <ana>
+         <tok val="Geniales"/>
+         <tok val="Genialis"/>
+         <tok val="geniales"/>
+         <tok val="genialis"/>
          <lm>
             <l>genialis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Geniales geniales-->
-         <tok val="[gG]eniales"/>
+      <ana>
+         <tok val="Geniales"/>
+         <tok val="geniales"/>
          <lm>
             <l>genialis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1103,8 +1371,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genialia genialia genialiaque-->
-         <tok val="[gG]enialia(que)?"/>
+      <ana>
+         <tok val="Genialia"/>
+         <tok val="genialia"/>
+         <tok val="genialiaque"/>
          <lm cert="0.5">
             <l>genialis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -1118,8 +1388,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Genialis genialis-->
-         <tok val="[gG]enialis"/>
+      <ana>
+         <tok val="Genialis"/>
+         <tok val="genialis"/>
          <lm>
             <l>genialis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1133,21 +1404,26 @@
       </ana>
       <ana>
          <tok val="Genialiter"/>
+         <tok val="genialiter"/>
          <lm>
             <l>genialiter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Genibus genibus genibusque genubus-->
-         <tok val="[gG]en[iu]bus(que)?"/>
+      <ana>
+         <tok val="Genibus"/>
+         <tok val="genibus"/>
+         <tok val="genibusque"/>
+         <tok val="genubus"/>
          <lm>
             <l>genu</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Genicula genicula-->
-         <tok val="[gG]enicula"/>
+      <ana>
+         <tok val="Genicula"/>
+         <tok val="genicula"/>
          <lm cert="0.5">
             <l>geniculum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1159,16 +1435,18 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Genicularis genicularis-->
-         <tok val="[gG]enicularis"/>
+      <ana>
+         <tok val="Genicularis"/>
+         <tok val="genicularis"/>
          <lm>
             <l>geniculo</l>
             <m cert="0.5">v - 2 s r s a</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Geniculatim geniculatim-->
-         <tok val="[gG]eniculatim"/>
+      <ana>
+         <tok val="Geniculatim"/>
+         <tok val="geniculatim"/>
          <lm>
             <l>geniculatim</l>
             <m>d</m>
@@ -1176,24 +1454,21 @@
       </ana>
       <ana>
          <tok val="Geniculatus"/>
-         <lm>
-            <l>geniculatus</l>
-            <m>n - - s - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--Geniculatus geniculatus-->
-         <tok val="[gG]eniculatus"/>
+         <tok val="geniculatus"/>
          <lm cert="0.5">
             <l>geniculatus</l>
-            <m>a - - s - - - m n</m>
+            <m cert="0.5">n - - s - - - m n</m>
+            <m cert="0.5">a - - s - - - m n</m>
          </lm>
          <lm cert="0.5">
             <l>geniculo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Geniculum geniculorum geniculum-->
-         <tok val="[gG]enicul(or)?um"/>
+      <ana>
+         <tok val="Geniculum"/>
+         <tok val="geniculorum"/>
+         <tok val="geniculum"/>
          <lm cert="0.5">
             <l>geniculus</l>
             <m>n - - p - - - m g</m>
@@ -1203,8 +1478,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Geniculum geniculum-->
-         <tok val="[gG]eniculum"/>
+      <ana>
+         <tok val="Geniculum"/>
+         <tok val="geniculum"/>
          <lm cert="0.5">
             <l>geniculum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1216,31 +1492,39 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Genii genii geniique-->
-         <tok val="[gG]enii(que)?"/>
+      <ana>
+         <tok val="Genii"/>
+         <tok val="genii"/>
+         <tok val="geniique"/>
          <lm>
             <l>genius</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Genii geni genii geniique genique-->
-         <tok val="[gG]eni[i]?(que|i)?"/>
+      <ana>
+         <tok val="Genii"/>
+         <tok val="geni"/>
+         <tok val="genii"/>
+         <tok val="geniique"/>
+         <tok val="genique"/>
          <lm>
             <l>genius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Geniis geniis-->
-         <tok val="[gG]eniis"/>
+      <ana>
+         <tok val="Geniis"/>
+         <tok val="geniis"/>
          <lm>
             <l>genius</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Genimen genimen-->
-         <tok val="[gG]enimen"/>
+      <ana>
+         <tok val="Genimen"/>
+         <tok val="genimen"/>
          <lm>
             <l>genimen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -1248,15 +1532,20 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Genios Geniosque genios geniosque-->
-         <tok val="[gG]enios(que)?"/>
+      <ana>
+         <tok val="Genios"/>
+         <tok val="Geniosque"/>
+         <tok val="genios"/>
+         <tok val="geniosque"/>
          <lm>
             <l>genius</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Genis genis genisque-->
-         <tok val="[gG]enis(que)?"/>
+      <ana>
+         <tok val="Genis"/>
+         <tok val="genis"/>
+         <tok val="genisque"/>
          <lm>
             <l>genum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -1265,14 +1554,17 @@
       </ana>
       <ana>
          <tok val="Genis"/>
+         <tok val="genis"/>
          <lm>
             <l>genae</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Genista genesta genista-->
-         <tok val="[gG]en[ie]sta"/>
+      <ana>
+         <tok val="Genista"/>
+         <tok val="genesta"/>
+         <tok val="genista"/>
          <lm>
             <l>genesta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1280,8 +1572,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Genita genita-->
-         <tok val="[gG]enita"/>
+      <ana>
+         <tok val="Genita"/>
+         <tok val="genita"/>
          <lm>
             <l>gigno</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1292,8 +1585,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Genitabilis genitabilis-->
-         <tok val="[gG]enitabilis"/>
+      <ana>
+         <tok val="Genitabilis"/>
+         <tok val="genitabilis"/>
          <lm>
             <l>genitabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1307,8 +1601,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Genitae genitae-->
-         <tok val="[gG]enitae"/>
+      <ana>
+         <tok val="Genitae"/>
+         <tok val="genitae"/>
          <lm>
             <l>gigno</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1317,8 +1612,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Genitale genitale genitaleque-->
-         <tok val="[gG]enitale(que)?"/>
+      <ana>
+         <tok val="Genitale"/>
+         <tok val="genitale"/>
+         <tok val="genitaleque"/>
          <lm cert="0.5">
             <l>genitalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1332,63 +1629,64 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Genitale Genitali-->
-         <tok val="Genital[ie]"/>
+      <ana>
+         <tok val="Genitale"/>
+         <tok val="Genitali"/>
+         <tok val="genitale"/>
+         <tok val="genitali"/>
          <lm>
             <l>genitalis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Genitale Genitali genitale genitaleque genitali-->
-         <tok val="[Gg]enital(i|e|eque)"/>
+      <ana>
+         <tok val="Genitale"/>
+         <tok val="Genitali"/>
+         <tok val="genitale"/>
+         <tok val="genitaleque"/>
+         <tok val="genitali"/>
          <lm>
             <l>genitale</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Genitales genitales-->
-         <tok val="[gG]enitales"/>
+      <ana>
+         <tok val="Genitales"/>
+         <tok val="genitales"/>
          <lm>
             <l>genitalis</l>
-            <m cert="0.25">a - - p - - - f n</m>
-            <m cert="0.25">a - - p - - - f v</m>
-            <m cert="0.25">a - - p - - - m v</m>
-            <m cert="0.25">a - - p - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--Genitales Genitalis-->
-         <tok val="Genital[ie]s"/>
-         <lm>
-            <l>genitalis</l>
-            <m>n - - p - - - f a</m>
-         </lm>
-      </ana>
-      <ana><!--Genitales Genitalis genitales genitalis-->
-         <tok val="[Gg]enital[ie]s"/>
-         <lm>
-            <l>genitalis</l>
-            <m cert="0.5">a - - p - - - m a</m>
-            <m cert="0.5">a - - p - - - f a</m>
+            <m cert="0.166666666666666667">a - - p - - - f n</m>
+            <m cert="0.166666666666666667">a - - p - - - f v</m>
+            <m cert="0.166666666666666667">a - - p - - - m v</m>
+            <m cert="0.166666666666666667">a - - p - - - m n</m>
+            <m cert="0.166666666666666667">n - - p - - - f v</m>
+            <m cert="0.166666666666666667">n - - p - - - f n</m>
          </lm>
       </ana>
       <ana>
          <tok val="Genitales"/>
+         <tok val="Genitalis"/>
+         <tok val="genitales"/>
+         <tok val="genitalis"/>
          <lm>
             <l>genitalis</l>
-            <m cert="0.5">n - - p - - - f v</m>
-            <m cert="0.5">n - - p - - - f n</m>
+            <m cert="0.333333333333333333">n - - p - - - f a</m>
+            <m cert="0.333333333333333333">a - - p - - - m a</m>
+            <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Genitali genitali-->
-         <tok val="[gG]enitali"/>
+      <ana>
+         <tok val="Genitali"/>
+         <tok val="genitali"/>
          <lm cert="0.5">
             <l>genitalis</l>
-            <m cert="0.166666666666666667">a - - s - - - m d</m>
-            <m cert="0.166666666666666667">a - - s - - - f d</m>
-            <m cert="0.166666666666666667">a - - s - - - m b</m>
-            <m cert="0.166666666666666667">a - - s - - - f b</m>
-            <m cert="0.166666666666666667">a - - s - - - n b</m>
-            <m cert="0.166666666666666667">a - - s - - - n d</m>
+            <m cert="0.142857142857142857">a - - s - - - m d</m>
+            <m cert="0.142857142857142857">a - - s - - - f d</m>
+            <m cert="0.142857142857142857">n - - s - - - f d</m>
+            <m cert="0.142857142857142857">a - - s - - - m b</m>
+            <m cert="0.142857142857142857">a - - s - - - f b</m>
+            <m cert="0.142857142857142857">a - - s - - - n b</m>
+            <m cert="0.142857142857142857">a - - s - - - n d</m>
          </lm>
          <lm cert="0.5">
             <l>genitale</l>
@@ -1396,14 +1694,8 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Genitali"/>
-         <lm>
-            <l>genitalis</l>
-            <m>n - - s - - - f d</m>
-         </lm>
-      </ana>
-      <ana><!--Genitalia genitalia-->
-         <tok val="[gG]enitalia"/>
+         <tok val="Genitalia"/>
+         <tok val="genitalia"/>
          <lm cert="0.5">
             <l>genitalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -1419,23 +1711,18 @@
       </ana>
       <ana>
          <tok val="Genitalis"/>
-         <lm>
-            <l>genitalis</l>
-            <m cert="0.5">n - - s - - - f n</m>
-            <m cert="0.5">n - - s - - - f g</m>
-         </lm>
-      </ana>
-      <ana><!--Genitalis genitalis-->
-         <tok val="[gG]enitalis"/>
+         <tok val="genitalis"/>
          <lm cert="0.5">
             <l>genitalis</l>
-            <m cert="0.142857142857142857">a - - s - - - f g</m>
-            <m cert="0.142857142857142857">a - - s - - - f n</m>
-            <m cert="0.142857142857142857">a - - s - - - m g</m>
-            <m cert="0.142857142857142857">a - - s - - - f v</m>
-            <m cert="0.142857142857142857">a - - s - - - m n</m>
-            <m cert="0.142857142857142857">a - - s - - - m v</m>
-            <m cert="0.142857142857142857">a - - s - - - n g</m>
+            <m cert="0.111111111111111111">n - - s - - - f n</m>
+            <m cert="0.111111111111111111">a - - s - - - f g</m>
+            <m cert="0.111111111111111111">a - - s - - - f n</m>
+            <m cert="0.111111111111111111">a - - s - - - m g</m>
+            <m cert="0.111111111111111111">a - - s - - - f v</m>
+            <m cert="0.111111111111111111">n - - s - - - f g</m>
+            <m cert="0.111111111111111111">a - - s - - - m n</m>
+            <m cert="0.111111111111111111">a - - s - - - m v</m>
+            <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
          <lm cert="0.5">
             <l>genitale</l>
@@ -1444,20 +1731,28 @@
       </ana>
       <ana>
          <tok val="Genitaliter"/>
+         <tok val="genitaliter"/>
          <lm>
             <l>genitaliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Genitam genitam genitamque-->
-         <tok val="[gG]enitam(que)?"/>
+      <ana>
+         <tok val="Genitam"/>
+         <tok val="genitam"/>
+         <tok val="genitamque"/>
          <lm>
             <l>gigno</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Genitiua genetiua genetiva genetivaque genitiva-->
-         <tok val="[gG]en[ei]ti[vu]a(que)?"/>
+      <ana>
+         <tok val="Genitiua"/>
+         <tok val="genetiua"/>
+         <tok val="genetiva"/>
+         <tok val="genetivaque"/>
+         <tok val="genitiua"/>
+         <tok val="genitiva"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1468,8 +1763,12 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Genitiuo genetiuo genetivo genitiuo genitivo-->
-         <tok val="[gG]en[ei]ti[vu]o"/>
+      <ana>
+         <tok val="Genitiuo"/>
+         <tok val="genetiuo"/>
+         <tok val="genetivo"/>
+         <tok val="genitiuo"/>
+         <tok val="genitivo"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1478,8 +1777,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Genito genito-->
-         <tok val="[gG]enito"/>
+      <ana>
+         <tok val="Genito"/>
+         <tok val="genito"/>
          <lm>
             <l>gigno</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1488,30 +1788,35 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Genitor genitor genitorque-->
-         <tok val="[gG]enitor(que)?"/>
+      <ana>
+         <tok val="Genitor"/>
+         <tok val="genitor"/>
+         <tok val="genitorque"/>
          <lm>
             <l>genitor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Genitore genitore-->
-         <tok val="[gG]enitore"/>
+      <ana>
+         <tok val="Genitore"/>
+         <tok val="genitore"/>
          <lm>
             <l>genitor</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Genitorem genitorem-->
-         <tok val="[gG]enitorem"/>
+      <ana>
+         <tok val="Genitorem"/>
+         <tok val="genitorem"/>
          <lm>
             <l>genitor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Genitores genitores-->
-         <tok val="[gG]enitores"/>
+      <ana>
+         <tok val="Genitores"/>
+         <tok val="genitores"/>
          <lm>
             <l>genitor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1519,22 +1824,27 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Genitoris genitoris-->
-         <tok val="[gG]enitoris"/>
+      <ana>
+         <tok val="Genitoris"/>
+         <tok val="genitoris"/>
          <lm>
             <l>genitor</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Genitos genitos genitosque-->
-         <tok val="[gG]enitos(que)?"/>
+      <ana>
+         <tok val="Genitos"/>
+         <tok val="genitos"/>
+         <tok val="genitosque"/>
          <lm>
             <l>gigno</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Genitura genitura genituraque-->
-         <tok val="[gG]enitura(que)?"/>
+      <ana>
+         <tok val="Genitura"/>
+         <tok val="genitura"/>
+         <tok val="genituraque"/>
          <lm cert="0.5">
             <l>gigno</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -1551,8 +1861,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Genituram genituram-->
-         <tok val="[gG]enituram"/>
+      <ana>
+         <tok val="Genituram"/>
+         <tok val="genituram"/>
          <lm cert="0.5">
             <l>gigno</l>
             <m>v - - s f p a f a</m>
@@ -1562,16 +1873,19 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Geniture geniture-->
-         <tok val="[gG]eniture"/>
+      <ana>
+         <tok val="Geniture"/>
+         <tok val="geniture"/>
          <lm>
             <l>gigno</l>
             <m cert="0.5">v - - s f p a n v</m>
             <m cert="0.5">v - - s f p a m v</m>
          </lm>
       </ana>
-      <ana><!--Genitus genitus genitusque-->
-         <tok val="[gG]enitus(que)?"/>
+      <ana>
+         <tok val="Genitus"/>
+         <tok val="genitus"/>
+         <tok val="genitusque"/>
          <lm cert="0.5">
             <l>genitus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1584,30 +1898,50 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Genium Geniumne Geniumque geniorum genium geniumne geniumque geniúmque-->
-         <tok val="[gG]eni(u|ú|oru)m(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Genium"/>
+         <tok val="Geniumne"/>
+         <tok val="Geniumque"/>
+         <tok val="geniorum"/>
+         <tok val="genium"/>
+         <tok val="geniumne"/>
+         <tok val="geniumque"/>
+         <tok val="geniúmque"/>
          <lm>
             <l>genius</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Genium Geniumne Geniumque genium geniumne geniumque-->
-         <tok val="[gG]enium(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Genium"/>
+         <tok val="Geniumne"/>
+         <tok val="Geniumque"/>
+         <tok val="genium"/>
+         <tok val="geniumne"/>
+         <tok val="geniumque"/>
          <lm>
             <l>genius</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Genn Gens gens gensque GENS-->
-         <tok val="[Gg]?(en)?(s|n|sque|GENS)"/>
+      <ana>
+         <tok val="GENS"/>
+         <tok val="Genn"/>
+         <tok val="Gens"/>
+         <tok val="genn"/>
+         <tok val="gens"/>
+         <tok val="gensque"/>
          <lm>
             <l>gens</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Geno Genon geno-->
-         <tok val="[Gg]eno[n]?"/>
+      <ana>
+         <tok val="Geno"/>
+         <tok val="Genon"/>
+         <tok val="geno"/>
+         <tok val="genon"/>
          <lm cert="0.5">
             <l>genum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1619,44 +1953,55 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Genon Genos genos-->
-         <tok val="[Gg]eno[sn]"/>
+      <ana>
+         <tok val="Genon"/>
+         <tok val="Genos"/>
+         <tok val="genon"/>
+         <tok val="genos"/>
          <lm>
             <l>genus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Gente Genti Gentique gente genti gentique-->
-         <tok val="[gG]ent[i]?(que|e|i)?"/>
+      <ana>
+         <tok val="Gente"/>
+         <tok val="Genti"/>
+         <tok val="Gentique"/>
+         <tok val="gente"/>
+         <tok val="genti"/>
+         <tok val="gentique"/>
          <lm>
             <l>gens</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Gentem gentem gentemque-->
-         <tok val="[gG]entem(que)?"/>
+      <ana>
+         <tok val="Gentem"/>
+         <tok val="gentem"/>
+         <tok val="gentemque"/>
          <lm>
             <l>gens</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Genti Gentique-->
-         <tok val="Genti(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Genti"/>
+         <tok val="Gentique"/>
+         <tok val="genti"/>
+         <tok val="gentique"/>
+         <lm cert="0.5">
             <l>Gentius</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Genti Gentique genti gentique-->
-         <tok val="[gG]enti(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>gens</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Gentiana gentiana-->
-         <tok val="[gG]entiana"/>
+      <ana>
+         <tok val="Gentiana"/>
+         <tok val="gentiana"/>
          <lm>
             <l>gentiana</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1664,8 +2009,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Gentianae gentianae-->
-         <tok val="[gG]entianae"/>
+      <ana>
+         <tok val="Gentianae"/>
+         <tok val="gentianae"/>
          <lm>
             <l>gentiana</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1674,30 +2020,35 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Gentianam gentianam-->
-         <tok val="[gG]entianam"/>
+      <ana>
+         <tok val="Gentianam"/>
+         <tok val="gentianam"/>
          <lm>
             <l>gentiana</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gentibus gentibus gentibusque-->
-         <tok val="[gG]entibus(que)?"/>
+      <ana>
+         <tok val="Gentibus"/>
+         <tok val="gentibus"/>
+         <tok val="gentibusque"/>
          <lm>
             <l>gens</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Genticus genticus-->
-         <tok val="[gG]enticus"/>
+      <ana>
+         <tok val="Genticus"/>
+         <tok val="genticus"/>
          <lm>
             <l>genticus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gentile gentile-->
-         <tok val="[gG]entile"/>
+      <ana>
+         <tok val="Gentile"/>
+         <tok val="gentile"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1705,8 +2056,12 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Gentile Gentili gentile gentili gentilique-->
-         <tok val="[Gg]entil(i|e|ique)"/>
+      <ana>
+         <tok val="Gentile"/>
+         <tok val="Gentili"/>
+         <tok val="gentile"/>
+         <tok val="gentili"/>
+         <tok val="gentilique"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.5">n - - s - - - f b</m>
@@ -1715,14 +2070,17 @@
       </ana>
       <ana>
          <tok val="Gentiles"/>
+         <tok val="gentiles"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Gentiles gentiles gentilesque-->
-         <tok val="[gG]entiles(que)?"/>
+      <ana>
+         <tok val="Gentiles"/>
+         <tok val="gentiles"/>
+         <tok val="gentilesque"/>
          <lm cert="0.5">
             <l>gentilis</l>
             <m cert="0.166666666666666667">a - - p - - - f n</m>
@@ -1737,8 +2095,10 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gentili gentili gentilique-->
-         <tok val="[gG]entili(que)?"/>
+      <ana>
+         <tok val="Gentili"/>
+         <tok val="gentili"/>
+         <tok val="gentilique"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.125">a - - s - - - m d</m>
@@ -1751,8 +2111,9 @@
             <m cert="0.125">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Gentilicium gentilicium-->
-         <tok val="[gG]entilicium"/>
+      <ana>
+         <tok val="Gentilicium"/>
+         <tok val="gentilicium"/>
          <lm>
             <l>gentilicius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1763,15 +2124,18 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Gentilitas gentilitas-->
-         <tok val="[gG]entilitas"/>
+      <ana>
+         <tok val="Gentilitas"/>
+         <tok val="gentilitas"/>
          <lm>
             <l>gentilitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Gentilium gentilium gentiliumque-->
-         <tok val="[gG]entilium(que)?"/>
+      <ana>
+         <tok val="Gentilium"/>
+         <tok val="gentilium"/>
+         <tok val="gentiliumque"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.2">n - - p - - - m g</m>
@@ -1783,21 +2147,30 @@
       </ana>
       <ana>
          <tok val="Gentio"/>
+         <tok val="gentio"/>
          <lm>
             <l>Gentius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Gentis Gentisque gentis gentisne gentisque gentisue-->
-         <tok val="[gG]entis[q]?[un]?[e]?"/>
+      <ana>
+         <tok val="Gentis"/>
+         <tok val="Gentisque"/>
+         <tok val="gentis"/>
+         <tok val="gentisne"/>
+         <tok val="gentisque"/>
+         <tok val="gentisue"/>
          <lm>
             <l>gens</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Gentium Gentiumque-->
-         <tok val="Gentium(que)?"/>
+      <ana>
+         <tok val="Gentium"/>
+         <tok val="Gentiumque"/>
+         <tok val="gentium"/>
+         <tok val="gentiumque"/>
          <lm>
             <l>Gentius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1806,13 +2179,16 @@
       </ana>
       <ana>
          <tok val="Gentius"/>
+         <tok val="gentius"/>
          <lm>
             <l>Gentius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genu genu genuque-->
-         <tok val="[gG]enu(que)?"/>
+      <ana>
+         <tok val="Genu"/>
+         <tok val="genu"/>
+         <tok val="genuque"/>
          <lm>
             <l>genu</l>
             <m cert="0.5">n - - s - - - n b</m>
@@ -1821,30 +2197,31 @@
       </ana>
       <ana>
          <tok val="Genua"/>
-         <lm>
+         <tok val="genua"/>
+         <lm cert="0.5">
             <l>Genua</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Genua genua génua-->
-         <tok val="[gG]?(e|gé)nua"/>
-         <lm>
-            <l>genu</l>
-            <m>n - - p - - - n a</m>
-         </lm>
-      </ana>
-      <ana><!--Genua genua-->
-         <tok val="[gG]enua"/>
-         <lm>
+         <lm cert="0.5">
             <l>genu</l>
             <m cert="0.5">n - - p - - - n n</m>
             <m cert="0.5">n - - p - - - n v</m>
          </lm>
       </ana>
       <ana>
+         <tok val="Genua"/>
+         <tok val="genua"/>
+         <tok val="génua"/>
+         <lm>
+            <l>genu</l>
+            <m>n - - p - - - n a</m>
+         </lm>
+      </ana>
+      <ana>
          <tok val="Genuae"/>
+         <tok val="genuae"/>
          <lm>
             <l>Genua</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1853,8 +2230,9 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Genualia genualia-->
-         <tok val="[gG]enualia"/>
+      <ana>
+         <tok val="Genualia"/>
+         <tok val="genualia"/>
          <lm>
             <l>genualia</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1862,8 +2240,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Genuam Genuamque-->
-         <tok val="Genuam(que)?"/>
+      <ana>
+         <tok val="Genuam"/>
+         <tok val="Genuamque"/>
+         <tok val="genuam"/>
+         <tok val="genuamque"/>
          <lm>
             <l>Genua</l>
             <m>n e - s - - - f a</m>
@@ -1871,6 +2252,7 @@
       </ana>
       <ana>
          <tok val="Genucilio"/>
+         <tok val="genucilio"/>
          <lm>
             <l>Genucilius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1879,6 +2261,7 @@
       </ana>
       <ana>
          <tok val="Genucilium"/>
+         <tok val="genucilium"/>
          <lm>
             <l>Genucilius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1887,13 +2270,17 @@
       </ana>
       <ana>
          <tok val="Genucilius"/>
+         <tok val="genucilius"/>
          <lm>
             <l>Genucilius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genui Genuin genui-->
-         <tok val="[Gg]enui[n]?"/>
+      <ana>
+         <tok val="Genui"/>
+         <tok val="Genuin"/>
+         <tok val="genui"/>
+         <tok val="genuin"/>
          <lm cert="0.5">
             <l>gigno</l>
             <m>v - 1 s r i a</m>
@@ -1905,14 +2292,16 @@
       </ana>
       <ana>
          <tok val="Genuin"/>
+         <tok val="genuin"/>
          <lm>
             <l>Genua</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Genuini genuini-->
-         <tok val="[gG]enuini"/>
+      <ana>
+         <tok val="Genuini"/>
+         <tok val="genuini"/>
          <lm>
             <l>genuinus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -1924,8 +2313,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Genuino genuino-->
-         <tok val="[gG]enuino"/>
+      <ana>
+         <tok val="Genuino"/>
+         <tok val="genuino"/>
          <lm>
             <l>genuinus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -1936,8 +2326,9 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Genuinum genuinum-->
-         <tok val="[gG]enuinum"/>
+      <ana>
+         <tok val="Genuinum"/>
+         <tok val="genuinum"/>
          <lm>
             <l>genuinus</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -1949,23 +2340,28 @@
             <m cert="0.142857142857142857">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Genuinum genuine genuinum-->
-         <tok val="[gG]enuin(um|e)"/>
+      <ana>
+         <tok val="Genuinum"/>
+         <tok val="genuine"/>
+         <tok val="genuinum"/>
          <lm>
             <l>genuinus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Genuinus genuinus-->
-         <tok val="[gG]enuinus"/>
+      <ana>
+         <tok val="Genuinus"/>
+         <tok val="genuinus"/>
          <lm>
             <l>genuinus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genuit genuit genuitque-->
-         <tok val="[gG]enuit(que)?"/>
+      <ana>
+         <tok val="Genuit"/>
+         <tok val="genuit"/>
+         <tok val="genuitque"/>
          <lm>
             <l>gigno</l>
             <m>v - 3 s r i a</m>
@@ -1973,6 +2369,7 @@
       </ana>
       <ana>
          <tok val="Genusum"/>
+         <tok val="genusum"/>
          <lm>
             <l>Genusus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1981,20 +2378,24 @@
       </ana>
       <ana>
          <tok val="Genusus"/>
+         <tok val="genusus"/>
          <lm>
             <l>Genusus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Genuum genuum genuumque-->
-         <tok val="[gG]enuum(que)?"/>
+      <ana>
+         <tok val="Genuum"/>
+         <tok val="genuum"/>
+         <tok val="genuumque"/>
          <lm>
             <l>genu</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--genae genaeque-->
-         <tok val="genae(que)?"/>
+      <ana>
+         <tok val="genae"/>
+         <tok val="genaeque"/>
          <lm>
             <l>gena</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -2008,15 +2409,17 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--genarum genarumque-->
-         <tok val="genarum(que)?"/>
+      <ana>
+         <tok val="genarum"/>
+         <tok val="genarumque"/>
          <lm>
             <l>gena</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--genas genasque-->
-         <tok val="genas(que)?"/>
+      <ana>
+         <tok val="genas"/>
+         <tok val="genasque"/>
          <lm>
             <l>gena</l>
             <m>n - - p - - - f a</m>
@@ -2294,8 +2697,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--generaliter generalius-->
-         <tok val="generali(us|ter)"/>
+      <ana>
+         <tok val="generaliter"/>
+         <tok val="generalius"/>
          <lm>
             <l>generalis</l>
             <m>d</m>
@@ -2319,8 +2723,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--generan generas-->
-         <tok val="genera[sn]"/>
+      <ana>
+         <tok val="generan"/>
+         <tok val="generas"/>
          <lm>
             <l>genero</l>
             <m>v - 2 s p i a</m>
@@ -2372,8 +2777,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--generandorum generandum-->
-         <tok val="generand(or)?um"/>
+      <ana>
+         <tok val="generandorum"/>
+         <tok val="generandum"/>
          <lm>
             <l>genero</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -2405,8 +2811,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--generante generanti-->
-         <tok val="generant[ie]"/>
+      <ana>
+         <tok val="generante"/>
+         <tok val="generanti"/>
          <lm>
             <l>genero</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2537,8 +2944,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--generasse generavisse-->
-         <tok val="genera(vi)?sse"/>
+      <ana>
+         <tok val="generasse"/>
+         <tok val="generavisse"/>
          <lm>
             <l>genero</l>
             <m>v - - - r n a</m>
@@ -2616,8 +3024,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--generationi generationique-->
-         <tok val="generationi(que)?"/>
+      <ana>
+         <tok val="generationi"/>
+         <tok val="generationique"/>
          <lm>
             <l>generatio</l>
             <m>n - - s - - - f d</m>
@@ -2737,23 +3146,26 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--generauerit generaverit-->
-         <tok val="genera[vu]erit"/>
+      <ana>
+         <tok val="generauerit"/>
+         <tok val="generaverit"/>
          <lm>
             <l>genero</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--generavere generaverunt-->
-         <tok val="generaver(unt|e)"/>
+      <ana>
+         <tok val="generavere"/>
+         <tok val="generaverunt"/>
          <lm>
             <l>genero</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--generemque generem-->
-         <tok val="generem(que)?"/>
+      <ana>
+         <tok val="generem"/>
+         <tok val="generemque"/>
          <lm>
             <l>genero</l>
             <m>v - 1 s p s a</m>
@@ -2780,8 +3192,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--generet generetque-->
-         <tok val="generet(que)?"/>
+      <ana>
+         <tok val="generet"/>
+         <tok val="generetque"/>
          <lm>
             <l>genero</l>
             <m>v - 3 s p s a</m>
@@ -2875,8 +3288,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--generosissimae generosissimaeque-->
-         <tok val="generosissimae(que)?"/>
+      <ana>
+         <tok val="generosissimae"/>
+         <tok val="generosissimaeque"/>
          <lm>
             <l>generosus</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -2950,15 +3364,18 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--genesium Genesium-->
-         <tok val="[Gg]enesium"/>
+      <ana>
+         <tok val="Genesium"/>
+         <tok val="genesium"/>
          <lm>
             <l>genesis</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--genestae genistae genistaeque-->
-         <tok val="gen[ie]stae(que)?"/>
+      <ana>
+         <tok val="genestae"/>
+         <tok val="genistae"/>
+         <tok val="genistaeque"/>
          <lm>
             <l>genesta</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -2967,8 +3384,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--genethliaca genethliace-->
-         <tok val="genethliac[ea]"/>
+      <ana>
+         <tok val="genethliaca"/>
+         <tok val="genethliace"/>
          <lm>
             <l>genethliace</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -3017,8 +3435,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--genethliaco genethliacon-->
-         <tok val="genethliaco[n]?"/>
+      <ana>
+         <tok val="genethliaco"/>
+         <tok val="genethliacon"/>
          <lm>
             <l>genethliacus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -3029,8 +3448,9 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--genethliacon genethliacos-->
-         <tok val="genethliaco[sn]"/>
+      <ana>
+         <tok val="genethliacon"/>
+         <tok val="genethliacos"/>
          <lm>
             <l>genethliacus</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -3056,16 +3476,19 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--genetiuis genetivis-->
-         <tok val="geneti[vu]is"/>
+      <ana>
+         <tok val="genetiuis"/>
+         <tok val="genetivis"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.5">n - - p - - - m d</m>
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--genetiuis genetivis genitiuis-->
-         <tok val="gen[ei]ti[vu]is"/>
+      <ana>
+         <tok val="genetiuis"/>
+         <tok val="genetivis"/>
+         <tok val="genitiuis"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -3076,30 +3499,38 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--genetiuo genetivo-->
-         <tok val="geneti[vu]o"/>
+      <ana>
+         <tok val="genetiuo"/>
+         <tok val="genetivo"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--genetiuos genetivos genitiuos genitivos-->
-         <tok val="gen[ei]ti[vu]os"/>
+      <ana>
+         <tok val="genetiuos"/>
+         <tok val="genetivos"/>
+         <tok val="genitiuos"/>
+         <tok val="genitivos"/>
          <lm>
             <l>genetivus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--genetiuos genetivos-->
-         <tok val="geneti[vu]os"/>
+      <ana>
+         <tok val="genetiuos"/>
+         <tok val="genetivos"/>
          <lm>
             <l>genetivus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--genetiuum genetivum genitiuum genitivum-->
-         <tok val="gen[ei]ti[vu]um"/>
+      <ana>
+         <tok val="genetiuum"/>
+         <tok val="genetivum"/>
+         <tok val="genitiuum"/>
+         <tok val="genitivum"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -3109,16 +3540,18 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--genetiuum genetivum-->
-         <tok val="geneti[vu]um"/>
+      <ana>
+         <tok val="genetiuum"/>
+         <tok val="genetivum"/>
          <lm>
             <l>genetivus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--genetrice genitrice-->
-         <tok val="gen[ie]trice"/>
+      <ana>
+         <tok val="genetrice"/>
+         <tok val="genitrice"/>
          <lm>
             <l>genetrix</l>
             <m>n - - s - - - f b</m>
@@ -3415,8 +3848,9 @@
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--genis genisque-->
-         <tok val="genis(que)?"/>
+      <ana>
+         <tok val="genis"/>
+         <tok val="genisque"/>
          <lm>
             <l>gena</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -3506,15 +3940,19 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--genitas genitasque-->
-         <tok val="genitas(que)?"/>
+      <ana>
+         <tok val="genitas"/>
+         <tok val="genitasque"/>
          <lm>
             <l>gigno</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--genite genitum genitumque genitumst-->
-         <tok val="genit(um)?(st|que|e)?"/>
+      <ana>
+         <tok val="genite"/>
+         <tok val="genitum"/>
+         <tok val="genitumque"/>
+         <tok val="genitumst"/>
          <lm>
             <l>gigno</l>
             <m>v - - s r p p n v</m>
@@ -3561,8 +3999,11 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--genitorum genitum genitumque genitumst-->
-         <tok val="genit(or)?um(st|que)?"/>
+      <ana>
+         <tok val="genitorum"/>
+         <tok val="genitum"/>
+         <tok val="genitumque"/>
+         <tok val="genitumst"/>
          <lm>
             <l>gigno</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -3580,8 +4021,10 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--genitum genitumque genitumst-->
-         <tok val="genitum(st|que)?"/>
+      <ana>
+         <tok val="genitum"/>
+         <tok val="genitumque"/>
+         <tok val="genitumst"/>
          <lm cert="0.5">
             <l>gigno</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -3684,8 +4127,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--gentilem gentilemque-->
-         <tok val="gentilem(que)?"/>
+      <ana>
+         <tok val="gentilem"/>
+         <tok val="gentilemque"/>
          <lm cert="0.5">
             <l>gentilis</l>
             <m cert="0.333333333333333333">a - - s - - - f a</m>
@@ -3697,8 +4141,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--gentiles gentilesque-->
-         <tok val="gentiles(que)?"/>
+      <ana>
+         <tok val="gentiles"/>
+         <tok val="gentilesque"/>
          <lm>
             <l>gentiles</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -3706,8 +4151,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--gentili gentilique-->
-         <tok val="gentili(que)?"/>
+      <ana>
+         <tok val="gentili"/>
+         <tok val="gentilique"/>
          <lm>
             <l>gentiles</l>
             <m>n - - s - - - m d</m>
@@ -3722,8 +4168,10 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--gentilibus gentilibusque Gentilibus-->
-         <tok val="[Gg]entilibus(que)?"/>
+      <ana>
+         <tok val="Gentilibus"/>
+         <tok val="gentilibus"/>
+         <tok val="gentilibusque"/>
          <lm cert="0.5">
             <l>gentiles</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -3792,8 +4240,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--gentilis gentilisque-->
-         <tok val="gentilis(que)?"/>
+      <ana>
+         <tok val="gentilis"/>
+         <tok val="gentilisque"/>
          <lm>
             <l>gentiles</l>
             <m>n - - s - - - m g</m>
@@ -3807,15 +4256,17 @@
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--gentilitate gentilitateque-->
-         <tok val="gentilitate(que)?"/>
+      <ana>
+         <tok val="gentilitate"/>
+         <tok val="gentilitateque"/>
          <lm>
             <l>gentilitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--gentilitatem gentilitatemque-->
-         <tok val="gentilitatem(que)?"/>
+      <ana>
+         <tok val="gentilitatem"/>
+         <tok val="gentilitatemque"/>
          <lm>
             <l>gentilitas</l>
             <m>n - - s - - - f a</m>
@@ -3872,8 +4323,10 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--genuere genuerunt génuerunt-->
-         <tok val="g[ée]nuer(unt|e)"/>
+      <ana>
+         <tok val="genuere"/>
+         <tok val="genuerunt"/>
+         <tok val="génuerunt"/>
          <lm>
             <l>gigno</l>
             <m>v - 3 p r i a</m>
@@ -3894,8 +4347,9 @@
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--genuerint genuerintque-->
-         <tok val="genuerint(que)?"/>
+      <ana>
+         <tok val="genuerint"/>
+         <tok val="genuerintque"/>
          <lm>
             <l>gigno</l>
             <m cert="0.5">v - 3 p t i a</m>
@@ -4054,6 +4508,7 @@
       </ana>
       <ana>
          <tok val="Gentilibus"/>
+         <tok val="gentilibus"/>
          <lm>
             <l>gentilis</l>
             <m cert="0.5">n - - p - - - m b</m>

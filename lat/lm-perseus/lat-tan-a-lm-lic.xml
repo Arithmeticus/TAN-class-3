@@ -1,71 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuslic">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:lic">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to lic</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-lic.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>LIC</tok-starts-with>
       <tok-starts-with>Lic</tok-starts-with>
       <tok-starts-with>lic</tok-starts-with>
       <tok-starts-with>líc</tok-starts-with>
-      <ana><!--LICEAT Liceat liceat líceat-->
-         <tok val="[lL]?(i|lí)?(ceat|LICEAT)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:31:47.477-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:31:47.477-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-lic.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="LICEAT"/>
+         <tok val="Liceat"/>
+         <tok val="liceat"/>
+         <tok val="líceat"/>
          <lm>
             <l>licet</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--LICEOR Liceor-->
-         <tok val="L(iceor|ICEOR)"/>
+      <ana>
+         <tok val="LICEOR"/>
+         <tok val="Liceor"/>
+         <tok val="liceor"/>
          <lm>
             <l>licet</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--LICERET Liceret liceret-->
-         <tok val="[lL]?(iceret|LICERET)"/>
+      <ana>
+         <tok val="LICERET"/>
+         <tok val="Liceret"/>
+         <tok val="liceret"/>
          <lm>
             <l>licet</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--LICET Licet Licetne Licetque licet licét-->
-         <tok val="[Ll]?(ic)?[eé]?[t]?(ne|que|LICET)?"/>
+      <ana>
+         <tok val="LICET"/>
+         <tok val="Licet"/>
+         <tok val="Licetne"/>
+         <tok val="Licetque"/>
+         <tok val="licet"/>
+         <tok val="licetne"/>
+         <tok val="licetque"/>
+         <tok val="licét"/>
          <lm>
             <l>licet</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--LICINI Licini licini-->
-         <tok val="[lL]?(icini|LICINI)"/>
+      <ana>
+         <tok val="LICINI"/>
+         <tok val="Licini"/>
+         <tok val="licini"/>
          <lm>
             <l>licinus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -74,15 +98,21 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--LICINI Licini Licinii licini-->
-         <tok val="[Ll]?(icini)?(i|LICINI)?"/>
+      <ana>
+         <tok val="LICINI"/>
+         <tok val="Licini"/>
+         <tok val="Licinii"/>
+         <tok val="licini"/>
+         <tok val="licinii"/>
          <lm>
             <l>licinium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--LICINIO Licinio licinio-->
-         <tok val="[lL]?(icinio|LICINIO)"/>
+      <ana>
+         <tok val="LICINIO"/>
+         <tok val="Licinio"/>
+         <tok val="licinio"/>
          <lm cert="0.5">
             <l>licinio</l>
             <m>v - 1 s p i a</m>
@@ -93,16 +123,19 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--LICO Lico-->
-         <tok val="L(ico|ICO)"/>
+      <ana>
+         <tok val="LICO"/>
+         <tok val="Lico"/>
+         <tok val="lico"/>
          <lm>
             <l>Licus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--LICTORIA lictoria-->
-         <tok val="(lictoria|LICTORIA)"/>
+      <ana>
+         <tok val="LICTORIA"/>
+         <tok val="lictoria"/>
          <lm>
             <l>lictorius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -113,8 +146,11 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--LICVERIT Licuerit-->
-         <tok val="L(icuerit|ICVERIT)"/>
+      <ana>
+         <tok val="LICVERIT"/>
+         <tok val="Licuerit"/>
+         <tok val="licuerit"/>
+         <tok val="licverit"/>
          <lm>
             <l>liqueo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -123,6 +159,7 @@
       </ana>
       <ana>
          <tok val="Lice"/>
+         <tok val="lice"/>
          <lm cert="0.5">
             <l>Licus</l>
             <m>n e - s - - - m v</m>
@@ -132,8 +169,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Licebat licebat-->
-         <tok val="[lL]icebat"/>
+      <ana>
+         <tok val="Licebat"/>
+         <tok val="licebat"/>
          <lm>
             <l>licet</l>
             <m>v - 3 s i i a</m>
@@ -141,13 +179,16 @@
       </ana>
       <ana>
          <tok val="Licebit"/>
+         <tok val="licebit"/>
          <lm>
             <l>licet</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Licentia licentia licentiaque-->
-         <tok val="[lL]icentia(que)?"/>
+      <ana>
+         <tok val="Licentia"/>
+         <tok val="licentia"/>
+         <tok val="licentiaque"/>
          <lm>
             <l>licentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -157,6 +198,7 @@
       </ana>
       <ana>
          <tok val="Licentia"/>
+         <tok val="licentia"/>
          <lm>
             <l>licet</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -164,8 +206,10 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Licentiae licentiae licentiaeque-->
-         <tok val="[lL]icentiae(que)?"/>
+      <ana>
+         <tok val="Licentiae"/>
+         <tok val="licentiae"/>
+         <tok val="licentiaeque"/>
          <lm>
             <l>licentia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -174,8 +218,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Licentiam licentiam licentiamque-->
-         <tok val="[lL]icentiam(que)?"/>
+      <ana>
+         <tok val="Licentiam"/>
+         <tok val="licentiam"/>
+         <tok val="licentiamque"/>
          <lm>
             <l>licentia</l>
             <m>n - - s - - - f a</m>
@@ -183,6 +229,7 @@
       </ana>
       <ana>
          <tok val="Licentio"/>
+         <tok val="licentio"/>
          <lm>
             <l>Licentius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -191,6 +238,7 @@
       </ana>
       <ana>
          <tok val="Licentior"/>
+         <tok val="licentior"/>
          <lm>
             <l>licet</l>
             <m cert="0.25">v - - s p p a m v c</m>
@@ -199,8 +247,9 @@
             <m cert="0.25">v - - s p p a f n c</m>
          </lm>
       </ana>
-      <ana><!--Licentiosus licentiosus-->
-         <tok val="[lL]icentiosus"/>
+      <ana>
+         <tok val="Licentiosus"/>
+         <tok val="licentiosus"/>
          <lm>
             <l>licentiosus</l>
             <m>a - - s - - - m n</m>
@@ -208,6 +257,7 @@
       </ana>
       <ana>
          <tok val="Licentissimi"/>
+         <tok val="licentissimi"/>
          <lm>
             <l>licet</l>
             <m cert="0.25">v - - p p p a m v s</m>
@@ -218,26 +268,22 @@
       </ana>
       <ana>
          <tok val="Licentius"/>
+         <tok val="licentius"/>
          <lm cert="0.5">
             <l>Licentius</l>
             <m>n e - s - - - m n</m>
          </lm>
          <lm cert="0.5">
             <l>licet</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Licentius licentius-->
-         <tok val="[lL]icentius"/>
-         <lm>
-            <l>licet</l>
-            <m cert="0.333333333333333333">v - - s p p a n n c</m>
-            <m cert="0.333333333333333333">v - - s p p a n a c</m>
-            <m cert="0.333333333333333333">v - - s p p a n v c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">v - - s p p a n n c</m>
+            <m cert="0.25">v - - s p p a n a c</m>
+            <m cert="0.25">v - - s p p a n v c</m>
          </lm>
       </ana>
       <ana>
          <tok val="Liceo"/>
+         <tok val="liceo"/>
          <lm>
             <l>licet</l>
             <m>v - 1 s p i a</m>
@@ -245,14 +291,18 @@
       </ana>
       <ana>
          <tok val="Licere"/>
+         <tok val="licere"/>
          <lm>
             <l>licet</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Licere Liceris-->
-         <tok val="Licer(is|e)"/>
+      <ana>
+         <tok val="Licere"/>
+         <tok val="Liceris"/>
+         <tok val="licere"/>
+         <tok val="liceris"/>
          <lm>
             <l>licet</l>
             <m>v - 2 s p i p</m>
@@ -260,6 +310,7 @@
       </ana>
       <ana>
          <tok val="Liceri"/>
+         <tok val="liceri"/>
          <lm>
             <l>licet</l>
             <m>v - - - p n p</m>
@@ -267,6 +318,7 @@
       </ana>
       <ana>
          <tok val="Liceriana"/>
+         <tok val="liceriana"/>
          <lm>
             <l>Licerianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -279,6 +331,7 @@
       </ana>
       <ana>
          <tok val="Licerianus"/>
+         <tok val="licerianus"/>
          <lm>
             <l>Licerianus</l>
             <m>a e - s - - - m n</m>
@@ -286,6 +339,7 @@
       </ana>
       <ana>
          <tok val="Licet"/>
+         <tok val="licet"/>
          <lm>
             <l>licet2</l>
             <m>c</m>
@@ -293,14 +347,18 @@
       </ana>
       <ana>
          <tok val="Licha"/>
+         <tok val="licha"/>
          <lm>
             <l>Lichas</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Licha Lichas-->
-         <tok val="Licha[s]?"/>
+      <ana>
+         <tok val="Licha"/>
+         <tok val="Lichas"/>
+         <tok val="licha"/>
+         <tok val="lichas"/>
          <lm>
             <l>Lichas</l>
             <m>n e - s - - - m n</m>
@@ -308,6 +366,7 @@
       </ana>
       <ana>
          <tok val="Lichae"/>
+         <tok val="lichae"/>
          <lm>
             <l>Lichas</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -316,8 +375,11 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Licham Lichan-->
-         <tok val="Licha[nm]"/>
+      <ana>
+         <tok val="Licham"/>
+         <tok val="Lichan"/>
+         <tok val="licham"/>
+         <tok val="lichan"/>
          <lm>
             <l>Lichas</l>
             <m>n e - s - - - m a</m>
@@ -325,13 +387,19 @@
       </ana>
       <ana>
          <tok val="Lichas"/>
+         <tok val="lichas"/>
          <lm>
             <l>Lichas</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lici Licin Licinn-->
-         <tok val="Lici[n]?(n|)?"/>
+      <ana>
+         <tok val="Lici"/>
+         <tok val="Licin"/>
+         <tok val="Licinn"/>
+         <tok val="lici"/>
+         <tok val="licin"/>
+         <tok val="licinn"/>
          <lm>
             <l>Licus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -339,15 +407,22 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lici Licin Licinn lici licii-->
-         <tok val="[Ll]ici[n]?[ni]?"/>
+      <ana>
+         <tok val="Lici"/>
+         <tok val="Licin"/>
+         <tok val="Licinn"/>
+         <tok val="lici"/>
+         <tok val="licii"/>
+         <tok val="licin"/>
+         <tok val="licinn"/>
          <lm>
             <l>licium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Licia licia-->
-         <tok val="[lL]icia"/>
+      <ana>
+         <tok val="Licia"/>
+         <tok val="licia"/>
          <lm>
             <l>licium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -355,8 +430,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Liciatorium liciatorium-->
-         <tok val="[lL]iciatorium"/>
+      <ana>
+         <tok val="Liciatorium"/>
+         <tok val="liciatorium"/>
          <lm>
             <l>liciatorium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -365,8 +441,11 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Licin Licinn-->
-         <tok val="Licin[n]?"/>
+      <ana>
+         <tok val="Licin"/>
+         <tok val="Licinn"/>
+         <tok val="licin"/>
+         <tok val="licinn"/>
          <lm>
             <l>Licus</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -375,6 +454,7 @@
       </ana>
       <ana>
          <tok val="Licini"/>
+         <tok val="licini"/>
          <lm>
             <l>Licinus</l>
             <m cert="0.333333333333333333">n e - p - - - m v</m>
@@ -384,7 +464,8 @@
       </ana>
       <ana>
          <tok val="Licinia"/>
-         <lm cert="0.5">
+         <tok val="licinia"/>
+         <lm cert="0.25">
             <l>Licinius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
             <m cert="0.166666666666666667">a e - p - - - n v</m>
@@ -393,28 +474,26 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.25">
             <l>Licinia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Licinia licinia-->
-         <tok val="[lL]icinia"/>
-         <lm cert="0.5">
+         <lm cert="0.25">
             <l>licinium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
             <m cert="0.333333333333333333">n - - p - - - n v</m>
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.25">
             <l>licinio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Liciniae"/>
+         <tok val="liciniae"/>
          <lm cert="0.5">
             <l>Licinia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -432,6 +511,7 @@
       </ana>
       <ana>
          <tok val="Liciniam"/>
+         <tok val="liciniam"/>
          <lm cert="0.5">
             <l>Licinia</l>
             <m>n e - s - - - f a</m>
@@ -443,6 +523,7 @@
       </ana>
       <ana>
          <tok val="Liciniana"/>
+         <tok val="liciniana"/>
          <lm>
             <l>Licinianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -455,6 +536,7 @@
       </ana>
       <ana>
          <tok val="Licinianae"/>
+         <tok val="licinianae"/>
          <lm>
             <l>Licinianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -463,8 +545,11 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Liciniane Licinianum-->
-         <tok val="Licinian(um|e)"/>
+      <ana>
+         <tok val="Liciniane"/>
+         <tok val="Licinianum"/>
+         <tok val="liciniane"/>
+         <tok val="licinianum"/>
          <lm>
             <l>Licinianus</l>
             <m>a e - s - - - n v</m>
@@ -472,6 +557,7 @@
       </ana>
       <ana>
          <tok val="Liciniane"/>
+         <tok val="liciniane"/>
          <lm>
             <l>Licinianus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -480,6 +566,7 @@
       </ana>
       <ana>
          <tok val="Liciniani"/>
+         <tok val="liciniani"/>
          <lm cert="0.5">
             <l>Licinianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -495,6 +582,7 @@
       </ana>
       <ana>
          <tok val="Liciniano"/>
+         <tok val="liciniano"/>
          <lm>
             <l>Licinianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -505,6 +593,7 @@
       </ana>
       <ana>
          <tok val="Licinianum"/>
+         <tok val="licinianum"/>
          <lm cert="0.5">
             <l>Licinianus</l>
             <m cert="0.2">a e - p - - - m g</m>
@@ -520,6 +609,7 @@
       </ana>
       <ana>
          <tok val="Licinianus"/>
+         <tok val="licinianus"/>
          <lm>
             <l>Licinianus</l>
             <m>a e - s - - - m n</m>
@@ -527,6 +617,7 @@
       </ana>
       <ana>
          <tok val="Licinias"/>
+         <tok val="licinias"/>
          <lm cert="0.333333333333333333">
             <l>Licinius</l>
             <m>a e - p - - - f a</m>
@@ -542,6 +633,7 @@
       </ana>
       <ana>
          <tok val="Licinii"/>
+         <tok val="licinii"/>
          <lm>
             <l>Licinius</l>
             <m cert="0.25">n e - p - - - m v</m>
@@ -552,6 +644,7 @@
       </ana>
       <ana>
          <tok val="Liciniis"/>
+         <tok val="liciniis"/>
          <lm cert="0.333333333333333333">
             <l>Licinia</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -574,6 +667,7 @@
       </ana>
       <ana>
          <tok val="Licinio"/>
+         <tok val="licinio"/>
          <lm>
             <l>Licinius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -584,6 +678,7 @@
       </ana>
       <ana>
          <tok val="Licinis"/>
+         <tok val="licinis"/>
          <lm cert="0.5">
             <l>Licinus</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -599,9 +694,12 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Licinium Liciniumque-->
-         <tok val="Licinium(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Licinium"/>
+         <tok val="Liciniumque"/>
+         <tok val="licinium"/>
+         <tok val="liciniumque"/>
+         <lm cert="0.5">
             <l>Licinius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
             <m cert="0.166666666666666667">n e - p - - - m g</m>
@@ -610,10 +708,7 @@
             <m cert="0.166666666666666667">n e - s - - - m a</m>
             <m cert="0.166666666666666667">a e - p - - - n g</m>
          </lm>
-      </ana>
-      <ana><!--Licinium Liciniumque licinium-->
-         <tok val="[lL]icinium(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>licinium</l>
             <m cert="0.25">n - - s - - - n v</m>
             <m cert="0.25">n - - s - - - n a</m>
@@ -621,28 +716,28 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Licinius Liciniusque-->
-         <tok val="Licinius(que)?"/>
+      <ana>
+         <tok val="Licinius"/>
+         <tok val="Liciniusque"/>
+         <tok val="licinius"/>
+         <tok val="liciniusque"/>
          <lm cert="0.5">
             <l>licinus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>Licinius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Licinius Liciniusque licinius-->
-         <tok val="[lL]icinius(que)?"/>
-         <lm>
-            <l>licinus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Licino Licinoque-->
-         <tok val="Licino(que)?"/>
+      <ana>
+         <tok val="Licino"/>
+         <tok val="Licinoque"/>
+         <tok val="licino"/>
+         <tok val="licinoque"/>
          <lm cert="0.5">
             <l>licinus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -658,6 +753,7 @@
       </ana>
       <ana>
          <tok val="Licinum"/>
+         <tok val="licinum"/>
          <lm cert="0.5">
             <l>licinus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -675,20 +771,19 @@
       </ana>
       <ana>
          <tok val="Licinus"/>
-         <lm>
+         <tok val="licinus"/>
+         <lm cert="0.5">
             <l>Licinus</l>
             <m>n e - s - - - m n</m>
          </lm>
-      </ana>
-      <ana><!--Licinus licinus-->
-         <tok val="[lL]icinus"/>
-         <lm>
+         <lm cert="0.5">
             <l>licinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Licio licio-->
-         <tok val="[lL]icio"/>
+      <ana>
+         <tok val="Licio"/>
+         <tok val="licio"/>
          <lm>
             <l>licium</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -697,7 +792,8 @@
       </ana>
       <ana>
          <tok val="Licita"/>
-         <lm>
+         <tok val="licita"/>
+         <lm cert="0.5">
             <l>licet</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
             <m cert="0.166666666666666667">v - - p r p p n v</m>
@@ -706,18 +802,17 @@
             <m cert="0.166666666666666667">v - - s r p p f n</m>
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
-      </ana>
-      <ana><!--Licita licita-->
-         <tok val="[lL]icita"/>
-         <lm>
+         <lm cert="0.5">
             <l>licita</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
             <m cert="0.333333333333333333">n - - p - - - n v</m>
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Licitae licitaeque-->
-         <tok val="[lL]icitae(que)?"/>
+      <ana>
+         <tok val="Licitae"/>
+         <tok val="licitae"/>
+         <tok val="licitaeque"/>
          <lm>
             <l>licet</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -728,6 +823,7 @@
       </ana>
       <ana>
          <tok val="Licitans"/>
+         <tok val="licitans"/>
          <lm>
             <l>licitor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -739,23 +835,26 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Licitatio licitatio-->
-         <tok val="[lL]icitatio"/>
+      <ana>
+         <tok val="Licitatio"/>
+         <tok val="licitatio"/>
          <lm>
             <l>licitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Licitatione licitatione-->
-         <tok val="[lL]icitatione"/>
+      <ana>
+         <tok val="Licitatione"/>
+         <tok val="licitatione"/>
          <lm>
             <l>licitatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Licitationem licitationem-->
-         <tok val="[lL]icitationem"/>
+      <ana>
+         <tok val="Licitationem"/>
+         <tok val="licitationem"/>
          <lm>
             <l>licitatio</l>
             <m>n - - s - - - f a</m>
@@ -763,6 +862,7 @@
       </ana>
       <ana>
          <tok val="Licito"/>
+         <tok val="licito"/>
          <lm>
             <l>licet</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -771,16 +871,20 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Licitor licitor-->
-         <tok val="[lL]icitor"/>
+      <ana>
+         <tok val="Licitor"/>
+         <tok val="licitor"/>
          <lm>
             <l>licitor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Licitum Licitumst-->
-         <tok val="Licitum(st)?"/>
-         <lm>
+      <ana>
+         <tok val="Licitum"/>
+         <tok val="Licitumst"/>
+         <tok val="licitum"/>
+         <tok val="licitumst"/>
+         <lm cert="0.5">
             <l>licet</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -790,16 +894,14 @@
             <m cert="0.142857142857142857">v - - s r p p n a</m>
             <m cert="0.142857142857142857">v - - s r p p n v</m>
          </lm>
-      </ana>
-      <ana><!--Licitum Licitumst licitum licitumst-->
-         <tok val="[lL]icitum(st)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>licita</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Liciturum"/>
+         <tok val="liciturum"/>
          <lm>
             <l>licet</l>
             <m cert="0.166666666666666667">v - - p f p a n g</m>
@@ -812,6 +914,7 @@
       </ana>
       <ana>
          <tok val="Liciturus"/>
+         <tok val="liciturus"/>
          <lm>
             <l>licet</l>
             <m>v - - s f p a m n</m>
@@ -819,13 +922,16 @@
       </ana>
       <ana>
          <tok val="Licitus"/>
+         <tok val="licitus"/>
          <lm>
             <l>licet</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Licium licium liciumque-->
-         <tok val="[lL]icium(que)?"/>
+      <ana>
+         <tok val="Licium"/>
+         <tok val="licium"/>
+         <tok val="liciumque"/>
          <lm>
             <l>licium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -833,30 +939,37 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Licium liciorum licium liciumque-->
-         <tok val="[lL]ici(or)?um(que)?"/>
+      <ana>
+         <tok val="Licium"/>
+         <tok val="liciorum"/>
+         <tok val="licium"/>
+         <tok val="liciumque"/>
          <lm>
             <l>licium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lictor lictor-->
-         <tok val="[lL]ictor"/>
+      <ana>
+         <tok val="Lictor"/>
+         <tok val="lictor"/>
          <lm>
             <l>lictor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lictorem lictorem-->
-         <tok val="[lL]ictorem"/>
+      <ana>
+         <tok val="Lictorem"/>
+         <tok val="lictorem"/>
          <lm>
             <l>lictor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lictores lictores lictoresque-->
-         <tok val="[lL]ictores(que)?"/>
+      <ana>
+         <tok val="Lictores"/>
+         <tok val="lictores"/>
+         <tok val="lictoresque"/>
          <lm>
             <l>lictor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -864,8 +977,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lictoris lictoris-->
-         <tok val="[lL]ictoris"/>
+      <ana>
+         <tok val="Lictoris"/>
+         <tok val="lictoris"/>
          <lm>
             <l>lictor</l>
             <m>n - - s - - - m g</m>
@@ -873,6 +987,7 @@
       </ana>
       <ana>
          <tok val="Lictorium"/>
+         <tok val="lictorium"/>
          <lm>
             <l>lictorius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -883,15 +998,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lictorius lictorius-->
-         <tok val="[lL]ictorius"/>
+      <ana>
+         <tok val="Lictorius"/>
+         <tok val="lictorius"/>
          <lm>
             <l>lictorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lictorum lictorum-->
-         <tok val="[lL]ictorum"/>
+      <ana>
+         <tok val="Lictorum"/>
+         <tok val="lictorum"/>
          <lm>
             <l>lictor</l>
             <m>n - - p - - - m g</m>
@@ -899,13 +1016,18 @@
       </ana>
       <ana>
          <tok val="Licuisse"/>
+         <tok val="licuisse"/>
          <lm>
             <l>liqueo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Licuit licuit licuitne licuitque licuitve-->
-         <tok val="[lL]icuit[vn]?(e|que)?"/>
+      <ana>
+         <tok val="Licuit"/>
+         <tok val="licuit"/>
+         <tok val="licuitne"/>
+         <tok val="licuitque"/>
+         <tok val="licuitve"/>
          <lm>
             <l>licet</l>
             <m>v - 3 s r i a</m>
@@ -913,6 +1035,7 @@
       </ana>
       <ana>
          <tok val="Licus"/>
+         <tok val="licus"/>
          <lm>
             <l>Licus</l>
             <m>n e - s - - - m n</m>
@@ -920,6 +1043,7 @@
       </ana>
       <ana>
          <tok val="Licymnia"/>
+         <tok val="licymnia"/>
          <lm>
             <l>Lycimnia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -929,6 +1053,7 @@
       </ana>
       <ana>
          <tok val="Licymniae"/>
+         <tok val="licymniae"/>
          <lm>
             <l>Lycimnia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -937,8 +1062,9 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--lice licen-->
-         <tok val="lice[n]?"/>
+      <ana>
+         <tok val="lice"/>
+         <tok val="licen"/>
          <lm>
             <l>liceo</l>
             <m>v - 2 s p m a</m>
@@ -972,8 +1098,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--liceatne liceatque-->
-         <tok val="liceat(qu|n)e"/>
+      <ana>
+         <tok val="liceatne"/>
+         <tok val="liceatque"/>
          <lm>
             <l>liceo</l>
             <m>v - 3 s p s a</m>
@@ -1000,8 +1127,10 @@
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--licebit licebitne licebitque-->
-         <tok val="licebit(ne|que)?"/>
+      <ana>
+         <tok val="licebit"/>
+         <tok val="licebitne"/>
+         <tok val="licebitque"/>
          <lm>
             <l>liceo</l>
             <m>v - 3 s f i a</m>
@@ -1036,8 +1165,10 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--licen lices licesne-->
-         <tok val="lice[s]?[n]?[es]?"/>
+      <ana>
+         <tok val="licen"/>
+         <tok val="lices"/>
+         <tok val="licesne"/>
          <lm>
             <l>liceo</l>
             <m>v - 2 s p i a</m>
@@ -1115,8 +1246,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--licente licenti-->
-         <tok val="licent[ie]"/>
+      <ana>
+         <tok val="licente"/>
+         <tok val="licenti"/>
          <lm>
             <l>liceo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1142,8 +1274,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--licentes licentis-->
-         <tok val="licent[ie]s"/>
+      <ana>
+         <tok val="licentes"/>
+         <tok val="licentis"/>
          <lm>
             <l>liceo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1159,8 +1292,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--licentia licentiaque-->
-         <tok val="licentia(que)?"/>
+      <ana>
+         <tok val="licentia"/>
+         <tok val="licentiaque"/>
          <lm>
             <l>liceo</l>
             <m cert="0.333333333333333333">v - - p p p a n a</m>
@@ -1236,15 +1370,17 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--licentiose licentiosius-->
-         <tok val="licentios(ius|e)"/>
+      <ana>
+         <tok val="licentiose"/>
+         <tok val="licentiosius"/>
          <lm>
             <l>licentiosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--licentiose licentiosum-->
-         <tok val="licentios(um|e)"/>
+      <ana>
+         <tok val="licentiose"/>
+         <tok val="licentiosum"/>
          <lm>
             <l>licentiosus</l>
             <m>a - - s - - - n v</m>
@@ -1336,8 +1472,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--licentius licenter-->
-         <tok val="licent(er|ius)"/>
+      <ana>
+         <tok val="licenter"/>
+         <tok val="licentius"/>
          <lm>
             <l>licet</l>
             <m>d</m>
@@ -1382,8 +1519,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--licere liceris-->
-         <tok val="licer(is|e)"/>
+      <ana>
+         <tok val="licere"/>
+         <tok val="liceris"/>
          <lm>
             <l>liceo</l>
             <m>v - 2 s p i p</m>
@@ -1452,8 +1590,12 @@
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--licetne licetque Licétne-->
-         <tok val="[lL]ic(étn)?e[t]?(qu|n)?(e|)"/>
+      <ana>
+         <tok val="Licetne"/>
+         <tok val="Licétne"/>
+         <tok val="licetne"/>
+         <tok val="licetque"/>
+         <tok val="licétne"/>
          <lm>
             <l>liceo</l>
             <m>v - 3 s p i a</m>
@@ -1474,16 +1616,18 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--lichano lichanon-->
-         <tok val="lichano[n]?"/>
+      <ana>
+         <tok val="lichano"/>
+         <tok val="lichanon"/>
          <lm>
             <l>lichanos</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--lichanon lichanos-->
-         <tok val="lichano[sn]"/>
+      <ana>
+         <tok val="lichanon"/>
+         <tok val="lichanos"/>
          <lm>
             <l>lichanos</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1497,8 +1641,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--liciis liciisque-->
-         <tok val="liciis(que)?"/>
+      <ana>
+         <tok val="liciis"/>
+         <tok val="liciisque"/>
          <lm>
             <l>licium</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -1585,8 +1730,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--licitare licitaris-->
-         <tok val="licitar(is|e)"/>
+      <ana>
+         <tok val="licitare"/>
+         <tok val="licitaris"/>
          <lm>
             <l>licitor</l>
             <m>v - 2 s p i p</m>
@@ -1606,8 +1752,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--licitas licitasque-->
-         <tok val="licitas(que)?"/>
+      <ana>
+         <tok val="licitas"/>
+         <tok val="licitasque"/>
          <lm>
             <l>liceo</l>
             <m>v - - p r p p f a</m>
@@ -1631,8 +1778,9 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--licitationibus licitationibusque-->
-         <tok val="licitationibus(que)?"/>
+      <ana>
+         <tok val="licitationibus"/>
+         <tok val="licitationibusque"/>
          <lm>
             <l>licitatio</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -1665,8 +1813,10 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--licite licitum licitumst-->
-         <tok val="licit(um)?(st|e)?"/>
+      <ana>
+         <tok val="licite"/>
+         <tok val="licitum"/>
+         <tok val="licitumst"/>
          <lm>
             <l>liceo</l>
             <m>v - - s r p p n v</m>
@@ -1737,15 +1887,18 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--licitum licitumst lícitum-->
-         <tok val="l[ií]citum(st)?"/>
+      <ana>
+         <tok val="licitum"/>
+         <tok val="licitumst"/>
+         <tok val="lícitum"/>
          <lm>
             <l>liceo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--licitum licitumst-->
-         <tok val="licitum(st)?"/>
+      <ana>
+         <tok val="licitum"/>
+         <tok val="licitumst"/>
          <lm>
             <l>liceo</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -1781,8 +1934,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--lictori lictorique-->
-         <tok val="lictori(que)?"/>
+      <ana>
+         <tok val="lictori"/>
+         <tok val="lictorique"/>
          <lm cert="0.5">
             <l>lictorius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -1803,8 +1957,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--lictoribus lictoribusque-->
-         <tok val="lictoribus(que)?"/>
+      <ana>
+         <tok val="lictoribus"/>
+         <tok val="lictoribusque"/>
          <lm>
             <l>lictor</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -1818,8 +1973,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--licuerit licueritne-->
-         <tok val="licuerit(ne)?"/>
+      <ana>
+         <tok val="licuerit"/>
+         <tok val="licueritne"/>
          <lm>
             <l>liceo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -1847,10 +2003,15 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--licuisset Licuisset-->
-         <tok val="[Ll]icuisset"/>
-         <lm>
+      <ana>
+         <tok val="Licuisset"/>
+         <tok val="licuisset"/>
+         <lm cert="0.5">
             <l>licet</l>
+            <m>v - 3 s l s a</m>
+         </lm>
+         <lm cert="0.5">
+            <l>liqueo</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
@@ -1876,6 +2037,7 @@
       </ana>
       <ana>
          <tok val="Licuerit"/>
+         <tok val="licuerit"/>
          <lm>
             <l>licet</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -1883,14 +2045,8 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Licuisset"/>
-         <lm>
-            <l>liqueo</l>
-            <m>v - 3 s l s a</m>
-         </lm>
-      </ana>
-      <ana><!--lichenas lichenes-->
-         <tok val="lichen[ea]s"/>
+         <tok val="lichenas"/>
+         <tok val="lichenes"/>
          <lm>
             <l>lichen</l>
             <m>n - - p - - - m a</m>

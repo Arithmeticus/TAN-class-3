@@ -1,22 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../TAN-2020/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../TAN-2020/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <!--<?xml-model href="../../schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
 <?xml-model href="../../schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
-<!--<?xml-model href="http://textalign.net/release/TAN-2018/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="http://textalign.net/release/TAN-2018/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
-<TAN-mor xmlns="tag:textalign.net,2015:ns" TAN-version="2018" id="tag:kalvesmaki.com,2014:tan-r-mor:syr:sedra4">
+<!--<?xml-model href="http://textalign.net/release/TAN-2020/schemas/TAN-mor.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="http://textalign.net/release/TAN-2020/schemas/TAN-mor.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
+<TAN-mor xmlns="tag:textalign.net,2015:ns"
+         TAN-version="2020"
+         id="tag:kalvesmaki.com,2014:tan-r-mor:syr:sedra4">
    <head>
       <name>Sedra 4 rules for Syriac morphology</name>
-      <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/TAN-mor/syr.kalvesmaki.com%2C2015.1.xml"/>
-      <license which="by-nc-nd_4.0"/>
-      <licensor who="kalvesmaki"/>
-      <source xml:id="sedra">
+      <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/syr/syr.sedra4.tan-mor.xml"/>
+      <license which="by-nc-nd_4.0" licensor="kalvesmaki"/>
+      <for-lang>syr</for-lang>
+      <source>
          <IRI>tag:kalvesmaki.com,2015:morphology:sedra4</IRI>
          <name>Sedra 4</name>
          <desc xml:lang="eng">Sedras</desc>
       </source>
-      <definitions ed-when="2016-03-31" ed-who="kalvesmaki">
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>Vocabulary items part of Kalvesmaki's collection of lexico-morphology files</name>
+         <location href="../lm.TAN-voc.xml" accessed-when="2020-03-05"/>
+      </vocabulary>
+      <predecessor>
+         <IRI>tag:kalvesmaki.com,2014:tan-r-mor:syr:sedra4</IRI>
+         <name>Sedra 4 rules for Syriac morphology</name>
+         <desc>2018 version</desc>
+         <location href="syr.sedra4.tan-mor-2018.xml" accessed-when="2020-03-05"/>
+      </predecessor>
+      <vocabulary-key ed-when="2016-03-31" ed-who="kalvesmaki">
+         <algorithm xml:id="xslt2">
+            <IRI>tag:textalign.net,2015:stylesheet:convert-tan2018-to-tan2020</IRI>
+            <name>Converter from TAN 2018 to TAN 2020</name>
+            <location href="../../TAN-2020/applications/convert/convert%20TAN%202018%20to%20TAN%202020.xsl"
+                      accessed-when="2020-03-05T22:27:40.764-05:00"/>
+         </algorithm>
          <person xml:id="sci">
             <IRI>tag:kalvesmaki.com,2015:agent:syriac-computing-institute</IRI>
             <name>Syriac Computing Institute</name>
@@ -25,21 +44,18 @@
             <IRI>http://viaf.org/viaf/44440112</IRI>
             <name>George Kiraz</name>
          </person>
-         <person xml:id="kalvesmaki">
-            <IRI>http://viaf.org/viaf/299582703</IRI>
-            <IRI>tag:kalvesmaki.com,2014:self</IRI>
-            <name>Joel Kalvesmaki</name>
-         </person>
-         <algorithm xml:id="xslt1"><IRI>tag:textalign.net,2015:stylesheet:convert-tan2017-to-tan2018</IRI><name>Stylesheet to populate a TAN-A-div file from collections.</name><desc>Stylesheet at: ../../../TAN-2018/do%20things/convert/convert%20TAN%202017%20to%20TAN%202018.xsl</desc></algorithm>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert-tan2017-to-tan2018</IRI>
+            <name>Stylesheet to populate a TAN-A-div file from collections.</name>
+            <desc>Stylesheet at: ../../../TAN-2018/do%20things/convert/convert%20TAN%202017%20to%20TAN%202018.xsl</desc>
+            <location href="../../TAN-2020/applications/convert/convert%20TAN%202017%20to%20TAN%202018.xsl"
+                      accessed-when="2020-03-05"/>
+         </algorithm>
          <role xml:id="provider">
             <IRI>http://schema.org/provider</IRI>
             <name>Provider</name>
          </role>
-         <role xml:id="editor">
-            <IRI>http://schema.org/editor</IRI>
-            <name>Editor</name>
-         </role>
-         <role xml:id="stylesheet" which="stylesheet"/>
+
          <feature which="verb" xml:id="verb"/>
          <feature which="participle" xml:id="participle"/>
          <feature xml:id="denominative">
@@ -47,9 +63,10 @@
             <name>denominative</name>
          </feature>
          <feature which="substantive adjective" xml:id="substantive"/>
+         <feature which="proper noun" xml:id="proper"/>
          <feature which="noun" xml:id="noun"/>
          <feature which="pronoun" xml:id="pronoun"/>
-         <feature which="proper noun" xml:id="proper"/>
+         <feature which="preposition" xml:id="preposition"/>
          <feature which="number cardinal" xml:id="numeral"/>
          <feature which="adjective" xml:id="adjective"/>
          <feature xml:id="adj-place">
@@ -62,52 +79,52 @@
             <name>idiom</name>
          </feature>
          <feature which="adverb" xml:id="adverb"/>
-         <alias id="p'al" idrefs="p-al"/>
-         <feature xml:id="p-al">
+         <alias id="p'al" idrefs="pʿal"/>
+         <feature xml:id="pʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:p'al</IRI>
             <name>p'al</name>
          </feature>
-         <alias id="pa''el" idrefs="pa--el"/>
-         <feature xml:id="pa--el">
+         <alias id="pa''el" idrefs="paʿʿel"/>
+         <feature xml:id="paʿʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:pa''el</IRI>
             <name>pa''el</name>
          </feature>
-         <alias id="aph'el" idrefs="aph-el"/>
-         <feature xml:id="aph-el">
+         <alias id="aph'el" idrefs="aphʿel"/>
+         <feature xml:id="aphʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:aph'el</IRI>
             <name>aph'el</name>
          </feature>
-         <alias id="ethpa''al" idrefs="ethpa--al"/>
-         <feature xml:id="ethpa--al">
+         <alias id="ethpa''al" idrefs="ethpaʿʿal"/>
+         <feature xml:id="ethpaʿʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethpa''al</IRI>
             <name>ethpa''al</name>
          </feature>
-         <alias id="ethp'el" idrefs="ethp-el"/>
-         <feature xml:id="ethp-el">
+         <alias id="ethp'el" idrefs="ethpʿel"/>
+         <feature xml:id="ethpʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethp'el</IRI>
             <name>ethp'el</name>
          </feature>
-         <feature xml:id="iva">
+         <feature xml:id="IVa">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:iva</IRI>
-            <name>iva</name>
+            <name>IVa</name>
          </feature>
-         <alias id="eshtaph'al" idrefs="eshtaph-al"/>
-         <feature xml:id="eshtaph-al">
+         <alias id="eshtaph'al" idrefs="eshtaphʿal"/>
+         <feature xml:id="eshtaphʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:eshtaph'al</IRI>
             <name>eshtaph'al</name>
          </feature>
-         <alias id="ettaph'al" idrefs="ettaph-al"/>
-         <feature xml:id="ettaph-al">
+         <alias id="ettaph'al" idrefs="ettaphʿal"/>
+         <feature xml:id="ettaphʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ettaph'al</IRI>
             <name>ettaph'al</name>
          </feature>
-         <alias id="pay'el" idrefs="pay-el"/>
-         <feature xml:id="pay-el">
+         <alias id="pay'el" idrefs="payʿel"/>
+         <feature xml:id="payʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:pay'el</IRI>
             <name>pay'el</name>
          </feature>
-         <alias id="shaph'el" idrefs="shaph-el"/>
-         <feature xml:id="shaph-el">
+         <alias id="shaph'el" idrefs="shaphʿel"/>
+         <feature xml:id="shaphʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:shaph'el</IRI>
             <name>shaph'el</name>
          </feature>
@@ -119,18 +136,18 @@
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethpalpal</IRI>
             <name>ethpalpal</name>
          </feature>
-         <alias id="ethpay'al" idrefs="ethpay-al"/>
-         <feature xml:id="ethpay-al">
+         <alias id="ethpay'al" idrefs="ethpayʿal"/>
+         <feature xml:id="ethpayʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethpay'al</IRI>
             <name>ethpay'al</name>
          </feature>
-         <alias id="pam'el" idrefs="pam-el"/>
-         <feature xml:id="pam-el">
+         <alias id="pam'el" idrefs="pamʿel"/>
+         <feature xml:id="pamʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:pam'el</IRI>
             <name>pam'el</name>
          </feature>
-         <alias id="estaph'al" idrefs="estaph-al"/>
-         <feature xml:id="estaph-al">
+         <alias id="estaph'al" idrefs="estaphʿal"/>
+         <feature xml:id="estaphʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:estaph'al</IRI>
             <name>estaph'al</name>
          </feature>
@@ -138,33 +155,33 @@
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethaphal</IRI>
             <name>ethaphal</name>
          </feature>
-         <alias id="taph'el" idrefs="taph-el"/>
-         <feature xml:id="taph-el">
+         <alias id="taph'el" idrefs="taphʿel"/>
+         <feature xml:id="taphʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:taph'el</IRI>
             <name>taph'el</name>
          </feature>
-         <alias id="saph'el" idrefs="saph-el"/>
-         <feature xml:id="saph-el">
+         <alias id="saph'el" idrefs="saphʿel"/>
+         <feature xml:id="saphʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:saph'el</IRI>
             <name>saph'el</name>
          </feature>
-         <alias id="ethpar'al" idrefs="ethpar-al"/>
-         <feature xml:id="ethpar-al">
+         <alias id="ethpar'al" idrefs="ethparʿal"/>
+         <feature xml:id="ethparʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethpar'al</IRI>
             <name>ethpar'al</name>
          </feature>
-         <alias id="par'el" idrefs="par-el"/>
-         <feature xml:id="par-el">
+         <alias id="par'el" idrefs="parʿel"/>
+         <feature xml:id="parʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:par'el</IRI>
             <name>par'el</name>
          </feature>
-         <alias id="ethpaw'al" idrefs="ethpaw-al"/>
-         <feature xml:id="ethpaw-al">
+         <alias id="ethpaw'al" idrefs="ethpawʿal"/>
+         <feature xml:id="ethpawʿal">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethpaw'al</IRI>
             <name>ethpaw'al</name>
          </feature>
-         <alias id="paw'el" idrefs="paw-el"/>
-         <feature xml:id="paw-el">
+         <alias id="paw'el" idrefs="pawʿel"/>
+         <feature xml:id="pawʿel">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:paw'el</IRI>
             <name>paw'el</name>
          </feature>
@@ -172,13 +189,13 @@
             <IRI>tag:kalvesmaki.com,2015:feature:syr:palpal</IRI>
             <name>palpal</name>
          </feature>
-         <alias id="pa'li" idrefs="pa-li"/>
-         <feature xml:id="pa-li">
+         <alias id="pa'li" idrefs="paʿli"/>
+         <feature xml:id="paʿli">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:pa'li</IRI>
             <name>pa'li</name>
          </feature>
-         <alias id="ethpa'li" idrefs="ethpa-li"/>
-         <feature xml:id="ethpa-li">
+         <alias id="ethpa'li" idrefs="ethpaʿli"/>
+         <feature xml:id="ethpaʿli">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:ethpa'li</IRI>
             <name>ethpa'li</name>
          </feature>
@@ -270,18 +287,27 @@
          <feature xml:id="suff-f">
             <IRI>tag:kalvesmaki.com,2015:feature:syr:has-feminine-gender-suffix</IRI>
             <name>has suffix in the feminine gender</name>
-         </feature></definitions>
+         </feature>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
       <resp roles="provider" who="sci"/>
       <resp roles="provider editor" who="kiraz"/>
       <resp roles="editor" who="kalvesmaki"/>
-      <resp who="xslt1" roles="stylesheet"/>
+      <resp roles="stylesheet" who="xslt1 xslt2"/>
       <change when="2016-04-19" who="kalvesmaki">First draft started.</change>
       <change who="xslt1" when="2017-12-19T12:33:44.065-05:00">TAN file updated to 2018 schemas.</change>
+      <change who="xslt2" when="2020-03-05T22:27:40.764-05:00">Converted from 2018 to 2020 schemas.</change>
+      <change when="2020-06-18" who="kalvesmaki">Restored features whose @xml:id and @which were
+         identical. TAN-mor files must allow this apparent reduncancy because the vocabulary
+         determines what features may be invoked.</change>
+      <change when="2020-07-12" who="kalvesmaki">Changed - to ʿ in @xml:id and @idref values for
+         verbs.</change>
+      <to-do>
+         <comment who="kalvesmaki" when="2020-03-05">Needs to be tested against live work.</comment>
+      </to-do>
       <comment when="2016-04-19" who="kalvesmaki">This work makes use of the Syriac Electronic Data
-         Retrieval Archive (SEDRA) by George A. Kiraz, distributed by the Syriac Computing Institute
-      </comment>
+         Retrieval Archive (SEDRA) by George A. Kiraz, distributed by the Syriac Computing Institute</comment>
    </head>
    <body>
-      <for-lang>syr</for-lang>
    </body>
 </TAN-mor>

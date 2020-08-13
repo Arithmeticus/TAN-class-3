@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscall">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:call">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to call</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-call.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CALL</tok-starts-with>
       <tok-starts-with>Call</tok-starts-with>
       <tok-starts-with>call</tok-starts-with>
       <tok-starts-with>cáll</tok-starts-with>
-      <ana><!--CALLEO Calleo calleo cálleo-->
-         <tok val="[cC]?(a|cá)?(lleo|CALLEO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:13:29.977-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:13:29.977-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-call.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CALLEO"/>
+         <tok val="Calleo"/>
+         <tok val="calleo"/>
+         <tok val="cálleo"/>
          <lm>
             <l>calleo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CALLIM Callim callem callim-->
-         <tok val="[cC]?(all)?[ie]?(m|CALLIM)"/>
+      <ana>
+         <tok val="CALLIM"/>
+         <tok val="Callim"/>
+         <tok val="callem"/>
+         <tok val="callim"/>
          <lm>
             <l>callis</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--CALLISTO Callisto-->
-         <tok val="C(allisto|ALLISTO)"/>
+      <ana>
+         <tok val="CALLISTO"/>
+         <tok val="Callisto"/>
+         <tok val="callisto"/>
          <lm>
             <l>Callisto</l>
             <m cert="0.25">n e - s - - - f a</m>
@@ -60,8 +76,14 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--CALLVM Callorum Callum callum callumque-->
-         <tok val="[Cc]?(all)?(or)?(um)?(que|CALLVM)?"/>
+      <ana>
+         <tok val="CALLVM"/>
+         <tok val="Callorum"/>
+         <tok val="Callum"/>
+         <tok val="callorum"/>
+         <tok val="callum"/>
+         <tok val="callumque"/>
+         <tok val="callvm"/>
          <lm cert="0.5">
             <l>callus</l>
             <m>n - - p - - - m g</m>
@@ -71,15 +93,25 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CALLVM Callum calle callen callum callumque-->
-         <tok val="[cC]?(all)?[e]?(n|um|umque|CALLVM)?"/>
+      <ana>
+         <tok val="CALLVM"/>
+         <tok val="Callum"/>
+         <tok val="calle"/>
+         <tok val="callen"/>
+         <tok val="callum"/>
+         <tok val="callumque"/>
+         <tok val="callvm"/>
          <lm>
             <l>callum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--CALLVM Callum callum callumque-->
-         <tok val="[cC]?(allum)?(que|CALLVM)?"/>
+      <ana>
+         <tok val="CALLVM"/>
+         <tok val="Callum"/>
+         <tok val="callum"/>
+         <tok val="callumque"/>
+         <tok val="callvm"/>
          <lm cert="0.5">
             <l>callum</l>
             <m cert="0.5">n - - s - - - n a</m>
@@ -90,15 +122,19 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--CALLVS Callus callus-->
-         <tok val="[cC]?(allus|CALLVS)"/>
+      <ana>
+         <tok val="CALLVS"/>
+         <tok val="Callus"/>
+         <tok val="callus"/>
+         <tok val="callvs"/>
          <lm>
             <l>callus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Calla calla-->
-         <tok val="[cC]alla"/>
+      <ana>
+         <tok val="Calla"/>
+         <tok val="calla"/>
          <lm>
             <l>callum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -108,6 +144,7 @@
       </ana>
       <ana>
          <tok val="Callaicae"/>
+         <tok val="callaicae"/>
          <lm>
             <l>Gallaecus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -118,6 +155,7 @@
       </ana>
       <ana>
          <tok val="Callaicam"/>
+         <tok val="callaicam"/>
          <lm>
             <l>Gallaecus</l>
             <m>a e - s - - - f a</m>
@@ -125,6 +163,7 @@
       </ana>
       <ana>
          <tok val="Callaicas"/>
+         <tok val="callaicas"/>
          <lm>
             <l>Gallaecus</l>
             <m>a e - p - - - f a</m>
@@ -132,6 +171,7 @@
       </ana>
       <ana>
          <tok val="Callaici"/>
+         <tok val="callaici"/>
          <lm cert="0.5">
             <l>Gallaecus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -147,6 +187,7 @@
       </ana>
       <ana>
          <tok val="Callaicis"/>
+         <tok val="callaicis"/>
          <lm cert="0.5">
             <l>Gallaeci</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -164,6 +205,7 @@
       </ana>
       <ana>
          <tok val="Callaico"/>
+         <tok val="callaico"/>
          <lm>
             <l>Gallaecus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -174,6 +216,7 @@
       </ana>
       <ana>
          <tok val="Callaicum"/>
+         <tok val="callaicum"/>
          <lm cert="0.5">
             <l>Gallaecus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -190,20 +233,24 @@
       </ana>
       <ana>
          <tok val="Callaicus"/>
+         <tok val="callaicus"/>
          <lm>
             <l>Gallaecus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Callais callais-->
-         <tok val="[cC]allais"/>
+      <ana>
+         <tok val="Callais"/>
+         <tok val="callais"/>
          <lm>
             <l>callais</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Callaria callarias-->
-         <tok val="[cC]allaria[s]?"/>
+      <ana>
+         <tok val="Callaria"/>
+         <tok val="callaria"/>
+         <tok val="callarias"/>
          <lm>
             <l>callarias</l>
             <m>n - - s - - - m n</m>
@@ -211,21 +258,24 @@
       </ana>
       <ana>
          <tok val="Callaria"/>
+         <tok val="callaria"/>
          <lm>
             <l>callarias</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Callemus callemus-->
-         <tok val="[cC]allemus"/>
+      <ana>
+         <tok val="Callemus"/>
+         <tok val="callemus"/>
          <lm>
             <l>calleo</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Callens callens-->
-         <tok val="[cC]allens"/>
+      <ana>
+         <tok val="Callens"/>
+         <tok val="callens"/>
          <lm>
             <l>calleo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -239,6 +289,7 @@
       </ana>
       <ana>
          <tok val="Callenses"/>
+         <tok val="callenses"/>
          <lm>
             <l>Callenses</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -248,14 +299,16 @@
       </ana>
       <ana>
          <tok val="Callensibus"/>
+         <tok val="callensibus"/>
          <lm>
             <l>Callenses</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Callere callere-->
-         <tok val="[cC]allere"/>
+      <ana>
+         <tok val="Callere"/>
+         <tok val="callere"/>
          <lm>
             <l>calleo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -263,8 +316,11 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Calles callen calles callesque-->
-         <tok val="[cC]alle(s|n|sque)"/>
+      <ana>
+         <tok val="Calles"/>
+         <tok val="callen"/>
+         <tok val="calles"/>
+         <tok val="callesque"/>
          <lm cert="0.5">
             <l>callis</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -275,22 +331,38 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Calles Callin Callis Callist callen calles callesque callis-->
-         <tok val="[Cc]all[ie]?[s]?(t|in|es|en|is|esque)?"/>
+      <ana>
+         <tok val="Calles"/>
+         <tok val="Callin"/>
+         <tok val="Callis"/>
+         <tok val="Callist"/>
+         <tok val="callen"/>
+         <tok val="calles"/>
+         <tok val="callesque"/>
+         <tok val="callin"/>
+         <tok val="callis"/>
+         <tok val="callist"/>
          <lm>
             <l>callis</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Callet callet-->
-         <tok val="[cC]allet"/>
+      <ana>
+         <tok val="Callet"/>
+         <tok val="callet"/>
          <lm>
             <l>calleo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Calli Callin Callist calli callique-->
-         <tok val="[Cc]alli(n|st|que)?"/>
+      <ana>
+         <tok val="Calli"/>
+         <tok val="Callin"/>
+         <tok val="Callist"/>
+         <tok val="calli"/>
+         <tok val="callin"/>
+         <tok val="callique"/>
+         <tok val="callist"/>
          <lm cert="0.333333333333333333">
             <l>callus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -306,15 +378,26 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Calli Callin Callist calle callen calli callique-->
-         <tok val="[Cc]all[i]?(n|en|e|ist|i|ique)?"/>
+      <ana>
+         <tok val="Calli"/>
+         <tok val="Callin"/>
+         <tok val="Callist"/>
+         <tok val="calle"/>
+         <tok val="callen"/>
+         <tok val="calli"/>
+         <tok val="callin"/>
+         <tok val="callique"/>
+         <tok val="callist"/>
          <lm>
             <l>callis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Callia Callian callia-->
-         <tok val="[Cc]allia[n]?"/>
+      <ana>
+         <tok val="Callia"/>
+         <tok val="Callian"/>
+         <tok val="callia"/>
+         <tok val="callian"/>
          <lm>
             <l>callion</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -322,8 +405,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Calliblepharum calliblepharum-->
-         <tok val="[cC]alliblepharum"/>
+      <ana>
+         <tok val="Calliblepharum"/>
+         <tok val="calliblepharum"/>
          <lm>
             <l>calliblepharum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -334,6 +418,7 @@
       </ana>
       <ana>
          <tok val="Callicias"/>
+         <tok val="callicias"/>
          <lm cert="0.5">
             <l>Callicias</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -346,6 +431,7 @@
       </ana>
       <ana>
          <tok val="Callicle"/>
+         <tok val="callicle"/>
          <lm>
             <l>Callicles</l>
             <m>n e - s - - - m b</m>
@@ -353,6 +439,7 @@
       </ana>
       <ana>
          <tok val="Calliclem"/>
+         <tok val="calliclem"/>
          <lm>
             <l>Callicles</l>
             <m>n e - s - - - m a</m>
@@ -360,6 +447,7 @@
       </ana>
       <ana>
          <tok val="Callicles"/>
+         <tok val="callicles"/>
          <lm>
             <l>Callicles</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -370,6 +458,7 @@
       </ana>
       <ana>
          <tok val="Callicli"/>
+         <tok val="callicli"/>
          <lm>
             <l>Callicles</l>
             <m>n e - s - - - m d</m>
@@ -377,6 +466,7 @@
       </ana>
       <ana>
          <tok val="Callicratidan"/>
+         <tok val="callicratidan"/>
          <lm>
             <l>Callicratidas</l>
             <m>n e - s - - - m a</m>
@@ -384,6 +474,7 @@
       </ana>
       <ana>
          <tok val="Callicratidas"/>
+         <tok val="callicratidas"/>
          <lm>
             <l>Callicratidas</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -392,6 +483,7 @@
       </ana>
       <ana>
          <tok val="Callicula"/>
+         <tok val="callicula"/>
          <lm>
             <l>Callicula</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -401,6 +493,7 @@
       </ana>
       <ana>
          <tok val="Calliculae"/>
+         <tok val="calliculae"/>
          <lm>
             <l>Callicula</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -411,13 +504,15 @@
       </ana>
       <ana>
          <tok val="Calliculam"/>
+         <tok val="calliculam"/>
          <lm>
             <l>Callicula</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Callida callida-->
-         <tok val="[cC]allida"/>
+      <ana>
+         <tok val="Callida"/>
+         <tok val="callida"/>
          <lm>
             <l>callidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -430,6 +525,7 @@
       </ana>
       <ana>
          <tok val="Callidamatem"/>
+         <tok val="callidamatem"/>
          <lm>
             <l>Callidamates</l>
             <m>n e - s - - - m a</m>
@@ -437,6 +533,7 @@
       </ana>
       <ana>
          <tok val="Callidamates"/>
+         <tok val="callidamates"/>
          <lm>
             <l>Callidamates</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -447,21 +544,29 @@
       </ana>
       <ana>
          <tok val="Callidamati"/>
+         <tok val="callidamati"/>
          <lm>
             <l>Callidamates</l>
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Callide callide callideque-->
-         <tok val="[cC]allide(que)?"/>
+      <ana>
+         <tok val="Callide"/>
+         <tok val="callide"/>
+         <tok val="callideque"/>
          <lm>
             <l>callidus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Callide Callidum callide callideque callidum callidumque-->
-         <tok val="[cC]allid(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Callide"/>
+         <tok val="Callidum"/>
+         <tok val="callide"/>
+         <tok val="callideque"/>
+         <tok val="callidum"/>
+         <tok val="callidumque"/>
          <lm>
             <l>callidus</l>
             <m>a - - s - - - n v</m>
@@ -469,6 +574,7 @@
       </ana>
       <ana>
          <tok val="Callidemidem"/>
+         <tok val="callidemidem"/>
          <lm>
             <l>Callidemides</l>
             <m>n e - s - - - m a</m>
@@ -476,6 +582,7 @@
       </ana>
       <ana>
          <tok val="Callidemides"/>
+         <tok val="callidemides"/>
          <lm>
             <l>Callidemides</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -484,8 +591,9 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Callidi callidi-->
-         <tok val="[cC]allidi"/>
+      <ana>
+         <tok val="Callidi"/>
+         <tok val="callidi"/>
          <lm>
             <l>callidus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -494,15 +602,17 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Callidiore callidiore-->
-         <tok val="[cC]allidiore"/>
+      <ana>
+         <tok val="Callidiore"/>
+         <tok val="callidiore"/>
          <lm>
             <l>callidus</l>
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--Callidissima callidissima-->
-         <tok val="[cC]allidissima"/>
+      <ana>
+         <tok val="Callidissima"/>
+         <tok val="callidissima"/>
          <lm>
             <l>callidus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -513,29 +623,36 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Callidissime callidissime-->
-         <tok val="[cC]allidissime"/>
+      <ana>
+         <tok val="Callidissime"/>
+         <tok val="callidissime"/>
          <lm>
             <l>callidus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Callidissime Callidissimus callidissime callidissimus-->
-         <tok val="[cC]allidissim(us|e)"/>
+      <ana>
+         <tok val="Callidissime"/>
+         <tok val="Callidissimus"/>
+         <tok val="callidissime"/>
+         <tok val="callidissimus"/>
          <lm>
             <l>callidus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Callidissime callidissime callidissimum-->
-         <tok val="[cC]allidissim(e|um)"/>
+      <ana>
+         <tok val="Callidissime"/>
+         <tok val="callidissime"/>
+         <tok val="callidissimum"/>
          <lm>
             <l>callidus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Callidissimi callidissimi-->
-         <tok val="[cC]allidissimi"/>
+      <ana>
+         <tok val="Callidissimi"/>
+         <tok val="callidissimi"/>
          <lm>
             <l>callidus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -544,22 +661,25 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Callidissimus callidissimus-->
-         <tok val="[cC]allidissimus"/>
+      <ana>
+         <tok val="Callidissimus"/>
+         <tok val="callidissimus"/>
          <lm>
             <l>callidus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Calliditas calliditas-->
-         <tok val="[cC]alliditas"/>
+      <ana>
+         <tok val="Calliditas"/>
+         <tok val="calliditas"/>
          <lm>
             <l>calliditas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Calliditates calliditates-->
-         <tok val="[cC]alliditates"/>
+      <ana>
+         <tok val="Calliditates"/>
+         <tok val="calliditates"/>
          <lm>
             <l>calliditas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -569,6 +689,7 @@
       </ana>
       <ana>
          <tok val="Callidromi"/>
+         <tok val="callidromi"/>
          <lm>
             <l>Callidromus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -578,6 +699,7 @@
       </ana>
       <ana>
          <tok val="Callidromon"/>
+         <tok val="callidromon"/>
          <lm>
             <l>Callidromus</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -587,6 +709,7 @@
       </ana>
       <ana>
          <tok val="Callidromum"/>
+         <tok val="callidromum"/>
          <lm>
             <l>Callidromus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -595,36 +718,46 @@
       </ana>
       <ana>
          <tok val="Callidromus"/>
+         <tok val="callidromus"/>
          <lm>
             <l>Callidromus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Callidum callidum callidumque cállidum-->
-         <tok val="[cC]?(a|cá|ca)llidum(que)?"/>
+      <ana>
+         <tok val="Callidum"/>
+         <tok val="callidum"/>
+         <tok val="callidumque"/>
+         <tok val="cállidum"/>
          <lm>
             <l>callidus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Callidum callidum callidumque callidorum-->
-         <tok val="[cC]allid(or)?um(que)?"/>
+      <ana>
+         <tok val="Callidum"/>
+         <tok val="callidorum"/>
+         <tok val="callidum"/>
+         <tok val="callidumque"/>
          <lm>
             <l>callidus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Callidum callidum callidumque-->
-         <tok val="[cC]allidum(que)?"/>
+      <ana>
+         <tok val="Callidum"/>
+         <tok val="callidum"/>
+         <tok val="callidumque"/>
          <lm>
             <l>callidus</l>
             <m cert="0.5">a - - s - - - n a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Callidus callidus-->
-         <tok val="[cC]allidus"/>
+      <ana>
+         <tok val="Callidus"/>
+         <tok val="callidus"/>
          <lm>
             <l>callidus</l>
             <m>a - - s - - - m n</m>
@@ -632,6 +765,7 @@
       </ana>
       <ana>
          <tok val="Callifae"/>
+         <tok val="callifae"/>
          <lm>
             <l>Callifae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -640,13 +774,15 @@
       </ana>
       <ana>
          <tok val="Calligone"/>
+         <tok val="calligone"/>
          <lm>
             <l>calligonon</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Calligonon calligonon-->
-         <tok val="[cC]alligonon"/>
+      <ana>
+         <tok val="Calligonon"/>
+         <tok val="calligonon"/>
          <lm>
             <l>calligonon</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -655,6 +791,7 @@
       </ana>
       <ana>
          <tok val="Callimachi"/>
+         <tok val="callimachi"/>
          <lm cert="0.5">
             <l>Callimachius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -669,6 +806,7 @@
       </ana>
       <ana>
          <tok val="Callimachius"/>
+         <tok val="callimachius"/>
          <lm>
             <l>Callimachius</l>
             <m>a e - s - - - m n</m>
@@ -676,29 +814,41 @@
       </ana>
       <ana>
          <tok val="Callimacho"/>
+         <tok val="callimacho"/>
          <lm>
             <l>Callimachus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Callimachum Callimachumque-->
-         <tok val="Callimachum(que)?"/>
+      <ana>
+         <tok val="Callimachum"/>
+         <tok val="Callimachumque"/>
+         <tok val="callimachum"/>
+         <tok val="callimachumque"/>
          <lm>
             <l>Callimachus</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Callimachus Callimachusque-->
-         <tok val="Callimachus(que)?"/>
+      <ana>
+         <tok val="Callimachus"/>
+         <tok val="Callimachusque"/>
+         <tok val="callimachus"/>
+         <tok val="callimachusque"/>
          <lm>
             <l>Callimachus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Callin Callis Callist callis-->
-         <tok val="[Cc]alli[s]?[tns]?"/>
+      <ana>
+         <tok val="Callin"/>
+         <tok val="Callis"/>
+         <tok val="Callist"/>
+         <tok val="callin"/>
+         <tok val="callis"/>
+         <tok val="callist"/>
          <lm cert="0.333333333333333333">
             <l>callus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -716,6 +866,7 @@
       </ana>
       <ana>
          <tok val="Callinici"/>
+         <tok val="callinici"/>
          <lm>
             <l>Callinicus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -725,6 +876,7 @@
       </ana>
       <ana>
          <tok val="Callinico"/>
+         <tok val="callinico"/>
          <lm>
             <l>Callinicus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -733,6 +885,7 @@
       </ana>
       <ana>
          <tok val="Callinicum"/>
+         <tok val="callinicum"/>
          <lm>
             <l>Callinicus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -741,6 +894,7 @@
       </ana>
       <ana>
          <tok val="Callinicus"/>
+         <tok val="callinicus"/>
          <lm>
             <l>Callinicus</l>
             <m>n e - s - - - m n</m>
@@ -748,6 +902,7 @@
       </ana>
       <ana>
          <tok val="Calliopea"/>
+         <tok val="calliopea"/>
          <lm cert="0.5">
             <l>Calliope</l>
             <m>n e - s - - - f n</m>
@@ -760,13 +915,17 @@
       </ana>
       <ana>
          <tok val="Calliopeius"/>
+         <tok val="calliopeius"/>
          <lm>
             <l>Calliopeius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Callipho Calliphon-->
-         <tok val="Callipho[n]?"/>
+      <ana>
+         <tok val="Callipho"/>
+         <tok val="Calliphon"/>
+         <tok val="callipho"/>
+         <tok val="calliphon"/>
          <lm>
             <l>Callipho</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -775,6 +934,7 @@
       </ana>
       <ana>
          <tok val="Calliphone"/>
+         <tok val="calliphone"/>
          <lm>
             <l>Callipho</l>
             <m>n e - s - - - m b</m>
@@ -782,14 +942,18 @@
       </ana>
       <ana>
          <tok val="Callipide"/>
+         <tok val="callipide"/>
          <lm>
             <l>Callipides</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Callipides Callippides-->
-         <tok val="Calli[p]?pides"/>
+      <ana>
+         <tok val="Callipides"/>
+         <tok val="Callippides"/>
+         <tok val="callipides"/>
+         <tok val="callippides"/>
          <lm>
             <l>Callipides</l>
             <m>n e - s - - - m n</m>
@@ -797,13 +961,17 @@
       </ana>
       <ana>
          <tok val="Callipolim"/>
+         <tok val="callipolim"/>
          <lm>
             <l>Callipolis</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Callipolin Callipolis-->
-         <tok val="Callipoli[sn]"/>
+      <ana>
+         <tok val="Callipolin"/>
+         <tok val="Callipolis"/>
+         <tok val="callipolin"/>
+         <tok val="callipolis"/>
          <lm>
             <l>Callipolis</l>
             <m cert="0.333333333333333333">n e - s - - - f g</m>
@@ -813,6 +981,7 @@
       </ana>
       <ana>
          <tok val="Callipolin"/>
+         <tok val="callipolin"/>
          <lm>
             <l>Callipolis</l>
             <m cert="0.5">n e - s - - - f d</m>
@@ -821,6 +990,7 @@
       </ana>
       <ana>
          <tok val="Callippidas"/>
+         <tok val="callippidas"/>
          <lm>
             <l>Callipides</l>
             <m>n e - p - - - m a</m>
@@ -828,6 +998,7 @@
       </ana>
       <ana>
          <tok val="Callippo"/>
+         <tok val="callippo"/>
          <lm>
             <l>Callippus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -836,6 +1007,7 @@
       </ana>
       <ana>
          <tok val="Callippum"/>
+         <tok val="callippum"/>
          <lm>
             <l>Callippus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -844,6 +1016,7 @@
       </ana>
       <ana>
          <tok val="Callippus"/>
+         <tok val="callippus"/>
          <lm>
             <l>Callippus</l>
             <m>n e - s - - - m n</m>
@@ -851,6 +1024,7 @@
       </ana>
       <ana>
          <tok val="Callirrhoe"/>
+         <tok val="callirrhoe"/>
          <lm>
             <l>Callirrhoe</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -860,13 +1034,15 @@
       </ana>
       <ana>
          <tok val="Callirrhoen"/>
+         <tok val="callirrhoen"/>
          <lm>
             <l>Callirrhoe</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Callis callis-->
-         <tok val="[cC]allis"/>
+      <ana>
+         <tok val="Callis"/>
+         <tok val="callis"/>
          <lm>
             <l>callis</l>
             <m>n - - s - - - m g</m>
@@ -874,13 +1050,17 @@
       </ana>
       <ana>
          <tok val="Callisthene"/>
+         <tok val="callisthene"/>
          <lm>
             <l>Callisthenes</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Callisthenem Callisthenen-->
-         <tok val="Callisthene[nm]"/>
+      <ana>
+         <tok val="Callisthenem"/>
+         <tok val="Callisthenen"/>
+         <tok val="callisthenem"/>
+         <tok val="callisthenen"/>
          <lm>
             <l>Callisthenes</l>
             <m>n e - s - - - m a</m>
@@ -888,6 +1068,7 @@
       </ana>
       <ana>
          <tok val="Callisthenes"/>
+         <tok val="callisthenes"/>
          <lm>
             <l>Callisthenes</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -898,6 +1079,7 @@
       </ana>
       <ana>
          <tok val="Callistheni"/>
+         <tok val="callistheni"/>
          <lm>
             <l>Callisthenes</l>
             <m>n e - s - - - m d</m>
@@ -905,6 +1087,7 @@
       </ana>
       <ana>
          <tok val="Callisthenis"/>
+         <tok val="callisthenis"/>
          <lm>
             <l>Callisthenes</l>
             <m>n e - s - - - m g</m>
@@ -912,6 +1095,7 @@
       </ana>
       <ana>
          <tok val="Callistrate"/>
+         <tok val="callistrate"/>
          <lm>
             <l>Callistratus</l>
             <m>n e - s - - - m v</m>
@@ -919,6 +1103,7 @@
       </ana>
       <ana>
          <tok val="Callistrati"/>
+         <tok val="callistrati"/>
          <lm>
             <l>Callistratus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -928,6 +1113,7 @@
       </ana>
       <ana>
          <tok val="Callistrato"/>
+         <tok val="callistrato"/>
          <lm>
             <l>Callistratus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -936,6 +1122,7 @@
       </ana>
       <ana>
          <tok val="Callistratum"/>
+         <tok val="callistratum"/>
          <lm>
             <l>Callistratus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -944,13 +1131,15 @@
       </ana>
       <ana>
          <tok val="Callistratus"/>
+         <tok val="callistratus"/>
          <lm>
             <l>Callistratus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Callistruthiae callistruthiae-->
-         <tok val="[cC]allistruthiae"/>
+      <ana>
+         <tok val="Callistruthiae"/>
+         <tok val="callistruthiae"/>
          <lm>
             <l>callistruthia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -959,8 +1148,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Callistruthis callistruthis-->
-         <tok val="[cC]allistruthis"/>
+      <ana>
+         <tok val="Callistruthis"/>
+         <tok val="callistruthis"/>
          <lm>
             <l>callistruthis</l>
             <m>n - - s - - - f n</m>
@@ -968,29 +1158,35 @@
       </ana>
       <ana>
          <tok val="Callistus"/>
+         <tok val="callistus"/>
          <lm>
             <l>Callisto</l>
             <m>n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Callitrichon callitricho callitrichon-->
-         <tok val="[cC]allitricho[n]?"/>
+      <ana>
+         <tok val="Callitrichon"/>
+         <tok val="callitricho"/>
+         <tok val="callitrichon"/>
          <lm>
             <l>callitrichos</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Callitrichon callitrichon callitrichos-->
-         <tok val="[cC]allitricho[ns]"/>
+      <ana>
+         <tok val="Callitrichon"/>
+         <tok val="callitrichon"/>
+         <tok val="callitrichos"/>
          <lm>
             <l>callitrichos</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Callium callium-->
-         <tok val="[cC]allium"/>
+      <ana>
+         <tok val="Callium"/>
+         <tok val="callium"/>
          <lm cert="0.5">
             <l>callis</l>
             <m>n - - p - - - m g</m>
@@ -1000,8 +1196,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Callium callion callium-->
-         <tok val="[cC]alli(um|on)"/>
+      <ana>
+         <tok val="Callium"/>
+         <tok val="callion"/>
+         <tok val="callium"/>
          <lm>
             <l>callion</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1009,8 +1207,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Callo callo callon-->
-         <tok val="[cC]allo[n]?"/>
+      <ana>
+         <tok val="Callo"/>
+         <tok val="callo"/>
+         <tok val="callon"/>
          <lm cert="0.5">
             <l>callum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1024,6 +1224,7 @@
       </ana>
       <ana>
          <tok val="Callon"/>
+         <tok val="callon"/>
          <lm>
             <l>Callon</l>
             <m>n e - s - - - m n</m>
@@ -1031,6 +1232,7 @@
       </ana>
       <ana>
          <tok val="Callonem"/>
+         <tok val="callonem"/>
          <lm>
             <l>Callon</l>
             <m>n e - s - - - m a</m>
@@ -1038,6 +1240,7 @@
       </ana>
       <ana>
          <tok val="Callones"/>
+         <tok val="callones"/>
          <lm>
             <l>Callon</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1045,8 +1248,9 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Callosa callosa-->
-         <tok val="[cC]allosa"/>
+      <ana>
+         <tok val="Callosa"/>
+         <tok val="callosa"/>
          <lm>
             <l>callosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1057,15 +1261,18 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Callositas callositas-->
-         <tok val="[cC]allositas"/>
+      <ana>
+         <tok val="Callositas"/>
+         <tok val="callositas"/>
          <lm>
             <l>callositas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Callosus callosus callosusque-->
-         <tok val="[cC]allosus(que)?"/>
+      <ana>
+         <tok val="Callosus"/>
+         <tok val="callosus"/>
+         <tok val="callosusque"/>
          <lm>
             <l>callosus</l>
             <m>a - - s - - - m n</m>
@@ -1149,8 +1356,9 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--calle callen-->
-         <tok val="calle[n]?"/>
+      <ana>
+         <tok val="calle"/>
+         <tok val="callen"/>
          <lm cert="0.5">
             <l>calleo</l>
             <m>v - 2 s p m a</m>
@@ -1202,8 +1410,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--callente callenti-->
-         <tok val="callent[ie]"/>
+      <ana>
+         <tok val="callente"/>
+         <tok val="callenti"/>
          <lm>
             <l>calleo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1236,8 +1445,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--callentes callentis-->
-         <tok val="callent[ie]s"/>
+      <ana>
+         <tok val="callentes"/>
+         <tok val="callentis"/>
          <lm>
             <l>calleo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1405,15 +1615,18 @@
             <m cert="0.5">a - - p - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--callidis callidisque cállidis-->
-         <tok val="c[áa]llidis(que)?"/>
+      <ana>
+         <tok val="callidis"/>
+         <tok val="callidisque"/>
+         <tok val="cállidis"/>
          <lm>
             <l>callidus</l>
             <m>a - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--callidis callidisque-->
-         <tok val="callidis(que)?"/>
+      <ana>
+         <tok val="callidis"/>
+         <tok val="callidisque"/>
          <lm>
             <l>callidus</l>
             <m cert="0.2">a - - p - - - f b</m>
@@ -1484,8 +1697,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--calliditatis calliditatisque-->
-         <tok val="calliditatis(que)?"/>
+      <ana>
+         <tok val="calliditatis"/>
+         <tok val="calliditatisque"/>
          <lm>
             <l>calliditas</l>
             <m>n - - s - - - f g</m>
@@ -1593,8 +1807,9 @@
             <m>n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--callon callos-->
-         <tok val="callo[sn]"/>
+      <ana>
+         <tok val="callon"/>
+         <tok val="callos"/>
          <lm>
             <l>callus</l>
             <m>n - - p - - - m a</m>
@@ -1627,8 +1842,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--callosior callosiorque callosiorve-->
-         <tok val="callosior(ve|que)?"/>
+      <ana>
+         <tok val="callosior"/>
+         <tok val="callosiorque"/>
+         <tok val="callosiorve"/>
          <lm>
             <l>callosus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1685,8 +1902,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--callosorum callosum-->
-         <tok val="callos(or)?um"/>
+      <ana>
+         <tok val="callosorum"/>
+         <tok val="callosum"/>
          <lm>
             <l>callosus</l>
             <m cert="0.5">a - - p - - - n g</m>

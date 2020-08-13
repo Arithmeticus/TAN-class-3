@@ -1,66 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusaed">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:aed">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to aed</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-aed.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>AED</tok-starts-with>
       <tok-starts-with>AEd</tok-starts-with>
       <tok-starts-with>Aed</tok-starts-with>
       <tok-starts-with>aed</tok-starts-with>
       <tok-starts-with>aéd</tok-starts-with>
-      <ana><!--AEDE AEde Aede aede-->
-         <tok val="[A]?(e|E|ae)?(de|AEDE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:09:04.039-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:09:04.039-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-aed.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="AEDE"/>
+         <tok val="AEde"/>
+         <tok val="Aede"/>
+         <tok val="aede"/>
          <lm>
             <l>aedes</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--AEDEM Aedem Aedemque aedem aedemque-->
-         <tok val="[aA]?(edem)?(que|AEDEM)?"/>
+      <ana>
+         <tok val="AEDEM"/>
+         <tok val="Aedem"/>
+         <tok val="Aedemque"/>
+         <tok val="aedem"/>
+         <tok val="aedemque"/>
          <lm>
             <l>aedes</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEDES AEdes Aedes aedes aedesque aedés aédes-->
-         <tok val="[A]?(e|E|ae|aé)?[d]?[eé]?[s]?(que|AEDES)?"/>
+      <ana>
+         <tok val="AEDES"/>
+         <tok val="AEdes"/>
+         <tok val="Aedes"/>
+         <tok val="aedes"/>
+         <tok val="aedesque"/>
+         <tok val="aedés"/>
+         <tok val="aédes"/>
          <lm>
             <l>aedes</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--AEDES AEdes Aedes aedes aedesque-->
-         <tok val="[A]?(e|E|ae)?(des)?(que|AEDES)?"/>
+      <ana>
+         <tok val="AEDES"/>
+         <tok val="AEdes"/>
+         <tok val="Aedes"/>
+         <tok val="aedes"/>
+         <tok val="aedesque"/>
          <lm>
             <l>aedes</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -69,52 +94,77 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--AEDI Aedi aedi-->
-         <tok val="[aA]?(edi|AEDI)"/>
+      <ana>
+         <tok val="AEDI"/>
+         <tok val="Aedi"/>
+         <tok val="aedi"/>
          <lm>
             <l>aedes</l>
             <m cert="0.5">v - - - p n p</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--AEDIBUS AEDIBVS Aedibus aedibus aedibusque aedibust aedibús aedíbus aédibus-->
-         <tok val="(aedibus)?(t|AEDIBVS|AEDIBUS|Aedibus|aedibús|aedíbus|aédibus|aedibusque)?"/>
+      <ana>
+         <tok val="AEDIBUS"/>
+         <tok val="AEDIBVS"/>
+         <tok val="Aedibus"/>
+         <tok val="aedibus"/>
+         <tok val="aedibusque"/>
+         <tok val="aedibust"/>
+         <tok val="aedibvs"/>
+         <tok val="aedibús"/>
+         <tok val="aedíbus"/>
+         <tok val="aédibus"/>
          <lm>
             <l>aedes</l>
             <m>n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AEDIBUS AEDIBVS Aedibus aedibus aedibusque aedibust-->
-         <tok val="(aedibus)?(t|AEDIBVS|AEDIBUS|Aedibus|aedibusque)?"/>
+      <ana>
+         <tok val="AEDIBUS"/>
+         <tok val="AEDIBVS"/>
+         <tok val="Aedibus"/>
+         <tok val="aedibus"/>
+         <tok val="aedibusque"/>
+         <tok val="aedibust"/>
+         <tok val="aedibvs"/>
          <lm>
             <l>aedes</l>
             <m>n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--AEDICVLAM Aediculam aediculam-->
-         <tok val="[aA]?(ediculam|AEDICVLAM)"/>
+      <ana>
+         <tok val="AEDICVLAM"/>
+         <tok val="Aediculam"/>
+         <tok val="aediculam"/>
+         <tok val="aedicvlam"/>
          <lm>
             <l>aedicula</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEDICVLIS aediculis-->
-         <tok val="(aediculis|AEDICVLIS)"/>
+      <ana>
+         <tok val="AEDICVLIS"/>
+         <tok val="aediculis"/>
+         <tok val="aedicvlis"/>
          <lm>
             <l>aedicula</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICA Aedifica aedifica-->
-         <tok val="[aA]?(edifica|AEDIFICA)"/>
+      <ana>
+         <tok val="AEDIFICA"/>
+         <tok val="Aedifica"/>
+         <tok val="aedifica"/>
          <lm>
             <l>aedifico</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICANDO aedificando-->
-         <tok val="(aedificando|AEDIFICANDO)"/>
+      <ana>
+         <tok val="AEDIFICANDO"/>
+         <tok val="aedificando"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -125,8 +175,11 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICATORIA Aedificatoria aedificatoria aedificatorian-->
-         <tok val="[aA]?(edificatoria)?(n|AEDIFICATORIA)?"/>
+      <ana>
+         <tok val="AEDIFICATORIA"/>
+         <tok val="Aedificatoria"/>
+         <tok val="aedificatoria"/>
+         <tok val="aedificatorian"/>
          <lm cert="0.5">
             <l>aedificatoria</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -143,8 +196,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICATORIAM AEdificatoriam aedificatoriam-->
-         <tok val="(ae|AE)?(dificatoriam|AEDIFICATORIAM)"/>
+      <ana>
+         <tok val="AEDIFICATORIAM"/>
+         <tok val="AEdificatoriam"/>
+         <tok val="aedificatoriam"/>
          <lm cert="0.5">
             <l>aedificatorius</l>
             <m>a - - s - - - f a</m>
@@ -154,8 +209,12 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICIA AEdificia Aedificia aedificia aedificiaque-->
-         <tok val="[A]?(e|E|ae)?(dificia)?(que|AEDIFICIA)?"/>
+      <ana>
+         <tok val="AEDIFICIA"/>
+         <tok val="AEdificia"/>
+         <tok val="Aedificia"/>
+         <tok val="aedificia"/>
+         <tok val="aedificiaque"/>
          <lm>
             <l>aedificium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -163,87 +222,135 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICIIS AEdificiis Aedificiis aedificiis aedificiisque aedificiisve aédificiis-->
-         <tok val="[aA]?(e|AE|aé|ae)?(dificiis)?(ve|que|AEDIFICIIS)?"/>
+      <ana>
+         <tok val="AEDIFICIIS"/>
+         <tok val="AEdificiis"/>
+         <tok val="Aedificiis"/>
+         <tok val="aedificiis"/>
+         <tok val="aedificiisque"/>
+         <tok val="aedificiisve"/>
+         <tok val="aédificiis"/>
          <lm>
             <l>aedificium</l>
             <m>n - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICIIS AEdificiis Aedificiis aedificiis aedificiisque aedificiisve-->
-         <tok val="[aA]?(e|AE|ae)?(dificiis)?(ve|que|AEDIFICIIS)?"/>
+      <ana>
+         <tok val="AEDIFICIIS"/>
+         <tok val="AEdificiis"/>
+         <tok val="Aedificiis"/>
+         <tok val="aedificiis"/>
+         <tok val="aedificiisque"/>
+         <tok val="aedificiisve"/>
          <lm>
             <l>aedificium</l>
             <m>n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICIORUM AEDIFICIORVM AEdificium Aedificium aedificiorum aedificiorumque aedificium aedificiumue-->
-         <tok val="(AEDIFICIOR)?[VU]?(M|aedificium|aedificiorum|aedificiumue|Aedificium|AEdificium|aedificiorumque)"/>
+      <ana>
+         <tok val="AEDIFICIORUM"/>
+         <tok val="AEDIFICIORVM"/>
+         <tok val="AEdificium"/>
+         <tok val="Aedificium"/>
+         <tok val="aedificiorum"/>
+         <tok val="aedificiorumque"/>
+         <tok val="aedificiorvm"/>
+         <tok val="aedificium"/>
+         <tok val="aedificiumue"/>
          <lm>
             <l>aedificium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEDIFICO Aedifico aedifico-->
-         <tok val="[aA]?(edifico|AEDIFICO)"/>
+      <ana>
+         <tok val="AEDIFICO"/>
+         <tok val="Aedifico"/>
+         <tok val="aedifico"/>
          <lm>
             <l>aedifico</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AEDILI Aedile aedile aedili-->
-         <tok val="[aA]?(edil)?(e|i|AEDILI)"/>
+      <ana>
+         <tok val="AEDILI"/>
+         <tok val="Aedile"/>
+         <tok val="aedile"/>
+         <tok val="aedili"/>
          <lm>
             <l>aedilis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--AEDILI aedili-->
-         <tok val="(aedili|AEDILI)"/>
+      <ana>
+         <tok val="AEDILI"/>
+         <tok val="aedili"/>
          <lm>
             <l>aedilis</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--AEDILIBUS AEDILIBVS Aedilibus aedilibus-->
-         <tok val="(AEDILIB)?[VU]?(S|aedilibus|Aedilibus)"/>
+      <ana>
+         <tok val="AEDILIBUS"/>
+         <tok val="AEDILIBVS"/>
+         <tok val="Aedilibus"/>
+         <tok val="aedilibus"/>
+         <tok val="aedilibvs"/>
          <lm>
             <l>aedilis</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--AEDILIS Aedilis aedilis-->
-         <tok val="[aA]?(edilis|AEDILIS)"/>
+      <ana>
+         <tok val="AEDILIS"/>
+         <tok val="Aedilis"/>
+         <tok val="aedilis"/>
          <lm>
             <l>aedilis</l>
             <m cert="0.5">n - - s - - - m g</m>
             <m cert="0.5">n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEDILIS Aediles Aedilis aediles aedilesque aedilis-->
-         <tok val="[Aa]?(edil)?[ie]?[s]?(que|AEDILIS)?"/>
+      <ana>
+         <tok val="AEDILIS"/>
+         <tok val="Aediles"/>
+         <tok val="Aedilis"/>
+         <tok val="aediles"/>
+         <tok val="aedilesque"/>
+         <tok val="aedilis"/>
          <lm>
             <l>aedilis</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--AEDIS Aedis Aedisque aedis aedisque aedís aédis-->
-         <tok val="[aA]?(e|aé)?[d]?[ií]?[s]?(que|AEDIS)?"/>
+      <ana>
+         <tok val="AEDIS"/>
+         <tok val="Aedis"/>
+         <tok val="Aedisque"/>
+         <tok val="aedis"/>
+         <tok val="aedisque"/>
+         <tok val="aedís"/>
+         <tok val="aédis"/>
          <lm>
             <l>aedes</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AEDIS Aedis Aedisque aedis aedisque-->
-         <tok val="[aA]?(edis)?(que|AEDIS)?"/>
+      <ana>
+         <tok val="AEDIS"/>
+         <tok val="Aedis"/>
+         <tok val="Aedisque"/>
+         <tok val="aedis"/>
+         <tok val="aedisque"/>
          <lm>
             <l>aedes</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEdicula Aedicula aedicula-->
-         <tok val="[A]?(e|E|ae)dicula"/>
+      <ana>
+         <tok val="AEdicula"/>
+         <tok val="Aedicula"/>
+         <tok val="aedicula"/>
          <lm>
             <l>aedicula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -251,8 +358,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--AEdificandi aedificandi-->
-         <tok val="(ae|AE)dificandi"/>
+      <ana>
+         <tok val="AEdificandi"/>
+         <tok val="aedificandi"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -262,8 +370,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--AEdificantium aedificantium-->
-         <tok val="(ae|AE)dificantium"/>
+      <ana>
+         <tok val="AEdificantium"/>
+         <tok val="aedificantium"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -271,30 +380,37 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--AEdificare Aedificare aedificare-->
-         <tok val="[A]?(e|E|ae)dificare"/>
+      <ana>
+         <tok val="AEdificare"/>
+         <tok val="Aedificare"/>
+         <tok val="aedificare"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--AEdificare Aedificare aedificare aedificaris-->
-         <tok val="[A]?(e|E|ae)dificar(e|is)"/>
+      <ana>
+         <tok val="AEdificare"/>
+         <tok val="Aedificare"/>
+         <tok val="aedificare"/>
+         <tok val="aedificaris"/>
          <lm>
             <l>aedifico</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AEdificari aedificari-->
-         <tok val="(ae|AE)dificari"/>
+      <ana>
+         <tok val="AEdificari"/>
+         <tok val="aedificari"/>
          <lm>
             <l>aedifico</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--AEdificata aedificata-->
-         <tok val="(ae|AE)dificata"/>
+      <ana>
+         <tok val="AEdificata"/>
+         <tok val="aedificata"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -305,22 +421,29 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--AEdificationem Aedificationem aedificationem aedificationemque-->
-         <tok val="[A]?(e|E|ae)dificationem(que)?"/>
+      <ana>
+         <tok val="AEdificationem"/>
+         <tok val="Aedificationem"/>
+         <tok val="aedificationem"/>
+         <tok val="aedificationemque"/>
          <lm>
             <l>aedificatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEdificii aedificii-->
-         <tok val="(ae|AE)dificii"/>
+      <ana>
+         <tok val="AEdificii"/>
+         <tok val="aedificii"/>
          <lm>
             <l>aedificium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEdificium Aedificium aedificium aedificiumue-->
-         <tok val="[aA]?(e|AE)dificium(ue)?"/>
+      <ana>
+         <tok val="AEdificium"/>
+         <tok val="Aedificium"/>
+         <tok val="aedificium"/>
+         <tok val="aedificiumue"/>
          <lm>
             <l>aedificium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -328,15 +451,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AEdilitas Aedilitas aedilitas-->
-         <tok val="[A]?(e|E|ae)dilitas"/>
+      <ana>
+         <tok val="AEdilitas"/>
+         <tok val="Aedilitas"/>
+         <tok val="aedilitas"/>
          <lm>
             <l>aedilitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--AEdonius aedonius-->
-         <tok val="(ae|AE)donius"/>
+      <ana>
+         <tok val="AEdonius"/>
+         <tok val="aedonius"/>
          <lm>
             <l>aedonius</l>
             <m>a - - s - - - m n</m>
@@ -344,13 +470,15 @@
       </ana>
       <ana>
          <tok val="Aedan"/>
+         <tok val="aedan"/>
          <lm>
             <l>aedes</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Aediculae aediculae-->
-         <tok val="[aA]ediculae"/>
+      <ana>
+         <tok val="Aediculae"/>
+         <tok val="aediculae"/>
          <lm>
             <l>aedicula</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -359,29 +487,36 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Aedificant aedificant-->
-         <tok val="[aA]edificant"/>
+      <ana>
+         <tok val="Aedificant"/>
+         <tok val="aedificant"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Aedificarintne aedificarint aedificarintne aedificauerint aedificaverint-->
-         <tok val="[aA]edifica(ve|ue)?rint(ne)?"/>
+      <ana>
+         <tok val="Aedificarintne"/>
+         <tok val="aedificarint"/>
+         <tok val="aedificarintne"/>
+         <tok val="aedificauerint"/>
+         <tok val="aedificaverint"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--Aedificas aedificas-->
-         <tok val="[aA]edificas"/>
+      <ana>
+         <tok val="Aedificas"/>
+         <tok val="aedificas"/>
          <lm>
             <l>aedifico</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aedificati aedificati-->
-         <tok val="[aA]edificati"/>
+      <ana>
+         <tok val="Aedificati"/>
+         <tok val="aedificati"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -390,67 +525,80 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Aedificator aedificator aedificatorque-->
-         <tok val="[aA]edificator(que)?"/>
+      <ana>
+         <tok val="Aedificator"/>
+         <tok val="aedificator"/>
+         <tok val="aedificatorque"/>
          <lm>
             <l>aedificator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Aedificatus aedificatus-->
-         <tok val="[aA]edificatus"/>
+      <ana>
+         <tok val="Aedificatus"/>
+         <tok val="aedificatus"/>
          <lm>
             <l>aedifico</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Aedificio aedificio aedificioue-->
-         <tok val="[aA]edificio(ue)?"/>
+      <ana>
+         <tok val="Aedificio"/>
+         <tok val="aedificio"/>
+         <tok val="aedificioue"/>
          <lm>
             <l>aedificium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Aedilem aedilem aedilemque-->
-         <tok val="[aA]edilem(que)?"/>
+      <ana>
+         <tok val="Aedilem"/>
+         <tok val="aedilem"/>
+         <tok val="aedilemque"/>
          <lm>
             <l>aedilis</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aediles aediles aedilesque-->
-         <tok val="[aA]ediles(que)?"/>
+      <ana>
+         <tok val="Aediles"/>
+         <tok val="aediles"/>
+         <tok val="aedilesque"/>
          <lm>
             <l>aedilis</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Aedilitate aedilitate-->
-         <tok val="[aA]edilitate"/>
+      <ana>
+         <tok val="Aedilitate"/>
+         <tok val="aedilitate"/>
          <lm>
             <l>aedilitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aedilitatem aedilitatem-->
-         <tok val="[aA]edilitatem"/>
+      <ana>
+         <tok val="Aedilitatem"/>
+         <tok val="aedilitatem"/>
          <lm>
             <l>aedilitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aedilium aedilium-->
-         <tok val="[aA]edilium"/>
+      <ana>
+         <tok val="Aedilium"/>
+         <tok val="aedilium"/>
          <lm>
             <l>aedilis</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Aedita aedita-->
-         <tok val="[aA]edita"/>
+      <ana>
+         <tok val="Aedita"/>
+         <tok val="aedita"/>
          <lm>
             <l>aedes</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -461,15 +609,20 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Aeditimus Aeditus aeditimus aeditus AEDITIMUS-->
-         <tok val="[aA]?(edit)?(im)?(us|AEDITIMUS)"/>
+      <ana>
+         <tok val="AEDITIMUS"/>
+         <tok val="Aeditimus"/>
+         <tok val="Aeditus"/>
+         <tok val="aeditimus"/>
+         <tok val="aeditus"/>
          <lm>
             <l>aeditimus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aeditui aeditui-->
-         <tok val="[aA]editui"/>
+      <ana>
+         <tok val="Aeditui"/>
+         <tok val="aeditui"/>
          <lm>
             <l>aedituus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -477,22 +630,25 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Aedituos aedituos-->
-         <tok val="[aA]edituos"/>
+      <ana>
+         <tok val="Aedituos"/>
+         <tok val="aedituos"/>
          <lm>
             <l>aedituus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aeditus aeditus-->
-         <tok val="[aA]editus"/>
+      <ana>
+         <tok val="Aeditus"/>
+         <tok val="aeditus"/>
          <lm>
             <l>aedes</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Aedituus aedituus-->
-         <tok val="[aA]edituus"/>
+      <ana>
+         <tok val="Aedituus"/>
+         <tok val="aedituus"/>
          <lm>
             <l>aedituus</l>
             <m>n - - s - - - m n</m>
@@ -500,13 +656,15 @@
       </ana>
       <ana>
          <tok val="Aedo"/>
+         <tok val="aedo"/>
          <lm>
             <l>aedes</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aedon aedon-->
-         <tok val="[aA]edon"/>
+      <ana>
+         <tok val="Aedon"/>
+         <tok val="aedon"/>
          <lm>
             <l>aedon</l>
             <m>n - - s - - - f n</m>
@@ -514,36 +672,47 @@
       </ana>
       <ana>
          <tok val="Aedone"/>
+         <tok val="aedone"/>
          <lm>
             <l>aedon</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aedonis aedonis-->
-         <tok val="[aA]edonis"/>
+      <ana>
+         <tok val="Aedonis"/>
+         <tok val="aedonis"/>
          <lm>
             <l>aedon</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Aedui Aeduine-->
-         <tok val="Aedui(ne)?"/>
+      <ana>
+         <tok val="Aedui"/>
+         <tok val="Aeduine"/>
+         <tok val="aedui"/>
+         <tok val="aeduine"/>
          <lm>
             <l>Aedui</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Aeduis Aeduisque-->
-         <tok val="Aeduis(que)?"/>
+      <ana>
+         <tok val="Aeduis"/>
+         <tok val="Aeduisque"/>
+         <tok val="aeduis"/>
+         <tok val="aeduisque"/>
          <lm>
             <l>Aedui</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Aeduorum Aeduum-->
-         <tok val="Aedu(or)?um"/>
+      <ana>
+         <tok val="Aeduorum"/>
+         <tok val="Aeduum"/>
+         <tok val="aeduorum"/>
+         <tok val="aeduum"/>
          <lm>
             <l>Aedui</l>
             <m>n e - p - - - m g</m>
@@ -551,6 +720,7 @@
       </ana>
       <ana>
          <tok val="Aeduos"/>
+         <tok val="aeduos"/>
          <lm>
             <l>Aedui</l>
             <m>n e - p - - - m a</m>
@@ -703,8 +873,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--aedificanda aedificandan-->
-         <tok val="aedificanda[n]?"/>
+      <ana>
+         <tok val="aedificanda"/>
+         <tok val="aedificandan"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -725,15 +896,17 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--aedificandam aedificandamque-->
-         <tok val="aedificandam(que)?"/>
+      <ana>
+         <tok val="aedificandam"/>
+         <tok val="aedificandamque"/>
          <lm>
             <l>aedifico</l>
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--aedificandan aedificandas-->
-         <tok val="aedificanda[sn]"/>
+      <ana>
+         <tok val="aedificandan"/>
+         <tok val="aedificandas"/>
          <lm>
             <l>aedifico</l>
             <m>v - - p p g p f a</m>
@@ -784,8 +957,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--aedificante aedificanti-->
-         <tok val="aedificant[ie]"/>
+      <ana>
+         <tok val="aedificante"/>
+         <tok val="aedificanti"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -811,8 +985,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--aedificantes aedificantis-->
-         <tok val="aedificant[ie]s"/>
+      <ana>
+         <tok val="aedificantes"/>
+         <tok val="aedificantis"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -849,15 +1024,18 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--aedificantur aédificantur-->
-         <tok val="a[ée]dificantur"/>
+      <ana>
+         <tok val="aedificantur"/>
+         <tok val="aédificantur"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--aedificarat aedificauerat aedificaverat-->
-         <tok val="aedifica[vu]?(e|)rat"/>
+      <ana>
+         <tok val="aedificarat"/>
+         <tok val="aedificauerat"/>
+         <tok val="aedificaverat"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 s l i a</m>
@@ -912,36 +1090,45 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--aedificarim aedificauerim-->
-         <tok val="aedifica(ue)?rim"/>
+      <ana>
+         <tok val="aedificarim"/>
+         <tok val="aedificauerim"/>
          <lm>
             <l>aedifico</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--aedificaris aedificaueris aedificaveris-->
-         <tok val="aedifica[vu]?(e|)ris"/>
+      <ana>
+         <tok val="aedificaris"/>
+         <tok val="aedificaueris"/>
+         <tok val="aedificaveris"/>
          <lm>
             <l>aedifico</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--aedificarit aedificauerit aedificaverit-->
-         <tok val="aedifica[vu]?(e|)rit"/>
+      <ana>
+         <tok val="aedificarit"/>
+         <tok val="aedificauerit"/>
+         <tok val="aedificaverit"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--aedificarunt aedificavere aedificaverunt aedificaveruntque-->
-         <tok val="aedifica(ve)?r(unt)?(que|e)?"/>
+      <ana>
+         <tok val="aedificarunt"/>
+         <tok val="aedificavere"/>
+         <tok val="aedificaverunt"/>
+         <tok val="aedificaveruntque"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--aedificasse aedificavisse-->
-         <tok val="aedifica(vi)?sse"/>
+      <ana>
+         <tok val="aedificasse"/>
+         <tok val="aedificavisse"/>
          <lm>
             <l>aedifico</l>
             <m>v - - - r n a</m>
@@ -982,15 +1169,17 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--aedificat Aedificat-->
-         <tok val="[Aa]edificat"/>
+      <ana>
+         <tok val="Aedificat"/>
+         <tok val="aedificat"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--aedificatae aedificataeque-->
-         <tok val="aedificatae(que)?"/>
+      <ana>
+         <tok val="aedificatae"/>
+         <tok val="aedificataeque"/>
          <lm>
             <l>aedifico</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1006,8 +1195,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--aedificatas aédificatas-->
-         <tok val="a[ée]dificatas"/>
+      <ana>
+         <tok val="aedificatas"/>
+         <tok val="aédificatas"/>
          <lm>
             <l>aedifico</l>
             <m>v - - p r p p f a</m>
@@ -1021,22 +1211,26 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--aedificate aedificatum-->
-         <tok val="aedificat(um|e)"/>
+      <ana>
+         <tok val="aedificate"/>
+         <tok val="aedificatum"/>
          <lm>
             <l>aedifico</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--aedificatio aedificátio Aedificatio-->
-         <tok val="[aA]edific[áa]tio"/>
+      <ana>
+         <tok val="Aedificatio"/>
+         <tok val="aedificatio"/>
+         <tok val="aedificátio"/>
          <lm>
             <l>aedificatio</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--aedificatio Aedificatio-->
-         <tok val="[Aa]edificatio"/>
+      <ana>
+         <tok val="Aedificatio"/>
+         <tok val="aedificatio"/>
          <lm>
             <l>aedificatio</l>
             <m>n - - s - - - f v</m>
@@ -1128,8 +1322,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--aedificatorem aedificatoremque-->
-         <tok val="aedificatorem(que)?"/>
+      <ana>
+         <tok val="aedificatorem"/>
+         <tok val="aedificatoremque"/>
          <lm>
             <l>aedificator</l>
             <m>n - - s - - - m a</m>
@@ -1230,8 +1425,9 @@
             <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--aedificatur Aedificatur-->
-         <tok val="[Aa]edificatur"/>
+      <ana>
+         <tok val="Aedificatur"/>
+         <tok val="aedificatur"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 s p i p</m>
@@ -1292,22 +1488,25 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--aedificauerint aedificaverint-->
-         <tok val="aedifica[vu]erint"/>
+      <ana>
+         <tok val="aedificauerint"/>
+         <tok val="aedificaverint"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--aedificaueris aedificaveris-->
-         <tok val="aedifica[vu]eris"/>
+      <ana>
+         <tok val="aedificaueris"/>
+         <tok val="aedificaveris"/>
          <lm>
             <l>aedifico</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--aedificauerit aedificaverit-->
-         <tok val="aedifica[vu]erit"/>
+      <ana>
+         <tok val="aedificauerit"/>
+         <tok val="aedificaverit"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 s t i a</m>
@@ -1320,15 +1519,19 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--aedificaui aedificavi-->
-         <tok val="aedifica[vu]i"/>
+      <ana>
+         <tok val="aedificaui"/>
+         <tok val="aedificavi"/>
          <lm>
             <l>aedifico</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--aedificauit aedificauitque aedificavit aedificavitque-->
-         <tok val="aedifica[vu]it(que)?"/>
+      <ana>
+         <tok val="aedificauit"/>
+         <tok val="aedificauitque"/>
+         <tok val="aedificavit"/>
+         <tok val="aedificavitque"/>
          <lm>
             <l>aedifico</l>
             <m>v - 3 s r i a</m>
@@ -1455,8 +1658,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--aediliciorum aedilicium-->
-         <tok val="aedilici(or)?um"/>
+      <ana>
+         <tok val="aediliciorum"/>
+         <tok val="aedilicium"/>
          <lm>
             <l>aedilicius</l>
             <m>n - - p - - - m g</m>
@@ -1535,8 +1739,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--aeditimo aedito-->
-         <tok val="aedit(im)?o"/>
+      <ana>
+         <tok val="aeditimo"/>
+         <tok val="aedito"/>
          <lm>
             <l>aeditimus</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -1642,8 +1847,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--aedituorum aedituum-->
-         <tok val="aeditu(or)?um"/>
+      <ana>
+         <tok val="aedituorum"/>
+         <tok val="aedituum"/>
          <lm>
             <l>aedituus</l>
             <m>n - - p - - - m g</m>
@@ -1666,8 +1872,11 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--aedium Aedium aédium aediumque-->
-         <tok val="[Aa]?(e|aé|ae)dium(que)?"/>
+      <ana>
+         <tok val="Aedium"/>
+         <tok val="aedium"/>
+         <tok val="aediumque"/>
+         <tok val="aédium"/>
          <lm>
             <l>aedes</l>
             <m>n - - p - - - f g</m>

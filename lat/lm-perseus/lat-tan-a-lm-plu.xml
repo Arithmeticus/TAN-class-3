@@ -1,59 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusplu">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:plu">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to plu</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-plu.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PLU</tok-starts-with>
       <tok-starts-with>PLu</tok-starts-with>
       <tok-starts-with>Plu</tok-starts-with>
       <tok-starts-with>plu</tok-starts-with>
       <tok-starts-with>plú</tok-starts-with>
-      <ana><!--PLUS Plus Plusne Plusque plusque plusue plusve-->
-         <tok val="[pP]?(lus)?[q]?[uvn]?(e|PLUS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:39:54.109-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:39:54.109-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-plu.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PLUS"/>
+         <tok val="Plus"/>
+         <tok val="Plusne"/>
+         <tok val="Plusque"/>
+         <tok val="plus"/>
+         <tok val="plusne"/>
+         <tok val="plusque"/>
+         <tok val="plusue"/>
+         <tok val="plusve"/>
          <lm>
             <l>multus</l>
             <m cert="0.5">a - - s - - - - n c</m>
             <m cert="0.5">a - - s - - - - a c</m>
          </lm>
       </ana>
-      <ana><!--PLurima Plurima Plurimaque plurima plurimaque pluruma plurimá plúruma-->
-         <tok val="[pP]?(l|PL|pl|plúr)u[r]?[iu]?[m]?[a]?(que|á|ma)?"/>
+      <ana>
+         <tok val="PLurima"/>
+         <tok val="Plurima"/>
+         <tok val="Plurimaque"/>
+         <tok val="plurima"/>
+         <tok val="plurimaque"/>
+         <tok val="plurimá"/>
+         <tok val="pluruma"/>
+         <tok val="plúruma"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - n a s</m>
          </lm>
       </ana>
-      <ana><!--PLurima Plurima Plurimaque plurima plurimaque-->
-         <tok val="[pP]?(l|PL|pl)urima(que)?"/>
+      <ana>
+         <tok val="PLurima"/>
+         <tok val="Plurima"/>
+         <tok val="Plurimaque"/>
+         <tok val="plurima"/>
+         <tok val="plurimaque"/>
          <lm>
             <l>multus</l>
             <m cert="0.25">a - - s - - - f n s</m>
@@ -62,22 +89,31 @@
             <m cert="0.25">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--PLurima Plurima Plurimaque plurima plurimaque pluruma-->
-         <tok val="[pP]?(l|PL|pl)ur[iu]ma(que)?"/>
+      <ana>
+         <tok val="PLurima"/>
+         <tok val="Plurima"/>
+         <tok val="Plurimaque"/>
+         <tok val="plurima"/>
+         <tok val="plurimaque"/>
+         <tok val="pluruma"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--PLurimas Plurimas plurimas plurimasque-->
-         <tok val="[P]?(l|L|pl)urimas(que)?"/>
+      <ana>
+         <tok val="PLurimas"/>
+         <tok val="Plurimas"/>
+         <tok val="plurimas"/>
+         <tok val="plurimasque"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--Pluat pluat-->
-         <tok val="[pP]luat"/>
+      <ana>
+         <tok val="Pluat"/>
+         <tok val="pluat"/>
          <lm>
             <l>pluo</l>
             <m>v - 3 s p s a</m>
@@ -85,6 +121,7 @@
       </ana>
       <ana>
          <tok val="Pluentes"/>
+         <tok val="pluentes"/>
          <lm>
             <l>pluo</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -95,8 +132,9 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Pluere pluere-->
-         <tok val="[pP]luere"/>
+      <ana>
+         <tok val="Pluere"/>
+         <tok val="pluere"/>
          <lm>
             <l>pluo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -105,15 +143,19 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Pluit pluit pluitque-->
-         <tok val="[pP]luit(que)?"/>
+      <ana>
+         <tok val="Pluit"/>
+         <tok val="pluit"/>
+         <tok val="pluitque"/>
          <lm>
             <l>pluo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pluma pluma plumaque-->
-         <tok val="[pP]luma(que)?"/>
+      <ana>
+         <tok val="Pluma"/>
+         <tok val="pluma"/>
+         <tok val="plumaque"/>
          <lm cert="0.5">
             <l>pluma</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -125,8 +167,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Plumae plumae plumaeque-->
-         <tok val="[pP]lumae(que)?"/>
+      <ana>
+         <tok val="Plumae"/>
+         <tok val="plumae"/>
+         <tok val="plumaeque"/>
          <lm>
             <l>pluma</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -135,8 +179,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Plumam plumam plumamque-->
-         <tok val="[pP]lumam(que)?"/>
+      <ana>
+         <tok val="Plumam"/>
+         <tok val="plumam"/>
+         <tok val="plumamque"/>
          <lm>
             <l>pluma</l>
             <m>n - - s - - - f a</m>
@@ -144,6 +190,7 @@
       </ana>
       <ana>
          <tok val="Plumantes"/>
+         <tok val="plumantes"/>
          <lm>
             <l>plumo</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -154,8 +201,9 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Plumare plumare-->
-         <tok val="[pP]lumare"/>
+      <ana>
+         <tok val="Plumare"/>
+         <tok val="plumare"/>
          <lm>
             <l>plumo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -165,6 +213,7 @@
       </ana>
       <ana>
          <tok val="Plumarium"/>
+         <tok val="plumarium"/>
          <lm>
             <l>plumarius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -174,8 +223,10 @@
             <m cert="0.2">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Plumarium plumariorum-->
-         <tok val="[pP]lumari(or)?um"/>
+      <ana>
+         <tok val="Plumarium"/>
+         <tok val="plumariorum"/>
+         <tok val="plumarium"/>
          <lm>
             <l>plumarius</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -183,16 +234,18 @@
             <m cert="0.333333333333333333">n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Plumarius plumarius-->
-         <tok val="[pP]lumarius"/>
+      <ana>
+         <tok val="Plumarius"/>
+         <tok val="plumarius"/>
          <lm>
             <l>plumarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Plumarum plumarum-->
-         <tok val="[pP]lumarum"/>
+      <ana>
+         <tok val="Plumarum"/>
+         <tok val="plumarum"/>
          <lm>
             <l>pluma</l>
             <m>n - - p - - - f g</m>
@@ -200,13 +253,15 @@
       </ana>
       <ana>
          <tok val="Plumatilis"/>
+         <tok val="plumatilis"/>
          <lm>
             <l>plumatile</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Plumato plumato-->
-         <tok val="[pP]lumato"/>
+      <ana>
+         <tok val="Plumato"/>
+         <tok val="plumato"/>
          <lm cert="0.5">
             <l>plumatus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -224,8 +279,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Plumba plumba-->
-         <tok val="[pP]lumba"/>
+      <ana>
+         <tok val="Plumba"/>
+         <tok val="plumba"/>
          <lm cert="0.5">
             <l>plumbum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -237,22 +293,26 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Plumbagine plumbagine-->
-         <tok val="[pP]lumbagine"/>
+      <ana>
+         <tok val="Plumbagine"/>
+         <tok val="plumbagine"/>
          <lm>
             <l>plumbago</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Plumbago plumbago-->
-         <tok val="[pP]lumbago"/>
+      <ana>
+         <tok val="Plumbago"/>
+         <tok val="plumbago"/>
          <lm>
             <l>plumbago</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Plumbari plumbari plumbarii-->
-         <tok val="[pP]lumbari[i]?"/>
+      <ana>
+         <tok val="Plumbari"/>
+         <tok val="plumbari"/>
+         <tok val="plumbarii"/>
          <lm cert="0.5">
             <l>plumbarius</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -264,8 +324,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Plumbari plumbari-->
-         <tok val="[pP]lumbari"/>
+      <ana>
+         <tok val="Plumbari"/>
+         <tok val="plumbari"/>
          <lm cert="0.5">
             <l>plumbo</l>
             <m>v - - - p n p</m>
@@ -275,8 +336,9 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Plumbaria plumbaria-->
-         <tok val="[pP]lumbaria"/>
+      <ana>
+         <tok val="Plumbaria"/>
+         <tok val="plumbaria"/>
          <lm cert="0.5">
             <l>plumbarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -293,16 +355,18 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Plumbarius plumbarius-->
-         <tok val="[pP]lumbarius"/>
+      <ana>
+         <tok val="Plumbarius"/>
+         <tok val="plumbarius"/>
          <lm>
             <l>plumbarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Plumbata plumbata-->
-         <tok val="[pP]lumbata"/>
+      <ana>
+         <tok val="Plumbata"/>
+         <tok val="plumbata"/>
          <lm cert="0.5">
             <l>plumbo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -322,8 +386,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Plumbatura plumbatura-->
-         <tok val="[pP]lumbatura"/>
+      <ana>
+         <tok val="Plumbatura"/>
+         <tok val="plumbatura"/>
          <lm cert="0.5">
             <l>plumbo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -340,8 +405,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Plumbea plumbea-->
-         <tok val="[pP]lumbea"/>
+      <ana>
+         <tok val="Plumbea"/>
+         <tok val="plumbea"/>
          <lm cert="0.333333333333333333">
             <l>plumbea</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -364,8 +430,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Plumbeae plumbeae plumbeaeque-->
-         <tok val="[pP]lumbeae(que)?"/>
+      <ana>
+         <tok val="Plumbeae"/>
+         <tok val="plumbeae"/>
+         <tok val="plumbeaeque"/>
          <lm cert="0.5">
             <l>plumbeus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -381,8 +449,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Plumbei plumbei-->
-         <tok val="[pP]lumbei"/>
+      <ana>
+         <tok val="Plumbei"/>
+         <tok val="plumbei"/>
          <lm cert="0.5">
             <l>plumbeus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -395,8 +464,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Plumbeo plumbeo-->
-         <tok val="[pP]lumbeo"/>
+      <ana>
+         <tok val="Plumbeo"/>
+         <tok val="plumbeo"/>
          <lm cert="0.5">
             <l>plumbeus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -410,8 +480,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Plumbeum plumbeum-->
-         <tok val="[pP]lumbeum"/>
+      <ana>
+         <tok val="Plumbeum"/>
+         <tok val="plumbeum"/>
          <lm cert="0.5">
             <l>plumbeus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -426,8 +497,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Plumbeum plumbeorum plumbeum-->
-         <tok val="[pP]lumbe(or)?um"/>
+      <ana>
+         <tok val="Plumbeum"/>
+         <tok val="plumbeorum"/>
+         <tok val="plumbeum"/>
          <lm cert="0.5">
             <l>plumbeus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -438,22 +511,27 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Plumbeus plumbeus-->
-         <tok val="[pP]lumbeus"/>
+      <ana>
+         <tok val="Plumbeus"/>
+         <tok val="plumbeus"/>
          <lm>
             <l>plumbeus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Plumbi plumbi plumbique-->
-         <tok val="[pP]lumbi(que)?"/>
+      <ana>
+         <tok val="Plumbi"/>
+         <tok val="plumbi"/>
+         <tok val="plumbique"/>
          <lm>
             <l>plumbum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Plumbo plumbo plumboque-->
-         <tok val="[pP]lumbo(que)?"/>
+      <ana>
+         <tok val="Plumbo"/>
+         <tok val="plumbo"/>
+         <tok val="plumboque"/>
          <lm cert="0.5">
             <l>plumbo</l>
             <m>v - 1 s p i a</m>
@@ -464,15 +542,19 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Plumbosus plumbosus-->
-         <tok val="[pP]lumbosus"/>
+      <ana>
+         <tok val="Plumbosus"/>
+         <tok val="plumbosus"/>
          <lm>
             <l>plumbosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Plumbum plumbum plumbumque plumbumue-->
-         <tok val="[pP]lumbum[q]?(ue)?"/>
+      <ana>
+         <tok val="Plumbum"/>
+         <tok val="plumbum"/>
+         <tok val="plumbumque"/>
+         <tok val="plumbumue"/>
          <lm>
             <l>plumbum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -481,8 +563,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Plumea plumea-->
-         <tok val="[pP]lumea"/>
+      <ana>
+         <tok val="Plumea"/>
+         <tok val="plumea"/>
          <lm>
             <l>plumeus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -493,15 +576,17 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Plumesco plumesco-->
-         <tok val="[pP]lumesco"/>
+      <ana>
+         <tok val="Plumesco"/>
+         <tok val="plumesco"/>
          <lm>
             <l>plumesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Plumeum plumeum-->
-         <tok val="[pP]lumeum"/>
+      <ana>
+         <tok val="Plumeum"/>
+         <tok val="plumeum"/>
          <lm>
             <l>plumeus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -512,22 +597,26 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Plumeus plumeus-->
-         <tok val="[pP]lumeus"/>
+      <ana>
+         <tok val="Plumeus"/>
+         <tok val="plumeus"/>
          <lm>
             <l>plumeus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Plumo plumo-->
-         <tok val="[pP]lumo"/>
+      <ana>
+         <tok val="Plumo"/>
+         <tok val="plumo"/>
          <lm>
             <l>plumo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Plumosum plumosom-->
-         <tok val="[pP]lumos[ou]m"/>
+      <ana>
+         <tok val="Plumosum"/>
+         <tok val="plumosom"/>
+         <tok val="plumosum"/>
          <lm>
             <l>plumosus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -538,21 +627,24 @@
       </ana>
       <ana>
          <tok val="Plumosum"/>
+         <tok val="plumosum"/>
          <lm>
             <l>plumosus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Plumosus plumosus-->
-         <tok val="[pP]lumosus"/>
+      <ana>
+         <tok val="Plumosus"/>
+         <tok val="plumosus"/>
          <lm>
             <l>plumosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Plumula plumula-->
-         <tok val="[pP]lumula"/>
+      <ana>
+         <tok val="Plumula"/>
+         <tok val="plumula"/>
          <lm>
             <l>plumula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -560,15 +652,21 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Pluo pluo-->
-         <tok val="[pP]luo"/>
+      <ana>
+         <tok val="Pluo"/>
+         <tok val="pluo"/>
          <lm>
             <l>pluo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Plura Pluraque plura pluraque pluraue plurave-->
-         <tok val="[pP]lura[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Plura"/>
+         <tok val="Pluraque"/>
+         <tok val="plura"/>
+         <tok val="pluraque"/>
+         <tok val="pluraue"/>
+         <tok val="plurave"/>
          <lm>
             <l>multus</l>
             <m cert="0.5">a - - p - - - n n c</m>
@@ -577,13 +675,15 @@
       </ana>
       <ana>
          <tok val="Plura"/>
+         <tok val="plura"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Plurale plurale-->
-         <tok val="[pP]lurale"/>
+      <ana>
+         <tok val="Plurale"/>
+         <tok val="plurale"/>
          <lm>
             <l>pluralis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -591,8 +691,10 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Plurali plurali pluralique-->
-         <tok val="[pP]lurali(que)?"/>
+      <ana>
+         <tok val="Plurali"/>
+         <tok val="plurali"/>
+         <tok val="pluralique"/>
          <lm>
             <l>pluralis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -603,8 +705,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Pluralis pluralis pluralisve-->
-         <tok val="[pP]luralis(ve)?"/>
+      <ana>
+         <tok val="Pluralis"/>
+         <tok val="pluralis"/>
+         <tok val="pluralisve"/>
          <lm>
             <l>pluralis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -616,16 +720,20 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pluralis plurales pluralis pluralisve-->
-         <tok val="[pP]lural[ie]s(ve)?"/>
+      <ana>
+         <tok val="Pluralis"/>
+         <tok val="plurales"/>
+         <tok val="pluralis"/>
+         <tok val="pluralisve"/>
          <lm>
             <l>pluralis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pluralitatem pluralitatem-->
-         <tok val="[pP]luralitatem"/>
+      <ana>
+         <tok val="Pluralitatem"/>
+         <tok val="pluralitatem"/>
          <lm>
             <l>pluralitas</l>
             <m>n - - s - - - f a</m>
@@ -633,35 +741,60 @@
       </ana>
       <ana>
          <tok val="Pluraliter"/>
+         <tok val="pluraliter"/>
          <lm>
             <l>pluraliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Pluratiuus pluratiuus plurativus-->
-         <tok val="[pP]lurati[uv]us"/>
+      <ana>
+         <tok val="Pluratiuus"/>
+         <tok val="pluratiuus"/>
+         <tok val="plurativus"/>
          <lm>
             <l>plurativus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Plures Pluris plures pluresne pluresque pluresue pluresve pluris plurisne plurisque plurisue plurisve-->
-         <tok val="[pP]lur(isu|isqu|isn|isv)?[e]?[s]?[q]?(ue|sne|sve|s|is|es)?"/>
+      <ana>
+         <tok val="Plures"/>
+         <tok val="Pluris"/>
+         <tok val="plures"/>
+         <tok val="pluresne"/>
+         <tok val="pluresque"/>
+         <tok val="pluresue"/>
+         <tok val="pluresve"/>
+         <tok val="pluris"/>
+         <tok val="plurisne"/>
+         <tok val="plurisque"/>
+         <tok val="plurisue"/>
+         <tok val="plurisve"/>
          <lm>
             <l>multus</l>
             <m cert="0.5">a - - p - - - m a c</m>
             <m cert="0.5">a - - p - - - f a c</m>
          </lm>
       </ana>
-      <ana><!--Plures plures pluresne pluresque pluresue pluresve pluris-->
-         <tok val="[pP]lur[ei]s[q]?[unv]?[e]?"/>
+      <ana>
+         <tok val="Plures"/>
+         <tok val="plures"/>
+         <tok val="pluresne"/>
+         <tok val="pluresque"/>
+         <tok val="pluresue"/>
+         <tok val="pluresve"/>
+         <tok val="pluris"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - m n c</m>
          </lm>
       </ana>
-      <ana><!--Plures plures pluresne pluresque pluresue pluresve-->
-         <tok val="[pP]lures[q]?[unv]?[e]?"/>
+      <ana>
+         <tok val="Plures"/>
+         <tok val="plures"/>
+         <tok val="pluresne"/>
+         <tok val="pluresque"/>
+         <tok val="pluresue"/>
+         <tok val="pluresve"/>
          <lm>
             <l>multus</l>
             <m cert="0.333333333333333333">a - - p - - - m v c</m>
@@ -669,8 +802,13 @@
             <m cert="0.333333333333333333">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Pluribus pluribus pluribusne pluribusque pluribusue pluribusve-->
-         <tok val="[pP]luribus[q]?[unv]?[e]?"/>
+      <ana>
+         <tok val="Pluribus"/>
+         <tok val="pluribus"/>
+         <tok val="pluribusne"/>
+         <tok val="pluribusque"/>
+         <tok val="pluribusue"/>
+         <tok val="pluribusve"/>
          <lm>
             <l>multus</l>
             <m cert="0.166666666666666667">a - - p - - - m d c</m>
@@ -681,15 +819,19 @@
             <m cert="0.166666666666666667">a - - p - - - f d c</m>
          </lm>
       </ana>
-      <ana><!--Plurifariam plurifariam-->
-         <tok val="[pP]lurifariam"/>
+      <ana>
+         <tok val="Plurifariam"/>
+         <tok val="plurifariam"/>
          <lm>
             <l>plurifariam</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Plurimae Plurimaeque plurimae plurimaeque-->
-         <tok val="[pP]lurimae(que)?"/>
+      <ana>
+         <tok val="Plurimae"/>
+         <tok val="Plurimaeque"/>
+         <tok val="plurimae"/>
+         <tok val="plurimaeque"/>
          <lm>
             <l>multus</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -698,22 +840,27 @@
             <m cert="0.25">a - - s - - - f g s</m>
          </lm>
       </ana>
-      <ana><!--Plurimam plurimam-->
-         <tok val="[pP]lurimam"/>
+      <ana>
+         <tok val="Plurimam"/>
+         <tok val="plurimam"/>
          <lm>
             <l>multus</l>
             <m>a - - s - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--Plurimarum plurimarum-->
-         <tok val="[pP]lurimarum"/>
+      <ana>
+         <tok val="Plurimarum"/>
+         <tok val="plurimarum"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - f g s</m>
          </lm>
       </ana>
-      <ana><!--Plurimi Plurimique plurimi plurimique-->
-         <tok val="[pP]lurimi(que)?"/>
+      <ana>
+         <tok val="Plurimi"/>
+         <tok val="Plurimique"/>
+         <tok val="plurimi"/>
+         <tok val="plurimique"/>
          <lm>
             <l>multus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -722,8 +869,10 @@
             <m cert="0.25">a - - p - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Plurimis plurimis plurimisque-->
-         <tok val="[pP]lurimis(que)?"/>
+      <ana>
+         <tok val="Plurimis"/>
+         <tok val="plurimis"/>
+         <tok val="plurimisque"/>
          <lm>
             <l>multus</l>
             <m cert="0.2">a - - p - - - n d s</m>
@@ -733,15 +882,20 @@
             <m cert="0.2">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--Plurimis plurimis plurimisque plúrimis-->
-         <tok val="[pP]l[uú]rimis(que)?"/>
+      <ana>
+         <tok val="Plurimis"/>
+         <tok val="plurimis"/>
+         <tok val="plurimisque"/>
+         <tok val="plúrimis"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - f d s</m>
          </lm>
       </ana>
-      <ana><!--Plurimo plurimo plurimoque-->
-         <tok val="[pP]lurimo(que)?"/>
+      <ana>
+         <tok val="Plurimo"/>
+         <tok val="plurimo"/>
+         <tok val="plurimoque"/>
          <lm>
             <l>multus</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -750,65 +904,107 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--Plurimorum Plurimum plurimorum plurimum plurimumque plurimumst plurimumue plurímum plúrimum-->
-         <tok val="[pP]l(úrim)?u[r]?[ií]?[m]?(or)?(u|)m[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Plurimorum"/>
+         <tok val="Plurimum"/>
+         <tok val="plurimorum"/>
+         <tok val="plurimum"/>
+         <tok val="plurimumque"/>
+         <tok val="plurimumst"/>
+         <tok val="plurimumue"/>
+         <tok val="plurímum"/>
+         <tok val="plúrimum"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Plurimorum Plurimum plurimorum plurimum plurimumque plurimumst plurimumue-->
-         <tok val="[pP]lurim(or)?um[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Plurimorum"/>
+         <tok val="Plurimum"/>
+         <tok val="plurimorum"/>
+         <tok val="plurimum"/>
+         <tok val="plurimumque"/>
+         <tok val="plurimumst"/>
+         <tok val="plurimumue"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--Plurimos plurimos plurimosque plurumos-->
-         <tok val="[pP]lur[iu]mos(que)?"/>
+      <ana>
+         <tok val="Plurimos"/>
+         <tok val="plurimos"/>
+         <tok val="plurimosque"/>
+         <tok val="plurumos"/>
          <lm>
             <l>multus</l>
             <m>a - - p - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--Plurimum plurime plurimum plurimumque plurimumst plurimumue-->
-         <tok val="[pP]lurim(um)?[q]?(ue|st|e)?"/>
+      <ana>
+         <tok val="Plurimum"/>
+         <tok val="plurime"/>
+         <tok val="plurimum"/>
+         <tok val="plurimumque"/>
+         <tok val="plurimumst"/>
+         <tok val="plurimumue"/>
          <lm>
             <l>multus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Plurimum plurimum plurimumque plurimumst plurimumue plurumum-->
-         <tok val="[pP]lur[iu]mum[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Plurimum"/>
+         <tok val="plurimum"/>
+         <tok val="plurimumque"/>
+         <tok val="plurimumst"/>
+         <tok val="plurimumue"/>
+         <tok val="plurumum"/>
          <lm>
             <l>multus</l>
             <m cert="0.5">a - - s - - - n a s</m>
             <m cert="0.5">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Plurimum plurimum plurimumque plurimumst plurimumue-->
-         <tok val="[pP]lurimum[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Plurimum"/>
+         <tok val="plurimum"/>
+         <tok val="plurimumque"/>
+         <tok val="plurimumst"/>
+         <tok val="plurimumue"/>
          <lm>
             <l>multus</l>
             <m>a - - s - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--Plurimus plurimus plurimusque-->
-         <tok val="[pP]lurimus(que)?"/>
+      <ana>
+         <tok val="Plurimus"/>
+         <tok val="plurimus"/>
+         <tok val="plurimusque"/>
          <lm>
             <l>multus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Pluris pluris plurisne plurisque plurisue plurisve-->
-         <tok val="[pP]luris[q]?[unv]?[e]?"/>
+      <ana>
+         <tok val="Pluris"/>
+         <tok val="pluris"/>
+         <tok val="plurisne"/>
+         <tok val="plurisque"/>
+         <tok val="plurisue"/>
+         <tok val="plurisve"/>
          <lm>
             <l>multus</l>
             <m>a - - s - - - n g c</m>
          </lm>
       </ana>
-      <ana><!--Plurium plurium pluriumque pluriumue pluriumve-->
-         <tok val="[pP]lurium[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Plurium"/>
+         <tok val="plurium"/>
+         <tok val="pluriumque"/>
+         <tok val="pluriumue"/>
+         <tok val="pluriumve"/>
          <lm>
             <l>multus</l>
             <m cert="0.333333333333333333">a - - p - - - f g c</m>
@@ -816,22 +1012,25 @@
             <m cert="0.333333333333333333">a - - p - - - m g c</m>
          </lm>
       </ana>
-      <ana><!--Plus plus-->
-         <tok val="[pP]lus"/>
+      <ana>
+         <tok val="Plus"/>
+         <tok val="plus"/>
          <lm>
             <l>multus</l>
             <m>a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Plusculos plusculos-->
-         <tok val="[pP]lusculos"/>
+      <ana>
+         <tok val="Plusculos"/>
+         <tok val="plusculos"/>
          <lm>
             <l>plusculus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Plusculum plusculum-->
-         <tok val="[pP]lusculum"/>
+      <ana>
+         <tok val="Plusculum"/>
+         <tok val="plusculum"/>
          <lm>
             <l>plusculus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -840,8 +1039,10 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Plusculum plusculorum plusculum-->
-         <tok val="[pP]luscul(or)?um"/>
+      <ana>
+         <tok val="Plusculum"/>
+         <tok val="plusculorum"/>
+         <tok val="plusculum"/>
          <lm>
             <l>plusculus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -850,13 +1051,15 @@
       </ana>
       <ana>
          <tok val="Plute"/>
+         <tok val="plute"/>
          <lm>
             <l>Plutus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Plutei plutei-->
-         <tok val="[pP]lutei"/>
+      <ana>
+         <tok val="Plutei"/>
+         <tok val="plutei"/>
          <lm cert="0.5">
             <l>pluteus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -868,15 +1071,20 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pluteos pluteos pluteosque-->
-         <tok val="[pP]luteos(que)?"/>
+      <ana>
+         <tok val="Pluteos"/>
+         <tok val="pluteos"/>
+         <tok val="pluteosque"/>
          <lm>
             <l>pluteus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pluteum pluteorum pluteum pluteorumque-->
-         <tok val="[pP]lute(or)?um(que)?"/>
+      <ana>
+         <tok val="Pluteum"/>
+         <tok val="pluteorum"/>
+         <tok val="pluteorumque"/>
+         <tok val="pluteum"/>
          <lm cert="0.5">
             <l>pluteus</l>
             <m>n - - p - - - m g</m>
@@ -886,8 +1094,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pluteum pluteum-->
-         <tok val="[pP]luteum"/>
+      <ana>
+         <tok val="Pluteum"/>
+         <tok val="pluteum"/>
          <lm cert="0.5">
             <l>pluteum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -899,15 +1108,20 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pluteus pluteun pluteus-->
-         <tok val="[pP]luteu[sn]"/>
+      <ana>
+         <tok val="Pluteus"/>
+         <tok val="pluteun"/>
+         <tok val="pluteus"/>
          <lm>
             <l>pluteus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pluto Pluton-->
-         <tok val="Pluto[n]?"/>
+      <ana>
+         <tok val="Pluto"/>
+         <tok val="Pluton"/>
+         <tok val="pluto"/>
+         <tok val="pluton"/>
          <lm cert="0.5">
             <l>Pluto</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -921,6 +1135,7 @@
       </ana>
       <ana>
          <tok val="Pluton"/>
+         <tok val="pluton"/>
          <lm>
             <l>Plutus</l>
             <m>n e - p - - - m a</m>
@@ -928,6 +1143,7 @@
       </ana>
       <ana>
          <tok val="Plutone"/>
+         <tok val="plutone"/>
          <lm>
             <l>Pluto</l>
             <m>n e - s - - - m b</m>
@@ -935,6 +1151,7 @@
       </ana>
       <ana>
          <tok val="Plutonem"/>
+         <tok val="plutonem"/>
          <lm>
             <l>Pluto</l>
             <m>n e - s - - - m a</m>
@@ -942,6 +1159,7 @@
       </ana>
       <ana>
          <tok val="Plutoni"/>
+         <tok val="plutoni"/>
          <lm cert="0.5">
             <l>Plutonius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -954,6 +1172,7 @@
       </ana>
       <ana>
          <tok val="Plutonia"/>
+         <tok val="plutonia"/>
          <lm cert="0.5">
             <l>Plutonia</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -972,6 +1191,7 @@
       </ana>
       <ana>
          <tok val="Plutonis"/>
+         <tok val="plutonis"/>
          <lm>
             <l>Pluto</l>
             <m>n e - s - - - m g</m>
@@ -979,6 +1199,7 @@
       </ana>
       <ana>
          <tok val="Plutonium"/>
+         <tok val="plutonium"/>
          <lm cert="0.5">
             <l>Plutonius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -995,6 +1216,7 @@
       </ana>
       <ana>
          <tok val="Plutonius"/>
+         <tok val="plutonius"/>
          <lm>
             <l>Plutonius</l>
             <m>a e - s - - - m n</m>
@@ -1002,6 +1224,7 @@
       </ana>
       <ana>
          <tok val="Plutum"/>
+         <tok val="plutum"/>
          <lm>
             <l>Plutus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1010,13 +1233,19 @@
       </ana>
       <ana>
          <tok val="Plutus"/>
+         <tok val="plutus"/>
          <lm>
             <l>Plutus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pluuia Pluvia pluuia pluuiaque pluvia pluviaque-->
-         <tok val="[pP]lu[vu]ia(que)?"/>
+      <ana>
+         <tok val="Pluuia"/>
+         <tok val="Pluvia"/>
+         <tok val="pluuia"/>
+         <tok val="pluuiaque"/>
+         <tok val="pluvia"/>
+         <tok val="pluviaque"/>
          <lm cert="0.333333333333333333">
             <l>pluvia</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1039,8 +1268,15 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Pluuiae Pluviae pluuiae pluuiaeque pluuiaeue pluviae pluviaeque pluviaeve-->
-         <tok val="[pP]lu[uv]iae[q]?(ue|ve)?"/>
+      <ana>
+         <tok val="Pluuiae"/>
+         <tok val="Pluviae"/>
+         <tok val="pluuiae"/>
+         <tok val="pluuiaeque"/>
+         <tok val="pluuiaeue"/>
+         <tok val="pluviae"/>
+         <tok val="pluviaeque"/>
+         <tok val="pluviaeve"/>
          <lm cert="0.5">
             <l>pluvius</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1056,16 +1292,23 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Pluuiales Pluuialis pluuiales pluuialis pluviales pluvialis-->
-         <tok val="[Pp]lu[uv]ial[ie]s"/>
+      <ana>
+         <tok val="Pluuiales"/>
+         <tok val="Pluuialis"/>
+         <tok val="pluuiales"/>
+         <tok val="pluuialis"/>
+         <tok val="pluviales"/>
+         <tok val="pluvialis"/>
          <lm>
             <l>pluvialis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pluuiales pluuiales pluviales-->
-         <tok val="[pP]lu[uv]iales"/>
+      <ana>
+         <tok val="Pluuiales"/>
+         <tok val="pluuiales"/>
+         <tok val="pluviales"/>
          <lm>
             <l>pluvialis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1074,26 +1317,28 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pluuialia Pluvialia pluvialia-->
-         <tok val="[Pp]lu[vu]ialia"/>
-         <lm>
+      <ana>
+         <tok val="Pluuialia"/>
+         <tok val="Pluvialia"/>
+         <tok val="pluuialia"/>
+         <tok val="pluvialia"/>
+         <lm cert="0.5">
             <l>pluvialis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
             <m cert="0.333333333333333333">a - - p - - - n v</m>
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
-      </ana>
-      <ana><!--Pluuialia Pluvialia-->
-         <tok val="Plu[vu]ialia"/>
-         <lm>
+         <lm cert="0.5">
             <l>Pluvialia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Pluuialis pluuialis pluvialis-->
-         <tok val="[pP]lu[uv]ialis"/>
+      <ana>
+         <tok val="Pluuialis"/>
+         <tok val="pluuialis"/>
+         <tok val="pluvialis"/>
          <lm>
             <l>pluvialis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1105,8 +1350,12 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pluuiam pluuiam pluuiamque pluviam pluviamque-->
-         <tok val="[pP]lu[vu]iam(que)?"/>
+      <ana>
+         <tok val="Pluuiam"/>
+         <tok val="pluuiam"/>
+         <tok val="pluuiamque"/>
+         <tok val="pluviam"/>
+         <tok val="pluviamque"/>
          <lm cert="0.5">
             <l>pluvius</l>
             <m>a - - s - - - f a</m>
@@ -1116,8 +1365,10 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pluuiarum pluuiarum pluviarum-->
-         <tok val="[pP]lu[uv]iarum"/>
+      <ana>
+         <tok val="Pluuiarum"/>
+         <tok val="pluuiarum"/>
+         <tok val="pluviarum"/>
          <lm cert="0.5">
             <l>pluvia</l>
             <m>n - - p - - - f g</m>
@@ -1127,8 +1378,10 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Pluuiatilis pluuiatilis pluviatilis-->
-         <tok val="[pP]lu[uv]iatilis"/>
+      <ana>
+         <tok val="Pluuiatilis"/>
+         <tok val="pluuiatilis"/>
+         <tok val="pluviatilis"/>
          <lm>
             <l>pluviatilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1142,8 +1395,12 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pluuio pluuio pluuioque pluvio pluvioque-->
-         <tok val="[pP]lu[vu]io(que)?"/>
+      <ana>
+         <tok val="Pluuio"/>
+         <tok val="pluuio"/>
+         <tok val="pluuioque"/>
+         <tok val="pluvio"/>
+         <tok val="pluvioque"/>
          <lm cert="0.5">
             <l>pluvius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1157,15 +1414,19 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Pluuiosus pluuiosus pluviosus-->
-         <tok val="[pP]lu[uv]iosus"/>
+      <ana>
+         <tok val="Pluuiosus"/>
+         <tok val="pluuiosus"/>
+         <tok val="pluviosus"/>
          <lm>
             <l>pluviosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pluuius pluuius pluvius-->
-         <tok val="[pP]lu[uv]ius"/>
+      <ana>
+         <tok val="Pluuius"/>
+         <tok val="pluuius"/>
+         <tok val="pluvius"/>
          <lm>
             <l>pluvius</l>
             <m>a - - s - - - m n</m>
@@ -1173,13 +1434,16 @@
       </ana>
       <ana>
          <tok val="Pluvialiam"/>
+         <tok val="pluvialiam"/>
          <lm>
             <l>Pluvialia</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pluvialibus pluuialibus pluvialibus-->
-         <tok val="[pP]lu[vu]ialibus"/>
+      <ana>
+         <tok val="Pluvialibus"/>
+         <tok val="pluuialibus"/>
+         <tok val="pluvialibus"/>
          <lm>
             <l>pluvialis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1190,8 +1454,12 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Pluvias pluuias pluuiasque pluvias pluviasque-->
-         <tok val="[pP]lu[vu]ias(que)?"/>
+      <ana>
+         <tok val="Pluvias"/>
+         <tok val="pluuias"/>
+         <tok val="pluuiasque"/>
+         <tok val="pluvias"/>
+         <tok val="pluviasque"/>
          <lm cert="0.5">
             <l>pluvius</l>
             <m>a - - p - - - f a</m>
@@ -1687,8 +1955,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--plumbaueris plumbaveris-->
-         <tok val="plumba[vu]eris"/>
+      <ana>
+         <tok val="plumbaueris"/>
+         <tok val="plumbaveris"/>
          <lm>
             <l>plumbo</l>
             <m cert="0.5">v - 2 s t i a</m>
@@ -1728,8 +1997,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--plumbeis plumbeisque-->
-         <tok val="plumbeis(que)?"/>
+      <ana>
+         <tok val="plumbeis"/>
+         <tok val="plumbeisque"/>
          <lm cert="0.333333333333333333">
             <l>plumbeus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1750,8 +2020,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--plumbeos plúmbeos-->
-         <tok val="pl[úu]mbeos"/>
+      <ana>
+         <tok val="plumbeos"/>
+         <tok val="plúmbeos"/>
          <lm>
             <l>plumbeus</l>
             <m>a - - p - - - m a</m>
@@ -1954,8 +2225,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--plumulae plumulaeque-->
-         <tok val="plumulae(que)?"/>
+      <ana>
+         <tok val="plumulae"/>
+         <tok val="plumulaeque"/>
          <lm>
             <l>plumula</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -1972,8 +2244,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--plun plusne-->
-         <tok val="plu[s]?n[e]?"/>
+      <ana>
+         <tok val="plun"/>
+         <tok val="plusne"/>
          <lm>
             <l>multus</l>
             <m cert="0.5">a - - s - - - - n</m>
@@ -1999,8 +2272,9 @@
             <m>n - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--pluralem pluralemque-->
-         <tok val="pluralem(que)?"/>
+      <ana>
+         <tok val="pluralem"/>
+         <tok val="pluralemque"/>
          <lm>
             <l>pluralis</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -2059,8 +2333,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--pluratiuo plurativo-->
-         <tok val="plurati[vu]o"/>
+      <ana>
+         <tok val="pluratiuo"/>
+         <tok val="plurativo"/>
          <lm cert="0.5">
             <l>plurativus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2074,8 +2349,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--pluratiuum plurativum-->
-         <tok val="plurati[vu]um"/>
+      <ana>
+         <tok val="pluratiuum"/>
+         <tok val="plurativum"/>
          <lm cert="0.5">
             <l>plurativus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -2184,8 +2460,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--plurime plurumum-->
-         <tok val="plur[ui]m(um|e)"/>
+      <ana>
+         <tok val="plurime"/>
+         <tok val="plurumum"/>
          <lm>
             <l>multus</l>
             <m>d - - - - - - - - s</m>
@@ -2217,8 +2494,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--plus plús-->
-         <tok val="pl[úu]s"/>
+      <ana>
+         <tok val="plus"/>
+         <tok val="plús"/>
          <lm>
             <l>multus</l>
             <m>d - - - - - - - - c</m>
@@ -2277,8 +2555,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--plusculis plusculisque-->
-         <tok val="plusculis(que)?"/>
+      <ana>
+         <tok val="plusculis"/>
+         <tok val="plusculisque"/>
          <lm>
             <l>plusculus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2322,15 +2601,17 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--plutearius plutiarius-->
-         <tok val="plut[ie]arius"/>
+      <ana>
+         <tok val="plutearius"/>
+         <tok val="plutiarius"/>
          <lm>
             <l>plutearius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--pluteis pluteisque-->
-         <tok val="pluteis(que)?"/>
+      <ana>
+         <tok val="pluteis"/>
+         <tok val="pluteisque"/>
          <lm cert="0.5">
             <l>pluteus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -2363,8 +2644,9 @@
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--pluuiale pluviale-->
-         <tok val="plu[vu]iale"/>
+      <ana>
+         <tok val="pluuiale"/>
+         <tok val="pluviale"/>
          <lm>
             <l>pluvialis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2372,16 +2654,18 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--pluuialem pluvialem-->
-         <tok val="plu[vu]ialem"/>
+      <ana>
+         <tok val="pluuialem"/>
+         <tok val="pluvialem"/>
          <lm>
             <l>pluvialis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--pluuiali pluviali-->
-         <tok val="plu[vu]iali"/>
+      <ana>
+         <tok val="pluuiali"/>
+         <tok val="pluviali"/>
          <lm>
             <l>pluvialis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -2421,8 +2705,10 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--pluuii pluvii pluviique-->
-         <tok val="plu[vu]ii(que)?"/>
+      <ana>
+         <tok val="pluuii"/>
+         <tok val="pluvii"/>
+         <tok val="pluviique"/>
          <lm cert="0.5">
             <l>pluvius</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -2435,8 +2721,11 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--pluuiis pluuiisque pluviis pluviisque-->
-         <tok val="plu[vu]iis(que)?"/>
+      <ana>
+         <tok val="pluuiis"/>
+         <tok val="pluuiisque"/>
+         <tok val="pluviis"/>
+         <tok val="pluviisque"/>
          <lm cert="0.333333333333333333">
             <l>pluvius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2501,8 +2790,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--pluuium pluvium-->
-         <tok val="plu[vu]ium"/>
+      <ana>
+         <tok val="pluuium"/>
+         <tok val="pluvium"/>
          <lm cert="0.5">
             <l>pluvius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -2534,8 +2824,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--pluvios pluviosque-->
-         <tok val="pluvios(que)?"/>
+      <ana>
+         <tok val="pluvios"/>
+         <tok val="pluviosque"/>
          <lm>
             <l>pluvius</l>
             <m>a - - p - - - m a</m>
@@ -2570,8 +2861,9 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--pluisse pluuisse-->
-         <tok val="pl[u]?uisse"/>
+      <ana>
+         <tok val="pluisse"/>
+         <tok val="pluuisse"/>
          <lm>
             <l>pluo</l>
             <m>v - - - r n a</m>
@@ -2615,8 +2907,9 @@
             <m cert="0.333333333333333333">a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--plurumis plurumisque-->
-         <tok val="plurumis(que)?"/>
+      <ana>
+         <tok val="plurumis"/>
+         <tok val="plurumisque"/>
          <lm>
             <l>plurimus</l>
             <m cert="0.5">a - - p - - - m b</m>

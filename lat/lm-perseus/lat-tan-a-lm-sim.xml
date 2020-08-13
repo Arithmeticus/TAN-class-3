@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussim">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sim">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sim</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sim.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SIM</tok-starts-with>
       <tok-starts-with>SIm</tok-starts-with>
       <tok-starts-with>Sim</tok-starts-with>
       <tok-starts-with>sim</tok-starts-with>
       <tok-starts-with>sím</tok-starts-with>
-      <ana><!--SIMAE Simae simae simaeque-->
-         <tok val="[sS]?(imae)?(que|SIMAE)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:46:06.159-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:46:06.159-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sim.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SIMAE"/>
+         <tok val="Simae"/>
+         <tok val="simae"/>
+         <tok val="simaeque"/>
          <lm cert="0.5">
             <l>simus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -54,8 +65,11 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--SIMI Simi simi simique-->
-         <tok val="[sS]?(imi)?(que|SIMI)?"/>
+      <ana>
+         <tok val="SIMI"/>
+         <tok val="Simi"/>
+         <tok val="simi"/>
+         <tok val="simique"/>
          <lm cert="0.5">
             <l>simus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -68,15 +82,23 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--SIMI Simi simi simii simique-->
-         <tok val="[sS]?(imi)?(i|que|SIMI)?"/>
+      <ana>
+         <tok val="SIMI"/>
+         <tok val="Simi"/>
+         <tok val="simi"/>
+         <tok val="simii"/>
+         <tok val="simique"/>
          <lm>
             <l>simius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--SIMIA Simia Simian simia-->
-         <tok val="[Ss]?(imia)?(n|SIMIA)?"/>
+      <ana>
+         <tok val="SIMIA"/>
+         <tok val="Simia"/>
+         <tok val="Simian"/>
+         <tok val="simia"/>
+         <tok val="simian"/>
          <lm>
             <l>simia</l>
             <m cert="0.166666666666666667">n - - s - - - f b</m>
@@ -87,8 +109,16 @@
             <m cert="0.166666666666666667">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--SIMILIA Similia Similiaque Simillima similia similiane similiaque similiave simillima-->
-         <tok val="[sS]?(imil)?[l]?[i]?[m]?[a]?(qu|v|n)?(e|SIMILIA)?"/>
+      <ana>
+         <tok val="SIMILIA"/>
+         <tok val="Similia"/>
+         <tok val="Similiaque"/>
+         <tok val="Simillima"/>
+         <tok val="similia"/>
+         <tok val="similiane"/>
+         <tok val="similiaque"/>
+         <tok val="similiave"/>
+         <tok val="simillima"/>
          <lm>
             <l>similis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -96,81 +126,186 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS Similis Similisne Similisque similis similisne similisque similist similisve-->
-         <tok val="[sS]?(imilis)?(t|que|ne|ve|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
          <lm>
             <l>simila</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS Similis Similisne Similisque Simillimae similis similisne similisque similist similisve simillimae símilis-->
-         <tok val="[sS]?(i|sí)?(mil)?[l]?[i]?[s]?(t|que|mae|sne|sve|s|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="Simillimae"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
+         <tok val="simillimae"/>
+         <tok val="símilis"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS SImiles Similes Similis Similisne Similisque similen similes similesne similesque similis similisne similisque similist similisve simillimos simillimosque-->
-         <tok val="[sS]?(i|SI)?(mil)?[ie]?[s]?(t|que|ne|ve|en|es|limosque|limos|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="SImiles"/>
+         <tok val="Similes"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="similen"/>
+         <tok val="similes"/>
+         <tok val="similesne"/>
+         <tok val="similesque"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
+         <tok val="simillimos"/>
+         <tok val="simillimosque"/>
          <lm>
             <l>similis</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS Similis Similisne Similisque Simillima similis similisne similisque similist similisve simillima-->
-         <tok val="[sS]?(imil)?[l]?[i]?[s]?(t|que|ne|ve|ma|s|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="Simillima"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
+         <tok val="simillima"/>
          <lm>
             <l>similis</l>
             <m cert="0.5">a - - s - - - f n</m>
             <m cert="0.5">a - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS Similis Similisne Similisque similis similisne similisque similist similisve simillimi simillimique-->
-         <tok val="[sS]?(imil)?[l]?[i]?[s]?(t|que|ne|ve|mique|mi|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
+         <tok val="simillimi"/>
+         <tok val="simillimique"/>
          <lm>
             <l>similis</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS SImiles Similes Similis Similisne Similisque similen similes similesne similesque similis similisne similisque similist similisve simillimas-->
-         <tok val="[sS]?(i|SI|si)?(mil)?[ie]?[s]?(t|que|ne|ve|en|es|limas|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="SImiles"/>
+         <tok val="Similes"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="similen"/>
+         <tok val="similes"/>
+         <tok val="similesne"/>
+         <tok val="similesque"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
+         <tok val="simillimas"/>
          <lm>
             <l>similis</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS Similis Similisne Similisque Simillimus similis similisne similisque similist similisve simillimus simillimust-->
-         <tok val="[sS]?(imil)?[l]?[i]?(mu)?[s]?(t|que|ne|ve|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="Simillimus"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
+         <tok val="simillimus"/>
+         <tok val="simillimust"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SIMILIS Similis Similisne Similisque Simillime similis similisne similisque similist similisve simillime-->
-         <tok val="[sS]?(imil)?[l]?[i]?[s]?(t|que|ne|ve|me|s|SIMILIS)?"/>
+      <ana>
+         <tok val="SIMILIS"/>
+         <tok val="Similis"/>
+         <tok val="Similisne"/>
+         <tok val="Similisque"/>
+         <tok val="Simillime"/>
+         <tok val="similis"/>
+         <tok val="similisne"/>
+         <tok val="similisque"/>
+         <tok val="similist"/>
+         <tok val="similisve"/>
+         <tok val="simillime"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--SIMILITER Similiter Similiterque similiter similiterne similiterque simulter-->
-         <tok val="[sS]?(im)?[iu]?[l]?[i]?(ter)?(qu|n)?(e|SIMILITER)?"/>
+      <ana>
+         <tok val="SIMILITER"/>
+         <tok val="Similiter"/>
+         <tok val="Similiterque"/>
+         <tok val="similiter"/>
+         <tok val="similiterne"/>
+         <tok val="similiterque"/>
+         <tok val="simulter"/>
          <lm>
             <l>similis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--SIMO Simo simo simon Simó-->
-         <tok val="[sS]?(im)?[o]?(n|ó|SIMO)?"/>
+      <ana>
+         <tok val="SIMO"/>
+         <tok val="Simo"/>
+         <tok val="Simó"/>
+         <tok val="simo"/>
+         <tok val="simon"/>
+         <tok val="simó"/>
          <lm>
             <l>simus</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SIMO Simo simo simon-->
-         <tok val="[sS]?(imo)?(n|SIMO)?"/>
+      <ana>
+         <tok val="SIMO"/>
+         <tok val="Simo"/>
+         <tok val="simo"/>
+         <tok val="simon"/>
          <lm cert="0.5">
             <l>simo</l>
             <m>v - 1 s p i a</m>
@@ -182,22 +317,28 @@
             <m cert="0.333333333333333333">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--SIMON Simon-->
-         <tok val="S(imon|IMON)"/>
+      <ana>
+         <tok val="SIMON"/>
+         <tok val="Simon"/>
+         <tok val="simon"/>
          <lm>
             <l>Simon</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SIMONI Simoni-->
-         <tok val="S(imoni|IMONI)"/>
+      <ana>
+         <tok val="SIMONI"/>
+         <tok val="Simoni"/>
+         <tok val="simoni"/>
          <lm>
             <l>Simon</l>
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--SIMONIDES Simonides-->
-         <tok val="S(imonides|IMONIDES)"/>
+      <ana>
+         <tok val="SIMONIDES"/>
+         <tok val="Simonides"/>
+         <tok val="simonides"/>
          <lm>
             <l>Simonides</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -206,8 +347,11 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--SIMPLICEM Simplicem simplicem simplicemque-->
-         <tok val="[sS]?(implicem)?(que|SIMPLICEM)?"/>
+      <ana>
+         <tok val="SIMPLICEM"/>
+         <tok val="Simplicem"/>
+         <tok val="simplicem"/>
+         <tok val="simplicemque"/>
          <lm cert="0.5">
             <l>simplex</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -218,74 +362,148 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--SIMVL Simul Simulque Simvl simul simulque simúl símul símulque-->
-         <tok val="[sS]?(i|sí|Si|si)?[m]?[uvú]?[l]?(que|SIMVL)?"/>
+      <ana>
+         <tok val="SIMVL"/>
+         <tok val="Simul"/>
+         <tok val="Simulque"/>
+         <tok val="Simvl"/>
+         <tok val="simul"/>
+         <tok val="simulque"/>
+         <tok val="simvl"/>
+         <tok val="simúl"/>
+         <tok val="símul"/>
+         <tok val="símulque"/>
          <lm>
             <l>simul</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--SIMVLACRIS simulacris simulacrisque-->
-         <tok val="(simulacris)?(que|SIMVLACRIS)?"/>
+      <ana>
+         <tok val="SIMVLACRIS"/>
+         <tok val="simulacris"/>
+         <tok val="simulacrisque"/>
+         <tok val="simvlacris"/>
          <lm>
             <l>simulacrum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SImile Simile simile similen simileque similest simillimum simillimumque-->
-         <tok val="[sS]?(i|SI|si)mil(limumqu)?[e]?(n|limum|est|eque)?"/>
+      <ana>
+         <tok val="SImile"/>
+         <tok val="Simile"/>
+         <tok val="simile"/>
+         <tok val="similen"/>
+         <tok val="simileque"/>
+         <tok val="similest"/>
+         <tok val="simillimum"/>
+         <tok val="simillimumque"/>
          <lm>
             <l>similis</l>
             <m cert="0.5">a - - s - - - n n</m>
             <m cert="0.5">a - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--SImile Simile Simillime simile similen simileque similest simillime simillimum simillimumque-->
-         <tok val="[sS]?(i|SI|si)mil(lim|limumqu)?[e]?(n|limum|est|eque)?"/>
+      <ana>
+         <tok val="SImile"/>
+         <tok val="Simile"/>
+         <tok val="Simillime"/>
+         <tok val="simile"/>
+         <tok val="similen"/>
+         <tok val="simileque"/>
+         <tok val="similest"/>
+         <tok val="simillime"/>
+         <tok val="simillimum"/>
+         <tok val="simillimumque"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--SImilem Similem Similemne similem similemne similemque similemue simillimam simillimamque-->
-         <tok val="[sS]?(i|SI)mil(limamqu)?[e]?[m]?[q]?[un]?(e|limam|em)?"/>
+      <ana>
+         <tok val="SImilem"/>
+         <tok val="Similem"/>
+         <tok val="Similemne"/>
+         <tok val="similem"/>
+         <tok val="similemne"/>
+         <tok val="similemque"/>
+         <tok val="similemue"/>
+         <tok val="simillimam"/>
+         <tok val="simillimamque"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--SImilem Similem Similemne similem similemne similemque similemue simillimum simillimumque-->
-         <tok val="[sS]?(i|SI)mil(limumqu)?[e]?[m]?[q]?[un]?(e|limum|em)?"/>
+      <ana>
+         <tok val="SImilem"/>
+         <tok val="Similem"/>
+         <tok val="Similemne"/>
+         <tok val="similem"/>
+         <tok val="similemne"/>
+         <tok val="similemque"/>
+         <tok val="similemue"/>
+         <tok val="simillimum"/>
+         <tok val="simillimumque"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SImiles Similes Simillimae similen similes similesne similesque simillimae símiles-->
-         <tok val="[sS]?(i|SI|sí|si)mil(lima)?e(sne|n|s|sque)?"/>
+      <ana>
+         <tok val="SImiles"/>
+         <tok val="Similes"/>
+         <tok val="Simillimae"/>
+         <tok val="similen"/>
+         <tok val="similes"/>
+         <tok val="similesne"/>
+         <tok val="similesque"/>
+         <tok val="simillimae"/>
+         <tok val="símiles"/>
          <lm>
             <l>similis</l>
             <m>a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--SImiles Similes Simillimae similen similes similesne similesque simillimae-->
-         <tok val="[sS]?(i|SI|si)mil(lima)?e(sne|n|s|sque)?"/>
+      <ana>
+         <tok val="SImiles"/>
+         <tok val="Similes"/>
+         <tok val="Simillimae"/>
+         <tok val="similen"/>
+         <tok val="similes"/>
+         <tok val="similesne"/>
+         <tok val="similesque"/>
+         <tok val="simillimae"/>
          <lm>
             <l>similis</l>
             <m>a - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--SImiles Similes similen similes similesne similesque simillimi simillimique-->
-         <tok val="[sS]?(i|SI|si)mil(limiqu)?[e]?[s]?[n]?(e|s|limi|esque)?"/>
+      <ana>
+         <tok val="SImiles"/>
+         <tok val="Similes"/>
+         <tok val="similen"/>
+         <tok val="similes"/>
+         <tok val="similesne"/>
+         <tok val="similesque"/>
+         <tok val="simillimi"/>
+         <tok val="simillimique"/>
          <lm>
             <l>similis</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SImili Simili Similique simili similique similist similiue similive simillimo-->
-         <tok val="[sS]?(i|SI|si)mil[l]?i[q]?[uv]?(e|st|mo)?"/>
+      <ana>
+         <tok val="SImili"/>
+         <tok val="Simili"/>
+         <tok val="Similique"/>
+         <tok val="simili"/>
+         <tok val="similique"/>
+         <tok val="similist"/>
+         <tok val="similiue"/>
+         <tok val="similive"/>
+         <tok val="simillimo"/>
          <lm>
             <l>similis</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -293,36 +511,70 @@
             <m cert="0.333333333333333333">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--SImili Simili Similique Simillimae simili similique similist similiue similive simillimae-->
-         <tok val="[sS]?(i|SI)mil[l]?i[q]?(u|ma|qu|v)?(e|st)?"/>
+      <ana>
+         <tok val="SImili"/>
+         <tok val="Simili"/>
+         <tok val="Similique"/>
+         <tok val="Simillimae"/>
+         <tok val="simili"/>
+         <tok val="similique"/>
+         <tok val="similist"/>
+         <tok val="similiue"/>
+         <tok val="similive"/>
+         <tok val="simillimae"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--SImili Simili Similique Simillima simili similique similist similiue similive simillima-->
-         <tok val="[sS]?(i|SI)mil[i]?[q]?(ue|lima|ive|ist|i)"/>
+      <ana>
+         <tok val="SImili"/>
+         <tok val="Simili"/>
+         <tok val="Similique"/>
+         <tok val="Simillima"/>
+         <tok val="simili"/>
+         <tok val="similique"/>
+         <tok val="similist"/>
+         <tok val="similiue"/>
+         <tok val="similive"/>
+         <tok val="simillima"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--SImili Simili Similique simile simili similique similist similiue similive simillimo-->
-         <tok val="[sS]?(i|SI|si)mil[i]?[q]?[uv]?(e|st|i|limo)?"/>
+      <ana>
+         <tok val="SImili"/>
+         <tok val="Simili"/>
+         <tok val="Similique"/>
+         <tok val="simile"/>
+         <tok val="simili"/>
+         <tok val="similique"/>
+         <tok val="similist"/>
+         <tok val="similiue"/>
+         <tok val="similive"/>
+         <tok val="simillimo"/>
          <lm>
             <l>similis</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sim Simne Simque sim simne simque sím-->
-         <tok val="[sS]?(i|sí)m(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Sim"/>
+         <tok val="Simne"/>
+         <tok val="Simque"/>
+         <tok val="sim"/>
+         <tok val="simne"/>
+         <tok val="simque"/>
+         <tok val="sím"/>
          <lm>
             <l>sum</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Sima sima-->
-         <tok val="[sS]ima"/>
+      <ana>
+         <tok val="Sima"/>
+         <tok val="sima"/>
          <lm cert="0.333333333333333333">
             <l>sima</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -345,6 +597,7 @@
       </ana>
       <ana>
          <tok val="Simandi"/>
+         <tok val="simandi"/>
          <lm>
             <l>simo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -356,6 +609,7 @@
       </ana>
       <ana>
          <tok val="Simbruina"/>
+         <tok val="simbruina"/>
          <lm>
             <l>Simbruinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -368,6 +622,7 @@
       </ana>
       <ana>
          <tok val="Simbruinis"/>
+         <tok val="simbruinis"/>
          <lm>
             <l>Simbruinus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -380,6 +635,7 @@
       </ana>
       <ana>
          <tok val="Simbruino"/>
+         <tok val="simbruino"/>
          <lm>
             <l>Simbruinus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -390,6 +646,7 @@
       </ana>
       <ana>
          <tok val="Simbruinus"/>
+         <tok val="simbruinus"/>
          <lm>
             <l>Simbruinus</l>
             <m>a e - s - - - m n</m>
@@ -397,6 +654,7 @@
       </ana>
       <ana>
          <tok val="Simbruuio"/>
+         <tok val="simbruuio"/>
          <lm>
             <l>Simbruvium</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -405,6 +663,7 @@
       </ana>
       <ana>
          <tok val="Simbruvium"/>
+         <tok val="simbruvium"/>
          <lm>
             <l>Simbruvium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -413,8 +672,9 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Simiae simiae-->
-         <tok val="[sS]imiae"/>
+      <ana>
+         <tok val="Simiae"/>
+         <tok val="simiae"/>
          <lm>
             <l>simia</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -425,40 +685,48 @@
             <m cert="0.166666666666666667">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Simiae simiae simiai-->
-         <tok val="[sS]imia[ei]"/>
+      <ana>
+         <tok val="Simiae"/>
+         <tok val="simiae"/>
+         <tok val="simiai"/>
          <lm>
             <l>simia</l>
             <m cert="0.5">n - - s - - - m g</m>
             <m cert="0.5">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Simiam simiam-->
-         <tok val="[sS]imiam"/>
+      <ana>
+         <tok val="Simiam"/>
+         <tok val="simiam"/>
          <lm>
             <l>simia</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Simian Simias simias-->
-         <tok val="[Ss]imia[sn]"/>
+      <ana>
+         <tok val="Simian"/>
+         <tok val="Simias"/>
+         <tok val="simian"/>
+         <tok val="simias"/>
          <lm>
             <l>simia</l>
             <m cert="0.5">n - - p - - - m a</m>
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Simiarum simiarum-->
-         <tok val="[sS]imiarum"/>
+      <ana>
+         <tok val="Simiarum"/>
+         <tok val="simiarum"/>
          <lm>
             <l>simia</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Simila simila-->
-         <tok val="[sS]imila"/>
+      <ana>
+         <tok val="Simila"/>
+         <tok val="simila"/>
          <lm>
             <l>simila</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -466,15 +734,20 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Similagineus similagineus-->
-         <tok val="[sS]imilagineus"/>
+      <ana>
+         <tok val="Similagineus"/>
+         <tok val="similagineus"/>
          <lm>
             <l>similagineus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Similibus similibus similibusque similibusue simillimis-->
-         <tok val="[sS]imil[l]?i(bu|mi)s[q]?(ue)?"/>
+      <ana>
+         <tok val="Similibus"/>
+         <tok val="similibus"/>
+         <tok val="similibusque"/>
+         <tok val="similibusue"/>
+         <tok val="simillimis"/>
          <lm>
             <l>similis</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -485,8 +758,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Similior similior-->
-         <tok val="[sS]imilior"/>
+      <ana>
+         <tok val="Similior"/>
+         <tok val="similior"/>
          <lm>
             <l>similis</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -495,8 +769,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Similiores similiores-->
-         <tok val="[sS]imiliores"/>
+      <ana>
+         <tok val="Similiores"/>
+         <tok val="similiores"/>
          <lm>
             <l>similis</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -507,22 +782,26 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Similitudine similitudine-->
-         <tok val="[sS]imilitudine"/>
+      <ana>
+         <tok val="Similitudine"/>
+         <tok val="similitudine"/>
          <lm>
             <l>similitudo</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Similitudinem similitudinem-->
-         <tok val="[sS]imilitudinem"/>
+      <ana>
+         <tok val="Similitudinem"/>
+         <tok val="similitudinem"/>
          <lm>
             <l>similitudo</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Similitudines similitudines similitudinesque-->
-         <tok val="[sS]imilitudines(que)?"/>
+      <ana>
+         <tok val="Similitudines"/>
+         <tok val="similitudines"/>
+         <tok val="similitudinesque"/>
          <lm>
             <l>similitudo</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -530,58 +809,72 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Similitudinis similitudinis-->
-         <tok val="[sS]imilitudinis"/>
+      <ana>
+         <tok val="Similitudinis"/>
+         <tok val="similitudinis"/>
          <lm>
             <l>similitudo</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Similitudinum similitudinum-->
-         <tok val="[sS]imilitudinum"/>
+      <ana>
+         <tok val="Similitudinum"/>
+         <tok val="similitudinum"/>
          <lm>
             <l>similitudo</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Similitudo similitudo similitudoque-->
-         <tok val="[sS]imilitudo(que)?"/>
+      <ana>
+         <tok val="Similitudo"/>
+         <tok val="similitudo"/>
+         <tok val="similitudoque"/>
          <lm>
             <l>similitudo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Similium similium similiumque simillimum simillimumque-->
-         <tok val="[sS]imil[l]?i[m]?um(que)?"/>
+      <ana>
+         <tok val="Similium"/>
+         <tok val="similium"/>
+         <tok val="similiumque"/>
+         <tok val="simillimum"/>
+         <tok val="simillimumque"/>
          <lm>
             <l>similis</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Similium similium similiumque-->
-         <tok val="[sS]imilium(que)?"/>
+      <ana>
+         <tok val="Similium"/>
+         <tok val="similium"/>
+         <tok val="similiumque"/>
          <lm>
             <l>similis</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Simillime simillime-->
-         <tok val="[sS]imillime"/>
+      <ana>
+         <tok val="Simillime"/>
+         <tok val="simillime"/>
          <lm>
             <l>similis</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Simiolus simiolus-->
-         <tok val="[sS]imiolus"/>
+      <ana>
+         <tok val="Simiolus"/>
+         <tok val="simiolus"/>
          <lm>
             <l>simiolus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Simitu simitu simítu-->
-         <tok val="[sS]im[ií]tu"/>
+      <ana>
+         <tok val="Simitu"/>
+         <tok val="simitu"/>
+         <tok val="simítu"/>
          <lm>
             <l>simitu</l>
             <m>d</m>
@@ -589,18 +882,13 @@
       </ana>
       <ana>
          <tok val="Simius"/>
-         <lm>
-            <l>simus</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Simius simius-->
-         <tok val="[sS]imius"/>
+         <tok val="simius"/>
          <lm cert="0.5">
             <l>simus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>simius</l>
@@ -609,6 +897,7 @@
       </ana>
       <ana>
          <tok val="Simo"/>
+         <tok val="simo"/>
          <lm>
             <l>Simo</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -617,6 +906,7 @@
       </ana>
       <ana>
          <tok val="Simois"/>
+         <tok val="simois"/>
          <lm>
             <l>Simois</l>
             <m>n e - s - - - m n</m>
@@ -624,6 +914,7 @@
       </ana>
       <ana>
          <tok val="Simone"/>
+         <tok val="simone"/>
          <lm>
             <l>Simon</l>
             <m>n e - s - - - m b</m>
@@ -631,6 +922,7 @@
       </ana>
       <ana>
          <tok val="Simonem"/>
+         <tok val="simonem"/>
          <lm>
             <l>Simon</l>
             <m>n e - s - - - m a</m>
@@ -638,6 +930,7 @@
       </ana>
       <ana>
          <tok val="Simonide"/>
+         <tok val="simonide"/>
          <lm>
             <l>Simonides</l>
             <m>n e - s - - - m b</m>
@@ -645,6 +938,7 @@
       </ana>
       <ana>
          <tok val="Simonideis"/>
+         <tok val="simonideis"/>
          <lm>
             <l>Simonideus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -655,8 +949,11 @@
             <m cert="0.166666666666666667">a e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Simonidem Simoniden-->
-         <tok val="Simonide[nm]"/>
+      <ana>
+         <tok val="Simonidem"/>
+         <tok val="Simoniden"/>
+         <tok val="simonidem"/>
+         <tok val="simoniden"/>
          <lm>
             <l>Simonides</l>
             <m>n e - s - - - m a</m>
@@ -664,6 +961,7 @@
       </ana>
       <ana>
          <tok val="Simonideus"/>
+         <tok val="simonideus"/>
          <lm>
             <l>Simonideus</l>
             <m>a e - s - - - m n</m>
@@ -671,13 +969,17 @@
       </ana>
       <ana>
          <tok val="Simonidi"/>
+         <tok val="simonidi"/>
          <lm>
             <l>Simonides</l>
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Simonidis Simonidisve-->
-         <tok val="Simonidis(ve)?"/>
+      <ana>
+         <tok val="Simonidis"/>
+         <tok val="Simonidisve"/>
+         <tok val="simonidis"/>
+         <tok val="simonidisve"/>
          <lm>
             <l>Simonides</l>
             <m>n e - s - - - m g</m>
@@ -685,28 +987,36 @@
       </ana>
       <ana>
          <tok val="Simonis"/>
+         <tok val="simonis"/>
          <lm>
             <l>Simon</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Simorum simorum simum simumque-->
-         <tok val="[sS]im(or)?um(que)?"/>
+      <ana>
+         <tok val="Simorum"/>
+         <tok val="simorum"/>
+         <tok val="simum"/>
+         <tok val="simumque"/>
          <lm>
             <l>simus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Simos simon simos simosque-->
-         <tok val="[sS]imo(s|n|sque)"/>
+      <ana>
+         <tok val="Simos"/>
+         <tok val="simon"/>
+         <tok val="simos"/>
+         <tok val="simosque"/>
          <lm>
             <l>simus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Simpla simpla-->
-         <tok val="[sS]impla"/>
+      <ana>
+         <tok val="Simpla"/>
+         <tok val="simpla"/>
          <lm cert="0.25">
             <l>simpla</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -735,6 +1045,7 @@
       </ana>
       <ana>
          <tok val="Simplariae"/>
+         <tok val="simplariae"/>
          <lm>
             <l>simplarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -745,26 +1056,24 @@
       </ana>
       <ana>
          <tok val="Simplarius"/>
-         <lm>
-            <l>simplaris</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Simplarius simplarius-->
-         <tok val="[sS]implarius"/>
+         <tok val="simplarius"/>
          <lm cert="0.5">
             <l>simplaris</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>simplarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Simplex simplex simplexne simplexque-->
-         <tok val="[sS]implex(ne|que)?"/>
+      <ana>
+         <tok val="Simplex"/>
+         <tok val="simplex"/>
+         <tok val="simplexne"/>
+         <tok val="simplexque"/>
          <lm>
             <l>simplex</l>
             <m cert="0.333333333333333333">a - - s - - - f n</m>
@@ -772,8 +1081,9 @@
             <m cert="0.333333333333333333">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Simpli simpli-->
-         <tok val="[sS]impli"/>
+      <ana>
+         <tok val="Simpli"/>
+         <tok val="simpli"/>
          <lm cert="0.5">
             <l>simplus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -786,8 +1096,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Simplices simplices simplicesque-->
-         <tok val="[sS]implices(que)?"/>
+      <ana>
+         <tok val="Simplices"/>
+         <tok val="simplices"/>
+         <tok val="simplicesque"/>
          <lm cert="0.5">
             <l>simplex</l>
             <m cert="0.166666666666666667">a - - p - - - m a</m>
@@ -802,8 +1114,11 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Simplici simplici simplicique simplicive-->
-         <tok val="[sS]implici(ve|que)?"/>
+      <ana>
+         <tok val="Simplici"/>
+         <tok val="simplici"/>
+         <tok val="simplicique"/>
+         <tok val="simplicive"/>
          <lm>
             <l>simplex</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -811,8 +1126,9 @@
             <m cert="0.333333333333333333">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Simplicibus simplicibus-->
-         <tok val="[sS]implicibus"/>
+      <ana>
+         <tok val="Simplicibus"/>
+         <tok val="simplicibus"/>
          <lm>
             <l>simplex</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -823,8 +1139,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Simplicis simplicis-->
-         <tok val="[sS]implicis"/>
+      <ana>
+         <tok val="Simplicis"/>
+         <tok val="simplicis"/>
          <lm>
             <l>simplex</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -832,29 +1149,35 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Simplicitas simplicitas simplicitasque-->
-         <tok val="[sS]implicitas(que)?"/>
+      <ana>
+         <tok val="Simplicitas"/>
+         <tok val="simplicitas"/>
+         <tok val="simplicitasque"/>
          <lm>
             <l>simplicitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Simpliciter simpliciter simpliciterque-->
-         <tok val="[sS]impliciter(que)?"/>
+      <ana>
+         <tok val="Simpliciter"/>
+         <tok val="simpliciter"/>
+         <tok val="simpliciterque"/>
          <lm>
             <l>simpliciter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Simplus simplus-->
-         <tok val="[sS]implus"/>
+      <ana>
+         <tok val="Simplus"/>
+         <tok val="simplus"/>
          <lm>
             <l>simplus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Simpulum simpulum-->
-         <tok val="[sS]impulum"/>
+      <ana>
+         <tok val="Simpulum"/>
+         <tok val="simpulum"/>
          <lm>
             <l>simpulum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -863,8 +1186,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Simula simula-->
-         <tok val="[sS]imula"/>
+      <ana>
+         <tok val="Simula"/>
+         <tok val="simula"/>
          <lm cert="0.5">
             <l>simulus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -879,8 +1203,11 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Simulacra simulacra simulacraque simulacraue-->
-         <tok val="[sS]imulacra[q]?(ue)?"/>
+      <ana>
+         <tok val="Simulacra"/>
+         <tok val="simulacra"/>
+         <tok val="simulacraque"/>
+         <tok val="simulacraue"/>
          <lm>
             <l>simulacrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -888,30 +1215,40 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Simulacrum simulacrum simulacrumque-->
-         <tok val="[sS]imulacrum(que)?"/>
+      <ana>
+         <tok val="Simulacrum"/>
+         <tok val="simulacrum"/>
+         <tok val="simulacrumque"/>
          <lm>
             <l>simulacrum</l>
             <m cert="0.5">n - - s - - - n v</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Simulacrum simulacrum simulacrumque simulácrumque-->
-         <tok val="[sS]imul[áa]crum(que)?"/>
+      <ana>
+         <tok val="Simulacrum"/>
+         <tok val="simulacrum"/>
+         <tok val="simulacrumque"/>
+         <tok val="simulácrumque"/>
          <lm>
             <l>simulacrum</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Simulacrum simulacrorum simulacrorumque simulacrum simulacrumque-->
-         <tok val="[sS]imulac(ro)?rum(que)?"/>
+      <ana>
+         <tok val="Simulacrum"/>
+         <tok val="simulacrorum"/>
+         <tok val="simulacrorumque"/>
+         <tok val="simulacrum"/>
+         <tok val="simulacrumque"/>
          <lm>
             <l>simulacrum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Simulamen simulamen-->
-         <tok val="[sS]imulamen"/>
+      <ana>
+         <tok val="Simulamen"/>
+         <tok val="simulamen"/>
          <lm>
             <l>simulamen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -921,13 +1258,16 @@
       </ana>
       <ana>
          <tok val="Simulaminis"/>
+         <tok val="simulaminis"/>
          <lm>
             <l>simulamen</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Simulans simulans simulansque-->
-         <tok val="[sS]imulans(que)?"/>
+      <ana>
+         <tok val="Simulans"/>
+         <tok val="simulans"/>
+         <tok val="simulansque"/>
          <lm>
             <l>simulo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -939,8 +1279,10 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Simulante simulante simulanti-->
-         <tok val="[sS]imulant[ei]"/>
+      <ana>
+         <tok val="Simulante"/>
+         <tok val="simulante"/>
+         <tok val="simulanti"/>
          <lm>
             <l>simulo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -948,8 +1290,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Simulare simulare-->
-         <tok val="[sS]imulare"/>
+      <ana>
+         <tok val="Simulare"/>
+         <tok val="simulare"/>
          <lm>
             <l>simulo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -957,29 +1300,37 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Simularet simularet-->
-         <tok val="[sS]imularet"/>
+      <ana>
+         <tok val="Simularet"/>
+         <tok val="simularet"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Simulasse simulasse simulavisse-->
-         <tok val="[sS]imula(vi)?sse"/>
+      <ana>
+         <tok val="Simulasse"/>
+         <tok val="simulasse"/>
+         <tok val="simulavisse"/>
          <lm>
             <l>simulo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Simulat Simulatque simulat simulatque-->
-         <tok val="[sS]imulat(que)?"/>
+      <ana>
+         <tok val="Simulat"/>
+         <tok val="Simulatque"/>
+         <tok val="simulat"/>
+         <tok val="simulatque"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Simulata simulata simulataque-->
-         <tok val="[sS]imulata(que)?"/>
+      <ana>
+         <tok val="Simulata"/>
+         <tok val="simulata"/>
+         <tok val="simulataque"/>
          <lm>
             <l>simulo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -990,8 +1341,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Simulatae simulatae-->
-         <tok val="[sS]imulatae"/>
+      <ana>
+         <tok val="Simulatae"/>
+         <tok val="simulatae"/>
          <lm>
             <l>simulo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1000,45 +1352,57 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Simulate simulate-->
-         <tok val="[sS]imulate"/>
+      <ana>
+         <tok val="Simulate"/>
+         <tok val="simulate"/>
          <lm>
             <l>simulo</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Simulate simulate simulatum simulatumque-->
-         <tok val="[sS]imulat(umqu)?(e|um)"/>
+      <ana>
+         <tok val="Simulate"/>
+         <tok val="simulate"/>
+         <tok val="simulatum"/>
+         <tok val="simulatumque"/>
          <lm>
             <l>simulo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Simulatio simulatio simulation simulatioque-->
-         <tok val="[sS]imulatio(n|que)?"/>
+      <ana>
+         <tok val="Simulatio"/>
+         <tok val="simulatio"/>
+         <tok val="simulation"/>
+         <tok val="simulatioque"/>
          <lm>
             <l>simulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Simulatione simulatione-->
-         <tok val="[sS]imulatione"/>
+      <ana>
+         <tok val="Simulatione"/>
+         <tok val="simulatione"/>
          <lm>
             <l>simulatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Simulationem simulationem simulationemque-->
-         <tok val="[sS]imulationem(que)?"/>
+      <ana>
+         <tok val="Simulationem"/>
+         <tok val="simulationem"/>
+         <tok val="simulationemque"/>
          <lm>
             <l>simulatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Simulato simulato simulatoque-->
-         <tok val="[sS]imulato(que)?"/>
+      <ana>
+         <tok val="Simulato"/>
+         <tok val="simulato"/>
+         <tok val="simulatoque"/>
          <lm>
             <l>simulo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -1049,87 +1413,100 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Simulator simulator-->
-         <tok val="[sS]imulator"/>
+      <ana>
+         <tok val="Simulator"/>
+         <tok val="simulator"/>
          <lm>
             <l>simulator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Simulaturn simulatur-->
-         <tok val="[sS]imulatur[n]?"/>
+      <ana>
+         <tok val="Simulaturn"/>
+         <tok val="simulatur"/>
+         <tok val="simulaturn"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Simulatus simulatus-->
-         <tok val="[sS]imulatus"/>
+      <ana>
+         <tok val="Simulatus"/>
+         <tok val="simulatus"/>
          <lm>
             <l>simulo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Simulauit Simulavit simulauit simulavit simulavitque-->
-         <tok val="[Ss]imula[vu]it(que)?"/>
+      <ana>
+         <tok val="Simulauit"/>
+         <tok val="Simulavit"/>
+         <tok val="simulauit"/>
+         <tok val="simulavit"/>
+         <tok val="simulavitque"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Simulavi simulaui simulavi-->
-         <tok val="[sS]imula[vu]i"/>
+      <ana>
+         <tok val="Simulavi"/>
+         <tok val="simulaui"/>
+         <tok val="simulavi"/>
          <lm>
             <l>simulo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Simulet simulet-->
-         <tok val="[sS]imulet"/>
+      <ana>
+         <tok val="Simulet"/>
+         <tok val="simulet"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Simulo simulo-->
-         <tok val="[sS]imulo"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Simulo"/>
+         <tok val="simulo"/>
+         <lm cert="0.333333333333333333">
             <l>simulus</l>
             <m cert="0.25">a - - s - - - n b</m>
             <m cert="0.25">a - - s - - - m d</m>
             <m cert="0.25">a - - s - - - n d</m>
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
+            <l>Simulus</l>
+            <m cert="0.5">n e - s - - - m b</m>
+            <m cert="0.5">n e - s - - - m d</m>
+         </lm>
+         <lm cert="0.333333333333333333">
             <l>simulo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Simulo"/>
-         <lm>
-            <l>Simulus</l>
-            <m cert="0.5">n e - s - - - m b</m>
-            <m cert="0.5">n e - s - - - m d</m>
-         </lm>
-      </ana>
-      <ana><!--Simultas simultas-->
-         <tok val="[sS]imultas"/>
+         <tok val="Simultas"/>
+         <tok val="simultas"/>
          <lm>
             <l>simultas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Simultatem simultatem simultatém-->
-         <tok val="[sS]imultat[eé]m"/>
+      <ana>
+         <tok val="Simultatem"/>
+         <tok val="simultatem"/>
+         <tok val="simultatém"/>
          <lm>
             <l>simultas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Simultates simultates-->
-         <tok val="[sS]imultates"/>
+      <ana>
+         <tok val="Simultates"/>
+         <tok val="simultates"/>
          <lm>
             <l>simultas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1139,6 +1516,7 @@
       </ana>
       <ana>
          <tok val="Simulum"/>
+         <tok val="simulum"/>
          <lm cert="0.5">
             <l>simulus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1153,8 +1531,10 @@
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Simulum simule-->
-         <tok val="[sS]imul(e|um)"/>
+      <ana>
+         <tok val="Simulum"/>
+         <tok val="simule"/>
+         <tok val="simulum"/>
          <lm>
             <l>simulus</l>
             <m>a - - s - - - n v</m>
@@ -1162,27 +1542,28 @@
       </ana>
       <ana>
          <tok val="Simulus"/>
-         <lm>
+         <tok val="simulus"/>
+         <lm cert="0.5">
             <l>Simulus</l>
             <m>n e - s - - - m n</m>
          </lm>
-      </ana>
-      <ana><!--Simulus simulus-->
-         <tok val="[sS]imulus"/>
-         <lm>
+         <lm cert="0.5">
             <l>simulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Simus simus símus-->
-         <tok val="[sS]?(i|sí)mus"/>
+      <ana>
+         <tok val="Simus"/>
+         <tok val="simus"/>
+         <tok val="símus"/>
          <lm>
             <l>sum</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Simus simus-->
-         <tok val="[sS]imus"/>
+      <ana>
+         <tok val="Simus"/>
+         <tok val="simus"/>
          <lm>
             <l>simus</l>
             <m>a - - s - - - m n</m>
@@ -1245,16 +1626,20 @@
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--sime simeque-->
-         <tok val="sime(que)?"/>
+      <ana>
+         <tok val="sime"/>
+         <tok val="simeque"/>
          <lm>
             <l>simus</l>
             <m cert="0.5">d - - - - - - - - s</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--sime simeque simum simumque-->
-         <tok val="sim(um|e)?[q]?[u]?[em]"/>
+      <ana>
+         <tok val="sime"/>
+         <tok val="simeque"/>
+         <tok val="simum"/>
+         <tok val="simumque"/>
          <lm>
             <l>simus</l>
             <m>a - - s - - - n v</m>
@@ -1429,8 +1814,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--simplae simplaeue-->
-         <tok val="simplae(ue)?"/>
+      <ana>
+         <tok val="simplae"/>
+         <tok val="simplaeue"/>
          <lm cert="0.5">
             <l>simplus</l>
             <m cert="0.25">a - - s - - - f d</m>
@@ -1492,8 +1878,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--simple simplum-->
-         <tok val="simpl(um|e)"/>
+      <ana>
+         <tok val="simple"/>
+         <tok val="simplum"/>
          <lm cert="0.5">
             <l>simplus</l>
             <m>a - - s - - - n v</m>
@@ -1541,8 +1928,9 @@
             <m cert="0.333333333333333333">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--simplicitate Simplicitate-->
-         <tok val="[Ss]implicitate"/>
+      <ana>
+         <tok val="Simplicitate"/>
+         <tok val="simplicitate"/>
          <lm>
             <l>simplicitas</l>
             <m>n - - s - - - f b</m>
@@ -1668,8 +2056,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--simpuuium simpuvium-->
-         <tok val="simpu[vu]ium"/>
+      <ana>
+         <tok val="simpuuium"/>
+         <tok val="simpuvium"/>
          <lm>
             <l>simpuvium</l>
             <m cert="0.25">n - - s - - - n a</m>
@@ -1841,8 +2230,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--simulandi simulandique-->
-         <tok val="simulandi(que)?"/>
+      <ana>
+         <tok val="simulandi"/>
+         <tok val="simulandique"/>
          <lm>
             <l>simulo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1884,23 +2274,26 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--simulant simulantque-->
-         <tok val="simulant(que)?"/>
+      <ana>
+         <tok val="simulant"/>
+         <tok val="simulantque"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--simulantem simulantemque-->
-         <tok val="simulantem(que)?"/>
+      <ana>
+         <tok val="simulantem"/>
+         <tok val="simulantemque"/>
          <lm>
             <l>simulo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--simulantes simulantesque-->
-         <tok val="simulantes(que)?"/>
+      <ana>
+         <tok val="simulantes"/>
+         <tok val="simulantesque"/>
          <lm>
             <l>simulo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1909,8 +2302,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--simulantes simulantesque simulantis-->
-         <tok val="simulant[ie]s(que)?"/>
+      <ana>
+         <tok val="simulantes"/>
+         <tok val="simulantesque"/>
+         <tok val="simulantis"/>
          <lm>
             <l>simulo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1966,8 +2361,10 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--simularat simulauerat simulaverat-->
-         <tok val="simula[vu]?(e|)rat"/>
+      <ana>
+         <tok val="simularat"/>
+         <tok val="simulauerat"/>
+         <tok val="simulaverat"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s l i a</m>
@@ -2015,15 +2412,22 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--simularit simulauerit simulaueritne simulaverit simulaveritne-->
-         <tok val="simula[vu]?(e|)rit(ne)?"/>
+      <ana>
+         <tok val="simularit"/>
+         <tok val="simulauerit"/>
+         <tok val="simulaueritne"/>
+         <tok val="simulaverit"/>
+         <tok val="simulaveritne"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--simularunt simulauere simulavere simulaverunt-->
-         <tok val="simula(ve|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="simularunt"/>
+         <tok val="simulauere"/>
+         <tok val="simulavere"/>
+         <tok val="simulaverunt"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 p r i a</m>
@@ -2061,22 +2465,25 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--simulatam simulatamque-->
-         <tok val="simulatam(que)?"/>
+      <ana>
+         <tok val="simulatam"/>
+         <tok val="simulatamque"/>
          <lm>
             <l>simulo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--simulatas simulatasque-->
-         <tok val="simulatas(que)?"/>
+      <ana>
+         <tok val="simulatas"/>
+         <tok val="simulatasque"/>
          <lm>
             <l>simulo</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--simulati simulatique-->
-         <tok val="simulati(que)?"/>
+      <ana>
+         <tok val="simulati"/>
+         <tok val="simulatique"/>
          <lm>
             <l>simulo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2130,8 +2537,10 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--simulatis simulatisque Simulatis-->
-         <tok val="[Ss]imulatis(que)?"/>
+      <ana>
+         <tok val="Simulatis"/>
+         <tok val="simulatis"/>
+         <tok val="simulatisque"/>
          <lm>
             <l>simulo</l>
             <m cert="0.142857142857142857">v - - p r p p f d</m>
@@ -2143,8 +2552,9 @@
             <m cert="0.142857142857142857">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--simulatorem simulatoremque-->
-         <tok val="simulatorem(que)?"/>
+      <ana>
+         <tok val="simulatorem"/>
+         <tok val="simulatoremque"/>
          <lm>
             <l>simulator</l>
             <m>n - - s - - - m a</m>
@@ -2159,8 +2569,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--simulatos simulatosque-->
-         <tok val="simulatos(que)?"/>
+      <ana>
+         <tok val="simulatos"/>
+         <tok val="simulatosque"/>
          <lm>
             <l>simulo</l>
             <m>v - - p r p p m a</m>
@@ -2188,8 +2599,9 @@
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--simulatum simulatumque-->
-         <tok val="simulatum(que)?"/>
+      <ana>
+         <tok val="simulatum"/>
+         <tok val="simulatumque"/>
          <lm>
             <l>simulo</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -2206,8 +2618,11 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--simulauerit simulaueritne simulaverit simulaveritne-->
-         <tok val="simula[vu]erit(ne)?"/>
+      <ana>
+         <tok val="simulauerit"/>
+         <tok val="simulaueritne"/>
+         <tok val="simulaverit"/>
+         <tok val="simulaveritne"/>
          <lm>
             <l>simulo</l>
             <m>v - 3 s t i a</m>
@@ -2316,15 +2731,18 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--simultatium simultatiumque simultatum-->
-         <tok val="simultat[i]?um(que)?"/>
+      <ana>
+         <tok val="simultatium"/>
+         <tok val="simultatiumque"/>
+         <tok val="simultatum"/>
          <lm>
             <l>simultas</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--simum simumque-->
-         <tok val="simum(que)?"/>
+      <ana>
+         <tok val="simum"/>
+         <tok val="simumque"/>
          <lm>
             <l>simus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2334,24 +2752,20 @@
       </ana>
       <ana>
          <tok val="Simoentis"/>
+         <tok val="simoentis"/>
          <lm>
             <l>Simois</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--simplicia Simplicia-->
-         <tok val="[Ss]implicia"/>
-         <lm>
-            <l>simplex</l>
-            <m cert="0.5">a - - p - - - n n</m>
-            <m cert="0.5">a - - p - - - n a</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Simplicia"/>
+         <tok val="simplicia"/>
          <lm>
             <l>simplex</l>
-            <m>a - - p - - - n v</m>
+            <m cert="0.333333333333333333">a - - p - - - n n</m>
+            <m cert="0.333333333333333333">a - - p - - - n a</m>
+            <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
       <ana>
@@ -2363,8 +2777,11 @@
             <m cert="0.333333333333333333">n - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--simpliciumque Simpliciumque simplicium Simplicium-->
-         <tok val="[Ss]implicium(que)?"/>
+      <ana>
+         <tok val="Simplicium"/>
+         <tok val="Simpliciumque"/>
+         <tok val="simplicium"/>
+         <tok val="simpliciumque"/>
          <lm>
             <l>simplex</l>
             <m cert="0.333333333333333333">a - - p - - - f g</m>
@@ -2395,8 +2812,15 @@
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Simoënta Simoenta Simoëntaque-->
-         <tok val="Simo[eë]nta(que)?"/>
+      <ana>
+         <tok val="Simoenta"/>
+         <tok val="Simoentaque"/>
+         <tok val="Simoënta"/>
+         <tok val="Simoëntaque"/>
+         <tok val="simoenta"/>
+         <tok val="simoentaque"/>
+         <tok val="simoënta"/>
+         <tok val="simoëntaque"/>
          <lm>
             <l>Simois</l>
             <m>n e - s - - - m a</m>

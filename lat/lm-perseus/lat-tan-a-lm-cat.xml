@@ -1,49 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscat">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:cat">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to cat</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-cat.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CAT</tok-starts-with>
       <tok-starts-with>Cat</tok-starts-with>
       <tok-starts-with>cat</tok-starts-with>
-      <ana><!--CATALOGUS CATALOGVS Catalogus catalogus-->
-         <tok val="(CATALOG)?[VU]?(S|catalogus|Catalogus)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:13:51.855-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:13:51.855-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-cat.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CATALOGUS"/>
+         <tok val="CATALOGVS"/>
+         <tok val="Catalogus"/>
+         <tok val="catalogus"/>
+         <tok val="catalogvs"/>
          <lm>
             <l>catalogus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--CATAPOTIA Catapotia catapotia-->
-         <tok val="[cC]?(atapotia|CATAPOTIA)"/>
+      <ana>
+         <tok val="CATAPOTIA"/>
+         <tok val="Catapotia"/>
+         <tok val="catapotia"/>
          <lm>
             <l>catapotium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -51,8 +65,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--CATENA Catena catena catenave-->
-         <tok val="[cC]?(atena)?(ve|CATENA)?"/>
+      <ana>
+         <tok val="CATENA"/>
+         <tok val="Catena"/>
+         <tok val="catena"/>
+         <tok val="catenave"/>
          <lm cert="0.5">
             <l>catena</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -64,15 +81,19 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--CATILINAM Catilinam-->
-         <tok val="C(atilinam|ATILINAM)"/>
+      <ana>
+         <tok val="CATILINAM"/>
+         <tok val="Catilinam"/>
+         <tok val="catilinam"/>
          <lm>
             <l>Catilina</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--CATILIO Catilio-->
-         <tok val="C(atilio|ATILIO)"/>
+      <ana>
+         <tok val="CATILIO"/>
+         <tok val="Catilio"/>
+         <tok val="catilio"/>
          <lm>
             <l>Catilius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -81,23 +102,34 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--CATINVS Catinus catinus-->
-         <tok val="[cC]?(atinus|CATINVS)"/>
+      <ana>
+         <tok val="CATINVS"/>
+         <tok val="Catinus"/>
+         <tok val="catinus"/>
+         <tok val="catinvs"/>
          <lm>
             <l>catinus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--CATIO Catio-->
-         <tok val="C(atio|ATIO)"/>
+      <ana>
+         <tok val="CATIO"/>
+         <tok val="Catio"/>
+         <tok val="catio"/>
          <lm>
             <l>Catius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CATO Cato Caton cato catone catoque-->
-         <tok val="[Cc]?(ato)?(n|ne|que|CATO)?"/>
+      <ana>
+         <tok val="CATO"/>
+         <tok val="Cato"/>
+         <tok val="Caton"/>
+         <tok val="cato"/>
+         <tok val="caton"/>
+         <tok val="catone"/>
+         <tok val="catoque"/>
          <lm>
             <l>catus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -108,37 +140,53 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--CATONI Catoni catoni-->
-         <tok val="[cC]?(atoni|CATONI)"/>
+      <ana>
+         <tok val="CATONI"/>
+         <tok val="Catoni"/>
+         <tok val="catoni"/>
          <lm>
             <l>catonium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CATONIS Catonis Catonisque-->
-         <tok val="C(atonis)?(que|ATONIS)?"/>
+      <ana>
+         <tok val="CATONIS"/>
+         <tok val="Catonis"/>
+         <tok val="Catonisque"/>
+         <tok val="catonis"/>
+         <tok val="catonisque"/>
          <lm>
             <l>Cato</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--CATVLO Catulo Catvlo-->
-         <tok val="C(at)?[vu]?(lo|ATVLO)"/>
+      <ana>
+         <tok val="CATVLO"/>
+         <tok val="Catulo"/>
+         <tok val="Catvlo"/>
+         <tok val="catulo"/>
+         <tok val="catvlo"/>
          <lm>
             <l>Catulus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CATVLVS Catulus-->
-         <tok val="C(atulus|ATVLVS)"/>
+      <ana>
+         <tok val="CATVLVS"/>
+         <tok val="Catulus"/>
+         <tok val="catulus"/>
+         <tok val="catvlvs"/>
          <lm>
             <l>Catulus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cata Catast cata catast-->
-         <tok val="[cC]ata(st)?"/>
+      <ana>
+         <tok val="Cata"/>
+         <tok val="Catast"/>
+         <tok val="cata"/>
+         <tok val="catast"/>
          <lm>
             <l>catus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -149,8 +197,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Catabasis catabasis-->
-         <tok val="[cC]atabasis"/>
+      <ana>
+         <tok val="Catabasis"/>
+         <tok val="catabasis"/>
          <lm>
             <l>catabasis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -164,16 +213,22 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Catabathmo Catabathmon-->
-         <tok val="Catabathmo[n]?"/>
+      <ana>
+         <tok val="Catabathmo"/>
+         <tok val="Catabathmon"/>
+         <tok val="catabathmo"/>
+         <tok val="catabathmon"/>
          <lm>
             <l>Catabathmos</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Catabathmon Catabathmos-->
-         <tok val="Catabathmo[sn]"/>
+      <ana>
+         <tok val="Catabathmon"/>
+         <tok val="Catabathmos"/>
+         <tok val="catabathmon"/>
+         <tok val="catabathmos"/>
          <lm>
             <l>Catabathmos</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -182,6 +237,7 @@
       </ana>
       <ana>
          <tok val="Catabathmum"/>
+         <tok val="catabathmum"/>
          <lm>
             <l>Catabathmos</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -190,6 +246,7 @@
       </ana>
       <ana>
          <tok val="Catacecaumene"/>
+         <tok val="catacecaumene"/>
          <lm>
             <l>Catacecaumene</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -199,6 +256,7 @@
       </ana>
       <ana>
          <tok val="Catacecaumenitae"/>
+         <tok val="catacecaumenitae"/>
          <lm>
             <l>Catacecaumenites</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -209,13 +267,15 @@
       </ana>
       <ana>
          <tok val="Catacecaumeniten"/>
+         <tok val="catacecaumeniten"/>
          <lm>
             <l>Catacecaumenites</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catachresis catachresis-->
-         <tok val="[cC]atachresis"/>
+      <ana>
+         <tok val="Catachresis"/>
+         <tok val="catachresis"/>
          <lm>
             <l>catachresis</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -223,16 +283,19 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cataclysmos cataclysmon cataclysmos-->
-         <tok val="[cC]ataclysmo[sn]"/>
+      <ana>
+         <tok val="Cataclysmos"/>
+         <tok val="cataclysmon"/>
+         <tok val="cataclysmos"/>
          <lm>
             <l>cataclysmos</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catadromus catadromus-->
-         <tok val="[cC]atadromus"/>
+      <ana>
+         <tok val="Catadromus"/>
+         <tok val="catadromus"/>
          <lm>
             <l>catadromus</l>
             <m>n - - s - - - m n</m>
@@ -240,6 +303,7 @@
       </ana>
       <ana>
          <tok val="Catadupa"/>
+         <tok val="catadupa"/>
          <lm>
             <l>Catadupa</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -249,6 +313,7 @@
       </ana>
       <ana>
          <tok val="Catadupi"/>
+         <tok val="catadupi"/>
          <lm>
             <l>Catadupi</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -257,6 +322,7 @@
       </ana>
       <ana>
          <tok val="Catagelasimum"/>
+         <tok val="catagelasimum"/>
          <lm>
             <l>Catagelasimus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -269,13 +335,15 @@
       </ana>
       <ana>
          <tok val="Catagelasimus"/>
+         <tok val="catagelasimus"/>
          <lm>
             <l>Catagelasimus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catagrapha catagrapha-->
-         <tok val="[cC]atagrapha"/>
+      <ana>
+         <tok val="Catagrapha"/>
+         <tok val="catagrapha"/>
          <lm cert="0.5">
             <l>catagrapha</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -294,6 +362,7 @@
       </ana>
       <ana>
          <tok val="Catagusa"/>
+         <tok val="catagusa"/>
          <lm>
             <l>Catagusa</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -301,8 +370,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Catalauni Catelauni-->
-         <tok val="Cat[ea]launi"/>
+      <ana>
+         <tok val="Catalauni"/>
+         <tok val="Catelauni"/>
+         <tok val="catalauni"/>
+         <tok val="catelauni"/>
          <lm>
             <l>Catalauni</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -311,6 +383,7 @@
       </ana>
       <ana>
          <tok val="Catalaunicus"/>
+         <tok val="catalaunicus"/>
          <lm>
             <l>Catalaunicus</l>
             <m>a e - s - - - m n</m>
@@ -318,6 +391,7 @@
       </ana>
       <ana>
          <tok val="Catalecta"/>
+         <tok val="catalecta"/>
          <lm cert="0.5">
             <l>Catalecta</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -334,8 +408,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Catalecticum catalecticum-->
-         <tok val="[cC]atalecticum"/>
+      <ana>
+         <tok val="Catalecticum"/>
+         <tok val="catalecticum"/>
          <lm>
             <l>catalecticus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -346,15 +421,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catalecticus catalecticus-->
-         <tok val="[cC]atalecticus"/>
+      <ana>
+         <tok val="Catalecticus"/>
+         <tok val="catalecticus"/>
          <lm>
             <l>catalecticus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catalogi catalogi-->
-         <tok val="[cC]atalogi"/>
+      <ana>
+         <tok val="Catalogi"/>
+         <tok val="catalogi"/>
          <lm>
             <l>catalogus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -362,8 +439,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catalogo catalogo-->
-         <tok val="[cC]atalogo"/>
+      <ana>
+         <tok val="Catalogo"/>
+         <tok val="catalogo"/>
          <lm>
             <l>catalogus</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -372,6 +450,7 @@
       </ana>
       <ana>
          <tok val="Catalogum"/>
+         <tok val="catalogum"/>
          <lm>
             <l>catalogus</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -380,6 +459,7 @@
       </ana>
       <ana>
          <tok val="Catamite"/>
+         <tok val="catamite"/>
          <lm>
             <l>Catamitus</l>
             <m>n e - s - - - m v</m>
@@ -387,6 +467,7 @@
       </ana>
       <ana>
          <tok val="Catamitum"/>
+         <tok val="catamitum"/>
          <lm>
             <l>Catamitus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -395,13 +476,17 @@
       </ana>
       <ana>
          <tok val="Catamitus"/>
+         <tok val="catamitus"/>
          <lm>
             <l>Catamitus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catana Catina-->
-         <tok val="Cat[ia]na"/>
+      <ana>
+         <tok val="Catana"/>
+         <tok val="Catina"/>
+         <tok val="catana"/>
+         <tok val="catina"/>
          <lm>
             <l>Catina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -409,8 +494,9 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Catanancen catanancen-->
-         <tok val="[cC]atanancen"/>
+      <ana>
+         <tok val="Catanancen"/>
+         <tok val="catanancen"/>
          <lm>
             <l>catanance</l>
             <m>n - - s - - - f a</m>
@@ -418,6 +504,7 @@
       </ana>
       <ana>
          <tok val="Catane"/>
+         <tok val="catane"/>
          <lm>
             <l>Catane</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -427,6 +514,7 @@
       </ana>
       <ana>
          <tok val="Catanen"/>
+         <tok val="catanen"/>
          <lm>
             <l>Catane</l>
             <m>n e - s - - - f a</m>
@@ -434,6 +522,7 @@
       </ana>
       <ana>
          <tok val="Catanes"/>
+         <tok val="catanes"/>
          <lm>
             <l>Catane</l>
             <m>n e - s - - - f g</m>
@@ -441,6 +530,7 @@
       </ana>
       <ana>
          <tok val="Cataones"/>
+         <tok val="cataones"/>
          <lm>
             <l>Cataones</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -450,6 +540,7 @@
       </ana>
       <ana>
          <tok val="Cataonia"/>
+         <tok val="cataonia"/>
          <lm>
             <l>Cataonia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -459,6 +550,7 @@
       </ana>
       <ana>
          <tok val="Cataoniam"/>
+         <tok val="cataoniam"/>
          <lm>
             <l>Cataonia</l>
             <m>n e - s - - - f a</m>
@@ -466,6 +558,7 @@
       </ana>
       <ana>
          <tok val="Cataphractae"/>
+         <tok val="cataphractae"/>
          <lm cert="0.5">
             <l>cataphractes</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -480,15 +573,19 @@
             <m cert="0.25">a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cataphractae Cataphracti cataphracti-->
-         <tok val="[cC]ataphract(i|ae)"/>
+      <ana>
+         <tok val="Cataphractae"/>
+         <tok val="Cataphracti"/>
+         <tok val="cataphractae"/>
+         <tok val="cataphracti"/>
          <lm>
             <l>cataphractes</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Cataphracti cataphracti-->
-         <tok val="[cC]ataphracti"/>
+      <ana>
+         <tok val="Cataphracti"/>
+         <tok val="cataphracti"/>
          <lm cert="0.5">
             <l>cataphracti</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -502,15 +599,17 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cataphractus cataphractus-->
-         <tok val="[cC]ataphractus"/>
+      <ana>
+         <tok val="Cataphractus"/>
+         <tok val="cataphractus"/>
          <lm>
             <l>cataphractus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cataplasma cataplasma-->
-         <tok val="[cC]ataplasma"/>
+      <ana>
+         <tok val="Cataplasma"/>
+         <tok val="cataplasma"/>
          <lm cert="0.5">
             <l>cataplasma</l>
             <m>n - - s - - - n n</m>
@@ -520,8 +619,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Cataplasmata cataplasmata-->
-         <tok val="[cC]ataplasmata"/>
+      <ana>
+         <tok val="Cataplasmata"/>
+         <tok val="cataplasmata"/>
          <lm cert="0.5">
             <l>cataplasmo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -538,22 +638,27 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cataplus cataplus-->
-         <tok val="[cC]ataplus"/>
+      <ana>
+         <tok val="Cataplus"/>
+         <tok val="cataplus"/>
          <lm>
             <l>cataplus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catapotiorum Catapotium catapotium-->
-         <tok val="[Cc]atapoti(or)?um"/>
+      <ana>
+         <tok val="Catapotiorum"/>
+         <tok val="Catapotium"/>
+         <tok val="catapotiorum"/>
+         <tok val="catapotium"/>
          <lm>
             <l>catapotium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Catapotium catapotium-->
-         <tok val="[cC]atapotium"/>
+      <ana>
+         <tok val="Catapotium"/>
+         <tok val="catapotium"/>
          <lm>
             <l>catapotium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -561,8 +666,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Catapulta catapulta catapultast-->
-         <tok val="[cC]atapulta(st)?"/>
+      <ana>
+         <tok val="Catapulta"/>
+         <tok val="catapulta"/>
+         <tok val="catapultast"/>
          <lm>
             <l>catapulta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -570,8 +677,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Catapultarium catapultarium-->
-         <tok val="[cC]atapultarium"/>
+      <ana>
+         <tok val="Catapultarium"/>
+         <tok val="catapultarium"/>
          <lm>
             <l>catapultarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -582,22 +690,28 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catapultarum Catapultarumque catapultarum-->
-         <tok val="[cC]atapultarum(que)?"/>
+      <ana>
+         <tok val="Catapultarum"/>
+         <tok val="Catapultarumque"/>
+         <tok val="catapultarum"/>
+         <tok val="catapultarumque"/>
          <lm>
             <l>catapulta</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Catapultas catapultas-->
-         <tok val="[cC]atapultas"/>
+      <ana>
+         <tok val="Catapultas"/>
+         <tok val="catapultas"/>
          <lm>
             <l>catapulta</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cataracta cataracta catarracta-->
-         <tok val="[cC]atar[r]?acta"/>
+      <ana>
+         <tok val="Cataracta"/>
+         <tok val="cataracta"/>
+         <tok val="catarracta"/>
          <lm>
             <l>cataracta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -607,14 +721,20 @@
       </ana>
       <ana>
          <tok val="Cataracta"/>
+         <tok val="cataracta"/>
          <lm>
             <l>Cataractes</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Cataracta Cataractes Catarrhactes-->
-         <tok val="Catar(rh)?act(es|a)"/>
+      <ana>
+         <tok val="Cataracta"/>
+         <tok val="Cataractes"/>
+         <tok val="Catarrhactes"/>
+         <tok val="cataracta"/>
+         <tok val="cataractes"/>
+         <tok val="catarrhactes"/>
          <lm>
             <l>Cataractes</l>
             <m>n e - s - - - m n</m>
@@ -622,17 +742,15 @@
       </ana>
       <ana>
          <tok val="Cataractae"/>
-         <lm>
+         <tok val="cataractae"/>
+         <lm cert="0.5">
             <l>Cataractes</l>
             <m cert="0.25">n e - p - - - m v</m>
             <m cert="0.25">n e - s - - - m d</m>
             <m cert="0.25">n e - p - - - m n</m>
             <m cert="0.25">n e - s - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Cataractae cataractae-->
-         <tok val="[cC]ataractae"/>
-         <lm>
+         <lm cert="0.5">
             <l>cataracta</l>
             <m cert="0.25">n - - s - - - f d</m>
             <m cert="0.25">n - - s - - - f g</m>
@@ -642,34 +760,36 @@
       </ana>
       <ana>
          <tok val="Cataractam"/>
-         <lm>
+         <tok val="cataractam"/>
+         <lm cert="0.5">
             <l>Cataractes</l>
             <m>n e - s - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Cataractam cataractam-->
-         <tok val="[cC]ataractam"/>
-         <lm>
+         <lm cert="0.5">
             <l>cataracta</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catarractes catarracta catarractes-->
-         <tok val="[cC]atarract(es|a)"/>
+      <ana>
+         <tok val="Catarractes"/>
+         <tok val="catarracta"/>
+         <tok val="catarractes"/>
          <lm>
             <l>catarractes</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catarrhus catarrhus-->
-         <tok val="[cC]atarrhus"/>
+      <ana>
+         <tok val="Catarrhus"/>
+         <tok val="catarrhus"/>
          <lm>
             <l>catarrhus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catascopium catascopium-->
-         <tok val="[cC]atascopium"/>
+      <ana>
+         <tok val="Catascopium"/>
+         <tok val="catascopium"/>
          <lm>
             <l>catascopium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -678,15 +798,17 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Catascopus catascopus-->
-         <tok val="[cC]atascopus"/>
+      <ana>
+         <tok val="Catascopus"/>
+         <tok val="catascopus"/>
          <lm>
             <l>catascopus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catasta catasta-->
-         <tok val="[cC]atasta"/>
+      <ana>
+         <tok val="Catasta"/>
+         <tok val="catasta"/>
          <lm>
             <l>catasta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -696,14 +818,20 @@
       </ana>
       <ana>
          <tok val="Catatexitechnos"/>
+         <tok val="catatexitechnos"/>
          <lm>
             <l>Catatexitechnos</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cate Caten Catene cate caten-->
-         <tok val="[Cc]ate[n]?[en]?"/>
+      <ana>
+         <tok val="Cate"/>
+         <tok val="Caten"/>
+         <tok val="Catene"/>
+         <tok val="cate"/>
+         <tok val="caten"/>
+         <tok val="catene"/>
          <lm>
             <l>catus</l>
             <m cert="0.333333333333333333">d</m>
@@ -711,30 +839,43 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Cate Caten Catene Catum cate caten catum catumque-->
-         <tok val="[Cc]at[e]?[n]?(e|n|um|umque)?"/>
+      <ana>
+         <tok val="Cate"/>
+         <tok val="Caten"/>
+         <tok val="Catene"/>
+         <tok val="Catum"/>
+         <tok val="cate"/>
+         <tok val="caten"/>
+         <tok val="catene"/>
+         <tok val="catum"/>
+         <tok val="catumque"/>
          <lm>
             <l>catus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Catecheses catecheses-->
-         <tok val="[cC]atecheses"/>
+      <ana>
+         <tok val="Catecheses"/>
+         <tok val="catecheses"/>
          <lm>
             <l>catechesis</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Catecheses Catechesis catecheses catechesis-->
-         <tok val="[Cc]ateches[ie]s"/>
+      <ana>
+         <tok val="Catecheses"/>
+         <tok val="Catechesis"/>
+         <tok val="catecheses"/>
+         <tok val="catechesis"/>
          <lm>
             <l>catechesis</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catechesis catechesis-->
-         <tok val="[cC]atechesis"/>
+      <ana>
+         <tok val="Catechesis"/>
+         <tok val="catechesis"/>
          <lm>
             <l>catechesis</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -743,6 +884,7 @@
       </ana>
       <ana>
          <tok val="Catechizare"/>
+         <tok val="catechizare"/>
          <lm>
             <l>catechizo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -750,15 +892,17 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Catechumenus catechumenus-->
-         <tok val="[cC]atechumenus"/>
+      <ana>
+         <tok val="Catechumenus"/>
+         <tok val="catechumenus"/>
          <lm>
             <l>catechumenus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Categoria categoria-->
-         <tok val="[cC]ategoria"/>
+      <ana>
+         <tok val="Categoria"/>
+         <tok val="categoria"/>
          <lm>
             <l>categoria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -766,8 +910,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Categoriae categoriae-->
-         <tok val="[cC]ategoriae"/>
+      <ana>
+         <tok val="Categoriae"/>
+         <tok val="categoriae"/>
          <lm>
             <l>categoria</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -776,23 +921,28 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Categorias categorias-->
-         <tok val="[cC]ategorias"/>
+      <ana>
+         <tok val="Categorias"/>
+         <tok val="categorias"/>
          <lm>
             <l>categoria</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Categoriis categoriis-->
-         <tok val="[cC]ategoriis"/>
+      <ana>
+         <tok val="Categoriis"/>
+         <tok val="categoriis"/>
          <lm>
             <l>categoria</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Catella Catenula catella catenula-->
-         <tok val="[cC]ate(nu|l)la"/>
+      <ana>
+         <tok val="Catella"/>
+         <tok val="Catenula"/>
+         <tok val="catella"/>
+         <tok val="catenula"/>
          <lm>
             <l>catella</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -800,8 +950,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Catellae catellae catenulae-->
-         <tok val="[cC]ate(l|nu)lae"/>
+      <ana>
+         <tok val="Catellae"/>
+         <tok val="catellae"/>
+         <tok val="catenulae"/>
          <lm>
             <l>catella</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -810,22 +962,26 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Catellam catellam catenulam-->
-         <tok val="[cC]ate(l|nu)lam"/>
+      <ana>
+         <tok val="Catellam"/>
+         <tok val="catellam"/>
+         <tok val="catenulam"/>
          <lm>
             <l>catella</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catelle catelle-->
-         <tok val="[cC]atelle"/>
+      <ana>
+         <tok val="Catelle"/>
+         <tok val="catelle"/>
          <lm>
             <l>catellus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Catelli catelli-->
-         <tok val="[cC]atelli"/>
+      <ana>
+         <tok val="Catelli"/>
+         <tok val="catelli"/>
          <lm>
             <l>catellus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -833,23 +989,26 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catellum catellum-->
-         <tok val="[cC]atellum"/>
+      <ana>
+         <tok val="Catellum"/>
+         <tok val="catellum"/>
          <lm>
             <l>catellus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catellus catellus-->
-         <tok val="[cC]atellus"/>
+      <ana>
+         <tok val="Catellus"/>
+         <tok val="catellus"/>
          <lm>
             <l>catellus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catenae catenae-->
-         <tok val="[cC]atenae"/>
+      <ana>
+         <tok val="Catenae"/>
+         <tok val="catenae"/>
          <lm>
             <l>catena</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -858,15 +1017,18 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Catenam catenam-->
-         <tok val="[cC]atenam"/>
+      <ana>
+         <tok val="Catenam"/>
+         <tok val="catenam"/>
          <lm>
             <l>catena</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catenas catenas catenasque-->
-         <tok val="[cC]atenas(que)?"/>
+      <ana>
+         <tok val="Catenas"/>
+         <tok val="catenas"/>
+         <tok val="catenasque"/>
          <lm cert="0.5">
             <l>cateno</l>
             <m>v - 2 s p i a</m>
@@ -876,8 +1038,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catenata catenata-->
-         <tok val="[cC]atenata"/>
+      <ana>
+         <tok val="Catenata"/>
+         <tok val="catenata"/>
          <lm cert="0.5">
             <l>cateno</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -897,8 +1060,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Catenatae catenatae-->
-         <tok val="[cC]atenatae"/>
+      <ana>
+         <tok val="Catenatae"/>
+         <tok val="catenatae"/>
          <lm cert="0.5">
             <l>catenatus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -914,8 +1078,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Catenati catenati catenatique-->
-         <tok val="[cC]atenati(que)?"/>
+      <ana>
+         <tok val="Catenati"/>
+         <tok val="catenati"/>
+         <tok val="catenatique"/>
          <lm cert="0.5">
             <l>cateno</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -931,8 +1097,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Catenatus catenatus-->
-         <tok val="[cC]atenatus"/>
+      <ana>
+         <tok val="Catenatus"/>
+         <tok val="catenatus"/>
          <lm cert="0.5">
             <l>catenatus</l>
             <m>a - - s - - - m n</m>
@@ -942,23 +1109,28 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Catenis catenis catenisque-->
-         <tok val="[cC]atenis(que)?"/>
+      <ana>
+         <tok val="Catenis"/>
+         <tok val="catenis"/>
+         <tok val="catenisque"/>
          <lm>
             <l>catena</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cateno cateno-->
-         <tok val="[cC]ateno"/>
+      <ana>
+         <tok val="Cateno"/>
+         <tok val="cateno"/>
          <lm>
             <l>cateno</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Caterua caterua caterva-->
-         <tok val="[cC]ater[uv]a"/>
+      <ana>
+         <tok val="Caterua"/>
+         <tok val="caterua"/>
+         <tok val="caterva"/>
          <lm>
             <l>caterva</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -966,8 +1138,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cateruae cateruae catervae catervaeque-->
-         <tok val="[cC]ater[uv]ae(que)?"/>
+      <ana>
+         <tok val="Cateruae"/>
+         <tok val="cateruae"/>
+         <tok val="catervae"/>
+         <tok val="catervaeque"/>
          <lm>
             <l>caterva</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -976,22 +1151,28 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cateruas cateruas catervas catervasque-->
-         <tok val="[cC]ater[uv]as(que)?"/>
+      <ana>
+         <tok val="Cateruas"/>
+         <tok val="cateruas"/>
+         <tok val="catervas"/>
+         <tok val="catervasque"/>
          <lm>
             <l>caterva</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catervam cateruam catervam-->
-         <tok val="[cC]ater[vu]am"/>
+      <ana>
+         <tok val="Catervam"/>
+         <tok val="cateruam"/>
+         <tok val="catervam"/>
          <lm>
             <l>caterva</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catervarii catervarii-->
-         <tok val="[cC]atervarii"/>
+      <ana>
+         <tok val="Catervarii"/>
+         <tok val="catervarii"/>
          <lm>
             <l>catervarius</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1000,8 +1181,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Catharticum catharticum-->
-         <tok val="[cC]atharticum"/>
+      <ana>
+         <tok val="Catharticum"/>
+         <tok val="catharticum"/>
          <lm>
             <l>catharticum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1010,8 +1192,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cathedra cathedra-->
-         <tok val="[cC]athedra"/>
+      <ana>
+         <tok val="Cathedra"/>
+         <tok val="cathedra"/>
          <lm>
             <l>cathedra</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1019,8 +1202,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cathedrae cathedrae-->
-         <tok val="[cC]athedrae"/>
+      <ana>
+         <tok val="Cathedrae"/>
+         <tok val="cathedrae"/>
          <lm>
             <l>cathedra</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1029,15 +1213,17 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cathedram cathedram-->
-         <tok val="[cC]athedram"/>
+      <ana>
+         <tok val="Cathedram"/>
+         <tok val="cathedram"/>
          <lm>
             <l>cathedra</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cathedrarios cathedrarios-->
-         <tok val="[cC]athedrarios"/>
+      <ana>
+         <tok val="Cathedrarios"/>
+         <tok val="cathedrarios"/>
          <lm>
             <l>cathedrarius</l>
             <m>a - - p - - - m a</m>
@@ -1045,6 +1231,7 @@
       </ana>
       <ana>
          <tok val="Catheti"/>
+         <tok val="catheti"/>
          <lm>
             <l>cathetus</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1052,15 +1239,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Cathetus cathetus-->
-         <tok val="[cC]athetus"/>
+      <ana>
+         <tok val="Cathetus"/>
+         <tok val="cathetus"/>
          <lm>
             <l>cathetus</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Catholica catholica-->
-         <tok val="[cC]atholica"/>
+      <ana>
+         <tok val="Catholica"/>
+         <tok val="catholica"/>
          <lm>
             <l>catholicus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1071,8 +1260,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Catholicae catholicae-->
-         <tok val="[cC]atholicae"/>
+      <ana>
+         <tok val="Catholicae"/>
+         <tok val="catholicae"/>
          <lm>
             <l>catholicus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1081,15 +1271,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Catholicam catholicam-->
-         <tok val="[cC]atholicam"/>
+      <ana>
+         <tok val="Catholicam"/>
+         <tok val="catholicam"/>
          <lm>
             <l>catholicus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catholici catholici-->
-         <tok val="[cC]atholici"/>
+      <ana>
+         <tok val="Catholici"/>
+         <tok val="catholici"/>
          <lm>
             <l>catholicus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1098,8 +1290,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Catholicis catholicis-->
-         <tok val="[cC]atholicis"/>
+      <ana>
+         <tok val="Catholicis"/>
+         <tok val="catholicis"/>
          <lm>
             <l>catholicus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1110,16 +1303,20 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Catholicorum Catholicum catholicorum catholicum-->
-         <tok val="[cC]atholic(or)?um"/>
+      <ana>
+         <tok val="Catholicorum"/>
+         <tok val="Catholicum"/>
+         <tok val="catholicorum"/>
+         <tok val="catholicum"/>
          <lm>
             <l>catholicus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catholicum catholicum-->
-         <tok val="[cC]atholicum"/>
+      <ana>
+         <tok val="Catholicum"/>
+         <tok val="catholicum"/>
          <lm>
             <l>catholicus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1127,22 +1324,27 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catholicum catholice catholicum-->
-         <tok val="[cC]atholic(um|e)"/>
+      <ana>
+         <tok val="Catholicum"/>
+         <tok val="catholice"/>
+         <tok val="catholicum"/>
          <lm>
             <l>catholicus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Catholicus catholicus-->
-         <tok val="[cC]atholicus"/>
+      <ana>
+         <tok val="Catholicus"/>
+         <tok val="catholicus"/>
          <lm>
             <l>catholicus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cati cati cative-->
-         <tok val="[cC]ati(ve)?"/>
+      <ana>
+         <tok val="Cati"/>
+         <tok val="cati"/>
+         <tok val="cative"/>
          <lm>
             <l>catus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -1156,6 +1358,7 @@
       </ana>
       <ana>
          <tok val="Cati"/>
+         <tok val="cati"/>
          <lm>
             <l>Catius</l>
             <m>n e - s - - - m v</m>
@@ -1163,6 +1366,7 @@
       </ana>
       <ana>
          <tok val="Catia"/>
+         <tok val="catia"/>
          <lm>
             <l>Catia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1172,6 +1376,7 @@
       </ana>
       <ana>
          <tok val="Catiae"/>
+         <tok val="catiae"/>
          <lm>
             <l>Catia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1182,6 +1387,7 @@
       </ana>
       <ana>
          <tok val="Catiana"/>
+         <tok val="catiana"/>
          <lm>
             <l>Catianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1192,8 +1398,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Catiane Catianum-->
-         <tok val="Catian(um|e)"/>
+      <ana>
+         <tok val="Catiane"/>
+         <tok val="Catianum"/>
+         <tok val="catiane"/>
+         <tok val="catianum"/>
          <lm>
             <l>Catianus</l>
             <m>a e - s - - - n v</m>
@@ -1201,6 +1410,7 @@
       </ana>
       <ana>
          <tok val="Catiane"/>
+         <tok val="catiane"/>
          <lm>
             <l>Catianus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -1209,6 +1419,7 @@
       </ana>
       <ana>
          <tok val="Catianis"/>
+         <tok val="catianis"/>
          <lm>
             <l>Catianus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1221,6 +1432,7 @@
       </ana>
       <ana>
          <tok val="Catianum"/>
+         <tok val="catianum"/>
          <lm>
             <l>Catianus</l>
             <m cert="0.2">a e - p - - - m g</m>
@@ -1232,6 +1444,7 @@
       </ana>
       <ana>
          <tok val="Catianus"/>
+         <tok val="catianus"/>
          <lm>
             <l>Catianus</l>
             <m>a e - s - - - m n</m>
@@ -1239,6 +1452,7 @@
       </ana>
       <ana>
          <tok val="Catiena"/>
+         <tok val="catiena"/>
          <lm cert="0.5">
             <l>Catienus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1257,6 +1471,7 @@
       </ana>
       <ana>
          <tok val="Catienae"/>
+         <tok val="catienae"/>
          <lm cert="0.5">
             <l>Catiena</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1274,6 +1489,7 @@
       </ana>
       <ana>
          <tok val="Catienis"/>
+         <tok val="catienis"/>
          <lm cert="0.5">
             <l>Catiena</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -1291,6 +1507,7 @@
       </ana>
       <ana>
          <tok val="Catienus"/>
+         <tok val="catienus"/>
          <lm>
             <l>Catienus</l>
             <m>a e - s - - - m n</m>
@@ -1298,6 +1515,7 @@
       </ana>
       <ana>
          <tok val="Catii"/>
+         <tok val="catii"/>
          <lm>
             <l>Catius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1305,8 +1523,11 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Catili Catiline-->
-         <tok val="Catili(ne)?"/>
+      <ana>
+         <tok val="Catili"/>
+         <tok val="Catiline"/>
+         <tok val="catili"/>
+         <tok val="catiline"/>
          <lm cert="0.5">
             <l>Catilius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -1321,6 +1542,7 @@
       </ana>
       <ana>
          <tok val="Catilina"/>
+         <tok val="catilina"/>
          <lm>
             <l>Catilina</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -1330,6 +1552,7 @@
       </ana>
       <ana>
          <tok val="Catilinae"/>
+         <tok val="catilinae"/>
          <lm>
             <l>Catilina</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -1340,6 +1563,7 @@
       </ana>
       <ana>
          <tok val="Catilinarian"/>
+         <tok val="catilinarian"/>
          <lm>
             <l>Catilinarius</l>
             <m cert="0.142857142857142857">a e - p - - - n n</m>
@@ -1353,6 +1577,7 @@
       </ana>
       <ana>
          <tok val="Catilinarium"/>
+         <tok val="catilinarium"/>
          <lm>
             <l>Catilinarius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1365,6 +1590,7 @@
       </ana>
       <ana>
          <tok val="Catilinarius"/>
+         <tok val="catilinarius"/>
          <lm>
             <l>Catilinarius</l>
             <m>a e - s - - - m n</m>
@@ -1372,6 +1598,7 @@
       </ana>
       <ana>
          <tok val="Catilinarum"/>
+         <tok val="catilinarum"/>
          <lm>
             <l>Catilina</l>
             <m>n e - p - - - m g</m>
@@ -1379,6 +1606,7 @@
       </ana>
       <ana>
          <tok val="Catilinas"/>
+         <tok val="catilinas"/>
          <lm>
             <l>Catilina</l>
             <m>n e - p - - - m a</m>
@@ -1386,13 +1614,15 @@
       </ana>
       <ana>
          <tok val="Catilius"/>
+         <tok val="catilius"/>
          <lm>
             <l>Catilius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catillatio catillatio-->
-         <tok val="[cC]atillatio"/>
+      <ana>
+         <tok val="Catillatio"/>
+         <tok val="catillatio"/>
          <lm>
             <l>catillatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1401,13 +1631,15 @@
       </ana>
       <ana>
          <tok val="Catille"/>
+         <tok val="catille"/>
          <lm>
             <l>catillus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Catilli catilli-->
-         <tok val="[cC]atilli"/>
+      <ana>
+         <tok val="Catilli"/>
+         <tok val="catilli"/>
          <lm>
             <l>catillus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1415,8 +1647,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catillo catillo-->
-         <tok val="[cC]atillo"/>
+      <ana>
+         <tok val="Catillo"/>
+         <tok val="catillo"/>
          <lm cert="0.5">
             <l>catillo</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1430,6 +1663,7 @@
       </ana>
       <ana>
          <tok val="Catillones"/>
+         <tok val="catillones"/>
          <lm>
             <l>catillo</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1437,22 +1671,29 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catillorum Catillum catillorum catillum-->
-         <tok val="[cC]atill(or)?um"/>
+      <ana>
+         <tok val="Catillorum"/>
+         <tok val="Catillum"/>
+         <tok val="catillorum"/>
+         <tok val="catillum"/>
          <lm>
             <l>catillus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catillum catillum-->
-         <tok val="[cC]atillum"/>
+      <ana>
+         <tok val="Catillum"/>
+         <tok val="catillum"/>
          <lm>
             <l>catillus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catillus Catillusque catillus-->
-         <tok val="[cC]atillus(que)?"/>
+      <ana>
+         <tok val="Catillus"/>
+         <tok val="Catillusque"/>
+         <tok val="catillus"/>
+         <tok val="catillusque"/>
          <lm>
             <l>catillus</l>
             <m>n - - s - - - m n</m>
@@ -1460,13 +1701,15 @@
       </ana>
       <ana>
          <tok val="Catilus"/>
+         <tok val="catilus"/>
          <lm>
             <l>Catillus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catina catina-->
-         <tok val="[cC]atina"/>
+      <ana>
+         <tok val="Catina"/>
+         <tok val="catina"/>
          <lm>
             <l>catinum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1474,8 +1717,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Catinae Catinaeque-->
-         <tok val="Catinae(que)?"/>
+      <ana>
+         <tok val="Catinae"/>
+         <tok val="Catinaeque"/>
+         <tok val="catinae"/>
+         <tok val="catinaeque"/>
          <lm>
             <l>Catina</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1486,13 +1732,17 @@
       </ana>
       <ana>
          <tok val="Catinam"/>
+         <tok val="catinam"/>
          <lm>
             <l>Catina</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Catine Catinum catinum-->
-         <tok val="[cC]atin(um|e)"/>
+      <ana>
+         <tok val="Catine"/>
+         <tok val="Catinum"/>
+         <tok val="catine"/>
+         <tok val="catinum"/>
          <lm>
             <l>catinum</l>
             <m>n - - s - - - n v</m>
@@ -1500,6 +1750,7 @@
       </ana>
       <ana>
          <tok val="Catine"/>
+         <tok val="catine"/>
          <lm>
             <l>catinus</l>
             <m>n - - s - - - m v</m>
@@ -1507,6 +1758,7 @@
       </ana>
       <ana>
          <tok val="Catinenses"/>
+         <tok val="catinenses"/>
          <lm cert="0.5">
             <l>Catinensis</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -1520,8 +1772,11 @@
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catinenses Catinensis-->
-         <tok val="Catinens[ie]s"/>
+      <ana>
+         <tok val="Catinenses"/>
+         <tok val="Catinensis"/>
+         <tok val="catinenses"/>
+         <tok val="catinensis"/>
          <lm cert="0.5">
             <l>Catinensis</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -1534,6 +1789,7 @@
       </ana>
       <ana>
          <tok val="Catinensi"/>
+         <tok val="catinensi"/>
          <lm>
             <l>Catinensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -1546,6 +1802,7 @@
       </ana>
       <ana>
          <tok val="Catinensis"/>
+         <tok val="catinensis"/>
          <lm>
             <l>Catinensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -1559,6 +1816,7 @@
       </ana>
       <ana>
          <tok val="Catinensium"/>
+         <tok val="catinensium"/>
          <lm cert="0.5">
             <l>Catinensis</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -1570,8 +1828,9 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catini catini-->
-         <tok val="[cC]atini"/>
+      <ana>
+         <tok val="Catini"/>
+         <tok val="catini"/>
          <lm cert="0.5">
             <l>catinus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1583,8 +1842,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Catino catino-->
-         <tok val="[cC]atino"/>
+      <ana>
+         <tok val="Catino"/>
+         <tok val="catino"/>
          <lm cert="0.5">
             <l>catinum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1596,8 +1856,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Catinum catinum-->
-         <tok val="[cC]atinum"/>
+      <ana>
+         <tok val="Catinum"/>
+         <tok val="catinum"/>
          <lm cert="0.5">
             <l>catinus</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -1612,6 +1873,7 @@
       </ana>
       <ana>
          <tok val="Catium"/>
+         <tok val="catium"/>
          <lm>
             <l>Catius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1620,13 +1882,17 @@
       </ana>
       <ana>
          <tok val="Catius"/>
+         <tok val="catius"/>
          <lm>
             <l>Catius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catius Cativs catius-->
-         <tok val="[Cc]ati[vu]s"/>
+      <ana>
+         <tok val="Catius"/>
+         <tok val="Cativs"/>
+         <tok val="catius"/>
+         <tok val="cativs"/>
          <lm>
             <l>catus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -1637,36 +1903,44 @@
       </ana>
       <ana>
          <tok val="Cativolcus"/>
+         <tok val="cativolcus"/>
          <lm>
             <l>Cativolcus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cato Caton-->
-         <tok val="Cato[n]?"/>
+      <ana>
+         <tok val="Cato"/>
+         <tok val="Caton"/>
+         <tok val="cato"/>
+         <tok val="caton"/>
          <lm>
             <l>Cato</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catoblepas catoblepas-->
-         <tok val="[cC]atoblepas"/>
+      <ana>
+         <tok val="Catoblepas"/>
+         <tok val="catoblepas"/>
          <lm>
             <l>catoblepas</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catochitis catochitis-->
-         <tok val="[cC]atochitis"/>
+      <ana>
+         <tok val="Catochitis"/>
+         <tok val="catochitis"/>
          <lm>
             <l>catochitis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Caton catos-->
-         <tok val="[cC]ato[sn]"/>
+      <ana>
+         <tok val="Caton"/>
+         <tok val="caton"/>
+         <tok val="catos"/>
          <lm>
             <l>catus</l>
             <m cert="0.5">n - - p - - - m a</m>
@@ -1675,6 +1949,7 @@
       </ana>
       <ana>
          <tok val="Catone"/>
+         <tok val="catone"/>
          <lm>
             <l>Cato</l>
             <m>n e - s - - - m b</m>
@@ -1682,13 +1957,17 @@
       </ana>
       <ana>
          <tok val="Catonem"/>
+         <tok val="catonem"/>
          <lm>
             <l>Cato</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catones Catonesque-->
-         <tok val="Catones(que)?"/>
+      <ana>
+         <tok val="Catones"/>
+         <tok val="Catonesque"/>
+         <tok val="catones"/>
+         <tok val="catonesque"/>
          <lm>
             <l>Cato</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1698,6 +1977,7 @@
       </ana>
       <ana>
          <tok val="Catoni"/>
+         <tok val="catoni"/>
          <lm>
             <l>Cato</l>
             <m>n e - s - - - m d</m>
@@ -1705,6 +1985,7 @@
       </ana>
       <ana>
          <tok val="Catonia"/>
+         <tok val="catonia"/>
          <lm>
             <l>catonium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1714,6 +1995,7 @@
       </ana>
       <ana>
          <tok val="Catoniana"/>
+         <tok val="catoniana"/>
          <lm>
             <l>Catonianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1726,6 +2008,7 @@
       </ana>
       <ana>
          <tok val="Catonianae"/>
+         <tok val="catonianae"/>
          <lm>
             <l>Catonianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1736,6 +2019,7 @@
       </ana>
       <ana>
          <tok val="Catonianam"/>
+         <tok val="catonianam"/>
          <lm>
             <l>Catonianus</l>
             <m>a e - s - - - f a</m>
@@ -1743,6 +2027,7 @@
       </ana>
       <ana>
          <tok val="Catonianos"/>
+         <tok val="catonianos"/>
          <lm>
             <l>Catonianus</l>
             <m>a e - p - - - m a</m>
@@ -1750,6 +2035,7 @@
       </ana>
       <ana>
          <tok val="Catonianum"/>
+         <tok val="catonianum"/>
          <lm>
             <l>Catonianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1762,6 +2048,7 @@
       </ana>
       <ana>
          <tok val="Catonianus"/>
+         <tok val="catonianus"/>
          <lm>
             <l>Catonianus</l>
             <m>a e - s - - - m n</m>
@@ -1769,6 +2056,7 @@
       </ana>
       <ana>
          <tok val="Catonibus"/>
+         <tok val="catonibus"/>
          <lm>
             <l>Cato</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1777,6 +2065,7 @@
       </ana>
       <ana>
          <tok val="Catonini"/>
+         <tok val="catonini"/>
          <lm>
             <l>Catonini</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1785,13 +2074,15 @@
       </ana>
       <ana>
          <tok val="Catoninos"/>
+         <tok val="catoninos"/>
          <lm>
             <l>Catonini</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catonium catonium-->
-         <tok val="[cC]atonium"/>
+      <ana>
+         <tok val="Catonium"/>
+         <tok val="catonium"/>
          <lm>
             <l>catonium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1802,13 +2093,15 @@
       </ana>
       <ana>
          <tok val="Catonum"/>
+         <tok val="catonum"/>
          <lm>
             <l>Cato</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catoptritis catoptritis-->
-         <tok val="[cC]atoptritis"/>
+      <ana>
+         <tok val="Catoptritis"/>
+         <tok val="catoptritis"/>
          <lm>
             <l>catoptritis</l>
             <m>n - - s - - - f n</m>
@@ -1816,6 +2109,7 @@
       </ana>
       <ana>
          <tok val="Cattis"/>
+         <tok val="cattis"/>
          <lm>
             <l>catta</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -1824,6 +2118,7 @@
       </ana>
       <ana>
          <tok val="Catule"/>
+         <tok val="catule"/>
          <lm>
             <l>Catulus</l>
             <m>n e - s - - - m v</m>
@@ -1831,6 +2126,7 @@
       </ana>
       <ana>
          <tok val="Catuli"/>
+         <tok val="catuli"/>
          <lm>
             <l>Catulus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1838,8 +2134,10 @@
             <m cert="0.333333333333333333">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Catuli catuli catulique-->
-         <tok val="[cC]atuli(que)?"/>
+      <ana>
+         <tok val="Catuli"/>
+         <tok val="catuli"/>
+         <tok val="catulique"/>
          <lm>
             <l>catulio</l>
             <m>v - 2 s p m a</m>
@@ -1847,7 +2145,8 @@
       </ana>
       <ana>
          <tok val="Catulina"/>
-         <lm>
+         <tok val="catulina"/>
+         <lm cert="0.5">
             <l>Catulinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
             <m cert="0.166666666666666667">a e - p - - - n v</m>
@@ -1856,10 +2155,7 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Catulina catulina-->
-         <tok val="[cC]atulina"/>
-         <lm>
+         <lm cert="0.5">
             <l>catulina</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1868,6 +2164,7 @@
       </ana>
       <ana>
          <tok val="Catulinae"/>
+         <tok val="catulinae"/>
          <lm cert="0.5">
             <l>Catulinus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1885,6 +2182,7 @@
       </ana>
       <ana>
          <tok val="Catulino"/>
+         <tok val="catulino"/>
          <lm>
             <l>Catulinus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1895,13 +2193,15 @@
       </ana>
       <ana>
          <tok val="Catulinus"/>
+         <tok val="catulinus"/>
          <lm>
             <l>Catulinus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catulio catulio-->
-         <tok val="[cC]atulio"/>
+      <ana>
+         <tok val="Catulio"/>
+         <tok val="catulio"/>
          <lm>
             <l>catulio</l>
             <m>v - 1 s p i a</m>
@@ -1909,21 +2209,21 @@
       </ana>
       <ana>
          <tok val="Catulis"/>
-         <lm>
+         <tok val="catulis"/>
+         <lm cert="0.5">
             <l>Catulus</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Catulis catulis-->
-         <tok val="[cC]atulis"/>
-         <lm>
+         <lm cert="0.5">
             <l>catulio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Catulitio catlitio catulitio-->
-         <tok val="[cC]at[u]?litio"/>
+      <ana>
+         <tok val="Catulitio"/>
+         <tok val="catlitio"/>
+         <tok val="catulitio"/>
          <lm>
             <l>catulitio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1932,13 +2232,17 @@
       </ana>
       <ana>
          <tok val="Catulle"/>
+         <tok val="catulle"/>
          <lm>
             <l>Catullus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Catulli Catullique-->
-         <tok val="Catulli(que)?"/>
+      <ana>
+         <tok val="Catulli"/>
+         <tok val="Catullique"/>
+         <tok val="catulli"/>
+         <tok val="catullique"/>
          <lm>
             <l>Catullus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1948,6 +2252,7 @@
       </ana>
       <ana>
          <tok val="Catulliana"/>
+         <tok val="catulliana"/>
          <lm>
             <l>Catullianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1960,6 +2265,7 @@
       </ana>
       <ana>
          <tok val="Catulliani"/>
+         <tok val="catulliani"/>
          <lm>
             <l>Catullianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1970,13 +2276,17 @@
       </ana>
       <ana>
          <tok val="Catullianus"/>
+         <tok val="catullianus"/>
          <lm>
             <l>Catullianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catullo Catullost-->
-         <tok val="Catullo(st)?"/>
+      <ana>
+         <tok val="Catullo"/>
+         <tok val="Catullost"/>
+         <tok val="catullo"/>
+         <tok val="catullost"/>
          <lm>
             <l>Catullus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1985,6 +2295,7 @@
       </ana>
       <ana>
          <tok val="Catullost"/>
+         <tok val="catullost"/>
          <lm>
             <l>Catullus</l>
             <m>n e - p - - - m a</m>
@@ -1992,6 +2303,7 @@
       </ana>
       <ana>
          <tok val="Catullum"/>
+         <tok val="catullum"/>
          <lm>
             <l>Catullus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -2000,13 +2312,17 @@
       </ana>
       <ana>
          <tok val="Catullus"/>
+         <tok val="catullus"/>
          <lm>
             <l>Catullus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Catulorum Catulum-->
-         <tok val="Catul(or)?um"/>
+      <ana>
+         <tok val="Catulorum"/>
+         <tok val="Catulum"/>
+         <tok val="catulorum"/>
+         <tok val="catulum"/>
          <lm>
             <l>Catulus</l>
             <m>n e - p - - - m g</m>
@@ -2014,6 +2330,7 @@
       </ana>
       <ana>
          <tok val="Catulos"/>
+         <tok val="catulos"/>
          <lm>
             <l>Catulus</l>
             <m>n e - p - - - m a</m>
@@ -2021,13 +2338,16 @@
       </ana>
       <ana>
          <tok val="Catulum"/>
+         <tok val="catulum"/>
          <lm>
             <l>Catulus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catum catum catumque-->
-         <tok val="[cC]atum(que)?"/>
+      <ana>
+         <tok val="Catum"/>
+         <tok val="catum"/>
+         <tok val="catumque"/>
          <lm>
             <l>catus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -2036,8 +2356,11 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Catum catorum catum catumque-->
-         <tok val="[cC]at(or)?um(que)?"/>
+      <ana>
+         <tok val="Catum"/>
+         <tok val="catorum"/>
+         <tok val="catum"/>
+         <tok val="catumque"/>
          <lm>
             <l>catus</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -2047,6 +2370,7 @@
       </ana>
       <ana>
          <tok val="Caturiges"/>
+         <tok val="caturiges"/>
          <lm>
             <l>Caturiges</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -2054,8 +2378,11 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Catus Catvs catus-->
-         <tok val="[Cc]at[vu]s"/>
+      <ana>
+         <tok val="Catus"/>
+         <tok val="Catvs"/>
+         <tok val="catus"/>
+         <tok val="catvs"/>
          <lm>
             <l>catus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -2089,8 +2416,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--cataclysmo cataclysmon-->
-         <tok val="cataclysmo[n]?"/>
+      <ana>
+         <tok val="cataclysmo"/>
+         <tok val="cataclysmon"/>
          <lm>
             <l>cataclysmos</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -2122,8 +2450,9 @@
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--catae cataeque-->
-         <tok val="catae(que)?"/>
+      <ana>
+         <tok val="catae"/>
+         <tok val="cataeque"/>
          <lm>
             <l>catus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2149,8 +2478,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--catagraphos catagraphosque-->
-         <tok val="catagraphos(que)?"/>
+      <ana>
+         <tok val="catagraphos"/>
+         <tok val="catagraphosque"/>
          <lm>
             <l>catagraphus</l>
             <m>a - - p - - - m a</m>
@@ -2182,8 +2512,9 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--catalectico catalecticon-->
-         <tok val="catalectico[n]?"/>
+      <ana>
+         <tok val="catalectico"/>
+         <tok val="catalecticon"/>
          <lm>
             <l>catalecticus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2276,8 +2607,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--cataphracta cataphractes-->
-         <tok val="cataphract(es|a)"/>
+      <ana>
+         <tok val="cataphracta"/>
+         <tok val="cataphractes"/>
          <lm>
             <l>cataphractes</l>
             <m>n - - s - - - m n</m>
@@ -2412,8 +2744,9 @@
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--cataplasmate cataplasmatum-->
-         <tok val="cataplasmat(um|e)"/>
+      <ana>
+         <tok val="cataplasmate"/>
+         <tok val="cataplasmatum"/>
          <lm>
             <l>cataplasmo</l>
             <m>v - - s r p p n v</m>
@@ -2441,8 +2774,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--cataplasmatis cataplasmatisque-->
-         <tok val="cataplasmatis(que)?"/>
+      <ana>
+         <tok val="cataplasmatis"/>
+         <tok val="cataplasmatisque"/>
          <lm cert="0.5">
             <l>cataplasmo</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -2497,8 +2831,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--catapultis catapultisque-->
-         <tok val="catapultis(que)?"/>
+      <ana>
+         <tok val="catapultis"/>
+         <tok val="catapultisque"/>
          <lm>
             <l>catapulta</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -2512,15 +2847,17 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--cataractas catarractas-->
-         <tok val="catar[r]?actas"/>
+      <ana>
+         <tok val="cataractas"/>
+         <tok val="catarractas"/>
          <lm>
             <l>cataracta</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--cataractis catarractis-->
-         <tok val="catar[r]?actis"/>
+      <ana>
+         <tok val="cataractis"/>
+         <tok val="catarractis"/>
          <lm>
             <l>cataracta</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -2536,8 +2873,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--catarracta catarracte-->
-         <tok val="catarract[ea]"/>
+      <ana>
+         <tok val="catarracta"/>
+         <tok val="catarracte"/>
          <lm>
             <l>catarractes</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -2832,15 +3170,19 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--catellarum catenularum catenularumque-->
-         <tok val="cate(nu|l)larum(que)?"/>
+      <ana>
+         <tok val="catellarum"/>
+         <tok val="catenularum"/>
+         <tok val="catenularumque"/>
          <lm>
             <l>catella</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--catellas catenulas catenulasque-->
-         <tok val="cate(nu|l)las(que)?"/>
+      <ana>
+         <tok val="catellas"/>
+         <tok val="catenulas"/>
+         <tok val="catenulasque"/>
          <lm>
             <l>catella</l>
             <m>n - - p - - - f a</m>
@@ -2854,8 +3196,10 @@
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--catellis catenulis catenulisque-->
-         <tok val="cate(nu|l)lis(que)?"/>
+      <ana>
+         <tok val="catellis"/>
+         <tok val="catenulis"/>
+         <tok val="catenulisque"/>
          <lm>
             <l>catella</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -3008,15 +3352,17 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--cateruarum catervarum-->
-         <tok val="cater[vu]arum"/>
+      <ana>
+         <tok val="cateruarum"/>
+         <tok val="catervarum"/>
          <lm>
             <l>caterva</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--cateruis catervis-->
-         <tok val="cater[vu]is"/>
+      <ana>
+         <tok val="cateruis"/>
+         <tok val="catervis"/>
          <lm>
             <l>caterva</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -3037,8 +3383,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--catervatim cateruatim-->
-         <tok val="cater[uv]atim"/>
+      <ana>
+         <tok val="cateruatim"/>
+         <tok val="catervatim"/>
          <lm>
             <l>catervatim</l>
             <m>d</m>
@@ -3153,8 +3500,10 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--catholico catholicon catholicoque-->
-         <tok val="catholico(n|que)?"/>
+      <ana>
+         <tok val="catholico"/>
+         <tok val="catholicon"/>
+         <tok val="catholicoque"/>
          <lm>
             <l>catholicus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -3163,8 +3512,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--catholicon catholicos-->
-         <tok val="catholico[sn]"/>
+      <ana>
+         <tok val="catholicon"/>
+         <tok val="catholicos"/>
          <lm>
             <l>catholicus</l>
             <m>a - - p - - - m a</m>
@@ -3248,8 +3598,9 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--catis catisque-->
-         <tok val="catis(que)?"/>
+      <ana>
+         <tok val="catis"/>
+         <tok val="catisque"/>
          <lm>
             <l>catus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -3371,8 +3722,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--cattae Cattae-->
-         <tok val="[Cc]attae"/>
+      <ana>
+         <tok val="Cattae"/>
+         <tok val="cattae"/>
          <lm>
             <l>catta</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -3388,8 +3740,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--catuli catulique-->
-         <tok val="catuli(que)?"/>
+      <ana>
+         <tok val="catuli"/>
+         <tok val="catulique"/>
          <lm>
             <l>catulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -3435,15 +3788,18 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--catulorum catulorumque catulum-->
-         <tok val="catul(or)?um(que)?"/>
+      <ana>
+         <tok val="catulorum"/>
+         <tok val="catulorumque"/>
+         <tok val="catulum"/>
          <lm>
             <l>catulus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--catulos catulosque-->
-         <tok val="catulos(que)?"/>
+      <ana>
+         <tok val="catulos"/>
+         <tok val="catulosque"/>
          <lm>
             <l>catulus</l>
             <m>n - - p - - - m a</m>
@@ -3472,6 +3828,7 @@
       </ana>
       <ana>
          <tok val="Catamantaloedis"/>
+         <tok val="catamantaloedis"/>
          <lm>
             <l>Catamantaloedes</l>
             <m>n e - s - - - m g</m>

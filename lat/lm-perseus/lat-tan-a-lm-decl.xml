@@ -1,63 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdecl">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:decl">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to decl</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-decl.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DECL</tok-starts-with>
       <tok-starts-with>Decl</tok-starts-with>
       <tok-starts-with>decl</tok-starts-with>
-      <ana><!--DECLINATIONE Declinatione declinatione-->
-         <tok val="[dD]?(eclinatione|DECLINATIONE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:19:01.054-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:19:01.054-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-decl.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DECLINATIONE"/>
+         <tok val="Declinatione"/>
+         <tok val="declinatione"/>
          <lm>
             <l>declinatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--DECLINO Declino declino-->
-         <tok val="[dD]?(eclino|DECLINO)"/>
+      <ana>
+         <tok val="DECLINO"/>
+         <tok val="Declino"/>
+         <tok val="declino"/>
          <lm>
             <l>declino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declamabat declamabat-->
-         <tok val="[dD]eclamabat"/>
+      <ana>
+         <tok val="Declamabat"/>
+         <tok val="declamabat"/>
          <lm>
             <l>declamo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Declamandi declamandi-->
-         <tok val="[dD]eclamandi"/>
+      <ana>
+         <tok val="Declamandi"/>
+         <tok val="declamandi"/>
          <lm>
             <l>declamo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -67,16 +81,18 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Declamantem declamantem-->
-         <tok val="[dD]eclamantem"/>
+      <ana>
+         <tok val="Declamantem"/>
+         <tok val="declamantem"/>
          <lm>
             <l>declamo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Declamare declamare-->
-         <tok val="[dD]eclamare"/>
+      <ana>
+         <tok val="Declamare"/>
+         <tok val="declamare"/>
          <lm>
             <l>declamo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -84,30 +100,35 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Declamas declamas-->
-         <tok val="[dD]eclamas"/>
+      <ana>
+         <tok val="Declamas"/>
+         <tok val="declamas"/>
          <lm>
             <l>declamo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declamat declamat-->
-         <tok val="[dD]eclamat"/>
+      <ana>
+         <tok val="Declamat"/>
+         <tok val="declamat"/>
          <lm>
             <l>declamo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declamatio declamatio declamation-->
-         <tok val="[dD]eclamatio[n]?"/>
+      <ana>
+         <tok val="Declamatio"/>
+         <tok val="declamatio"/>
+         <tok val="declamation"/>
          <lm>
             <l>declamatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Declamationes declamationes-->
-         <tok val="[dD]eclamationes"/>
+      <ana>
+         <tok val="Declamationes"/>
+         <tok val="declamationes"/>
          <lm>
             <l>declamatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -115,16 +136,18 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Declamator declamator-->
-         <tok val="[dD]eclamator"/>
+      <ana>
+         <tok val="Declamator"/>
+         <tok val="declamator"/>
          <lm>
             <l>declamator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Declamatores declamatores-->
-         <tok val="[dD]eclamatores"/>
+      <ana>
+         <tok val="Declamatores"/>
+         <tok val="declamatores"/>
          <lm>
             <l>declamator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -132,8 +155,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Declamatoria declamatoria-->
-         <tok val="[dD]eclamatoria"/>
+      <ana>
+         <tok val="Declamatoria"/>
+         <tok val="declamatoria"/>
          <lm>
             <l>declamatorius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -144,8 +168,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Declamatorium declamatorium-->
-         <tok val="[dD]eclamatorium"/>
+      <ana>
+         <tok val="Declamatorium"/>
+         <tok val="declamatorium"/>
          <lm>
             <l>declamatorius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -155,43 +180,55 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Declamatorium declamatorie declamatorium-->
-         <tok val="[dD]eclamatori(um|e)"/>
+      <ana>
+         <tok val="Declamatorium"/>
+         <tok val="declamatorie"/>
+         <tok val="declamatorium"/>
          <lm>
             <l>declamatorius</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Declamatorius declamatorius-->
-         <tok val="[dD]eclamatorius"/>
+      <ana>
+         <tok val="Declamatorius"/>
+         <tok val="declamatorius"/>
          <lm>
             <l>declamatorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Declamaturus declamaturus-->
-         <tok val="[dD]eclamaturus"/>
+      <ana>
+         <tok val="Declamaturus"/>
+         <tok val="declamaturus"/>
          <lm>
             <l>declamo</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Declamauerat Declamaverat declamauerat declamaverat DECLAMAVERAT-->
-         <tok val="[Dd]?(eclama)?[vu]?(erat|DECLAMAVERAT)"/>
+      <ana>
+         <tok val="DECLAMAVERAT"/>
+         <tok val="Declamauerat"/>
+         <tok val="Declamaverat"/>
+         <tok val="declamauerat"/>
+         <tok val="declamaverat"/>
          <lm>
             <l>declamo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Declamavit declamauit declamauitque declamavit-->
-         <tok val="[dD]eclama[vu]it(que)?"/>
+      <ana>
+         <tok val="Declamavit"/>
+         <tok val="declamauit"/>
+         <tok val="declamauitque"/>
+         <tok val="declamavit"/>
          <lm>
             <l>declamo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Declamitans declamitans-->
-         <tok val="[dD]eclamitans"/>
+      <ana>
+         <tok val="Declamitans"/>
+         <tok val="declamitans"/>
          <lm>
             <l>declamito</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -203,36 +240,41 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Declamito declamito-->
-         <tok val="[dD]eclamito"/>
+      <ana>
+         <tok val="Declamito"/>
+         <tok val="declamito"/>
          <lm>
             <l>declamito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declamo declamo-->
-         <tok val="[dD]eclamo"/>
+      <ana>
+         <tok val="Declamo"/>
+         <tok val="declamo"/>
          <lm>
             <l>declamo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declarabimus declarabimus-->
-         <tok val="[dD]eclarabimus"/>
+      <ana>
+         <tok val="Declarabimus"/>
+         <tok val="declarabimus"/>
          <lm>
             <l>declaro</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Declarabitur declarabitur-->
-         <tok val="[dD]eclarabitur"/>
+      <ana>
+         <tok val="Declarabitur"/>
+         <tok val="declarabitur"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Declarandi declarandi-->
-         <tok val="[dD]eclarandi"/>
+      <ana>
+         <tok val="Declarandi"/>
+         <tok val="declarandi"/>
          <lm>
             <l>declaro</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -242,8 +284,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Declarandum declarandum-->
-         <tok val="[dD]eclarandum"/>
+      <ana>
+         <tok val="Declarandum"/>
+         <tok val="declarandum"/>
          <lm>
             <l>declaro</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -253,59 +296,70 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Declarandum declarandorum declarandum-->
-         <tok val="[dD]eclarand(or)?um"/>
+      <ana>
+         <tok val="Declarandum"/>
+         <tok val="declarandorum"/>
+         <tok val="declarandum"/>
          <lm>
             <l>declaro</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Declarant declarant-->
-         <tok val="[dD]eclarant"/>
+      <ana>
+         <tok val="Declarant"/>
+         <tok val="declarant"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Declarare declarare-->
-         <tok val="[dD]eclarare"/>
+      <ana>
+         <tok val="Declarare"/>
+         <tok val="declarare"/>
          <lm>
             <l>declaro</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Declarare declarare declararis-->
-         <tok val="[dD]eclarar(e|is)"/>
+      <ana>
+         <tok val="Declarare"/>
+         <tok val="declarare"/>
+         <tok val="declararis"/>
          <lm>
             <l>declaro</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Declararem declararem-->
-         <tok val="[dD]eclararem"/>
+      <ana>
+         <tok val="Declararem"/>
+         <tok val="declararem"/>
          <lm>
             <l>declaro</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Declarasti declarasti-->
-         <tok val="[dD]eclarasti"/>
+      <ana>
+         <tok val="Declarasti"/>
+         <tok val="declarasti"/>
          <lm>
             <l>declaro</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Declarat declarat declaratque-->
-         <tok val="[dD]eclarat(que)?"/>
+      <ana>
+         <tok val="Declarat"/>
+         <tok val="declarat"/>
+         <tok val="declaratque"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declarata declarata-->
-         <tok val="[dD]eclarata"/>
+      <ana>
+         <tok val="Declarata"/>
+         <tok val="declarata"/>
          <lm>
             <l>declaro</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -316,16 +370,20 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Declaratio declaratio declaration-->
-         <tok val="[dD]eclaratio[n]?"/>
+      <ana>
+         <tok val="Declaratio"/>
+         <tok val="declaratio"/>
+         <tok val="declaration"/>
          <lm>
             <l>declaratio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Declaratum declaratum declaratumque-->
-         <tok val="[dD]eclaratum(que)?"/>
+      <ana>
+         <tok val="Declaratum"/>
+         <tok val="declaratum"/>
+         <tok val="declaratumque"/>
          <lm>
             <l>declaro</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -335,8 +393,11 @@
             <m cert="0.2">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Declaratum declarate declaratum declaratumque-->
-         <tok val="[dD]eclarat(um)?(que|e)?"/>
+      <ana>
+         <tok val="Declaratum"/>
+         <tok val="declarate"/>
+         <tok val="declaratum"/>
+         <tok val="declaratumque"/>
          <lm>
             <l>declaro</l>
             <m>v - - s r p p n v</m>
@@ -344,55 +405,65 @@
       </ana>
       <ana>
          <tok val="Declaratum"/>
+         <tok val="declaratum"/>
          <lm>
             <l>declaro</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Declaratur declaratur-->
-         <tok val="[dD]eclaratur"/>
+      <ana>
+         <tok val="Declaratur"/>
+         <tok val="declaratur"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Declaratus declaratus-->
-         <tok val="[dD]eclaratus"/>
+      <ana>
+         <tok val="Declaratus"/>
+         <tok val="declaratus"/>
          <lm>
             <l>declaro</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Declarauimus declarauimus-->
-         <tok val="[dD]eclarauimus"/>
+      <ana>
+         <tok val="Declarauimus"/>
+         <tok val="declarauimus"/>
          <lm>
             <l>declaro</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Declaravit declarauit declaravit declaravitque-->
-         <tok val="[dD]eclara[vu]it(que)?"/>
+      <ana>
+         <tok val="Declaravit"/>
+         <tok val="declarauit"/>
+         <tok val="declaravit"/>
+         <tok val="declaravitque"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Declaro declaro-->
-         <tok val="[dD]eclaro"/>
+      <ana>
+         <tok val="Declaro"/>
+         <tok val="declaro"/>
          <lm>
             <l>declaro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declinabit declinabit-->
-         <tok val="[dD]eclinabit"/>
+      <ana>
+         <tok val="Declinabit"/>
+         <tok val="declinabit"/>
          <lm>
             <l>declino</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Declinandum declinandum-->
-         <tok val="[dD]eclinandum"/>
+      <ana>
+         <tok val="Declinandum"/>
+         <tok val="declinandum"/>
          <lm>
             <l>declino</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -404,8 +475,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Declinans declinans-->
-         <tok val="[dD]eclinans"/>
+      <ana>
+         <tok val="Declinans"/>
+         <tok val="declinans"/>
          <lm>
             <l>declino</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -417,8 +489,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Declinare declinare-->
-         <tok val="[dD]eclinare"/>
+      <ana>
+         <tok val="Declinare"/>
+         <tok val="declinare"/>
          <lm>
             <l>declino</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -426,22 +499,25 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Declinari declinari-->
-         <tok val="[dD]eclinari"/>
+      <ana>
+         <tok val="Declinari"/>
+         <tok val="declinari"/>
          <lm>
             <l>declino</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Declinat declinat-->
-         <tok val="[dD]eclinat"/>
+      <ana>
+         <tok val="Declinat"/>
+         <tok val="declinat"/>
          <lm>
             <l>declino</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Declinata declinata-->
-         <tok val="[dD]eclinata"/>
+      <ana>
+         <tok val="Declinata"/>
+         <tok val="declinata"/>
          <lm>
             <l>declino</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -452,16 +528,19 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Declinatio declinatio declination-->
-         <tok val="[dD]eclinatio[n]?"/>
+      <ana>
+         <tok val="Declinatio"/>
+         <tok val="declinatio"/>
+         <tok val="declination"/>
          <lm>
             <l>declinatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Declinationes declinationes-->
-         <tok val="[dD]eclinationes"/>
+      <ana>
+         <tok val="Declinationes"/>
+         <tok val="declinationes"/>
          <lm>
             <l>declinatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -469,8 +548,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Declinatus declinatus-->
-         <tok val="[dD]eclinatus"/>
+      <ana>
+         <tok val="Declinatus"/>
+         <tok val="declinatus"/>
          <lm cert="0.5">
             <l>declinatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -483,8 +563,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Decline decline-->
-         <tok val="[dD]ecline"/>
+      <ana>
+         <tok val="Decline"/>
+         <tok val="decline"/>
          <lm>
             <l>declinis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -492,15 +573,19 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Declinetque declinet-->
-         <tok val="[dD]eclinet(que)?"/>
+      <ana>
+         <tok val="Declinetque"/>
+         <tok val="declinet"/>
+         <tok val="declinetque"/>
          <lm>
             <l>declino</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Decliue decliue declive-->
-         <tok val="[dD]ecli[uv]e"/>
+      <ana>
+         <tok val="Decliue"/>
+         <tok val="decliue"/>
+         <tok val="declive"/>
          <lm cert="0.5">
             <l>declivis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -514,23 +599,34 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Decliue decliue decliui declive declivi-->
-         <tok val="[dD]ecli[u]?(e|i|ve|vi)"/>
+      <ana>
+         <tok val="Decliue"/>
+         <tok val="decliue"/>
+         <tok val="decliui"/>
+         <tok val="declive"/>
+         <tok val="declivi"/>
          <lm>
             <l>declive</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Decliues Decliuis decliues decliuesque decliuis declivis-->
-         <tok val="[Dd]ecli[u]?[ie]?(s|vis|uesque)"/>
+      <ana>
+         <tok val="Decliues"/>
+         <tok val="Decliuis"/>
+         <tok val="decliues"/>
+         <tok val="decliuesque"/>
+         <tok val="decliuis"/>
+         <tok val="declivis"/>
          <lm>
             <l>declivis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Decliues decliues decliuesque-->
-         <tok val="[dD]ecliues(que)?"/>
+      <ana>
+         <tok val="Decliues"/>
+         <tok val="decliues"/>
+         <tok val="decliuesque"/>
          <lm>
             <l>declivis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -539,8 +635,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Decliuia decliuia declivia-->
-         <tok val="[dD]ecli[uv]ia"/>
+      <ana>
+         <tok val="Decliuia"/>
+         <tok val="decliuia"/>
+         <tok val="declivia"/>
          <lm cert="0.5">
             <l>declivis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -554,8 +652,10 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Decliuibus decliuibus declivibus-->
-         <tok val="[dD]ecli[uv]ibus"/>
+      <ana>
+         <tok val="Decliuibus"/>
+         <tok val="decliuibus"/>
+         <tok val="declivibus"/>
          <lm cert="0.5">
             <l>declivis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -571,8 +671,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Decliuis decliuis declivis-->
-         <tok val="[dD]ecli[uv]is"/>
+      <ana>
+         <tok val="Decliuis"/>
+         <tok val="decliuis"/>
+         <tok val="declivis"/>
          <lm cert="0.5">
             <l>declivis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -588,8 +690,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Decliuitas decliuitas declivitas-->
-         <tok val="[dD]ecli[uv]itas"/>
+      <ana>
+         <tok val="Decliuitas"/>
+         <tok val="decliuitas"/>
+         <tok val="declivitas"/>
          <lm>
             <l>declivitas</l>
             <m>n - - s - - - f n</m>
@@ -702,8 +806,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--declamantes declamantis-->
-         <tok val="declamant[ie]s"/>
+      <ana>
+         <tok val="declamantes"/>
+         <tok val="declamantis"/>
          <lm>
             <l>declamo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -931,31 +1036,35 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--declamauerint declamaverint-->
-         <tok val="declama[vu]erint"/>
+      <ana>
+         <tok val="declamauerint"/>
+         <tok val="declamaverint"/>
          <lm>
             <l>declamo</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--declamaverant declamauerant-->
-         <tok val="declama[uv]erant"/>
+      <ana>
+         <tok val="declamauerant"/>
+         <tok val="declamaverant"/>
          <lm>
             <l>declamo</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--declamaverit declamauerit-->
-         <tok val="declama[uv]erit"/>
+      <ana>
+         <tok val="declamauerit"/>
+         <tok val="declamaverit"/>
          <lm>
             <l>declamo</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--declamaverunt declamauerunt-->
-         <tok val="declama[uv]erunt"/>
+      <ana>
+         <tok val="declamauerunt"/>
+         <tok val="declamaverunt"/>
          <lm>
             <l>declamo</l>
             <m>v - 3 p r i a</m>
@@ -1011,8 +1120,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--declamitare Declamitare-->
-         <tok val="[Dd]eclamitare"/>
+      <ana>
+         <tok val="Declamitare"/>
+         <tok val="declamitare"/>
          <lm>
             <l>declamito</l>
             <m cert="0.333333333333333333">v - - - p n a</m>
@@ -1034,8 +1144,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--declara declaran-->
-         <tok val="declara[n]?"/>
+      <ana>
+         <tok val="declara"/>
+         <tok val="declaran"/>
          <lm>
             <l>declaro</l>
             <m>v - 2 s p m a</m>
@@ -1118,8 +1229,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--declaran declaras-->
-         <tok val="declara[sn]"/>
+      <ana>
+         <tok val="declaran"/>
+         <tok val="declaras"/>
          <lm>
             <l>declaro</l>
             <m>v - 2 s p i a</m>
@@ -1221,8 +1333,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--declarantem declarantemque-->
-         <tok val="declarantem(que)?"/>
+      <ana>
+         <tok val="declarantem"/>
+         <tok val="declarantemque"/>
          <lm>
             <l>declaro</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1239,8 +1352,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--declarantes declarantis-->
-         <tok val="declarant[ie]s"/>
+      <ana>
+         <tok val="declarantes"/>
+         <tok val="declarantis"/>
          <lm>
             <l>declaro</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1321,15 +1435,17 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--declarari declararique-->
-         <tok val="declarari(que)?"/>
+      <ana>
+         <tok val="declarari"/>
+         <tok val="declararique"/>
          <lm>
             <l>declaro</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--declararint declarauerint-->
-         <tok val="declara(ue)?rint"/>
+      <ana>
+         <tok val="declararint"/>
+         <tok val="declarauerint"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 p r s a</m>
@@ -1342,8 +1458,10 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--declararit declarauerit declaraverit-->
-         <tok val="declara[vu]?(e|)rit"/>
+      <ana>
+         <tok val="declararit"/>
+         <tok val="declarauerit"/>
+         <tok val="declaraverit"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 s r s a</m>
@@ -1402,8 +1520,10 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--declarati declaratique declaratiue-->
-         <tok val="declarati[q]?(ue|)"/>
+      <ana>
+         <tok val="declarati"/>
+         <tok val="declaratique"/>
+         <tok val="declaratiue"/>
          <lm>
             <l>declaro</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1582,15 +1702,17 @@
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--declarauerit declaraverit-->
-         <tok val="declara[vu]erit"/>
+      <ana>
+         <tok val="declarauerit"/>
+         <tok val="declaraverit"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--declaraui declaravi-->
-         <tok val="declara[vu]i"/>
+      <ana>
+         <tok val="declaraui"/>
+         <tok val="declaravi"/>
          <lm>
             <l>declaro</l>
             <m>v - 1 s r i a</m>
@@ -1617,8 +1739,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--declaren declares-->
-         <tok val="declare[sn]"/>
+      <ana>
+         <tok val="declaren"/>
+         <tok val="declares"/>
          <lm>
             <l>declaro</l>
             <m>v - 2 s p s a</m>
@@ -1631,8 +1754,9 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--declarentur declarenturque-->
-         <tok val="declarentur(que)?"/>
+      <ana>
+         <tok val="declarentur"/>
+         <tok val="declarenturque"/>
          <lm>
             <l>declaro</l>
             <m>v - 3 p p s p</m>
@@ -1652,8 +1776,10 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--declina declinan declinaue-->
-         <tok val="declina(n|ue)?"/>
+      <ana>
+         <tok val="declina"/>
+         <tok val="declinan"/>
+         <tok val="declinaue"/>
          <lm>
             <l>declino</l>
             <m>v - 2 s p m a</m>
@@ -1744,8 +1870,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--declinabitin declinabitis-->
-         <tok val="declinabiti[sn]"/>
+      <ana>
+         <tok val="declinabitin"/>
+         <tok val="declinabitis"/>
          <lm>
             <l>declino</l>
             <m>v - 2 p f i a</m>
@@ -1786,8 +1913,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--declinan declinas-->
-         <tok val="declina[sn]"/>
+      <ana>
+         <tok val="declinan"/>
+         <tok val="declinas"/>
          <lm>
             <l>declino</l>
             <m>v - 2 s p i a</m>
@@ -1854,8 +1982,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--declinante declinanti-->
-         <tok val="declinant[ie]"/>
+      <ana>
+         <tok val="declinante"/>
+         <tok val="declinanti"/>
          <lm>
             <l>declino</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1881,8 +2010,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--declinantes declinantis-->
-         <tok val="declinant[ie]s"/>
+      <ana>
+         <tok val="declinantes"/>
+         <tok val="declinantis"/>
          <lm>
             <l>declino</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1926,8 +2056,10 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--declinarat declinauerat declinaverat-->
-         <tok val="declina[vu]?(e|)rat"/>
+      <ana>
+         <tok val="declinarat"/>
+         <tok val="declinauerat"/>
+         <tok val="declinaverat"/>
          <lm>
             <l>declino</l>
             <m>v - 3 s l i a</m>
@@ -1968,22 +2100,27 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--declinarint declinauerint-->
-         <tok val="declina(ue)?rint"/>
+      <ana>
+         <tok val="declinarint"/>
+         <tok val="declinauerint"/>
          <lm>
             <l>declino</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--declinarit declinaverit-->
-         <tok val="declina(ve)?rit"/>
+      <ana>
+         <tok val="declinarit"/>
+         <tok val="declinaverit"/>
          <lm>
             <l>declino</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--declinarunt declinauere declinauerunt declinaverunt-->
-         <tok val="declina[vu]?(e|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="declinarunt"/>
+         <tok val="declinauere"/>
+         <tok val="declinauerunt"/>
+         <tok val="declinaverunt"/>
          <lm>
             <l>declino</l>
             <m>v - 3 p r i a</m>
@@ -2049,8 +2186,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--declinate declinatum-->
-         <tok val="declinat(um|e)"/>
+      <ana>
+         <tok val="declinate"/>
+         <tok val="declinatum"/>
          <lm>
             <l>declino</l>
             <m>v - - s r p p n v</m>
@@ -2088,8 +2226,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--declinationis declinationisque-->
-         <tok val="declinationis(que)?"/>
+      <ana>
+         <tok val="declinationis"/>
+         <tok val="declinationisque"/>
          <lm>
             <l>declinatio</l>
             <m>n - - s - - - f g</m>
@@ -2127,8 +2266,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--declinatorum declinatum-->
-         <tok val="declinat(or)?um"/>
+      <ana>
+         <tok val="declinatorum"/>
+         <tok val="declinatum"/>
          <lm>
             <l>declino</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -2207,8 +2347,9 @@
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--declinauit declinavit-->
-         <tok val="declina[vu]it"/>
+      <ana>
+         <tok val="declinauit"/>
+         <tok val="declinavit"/>
          <lm>
             <l>declino</l>
             <m>v - 3 s r i a</m>
@@ -2236,8 +2377,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--declinem declinemque-->
-         <tok val="declinem(que)?"/>
+      <ana>
+         <tok val="declinem"/>
+         <tok val="declinemque"/>
          <lm cert="0.5">
             <l>declinis</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -2290,8 +2432,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--declines declinis-->
-         <tok val="declin[ie]s"/>
+      <ana>
+         <tok val="declines"/>
+         <tok val="declinis"/>
          <lm>
             <l>declinis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -2358,16 +2501,19 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--decliuem decliuemque declivem-->
-         <tok val="decli[vu]em(que)?"/>
+      <ana>
+         <tok val="decliuem"/>
+         <tok val="decliuemque"/>
+         <tok val="declivem"/>
          <lm>
             <l>declivis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--decliui declivi-->
-         <tok val="decli[vu]i"/>
+      <ana>
+         <tok val="decliui"/>
+         <tok val="declivi"/>
          <lm cert="0.5">
             <l>declivis</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -2382,8 +2528,9 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--decliuior declivior-->
-         <tok val="decli[vu]ior"/>
+      <ana>
+         <tok val="decliuior"/>
+         <tok val="declivior"/>
          <lm>
             <l>declivis</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -2392,8 +2539,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--decliuiora decliviora-->
-         <tok val="decli[vu]iora"/>
+      <ana>
+         <tok val="decliuiora"/>
+         <tok val="decliviora"/>
          <lm>
             <l>declivis</l>
             <m cert="0.333333333333333333">a - - p - - - n v c</m>
@@ -2408,8 +2556,9 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--decliuiores decliviores-->
-         <tok val="decli[vu]iores"/>
+      <ana>
+         <tok val="decliuiores"/>
+         <tok val="decliviores"/>
          <lm>
             <l>declivis</l>
             <m cert="0.166666666666666667">a - - p - - - m v c</m>
@@ -2434,15 +2583,17 @@
             <m>a - - s - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--decliuitate declivitate-->
-         <tok val="decli[vu]itate"/>
+      <ana>
+         <tok val="decliuitate"/>
+         <tok val="declivitate"/>
          <lm>
             <l>declivitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--decliuitatem declivitatem-->
-         <tok val="decli[vu]itatem"/>
+      <ana>
+         <tok val="decliuitatem"/>
+         <tok val="declivitatem"/>
          <lm>
             <l>declivitas</l>
             <m>n - - s - - - f a</m>
@@ -2455,15 +2606,18 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--decliuius decliviter declivius-->
-         <tok val="decli[vu]i(us|ter)"/>
+      <ana>
+         <tok val="decliuius"/>
+         <tok val="decliviter"/>
+         <tok val="declivius"/>
          <lm>
             <l>declivis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--decliuius declivius-->
-         <tok val="decli[vu]ius"/>
+      <ana>
+         <tok val="decliuius"/>
+         <tok val="declivius"/>
          <lm>
             <l>declivis</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -2509,6 +2663,7 @@
       </ana>
       <ana>
          <tok val="Declamitauerat"/>
+         <tok val="declamitauerat"/>
          <lm>
             <l>declamito</l>
             <m>v - 3 s l i a</m>

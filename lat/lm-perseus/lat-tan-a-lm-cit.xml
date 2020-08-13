@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscit">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:cit">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to cit</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-cit.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CIT</tok-starts-with>
       <tok-starts-with>Cit</tok-starts-with>
       <tok-starts-with>cit</tok-starts-with>
-      <ana><!--CITATIONES Citationes citationes citationesque-->
-         <tok val="[cC]?(itationes)?(que|CITATIONES)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:15:11.056-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:15:11.056-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-cit.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CITATIONES"/>
+         <tok val="Citationes"/>
+         <tok val="citationes"/>
+         <tok val="citationesque"/>
          <lm>
             <l>citatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -44,8 +55,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--CITHAROEDA citharoeda-->
-         <tok val="(citharoeda|CITHAROEDA)"/>
+      <ana>
+         <tok val="CITHAROEDA"/>
+         <tok val="citharoeda"/>
          <lm>
             <l>citharoeda</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -53,8 +65,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--CITO Cito cito-->
-         <tok val="[cC]?(ito|CITO)"/>
+      <ana>
+         <tok val="CITO"/>
+         <tok val="Cito"/>
+         <tok val="cito"/>
          <lm cert="0.333333333333333333">
             <l>cieo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -71,8 +85,14 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--CITRA Citra Citraque citra citraque citraue citrave-->
-         <tok val="[cC]?(itra)?[q]?[uv]?(e|CITRA)?"/>
+      <ana>
+         <tok val="CITRA"/>
+         <tok val="Citra"/>
+         <tok val="Citraque"/>
+         <tok val="citra"/>
+         <tok val="citraque"/>
+         <tok val="citraue"/>
+         <tok val="citrave"/>
          <lm cert="0.333333333333333333">
             <l>citra</l>
             <m>d</m>
@@ -93,8 +113,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--CITRIA citria-->
-         <tok val="(citria|CITRIA)"/>
+      <ana>
+         <tok val="CITRIA"/>
+         <tok val="citria"/>
          <lm>
             <l>citrium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -102,8 +123,10 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--CITRIVM citrium-->
-         <tok val="(citrium|CITRIVM)"/>
+      <ana>
+         <tok val="CITRIVM"/>
+         <tok val="citrium"/>
+         <tok val="citrivm"/>
          <lm>
             <l>citrium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -112,8 +135,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cita cita-->
-         <tok val="[cC]ita"/>
+      <ana>
+         <tok val="Cita"/>
+         <tok val="cita"/>
          <lm cert="0.5">
             <l>cieo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -128,8 +152,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Citae citae citaeque-->
-         <tok val="[cC]itae(que)?"/>
+      <ana>
+         <tok val="Citae"/>
+         <tok val="citae"/>
+         <tok val="citaeque"/>
          <lm>
             <l>cieo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -138,22 +164,29 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Citam citam-->
-         <tok val="[cC]itam"/>
-         <lm>
+      <ana>
+         <tok val="Citam"/>
+         <tok val="citam"/>
+         <lm cert="0.5">
             <l>cieo</l>
             <m>v - - s r p p f a</m>
          </lm>
+         <lm cert="0.5">
+            <l>citus</l>
+            <m>a - - s - - - f a</m>
+         </lm>
       </ana>
-      <ana><!--Citant citant-->
-         <tok val="[cC]itant"/>
+      <ana>
+         <tok val="Citant"/>
+         <tok val="citant"/>
          <lm>
             <l>cito2</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Citare citare-->
-         <tok val="[cC]itare"/>
+      <ana>
+         <tok val="Citare"/>
+         <tok val="citare"/>
          <lm>
             <l>cito2</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -161,8 +194,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Citaret citaret-->
-         <tok val="[cC]itaret"/>
+      <ana>
+         <tok val="Citaret"/>
+         <tok val="citaret"/>
          <lm>
             <l>cito2</l>
             <m>v - 3 s i s a</m>
@@ -170,21 +204,24 @@
       </ana>
       <ana>
          <tok val="Citarini"/>
+         <tok val="citarini"/>
          <lm>
             <l>Cetarini</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Citat citat-->
-         <tok val="[cC]itat"/>
+      <ana>
+         <tok val="Citat"/>
+         <tok val="citat"/>
          <lm>
             <l>cito2</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Citati citati-->
-         <tok val="[cC]itati"/>
+      <ana>
+         <tok val="Citati"/>
+         <tok val="citati"/>
          <lm cert="0.5">
             <l>cito2</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -200,15 +237,18 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Citatim citatim-->
-         <tok val="[cC]itatim"/>
+      <ana>
+         <tok val="Citatim"/>
+         <tok val="citatim"/>
          <lm>
             <l>citatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Citatis citatis citatisque-->
-         <tok val="[cC]itatis(que)?"/>
+      <ana>
+         <tok val="Citatis"/>
+         <tok val="citatis"/>
+         <tok val="citatisque"/>
          <lm cert="0.5">
             <l>cito2</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -229,8 +269,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Citato citato-->
-         <tok val="[cC]itato"/>
+      <ana>
+         <tok val="Citato"/>
+         <tok val="citato"/>
          <lm cert="0.5">
             <l>citatus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -248,15 +289,20 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Citatur Citaturque citatur-->
-         <tok val="[cC]itatur(que)?"/>
+      <ana>
+         <tok val="Citatur"/>
+         <tok val="Citaturque"/>
+         <tok val="citatur"/>
+         <tok val="citaturque"/>
          <lm>
             <l>cito2</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Citatus citatus citatusque-->
-         <tok val="[cC]itatus(que)?"/>
+      <ana>
+         <tok val="Citatus"/>
+         <tok val="citatus"/>
+         <tok val="citatusque"/>
          <lm cert="0.5">
             <l>citatus</l>
             <m>a - - s - - - m n</m>
@@ -266,22 +312,30 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Cite Citum Citumque cite citum citumque citumue-->
-         <tok val="[cC]it(um)?[q]?(ue|e)?"/>
+      <ana>
+         <tok val="Cite"/>
+         <tok val="Citum"/>
+         <tok val="Citumque"/>
+         <tok val="cite"/>
+         <tok val="citum"/>
+         <tok val="citumque"/>
+         <tok val="citumue"/>
          <lm>
             <l>cieo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Cite cite-->
-         <tok val="[cC]ite"/>
+      <ana>
+         <tok val="Cite"/>
+         <tok val="cite"/>
          <lm>
             <l>cieo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Citer citer-->
-         <tok val="[cC]iter"/>
+      <ana>
+         <tok val="Citer"/>
+         <tok val="citer"/>
          <lm cert="0.5">
             <l>citer</l>
             <m>a - - s - - - m n</m>
@@ -291,15 +345,18 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Citer citer citre-->
-         <tok val="[cC]it[r]?e(r|)"/>
+      <ana>
+         <tok val="Citer"/>
+         <tok val="citer"/>
+         <tok val="citre"/>
          <lm>
             <l>citer</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Citeria citeria-->
-         <tok val="[cC]iteria"/>
+      <ana>
+         <tok val="Citeria"/>
+         <tok val="citeria"/>
          <lm>
             <l>citeria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -307,8 +364,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Citerior citerior citeriorue citeriorve-->
-         <tok val="[cC]iterior[vu]?[e]?"/>
+      <ana>
+         <tok val="Citerior"/>
+         <tok val="citerior"/>
+         <tok val="citeriorue"/>
+         <tok val="citeriorve"/>
          <lm>
             <l>citer</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -317,8 +377,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Citeriora citeriora-->
-         <tok val="[cC]iteriora"/>
+      <ana>
+         <tok val="Citeriora"/>
+         <tok val="citeriora"/>
          <lm>
             <l>citer</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -326,8 +387,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--Citerioris citerioris-->
-         <tok val="[cC]iterioris"/>
+      <ana>
+         <tok val="Citerioris"/>
+         <tok val="citerioris"/>
          <lm>
             <l>citer</l>
             <m cert="0.333333333333333333">a - - s - - - m g c</m>
@@ -335,8 +397,11 @@
             <m cert="0.333333333333333333">a - - s - - - n g c</m>
          </lm>
       </ana>
-      <ana><!--Citerius citerius citeriusue citeriusve-->
-         <tok val="[cC]iterius[vu]?[e]?"/>
+      <ana>
+         <tok val="Citerius"/>
+         <tok val="citerius"/>
+         <tok val="citeriusue"/>
+         <tok val="citeriusve"/>
          <lm cert="0.5">
             <l>citerius</l>
             <m>d</m>
@@ -348,15 +413,21 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Citetur citetur citeturne citeturque-->
-         <tok val="[cC]itetur(ne|que)?"/>
+      <ana>
+         <tok val="Citetur"/>
+         <tok val="citetur"/>
+         <tok val="citeturne"/>
+         <tok val="citeturque"/>
          <lm>
             <l>cito2</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Cithaeron Citheron-->
-         <tok val="Cith[a]?eron"/>
+      <ana>
+         <tok val="Cithaeron"/>
+         <tok val="Citheron"/>
+         <tok val="cithaeron"/>
+         <tok val="citheron"/>
          <lm>
             <l>Cithaeron</l>
             <m>n e - s - - - m n</m>
@@ -364,6 +435,7 @@
       </ana>
       <ana>
          <tok val="Cithaerone"/>
+         <tok val="cithaerone"/>
          <lm>
             <l>Cithaeron</l>
             <m>n e - s - - - m b</m>
@@ -371,6 +443,7 @@
       </ana>
       <ana>
          <tok val="Cithaeronem"/>
+         <tok val="cithaeronem"/>
          <lm>
             <l>Cithaeron</l>
             <m>n e - s - - - m a</m>
@@ -378,6 +451,7 @@
       </ana>
       <ana>
          <tok val="Cithaeroni"/>
+         <tok val="cithaeroni"/>
          <lm>
             <l>Cithaeron</l>
             <m>n e - s - - - m d</m>
@@ -385,13 +459,17 @@
       </ana>
       <ana>
          <tok val="Cithaeronis"/>
+         <tok val="cithaeronis"/>
          <lm>
             <l>Cithaeron</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Cithara cithara citharaque citharave-->
-         <tok val="[cC]ithara(ve|que)?"/>
+      <ana>
+         <tok val="Cithara"/>
+         <tok val="cithara"/>
+         <tok val="citharaque"/>
+         <tok val="citharave"/>
          <lm>
             <l>cithara</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -399,8 +477,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Citharae citharae citharaeque-->
-         <tok val="[cC]itharae(que)?"/>
+      <ana>
+         <tok val="Citharae"/>
+         <tok val="citharae"/>
+         <tok val="citharaeque"/>
          <lm>
             <l>cithara</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -409,22 +489,27 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Citharam citharam citharamque citharamve-->
-         <tok val="[cC]itharam(ve|que)?"/>
+      <ana>
+         <tok val="Citharam"/>
+         <tok val="citharam"/>
+         <tok val="citharamque"/>
+         <tok val="citharamve"/>
          <lm>
             <l>cithara</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Citharas citharas-->
-         <tok val="[cC]itharas"/>
+      <ana>
+         <tok val="Citharas"/>
+         <tok val="citharas"/>
          <lm>
             <l>cithara</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Citharista citharista-->
-         <tok val="[cC]itharista"/>
+      <ana>
+         <tok val="Citharista"/>
+         <tok val="citharista"/>
          <lm>
             <l>citharista</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -432,8 +517,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Citharistae citharistae-->
-         <tok val="[cC]itharistae"/>
+      <ana>
+         <tok val="Citharistae"/>
+         <tok val="citharistae"/>
          <lm>
             <l>citharista</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -442,8 +528,9 @@
             <m cert="0.25">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Citharistria citharistria-->
-         <tok val="[cC]itharistria"/>
+      <ana>
+         <tok val="Citharistria"/>
+         <tok val="citharistria"/>
          <lm>
             <l>citharistria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -451,15 +538,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Citharistriam citharistriam-->
-         <tok val="[cC]itharistriam"/>
+      <ana>
+         <tok val="Citharistriam"/>
+         <tok val="citharistriam"/>
          <lm>
             <l>citharistria</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Citharoedica citharoedica-->
-         <tok val="[cC]itharoedica"/>
+      <ana>
+         <tok val="Citharoedica"/>
+         <tok val="citharoedica"/>
          <lm>
             <l>citharoedicus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -470,46 +559,52 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Citharoedicus citharoedicus-->
-         <tok val="[cC]itharoedicus"/>
+      <ana>
+         <tok val="Citharoedicus"/>
+         <tok val="citharoedicus"/>
          <lm>
             <l>citharoedicus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Citharoedus citharoedus-->
-         <tok val="[cC]itharoedus"/>
+      <ana>
+         <tok val="Citharoedus"/>
+         <tok val="citharoedus"/>
          <lm>
             <l>citharoedus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Citi citi-->
-         <tok val="[cC]iti"/>
-         <lm>
+      <ana>
+         <tok val="Citi"/>
+         <tok val="citi"/>
+         <lm cert="0.5">
             <l>cieo</l>
             <m cert="0.25">v - - s r p p n g</m>
             <m cert="0.25">v - - p r p p m v</m>
             <m cert="0.25">v - - p r p p m n</m>
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Citi"/>
-         <lm>
+         <lm cert="0.5">
             <l>Citius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Citi Citii-->
-         <tok val="Citi[i]?"/>
+      <ana>
+         <tok val="Citi"/>
+         <tok val="Citii"/>
+         <tok val="citi"/>
+         <tok val="citii"/>
          <lm>
             <l>Citius</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Citiense Citiensi-->
-         <tok val="Citiens[ie]"/>
+      <ana>
+         <tok val="Citiense"/>
+         <tok val="Citiensi"/>
+         <tok val="citiense"/>
+         <tok val="citiensi"/>
          <lm>
             <l>Citiensis</l>
             <m>n e - s - - - m b</m>
@@ -517,6 +612,7 @@
       </ana>
       <ana>
          <tok val="Citiensem"/>
+         <tok val="citiensem"/>
          <lm>
             <l>Citiensis</l>
             <m>n e - s - - - m a</m>
@@ -524,6 +620,7 @@
       </ana>
       <ana>
          <tok val="Citiensi"/>
+         <tok val="citiensi"/>
          <lm>
             <l>Citiensis</l>
             <m>n e - s - - - m d</m>
@@ -531,6 +628,7 @@
       </ana>
       <ana>
          <tok val="Citiensibus"/>
+         <tok val="citiensibus"/>
          <lm>
             <l>Citiensis</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -539,6 +637,7 @@
       </ana>
       <ana>
          <tok val="Citiensis"/>
+         <tok val="citiensis"/>
          <lm>
             <l>Citiensis</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -548,6 +647,7 @@
       </ana>
       <ana>
          <tok val="Citieo"/>
+         <tok val="citieo"/>
          <lm>
             <l>Citieus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -556,6 +656,7 @@
       </ana>
       <ana>
          <tok val="Citieos"/>
+         <tok val="citieos"/>
          <lm>
             <l>Citieus</l>
             <m>n e - p - - - m a</m>
@@ -563,6 +664,7 @@
       </ana>
       <ana>
          <tok val="Citieus"/>
+         <tok val="citieus"/>
          <lm>
             <l>Citieus</l>
             <m>n e - s - - - m n</m>
@@ -570,6 +672,7 @@
       </ana>
       <ana>
          <tok val="Citii"/>
+         <tok val="citii"/>
          <lm cert="0.5">
             <l>Citium</l>
             <m>n e - s - - - n g</m>
@@ -582,6 +685,7 @@
       </ana>
       <ana>
          <tok val="Citimo"/>
+         <tok val="citimo"/>
          <lm>
             <l>citimus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -592,6 +696,7 @@
       </ana>
       <ana>
          <tok val="Citimum"/>
+         <tok val="citimum"/>
          <lm>
             <l>citimus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -601,15 +706,18 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Citimum citime-->
-         <tok val="[cC]itim(e|um)"/>
+      <ana>
+         <tok val="Citimum"/>
+         <tok val="citime"/>
+         <tok val="citimum"/>
          <lm>
             <l>citimus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Citimus citimus-->
-         <tok val="[cC]itimus"/>
+      <ana>
+         <tok val="Citimus"/>
+         <tok val="citimus"/>
          <lm>
             <l>citimus</l>
             <m>a - - s - - - m n</m>
@@ -617,6 +725,7 @@
       </ana>
       <ana>
          <tok val="Citio"/>
+         <tok val="citio"/>
          <lm cert="0.5">
             <l>Citius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -628,8 +737,9 @@
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Citior citior-->
-         <tok val="[cC]itior"/>
+      <ana>
+         <tok val="Citior"/>
+         <tok val="citior"/>
          <lm>
             <l>citus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -640,27 +750,37 @@
       </ana>
       <ana>
          <tok val="Citiorum"/>
+         <tok val="citiorum"/>
          <lm>
             <l>citus</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Citiorum Citium Cittium-->
-         <tok val="Ci[t]?ti(or)?um"/>
+      <ana>
+         <tok val="Citiorum"/>
+         <tok val="Citium"/>
+         <tok val="Cittium"/>
+         <tok val="citiorum"/>
+         <tok val="citium"/>
+         <tok val="cittium"/>
          <lm>
             <l>Citium</l>
             <m>n e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Citiorum Citium-->
-         <tok val="Citi(or)?um"/>
+      <ana>
+         <tok val="Citiorum"/>
+         <tok val="Citium"/>
+         <tok val="citiorum"/>
+         <tok val="citium"/>
          <lm>
             <l>Citius</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Citis citis-->
-         <tok val="[cC]itis"/>
+      <ana>
+         <tok val="Citis"/>
+         <tok val="citis"/>
          <lm>
             <l>cieo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -671,29 +791,39 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Citissime citissime citissimeque-->
-         <tok val="[cC]itissime(que)?"/>
+      <ana>
+         <tok val="Citissime"/>
+         <tok val="citissime"/>
+         <tok val="citissimeque"/>
          <lm>
             <l>citus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Citissime citissime citissimeque citissimus-->
-         <tok val="[cC]itissim[e]?(que|us)?"/>
+      <ana>
+         <tok val="Citissime"/>
+         <tok val="citissime"/>
+         <tok val="citissimeque"/>
+         <tok val="citissimus"/>
          <lm>
             <l>citus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Citissime Citissimum citissime citissimeque citissimum-->
-         <tok val="[cC]itissim(um|e|eque)"/>
+      <ana>
+         <tok val="Citissime"/>
+         <tok val="Citissimum"/>
+         <tok val="citissime"/>
+         <tok val="citissimeque"/>
+         <tok val="citissimum"/>
          <lm>
             <l>citus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Citissimum citissimum-->
-         <tok val="[cC]itissimum"/>
+      <ana>
+         <tok val="Citissimum"/>
+         <tok val="citissimum"/>
          <lm>
             <l>citus</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -703,8 +833,11 @@
             <m cert="0.2">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Citium Cittium-->
-         <tok val="Ci[t]?tium"/>
+      <ana>
+         <tok val="Citium"/>
+         <tok val="Cittium"/>
+         <tok val="citium"/>
+         <tok val="cittium"/>
          <lm>
             <l>Citium</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -714,6 +847,7 @@
       </ana>
       <ana>
          <tok val="Citium"/>
+         <tok val="citium"/>
          <lm>
             <l>Citius</l>
             <m>n e - s - - - m a</m>
@@ -721,13 +855,17 @@
       </ana>
       <ana>
          <tok val="Citius"/>
+         <tok val="citius"/>
          <lm>
             <l>Citius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Citius citius citiusque citiusue-->
-         <tok val="[cC]itius[q]?(ue)?"/>
+      <ana>
+         <tok val="Citius"/>
+         <tok val="citius"/>
+         <tok val="citiusque"/>
+         <tok val="citiusue"/>
          <lm>
             <l>citus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -736,15 +874,18 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Citrago citreago-->
-         <tok val="[cC]itr[e]?ago"/>
+      <ana>
+         <tok val="Citrago"/>
+         <tok val="citrago"/>
+         <tok val="citreago"/>
          <lm>
             <l>citrago</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Citrea citrea-->
-         <tok val="[cC]itrea"/>
+      <ana>
+         <tok val="Citrea"/>
+         <tok val="citrea"/>
          <lm cert="0.5">
             <l>citrea</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -758,8 +899,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Citreae citreae-->
-         <tok val="[cC]itreae"/>
+      <ana>
+         <tok val="Citreae"/>
+         <tok val="citreae"/>
          <lm>
             <l>citrea</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -768,8 +910,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Citreum citreum-->
-         <tok val="[cC]itreum"/>
+      <ana>
+         <tok val="Citreum"/>
+         <tok val="citreum"/>
          <lm>
             <l>citreum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -777,15 +920,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Citreum citreorum citreum-->
-         <tok val="[cC]itre(or)?um"/>
+      <ana>
+         <tok val="Citreum"/>
+         <tok val="citreorum"/>
+         <tok val="citreum"/>
          <lm>
             <l>citreum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Citri citri-->
-         <tok val="[cC]itri"/>
+      <ana>
+         <tok val="Citri"/>
+         <tok val="citri"/>
          <lm cert="0.5">
             <l>citer</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -798,8 +944,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Citro citro citroque-->
-         <tok val="[cC]itro(que)?"/>
+      <ana>
+         <tok val="Citro"/>
+         <tok val="citro"/>
+         <tok val="citroque"/>
          <lm cert="0.333333333333333333">
             <l>citer</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -817,8 +965,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Citrosa citrosa-->
-         <tok val="[cC]itrosa"/>
+      <ana>
+         <tok val="Citrosa"/>
+         <tok val="citrosa"/>
          <lm>
             <l>citrosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -829,8 +978,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Citrum citrum-->
-         <tok val="[cC]itrum"/>
+      <ana>
+         <tok val="Citrum"/>
+         <tok val="citrum"/>
          <lm cert="0.5">
             <l>citer</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -846,8 +996,10 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Citrum citre citrum-->
-         <tok val="[cC]itr(um|e)"/>
+      <ana>
+         <tok val="Citrum"/>
+         <tok val="citre"/>
+         <tok val="citrum"/>
          <lm cert="0.5">
             <l>citer</l>
             <m>a - - s - - - n v</m>
@@ -857,15 +1009,22 @@
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Citu citu cituque cito-->
-         <tok val="[cC]it(u|o|uque)"/>
+      <ana>
+         <tok val="Citu"/>
+         <tok val="cito"/>
+         <tok val="citu"/>
+         <tok val="cituque"/>
          <lm>
             <l>citus</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Citum Citumque citum citumque citumue-->
-         <tok val="[cC]itum[q]?(ue)?"/>
+      <ana>
+         <tok val="Citum"/>
+         <tok val="Citumque"/>
+         <tok val="citum"/>
+         <tok val="citumque"/>
+         <tok val="citumue"/>
          <lm>
             <l>cieo</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -876,8 +1035,11 @@
             <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Citus citus citusque citust-->
-         <tok val="[cC]itus(t|que)?"/>
+      <ana>
+         <tok val="Citus"/>
+         <tok val="citus"/>
+         <tok val="citusque"/>
+         <tok val="citust"/>
          <lm>
             <l>cieo</l>
             <m>v - - s r p p m n</m>
@@ -1007,8 +1169,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--citandorum citandum-->
-         <tok val="citand(or)?um"/>
+      <ana>
+         <tok val="citandorum"/>
+         <tok val="citandum"/>
          <lm>
             <l>cito2</l>
             <m cert="0.5">v - - p p g p n g</m>
@@ -1046,8 +1209,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--citante citanti-->
-         <tok val="citant[ie]"/>
+      <ana>
+         <tok val="citante"/>
+         <tok val="citanti"/>
          <lm>
             <l>cito2</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1126,8 +1290,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--citari citarier-->
-         <tok val="citari(er)?"/>
+      <ana>
+         <tok val="citari"/>
+         <tok val="citarier"/>
          <lm>
             <l>cito2</l>
             <m>v - - - p n p</m>
@@ -1140,8 +1305,11 @@
             <m>v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--citarunt citauerunt citavere citaverunt-->
-         <tok val="cita[vu]?(e|ve)?r(unt|e)"/>
+      <ana>
+         <tok val="citarunt"/>
+         <tok val="citauerunt"/>
+         <tok val="citavere"/>
+         <tok val="citaverunt"/>
          <lm>
             <l>cito2</l>
             <m>v - 3 p r i a</m>
@@ -1247,8 +1415,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--citate citaten-->
-         <tok val="citate[n]?"/>
+      <ana>
+         <tok val="citate"/>
+         <tok val="citaten"/>
          <lm cert="0.5">
             <l>cito2</l>
             <m cert="0.5">v - 2 p p m a</m>
@@ -1260,8 +1429,11 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--citate citaten citatum citatumque-->
-         <tok val="citat(umqu)?[e]?(n|um)?"/>
+      <ana>
+         <tok val="citate"/>
+         <tok val="citaten"/>
+         <tok val="citatum"/>
+         <tok val="citatumque"/>
          <lm cert="0.5">
             <l>citatus</l>
             <m>a - - s - - - n v</m>
@@ -1271,8 +1443,9 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--citatio citatioque-->
-         <tok val="citatio(que)?"/>
+      <ana>
+         <tok val="citatio"/>
+         <tok val="citatioque"/>
          <lm>
             <l>citatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1341,8 +1514,9 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--citatiorem citatioremque-->
-         <tok val="citatiorem(que)?"/>
+      <ana>
+         <tok val="citatiorem"/>
+         <tok val="citatioremque"/>
          <lm>
             <l>cito2</l>
             <m cert="0.5">a - - s - - - f a c</m>
@@ -1398,15 +1572,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--citatissime citatissimus-->
-         <tok val="citatissim(us|e)"/>
+      <ana>
+         <tok val="citatissime"/>
+         <tok val="citatissimus"/>
          <lm>
             <l>cito2</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--citatissime citatissimum-->
-         <tok val="citatissim(um|e)"/>
+      <ana>
+         <tok val="citatissime"/>
+         <tok val="citatissimum"/>
          <lm>
             <l>cito2</l>
             <m>a - - s - - - n v s</m>
@@ -1489,8 +1665,10 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--citatorum citatum citatumque-->
-         <tok val="citat(or)?um(que)?"/>
+      <ana>
+         <tok val="citatorum"/>
+         <tok val="citatum"/>
+         <tok val="citatumque"/>
          <lm cert="0.5">
             <l>citatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1502,8 +1680,9 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--citatos citatosque-->
-         <tok val="citatos(que)?"/>
+      <ana>
+         <tok val="citatos"/>
+         <tok val="citatosque"/>
          <lm cert="0.5">
             <l>citatus</l>
             <m>a - - p - - - m a</m>
@@ -1520,8 +1699,9 @@
             <m>v - - - - u - - b</m>
          </lm>
       </ana>
-      <ana><!--citatum citatumque-->
-         <tok val="citatum(que)?"/>
+      <ana>
+         <tok val="citatum"/>
+         <tok val="citatumque"/>
          <lm cert="0.5">
             <l>citatus</l>
             <m cert="0.5">a - - s - - - n a</m>
@@ -1570,8 +1750,9 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--citaui citavi-->
-         <tok val="cita[vu]i"/>
+      <ana>
+         <tok val="citaui"/>
+         <tok val="citavi"/>
          <lm>
             <l>cito2</l>
             <m>v - 1 s r i a</m>
@@ -1584,8 +1765,9 @@
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--citauit citavit-->
-         <tok val="cita[vu]it"/>
+      <ana>
+         <tok val="citauit"/>
+         <tok val="citavit"/>
          <lm>
             <l>cito2</l>
             <m>v - 3 s r i a</m>
@@ -1655,8 +1837,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--citharis citharisque-->
-         <tok val="citharis(que)?"/>
+      <ana>
+         <tok val="citharis"/>
+         <tok val="citharisque"/>
          <lm cert="0.5">
             <l>citharus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1795,8 +1978,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--citharoedorum citharoedum-->
-         <tok val="citharoed(or)?um"/>
+      <ana>
+         <tok val="citharoedorum"/>
+         <tok val="citharoedum"/>
          <lm>
             <l>citharoedus</l>
             <m>n - - p - - - m g</m>
@@ -2094,20 +2278,14 @@
             <m cert="0.25">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--citae citaeque-->
-         <tok val="citae(que)?"/>
+      <ana>
+         <tok val="citae"/>
+         <tok val="citaeque"/>
          <lm>
             <l>citus</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
             <m cert="0.333333333333333333">a - - s - - - f g</m>
             <m cert="0.333333333333333333">a - - s - - - f d</m>
-         </lm>
-      </ana>
-      <ana><!--citam Citam-->
-         <tok val="[Cc]itam"/>
-         <lm>
-            <l>citus</l>
-            <m>a - - s - - - f a</m>
          </lm>
       </ana>
       <ana>

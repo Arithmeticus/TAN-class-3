@@ -1,49 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusvec">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:vec">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to vec</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-vec.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Vec</tok-starts-with>
       <tok-starts-with>vec</tok-starts-with>
       <tok-starts-with>véc</tok-starts-with>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T05:05:40.767-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T05:05:40.767-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-vec.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
       <ana>
          <tok val="Vecilius"/>
+         <tok val="vecilius"/>
          <lm>
             <l>Vecilius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vecordia vecordia-->
-         <tok val="[vV]ecordia"/>
+      <ana>
+         <tok val="Vecordia"/>
+         <tok val="vecordia"/>
          <lm>
             <l>vecordia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -53,6 +63,7 @@
       </ana>
       <ana>
          <tok val="Vecta"/>
+         <tok val="vecta"/>
          <lm>
             <l>Vecta</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -60,8 +71,10 @@
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vecta vecta vectast-->
-         <tok val="[vV]ecta(st)?"/>
+      <ana>
+         <tok val="Vecta"/>
+         <tok val="vecta"/>
+         <tok val="vectast"/>
          <lm cert="0.5">
             <l>veho</l>
             <m cert="0.2">v - - s r p p f b</m>
@@ -75,22 +88,27 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vecta vecta vectast vécta-->
-         <tok val="[vV]?(e|vé)cta(st)?"/>
+      <ana>
+         <tok val="Vecta"/>
+         <tok val="vecta"/>
+         <tok val="vectast"/>
+         <tok val="vécta"/>
          <lm>
             <l>veho</l>
             <m>v - - p r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Vectabor vectabor-->
-         <tok val="[vV]ectabor"/>
+      <ana>
+         <tok val="Vectabor"/>
+         <tok val="vectabor"/>
          <lm>
             <l>vecto</l>
             <m>v - 1 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Vectabulum vectabulum-->
-         <tok val="[vV]ectabulum"/>
+      <ana>
+         <tok val="Vectabulum"/>
+         <tok val="vectabulum"/>
          <lm>
             <l>vectabulum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -99,36 +117,49 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vectarius vectarius-->
-         <tok val="[vV]ectarius"/>
+      <ana>
+         <tok val="Vectarius"/>
+         <tok val="vectarius"/>
          <lm>
             <l>vectarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vecte Vecti vecte vecteue vecti-->
-         <tok val="[vV]ect[e]?(ue|i|e)?"/>
+      <ana>
+         <tok val="Vecte"/>
+         <tok val="Vecti"/>
+         <tok val="vecte"/>
+         <tok val="vecteue"/>
+         <tok val="vecti"/>
          <lm>
             <l>vectis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Vecte Vecti-->
-         <tok val="Vect[ie]"/>
+      <ana>
+         <tok val="Vecte"/>
+         <tok val="Vecti"/>
+         <tok val="vecte"/>
+         <tok val="vecti"/>
          <lm>
             <l>Vectis</l>
             <m>n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vecte vecte vecteue vectum-->
-         <tok val="[vV]ect[e]?(ue|um)?"/>
+      <ana>
+         <tok val="Vecte"/>
+         <tok val="vecte"/>
+         <tok val="vecteue"/>
+         <tok val="vectum"/>
          <lm>
             <l>veho</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Vecte vecte vecteue-->
-         <tok val="[vV]ecte(ue)?"/>
+      <ana>
+         <tok val="Vecte"/>
+         <tok val="vecte"/>
+         <tok val="vecteue"/>
          <lm>
             <l>veho</l>
             <m>v - - s r p p m v</m>
@@ -136,32 +167,33 @@
       </ana>
       <ana>
          <tok val="Vectem"/>
-         <lm>
+         <tok val="vectem"/>
+         <lm cert="0.333333333333333333">
             <l>Vectis</l>
             <m>n e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Vectem vectem-->
-         <tok val="[vV]ectem"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>vecto</l>
             <m>v - 1 s p s a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>vectis</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Vectes"/>
+         <tok val="vectes"/>
          <lm>
             <l>Vectis</l>
             <m cert="0.5">n e - p - - - f n</m>
             <m cert="0.5">n e - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vectes vectes vectesque-->
-         <tok val="[vV]ectes(que)?"/>
+      <ana>
+         <tok val="Vectes"/>
+         <tok val="vectes"/>
+         <tok val="vectesque"/>
          <lm cert="0.5">
             <l>vectis</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -172,48 +204,54 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vectes Vectis-->
-         <tok val="Vect[ie]s"/>
+      <ana>
+         <tok val="Vectes"/>
+         <tok val="Vectis"/>
+         <tok val="vectes"/>
+         <tok val="vectis"/>
          <lm>
             <l>Vectis</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vectes Vectis vectes vectesque vectis-->
-         <tok val="[Vv]ect[ie]s(que)?"/>
+      <ana>
+         <tok val="Vectes"/>
+         <tok val="Vectis"/>
+         <tok val="vectes"/>
+         <tok val="vectesque"/>
+         <tok val="vectis"/>
          <lm>
             <l>vectis</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vecti vecti-->
-         <tok val="[vV]ecti"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Vecti"/>
+         <tok val="vecti"/>
+         <lm cert="0.25">
             <l>veho</l>
             <m cert="0.25">v - - s r p p n g</m>
             <m cert="0.25">v - - p r p p m v</m>
             <m cert="0.25">v - - s r p p m g</m>
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.25">
+            <l>Vectis</l>
+            <m>n e - s - - - f d</m>
+         </lm>
+         <lm cert="0.25">
+            <l>Vectius</l>
+            <m cert="0.5">n e - s - - - m v</m>
+            <m cert="0.5">n e - s - - - m g</m>
+         </lm>
+         <lm cert="0.25">
             <l>vectis</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Vecti"/>
-         <lm cert="0.5">
-            <l>Vectis</l>
-            <m>n e - s - - - f d</m>
-         </lm>
-         <lm cert="0.5">
-            <l>Vectius</l>
-            <m cert="0.5">n e - s - - - m v</m>
-            <m cert="0.5">n e - s - - - m g</m>
-         </lm>
-      </ana>
-      <ana><!--Vectiarii vectiarii-->
-         <tok val="[vV]ectiarii"/>
+         <tok val="Vectiarii"/>
+         <tok val="vectiarii"/>
          <lm>
             <l>vectiarius</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -223,13 +261,15 @@
       </ana>
       <ana>
          <tok val="Vectiarios"/>
+         <tok val="vectiarios"/>
          <lm>
             <l>vectiarius</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vectiarius vectiarius-->
-         <tok val="[vV]ectiarius"/>
+      <ana>
+         <tok val="Vectiarius"/>
+         <tok val="vectiarius"/>
          <lm>
             <l>vectiarius</l>
             <m>n - - s - - - m n</m>
@@ -237,44 +277,53 @@
       </ana>
       <ana>
          <tok val="Vectibus"/>
+         <tok val="vectibus"/>
          <lm>
             <l>Vectis</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vectibus vectibus vectibusque-->
-         <tok val="[vV]ectibus(que)?"/>
+      <ana>
+         <tok val="Vectibus"/>
+         <tok val="vectibus"/>
+         <tok val="vectibusque"/>
          <lm>
             <l>vectis</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Vecticularius vecticularius-->
-         <tok val="[vV]ecticularius"/>
+      <ana>
+         <tok val="Vecticularius"/>
+         <tok val="vecticularius"/>
          <lm>
             <l>vecticularius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vectigal vectigal-->
-         <tok val="[vV]ectigal"/>
+      <ana>
+         <tok val="Vectigal"/>
+         <tok val="vectigal"/>
          <lm>
             <l>vectigal</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Vectigales Vectigalis vectigales vectigalis-->
-         <tok val="[Vv]ectigal[ie]s"/>
+      <ana>
+         <tok val="Vectigales"/>
+         <tok val="Vectigalis"/>
+         <tok val="vectigales"/>
+         <tok val="vectigalis"/>
          <lm>
             <l>vectigalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vectigales vectigales-->
-         <tok val="[vV]ectigales"/>
+      <ana>
+         <tok val="Vectigales"/>
+         <tok val="vectigales"/>
          <lm>
             <l>vectigalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -283,8 +332,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vectigalia vectigalia vectigaliaque-->
-         <tok val="[vV]ectigalia(que)?"/>
+      <ana>
+         <tok val="Vectigalia"/>
+         <tok val="vectigalia"/>
+         <tok val="vectigaliaque"/>
          <lm>
             <l>vectigalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -292,8 +343,10 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Vectigalibus vectigalibus vectigalibusque-->
-         <tok val="[vV]ectigalibus(que)?"/>
+      <ana>
+         <tok val="Vectigalibus"/>
+         <tok val="vectigalibus"/>
+         <tok val="vectigalibusque"/>
          <lm cert="0.5">
             <l>vectigalis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -309,15 +362,17 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vectigaliorum vectigaliorum-->
-         <tok val="[vV]ectigaliorum"/>
+      <ana>
+         <tok val="Vectigaliorum"/>
+         <tok val="vectigaliorum"/>
          <lm>
             <l>vectigalis</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Vectigalis vectigalis-->
-         <tok val="[vV]ectigalis"/>
+      <ana>
+         <tok val="Vectigalis"/>
+         <tok val="vectigalis"/>
          <lm cert="0.5">
             <l>vectigalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -333,8 +388,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vectigalium vectigalium vectigaliumque-->
-         <tok val="[vV]ectigalium(que)?"/>
+      <ana>
+         <tok val="Vectigalium"/>
+         <tok val="vectigalium"/>
+         <tok val="vectigaliumque"/>
          <lm>
             <l>vectigalis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -344,22 +401,21 @@
       </ana>
       <ana>
          <tok val="Vectio"/>
-         <lm>
+         <tok val="vectio"/>
+         <lm cert="0.5">
             <l>Vectius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Vectio vectio-->
-         <tok val="[vV]ectio"/>
-         <lm>
+         <lm cert="0.5">
             <l>vectio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vectionem vectionem-->
-         <tok val="[vV]ectionem"/>
+      <ana>
+         <tok val="Vectionem"/>
+         <tok val="vectionem"/>
          <lm>
             <l>vectio</l>
             <m>n - - s - - - f a</m>
@@ -367,20 +423,13 @@
       </ana>
       <ana>
          <tok val="Vectis"/>
-         <lm cert="0.5">
+         <tok val="vectis"/>
+         <lm cert="0.25">
             <l>Vecta</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
-         <lm cert="0.5">
-            <l>Vectis</l>
-            <m cert="0.5">n e - s - - - f g</m>
-            <m cert="0.5">n e - s - - - f n</m>
-         </lm>
-      </ana>
-      <ana><!--Vectis vectis-->
-         <tok val="[vV]ectis"/>
-         <lm cert="0.5">
+         <lm cert="0.25">
             <l>veho</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
             <m cert="0.166666666666666667">v - - p r p p f b</m>
@@ -389,32 +438,36 @@
             <m cert="0.166666666666666667">v - - p r p p m d</m>
             <m cert="0.166666666666666667">v - - p r p p n b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.25">
+            <l>Vectis</l>
+            <m cert="0.5">n e - s - - - f g</m>
+            <m cert="0.5">n e - s - - - f n</m>
+         </lm>
+         <lm cert="0.25">
             <l>vectis</l>
             <m cert="0.5">n - - s - - - m g</m>
             <m cert="0.5">n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vectium vectium-->
-         <tok val="[vV]ectium"/>
-         <lm>
+      <ana>
+         <tok val="Vectium"/>
+         <tok val="vectium"/>
+         <lm cert="0.333333333333333333">
             <l>vectis</l>
             <m>n - - p - - - m g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Vectium"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>Vectis</l>
             <m>n e - p - - - f g</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>Vectius</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Vectius"/>
+         <tok val="vectius"/>
          <lm cert="0.5">
             <l>Vectius</l>
             <m>n e - s - - - m n</m>
@@ -427,8 +480,10 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Vecto vecto vectoque-->
-         <tok val="[vV]ecto(que)?"/>
+      <ana>
+         <tok val="Vecto"/>
+         <tok val="vecto"/>
+         <tok val="vectoque"/>
          <lm cert="0.5">
             <l>vecto</l>
             <m>v - 1 s p i a</m>
@@ -443,6 +498,7 @@
       </ana>
       <ana>
          <tok val="Vectones"/>
+         <tok val="vectones"/>
          <lm>
             <l>Vectones</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -450,8 +506,9 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vector vector-->
-         <tok val="[vV]ector"/>
+      <ana>
+         <tok val="Vector"/>
+         <tok val="vector"/>
          <lm cert="0.5">
             <l>vector</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -462,15 +519,17 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vectorem vectorem-->
-         <tok val="[vV]ectorem"/>
+      <ana>
+         <tok val="Vectorem"/>
+         <tok val="vectorem"/>
          <lm>
             <l>vector</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vectores vectores-->
-         <tok val="[vV]ectores"/>
+      <ana>
+         <tok val="Vectores"/>
+         <tok val="vectores"/>
          <lm>
             <l>vector</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -478,8 +537,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vectoria vectoria-->
-         <tok val="[vV]ectoria"/>
+      <ana>
+         <tok val="Vectoria"/>
+         <tok val="vectoria"/>
          <lm>
             <l>vectorius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -490,22 +550,25 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vectoris vectoris-->
-         <tok val="[vV]ectoris"/>
+      <ana>
+         <tok val="Vectoris"/>
+         <tok val="vectoris"/>
          <lm>
             <l>vector</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vectorius vectorius-->
-         <tok val="[vV]ectorius"/>
+      <ana>
+         <tok val="Vectorius"/>
+         <tok val="vectorius"/>
          <lm>
             <l>vectorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vectura vectura-->
-         <tok val="[vV]ectura"/>
+      <ana>
+         <tok val="Vectura"/>
+         <tok val="vectura"/>
          <lm cert="0.5">
             <l>veho</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -522,8 +585,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vecturam vecturam-->
-         <tok val="[vV]ecturam"/>
+      <ana>
+         <tok val="Vecturam"/>
+         <tok val="vecturam"/>
          <lm cert="0.5">
             <l>veho</l>
             <m>v - - s f p a f a</m>
@@ -535,6 +599,7 @@
       </ana>
       <ana>
          <tok val="Vecturis"/>
+         <tok val="vecturis"/>
          <lm cert="0.5">
             <l>vectura</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -550,8 +615,11 @@
             <m cert="0.166666666666666667">v - - p f p a m d</m>
          </lm>
       </ana>
-      <ana><!--Vectus vectus vectusque vectust-->
-         <tok val="[vV]ectus(t|que)?"/>
+      <ana>
+         <tok val="Vectus"/>
+         <tok val="vectus"/>
+         <tok val="vectusque"/>
+         <tok val="vectust"/>
          <lm>
             <l>veho</l>
             <m>v - - s r p p m n</m>
@@ -637,8 +705,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--vectam vectamque-->
-         <tok val="vectam(que)?"/>
+      <ana>
+         <tok val="vectam"/>
+         <tok val="vectamque"/>
          <lm>
             <l>veho</l>
             <m>v - - s r p p f a</m>
@@ -933,15 +1002,18 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--vectorum vectorumque-->
-         <tok val="vectorum(que)?"/>
+      <ana>
+         <tok val="vectorum"/>
+         <tok val="vectorumque"/>
          <lm>
             <l>vector</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--vectorum vectorumque vectum-->
-         <tok val="vect(or)?um(que)?"/>
+      <ana>
+         <tok val="vectorum"/>
+         <tok val="vectorumque"/>
+         <tok val="vectum"/>
          <lm>
             <l>veho</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -1011,8 +1083,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--vecturas vecturasque-->
-         <tok val="vecturas(que)?"/>
+      <ana>
+         <tok val="vecturas"/>
+         <tok val="vecturasque"/>
          <lm cert="0.5">
             <l>veho</l>
             <m>v - - p f p a f a</m>

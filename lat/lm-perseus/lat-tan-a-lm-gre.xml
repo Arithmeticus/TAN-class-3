@@ -1,56 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusgre">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:gre">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to gre</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-gre.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>GRE</tok-starts-with>
       <tok-starts-with>Gre</tok-starts-with>
       <tok-starts-with>gre</tok-starts-with>
-      <ana><!--GREGOR Gregor-->
-         <tok val="G(regor|REGOR)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:26:09.707-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:26:09.707-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-gre.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="GREGOR"/>
+         <tok val="Gregor"/>
+         <tok val="gregor"/>
          <lm>
             <l>grego</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--GREX Grex grex grexque-->
-         <tok val="[gG]?(rex)?(que|GREX)?"/>
+      <ana>
+         <tok val="GREX"/>
+         <tok val="Grex"/>
+         <tok val="grex"/>
+         <tok val="grexque"/>
          <lm>
             <l>grex</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gregales gregales gregalesque-->
-         <tok val="[gG]regales(que)?"/>
+      <ana>
+         <tok val="Gregales"/>
+         <tok val="gregales"/>
+         <tok val="gregalesque"/>
          <lm cert="0.5">
             <l>gregales</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -64,8 +79,12 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gregales Gregalis gregales gregalesque gregalis-->
-         <tok val="[Gg]regal[ie]s(que)?"/>
+      <ana>
+         <tok val="Gregales"/>
+         <tok val="Gregalis"/>
+         <tok val="gregales"/>
+         <tok val="gregalesque"/>
+         <tok val="gregalis"/>
          <lm cert="0.5">
             <l>gregales</l>
             <m>n - - p - - - m a</m>
@@ -76,8 +95,9 @@
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gregalia gregalia-->
-         <tok val="[gG]regalia"/>
+      <ana>
+         <tok val="Gregalia"/>
+         <tok val="gregalia"/>
          <lm>
             <l>gregalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -85,8 +105,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Gregalis gregalis-->
-         <tok val="[gG]regalis"/>
+      <ana>
+         <tok val="Gregalis"/>
+         <tok val="gregalis"/>
          <lm>
             <l>gregalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -98,15 +119,18 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Gregarius gregarius-->
-         <tok val="[gG]regarius"/>
+      <ana>
+         <tok val="Gregarius"/>
+         <tok val="gregarius"/>
          <lm>
             <l>gregarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gregatim gregatim gregatimque-->
-         <tok val="[gG]regatim(que)?"/>
+      <ana>
+         <tok val="Gregatim"/>
+         <tok val="gregatim"/>
+         <tok val="gregatimque"/>
          <lm>
             <l>gregatim</l>
             <m>d</m>
@@ -114,6 +138,7 @@
       </ana>
       <ana>
          <tok val="Gregatius"/>
+         <tok val="gregatius"/>
          <lm>
             <l>grego</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -122,15 +147,18 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Grege grege-->
-         <tok val="[gG]rege"/>
+      <ana>
+         <tok val="Grege"/>
+         <tok val="grege"/>
          <lm>
             <l>grex</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Gregem gregem gregemque-->
-         <tok val="[gG]regem(que)?"/>
+      <ana>
+         <tok val="Gregem"/>
+         <tok val="gregem"/>
+         <tok val="gregemque"/>
          <lm cert="0.5">
             <l>grego</l>
             <m>v - 1 s p s a</m>
@@ -140,8 +168,11 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Greges greges gregesque gregesve-->
-         <tok val="[gG]reges(ve|que)?"/>
+      <ana>
+         <tok val="Greges"/>
+         <tok val="greges"/>
+         <tok val="gregesque"/>
+         <tok val="gregesve"/>
          <lm cert="0.5">
             <l>grex</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -153,15 +184,19 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Gregique gregi gregique-->
-         <tok val="[gG]regi(que|)"/>
+      <ana>
+         <tok val="Gregique"/>
+         <tok val="gregi"/>
+         <tok val="gregique"/>
          <lm>
             <l>grex</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Gregis gregis gregisque-->
-         <tok val="[gG]regis(que)?"/>
+      <ana>
+         <tok val="Gregis"/>
+         <tok val="gregis"/>
+         <tok val="gregisque"/>
          <lm>
             <l>grex</l>
             <m>n - - s - - - m g</m>
@@ -169,6 +204,7 @@
       </ana>
       <ana>
          <tok val="Gremiale"/>
+         <tok val="gremiale"/>
          <lm>
             <l>gremialis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -176,16 +212,20 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Gremio gremio gremioque-->
-         <tok val="[gG]remio(que)?"/>
+      <ana>
+         <tok val="Gremio"/>
+         <tok val="gremio"/>
+         <tok val="gremioque"/>
          <lm>
             <l>gremium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Gremium gremium gremiumque-->
-         <tok val="[gG]remium(que)?"/>
+      <ana>
+         <tok val="Gremium"/>
+         <tok val="gremium"/>
+         <tok val="gremiumque"/>
          <lm>
             <l>gremium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -194,8 +234,10 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Gressi gressi gressique-->
-         <tok val="[gG]ressi(que)?"/>
+      <ana>
+         <tok val="Gressi"/>
+         <tok val="gressi"/>
+         <tok val="gressique"/>
          <lm>
             <l>gradior</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -204,8 +246,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Gressu gressu gressuque-->
-         <tok val="[gG]ressu(que)?"/>
+      <ana>
+         <tok val="Gressu"/>
+         <tok val="gressu"/>
+         <tok val="gressuque"/>
          <lm cert="0.5">
             <l>gradior</l>
             <m>a - - s - - - n d</m>
@@ -215,8 +259,10 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Gressum gressum gressumque-->
-         <tok val="[gG]ressum(que)?"/>
+      <ana>
+         <tok val="Gressum"/>
+         <tok val="gressum"/>
+         <tok val="gressumque"/>
          <lm cert="0.5">
             <l>gradior</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -232,8 +278,10 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Gressus gressus gressusque-->
-         <tok val="[gG]ressus(que)?"/>
+      <ana>
+         <tok val="Gressus"/>
+         <tok val="gressus"/>
+         <tok val="gressusque"/>
          <lm cert="0.5">
             <l>gressus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -342,8 +390,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--gregari gregarii-->
-         <tok val="gregari[i]?"/>
+      <ana>
+         <tok val="gregari"/>
+         <tok val="gregarii"/>
          <lm>
             <l>gregarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -372,8 +421,9 @@
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--gregariis gregariisque-->
-         <tok val="gregariis(que)?"/>
+      <ana>
+         <tok val="gregariis"/>
+         <tok val="gregariisque"/>
          <lm>
             <l>gregarius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -394,8 +444,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--gregariorum gregariorumque gregarium-->
-         <tok val="gregari(or)?um(que)?"/>
+      <ana>
+         <tok val="gregariorum"/>
+         <tok val="gregariorumque"/>
+         <tok val="gregarium"/>
          <lm>
             <l>gregarius</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -487,8 +539,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--gregatun gregatus-->
-         <tok val="gregatu[sn]"/>
+      <ana>
+         <tok val="gregatun"/>
+         <tok val="gregatus"/>
          <lm>
             <l>grego</l>
             <m>v - - s r p p m n</m>
@@ -515,8 +568,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--gregibus gregibusque-->
-         <tok val="gregibus(que)?"/>
+      <ana>
+         <tok val="gregibus"/>
+         <tok val="gregibusque"/>
          <lm>
             <l>grex</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -556,8 +610,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--gremiales gremialis-->
-         <tok val="gremial[ie]s"/>
+      <ana>
+         <tok val="gremiales"/>
+         <tok val="gremialis"/>
          <lm>
             <l>gremialis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -623,8 +678,9 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--gressibus gressibusque-->
-         <tok val="gressibus(que)?"/>
+      <ana>
+         <tok val="gressibus"/>
+         <tok val="gressibusque"/>
          <lm>
             <l>gressus</l>
             <m cert="0.5">n - - p - - - m d</m>

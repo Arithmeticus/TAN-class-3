@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseustae">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:tae">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to tae</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-tae.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>TAE</tok-starts-with>
       <tok-starts-with>Tae</tok-starts-with>
       <tok-starts-with>tae</tok-starts-with>
-      <ana><!--TAEDAM taedam taedamque-->
-         <tok val="(taedam)?(que|TAEDAM)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:48:38.218-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:48:38.218-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-tae.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="TAEDAM"/>
+         <tok val="taedam"/>
+         <tok val="taedamque"/>
          <lm>
             <l>taeda</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--TAEDIO Taedio taedio taedioque-->
-         <tok val="[tT]?(aedio)?(que|TAEDIO)?"/>
+      <ana>
+         <tok val="TAEDIO"/>
+         <tok val="Taedio"/>
+         <tok val="taedio"/>
+         <tok val="taedioque"/>
          <lm cert="0.5">
             <l>taedio</l>
             <m>v - 1 s p i a</m>
@@ -54,8 +67,10 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--TAENIA Taenia taenia-->
-         <tok val="[tT]?(aenia|TAENIA)"/>
+      <ana>
+         <tok val="TAENIA"/>
+         <tok val="Taenia"/>
+         <tok val="taenia"/>
          <lm>
             <l>taenia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -65,20 +80,26 @@
       </ana>
       <ana>
          <tok val="Tae"/>
+         <tok val="tae"/>
          <lm>
             <l>Taum</l>
             <m>n e - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Tae tae taene taeque-->
-         <tok val="[tT]ae(ne|que)?"/>
+      <ana>
+         <tok val="Tae"/>
+         <tok val="tae"/>
+         <tok val="taene"/>
+         <tok val="taeque"/>
          <lm>
             <l>taos</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Taeda taeda taedaque-->
-         <tok val="[tT]aeda(que)?"/>
+      <ana>
+         <tok val="Taeda"/>
+         <tok val="taeda"/>
+         <tok val="taedaque"/>
          <lm>
             <l>taeda</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -86,8 +107,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Taedae taedae taedaeque-->
-         <tok val="[tT]aedae(que)?"/>
+      <ana>
+         <tok val="Taedae"/>
+         <tok val="taedae"/>
+         <tok val="taedaeque"/>
          <lm>
             <l>taeda</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -95,43 +118,53 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Taedae taedae taedaeque taedai-->
-         <tok val="[tT]aeda(e|i|eque)"/>
+      <ana>
+         <tok val="Taedae"/>
+         <tok val="taedae"/>
+         <tok val="taedaeque"/>
+         <tok val="taedai"/>
          <lm>
             <l>taeda</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Taedarum taedarum-->
-         <tok val="[tT]aedarum"/>
+      <ana>
+         <tok val="Taedarum"/>
+         <tok val="taedarum"/>
          <lm>
             <l>taeda</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Taedas taedas taedasque-->
-         <tok val="[tT]aedas(que)?"/>
+      <ana>
+         <tok val="Taedas"/>
+         <tok val="taedas"/>
+         <tok val="taedasque"/>
          <lm>
             <l>taeda</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Taedebat taedebat-->
-         <tok val="[tT]aedebat"/>
+      <ana>
+         <tok val="Taedebat"/>
+         <tok val="taedebat"/>
          <lm>
             <l>taedet</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Taedet taedet taedetque-->
-         <tok val="[tT]aedet(que)?"/>
+      <ana>
+         <tok val="Taedet"/>
+         <tok val="taedet"/>
+         <tok val="taedetque"/>
          <lm>
             <l>taedet</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Taedia taedia-->
-         <tok val="[tT]aedia"/>
+      <ana>
+         <tok val="Taedia"/>
+         <tok val="taedia"/>
          <lm cert="0.5">
             <l>taedium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -143,16 +176,18 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Taedis taedis-->
-         <tok val="[tT]aedis"/>
+      <ana>
+         <tok val="Taedis"/>
+         <tok val="taedis"/>
          <lm>
             <l>taeda</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Taedium taedium-->
-         <tok val="[tT]aedium"/>
+      <ana>
+         <tok val="Taedium"/>
+         <tok val="taedium"/>
          <lm>
             <l>taedium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -163,6 +198,7 @@
       </ana>
       <ana>
          <tok val="Taenara"/>
+         <tok val="taenara"/>
          <lm>
             <l>Taenarum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -172,14 +208,18 @@
       </ana>
       <ana>
          <tok val="Taenare"/>
+         <tok val="taenare"/>
          <lm>
             <l>Taenarus</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Taenare Taenarum-->
-         <tok val="Taenar(um|e)"/>
+      <ana>
+         <tok val="Taenare"/>
+         <tok val="Taenarum"/>
+         <tok val="taenare"/>
+         <tok val="taenarum"/>
          <lm>
             <l>Taenarum</l>
             <m>n e - s - - - n v</m>
@@ -187,6 +227,7 @@
       </ana>
       <ana>
          <tok val="Taenari"/>
+         <tok val="taenari"/>
          <lm cert="0.5">
             <l>Taenarus</l>
             <m cert="0.166666666666666667">n e - p - - - f n</m>
@@ -201,8 +242,11 @@
             <m>n e - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Taenari Taenarii-->
-         <tok val="Taenari[i]?"/>
+      <ana>
+         <tok val="Taenari"/>
+         <tok val="Taenarii"/>
+         <tok val="taenari"/>
+         <tok val="taenarii"/>
          <lm>
             <l>Taenarius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -211,6 +255,7 @@
       </ana>
       <ana>
          <tok val="Taenaria"/>
+         <tok val="taenaria"/>
          <lm>
             <l>Taenarius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -223,6 +268,7 @@
       </ana>
       <ana>
          <tok val="Taenariae"/>
+         <tok val="taenariae"/>
          <lm>
             <l>Taenarius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -233,6 +279,7 @@
       </ana>
       <ana>
          <tok val="Taenariam"/>
+         <tok val="taenariam"/>
          <lm>
             <l>Taenarius</l>
             <m>a e - s - - - f a</m>
@@ -240,6 +287,7 @@
       </ana>
       <ana>
          <tok val="Taenarias"/>
+         <tok val="taenarias"/>
          <lm>
             <l>Taenarius</l>
             <m>a e - p - - - f a</m>
@@ -247,6 +295,7 @@
       </ana>
       <ana>
          <tok val="Taenarides"/>
+         <tok val="taenarides"/>
          <lm cert="0.5">
             <l>Taenaris</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -260,6 +309,7 @@
       </ana>
       <ana>
          <tok val="Taenarii"/>
+         <tok val="taenarii"/>
          <lm>
             <l>Taenarius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -268,6 +318,7 @@
       </ana>
       <ana>
          <tok val="Taenariis"/>
+         <tok val="taenariis"/>
          <lm>
             <l>Taenarius</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -280,6 +331,7 @@
       </ana>
       <ana>
          <tok val="Taenario"/>
+         <tok val="taenario"/>
          <lm>
             <l>Taenarius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -290,6 +342,7 @@
       </ana>
       <ana>
          <tok val="Taenaris"/>
+         <tok val="taenaris"/>
          <lm cert="0.333333333333333333">
             <l>Taenarum</l>
             <m cert="0.5">n e - p - - - n d</m>
@@ -307,8 +360,11 @@
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Taenarium Taenariumque-->
-         <tok val="Taenarium(que)?"/>
+      <ana>
+         <tok val="Taenarium"/>
+         <tok val="Taenariumque"/>
+         <tok val="taenarium"/>
+         <tok val="taenariumque"/>
          <lm>
             <l>Taenarius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -321,13 +377,17 @@
       </ana>
       <ana>
          <tok val="Taenarius"/>
+         <tok val="taenarius"/>
          <lm>
             <l>Taenarius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Taenaro Taenaron-->
-         <tok val="Taenaro[n]?"/>
+      <ana>
+         <tok val="Taenaro"/>
+         <tok val="Taenaron"/>
+         <tok val="taenaro"/>
+         <tok val="taenaron"/>
          <lm cert="0.5">
             <l>Taenarus</l>
             <m cert="0.25">n e - s - - - m b</m>
@@ -341,8 +401,11 @@
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Taenaron Taenaros-->
-         <tok val="Taenaro[sn]"/>
+      <ana>
+         <tok val="Taenaron"/>
+         <tok val="Taenaros"/>
+         <tok val="taenaron"/>
+         <tok val="taenaros"/>
          <lm>
             <l>Taenarus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -351,6 +414,7 @@
       </ana>
       <ana>
          <tok val="Taenarum"/>
+         <tok val="taenarum"/>
          <lm cert="0.5">
             <l>Taenarum</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -367,14 +431,16 @@
       </ana>
       <ana>
          <tok val="Taenarus"/>
+         <tok val="taenarus"/>
          <lm>
             <l>Taenarus</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Taeniae taeniae-->
-         <tok val="[tT]aeniae"/>
+      <ana>
+         <tok val="Taeniae"/>
+         <tok val="taeniae"/>
          <lm>
             <l>taenia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -383,15 +449,18 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Taenias taenias taeniasque-->
-         <tok val="[tT]aenias(que)?"/>
+      <ana>
+         <tok val="Taenias"/>
+         <tok val="taenias"/>
+         <tok val="taeniasque"/>
          <lm>
             <l>taenia</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Taeniola taeniola-->
-         <tok val="[tT]aeniola"/>
+      <ana>
+         <tok val="Taeniola"/>
+         <tok val="taeniola"/>
          <lm>
             <l>taeniola</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -399,22 +468,28 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Taeter taeter-->
-         <tok val="[tT]aeter"/>
+      <ana>
+         <tok val="Taeter"/>
+         <tok val="taeter"/>
          <lm>
             <l>taeter</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Taeter taeter taetre taetreque-->
-         <tok val="[tT]aet[r]?e(r|que)?"/>
+      <ana>
+         <tok val="Taeter"/>
+         <tok val="taeter"/>
+         <tok val="taetre"/>
+         <tok val="taetreque"/>
          <lm>
             <l>taeter</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Taetrum taetrum taetrumque-->
-         <tok val="[tT]aetrum(que)?"/>
+      <ana>
+         <tok val="Taetrum"/>
+         <tok val="taetrum"/>
+         <tok val="taetrumque"/>
          <lm cert="0.5">
             <l>taeter</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -430,8 +505,12 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Taetrum taetre taetreque taetrum taetrumque-->
-         <tok val="[tT]aetr(eq)?[u]?[m]?(que|e)?"/>
+      <ana>
+         <tok val="Taetrum"/>
+         <tok val="taetre"/>
+         <tok val="taetreque"/>
+         <tok val="taetrum"/>
+         <tok val="taetrumque"/>
          <lm cert="0.5">
             <l>taeter</l>
             <m>a - - s - - - n v</m>
@@ -441,8 +520,9 @@
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--taedeat taedeatque-->
-         <tok val="taedeat(que)?"/>
+      <ana>
+         <tok val="taedeat"/>
+         <tok val="taedeatque"/>
          <lm>
             <l>taedet</l>
             <m>v - 3 s p s a</m>
@@ -573,8 +653,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--taedii taediique-->
-         <tok val="taedii(que)?"/>
+      <ana>
+         <tok val="taedii"/>
+         <tok val="taediique"/>
          <lm>
             <l>taedium</l>
             <m>n - - s - - - n g</m>
@@ -603,8 +684,9 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--taediose taediosum-->
-         <tok val="taedios(um|e)"/>
+      <ana>
+         <tok val="taediose"/>
+         <tok val="taediosum"/>
          <lm>
             <l>taediosus</l>
             <m>a - - s - - - n v</m>
@@ -635,15 +717,17 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--taeniarum taeniarumve-->
-         <tok val="taeniarum(ve)?"/>
+      <ana>
+         <tok val="taeniarum"/>
+         <tok val="taeniarumve"/>
          <lm>
             <l>taenia</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--taeniis taeniisque-->
-         <tok val="taeniis(que)?"/>
+      <ana>
+         <tok val="taeniis"/>
+         <tok val="taeniisque"/>
          <lm>
             <l>taenia</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -658,8 +742,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--taeterrima taeterrimaque-->
-         <tok val="taeterrima(que)?"/>
+      <ana>
+         <tok val="taeterrima"/>
+         <tok val="taeterrimaque"/>
          <lm>
             <l>taeter</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -670,8 +755,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--taeterrimae taeterrimaeque-->
-         <tok val="taeterrimae(que)?"/>
+      <ana>
+         <tok val="taeterrimae"/>
+         <tok val="taeterrimaeque"/>
          <lm>
             <l>taeter</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -687,22 +773,27 @@
             <m>a - - s - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--taeterrime taeterrimeque taetérrime-->
-         <tok val="taet[ée]rrime(que)?"/>
+      <ana>
+         <tok val="taeterrime"/>
+         <tok val="taeterrimeque"/>
+         <tok val="taetérrime"/>
          <lm>
             <l>taeter</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--taeterrime taeterrimeque taeterrimum-->
-         <tok val="taeterrim[e]?(que|um)?"/>
+      <ana>
+         <tok val="taeterrime"/>
+         <tok val="taeterrimeque"/>
+         <tok val="taeterrimum"/>
          <lm>
             <l>taeter</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--taeterrimi taeterrimique-->
-         <tok val="taeterrimi(que)?"/>
+      <ana>
+         <tok val="taeterrimi"/>
+         <tok val="taeterrimique"/>
          <lm>
             <l>taeter</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -733,8 +824,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--taeterrimorum taeterrimum-->
-         <tok val="taeterrim(or)?um"/>
+      <ana>
+         <tok val="taeterrimorum"/>
+         <tok val="taeterrimum"/>
          <lm>
             <l>taeter</l>
             <m cert="0.5">a - - p - - - n g s</m>
@@ -764,8 +856,9 @@
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--taetra taetraque-->
-         <tok val="taetra(que)?"/>
+      <ana>
+         <tok val="taetra"/>
+         <tok val="taetraque"/>
          <lm cert="0.333333333333333333">
             <l>taetrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -827,8 +920,10 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--taetre taetreque taetrius-->
-         <tok val="taetr[e]?(que|ius)?"/>
+      <ana>
+         <tok val="taetre"/>
+         <tok val="taetreque"/>
+         <tok val="taetrius"/>
          <lm>
             <l>taeter</l>
             <m>d</m>

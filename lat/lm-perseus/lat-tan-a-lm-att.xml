@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusatt">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:att">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to att</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-att.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ATT</tok-starts-with>
       <tok-starts-with>ATt</tok-starts-with>
@@ -38,15 +15,55 @@
       <tok-starts-with>att</tok-starts-with>
       <tok-starts-with>átt</tok-starts-with>
       <tok-starts-with>Átt</tok-starts-with>
-      <ana><!--ATTALUS ATTALVS Attalus Attalusque Attalusue-->
-         <tok val="A(ttalus)?[q]?(ue|TTALVS|TTALUS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:11:47.872-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:11:47.872-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-att.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ATTALUS"/>
+         <tok val="ATTALVS"/>
+         <tok val="Attalus"/>
+         <tok val="Attalusque"/>
+         <tok val="Attalusue"/>
+         <tok val="attalus"/>
+         <tok val="attalusque"/>
+         <tok val="attalusue"/>
+         <tok val="attalvs"/>
          <lm>
             <l>Attalus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ATTEGIA attegia-->
-         <tok val="(attegia|ATTEGIA)"/>
+      <ana>
+         <tok val="ATTEGIA"/>
+         <tok val="attegia"/>
          <lm>
             <l>attegia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -54,15 +71,20 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--ATTENDO Attendo attendo attendoque-->
-         <tok val="[aA]?(ttendo)?(que|ATTENDO)?"/>
+      <ana>
+         <tok val="ATTENDO"/>
+         <tok val="Attendo"/>
+         <tok val="attendo"/>
+         <tok val="attendoque"/>
          <lm>
             <l>attendo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTENTO Attento attento-->
-         <tok val="[aA]?(ttento|ATTENTO)"/>
+      <ana>
+         <tok val="ATTENTO"/>
+         <tok val="Attento"/>
+         <tok val="attento"/>
          <lm cert="0.5">
             <l>attento</l>
             <m>v - 1 s p i a</m>
@@ -75,29 +97,42 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--ATTENVO Attenuo attenuo-->
-         <tok val="[aA]?(ttenuo|ATTENVO)"/>
+      <ana>
+         <tok val="ATTENVO"/>
+         <tok val="Attenuo"/>
+         <tok val="attenuo"/>
+         <tok val="attenvo"/>
          <lm>
             <l>attenuo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTERO Attero attero-->
-         <tok val="[aA]?(ttero|ATTERO)"/>
+      <ana>
+         <tok val="ATTERO"/>
+         <tok val="Attero"/>
+         <tok val="attero"/>
          <lm>
             <l>attero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTICO Attico-->
-         <tok val="A(ttico|TTICO)"/>
+      <ana>
+         <tok val="ATTICO"/>
+         <tok val="Attico"/>
+         <tok val="attico"/>
          <lm>
             <l>Atticus</l>
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--ATTICO ATtICO ATtiCO Attico Atticon-->
-         <tok val="A[T]?[t]?(tico)?(n|ICO|TTICO|TtiCO)?"/>
+      <ana>
+         <tok val="ATTICO"/>
+         <tok val="ATtICO"/>
+         <tok val="ATtiCO"/>
+         <tok val="Attico"/>
+         <tok val="Atticon"/>
+         <tok val="attico"/>
+         <tok val="atticon"/>
          <lm>
             <l>Atticus</l>
             <m cert="0.333333333333333333">a e - s - - - m b</m>
@@ -105,15 +140,26 @@
             <m cert="0.333333333333333333">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--ATTICUM ATTICVM Atticvm-->
-         <tok val="A(TTIC)?[VU]?(M|tticvm)"/>
+      <ana>
+         <tok val="ATTICUM"/>
+         <tok val="ATTICVM"/>
+         <tok val="Atticvm"/>
+         <tok val="atticum"/>
+         <tok val="atticvm"/>
          <lm>
             <l>Atticus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--ATTICUM ATTICVM Atticorum Atticum Atticvm-->
-         <tok val="A(ttic)?(or)?(um|TTICVM|TTICUM|tticvm)"/>
+      <ana>
+         <tok val="ATTICUM"/>
+         <tok val="ATTICVM"/>
+         <tok val="Atticorum"/>
+         <tok val="Atticum"/>
+         <tok val="Atticvm"/>
+         <tok val="atticorum"/>
+         <tok val="atticum"/>
+         <tok val="atticvm"/>
          <lm cert="0.5">
             <l>Atticus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -124,8 +170,13 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--ATTICUM ATTICVM Atticum Atticvm-->
-         <tok val="A(TTIC)?[VU]?(M|tticvm|tticum)"/>
+      <ana>
+         <tok val="ATTICUM"/>
+         <tok val="ATTICVM"/>
+         <tok val="Atticum"/>
+         <tok val="Atticvm"/>
+         <tok val="atticum"/>
+         <tok val="atticvm"/>
          <lm>
             <l>Atticus</l>
             <m cert="0.333333333333333333">a e - s - - - m a</m>
@@ -133,80 +184,112 @@
             <m cert="0.333333333333333333">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--ATTINET Attinet attinet attinét áttinet-->
-         <tok val="[aAá]?(ttin)?[eé]?(t|ATTINET)"/>
+      <ana>
+         <tok val="ATTINET"/>
+         <tok val="Attinet"/>
+         <tok val="attinet"/>
+         <tok val="attinét"/>
+         <tok val="áttinet"/>
          <lm>
             <l>attineo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTINGO Attingo attingo-->
-         <tok val="[aA]?(ttingo|ATTINGO)"/>
+      <ana>
+         <tok val="ATTINGO"/>
+         <tok val="Attingo"/>
+         <tok val="attingo"/>
          <lm>
             <l>attingo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTINGVNT attingunt-->
-         <tok val="(attingunt|ATTINGVNT)"/>
+      <ana>
+         <tok val="ATTINGVNT"/>
+         <tok val="attingunt"/>
+         <tok val="attingvnt"/>
          <lm>
             <l>attingo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTIO Attio-->
-         <tok val="A(ttio|TTIO)"/>
+      <ana>
+         <tok val="ATTIO"/>
+         <tok val="Attio"/>
+         <tok val="attio"/>
          <lm>
             <l>Attius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--ATTOLLO Attollo attollo-->
-         <tok val="[aA]?(ttollo|ATTOLLO)"/>
+      <ana>
+         <tok val="ATTOLLO"/>
+         <tok val="Attollo"/>
+         <tok val="attollo"/>
          <lm>
             <l>attollo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTONDEO Attondeo attondeo-->
-         <tok val="[aA]?(ttondeo|ATTONDEO)"/>
+      <ana>
+         <tok val="ATTONDEO"/>
+         <tok val="Attondeo"/>
+         <tok val="attondeo"/>
          <lm>
             <l>attondeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTONITVS Attonitus Attonitusque attonitus attonitusque-->
-         <tok val="[aA]?(ttonitus)?(que|ATTONITVS)?"/>
+      <ana>
+         <tok val="ATTONITVS"/>
+         <tok val="Attonitus"/>
+         <tok val="Attonitusque"/>
+         <tok val="attonitus"/>
+         <tok val="attonitusque"/>
+         <tok val="attonitvs"/>
          <lm>
             <l>attono</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--ATTRIBVIT attribuit attribuitque-->
-         <tok val="(attribuit)?(que|ATTRIBVIT)?"/>
+      <ana>
+         <tok val="ATTRIBVIT"/>
+         <tok val="attribuit"/>
+         <tok val="attribuitque"/>
+         <tok val="attribvit"/>
          <lm>
             <l>attribuo</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATTRIBVO Attribuo attribuo-->
-         <tok val="[aA]?(ttribuo|ATTRIBVO)"/>
+      <ana>
+         <tok val="ATTRIBVO"/>
+         <tok val="Attribuo"/>
+         <tok val="attribuo"/>
+         <tok val="attribvo"/>
          <lm>
             <l>attribuo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--ATtICO ATtiCO Atticon-->
-         <tok val="A(T|)t[iI]?(CO|ticon)"/>
+      <ana>
+         <tok val="ATtICO"/>
+         <tok val="ATtiCO"/>
+         <tok val="Atticon"/>
+         <tok val="attico"/>
+         <tok val="atticon"/>
          <lm>
             <l>Atticus</l>
             <m>a e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Atta Attan-->
-         <tok val="Atta[n]?"/>
+      <ana>
+         <tok val="Atta"/>
+         <tok val="Attan"/>
+         <tok val="atta"/>
+         <tok val="attan"/>
          <lm>
             <l>Atta</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -216,20 +299,25 @@
       </ana>
       <ana>
          <tok val="Attaceo"/>
+         <tok val="attaceo"/>
          <lm>
             <l>attaceo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attacorum Attacum attacorum-->
-         <tok val="[aA]ttac(or|)um"/>
+      <ana>
+         <tok val="Attacorum"/>
+         <tok val="Attacum"/>
+         <tok val="attacorum"/>
+         <tok val="attacum"/>
          <lm>
             <l>attacus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Attactus attactus-->
-         <tok val="[aA]ttactus"/>
+      <ana>
+         <tok val="Attactus"/>
+         <tok val="attactus"/>
          <lm cert="0.5">
             <l>attactus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -244,13 +332,15 @@
       </ana>
       <ana>
          <tok val="Attacum"/>
+         <tok val="attacum"/>
          <lm>
             <l>attacus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Attacus attacus-->
-         <tok val="[aA]ttacus"/>
+      <ana>
+         <tok val="Attacus"/>
+         <tok val="attacus"/>
          <lm>
             <l>attacus</l>
             <m>n - - s - - - m n</m>
@@ -258,6 +348,7 @@
       </ana>
       <ana>
          <tok val="Attae"/>
+         <tok val="attae"/>
          <lm>
             <l>Atta</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -266,15 +357,17 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Attagen attagen-->
-         <tok val="[aA]ttagen"/>
+      <ana>
+         <tok val="Attagen"/>
+         <tok val="attagen"/>
          <lm>
             <l>attagus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Attagena attagena-->
-         <tok val="[aA]ttagena"/>
+      <ana>
+         <tok val="Attagena"/>
+         <tok val="attagena"/>
          <lm>
             <l>attagena</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -282,15 +375,21 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Attale Attalen-->
-         <tok val="Attale[n]?"/>
+      <ana>
+         <tok val="Attale"/>
+         <tok val="Attalen"/>
+         <tok val="attale"/>
+         <tok val="attalen"/>
          <lm>
             <l>Attalus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Attalea Attalia-->
-         <tok val="Attal[ie]a"/>
+      <ana>
+         <tok val="Attalea"/>
+         <tok val="Attalia"/>
+         <tok val="attalea"/>
+         <tok val="attalia"/>
          <lm>
             <l>Attalea</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -300,6 +399,7 @@
       </ana>
       <ana>
          <tok val="Attalenses"/>
+         <tok val="attalenses"/>
          <lm>
             <l>Attalenses</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -309,13 +409,17 @@
       </ana>
       <ana>
          <tok val="Attalensium"/>
+         <tok val="attalensium"/>
          <lm>
             <l>Attalenses</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Attali Attalique-->
-         <tok val="Attali(que)?"/>
+      <ana>
+         <tok val="Attali"/>
+         <tok val="Attalique"/>
+         <tok val="attali"/>
+         <tok val="attalique"/>
          <lm>
             <l>Attalus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -325,6 +429,7 @@
       </ana>
       <ana>
          <tok val="Attaliam"/>
+         <tok val="attaliam"/>
          <lm>
             <l>Attalea</l>
             <m>n e - s - - - f a</m>
@@ -332,6 +437,7 @@
       </ana>
       <ana>
          <tok val="Attalica"/>
+         <tok val="attalica"/>
          <lm cert="0.5">
             <l>Attalica</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -350,6 +456,7 @@
       </ana>
       <ana>
          <tok val="Attalicae"/>
+         <tok val="attalicae"/>
          <lm>
             <l>Attalicus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -360,6 +467,7 @@
       </ana>
       <ana>
          <tok val="Attalicas"/>
+         <tok val="attalicas"/>
          <lm>
             <l>Attalicus</l>
             <m>a e - p - - - f a</m>
@@ -367,6 +475,7 @@
       </ana>
       <ana>
          <tok val="Attalici"/>
+         <tok val="attalici"/>
          <lm>
             <l>Attalicus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -377,6 +486,7 @@
       </ana>
       <ana>
          <tok val="Attalicis"/>
+         <tok val="attalicis"/>
          <lm cert="0.5">
             <l>Attalicus</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
@@ -394,6 +504,7 @@
       </ana>
       <ana>
          <tok val="Attalico"/>
+         <tok val="attalico"/>
          <lm>
             <l>Attalicus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -404,6 +515,7 @@
       </ana>
       <ana>
          <tok val="Attalicos"/>
+         <tok val="attalicos"/>
          <lm>
             <l>Attalicus</l>
             <m>a e - p - - - m a</m>
@@ -411,6 +523,7 @@
       </ana>
       <ana>
          <tok val="Attalicus"/>
+         <tok val="attalicus"/>
          <lm>
             <l>Attalicus</l>
             <m>a e - s - - - m n</m>
@@ -418,6 +531,7 @@
       </ana>
       <ana>
          <tok val="Attalis"/>
+         <tok val="attalis"/>
          <lm cert="0.5">
             <l>Attalus</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -430,14 +544,18 @@
       </ana>
       <ana>
          <tok val="Attalo"/>
+         <tok val="attalo"/>
          <lm>
             <l>Attalus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Attalum Attalumque-->
-         <tok val="Attalum(que)?"/>
+      <ana>
+         <tok val="Attalum"/>
+         <tok val="Attalumque"/>
+         <tok val="attalum"/>
+         <tok val="attalumque"/>
          <lm>
             <l>Attalus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -446,13 +564,15 @@
       </ana>
       <ana>
          <tok val="Attam"/>
+         <tok val="attam"/>
          <lm>
             <l>Atta</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Attamino attamino-->
-         <tok val="[aA]ttamino"/>
+      <ana>
+         <tok val="Attamino"/>
+         <tok val="attamino"/>
          <lm>
             <l>attamino</l>
             <m>v - 1 s p i a</m>
@@ -460,20 +580,25 @@
       </ana>
       <ana>
          <tok val="Attan"/>
+         <tok val="attan"/>
          <lm>
             <l>Atta</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Attat attat áttat Áttat-->
-         <tok val="[aAáÁ]ttat"/>
+      <ana>
+         <tok val="Attat"/>
+         <tok val="attat"/>
+         <tok val="Áttat"/>
+         <tok val="áttat"/>
          <lm>
             <l>attat</l>
             <m>i</m>
          </lm>
       </ana>
-      <ana><!--Attegiae attegiae-->
-         <tok val="[aA]ttegiae"/>
+      <ana>
+         <tok val="Attegiae"/>
+         <tok val="attegiae"/>
          <lm>
             <l>attegia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -484,20 +609,23 @@
       </ana>
       <ana>
          <tok val="Atteius"/>
+         <tok val="atteius"/>
          <lm>
             <l>Atteius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Attelabus attelabus-->
-         <tok val="[aA]ttelabus"/>
+      <ana>
+         <tok val="Attelabus"/>
+         <tok val="attelabus"/>
          <lm>
             <l>attelabus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Attemperare attemperare-->
-         <tok val="[aA]ttemperare"/>
+      <ana>
+         <tok val="Attemperare"/>
+         <tok val="attemperare"/>
          <lm>
             <l>attempero</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -505,36 +633,41 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attempero attempero-->
-         <tok val="[aA]ttempero"/>
+      <ana>
+         <tok val="Attempero"/>
+         <tok val="attempero"/>
          <lm>
             <l>attempero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attendamus attendamus-->
-         <tok val="[aA]ttendamus"/>
+      <ana>
+         <tok val="Attendamus"/>
+         <tok val="attendamus"/>
          <lm>
             <l>attendo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Attendas attendas-->
-         <tok val="[aA]ttendas"/>
+      <ana>
+         <tok val="Attendas"/>
+         <tok val="attendas"/>
          <lm>
             <l>attendo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Attende attende-->
-         <tok val="[aA]ttende"/>
+      <ana>
+         <tok val="Attende"/>
+         <tok val="attende"/>
          <lm>
             <l>attendo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Attendenda attendenda-->
-         <tok val="[aA]ttendenda"/>
+      <ana>
+         <tok val="Attendenda"/>
+         <tok val="attendenda"/>
          <lm>
             <l>attendo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -545,8 +678,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Attendendum attendendum-->
-         <tok val="[aA]ttendendum"/>
+      <ana>
+         <tok val="Attendendum"/>
+         <tok val="attendendum"/>
          <lm>
             <l>attendo</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -558,8 +692,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Attendens attendens-->
-         <tok val="[aA]ttendens"/>
+      <ana>
+         <tok val="Attendens"/>
+         <tok val="attendens"/>
          <lm>
             <l>attendo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -571,74 +706,86 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Attendere attendere attenderunt-->
-         <tok val="[aA]ttender(e|unt)"/>
+      <ana>
+         <tok val="Attendere"/>
+         <tok val="attendere"/>
+         <tok val="attenderunt"/>
          <lm>
             <l>attendo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Attendere attendere-->
-         <tok val="[aA]ttendere"/>
+      <ana>
+         <tok val="Attendere"/>
+         <tok val="attendere"/>
          <lm>
             <l>attendo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Attendere attendere attenderis-->
-         <tok val="[aA]ttender(e|is)"/>
+      <ana>
+         <tok val="Attendere"/>
+         <tok val="attendere"/>
+         <tok val="attenderis"/>
          <lm>
             <l>attendo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Attenderes attenderes-->
-         <tok val="[aA]ttenderes"/>
+      <ana>
+         <tok val="Attenderes"/>
+         <tok val="attenderes"/>
          <lm>
             <l>attendo</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Attendimus attendimus-->
-         <tok val="[aA]ttendimus"/>
+      <ana>
+         <tok val="Attendimus"/>
+         <tok val="attendimus"/>
          <lm>
             <l>attendo</l>
             <m cert="0.5">v - 1 p r i a</m>
             <m cert="0.5">v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Attendistis attendistis-->
-         <tok val="[aA]ttendistis"/>
+      <ana>
+         <tok val="Attendistis"/>
+         <tok val="attendistis"/>
          <lm>
             <l>attendo</l>
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Attendite attendite-->
-         <tok val="[aA]ttendite"/>
+      <ana>
+         <tok val="Attendite"/>
+         <tok val="attendite"/>
          <lm>
             <l>attendo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Attendunt attendunt-->
-         <tok val="[aA]ttendunt"/>
+      <ana>
+         <tok val="Attendunt"/>
+         <tok val="attendunt"/>
          <lm>
             <l>attendo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Attene attene-->
-         <tok val="[aA]ttene"/>
+      <ana>
+         <tok val="Attene"/>
+         <tok val="attene"/>
          <lm>
             <l>atteneo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Attenta attenta-->
-         <tok val="[aA]ttenta"/>
+      <ana>
+         <tok val="Attenta"/>
+         <tok val="attenta"/>
          <lm>
             <l>attineo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -649,22 +796,27 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Attenta attempta attenta-->
-         <tok val="[aA]tte(n|mp)ta"/>
+      <ana>
+         <tok val="Attenta"/>
+         <tok val="attempta"/>
+         <tok val="attenta"/>
          <lm>
             <l>attento</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Attentam attentam-->
-         <tok val="[aA]ttentam"/>
+      <ana>
+         <tok val="Attentam"/>
+         <tok val="attentam"/>
          <lm>
             <l>attineo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Attentare attemptare attentare-->
-         <tok val="[aA]tte(n|mp)tare"/>
+      <ana>
+         <tok val="Attentare"/>
+         <tok val="attemptare"/>
+         <tok val="attentare"/>
          <lm>
             <l>attento</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -672,15 +824,19 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attentari attemptari attentari-->
-         <tok val="[aA]tte(n|mp)tari"/>
+      <ana>
+         <tok val="Attentari"/>
+         <tok val="attemptari"/>
+         <tok val="attentari"/>
          <lm>
             <l>attento</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Attentata attemptata-->
-         <tok val="[aA]tte(mp|n)tata"/>
+      <ana>
+         <tok val="Attentata"/>
+         <tok val="attemptata"/>
+         <tok val="attentata"/>
          <lm>
             <l>attento</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -693,35 +849,43 @@
       </ana>
       <ana>
          <tok val="Attentatur"/>
+         <tok val="attentatur"/>
          <lm>
             <l>attento</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attente attente attenteque attentum-->
-         <tok val="[aA]ttent[e]?(que|um)?"/>
+      <ana>
+         <tok val="Attente"/>
+         <tok val="attente"/>
+         <tok val="attenteque"/>
+         <tok val="attentum"/>
          <lm>
             <l>attineo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Attente attente attenteque-->
-         <tok val="[aA]ttente(que)?"/>
+      <ana>
+         <tok val="Attente"/>
+         <tok val="attente"/>
+         <tok val="attenteque"/>
          <lm>
             <l>attineo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Attentio attentio-->
-         <tok val="[aA]ttentio"/>
+      <ana>
+         <tok val="Attentio"/>
+         <tok val="attentio"/>
          <lm>
             <l>attentio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Attentior attentior-->
-         <tok val="[aA]ttentior"/>
+      <ana>
+         <tok val="Attentior"/>
+         <tok val="attentior"/>
          <lm>
             <l>attineo</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -730,8 +894,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Attentiores attentiores-->
-         <tok val="[aA]ttentiores"/>
+      <ana>
+         <tok val="Attentiores"/>
+         <tok val="attentiores"/>
          <lm>
             <l>attineo</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -742,8 +907,9 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Attentissime attentissime-->
-         <tok val="[aA]ttentissime"/>
+      <ana>
+         <tok val="Attentissime"/>
+         <tok val="attentissime"/>
          <lm>
             <l>attineo</l>
             <m cert="0.333333333333333333">d - - - - - - - - s</m>
@@ -751,8 +917,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Attentissimis attentissimis-->
-         <tok val="[aA]ttentissimis"/>
+      <ana>
+         <tok val="Attentissimis"/>
+         <tok val="attentissimis"/>
          <lm>
             <l>attineo</l>
             <m cert="0.166666666666666667">a - - p - - - f d s</m>
@@ -765,6 +932,7 @@
       </ana>
       <ana>
          <tok val="Attentissimo"/>
+         <tok val="attentissimo"/>
          <lm>
             <l>attineo</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -775,36 +943,36 @@
       </ana>
       <ana>
          <tok val="Attentius"/>
+         <tok val="attentius"/>
          <lm>
             <l>attineo</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Attentius attentius-->
-         <tok val="[aA]ttentius"/>
-         <lm>
-            <l>attineo</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Attentos attentos-->
-         <tok val="[aA]ttentos"/>
+      <ana>
+         <tok val="Attentos"/>
+         <tok val="attentos"/>
          <lm>
             <l>attineo</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Attentus attentus attentusque-->
-         <tok val="[aA]ttentus(que)?"/>
+      <ana>
+         <tok val="Attentus"/>
+         <tok val="attentus"/>
+         <tok val="attentusque"/>
          <lm>
             <l>attineo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Attenuans attenuans attenuansque-->
-         <tok val="[aA]ttenuans(que)?"/>
+      <ana>
+         <tok val="Attenuans"/>
+         <tok val="attenuans"/>
+         <tok val="attenuansque"/>
          <lm>
             <l>attenuo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -816,15 +984,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Attenuant attenuant-->
-         <tok val="[aA]ttenuant"/>
+      <ana>
+         <tok val="Attenuant"/>
+         <tok val="attenuant"/>
          <lm>
             <l>attenuo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Attenuare attenuare-->
-         <tok val="[aA]ttenuare"/>
+      <ana>
+         <tok val="Attenuare"/>
+         <tok val="attenuare"/>
          <lm>
             <l>attenuo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -832,15 +1002,17 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attenuat attenuat-->
-         <tok val="[aA]ttenuat"/>
+      <ana>
+         <tok val="Attenuat"/>
+         <tok val="attenuat"/>
          <lm>
             <l>attenuo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attenuata attenuata-->
-         <tok val="[aA]ttenuata"/>
+      <ana>
+         <tok val="Attenuata"/>
+         <tok val="attenuata"/>
          <lm>
             <l>attenuo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -851,8 +1023,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Attenuatae attenuatae-->
-         <tok val="[aA]ttenuatae"/>
+      <ana>
+         <tok val="Attenuatae"/>
+         <tok val="attenuatae"/>
          <lm>
             <l>attenuo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -861,8 +1034,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Attenuate attenuate-->
-         <tok val="[aA]ttenuate"/>
+      <ana>
+         <tok val="Attenuate"/>
+         <tok val="attenuate"/>
          <lm cert="0.5">
             <l>attenuo</l>
             <m>v - 2 p p m a</m>
@@ -872,16 +1046,19 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Attenuatio attenuatio-->
-         <tok val="[aA]ttenuatio"/>
+      <ana>
+         <tok val="Attenuatio"/>
+         <tok val="attenuatio"/>
          <lm>
             <l>attenuatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Attenuatum attenuatum attenuatumque-->
-         <tok val="[aA]ttenuatum(que)?"/>
+      <ana>
+         <tok val="Attenuatum"/>
+         <tok val="attenuatum"/>
+         <tok val="attenuatumque"/>
          <lm>
             <l>attenuo</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -893,8 +1070,10 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Attenuatus attenuatus attenuatusque-->
-         <tok val="[aA]ttenuatus(que)?"/>
+      <ana>
+         <tok val="Attenuatus"/>
+         <tok val="attenuatus"/>
+         <tok val="attenuatusque"/>
          <lm>
             <l>attenuo</l>
             <m>v - - s r p p m n</m>
@@ -902,13 +1081,15 @@
       </ana>
       <ana>
          <tok val="Attenuerat"/>
+         <tok val="attenuerat"/>
          <lm>
             <l>atteneo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Atterere atterere-->
-         <tok val="[aA]tterere"/>
+      <ana>
+         <tok val="Atterere"/>
+         <tok val="atterere"/>
          <lm>
             <l>attero</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -917,8 +1098,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Atteruntur atteruntur-->
-         <tok val="[aA]tteruntur"/>
+      <ana>
+         <tok val="Atteruntur"/>
+         <tok val="atteruntur"/>
          <lm>
             <l>attero</l>
             <m>v - 3 p p i p</m>
@@ -926,13 +1108,15 @@
       </ana>
       <ana>
          <tok val="Attestamur"/>
+         <tok val="attestamur"/>
          <lm>
             <l>attestor</l>
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Attestans attestans-->
-         <tok val="[aA]ttestans"/>
+      <ana>
+         <tok val="Attestans"/>
+         <tok val="attestans"/>
          <lm>
             <l>attestor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -946,6 +1130,7 @@
       </ana>
       <ana>
          <tok val="Attestante"/>
+         <tok val="attestante"/>
          <lm>
             <l>attestor</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -953,36 +1138,41 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Attestari attestari-->
-         <tok val="[aA]ttestari"/>
+      <ana>
+         <tok val="Attestari"/>
+         <tok val="attestari"/>
          <lm>
             <l>attestor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Attestatur attestatur-->
-         <tok val="[aA]ttestatur"/>
+      <ana>
+         <tok val="Attestatur"/>
+         <tok val="attestatur"/>
          <lm>
             <l>attestor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attestatus attestatus-->
-         <tok val="[aA]ttestatus"/>
+      <ana>
+         <tok val="Attestatus"/>
+         <tok val="attestatus"/>
          <lm>
             <l>attestor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Attestor attestor-->
-         <tok val="[aA]ttestor"/>
+      <ana>
+         <tok val="Attestor"/>
+         <tok val="attestor"/>
          <lm>
             <l>attestor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attexere attexere-->
-         <tok val="[aA]ttexere"/>
+      <ana>
+         <tok val="Attexere"/>
+         <tok val="attexere"/>
          <lm>
             <l>attexo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -991,8 +1181,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Attexo attexo-->
-         <tok val="[aA]ttexo"/>
+      <ana>
+         <tok val="Attexo"/>
+         <tok val="attexo"/>
          <lm>
             <l>attexo</l>
             <m>v - 1 s p i a</m>
@@ -1000,6 +1191,7 @@
       </ana>
       <ana>
          <tok val="Atthide"/>
+         <tok val="atthide"/>
          <lm>
             <l>Atthis</l>
             <m>n e - s - - - f b</m>
@@ -1007,6 +1199,7 @@
       </ana>
       <ana>
          <tok val="Atthidem"/>
+         <tok val="atthidem"/>
          <lm>
             <l>Atthis</l>
             <m>n e - s - - - f a</m>
@@ -1014,6 +1207,7 @@
       </ana>
       <ana>
          <tok val="Atthides"/>
+         <tok val="atthides"/>
          <lm>
             <l>Atthis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -1023,6 +1217,7 @@
       </ana>
       <ana>
          <tok val="Atthidis"/>
+         <tok val="atthidis"/>
          <lm>
             <l>Atthis</l>
             <m>n e - s - - - f g</m>
@@ -1030,6 +1225,7 @@
       </ana>
       <ana>
          <tok val="Atthidum"/>
+         <tok val="atthidum"/>
          <lm>
             <l>Atthis</l>
             <m>n e - p - - - f g</m>
@@ -1037,20 +1233,33 @@
       </ana>
       <ana>
          <tok val="Atthis"/>
+         <tok val="atthis"/>
          <lm>
             <l>Atthis</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Atti Atticumque Attin-->
-         <tok val="Atti(n|cumque)?"/>
+      <ana>
+         <tok val="Atti"/>
+         <tok val="Atticumque"/>
+         <tok val="Attin"/>
+         <tok val="atti"/>
+         <tok val="atticumque"/>
+         <tok val="attin"/>
          <lm>
             <l>Attius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Atti Atticumque Attii Attin-->
-         <tok val="Atti(i|n|cumque)?"/>
+      <ana>
+         <tok val="Atti"/>
+         <tok val="Atticumque"/>
+         <tok val="Attii"/>
+         <tok val="Attin"/>
+         <tok val="atti"/>
+         <tok val="atticumque"/>
+         <tok val="attii"/>
+         <tok val="attin"/>
          <lm>
             <l>Attius</l>
             <m>n e - s - - - m g</m>
@@ -1058,6 +1267,7 @@
       </ana>
       <ana>
          <tok val="Attianae"/>
+         <tok val="attianae"/>
          <lm>
             <l>Attianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1068,6 +1278,7 @@
       </ana>
       <ana>
          <tok val="Attiani"/>
+         <tok val="attiani"/>
          <lm>
             <l>Attianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1078,6 +1289,7 @@
       </ana>
       <ana>
          <tok val="Attiano"/>
+         <tok val="attiano"/>
          <lm>
             <l>Attianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1086,8 +1298,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Attianorum Attianum-->
-         <tok val="Attian(or)?um"/>
+      <ana>
+         <tok val="Attianorum"/>
+         <tok val="Attianum"/>
+         <tok val="attianorum"/>
+         <tok val="attianum"/>
          <lm>
             <l>Attianus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -1096,6 +1311,7 @@
       </ana>
       <ana>
          <tok val="Attianos"/>
+         <tok val="attianos"/>
          <lm>
             <l>Attianus</l>
             <m>a e - p - - - m a</m>
@@ -1103,6 +1319,7 @@
       </ana>
       <ana>
          <tok val="Attianum"/>
+         <tok val="attianum"/>
          <lm>
             <l>Attianus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -1113,6 +1330,7 @@
       </ana>
       <ana>
          <tok val="Attianus"/>
+         <tok val="attianus"/>
          <lm>
             <l>Attianus</l>
             <m>a e - s - - - m n</m>
@@ -1120,6 +1338,7 @@
       </ana>
       <ana>
          <tok val="Attica"/>
+         <tok val="attica"/>
          <lm>
             <l>Atticus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1130,8 +1349,13 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Attica Attice Atticene-->
-         <tok val="Attic[e]?(ne|a)?"/>
+      <ana>
+         <tok val="Attica"/>
+         <tok val="Attice"/>
+         <tok val="Atticene"/>
+         <tok val="attica"/>
+         <tok val="attice"/>
+         <tok val="atticene"/>
          <lm>
             <l>Attice</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1141,6 +1365,7 @@
       </ana>
       <ana>
          <tok val="Atticae"/>
+         <tok val="atticae"/>
          <lm cert="0.5">
             <l>Attice</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -1155,29 +1380,43 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Atticae Attices-->
-         <tok val="Attic[a]?e[s]?"/>
+      <ana>
+         <tok val="Atticae"/>
+         <tok val="Attices"/>
+         <tok val="atticae"/>
+         <tok val="attices"/>
          <lm>
             <l>Attice</l>
             <m>n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Atticam Atticen-->
-         <tok val="Attic(en|am)"/>
+      <ana>
+         <tok val="Atticam"/>
+         <tok val="Atticen"/>
+         <tok val="atticam"/>
+         <tok val="atticen"/>
          <lm>
             <l>Attice</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Atticam Átticam-->
-         <tok val="[ÁA]tticam"/>
-         <lm>
+      <ana>
+         <tok val="Atticam"/>
+         <tok val="atticam"/>
+         <tok val="Átticam"/>
+         <tok val="átticam"/>
+         <lm cert="0.5">
             <l>Atticus</l>
             <m>a e - s - - - f a</m>
+         </lm>
+         <lm cert="0.5">
+            <l>Attica</l>
+            <m>n e - s - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Atticarum"/>
+         <tok val="atticarum"/>
          <lm cert="0.5">
             <l>Attice</l>
             <m>n e - p - - - f g</m>
@@ -1189,6 +1428,7 @@
       </ana>
       <ana>
          <tok val="Atticas"/>
+         <tok val="atticas"/>
          <lm cert="0.5">
             <l>Atticus</l>
             <m>a e - p - - - f a</m>
@@ -1198,15 +1438,21 @@
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Attice Atticum-->
-         <tok val="Attic(um|e)"/>
+      <ana>
+         <tok val="Attice"/>
+         <tok val="Atticum"/>
+         <tok val="attice"/>
+         <tok val="atticum"/>
          <lm>
             <l>Atticus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Attice Atticene-->
-         <tok val="Attice(ne)?"/>
+      <ana>
+         <tok val="Attice"/>
+         <tok val="Atticene"/>
+         <tok val="attice"/>
+         <tok val="atticene"/>
          <lm>
             <l>Atticus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -1215,6 +1461,7 @@
       </ana>
       <ana>
          <tok val="Atticene"/>
+         <tok val="atticene"/>
          <lm>
             <l>Atticus</l>
             <m>a e - s - - - n v</m>
@@ -1222,6 +1469,7 @@
       </ana>
       <ana>
          <tok val="Attici"/>
+         <tok val="attici"/>
          <lm cert="0.5">
             <l>Atticus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1237,6 +1485,7 @@
       </ana>
       <ana>
          <tok val="Atticis"/>
+         <tok val="atticis"/>
          <lm cert="0.333333333333333333">
             <l>Attice</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -1257,15 +1506,21 @@
             <m cert="0.166666666666666667">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Atticisso atticisso-->
-         <tok val="[aA]tticisso"/>
+      <ana>
+         <tok val="Atticisso"/>
+         <tok val="atticisso"/>
          <lm>
             <l>atticisso</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Atticon Atticos Atticosque-->
-         <tok val="Attico(s|n|sque)"/>
+      <ana>
+         <tok val="Atticon"/>
+         <tok val="Atticos"/>
+         <tok val="Atticosque"/>
+         <tok val="atticon"/>
+         <tok val="atticos"/>
+         <tok val="atticosque"/>
          <lm cert="0.5">
             <l>Attici</l>
             <m>n e - p - - - m a</m>
@@ -1277,6 +1532,7 @@
       </ana>
       <ana>
          <tok val="Atticula"/>
+         <tok val="atticula"/>
          <lm>
             <l>Atticula</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1286,6 +1542,7 @@
       </ana>
       <ana>
          <tok val="Atticulae"/>
+         <tok val="atticulae"/>
          <lm>
             <l>Atticula</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1296,6 +1553,7 @@
       </ana>
       <ana>
          <tok val="Atticus"/>
+         <tok val="atticus"/>
          <lm>
             <l>Atticus</l>
             <m cert="0.5">a e - s - - - m n</m>
@@ -1304,6 +1562,7 @@
       </ana>
       <ana>
          <tok val="Attide"/>
+         <tok val="attide"/>
          <lm>
             <l>Attis</l>
             <m>n e - s - - - f b</m>
@@ -1311,21 +1570,24 @@
       </ana>
       <ana>
          <tok val="Attidis"/>
+         <tok val="attidis"/>
          <lm>
             <l>Attis</l>
             <m>n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Attigerit attigerit-->
-         <tok val="[aA]ttigerit"/>
+      <ana>
+         <tok val="Attigerit"/>
+         <tok val="attigerit"/>
          <lm>
             <l>attingo</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Attigit attigit-->
-         <tok val="[aA]ttigit"/>
+      <ana>
+         <tok val="Attigit"/>
+         <tok val="attigit"/>
          <lm cert="0.5">
             <l>attingo</l>
             <m>v - 3 s r i a</m>
@@ -1335,15 +1597,17 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attigo attigo-->
-         <tok val="[aA]ttigo"/>
+      <ana>
+         <tok val="Attigo"/>
+         <tok val="attigo"/>
          <lm>
             <l>attigo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attiguus attiguus-->
-         <tok val="[aA]ttiguus"/>
+      <ana>
+         <tok val="Attiguus"/>
+         <tok val="attiguus"/>
          <lm>
             <l>attiguus</l>
             <m>a - - s - - - m n</m>
@@ -1351,21 +1615,26 @@
       </ana>
       <ana>
          <tok val="Attii"/>
+         <tok val="attii"/>
          <lm>
             <l>Attius</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Attilus attilus-->
-         <tok val="[aA]ttilus"/>
+      <ana>
+         <tok val="Attilus"/>
+         <tok val="attilus"/>
          <lm>
             <l>attilus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Attin Attis-->
-         <tok val="Atti[sn]"/>
+      <ana>
+         <tok val="Attin"/>
+         <tok val="Attis"/>
+         <tok val="attin"/>
+         <tok val="attis"/>
          <lm cert="0.5">
             <l>Atta</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1376,59 +1645,68 @@
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Attinas attinas-->
-         <tok val="[aA]ttinas"/>
+      <ana>
+         <tok val="Attinas"/>
+         <tok val="attinas"/>
          <lm>
             <l>attinae</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Attineo attineo-->
-         <tok val="[aA]ttineo"/>
+      <ana>
+         <tok val="Attineo"/>
+         <tok val="attineo"/>
          <lm>
             <l>attineo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attinere attinere áttinere-->
-         <tok val="[aAá]ttinere"/>
+      <ana>
+         <tok val="Attinere"/>
+         <tok val="attinere"/>
+         <tok val="áttinere"/>
          <lm>
             <l>attineo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Attinere attinere-->
-         <tok val="[aA]ttinere"/>
+      <ana>
+         <tok val="Attinere"/>
+         <tok val="attinere"/>
          <lm>
             <l>attineo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attineri attineri-->
-         <tok val="[aA]ttineri"/>
+      <ana>
+         <tok val="Attineri"/>
+         <tok val="attineri"/>
          <lm>
             <l>attineo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Attingam attingam-->
-         <tok val="[aA]ttingam"/>
+      <ana>
+         <tok val="Attingam"/>
+         <tok val="attingam"/>
          <lm>
             <l>attingo</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Attingas attingas-->
-         <tok val="[aA]ttingas"/>
+      <ana>
+         <tok val="Attingas"/>
+         <tok val="attingas"/>
          <lm>
             <l>attingo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Attingere attingere-->
-         <tok val="[aA]ttingere"/>
+      <ana>
+         <tok val="Attingere"/>
+         <tok val="attingere"/>
          <lm>
             <l>attingo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1437,58 +1715,74 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Attingi attingi-->
-         <tok val="[aA]ttingi"/>
+      <ana>
+         <tok val="Attingi"/>
+         <tok val="attingi"/>
          <lm>
             <l>attingo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Attingit attingit-->
-         <tok val="[aA]ttingit"/>
+      <ana>
+         <tok val="Attingit"/>
+         <tok val="attingit"/>
          <lm>
             <l>attingo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attium Attiumque-->
-         <tok val="Attium(que)?"/>
+      <ana>
+         <tok val="Attium"/>
+         <tok val="Attiumque"/>
+         <tok val="attium"/>
+         <tok val="attiumque"/>
          <lm>
             <l>Attius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Attius Attiusque-->
-         <tok val="Attius(que)?"/>
+      <ana>
+         <tok val="Attius"/>
+         <tok val="Attiusque"/>
+         <tok val="attius"/>
+         <tok val="attiusque"/>
          <lm>
             <l>Attius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Attollat attollat attollatque-->
-         <tok val="[aA]ttollat(que)?"/>
+      <ana>
+         <tok val="Attollat"/>
+         <tok val="attollat"/>
+         <tok val="attollatque"/>
          <lm>
             <l>attollo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Attollatur attollatur attollaturque-->
-         <tok val="[aA]ttollatur(que)?"/>
+      <ana>
+         <tok val="Attollatur"/>
+         <tok val="attollatur"/>
+         <tok val="attollaturque"/>
          <lm>
             <l>attollo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Attolle attolle-->
-         <tok val="[aA]ttolle"/>
+      <ana>
+         <tok val="Attolle"/>
+         <tok val="attolle"/>
          <lm>
             <l>attollo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Attollens Attollensque attollens attollensque-->
-         <tok val="[aA]ttollens(que)?"/>
+      <ana>
+         <tok val="Attollens"/>
+         <tok val="Attollensque"/>
+         <tok val="attollens"/>
+         <tok val="attollensque"/>
          <lm>
             <l>attollo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1500,16 +1794,18 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Attollentem attollentem-->
-         <tok val="[aA]ttollentem"/>
+      <ana>
+         <tok val="Attollentem"/>
+         <tok val="attollentem"/>
          <lm>
             <l>attollo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Attollere attollere-->
-         <tok val="[aA]ttollere"/>
+      <ana>
+         <tok val="Attollere"/>
+         <tok val="attollere"/>
          <lm>
             <l>attollo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1518,43 +1814,53 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Attolli attolli attollique-->
-         <tok val="[aA]ttolli(que)?"/>
+      <ana>
+         <tok val="Attolli"/>
+         <tok val="attolli"/>
+         <tok val="attollique"/>
          <lm>
             <l>attollo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Attollit Attollitque attollit attollitque-->
-         <tok val="[aA]ttollit(que)?"/>
+      <ana>
+         <tok val="Attollit"/>
+         <tok val="Attollitque"/>
+         <tok val="attollit"/>
+         <tok val="attollitque"/>
          <lm>
             <l>attollo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attollitur attollitur-->
-         <tok val="[aA]ttollitur"/>
+      <ana>
+         <tok val="Attollitur"/>
+         <tok val="attollitur"/>
          <lm>
             <l>attollo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attollunt attollunt attolluntque-->
-         <tok val="[aA]ttollunt(que)?"/>
+      <ana>
+         <tok val="Attollunt"/>
+         <tok val="attollunt"/>
+         <tok val="attolluntque"/>
          <lm>
             <l>attollo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Attolluntur attolluntur-->
-         <tok val="[aA]ttolluntur"/>
+      <ana>
+         <tok val="Attolluntur"/>
+         <tok val="attolluntur"/>
          <lm>
             <l>attollo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Attondens attondens-->
-         <tok val="[aA]ttondens"/>
+      <ana>
+         <tok val="Attondens"/>
+         <tok val="attondens"/>
          <lm>
             <l>attondeo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1566,15 +1872,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Attondent attondent-->
-         <tok val="[aA]ttondent"/>
+      <ana>
+         <tok val="Attondent"/>
+         <tok val="attondent"/>
          <lm>
             <l>attondeo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Attondere attondere-->
-         <tok val="[aA]ttondere"/>
+      <ana>
+         <tok val="Attondere"/>
+         <tok val="attondere"/>
          <lm>
             <l>attondeo</l>
             <m cert="0.25">v - 3 p r i a</m>
@@ -1583,8 +1891,10 @@
             <m cert="0.25">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attonita attonita attonitaque-->
-         <tok val="[aA]ttonita(que)?"/>
+      <ana>
+         <tok val="Attonita"/>
+         <tok val="attonita"/>
+         <tok val="attonitaque"/>
          <lm>
             <l>attono</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1595,8 +1905,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Attonitae attonitae attonitaeque-->
-         <tok val="[aA]ttonitae(que)?"/>
+      <ana>
+         <tok val="Attonitae"/>
+         <tok val="attonitae"/>
+         <tok val="attonitaeque"/>
          <lm>
             <l>attono</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1605,15 +1917,18 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Attonitas attonitas-->
-         <tok val="[aA]ttonitas"/>
+      <ana>
+         <tok val="Attonitas"/>
+         <tok val="attonitas"/>
          <lm>
             <l>attono</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Attoniti attoniti attonitique-->
-         <tok val="[aA]ttoniti(que)?"/>
+      <ana>
+         <tok val="Attoniti"/>
+         <tok val="attoniti"/>
+         <tok val="attonitique"/>
          <lm>
             <l>attono</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1622,8 +1937,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Attonitis attonitis attonitisque-->
-         <tok val="[aA]ttonitis(que)?"/>
+      <ana>
+         <tok val="Attonitis"/>
+         <tok val="attonitis"/>
+         <tok val="attonitisque"/>
          <lm>
             <l>attono</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1634,8 +1951,11 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Attonito Attonitoque attonito attonitoque-->
-         <tok val="[aA]ttonito(que)?"/>
+      <ana>
+         <tok val="Attonito"/>
+         <tok val="Attonitoque"/>
+         <tok val="attonito"/>
+         <tok val="attonitoque"/>
          <lm>
             <l>attono</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1644,8 +1964,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Attonitos attonitos-->
-         <tok val="[aA]ttonitos"/>
+      <ana>
+         <tok val="Attonitos"/>
+         <tok val="attonitos"/>
          <lm>
             <l>attono</l>
             <m>v - - p r p p m a</m>
@@ -1653,13 +1974,16 @@
       </ana>
       <ana>
          <tok val="Attonitu"/>
+         <tok val="attonitu"/>
          <lm>
             <l>attono</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Attonitum attonitum attonitumque-->
-         <tok val="[aA]ttonitum(que)?"/>
+      <ana>
+         <tok val="Attonitum"/>
+         <tok val="attonitum"/>
+         <tok val="attonitumque"/>
          <lm>
             <l>attono</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -1670,22 +1994,27 @@
             <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Attonitum attonite attonitum attonitumque-->
-         <tok val="[aA]ttonit(um)?(que|e)?"/>
+      <ana>
+         <tok val="Attonitum"/>
+         <tok val="attonite"/>
+         <tok val="attonitum"/>
+         <tok val="attonitumque"/>
          <lm>
             <l>attono</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Attono attono-->
-         <tok val="[aA]ttono"/>
+      <ana>
+         <tok val="Attono"/>
+         <tok val="attono"/>
          <lm>
             <l>attono</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attonsa attonsa-->
-         <tok val="[aA]ttonsa"/>
+      <ana>
+         <tok val="Attonsa"/>
+         <tok val="attonsa"/>
          <lm>
             <l>attondeo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1696,8 +2025,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Attonsae attonsae-->
-         <tok val="[aA]ttonsae"/>
+      <ana>
+         <tok val="Attonsae"/>
+         <tok val="attonsae"/>
          <lm>
             <l>attondeo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1706,15 +2036,17 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Attonsus attonsus-->
-         <tok val="[aA]ttonsus"/>
+      <ana>
+         <tok val="Attonsus"/>
+         <tok val="attonsus"/>
          <lm>
             <l>attondeo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Attorquens attorquens-->
-         <tok val="[aA]ttorquens"/>
+      <ana>
+         <tok val="Attorquens"/>
+         <tok val="attorquens"/>
          <lm>
             <l>attorqueo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1726,30 +2058,35 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Attractio attractio attraction-->
-         <tok val="[aA]ttractio[n]?"/>
+      <ana>
+         <tok val="Attractio"/>
+         <tok val="attractio"/>
+         <tok val="attraction"/>
          <lm>
             <l>attractio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Attractione attractione-->
-         <tok val="[aA]ttractione"/>
+      <ana>
+         <tok val="Attractione"/>
+         <tok val="attractione"/>
          <lm>
             <l>attractio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Attractionem attractionem-->
-         <tok val="[aA]ttractionem"/>
+      <ana>
+         <tok val="Attractionem"/>
+         <tok val="attractionem"/>
          <lm>
             <l>attractio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Attractiones attractiones-->
-         <tok val="[aA]ttractiones"/>
+      <ana>
+         <tok val="Attractiones"/>
+         <tok val="attractiones"/>
          <lm>
             <l>attractio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1757,30 +2094,35 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Attractionibus attractionibus-->
-         <tok val="[aA]ttractionibus"/>
+      <ana>
+         <tok val="Attractionibus"/>
+         <tok val="attractionibus"/>
          <lm>
             <l>attractio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Attractionis attractionis-->
-         <tok val="[aA]ttractionis"/>
+      <ana>
+         <tok val="Attractionis"/>
+         <tok val="attractionis"/>
          <lm>
             <l>attractio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Attractionum attractionum-->
-         <tok val="[aA]ttractionum"/>
+      <ana>
+         <tok val="Attractionum"/>
+         <tok val="attractionum"/>
          <lm>
             <l>attractio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Attractus attractus attractusque-->
-         <tok val="[aA]ttractus(que)?"/>
+      <ana>
+         <tok val="Attractus"/>
+         <tok val="attractus"/>
+         <tok val="attractusque"/>
          <lm cert="0.5">
             <l>attractus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1793,15 +2135,18 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Attrahat attrahat-->
-         <tok val="[aA]ttrahat"/>
+      <ana>
+         <tok val="Attrahat"/>
+         <tok val="attrahat"/>
          <lm>
             <l>attraho</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Attrahens attrahens attrahensque-->
-         <tok val="[aA]ttrahens(que)?"/>
+      <ana>
+         <tok val="Attrahens"/>
+         <tok val="attrahens"/>
+         <tok val="attrahensque"/>
          <lm>
             <l>attraho</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1813,8 +2158,10 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Attrahere attrahere attrahereque-->
-         <tok val="[aA]ttrahere(que)?"/>
+      <ana>
+         <tok val="Attrahere"/>
+         <tok val="attrahere"/>
+         <tok val="attrahereque"/>
          <lm>
             <l>attraho</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1823,29 +2170,33 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Attrahit attrahit-->
-         <tok val="[aA]ttrahit"/>
+      <ana>
+         <tok val="Attrahit"/>
+         <tok val="attrahit"/>
          <lm>
             <l>attraho</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attrahite attrahite-->
-         <tok val="[aA]ttrahite"/>
+      <ana>
+         <tok val="Attrahite"/>
+         <tok val="attrahite"/>
          <lm>
             <l>attraho</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Attraho attraho-->
-         <tok val="[aA]ttraho"/>
+      <ana>
+         <tok val="Attraho"/>
+         <tok val="attraho"/>
          <lm>
             <l>attraho</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attrectare attrectare-->
-         <tok val="[aA]ttrectare"/>
+      <ana>
+         <tok val="Attrectare"/>
+         <tok val="attrectare"/>
          <lm>
             <l>attrecto</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1853,8 +2204,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Attrectatus attrectatus-->
-         <tok val="[aA]ttrectatus"/>
+      <ana>
+         <tok val="Attrectatus"/>
+         <tok val="attrectatus"/>
          <lm>
             <l>attrectatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1863,15 +2215,17 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Attrecto attrecto-->
-         <tok val="[aA]ttrecto"/>
+      <ana>
+         <tok val="Attrecto"/>
+         <tok val="attrecto"/>
          <lm>
             <l>attrecto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Attremere attremere-->
-         <tok val="[aA]ttremere"/>
+      <ana>
+         <tok val="Attremere"/>
+         <tok val="attremere"/>
          <lm>
             <l>attremo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1882,6 +2236,7 @@
       </ana>
       <ana>
          <tok val="Attremo"/>
+         <tok val="attremo"/>
          <lm>
             <l>attremo</l>
             <m>v - 1 s p i a</m>
@@ -1889,6 +2244,7 @@
       </ana>
       <ana>
          <tok val="Attribuendo"/>
+         <tok val="attribuendo"/>
          <lm>
             <l>attribuo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1899,15 +2255,18 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Attribuere attribuere attribuerunt-->
-         <tok val="[aA]ttribuer(e|unt)"/>
+      <ana>
+         <tok val="Attribuere"/>
+         <tok val="attribuere"/>
+         <tok val="attribuerunt"/>
          <lm>
             <l>attribuo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Attribuere attribuere-->
-         <tok val="[aA]ttribuere"/>
+      <ana>
+         <tok val="Attribuere"/>
+         <tok val="attribuere"/>
          <lm>
             <l>attribuo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1916,8 +2275,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Attributa attributa-->
-         <tok val="[aA]ttributa"/>
+      <ana>
+         <tok val="Attributa"/>
+         <tok val="attributa"/>
          <lm cert="0.5">
             <l>attribuo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -1934,8 +2294,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Attributae attributae-->
-         <tok val="[aA]ttributae"/>
+      <ana>
+         <tok val="Attributae"/>
+         <tok val="attributae"/>
          <lm>
             <l>attribuo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1944,8 +2305,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Attributi attributi-->
-         <tok val="[aA]ttributi"/>
+      <ana>
+         <tok val="Attributi"/>
+         <tok val="attributi"/>
          <lm cert="0.5">
             <l>attribuo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1958,30 +2320,34 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Attributio attributio-->
-         <tok val="[aA]ttributio"/>
+      <ana>
+         <tok val="Attributio"/>
+         <tok val="attributio"/>
          <lm>
             <l>attributio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Attributos attributos-->
-         <tok val="[aA]ttributos"/>
+      <ana>
+         <tok val="Attributos"/>
+         <tok val="attributos"/>
          <lm>
             <l>attribuo</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Attribuunt attribuunt-->
-         <tok val="[aA]ttribuunt"/>
+      <ana>
+         <tok val="Attribuunt"/>
+         <tok val="attribuunt"/>
          <lm>
             <l>attribuo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Attrita attrita-->
-         <tok val="[aA]ttrita"/>
+      <ana>
+         <tok val="Attrita"/>
+         <tok val="attrita"/>
          <lm>
             <l>attero</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1992,8 +2358,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Attritae attritae-->
-         <tok val="[aA]ttritae"/>
+      <ana>
+         <tok val="Attritae"/>
+         <tok val="attritae"/>
          <lm>
             <l>attero</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -2002,8 +2369,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Attriti attriti attritique-->
-         <tok val="[aA]ttriti(que)?"/>
+      <ana>
+         <tok val="Attriti"/>
+         <tok val="attriti"/>
+         <tok val="attritique"/>
          <lm>
             <l>attero</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2012,23 +2381,26 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Attritio attritio-->
-         <tok val="[aA]ttritio"/>
+      <ana>
+         <tok val="Attritio"/>
+         <tok val="attritio"/>
          <lm>
             <l>attritio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Attritione attritione-->
-         <tok val="[aA]ttritione"/>
+      <ana>
+         <tok val="Attritione"/>
+         <tok val="attritione"/>
          <lm>
             <l>attritio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Attritis attritis-->
-         <tok val="[aA]ttritis"/>
+      <ana>
+         <tok val="Attritis"/>
+         <tok val="attritis"/>
          <lm>
             <l>attero</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -2039,8 +2411,11 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Attritu attritu attrituque attrituue-->
-         <tok val="[aA]ttritu[q]?(ue)?"/>
+      <ana>
+         <tok val="Attritu"/>
+         <tok val="attritu"/>
+         <tok val="attrituque"/>
+         <tok val="attrituue"/>
          <lm cert="0.5">
             <l>attero</l>
             <m>a - - s - - - n d</m>
@@ -2050,8 +2425,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Attritus attritus-->
-         <tok val="[aA]ttritus"/>
+      <ana>
+         <tok val="Attritus"/>
+         <tok val="attritus"/>
          <lm cert="0.5">
             <l>attritus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2066,58 +2442,69 @@
       </ana>
       <ana>
          <tok val="Attuarii"/>
+         <tok val="attuarii"/>
          <lm>
             <l>Attuarii</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Attule attule-->
-         <tok val="[aA]ttule"/>
+      <ana>
+         <tok val="Attule"/>
+         <tok val="attule"/>
          <lm>
             <l>attulo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Attuleras attuleras-->
-         <tok val="[aA]ttuleras"/>
+      <ana>
+         <tok val="Attuleras"/>
+         <tok val="attuleras"/>
          <lm>
             <l>affero</l>
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Attulerat Attuleratque attulerat attuleratque-->
-         <tok val="[aA]ttulerat(que)?"/>
+      <ana>
+         <tok val="Attulerat"/>
+         <tok val="Attuleratque"/>
+         <tok val="attulerat"/>
+         <tok val="attuleratque"/>
          <lm>
             <l>affero</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Attulerint attulerint-->
-         <tok val="[aA]ttulerint"/>
+      <ana>
+         <tok val="Attulerint"/>
+         <tok val="attulerint"/>
          <lm>
             <l>affero</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--Attulerit attulerit-->
-         <tok val="[aA]ttulerit"/>
+      <ana>
+         <tok val="Attulerit"/>
+         <tok val="attulerit"/>
          <lm>
             <l>affero</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Attulerunt attulere attulerunt-->
-         <tok val="[aA]ttuler(unt|e)"/>
+      <ana>
+         <tok val="Attulerunt"/>
+         <tok val="attulere"/>
+         <tok val="attulerunt"/>
          <lm>
             <l>affero</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Attuli attuli-->
-         <tok val="[aA]ttuli"/>
+      <ana>
+         <tok val="Attuli"/>
+         <tok val="attuli"/>
          <lm cert="0.5">
             <l>attulo</l>
             <m>v - - - p n p</m>
@@ -2127,43 +2514,51 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Attulimus attulimus áttulimus-->
-         <tok val="[aAá]ttulimus"/>
+      <ana>
+         <tok val="Attulimus"/>
+         <tok val="attulimus"/>
+         <tok val="áttulimus"/>
          <lm>
             <l>affero</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Attulimus attulimus-->
-         <tok val="[aA]ttulimus"/>
+      <ana>
+         <tok val="Attulimus"/>
+         <tok val="attulimus"/>
          <lm>
             <l>attulo</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Attulisse attulisse-->
-         <tok val="[aA]ttulisse"/>
+      <ana>
+         <tok val="Attulisse"/>
+         <tok val="attulisse"/>
          <lm>
             <l>affero</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Attulisti attulisti-->
-         <tok val="[aA]ttulisti"/>
+      <ana>
+         <tok val="Attulisti"/>
+         <tok val="attulisti"/>
          <lm>
             <l>affero</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Attulit attulit áttulit-->
-         <tok val="[aAá]ttulit"/>
+      <ana>
+         <tok val="Attulit"/>
+         <tok val="attulit"/>
+         <tok val="áttulit"/>
          <lm>
             <l>affero</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Attulit attulit-->
-         <tok val="[aA]ttulit"/>
+      <ana>
+         <tok val="Attulit"/>
+         <tok val="attulit"/>
          <lm>
             <l>attulo</l>
             <m>v - 3 s p i a</m>
@@ -2171,6 +2566,7 @@
       </ana>
       <ana>
          <tok val="Attys"/>
+         <tok val="attys"/>
          <lm>
             <l>Atys</l>
             <m>n e - s - - - m n</m>
@@ -2185,8 +2581,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--attaces atticen-->
-         <tok val="att[ia]ce[ns]"/>
+      <ana>
+         <tok val="attaces"/>
+         <tok val="atticen"/>
          <lm>
             <l>attaceo</l>
             <m>v - 2 s p i a</m>
@@ -2240,8 +2637,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--attactum attactumque-->
-         <tok val="attactum(que)?"/>
+      <ana>
+         <tok val="attactum"/>
+         <tok val="attactumque"/>
          <lm cert="0.5">
             <l>attingo</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -2264,8 +2662,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--attagenae Attagenae-->
-         <tok val="[Aa]ttagenae"/>
+      <ana>
+         <tok val="Attagenae"/>
+         <tok val="attagenae"/>
          <lm>
             <l>attagena</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -2459,22 +2858,26 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--attemptarit attemptaverit attentarit-->
-         <tok val="atte(mp|n)ta(ve)?rit"/>
+      <ana>
+         <tok val="attemptarit"/>
+         <tok val="attemptaverit"/>
+         <tok val="attentarit"/>
          <lm>
             <l>attento</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--attemptas attentas-->
-         <tok val="atte(n|mp)tas"/>
+      <ana>
+         <tok val="attemptas"/>
+         <tok val="attentas"/>
          <lm>
             <l>attento</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--attemptasse attentasse-->
-         <tok val="atte(n|mp)tasse"/>
+      <ana>
+         <tok val="attemptasse"/>
+         <tok val="attentasse"/>
          <lm>
             <l>attento</l>
             <m>v - - - r n a</m>
@@ -2507,8 +2910,9 @@
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--attemptavit attentavit-->
-         <tok val="atte(n|mp)tavit"/>
+      <ana>
+         <tok val="attemptavit"/>
+         <tok val="attentavit"/>
          <lm>
             <l>attento</l>
             <m>v - 3 s r i a</m>
@@ -2557,8 +2961,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--attendat attendatque-->
-         <tok val="attendat(que)?"/>
+      <ana>
+         <tok val="attendat"/>
+         <tok val="attendatque"/>
          <lm>
             <l>attendo</l>
             <m>v - 3 s p s a</m>
@@ -2627,8 +3032,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--attendente attendenti-->
-         <tok val="attendent[ie]"/>
+      <ana>
+         <tok val="attendente"/>
+         <tok val="attendenti"/>
          <lm>
             <l>attendo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -2646,8 +3052,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--attendentes attendentis-->
-         <tok val="attendent[ie]s"/>
+      <ana>
+         <tok val="attendentes"/>
+         <tok val="attendentis"/>
          <lm>
             <l>attendo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2961,8 +3368,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--attentis attentisque-->
-         <tok val="attentis(que)?"/>
+      <ana>
+         <tok val="attentis"/>
+         <tok val="attentisque"/>
          <lm>
             <l>attineo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -3158,8 +3566,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--attenuatis Attenuatis-->
-         <tok val="[Aa]ttenuatis"/>
+      <ana>
+         <tok val="Attenuatis"/>
+         <tok val="attenuatis"/>
          <lm>
             <l>attenuo</l>
             <m>v - 2 p p i a</m>
@@ -3216,8 +3625,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--attenuetur attenueturque-->
-         <tok val="attenuetur(que)?"/>
+      <ana>
+         <tok val="attenuetur"/>
+         <tok val="attenueturque"/>
          <lm>
             <l>attenuo</l>
             <m>v - 3 s p s p</m>
@@ -3593,8 +4003,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--attice atticen-->
-         <tok val="attice[n]?"/>
+      <ana>
+         <tok val="attice"/>
+         <tok val="atticen"/>
          <lm>
             <l>attaceo</l>
             <m>v - 2 s p m a</m>
@@ -3638,8 +4049,9 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--attigas attigás-->
-         <tok val="attig[áa]s"/>
+      <ana>
+         <tok val="attigas"/>
+         <tok val="attigás"/>
          <lm>
             <l>attigo</l>
             <m>v - 2 s p s a</m>
@@ -3694,8 +4106,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--attigere attigerunt-->
-         <tok val="attiger(unt|e)"/>
+      <ana>
+         <tok val="attigere"/>
+         <tok val="attigerunt"/>
          <lm>
             <l>attingo</l>
             <m>v - 3 p r i a</m>
@@ -3709,8 +4122,9 @@
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--attigere attigeris-->
-         <tok val="attiger(is|e)"/>
+      <ana>
+         <tok val="attigere"/>
+         <tok val="attigeris"/>
          <lm>
             <l>attigo</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -3740,8 +4154,10 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--attigeris attígeris áttigeris-->
-         <tok val="[aá]tt[íi]geris"/>
+      <ana>
+         <tok val="attigeris"/>
+         <tok val="attígeris"/>
+         <tok val="áttigeris"/>
          <lm>
             <l>attingo</l>
             <m>v - 2 s t i a</m>
@@ -3898,8 +4314,9 @@
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--attine ATTINE-->
-         <tok val="(ATTINE|attine)"/>
+      <ana>
+         <tok val="ATTINE"/>
+         <tok val="attine"/>
          <lm>
             <l>attineo</l>
             <m>v - 2 s p m a</m>
@@ -3992,8 +4409,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--attinent attinént-->
-         <tok val="attin[ée]nt"/>
+      <ana>
+         <tok val="attinent"/>
+         <tok val="attinént"/>
          <lm>
             <l>attineo</l>
             <m>v - 3 p p i a</m>
@@ -4403,8 +4821,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--attinuit attínuit-->
-         <tok val="att[íi]nuit"/>
+      <ana>
+         <tok val="attinuit"/>
+         <tok val="attínuit"/>
          <lm>
             <l>attineo</l>
             <m>v - 3 s r i a</m>
@@ -4597,8 +5016,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--attollentes attollentis-->
-         <tok val="attollent[ie]s"/>
+      <ana>
+         <tok val="attollentes"/>
+         <tok val="attollentis"/>
          <lm>
             <l>attollo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -4700,8 +5120,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--attollet attolletque-->
-         <tok val="attollet(que)?"/>
+      <ana>
+         <tok val="attollet"/>
+         <tok val="attolletque"/>
          <lm>
             <l>attollo</l>
             <m>v - 3 s f i a</m>
@@ -4714,8 +5135,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--attollimurque attollimur-->
-         <tok val="attollimur(que)?"/>
+      <ana>
+         <tok val="attollimur"/>
+         <tok val="attollimurque"/>
          <lm>
             <l>attollo</l>
             <m>v - 1 p p i p</m>
@@ -4828,8 +5250,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--attondit áttondit-->
-         <tok val="[áa]ttondit"/>
+      <ana>
+         <tok val="attondit"/>
+         <tok val="áttondit"/>
          <lm>
             <l>attondeo</l>
             <m>v - 3 s r i a</m>
@@ -4849,8 +5272,9 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--attonitam attonitamque-->
-         <tok val="attonitam(que)?"/>
+      <ana>
+         <tok val="attonitam"/>
+         <tok val="attonitamque"/>
          <lm>
             <l>attono</l>
             <m>v - - s r p p f a</m>
@@ -5048,8 +5472,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--attractis attractisque-->
-         <tok val="attractis(que)?"/>
+      <ana>
+         <tok val="attractis"/>
+         <tok val="attractisque"/>
          <lm>
             <l>attraho</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -5089,8 +5514,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--attractorum attractum-->
-         <tok val="attract(or)?um"/>
+      <ana>
+         <tok val="attractorum"/>
+         <tok val="attractum"/>
          <lm>
             <l>attraho</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -5159,8 +5585,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--attrahe attrahen-->
-         <tok val="attrahe[n]?"/>
+      <ana>
+         <tok val="attrahe"/>
+         <tok val="attrahen"/>
          <lm>
             <l>attraho</l>
             <m>v - 2 s p m a</m>
@@ -5229,8 +5656,9 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--attrahendo attrahendoque-->
-         <tok val="attrahendo(que)?"/>
+      <ana>
+         <tok val="attrahendo"/>
+         <tok val="attrahendoque"/>
          <lm>
             <l>attraho</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -5261,8 +5689,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--attrahente attrahenti-->
-         <tok val="attrahent[ie]"/>
+      <ana>
+         <tok val="attrahente"/>
+         <tok val="attrahenti"/>
          <lm>
             <l>attraho</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -5288,8 +5717,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--attrahentes attrahentis-->
-         <tok val="attrahent[ie]s"/>
+      <ana>
+         <tok val="attrahentes"/>
+         <tok val="attrahentis"/>
          <lm>
             <l>attraho</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -5615,8 +6045,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--attribuat attribuatque-->
-         <tok val="attribuat(que)?"/>
+      <ana>
+         <tok val="attribuat"/>
+         <tok val="attribuatque"/>
          <lm>
             <l>attribuo</l>
             <m>v - 3 s p s a</m>
@@ -5895,8 +6326,9 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--attribute attributum-->
-         <tok val="attribut(um|e)"/>
+      <ana>
+         <tok val="attribute"/>
+         <tok val="attributum"/>
          <lm cert="0.5">
             <l>attributum</l>
             <m>n - - s - - - n v</m>
@@ -5974,8 +6406,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--attributorum attributum-->
-         <tok val="attribut(or)?um"/>
+      <ana>
+         <tok val="attributorum"/>
+         <tok val="attributum"/>
          <lm cert="0.5">
             <l>attribuo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -6015,8 +6448,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--attritam attritamque-->
-         <tok val="attritam(que)?"/>
+      <ana>
+         <tok val="attritam"/>
+         <tok val="attritamque"/>
          <lm>
             <l>attero</l>
             <m>v - - s r p p f a</m>
@@ -6029,8 +6463,9 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--attritas attritasque-->
-         <tok val="attritas(que)?"/>
+      <ana>
+         <tok val="attritas"/>
+         <tok val="attritasque"/>
          <lm>
             <l>attero</l>
             <m>v - - p r p p f a</m>
@@ -6063,8 +6498,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--attritorum attritum-->
-         <tok val="attrit(or)?um"/>
+      <ana>
+         <tok val="attritorum"/>
+         <tok val="attritum"/>
          <lm>
             <l>attero</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -6086,15 +6522,17 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--attriuerat attriverat-->
-         <tok val="attri[vu]erat"/>
+      <ana>
+         <tok val="attriuerat"/>
+         <tok val="attriverat"/>
          <lm>
             <l>attero</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--attriuere attrivere-->
-         <tok val="attri[vu]ere"/>
+      <ana>
+         <tok val="attriuere"/>
+         <tok val="attrivere"/>
          <lm>
             <l>attero</l>
             <m>v - 3 p r i a</m>
@@ -6123,8 +6561,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--attriuit attrivit-->
-         <tok val="attri[vu]it"/>
+      <ana>
+         <tok val="attriuit"/>
+         <tok val="attrivit"/>
          <lm>
             <l>attero</l>
             <m>v - 3 s r i a</m>
@@ -6168,8 +6607,9 @@
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--attulere attuleris-->
-         <tok val="attuler(is|e)"/>
+      <ana>
+         <tok val="attulere"/>
+         <tok val="attuleris"/>
          <lm>
             <l>attulo</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -6234,8 +6674,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--attulistis áttulistis-->
-         <tok val="[áa]ttulistis"/>
+      <ana>
+         <tok val="attulistis"/>
+         <tok val="áttulistis"/>
          <lm>
             <l>affero</l>
             <m>v - 2 p r i a</m>
@@ -6362,13 +6803,6 @@
          <lm>
             <l>affero</l>
             <m>v - 2 p l s a</m>
-         </lm>
-      </ana>
-      <ana>
-         <tok val="Átticam"/>
-         <lm>
-            <l>Attica</l>
-            <m>n e - s - - - f a</m>
          </lm>
       </ana>
    </body>

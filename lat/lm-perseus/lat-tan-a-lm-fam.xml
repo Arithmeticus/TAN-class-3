@@ -1,58 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfam">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fam">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fam</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fam.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FAM</tok-starts-with>
       <tok-starts-with>Fam</tok-starts-with>
       <tok-starts-with>fam</tok-starts-with>
       <tok-starts-with>fám</tok-starts-with>
-      <ana><!--FAMA Fama Famaque fama famaque famast famaue famave fáma-->
-         <tok val="[fF]?(a|fá)?(ma)?[q]?[uv]?(e|st|FAMA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:23:45.454-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:23:45.454-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fam.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FAMA"/>
+         <tok val="Fama"/>
+         <tok val="Famaque"/>
+         <tok val="fama"/>
+         <tok val="famaque"/>
+         <tok val="famast"/>
+         <tok val="famaue"/>
+         <tok val="famave"/>
+         <tok val="fáma"/>
          <lm>
             <l>fama</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--FAMA Fama Famaque fama famaque famast famaue famave-->
-         <tok val="[fF]?(ama)?[q]?[uv]?(e|st|FAMA)?"/>
+      <ana>
+         <tok val="FAMA"/>
+         <tok val="Fama"/>
+         <tok val="Famaque"/>
+         <tok val="fama"/>
+         <tok val="famaque"/>
+         <tok val="famast"/>
+         <tok val="famaue"/>
+         <tok val="famave"/>
          <lm>
             <l>fama</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--FAMES Famen Fames Famesque famen fames famesque-->
-         <tok val="[fF]?(ame)?[s]?(que|n|s|FAMES)?"/>
+      <ana>
+         <tok val="FAMES"/>
+         <tok val="Famen"/>
+         <tok val="Fames"/>
+         <tok val="Famesque"/>
+         <tok val="famen"/>
+         <tok val="fames"/>
+         <tok val="famesque"/>
          <lm>
             <l>fames</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -61,30 +90,44 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--FAMILIA Familia familia familiaque familiast fámilia-->
-         <tok val="[fF]?(a|fá|fa)?(milia)?(st|que|FAMILIA)?"/>
+      <ana>
+         <tok val="FAMILIA"/>
+         <tok val="Familia"/>
+         <tok val="familia"/>
+         <tok val="familiaque"/>
+         <tok val="familiast"/>
+         <tok val="fámilia"/>
          <lm>
             <l>familia</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--FAMILIA Familia familia familiaque familiast-->
-         <tok val="[fF]?(amilia)?(st|que|FAMILIA)?"/>
+      <ana>
+         <tok val="FAMILIA"/>
+         <tok val="Familia"/>
+         <tok val="familia"/>
+         <tok val="familiaque"/>
+         <tok val="familiast"/>
          <lm>
             <l>familia</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--FAMILIAM Familiam familiam familiamque-->
-         <tok val="[fF]?(amiliam)?(que|FAMILIAM)?"/>
+      <ana>
+         <tok val="FAMILIAM"/>
+         <tok val="Familiam"/>
+         <tok val="familiam"/>
+         <tok val="familiamque"/>
          <lm>
             <l>familia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FAMILIARIBVS familiaribus-->
-         <tok val="(familiaribus|FAMILIARIBVS)"/>
+      <ana>
+         <tok val="FAMILIARIBVS"/>
+         <tok val="familiaribus"/>
+         <tok val="familiaribvs"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -97,16 +140,25 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--FAMULUS Famulus famulus famulusque-->
-         <tok val="[fF]?(amulus)?(que|FAMULUS)?"/>
+      <ana>
+         <tok val="FAMULUS"/>
+         <tok val="Famulus"/>
+         <tok val="famulus"/>
+         <tok val="famulusque"/>
          <lm>
             <l>famulus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Famae Famaeque famae famaene famaeque famaeue famaeve-->
-         <tok val="[fF]amae[q]?[unv]?[e]?"/>
+      <ana>
+         <tok val="Famae"/>
+         <tok val="Famaeque"/>
+         <tok val="famae"/>
+         <tok val="famaene"/>
+         <tok val="famaeque"/>
+         <tok val="famaeue"/>
+         <tok val="famaeve"/>
          <lm>
             <l>fama</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -115,22 +167,31 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Famam Famamque famam famamque-->
-         <tok val="[fF]amam(que)?"/>
+      <ana>
+         <tok val="Famam"/>
+         <tok val="Famamque"/>
+         <tok val="famam"/>
+         <tok val="famamque"/>
          <lm>
             <l>fama</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fame Famen fame famen fameque famé-->
-         <tok val="[Ff]am[e]?(n|é|eque)?"/>
+      <ana>
+         <tok val="Fame"/>
+         <tok val="Famen"/>
+         <tok val="fame"/>
+         <tok val="famen"/>
+         <tok val="fameque"/>
+         <tok val="famé"/>
          <lm>
             <l>fames</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Famelica famelica-->
-         <tok val="[fF]amelica"/>
+      <ana>
+         <tok val="Famelica"/>
+         <tok val="famelica"/>
          <lm cert="0.5">
             <l>famelicus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -145,30 +206,37 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Famelicus famelicus-->
-         <tok val="[fF]amelicus"/>
+      <ana>
+         <tok val="Famelicus"/>
+         <tok val="famelicus"/>
          <lm>
             <l>famelicus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Famem Famemque famem famemque-->
-         <tok val="[fF]amem(que)?"/>
+      <ana>
+         <tok val="Famem"/>
+         <tok val="Famemque"/>
+         <tok val="famem"/>
+         <tok val="famemque"/>
          <lm>
             <l>fames</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fami fami famine-->
-         <tok val="[fF]ami(ne)?"/>
+      <ana>
+         <tok val="Fami"/>
+         <tok val="fami"/>
+         <tok val="famine"/>
          <lm>
             <l>fames</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Famigerabilis famigerabilis-->
-         <tok val="[fF]amigerabilis"/>
+      <ana>
+         <tok val="Famigerabilis"/>
+         <tok val="famigerabilis"/>
          <lm>
             <l>famigerabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -182,24 +250,29 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Famigeratio famigeratio-->
-         <tok val="[fF]amigeratio"/>
+      <ana>
+         <tok val="Famigeratio"/>
+         <tok val="famigeratio"/>
          <lm>
             <l>famigeratio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Famigerator famigerator-->
-         <tok val="[fF]amigerator"/>
+      <ana>
+         <tok val="Famigerator"/>
+         <tok val="famigerator"/>
          <lm>
             <l>famigerator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Familiae familiae familiaeque familiaeue-->
-         <tok val="[fF]amiliae[q]?(ue)?"/>
+      <ana>
+         <tok val="Familiae"/>
+         <tok val="familiae"/>
+         <tok val="familiaeque"/>
+         <tok val="familiaeue"/>
          <lm>
             <l>familia</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -207,15 +280,21 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Familiae familiae familiaeque familiaeue familiai fámiliae-->
-         <tok val="[fF]?(a|fá)milia[e]?[q]?(ue|i|e)?"/>
+      <ana>
+         <tok val="Familiae"/>
+         <tok val="familiae"/>
+         <tok val="familiaeque"/>
+         <tok val="familiaeue"/>
+         <tok val="familiai"/>
+         <tok val="fámiliae"/>
          <lm>
             <l>familia</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Familiare familiare-->
-         <tok val="[fF]amiliare"/>
+      <ana>
+         <tok val="Familiare"/>
+         <tok val="familiare"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -223,15 +302,22 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Familiare Familiari familiare familiari familiarique FAMILIARI-->
-         <tok val="[Ff]?(amiliar)?(i|e|ique|FAMILIARI)"/>
+      <ana>
+         <tok val="FAMILIARI"/>
+         <tok val="Familiare"/>
+         <tok val="Familiari"/>
+         <tok val="familiare"/>
+         <tok val="familiari"/>
+         <tok val="familiarique"/>
          <lm>
             <l>familiaris</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Familiarem familiarem familiaremque-->
-         <tok val="[fF]amiliarem(que)?"/>
+      <ana>
+         <tok val="Familiarem"/>
+         <tok val="familiarem"/>
+         <tok val="familiaremque"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.333333333333333333">a - - s - - - f a</m>
@@ -239,8 +325,11 @@
             <m cert="0.333333333333333333">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Familiares familiares familiaresque FAMILIARES-->
-         <tok val="[fF]?(amiliares)?(que|FAMILIARES)?"/>
+      <ana>
+         <tok val="FAMILIARES"/>
+         <tok val="Familiares"/>
+         <tok val="familiares"/>
+         <tok val="familiaresque"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -251,8 +340,13 @@
             <m cert="0.166666666666666667">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Familiares Familiaris familiares familiaresque familiaris FAMILIARES-->
-         <tok val="[Ff]?(amiliar)?[ie]?[s]?(que|FAMILIARES)?"/>
+      <ana>
+         <tok val="FAMILIARES"/>
+         <tok val="Familiares"/>
+         <tok val="Familiaris"/>
+         <tok val="familiares"/>
+         <tok val="familiaresque"/>
+         <tok val="familiaris"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.333333333333333333">n - - p - - - m a</m>
@@ -260,8 +354,11 @@
             <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Familiari familiari familiarique FAMILIARI-->
-         <tok val="[fF]?(amiliari)?(que|FAMILIARI)?"/>
+      <ana>
+         <tok val="FAMILIARI"/>
+         <tok val="Familiari"/>
+         <tok val="familiari"/>
+         <tok val="familiarique"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.142857142857142857">a - - s - - - m d</m>
@@ -273,8 +370,9 @@
             <m cert="0.142857142857142857">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Familiaria familiaria-->
-         <tok val="[fF]amiliaria"/>
+      <ana>
+         <tok val="Familiaria"/>
+         <tok val="familiaria"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -282,8 +380,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Familiarior familiarior-->
-         <tok val="[fF]amiliarior"/>
+      <ana>
+         <tok val="Familiarior"/>
+         <tok val="familiarior"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -292,16 +391,18 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Familiariorem familiariorem-->
-         <tok val="[fF]amiliariorem"/>
+      <ana>
+         <tok val="Familiariorem"/>
+         <tok val="familiariorem"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--Familiaris familiaris-->
-         <tok val="[fF]amiliaris"/>
+      <ana>
+         <tok val="Familiaris"/>
+         <tok val="familiaris"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.111111111111111111">n - - s - - - m g</m>
@@ -315,37 +416,47 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Familiarissime familiarissime-->
-         <tok val="[fF]amiliarissime"/>
+      <ana>
+         <tok val="Familiarissime"/>
+         <tok val="familiarissime"/>
          <lm>
             <l>familiaris</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Familiarissime Familiarissimus familiarissime familiarissimus-->
-         <tok val="[fF]amiliarissim(us|e)"/>
+      <ana>
+         <tok val="Familiarissime"/>
+         <tok val="Familiarissimus"/>
+         <tok val="familiarissime"/>
+         <tok val="familiarissimus"/>
          <lm>
             <l>familiaris</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Familiarissime Familiarissimum familiarissime familiarissimum-->
-         <tok val="[fF]amiliarissim(um|e)"/>
+      <ana>
+         <tok val="Familiarissime"/>
+         <tok val="Familiarissimum"/>
+         <tok val="familiarissime"/>
+         <tok val="familiarissimum"/>
          <lm>
             <l>familiaris</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Familiarissimum familiarissimorum familiarissimum-->
-         <tok val="[fF]amiliarissim(or)?um"/>
+      <ana>
+         <tok val="Familiarissimum"/>
+         <tok val="familiarissimorum"/>
+         <tok val="familiarissimum"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.5">a - - p - - - n g s</m>
             <m cert="0.5">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--Familiarissimum familiarissimum-->
-         <tok val="[fF]amiliarissimum"/>
+      <ana>
+         <tok val="Familiarissimum"/>
+         <tok val="familiarissimum"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.333333333333333333">a - - s - - - n a s</m>
@@ -353,22 +464,26 @@
             <m cert="0.333333333333333333">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Familiarissimus familiarissimus-->
-         <tok val="[fF]amiliarissimus"/>
+      <ana>
+         <tok val="Familiarissimus"/>
+         <tok val="familiarissimus"/>
          <lm>
             <l>familiaris</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Familiaritas familiaritas familiaritasque-->
-         <tok val="[fF]amiliaritas(que)?"/>
+      <ana>
+         <tok val="Familiaritas"/>
+         <tok val="familiaritas"/>
+         <tok val="familiaritasque"/>
          <lm>
             <l>familiaritas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Familiaritates familiaritates-->
-         <tok val="[fF]amiliaritates"/>
+      <ana>
+         <tok val="Familiaritates"/>
+         <tok val="familiaritates"/>
          <lm>
             <l>familiaritas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -376,16 +491,20 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Familiaritatibus familiaritatibus-->
-         <tok val="[fF]amiliaritatibus"/>
+      <ana>
+         <tok val="Familiaritatibus"/>
+         <tok val="familiaritatibus"/>
          <lm>
             <l>familiaritas</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Familiaritatis familiaritatis familiaritatisque familiaritatisue-->
-         <tok val="[fF]amiliaritatis[q]?(ue)?"/>
+      <ana>
+         <tok val="Familiaritatis"/>
+         <tok val="familiaritatis"/>
+         <tok val="familiaritatisque"/>
+         <tok val="familiaritatisue"/>
          <lm>
             <l>familiaritas</l>
             <m>n - - s - - - f g</m>
@@ -393,35 +512,43 @@
       </ana>
       <ana>
          <tok val="Familiariter"/>
+         <tok val="familiariter"/>
          <lm>
             <l>familiariter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Familiarum familiarum familiarumque-->
-         <tok val="[fF]amiliarum(que)?"/>
+      <ana>
+         <tok val="Familiarum"/>
+         <tok val="familiarum"/>
+         <tok val="familiarumque"/>
          <lm>
             <l>familia</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Familias familias familiasque-->
-         <tok val="[fF]amilias(que)?"/>
+      <ana>
+         <tok val="Familias"/>
+         <tok val="familias"/>
+         <tok val="familiasque"/>
          <lm>
             <l>familia</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Familiis familiis-->
-         <tok val="[fF]amiliis"/>
+      <ana>
+         <tok val="Familiis"/>
+         <tok val="familiis"/>
          <lm>
             <l>familia</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Famis famis famisque-->
-         <tok val="[fF]amis(que)?"/>
+      <ana>
+         <tok val="Famis"/>
+         <tok val="famis"/>
+         <tok val="famisque"/>
          <lm cert="0.5">
             <l>fames</l>
             <m>n - - s - - - f g</m>
@@ -432,8 +559,10 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Famosa famosa famosaque-->
-         <tok val="[fF]amosa(que)?"/>
+      <ana>
+         <tok val="Famosa"/>
+         <tok val="famosa"/>
+         <tok val="famosaque"/>
          <lm>
             <l>famosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -444,8 +573,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Famosi famosi famosique-->
-         <tok val="[fF]amosi(que)?"/>
+      <ana>
+         <tok val="Famosi"/>
+         <tok val="famosi"/>
+         <tok val="famosique"/>
          <lm>
             <l>famosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -454,8 +585,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Famosis famosis famosisque-->
-         <tok val="[fF]amosis(que)?"/>
+      <ana>
+         <tok val="Famosis"/>
+         <tok val="famosis"/>
+         <tok val="famosisque"/>
          <lm>
             <l>famosus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -466,15 +599,18 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Famosos famosos-->
-         <tok val="[fF]amosos"/>
+      <ana>
+         <tok val="Famosos"/>
+         <tok val="famosos"/>
          <lm>
             <l>famosus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Famosum famosum famosumque-->
-         <tok val="[fF]amosum(que)?"/>
+      <ana>
+         <tok val="Famosum"/>
+         <tok val="famosum"/>
+         <tok val="famosumque"/>
          <lm>
             <l>famosus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -482,30 +618,40 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Famosum famosorum famosum famosumque-->
-         <tok val="[fF]amos(or)?um(que)?"/>
+      <ana>
+         <tok val="Famosum"/>
+         <tok val="famosorum"/>
+         <tok val="famosum"/>
+         <tok val="famosumque"/>
          <lm>
             <l>famosus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Famosum famose famosum famosumque-->
-         <tok val="[fF]amos(um)?(que|e)?"/>
+      <ana>
+         <tok val="Famosum"/>
+         <tok val="famose"/>
+         <tok val="famosum"/>
+         <tok val="famosumque"/>
          <lm>
             <l>famosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Famosus famosus famosusque-->
-         <tok val="[fF]amosus(que)?"/>
+      <ana>
+         <tok val="Famosus"/>
+         <tok val="famosus"/>
+         <tok val="famosusque"/>
          <lm>
             <l>famosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Famula famula famulan-->
-         <tok val="[fF]amula[n]?"/>
+      <ana>
+         <tok val="Famula"/>
+         <tok val="famula"/>
+         <tok val="famulan"/>
          <lm cert="0.333333333333333333">
             <l>famula</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -526,8 +672,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Famulae famulae famulaeque-->
-         <tok val="[fF]amulae(que)?"/>
+      <ana>
+         <tok val="Famulae"/>
+         <tok val="famulae"/>
+         <tok val="famulaeque"/>
          <lm cert="0.5">
             <l>famulus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -543,8 +691,11 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Famulamne famulam famulamque-->
-         <tok val="[fF]amulam(que|ne)?"/>
+      <ana>
+         <tok val="Famulamne"/>
+         <tok val="famulam"/>
+         <tok val="famulamne"/>
+         <tok val="famulamque"/>
          <lm cert="0.5">
             <l>famulus</l>
             <m>a - - s - - - f a</m>
@@ -554,35 +705,37 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Famulare famulare-->
-         <tok val="[fF]amulare"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Famulare"/>
+         <tok val="famulare"/>
+         <lm cert="0.333333333333333333">
             <l>famularis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>famulo</l>
             <m>v - - - p n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Famulare"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>famulor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Famulare Famularis-->
-         <tok val="Famular(is|e)"/>
+      <ana>
+         <tok val="Famulare"/>
+         <tok val="Famularis"/>
+         <tok val="famulare"/>
+         <tok val="famularis"/>
          <lm>
             <l>famulor</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Famularia famularia-->
-         <tok val="[fF]amularia"/>
+      <ana>
+         <tok val="Famularia"/>
+         <tok val="famularia"/>
          <lm>
             <l>famularis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -592,14 +745,12 @@
       </ana>
       <ana>
          <tok val="Famularis"/>
-         <lm>
+         <tok val="famularis"/>
+         <lm cert="0.5">
             <l>famulor</l>
             <m>v - 2 s r s a</m>
          </lm>
-      </ana>
-      <ana><!--Famularis famularis-->
-         <tok val="[fF]amularis"/>
-         <lm>
+         <lm cert="0.5">
             <l>famularis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
             <m cert="0.111111111111111111">a - - p - - - m a</m>
@@ -614,6 +765,7 @@
       </ana>
       <ana>
          <tok val="Famularius"/>
+         <tok val="famularius"/>
          <lm>
             <l>famularis</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -622,8 +774,12 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Famulas famulan famulas famulasque famulasve-->
-         <tok val="[fF]amula[s]?(ve|n|sque)?"/>
+      <ana>
+         <tok val="Famulas"/>
+         <tok val="famulan"/>
+         <tok val="famulas"/>
+         <tok val="famulasque"/>
+         <tok val="famulasve"/>
          <lm cert="0.5">
             <l>famulo</l>
             <m>v - 2 s p i a</m>
@@ -633,30 +789,32 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Famulas famulan famulas famulasque-->
-         <tok val="[fF]amula(s|n|sque)"/>
+      <ana>
+         <tok val="Famulas"/>
+         <tok val="famulan"/>
+         <tok val="famulas"/>
+         <tok val="famulasque"/>
          <lm>
             <l>famulus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Famulate famulate-->
-         <tok val="[fF]amulate"/>
-         <lm>
+      <ana>
+         <tok val="Famulate"/>
+         <tok val="famulate"/>
+         <lm cert="0.5">
             <l>famulo</l>
             <m>v - 2 p p m a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Famulate"/>
-         <lm>
+         <lm cert="0.5">
             <l>famulor</l>
             <m cert="0.5">v - - s r p p n v</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Famulatio famulatio-->
-         <tok val="[fF]amulatio"/>
+      <ana>
+         <tok val="Famulatio"/>
+         <tok val="famulatio"/>
          <lm>
             <l>famulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -665,30 +823,33 @@
       </ana>
       <ana>
          <tok val="Famulatur"/>
+         <tok val="famulatur"/>
          <lm>
             <l>famulor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Famulatus famulatus-->
-         <tok val="[fF]amulatus"/>
-         <lm>
+      <ana>
+         <tok val="Famulatus"/>
+         <tok val="famulatus"/>
+         <lm cert="0.5">
             <l>famulatus</l>
             <m cert="0.25">n - - p - - - m n</m>
             <m cert="0.25">n - - s - - - m g</m>
             <m cert="0.25">n - - s - - - m n</m>
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Famulatus"/>
-         <lm>
+         <lm cert="0.5">
             <l>famulor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Famuli Famuline famuli famulique-->
-         <tok val="[Ff]amuli(ne|que)?"/>
+      <ana>
+         <tok val="Famuli"/>
+         <tok val="Famuline"/>
+         <tok val="famuli"/>
+         <tok val="famuline"/>
+         <tok val="famulique"/>
          <lm>
             <l>famulus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -700,8 +861,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Famulitium famulitium-->
-         <tok val="[fF]amulitium"/>
+      <ana>
+         <tok val="Famulitium"/>
+         <tok val="famulitium"/>
          <lm>
             <l>famulitium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -712,13 +874,17 @@
       </ana>
       <ana>
          <tok val="Famulor"/>
+         <tok val="famulor"/>
          <lm>
             <l>famulor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Famulum famulum famulumne famulumque-->
-         <tok val="[fF]amulum(ne|que)?"/>
+      <ana>
+         <tok val="Famulum"/>
+         <tok val="famulum"/>
+         <tok val="famulumne"/>
+         <tok val="famulumque"/>
          <lm>
             <l>famulus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -728,16 +894,25 @@
             <m cert="0.2">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Famulum famulorum famulum famulumne famulumque-->
-         <tok val="[fF]amul(or)?um(ne|que)?"/>
+      <ana>
+         <tok val="Famulum"/>
+         <tok val="famulorum"/>
+         <tok val="famulum"/>
+         <tok val="famulumne"/>
+         <tok val="famulumque"/>
          <lm>
             <l>famulus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Famulum famulorum famulum famulumne famulumque famulorumque-->
-         <tok val="[fF]amul(or)?um(que|ne)?"/>
+      <ana>
+         <tok val="Famulum"/>
+         <tok val="famulorum"/>
+         <tok val="famulorumque"/>
+         <tok val="famulum"/>
+         <tok val="famulumne"/>
+         <tok val="famulumque"/>
          <lm>
             <l>famulus</l>
             <m>n - - p - - - m g</m>
@@ -797,8 +972,9 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--famelice famelicum-->
-         <tok val="famelic(um|e)"/>
+      <ana>
+         <tok val="famelice"/>
+         <tok val="famelicum"/>
          <lm>
             <l>famelicus</l>
             <m>a - - s - - - n v</m>
@@ -833,8 +1009,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--famelicorum famelicum-->
-         <tok val="famelic(or)?um"/>
+      <ana>
+         <tok val="famelicorum"/>
+         <tok val="famelicum"/>
          <lm>
             <l>famelicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -842,8 +1019,9 @@
             <m cert="0.333333333333333333">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--famelicosque famelicos-->
-         <tok val="famelicos(que)?"/>
+      <ana>
+         <tok val="famelicos"/>
+         <tok val="famelicosque"/>
          <lm>
             <l>famelicus</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -933,8 +1111,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--famigeratorum famigeratum-->
-         <tok val="famigerat(or)?um"/>
+      <ana>
+         <tok val="famigeratorum"/>
+         <tok val="famigeratum"/>
          <lm>
             <l>famigeratus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1078,8 +1257,9 @@
             <m>a - - p - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--familiarissimi familiarissimique-->
-         <tok val="familiarissimi(que)?"/>
+      <ana>
+         <tok val="familiarissimi"/>
+         <tok val="familiarissimique"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -1088,8 +1268,9 @@
             <m cert="0.25">a - - p - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--familiarissimis familiarissumis-->
-         <tok val="familiariss[ui]mis"/>
+      <ana>
+         <tok val="familiarissimis"/>
+         <tok val="familiarissumis"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.166666666666666667">a - - p - - - n d s</m>
@@ -1124,8 +1305,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--familiaritatem familiaritatemque-->
-         <tok val="familiaritatem(que)?"/>
+      <ana>
+         <tok val="familiaritatem"/>
+         <tok val="familiaritatemque"/>
          <lm>
             <l>familiaritas</l>
             <m>n - - s - - - f a</m>
@@ -1138,15 +1320,19 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--familiariter familiariterque familiarius familiariusque-->
-         <tok val="familiari(t|usqu)?[e]?[r]?(que|us)?"/>
+      <ana>
+         <tok val="familiariter"/>
+         <tok val="familiariterque"/>
+         <tok val="familiarius"/>
+         <tok val="familiariusque"/>
          <lm>
             <l>familiaris</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--familiarium familiariumst-->
-         <tok val="familiarium(st)?"/>
+      <ana>
+         <tok val="familiarium"/>
+         <tok val="familiariumst"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.25">n - - p - - - m g</m>
@@ -1155,8 +1341,9 @@
             <m cert="0.25">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--familiarius familiariusque-->
-         <tok val="familiarius(que)?"/>
+      <ana>
+         <tok val="familiarius"/>
+         <tok val="familiariusque"/>
          <lm>
             <l>familiaris</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -1197,8 +1384,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--famose famosius-->
-         <tok val="famos(ius|e)"/>
+      <ana>
+         <tok val="famose"/>
+         <tok val="famosius"/>
          <lm>
             <l>famosus</l>
             <m>d</m>
@@ -1359,8 +1547,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--famulantes famulantis-->
-         <tok val="famulant[ie]s"/>
+      <ana>
+         <tok val="famulantes"/>
+         <tok val="famulantis"/>
          <lm>
             <l>famulo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1411,8 +1600,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--famulare famularis-->
-         <tok val="famular(is|e)"/>
+      <ana>
+         <tok val="famulare"/>
+         <tok val="famularis"/>
          <lm>
             <l>famulo</l>
             <m>v - 2 s p i p</m>
@@ -1472,8 +1662,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--famularum famularumque-->
-         <tok val="famularum(que)?"/>
+      <ana>
+         <tok val="famularum"/>
+         <tok val="famularumque"/>
          <lm cert="0.5">
             <l>famula</l>
             <m>n - - p - - - f g</m>
@@ -1495,8 +1686,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--famulate famulatum-->
-         <tok val="famulat(um|e)"/>
+      <ana>
+         <tok val="famulate"/>
+         <tok val="famulatum"/>
          <lm>
             <l>famulo</l>
             <m>v - - s r p p n v</m>
@@ -1589,8 +1781,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--famulis famulisque-->
-         <tok val="famulis(que)?"/>
+      <ana>
+         <tok val="famulis"/>
+         <tok val="famulisque"/>
          <lm cert="0.5">
             <l>famulus</l>
             <m cert="0.125">a - - p - - - n d</m>
@@ -1622,16 +1815,18 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--famulitio famulitione-->
-         <tok val="famulitio(ne)?"/>
+      <ana>
+         <tok val="famulitio"/>
+         <tok val="famulitione"/>
          <lm>
             <l>famulitium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--famulo famuloque-->
-         <tok val="famulo(que)?"/>
+      <ana>
+         <tok val="famulo"/>
+         <tok val="famuloque"/>
          <lm cert="0.5">
             <l>famulus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -1653,15 +1848,20 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--famulos famulosne famulosque fámulos-->
-         <tok val="f[aá]mulos(ne|que)?"/>
+      <ana>
+         <tok val="famulos"/>
+         <tok val="famulosne"/>
+         <tok val="famulosque"/>
+         <tok val="fámulos"/>
          <lm>
             <l>famulus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--famulos famulosne famulosque-->
-         <tok val="famulos(ne|que)?"/>
+      <ana>
+         <tok val="famulos"/>
+         <tok val="famulosne"/>
+         <tok val="famulosque"/>
          <lm>
             <l>famulus</l>
             <m>n - - p - - - m a</m>

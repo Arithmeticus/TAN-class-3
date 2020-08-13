@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscen">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:cen">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to cen</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-cen.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CEN</tok-starts-with>
       <tok-starts-with>CEn</tok-starts-with>
@@ -38,23 +15,68 @@
       <tok-starts-with>cen</tok-starts-with>
       <tok-starts-with>cén</tok-starts-with>
       <tok-starts-with>Cén</tok-starts-with>
-      <ana><!--CENSEO Censeo censeo censeoque censeó cénseo Cénseo-->
-         <tok val="[cC]?(e|cé|Cé|ce)?(nse)?(o|ó|oque|CENSEO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:14:08.107-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:14:08.107-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-cen.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CENSEO"/>
+         <tok val="Censeo"/>
+         <tok val="Cénseo"/>
+         <tok val="censeo"/>
+         <tok val="censeoque"/>
+         <tok val="censeó"/>
+         <tok val="cénseo"/>
          <lm>
             <l>censeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CENSOR Censor censor censorque censorue-->
-         <tok val="[cC]?(ensor)?[q]?(ue|CENSOR)?"/>
+      <ana>
+         <tok val="CENSOR"/>
+         <tok val="Censor"/>
+         <tok val="censor"/>
+         <tok val="censorque"/>
+         <tok val="censorue"/>
          <lm>
             <l>censor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--CENSORES Censores censores censoresque censoresue-->
-         <tok val="[cC]?(ensores)?[q]?(ue|CENSORES)?"/>
+      <ana>
+         <tok val="CENSORES"/>
+         <tok val="Censores"/>
+         <tok val="censores"/>
+         <tok val="censoresque"/>
+         <tok val="censoresue"/>
          <lm>
             <l>censor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -62,74 +84,114 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--CENSORI Censori Censorii Censorin censori censorii-->
-         <tok val="[Cc]?(ensori)?(i|n|CENSORI)?"/>
+      <ana>
+         <tok val="CENSORI"/>
+         <tok val="Censori"/>
+         <tok val="Censorii"/>
+         <tok val="Censorin"/>
+         <tok val="censori"/>
+         <tok val="censorii"/>
+         <tok val="censorin"/>
          <lm>
             <l>censorius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CENSORI Censori Censorin censori-->
-         <tok val="[Cc]?(ensori)?(n|CENSORI)?"/>
+      <ana>
+         <tok val="CENSORI"/>
+         <tok val="Censori"/>
+         <tok val="Censorin"/>
+         <tok val="censori"/>
+         <tok val="censorin"/>
          <lm>
             <l>censor</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CENSORIBVS Censoribus censoribus censoribusque-->
-         <tok val="[cC]?(ensoribus)?(que|CENSORIBVS)?"/>
+      <ana>
+         <tok val="CENSORIBVS"/>
+         <tok val="Censoribus"/>
+         <tok val="censoribus"/>
+         <tok val="censoribusque"/>
+         <tok val="censoribvs"/>
          <lm>
             <l>censor</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CENSORINVS Censorinus-->
-         <tok val="C(ensorinus|ENSORINVS)"/>
+      <ana>
+         <tok val="CENSORINVS"/>
+         <tok val="Censorinus"/>
+         <tok val="censorinus"/>
+         <tok val="censorinvs"/>
          <lm>
             <l>Censorinus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--CENSORIVS Censorius censorius-->
-         <tok val="[cC]?(ensorius|CENSORIVS)"/>
+      <ana>
+         <tok val="CENSORIVS"/>
+         <tok val="Censorius"/>
+         <tok val="censorius"/>
+         <tok val="censorivs"/>
          <lm>
             <l>censorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--CENSVIMVS Censuimus censuimus-->
-         <tok val="[cC]?(ensuimus|CENSVIMVS)"/>
+      <ana>
+         <tok val="CENSVIMVS"/>
+         <tok val="Censuimus"/>
+         <tok val="censuimus"/>
+         <tok val="censvimvs"/>
          <lm>
             <l>censeo</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--CENSVIT Censuit censuit censuitne censuitque-->
-         <tok val="[cC]?(ensuit)?(ne|que|CENSVIT)?"/>
+      <ana>
+         <tok val="CENSVIT"/>
+         <tok val="Censuit"/>
+         <tok val="censuit"/>
+         <tok val="censuitne"/>
+         <tok val="censuitque"/>
+         <tok val="censvit"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--CENTAVRIS Centauris Centaurisque centauris-->
-         <tok val="[cC]?(entauris)?(que|CENTAVRIS)?"/>
+      <ana>
+         <tok val="CENTAVRIS"/>
+         <tok val="Centauris"/>
+         <tok val="Centaurisque"/>
+         <tok val="centauris"/>
+         <tok val="centaurisque"/>
+         <tok val="centavris"/>
          <lm>
             <l>centauris</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--CENTO Cento cento centoue-->
-         <tok val="[cC]?(ento)?(ue|CENTO)?"/>
+      <ana>
+         <tok val="CENTO"/>
+         <tok val="Cento"/>
+         <tok val="cento"/>
+         <tok val="centoue"/>
          <lm>
             <l>cento</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--CENTRA Centra centra centraque centraue-->
-         <tok val="[cC]?(entra)?[q]?(ue|CENTRA)?"/>
+      <ana>
+         <tok val="CENTRA"/>
+         <tok val="Centra"/>
+         <tok val="centra"/>
+         <tok val="centraque"/>
+         <tok val="centraue"/>
          <lm>
             <l>centrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -137,52 +199,93 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--CENTRI Centri centri centrique-->
-         <tok val="[cC]?(entri)?(que|CENTRI)?"/>
+      <ana>
+         <tok val="CENTRI"/>
+         <tok val="Centri"/>
+         <tok val="centri"/>
+         <tok val="centrique"/>
          <lm>
             <l>centrum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CENTRO Centro Centron centro centron centroque-->
-         <tok val="[Cc]?(entro)?(n|que|CENTRO)?"/>
+      <ana>
+         <tok val="CENTRO"/>
+         <tok val="Centro"/>
+         <tok val="Centron"/>
+         <tok val="centro"/>
+         <tok val="centron"/>
+         <tok val="centroque"/>
          <lm>
             <l>centrum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--CENTRVM CEntrum Centrum Centrvm centre centrum centrumque centrumue centrumve-->
-         <tok val="[cC]?(e|CE|Ce|ce)?(ntr)?[uv]?[m]?[q]?[uv]?(e|CENTRVM)?"/>
+      <ana>
+         <tok val="CENTRVM"/>
+         <tok val="CEntrum"/>
+         <tok val="Centrum"/>
+         <tok val="Centrvm"/>
+         <tok val="centre"/>
+         <tok val="centrum"/>
+         <tok val="centrumque"/>
+         <tok val="centrumue"/>
+         <tok val="centrumve"/>
+         <tok val="centrvm"/>
          <lm>
             <l>centrum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--CENTRVM CEntrum Centrum Centrvm centrum centrumque centrumue centrumve-->
-         <tok val="[cC]?(e|CE|Ce)?(ntr)?[uv]?[m]?[q]?[uv]?(e|CENTRVM)?"/>
+      <ana>
+         <tok val="CENTRVM"/>
+         <tok val="CEntrum"/>
+         <tok val="Centrum"/>
+         <tok val="Centrvm"/>
+         <tok val="centrum"/>
+         <tok val="centrumque"/>
+         <tok val="centrumue"/>
+         <tok val="centrumve"/>
+         <tok val="centrvm"/>
          <lm>
             <l>centrum</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--CENTRVM CEntrum Centrum Centrvm centrorum centrum centrumque centrumue centrumve-->
-         <tok val="[cC]?(e|CE|Ce)?(ntr)?(or)?[uv]?[m]?[q]?[uv]?(e|CENTRVM)?"/>
+      <ana>
+         <tok val="CENTRVM"/>
+         <tok val="CEntrum"/>
+         <tok val="Centrum"/>
+         <tok val="Centrvm"/>
+         <tok val="centrorum"/>
+         <tok val="centrum"/>
+         <tok val="centrumque"/>
+         <tok val="centrumue"/>
+         <tok val="centrumve"/>
+         <tok val="centrvm"/>
          <lm>
             <l>centrum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CENTVM Centum centum centumque-->
-         <tok val="[cC]?(entum)?(que|CENTVM)?"/>
+      <ana>
+         <tok val="CENTVM"/>
+         <tok val="Centum"/>
+         <tok val="centum"/>
+         <tok val="centumque"/>
+         <tok val="centvm"/>
          <lm>
             <l>centum</l>
             <m>m</m>
          </lm>
       </ana>
-      <ana><!--CENTVRIA Centuria centuria-->
-         <tok val="[cC]?(enturia|CENTVRIA)"/>
+      <ana>
+         <tok val="CENTVRIA"/>
+         <tok val="Centuria"/>
+         <tok val="centuria"/>
+         <tok val="centvria"/>
          <lm cert="0.5">
             <l>centuria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -196,20 +299,26 @@
       </ana>
       <ana>
          <tok val="Cen"/>
+         <tok val="cen"/>
          <lm>
             <l>Cos</l>
             <m>n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cena cena Cená céna-->
-         <tok val="[cC]?(e|cé)n[aá]"/>
+      <ana>
+         <tok val="Cena"/>
+         <tok val="Cená"/>
+         <tok val="cena"/>
+         <tok val="cená"/>
+         <tok val="céna"/>
          <lm>
             <l>cena</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Cena cena-->
-         <tok val="[cC]ena"/>
+      <ana>
+         <tok val="Cena"/>
+         <tok val="cena"/>
          <lm cert="0.5">
             <l>cena</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -220,43 +329,50 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Cenabam cenabam-->
-         <tok val="[cC]enabam"/>
+      <ana>
+         <tok val="Cenabam"/>
+         <tok val="cenabam"/>
          <lm>
             <l>ceno</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Cenabat cenabat-->
-         <tok val="[cC]enabat"/>
+      <ana>
+         <tok val="Cenabat"/>
+         <tok val="cenabat"/>
          <lm>
             <l>ceno</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Cenabis cenabis cenábis-->
-         <tok val="[cC]en[aá]bis"/>
+      <ana>
+         <tok val="Cenabis"/>
+         <tok val="cenabis"/>
+         <tok val="cenábis"/>
          <lm>
             <l>ceno</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cenabit cenabit-->
-         <tok val="[cC]enabit"/>
+      <ana>
+         <tok val="Cenabit"/>
+         <tok val="cenabit"/>
          <lm>
             <l>ceno</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cenabo cenabo-->
-         <tok val="[cC]enabo"/>
+      <ana>
+         <tok val="Cenabo"/>
+         <tok val="cenabo"/>
          <lm>
             <l>ceno</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cenacula cenacula-->
-         <tok val="[cC]enacula"/>
+      <ana>
+         <tok val="Cenacula"/>
+         <tok val="cenacula"/>
          <lm>
             <l>cenaculum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -264,8 +380,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cenae cenae cenaene cenaeque-->
-         <tok val="[cC]enae(ne|que)?"/>
+      <ana>
+         <tok val="Cenae"/>
+         <tok val="cenae"/>
+         <tok val="cenaene"/>
+         <tok val="cenaeque"/>
          <lm>
             <l>cena</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -276,6 +395,7 @@
       </ana>
       <ana>
          <tok val="Cenaei"/>
+         <tok val="cenaei"/>
          <lm cert="0.5">
             <l>Cenaeus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -290,6 +410,7 @@
       </ana>
       <ana>
          <tok val="Cenaeo"/>
+         <tok val="cenaeo"/>
          <lm cert="0.5">
             <l>Cenaeus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -305,6 +426,7 @@
       </ana>
       <ana>
          <tok val="Cenaeum"/>
+         <tok val="cenaeum"/>
          <lm cert="0.5">
             <l>Cenaeum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -324,13 +446,15 @@
       </ana>
       <ana>
          <tok val="Cenaeus"/>
+         <tok val="cenaeus"/>
          <lm>
             <l>Cenaeus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cenandum cenandum-->
-         <tok val="[cC]enandum"/>
+      <ana>
+         <tok val="Cenandum"/>
+         <tok val="cenandum"/>
          <lm>
             <l>ceno</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -342,8 +466,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Cenanti cenanti-->
-         <tok val="[cC]enanti"/>
+      <ana>
+         <tok val="Cenanti"/>
+         <tok val="cenanti"/>
          <lm>
             <l>ceno</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -351,8 +476,10 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Cenanti cenante cenanti-->
-         <tok val="[cC]enant[ie]"/>
+      <ana>
+         <tok val="Cenanti"/>
+         <tok val="cenante"/>
+         <tok val="cenanti"/>
          <lm>
             <l>ceno</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -360,8 +487,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Cenantibus cenantibus-->
-         <tok val="[cC]enantibus"/>
+      <ana>
+         <tok val="Cenantibus"/>
+         <tok val="cenantibus"/>
          <lm>
             <l>ceno</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -372,8 +500,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Cenantis cenantis-->
-         <tok val="[cC]enantis"/>
+      <ana>
+         <tok val="Cenantis"/>
+         <tok val="cenantis"/>
          <lm>
             <l>ceno</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -381,37 +510,45 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Cenantis cenantes cenantis-->
-         <tok val="[cC]enant[ie]s"/>
+      <ana>
+         <tok val="Cenantis"/>
+         <tok val="cenantes"/>
+         <tok val="cenantis"/>
          <lm>
             <l>ceno</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Cenares cenares-->
-         <tok val="[cC]enares"/>
+      <ana>
+         <tok val="Cenares"/>
+         <tok val="cenares"/>
          <lm>
             <l>ceno</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Cenasti cenasti cenavisti cenavistine-->
-         <tok val="[cC]ena(vi)?sti(ne)?"/>
+      <ana>
+         <tok val="Cenasti"/>
+         <tok val="cenasti"/>
+         <tok val="cenavisti"/>
+         <tok val="cenavistine"/>
          <lm>
             <l>ceno</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Cenat cenat-->
-         <tok val="[cC]enat"/>
+      <ana>
+         <tok val="Cenat"/>
+         <tok val="cenat"/>
          <lm>
             <l>ceno</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cenato cenato-->
-         <tok val="[cC]enato"/>
+      <ana>
+         <tok val="Cenato"/>
+         <tok val="cenato"/>
          <lm cert="0.5">
             <l>cenatus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -429,8 +566,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Cenatoria cenatoria-->
-         <tok val="[cC]enatoria"/>
+      <ana>
+         <tok val="Cenatoria"/>
+         <tok val="cenatoria"/>
          <lm cert="0.5">
             <l>cenatorium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -447,15 +585,22 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cenavi Cenavin cenaui cenavi-->
-         <tok val="[Cc]ena[vu]i[n]?"/>
+      <ana>
+         <tok val="Cenavi"/>
+         <tok val="Cenavin"/>
+         <tok val="cenaui"/>
+         <tok val="cenavi"/>
+         <tok val="cenavin"/>
          <lm>
             <l>ceno</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Cenavitne cenauit cenavit-->
-         <tok val="[cC]ena[vu]it(ne)?"/>
+      <ana>
+         <tok val="Cenavitne"/>
+         <tok val="cenauit"/>
+         <tok val="cenavit"/>
+         <tok val="cenavitne"/>
          <lm>
             <l>ceno</l>
             <m>v - 3 s r i a</m>
@@ -463,13 +608,17 @@
       </ana>
       <ana>
          <tok val="Cenchraeus"/>
+         <tok val="cenchraeus"/>
          <lm>
             <l>Cenchraeus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cenchreae Cenchreaeque-->
-         <tok val="Cenchreae(que)?"/>
+      <ana>
+         <tok val="Cenchreae"/>
+         <tok val="Cenchreaeque"/>
+         <tok val="cenchreae"/>
+         <tok val="cenchreaeque"/>
          <lm>
             <l>Cenchreae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -478,6 +627,7 @@
       </ana>
       <ana>
          <tok val="Cenchreas"/>
+         <tok val="cenchreas"/>
          <lm>
             <l>Cenchreae</l>
             <m>n e - p - - - f a</m>
@@ -485,6 +635,7 @@
       </ana>
       <ana>
          <tok val="Cenchreidis"/>
+         <tok val="cenchreidis"/>
          <lm>
             <l>Cenchreis</l>
             <m>n e - s - - - f g</m>
@@ -492,6 +643,7 @@
       </ana>
       <ana>
          <tok val="Cenchreis"/>
+         <tok val="cenchreis"/>
          <lm cert="0.5">
             <l>Cenchreae</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -502,8 +654,9 @@
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Cenchris cenchris-->
-         <tok val="[cC]enchris"/>
+      <ana>
+         <tok val="Cenchris"/>
+         <tok val="cenchris"/>
          <lm cert="0.5">
             <l>cenchros</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -516,20 +669,24 @@
       </ana>
       <ana>
          <tok val="Cenchrius"/>
+         <tok val="cenchrius"/>
          <lm>
             <l>Cenchrius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cenem cenem-->
-         <tok val="[cC]enem"/>
+      <ana>
+         <tok val="Cenem"/>
+         <tok val="cenem"/>
          <lm>
             <l>ceno</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Cenes cenes cénes-->
-         <tok val="[cC]?(e|cé)nes"/>
+      <ana>
+         <tok val="Cenes"/>
+         <tok val="cenes"/>
+         <tok val="cénes"/>
          <lm>
             <l>ceno</l>
             <m>v - 2 s p s a</m>
@@ -537,6 +694,7 @@
       </ana>
       <ana>
          <tok val="Cenimagni"/>
+         <tok val="cenimagni"/>
          <lm>
             <l>Cenimagni</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -545,28 +703,36 @@
       </ana>
       <ana>
          <tok val="Cenites"/>
+         <tok val="cenites"/>
          <lm>
             <l>cenito</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Ceno ceno-->
-         <tok val="[cC]eno"/>
+      <ana>
+         <tok val="Ceno"/>
+         <tok val="ceno"/>
          <lm>
             <l>ceno</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cenomani Cenomanique-->
-         <tok val="Cenomani(que)?"/>
+      <ana>
+         <tok val="Cenomani"/>
+         <tok val="Cenomanique"/>
+         <tok val="cenomani"/>
+         <tok val="cenomanique"/>
          <lm>
             <l>Cenomani</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Cenomanis Cenomanisque-->
-         <tok val="Cenomanis(que)?"/>
+      <ana>
+         <tok val="Cenomanis"/>
+         <tok val="Cenomanisque"/>
+         <tok val="cenomanis"/>
+         <tok val="cenomanisque"/>
          <lm>
             <l>Cenomani</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -575,6 +741,7 @@
       </ana>
       <ana>
          <tok val="Cenomanorum"/>
+         <tok val="cenomanorum"/>
          <lm>
             <l>Cenomani</l>
             <m>n e - p - - - m g</m>
@@ -582,13 +749,15 @@
       </ana>
       <ana>
          <tok val="Cenomanos"/>
+         <tok val="cenomanos"/>
          <lm>
             <l>Cenomani</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cenotaphium cenotaphium-->
-         <tok val="[cC]enotaphium"/>
+      <ana>
+         <tok val="Cenotaphium"/>
+         <tok val="cenotaphium"/>
          <lm>
             <l>cenotaphium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -597,29 +766,41 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Censebam censebam censébam-->
-         <tok val="[cC]ens[eé]bam"/>
+      <ana>
+         <tok val="Censebam"/>
+         <tok val="censebam"/>
+         <tok val="censébam"/>
          <lm>
             <l>censeo</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Censebat censebat censebatque-->
-         <tok val="[cC]ensebat(que)?"/>
+      <ana>
+         <tok val="Censebat"/>
+         <tok val="censebat"/>
+         <tok val="censebatque"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Censen censen censes censesve-->
-         <tok val="[cC]ense[s]?(ve|n)?"/>
+      <ana>
+         <tok val="Censen"/>
+         <tok val="censen"/>
+         <tok val="censes"/>
+         <tok val="censesve"/>
          <lm>
             <l>censeo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Censen Censum cense censen censum censumque-->
-         <tok val="[cC]ens[e]?(n|um|umque)?"/>
+      <ana>
+         <tok val="Censen"/>
+         <tok val="Censum"/>
+         <tok val="cense"/>
+         <tok val="censen"/>
+         <tok val="censum"/>
+         <tok val="censumque"/>
          <lm cert="0.5">
             <l>censum</l>
             <m>n - - s - - - n v</m>
@@ -629,90 +810,109 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Censen cense censen-->
-         <tok val="[cC]ense[n]?"/>
+      <ana>
+         <tok val="Censen"/>
+         <tok val="cense"/>
+         <tok val="censen"/>
          <lm>
             <l>censeo</l>
             <m cert="0.5">v - 2 s p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Censent censent-->
-         <tok val="[cC]ensent"/>
+      <ana>
+         <tok val="Censent"/>
+         <tok val="censent"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Censeor censeor-->
-         <tok val="[cC]enseor"/>
+      <ana>
+         <tok val="Censeor"/>
+         <tok val="censeor"/>
          <lm>
             <l>censeo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Censere censere censeren-->
-         <tok val="[cC]ensere[n]?"/>
+      <ana>
+         <tok val="Censere"/>
+         <tok val="censere"/>
+         <tok val="censeren"/>
          <lm>
             <l>censeo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Censere censere censeren censeris-->
-         <tok val="[cC]enser[e]?(n|is)?"/>
+      <ana>
+         <tok val="Censere"/>
+         <tok val="censere"/>
+         <tok val="censeren"/>
+         <tok val="censeris"/>
          <lm>
             <l>censeo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Censeri censeri censerier-->
-         <tok val="[cC]enseri(er)?"/>
+      <ana>
+         <tok val="Censeri"/>
+         <tok val="censeri"/>
+         <tok val="censerier"/>
          <lm>
             <l>censeo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Censet censet-->
-         <tok val="[cC]enset"/>
+      <ana>
+         <tok val="Censet"/>
+         <tok val="censet"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Censetur censetur censeturque-->
-         <tok val="[cC]ensetur(que)?"/>
+      <ana>
+         <tok val="Censetur"/>
+         <tok val="censetur"/>
+         <tok val="censeturque"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Censibus censibus censibusque-->
-         <tok val="[cC]ensibus(que)?"/>
+      <ana>
+         <tok val="Censibus"/>
+         <tok val="censibus"/>
+         <tok val="censibusque"/>
          <lm>
             <l>census2</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Censio censio-->
-         <tok val="[cC]ensio"/>
+      <ana>
+         <tok val="Censio"/>
+         <tok val="censio"/>
          <lm>
             <l>censio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Censitor censitor-->
-         <tok val="[cC]ensitor"/>
+      <ana>
+         <tok val="Censitor"/>
+         <tok val="censitor"/>
          <lm>
             <l>censitor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Censo censo-->
-         <tok val="[cC]enso"/>
+      <ana>
+         <tok val="Censo"/>
+         <tok val="censo"/>
          <lm cert="0.5">
             <l>censeo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -726,22 +926,28 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Censore censore-->
-         <tok val="[cC]ensore"/>
+      <ana>
+         <tok val="Censore"/>
+         <tok val="censore"/>
          <lm>
             <l>censor</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Censorem censorem censoremque censoremue censoremve-->
-         <tok val="[cC]ensorem[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Censorem"/>
+         <tok val="censorem"/>
+         <tok val="censoremque"/>
+         <tok val="censoremue"/>
+         <tok val="censoremve"/>
          <lm>
             <l>censor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Censoria censoria-->
-         <tok val="[cC]ensoria"/>
+      <ana>
+         <tok val="Censoria"/>
+         <tok val="censoria"/>
          <lm>
             <l>censorius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -752,8 +958,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Censoriae censoriae-->
-         <tok val="[cC]ensoriae"/>
+      <ana>
+         <tok val="Censoriae"/>
+         <tok val="censoriae"/>
          <lm>
             <l>censorius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -762,30 +969,37 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Censoriam censoriam-->
-         <tok val="[cC]ensoriam"/>
+      <ana>
+         <tok val="Censoriam"/>
+         <tok val="censoriam"/>
          <lm>
             <l>censorius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Censorias censorias-->
-         <tok val="[cC]ensorias"/>
+      <ana>
+         <tok val="Censorias"/>
+         <tok val="censorias"/>
          <lm>
             <l>censorius</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Censorii censorii-->
-         <tok val="[cC]ensorii"/>
+      <ana>
+         <tok val="Censorii"/>
+         <tok val="censorii"/>
          <lm>
             <l>censorius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Censorin Censoris censoris censorisque-->
-         <tok val="[Cc]ensori(s|n|sque)"/>
+      <ana>
+         <tok val="Censorin"/>
+         <tok val="Censoris"/>
+         <tok val="censorin"/>
+         <tok val="censoris"/>
+         <tok val="censorisque"/>
          <lm>
             <l>censor</l>
             <m>n - - s - - - m g</m>
@@ -793,6 +1007,7 @@
       </ana>
       <ana>
          <tok val="Censorine"/>
+         <tok val="censorine"/>
          <lm>
             <l>Censorinus</l>
             <m>n e - s - - - m v</m>
@@ -800,6 +1015,7 @@
       </ana>
       <ana>
          <tok val="Censorini"/>
+         <tok val="censorini"/>
          <lm>
             <l>Censorinus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -807,16 +1023,24 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Censorino Censorinone Censorinoque-->
-         <tok val="Censorino(ne|que)?"/>
+      <ana>
+         <tok val="Censorino"/>
+         <tok val="Censorinone"/>
+         <tok val="Censorinoque"/>
+         <tok val="censorino"/>
+         <tok val="censorinone"/>
+         <tok val="censorinoque"/>
          <lm>
             <l>Censorinus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Censorinorum Censorinum-->
-         <tok val="Censorin(or)?um"/>
+      <ana>
+         <tok val="Censorinorum"/>
+         <tok val="Censorinum"/>
+         <tok val="censorinorum"/>
+         <tok val="censorinum"/>
          <lm>
             <l>Censorinus</l>
             <m>n e - p - - - m g</m>
@@ -824,13 +1048,15 @@
       </ana>
       <ana>
          <tok val="Censorinum"/>
+         <tok val="censorinum"/>
          <lm>
             <l>Censorinus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Censorio censorio-->
-         <tok val="[cC]ensorio"/>
+      <ana>
+         <tok val="Censorio"/>
+         <tok val="censorio"/>
          <lm>
             <l>censorius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -839,8 +1065,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Censorium censorium-->
-         <tok val="[cC]ensorium"/>
+      <ana>
+         <tok val="Censorium"/>
+         <tok val="censorium"/>
          <lm>
             <l>censorius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -851,15 +1078,20 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Censorum censorum-->
-         <tok val="[cC]ensorum"/>
+      <ana>
+         <tok val="Censorum"/>
+         <tok val="censorum"/>
          <lm>
             <l>censor</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Censorum Censum censorum censum censumque-->
-         <tok val="[cC]ens(or)?um(que)?"/>
+      <ana>
+         <tok val="Censorum"/>
+         <tok val="Censum"/>
+         <tok val="censorum"/>
+         <tok val="censum"/>
+         <tok val="censumque"/>
          <lm cert="0.5">
             <l>censeo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -870,8 +1102,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Censu censu censuque-->
-         <tok val="[cC]ensu(que)?"/>
+      <ana>
+         <tok val="Censu"/>
+         <tok val="censu"/>
+         <tok val="censuque"/>
          <lm cert="0.5">
             <l>censeo</l>
             <m>a - - s - - - n d</m>
@@ -881,8 +1115,10 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Censualis censuales censualis-->
-         <tok val="[cC]ensual[ie]s"/>
+      <ana>
+         <tok val="Censualis"/>
+         <tok val="censuales"/>
+         <tok val="censualis"/>
          <lm cert="0.5">
             <l>censuales</l>
             <m>n - - p - - - m a</m>
@@ -893,8 +1129,9 @@
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Censualis censualis-->
-         <tok val="[cC]ensualis"/>
+      <ana>
+         <tok val="Censualis"/>
+         <tok val="censualis"/>
          <lm>
             <l>censualis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -906,22 +1143,27 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Censui censui cénsui-->
-         <tok val="[cC]?(e|cé)nsui"/>
+      <ana>
+         <tok val="Censui"/>
+         <tok val="censui"/>
+         <tok val="cénsui"/>
          <lm>
             <l>censeo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Censui censui-->
-         <tok val="[cC]ensui"/>
+      <ana>
+         <tok val="Censui"/>
+         <tok val="censui"/>
          <lm>
             <l>census2</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Censum censum censumque-->
-         <tok val="[cC]ensum(que)?"/>
+      <ana>
+         <tok val="Censum"/>
+         <tok val="censum"/>
+         <tok val="censumque"/>
          <lm cert="0.333333333333333333">
             <l>censeo</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -939,8 +1181,10 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Censura censura censuraque-->
-         <tok val="[cC]ensura(que)?"/>
+      <ana>
+         <tok val="Censura"/>
+         <tok val="censura"/>
+         <tok val="censuraque"/>
          <lm cert="0.5">
             <l>censeo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -957,8 +1201,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Censurae censurae-->
-         <tok val="[cC]ensurae"/>
+      <ana>
+         <tok val="Censurae"/>
+         <tok val="censurae"/>
          <lm cert="0.5">
             <l>censeo</l>
             <m cert="0.25">v - - s f p a f d</m>
@@ -974,8 +1219,11 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Censuram Censuramque censuram censuramque-->
-         <tok val="[cC]ensuram(que)?"/>
+      <ana>
+         <tok val="Censuram"/>
+         <tok val="Censuramque"/>
+         <tok val="censuram"/>
+         <tok val="censuramque"/>
          <lm cert="0.5">
             <l>censeo</l>
             <m>v - - s f p a f a</m>
@@ -985,8 +1233,11 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Census Censusque census censusque-->
-         <tok val="[cC]ensus(que)?"/>
+      <ana>
+         <tok val="Census"/>
+         <tok val="Censusque"/>
+         <tok val="census"/>
+         <tok val="censusque"/>
          <lm cert="0.5">
             <l>census2</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -999,8 +1250,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Censuum censuum-->
-         <tok val="[cC]ensuum"/>
+      <ana>
+         <tok val="Censuum"/>
+         <tok val="censuum"/>
          <lm>
             <l>census2</l>
             <m>n - - p - - - m g</m>
@@ -1008,6 +1260,7 @@
       </ana>
       <ana>
          <tok val="Centaure"/>
+         <tok val="centaure"/>
          <lm>
             <l>Centaurus</l>
             <m>n e - s - - - m v</m>
@@ -1015,7 +1268,8 @@
       </ana>
       <ana>
          <tok val="Centaurea"/>
-         <lm>
+         <tok val="centaurea"/>
+         <lm cert="0.5">
             <l>Centaureus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
             <m cert="0.166666666666666667">a e - p - - - n v</m>
@@ -1024,10 +1278,7 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Centaurea centaurea-->
-         <tok val="[cC]entaurea"/>
-         <lm>
+         <lm cert="0.5">
             <l>centaureum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
             <m cert="0.333333333333333333">n - - p - - - n v</m>
@@ -1036,20 +1287,27 @@
       </ana>
       <ana>
          <tok val="Centaureos"/>
+         <tok val="centaureos"/>
          <lm>
             <l>Centaureus</l>
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centaureus Centaureusque-->
-         <tok val="Centaureus(que)?"/>
+      <ana>
+         <tok val="Centaureus"/>
+         <tok val="Centaureusque"/>
+         <tok val="centaureus"/>
+         <tok val="centaureusque"/>
          <lm>
             <l>Centaureus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centauri Centaurique-->
-         <tok val="Centauri(que)?"/>
+      <ana>
+         <tok val="Centauri"/>
+         <tok val="Centaurique"/>
+         <tok val="centauri"/>
+         <tok val="centaurique"/>
          <lm>
             <l>Centaurus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1057,8 +1315,9 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Centauria centauria-->
-         <tok val="[cC]entauria"/>
+      <ana>
+         <tok val="Centauria"/>
+         <tok val="centauria"/>
          <lm>
             <l>centauria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1068,6 +1327,7 @@
       </ana>
       <ana>
          <tok val="Centaurica"/>
+         <tok val="centaurica"/>
          <lm>
             <l>Centauricus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1080,6 +1340,7 @@
       </ana>
       <ana>
          <tok val="Centauricum"/>
+         <tok val="centauricum"/>
          <lm>
             <l>Centauricus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1092,13 +1353,17 @@
       </ana>
       <ana>
          <tok val="Centauricus"/>
+         <tok val="centauricus"/>
          <lm>
             <l>Centauricus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centauris Centaurisque-->
-         <tok val="Centauris(que)?"/>
+      <ana>
+         <tok val="Centauris"/>
+         <tok val="Centaurisque"/>
+         <tok val="centauris"/>
+         <tok val="centaurisque"/>
          <lm>
             <l>Centaurus</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1107,6 +1372,7 @@
       </ana>
       <ana>
          <tok val="Centauro"/>
+         <tok val="centauro"/>
          <lm>
             <l>Centaurus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1115,6 +1381,7 @@
       </ana>
       <ana>
          <tok val="Centauromachia"/>
+         <tok val="centauromachia"/>
          <lm>
             <l>Centauromachia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1124,13 +1391,17 @@
       </ana>
       <ana>
          <tok val="Centauromachiam"/>
+         <tok val="centauromachiam"/>
          <lm>
             <l>Centauromachia</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Centaurorum Centaurum-->
-         <tok val="Centaur(or)?um"/>
+      <ana>
+         <tok val="Centaurorum"/>
+         <tok val="Centaurum"/>
+         <tok val="centaurorum"/>
+         <tok val="centaurum"/>
          <lm>
             <l>Centaurus</l>
             <m>n e - p - - - m g</m>
@@ -1138,6 +1409,7 @@
       </ana>
       <ana>
          <tok val="Centauros"/>
+         <tok val="centauros"/>
          <lm>
             <l>Centaurus</l>
             <m>n e - p - - - m a</m>
@@ -1145,20 +1417,28 @@
       </ana>
       <ana>
          <tok val="Centaurum"/>
+         <tok val="centaurum"/>
          <lm>
             <l>Centaurus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centaurus Centaurusque Centavrvs-->
-         <tok val="Centa[uv]r[uv]s(que)?"/>
+      <ana>
+         <tok val="Centaurus"/>
+         <tok val="Centaurusque"/>
+         <tok val="Centavrvs"/>
+         <tok val="centaurus"/>
+         <tok val="centaurusque"/>
+         <tok val="centavrvs"/>
          <lm>
             <l>Centaurus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centena centena centenaque-->
-         <tok val="[cC]entena(que)?"/>
+      <ana>
+         <tok val="Centena"/>
+         <tok val="centena"/>
+         <tok val="centenaque"/>
          <lm cert="0.5">
             <l>centena</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1175,8 +1455,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Centenae Centenaeque centenae-->
-         <tok val="[cC]entenae(que)?"/>
+      <ana>
+         <tok val="Centenae"/>
+         <tok val="Centenaeque"/>
+         <tok val="centenae"/>
+         <tok val="centenaeque"/>
          <lm cert="0.5">
             <l>centeni</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1192,8 +1475,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Centenaria centenaria-->
-         <tok val="[cC]entenaria"/>
+      <ana>
+         <tok val="Centenaria"/>
+         <tok val="centenaria"/>
          <lm>
             <l>centenarius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1204,27 +1488,26 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Centenarii centenarii-->
-         <tok val="[cC]entenarii"/>
-         <lm>
+      <ana>
+         <tok val="Centenarii"/>
+         <tok val="centenarii"/>
+         <lm cert="0.5">
             <l>centenarius</l>
             <m cert="0.25">a - - s - - - m g</m>
             <m cert="0.25">a - - p - - - m v</m>
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Centenarii"/>
-         <lm>
+         <lm cert="0.5">
             <l>Centenarii</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Centenarium centenarium-->
-         <tok val="[cC]entenarium"/>
-         <lm>
+      <ana>
+         <tok val="Centenarium"/>
+         <tok val="centenarium"/>
+         <lm cert="0.5">
             <l>centenarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
             <m cert="0.166666666666666667">a - - p - - - n g</m>
@@ -1233,23 +1516,23 @@
             <m cert="0.166666666666666667">a - - p - - - m g</m>
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Centenarium"/>
-         <lm>
+         <lm cert="0.5">
             <l>Centenarii</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Centenarius centenarius-->
-         <tok val="[cC]entenarius"/>
+      <ana>
+         <tok val="Centenarius"/>
+         <tok val="centenarius"/>
          <lm>
             <l>centenarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centenas centenas centenasque-->
-         <tok val="[cC]entenas(que)?"/>
+      <ana>
+         <tok val="Centenas"/>
+         <tok val="centenas"/>
+         <tok val="centenasque"/>
          <lm cert="0.5">
             <l>centeni</l>
             <m>a - - p - - - f a</m>
@@ -1259,8 +1542,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Centeni centeni-->
-         <tok val="[cC]enteni"/>
+      <ana>
+         <tok val="Centeni"/>
+         <tok val="centeni"/>
          <lm>
             <l>centeni</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1269,8 +1553,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Centenis centenis-->
-         <tok val="[cC]entenis"/>
+      <ana>
+         <tok val="Centenis"/>
+         <tok val="centenis"/>
          <lm cert="0.5">
             <l>centeni</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -1288,6 +1573,7 @@
       </ana>
       <ana>
          <tok val="Centenius"/>
+         <tok val="centenius"/>
          <lm>
             <l>centeni</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -1296,8 +1582,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Centeno centeno-->
-         <tok val="[cC]enteno"/>
+      <ana>
+         <tok val="Centeno"/>
+         <tok val="centeno"/>
          <lm>
             <l>centeni</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1306,22 +1593,27 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Centenos centenos centenosque-->
-         <tok val="[cC]entenos(que)?"/>
+      <ana>
+         <tok val="Centenos"/>
+         <tok val="centenos"/>
+         <tok val="centenosque"/>
          <lm>
             <l>centeni</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centenus centenus-->
-         <tok val="[cC]entenus"/>
+      <ana>
+         <tok val="Centenus"/>
+         <tok val="centenus"/>
          <lm>
             <l>centeni</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centesima centesima centensima-->
-         <tok val="[cC]ente[n]?sima"/>
+      <ana>
+         <tok val="Centesima"/>
+         <tok val="centensima"/>
+         <tok val="centesima"/>
          <lm cert="0.5">
             <l>centesima</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1338,15 +1630,17 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Centesima centesima-->
-         <tok val="[cC]entesima"/>
+      <ana>
+         <tok val="Centesima"/>
+         <tok val="centesima"/>
          <lm>
             <l>centesimo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Centesimae centesimae-->
-         <tok val="[cC]entesimae"/>
+      <ana>
+         <tok val="Centesimae"/>
+         <tok val="centesimae"/>
          <lm cert="0.5">
             <l>centesimus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1362,8 +1656,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Centesimis centesimis-->
-         <tok val="[cC]entesimis"/>
+      <ana>
+         <tok val="Centesimis"/>
+         <tok val="centesimis"/>
          <lm cert="0.5">
             <l>centesimus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -1379,8 +1674,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Centesimum centesimum-->
-         <tok val="[cC]entesimum"/>
+      <ana>
+         <tok val="Centesimum"/>
+         <tok val="centesimum"/>
          <lm>
             <l>centesimus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1391,15 +1687,18 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centesimus centesimus centensimus-->
-         <tok val="[cC]ente[n]?simus"/>
+      <ana>
+         <tok val="Centesimus"/>
+         <tok val="centensimus"/>
+         <tok val="centesimus"/>
          <lm>
             <l>centesimus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centiceps centiceps-->
-         <tok val="[cC]enticeps"/>
+      <ana>
+         <tok val="Centiceps"/>
+         <tok val="centiceps"/>
          <lm>
             <l>centiceps</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1407,8 +1706,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Centies centiens centies-->
-         <tok val="[cC]entie[n]?s"/>
+      <ana>
+         <tok val="Centies"/>
+         <tok val="centiens"/>
+         <tok val="centies"/>
          <lm>
             <l>centiens</l>
             <m>d</m>
@@ -1416,6 +1717,7 @@
       </ana>
       <ana>
          <tok val="Centinodia"/>
+         <tok val="centinodia"/>
          <lm>
             <l>centinodius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1426,8 +1728,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Centipeda centipeda centupeda-->
-         <tok val="[cC]ent[iu]peda"/>
+      <ana>
+         <tok val="Centipeda"/>
+         <tok val="centipeda"/>
+         <tok val="centupeda"/>
          <lm>
             <l>centipeda</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1437,6 +1741,7 @@
       </ana>
       <ana>
          <tok val="Centobriga"/>
+         <tok val="centobriga"/>
          <lm>
             <l>Centobriga</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1446,6 +1751,7 @@
       </ana>
       <ana>
          <tok val="Centobrigam"/>
+         <tok val="centobrigam"/>
          <lm>
             <l>Centobriga</l>
             <m>n e - s - - - f a</m>
@@ -1453,6 +1759,7 @@
       </ana>
       <ana>
          <tok val="Centobrigenses"/>
+         <tok val="centobrigenses"/>
          <lm>
             <l>Centobrigenses</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1460,30 +1767,35 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Centonarius centonarius-->
-         <tok val="[cC]entonarius"/>
+      <ana>
+         <tok val="Centonarius"/>
+         <tok val="centonarius"/>
          <lm>
             <l>centonarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centone centone-->
-         <tok val="[cC]entone"/>
+      <ana>
+         <tok val="Centone"/>
+         <tok val="centone"/>
          <lm>
             <l>cento</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Centonem centonem-->
-         <tok val="[cC]entonem"/>
+      <ana>
+         <tok val="Centonem"/>
+         <tok val="centonem"/>
          <lm>
             <l>cento</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centones centones centonesque-->
-         <tok val="[cC]entones(que)?"/>
+      <ana>
+         <tok val="Centones"/>
+         <tok val="centones"/>
+         <tok val="centonesque"/>
          <lm>
             <l>cento</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1491,16 +1803,20 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centrales Centralis centrales centralis-->
-         <tok val="[Cc]entral[ie]s"/>
+      <ana>
+         <tok val="Centrales"/>
+         <tok val="Centralis"/>
+         <tok val="centrales"/>
+         <tok val="centralis"/>
          <lm>
             <l>centralis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Centrales centrales-->
-         <tok val="[cC]entrales"/>
+      <ana>
+         <tok val="Centrales"/>
+         <tok val="centrales"/>
          <lm>
             <l>centralis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1509,8 +1825,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centralis centralis-->
-         <tok val="[cC]entralis"/>
+      <ana>
+         <tok val="Centralis"/>
+         <tok val="centralis"/>
          <lm>
             <l>centralis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1522,8 +1839,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Centris centris centrisque-->
-         <tok val="[cC]entris(que)?"/>
+      <ana>
+         <tok val="Centris"/>
+         <tok val="centris"/>
+         <tok val="centrisque"/>
          <lm>
             <l>centrum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -1532,6 +1851,7 @@
       </ana>
       <ana>
          <tok val="Centrones"/>
+         <tok val="centrones"/>
          <lm>
             <l>Centrones</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1541,6 +1861,7 @@
       </ana>
       <ana>
          <tok val="Centrosa"/>
+         <tok val="centrosa"/>
          <lm>
             <l>centrosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1551,8 +1872,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Centrosus centrosus-->
-         <tok val="[cC]entrosus"/>
+      <ana>
+         <tok val="Centrosus"/>
+         <tok val="centrosus"/>
          <lm>
             <l>centrosus</l>
             <m>a - - s - - - m n</m>
@@ -1560,6 +1882,7 @@
       </ana>
       <ana>
          <tok val="Centumalo"/>
+         <tok val="centumalo"/>
          <lm>
             <l>Centumalus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1568,6 +1891,7 @@
       </ana>
       <ana>
          <tok val="Centumalum"/>
+         <tok val="centumalum"/>
          <lm>
             <l>Centumalus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1576,6 +1900,7 @@
       </ana>
       <ana>
          <tok val="Centumalus"/>
+         <tok val="centumalus"/>
          <lm>
             <l>Centumalus</l>
             <m>n e - s - - - m n</m>
@@ -1583,6 +1908,7 @@
       </ana>
       <ana>
          <tok val="Centumcellae"/>
+         <tok val="centumcellae"/>
          <lm>
             <l>CentumCellae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -1591,20 +1917,24 @@
       </ana>
       <ana>
          <tok val="Centumcellas"/>
+         <tok val="centumcellas"/>
          <lm>
             <l>CentumCellae</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Centumgeminus centumgeminus-->
-         <tok val="[cC]entumgeminus"/>
+      <ana>
+         <tok val="Centumgeminus"/>
+         <tok val="centumgeminus"/>
          <lm>
             <l>centumgeminus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centumpondium centumpondium centupondium-->
-         <tok val="[cC]entu[m]?pondium"/>
+      <ana>
+         <tok val="Centumpondium"/>
+         <tok val="centumpondium"/>
+         <tok val="centupondium"/>
          <lm>
             <l>centumpondium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1612,23 +1942,30 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Centumpondium centumpondiorum centumpondium centupondium-->
-         <tok val="[cC]entu[m]?pondi(or)?um"/>
+      <ana>
+         <tok val="Centumpondium"/>
+         <tok val="centumpondiorum"/>
+         <tok val="centumpondium"/>
+         <tok val="centupondium"/>
          <lm>
             <l>centumpondium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Centumuiri Centumviri centumuiri centumviri-->
-         <tok val="[Cc]entum[vu]iri"/>
+      <ana>
+         <tok val="Centumuiri"/>
+         <tok val="Centumviri"/>
+         <tok val="centumuiri"/>
+         <tok val="centumviri"/>
          <lm>
             <l>centumviri</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Centumviralis centumviralis-->
-         <tok val="[cC]entumviralis"/>
+      <ana>
+         <tok val="Centumviralis"/>
+         <tok val="centumviralis"/>
          <lm>
             <l>centumviralis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1640,31 +1977,36 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Centumviralis centumvirales centumviralis-->
-         <tok val="[cC]entumviral[ie]s"/>
+      <ana>
+         <tok val="Centumviralis"/>
+         <tok val="centumvirales"/>
+         <tok val="centumviralis"/>
          <lm>
             <l>centumviralis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Centunculum centunculum-->
-         <tok val="[cC]entunculum"/>
+      <ana>
+         <tok val="Centunculum"/>
+         <tok val="centunculum"/>
          <lm>
             <l>centunculus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centunculus centunculus-->
-         <tok val="[cC]entunculus"/>
+      <ana>
+         <tok val="Centunculus"/>
+         <tok val="centunculus"/>
          <lm>
             <l>centunculus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Centuplicato centuplicato-->
-         <tok val="[cC]entuplicato"/>
+      <ana>
+         <tok val="Centuplicato"/>
+         <tok val="centuplicato"/>
          <lm cert="0.5">
             <l>centuplicatus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1682,8 +2024,10 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Centuriae centuriae centuriaeque-->
-         <tok val="[cC]enturiae(que)?"/>
+      <ana>
+         <tok val="Centuriae"/>
+         <tok val="centuriae"/>
+         <tok val="centuriaeque"/>
          <lm>
             <l>centuria</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1692,22 +2036,27 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Centuriam centuriam-->
-         <tok val="[cC]enturiam"/>
+      <ana>
+         <tok val="Centuriam"/>
+         <tok val="centuriam"/>
          <lm>
             <l>centuria</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Centuriarum centuriarum centuriarumque-->
-         <tok val="[cC]enturiarum(que)?"/>
+      <ana>
+         <tok val="Centuriarum"/>
+         <tok val="centuriarum"/>
+         <tok val="centuriarumque"/>
          <lm>
             <l>centuria</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Centurias centurias centuriasque-->
-         <tok val="[cC]enturias(que)?"/>
+      <ana>
+         <tok val="Centurias"/>
+         <tok val="centurias"/>
+         <tok val="centuriasque"/>
          <lm cert="0.5">
             <l>centurio</l>
             <m>v - 2 s p i a</m>
@@ -1717,8 +2066,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Centuriata centuriata-->
-         <tok val="[cC]enturiata"/>
+      <ana>
+         <tok val="Centuriata"/>
+         <tok val="centuriata"/>
          <lm cert="0.5">
             <l>centurio</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -1740,6 +2090,7 @@
       </ana>
       <ana>
          <tok val="Centuriatae"/>
+         <tok val="centuriatae"/>
          <lm cert="0.5">
             <l>centuriatus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1755,15 +2106,18 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Centuriatim centuriatim-->
-         <tok val="[cC]enturiatim"/>
+      <ana>
+         <tok val="Centuriatim"/>
+         <tok val="centuriatim"/>
          <lm>
             <l>centuriatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Centuriatorum centuriatorum centuriatum-->
-         <tok val="[cC]enturiat(or|)um"/>
+      <ana>
+         <tok val="Centuriatorum"/>
+         <tok val="centuriatorum"/>
+         <tok val="centuriatum"/>
          <lm cert="0.5">
             <l>centuriatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1775,8 +2129,9 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Centuriatus centuriatus-->
-         <tok val="[cC]enturiatus"/>
+      <ana>
+         <tok val="Centuriatus"/>
+         <tok val="centuriatus"/>
          <lm cert="0.5">
             <l>centuriatus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -1790,16 +2145,19 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Centuriis centuriis-->
-         <tok val="[cC]enturiis"/>
+      <ana>
+         <tok val="Centuriis"/>
+         <tok val="centuriis"/>
          <lm>
             <l>centuria</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Centurio centurio centuriost-->
-         <tok val="[cC]enturio(st)?"/>
+      <ana>
+         <tok val="Centurio"/>
+         <tok val="centurio"/>
+         <tok val="centuriost"/>
          <lm>
             <l>centurio</l>
             <m cert="0.333333333333333333">v - 1 s p i a</m>
@@ -1807,8 +2165,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Centurionatus centurionatus-->
-         <tok val="[cC]enturionatus"/>
+      <ana>
+         <tok val="Centurionatus"/>
+         <tok val="centurionatus"/>
          <lm>
             <l>centurionatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1817,8 +2176,10 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centuriones centuriones centurionesque-->
-         <tok val="[cC]enturiones(que)?"/>
+      <ana>
+         <tok val="Centuriones"/>
+         <tok val="centuriones"/>
+         <tok val="centurionesque"/>
          <lm>
             <l>centurio</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1826,23 +2187,29 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Centurionibus centurionibus centurionibusque-->
-         <tok val="[cC]enturionibus(que)?"/>
+      <ana>
+         <tok val="Centurionibus"/>
+         <tok val="centurionibus"/>
+         <tok val="centurionibusque"/>
          <lm>
             <l>centurio</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Centurionis centurionis-->
-         <tok val="[cC]enturionis"/>
+      <ana>
+         <tok val="Centurionis"/>
+         <tok val="centurionis"/>
          <lm>
             <l>centurio</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Centurionum centurionum centurionumque centurionumve-->
-         <tok val="[cC]enturionum(ve|que)?"/>
+      <ana>
+         <tok val="Centurionum"/>
+         <tok val="centurionum"/>
+         <tok val="centurionumque"/>
+         <tok val="centurionumve"/>
          <lm>
             <l>centurio</l>
             <m>n - - p - - - m g</m>
@@ -1850,6 +2217,7 @@
       </ana>
       <ana>
          <tok val="Centuripae"/>
+         <tok val="centuripae"/>
          <lm>
             <l>Centuripae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -1858,6 +2226,7 @@
       </ana>
       <ana>
          <tok val="Centuripas"/>
+         <tok val="centuripas"/>
          <lm>
             <l>Centuripae</l>
             <m>n e - p - - - f a</m>
@@ -1865,6 +2234,7 @@
       </ana>
       <ana>
          <tok val="Centuripina"/>
+         <tok val="centuripina"/>
          <lm>
             <l>Centuripinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1877,6 +2247,7 @@
       </ana>
       <ana>
          <tok val="Centuripini"/>
+         <tok val="centuripini"/>
          <lm cert="0.5">
             <l>Centuripinus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1892,6 +2263,7 @@
       </ana>
       <ana>
          <tok val="Centuripinis"/>
+         <tok val="centuripinis"/>
          <lm cert="0.5">
             <l>Centuripini</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1909,6 +2281,7 @@
       </ana>
       <ana>
          <tok val="Centuripino"/>
+         <tok val="centuripino"/>
          <lm>
             <l>Centuripinus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1917,8 +2290,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Centuripinorum Centuripinum-->
-         <tok val="Centuripin(or)?um"/>
+      <ana>
+         <tok val="Centuripinorum"/>
+         <tok val="Centuripinum"/>
+         <tok val="centuripinorum"/>
+         <tok val="centuripinum"/>
          <lm cert="0.5">
             <l>Centuripinus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -1931,6 +2307,7 @@
       </ana>
       <ana>
          <tok val="Centuripinos"/>
+         <tok val="centuripinos"/>
          <lm cert="0.5">
             <l>Centuripini</l>
             <m>n e - p - - - m a</m>
@@ -1942,6 +2319,7 @@
       </ana>
       <ana>
          <tok val="Centuripinum"/>
+         <tok val="centuripinum"/>
          <lm>
             <l>Centuripinus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -1952,6 +2330,7 @@
       </ana>
       <ana>
          <tok val="Centuripinus"/>
+         <tok val="centuripinus"/>
          <lm>
             <l>Centuripinus</l>
             <m>a e - s - - - m n</m>
@@ -1959,14 +2338,16 @@
       </ana>
       <ana>
          <tok val="Centuripis"/>
+         <tok val="centuripis"/>
          <lm>
             <l>Centuripae</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Centussis centussis-->
-         <tok val="[cC]entussis"/>
+      <ana>
+         <tok val="Centussis"/>
+         <tok val="centussis"/>
          <lm>
             <l>centussis</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -2089,8 +2470,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--cenaculorum cenaculum-->
-         <tok val="cenacul(or)?um"/>
+      <ana>
+         <tok val="cenaculorum"/>
+         <tok val="cenaculum"/>
          <lm>
             <l>cenaculum</l>
             <m>n - - p - - - n g</m>
@@ -2105,8 +2487,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--cenam cenamque cénam-->
-         <tok val="c[ée]nam(que)?"/>
+      <ana>
+         <tok val="cenam"/>
+         <tok val="cenamque"/>
+         <tok val="cénam"/>
          <lm>
             <l>cena</l>
             <m>n - - s - - - f a</m>
@@ -2174,8 +2558,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--cenantem cenantemque-->
-         <tok val="cenantem(que)?"/>
+      <ana>
+         <tok val="cenantem"/>
+         <tok val="cenantemque"/>
          <lm>
             <l>ceno</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -2201,8 +2586,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--cenare cenareque-->
-         <tok val="cenare(que)?"/>
+      <ana>
+         <tok val="cenare"/>
+         <tok val="cenareque"/>
          <lm>
             <l>ceno</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -2238,15 +2624,18 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--cenarit cenaverit cenauerit-->
-         <tok val="cena[uv]?(e|)rit"/>
+      <ana>
+         <tok val="cenarit"/>
+         <tok val="cenauerit"/>
+         <tok val="cenaverit"/>
          <lm>
             <l>ceno</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cenarum cenarumque-->
-         <tok val="cenarum(que)?"/>
+      <ana>
+         <tok val="cenarum"/>
+         <tok val="cenarumque"/>
          <lm>
             <l>cena</l>
             <m>n - - p - - - f g</m>
@@ -2263,8 +2652,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--cenasse cenavisse-->
-         <tok val="cena(vi)?sse"/>
+      <ana>
+         <tok val="cenasse"/>
+         <tok val="cenavisse"/>
          <lm>
             <l>ceno</l>
             <m>v - - - r n a</m>
@@ -2277,8 +2667,9 @@
             <m>v - 1 p l s a</m>
          </lm>
       </ana>
-      <ana><!--cenasset cenavisset-->
-         <tok val="cena(vi)?sset"/>
+      <ana>
+         <tok val="cenasset"/>
+         <tok val="cenavisset"/>
          <lm>
             <l>ceno</l>
             <m>v - 3 s l s a</m>
@@ -2536,8 +2927,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--cenatum cenatumque-->
-         <tok val="cenatum(que)?"/>
+      <ana>
+         <tok val="cenatum"/>
+         <tok val="cenatumque"/>
          <lm cert="0.5">
             <l>cenatus</l>
             <m cert="0.2">a - - p - - - n g</m>
@@ -2647,8 +3039,10 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--cenaverit cenassit cenauerit-->
-         <tok val="cena[uv]?(er|ss)it"/>
+      <ana>
+         <tok val="cenassit"/>
+         <tok val="cenauerit"/>
+         <tok val="cenaverit"/>
          <lm>
             <l>ceno</l>
             <m>v - 3 s t i a</m>
@@ -2719,8 +3113,9 @@
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--cenchron cenchros-->
-         <tok val="cenchro[sn]"/>
+      <ana>
+         <tok val="cenchron"/>
+         <tok val="cenchros"/>
          <lm>
             <l>cenchros</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -2763,8 +3158,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--cenis cenisque-->
-         <tok val="cenis(que)?"/>
+      <ana>
+         <tok val="cenis"/>
+         <tok val="cenisque"/>
          <lm>
             <l>cena</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -2778,8 +3174,9 @@
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--cenitabat cenitabatque-->
-         <tok val="cenitabat(que)?"/>
+      <ana>
+         <tok val="cenitabat"/>
+         <tok val="cenitabatque"/>
          <lm>
             <l>cenito</l>
             <m>v - 3 s i i a</m>
@@ -2983,8 +3380,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--censeat cénseat-->
-         <tok val="c[ée]nseat"/>
+      <ana>
+         <tok val="censeat"/>
+         <tok val="cénseat"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 s p s a</m>
@@ -3004,8 +3402,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--censeban censebas-->
-         <tok val="censeba[sn]"/>
+      <ana>
+         <tok val="censeban"/>
+         <tok val="censebas"/>
          <lm>
             <l>censeo</l>
             <m>v - 2 s i i a</m>
@@ -3145,8 +3544,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--censendi censendique-->
-         <tok val="censendi(que)?"/>
+      <ana>
+         <tok val="censendi"/>
+         <tok val="censendique"/>
          <lm>
             <l>censeo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -3220,8 +3620,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--censente censenti-->
-         <tok val="censent[ie]"/>
+      <ana>
+         <tok val="censente"/>
+         <tok val="censenti"/>
          <lm>
             <l>censeo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -3239,8 +3640,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--censentes censentis-->
-         <tok val="censent[ie]s"/>
+      <ana>
+         <tok val="censentes"/>
+         <tok val="censentis"/>
          <lm>
             <l>censeo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3314,8 +3716,9 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--censeren censeres-->
-         <tok val="censere[sn]"/>
+      <ana>
+         <tok val="censeren"/>
+         <tok val="censeres"/>
          <lm>
             <l>censeo</l>
             <m>v - 2 s i s a</m>
@@ -3335,8 +3738,9 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--censeret cénseret-->
-         <tok val="c[ée]nseret"/>
+      <ana>
+         <tok val="censeret"/>
+         <tok val="cénseret"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 s i s a</m>
@@ -3356,8 +3760,9 @@
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--censetis censetisne-->
-         <tok val="censetis(ne)?"/>
+      <ana>
+         <tok val="censetis"/>
+         <tok val="censetisne"/>
          <lm>
             <l>censeo</l>
             <m>v - 2 p p i a</m>
@@ -3466,8 +3871,9 @@
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--censitos censitosque-->
-         <tok val="censitos(que)?"/>
+      <ana>
+         <tok val="censitos"/>
+         <tok val="censitosque"/>
          <lm>
             <l>censitus</l>
             <m>a - - p - - - m a</m>
@@ -3609,8 +4015,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--censuere censuerunt-->
-         <tok val="censuer(unt|e)"/>
+      <ana>
+         <tok val="censuere"/>
+         <tok val="censuerunt"/>
          <lm>
             <l>censeo</l>
             <m>v - 3 p r i a</m>
@@ -3725,8 +4132,9 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--censuras censurasque-->
-         <tok val="censuras(que)?"/>
+      <ana>
+         <tok val="censuras"/>
+         <tok val="censurasque"/>
          <lm cert="0.5">
             <l>censeo</l>
             <m>v - - p f p a f a</m>
@@ -3788,8 +4196,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--centenariarum centenariarumque-->
-         <tok val="centenariarum(que)?"/>
+      <ana>
+         <tok val="centenariarum"/>
+         <tok val="centenariarumque"/>
          <lm>
             <l>centenarius</l>
             <m>a - - p - - - f g</m>
@@ -3819,8 +4228,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--centenorum centenum-->
-         <tok val="centen(or)?um"/>
+      <ana>
+         <tok val="centenorum"/>
+         <tok val="centenum"/>
          <lm>
             <l>centeni</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -4082,8 +4492,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--centumpondii centupondi-->
-         <tok val="centu[m]?pondi[i]?"/>
+      <ana>
+         <tok val="centumpondii"/>
+         <tok val="centupondi"/>
          <lm>
             <l>centumpondium</l>
             <m>n - - s - - - n g</m>
@@ -4180,8 +4591,9 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--centunculis centunculisque-->
-         <tok val="centunculis(que)?"/>
+      <ana>
+         <tok val="centunculis"/>
+         <tok val="centunculisque"/>
          <lm>
             <l>centunculus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -4456,8 +4868,10 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--centuriauit centuriauitque centuriavit-->
-         <tok val="centuria[vu]it(que)?"/>
+      <ana>
+         <tok val="centuriauit"/>
+         <tok val="centuriauitque"/>
+         <tok val="centuriavit"/>
          <lm>
             <l>centurio</l>
             <m>v - 3 s r i a</m>
@@ -4491,8 +4905,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--centurionem centurionemque-->
-         <tok val="centurionem(que)?"/>
+      <ana>
+         <tok val="centurionem"/>
+         <tok val="centurionemque"/>
          <lm>
             <l>centurio</l>
             <m>n - - s - - - m a</m>
@@ -4505,8 +4920,9 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--centurioni centurionique-->
-         <tok val="centurioni(que)?"/>
+      <ana>
+         <tok val="centurioni"/>
+         <tok val="centurionique"/>
          <lm>
             <l>centurio</l>
             <m>n - - s - - - m d</m>

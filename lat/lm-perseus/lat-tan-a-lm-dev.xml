@@ -1,58 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdev">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dev">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dev</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dev.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DEV</tok-starts-with>
       <tok-starts-with>Dev</tok-starts-with>
       <tok-starts-with>dev</tok-starts-with>
       <tok-starts-with>dév</tok-starts-with>
-      <ana><!--DEVM Devm-->
-         <tok val="D(evm|EVM)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:19:58.784-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:19:58.784-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dev.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DEVM"/>
+         <tok val="Devm"/>
+         <tok val="devm"/>
          <lm>
             <l>deus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--DEVS Devs-->
-         <tok val="D(evs|EVS)"/>
+      <ana>
+         <tok val="DEVS"/>
+         <tok val="Devs"/>
+         <tok val="devs"/>
          <lm>
             <l>deus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Devade devade-->
-         <tok val="[dD]evade"/>
+      <ana>
+         <tok val="Devade"/>
+         <tok val="devade"/>
          <lm>
             <l>de_vado</l>
             <m>v - 2 s p m a</m>
@@ -60,13 +73,16 @@
       </ana>
       <ana>
          <tok val="Devales"/>
+         <tok val="devales"/>
          <lm>
             <l>de_valeo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deve deve devemet-->
-         <tok val="[dD]eve(met)?"/>
+      <ana>
+         <tok val="Deve"/>
+         <tok val="deve"/>
+         <tok val="devemet"/>
          <lm>
             <l>de2</l>
             <m cert="0.5">d</m>
@@ -75,27 +91,34 @@
       </ana>
       <ana>
          <tok val="Devehimus"/>
+         <tok val="devehimus"/>
          <lm>
             <l>deveho</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Devenere Devenerunt devenere devenerunt-->
-         <tok val="[dD]evener(unt|e)"/>
+      <ana>
+         <tok val="Devenere"/>
+         <tok val="Devenerunt"/>
+         <tok val="devenere"/>
+         <tok val="devenerunt"/>
          <lm>
             <l>devenio</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Devenire devenire-->
-         <tok val="[dD]evenire"/>
+      <ana>
+         <tok val="Devenire"/>
+         <tok val="devenire"/>
          <lm>
             <l>devenio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Devenit devenit devenitque-->
-         <tok val="[dD]evenit(que)?"/>
+      <ana>
+         <tok val="Devenit"/>
+         <tok val="devenit"/>
+         <tok val="devenitque"/>
          <lm>
             <l>devenio</l>
             <m cert="0.5">v - 3 s r i a</m>
@@ -104,6 +127,7 @@
       </ana>
       <ana>
          <tok val="Deverra"/>
+         <tok val="deverra"/>
          <lm>
             <l>Deverra</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -111,8 +135,10 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Deversoria deversoria devorsoria-->
-         <tok val="[dD]ev[eo]rsoria"/>
+      <ana>
+         <tok val="Deversoria"/>
+         <tok val="deversoria"/>
+         <tok val="devorsoria"/>
          <lm>
             <l>deversorium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -120,8 +146,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Deversoria deversoria-->
-         <tok val="[dD]eversoria"/>
+      <ana>
+         <tok val="Deversoria"/>
+         <tok val="deversoria"/>
          <lm>
             <l>deversorius</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
@@ -132,32 +159,36 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Devertar devertar-->
-         <tok val="[dD]evertar"/>
+      <ana>
+         <tok val="Devertar"/>
+         <tok val="devertar"/>
          <lm>
             <l>deverto</l>
             <m cert="0.5">v - 1 s f i p</m>
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Deverti deverti-->
-         <tok val="[dD]everti"/>
+      <ana>
+         <tok val="Deverti"/>
+         <tok val="deverti"/>
          <lm>
             <l>deverto</l>
             <m cert="0.5">v - - - p n p</m>
             <m cert="0.5">v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Devertit devertit-->
-         <tok val="[dD]evertit"/>
+      <ana>
+         <tok val="Devertit"/>
+         <tok val="devertit"/>
          <lm>
             <l>deverto</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Devexo devexo-->
-         <tok val="[dD]evexo"/>
+      <ana>
+         <tok val="Devexo"/>
+         <tok val="devexo"/>
          <lm cert="0.5">
             <l>devexus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -171,23 +202,29 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Devexus devexus-->
-         <tok val="[dD]evexus"/>
+      <ana>
+         <tok val="Devexus"/>
+         <tok val="devexus"/>
          <lm>
             <l>devexus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Devi devi devii devin-->
-         <tok val="[dD]evi[in]?"/>
+      <ana>
+         <tok val="Devi"/>
+         <tok val="devi"/>
+         <tok val="devii"/>
+         <tok val="devin"/>
          <lm>
             <l>devius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Devia devia deviaque-->
-         <tok val="[dD]evia(que)?"/>
+      <ana>
+         <tok val="Devia"/>
+         <tok val="devia"/>
+         <tok val="deviaque"/>
          <lm cert="0.333333333333333333">
             <l>devia</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -208,8 +245,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Devictaque devicta devictaque Devicta-->
-         <tok val="[dD]evicta(que)?"/>
+      <ana>
+         <tok val="Devicta"/>
+         <tok val="Devictaque"/>
+         <tok val="devicta"/>
+         <tok val="devictaque"/>
          <lm>
             <l>devinco</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -220,15 +260,17 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Devictus devictus-->
-         <tok val="[dD]evictus"/>
+      <ana>
+         <tok val="Devictus"/>
+         <tok val="devictus"/>
          <lm>
             <l>devinco</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Devinctus devinctus-->
-         <tok val="[dD]evinctus"/>
+      <ana>
+         <tok val="Devinctus"/>
+         <tok val="devinctus"/>
          <lm cert="0.5">
             <l>devincio</l>
             <m>v - - s r p p m n</m>
@@ -238,8 +280,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Devites devites-->
-         <tok val="[dD]evites"/>
+      <ana>
+         <tok val="Devites"/>
+         <tok val="devites"/>
          <lm>
             <l>devito</l>
             <m>v - 2 s p s a</m>
@@ -247,77 +290,90 @@
       </ana>
       <ana>
          <tok val="Deviuo"/>
+         <tok val="deviuo"/>
          <lm>
             <l>de_vivo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Devius devius-->
-         <tok val="[dD]evius"/>
+      <ana>
+         <tok val="Devius"/>
+         <tok val="devius"/>
          <lm>
             <l>devius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Devolvit devolvit-->
-         <tok val="[dD]evolvit"/>
+      <ana>
+         <tok val="Devolvit"/>
+         <tok val="devolvit"/>
          <lm>
             <l>devolvo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Devolvunt devolvunt-->
-         <tok val="[dD]evolvunt"/>
+      <ana>
+         <tok val="Devolvunt"/>
+         <tok val="devolvunt"/>
          <lm>
             <l>devolvo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Devoravi devoravi-->
-         <tok val="[dD]evoravi"/>
+      <ana>
+         <tok val="Devoravi"/>
+         <tok val="devoravi"/>
          <lm>
             <l>devoro</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Devorer devorer-->
-         <tok val="[dD]evorer"/>
+      <ana>
+         <tok val="Devorer"/>
+         <tok val="devorer"/>
          <lm>
             <l>devoro</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Devortar devortar-->
-         <tok val="[dD]evortar"/>
+      <ana>
+         <tok val="Devortar"/>
+         <tok val="devortar"/>
          <lm>
             <l>de_verto</l>
             <m cert="0.5">v - 1 s f i p</m>
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Devota devota devotaque devotast-->
-         <tok val="[dD]evota(st|que)?"/>
+      <ana>
+         <tok val="Devota"/>
+         <tok val="devota"/>
+         <tok val="devotaque"/>
+         <tok val="devotast"/>
          <lm>
             <l>devoto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Devotam devotam-->
-         <tok val="[dD]evotam"/>
+      <ana>
+         <tok val="Devotam"/>
+         <tok val="devotam"/>
          <lm>
             <l>de_voveo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Devotionis devotionis-->
-         <tok val="[dD]evotionis"/>
+      <ana>
+         <tok val="Devotionis"/>
+         <tok val="devotionis"/>
          <lm>
             <l>devotio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Devotum devotum-->
-         <tok val="[dD]evotum"/>
+      <ana>
+         <tok val="Devotum"/>
+         <tok val="devotum"/>
          <lm>
             <l>de_voveo</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -328,43 +384,52 @@
             <m cert="0.166666666666666667">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Devotum devote devotum-->
-         <tok val="[dD]evot(um|e)"/>
+      <ana>
+         <tok val="Devotum"/>
+         <tok val="devote"/>
+         <tok val="devotum"/>
          <lm>
             <l>de_voveo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Devotusque devotus-->
-         <tok val="[dD]evotus(que)?"/>
+      <ana>
+         <tok val="Devotusque"/>
+         <tok val="devotus"/>
+         <tok val="devotusque"/>
          <lm>
             <l>de_voveo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Devoveant devoveant-->
-         <tok val="[dD]evoveant"/>
+      <ana>
+         <tok val="Devoveant"/>
+         <tok val="devoveant"/>
          <lm>
             <l>devoveo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Devoveat devoveat-->
-         <tok val="[dD]evoveat"/>
+      <ana>
+         <tok val="Devoveat"/>
+         <tok val="devoveat"/>
          <lm>
             <l>devoveo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Devovet devovet-->
-         <tok val="[dD]evovet"/>
+      <ana>
+         <tok val="Devovet"/>
+         <tok val="devovet"/>
          <lm>
             <l>devoveo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Devovit devovit devovitque-->
-         <tok val="[dD]evovit(que)?"/>
+      <ana>
+         <tok val="Devovit"/>
+         <tok val="devovit"/>
+         <tok val="devovitque"/>
          <lm>
             <l>de_voveo</l>
             <m>v - 3 s r i a</m>
@@ -470,8 +535,9 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--devecta devectaque-->
-         <tok val="devecta(que)?"/>
+      <ana>
+         <tok val="devecta"/>
+         <tok val="devectaque"/>
          <lm cert="0.5">
             <l>deveho</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -493,8 +559,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--devecte devectum-->
-         <tok val="devect(um|e)"/>
+      <ana>
+         <tok val="devecte"/>
+         <tok val="devectum"/>
          <lm>
             <l>deveho</l>
             <m>v - - s r p p n v</m>
@@ -583,8 +650,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--devehendo devehundo-->
-         <tok val="deveh[ue]ndo"/>
+      <ana>
+         <tok val="devehendo"/>
+         <tok val="devehundo"/>
          <lm>
             <l>deveho</l>
             <m cert="0.2">v - - s p g p m d</m>
@@ -863,8 +931,9 @@
             <m cert="0.5">v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--devenio dévenio-->
-         <tok val="d[ée]venio"/>
+      <ana>
+         <tok val="devenio"/>
+         <tok val="dévenio"/>
          <lm>
             <l>devenio</l>
             <m>v - 1 s p i a</m>
@@ -1085,16 +1154,20 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--deversori deversorii-->
-         <tok val="deversori[i]?"/>
+      <ana>
+         <tok val="deversori"/>
+         <tok val="deversorii"/>
          <lm>
             <l>deversorius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--deversori deversorii devorsori devorsorii-->
-         <tok val="dev[eo]rsori[i]?"/>
+      <ana>
+         <tok val="deversori"/>
+         <tok val="deversorii"/>
+         <tok val="devorsori"/>
+         <tok val="devorsorii"/>
          <lm>
             <l>deversorium</l>
             <m>n - - s - - - n g</m>
@@ -1142,8 +1215,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--deversorio devorsorio-->
-         <tok val="dev[oe]rsorio"/>
+      <ana>
+         <tok val="deversorio"/>
+         <tok val="devorsorio"/>
          <lm>
             <l>deversorium</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1180,8 +1254,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--deversorium devorsorium-->
-         <tok val="dev[oe]rsorium"/>
+      <ana>
+         <tok val="deversorium"/>
+         <tok val="devorsorium"/>
          <lm>
             <l>deversorium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1297,8 +1372,10 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--devertere deverterunt deverteruntque-->
-         <tok val="deverter(unt)?(que|e)?"/>
+      <ana>
+         <tok val="devertere"/>
+         <tok val="deverterunt"/>
+         <tok val="deverteruntque"/>
          <lm>
             <l>deverto</l>
             <m>v - 3 p r i a</m>
@@ -1312,8 +1389,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--devertere deverteris-->
-         <tok val="deverter(is|e)"/>
+      <ana>
+         <tok val="devertere"/>
+         <tok val="deverteris"/>
          <lm>
             <l>deverto</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -1410,8 +1488,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--deverticulum devorticulum-->
-         <tok val="dev[oe]rticulum"/>
+      <ana>
+         <tok val="deverticulum"/>
+         <tok val="devorticulum"/>
          <lm>
             <l>deverticulum</l>
             <m cert="0.25">n - - s - - - n a</m>
@@ -1442,8 +1521,9 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--devertissem devertissemque-->
-         <tok val="devertissem(que)?"/>
+      <ana>
+         <tok val="devertissem"/>
+         <tok val="devertissemque"/>
          <lm>
             <l>deverto</l>
             <m>v - 1 s l s a</m>
@@ -1520,8 +1600,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--devexa devexaque-->
-         <tok val="devexa(que)?"/>
+      <ana>
+         <tok val="devexa"/>
+         <tok val="devexaque"/>
          <lm cert="0.5">
             <l>devexum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1755,15 +1836,17 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--devicerat deviceratque-->
-         <tok val="devicerat(que)?"/>
+      <ana>
+         <tok val="devicerat"/>
+         <tok val="deviceratque"/>
          <lm>
             <l>devinco</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--devicere devicerunt-->
-         <tok val="devicer(unt|e)"/>
+      <ana>
+         <tok val="devicere"/>
+         <tok val="devicerunt"/>
          <lm>
             <l>devinco</l>
             <m>v - 3 p r i a</m>
@@ -1785,8 +1868,9 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--devici devíci-->
-         <tok val="dev[íi]ci"/>
+      <ana>
+         <tok val="devici"/>
+         <tok val="devíci"/>
          <lm>
             <l>devinco</l>
             <m>v - 1 s r i a</m>
@@ -1898,8 +1982,9 @@
             <m cert="0.25">v - - s r p p n b</m>
          </lm>
       </ana>
-      <ana><!--devictorum devictum-->
-         <tok val="devict(or)?um"/>
+      <ana>
+         <tok val="devictorum"/>
+         <tok val="devictum"/>
          <lm>
             <l>devinco</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -2162,8 +2247,9 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--devinctas devinctasque-->
-         <tok val="devinctas(que)?"/>
+      <ana>
+         <tok val="devinctas"/>
+         <tok val="devinctasque"/>
          <lm cert="0.5">
             <l>devincio</l>
             <m>v - - p r p p f a</m>
@@ -2282,8 +2368,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--devinxere dévinxere-->
-         <tok val="d[ée]vinxere"/>
+      <ana>
+         <tok val="devinxere"/>
+         <tok val="dévinxere"/>
          <lm>
             <l>devincio</l>
             <m>v - 3 p r i a</m>
@@ -2742,8 +2829,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--devolasse devolavisse-->
-         <tok val="devola(vi)?sse"/>
+      <ana>
+         <tok val="devolasse"/>
+         <tok val="devolavisse"/>
          <lm>
             <l>devolo</l>
             <m>v - - - r n a</m>
@@ -2839,8 +2927,9 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--devolutorum devolutum-->
-         <tok val="devolut(or)?um"/>
+      <ana>
+         <tok val="devolutorum"/>
+         <tok val="devolutum"/>
          <lm>
             <l>de_volvo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -3014,8 +3103,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--devorabit devorabitque-->
-         <tok val="devorabit(que)?"/>
+      <ana>
+         <tok val="devorabit"/>
+         <tok val="devorabitque"/>
          <lm>
             <l>devoro</l>
             <m>v - 3 s f i a</m>
@@ -3082,8 +3172,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--devorandos devorandosque-->
-         <tok val="devorandos(que)?"/>
+      <ana>
+         <tok val="devorandos"/>
+         <tok val="devorandosque"/>
          <lm>
             <l>devoro</l>
             <m>v - - p p g p m a</m>
@@ -3129,8 +3220,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--devorante devoranti-->
-         <tok val="devorant[ie]"/>
+      <ana>
+         <tok val="devorante"/>
+         <tok val="devoranti"/>
          <lm>
             <l>devoro</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3156,8 +3248,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--devorantes devorantis-->
-         <tok val="devorant[ie]s"/>
+      <ana>
+         <tok val="devorantes"/>
+         <tok val="devorantis"/>
          <lm>
             <l>devoro</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3201,8 +3294,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--devorarat devoraverat-->
-         <tok val="devora(ve)?rat"/>
+      <ana>
+         <tok val="devorarat"/>
+         <tok val="devoraverat"/>
          <lm>
             <l>devoro</l>
             <m>v - 3 s l i a</m>
@@ -3238,15 +3332,19 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--devorari devorári-->
-         <tok val="devor[áa]ri"/>
+      <ana>
+         <tok val="devorari"/>
+         <tok val="devorári"/>
          <lm>
             <l>devoro</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--devorarunt devoravere devoraverunt devoraveruntque-->
-         <tok val="devora(ve)?r(unt)?(que|e)?"/>
+      <ana>
+         <tok val="devorarunt"/>
+         <tok val="devoravere"/>
+         <tok val="devoraverunt"/>
+         <tok val="devoraveruntque"/>
          <lm>
             <l>devoro</l>
             <m>v - 3 p r i a</m>
@@ -3287,8 +3385,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--devorat devorát-->
-         <tok val="devor[áa]t"/>
+      <ana>
+         <tok val="devorat"/>
+         <tok val="devorát"/>
          <lm>
             <l>devoro</l>
             <m>v - 3 s p i a</m>
@@ -3338,8 +3437,10 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--devorate devoratum devoratumque-->
-         <tok val="devorat(um)?(que|e)?"/>
+      <ana>
+         <tok val="devorate"/>
+         <tok val="devoratum"/>
+         <tok val="devoratumque"/>
          <lm>
             <l>devoro</l>
             <m>v - - s r p p n v</m>
@@ -3443,8 +3544,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--devoratum devoratumque-->
-         <tok val="devoratum(que)?"/>
+      <ana>
+         <tok val="devoratum"/>
+         <tok val="devoratumque"/>
          <lm>
             <l>devoro</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -3786,8 +3888,9 @@
             <m cert="0.5">a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--devotissime devotissimus-->
-         <tok val="devotissim(us|e)"/>
+      <ana>
+         <tok val="devotissime"/>
+         <tok val="devotissimus"/>
          <lm>
             <l>de_voveo</l>
             <m>a - - s - - - m v s</m>
@@ -4204,7 +4307,7 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--deviasset-->
+      <ana>
          <tok val="deviasset"/>
          <lm>
             <l>devio</l>

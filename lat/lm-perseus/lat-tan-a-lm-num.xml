@@ -1,51 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusnum">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:num">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to num</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-num.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>NUM</tok-starts-with>
       <tok-starts-with>Num</tok-starts-with>
       <tok-starts-with>num</tok-starts-with>
       <tok-starts-with>núm</tok-starts-with>
       <tok-starts-with>Núm</tok-starts-with>
-      <ana><!--NUM Num Numne Numque num numne numque numue numve núm Núm-->
-         <tok val="[nN]?(u|nú|Nú)?[m]?[q]?[unv]?(e|NUM)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:35:47.009-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:35:47.009-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-num.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="NUM"/>
+         <tok val="Num"/>
+         <tok val="Numne"/>
+         <tok val="Numque"/>
+         <tok val="Núm"/>
+         <tok val="num"/>
+         <tok val="numne"/>
+         <tok val="numque"/>
+         <tok val="numue"/>
+         <tok val="numve"/>
+         <tok val="núm"/>
          <lm>
             <l>num</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--NUMEN Numen numen numenque numenue-->
-         <tok val="[nN]?(umen)?[q]?(ue|NUMEN)?"/>
+      <ana>
+         <tok val="NUMEN"/>
+         <tok val="Numen"/>
+         <tok val="numen"/>
+         <tok val="numenque"/>
+         <tok val="numenue"/>
          <lm>
             <l>numen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -53,8 +75,13 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Numa Numan Numaque-->
-         <tok val="Numa(n|que)?"/>
+      <ana>
+         <tok val="Numa"/>
+         <tok val="Numan"/>
+         <tok val="Numaque"/>
+         <tok val="numa"/>
+         <tok val="numan"/>
+         <tok val="numaque"/>
          <lm>
             <l>Numa</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -62,8 +89,11 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numae Numaeque-->
-         <tok val="Numae(que)?"/>
+      <ana>
+         <tok val="Numae"/>
+         <tok val="Numaeque"/>
+         <tok val="numae"/>
+         <tok val="numaeque"/>
          <lm>
             <l>Numa</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -74,13 +104,17 @@
       </ana>
       <ana>
          <tok val="Numam"/>
+         <tok val="numam"/>
          <lm>
             <l>Numa</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numan Numas-->
-         <tok val="Numa[sn]"/>
+      <ana>
+         <tok val="Numan"/>
+         <tok val="Numas"/>
+         <tok val="numan"/>
+         <tok val="numas"/>
          <lm>
             <l>Numa</l>
             <m>n e - p - - - m a</m>
@@ -88,6 +122,7 @@
       </ana>
       <ana>
          <tok val="Numana"/>
+         <tok val="numana"/>
          <lm>
             <l>Numana</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -97,6 +132,7 @@
       </ana>
       <ana>
          <tok val="Numanae"/>
+         <tok val="numanae"/>
          <lm>
             <l>Numana</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -107,6 +143,7 @@
       </ana>
       <ana>
          <tok val="Numani"/>
+         <tok val="numani"/>
          <lm>
             <l>Numanus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -116,6 +153,7 @@
       </ana>
       <ana>
          <tok val="Numano"/>
+         <tok val="numano"/>
          <lm>
             <l>Numanus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -124,6 +162,7 @@
       </ana>
       <ana>
          <tok val="Numantia"/>
+         <tok val="numantia"/>
          <lm>
             <l>Numantia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -131,8 +170,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Numantiae Numantiaeque-->
-         <tok val="Numantiae(que)?"/>
+      <ana>
+         <tok val="Numantiae"/>
+         <tok val="Numantiaeque"/>
+         <tok val="numantiae"/>
+         <tok val="numantiaeque"/>
          <lm>
             <l>Numantia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -141,8 +183,11 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Numantiam Numantiamque-->
-         <tok val="Numantiam(que)?"/>
+      <ana>
+         <tok val="Numantiam"/>
+         <tok val="Numantiamque"/>
+         <tok val="numantiam"/>
+         <tok val="numantiamque"/>
          <lm>
             <l>Numantia</l>
             <m>n e - s - - - f a</m>
@@ -150,6 +195,7 @@
       </ana>
       <ana>
          <tok val="Numantina"/>
+         <tok val="numantina"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -160,8 +206,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Numantinae Numantinaeque-->
-         <tok val="Numantinae(que)?"/>
+      <ana>
+         <tok val="Numantinae"/>
+         <tok val="Numantinaeque"/>
+         <tok val="numantinae"/>
+         <tok val="numantinaeque"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -172,6 +221,7 @@
       </ana>
       <ana>
          <tok val="Numantini"/>
+         <tok val="numantini"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -185,6 +235,7 @@
       </ana>
       <ana>
          <tok val="Numantinis"/>
+         <tok val="numantinis"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -199,6 +250,7 @@
       </ana>
       <ana>
          <tok val="Numantino"/>
+         <tok val="numantino"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -209,8 +261,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Numantinorum Numantinum-->
-         <tok val="Numantin(or)?um"/>
+      <ana>
+         <tok val="Numantinorum"/>
+         <tok val="Numantinum"/>
+         <tok val="numantinorum"/>
+         <tok val="numantinum"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -220,6 +275,7 @@
       </ana>
       <ana>
          <tok val="Numantinos"/>
+         <tok val="numantinos"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -228,6 +284,7 @@
       </ana>
       <ana>
          <tok val="Numantinum"/>
+         <tok val="numantinum"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.2">a e - s - - - n v</m>
@@ -239,6 +296,7 @@
       </ana>
       <ana>
          <tok val="Numantinus"/>
+         <tok val="numantinus"/>
          <lm>
             <l>Numantinus</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -247,6 +305,7 @@
       </ana>
       <ana>
          <tok val="Numanum"/>
+         <tok val="numanum"/>
          <lm>
             <l>Numanus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -255,13 +314,16 @@
       </ana>
       <ana>
          <tok val="Numanus"/>
+         <tok val="numanus"/>
          <lm>
             <l>Numanus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numaria numaria nummaria-->
-         <tok val="[nN]u[m]?maria"/>
+      <ana>
+         <tok val="Numaria"/>
+         <tok val="numaria"/>
+         <tok val="nummaria"/>
          <lm>
             <l>nummarius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -272,8 +334,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Numarium numarium nummarium-->
-         <tok val="[nN]u[m]?marium"/>
+      <ana>
+         <tok val="Numarium"/>
+         <tok val="numarium"/>
+         <tok val="nummarium"/>
          <lm>
             <l>nummarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -284,15 +348,19 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numarius numarius nummarius-->
-         <tok val="[nN]u[m]?marius"/>
+      <ana>
+         <tok val="Numarius"/>
+         <tok val="numarius"/>
+         <tok val="nummarius"/>
          <lm>
             <l>nummarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numatum numatum nummatum-->
-         <tok val="[nN]u[m]?matum"/>
+      <ana>
+         <tok val="Numatum"/>
+         <tok val="numatum"/>
+         <tok val="nummatum"/>
          <lm>
             <l>nummatus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -303,22 +371,26 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numatus numatus nummatus-->
-         <tok val="[nN]u[m]?matus"/>
+      <ana>
+         <tok val="Numatus"/>
+         <tok val="numatus"/>
+         <tok val="nummatus"/>
          <lm>
             <l>nummatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nume nume-->
-         <tok val="[nN]ume"/>
+      <ana>
+         <tok val="Nume"/>
+         <tok val="nume"/>
          <lm>
             <l>nummus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numella numella-->
-         <tok val="[nN]umella"/>
+      <ana>
+         <tok val="Numella"/>
+         <tok val="numella"/>
          <lm>
             <l>numella</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -326,8 +398,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Numellae numellae-->
-         <tok val="[nN]umellae"/>
+      <ana>
+         <tok val="Numellae"/>
+         <tok val="numellae"/>
          <lm>
             <l>numella</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -336,8 +409,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Numellis numellis-->
-         <tok val="[nN]umellis"/>
+      <ana>
+         <tok val="Numellis"/>
+         <tok val="numellis"/>
          <lm cert="0.5">
             <l>numellus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -351,6 +425,7 @@
       </ana>
       <ana>
          <tok val="Numenii"/>
+         <tok val="numenii"/>
          <lm>
             <l>Numenius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -360,6 +435,7 @@
       </ana>
       <ana>
          <tok val="Numenio"/>
+         <tok val="numenio"/>
          <lm>
             <l>Numenius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -368,6 +444,7 @@
       </ana>
       <ana>
          <tok val="Numenium"/>
+         <tok val="numenium"/>
          <lm>
             <l>Numenius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -376,27 +453,32 @@
       </ana>
       <ana>
          <tok val="Numenius"/>
+         <tok val="numenius"/>
          <lm>
             <l>Numenius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numera numera numeran-->
-         <tok val="[nN]umera[n]?"/>
+      <ana>
+         <tok val="Numera"/>
+         <tok val="numera"/>
+         <tok val="numeran"/>
          <lm>
             <l>numero</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Numerabam numerabam-->
-         <tok val="[nN]umerabam"/>
+      <ana>
+         <tok val="Numerabam"/>
+         <tok val="numerabam"/>
          <lm>
             <l>numero</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Numerabilis numerabilis-->
-         <tok val="[nN]umerabilis"/>
+      <ana>
+         <tok val="Numerabilis"/>
+         <tok val="numerabilis"/>
          <lm>
             <l>numerabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -408,23 +490,27 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Numerabilis numerabiles numerabilis-->
-         <tok val="[nN]umerabil[ie]s"/>
+      <ana>
+         <tok val="Numerabilis"/>
+         <tok val="numerabiles"/>
+         <tok val="numerabilis"/>
          <lm>
             <l>numerabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Numerabimus numerabimus-->
-         <tok val="[nN]umerabimus"/>
+      <ana>
+         <tok val="Numerabimus"/>
+         <tok val="numerabimus"/>
          <lm>
             <l>numero</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Numerale numerale-->
-         <tok val="[nN]umerale"/>
+      <ana>
+         <tok val="Numerale"/>
+         <tok val="numerale"/>
          <lm>
             <l>numeralis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -432,30 +518,35 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Numerandus numerandus-->
-         <tok val="[nN]umerandus"/>
+      <ana>
+         <tok val="Numerandus"/>
+         <tok val="numerandus"/>
          <lm>
             <l>numero</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Numerantur numerantur-->
-         <tok val="[nN]umerantur"/>
+      <ana>
+         <tok val="Numerantur"/>
+         <tok val="numerantur"/>
          <lm>
             <l>numero</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Numerare numerare-->
-         <tok val="[nN]umerare"/>
+      <ana>
+         <tok val="Numerare"/>
+         <tok val="numerare"/>
          <lm>
             <l>numero</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Numerare numerare numeraris-->
-         <tok val="[nN]umerar(e|is)"/>
+      <ana>
+         <tok val="Numerare"/>
+         <tok val="numerare"/>
+         <tok val="numeraris"/>
          <lm>
             <l>numero</l>
             <m>v - 2 s p i p</m>
@@ -463,13 +554,16 @@
       </ana>
       <ana>
          <tok val="Numerarem"/>
+         <tok val="numerarem"/>
          <lm>
             <l>numero</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Numerari numerari numerarique-->
-         <tok val="[nN]umerari(que)?"/>
+      <ana>
+         <tok val="Numerari"/>
+         <tok val="numerari"/>
+         <tok val="numerarique"/>
          <lm cert="0.5">
             <l>numero</l>
             <m>v - - - p n p</m>
@@ -479,8 +573,11 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numerari numerari numerarii numerarique-->
-         <tok val="[nN]umerari(i|que)?"/>
+      <ana>
+         <tok val="Numerari"/>
+         <tok val="numerari"/>
+         <tok val="numerarii"/>
+         <tok val="numerarique"/>
          <lm>
             <l>numerarius</l>
             <m>n - - s - - - m g</m>
@@ -488,6 +585,7 @@
       </ana>
       <ana>
          <tok val="Numeraria"/>
+         <tok val="numeraria"/>
          <lm>
             <l>Numeraria</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -495,8 +593,9 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Numerate numerate-->
-         <tok val="[nN]umerate"/>
+      <ana>
+         <tok val="Numerate"/>
+         <tok val="numerate"/>
          <lm cert="0.5">
             <l>numero</l>
             <m cert="0.5">v - 2 p p m a</m>
@@ -508,8 +607,10 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numerate numerate numeratum-->
-         <tok val="[nN]umerat(e|um)"/>
+      <ana>
+         <tok val="Numerate"/>
+         <tok val="numerate"/>
+         <tok val="numeratum"/>
          <lm cert="0.333333333333333333">
             <l>numeratum</l>
             <m>n - - s - - - n v</m>
@@ -523,23 +624,27 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Numeratio numeratio-->
-         <tok val="[nN]umeratio"/>
+      <ana>
+         <tok val="Numeratio"/>
+         <tok val="numeratio"/>
          <lm>
             <l>numeratio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Numerationem numerationem numerationemque-->
-         <tok val="[nN]umerationem(que)?"/>
+      <ana>
+         <tok val="Numerationem"/>
+         <tok val="numerationem"/>
+         <tok val="numerationemque"/>
          <lm>
             <l>numeratio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Numerato numerato-->
-         <tok val="[nN]umerato"/>
+      <ana>
+         <tok val="Numerato"/>
+         <tok val="numerato"/>
          <lm cert="0.333333333333333333">
             <l>numeratus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -562,37 +667,43 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Numerator numerator-->
-         <tok val="[nN]umerator"/>
+      <ana>
+         <tok val="Numerator"/>
+         <tok val="numerator"/>
          <lm>
             <l>numerator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numeratore numeratore-->
-         <tok val="[nN]umeratore"/>
+      <ana>
+         <tok val="Numeratore"/>
+         <tok val="numeratore"/>
          <lm>
             <l>numerator</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Numeratoris numeratoris-->
-         <tok val="[nN]umeratoris"/>
+      <ana>
+         <tok val="Numeratoris"/>
+         <tok val="numeratoris"/>
          <lm>
             <l>numerator</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Numeratorum numeratorum-->
-         <tok val="[nN]umeratorum"/>
+      <ana>
+         <tok val="Numeratorum"/>
+         <tok val="numeratorum"/>
          <lm>
             <l>numerator</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Numeratorum numeratorum numeratum-->
-         <tok val="[nN]umerat(or|)um"/>
+      <ana>
+         <tok val="Numeratorum"/>
+         <tok val="numeratorum"/>
+         <tok val="numeratum"/>
          <lm cert="0.333333333333333333">
             <l>numeratus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -608,8 +719,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Numeratus numeratus-->
-         <tok val="[nN]umeratus"/>
+      <ana>
+         <tok val="Numeratus"/>
+         <tok val="numeratus"/>
          <lm cert="0.5">
             <l>numeratus</l>
             <m>a - - s - - - m n</m>
@@ -619,43 +731,53 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Numeraui numeraui numeravi-->
-         <tok val="[nN]umera[uv]i"/>
+      <ana>
+         <tok val="Numeraui"/>
+         <tok val="numeraui"/>
+         <tok val="numeravi"/>
          <lm>
             <l>numero</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Numeremus numeremus-->
-         <tok val="[nN]umeremus"/>
+      <ana>
+         <tok val="Numeremus"/>
+         <tok val="numeremus"/>
          <lm>
             <l>numero</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Numerent numerent-->
-         <tok val="[nN]umerent"/>
+      <ana>
+         <tok val="Numerent"/>
+         <tok val="numerent"/>
          <lm>
             <l>numero</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Numeres numeres-->
-         <tok val="[nN]umeres"/>
+      <ana>
+         <tok val="Numeres"/>
+         <tok val="numeres"/>
          <lm>
             <l>numero</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Numeret numeret-->
-         <tok val="[nN]umeret"/>
+      <ana>
+         <tok val="Numeret"/>
+         <tok val="numeret"/>
          <lm>
             <l>numero</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Numeri numeri numerique numeriue NUMERI-->
-         <tok val="[nN]?(umeri)?[q]?(ue|NUMERI)?"/>
+      <ana>
+         <tok val="NUMERI"/>
+         <tok val="Numeri"/>
+         <tok val="numeri"/>
+         <tok val="numerique"/>
+         <tok val="numeriue"/>
          <lm>
             <l>numerus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -665,13 +787,17 @@
       </ana>
       <ana>
          <tok val="Numeri"/>
+         <tok val="numeri"/>
          <lm>
             <l>Numerius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numeri Numerii-->
-         <tok val="Numeri[i]?"/>
+      <ana>
+         <tok val="Numeri"/>
+         <tok val="Numerii"/>
+         <tok val="numeri"/>
+         <tok val="numerii"/>
          <lm>
             <l>Numerius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -680,6 +806,7 @@
       </ana>
       <ana>
          <tok val="Numeria"/>
+         <tok val="numeria"/>
          <lm cert="0.5">
             <l>Numerius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -698,6 +825,7 @@
       </ana>
       <ana>
          <tok val="Numeriam"/>
+         <tok val="numeriam"/>
          <lm cert="0.5">
             <l>Numeria</l>
             <m>n e - s - - - f a</m>
@@ -709,6 +837,7 @@
       </ana>
       <ana>
          <tok val="Numeriani"/>
+         <tok val="numeriani"/>
          <lm>
             <l>Numerianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -719,6 +848,7 @@
       </ana>
       <ana>
          <tok val="Numeriano"/>
+         <tok val="numeriano"/>
          <lm>
             <l>Numerianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -729,6 +859,7 @@
       </ana>
       <ana>
          <tok val="Numerianum"/>
+         <tok val="numerianum"/>
          <lm>
             <l>Numerianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -741,6 +872,7 @@
       </ana>
       <ana>
          <tok val="Numerianus"/>
+         <tok val="numerianus"/>
          <lm>
             <l>Numerianus</l>
             <m>a e - s - - - m n</m>
@@ -748,6 +880,7 @@
       </ana>
       <ana>
          <tok val="Numerii"/>
+         <tok val="numerii"/>
          <lm>
             <l>Numerius</l>
             <m cert="0.2">a e - p - - - m v</m>
@@ -759,6 +892,7 @@
       </ana>
       <ana>
          <tok val="Numerio"/>
+         <tok val="numerio"/>
          <lm>
             <l>Numerius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -771,14 +905,17 @@
       </ana>
       <ana>
          <tok val="Numerios"/>
+         <tok val="numerios"/>
          <lm>
             <l>Numerius</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numeris numeris numerisque-->
-         <tok val="[nN]umeris(que)?"/>
+      <ana>
+         <tok val="Numeris"/>
+         <tok val="numeris"/>
+         <tok val="numerisque"/>
          <lm>
             <l>numerus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -787,6 +924,7 @@
       </ana>
       <ana>
          <tok val="Numerium"/>
+         <tok val="numerium"/>
          <lm>
             <l>Numerius</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -801,43 +939,67 @@
       </ana>
       <ana>
          <tok val="Numerius"/>
+         <tok val="numerius"/>
          <lm>
             <l>Numerius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numero Numerone Numeroque numero numerone numeroque Numeró número-->
-         <tok val="[nN]?(u|nú)mer[o]?(qu|n)?[eóo]?"/>
+      <ana>
+         <tok val="Numero"/>
+         <tok val="Numerone"/>
+         <tok val="Numeroque"/>
+         <tok val="Numeró"/>
+         <tok val="numero"/>
+         <tok val="numerone"/>
+         <tok val="numeroque"/>
+         <tok val="numeró"/>
+         <tok val="número"/>
          <lm>
             <l>numero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Numero Numerone Numeroque numero numerone numeroque-->
-         <tok val="[nN]umero(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Numero"/>
+         <tok val="Numerone"/>
+         <tok val="Numeroque"/>
+         <tok val="numero"/>
+         <tok val="numerone"/>
+         <tok val="numeroque"/>
          <lm>
             <l>numerus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Numerorum Numerum numerorum numerorumque numerum numerumque-->
-         <tok val="[nN]umer(or)?um(que)?"/>
+      <ana>
+         <tok val="Numerorum"/>
+         <tok val="Numerum"/>
+         <tok val="numerorum"/>
+         <tok val="numerorumque"/>
+         <tok val="numerum"/>
+         <tok val="numerumque"/>
          <lm>
             <l>numerus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Numeros Numerosque numeros numerosque-->
-         <tok val="[nN]umeros(que)?"/>
+      <ana>
+         <tok val="Numeros"/>
+         <tok val="Numerosque"/>
+         <tok val="numeros"/>
+         <tok val="numerosque"/>
          <lm>
             <l>numerus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numerosa numerosa numerosaque-->
-         <tok val="[nN]umerosa(que)?"/>
+      <ana>
+         <tok val="Numerosa"/>
+         <tok val="numerosa"/>
+         <tok val="numerosaque"/>
          <lm>
             <l>numerosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -848,29 +1010,40 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Numerose numerose numeroseque numerosius numerosiusque-->
-         <tok val="[nN]umeros(iusqu)?(e|ius|eque)"/>
+      <ana>
+         <tok val="Numerose"/>
+         <tok val="numerose"/>
+         <tok val="numeroseque"/>
+         <tok val="numerosius"/>
+         <tok val="numerosiusque"/>
          <lm>
             <l>numerosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Numerose Numerosum numerose numeroseque numerosum-->
-         <tok val="[nN]umeros(um|e|eque)"/>
+      <ana>
+         <tok val="Numerose"/>
+         <tok val="Numerosum"/>
+         <tok val="numerose"/>
+         <tok val="numeroseque"/>
+         <tok val="numerosum"/>
          <lm>
             <l>numerosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Numerose numerose numeroseque-->
-         <tok val="[nN]umerose(que)?"/>
+      <ana>
+         <tok val="Numerose"/>
+         <tok val="numerose"/>
+         <tok val="numeroseque"/>
          <lm>
             <l>numerosus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numerosi numerosi-->
-         <tok val="[nN]umerosi"/>
+      <ana>
+         <tok val="Numerosi"/>
+         <tok val="numerosi"/>
          <lm>
             <l>numerosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -879,8 +1052,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Numerosiore numerosiore-->
-         <tok val="[nN]umerosiore"/>
+      <ana>
+         <tok val="Numerosiore"/>
+         <tok val="numerosiore"/>
          <lm>
             <l>numerosus</l>
             <m>a - - s - - - - b c</m>
@@ -888,13 +1062,16 @@
       </ana>
       <ana>
          <tok val="Numerosius"/>
+         <tok val="numerosius"/>
          <lm>
             <l>numerosus</l>
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Numerosius numerosius numerosiusque-->
-         <tok val="[nN]umerosius(que)?"/>
+      <ana>
+         <tok val="Numerosius"/>
+         <tok val="numerosius"/>
+         <tok val="numerosiusque"/>
          <lm>
             <l>numerosus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -902,8 +1079,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Numerosum numerosum-->
-         <tok val="[nN]umerosum"/>
+      <ana>
+         <tok val="Numerosum"/>
+         <tok val="numerosum"/>
          <lm>
             <l>numerosus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -913,37 +1091,49 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numerosus numerosus-->
-         <tok val="[nN]umerosus"/>
+      <ana>
+         <tok val="Numerosus"/>
+         <tok val="numerosus"/>
          <lm>
             <l>numerosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numerum numerum numerumque-->
-         <tok val="[nN]umerum(que)?"/>
+      <ana>
+         <tok val="Numerum"/>
+         <tok val="numerum"/>
+         <tok val="numerumque"/>
          <lm>
             <l>numerus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numerus numerus numerusque numerusue-->
-         <tok val="[nN]umerus[q]?(ue)?"/>
+      <ana>
+         <tok val="Numerus"/>
+         <tok val="numerus"/>
+         <tok val="numerusque"/>
+         <tok val="numerusue"/>
          <lm>
             <l>numerus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numestrani Numistrani-->
-         <tok val="Num[ie]strani"/>
+      <ana>
+         <tok val="Numestrani"/>
+         <tok val="Numistrani"/>
+         <tok val="numestrani"/>
+         <tok val="numistrani"/>
          <lm>
             <l>Numistrani</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numi Nummi numi nummi-->
-         <tok val="[Nn]um[m]?i"/>
+      <ana>
+         <tok val="Numi"/>
+         <tok val="Nummi"/>
+         <tok val="numi"/>
+         <tok val="nummi"/>
          <lm>
             <l>nummus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -953,6 +1143,7 @@
       </ana>
       <ana>
          <tok val="Numici"/>
+         <tok val="numici"/>
          <lm cert="0.5">
             <l>Numicius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -967,6 +1158,7 @@
       </ana>
       <ana>
          <tok val="Numicium"/>
+         <tok val="numicium"/>
          <lm>
             <l>Numicius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -979,6 +1171,7 @@
       </ana>
       <ana>
          <tok val="Numicius"/>
+         <tok val="numicius"/>
          <lm>
             <l>Numicius</l>
             <m>a e - s - - - m n</m>
@@ -986,6 +1179,7 @@
       </ana>
       <ana>
          <tok val="Numicum"/>
+         <tok val="numicum"/>
          <lm>
             <l>Numicus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -994,6 +1188,7 @@
       </ana>
       <ana>
          <tok val="Numicus"/>
+         <tok val="numicus"/>
          <lm>
             <l>Numicus</l>
             <m>n e - s - - - m n</m>
@@ -1001,6 +1196,7 @@
       </ana>
       <ana>
          <tok val="Numida"/>
+         <tok val="numida"/>
          <lm>
             <l>Numida</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -1008,8 +1204,11 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numidae Numidaeque-->
-         <tok val="Numidae(que)?"/>
+      <ana>
+         <tok val="Numidae"/>
+         <tok val="Numidaeque"/>
+         <tok val="numidae"/>
+         <tok val="numidaeque"/>
          <lm>
             <l>Numida</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -1018,29 +1217,41 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Numidam Numidamque-->
-         <tok val="Numidam(que)?"/>
+      <ana>
+         <tok val="Numidam"/>
+         <tok val="Numidamque"/>
+         <tok val="numidam"/>
+         <tok val="numidamque"/>
          <lm>
             <l>Numida</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numidarum Numidarumque-->
-         <tok val="Numidarum(que)?"/>
+      <ana>
+         <tok val="Numidarum"/>
+         <tok val="Numidarumque"/>
+         <tok val="numidarum"/>
+         <tok val="numidarumque"/>
          <lm>
             <l>Numida</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Numidas Numidasque-->
-         <tok val="Numidas(que)?"/>
+      <ana>
+         <tok val="Numidas"/>
+         <tok val="Numidasque"/>
+         <tok val="numidas"/>
+         <tok val="numidasque"/>
          <lm>
             <l>Numida</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Numidia Numidiaque-->
-         <tok val="Numidia(que)?"/>
+      <ana>
+         <tok val="Numidia"/>
+         <tok val="Numidiaque"/>
+         <tok val="numidia"/>
+         <tok val="numidiaque"/>
          <lm>
             <l>Numidia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1048,8 +1259,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Numidiae Numidiaeque-->
-         <tok val="Numidiae(que)?"/>
+      <ana>
+         <tok val="Numidiae"/>
+         <tok val="Numidiaeque"/>
+         <tok val="numidiae"/>
+         <tok val="numidiaeque"/>
          <lm>
             <l>Numidia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1060,6 +1274,7 @@
       </ana>
       <ana>
          <tok val="Numidiam"/>
+         <tok val="numidiam"/>
          <lm>
             <l>Numidia</l>
             <m>n e - s - - - f a</m>
@@ -1067,6 +1282,7 @@
       </ana>
       <ana>
          <tok val="Numidianus"/>
+         <tok val="numidianus"/>
          <lm>
             <l>Numidianus</l>
             <m>a e - s - - - m n</m>
@@ -1074,6 +1290,7 @@
       </ana>
       <ana>
          <tok val="Numidica"/>
+         <tok val="numidica"/>
          <lm>
             <l>Numidicus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1084,8 +1301,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Numidicae Numidicaeque-->
-         <tok val="Numidicae(que)?"/>
+      <ana>
+         <tok val="Numidicae"/>
+         <tok val="Numidicaeque"/>
+         <tok val="numidicae"/>
+         <tok val="numidicaeque"/>
          <lm>
             <l>Numidicus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1096,6 +1316,7 @@
       </ana>
       <ana>
          <tok val="Numidicam"/>
+         <tok val="numidicam"/>
          <lm>
             <l>Numidicus</l>
             <m>a e - s - - - f a</m>
@@ -1103,6 +1324,7 @@
       </ana>
       <ana>
          <tok val="Numidicarum"/>
+         <tok val="numidicarum"/>
          <lm>
             <l>Numidicus</l>
             <m>a e - p - - - f g</m>
@@ -1110,6 +1332,7 @@
       </ana>
       <ana>
          <tok val="Numidicas"/>
+         <tok val="numidicas"/>
          <lm>
             <l>Numidicus</l>
             <m>a e - p - - - f a</m>
@@ -1117,6 +1340,7 @@
       </ana>
       <ana>
          <tok val="Numidici"/>
+         <tok val="numidici"/>
          <lm>
             <l>Numidicus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1127,6 +1351,7 @@
       </ana>
       <ana>
          <tok val="Numidicis"/>
+         <tok val="numidicis"/>
          <lm>
             <l>Numidicus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1139,6 +1364,7 @@
       </ana>
       <ana>
          <tok val="Numidico"/>
+         <tok val="numidico"/>
          <lm>
             <l>Numidicus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1149,6 +1375,7 @@
       </ana>
       <ana>
          <tok val="Numidicos"/>
+         <tok val="numidicos"/>
          <lm>
             <l>Numidicus</l>
             <m>a e - p - - - m a</m>
@@ -1156,6 +1383,7 @@
       </ana>
       <ana>
          <tok val="Numidicum"/>
+         <tok val="numidicum"/>
          <lm>
             <l>Numidicus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1168,21 +1396,26 @@
       </ana>
       <ana>
          <tok val="Numidicus"/>
+         <tok val="numidicus"/>
          <lm>
             <l>Numidicus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numidis Numidisque-->
-         <tok val="Numidis(que)?"/>
+      <ana>
+         <tok val="Numidis"/>
+         <tok val="Numidisque"/>
+         <tok val="numidis"/>
+         <tok val="numidisque"/>
          <lm>
             <l>Numida</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Numina numina-->
-         <tok val="[nN]umina"/>
+      <ana>
+         <tok val="Numina"/>
+         <tok val="numina"/>
          <lm>
             <l>numen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1190,44 +1423,54 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Numine numine-->
-         <tok val="[nN]umine"/>
+      <ana>
+         <tok val="Numine"/>
+         <tok val="numine"/>
          <lm>
             <l>numen</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Numini numini-->
-         <tok val="[nN]umini"/>
+      <ana>
+         <tok val="Numini"/>
+         <tok val="numini"/>
          <lm>
             <l>numen</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Numinibus numinibus numinibusque-->
-         <tok val="[nN]uminibus(que)?"/>
+      <ana>
+         <tok val="Numinibus"/>
+         <tok val="numinibus"/>
+         <tok val="numinibusque"/>
          <lm>
             <l>numen</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Numinis numinis numinisque-->
-         <tok val="[nN]uminis(que)?"/>
+      <ana>
+         <tok val="Numinis"/>
+         <tok val="numinis"/>
+         <tok val="numinisque"/>
          <lm>
             <l>numen</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Numinum numinum-->
-         <tok val="[nN]uminum"/>
+      <ana>
+         <tok val="Numinum"/>
+         <tok val="numinum"/>
          <lm>
             <l>numen</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Numis Nummis numis nummis-->
-         <tok val="[Nn]u[m]?mis"/>
+      <ana>
+         <tok val="Numis"/>
+         <tok val="Nummis"/>
+         <tok val="numis"/>
+         <tok val="nummis"/>
          <lm>
             <l>nummus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1236,6 +1479,7 @@
       </ana>
       <ana>
          <tok val="Numisia"/>
+         <tok val="numisia"/>
          <lm>
             <l>Numisius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1248,6 +1492,7 @@
       </ana>
       <ana>
          <tok val="Numisiana"/>
+         <tok val="numisiana"/>
          <lm>
             <l>Numisianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1260,6 +1505,7 @@
       </ana>
       <ana>
          <tok val="Numisianae"/>
+         <tok val="numisianae"/>
          <lm>
             <l>Numisianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1270,6 +1516,7 @@
       </ana>
       <ana>
          <tok val="Numisianam"/>
+         <tok val="numisianam"/>
          <lm>
             <l>Numisianus</l>
             <m>a e - s - - - f a</m>
@@ -1277,6 +1524,7 @@
       </ana>
       <ana>
          <tok val="Numisianas"/>
+         <tok val="numisianas"/>
          <lm>
             <l>Numisianus</l>
             <m>a e - p - - - f a</m>
@@ -1284,6 +1532,7 @@
       </ana>
       <ana>
          <tok val="Numisianum"/>
+         <tok val="numisianum"/>
          <lm>
             <l>Numisianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1296,6 +1545,7 @@
       </ana>
       <ana>
          <tok val="Numisianus"/>
+         <tok val="numisianus"/>
          <lm>
             <l>Numisianus</l>
             <m>a e - s - - - m n</m>
@@ -1303,6 +1553,7 @@
       </ana>
       <ana>
          <tok val="Numisiis"/>
+         <tok val="numisiis"/>
          <lm>
             <l>Numisius</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1315,6 +1566,7 @@
       </ana>
       <ana>
          <tok val="Numisio"/>
+         <tok val="numisio"/>
          <lm>
             <l>Numisius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1325,6 +1577,7 @@
       </ana>
       <ana>
          <tok val="Numisios"/>
+         <tok val="numisios"/>
          <lm>
             <l>Numisius</l>
             <m>a e - p - - - m a</m>
@@ -1332,6 +1585,7 @@
       </ana>
       <ana>
          <tok val="Numisium"/>
+         <tok val="numisium"/>
          <lm>
             <l>Numisius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1344,6 +1598,7 @@
       </ana>
       <ana>
          <tok val="Numisius"/>
+         <tok val="numisius"/>
          <lm>
             <l>Numisius</l>
             <m>a e - s - - - m n</m>
@@ -1351,6 +1606,7 @@
       </ana>
       <ana>
          <tok val="Numistro"/>
+         <tok val="numistro"/>
          <lm>
             <l>Numistro</l>
             <m cert="0.5">n e - s - - - f n</m>
@@ -1359,6 +1615,7 @@
       </ana>
       <ana>
          <tok val="Numistrone"/>
+         <tok val="numistrone"/>
          <lm>
             <l>Numistro</l>
             <m>n e - s - - - f b</m>
@@ -1366,13 +1623,17 @@
       </ana>
       <ana>
          <tok val="Numistronem"/>
+         <tok val="numistronem"/>
          <lm>
             <l>Numistro</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Numitor Numitorque-->
-         <tok val="Numitor(que)?"/>
+      <ana>
+         <tok val="Numitor"/>
+         <tok val="Numitorque"/>
+         <tok val="numitor"/>
+         <tok val="numitorque"/>
          <lm>
             <l>Numitor</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -1381,6 +1642,7 @@
       </ana>
       <ana>
          <tok val="Numitore"/>
+         <tok val="numitore"/>
          <lm>
             <l>Numitor</l>
             <m>n e - s - - - m b</m>
@@ -1388,6 +1650,7 @@
       </ana>
       <ana>
          <tok val="Numitorem"/>
+         <tok val="numitorem"/>
          <lm>
             <l>Numitor</l>
             <m>n e - s - - - m a</m>
@@ -1395,6 +1658,7 @@
       </ana>
       <ana>
          <tok val="Numitori"/>
+         <tok val="numitori"/>
          <lm cert="0.5">
             <l>Numitorius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -1407,13 +1671,17 @@
       </ana>
       <ana>
          <tok val="Numitoriam"/>
+         <tok val="numitoriam"/>
          <lm>
             <l>Numitorius</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Numitorio Numitorioque-->
-         <tok val="Numitorio(que)?"/>
+      <ana>
+         <tok val="Numitorio"/>
+         <tok val="Numitorioque"/>
+         <tok val="numitorio"/>
+         <tok val="numitorioque"/>
          <lm>
             <l>Numitorius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1424,6 +1692,7 @@
       </ana>
       <ana>
          <tok val="Numitoris"/>
+         <tok val="numitoris"/>
          <lm>
             <l>Numitor</l>
             <m>n e - s - - - m g</m>
@@ -1431,6 +1700,7 @@
       </ana>
       <ana>
          <tok val="Numitorium"/>
+         <tok val="numitorium"/>
          <lm>
             <l>Numitorius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1441,43 +1711,69 @@
             <m cert="0.166666666666666667">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Numitorius Numitoriusque-->
-         <tok val="Numitorius(que)?"/>
+      <ana>
+         <tok val="Numitorius"/>
+         <tok val="Numitoriusque"/>
+         <tok val="numitorius"/>
+         <tok val="numitoriusque"/>
          <lm>
             <l>Numitorius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nummariam nummariam-->
-         <tok val="[nN]ummariam"/>
+      <ana>
+         <tok val="Nummariam"/>
+         <tok val="nummariam"/>
          <lm>
             <l>nummarius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Nummo Numo nummo nummoque numo númmo-->
-         <tok val="[Nn]?(u|nú|nu)m[m]?o(que)?"/>
+      <ana>
+         <tok val="Nummo"/>
+         <tok val="Numo"/>
+         <tok val="nummo"/>
+         <tok val="nummoque"/>
+         <tok val="numo"/>
+         <tok val="númmo"/>
          <lm>
             <l>nummus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Nummo Numo nummo nummoque numo-->
-         <tok val="[Nn]um[m]?o(que)?"/>
+      <ana>
+         <tok val="Nummo"/>
+         <tok val="Numo"/>
+         <tok val="nummo"/>
+         <tok val="nummoque"/>
+         <tok val="numo"/>
          <lm>
             <l>nummus</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Nummorum Nummum Numorum nummorum nummum nummumque numum númmum-->
-         <tok val="(Nu)?[m]?(mor|n|N|númm)um(um|mum|morum|mumque)?"/>
+      <ana>
+         <tok val="Nummorum"/>
+         <tok val="Nummum"/>
+         <tok val="Numorum"/>
+         <tok val="nummorum"/>
+         <tok val="nummum"/>
+         <tok val="nummumque"/>
+         <tok val="numorum"/>
+         <tok val="numum"/>
+         <tok val="númmum"/>
          <lm>
             <l>nummus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Nummos nummos nummosque nummosue numos númmos-->
-         <tok val="[nN]?[u]?(m|núm)?mos[q]?(ue)?"/>
+      <ana>
+         <tok val="Nummos"/>
+         <tok val="nummos"/>
+         <tok val="nummosque"/>
+         <tok val="nummosue"/>
+         <tok val="numos"/>
+         <tok val="númmos"/>
          <lm>
             <l>nummus</l>
             <m>n - - p - - - m a</m>
@@ -1485,6 +1781,7 @@
       </ana>
       <ana>
          <tok val="Nummularia"/>
+         <tok val="nummularia"/>
          <lm>
             <l>nummularius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1495,8 +1792,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Nummulariis nummulariis-->
-         <tok val="[nN]ummulariis"/>
+      <ana>
+         <tok val="Nummulariis"/>
+         <tok val="nummulariis"/>
          <lm>
             <l>nummularius</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -1509,45 +1807,62 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Nummularios nummularios-->
-         <tok val="[nN]ummularios"/>
+      <ana>
+         <tok val="Nummularios"/>
+         <tok val="nummularios"/>
          <lm>
             <l>nummularius</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nummulis nummulis-->
-         <tok val="[nN]ummulis"/>
+      <ana>
+         <tok val="Nummulis"/>
+         <tok val="nummulis"/>
          <lm>
             <l>nummulus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Nummum nummum nummumque numum-->
-         <tok val="[nN]u[m]?mum(que)?"/>
+      <ana>
+         <tok val="Nummum"/>
+         <tok val="nummum"/>
+         <tok val="nummumque"/>
+         <tok val="numum"/>
          <lm>
             <l>nummus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nummus Numus nummus nummusque numus-->
-         <tok val="[Nn]u[m]?mus(que)?"/>
+      <ana>
+         <tok val="Nummus"/>
+         <tok val="Numus"/>
+         <tok val="nummus"/>
+         <tok val="nummusque"/>
+         <tok val="numus"/>
          <lm>
             <l>nummus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numnam numnam-->
-         <tok val="[nN]umnam"/>
+      <ana>
+         <tok val="Numnam"/>
+         <tok val="numnam"/>
          <lm>
             <l>numnam</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Numquam Numquamn Numquamne numquam numquamne numquamque númquam-->
-         <tok val="[Nn]?(u|nú|nu)mquam[n]?(e|ne|que)?"/>
+      <ana>
+         <tok val="Numquam"/>
+         <tok val="Numquamn"/>
+         <tok val="Numquamne"/>
+         <tok val="numquam"/>
+         <tok val="numquamn"/>
+         <tok val="numquamne"/>
+         <tok val="numquamque"/>
+         <tok val="númquam"/>
          <lm>
             <l>numquam</l>
             <m>d</m>
@@ -1555,20 +1870,27 @@
       </ana>
       <ana>
          <tok val="Numquampostreddonides"/>
+         <tok val="numquampostreddonides"/>
          <lm>
             <l>Numquampostreddonides</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Numquid numquid Numquíd númquid Númquid-->
-         <tok val="[nN]?(u|nú|Nú)mqu[ií]d"/>
+      <ana>
+         <tok val="Numquid"/>
+         <tok val="Numquíd"/>
+         <tok val="Númquid"/>
+         <tok val="numquid"/>
+         <tok val="numquíd"/>
+         <tok val="númquid"/>
          <lm>
             <l>numquid</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--numarii nummarii-->
-         <tok val="nu[m]?marii"/>
+      <ana>
+         <tok val="numarii"/>
+         <tok val="nummarii"/>
          <lm>
             <l>nummarius</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1776,8 +2098,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--numerales numeralis-->
-         <tok val="numeral[ie]s"/>
+      <ana>
+         <tok val="numerales"/>
+         <tok val="numeralis"/>
          <lm>
             <l>numeralis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -1823,8 +2146,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--numeran numeras-->
-         <tok val="numera[sn]"/>
+      <ana>
+         <tok val="numeran"/>
+         <tok val="numeras"/>
          <lm>
             <l>numero</l>
             <m>v - 2 s p i a</m>
@@ -1856,8 +2180,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--numerande numerandum-->
-         <tok val="numerand(um|e)"/>
+      <ana>
+         <tok val="numerande"/>
+         <tok val="numerandum"/>
          <lm>
             <l>numero</l>
             <m>v - - s p g p n v</m>
@@ -1937,15 +2262,17 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--numerant numerantque-->
-         <tok val="numerant(que)?"/>
+      <ana>
+         <tok val="numerant"/>
+         <tok val="numerantque"/>
          <lm>
             <l>numero</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--numerante numeranti-->
-         <tok val="numerant[ie]"/>
+      <ana>
+         <tok val="numerante"/>
+         <tok val="numeranti"/>
          <lm>
             <l>numero</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1971,8 +2298,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--numerantes numerantis-->
-         <tok val="numerant[ie]s"/>
+      <ana>
+         <tok val="numerantes"/>
+         <tok val="numerantis"/>
          <lm>
             <l>numero</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2071,15 +2399,18 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--numeraris numeraueris numeraveris-->
-         <tok val="numera[vu]?(e|)ris"/>
+      <ana>
+         <tok val="numeraris"/>
+         <tok val="numeraueris"/>
+         <tok val="numeraveris"/>
          <lm>
             <l>numero</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--numerarit numerauerit-->
-         <tok val="numera(ue)?rit"/>
+      <ana>
+         <tok val="numerarit"/>
+         <tok val="numerauerit"/>
          <lm>
             <l>numero</l>
             <m>v - 3 s r s a</m>
@@ -2092,8 +2423,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--numerarunt numeraverunt-->
-         <tok val="numera(ve)?runt"/>
+      <ana>
+         <tok val="numerarunt"/>
+         <tok val="numeraverunt"/>
          <lm>
             <l>numero</l>
             <m>v - 3 p r i a</m>
@@ -2127,15 +2459,17 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--numerat numeratque-->
-         <tok val="numerat(que)?"/>
+      <ana>
+         <tok val="numerat"/>
+         <tok val="numeratque"/>
          <lm>
             <l>numero</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--numerata numerataque-->
-         <tok val="numerata(que)?"/>
+      <ana>
+         <tok val="numerata"/>
+         <tok val="numerataque"/>
          <lm>
             <l>numero</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -2146,8 +2480,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--numerata numerataque Numerata-->
-         <tok val="[Nn]umerata(que)?"/>
+      <ana>
+         <tok val="Numerata"/>
+         <tok val="numerata"/>
+         <tok val="numerataque"/>
          <lm cert="0.5">
             <l>numeratum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2203,8 +2539,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--numeratas numeratasque-->
-         <tok val="numeratas(que)?"/>
+      <ana>
+         <tok val="numeratas"/>
+         <tok val="numeratasque"/>
          <lm cert="0.5">
             <l>numero</l>
             <m>v - - p r p p f a</m>
@@ -2214,8 +2551,10 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--numerati numeratin numeratique-->
-         <tok val="numerati(n|que)?"/>
+      <ana>
+         <tok val="numerati"/>
+         <tok val="numeratin"/>
+         <tok val="numeratique"/>
          <lm cert="0.333333333333333333">
             <l>numero</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2235,8 +2574,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--numeratin numeratis-->
-         <tok val="numerati[sn]"/>
+      <ana>
+         <tok val="numeratin"/>
+         <tok val="numeratis"/>
          <lm cert="0.333333333333333333">
             <l>numero</l>
             <m cert="0.142857142857142857">v - - p r p p n d</m>
@@ -2384,30 +2724,34 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--numerauerat numeraverat-->
-         <tok val="numera[vu]erat"/>
+      <ana>
+         <tok val="numerauerat"/>
+         <tok val="numeraverat"/>
          <lm>
             <l>numero</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--numerauerim numeraverim-->
-         <tok val="numera[vu]erim"/>
+      <ana>
+         <tok val="numerauerim"/>
+         <tok val="numeraverim"/>
          <lm>
             <l>numero</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--numerauerimus numeraverimus-->
-         <tok val="numera[vu]erimus"/>
+      <ana>
+         <tok val="numerauerimus"/>
+         <tok val="numeraverimus"/>
          <lm>
             <l>numero</l>
             <m cert="0.5">v - 1 p t i a</m>
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--numeraueris numeraveris-->
-         <tok val="numera[vu]eris"/>
+      <ana>
+         <tok val="numeraueris"/>
+         <tok val="numeraveris"/>
          <lm>
             <l>numero</l>
             <m>v - 2 s t i a</m>
@@ -2427,15 +2771,17 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--numerauimus numeravimus-->
-         <tok val="numera[vu]imus"/>
+      <ana>
+         <tok val="numerauimus"/>
+         <tok val="numeravimus"/>
          <lm>
             <l>numero</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--numerauit numeravit-->
-         <tok val="numera[vu]it"/>
+      <ana>
+         <tok val="numerauit"/>
+         <tok val="numeravit"/>
          <lm>
             <l>numero</l>
             <m>v - 3 s r i a</m>
@@ -2462,8 +2808,9 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--numerentur numerenturque-->
-         <tok val="numerentur(que)?"/>
+      <ana>
+         <tok val="numerentur"/>
+         <tok val="numerenturque"/>
          <lm>
             <l>numero</l>
             <m>v - 3 p p s p</m>
@@ -2616,8 +2963,9 @@
             <m cert="0.5">a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--numerosissime numerosissimum-->
-         <tok val="numerosissim(um|e)"/>
+      <ana>
+         <tok val="numerosissime"/>
+         <tok val="numerosissimum"/>
          <lm>
             <l>numerosus</l>
             <m>a - - s - - - n v s</m>
@@ -2677,8 +3025,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--numeroso numerosoque-->
-         <tok val="numeroso(que)?"/>
+      <ana>
+         <tok val="numeroso"/>
+         <tok val="numerosoque"/>
          <lm>
             <l>numerosus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2687,8 +3036,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--numerosos numerososque-->
-         <tok val="numerosos(que)?"/>
+      <ana>
+         <tok val="numerosos"/>
+         <tok val="numerososque"/>
          <lm>
             <l>numerosus</l>
             <m>a - - p - - - m a</m>
@@ -2766,8 +3116,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--nummulari nummularii-->
-         <tok val="nummulari[i]?"/>
+      <ana>
+         <tok val="nummulari"/>
+         <tok val="nummularii"/>
          <lm>
             <l>nummularius</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -2811,8 +3162,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--nummulariorum nummularium-->
-         <tok val="nummulari(or)?um"/>
+      <ana>
+         <tok val="nummulariorum"/>
+         <tok val="nummularium"/>
          <lm>
             <l>nummularius</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -2848,8 +3200,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--nummulorum nummulum-->
-         <tok val="nummul(or)?um"/>
+      <ana>
+         <tok val="nummulorum"/>
+         <tok val="nummulum"/>
          <lm>
             <l>nummulus</l>
             <m>n - - p - - - m g</m>
@@ -2878,6 +3231,7 @@
       </ana>
       <ana>
          <tok val="Numquem"/>
+         <tok val="numquem"/>
          <lm>
             <l>numquis</l>
             <m>p x - s - - - m a</m>

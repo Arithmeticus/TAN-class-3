@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusleg">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:leg">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to leg</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-leg.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>LEG</tok-starts-with>
       <tok-starts-with>LEg</tok-starts-with>
       <tok-starts-with>Leg</tok-starts-with>
       <tok-starts-with>leg</tok-starts-with>
       <tok-starts-with>lég</tok-starts-with>
-      <ana><!--LEGATIONE Legatione legatione-->
-         <tok val="[lL]?(egatione|LEGATIONE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:31:26.971-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:31:26.971-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-leg.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="LEGATIONE"/>
+         <tok val="Legatione"/>
+         <tok val="legatione"/>
          <lm>
             <l>legatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--LEGATIS Legatis legatis legatisque legatisue-->
-         <tok val="[lL]?(egatis)?[q]?(ue|LEGATIS)?"/>
+      <ana>
+         <tok val="LEGATIS"/>
+         <tok val="Legatis"/>
+         <tok val="legatis"/>
+         <tok val="legatisque"/>
+         <tok val="legatisue"/>
          <lm cert="0.25">
             <l>legatus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -71,8 +85,12 @@
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--LEGATO Legato legato legatoque legatoue-->
-         <tok val="[lL]?(egato)?[q]?(ue|LEGATO)?"/>
+      <ana>
+         <tok val="LEGATO"/>
+         <tok val="Legato"/>
+         <tok val="legato"/>
+         <tok val="legatoque"/>
+         <tok val="legatoue"/>
          <lm cert="0.333333333333333333">
             <l>lego</l>
             <m cert="0.166666666666666667">v - - s r p p n b</m>
@@ -93,8 +111,14 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--LEGATVS Legatus legatus legatusne legatusque legatusue-->
-         <tok val="[lL]?(egatus)?[q]?[un]?(e|LEGATVS)?"/>
+      <ana>
+         <tok val="LEGATVS"/>
+         <tok val="Legatus"/>
+         <tok val="legatus"/>
+         <tok val="legatusne"/>
+         <tok val="legatusque"/>
+         <tok val="legatusue"/>
+         <tok val="legatvs"/>
          <lm cert="0.5">
             <l>legatus</l>
             <m>n - - s - - - m n</m>
@@ -104,8 +128,12 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--LEGE Lege lege legen legeque-->
-         <tok val="[lL]?(ege)?(n|que|LEGE)?"/>
+      <ana>
+         <tok val="LEGE"/>
+         <tok val="Lege"/>
+         <tok val="lege"/>
+         <tok val="legen"/>
+         <tok val="legeque"/>
          <lm cert="0.5">
             <l>lex</l>
             <m>n - - s - - - f b</m>
@@ -115,8 +143,11 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--LEGEM Legem legem legemque-->
-         <tok val="[lL]?(egem)?(que|LEGEM)?"/>
+      <ana>
+         <tok val="LEGEM"/>
+         <tok val="Legem"/>
+         <tok val="legem"/>
+         <tok val="legemque"/>
          <lm cert="0.5">
             <l>lego</l>
             <m>v - 1 s p s a</m>
@@ -126,8 +157,11 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--LEGENDA Legenda legenda legunda-->
-         <tok val="[lL]?(eg)?[eu]?(nda|LEGENDA)"/>
+      <ana>
+         <tok val="LEGENDA"/>
+         <tok val="Legenda"/>
+         <tok val="legenda"/>
+         <tok val="legunda"/>
          <lm>
             <l>lego2</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -138,8 +172,18 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--LEGES LEges Leges Legesne Legesque legen leges legesne legesque legés léges-->
-         <tok val="[lL]?(e|LE|le|lé)?[g]?[e]?[s]?(qu|n)?(e|n|s|és|es|LEGES)?"/>
+      <ana>
+         <tok val="LEGES"/>
+         <tok val="LEges"/>
+         <tok val="Leges"/>
+         <tok val="Legesne"/>
+         <tok val="Legesque"/>
+         <tok val="legen"/>
+         <tok val="leges"/>
+         <tok val="legesne"/>
+         <tok val="legesque"/>
+         <tok val="legés"/>
+         <tok val="léges"/>
          <lm cert="0.333333333333333333">
             <l>lego2</l>
             <m>v - 2 s f i a</m>
@@ -154,44 +198,74 @@
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--LEGES LEges Leges Legesne Legesque legen leges legesne legesque-->
-         <tok val="[lL]?(e|LE)?(ge)?[s]?(qu|n)?(e|n|s|LEGES)?"/>
+      <ana>
+         <tok val="LEGES"/>
+         <tok val="LEges"/>
+         <tok val="Leges"/>
+         <tok val="Legesne"/>
+         <tok val="Legesque"/>
+         <tok val="legen"/>
+         <tok val="leges"/>
+         <tok val="legesne"/>
+         <tok val="legesque"/>
          <lm>
             <l>lex</l>
             <m>n - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--LEGIBUS Legibus legibus legibusque legibusve légibus-->
-         <tok val="[lL]?(e|lé|le)?(gibus)?(ve|que|LEGIBUS)?"/>
+      <ana>
+         <tok val="LEGIBUS"/>
+         <tok val="Legibus"/>
+         <tok val="legibus"/>
+         <tok val="legibusque"/>
+         <tok val="legibusve"/>
+         <tok val="légibus"/>
          <lm>
             <l>lex</l>
             <m>n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--LEGIBUS Legibus legibus legibusque legibusve legibús légibus-->
-         <tok val="[lL]?(e|lé|le)?(gib)?[uú]?[s]?(ve|que|LEGIBUS)?"/>
+      <ana>
+         <tok val="LEGIBUS"/>
+         <tok val="Legibus"/>
+         <tok val="legibus"/>
+         <tok val="legibusque"/>
+         <tok val="legibusve"/>
+         <tok val="legibús"/>
+         <tok val="légibus"/>
          <lm>
             <l>lex</l>
             <m>n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--LEGIO Legio Legion legio legion-->
-         <tok val="[Ll]?(egio)?(n|LEGIO)?"/>
+      <ana>
+         <tok val="LEGIO"/>
+         <tok val="Legio"/>
+         <tok val="Legion"/>
+         <tok val="legio"/>
+         <tok val="legion"/>
          <lm>
             <l>legio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--LEGIONIS Legionis legionis legionisque-->
-         <tok val="[lL]?(egionis)?(que|LEGIONIS)?"/>
+      <ana>
+         <tok val="LEGIONIS"/>
+         <tok val="Legionis"/>
+         <tok val="legionis"/>
+         <tok val="legionisque"/>
          <lm>
             <l>legio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--LEGIS Legis legis legisne legisque-->
-         <tok val="[lL]?(egis)?(ne|que|LEGIS)?"/>
+      <ana>
+         <tok val="LEGIS"/>
+         <tok val="Legis"/>
+         <tok val="legis"/>
+         <tok val="legisne"/>
+         <tok val="legisque"/>
          <lm cert="0.5">
             <l>lego2</l>
             <m>v - 2 s p i a</m>
@@ -201,15 +275,23 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--LEGITVR Legitur legitur legiturque-->
-         <tok val="[lL]?(egitur)?(que|LEGITVR)?"/>
+      <ana>
+         <tok val="LEGITVR"/>
+         <tok val="Legitur"/>
+         <tok val="legitur"/>
+         <tok val="legiturque"/>
+         <tok val="legitvr"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--LEGO Lego lego legone legoque-->
-         <tok val="[lL]?(ego)?(ne|que|LEGO)?"/>
+      <ana>
+         <tok val="LEGO"/>
+         <tok val="Lego"/>
+         <tok val="lego"/>
+         <tok val="legone"/>
+         <tok val="legoque"/>
          <lm cert="0.5">
             <l>lego</l>
             <m>v - 1 s p i a</m>
@@ -219,8 +301,10 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--LEGVMINARIA leguminaria-->
-         <tok val="(leguminaria|LEGVMINARIA)"/>
+      <ana>
+         <tok val="LEGVMINARIA"/>
+         <tok val="leguminaria"/>
+         <tok val="legvminaria"/>
          <lm>
             <l>leguminarius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -231,31 +315,38 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Lega lega legaue-->
-         <tok val="[lL]ega(ue)?"/>
+      <ana>
+         <tok val="Lega"/>
+         <tok val="lega"/>
+         <tok val="legaue"/>
          <lm>
             <l>lego</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Legalem legalem-->
-         <tok val="[lL]egalem"/>
+      <ana>
+         <tok val="Legalem"/>
+         <tok val="legalem"/>
          <lm>
             <l>legalis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Legales Legalis legales legalis-->
-         <tok val="[Ll]egal[ie]s"/>
+      <ana>
+         <tok val="Legales"/>
+         <tok val="Legalis"/>
+         <tok val="legales"/>
+         <tok val="legalis"/>
          <lm>
             <l>legalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Legales legales-->
-         <tok val="[lL]egales"/>
+      <ana>
+         <tok val="Legales"/>
+         <tok val="legales"/>
          <lm>
             <l>legalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -264,8 +355,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Legalis legalis-->
-         <tok val="[lL]egalis"/>
+      <ana>
+         <tok val="Legalis"/>
+         <tok val="legalis"/>
          <lm>
             <l>legalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -277,16 +369,18 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legam legam-->
-         <tok val="[lL]egam"/>
+      <ana>
+         <tok val="Legam"/>
+         <tok val="legam"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Legantur legantur-->
-         <tok val="[lL]egantur"/>
+      <ana>
+         <tok val="Legantur"/>
+         <tok val="legantur"/>
          <lm cert="0.5">
             <l>lego</l>
             <m>v - 3 p p i p</m>
@@ -296,8 +390,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Legare legare-->
-         <tok val="[lL]egare"/>
+      <ana>
+         <tok val="Legare"/>
+         <tok val="legare"/>
          <lm cert="0.5">
             <l>lego</l>
             <m cert="0.5">v - 2 s p m p</m>
@@ -308,15 +403,18 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Legare legare legaris-->
-         <tok val="[lL]egar(e|is)"/>
+      <ana>
+         <tok val="Legare"/>
+         <tok val="legare"/>
+         <tok val="legaris"/>
          <lm>
             <l>lego</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Legarium legarium-->
-         <tok val="[lL]egarium"/>
+      <ana>
+         <tok val="Legarium"/>
+         <tok val="legarium"/>
          <lm>
             <l>legarium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -325,22 +423,28 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legat legat-->
-         <tok val="[lL]egat"/>
+      <ana>
+         <tok val="Legat"/>
+         <tok val="legat"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Legat legat legatque-->
-         <tok val="[lL]egat(que)?"/>
+      <ana>
+         <tok val="Legat"/>
+         <tok val="legat"/>
+         <tok val="legatque"/>
          <lm>
             <l>lego</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Legata legata legataque legataue-->
-         <tok val="[lL]egata[q]?(ue)?"/>
+      <ana>
+         <tok val="Legata"/>
+         <tok val="legata"/>
+         <tok val="legataque"/>
+         <tok val="legataue"/>
          <lm cert="0.5">
             <l>lego</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -357,8 +461,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Legatam legatam-->
-         <tok val="[lL]egatam"/>
+      <ana>
+         <tok val="Legatam"/>
+         <tok val="legatam"/>
          <lm>
             <l>lego</l>
             <m>v - - s r p p f a</m>
@@ -366,16 +471,14 @@
       </ana>
       <ana>
          <tok val="Legataria"/>
-         <lm>
+         <tok val="legataria"/>
+         <lm cert="0.5">
             <l>Legataria</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Legataria legataria-->
-         <tok val="[lL]egataria"/>
-         <lm>
+         <lm cert="0.5">
             <l>legatarius</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -385,36 +488,28 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Legatarios legatarios-->
-         <tok val="[lL]egatarios"/>
-         <lm>
-            <l>legatarius</l>
-            <m>a - - p - - - m a</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Legatarios"/>
+         <tok val="legatarios"/>
          <lm>
             <l>legatarius</l>
-            <m>n - - p - - - m a</m>
+            <m cert="0.5">a - - p - - - m a</m>
+            <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Legatarius"/>
+         <tok val="legatarius"/>
          <lm>
             <l>legatarius</l>
-            <m>n - - s - - - m n</m>
+            <m cert="0.5">n - - s - - - m n</m>
+            <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Legatarius legatarius-->
-         <tok val="[lL]egatarius"/>
-         <lm>
-            <l>legatarius</l>
-            <m>a - - s - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--Legati legati legatique-->
-         <tok val="[lL]egati(que)?"/>
+      <ana>
+         <tok val="Legati"/>
+         <tok val="legati"/>
+         <tok val="legatique"/>
          <lm cert="0.333333333333333333">
             <l>legatus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -433,23 +528,28 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legatio legatio-->
-         <tok val="[lL]egatio"/>
+      <ana>
+         <tok val="Legatio"/>
+         <tok val="legatio"/>
          <lm>
             <l>legatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Legationem legationem legationemque-->
-         <tok val="[lL]egationem(que)?"/>
+      <ana>
+         <tok val="Legationem"/>
+         <tok val="legationem"/>
+         <tok val="legationemque"/>
          <lm>
             <l>legatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Legationes legationes legationesque-->
-         <tok val="[lL]egationes(que)?"/>
+      <ana>
+         <tok val="Legationes"/>
+         <tok val="legationes"/>
+         <tok val="legationesque"/>
          <lm>
             <l>legatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -457,23 +557,29 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Legationibus legationibus legationibusque-->
-         <tok val="[lL]egationibus(que)?"/>
+      <ana>
+         <tok val="Legationibus"/>
+         <tok val="legationibus"/>
+         <tok val="legationibusque"/>
          <lm>
             <l>legatio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Legationis legationis legationisque-->
-         <tok val="[lL]egationis(que)?"/>
+      <ana>
+         <tok val="Legationis"/>
+         <tok val="legationis"/>
+         <tok val="legationisque"/>
          <lm>
             <l>legatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Legatiuum legatiuum legativum-->
-         <tok val="[lL]egati[uv]um"/>
+      <ana>
+         <tok val="Legatiuum"/>
+         <tok val="legatiuum"/>
+         <tok val="legativum"/>
          <lm cert="0.5">
             <l>legativus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -491,8 +597,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legator legator-->
-         <tok val="[lL]egator"/>
+      <ana>
+         <tok val="Legator"/>
+         <tok val="legator"/>
          <lm>
             <l>legator</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -501,20 +608,36 @@
       </ana>
       <ana>
          <tok val="Legatorem"/>
+         <tok val="legatorem"/>
          <lm>
             <l>legator</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Legatorum Legatum legatorum legatum legatumne legatumque legatumue-->
-         <tok val="[lL]egat(or)?um[q]?(ue|ne)?"/>
+      <ana>
+         <tok val="Legatorum"/>
+         <tok val="Legatum"/>
+         <tok val="legatorum"/>
+         <tok val="legatum"/>
+         <tok val="legatumne"/>
+         <tok val="legatumque"/>
+         <tok val="legatumue"/>
          <lm>
             <l>legatus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Legatorum Legatum legatorum legatorumque legatorumue legatorumve legatum legatumne legatumque legatumue-->
-         <tok val="[lL]egat(or)?um[q]?[uv]?(e|ne)?"/>
+      <ana>
+         <tok val="Legatorum"/>
+         <tok val="Legatum"/>
+         <tok val="legatorum"/>
+         <tok val="legatorumque"/>
+         <tok val="legatorumue"/>
+         <tok val="legatorumve"/>
+         <tok val="legatum"/>
+         <tok val="legatumne"/>
+         <tok val="legatumque"/>
+         <tok val="legatumue"/>
          <lm cert="0.5">
             <l>lego</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -525,8 +648,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legatos legatos legatosque-->
-         <tok val="[lL]egatos(que)?"/>
+      <ana>
+         <tok val="Legatos"/>
+         <tok val="legatos"/>
+         <tok val="legatosque"/>
          <lm cert="0.5">
             <l>lego</l>
             <m>v - - p r p p m a</m>
@@ -536,8 +661,13 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Legatum legate legatum legatumne legatumque legatumue-->
-         <tok val="[lL]egat(um)?[q]?[un]?[e]?"/>
+      <ana>
+         <tok val="Legatum"/>
+         <tok val="legate"/>
+         <tok val="legatum"/>
+         <tok val="legatumne"/>
+         <tok val="legatumque"/>
+         <tok val="legatumue"/>
          <lm cert="0.5">
             <l>legatum</l>
             <m>n - - s - - - n v</m>
@@ -547,8 +677,12 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Legatum legatum legatumne legatumque legatumue-->
-         <tok val="[lL]egatum[q]?[un]?[e]?"/>
+      <ana>
+         <tok val="Legatum"/>
+         <tok val="legatum"/>
+         <tok val="legatumne"/>
+         <tok val="legatumque"/>
+         <tok val="legatumue"/>
          <lm cert="0.333333333333333333">
             <l>lego</l>
             <m cert="0.25">v - - s r p p m a</m>
@@ -566,8 +700,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Legatur legatur-->
-         <tok val="[lL]egatur"/>
+      <ana>
+         <tok val="Legatur"/>
+         <tok val="legatur"/>
          <lm cert="0.5">
             <l>lego2</l>
             <m>v - 3 s p s p</m>
@@ -577,57 +712,70 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Legauerat legarat legauerat legaverat-->
-         <tok val="[lL]ega[uv]?(e|)rat"/>
+      <ana>
+         <tok val="Legauerat"/>
+         <tok val="legarat"/>
+         <tok val="legauerat"/>
+         <tok val="legaverat"/>
          <lm>
             <l>lego</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Legaui legaui-->
-         <tok val="[lL]egaui"/>
+      <ana>
+         <tok val="Legaui"/>
+         <tok val="legaui"/>
          <lm>
             <l>lego</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Legebam legebam-->
-         <tok val="[lL]egebam"/>
+      <ana>
+         <tok val="Legebam"/>
+         <tok val="legebam"/>
          <lm>
             <l>lego2</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Legebamus legebamus-->
-         <tok val="[lL]egebamus"/>
+      <ana>
+         <tok val="Legebamus"/>
+         <tok val="legebamus"/>
          <lm>
             <l>lego2</l>
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Legebantur legebantur-->
-         <tok val="[lL]egebantur"/>
+      <ana>
+         <tok val="Legebantur"/>
+         <tok val="legebantur"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--Legebat legebat-->
-         <tok val="[lL]egebat"/>
+      <ana>
+         <tok val="Legebat"/>
+         <tok val="legebat"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Legebatur legebatur legebaturque-->
-         <tok val="[lL]egebatur(que)?"/>
+      <ana>
+         <tok val="Legebatur"/>
+         <tok val="legebatur"/>
+         <tok val="legebaturque"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Legendi legendi legendique legundi-->
-         <tok val="[lL]eg[eu]ndi(que)?"/>
+      <ana>
+         <tok val="Legendi"/>
+         <tok val="legendi"/>
+         <tok val="legendique"/>
+         <tok val="legundi"/>
          <lm>
             <l>lego2</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -637,8 +785,10 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Legendo legendo legendoque-->
-         <tok val="[lL]egendo(que)?"/>
+      <ana>
+         <tok val="Legendo"/>
+         <tok val="legendo"/>
+         <tok val="legendoque"/>
          <lm>
             <l>lego2</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -649,8 +799,10 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Legendum legendum legendumque-->
-         <tok val="[lL]egendum(que)?"/>
+      <ana>
+         <tok val="Legendum"/>
+         <tok val="legendum"/>
+         <tok val="legendumque"/>
          <lm>
             <l>lego2</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -660,61 +812,77 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Legendum legendorum legendum legendumque-->
-         <tok val="[lL]egend(or)?um(que)?"/>
+      <ana>
+         <tok val="Legendum"/>
+         <tok val="legendorum"/>
+         <tok val="legendum"/>
+         <tok val="legendumque"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Legerat legerat-->
-         <tok val="[lL]egerat"/>
+      <ana>
+         <tok val="Legerat"/>
+         <tok val="legerat"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Legere legere legerunt-->
-         <tok val="[lL]eger(e|unt)"/>
+      <ana>
+         <tok val="Legere"/>
+         <tok val="legere"/>
+         <tok val="legerunt"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Legere legere-->
-         <tok val="[lL]egere"/>
+      <ana>
+         <tok val="Legere"/>
+         <tok val="legere"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Legere legere legeris-->
-         <tok val="[lL]eger(e|is)"/>
+      <ana>
+         <tok val="Legere"/>
+         <tok val="legere"/>
+         <tok val="legeris"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Legere legaris legere legeris-->
-         <tok val="[lL]eg[ea]r(is|e)"/>
+      <ana>
+         <tok val="Legere"/>
+         <tok val="legaris"/>
+         <tok val="legere"/>
+         <tok val="legeris"/>
          <lm>
             <l>lego</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Legerit legerit-->
-         <tok val="[lL]egerit"/>
+      <ana>
+         <tok val="Legerit"/>
+         <tok val="legerit"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Legi legi legique legiue-->
-         <tok val="[lL]egi[q]?(ue)?"/>
+      <ana>
+         <tok val="Legi"/>
+         <tok val="legi"/>
+         <tok val="legique"/>
+         <tok val="legiue"/>
          <lm cert="0.5">
             <l>lego2</l>
             <m cert="0.5">v - - - p n p</m>
@@ -725,8 +893,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Legibilis legibilis-->
-         <tok val="[lL]egibilis"/>
+      <ana>
+         <tok val="Legibilis"/>
+         <tok val="legibilis"/>
          <lm>
             <l>legibilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -740,8 +909,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legifer legifer-->
-         <tok val="[lL]egifer"/>
+      <ana>
+         <tok val="Legifer"/>
+         <tok val="legifer"/>
          <lm>
             <l>legifer</l>
             <m cert="0.25">n - - s - - - m n</m>
@@ -750,8 +920,9 @@
             <m cert="0.25">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Legiferae legiferae-->
-         <tok val="[lL]egiferae"/>
+      <ana>
+         <tok val="Legiferae"/>
+         <tok val="legiferae"/>
          <lm>
             <l>legifer</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -760,16 +931,18 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Legimus legimus-->
-         <tok val="[lL]egimus"/>
+      <ana>
+         <tok val="Legimus"/>
+         <tok val="legimus"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - 1 p r i a</m>
             <m cert="0.5">v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Legionariae legionariae-->
-         <tok val="[lL]egionariae"/>
+      <ana>
+         <tok val="Legionariae"/>
+         <tok val="legionariae"/>
          <lm>
             <l>legionarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -778,8 +951,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Legionarii legionarii-->
-         <tok val="[lL]egionarii"/>
+      <ana>
+         <tok val="Legionarii"/>
+         <tok val="legionarii"/>
          <lm>
             <l>legionarius</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -788,59 +962,75 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legionarius legionarius-->
-         <tok val="[lL]egionarius"/>
+      <ana>
+         <tok val="Legionarius"/>
+         <tok val="legionarius"/>
          <lm>
             <l>legionarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Legione legione-->
-         <tok val="[lL]egione"/>
+      <ana>
+         <tok val="Legione"/>
+         <tok val="legione"/>
          <lm>
             <l>legio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Legionem legionem legionemque-->
-         <tok val="[lL]egionem(que)?"/>
+      <ana>
+         <tok val="Legionem"/>
+         <tok val="legionem"/>
+         <tok val="legionemque"/>
          <lm>
             <l>legio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Legiones legiones legionesque legionés légiones-->
-         <tok val="[lL]?(e|lé|le)gion[eé]s(que)?"/>
+      <ana>
+         <tok val="Legiones"/>
+         <tok val="legiones"/>
+         <tok val="legionesque"/>
+         <tok val="legionés"/>
+         <tok val="légiones"/>
          <lm>
             <l>legio</l>
             <m>n - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Legiones legiones legionesque-->
-         <tok val="[lL]egiones(que)?"/>
+      <ana>
+         <tok val="Legiones"/>
+         <tok val="legiones"/>
+         <tok val="legionesque"/>
          <lm>
             <l>legio</l>
             <m cert="0.5">n - - p - - - f a</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Legionibus Legionibusque legionibus legionibusque-->
-         <tok val="[lL]egionibus(que)?"/>
+      <ana>
+         <tok val="Legionibus"/>
+         <tok val="Legionibusque"/>
+         <tok val="legionibus"/>
+         <tok val="legionibusque"/>
          <lm>
             <l>legio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Legionum legionum legionumque-->
-         <tok val="[lL]egionum(que)?"/>
+      <ana>
+         <tok val="Legionum"/>
+         <tok val="legionum"/>
+         <tok val="legionumque"/>
          <lm>
             <l>legio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Legirupa legirupa-->
-         <tok val="[lL]egirupa"/>
+      <ana>
+         <tok val="Legirupa"/>
+         <tok val="legirupa"/>
          <lm>
             <l>legirupa</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -848,60 +1038,74 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Legirupio legirupio-->
-         <tok val="[lL]egirupio"/>
+      <ana>
+         <tok val="Legirupio"/>
+         <tok val="legirupio"/>
          <lm>
             <l>legirupio</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Legislator legislator legumlator-->
-         <tok val="[lL]eg(is|um)lator"/>
+      <ana>
+         <tok val="Legislator"/>
+         <tok val="legislator"/>
+         <tok val="legumlator"/>
          <lm>
             <l>legislator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Legisse legisse-->
-         <tok val="[lL]egisse"/>
+      <ana>
+         <tok val="Legisse"/>
+         <tok val="legisse"/>
          <lm>
             <l>lego2</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Legisses legisses-->
-         <tok val="[lL]egisses"/>
+      <ana>
+         <tok val="Legisses"/>
+         <tok val="legisses"/>
          <lm>
             <l>lego2</l>
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Legisti Legistine legisti-->
-         <tok val="[Ll]egisti(ne)?"/>
+      <ana>
+         <tok val="Legisti"/>
+         <tok val="Legistine"/>
+         <tok val="legisti"/>
+         <tok val="legistine"/>
          <lm>
             <l>lego2</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Legit Legitne legit legitque-->
-         <tok val="[Ll]egit(ne|que)?"/>
+      <ana>
+         <tok val="Legit"/>
+         <tok val="Legitne"/>
+         <tok val="legit"/>
+         <tok val="legitne"/>
+         <tok val="legitque"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Legite legite-->
-         <tok val="[lL]egite"/>
+      <ana>
+         <tok val="Legite"/>
+         <tok val="legite"/>
          <lm>
             <l>lego2</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Legitima legitima-->
-         <tok val="[lL]egitima"/>
+      <ana>
+         <tok val="Legitima"/>
+         <tok val="legitima"/>
          <lm cert="0.5">
             <l>legitima</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -918,8 +1122,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Legitimae Legitimaeque legitimae legitimaeque-->
-         <tok val="[lL]egitimae(que)?"/>
+      <ana>
+         <tok val="Legitimae"/>
+         <tok val="Legitimaeque"/>
+         <tok val="legitimae"/>
+         <tok val="legitimaeque"/>
          <lm>
             <l>legitimus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -928,37 +1135,48 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Legitimam legitimam-->
-         <tok val="[lL]egitimam"/>
+      <ana>
+         <tok val="Legitimam"/>
+         <tok val="legitimam"/>
          <lm>
             <l>legitimus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Legitimas legitimas-->
-         <tok val="[lL]egitimas"/>
+      <ana>
+         <tok val="Legitimas"/>
+         <tok val="legitimas"/>
          <lm>
             <l>legitimus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Legitime legitime legitimeque-->
-         <tok val="[lL]egitime(que)?"/>
+      <ana>
+         <tok val="Legitime"/>
+         <tok val="legitime"/>
+         <tok val="legitimeque"/>
          <lm>
             <l>legitimus</l>
             <m cert="0.5">d - - - - - - - - s</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Legitime Legitimum legitime legitimeque legitimum legitimumque-->
-         <tok val="[lL]egitim(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Legitime"/>
+         <tok val="Legitimum"/>
+         <tok val="legitime"/>
+         <tok val="legitimeque"/>
+         <tok val="legitimum"/>
+         <tok val="legitimumque"/>
          <lm>
             <l>legitimus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Legitimi legitimi legitimique-->
-         <tok val="[lL]egitimi(que)?"/>
+      <ana>
+         <tok val="Legitimi"/>
+         <tok val="legitimi"/>
+         <tok val="legitimique"/>
          <lm>
             <l>legitimus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -967,8 +1185,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legitimis legitimis-->
-         <tok val="[lL]egitimis"/>
+      <ana>
+         <tok val="Legitimis"/>
+         <tok val="legitimis"/>
          <lm cert="0.5">
             <l>legitimus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -984,15 +1203,20 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Legitimos legitimos legitumos-->
-         <tok val="[lL]egit[iu]mos"/>
+      <ana>
+         <tok val="Legitimos"/>
+         <tok val="legitimos"/>
+         <tok val="legitumos"/>
          <lm>
             <l>legitimus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Legitimum legitimum legitimumque legitumum-->
-         <tok val="[lL]egit[iu]mum(que)?"/>
+      <ana>
+         <tok val="Legitimum"/>
+         <tok val="legitimum"/>
+         <tok val="legitimumque"/>
+         <tok val="legitumum"/>
          <lm>
             <l>legitimus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1000,8 +1224,11 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Legitimum legitimorum legitimum legitimumque-->
-         <tok val="[lL]egitim(or)?um(que)?"/>
+      <ana>
+         <tok val="Legitimum"/>
+         <tok val="legitimorum"/>
+         <tok val="legitimum"/>
+         <tok val="legitimumque"/>
          <lm cert="0.5">
             <l>legitimus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1012,15 +1239,17 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legitimus legitimus-->
-         <tok val="[lL]egitimus"/>
+      <ana>
+         <tok val="Legitimus"/>
+         <tok val="legitimus"/>
          <lm>
             <l>legitimus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Legiuncula legiuncula-->
-         <tok val="[lL]egiuncula"/>
+      <ana>
+         <tok val="Legiuncula"/>
+         <tok val="legiuncula"/>
          <lm>
             <l>legiuncula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1028,29 +1257,36 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Leguleius leguleius-->
-         <tok val="[lL]eguleius"/>
+      <ana>
+         <tok val="Leguleius"/>
+         <tok val="leguleius"/>
          <lm>
             <l>leguleius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Legulus legulus-->
-         <tok val="[lL]egulus"/>
+      <ana>
+         <tok val="Legulus"/>
+         <tok val="legulus"/>
          <lm>
             <l>legulus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Legum Legvm legum legumque-->
-         <tok val="[Ll]eg[vu]m(que)?"/>
+      <ana>
+         <tok val="Legum"/>
+         <tok val="Legvm"/>
+         <tok val="legum"/>
+         <tok val="legumque"/>
+         <tok val="legvm"/>
          <lm>
             <l>lex</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Legumen legumen-->
-         <tok val="[lL]egumen"/>
+      <ana>
+         <tok val="Legumen"/>
+         <tok val="legumen"/>
          <lm>
             <l>legumen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -1058,8 +1294,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Legumentum legumentum-->
-         <tok val="[lL]egumentum"/>
+      <ana>
+         <tok val="Legumentum"/>
+         <tok val="legumentum"/>
          <lm>
             <l>legumentum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1068,8 +1305,10 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legumina legumina leguminaque-->
-         <tok val="[lL]egumina(que)?"/>
+      <ana>
+         <tok val="Legumina"/>
+         <tok val="legumina"/>
+         <tok val="leguminaque"/>
          <lm>
             <l>legumen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1077,22 +1316,25 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Leguminum leguminum-->
-         <tok val="[lL]eguminum"/>
+      <ana>
+         <tok val="Leguminum"/>
+         <tok val="leguminum"/>
          <lm>
             <l>legumen</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Legunt legunt-->
-         <tok val="[lL]egunt"/>
+      <ana>
+         <tok val="Legunt"/>
+         <tok val="legunt"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Leguntur leguntur-->
-         <tok val="[lL]eguntur"/>
+      <ana>
+         <tok val="Leguntur"/>
+         <tok val="leguntur"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 p p i p</m>
@@ -1250,8 +1492,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--legant legantque-->
-         <tok val="legant(que)?"/>
+      <ana>
+         <tok val="legant"/>
+         <tok val="legantque"/>
          <lm cert="0.5">
             <l>lego2</l>
             <m>v - 3 p p s a</m>
@@ -1329,29 +1572,34 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--legari legarii-->
-         <tok val="legari[i]?"/>
+      <ana>
+         <tok val="legari"/>
+         <tok val="legarii"/>
          <lm>
             <l>legarium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--legaris legaueris-->
-         <tok val="lega(ue)?ris"/>
+      <ana>
+         <tok val="legaris"/>
+         <tok val="legaueris"/>
          <lm>
             <l>lego</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--legarit legauerit legaverit-->
-         <tok val="lega[vu]?(e|)rit"/>
+      <ana>
+         <tok val="legarit"/>
+         <tok val="legauerit"/>
+         <tok val="legaverit"/>
          <lm>
             <l>lego</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--legarunt legauerunt-->
-         <tok val="lega(ue)?runt"/>
+      <ana>
+         <tok val="legarunt"/>
+         <tok val="legauerunt"/>
          <lm>
             <l>lego</l>
             <m>v - 3 p r i a</m>
@@ -1413,8 +1661,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--legatari legatarii-->
-         <tok val="legatari[i]?"/>
+      <ana>
+         <tok val="legatari"/>
+         <tok val="legatarii"/>
          <lm>
             <l>legatarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -1446,8 +1695,9 @@
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--legatariis legatariisque-->
-         <tok val="legatariis(que)?"/>
+      <ana>
+         <tok val="legatariis"/>
+         <tok val="legatariisque"/>
          <lm>
             <l>legatarius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1468,8 +1718,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--legatariorum legatarium-->
-         <tok val="legatari(or)?um"/>
+      <ana>
+         <tok val="legatariorum"/>
+         <tok val="legatarium"/>
          <lm>
             <l>legatarius</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1578,15 +1829,19 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--legatorumque legatorumue legatorumve-->
-         <tok val="legatorum[q]?[uv]e"/>
+      <ana>
+         <tok val="legatorumque"/>
+         <tok val="legatorumue"/>
+         <tok val="legatorumve"/>
          <lm>
             <l>legator</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--legatque leget legetque-->
-         <tok val="leg[ea]t(que|)"/>
+      <ana>
+         <tok val="legatque"/>
+         <tok val="leget"/>
+         <tok val="legetque"/>
          <lm>
             <l>lego</l>
             <m>v - 3 s p s a</m>
@@ -1635,15 +1890,17 @@
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--legauerant legaverant-->
-         <tok val="lega[vu]erant"/>
+      <ana>
+         <tok val="legauerant"/>
+         <tok val="legaverant"/>
          <lm>
             <l>lego</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--legauerint legaverint-->
-         <tok val="lega[vu]erint"/>
+      <ana>
+         <tok val="legauerint"/>
+         <tok val="legaverint"/>
          <lm>
             <l>lego</l>
             <m cert="0.5">v - 3 p t i a</m>
@@ -1657,22 +1914,25 @@
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--legauerit legaverit-->
-         <tok val="lega[vu]erit"/>
+      <ana>
+         <tok val="legauerit"/>
+         <tok val="legaverit"/>
          <lm>
             <l>lego</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--legauero legavero-->
-         <tok val="lega[vu]ero"/>
+      <ana>
+         <tok val="legauero"/>
+         <tok val="legavero"/>
          <lm>
             <l>lego</l>
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--legauit legavit-->
-         <tok val="lega[vu]it"/>
+      <ana>
+         <tok val="legauit"/>
+         <tok val="legavit"/>
          <lm>
             <l>lego</l>
             <m>v - 3 s r i a</m>
@@ -1717,8 +1977,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--legendae legundae-->
-         <tok val="leg[ue]ndae"/>
+      <ana>
+         <tok val="legendae"/>
+         <tok val="legundae"/>
          <lm>
             <l>lego2</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -1748,8 +2009,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--legendis legendisve-->
-         <tok val="legendis(ve)?"/>
+      <ana>
+         <tok val="legendis"/>
+         <tok val="legendisve"/>
          <lm>
             <l>lego2</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -1760,8 +2022,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--legendos legendosque-->
-         <tok val="legendos(que)?"/>
+      <ana>
+         <tok val="legendos"/>
+         <tok val="legendosque"/>
          <lm>
             <l>lego2</l>
             <m>v - - p p g p m a</m>
@@ -1774,8 +2037,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--legens legensque-->
-         <tok val="legens(que)?"/>
+      <ana>
+         <tok val="legens"/>
+         <tok val="legensque"/>
          <lm>
             <l>lego2</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -1798,8 +2062,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--legente legenti-->
-         <tok val="legent[ie]"/>
+      <ana>
+         <tok val="legente"/>
+         <tok val="legenti"/>
          <lm>
             <l>lego2</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1825,8 +2090,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--legentes legentis-->
-         <tok val="legent[ie]s"/>
+      <ana>
+         <tok val="legentes"/>
+         <tok val="legentis"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2014,8 +2280,9 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--leget legetque-->
-         <tok val="leget(que)?"/>
+      <ana>
+         <tok val="leget"/>
+         <tok val="legetque"/>
          <lm>
             <l>lego2</l>
             <m>v - 3 s f i a</m>
@@ -2032,8 +2299,9 @@
             <m>v - 2 p f i a</m>
          </lm>
       </ana>
-      <ana><!--legetur legeturque-->
-         <tok val="legetur(que)?"/>
+      <ana>
+         <tok val="legetur"/>
+         <tok val="legeturque"/>
          <lm cert="0.5">
             <l>lego2</l>
             <m>v - 3 s f i p</m>
@@ -2106,8 +2374,9 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--legionarias legionariasque-->
-         <tok val="legionarias(que)?"/>
+      <ana>
+         <tok val="legionarias"/>
+         <tok val="legionariasque"/>
          <lm>
             <l>legionarius</l>
             <m>a - - p - - - f a</m>
@@ -2135,8 +2404,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--legionariorum legionarium-->
-         <tok val="legionari(or)?um"/>
+      <ana>
+         <tok val="legionariorum"/>
+         <tok val="legionarium"/>
          <lm>
             <l>legionarius</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2160,8 +2430,9 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--legioni legionique-->
-         <tok val="legioni(que)?"/>
+      <ana>
+         <tok val="legioni"/>
+         <tok val="legionique"/>
          <lm>
             <l>legio</l>
             <m>n - - s - - - f d</m>
@@ -2196,8 +2467,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--legislatorem legumlatorem-->
-         <tok val="leg(um|is)latorem"/>
+      <ana>
+         <tok val="legislatorem"/>
+         <tok val="legumlatorem"/>
          <lm>
             <l>legislator</l>
             <m>n - - s - - - m a</m>
@@ -2227,8 +2499,9 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--legislatoris legumlatoris-->
-         <tok val="leg(um|is)latoris"/>
+      <ana>
+         <tok val="legislatoris"/>
+         <tok val="legumlatoris"/>
          <lm>
             <l>legislator</l>
             <m>n - - s - - - m g</m>
@@ -2300,8 +2573,9 @@
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--legito legitoque-->
-         <tok val="legito(que)?"/>
+      <ana>
+         <tok val="legito"/>
+         <tok val="legitoque"/>
          <lm cert="0.5">
             <l>legito</l>
             <m>v - 1 s p i a</m>
@@ -2359,8 +2633,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--legulei leguleii-->
-         <tok val="legulei[i]?"/>
+      <ana>
+         <tok val="legulei"/>
+         <tok val="leguleii"/>
          <lm>
             <l>leguleius</l>
             <m>n - - s - - - m g</m>
@@ -2453,8 +2728,9 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--leguminibus leguminibusque-->
-         <tok val="leguminibus(que)?"/>
+      <ana>
+         <tok val="leguminibus"/>
+         <tok val="leguminibusque"/>
          <lm>
             <l>legumen</l>
             <m cert="0.5">n - - p - - - n d</m>

@@ -1,60 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdup">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dup">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dup</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dup.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DUP</tok-starts-with>
       <tok-starts-with>DUp</tok-starts-with>
       <tok-starts-with>Dup</tok-starts-with>
       <tok-starts-with>dup</tok-starts-with>
       <tok-starts-with>dúp</tok-starts-with>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:22.595-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:22.595-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dup.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
       <ana>
          <tok val="DUPLARIUS"/>
+         <tok val="duplarius"/>
          <lm>
             <l>duplaris</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--DUPLARIUS duplarius-->
-         <tok val="(duplarius|DUPLARIUS)"/>
-         <lm>
-            <l>duplaris</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--DUplicem Duplicem duplicem duplicemque-->
-         <tok val="[D]?(u|U|du)plicem(que)?"/>
+      <ana>
+         <tok val="DUplicem"/>
+         <tok val="Duplicem"/>
+         <tok val="duplicem"/>
+         <tok val="duplicemque"/>
          <lm cert="0.5">
             <l>duplex</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -65,8 +71,10 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Dupla dupla duplane-->
-         <tok val="[dD]upla(ne)?"/>
+      <ana>
+         <tok val="Dupla"/>
+         <tok val="dupla"/>
+         <tok val="duplane"/>
          <lm cert="0.25">
             <l>dupla</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -93,8 +101,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Duplae duplae duplaeque-->
-         <tok val="[dD]uplae(que)?"/>
+      <ana>
+         <tok val="Duplae"/>
+         <tok val="duplae"/>
+         <tok val="duplaeque"/>
          <lm cert="0.5">
             <l>duplus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -110,8 +120,10 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Duplam duplam duplamque-->
-         <tok val="[dD]uplam(que)?"/>
+      <ana>
+         <tok val="Duplam"/>
+         <tok val="duplam"/>
+         <tok val="duplamque"/>
          <lm cert="0.5">
             <l>duplus</l>
             <m>a - - s - - - f a</m>
@@ -121,8 +133,11 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Duplares Duplaris duplaris-->
-         <tok val="[Dd]uplar[ie]s"/>
+      <ana>
+         <tok val="Duplares"/>
+         <tok val="Duplaris"/>
+         <tok val="duplares"/>
+         <tok val="duplaris"/>
          <lm>
             <l>duplaris</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -131,6 +146,7 @@
       </ana>
       <ana>
          <tok val="Duplares"/>
+         <tok val="duplares"/>
          <lm cert="0.5">
             <l>duplaris</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -143,8 +159,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Duplaris duplaris-->
-         <tok val="[dD]uplaris"/>
+      <ana>
+         <tok val="Duplaris"/>
+         <tok val="duplaris"/>
          <lm cert="0.5">
             <l>duplo</l>
             <m cert="0.5">v - 2 s r s a</m>
@@ -161,8 +178,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Duplas duplas-->
-         <tok val="[dD]uplas"/>
+      <ana>
+         <tok val="Duplas"/>
+         <tok val="duplas"/>
          <lm cert="0.333333333333333333">
             <l>duplo</l>
             <m>v - 2 s p i a</m>
@@ -176,23 +194,33 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Duplex duplex duplexque duplexve Duplexque-->
-         <tok val="[Dd]uplex(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Duplex"/>
+         <tok val="Duplexque"/>
+         <tok val="duplex"/>
+         <tok val="duplexque"/>
+         <tok val="duplexve"/>
          <lm>
             <l>duplex</l>
             <m cert="0.5">a - - s - - - f n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Duplex duplex duplexque duplexve dúplex Duplexque-->
-         <tok val="[Dd]?(u|dú)plex(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Duplex"/>
+         <tok val="Duplexque"/>
+         <tok val="duplex"/>
+         <tok val="duplexque"/>
+         <tok val="duplexve"/>
+         <tok val="dúplex"/>
          <lm>
             <l>duplex</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Dupli dupli-->
-         <tok val="[dD]upli"/>
+      <ana>
+         <tok val="Dupli"/>
+         <tok val="dupli"/>
          <lm cert="0.5">
             <l>duplus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -205,8 +233,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Duplicandi duplicandi-->
-         <tok val="[dD]uplicandi"/>
+      <ana>
+         <tok val="Duplicandi"/>
+         <tok val="duplicandi"/>
          <lm>
             <l>duplico</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -216,8 +245,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Duplicare duplicare-->
-         <tok val="[dD]uplicare"/>
+      <ana>
+         <tok val="Duplicare"/>
+         <tok val="duplicare"/>
          <lm>
             <l>duplico</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -225,8 +255,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Duplicari duplicari duplicarique-->
-         <tok val="[dD]uplicari(que)?"/>
+      <ana>
+         <tok val="Duplicari"/>
+         <tok val="duplicari"/>
+         <tok val="duplicarique"/>
          <lm cert="0.5">
             <l>duplico</l>
             <m>v - - - p n p</m>
@@ -236,22 +268,29 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Duplicari duplicari duplicarii duplicarique-->
-         <tok val="[dD]uplicari(i|que)?"/>
+      <ana>
+         <tok val="Duplicari"/>
+         <tok val="duplicari"/>
+         <tok val="duplicarii"/>
+         <tok val="duplicarique"/>
          <lm>
             <l>duplicarius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Duplicat duplicat duplicatque-->
-         <tok val="[dD]uplicat(que)?"/>
+      <ana>
+         <tok val="Duplicat"/>
+         <tok val="duplicat"/>
+         <tok val="duplicatque"/>
          <lm>
             <l>duplico</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Duplicata duplicata duplicataque-->
-         <tok val="[dD]uplicata(que)?"/>
+      <ana>
+         <tok val="Duplicata"/>
+         <tok val="duplicata"/>
+         <tok val="duplicataque"/>
          <lm>
             <l>duplico</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -262,8 +301,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Duplicati duplicati-->
-         <tok val="[dD]uplicati"/>
+      <ana>
+         <tok val="Duplicati"/>
+         <tok val="duplicati"/>
          <lm>
             <l>duplico</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -272,16 +312,19 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Duplicatio duplicatio-->
-         <tok val="[dD]uplicatio"/>
+      <ana>
+         <tok val="Duplicatio"/>
+         <tok val="duplicatio"/>
          <lm>
             <l>duplicatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Duplicato duplicato duplicatoque-->
-         <tok val="[dD]uplicato(que)?"/>
+      <ana>
+         <tok val="Duplicato"/>
+         <tok val="duplicato"/>
+         <tok val="duplicatoque"/>
          <lm cert="0.5">
             <l>duplico</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -298,28 +341,35 @@
       </ana>
       <ana>
          <tok val="Duplicator"/>
+         <tok val="duplicator"/>
          <lm>
             <l>duplicator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Duplicatur duplicatur-->
-         <tok val="[dD]uplicatur"/>
+      <ana>
+         <tok val="Duplicatur"/>
+         <tok val="duplicatur"/>
          <lm>
             <l>duplico</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Duplicatus duplicatus duplicatusque-->
-         <tok val="[dD]uplicatus(que)?"/>
+      <ana>
+         <tok val="Duplicatus"/>
+         <tok val="duplicatus"/>
+         <tok val="duplicatusque"/>
          <lm>
             <l>duplico</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Duplices Duplicesque duplices duplicesque-->
-         <tok val="[dD]uplices(que)?"/>
+      <ana>
+         <tok val="Duplices"/>
+         <tok val="Duplicesque"/>
+         <tok val="duplices"/>
+         <tok val="duplicesque"/>
          <lm cert="0.5">
             <l>duplex</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -332,38 +382,49 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Duplices Duplicesque duplices duplicesque duplicis-->
-         <tok val="[dD]uplic[ei]s(que)?"/>
+      <ana>
+         <tok val="Duplices"/>
+         <tok val="Duplicesque"/>
+         <tok val="duplices"/>
+         <tok val="duplicesque"/>
+         <tok val="duplicis"/>
          <lm>
             <l>duplex</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Duplicetur duplicetur-->
-         <tok val="[dD]uplicetur"/>
+      <ana>
+         <tok val="Duplicetur"/>
+         <tok val="duplicetur"/>
          <lm>
             <l>duplico</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Duplici duplici duplicique duplicí-->
-         <tok val="[dD]uplic(i|í|ique)"/>
+      <ana>
+         <tok val="Duplici"/>
+         <tok val="duplici"/>
+         <tok val="duplicique"/>
+         <tok val="duplicí"/>
          <lm>
             <l>duplex</l>
             <m>a - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Duplici duplici duplicique-->
-         <tok val="[dD]uplici(que)?"/>
+      <ana>
+         <tok val="Duplici"/>
+         <tok val="duplici"/>
+         <tok val="duplicique"/>
          <lm>
             <l>duplex</l>
             <m cert="0.5">a - - s - - - f d</m>
             <m cert="0.5">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Duplicibus duplicibus-->
-         <tok val="[dD]uplicibus"/>
+      <ana>
+         <tok val="Duplicibus"/>
+         <tok val="duplicibus"/>
          <lm>
             <l>duplex</l>
             <m cert="0.2">a - - p - - - f b</m>
@@ -373,37 +434,46 @@
             <m cert="0.2">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Duplicibus duplicibus duplicíbus-->
-         <tok val="[dD]uplic[ií]bus"/>
+      <ana>
+         <tok val="Duplicibus"/>
+         <tok val="duplicibus"/>
+         <tok val="duplicíbus"/>
          <lm>
             <l>duplex</l>
             <m>a - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Duplicis duplicis duplicisque duplicís-->
-         <tok val="[dD]uplic[ií]s(que)?"/>
+      <ana>
+         <tok val="Duplicis"/>
+         <tok val="duplicis"/>
+         <tok val="duplicisque"/>
+         <tok val="duplicís"/>
          <lm>
             <l>duplex</l>
             <m>a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Duplicis duplicis duplicisque-->
-         <tok val="[dD]uplicis(que)?"/>
+      <ana>
+         <tok val="Duplicis"/>
+         <tok val="duplicis"/>
+         <tok val="duplicisque"/>
          <lm>
             <l>duplex</l>
             <m cert="0.5">a - - s - - - f g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Dupliciter dupliciter-->
-         <tok val="[dD]upliciter"/>
+      <ana>
+         <tok val="Dupliciter"/>
+         <tok val="dupliciter"/>
          <lm>
             <l>dupliciter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Duplico duplico-->
-         <tok val="[dD]uplico"/>
+      <ana>
+         <tok val="Duplico"/>
+         <tok val="duplico"/>
          <lm>
             <l>duplico</l>
             <m>v - 1 s p i a</m>
@@ -411,14 +481,16 @@
       </ana>
       <ana>
          <tok val="Duplio"/>
+         <tok val="duplio"/>
          <lm>
             <l>duplio</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Duplo duplo-->
-         <tok val="[dD]uplo"/>
+      <ana>
+         <tok val="Duplo"/>
+         <tok val="duplo"/>
          <lm cert="0.333333333333333333">
             <l>duplus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -436,8 +508,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Duplum duplum-->
-         <tok val="[dD]uplum"/>
+      <ana>
+         <tok val="Duplum"/>
+         <tok val="duplum"/>
          <lm cert="0.5">
             <l>duplus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -450,8 +523,10 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Duplum duplorum duplum-->
-         <tok val="[dD]upl(or)?um"/>
+      <ana>
+         <tok val="Duplum"/>
+         <tok val="duplorum"/>
+         <tok val="duplum"/>
          <lm cert="0.5">
             <l>duplus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -462,8 +537,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Duplum duple duplum-->
-         <tok val="[dD]upl(um|e)"/>
+      <ana>
+         <tok val="Duplum"/>
+         <tok val="duple"/>
+         <tok val="duplum"/>
          <lm cert="0.5">
             <l>duplum</l>
             <m>n - - s - - - n v</m>
@@ -473,15 +550,17 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Duplus duplus-->
-         <tok val="[dD]uplus"/>
+      <ana>
+         <tok val="Duplus"/>
+         <tok val="duplus"/>
          <lm>
             <l>duplus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Dupondius dupondius-->
-         <tok val="[dD]upondius"/>
+      <ana>
+         <tok val="Dupondius"/>
+         <tok val="dupondius"/>
          <lm>
             <l>dupondius</l>
             <m>n - - s - - - m n</m>
@@ -494,8 +573,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--duplari duplariue-->
-         <tok val="duplari(ue)?"/>
+      <ana>
+         <tok val="duplari"/>
+         <tok val="duplariue"/>
          <lm cert="0.5">
             <l>duplaris</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -586,8 +666,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--duple duplum-->
-         <tok val="dupl(um|e)"/>
+      <ana>
+         <tok val="duple"/>
+         <tok val="duplum"/>
          <lm>
             <l>duplus</l>
             <m>d</m>
@@ -759,8 +840,10 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--duplicarat duplicauerat duplicaverat-->
-         <tok val="duplica[vu]?(e|)rat"/>
+      <ana>
+         <tok val="duplicarat"/>
+         <tok val="duplicauerat"/>
+         <tok val="duplicaverat"/>
          <lm>
             <l>duplico</l>
             <m>v - 3 s l i a</m>
@@ -871,8 +954,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--duplicate duplicatum-->
-         <tok val="duplicat(um|e)"/>
+      <ana>
+         <tok val="duplicate"/>
+         <tok val="duplicatum"/>
          <lm>
             <l>duplico</l>
             <m>v - - s r p p n v</m>
@@ -956,8 +1040,9 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--duplicauit duplicavit-->
-         <tok val="duplica[vu]it"/>
+      <ana>
+         <tok val="duplicauit"/>
+         <tok val="duplicavit"/>
          <lm>
             <l>duplico</l>
             <m>v - 3 s r i a</m>
@@ -994,8 +1079,9 @@
             <m cert="0.5">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--duplice duplici-->
-         <tok val="duplic[ie]"/>
+      <ana>
+         <tok val="duplice"/>
+         <tok val="duplici"/>
          <lm>
             <l>duplex</l>
             <m>a - - s - - - m b</m>
@@ -1079,8 +1165,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--dupondi dupondii-->
-         <tok val="dupondi[i]?"/>
+      <ana>
+         <tok val="dupondi"/>
+         <tok val="dupondii"/>
          <lm>
             <l>dupondius</l>
             <m>n - - s - - - m g</m>

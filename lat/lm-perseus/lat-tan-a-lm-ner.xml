@@ -1,78 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusner">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ner">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ner</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ner.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>NER</tok-starts-with>
       <tok-starts-with>Ner</tok-starts-with>
       <tok-starts-with>ner</tok-starts-with>
-      <ana><!--NERONEM Neronem Neronemque-->
-         <tok val="N(eronem)?(que|ERONEM)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:35:12.631-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:35:12.631-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ner.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="NERONEM"/>
+         <tok val="Neronem"/>
+         <tok val="Neronemque"/>
+         <tok val="neronem"/>
+         <tok val="neronemque"/>
          <lm>
             <l>Nero</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--NERONIS Neronis-->
-         <tok val="N(eronis|ERONIS)"/>
+      <ana>
+         <tok val="NERONIS"/>
+         <tok val="Neronis"/>
+         <tok val="neronis"/>
          <lm>
             <l>Nero</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Ner ner-->
-         <tok val="[nN]er"/>
+      <ana>
+         <tok val="Ner"/>
+         <tok val="ner"/>
          <lm>
             <l>no</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Nerat nerat-->
-         <tok val="[nN]erat"/>
+      <ana>
+         <tok val="Nerat"/>
+         <tok val="nerat"/>
          <lm>
             <l>neo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Nere nere nerene-->
-         <tok val="[nN]ere(ne)?"/>
+      <ana>
+         <tok val="Nere"/>
+         <tok val="nere"/>
+         <tok val="nerene"/>
          <lm>
             <l>neo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Nere Neris nere nerene neris nerisque-->
-         <tok val="[nN]er[e]?(ne|is|isque|e)?"/>
+      <ana>
+         <tok val="Nere"/>
+         <tok val="Neris"/>
+         <tok val="nere"/>
+         <tok val="nerene"/>
+         <tok val="neris"/>
+         <tok val="nerisque"/>
          <lm cert="0.5">
             <l>neo</l>
             <m>v - 2 s p i p</m>
@@ -82,8 +105,11 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Nerei Nereine-->
-         <tok val="Nerei(ne)?"/>
+      <ana>
+         <tok val="Nerei"/>
+         <tok val="Nereine"/>
+         <tok val="nerei"/>
+         <tok val="nereine"/>
          <lm>
             <l>Nereius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -92,6 +118,7 @@
       </ana>
       <ana>
          <tok val="Nereia"/>
+         <tok val="nereia"/>
          <lm>
             <l>Nereius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -104,13 +131,17 @@
       </ana>
       <ana>
          <tok val="Nereide"/>
+         <tok val="nereide"/>
          <lm>
             <l>Nereis</l>
             <m>n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Nereides Nereidesque-->
-         <tok val="Nereides(que)?"/>
+      <ana>
+         <tok val="Nereides"/>
+         <tok val="Nereidesque"/>
+         <tok val="nereides"/>
+         <tok val="nereidesque"/>
          <lm>
             <l>Nereis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -120,6 +151,7 @@
       </ana>
       <ana>
          <tok val="Nereidi"/>
+         <tok val="nereidi"/>
          <lm>
             <l>Nereis</l>
             <m>n e - s - - - f d</m>
@@ -127,6 +159,7 @@
       </ana>
       <ana>
          <tok val="Nereidibus"/>
+         <tok val="nereidibus"/>
          <lm>
             <l>Nereis</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -135,13 +168,17 @@
       </ana>
       <ana>
          <tok val="Nereidis"/>
+         <tok val="nereidis"/>
          <lm>
             <l>Nereis</l>
             <m>n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Nereidum Nereidumque-->
-         <tok val="Nereidum(que)?"/>
+      <ana>
+         <tok val="Nereidum"/>
+         <tok val="Nereidumque"/>
+         <tok val="nereidum"/>
+         <tok val="nereidumque"/>
          <lm>
             <l>Nereis</l>
             <m>n e - p - - - f g</m>
@@ -149,6 +186,7 @@
       </ana>
       <ana>
          <tok val="Nereis"/>
+         <tok val="nereis"/>
          <lm>
             <l>Nereis</l>
             <m>n e - s - - - f n</m>
@@ -156,6 +194,7 @@
       </ana>
       <ana>
          <tok val="Nereium"/>
+         <tok val="nereium"/>
          <lm>
             <l>Nereius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -168,13 +207,15 @@
       </ana>
       <ana>
          <tok val="Nereius"/>
+         <tok val="nereius"/>
          <lm>
             <l>Nereius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Neres neres-->
-         <tok val="[nN]eres"/>
+      <ana>
+         <tok val="Neres"/>
+         <tok val="neres"/>
          <lm>
             <l>neo</l>
             <m>v - 2 s i s a</m>
@@ -182,6 +223,7 @@
       </ana>
       <ana>
          <tok val="Neretini"/>
+         <tok val="neretini"/>
          <lm>
             <l>Neretini</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -190,6 +232,7 @@
       </ana>
       <ana>
          <tok val="Neretum"/>
+         <tok val="neretum"/>
          <lm>
             <l>Neretum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -200,28 +243,41 @@
       </ana>
       <ana>
          <tok val="Nereus"/>
+         <tok val="nereus"/>
          <lm>
             <l>Nereus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Neri Nerique-->
-         <tok val="Neri(que)?"/>
+      <ana>
+         <tok val="Neri"/>
+         <tok val="Nerique"/>
+         <tok val="neri"/>
+         <tok val="nerique"/>
          <lm>
             <l>Nerius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Neri Nerique neri nerine-->
-         <tok val="[nN]eri(ne|que)?"/>
+      <ana>
+         <tok val="Neri"/>
+         <tok val="Nerique"/>
+         <tok val="neri"/>
+         <tok val="nerine"/>
+         <tok val="nerique"/>
          <lm>
             <l>neo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Neri Nerique neri nerii nerine-->
-         <tok val="[nN]eri(i|ne|que)?"/>
+      <ana>
+         <tok val="Neri"/>
+         <tok val="Nerique"/>
+         <tok val="neri"/>
+         <tok val="nerii"/>
+         <tok val="nerine"/>
+         <tok val="nerique"/>
          <lm>
             <l>nerion</l>
             <m>n - - s - - - n g</m>
@@ -229,6 +285,7 @@
       </ana>
       <ana>
          <tok val="Neria"/>
+         <tok val="neria"/>
          <lm cert="0.333333333333333333">
             <l>Nerius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -253,6 +310,7 @@
       </ana>
       <ana>
          <tok val="Neriae"/>
+         <tok val="neriae"/>
          <lm cert="0.5">
             <l>Neria</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -268,8 +326,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Neriene Nerium-->
-         <tok val="Neri(um|ene)"/>
+      <ana>
+         <tok val="Neriene"/>
+         <tok val="Nerium"/>
+         <tok val="neriene"/>
+         <tok val="nerium"/>
          <lm>
             <l>Nerius</l>
             <m>a e - s - - - n v</m>
@@ -277,13 +338,18 @@
       </ana>
       <ana>
          <tok val="Neriene"/>
+         <tok val="neriene"/>
          <lm>
             <l>Nerius</l>
             <m>a e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Neriene Nerium nerion nerium-->
-         <tok val="[nN]eri(um|on|ene)"/>
+      <ana>
+         <tok val="Neriene"/>
+         <tok val="Nerium"/>
+         <tok val="neriene"/>
+         <tok val="nerion"/>
+         <tok val="nerium"/>
          <lm>
             <l>nerion</l>
             <m>n - - s - - - n v</m>
@@ -291,6 +357,7 @@
       </ana>
       <ana>
          <tok val="Nerina"/>
+         <tok val="nerina"/>
          <lm>
             <l>Nerinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -301,8 +368,11 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Nerina Nerine-->
-         <tok val="Nerin[ea]"/>
+      <ana>
+         <tok val="Nerina"/>
+         <tok val="Nerine"/>
+         <tok val="nerina"/>
+         <tok val="nerine"/>
          <lm>
             <l>Nerine</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -312,6 +382,7 @@
       </ana>
       <ana>
          <tok val="Nerinae"/>
+         <tok val="nerinae"/>
          <lm cert="0.5">
             <l>Nerine</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -329,6 +400,7 @@
       </ana>
       <ana>
          <tok val="Nerine"/>
+         <tok val="nerine"/>
          <lm>
             <l>Nerinus</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -338,6 +410,7 @@
       </ana>
       <ana>
          <tok val="Nerinorum"/>
+         <tok val="nerinorum"/>
          <lm>
             <l>Nerinus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -346,6 +419,7 @@
       </ana>
       <ana>
          <tok val="Nerinus"/>
+         <tok val="nerinus"/>
          <lm>
             <l>Nerinus</l>
             <m>a e - s - - - m n</m>
@@ -353,6 +427,7 @@
       </ana>
       <ana>
          <tok val="Nerio"/>
+         <tok val="nerio"/>
          <lm cert="0.5">
             <l>Nerius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -366,8 +441,10 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Neris neris nerisque-->
-         <tok val="[nN]eris(que)?"/>
+      <ana>
+         <tok val="Neris"/>
+         <tok val="neris"/>
+         <tok val="nerisque"/>
          <lm>
             <l>neo</l>
             <m>v - 2 s r s a</m>
@@ -375,6 +452,7 @@
       </ana>
       <ana>
          <tok val="Neritae"/>
+         <tok val="neritae"/>
          <lm>
             <l>nerita</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -385,6 +463,7 @@
       </ana>
       <ana>
          <tok val="Neritia"/>
+         <tok val="neritia"/>
          <lm>
             <l>Neritius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -395,8 +474,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Neritiae Neritiaeque-->
-         <tok val="Neritiae(que)?"/>
+      <ana>
+         <tok val="Neritiae"/>
+         <tok val="Neritiaeque"/>
+         <tok val="neritiae"/>
+         <tok val="neritiaeque"/>
          <lm>
             <l>Neritius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -405,8 +487,11 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Neritias Neritiasque-->
-         <tok val="Neritias(que)?"/>
+      <ana>
+         <tok val="Neritias"/>
+         <tok val="Neritiasque"/>
+         <tok val="neritias"/>
+         <tok val="neritiasque"/>
          <lm>
             <l>Neritius</l>
             <m>a e - p - - - f a</m>
@@ -414,6 +499,7 @@
       </ana>
       <ana>
          <tok val="Neritii"/>
+         <tok val="neritii"/>
          <lm>
             <l>Neritius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -424,6 +510,7 @@
       </ana>
       <ana>
          <tok val="Neritio"/>
+         <tok val="neritio"/>
          <lm>
             <l>Neritius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -432,8 +519,9 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Neritis neritis-->
-         <tok val="[nN]eritis"/>
+      <ana>
+         <tok val="Neritis"/>
+         <tok val="neritis"/>
          <lm cert="0.5">
             <l>neo</l>
             <m>v - 2 p r s a</m>
@@ -446,13 +534,17 @@
       </ana>
       <ana>
          <tok val="Neritius"/>
+         <tok val="neritius"/>
          <lm>
             <l>Neritius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Neritom Neritum-->
-         <tok val="Nerit[uo]m"/>
+      <ana>
+         <tok val="Neritom"/>
+         <tok val="Neritum"/>
+         <tok val="neritom"/>
+         <tok val="neritum"/>
          <lm>
             <l>Neritos</l>
             <m>n e - s - - - m a</m>
@@ -460,14 +552,18 @@
       </ana>
       <ana>
          <tok val="Neriton"/>
+         <tok val="neriton"/>
          <lm>
             <l>Neritos</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Neriton Neritos-->
-         <tok val="Nerito[sn]"/>
+      <ana>
+         <tok val="Neriton"/>
+         <tok val="Neritos"/>
+         <tok val="neriton"/>
+         <tok val="neritos"/>
          <lm>
             <l>Neritos</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -476,6 +572,7 @@
       </ana>
       <ana>
          <tok val="Neritum"/>
+         <tok val="neritum"/>
          <lm>
             <l>Neritos</l>
             <m>n e - p - - - m g</m>
@@ -483,7 +580,8 @@
       </ana>
       <ana>
          <tok val="Nerium"/>
-         <lm>
+         <tok val="nerium"/>
+         <lm cert="0.5">
             <l>Nerius</l>
             <m cert="0.2">a e - p - - - m g</m>
             <m cert="0.2">a e - s - - - n n</m>
@@ -491,31 +589,34 @@
             <m cert="0.2">a e - s - - - m a</m>
             <m cert="0.2">a e - p - - - n g</m>
          </lm>
+         <lm cert="0.5">
+            <l>nerion</l>
+            <m>n - - p - - - n g</m>
+         </lm>
       </ana>
-      <ana><!--Nerium nerion nerium-->
-         <tok val="[nN]eri(um|on)"/>
+      <ana>
+         <tok val="Nerium"/>
+         <tok val="nerion"/>
+         <tok val="nerium"/>
          <lm>
             <l>nerion</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Nerium nerium-->
-         <tok val="[nN]erium"/>
-         <lm>
-            <l>nerion</l>
-            <m>n - - p - - - n g</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Nerius"/>
+         <tok val="nerius"/>
          <lm>
             <l>Nerius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nero Neron-->
-         <tok val="Nero[n]?"/>
+      <ana>
+         <tok val="Nero"/>
+         <tok val="Neron"/>
+         <tok val="nero"/>
+         <tok val="neron"/>
          <lm>
             <l>Nero</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -524,6 +625,7 @@
       </ana>
       <ana>
          <tok val="Nerone"/>
+         <tok val="nerone"/>
          <lm>
             <l>Nero</l>
             <m>n e - s - - - m b</m>
@@ -531,6 +633,7 @@
       </ana>
       <ana>
          <tok val="Neronea"/>
+         <tok val="neronea"/>
          <lm>
             <l>Neroneus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -543,6 +646,7 @@
       </ana>
       <ana>
          <tok val="Neroneo"/>
+         <tok val="neroneo"/>
          <lm>
             <l>Neroneus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -553,6 +657,7 @@
       </ana>
       <ana>
          <tok val="Nerones"/>
+         <tok val="nerones"/>
          <lm>
             <l>Nero</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -562,6 +667,7 @@
       </ana>
       <ana>
          <tok val="Neroneum"/>
+         <tok val="neroneum"/>
          <lm>
             <l>Neroneus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -574,6 +680,7 @@
       </ana>
       <ana>
          <tok val="Neroneus"/>
+         <tok val="neroneus"/>
          <lm>
             <l>Neroneus</l>
             <m>a e - s - - - m n</m>
@@ -581,6 +688,7 @@
       </ana>
       <ana>
          <tok val="Neroni"/>
+         <tok val="neroni"/>
          <lm cert="0.5">
             <l>Neronius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -593,6 +701,7 @@
       </ana>
       <ana>
          <tok val="Neronia"/>
+         <tok val="neronia"/>
          <lm>
             <l>Neronius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -605,6 +714,7 @@
       </ana>
       <ana>
          <tok val="Neroniana"/>
+         <tok val="neroniana"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -617,6 +727,7 @@
       </ana>
       <ana>
          <tok val="Neronianae"/>
+         <tok val="neronianae"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -627,6 +738,7 @@
       </ana>
       <ana>
          <tok val="Neronianam"/>
+         <tok val="neronianam"/>
          <lm>
             <l>Neronianus</l>
             <m>a e - s - - - f a</m>
@@ -634,6 +746,7 @@
       </ana>
       <ana>
          <tok val="Neronianarum"/>
+         <tok val="neronianarum"/>
          <lm>
             <l>Neronianus</l>
             <m>a e - p - - - f g</m>
@@ -641,6 +754,7 @@
       </ana>
       <ana>
          <tok val="Neronianas"/>
+         <tok val="neronianas"/>
          <lm>
             <l>Neronianus</l>
             <m>a e - p - - - f a</m>
@@ -648,6 +762,7 @@
       </ana>
       <ana>
          <tok val="Neroniani"/>
+         <tok val="neroniani"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -661,6 +776,7 @@
       </ana>
       <ana>
          <tok val="Neronianis"/>
+         <tok val="neronianis"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -675,6 +791,7 @@
       </ana>
       <ana>
          <tok val="Neroniano"/>
+         <tok val="neroniano"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -685,8 +802,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Neronianorum Neronianum-->
-         <tok val="Neronian(or)?um"/>
+      <ana>
+         <tok val="Neronianorum"/>
+         <tok val="Neronianum"/>
+         <tok val="neronianorum"/>
+         <tok val="neronianum"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -696,6 +816,7 @@
       </ana>
       <ana>
          <tok val="Neronianos"/>
+         <tok val="neronianos"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -704,6 +825,7 @@
       </ana>
       <ana>
          <tok val="Neronianum"/>
+         <tok val="neronianum"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.2">a e - s - - - n v</m>
@@ -715,14 +837,18 @@
       </ana>
       <ana>
          <tok val="Neronianus"/>
+         <tok val="neronianus"/>
          <lm>
             <l>Neronianus</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Neronibus Neronibvs-->
-         <tok val="Neronib[vu]s"/>
+      <ana>
+         <tok val="Neronibus"/>
+         <tok val="Neronibvs"/>
+         <tok val="neronibus"/>
+         <tok val="neronibvs"/>
          <lm>
             <l>Nero</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -731,13 +857,17 @@
       </ana>
       <ana>
          <tok val="Neronius"/>
+         <tok val="neronius"/>
          <lm>
             <l>Neronius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Neronum Neronvm-->
-         <tok val="Neron[vu]m"/>
+      <ana>
+         <tok val="Neronum"/>
+         <tok val="Neronvm"/>
+         <tok val="neronum"/>
+         <tok val="neronvm"/>
          <lm>
             <l>Nero</l>
             <m>n e - p - - - m g</m>
@@ -745,13 +875,17 @@
       </ana>
       <ana>
          <tok val="Neropolim"/>
+         <tok val="neropolim"/>
          <lm>
             <l>Neropolis</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Neropolin Neropolis-->
-         <tok val="Neropoli[sn]"/>
+      <ana>
+         <tok val="Neropolin"/>
+         <tok val="Neropolis"/>
+         <tok val="neropolin"/>
+         <tok val="neropolis"/>
          <lm>
             <l>Neropolis</l>
             <m cert="0.333333333333333333">n e - s - - - f g</m>
@@ -761,6 +895,7 @@
       </ana>
       <ana>
          <tok val="Neropolin"/>
+         <tok val="neropolin"/>
          <lm>
             <l>Neropolis</l>
             <m cert="0.5">n e - s - - - f b</m>
@@ -769,6 +904,7 @@
       </ana>
       <ana>
          <tok val="Nersae"/>
+         <tok val="nersae"/>
          <lm>
             <l>Nersae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -777,6 +913,7 @@
       </ana>
       <ana>
          <tok val="Nersia"/>
+         <tok val="nersia"/>
          <lm>
             <l>Nersia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -786,6 +923,7 @@
       </ana>
       <ana>
          <tok val="Nerthum"/>
+         <tok val="nerthum"/>
          <lm>
             <l>Nerthus</l>
             <m cert="0.5">n e - s - - - f a</m>
@@ -794,6 +932,7 @@
       </ana>
       <ana>
          <tok val="Nerthus"/>
+         <tok val="nerthus"/>
          <lm>
             <l>Nerthus</l>
             <m>n e - s - - - f n</m>
@@ -801,6 +940,7 @@
       </ana>
       <ana>
          <tok val="Nertobriga"/>
+         <tok val="nertobriga"/>
          <lm>
             <l>Nertobriga</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -810,6 +950,7 @@
       </ana>
       <ana>
          <tok val="Nertobrigae"/>
+         <tok val="nertobrigae"/>
          <lm>
             <l>Nertobriga</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -818,8 +959,13 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Nerua Nerva Nervaque-->
-         <tok val="Ner[vu]a(que)?"/>
+      <ana>
+         <tok val="Nerua"/>
+         <tok val="Nerva"/>
+         <tok val="Nervaque"/>
+         <tok val="nerua"/>
+         <tok val="nerva"/>
+         <tok val="nervaque"/>
          <lm>
             <l>Nerva</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -827,8 +973,11 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Neruae Nervae-->
-         <tok val="Ner[vu]ae"/>
+      <ana>
+         <tok val="Neruae"/>
+         <tok val="Nervae"/>
+         <tok val="neruae"/>
+         <tok val="nervae"/>
          <lm>
             <l>Nerva</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -837,15 +986,25 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Neruam Nervam-->
-         <tok val="Ner[vu]am"/>
+      <ana>
+         <tok val="Neruam"/>
+         <tok val="Nervam"/>
+         <tok val="neruam"/>
+         <tok val="nervam"/>
          <lm>
             <l>Nerva</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nerui Nervi nerui neruine neruique neruiue nervi nervique-->
-         <tok val="[nN]er(viq)?[u]?[i]?[q]?(u|in)?(e|i|vi|ui)"/>
+      <ana>
+         <tok val="Nerui"/>
+         <tok val="Nervi"/>
+         <tok val="nerui"/>
+         <tok val="neruine"/>
+         <tok val="neruique"/>
+         <tok val="neruiue"/>
+         <tok val="nervi"/>
+         <tok val="nervique"/>
          <lm>
             <l>nervus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -853,16 +1012,26 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Nerui Neruii Nervi Nervii-->
-         <tok val="Ner[uv]i[i]?"/>
+      <ana>
+         <tok val="Nerui"/>
+         <tok val="Neruii"/>
+         <tok val="Nervi"/>
+         <tok val="Nervii"/>
+         <tok val="nerui"/>
+         <tok val="neruii"/>
+         <tok val="nervi"/>
+         <tok val="nervii"/>
          <lm>
             <l>Nervius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Neruii Nervii-->
-         <tok val="Ner[vu]ii"/>
+      <ana>
+         <tok val="Neruii"/>
+         <tok val="Nervii"/>
+         <tok val="neruii"/>
+         <tok val="nervii"/>
          <lm cert="0.5">
             <l>Nervius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -874,8 +1043,11 @@
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Neruiorum Nerviorum-->
-         <tok val="Ner[vu]iorum"/>
+      <ana>
+         <tok val="Neruiorum"/>
+         <tok val="Nerviorum"/>
+         <tok val="neruiorum"/>
+         <tok val="nerviorum"/>
          <lm cert="0.5">
             <l>Nervius</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -886,23 +1058,37 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Neruiorum Nerviorum nervium-->
-         <tok val="[Nn]er[vu]i(or|)um"/>
+      <ana>
+         <tok val="Neruiorum"/>
+         <tok val="Nerviorum"/>
+         <tok val="neruiorum"/>
+         <tok val="nerviorum"/>
+         <tok val="nervium"/>
          <lm>
             <l>nervia</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Neruis Nervis neruis neruisque neruisue nervis nervisque nervisve-->
-         <tok val="[nN]er[uv]is[q]?(ue|ve)?"/>
+      <ana>
+         <tok val="Neruis"/>
+         <tok val="Nervis"/>
+         <tok val="neruis"/>
+         <tok val="neruisque"/>
+         <tok val="neruisue"/>
+         <tok val="nervis"/>
+         <tok val="nervisque"/>
+         <tok val="nervisve"/>
          <lm>
             <l>nervus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Neruius Nervius-->
-         <tok val="Ner[vu]ius"/>
+      <ana>
+         <tok val="Neruius"/>
+         <tok val="Nervius"/>
+         <tok val="neruius"/>
+         <tok val="nervius"/>
          <lm>
             <l>Nervius</l>
             <m>a e - s - - - m n</m>
@@ -910,6 +1096,7 @@
       </ana>
       <ana>
          <tok val="Nerulonenses"/>
+         <tok val="nerulonenses"/>
          <lm>
             <l>Nerulonensis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -918,8 +1105,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Nerulonenses Nerulonensis-->
-         <tok val="Nerulonens[ie]s"/>
+      <ana>
+         <tok val="Nerulonenses"/>
+         <tok val="Nerulonensis"/>
+         <tok val="nerulonenses"/>
+         <tok val="nerulonensis"/>
          <lm>
             <l>Nerulonensis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -928,6 +1118,7 @@
       </ana>
       <ana>
          <tok val="Nerulonensis"/>
+         <tok val="nerulonensis"/>
          <lm>
             <l>Nerulonensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -941,6 +1132,7 @@
       </ana>
       <ana>
          <tok val="Nerulum"/>
+         <tok val="nerulum"/>
          <lm>
             <l>Nerulum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -949,37 +1141,66 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Neruo Nervo neruo neruoque nervo nervoque nervove-->
-         <tok val="[nN]er[vu]o(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Neruo"/>
+         <tok val="Nervo"/>
+         <tok val="neruo"/>
+         <tok val="neruoque"/>
+         <tok val="nervo"/>
+         <tok val="nervoque"/>
+         <tok val="nervove"/>
          <lm>
             <l>nervus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Neruorum Neruum Nervorum neruorum neruorumque neruum neruumque nervorum nervorumque nervorumve nervum-->
-         <tok val="[nN]er[vu]?(or|u|vor|uor|v)um(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Neruorum"/>
+         <tok val="Neruum"/>
+         <tok val="Nervorum"/>
+         <tok val="neruorum"/>
+         <tok val="neruorumque"/>
+         <tok val="neruum"/>
+         <tok val="neruumque"/>
+         <tok val="nervorum"/>
+         <tok val="nervorumque"/>
+         <tok val="nervorumve"/>
+         <tok val="nervum"/>
          <lm>
             <l>nervus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Neruos Nervos neruos neruosque nervos nervosque-->
-         <tok val="[nN]er[vu]os(que)?"/>
+      <ana>
+         <tok val="Neruos"/>
+         <tok val="Nervos"/>
+         <tok val="neruos"/>
+         <tok val="neruosque"/>
+         <tok val="nervos"/>
+         <tok val="nervosque"/>
          <lm>
             <l>nervus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Neruum neruom neruum neruumque nervom nervum-->
-         <tok val="[nN]er[u]?[uo]?(m|vom|vum|uumque)"/>
+      <ana>
+         <tok val="Neruum"/>
+         <tok val="neruom"/>
+         <tok val="neruum"/>
+         <tok val="neruumque"/>
+         <tok val="nervom"/>
+         <tok val="nervum"/>
          <lm>
             <l>nervus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Neruus neruus neruusque nervus-->
-         <tok val="[nN]er[uv]us(que)?"/>
+      <ana>
+         <tok val="Neruus"/>
+         <tok val="neruus"/>
+         <tok val="neruusque"/>
+         <tok val="nervus"/>
          <lm>
             <l>nervus</l>
             <m>n - - s - - - m n</m>
@@ -987,6 +1208,7 @@
       </ana>
       <ana>
          <tok val="Nervas"/>
+         <tok val="nervas"/>
          <lm>
             <l>Nerva</l>
             <m>n e - p - - - m a</m>
@@ -994,6 +1216,7 @@
       </ana>
       <ana>
          <tok val="Nervico"/>
+         <tok val="nervico"/>
          <lm>
             <l>nervicus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1002,8 +1225,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Nervicus nervicus-->
-         <tok val="[nN]ervicus"/>
+      <ana>
+         <tok val="Nervicus"/>
+         <tok val="nervicus"/>
          <lm>
             <l>nervicus</l>
             <m>a - - s - - - m n</m>
@@ -1011,6 +1235,7 @@
       </ana>
       <ana>
          <tok val="Nerviis"/>
+         <tok val="nerviis"/>
          <lm cert="0.25">
             <l>Nervii</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1038,6 +1263,7 @@
       </ana>
       <ana>
          <tok val="Nervio"/>
+         <tok val="nervio"/>
          <lm>
             <l>Nervius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1048,6 +1274,7 @@
       </ana>
       <ana>
          <tok val="Nervios"/>
+         <tok val="nervios"/>
          <lm cert="0.5">
             <l>Nervii</l>
             <m>n e - p - - - m a</m>
@@ -1059,6 +1286,7 @@
       </ana>
       <ana>
          <tok val="Nervolaria"/>
+         <tok val="nervolaria"/>
          <lm>
             <l>Nervolaria</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1094,8 +1322,9 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--neratis neratisque-->
-         <tok val="neratis(que)?"/>
+      <ana>
+         <tok val="neratis"/>
+         <tok val="neratisque"/>
          <lm>
             <l>neo</l>
             <m>v - 2 p l i a</m>
@@ -1129,8 +1358,9 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--neret neretue-->
-         <tok val="neret(ue)?"/>
+      <ana>
+         <tok val="neret"/>
+         <tok val="neretue"/>
          <lm>
             <l>neo</l>
             <m>v - 3 s i s a</m>
@@ -1180,8 +1410,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--neruias nervias-->
-         <tok val="ner[vu]ias"/>
+      <ana>
+         <tok val="neruias"/>
+         <tok val="nervias"/>
          <lm>
             <l>nerviae</l>
             <m>n - - p - - - f a</m>
@@ -1318,15 +1549,18 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--nervose nervoseque nervosius-->
-         <tok val="nervos[e]?(que|ius)?"/>
+      <ana>
+         <tok val="nervose"/>
+         <tok val="nervoseque"/>
+         <tok val="nervosius"/>
          <lm>
             <l>nervosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--nervose nervoseque-->
-         <tok val="nervose(que)?"/>
+      <ana>
+         <tok val="nervose"/>
+         <tok val="nervoseque"/>
          <lm>
             <l>nervosus</l>
             <m cert="0.5">a - - s - - - n v</m>
@@ -1353,8 +1587,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--nervosis nervosisque-->
-         <tok val="nervosis(que)?"/>
+      <ana>
+         <tok val="nervosis"/>
+         <tok val="nervosisque"/>
          <lm>
             <l>nervosus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1404,6 +1639,7 @@
       </ana>
       <ana>
          <tok val="Neratius"/>
+         <tok val="neratius"/>
          <lm>
             <l>Neratius</l>
             <m>n e - s - - - m n</m>

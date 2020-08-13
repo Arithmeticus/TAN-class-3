@@ -1,58 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussic">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sic">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sic</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sic.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SIC</tok-starts-with>
       <tok-starts-with>Sic</tok-starts-with>
       <tok-starts-with>sic</tok-starts-with>
       <tok-starts-with>síc</tok-starts-with>
       <tok-starts-with>Síc</tok-starts-with>
-      <ana><!--SIC Sic Sicne Sicque sic siccumque sicque síc Síc-->
-         <tok val="[sS]?(i|sí|Sí)?[c]?(cum)?(qu|n)?(e|SIC)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:45:57.331-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:45:57.331-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sic.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SIC"/>
+         <tok val="Sic"/>
+         <tok val="Sicne"/>
+         <tok val="Sicque"/>
+         <tok val="Síc"/>
+         <tok val="sic"/>
+         <tok val="siccumque"/>
+         <tok val="sicne"/>
+         <tok val="sicque"/>
+         <tok val="síc"/>
          <lm>
             <l>sic</l>
             <m>d d</m>
          </lm>
       </ana>
-      <ana><!--SICCVS Siccus Siccvs siccus siccusque-->
-         <tok val="[Ss]?(icc)?[vu]?[s]?(que|SICCVS)?"/>
+      <ana>
+         <tok val="SICCVS"/>
+         <tok val="Siccus"/>
+         <tok val="Siccvs"/>
+         <tok val="siccus"/>
+         <tok val="siccusque"/>
+         <tok val="siccvs"/>
          <lm>
             <l>siccus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SICILIA Sicilia Sicilian Siciliane Siciliaque-->
-         <tok val="S(icilia)?[n]?(e|que|ICILIA)?"/>
+      <ana>
+         <tok val="SICILIA"/>
+         <tok val="Sicilia"/>
+         <tok val="Sicilian"/>
+         <tok val="Siciliane"/>
+         <tok val="Siciliaque"/>
+         <tok val="sicilia"/>
+         <tok val="sicilian"/>
+         <tok val="siciliane"/>
+         <tok val="siciliaque"/>
          <lm>
             <l>Sicilia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -60,8 +90,12 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--SICILIAE Siciliae Siciliaeque-->
-         <tok val="S(iciliae)?(que|ICILIAE)?"/>
+      <ana>
+         <tok val="SICILIAE"/>
+         <tok val="Siciliae"/>
+         <tok val="Siciliaeque"/>
+         <tok val="siciliae"/>
+         <tok val="siciliaeque"/>
          <lm>
             <l>Sicilia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -70,8 +104,10 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--SICILIENSI Siciliensi-->
-         <tok val="S(iciliensi|ICILIENSI)"/>
+      <ana>
+         <tok val="SICILIENSI"/>
+         <tok val="Siciliensi"/>
+         <tok val="siciliensi"/>
          <lm>
             <l>Siciliensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -82,22 +118,29 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SICUT Sicut sicut sicuti sicutque-->
-         <tok val="[sS]?(icut)?(i|que|SICUT)?"/>
+      <ana>
+         <tok val="SICUT"/>
+         <tok val="Sicut"/>
+         <tok val="sicut"/>
+         <tok val="sicuti"/>
+         <tok val="sicutque"/>
          <lm>
             <l>sicut</l>
             <m>d r</m>
          </lm>
       </ana>
-      <ana><!--SICVT Sicvt-->
-         <tok val="S(icvt|ICVT)"/>
+      <ana>
+         <tok val="SICVT"/>
+         <tok val="Sicvt"/>
+         <tok val="sicvt"/>
          <lm>
             <l>sicut</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--Sica sica-->
-         <tok val="[sS]ica"/>
+      <ana>
+         <tok val="Sica"/>
+         <tok val="sica"/>
          <lm>
             <l>sica</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -105,8 +148,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Sicam sicam-->
-         <tok val="[sS]icam"/>
+      <ana>
+         <tok val="Sicam"/>
+         <tok val="sicam"/>
          <lm>
             <l>sica</l>
             <m>n - - s - - - f a</m>
@@ -114,6 +158,7 @@
       </ana>
       <ana>
          <tok val="Sicana"/>
+         <tok val="sicana"/>
          <lm>
             <l>Sicanus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -126,6 +171,7 @@
       </ana>
       <ana>
          <tok val="Sicanae"/>
+         <tok val="sicanae"/>
          <lm>
             <l>Sicanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -136,6 +182,7 @@
       </ana>
       <ana>
          <tok val="Sicani"/>
+         <tok val="sicani"/>
          <lm cert="0.5">
             <l>Sicanus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -151,6 +198,7 @@
       </ana>
       <ana>
          <tok val="Sicania"/>
+         <tok val="sicania"/>
          <lm cert="0.5">
             <l>Sicanius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -169,6 +217,7 @@
       </ana>
       <ana>
          <tok val="Sicaniae"/>
+         <tok val="sicaniae"/>
          <lm cert="0.5">
             <l>Sicania</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -186,6 +235,7 @@
       </ana>
       <ana>
          <tok val="Sicaniam"/>
+         <tok val="sicaniam"/>
          <lm cert="0.5">
             <l>Sicania</l>
             <m>n e - s - - - f a</m>
@@ -197,6 +247,7 @@
       </ana>
       <ana>
          <tok val="Sicanias"/>
+         <tok val="sicanias"/>
          <lm cert="0.5">
             <l>Sicanius</l>
             <m>a e - p - - - f a</m>
@@ -208,6 +259,7 @@
       </ana>
       <ana>
          <tok val="Sicanii"/>
+         <tok val="sicanii"/>
          <lm>
             <l>Sicanius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -216,8 +268,11 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sicaniis Sicaniisque-->
-         <tok val="Sicaniis(que)?"/>
+      <ana>
+         <tok val="Sicaniis"/>
+         <tok val="Sicaniisque"/>
+         <tok val="sicaniis"/>
+         <tok val="sicaniisque"/>
          <lm cert="0.5">
             <l>Sicania</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -235,6 +290,7 @@
       </ana>
       <ana>
          <tok val="Sicanio"/>
+         <tok val="sicanio"/>
          <lm>
             <l>Sicanius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -245,6 +301,7 @@
       </ana>
       <ana>
          <tok val="Sicanios"/>
+         <tok val="sicanios"/>
          <lm>
             <l>Sicanius</l>
             <m>a e - p - - - m a</m>
@@ -252,6 +309,7 @@
       </ana>
       <ana>
          <tok val="Sicanis"/>
+         <tok val="sicanis"/>
          <lm cert="0.333333333333333333">
             <l>Sicani</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -273,6 +331,7 @@
       </ana>
       <ana>
          <tok val="Sicanium"/>
+         <tok val="sicanium"/>
          <lm>
             <l>Sicanius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -285,6 +344,7 @@
       </ana>
       <ana>
          <tok val="Sicanius"/>
+         <tok val="sicanius"/>
          <lm cert="0.5">
             <l>Sicanus</l>
             <m cert="0.25">a e - s - - - n a c</m>
@@ -299,6 +359,7 @@
       </ana>
       <ana>
          <tok val="Sicano"/>
+         <tok val="sicano"/>
          <lm>
             <l>Sicanus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -309,6 +370,7 @@
       </ana>
       <ana>
          <tok val="Sicanorum"/>
+         <tok val="sicanorum"/>
          <lm cert="0.5">
             <l>Sicanus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -321,6 +383,7 @@
       </ana>
       <ana>
          <tok val="Sicanos"/>
+         <tok val="sicanos"/>
          <lm cert="0.5">
             <l>Sicani</l>
             <m>n e - p - - - m a</m>
@@ -332,49 +395,59 @@
       </ana>
       <ana>
          <tok val="Sicanus"/>
+         <tok val="sicanus"/>
          <lm>
             <l>Sicanus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sicarii sicarii-->
-         <tok val="[sS]icarii"/>
+      <ana>
+         <tok val="Sicarii"/>
+         <tok val="sicarii"/>
          <lm>
             <l>sicarius</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Sicarii sicari sicarii-->
-         <tok val="[sS]icari[i]?"/>
+      <ana>
+         <tok val="Sicarii"/>
+         <tok val="sicari"/>
+         <tok val="sicarii"/>
          <lm>
             <l>sicarius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sicarios sicarios-->
-         <tok val="[sS]icarios"/>
+      <ana>
+         <tok val="Sicarios"/>
+         <tok val="sicarios"/>
          <lm>
             <l>sicarius</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sicarius sicarius-->
-         <tok val="[sS]icarius"/>
+      <ana>
+         <tok val="Sicarius"/>
+         <tok val="sicarius"/>
          <lm>
             <l>sicarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sicas sicas-->
-         <tok val="[sS]icas"/>
+      <ana>
+         <tok val="Sicas"/>
+         <tok val="sicas"/>
          <lm>
             <l>sica</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sicca Siccaque-->
-         <tok val="Sicca(que)?"/>
+      <ana>
+         <tok val="Sicca"/>
+         <tok val="Siccaque"/>
+         <tok val="sicca"/>
+         <tok val="siccaque"/>
          <lm>
             <l>Sicca</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -382,8 +455,13 @@
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sicca Siccaque sicca siccan siccaque siccaue-->
-         <tok val="[sS]icca[q]?(ue|n|que)?"/>
+      <ana>
+         <tok val="Sicca"/>
+         <tok val="Siccaque"/>
+         <tok val="sicca"/>
+         <tok val="siccan"/>
+         <tok val="siccaque"/>
+         <tok val="siccaue"/>
          <lm cert="0.5">
             <l>sicco</l>
             <m>v - 2 s p m a</m>
@@ -397,8 +475,14 @@
             <m cert="0.2">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sicca Siccaque sicca siccan siccaque siccaue sícca-->
-         <tok val="[sS]?(i|sí)cca[q]?(ue|n|que)?"/>
+      <ana>
+         <tok val="Sicca"/>
+         <tok val="Siccaque"/>
+         <tok val="sicca"/>
+         <tok val="siccan"/>
+         <tok val="siccaque"/>
+         <tok val="siccaue"/>
+         <tok val="sícca"/>
          <lm>
             <l>siccus</l>
             <m>a - - s - - - f n</m>
@@ -406,6 +490,7 @@
       </ana>
       <ana>
          <tok val="Siccae"/>
+         <tok val="siccae"/>
          <lm>
             <l>Sicca</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -414,8 +499,10 @@
             <m cert="0.25">n e - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Siccae siccae siccaeque-->
-         <tok val="[sS]iccae(que)?"/>
+      <ana>
+         <tok val="Siccae"/>
+         <tok val="siccae"/>
+         <tok val="siccaeque"/>
          <lm>
             <l>siccus</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
@@ -423,8 +510,11 @@
             <m cert="0.333333333333333333">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Siccae siccae siccaeque siccaé-->
-         <tok val="[sS]icca(e|é|eque)"/>
+      <ana>
+         <tok val="Siccae"/>
+         <tok val="siccae"/>
+         <tok val="siccaeque"/>
+         <tok val="siccaé"/>
          <lm>
             <l>siccus</l>
             <m>a - - p - - - f v</m>
@@ -432,55 +522,65 @@
       </ana>
       <ana>
          <tok val="Siccam"/>
+         <tok val="siccam"/>
          <lm>
             <l>Sicca</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Siccam siccam siccamque-->
-         <tok val="[sS]iccam(que)?"/>
+      <ana>
+         <tok val="Siccam"/>
+         <tok val="siccam"/>
+         <tok val="siccamque"/>
          <lm>
             <l>siccus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Siccanas siccanas-->
-         <tok val="[sS]iccanas"/>
+      <ana>
+         <tok val="Siccanas"/>
+         <tok val="siccanas"/>
          <lm>
             <l>siccanus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Siccandam siccandam-->
-         <tok val="[sS]iccandam"/>
+      <ana>
+         <tok val="Siccandam"/>
+         <tok val="siccandam"/>
          <lm>
             <l>sicco</l>
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--Siccaneus siccaneus-->
-         <tok val="[sS]iccaneus"/>
+      <ana>
+         <tok val="Siccaneus"/>
+         <tok val="siccaneus"/>
          <lm>
             <l>siccaneus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Siccantur siccantur siccanturque-->
-         <tok val="[sS]iccantur(que)?"/>
+      <ana>
+         <tok val="Siccantur"/>
+         <tok val="siccantur"/>
+         <tok val="siccanturque"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Siccanus siccanus-->
-         <tok val="[sS]iccanus"/>
+      <ana>
+         <tok val="Siccanus"/>
+         <tok val="siccanus"/>
          <lm>
             <l>siccanus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Siccare siccare-->
-         <tok val="[sS]iccare"/>
+      <ana>
+         <tok val="Siccare"/>
+         <tok val="siccare"/>
          <lm>
             <l>sicco</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -488,8 +588,12 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Siccas siccan siccas siccasque siccasve-->
-         <tok val="[sS]icca[s]?(ve|n|sque)?"/>
+      <ana>
+         <tok val="Siccas"/>
+         <tok val="siccan"/>
+         <tok val="siccas"/>
+         <tok val="siccasque"/>
+         <tok val="siccasve"/>
          <lm cert="0.5">
             <l>sicco</l>
             <m>v - 2 s p i a</m>
@@ -501,20 +605,24 @@
       </ana>
       <ana>
          <tok val="Siccas"/>
+         <tok val="siccas"/>
          <lm>
             <l>Sicca</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Siccat siccat siccatque-->
-         <tok val="[sS]iccat(que)?"/>
+      <ana>
+         <tok val="Siccat"/>
+         <tok val="siccat"/>
+         <tok val="siccatque"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Siccati siccati-->
-         <tok val="[sS]iccati"/>
+      <ana>
+         <tok val="Siccati"/>
+         <tok val="siccati"/>
          <lm>
             <l>sicco</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -523,8 +631,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Siccato siccato siccatoque-->
-         <tok val="[sS]iccato(que)?"/>
+      <ana>
+         <tok val="Siccato"/>
+         <tok val="siccato"/>
+         <tok val="siccatoque"/>
          <lm>
             <l>sicco</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -535,43 +645,59 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Siccatur siccatur siccaturque-->
-         <tok val="[sS]iccatur(que)?"/>
+      <ana>
+         <tok val="Siccatur"/>
+         <tok val="siccatur"/>
+         <tok val="siccaturque"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Siccatus siccatus siccatusque-->
-         <tok val="[sS]iccatus(que)?"/>
+      <ana>
+         <tok val="Siccatus"/>
+         <tok val="siccatus"/>
+         <tok val="siccatusque"/>
          <lm>
             <l>sicco</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Sicce sicce siccen siccius-->
-         <tok val="[sS]icc[e]?(n|ius)?"/>
+      <ana>
+         <tok val="Sicce"/>
+         <tok val="sicce"/>
+         <tok val="siccen"/>
+         <tok val="siccius"/>
          <lm>
             <l>siccus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Sicce Siccum sicce siccen siccum-->
-         <tok val="[sS]icc[e]?(n|um|e)?"/>
+      <ana>
+         <tok val="Sicce"/>
+         <tok val="Siccum"/>
+         <tok val="sicce"/>
+         <tok val="siccen"/>
+         <tok val="siccum"/>
          <lm>
             <l>siccus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sicce sicce siccen-->
-         <tok val="[sS]icce[n]?"/>
+      <ana>
+         <tok val="Sicce"/>
+         <tok val="sicce"/>
+         <tok val="siccen"/>
          <lm>
             <l>siccus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Siccenses Siccensis-->
-         <tok val="Siccens[ie]s"/>
+      <ana>
+         <tok val="Siccenses"/>
+         <tok val="Siccensis"/>
+         <tok val="siccenses"/>
+         <tok val="siccensis"/>
          <lm>
             <l>Siccenses</l>
             <m>n e - p - - - m a</m>
@@ -579,6 +705,7 @@
       </ana>
       <ana>
          <tok val="Siccenses"/>
+         <tok val="siccenses"/>
          <lm>
             <l>Siccenses</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -587,6 +714,7 @@
       </ana>
       <ana>
          <tok val="Siccensibus"/>
+         <tok val="siccensibus"/>
          <lm>
             <l>Siccenses</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -595,27 +723,35 @@
       </ana>
       <ana>
          <tok val="Siccensium"/>
+         <tok val="siccensium"/>
          <lm>
             <l>Siccenses</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Siccesco siccesco-->
-         <tok val="[sS]iccesco"/>
+      <ana>
+         <tok val="Siccesco"/>
+         <tok val="siccesco"/>
          <lm>
             <l>siccesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Siccetur siccetur sicceturque-->
-         <tok val="[sS]iccetur(que)?"/>
+      <ana>
+         <tok val="Siccetur"/>
+         <tok val="siccetur"/>
+         <tok val="sicceturque"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Sicci Siccine sicci siccine siccique-->
-         <tok val="[sS]icci(ne|que)?"/>
+      <ana>
+         <tok val="Sicci"/>
+         <tok val="Siccine"/>
+         <tok val="sicci"/>
+         <tok val="siccine"/>
+         <tok val="siccique"/>
          <lm>
             <l>siccus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -624,8 +760,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sicciora sicciora siccioraque-->
-         <tok val="[sS]icciora(que)?"/>
+      <ana>
+         <tok val="Sicciora"/>
+         <tok val="sicciora"/>
+         <tok val="siccioraque"/>
          <lm>
             <l>siccus</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -635,14 +773,17 @@
       </ana>
       <ana>
          <tok val="Siccis"/>
+         <tok val="siccis"/>
          <lm>
             <l>Sicca</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Siccis siccis siccisque-->
-         <tok val="[sS]iccis(que)?"/>
+      <ana>
+         <tok val="Siccis"/>
+         <tok val="siccis"/>
+         <tok val="siccisque"/>
          <lm>
             <l>siccus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -653,8 +794,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Siccissima siccissima-->
-         <tok val="[sS]iccissima"/>
+      <ana>
+         <tok val="Siccissima"/>
+         <tok val="siccissima"/>
          <lm>
             <l>siccus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -665,29 +807,36 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Siccitas siccitas siccitasque siccitasve-->
-         <tok val="[sS]iccitas(ve|que)?"/>
+      <ana>
+         <tok val="Siccitas"/>
+         <tok val="siccitas"/>
+         <tok val="siccitasque"/>
+         <tok val="siccitasve"/>
          <lm>
             <l>siccitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Siccitate siccitate siccitateque-->
-         <tok val="[sS]iccitate(que)?"/>
+      <ana>
+         <tok val="Siccitate"/>
+         <tok val="siccitate"/>
+         <tok val="siccitateque"/>
          <lm>
             <l>siccitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Siccitatem siccitatem-->
-         <tok val="[sS]iccitatem"/>
+      <ana>
+         <tok val="Siccitatem"/>
+         <tok val="siccitatem"/>
          <lm>
             <l>siccitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Siccitatis siccitatis-->
-         <tok val="[sS]iccitatis"/>
+      <ana>
+         <tok val="Siccitatis"/>
+         <tok val="siccitatis"/>
          <lm>
             <l>siccitas</l>
             <m>n - - s - - - f g</m>
@@ -695,22 +844,19 @@
       </ana>
       <ana>
          <tok val="Siccius"/>
+         <tok val="siccius"/>
          <lm>
             <l>siccus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Siccius siccius-->
-         <tok val="[sS]iccius"/>
-         <lm>
-            <l>siccus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Sicco sicco siccoque-->
-         <tok val="[sS]icco(que)?"/>
+      <ana>
+         <tok val="Sicco"/>
+         <tok val="sicco"/>
+         <tok val="siccoque"/>
          <lm cert="0.5">
             <l>siccus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -723,30 +869,37 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Siccoculus siccoculus-->
-         <tok val="[sS]iccoculus"/>
+      <ana>
+         <tok val="Siccoculus"/>
+         <tok val="siccoculus"/>
          <lm>
             <l>siccoculus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Siccorum Siccum siccorum siccorumque siccum-->
-         <tok val="[sS]icc(or)?um(que)?"/>
+      <ana>
+         <tok val="Siccorum"/>
+         <tok val="Siccum"/>
+         <tok val="siccorum"/>
+         <tok val="siccorumque"/>
+         <tok val="siccum"/>
          <lm>
             <l>siccus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Siccos siccos-->
-         <tok val="[sS]iccos"/>
+      <ana>
+         <tok val="Siccos"/>
+         <tok val="siccos"/>
          <lm>
             <l>siccus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Siccum siccum-->
-         <tok val="[sS]iccum"/>
+      <ana>
+         <tok val="Siccum"/>
+         <tok val="siccum"/>
          <lm cert="0.5">
             <l>siccus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -760,6 +913,7 @@
       </ana>
       <ana>
          <tok val="Sicelica"/>
+         <tok val="sicelica"/>
          <lm>
             <l>sicelicon</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -767,8 +921,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sicelicon sicelicon-->
-         <tok val="[sS]icelicon"/>
+      <ana>
+         <tok val="Sicelicon"/>
+         <tok val="sicelicon"/>
          <lm>
             <l>sicelicon</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -777,6 +932,7 @@
       </ana>
       <ana>
          <tok val="Sicelides"/>
+         <tok val="sicelides"/>
          <lm>
             <l>Sicelis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -786,13 +942,15 @@
       </ana>
       <ana>
          <tok val="Sicelis"/>
+         <tok val="sicelis"/>
          <lm>
             <l>Sicelis</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Sicera sicera-->
-         <tok val="[sS]icera"/>
+      <ana>
+         <tok val="Sicera"/>
+         <tok val="sicera"/>
          <lm>
             <l>sicera</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -802,6 +960,7 @@
       </ana>
       <ana>
          <tok val="Sichaeus"/>
+         <tok val="sichaeus"/>
          <lm>
             <l>Sychaeus</l>
             <m>n e - s - - - m n</m>
@@ -809,6 +968,7 @@
       </ana>
       <ana>
          <tok val="Sicili"/>
+         <tok val="sicili"/>
          <lm cert="0.5">
             <l>sicilis</l>
             <m cert="0.5">n - - s - - - f b</m>
@@ -819,16 +979,16 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Siciliam Siciliamque-->
-         <tok val="Siciliam(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Siciliam"/>
+         <tok val="Siciliamque"/>
+         <tok val="siciliam"/>
+         <tok val="siciliamque"/>
+         <lm cert="0.5">
             <l>Sicilia</l>
             <m>n e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Siciliam Siciliamque siciliam-->
-         <tok val="[sS]iciliam(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>sicilio</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
@@ -836,6 +996,7 @@
       </ana>
       <ana>
          <tok val="Sicilian"/>
+         <tok val="sicilian"/>
          <lm cert="0.5">
             <l>Sicilia</l>
             <m>n e - p - - - f a</m>
@@ -845,22 +1006,27 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Sicilicum sicilicorum sicilicum-->
-         <tok val="[sS]icilic(or)?um"/>
+      <ana>
+         <tok val="Sicilicum"/>
+         <tok val="sicilicorum"/>
+         <tok val="sicilicum"/>
          <lm>
             <l>sicilicus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sicilicum sicilicum-->
-         <tok val="[sS]icilicum"/>
+      <ana>
+         <tok val="Sicilicum"/>
+         <tok val="sicilicum"/>
          <lm>
             <l>sicilicus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sicilicus sicilicus siciliquus-->
-         <tok val="[sS]icili(c|qu)us"/>
+      <ana>
+         <tok val="Sicilicus"/>
+         <tok val="sicilicus"/>
+         <tok val="siciliquus"/>
          <lm>
             <l>sicilicus</l>
             <m>n - - s - - - m n</m>
@@ -868,6 +1034,7 @@
       </ana>
       <ana>
          <tok val="Sicilien"/>
+         <tok val="sicilien"/>
          <lm>
             <l>sicilio</l>
             <m>v - 2 s f i a</m>
@@ -875,6 +1042,7 @@
       </ana>
       <ana>
          <tok val="Siciliense"/>
+         <tok val="siciliense"/>
          <lm>
             <l>Siciliensis</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -882,8 +1050,11 @@
             <m cert="0.333333333333333333">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Siciliensem Siciliensemque-->
-         <tok val="Siciliensem(que)?"/>
+      <ana>
+         <tok val="Siciliensem"/>
+         <tok val="Siciliensemque"/>
+         <tok val="siciliensem"/>
+         <tok val="siciliensemque"/>
          <lm>
             <l>Siciliensis</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -892,6 +1063,7 @@
       </ana>
       <ana>
          <tok val="Sicilienses"/>
+         <tok val="sicilienses"/>
          <lm>
             <l>Siciliensis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -900,8 +1072,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Sicilienses Siciliensis-->
-         <tok val="Siciliens[ie]s"/>
+      <ana>
+         <tok val="Sicilienses"/>
+         <tok val="Siciliensis"/>
+         <tok val="sicilienses"/>
+         <tok val="siciliensis"/>
          <lm>
             <l>Siciliensis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -910,6 +1085,7 @@
       </ana>
       <ana>
          <tok val="Siciliensibusque"/>
+         <tok val="siciliensibusque"/>
          <lm>
             <l>Siciliensis</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -922,6 +1098,7 @@
       </ana>
       <ana>
          <tok val="Siciliensis"/>
+         <tok val="siciliensis"/>
          <lm>
             <l>Siciliensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -935,20 +1112,25 @@
       </ana>
       <ana>
          <tok val="Sicilimentum"/>
+         <tok val="sicilimentum"/>
          <lm>
             <l>sicilimenta</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sicilio Sicilione sicilio-->
-         <tok val="[Ss]icilio(ne)?"/>
+      <ana>
+         <tok val="Sicilio"/>
+         <tok val="Sicilione"/>
+         <tok val="sicilio"/>
+         <tok val="sicilione"/>
          <lm>
             <l>sicilio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sicilisso sicilisso-->
-         <tok val="[sS]icilisso"/>
+      <ana>
+         <tok val="Sicilisso"/>
+         <tok val="sicilisso"/>
          <lm>
             <l>sicilisso</l>
             <m>v - 1 s p i a</m>
@@ -956,6 +1138,7 @@
       </ana>
       <ana>
          <tok val="Sicimina"/>
+         <tok val="sicimina"/>
          <lm>
             <l>Sicimina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -965,21 +1148,28 @@
       </ana>
       <ana>
          <tok val="Siciminam"/>
+         <tok val="siciminam"/>
          <lm>
             <l>Sicimina</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sicin sicin sicis-->
-         <tok val="[sS]ici[ns]"/>
+      <ana>
+         <tok val="Sicin"/>
+         <tok val="sicin"/>
+         <tok val="sicis"/>
          <lm>
             <l>sica</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Sicine sicine sicinest sícine Sícine-->
-         <tok val="[sS]?(i|sí|Sí)cine(st)?"/>
+      <ana>
+         <tok val="Sicine"/>
+         <tok val="Sícine"/>
+         <tok val="sicine"/>
+         <tok val="sicinest"/>
+         <tok val="sícine"/>
          <lm>
             <l>sicine</l>
             <m>d</m>
@@ -987,6 +1177,7 @@
       </ana>
       <ana>
          <tok val="Sicini"/>
+         <tok val="sicini"/>
          <lm>
             <l>Sicinius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -995,6 +1186,7 @@
       </ana>
       <ana>
          <tok val="Sicinio"/>
+         <tok val="sicinio"/>
          <lm>
             <l>Sicinius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1003,6 +1195,7 @@
       </ana>
       <ana>
          <tok val="Sicinium"/>
+         <tok val="sicinium"/>
          <lm>
             <l>Sicinius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1011,21 +1204,26 @@
       </ana>
       <ana>
          <tok val="Sicinius"/>
+         <tok val="sicinius"/>
          <lm>
             <l>Sicinius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sicinnium sicinnium-->
-         <tok val="[sS]icinnium"/>
+      <ana>
+         <tok val="Sicinnium"/>
+         <tok val="sicinnium"/>
          <lm>
             <l>sicinnium</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sicori Sicorin-->
-         <tok val="Sicori[n]?"/>
+      <ana>
+         <tok val="Sicori"/>
+         <tok val="Sicorin"/>
+         <tok val="sicori"/>
+         <tok val="sicorin"/>
          <lm>
             <l>Sicoris</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1034,13 +1232,17 @@
       </ana>
       <ana>
          <tok val="Sicorim"/>
+         <tok val="sicorim"/>
          <lm>
             <l>Sicoris</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sicorin Sicoris-->
-         <tok val="Sicori[sn]"/>
+      <ana>
+         <tok val="Sicorin"/>
+         <tok val="Sicoris"/>
+         <tok val="sicorin"/>
+         <tok val="sicoris"/>
          <lm>
             <l>Sicoris</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1048,15 +1250,17 @@
             <m cert="0.333333333333333333">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sicubi sicubi-->
-         <tok val="[sS]icubi"/>
+      <ana>
+         <tok val="Sicubi"/>
+         <tok val="sicubi"/>
          <lm>
             <l>sicubi</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Sicui sicui-->
-         <tok val="[sS]icui"/>
+      <ana>
+         <tok val="Sicui"/>
+         <tok val="sicui"/>
          <lm>
             <l>siquis</l>
             <m cert="0.333333333333333333">p - - s - - - m d</m>
@@ -1064,8 +1268,11 @@
             <m cert="0.333333333333333333">p - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Sicula Siculaque-->
-         <tok val="Sicula(que)?"/>
+      <ana>
+         <tok val="Sicula"/>
+         <tok val="Siculaque"/>
+         <tok val="sicula"/>
+         <tok val="siculaque"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1076,8 +1283,13 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Sicula Siculaque Sicvla sicula-->
-         <tok val="[Ss]ic[vu]la(que)?"/>
+      <ana>
+         <tok val="Sicula"/>
+         <tok val="Siculaque"/>
+         <tok val="Sicvla"/>
+         <tok val="sicula"/>
+         <tok val="siculaque"/>
+         <tok val="sicvla"/>
          <lm>
             <l>sicula</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1085,19 +1297,19 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Siculae Siculaeque-->
-         <tok val="Siculae(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Siculae"/>
+         <tok val="Siculaeque"/>
+         <tok val="siculae"/>
+         <tok val="siculaeque"/>
+         <lm cert="0.5">
             <l>Siculus</l>
             <m cert="0.25">a e - s - - - f g</m>
             <m cert="0.25">a e - p - - - f v</m>
             <m cert="0.25">a e - s - - - f d</m>
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
-      </ana>
-      <ana><!--Siculae Siculaeque siculae-->
-         <tok val="[sS]iculae(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>sicula</l>
             <m cert="0.25">n - - s - - - f d</m>
             <m cert="0.25">n - - s - - - f g</m>
@@ -1107,20 +1319,19 @@
       </ana>
       <ana>
          <tok val="Siculam"/>
-         <lm>
+         <tok val="siculam"/>
+         <lm cert="0.5">
             <l>Siculus</l>
             <m>a e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Siculam siculam-->
-         <tok val="[sS]iculam"/>
-         <lm>
+         <lm cert="0.5">
             <l>sicula</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Sicularum"/>
+         <tok val="sicularum"/>
          <lm cert="0.5">
             <l>sicula</l>
             <m>n - - p - - - f g</m>
@@ -1132,6 +1343,7 @@
       </ana>
       <ana>
          <tok val="Siculas"/>
+         <tok val="siculas"/>
          <lm cert="0.5">
             <l>Siculus</l>
             <m>a e - p - - - f a</m>
@@ -1141,8 +1353,13 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sicule Siculum Siculumque-->
-         <tok val="Sicul(um)?(que|e)?"/>
+      <ana>
+         <tok val="Sicule"/>
+         <tok val="Siculum"/>
+         <tok val="Siculumque"/>
+         <tok val="sicule"/>
+         <tok val="siculum"/>
+         <tok val="siculumque"/>
          <lm>
             <l>Siculus</l>
             <m>a e - s - - - n v</m>
@@ -1150,6 +1367,7 @@
       </ana>
       <ana>
          <tok val="Sicule"/>
+         <tok val="sicule"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.333333333333333333">a e - s - - - m v</m>
@@ -1157,8 +1375,13 @@
             <m cert="0.333333333333333333">d e</m>
          </lm>
       </ana>
-      <ana><!--Siculi Siculique Sicvli-->
-         <tok val="Sic[vu]li(que)?"/>
+      <ana>
+         <tok val="Siculi"/>
+         <tok val="Siculique"/>
+         <tok val="Sicvli"/>
+         <tok val="siculi"/>
+         <tok val="siculique"/>
+         <tok val="sicvli"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -1170,8 +1393,11 @@
             <m cert="0.142857142857142857">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Siculis Siculisne-->
-         <tok val="Siculis(ne)?"/>
+      <ana>
+         <tok val="Siculis"/>
+         <tok val="Siculisne"/>
+         <tok val="siculis"/>
+         <tok val="siculisne"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -1184,16 +1410,24 @@
             <m cert="0.125">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Siculis Siculisne Sicvlis siculis-->
-         <tok val="[Ss]ic[uv]lis(ne)?"/>
+      <ana>
+         <tok val="Siculis"/>
+         <tok val="Siculisne"/>
+         <tok val="Sicvlis"/>
+         <tok val="siculis"/>
+         <tok val="siculisne"/>
+         <tok val="sicvlis"/>
          <lm>
             <l>sicula</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Siculo Siculone-->
-         <tok val="Siculo(ne)?"/>
+      <ana>
+         <tok val="Siculo"/>
+         <tok val="Siculone"/>
+         <tok val="siculo"/>
+         <tok val="siculone"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -1204,8 +1438,15 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Siculorum Siculorumque Siculum Siculumque-->
-         <tok val="Sicul(or)?um(que)?"/>
+      <ana>
+         <tok val="Siculorum"/>
+         <tok val="Siculorumque"/>
+         <tok val="Siculum"/>
+         <tok val="Siculumque"/>
+         <tok val="siculorum"/>
+         <tok val="siculorumque"/>
+         <tok val="siculum"/>
+         <tok val="siculumque"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -1213,16 +1454,24 @@
             <m cert="0.333333333333333333">n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Siculos Siculosne Siculosque-->
-         <tok val="Siculos(ne|que)?"/>
+      <ana>
+         <tok val="Siculos"/>
+         <tok val="Siculosne"/>
+         <tok val="Siculosque"/>
+         <tok val="siculos"/>
+         <tok val="siculosne"/>
+         <tok val="siculosque"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Siculum Siculumque-->
-         <tok val="Siculum(que)?"/>
+      <ana>
+         <tok val="Siculum"/>
+         <tok val="Siculumque"/>
+         <tok val="siculum"/>
+         <tok val="siculumque"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -1231,16 +1480,20 @@
             <m cert="0.25">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Siculus Siculusque-->
-         <tok val="Siculus(que)?"/>
+      <ana>
+         <tok val="Siculus"/>
+         <tok val="Siculusque"/>
+         <tok val="siculus"/>
+         <tok val="siculusque"/>
          <lm>
             <l>Siculus</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sicunde sicunde-->
-         <tok val="[sS]icunde"/>
+      <ana>
+         <tok val="Sicunde"/>
+         <tok val="sicunde"/>
          <lm>
             <l>sicunde</l>
             <m>d</m>
@@ -1248,6 +1501,7 @@
       </ana>
       <ana>
          <tok val="Sicuti"/>
+         <tok val="sicuti"/>
          <lm>
             <l>sicuti</l>
             <m>d r</m>
@@ -1255,6 +1509,7 @@
       </ana>
       <ana>
          <tok val="Sicyon"/>
+         <tok val="sicyon"/>
          <lm>
             <l>Sicyon</l>
             <m>n e - s - - - f n</m>
@@ -1262,6 +1517,7 @@
       </ana>
       <ana>
          <tok val="Sicyone"/>
+         <tok val="sicyone"/>
          <lm cert="0.5">
             <l>Sicyonus</l>
             <m>n e - s - - - m v</m>
@@ -1273,13 +1529,17 @@
       </ana>
       <ana>
          <tok val="Sicyonem"/>
+         <tok val="sicyonem"/>
          <lm>
             <l>Sicyon</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sicyoni Sicyonii-->
-         <tok val="Sicyoni[i]?"/>
+      <ana>
+         <tok val="Sicyoni"/>
+         <tok val="Sicyonii"/>
+         <tok val="sicyoni"/>
+         <tok val="sicyonii"/>
          <lm>
             <l>Sicyonius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -1288,6 +1548,7 @@
       </ana>
       <ana>
          <tok val="Sicyoni"/>
+         <tok val="sicyoni"/>
          <lm cert="0.5">
             <l>Sicyonus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1301,6 +1562,7 @@
       </ana>
       <ana>
          <tok val="Sicyonia"/>
+         <tok val="sicyonia"/>
          <lm cert="0.5">
             <l>Sicyonia</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1319,6 +1581,7 @@
       </ana>
       <ana>
          <tok val="Sicyoniam"/>
+         <tok val="sicyoniam"/>
          <lm>
             <l>Sicyonius</l>
             <m>a e - s - - - f a</m>
@@ -1326,6 +1589,7 @@
       </ana>
       <ana>
          <tok val="Sicyonii"/>
+         <tok val="sicyonii"/>
          <lm cert="0.5">
             <l>Sicyonius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -1339,6 +1603,7 @@
       </ana>
       <ana>
          <tok val="Sicyoniis"/>
+         <tok val="sicyoniis"/>
          <lm cert="0.333333333333333333">
             <l>Sicyonii</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1361,6 +1626,7 @@
       </ana>
       <ana>
          <tok val="Sicyonio"/>
+         <tok val="sicyonio"/>
          <lm>
             <l>Sicyonius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1369,8 +1635,13 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sicyoniorum Sicyonium Sicyoniumque-->
-         <tok val="Sicyoni(or)?um(que)?"/>
+      <ana>
+         <tok val="Sicyoniorum"/>
+         <tok val="Sicyonium"/>
+         <tok val="Sicyoniumque"/>
+         <tok val="sicyoniorum"/>
+         <tok val="sicyonium"/>
+         <tok val="sicyoniumque"/>
          <lm cert="0.333333333333333333">
             <l>Sicyonia</l>
             <m>n e - p - - - n g</m>
@@ -1387,6 +1658,7 @@
       </ana>
       <ana>
          <tok val="Sicyonios"/>
+         <tok val="sicyonios"/>
          <lm cert="0.5">
             <l>Sicyonii</l>
             <m>n e - p - - - m a</m>
@@ -1398,6 +1670,7 @@
       </ana>
       <ana>
          <tok val="Sicyonis"/>
+         <tok val="sicyonis"/>
          <lm cert="0.5">
             <l>Sicyonus</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1408,8 +1681,11 @@
             <m>n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sicyonium Sicyoniumque-->
-         <tok val="Sicyonium(que)?"/>
+      <ana>
+         <tok val="Sicyonium"/>
+         <tok val="Sicyoniumque"/>
+         <tok val="sicyonium"/>
+         <tok val="sicyoniumque"/>
          <lm>
             <l>Sicyonius</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -1420,6 +1696,7 @@
       </ana>
       <ana>
          <tok val="Sicyonius"/>
+         <tok val="sicyonius"/>
          <lm>
             <l>Sicyonius</l>
             <m>a e - s - - - m n</m>
@@ -1427,6 +1704,7 @@
       </ana>
       <ana>
          <tok val="Sicyonus"/>
+         <tok val="sicyonus"/>
          <lm>
             <l>Sicyonus</l>
             <m>n e - s - - - m n</m>
@@ -1449,8 +1727,9 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--sicariis sicaris-->
-         <tok val="sicar[i]?is"/>
+      <ana>
+         <tok val="sicariis"/>
+         <tok val="sicaris"/>
          <lm>
             <l>sicarius</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -1465,8 +1744,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--sicariorum sicarium-->
-         <tok val="sicari(or)?um"/>
+      <ana>
+         <tok val="sicariorum"/>
+         <tok val="sicarium"/>
          <lm>
             <l>sicarius</l>
             <m>n - - p - - - m g</m>
@@ -1593,8 +1873,9 @@
             <m cert="0.25">v - - p p g p f v</m>
          </lm>
       </ana>
-      <ana><!--siccandas siccandasque-->
-         <tok val="siccandas(que)?"/>
+      <ana>
+         <tok val="siccandas"/>
+         <tok val="siccandasque"/>
          <lm>
             <l>sicco</l>
             <m>v - - p p g p f a</m>
@@ -1635,8 +1916,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--siccandorum siccandum-->
-         <tok val="siccand(or)?um"/>
+      <ana>
+         <tok val="siccandorum"/>
+         <tok val="siccandum"/>
          <lm>
             <l>sicco</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -1734,8 +2016,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--siccant siccantque-->
-         <tok val="siccant(que)?"/>
+      <ana>
+         <tok val="siccant"/>
+         <tok val="siccantque"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 p p i a</m>
@@ -1810,16 +2093,19 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--siccari siccarii siccarique-->
-         <tok val="siccari(i|que)?"/>
+      <ana>
+         <tok val="siccari"/>
+         <tok val="siccarii"/>
+         <tok val="siccarique"/>
          <lm>
             <l>siccarius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--siccari siccarique-->
-         <tok val="siccari(que)?"/>
+      <ana>
+         <tok val="siccari"/>
+         <tok val="siccarique"/>
          <lm>
             <l>sicco</l>
             <m>v - - - p n p</m>
@@ -1892,8 +2178,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--siccata siccataque-->
-         <tok val="siccata(que)?"/>
+      <ana>
+         <tok val="siccata"/>
+         <tok val="siccataque"/>
          <lm>
             <l>sicco</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1904,8 +2191,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--siccatae siccataeque-->
-         <tok val="siccatae(que)?"/>
+      <ana>
+         <tok val="siccatae"/>
+         <tok val="siccataeque"/>
          <lm>
             <l>sicco</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -1914,8 +2202,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--siccatam siccatamque-->
-         <tok val="siccatam(que)?"/>
+      <ana>
+         <tok val="siccatam"/>
+         <tok val="siccatamque"/>
          <lm>
             <l>sicco</l>
             <m>v - - s r p p f a</m>
@@ -1936,8 +2225,10 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--siccate siccatum siccatumque-->
-         <tok val="siccat(um)?(que|e)?"/>
+      <ana>
+         <tok val="siccate"/>
+         <tok val="siccatum"/>
+         <tok val="siccatumque"/>
          <lm>
             <l>sicco</l>
             <m>v - - s r p p n v</m>
@@ -1951,8 +2242,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--siccatis siccatisque-->
-         <tok val="siccatis(que)?"/>
+      <ana>
+         <tok val="siccatis"/>
+         <tok val="siccatisque"/>
          <lm>
             <l>sicco</l>
             <m cert="0.142857142857142857">v - - p r p p f d</m>
@@ -1978,23 +2270,27 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--siccatorum siccatum siccatumque-->
-         <tok val="siccat(or)?um(que)?"/>
+      <ana>
+         <tok val="siccatorum"/>
+         <tok val="siccatum"/>
+         <tok val="siccatumque"/>
          <lm>
             <l>sicco</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--siccatos siccatosque-->
-         <tok val="siccatos(que)?"/>
+      <ana>
+         <tok val="siccatos"/>
+         <tok val="siccatosque"/>
          <lm>
             <l>sicco</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--siccatum siccatumque-->
-         <tok val="siccatum(que)?"/>
+      <ana>
+         <tok val="siccatum"/>
+         <tok val="siccatumque"/>
          <lm>
             <l>sicco</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -2003,8 +2299,9 @@
             <m cert="0.25">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--siccauerat siccaverat-->
-         <tok val="sicca[vu]erat"/>
+      <ana>
+         <tok val="siccauerat"/>
+         <tok val="siccaverat"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 s l i a</m>
@@ -2018,30 +2315,35 @@
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--siccauerit siccaverit-->
-         <tok val="sicca[vu]erit"/>
+      <ana>
+         <tok val="siccauerit"/>
+         <tok val="siccaverit"/>
          <lm>
             <l>sicco</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--siccauerunt siccavere siccaverunt-->
-         <tok val="sicca[vu]er(unt|e)"/>
+      <ana>
+         <tok val="siccauerunt"/>
+         <tok val="siccavere"/>
+         <tok val="siccaverunt"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--siccaui siccavi-->
-         <tok val="sicca[vu]i"/>
+      <ana>
+         <tok val="siccaui"/>
+         <tok val="siccavi"/>
          <lm>
             <l>sicco</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--siccauit siccavit-->
-         <tok val="sicca[vu]it"/>
+      <ana>
+         <tok val="siccauit"/>
+         <tok val="siccavit"/>
          <lm>
             <l>sicco</l>
             <m>v - 3 s r i a</m>
@@ -2090,8 +2392,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--siccescendo siccescendoque-->
-         <tok val="siccescendo(que)?"/>
+      <ana>
+         <tok val="siccescendo"/>
+         <tok val="siccescendoque"/>
          <lm>
             <l>siccesco</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -2137,8 +2440,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--siccescit siccescitque-->
-         <tok val="siccescit(que)?"/>
+      <ana>
+         <tok val="siccescit"/>
+         <tok val="siccescitque"/>
          <lm>
             <l>siccesco</l>
             <m>v - 3 s p i a</m>
@@ -2165,8 +2469,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--siccior sicciorque-->
-         <tok val="siccior(que)?"/>
+      <ana>
+         <tok val="siccior"/>
+         <tok val="sicciorque"/>
          <lm>
             <l>siccus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -2182,8 +2487,9 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--sicciorem siccioremque-->
-         <tok val="sicciorem(que)?"/>
+      <ana>
+         <tok val="sicciorem"/>
+         <tok val="siccioremque"/>
          <lm>
             <l>siccus</l>
             <m cert="0.5">a - - s - - - f a c</m>
@@ -2209,8 +2515,9 @@
             <m>a - - s - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--siccioribus siccioribusque-->
-         <tok val="siccioribus(que)?"/>
+      <ana>
+         <tok val="siccioribus"/>
+         <tok val="siccioribusque"/>
          <lm>
             <l>siccus</l>
             <m cert="0.5">a - - p - - - - b c</m>
@@ -2351,8 +2658,9 @@
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--siciles sicilis-->
-         <tok val="sicil[ie]s"/>
+      <ana>
+         <tok val="siciles"/>
+         <tok val="sicilis"/>
          <lm>
             <l>sicilis</l>
             <m>n - - p - - - f a</m>
@@ -2366,8 +2674,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--sicilici sicilicique-->
-         <tok val="sicilici(que)?"/>
+      <ana>
+         <tok val="sicilici"/>
+         <tok val="sicilicique"/>
          <lm>
             <l>sicilicus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2477,8 +2786,10 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--sicút sícut-->
-         <tok val="s[íi]c[uú]t"/>
+      <ana>
+         <tok val="sicut"/>
+         <tok val="sicút"/>
+         <tok val="sícut"/>
          <lm>
             <l>sicut</l>
             <m>d</m>

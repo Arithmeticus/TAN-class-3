@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusexci">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:exci">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to exci</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-exci.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>EXCI</tok-starts-with>
       <tok-starts-with>Exci</tok-starts-with>
       <tok-starts-with>exci</tok-starts-with>
       <tok-starts-with>éxci</tok-starts-with>
-      <ana><!--EXCIDIT Excidit excidit excidít éxcidit-->
-         <tok val="[eEé]?(xcid)?[ií]?(t|EXCIDIT)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:22:50.183-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:22:50.183-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-exci.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="EXCIDIT"/>
+         <tok val="Excidit"/>
+         <tok val="excidit"/>
+         <tok val="excidít"/>
+         <tok val="éxcidit"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 s r i a</m>
@@ -47,8 +59,10 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--EXCIDIT Excidit excidit-->
-         <tok val="[eE]?(xcidit|EXCIDIT)"/>
+      <ana>
+         <tok val="EXCIDIT"/>
+         <tok val="Excidit"/>
+         <tok val="excidit"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 s p i a</m>
@@ -58,36 +72,52 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--EXCIDO Excido excido-->
-         <tok val="[eE]?(xcido|EXCIDO)"/>
-         <lm>
+      <ana>
+         <tok val="EXCIDO"/>
+         <tok val="Excido"/>
+         <tok val="excido"/>
+         <lm cert="0.5">
             <l>excido</l>
             <m>v - 1 s p i a</m>
          </lm>
+         <lm cert="0.5">
+            <l>excido2</l>
+            <m>v - 1 s p i a</m>
+         </lm>
       </ana>
-      <ana><!--EXCIO Excieo Excio excio-->
-         <tok val="[Ee]?(xci)?[e]?(o|EXCIO)"/>
+      <ana>
+         <tok val="EXCIO"/>
+         <tok val="Excieo"/>
+         <tok val="Excio"/>
+         <tok val="excieo"/>
+         <tok val="excio"/>
          <lm>
             <l>excio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--EXCIPIO Excipio excipio-->
-         <tok val="[eE]?(xcipio|EXCIPIO)"/>
+      <ana>
+         <tok val="EXCIPIO"/>
+         <tok val="Excipio"/>
+         <tok val="excipio"/>
          <lm>
             <l>excipio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Exci exci exciere excin-->
-         <tok val="[eE]xci(n|ere)?"/>
+      <ana>
+         <tok val="Exci"/>
+         <tok val="exci"/>
+         <tok val="exciere"/>
+         <tok val="excin"/>
          <lm>
             <l>excio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Excidat excidat-->
-         <tok val="[eE]xcidat"/>
+      <ana>
+         <tok val="Excidat"/>
+         <tok val="excidat"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 s p s a</m>
@@ -97,8 +127,10 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Excide excide exciden-->
-         <tok val="[eE]xcide[n]?"/>
+      <ana>
+         <tok val="Excide"/>
+         <tok val="excide"/>
+         <tok val="exciden"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 2 s p m a</m>
@@ -108,8 +140,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Exciderant exciderant-->
-         <tok val="[eE]xciderant"/>
+      <ana>
+         <tok val="Exciderant"/>
+         <tok val="exciderant"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 p l i a</m>
@@ -119,8 +152,11 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--Exciderat Excideratne exciderat-->
-         <tok val="[Ee]xciderat(ne)?"/>
+      <ana>
+         <tok val="Exciderat"/>
+         <tok val="Excideratne"/>
+         <tok val="exciderat"/>
+         <tok val="excideratne"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 s l i a</m>
@@ -130,8 +166,13 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Excidere Exciderunt excidere exciderunt excideruntque éxciderúnt-->
-         <tok val="[eEé]xcider(unt|e|untque|únt)"/>
+      <ana>
+         <tok val="Excidere"/>
+         <tok val="Exciderunt"/>
+         <tok val="excidere"/>
+         <tok val="exciderunt"/>
+         <tok val="excideruntque"/>
+         <tok val="éxciderúnt"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 p r i a</m>
@@ -141,8 +182,9 @@
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Excidere excidere-->
-         <tok val="[eE]xcidere"/>
+      <ana>
+         <tok val="Excidere"/>
+         <tok val="excidere"/>
          <lm cert="0.5">
             <l>excido</l>
             <m cert="0.5">v - 2 s p m p</m>
@@ -154,8 +196,10 @@
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Excidere excidere excideris-->
-         <tok val="[eE]xcider(e|is)"/>
+      <ana>
+         <tok val="Excidere"/>
+         <tok val="excidere"/>
+         <tok val="excideris"/>
          <lm cert="0.5">
             <l>excido</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -167,8 +211,9 @@
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Excidet excidet-->
-         <tok val="[eE]xcidet"/>
+      <ana>
+         <tok val="Excidet"/>
+         <tok val="excidet"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 s f i a</m>
@@ -178,15 +223,19 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Excidii excidi excidii-->
-         <tok val="[eE]xcidi[i]?"/>
+      <ana>
+         <tok val="Excidii"/>
+         <tok val="excidi"/>
+         <tok val="excidii"/>
          <lm>
             <l>excidium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Excidio excidio excidioque-->
-         <tok val="[eE]xcidio(que)?"/>
+      <ana>
+         <tok val="Excidio"/>
+         <tok val="excidio"/>
+         <tok val="excidioque"/>
          <lm cert="0.5">
             <l>excidio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -198,15 +247,18 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Excidionem excidionem-->
-         <tok val="[eE]xcidionem"/>
+      <ana>
+         <tok val="Excidionem"/>
+         <tok val="excidionem"/>
          <lm>
             <l>excidio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Excidisse excidisse éxcidisse-->
-         <tok val="[eEé]xcidisse"/>
+      <ana>
+         <tok val="Excidisse"/>
+         <tok val="excidisse"/>
+         <tok val="éxcidisse"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - - - r n a</m>
@@ -216,8 +268,9 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Exciditur exciditur-->
-         <tok val="[eE]xciditur"/>
+      <ana>
+         <tok val="Exciditur"/>
+         <tok val="exciditur"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 s p i p</m>
@@ -227,8 +280,10 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Excidium excidium excidiumque-->
-         <tok val="[eE]xcidium(que)?"/>
+      <ana>
+         <tok val="Excidium"/>
+         <tok val="excidium"/>
+         <tok val="excidiumque"/>
          <lm>
             <l>excidium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -237,8 +292,11 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Excidunt Exciduntque excidunt exciduntque-->
-         <tok val="[eE]xcidunt(que)?"/>
+      <ana>
+         <tok val="Excidunt"/>
+         <tok val="Exciduntque"/>
+         <tok val="excidunt"/>
+         <tok val="exciduntque"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 p p i a</m>
@@ -248,66 +306,81 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Excipe excipe-->
-         <tok val="[eE]xcipe"/>
+      <ana>
+         <tok val="Excipe"/>
+         <tok val="excipe"/>
          <lm>
             <l>excipio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Excipere excipere-->
-         <tok val="[eE]xcipere"/>
+      <ana>
+         <tok val="Excipere"/>
+         <tok val="excipere"/>
          <lm>
             <l>excipio</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Excipere excipere exciperis-->
-         <tok val="[eE]xciper(e|is)"/>
+      <ana>
+         <tok val="Excipere"/>
+         <tok val="excipere"/>
+         <tok val="exciperis"/>
          <lm>
             <l>excipio</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Exciperet exciperet-->
-         <tok val="[eE]xciperet"/>
+      <ana>
+         <tok val="Exciperet"/>
+         <tok val="exciperet"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Excipi excipi-->
-         <tok val="[eE]xcipi"/>
+      <ana>
+         <tok val="Excipi"/>
+         <tok val="excipi"/>
          <lm>
             <l>excipio</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Excipiam Excipiamque excipiam excipiamque-->
-         <tok val="[eE]xcipiam(que)?"/>
+      <ana>
+         <tok val="Excipiam"/>
+         <tok val="Excipiamque"/>
+         <tok val="excipiam"/>
+         <tok val="excipiamque"/>
          <lm>
             <l>excipio</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Excipiant excipiant excipiantque-->
-         <tok val="[eE]xcipiant(que)?"/>
+      <ana>
+         <tok val="Excipiant"/>
+         <tok val="excipiant"/>
+         <tok val="excipiantque"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Excipiat Excipiatque excipiat excipiatque-->
-         <tok val="[eE]xcipiat(que)?"/>
+      <ana>
+         <tok val="Excipiat"/>
+         <tok val="Excipiatque"/>
+         <tok val="excipiat"/>
+         <tok val="excipiatque"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Excipiendi excipiendi-->
-         <tok val="[eE]xcipiendi"/>
+      <ana>
+         <tok val="Excipiendi"/>
+         <tok val="excipiendi"/>
          <lm>
             <l>excipio</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -317,8 +390,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Excipiendo excipiendo-->
-         <tok val="[eE]xcipiendo"/>
+      <ana>
+         <tok val="Excipiendo"/>
+         <tok val="excipiendo"/>
          <lm>
             <l>excipio</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -329,78 +403,93 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Excipiendus excipiendus-->
-         <tok val="[eE]xcipiendus"/>
+      <ana>
+         <tok val="Excipiendus"/>
+         <tok val="excipiendus"/>
          <lm>
             <l>excipio</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Excipient excipient-->
-         <tok val="[eE]xcipient"/>
+      <ana>
+         <tok val="Excipient"/>
+         <tok val="excipient"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Excipiet Excipietque excipiet excipietque-->
-         <tok val="[eE]xcipiet(que)?"/>
+      <ana>
+         <tok val="Excipiet"/>
+         <tok val="Excipietque"/>
+         <tok val="excipiet"/>
+         <tok val="excipietque"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Excipis excipis-->
-         <tok val="[eE]xcipis"/>
+      <ana>
+         <tok val="Excipis"/>
+         <tok val="excipis"/>
          <lm>
             <l>excipio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Excipit excipit-->
-         <tok val="[eE]xcipit"/>
+      <ana>
+         <tok val="Excipit"/>
+         <tok val="excipit"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Excipite excipite-->
-         <tok val="[eE]xcipite"/>
+      <ana>
+         <tok val="Excipite"/>
+         <tok val="excipite"/>
          <lm>
             <l>excipio</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Excipitis excipitis-->
-         <tok val="[eE]xcipitis"/>
+      <ana>
+         <tok val="Excipitis"/>
+         <tok val="excipitis"/>
          <lm>
             <l>excipio</l>
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Excipitur excipitur excipiturque-->
-         <tok val="[eE]xcipitur(que)?"/>
+      <ana>
+         <tok val="Excipitur"/>
+         <tok val="excipitur"/>
+         <tok val="excipiturque"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Excipiunt excipiunt-->
-         <tok val="[eE]xcipiunt"/>
+      <ana>
+         <tok val="Excipiunt"/>
+         <tok val="excipiunt"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Excipiuntur excipiuntur excipiunturque-->
-         <tok val="[eE]xcipiuntur(que)?"/>
+      <ana>
+         <tok val="Excipiuntur"/>
+         <tok val="excipiuntur"/>
+         <tok val="excipiunturque"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Excipula excipula-->
-         <tok val="[eE]xcipula"/>
+      <ana>
+         <tok val="Excipula"/>
+         <tok val="excipula"/>
          <lm>
             <l>excipula</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -408,15 +497,20 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Excire exciere excire exciri-->
-         <tok val="[eE]xci[e]?r[ei]"/>
+      <ana>
+         <tok val="Excire"/>
+         <tok val="exciere"/>
+         <tok val="excire"/>
+         <tok val="exciri"/>
          <lm>
             <l>excio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Excisa excisa excisaque-->
-         <tok val="[eE]xcisa(que)?"/>
+      <ana>
+         <tok val="Excisa"/>
+         <tok val="excisa"/>
+         <tok val="excisaque"/>
          <lm>
             <l>excido2</l>
             <m cert="0.166666666666666667">v - - s r p p f v</m>
@@ -427,23 +521,26 @@
             <m cert="0.166666666666666667">v - - s r p p f b</m>
          </lm>
       </ana>
-      <ana><!--Excisio excisio-->
-         <tok val="[eE]xcisio"/>
+      <ana>
+         <tok val="Excisio"/>
+         <tok val="excisio"/>
          <lm>
             <l>excisio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Excisionem excisionem-->
-         <tok val="[eE]xcisionem"/>
+      <ana>
+         <tok val="Excisionem"/>
+         <tok val="excisionem"/>
          <lm>
             <l>excisio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Excisis excisis-->
-         <tok val="[eE]xcisis"/>
+      <ana>
+         <tok val="Excisis"/>
+         <tok val="excisis"/>
          <lm>
             <l>excido2</l>
             <m cert="0.166666666666666667">v - - p r p p m b</m>
@@ -454,8 +551,10 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--Exciso exciso excisoque-->
-         <tok val="[eE]xciso(que)?"/>
+      <ana>
+         <tok val="Exciso"/>
+         <tok val="exciso"/>
+         <tok val="excisoque"/>
          <lm>
             <l>excido2</l>
             <m cert="0.25">v - - s r p p m d</m>
@@ -464,47 +563,47 @@
             <m cert="0.25">v - - s r p p n d</m>
          </lm>
       </ana>
-      <ana><!--Excisorius excisorius-->
-         <tok val="[eE]xcisorius"/>
+      <ana>
+         <tok val="Excisorius"/>
+         <tok val="excisorius"/>
          <lm>
             <l>excisorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Excisos excisos-->
-         <tok val="[eE]xcisos"/>
+      <ana>
+         <tok val="Excisos"/>
+         <tok val="excisos"/>
          <lm>
             <l>excido2</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Excisum excisum-->
-         <tok val="[eE]xcisum"/>
+      <ana>
+         <tok val="Excisum"/>
+         <tok val="excisum"/>
          <lm>
             <l>excido2</l>
-            <m cert="0.25">a - - s - - - n n</m>
-            <m cert="0.25">v - - s r p p n v</m>
-            <m cert="0.25">v - - s r p p m a</m>
-            <m cert="0.25">v - - s r p p n a</m>
+            <m cert="0.2">a - - s - - - n n</m>
+            <m cert="0.2">v - - s r p p n v</m>
+            <m cert="0.2">v - - s r p p n n</m>
+            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.2">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Excisum excisorum excisum-->
-         <tok val="[eE]xcis(or)?um"/>
+      <ana>
+         <tok val="Excisum"/>
+         <tok val="excisorum"/>
+         <tok val="excisum"/>
          <lm>
             <l>excido2</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Excisum excisum-->
-         <tok val="[Ee]xcisum"/>
-         <lm>
-            <l>excido2</l>
-            <m>v - - s r p p n n</m>
-         </lm>
-      </ana>
-      <ana><!--Excisurum excisurum-->
-         <tok val="[eE]xcisurum"/>
+      <ana>
+         <tok val="Excisurum"/>
+         <tok val="excisurum"/>
          <lm>
             <l>excido2</l>
             <m cert="0.166666666666666667">v - - p f p a n g</m>
@@ -515,15 +614,20 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Excisus excisus-->
-         <tok val="[eE]xcisus"/>
+      <ana>
+         <tok val="Excisus"/>
+         <tok val="excisus"/>
          <lm>
             <l>excido2</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Excita excita excitan excitaue excitave-->
-         <tok val="[eE]xcita(n|ve|ue)?"/>
+      <ana>
+         <tok val="Excita"/>
+         <tok val="excita"/>
+         <tok val="excitan"/>
+         <tok val="excitaue"/>
+         <tok val="excitave"/>
          <lm cert="0.5">
             <l>excio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -538,22 +642,25 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Excitabat excitabat-->
-         <tok val="[eE]xcitabat"/>
+      <ana>
+         <tok val="Excitabat"/>
+         <tok val="excitabat"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Excitabit excitabit-->
-         <tok val="[eE]xcitabit"/>
+      <ana>
+         <tok val="Excitabit"/>
+         <tok val="excitabit"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Excitanda excitanda-->
-         <tok val="[eE]xcitanda"/>
+      <ana>
+         <tok val="Excitanda"/>
+         <tok val="excitanda"/>
          <lm>
             <l>excito</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -564,44 +671,54 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Excitandus excitandus-->
-         <tok val="[eE]xcitandus"/>
+      <ana>
+         <tok val="Excitandus"/>
+         <tok val="excitandus"/>
          <lm>
             <l>excito</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Excitare excitare-->
-         <tok val="[eE]xcitare"/>
+      <ana>
+         <tok val="Excitare"/>
+         <tok val="excitare"/>
          <lm>
             <l>excito</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Excitare excitare excitaris-->
-         <tok val="[eE]xcitar(e|is)"/>
+      <ana>
+         <tok val="Excitare"/>
+         <tok val="excitare"/>
+         <tok val="excitaris"/>
          <lm>
             <l>excito</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Excitari excitari excitarique-->
-         <tok val="[eE]xcitari(que)?"/>
+      <ana>
+         <tok val="Excitari"/>
+         <tok val="excitari"/>
+         <tok val="excitarique"/>
          <lm>
             <l>excito</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Excitat excitat excitatque-->
-         <tok val="[eE]xcitat(que)?"/>
+      <ana>
+         <tok val="Excitat"/>
+         <tok val="excitat"/>
+         <tok val="excitatque"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Excitata excitata excitataque-->
-         <tok val="[eE]xcitata(que)?"/>
+      <ana>
+         <tok val="Excitata"/>
+         <tok val="excitata"/>
+         <tok val="excitataque"/>
          <lm>
             <l>excito</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -612,16 +729,19 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Excitate excitate-->
-         <tok val="[eE]xcitate"/>
+      <ana>
+         <tok val="Excitate"/>
+         <tok val="excitate"/>
          <lm>
             <l>excito</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Excitate excitate excitatum-->
-         <tok val="[eE]xcitat(e|um)"/>
+      <ana>
+         <tok val="Excitate"/>
+         <tok val="excitate"/>
+         <tok val="excitatum"/>
          <lm>
             <l>excito</l>
             <m>v - - s r p p n v</m>
@@ -629,6 +749,7 @@
       </ana>
       <ana>
          <tok val="Excitatissimus"/>
+         <tok val="excitatissimus"/>
          <lm>
             <l>excito</l>
             <m cert="0.5">a - - s - - - m v s</m>
@@ -637,58 +758,61 @@
       </ana>
       <ana>
          <tok val="Excitatius"/>
+         <tok val="excitatius"/>
          <lm>
             <l>excito</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Excitatius excitatius-->
-         <tok val="[eE]xcitatius"/>
-         <lm>
-            <l>excito</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Excitator excitator-->
-         <tok val="[eE]xcitator"/>
+      <ana>
+         <tok val="Excitator"/>
+         <tok val="excitator"/>
          <lm>
             <l>excitator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Excitatur excitatur-->
-         <tok val="[eE]xcitatur"/>
+      <ana>
+         <tok val="Excitatur"/>
+         <tok val="excitatur"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Excitatus excitatus excitatusque-->
-         <tok val="[eE]xcitatus(que)?"/>
+      <ana>
+         <tok val="Excitatus"/>
+         <tok val="excitatus"/>
+         <tok val="excitatusque"/>
          <lm>
             <l>excito</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Excitet excitet excitetque-->
-         <tok val="[eE]xcitet(que)?"/>
+      <ana>
+         <tok val="Excitet"/>
+         <tok val="excitet"/>
+         <tok val="excitetque"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Excitetur excitetur-->
-         <tok val="[eE]xcitetur"/>
+      <ana>
+         <tok val="Excitetur"/>
+         <tok val="excitetur"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Exciti exciti-->
-         <tok val="[eE]xciti"/>
+      <ana>
+         <tok val="Exciti"/>
+         <tok val="exciti"/>
          <lm>
             <l>excio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -697,8 +821,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Excitis excitis excitisque-->
-         <tok val="[eE]xcitis(que)?"/>
+      <ana>
+         <tok val="Excitis"/>
+         <tok val="excitis"/>
+         <tok val="excitisque"/>
          <lm>
             <l>excio</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -710,8 +836,9 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Excito excito-->
-         <tok val="[eE]xcito"/>
+      <ana>
+         <tok val="Excito"/>
+         <tok val="excito"/>
          <lm cert="0.5">
             <l>excio</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -726,43 +853,57 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Excitor excitor-->
-         <tok val="[eE]xcitor"/>
+      <ana>
+         <tok val="Excitor"/>
+         <tok val="excitor"/>
          <lm>
             <l>excito</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Excitosque excitos excitosque-->
-         <tok val="[eE]xcitos(que|)"/>
+      <ana>
+         <tok val="Excitosque"/>
+         <tok val="excitos"/>
+         <tok val="excitosque"/>
          <lm>
             <l>excio</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Excitur exciet excit excitur-->
-         <tok val="[eE]xci[e]?t(ur)?"/>
+      <ana>
+         <tok val="Excitur"/>
+         <tok val="exciet"/>
+         <tok val="excit"/>
+         <tok val="excitur"/>
          <lm>
             <l>excio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Excitus excitus excitusque-->
-         <tok val="[eE]xcitus(que)?"/>
+      <ana>
+         <tok val="Excitus"/>
+         <tok val="excitus"/>
+         <tok val="excitusque"/>
          <lm>
             <l>excio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Excivere exciuere exciuerunt excivere excierunt-->
-         <tok val="[eE]xci[uv]?er(unt|e)"/>
+      <ana>
+         <tok val="Excivere"/>
+         <tok val="excierunt"/>
+         <tok val="exciuere"/>
+         <tok val="exciuerunt"/>
+         <tok val="excivere"/>
          <lm>
             <l>excio</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Excivit exciuit excivit-->
-         <tok val="[eE]xci[vu]it"/>
+      <ana>
+         <tok val="Excivit"/>
+         <tok val="exciuit"/>
+         <tok val="excivit"/>
          <lm>
             <l>excio</l>
             <m>v - 3 s r i a</m>
@@ -776,8 +917,9 @@
             <m cert="0.5">v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--excibant exciebant-->
-         <tok val="exci[e]?bant"/>
+      <ana>
+         <tok val="excibant"/>
+         <tok val="exciebant"/>
          <lm>
             <l>excio</l>
             <m>v - 3 p i i a</m>
@@ -947,8 +1089,9 @@
             <m cert="0.166666666666666667">v - - p p g p n n</m>
          </lm>
       </ana>
-      <ana><!--excidendae excidendaeque-->
-         <tok val="excidendae(que)?"/>
+      <ana>
+         <tok val="excidendae"/>
+         <tok val="excidendaeque"/>
          <lm cert="0.5">
             <l>excido</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -1036,8 +1179,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--excidendorum excidendum-->
-         <tok val="excidend(or)?um"/>
+      <ana>
+         <tok val="excidendorum"/>
+         <tok val="excidendum"/>
          <lm cert="0.5">
             <l>excido</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -1143,8 +1287,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--excidentes excidentis-->
-         <tok val="excident[ie]s"/>
+      <ana>
+         <tok val="excidentes"/>
+         <tok val="excidentis"/>
          <lm cert="0.5">
             <l>excido</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1208,8 +1353,9 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--exciderent exciderentque-->
-         <tok val="exciderent(que)?"/>
+      <ana>
+         <tok val="exciderent"/>
+         <tok val="exciderentque"/>
          <lm cert="0.5">
             <l>excido</l>
             <m>v - 3 p i s a</m>
@@ -1447,8 +1593,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--exciere excies-->
-         <tok val="excie(s|re)"/>
+      <ana>
+         <tok val="exciere"/>
+         <tok val="excies"/>
          <lm>
             <l>excio</l>
             <m>v - 2 s f i a</m>
@@ -1462,8 +1609,11 @@
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--exciere excies excin excis-->
-         <tok val="exci[e]?(s|n|ere)"/>
+      <ana>
+         <tok val="exciere"/>
+         <tok val="excies"/>
+         <tok val="excin"/>
+         <tok val="excis"/>
          <lm>
             <l>excio</l>
             <m>v - 2 s p i a</m>
@@ -1476,15 +1626,17 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--exciet éxciet-->
-         <tok val="[ée]xciet"/>
+      <ana>
+         <tok val="exciet"/>
+         <tok val="éxciet"/>
          <lm>
             <l>excio</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--excindit excindite-->
-         <tok val="excindit[e]?"/>
+      <ana>
+         <tok val="excindit"/>
+         <tok val="excindite"/>
          <lm>
             <l>exscindo</l>
             <m>v - 2 p p m a</m>
@@ -1518,8 +1670,9 @@
             <m>v - 1 p i s p</m>
          </lm>
       </ana>
-      <ana><!--exciperent exciperentque-->
-         <tok val="exciperent(que)?"/>
+      <ana>
+         <tok val="exciperent"/>
+         <tok val="exciperentque"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 p i s a</m>
@@ -1581,8 +1734,9 @@
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--excipiatur excipiaturque-->
-         <tok val="excipiatur(que)?"/>
+      <ana>
+         <tok val="excipiatur"/>
+         <tok val="excipiaturque"/>
          <lm>
             <l>excipio</l>
             <m>v - 3 s p s p</m>
@@ -1623,8 +1777,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--excipien excipies-->
-         <tok val="excipie[sn]"/>
+      <ana>
+         <tok val="excipien"/>
+         <tok val="excipies"/>
          <lm>
             <l>excipio</l>
             <m>v - 2 s f i a</m>
@@ -1685,23 +1840,27 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--excipiendorum excipiendum excipiundum-->
-         <tok val="excipi[eu]nd(or)?um"/>
+      <ana>
+         <tok val="excipiendorum"/>
+         <tok val="excipiendum"/>
+         <tok val="excipiundum"/>
          <lm>
             <l>excipio</l>
             <m cert="0.5">v - - p p g p m g</m>
             <m cert="0.5">v - - p p g p n g</m>
          </lm>
       </ana>
-      <ana><!--excipiendos excipiundos-->
-         <tok val="excipi[ue]ndos"/>
+      <ana>
+         <tok val="excipiendos"/>
+         <tok val="excipiundos"/>
          <lm>
             <l>excipio</l>
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--excipiendum excipiundum-->
-         <tok val="excipi[ue]ndum"/>
+      <ana>
+         <tok val="excipiendum"/>
+         <tok val="excipiundum"/>
          <lm>
             <l>excipio</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -1733,8 +1892,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--excipientem excipientemque-->
-         <tok val="excipientem(que)?"/>
+      <ana>
+         <tok val="excipientem"/>
+         <tok val="excipientemque"/>
          <lm>
             <l>excipio</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1751,8 +1911,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--excipientes excipientis-->
-         <tok val="excipient[ie]s"/>
+      <ana>
+         <tok val="excipientes"/>
+         <tok val="excipientis"/>
          <lm>
             <l>excipio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1768,8 +1929,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--excipientibus excipientibusque-->
-         <tok val="excipientibus(que)?"/>
+      <ana>
+         <tok val="excipientibus"/>
+         <tok val="excipientibusque"/>
          <lm>
             <l>excipio</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -1819,8 +1981,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--excipimus excipimusque-->
-         <tok val="excipimus(que)?"/>
+      <ana>
+         <tok val="excipimus"/>
+         <tok val="excipimusque"/>
          <lm>
             <l>excipio</l>
             <m>v - 1 p p i a</m>
@@ -1848,8 +2011,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--excisae excisaeque-->
-         <tok val="excisae(que)?"/>
+      <ana>
+         <tok val="excisae"/>
+         <tok val="excisaeque"/>
          <lm>
             <l>excido2</l>
             <m cert="0.25">v - - p r p p f v</m>
@@ -1858,15 +2022,17 @@
             <m cert="0.25">v - - p r p p f n</m>
          </lm>
       </ana>
-      <ana><!--excisam excisamque-->
-         <tok val="excisam(que)?"/>
+      <ana>
+         <tok val="excisam"/>
+         <tok val="excisamque"/>
          <lm>
             <l>excido2</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--excisas excisasque-->
-         <tok val="excisas(que)?"/>
+      <ana>
+         <tok val="excisas"/>
+         <tok val="excisasque"/>
          <lm>
             <l>excido2</l>
             <m>v - - p r p p f a</m>
@@ -1879,8 +2045,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--excisi excisique-->
-         <tok val="excisi(que)?"/>
+      <ana>
+         <tok val="excisi"/>
+         <tok val="excisique"/>
          <lm>
             <l>excido2</l>
             <m cert="0.25">v - - p r p p m v</m>
@@ -1889,8 +2056,10 @@
             <m cert="0.25">v - - s r p p n g</m>
          </lm>
       </ana>
-      <ana><!--excisi excisique excidi-->
-         <tok val="exci[ds]i(que)?"/>
+      <ana>
+         <tok val="excidi"/>
+         <tok val="excisi"/>
+         <tok val="excisique"/>
          <lm>
             <l>excido2</l>
             <m>v - 1 s r i a</m>
@@ -2003,8 +2172,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--excitabuntur excitabunturque-->
-         <tok val="excitabuntur(que)?"/>
+      <ana>
+         <tok val="excitabuntur"/>
+         <tok val="excitabunturque"/>
          <lm>
             <l>excito</l>
             <m>v - 3 p f i p</m>
@@ -2020,8 +2190,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--excitam excitamque-->
-         <tok val="excitam(que)?"/>
+      <ana>
+         <tok val="excitam"/>
+         <tok val="excitamque"/>
          <lm>
             <l>excio</l>
             <m>v - - s r p p f a</m>
@@ -2041,8 +2212,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--excitan excitas-->
-         <tok val="excita[sn]"/>
+      <ana>
+         <tok val="excitan"/>
+         <tok val="excitas"/>
          <lm cert="0.5">
             <l>excito</l>
             <m>v - 2 s p i a</m>
@@ -2062,8 +2234,9 @@
             <m cert="0.25">v - - p p g p f v</m>
          </lm>
       </ana>
-      <ana><!--excitandam excitandamque-->
-         <tok val="excitandam(que)?"/>
+      <ana>
+         <tok val="excitandam"/>
+         <tok val="excitandamque"/>
          <lm>
             <l>excito</l>
             <m>v - - s p g p f a</m>
@@ -2151,8 +2324,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--excitante excitanti-->
-         <tok val="excitant[ie]"/>
+      <ana>
+         <tok val="excitante"/>
+         <tok val="excitanti"/>
          <lm>
             <l>excito</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2178,8 +2352,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--excitantes excitantis-->
-         <tok val="excitant[ie]s"/>
+      <ana>
+         <tok val="excitantes"/>
+         <tok val="excitantis"/>
          <lm>
             <l>excito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2225,8 +2400,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--excitantur excitanturque-->
-         <tok val="excitantur(que)?"/>
+      <ana>
+         <tok val="excitantur"/>
+         <tok val="excitanturque"/>
          <lm>
             <l>excito</l>
             <m>v - 3 p p i p</m>
@@ -2295,36 +2471,46 @@
             <m>v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--excitarint excitauerint excitaverint-->
-         <tok val="excita[vu]?(e|)rint"/>
+      <ana>
+         <tok val="excitarint"/>
+         <tok val="excitauerint"/>
+         <tok val="excitaverint"/>
          <lm>
             <l>excito</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--excitaris excitaueris excitaveris-->
-         <tok val="excita[vu]?(e|)ris"/>
+      <ana>
+         <tok val="excitaris"/>
+         <tok val="excitaueris"/>
+         <tok val="excitaveris"/>
          <lm>
             <l>excito</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--excitarit excitauerit excitaverit-->
-         <tok val="excita[vu]?(e|)rit"/>
+      <ana>
+         <tok val="excitarit"/>
+         <tok val="excitauerit"/>
+         <tok val="excitaverit"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--excitarunt excitauerunt excitaverunt excitavere-->
-         <tok val="excita[vu]?(e|ve)?r(unt|e)"/>
+      <ana>
+         <tok val="excitarunt"/>
+         <tok val="excitauerunt"/>
+         <tok val="excitavere"/>
+         <tok val="excitaverunt"/>
          <lm>
             <l>excito</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--excitasse excitavisse-->
-         <tok val="excita(vi)?sse"/>
+      <ana>
+         <tok val="excitasse"/>
+         <tok val="excitavisse"/>
          <lm>
             <l>excito</l>
             <m>v - - - r n a</m>
@@ -2337,8 +2523,9 @@
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--excitassent excitauissent-->
-         <tok val="excita(ui)?ssent"/>
+      <ana>
+         <tok val="excitassent"/>
+         <tok val="excitauissent"/>
          <lm>
             <l>excito</l>
             <m>v - 3 p l s a</m>
@@ -2351,8 +2538,9 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--excitasset excitauisset-->
-         <tok val="excita(ui)?sset"/>
+      <ana>
+         <tok val="excitasset"/>
+         <tok val="excitauisset"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s l s a</m>
@@ -2389,8 +2577,9 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--excitati excitatique-->
-         <tok val="excitati(que)?"/>
+      <ana>
+         <tok val="excitati"/>
+         <tok val="excitatique"/>
          <lm>
             <l>excito</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2457,8 +2646,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--excitatis excitatisque-->
-         <tok val="excitatis(que)?"/>
+      <ana>
+         <tok val="excitatis"/>
+         <tok val="excitatisque"/>
          <lm>
             <l>excito</l>
             <m cert="0.142857142857142857">v - - p r p p f d</m>
@@ -2499,8 +2689,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--excitatos excitatosque-->
-         <tok val="excitatos(que)?"/>
+      <ana>
+         <tok val="excitatos"/>
+         <tok val="excitatosque"/>
          <lm>
             <l>excito</l>
             <m>v - - p r p p m a</m>
@@ -2559,50 +2750,60 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--excitauerant excitaverant-->
-         <tok val="excita[vu]erant"/>
+      <ana>
+         <tok val="excitauerant"/>
+         <tok val="excitaverant"/>
          <lm>
             <l>excito</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--excitauerat excitaverat excitarat-->
-         <tok val="excita[vu]?(e|)rat"/>
+      <ana>
+         <tok val="excitarat"/>
+         <tok val="excitauerat"/>
+         <tok val="excitaverat"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--excitauerint excitaverint-->
-         <tok val="excita[vu]erint"/>
+      <ana>
+         <tok val="excitauerint"/>
+         <tok val="excitaverint"/>
          <lm>
             <l>excito</l>
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--excitaueris excitaveris-->
-         <tok val="excita[vu]eris"/>
+      <ana>
+         <tok val="excitaueris"/>
+         <tok val="excitaveris"/>
          <lm>
             <l>excito</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--excitauerit excitaverit-->
-         <tok val="excita[vu]erit"/>
+      <ana>
+         <tok val="excitauerit"/>
+         <tok val="excitaverit"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--excitauit excitavit excitávit Excitavit-->
-         <tok val="[eE]xcit[a]?(v|u|áv|av)it"/>
+      <ana>
+         <tok val="Excitavit"/>
+         <tok val="excitauit"/>
+         <tok val="excitavit"/>
+         <tok val="excitávit"/>
          <lm>
             <l>excito</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--excitavi excitaui-->
-         <tok val="excita[uv]i"/>
+      <ana>
+         <tok val="excitaui"/>
+         <tok val="excitavi"/>
          <lm>
             <l>excito</l>
             <m>v - 1 s r i a</m>
@@ -2615,16 +2816,19 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--excite exciten-->
-         <tok val="excite[n]?"/>
+      <ana>
+         <tok val="excite"/>
+         <tok val="exciten"/>
          <lm>
             <l>excio</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--excite excitum exciten-->
-         <tok val="excit[e]?(n|um)?"/>
+      <ana>
+         <tok val="excite"/>
+         <tok val="exciten"/>
+         <tok val="excitum"/>
          <lm>
             <l>excio</l>
             <m>v - - s r p p n v</m>
@@ -2679,8 +2883,9 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--excites exciten-->
-         <tok val="excite[ns]"/>
+      <ana>
+         <tok val="exciten"/>
+         <tok val="excites"/>
          <lm>
             <l>excito</l>
             <m>v - 2 s p s a</m>
@@ -2724,15 +2929,17 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--exciuerant exciverant-->
-         <tok val="exci[vu]erant"/>
+      <ana>
+         <tok val="exciuerant"/>
+         <tok val="exciverant"/>
          <lm>
             <l>excio</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--exciuerat exciverat-->
-         <tok val="exci[vu]erat"/>
+      <ana>
+         <tok val="exciuerat"/>
+         <tok val="exciverat"/>
          <lm>
             <l>excio</l>
             <m>v - 3 s l i a</m>
@@ -2752,15 +2959,17 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--exciuisset excierat-->
-         <tok val="exci(uiss)?e(ra)?t"/>
+      <ana>
+         <tok val="excierat"/>
+         <tok val="exciuisset"/>
          <lm>
             <l>excio</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--exciverit excierit-->
-         <tok val="exci[v]?erit"/>
+      <ana>
+         <tok val="excierit"/>
+         <tok val="exciverit"/>
          <lm>
             <l>excio</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -2772,13 +2981,6 @@
          <lm>
             <l>excio</l>
             <m>v - 2 s r i a</m>
-         </lm>
-      </ana>
-      <ana><!--excido EXCIDO Excido-->
-         <tok val="[Ee]?(xcido|EXCIDO)"/>
-         <lm>
-            <l>excido2</l>
-            <m>v - 1 s p i a</m>
          </lm>
       </ana>
       <ana>

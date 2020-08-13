@@ -1,70 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusamn">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:amn">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to amn</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-amn.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Amn</tok-starts-with>
       <tok-starts-with>amn</tok-starts-with>
-      <ana><!--Amne Amni amne amni amnique-->
-         <tok val="[Aa]mn(i|e|ique)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:10:02.341-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:10:02.341-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-amn.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="Amne"/>
+         <tok val="Amni"/>
+         <tok val="amne"/>
+         <tok val="amni"/>
+         <tok val="amnique"/>
          <lm>
             <l>amnis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Amnem Amnemque amnem amnemque-->
-         <tok val="[aA]mnem(que)?"/>
+      <ana>
+         <tok val="Amnem"/>
+         <tok val="Amnemque"/>
+         <tok val="amnem"/>
+         <tok val="amnemque"/>
          <lm>
             <l>amnis</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Amnes amnes amnesque-->
-         <tok val="[aA]mnes(que)?"/>
+      <ana>
+         <tok val="Amnes"/>
+         <tok val="amnes"/>
+         <tok val="amnesque"/>
          <lm>
             <l>amnis</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Amnes Amnis amnes amnesque amnis amnisque-->
-         <tok val="[aA]mn[ie]s(que)?"/>
+      <ana>
+         <tok val="Amnes"/>
+         <tok val="Amnis"/>
+         <tok val="amnes"/>
+         <tok val="amnesque"/>
+         <tok val="amnis"/>
+         <tok val="amnisque"/>
          <lm>
             <l>amnis</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Amnestia amnestia-->
-         <tok val="[aA]mnestia"/>
+      <ana>
+         <tok val="Amnestia"/>
+         <tok val="amnestia"/>
          <lm>
             <l>amnestia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -72,23 +95,28 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Amni amni amnique-->
-         <tok val="[aA]mni(que)?"/>
+      <ana>
+         <tok val="Amni"/>
+         <tok val="amni"/>
+         <tok val="amnique"/>
          <lm>
             <l>amnis</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Amnibus amnibus amnibusque-->
-         <tok val="[aA]mnibus(que)?"/>
+      <ana>
+         <tok val="Amnibus"/>
+         <tok val="amnibus"/>
+         <tok val="amnibusque"/>
          <lm>
             <l>amnis</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Amnicola amnicola-->
-         <tok val="[aA]mnicola"/>
+      <ana>
+         <tok val="Amnicola"/>
+         <tok val="amnicola"/>
          <lm>
             <l>amnicola</l>
             <m cert="0.166666666666666667">n - - s - - - f b</m>
@@ -99,8 +127,10 @@
             <m cert="0.166666666666666667">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Amnicolae amnicolaeque-->
-         <tok val="[aA]mnicolae(que)?"/>
+      <ana>
+         <tok val="Amnicolae"/>
+         <tok val="amnicolae"/>
+         <tok val="amnicolaeque"/>
          <lm>
             <l>amnicola</l>
             <m cert="0.125">n - - p - - - m n</m>
@@ -113,15 +143,18 @@
             <m cert="0.125">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Amnicus amnicus-->
-         <tok val="[aA]mnicus"/>
+      <ana>
+         <tok val="Amnicus"/>
+         <tok val="amnicus"/>
          <lm>
             <l>amnicus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Amnis amnis amnisque-->
-         <tok val="[aA]mnis(que)?"/>
+      <ana>
+         <tok val="Amnis"/>
+         <tok val="amnis"/>
+         <tok val="amnisque"/>
          <lm>
             <l>amnis</l>
             <m cert="0.5">n - - s - - - m g</m>
@@ -138,8 +171,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--amnenses amneses-->
-         <tok val="amne[n]?ses"/>
+      <ana>
+         <tok val="amnenses"/>
+         <tok val="amneses"/>
          <lm>
             <l>amnenses</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -216,8 +250,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--amnium amniumque-->
-         <tok val="amnium(que)?"/>
+      <ana>
+         <tok val="amnium"/>
+         <tok val="amniumque"/>
          <lm>
             <l>amnis</l>
             <m>n - - p - - - m g</m>

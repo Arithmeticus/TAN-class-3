@@ -1,50 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfla">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fla">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fla</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fla.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FLA</tok-starts-with>
       <tok-starts-with>Fla</tok-starts-with>
       <tok-starts-with>fla</tok-starts-with>
       <tok-starts-with>flá</tok-starts-with>
-      <ana><!--FLA Fla fla flan flaue-->
-         <tok val="[fF]?(la)?(n|ue|FLA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:24:27.44-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:24:27.44-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fla.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FLA"/>
+         <tok val="Fla"/>
+         <tok val="fla"/>
+         <tok val="flan"/>
+         <tok val="flaue"/>
          <lm>
             <l>flo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--FLACCO Flacco Flaccoque flacco-->
-         <tok val="[fF]?(lacco)?(que|FLACCO)?"/>
+      <ana>
+         <tok val="FLACCO"/>
+         <tok val="Flacco"/>
+         <tok val="Flaccoque"/>
+         <tok val="flacco"/>
+         <tok val="flaccoque"/>
          <lm>
             <l>flaccus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -53,23 +69,33 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--FLACCUS FLACCVS Flaccus flaccus-->
-         <tok val="(FLACC)?[VU]?(S|flaccus|Flaccus)"/>
+      <ana>
+         <tok val="FLACCUS"/>
+         <tok val="FLACCVS"/>
+         <tok val="Flaccus"/>
+         <tok val="flaccus"/>
+         <tok val="flaccvs"/>
          <lm>
             <l>flaccus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--FLAGITIIS Flagitiis flagitiis flagitiisque-->
-         <tok val="[fF]?(lagitiis)?(que|FLAGITIIS)?"/>
+      <ana>
+         <tok val="FLAGITIIS"/>
+         <tok val="Flagitiis"/>
+         <tok val="flagitiis"/>
+         <tok val="flagitiisque"/>
          <lm>
             <l>flagitium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--FLAGRO Flagro flagro flagroue-->
-         <tok val="[fF]?(lagro)?(ue|FLAGRO)?"/>
+      <ana>
+         <tok val="FLAGRO"/>
+         <tok val="Flagro"/>
+         <tok val="flagro"/>
+         <tok val="flagroue"/>
          <lm cert="0.5">
             <l>flagro</l>
             <m>v - 1 s p i a</m>
@@ -80,8 +106,10 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--FLAMEN Flamen flamen-->
-         <tok val="[fF]?(lamen|FLAMEN)"/>
+      <ana>
+         <tok val="FLAMEN"/>
+         <tok val="Flamen"/>
+         <tok val="flamen"/>
          <lm>
             <l>flamen</l>
             <m cert="0.2">n - - s - - - m n</m>
@@ -93,21 +121,27 @@
       </ana>
       <ana>
          <tok val="FLAMINALES"/>
+         <tok val="flaminales"/>
          <lm>
             <l>flaminalis</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--FLAMINALES flaminalis-->
-         <tok val="(flaminalis|FLAMINALES)"/>
+      <ana>
+         <tok val="FLAMINALES"/>
+         <tok val="flaminales"/>
+         <tok val="flaminalis"/>
          <lm>
             <l>flaminalis</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--FLAMINES Flamines flamines flaminesque-->
-         <tok val="[fF]?(lamines)?(que|FLAMINES)?"/>
+      <ana>
+         <tok val="FLAMINES"/>
+         <tok val="Flamines"/>
+         <tok val="flamines"/>
+         <tok val="flaminesque"/>
          <lm>
             <l>flamen</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -115,8 +149,10 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--FLAMINICAE Flaminicae flaminicae-->
-         <tok val="[fF]?(laminicae|FLAMINICAE)"/>
+      <ana>
+         <tok val="FLAMINICAE"/>
+         <tok val="Flaminicae"/>
+         <tok val="flaminicae"/>
          <lm>
             <l>flaminica</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -125,8 +161,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--FLAMINIS Flaminis flaminis-->
-         <tok val="[fF]?(laminis|FLAMINIS)"/>
+      <ana>
+         <tok val="FLAMINIS"/>
+         <tok val="Flaminis"/>
+         <tok val="flaminis"/>
          <lm cert="0.5">
             <l>flamen</l>
             <m cert="0.5">n - - s - - - m g</m>
@@ -138,30 +176,38 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--FLAMMIS Flammis flammis flammisque-->
-         <tok val="[fF]?(lammis)?(que|FLAMMIS)?"/>
+      <ana>
+         <tok val="FLAMMIS"/>
+         <tok val="Flammis"/>
+         <tok val="flammis"/>
+         <tok val="flammisque"/>
          <lm>
             <l>flamma</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Flabelli flabelli-->
-         <tok val="[fF]labelli"/>
+      <ana>
+         <tok val="Flabelli"/>
+         <tok val="flabelli"/>
          <lm>
             <l>flabellum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flabellorum Flabellum flabellorum flabellum-->
-         <tok val="[fF]labell(or)?um"/>
+      <ana>
+         <tok val="Flabellorum"/>
+         <tok val="Flabellum"/>
+         <tok val="flabellorum"/>
+         <tok val="flabellum"/>
          <lm>
             <l>flabellum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flabellum flabellum-->
-         <tok val="[fF]labellum"/>
+      <ana>
+         <tok val="Flabellum"/>
+         <tok val="flabellum"/>
          <lm>
             <l>flabellum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -169,8 +215,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Flabilis flabilis-->
-         <tok val="[fF]labilis"/>
+      <ana>
+         <tok val="Flabilis"/>
+         <tok val="flabilis"/>
          <lm>
             <l>flabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -182,23 +229,28 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flabilis flabiles flabilis-->
-         <tok val="[fF]labil[ie]s"/>
+      <ana>
+         <tok val="Flabilis"/>
+         <tok val="flabiles"/>
+         <tok val="flabilis"/>
          <lm>
             <l>flabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Flabit flabit-->
-         <tok val="[fF]labit"/>
+      <ana>
+         <tok val="Flabit"/>
+         <tok val="flabit"/>
          <lm>
             <l>flo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Flabra flabra flabraque-->
-         <tok val="[fF]labra(que)?"/>
+      <ana>
+         <tok val="Flabra"/>
+         <tok val="flabra"/>
+         <tok val="flabraque"/>
          <lm>
             <l>flabra</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -206,8 +258,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Flabris flabris-->
-         <tok val="[fF]labris"/>
+      <ana>
+         <tok val="Flabris"/>
+         <tok val="flabris"/>
          <lm>
             <l>flabra</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -216,6 +269,7 @@
       </ana>
       <ana>
          <tok val="Flabrum"/>
+         <tok val="flabrum"/>
          <lm>
             <l>flabra</l>
             <m>n - - p - - - n g</m>
@@ -223,6 +277,7 @@
       </ana>
       <ana>
          <tok val="Flaccas"/>
+         <tok val="flaccas"/>
          <lm>
             <l>flaccus</l>
             <m>a - - p - - - f a</m>
@@ -230,64 +285,66 @@
       </ana>
       <ana>
          <tok val="Flacce"/>
-         <lm>
+         <tok val="flacce"/>
+         <lm cert="0.333333333333333333">
             <l>Flaccus</l>
             <m>n e - s - - - m v</m>
          </lm>
-      </ana>
-      <ana><!--Flacce flacce-->
-         <tok val="[fF]lacce"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>flaccus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>flacceo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Flacce Flaccum flacce-->
-         <tok val="[fF]lacc(e|um)"/>
+      <ana>
+         <tok val="Flacce"/>
+         <tok val="Flaccum"/>
+         <tok val="flacce"/>
+         <tok val="flaccum"/>
          <lm>
             <l>flaccus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Flacceo flacceo-->
-         <tok val="[fF]lacceo"/>
+      <ana>
+         <tok val="Flacceo"/>
+         <tok val="flacceo"/>
          <lm>
             <l>flacceo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flaccescit flaccescit-->
-         <tok val="[fF]laccescit"/>
+      <ana>
+         <tok val="Flaccescit"/>
+         <tok val="flaccescit"/>
          <lm>
             <l>flaccesco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flaccesco flaccesco-->
-         <tok val="[fF]laccesco"/>
+      <ana>
+         <tok val="Flaccesco"/>
+         <tok val="flaccesco"/>
          <lm>
             <l>flaccesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flacci flacci-->
-         <tok val="[fF]lacci"/>
-         <lm>
+      <ana>
+         <tok val="Flacci"/>
+         <tok val="flacci"/>
+         <lm cert="0.5">
             <l>flaccus</l>
             <m cert="0.25">a - - s - - - m g</m>
             <m cert="0.25">a - - p - - - m v</m>
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Flacci"/>
-         <lm>
+         <lm cert="0.5">
             <l>Flaccus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
             <m cert="0.333333333333333333">n e - s - - - m g</m>
@@ -296,6 +353,7 @@
       </ana>
       <ana>
          <tok val="Flacciana"/>
+         <tok val="flacciana"/>
          <lm>
             <l>Flaccianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -308,6 +366,7 @@
       </ana>
       <ana>
          <tok val="Flaccianum"/>
+         <tok val="flaccianum"/>
          <lm>
             <l>Flaccianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -320,13 +379,15 @@
       </ana>
       <ana>
          <tok val="Flaccianus"/>
+         <tok val="flaccianus"/>
          <lm>
             <l>Flaccianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flaccida flaccida-->
-         <tok val="[fF]laccida"/>
+      <ana>
+         <tok val="Flaccida"/>
+         <tok val="flaccida"/>
          <lm>
             <l>flaccidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -337,8 +398,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Flaccidae flaccidae-->
-         <tok val="[fF]laccidae"/>
+      <ana>
+         <tok val="Flaccidae"/>
+         <tok val="flaccidae"/>
          <lm>
             <l>flaccidus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -347,38 +409,43 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Flaccidus flaccidus-->
-         <tok val="[fF]laccidus"/>
+      <ana>
+         <tok val="Flaccidus"/>
+         <tok val="flaccidus"/>
          <lm>
             <l>flaccidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flacco Flaccoque-->
-         <tok val="Flacco(que)?"/>
+      <ana>
+         <tok val="Flacco"/>
+         <tok val="Flaccoque"/>
+         <tok val="flacco"/>
+         <tok val="flaccoque"/>
          <lm>
             <l>Flaccus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Flaccorum Flaccum flaccorum-->
-         <tok val="[fF]lacc(or|)um"/>
-         <lm>
+      <ana>
+         <tok val="Flaccorum"/>
+         <tok val="Flaccum"/>
+         <tok val="flaccorum"/>
+         <tok val="flaccum"/>
+         <lm cert="0.5">
             <l>flaccus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Flaccorum Flaccum-->
-         <tok val="Flacc(or)?um"/>
-         <lm>
+         <lm cert="0.5">
             <l>Flaccus</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Flaccum"/>
+         <tok val="flaccum"/>
          <lm cert="0.5">
             <l>flaccus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -392,13 +459,15 @@
       </ana>
       <ana>
          <tok val="Flaccus"/>
+         <tok val="flaccus"/>
          <lm>
             <l>Flaccus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flagella flagella-->
-         <tok val="[fF]lagella"/>
+      <ana>
+         <tok val="Flagella"/>
+         <tok val="flagella"/>
          <lm cert="0.5">
             <l>flagellum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -410,8 +479,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Flagellare flagellare-->
-         <tok val="[fF]lagellare"/>
+      <ana>
+         <tok val="Flagellare"/>
+         <tok val="flagellare"/>
          <lm>
             <l>flagello</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -421,6 +491,7 @@
       </ana>
       <ana>
          <tok val="Flagellata"/>
+         <tok val="flagellata"/>
          <lm>
             <l>flagello</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -431,30 +502,35 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Flagellatus flagellatus FLAGELLATUS-->
-         <tok val="[fF]?(lagellatus|FLAGELLATUS)"/>
+      <ana>
+         <tok val="FLAGELLATUS"/>
+         <tok val="Flagellatus"/>
+         <tok val="flagellatus"/>
          <lm>
             <l>flagello</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Flagelli flagelli-->
-         <tok val="[fF]lagelli"/>
+      <ana>
+         <tok val="Flagelli"/>
+         <tok val="flagelli"/>
          <lm>
             <l>flagellum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flagellis flagellis-->
-         <tok val="[fF]lagellis"/>
+      <ana>
+         <tok val="Flagellis"/>
+         <tok val="flagellis"/>
          <lm>
             <l>flagellum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flagello flagello-->
-         <tok val="[fF]lagello"/>
+      <ana>
+         <tok val="Flagello"/>
+         <tok val="flagello"/>
          <lm cert="0.5">
             <l>flagello</l>
             <m>v - 1 s p i a</m>
@@ -465,8 +541,10 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flagellum flagellum flagellumque-->
-         <tok val="[fF]lagellum(que)?"/>
+      <ana>
+         <tok val="Flagellum"/>
+         <tok val="flagellum"/>
+         <tok val="flagellumque"/>
          <lm>
             <l>flagellum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -474,29 +552,36 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Flagellum flagellorum flagellorumue flagellum flagellumque-->
-         <tok val="[fF]lagell(or)?um(ue|que)?"/>
+      <ana>
+         <tok val="Flagellum"/>
+         <tok val="flagellorum"/>
+         <tok val="flagellorumue"/>
+         <tok val="flagellum"/>
+         <tok val="flagellumque"/>
          <lm>
             <l>flagellum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flagitabar flagitabar-->
-         <tok val="[fF]lagitabar"/>
+      <ana>
+         <tok val="Flagitabar"/>
+         <tok val="flagitabar"/>
          <lm>
             <l>flagito</l>
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Flagitabatur flagitabatur-->
-         <tok val="[fF]lagitabatur"/>
+      <ana>
+         <tok val="Flagitabatur"/>
+         <tok val="flagitabatur"/>
          <lm>
             <l>flagito</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Flagitare flagitare-->
-         <tok val="[fF]lagitare"/>
+      <ana>
+         <tok val="Flagitare"/>
+         <tok val="flagitare"/>
          <lm>
             <l>flagito</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -504,37 +589,45 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Flagitas flagitas-->
-         <tok val="[fF]lagitas"/>
+      <ana>
+         <tok val="Flagitas"/>
+         <tok val="flagitas"/>
          <lm>
             <l>flagito</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flagitat flagitat-->
-         <tok val="[fF]lagitat"/>
+      <ana>
+         <tok val="Flagitat"/>
+         <tok val="flagitat"/>
          <lm>
             <l>flagito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flagitator flagitator-->
-         <tok val="[fF]lagitator"/>
+      <ana>
+         <tok val="Flagitator"/>
+         <tok val="flagitator"/>
          <lm>
             <l>flagitator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Flagiti Flagitii flagiti flagitii flágiti-->
-         <tok val="[Ff]l[aá]giti[i]?"/>
+      <ana>
+         <tok val="Flagiti"/>
+         <tok val="Flagitii"/>
+         <tok val="flagiti"/>
+         <tok val="flagitii"/>
+         <tok val="flágiti"/>
          <lm>
             <l>flagitium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flagitia flagitia-->
-         <tok val="[fF]lagitia"/>
+      <ana>
+         <tok val="Flagitia"/>
+         <tok val="flagitia"/>
          <lm>
             <l>flagitium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -542,29 +635,42 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Flagitio flagitio flagitioue flágitio-->
-         <tok val="[fF]l[aá]gitio(ue)?"/>
+      <ana>
+         <tok val="Flagitio"/>
+         <tok val="flagitio"/>
+         <tok val="flagitioue"/>
+         <tok val="flágitio"/>
          <lm>
             <l>flagitium</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Flagitio flagitio flagitioue-->
-         <tok val="[fF]lagitio(ue)?"/>
+      <ana>
+         <tok val="Flagitio"/>
+         <tok val="flagitio"/>
+         <tok val="flagitioue"/>
          <lm>
             <l>flagitium</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flagitiorum Flagitium flagitiorum flagitiorumque flagitium flagitiumst flagitiumue flagitiumve-->
-         <tok val="[fF]lagiti(or)?um(ve|ue|st|que)?"/>
+      <ana>
+         <tok val="Flagitiorum"/>
+         <tok val="Flagitium"/>
+         <tok val="flagitiorum"/>
+         <tok val="flagitiorumque"/>
+         <tok val="flagitium"/>
+         <tok val="flagitiumst"/>
+         <tok val="flagitiumue"/>
+         <tok val="flagitiumve"/>
          <lm>
             <l>flagitium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flagitiosae flagitiosae-->
-         <tok val="[fF]lagitiosae"/>
+      <ana>
+         <tok val="Flagitiosae"/>
+         <tok val="flagitiosae"/>
          <lm>
             <l>flagitiosus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -573,79 +679,111 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Flagitiose flagitiose flagitioseque flagitiosius-->
-         <tok val="[fF]lagitios[e]?(que|ius)?"/>
+      <ana>
+         <tok val="Flagitiose"/>
+         <tok val="flagitiose"/>
+         <tok val="flagitioseque"/>
+         <tok val="flagitiosius"/>
          <lm>
             <l>flagitiosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Flagitiose flagitiose flagitioseque flagitiosum flagitiosumque-->
-         <tok val="[fF]lagitios(umqu)?[e]?(que|um)?"/>
+      <ana>
+         <tok val="Flagitiose"/>
+         <tok val="flagitiose"/>
+         <tok val="flagitioseque"/>
+         <tok val="flagitiosum"/>
+         <tok val="flagitiosumque"/>
          <lm>
             <l>flagitiosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Flagitiose flagitiose flagitioseque-->
-         <tok val="[fF]lagitiose(que)?"/>
+      <ana>
+         <tok val="Flagitiose"/>
+         <tok val="flagitiose"/>
+         <tok val="flagitioseque"/>
          <lm>
             <l>flagitiosus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Flagitiosissime flagitiosissime flagitiosissimeque-->
-         <tok val="[fF]lagitiosissime(que)?"/>
+      <ana>
+         <tok val="Flagitiosissime"/>
+         <tok val="flagitiosissime"/>
+         <tok val="flagitiosissimeque"/>
          <lm>
             <l>flagitiosus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Flagitiosissime flagitiosissime flagitiosissimeque flagitiosissimus-->
-         <tok val="[fF]lagitiosissim[e]?(que|us)?"/>
+      <ana>
+         <tok val="Flagitiosissime"/>
+         <tok val="flagitiosissime"/>
+         <tok val="flagitiosissimeque"/>
+         <tok val="flagitiosissimus"/>
          <lm>
             <l>flagitiosus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Flagitiosissime flagitiosissime flagitiosissimeque flagitiosissimum flagitiosissumum-->
-         <tok val="[fF]lagitiosiss[ui]m(um|e|eque)"/>
+      <ana>
+         <tok val="Flagitiosissime"/>
+         <tok val="flagitiosissime"/>
+         <tok val="flagitiosissimeque"/>
+         <tok val="flagitiosissimum"/>
+         <tok val="flagitiosissumum"/>
          <lm>
             <l>flagitiosus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Flagitiosus flagitiosus-->
-         <tok val="[fF]lagitiosus"/>
+      <ana>
+         <tok val="Flagitiosus"/>
+         <tok val="flagitiosus"/>
          <lm>
             <l>flagitiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flagitium flagitium flagitiumst flagitiumue flagitiumve-->
-         <tok val="[fF]lagitium[vu]?(e|st)?"/>
+      <ana>
+         <tok val="Flagitium"/>
+         <tok val="flagitium"/>
+         <tok val="flagitiumst"/>
+         <tok val="flagitiumue"/>
+         <tok val="flagitiumve"/>
          <lm>
             <l>flagitium</l>
             <m cert="0.5">n - - s - - - n v</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Flagitium flagitium flagitiumst flagitiumue flagitiumve flagítium flágitium-->
-         <tok val="[fF]l[aá]g[ií]tium[vu]?(e|st)?"/>
+      <ana>
+         <tok val="Flagitium"/>
+         <tok val="flagitium"/>
+         <tok val="flagitiumst"/>
+         <tok val="flagitiumue"/>
+         <tok val="flagitiumve"/>
+         <tok val="flagítium"/>
+         <tok val="flágitium"/>
          <lm>
             <l>flagitium</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Flagito flagito-->
-         <tok val="[fF]lagito"/>
+      <ana>
+         <tok val="Flagito"/>
+         <tok val="flagito"/>
          <lm>
             <l>flagito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flagra flagra flagran-->
-         <tok val="[fF]lagra[n]?"/>
+      <ana>
+         <tok val="Flagra"/>
+         <tok val="flagra"/>
+         <tok val="flagran"/>
          <lm cert="0.5">
             <l>flagrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -657,22 +795,27 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Flagrabant flagrabant-->
-         <tok val="[fF]lagrabant"/>
+      <ana>
+         <tok val="Flagrabant"/>
+         <tok val="flagrabant"/>
          <lm>
             <l>flagro</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Flagrabat flagrabat flagrabatque-->
-         <tok val="[fF]lagrabat(que)?"/>
+      <ana>
+         <tok val="Flagrabat"/>
+         <tok val="flagrabat"/>
+         <tok val="flagrabatque"/>
          <lm>
             <l>flagro</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Flagrans flagrans flagransque-->
-         <tok val="[fF]lagrans(que)?"/>
+      <ana>
+         <tok val="Flagrans"/>
+         <tok val="flagrans"/>
+         <tok val="flagransque"/>
          <lm>
             <l>flagro</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -684,15 +827,19 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Flagrant flagrant-->
-         <tok val="[fF]lagrant"/>
+      <ana>
+         <tok val="Flagrant"/>
+         <tok val="flagrant"/>
          <lm>
             <l>flagro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Flagrante flagrante flagranti flagrantique-->
-         <tok val="[fF]lagrant(e|i|ique)"/>
+      <ana>
+         <tok val="Flagrante"/>
+         <tok val="flagrante"/>
+         <tok val="flagranti"/>
+         <tok val="flagrantique"/>
          <lm>
             <l>flagro</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -700,23 +847,28 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Flagrantem flagrantem flagrantemque-->
-         <tok val="[fF]lagrantem(que)?"/>
+      <ana>
+         <tok val="Flagrantem"/>
+         <tok val="flagrantem"/>
+         <tok val="flagrantemque"/>
          <lm>
             <l>flagro</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Flagranter flagranter-->
-         <tok val="[fF]lagranter"/>
+      <ana>
+         <tok val="Flagranter"/>
+         <tok val="flagranter"/>
          <lm>
             <l>flagranter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Flagrantes flagrantes flagrantesque-->
-         <tok val="[fF]lagrantes(que)?"/>
+      <ana>
+         <tok val="Flagrantes"/>
+         <tok val="flagrantes"/>
+         <tok val="flagrantesque"/>
          <lm>
             <l>flagro</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -725,16 +877,23 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Flagrantes Flagrantis flagrantes flagrantesque flagrantis flagrantisque-->
-         <tok val="[fF]lagrant[ie]s(que)?"/>
+      <ana>
+         <tok val="Flagrantes"/>
+         <tok val="Flagrantis"/>
+         <tok val="flagrantes"/>
+         <tok val="flagrantesque"/>
+         <tok val="flagrantis"/>
+         <tok val="flagrantisque"/>
          <lm>
             <l>flagro</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Flagrantia flagrantia flagrantiaque-->
-         <tok val="[fF]lagrantia(que)?"/>
+      <ana>
+         <tok val="Flagrantia"/>
+         <tok val="flagrantia"/>
+         <tok val="flagrantiaque"/>
          <lm cert="0.5">
             <l>flagrantia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -748,8 +907,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Flagrantibus flagrantibus-->
-         <tok val="[fF]lagrantibus"/>
+      <ana>
+         <tok val="Flagrantibus"/>
+         <tok val="flagrantibus"/>
          <lm>
             <l>flagro</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -760,8 +920,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Flagrantior flagrantior-->
-         <tok val="[fF]lagrantior"/>
+      <ana>
+         <tok val="Flagrantior"/>
+         <tok val="flagrantior"/>
          <lm>
             <l>flagro</l>
             <m cert="0.25">v - - s p p a m v c</m>
@@ -770,8 +931,10 @@
             <m cert="0.25">v - - s p p a f n c</m>
          </lm>
       </ana>
-      <ana><!--Flagrantis flagrantis flagrantisque-->
-         <tok val="[fF]lagrantis(que)?"/>
+      <ana>
+         <tok val="Flagrantis"/>
+         <tok val="flagrantis"/>
+         <tok val="flagrantisque"/>
          <lm>
             <l>flagro</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -779,36 +942,45 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Flagrantissime flagrantissime-->
-         <tok val="[fF]lagrantissime"/>
+      <ana>
+         <tok val="Flagrantissime"/>
+         <tok val="flagrantissime"/>
          <lm>
             <l>flagro</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Flagrantissime flagrantissime flagrantissimum flagrantissumum-->
-         <tok val="[fF]lagrantiss[ui]m(um|e)"/>
+      <ana>
+         <tok val="Flagrantissime"/>
+         <tok val="flagrantissime"/>
+         <tok val="flagrantissimum"/>
+         <tok val="flagrantissumum"/>
          <lm>
             <l>flagro</l>
             <m>v - - s p p a n v s</m>
          </lm>
       </ana>
-      <ana><!--Flagrantissime Flagrantissimus flagrantissime flagrantissimus-->
-         <tok val="[fF]lagrantissim(us|e)"/>
+      <ana>
+         <tok val="Flagrantissime"/>
+         <tok val="Flagrantissimus"/>
+         <tok val="flagrantissime"/>
+         <tok val="flagrantissimus"/>
          <lm>
             <l>flagro</l>
             <m>v - - s p p a m v s</m>
          </lm>
       </ana>
-      <ana><!--Flagrantissimus flagrantissimus-->
-         <tok val="[fF]lagrantissimus"/>
+      <ana>
+         <tok val="Flagrantissimus"/>
+         <tok val="flagrantissimus"/>
          <lm>
             <l>flagro</l>
             <m>v - - s p p a m n s</m>
          </lm>
       </ana>
-      <ana><!--Flagrare flagrare-->
-         <tok val="[fF]lagrare"/>
+      <ana>
+         <tok val="Flagrare"/>
+         <tok val="flagrare"/>
          <lm>
             <l>flagro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -816,37 +988,44 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Flagrat flagrat flagratque-->
-         <tok val="[fF]lagrat(que)?"/>
+      <ana>
+         <tok val="Flagrat"/>
+         <tok val="flagrat"/>
+         <tok val="flagratque"/>
          <lm>
             <l>flagro</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flagravit flagrauit flagravit-->
-         <tok val="[fF]lagra[vu]it"/>
+      <ana>
+         <tok val="Flagravit"/>
+         <tok val="flagrauit"/>
+         <tok val="flagravit"/>
          <lm>
             <l>flagro</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Flagret flagret-->
-         <tok val="[fF]lagret"/>
+      <ana>
+         <tok val="Flagret"/>
+         <tok val="flagret"/>
          <lm>
             <l>flagro</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Flagris flagris-->
-         <tok val="[fF]lagris"/>
+      <ana>
+         <tok val="Flagris"/>
+         <tok val="flagris"/>
          <lm>
             <l>flagrum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flagrum flagrum-->
-         <tok val="[fF]lagrum"/>
+      <ana>
+         <tok val="Flagrum"/>
+         <tok val="flagrum"/>
          <lm>
             <l>flagrum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -854,15 +1033,20 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Flagrum flagrorum flagrum-->
-         <tok val="[fF]lagr(or)?um"/>
+      <ana>
+         <tok val="Flagrum"/>
+         <tok val="flagrorum"/>
+         <tok val="flagrum"/>
          <lm>
             <l>flagrum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flamina Flaminaque flamina flaminaque-->
-         <tok val="[fF]lamina(que)?"/>
+      <ana>
+         <tok val="Flamina"/>
+         <tok val="Flaminaque"/>
+         <tok val="flamina"/>
+         <tok val="flaminaque"/>
          <lm cert="0.5">
             <l>flamina</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -871,42 +1055,46 @@
          </lm>
          <lm cert="0.5">
             <l>flamen</l>
-            <m cert="0.5">n - - p - - - n a</m>
-            <m cert="0.5">n - - p - - - n v</m>
+            <m cert="0.333333333333333333">n - - p - - - n a</m>
+            <m cert="0.333333333333333333">n - - p - - - n n</m>
+            <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Flamina Flaminaque flaminaque-->
-         <tok val="[fF]lamina(que|)"/>
-         <lm>
-            <l>flamen</l>
-            <m>n - - p - - - n n</m>
-         </lm>
-      </ana>
-      <ana><!--Flamine flamine-->
-         <tok val="[fF]lamine"/>
+      <ana>
+         <tok val="Flamine"/>
+         <tok val="flamine"/>
          <lm>
             <l>flamen</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flaminem flaminem-->
-         <tok val="[fF]laminem"/>
+      <ana>
+         <tok val="Flaminem"/>
+         <tok val="flaminem"/>
          <lm>
             <l>flamen</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flamini Flaminii-->
-         <tok val="Flamini[i]?"/>
-         <lm>
+      <ana>
+         <tok val="Flamini"/>
+         <tok val="Flaminii"/>
+         <tok val="flamini"/>
+         <tok val="flaminii"/>
+         <lm cert="0.5">
             <l>Flaminius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
+         <lm cert="0.5">
+            <l>flaminium</l>
+            <m>n - - s - - - n g</m>
+         </lm>
       </ana>
-      <ana><!--Flamini flamini-->
-         <tok val="[fF]lamini"/>
+      <ana>
+         <tok val="Flamini"/>
+         <tok val="flamini"/>
          <lm cert="0.5">
             <l>flo</l>
             <m cert="0.5">v - 2 p p i p</m>
@@ -918,31 +1106,20 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Flamini Flaminii flamini flaminii-->
-         <tok val="[Ff]lamini[i]?"/>
-         <lm>
-            <l>flaminium</l>
-            <m>n - - s - - - n g</m>
-         </lm>
-      </ana>
-      <ana><!--Flaminia Flaminian Flaminiaque flaminia-->
-         <tok val="[Ff]laminia(n|que)?"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Flaminia"/>
+         <tok val="Flaminian"/>
+         <tok val="Flaminiaque"/>
+         <tok val="flaminia"/>
+         <tok val="flaminian"/>
+         <tok val="flaminiaque"/>
+         <lm cert="0.333333333333333333">
             <l>flaminia</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
-         <lm cert="0.5">
-            <l>flaminium</l>
-            <m cert="0.333333333333333333">n - - p - - - n a</m>
-            <m cert="0.333333333333333333">n - - p - - - n v</m>
-            <m cert="0.333333333333333333">n - - p - - - n n</m>
-         </lm>
-      </ana>
-      <ana><!--Flaminia Flaminian Flaminiaque-->
-         <tok val="Flaminia(n|que)?"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>Flaminius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
             <m cert="0.166666666666666667">a e - p - - - n v</m>
@@ -951,20 +1128,24 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
+         <lm cert="0.333333333333333333">
+            <l>flaminium</l>
+            <m cert="0.333333333333333333">n - - p - - - n a</m>
+            <m cert="0.333333333333333333">n - - p - - - n v</m>
+            <m cert="0.333333333333333333">n - - p - - - n n</m>
+         </lm>
       </ana>
       <ana>
          <tok val="Flaminiae"/>
-         <lm>
+         <tok val="flaminiae"/>
+         <lm cert="0.5">
             <l>Flaminius</l>
             <m cert="0.25">a e - s - - - f g</m>
             <m cert="0.25">a e - p - - - f v</m>
             <m cert="0.25">a e - s - - - f d</m>
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
-      </ana>
-      <ana><!--Flaminiae flaminiae-->
-         <tok val="[fF]laminiae"/>
-         <lm>
+         <lm cert="0.5">
             <l>flaminia</l>
             <m cert="0.25">n - - s - - - f d</m>
             <m cert="0.25">n - - s - - - f g</m>
@@ -974,20 +1155,19 @@
       </ana>
       <ana>
          <tok val="Flaminiam"/>
-         <lm>
+         <tok val="flaminiam"/>
+         <lm cert="0.5">
             <l>Flaminius</l>
             <m>a e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Flaminiam flaminiam-->
-         <tok val="[fF]laminiam"/>
-         <lm>
+         <lm cert="0.5">
             <l>flaminia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Flaminian"/>
+         <tok val="flaminian"/>
          <lm cert="0.5">
             <l>flaminia</l>
             <m>n - - p - - - f a</m>
@@ -999,6 +1179,7 @@
       </ana>
       <ana>
          <tok val="Flaminiana"/>
+         <tok val="flaminiana"/>
          <lm>
             <l>Flaminianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1011,13 +1192,15 @@
       </ana>
       <ana>
          <tok val="Flaminianus"/>
+         <tok val="flaminianus"/>
          <lm>
             <l>Flaminianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flaminica flaminica-->
-         <tok val="[fF]laminica"/>
+      <ana>
+         <tok val="Flaminica"/>
+         <tok val="flaminica"/>
          <lm>
             <l>flaminica</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1025,8 +1208,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Flaminicis flaminicis-->
-         <tok val="[fF]laminicis"/>
+      <ana>
+         <tok val="Flaminicis"/>
+         <tok val="flaminicis"/>
          <lm>
             <l>flaminica</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -1035,6 +1219,7 @@
       </ana>
       <ana>
          <tok val="Flaminii"/>
+         <tok val="flaminii"/>
          <lm>
             <l>Flaminius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -1043,6 +1228,7 @@
       </ana>
       <ana>
          <tok val="Flaminiis"/>
+         <tok val="flaminiis"/>
          <lm cert="0.333333333333333333">
             <l>Flaminius</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
@@ -1065,6 +1251,7 @@
       </ana>
       <ana>
          <tok val="Flaminine"/>
+         <tok val="flaminine"/>
          <lm>
             <l>Flamininus</l>
             <m>n e - s - - - m v</m>
@@ -1072,6 +1259,7 @@
       </ana>
       <ana>
          <tok val="Flaminini"/>
+         <tok val="flaminini"/>
          <lm>
             <l>Flamininus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1081,6 +1269,7 @@
       </ana>
       <ana>
          <tok val="Flaminino"/>
+         <tok val="flaminino"/>
          <lm>
             <l>Flamininus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1089,6 +1278,7 @@
       </ana>
       <ana>
          <tok val="Flamininum"/>
+         <tok val="flamininum"/>
          <lm>
             <l>Flamininus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1097,6 +1287,7 @@
       </ana>
       <ana>
          <tok val="Flamininus"/>
+         <tok val="flamininus"/>
          <lm>
             <l>Flamininus</l>
             <m>n e - s - - - m n</m>
@@ -1104,25 +1295,26 @@
       </ana>
       <ana>
          <tok val="Flaminio"/>
-         <lm>
+         <tok val="flaminio"/>
+         <lm cert="0.5">
             <l>Flaminius</l>
             <m cert="0.25">a e - s - - - n d</m>
             <m cert="0.25">a e - s - - - m b</m>
             <m cert="0.25">a e - s - - - m d</m>
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
-      </ana>
-      <ana><!--Flaminio flaminio-->
-         <tok val="[fF]laminio"/>
-         <lm>
+         <lm cert="0.5">
             <l>flaminium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flaminium Flaminiumque-->
-         <tok val="Flaminium(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Flaminium"/>
+         <tok val="Flaminiumque"/>
+         <tok val="flaminium"/>
+         <tok val="flaminiumque"/>
+         <lm cert="0.5">
             <l>Flaminius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
             <m cert="0.166666666666666667">a e - p - - - m g</m>
@@ -1131,10 +1323,7 @@
             <m cert="0.166666666666666667">a e - s - - - m a</m>
             <m cert="0.166666666666666667">a e - p - - - n g</m>
          </lm>
-      </ana>
-      <ana><!--Flaminium Flaminiumque flaminium-->
-         <tok val="[fF]laminium(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>flaminium</l>
             <m cert="0.25">n - - s - - - n v</m>
             <m cert="0.25">n - - s - - - n a</m>
@@ -1144,20 +1333,30 @@
       </ana>
       <ana>
          <tok val="Flaminium"/>
+         <tok val="flaminium"/>
          <lm>
             <l>Flaminius</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flaminius Flaminiusque-->
-         <tok val="Flaminius(que)?"/>
+      <ana>
+         <tok val="Flaminius"/>
+         <tok val="Flaminiusque"/>
+         <tok val="flaminius"/>
+         <tok val="flaminiusque"/>
          <lm>
             <l>Flaminius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flamma Flammaque flamma flamman flammaque flammast flammaue-->
-         <tok val="[fF]lamma[q]?(ue|n|que|st)?"/>
+      <ana>
+         <tok val="Flamma"/>
+         <tok val="Flammaque"/>
+         <tok val="flamma"/>
+         <tok val="flamman"/>
+         <tok val="flammaque"/>
+         <tok val="flammast"/>
+         <tok val="flammaue"/>
          <lm cert="0.5">
             <l>flamma</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1169,8 +1368,11 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Flamma Flammaque-->
-         <tok val="Flamma(que)?"/>
+      <ana>
+         <tok val="Flamma"/>
+         <tok val="Flammaque"/>
+         <tok val="flamma"/>
+         <tok val="flammaque"/>
          <lm>
             <l>Flamma</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -1180,6 +1382,7 @@
       </ana>
       <ana>
          <tok val="Flammae"/>
+         <tok val="flammae"/>
          <lm>
             <l>Flamma</l>
             <m cert="0.333333333333333333">n e - p - - - m v</m>
@@ -1187,8 +1390,12 @@
             <m cert="0.333333333333333333">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flammae flammae flammaeque flammaeue flammaeve-->
-         <tok val="[fF]lammae[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Flammae"/>
+         <tok val="flammae"/>
+         <tok val="flammaeque"/>
+         <tok val="flammaeue"/>
+         <tok val="flammaeve"/>
          <lm>
             <l>flamma</l>
             <m cert="0.333333333333333333">n - - s - - - f d</m>
@@ -1196,15 +1403,25 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Flammae Flammain flammae flammaeque flammaeue flammaeve flammai-->
-         <tok val="[fF]lamma[e]?[q]?[uv]?(e|i|in)?"/>
+      <ana>
+         <tok val="Flammae"/>
+         <tok val="Flammain"/>
+         <tok val="flammae"/>
+         <tok val="flammaeque"/>
+         <tok val="flammaeue"/>
+         <tok val="flammaeve"/>
+         <tok val="flammai"/>
+         <tok val="flammain"/>
          <lm>
             <l>flamma</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Flammae Flammain-->
-         <tok val="Flamma(in|e)"/>
+      <ana>
+         <tok val="Flammae"/>
+         <tok val="Flammain"/>
+         <tok val="flammae"/>
+         <tok val="flammain"/>
          <lm>
             <l>Flamma</l>
             <m>n e - s - - - m g</m>
@@ -1212,20 +1429,24 @@
       </ana>
       <ana>
          <tok val="Flammam"/>
+         <tok val="flammam"/>
          <lm>
             <l>Flamma</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flammam flammam flammamque-->
-         <tok val="[fF]lammam(que)?"/>
+      <ana>
+         <tok val="Flammam"/>
+         <tok val="flammam"/>
+         <tok val="flammamque"/>
          <lm>
             <l>flamma</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Flammans flammans-->
-         <tok val="[fF]lammans"/>
+      <ana>
+         <tok val="Flammans"/>
+         <tok val="flammans"/>
          <lm>
             <l>flammo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1237,8 +1458,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Flammantia flammantia-->
-         <tok val="[fF]lammantia"/>
+      <ana>
+         <tok val="Flammantia"/>
+         <tok val="flammantia"/>
          <lm>
             <l>flammo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -1246,16 +1468,20 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Flammare flammare-->
-         <tok val="[fF]lammare"/>
+      <ana>
+         <tok val="Flammare"/>
+         <tok val="flammare"/>
          <lm>
             <l>flammo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Flammare Flammarisve flammare-->
-         <tok val="[fF]lammar(isv)?e"/>
+      <ana>
+         <tok val="Flammare"/>
+         <tok val="Flammarisve"/>
+         <tok val="flammare"/>
+         <tok val="flammarisve"/>
          <lm>
             <l>flammo</l>
             <m>v - 2 s p i p</m>
@@ -1263,34 +1489,39 @@
       </ana>
       <ana>
          <tok val="Flammarisve"/>
+         <tok val="flammarisve"/>
          <lm>
             <l>flammo</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Flammarum Flammarumque flammarum flammarumque-->
-         <tok val="[fF]lammarum(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Flammarum"/>
+         <tok val="Flammarumque"/>
+         <tok val="flammarum"/>
+         <tok val="flammarumque"/>
+         <lm cert="0.5">
             <l>flamma</l>
             <m>n - - p - - - f g</m>
          </lm>
-      </ana>
-      <ana><!--Flammarum Flammarumque-->
-         <tok val="Flammarum(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>Flamma</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Flammas"/>
+         <tok val="flammas"/>
          <lm>
             <l>Flamma</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flammas flamman flammas flammasque-->
-         <tok val="[fF]lamma(s|n|sque)"/>
+      <ana>
+         <tok val="Flammas"/>
+         <tok val="flamman"/>
+         <tok val="flammas"/>
+         <tok val="flammasque"/>
          <lm cert="0.5">
             <l>flammo</l>
             <m>v - 2 s p i a</m>
@@ -1300,8 +1531,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Flammata flammata-->
-         <tok val="[fF]lammata"/>
+      <ana>
+         <tok val="Flammata"/>
+         <tok val="flammata"/>
          <lm>
             <l>flammo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1312,34 +1544,31 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Flammatum flammatum-->
-         <tok val="[fF]lammatum"/>
+      <ana>
+         <tok val="Flammatum"/>
+         <tok val="flammatum"/>
          <lm>
             <l>flammo</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Flammatum"/>
-         <lm>
-            <l>flammo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Flammatus flammatus-->
-         <tok val="[fF]lammatus"/>
+         <tok val="Flammatus"/>
+         <tok val="flammatus"/>
          <lm>
             <l>flammo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Flammea flammea-->
-         <tok val="[fF]lammea"/>
+      <ana>
+         <tok val="Flammea"/>
+         <tok val="flammea"/>
          <lm cert="0.5">
             <l>flammeum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1356,15 +1585,17 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Flammearius flammearius-->
-         <tok val="[fF]lammearius"/>
+      <ana>
+         <tok val="Flammearius"/>
+         <tok val="flammearius"/>
          <lm>
             <l>flammearius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flammeo flammeo-->
-         <tok val="[fF]lammeo"/>
+      <ana>
+         <tok val="Flammeo"/>
+         <tok val="flammeo"/>
          <lm cert="0.5">
             <l>flammeus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1378,8 +1609,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flammeolum flammeolum-->
-         <tok val="[fF]lammeolum"/>
+      <ana>
+         <tok val="Flammeolum"/>
+         <tok val="flammeolum"/>
          <lm cert="0.5">
             <l>flammeolus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1397,15 +1629,17 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flammeolus flammeolus-->
-         <tok val="[fF]lammeolus"/>
+      <ana>
+         <tok val="Flammeolus"/>
+         <tok val="flammeolus"/>
          <lm>
             <l>flammeolus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flammescere flammescere-->
-         <tok val="[fF]lammescere"/>
+      <ana>
+         <tok val="Flammescere"/>
+         <tok val="flammescere"/>
          <lm>
             <l>flammesco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1414,8 +1648,10 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Flammeum flammeum flammeumque-->
-         <tok val="[fF]lammeum(que)?"/>
+      <ana>
+         <tok val="Flammeum"/>
+         <tok val="flammeum"/>
+         <tok val="flammeumque"/>
          <lm cert="0.5">
             <l>flammeus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1433,23 +1669,26 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flammeus flammeus-->
-         <tok val="[fF]lammeus"/>
+      <ana>
+         <tok val="Flammeus"/>
+         <tok val="flammeus"/>
          <lm>
             <l>flammeus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flammifer flammifer-->
-         <tok val="[fF]lammifer"/>
+      <ana>
+         <tok val="Flammifer"/>
+         <tok val="flammifer"/>
          <lm>
             <l>flammifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Flammifera flammifera-->
-         <tok val="[fF]lammifera"/>
+      <ana>
+         <tok val="Flammifera"/>
+         <tok val="flammifera"/>
          <lm>
             <l>flammifer</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1460,22 +1699,26 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Flammiferam flammiferam-->
-         <tok val="[fF]lammiferam"/>
+      <ana>
+         <tok val="Flammiferam"/>
+         <tok val="flammiferam"/>
          <lm>
             <l>flammifer</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Flammiferos flammiferos-->
-         <tok val="[fF]lammiferos"/>
+      <ana>
+         <tok val="Flammiferos"/>
+         <tok val="flammiferos"/>
          <lm>
             <l>flammifer</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flammiferumque flammiferum flammiferumque-->
-         <tok val="[fF]lammiferum(que|)"/>
+      <ana>
+         <tok val="Flammiferumque"/>
+         <tok val="flammiferum"/>
+         <tok val="flammiferumque"/>
          <lm>
             <l>flammifer</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1486,8 +1729,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flammiger flammiger-->
-         <tok val="[fF]lammiger"/>
+      <ana>
+         <tok val="Flammiger"/>
+         <tok val="flammiger"/>
          <lm>
             <l>flammigo</l>
             <m>v - 1 s p s p</m>
@@ -1495,6 +1739,7 @@
       </ana>
       <ana>
          <tok val="Flammigerare"/>
+         <tok val="flammigerare"/>
          <lm>
             <l>flammigero</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1504,21 +1749,24 @@
       </ana>
       <ana>
          <tok val="Flammis"/>
+         <tok val="flammis"/>
          <lm>
             <l>Flamma</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Flammo flammo-->
-         <tok val="[fF]lammo"/>
+      <ana>
+         <tok val="Flammo"/>
+         <tok val="flammo"/>
          <lm>
             <l>flammo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flammula flammula-->
-         <tok val="[fF]lammula"/>
+      <ana>
+         <tok val="Flammula"/>
+         <tok val="flammula"/>
          <lm>
             <l>flammula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1528,6 +1776,7 @@
       </ana>
       <ana>
          <tok val="Flamomenses"/>
+         <tok val="flamomenses"/>
          <lm>
             <l>Flamomenses</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1535,15 +1784,18 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Flant flant-->
-         <tok val="[fF]lant"/>
+      <ana>
+         <tok val="Flant"/>
+         <tok val="flant"/>
          <lm>
             <l>flo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Flante flante flanti-->
-         <tok val="[fF]lant[ei]"/>
+      <ana>
+         <tok val="Flante"/>
+         <tok val="flante"/>
+         <tok val="flanti"/>
          <lm>
             <l>flo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1551,8 +1803,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Flantibus flantibus-->
-         <tok val="[fF]lantibus"/>
+      <ana>
+         <tok val="Flantibus"/>
+         <tok val="flantibus"/>
          <lm>
             <l>flo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -1563,23 +1816,27 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Flare flare-->
-         <tok val="[fF]lare"/>
+      <ana>
+         <tok val="Flare"/>
+         <tok val="flare"/>
          <lm>
             <l>flo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Flare flare flaris-->
-         <tok val="[fF]lar(e|is)"/>
+      <ana>
+         <tok val="Flare"/>
+         <tok val="flare"/>
+         <tok val="flaris"/>
          <lm>
             <l>flo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Flat flat-->
-         <tok val="[fF]lat"/>
+      <ana>
+         <tok val="Flat"/>
+         <tok val="flat"/>
          <lm>
             <l>flo</l>
             <m>v - 3 s p i a</m>
@@ -1587,29 +1844,35 @@
       </ana>
       <ana>
          <tok val="Flate"/>
+         <tok val="flate"/>
          <lm>
             <l>flo</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Flate Flatum flatum-->
-         <tok val="[fF]lat(um|e)"/>
+      <ana>
+         <tok val="Flate"/>
+         <tok val="Flatum"/>
+         <tok val="flate"/>
+         <tok val="flatum"/>
          <lm>
             <l>flo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Flatibus flatibus-->
-         <tok val="[fF]latibus"/>
+      <ana>
+         <tok val="Flatibus"/>
+         <tok val="flatibus"/>
          <lm>
             <l>flatus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Flator flator-->
-         <tok val="[fF]lator"/>
+      <ana>
+         <tok val="Flator"/>
+         <tok val="flator"/>
          <lm cert="0.5">
             <l>flator</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1620,8 +1883,10 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Flatu flatu flatuque-->
-         <tok val="[fF]latu(que)?"/>
+      <ana>
+         <tok val="Flatu"/>
+         <tok val="flatu"/>
+         <tok val="flatuque"/>
          <lm cert="0.5">
             <l>flatus</l>
             <m>n - - s - - - m b</m>
@@ -1631,15 +1896,17 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Flatum flatum-->
-         <tok val="[fF]latum"/>
+      <ana>
+         <tok val="Flatum"/>
+         <tok val="flatum"/>
          <lm cert="0.5">
             <l>flo</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - s r p p m a</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
          <lm cert="0.5">
             <l>flatus</l>
@@ -1647,14 +1914,9 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Flatum"/>
-         <lm>
-            <l>flo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Flatus flatus flatusque-->
-         <tok val="[fF]latus(que)?"/>
+         <tok val="Flatus"/>
+         <tok val="flatus"/>
+         <tok val="flatusque"/>
          <lm cert="0.5">
             <l>flatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1667,8 +1929,14 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Flaua Flava Flavaque flaua flauaque flava flavaque-->
-         <tok val="[fF]l[a]?[vu]?a(que|va|ua)"/>
+      <ana>
+         <tok val="Flaua"/>
+         <tok val="Flava"/>
+         <tok val="Flavaque"/>
+         <tok val="flaua"/>
+         <tok val="flauaque"/>
+         <tok val="flava"/>
+         <tok val="flavaque"/>
          <lm>
             <l>flavus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1679,8 +1947,12 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Flauae flauae flauaeque flavae flavaeque-->
-         <tok val="[fF]la[vu]ae(que)?"/>
+      <ana>
+         <tok val="Flauae"/>
+         <tok val="flauae"/>
+         <tok val="flauaeque"/>
+         <tok val="flavae"/>
+         <tok val="flavaeque"/>
          <lm>
             <l>flavus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1689,15 +1961,21 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Flauam flauam flauamque flavam flavamque-->
-         <tok val="[fF]la[vu]am(que)?"/>
+      <ana>
+         <tok val="Flauam"/>
+         <tok val="flauam"/>
+         <tok val="flauamque"/>
+         <tok val="flavam"/>
+         <tok val="flavamque"/>
          <lm>
             <l>flavus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Flauens flavens-->
-         <tok val="[fF]la[vu]ens"/>
+      <ana>
+         <tok val="Flauens"/>
+         <tok val="flauens"/>
+         <tok val="flavens"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1709,8 +1987,11 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Flauentes flauentes flaventes flaventesque-->
-         <tok val="[fF]la[uv]entes(que)?"/>
+      <ana>
+         <tok val="Flauentes"/>
+         <tok val="flauentes"/>
+         <tok val="flaventes"/>
+         <tok val="flaventesque"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1719,16 +2000,26 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Flauentes Flaventis flauentes flauentis flauentisque flaventes flaventesque flaventis-->
-         <tok val="[fF]la[uv]ent[ei]s(que)?"/>
+      <ana>
+         <tok val="Flauentes"/>
+         <tok val="Flaventis"/>
+         <tok val="flauentes"/>
+         <tok val="flauentis"/>
+         <tok val="flauentisque"/>
+         <tok val="flaventes"/>
+         <tok val="flaventesque"/>
+         <tok val="flaventis"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Flauentia flauentia flauentiaque flaventia-->
-         <tok val="[fF]la[uv]entia(que)?"/>
+      <ana>
+         <tok val="Flauentia"/>
+         <tok val="flauentia"/>
+         <tok val="flauentiaque"/>
+         <tok val="flaventia"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -1736,22 +2027,29 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Flaueo flaveo-->
-         <tok val="[fF]la[vu]eo"/>
+      <ana>
+         <tok val="Flaueo"/>
+         <tok val="flaueo"/>
+         <tok val="flaveo"/>
          <lm>
             <l>flaveo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flauere flauere flavere flaverunt-->
-         <tok val="[fF]la[uv]er(e|unt)"/>
+      <ana>
+         <tok val="Flauere"/>
+         <tok val="flauere"/>
+         <tok val="flavere"/>
+         <tok val="flaverunt"/>
          <lm>
             <l>flo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Flauere flauere flavere-->
-         <tok val="[fF]la[uv]ere"/>
+      <ana>
+         <tok val="Flauere"/>
+         <tok val="flauere"/>
+         <tok val="flavere"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1759,8 +2057,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Flauescere flauescere flavescere-->
-         <tok val="[fF]la[uv]escere"/>
+      <ana>
+         <tok val="Flauescere"/>
+         <tok val="flauescere"/>
+         <tok val="flavescere"/>
          <lm>
             <l>flavesco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1769,22 +2069,31 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Flauescit flauescit flavescit-->
-         <tok val="[fF]la[uv]escit"/>
+      <ana>
+         <tok val="Flauescit"/>
+         <tok val="flauescit"/>
+         <tok val="flavescit"/>
          <lm>
             <l>flavesco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flauesco flavesco-->
-         <tok val="[fF]la[vu]esco"/>
+      <ana>
+         <tok val="Flauesco"/>
+         <tok val="flauesco"/>
+         <tok val="flavesco"/>
          <lm>
             <l>flavesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Flaui Flavi flaui flavi flavique FLAVI-->
-         <tok val="[Ff]?(la)?[vu]?[i]?(que|FLAVI)?"/>
+      <ana>
+         <tok val="FLAVI"/>
+         <tok val="Flaui"/>
+         <tok val="Flavi"/>
+         <tok val="flaui"/>
+         <tok val="flavi"/>
+         <tok val="flavique"/>
          <lm>
             <l>flavus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1793,15 +2102,24 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flaui flaui flavi flavique FLAVI-->
-         <tok val="[fF]?(la)?[uv]?[i]?(que|FLAVI)?"/>
+      <ana>
+         <tok val="FLAVI"/>
+         <tok val="Flaui"/>
+         <tok val="flaui"/>
+         <tok val="flavi"/>
+         <tok val="flavique"/>
          <lm>
             <l>flo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Flauia Flavia Flavian-->
-         <tok val="Fla[vu]ia[n]?"/>
+      <ana>
+         <tok val="Flauia"/>
+         <tok val="Flavia"/>
+         <tok val="Flavian"/>
+         <tok val="flauia"/>
+         <tok val="flavia"/>
+         <tok val="flavian"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1812,8 +2130,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Flauiae Flaviae-->
-         <tok val="Fla[vu]iae"/>
+      <ana>
+         <tok val="Flauiae"/>
+         <tok val="Flaviae"/>
+         <tok val="flauiae"/>
+         <tok val="flaviae"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1822,8 +2143,11 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Flauialium Flavialium-->
-         <tok val="Fla[vu]ialium"/>
+      <ana>
+         <tok val="Flauialium"/>
+         <tok val="Flavialium"/>
+         <tok val="flauialium"/>
+         <tok val="flavialium"/>
          <lm>
             <l>Flavialis</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -1833,13 +2157,17 @@
       </ana>
       <ana>
          <tok val="Flauiam"/>
+         <tok val="flauiam"/>
          <lm>
             <l>Flavius</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Flauiani Flaviani-->
-         <tok val="Fla[vu]iani"/>
+      <ana>
+         <tok val="Flauiani"/>
+         <tok val="Flaviani"/>
+         <tok val="flauiani"/>
+         <tok val="flaviani"/>
          <lm>
             <l>Flavianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1848,8 +2176,11 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Flauiano Flaviano-->
-         <tok val="Fla[vu]iano"/>
+      <ana>
+         <tok val="Flauiano"/>
+         <tok val="Flaviano"/>
+         <tok val="flauiano"/>
+         <tok val="flaviano"/>
          <lm>
             <l>Flavianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1858,15 +2189,21 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Flauianos Flavianos-->
-         <tok val="Fla[vu]ianos"/>
+      <ana>
+         <tok val="Flauianos"/>
+         <tok val="Flavianos"/>
+         <tok val="flauianos"/>
+         <tok val="flavianos"/>
          <lm>
             <l>Flavianus</l>
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flauianum Flavianum-->
-         <tok val="Fla[vu]ianum"/>
+      <ana>
+         <tok val="Flauianum"/>
+         <tok val="Flavianum"/>
+         <tok val="flauianum"/>
+         <tok val="flavianum"/>
          <lm>
             <l>Flavianus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -1875,16 +2212,24 @@
             <m cert="0.25">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Flauianum Flavianorum Flavianum-->
-         <tok val="Fla[vu]ian(or)?um"/>
+      <ana>
+         <tok val="Flauianum"/>
+         <tok val="Flavianorum"/>
+         <tok val="Flavianum"/>
+         <tok val="flauianum"/>
+         <tok val="flavianorum"/>
+         <tok val="flavianum"/>
          <lm>
             <l>Flavianus</l>
             <m cert="0.5">a e - p - - - m g</m>
             <m cert="0.5">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flauii Flavii-->
-         <tok val="Fla[vu]ii"/>
+      <ana>
+         <tok val="Flauii"/>
+         <tok val="Flavii"/>
+         <tok val="flauii"/>
+         <tok val="flavii"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1893,8 +2238,11 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Flauina Flavina-->
-         <tok val="Fla[vu]ina"/>
+      <ana>
+         <tok val="Flauina"/>
+         <tok val="Flavina"/>
+         <tok val="flauina"/>
+         <tok val="flavina"/>
          <lm>
             <l>Flavina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1902,8 +2250,13 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Flauinia Flauiniaque Flaviniaque-->
-         <tok val="Fla[vu]inia(que|)"/>
+      <ana>
+         <tok val="Flauinia"/>
+         <tok val="Flauiniaque"/>
+         <tok val="Flaviniaque"/>
+         <tok val="flauinia"/>
+         <tok val="flauiniaque"/>
+         <tok val="flaviniaque"/>
          <lm cert="0.5">
             <l>Flavinium</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1920,8 +2273,11 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Flauinium Flavinium-->
-         <tok val="Fla[vu]inium"/>
+      <ana>
+         <tok val="Flauinium"/>
+         <tok val="Flavinium"/>
+         <tok val="flauinium"/>
+         <tok val="flavinium"/>
          <lm cert="0.5">
             <l>Flavinium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1939,8 +2295,11 @@
             <m cert="0.166666666666666667">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flauio Flavio-->
-         <tok val="Fla[vu]io"/>
+      <ana>
+         <tok val="Flauio"/>
+         <tok val="Flavio"/>
+         <tok val="flauio"/>
+         <tok val="flavio"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1951,21 +2310,31 @@
       </ana>
       <ana>
          <tok val="Flauiorum"/>
+         <tok val="flauiorum"/>
          <lm>
             <l>flavus</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Flauiorum Flauium Flavium Flaviumque-->
-         <tok val="Fla(vi)?u[i]?(or)?[u]?m(que)?"/>
+      <ana>
+         <tok val="Flauiorum"/>
+         <tok val="Flauium"/>
+         <tok val="Flavium"/>
+         <tok val="Flaviumque"/>
+         <tok val="flauiorum"/>
+         <tok val="flauium"/>
+         <tok val="flavium"/>
+         <tok val="flaviumque"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.5">a e - p - - - m g</m>
             <m cert="0.5">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Flauis flauis flavis-->
-         <tok val="[fF]la[uv]is"/>
+      <ana>
+         <tok val="Flauis"/>
+         <tok val="flauis"/>
+         <tok val="flavis"/>
          <lm>
             <l>flavus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1976,8 +2345,13 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Flauium Flavium Flaviumque-->
-         <tok val="Fla[vu]ium(que)?"/>
+      <ana>
+         <tok val="Flauium"/>
+         <tok val="Flavium"/>
+         <tok val="Flaviumque"/>
+         <tok val="flauium"/>
+         <tok val="flavium"/>
+         <tok val="flaviumque"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -1986,28 +2360,31 @@
             <m cert="0.25">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Flauius Flavius-->
-         <tok val="Fla[vu]ius"/>
+      <ana>
+         <tok val="Flauius"/>
+         <tok val="Flavius"/>
+         <tok val="flauius"/>
+         <tok val="flavius"/>
          <lm cert="0.5">
             <l>flavus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>Flavius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flauius Flavius flauius flavius-->
-         <tok val="[Ff]la[vu]ius"/>
-         <lm>
-            <l>flavus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Flauo Flavo flauo flauoque flavo flavoque FLAVO-->
-         <tok val="[fF]?(la)?[vu]?[o]?(que|FLAVO)?"/>
+      <ana>
+         <tok val="FLAVO"/>
+         <tok val="Flauo"/>
+         <tok val="Flavo"/>
+         <tok val="flauo"/>
+         <tok val="flauoque"/>
+         <tok val="flavo"/>
+         <tok val="flavoque"/>
          <lm>
             <l>flavus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2016,8 +2393,16 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Flauum Flauumque Flavum flauom flauum flauumque flavom flavum flavumque-->
-         <tok val="[fF]la[uv]?[u]?[o]?[m]?(que|vom|vum)?"/>
+      <ana>
+         <tok val="Flauum"/>
+         <tok val="Flauumque"/>
+         <tok val="Flavum"/>
+         <tok val="flauom"/>
+         <tok val="flauum"/>
+         <tok val="flauumque"/>
+         <tok val="flavom"/>
+         <tok val="flavum"/>
+         <tok val="flavumque"/>
          <lm>
             <l>flavus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2025,37 +2410,63 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Flauum Flauumque Flavum flauum flauumque flavorum flavum flavumque-->
-         <tok val="[fF]la(u|v|vor)um(que)?"/>
+      <ana>
+         <tok val="Flauum"/>
+         <tok val="Flauumque"/>
+         <tok val="Flavum"/>
+         <tok val="flauum"/>
+         <tok val="flauumque"/>
+         <tok val="flavorum"/>
+         <tok val="flavum"/>
+         <tok val="flavumque"/>
          <lm>
             <l>flavus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Flauum Flauumque Flave Flavum flauom flauum flauumque flave flavom flavum flavumque-->
-         <tok val="[fF]la[uv]?[u]?[o]?[m]?(que|vom|vum|ve)?"/>
+      <ana>
+         <tok val="Flauum"/>
+         <tok val="Flauumque"/>
+         <tok val="Flave"/>
+         <tok val="Flavum"/>
+         <tok val="flauom"/>
+         <tok val="flauum"/>
+         <tok val="flauumque"/>
+         <tok val="flave"/>
+         <tok val="flavom"/>
+         <tok val="flavum"/>
+         <tok val="flavumque"/>
          <lm>
             <l>flavus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Flauus Flavus flauus flauusque flavus flavusque-->
-         <tok val="[fF]la[vu]us(que)?"/>
+      <ana>
+         <tok val="Flauus"/>
+         <tok val="Flavus"/>
+         <tok val="flauus"/>
+         <tok val="flauusque"/>
+         <tok val="flavus"/>
+         <tok val="flavusque"/>
          <lm>
             <l>flavus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Flave flauius flave flavius-->
-         <tok val="[fF]la[vu]?(ius|ve)"/>
+      <ana>
+         <tok val="Flave"/>
+         <tok val="flauius"/>
+         <tok val="flave"/>
+         <tok val="flavius"/>
          <lm>
             <l>flavus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Flave flave-->
-         <tok val="[fF]lave"/>
+      <ana>
+         <tok val="Flave"/>
+         <tok val="flave"/>
          <lm cert="0.5">
             <l>flaveo</l>
             <m>v - 2 s p m a</m>
@@ -2065,8 +2476,11 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Flaventis flauentis flauentisque flaventis-->
-         <tok val="[fF]la[vu]entis(que)?"/>
+      <ana>
+         <tok val="Flaventis"/>
+         <tok val="flauentis"/>
+         <tok val="flauentisque"/>
+         <tok val="flaventis"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -2076,6 +2490,7 @@
       </ana>
       <ana>
          <tok val="Flavi"/>
+         <tok val="flavi"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -2084,6 +2499,7 @@
       </ana>
       <ana>
          <tok val="Flavialis"/>
+         <tok val="flavialis"/>
          <lm>
             <l>Flavialis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -2097,8 +2513,11 @@
             <m cert="0.111111111111111111">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Flavian Flavias-->
-         <tok val="Flavia[sn]"/>
+      <ana>
+         <tok val="Flavian"/>
+         <tok val="Flavias"/>
+         <tok val="flavian"/>
+         <tok val="flavias"/>
          <lm>
             <l>Flavius</l>
             <m>a e - p - - - f a</m>
@@ -2106,6 +2525,7 @@
       </ana>
       <ana>
          <tok val="Flavianarum"/>
+         <tok val="flavianarum"/>
          <lm>
             <l>Flavianus</l>
             <m>a e - p - - - f g</m>
@@ -2113,6 +2533,7 @@
       </ana>
       <ana>
          <tok val="Flavianas"/>
+         <tok val="flavianas"/>
          <lm>
             <l>Flavianus</l>
             <m>a e - p - - - f a</m>
@@ -2120,6 +2541,7 @@
       </ana>
       <ana>
          <tok val="Flavianis"/>
+         <tok val="flavianis"/>
          <lm>
             <l>Flavianus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2132,6 +2554,7 @@
       </ana>
       <ana>
          <tok val="Flavianus"/>
+         <tok val="flavianus"/>
          <lm>
             <l>Flavianus</l>
             <m>a e - s - - - m n</m>
@@ -2139,6 +2562,7 @@
       </ana>
       <ana>
          <tok val="Flaviis"/>
+         <tok val="flaviis"/>
          <lm>
             <l>Flavius</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2151,21 +2575,26 @@
       </ana>
       <ana>
          <tok val="Flavini"/>
+         <tok val="flavini"/>
          <lm>
             <l>Flavinius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Flavit flauit flavit-->
-         <tok val="[fF]la[vu]it"/>
+      <ana>
+         <tok val="Flavit"/>
+         <tok val="flauit"/>
+         <tok val="flavit"/>
          <lm>
             <l>flo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Flavos flauos flavos-->
-         <tok val="[fF]la[vu]os"/>
+      <ana>
+         <tok val="Flavos"/>
+         <tok val="flauos"/>
+         <tok val="flavos"/>
          <lm>
             <l>flavus</l>
             <m>a - - p - - - m a</m>
@@ -2486,8 +2915,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--flaccos Flaccos-->
-         <tok val="[Ff]laccos"/>
+      <ana>
+         <tok val="Flaccos"/>
+         <tok val="flaccos"/>
          <lm>
             <l>flaccus</l>
             <m>a - - p - - - m a</m>
@@ -2623,8 +3053,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--flagellati flagellatique-->
-         <tok val="flagellati(que)?"/>
+      <ana>
+         <tok val="flagellati"/>
+         <tok val="flagellatique"/>
          <lm>
             <l>flagello</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2686,15 +3117,17 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--flagellatur flagellatur’-->
-         <tok val="flagellatur[’]?"/>
+      <ana>
+         <tok val="flagellatur"/>
+         <tok val="flagellatur’"/>
          <lm>
             <l>flagello</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--flagellauit flagellavit-->
-         <tok val="flagella[vu]it"/>
+      <ana>
+         <tok val="flagellauit"/>
+         <tok val="flagellavit"/>
          <lm>
             <l>flagello</l>
             <m>v - 3 s r i a</m>
@@ -2825,8 +3258,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--flagitante flagitanti-->
-         <tok val="flagitant[ie]"/>
+      <ana>
+         <tok val="flagitante"/>
+         <tok val="flagitanti"/>
          <lm>
             <l>flagito</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2852,8 +3286,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--flagitantes flagitantis-->
-         <tok val="flagitant[ie]s"/>
+      <ana>
+         <tok val="flagitantes"/>
+         <tok val="flagitantis"/>
          <lm>
             <l>flagito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2869,8 +3304,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--flagitantibus flagitantibusque-->
-         <tok val="flagitantibus(que)?"/>
+      <ana>
+         <tok val="flagitantibus"/>
+         <tok val="flagitantibusque"/>
          <lm>
             <l>flagito</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -2906,8 +3342,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--flagitarat flagitaverat-->
-         <tok val="flagita(ve)?rat"/>
+      <ana>
+         <tok val="flagitarat"/>
+         <tok val="flagitaverat"/>
          <lm>
             <l>flagito</l>
             <m>v - 3 s l i a</m>
@@ -2948,8 +3385,10 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--flagitari flagitarier flagitarique-->
-         <tok val="flagitari(er|que)?"/>
+      <ana>
+         <tok val="flagitari"/>
+         <tok val="flagitarier"/>
+         <tok val="flagitarique"/>
          <lm>
             <l>flagito</l>
             <m>v - - - p n p</m>
@@ -2969,8 +3408,9 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--flagitasset flagitavisset-->
-         <tok val="flagita(vi)?sset"/>
+      <ana>
+         <tok val="flagitasset"/>
+         <tok val="flagitavisset"/>
          <lm>
             <l>flagito</l>
             <m>v - 3 s l s a</m>
@@ -3020,8 +3460,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--flagitate flagitatum-->
-         <tok val="flagitat(um|e)"/>
+      <ana>
+         <tok val="flagitate"/>
+         <tok val="flagitatum"/>
          <lm>
             <l>flagito</l>
             <m>v - - s r p p n v</m>
@@ -3130,8 +3571,9 @@
             <m cert="0.25">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--flagitatum flagitatorum-->
-         <tok val="flagitat(or)?um"/>
+      <ana>
+         <tok val="flagitatorum"/>
+         <tok val="flagitatum"/>
          <lm>
             <l>flagito</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -3152,16 +3594,18 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--flagitauerit flagitaverit-->
-         <tok val="flagita[vu]erit"/>
+      <ana>
+         <tok val="flagitauerit"/>
+         <tok val="flagitaverit"/>
          <lm>
             <l>flagito</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--flagitauit flagitavit-->
-         <tok val="flagita[vu]it"/>
+      <ana>
+         <tok val="flagitauit"/>
+         <tok val="flagitavit"/>
          <lm>
             <l>flagito</l>
             <m>v - 3 s r i a</m>
@@ -3276,8 +3720,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--flagitiosis flagitiosisque-->
-         <tok val="flagitiosis(que)?"/>
+      <ana>
+         <tok val="flagitiosis"/>
+         <tok val="flagitiosisque"/>
          <lm>
             <l>flagitiosus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -3288,8 +3733,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--flagitiosissima flagitiosissuma-->
-         <tok val="flagitiosiss[ui]ma"/>
+      <ana>
+         <tok val="flagitiosissima"/>
+         <tok val="flagitiosissuma"/>
          <lm>
             <l>flagitiosus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -3339,8 +3785,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--flagitiosissimo flagitiosissimoque-->
-         <tok val="flagitiosissimo(que)?"/>
+      <ana>
+         <tok val="flagitiosissimo"/>
+         <tok val="flagitiosissimoque"/>
          <lm>
             <l>flagitiosus</l>
             <m cert="0.25">a - - s - - - n d s</m>
@@ -3356,8 +3803,9 @@
             <m>a - - p - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--flagitiosissimum flagitiosissumum-->
-         <tok val="flagitiosiss[ui]mum"/>
+      <ana>
+         <tok val="flagitiosissimum"/>
+         <tok val="flagitiosissumum"/>
          <lm>
             <l>flagitiosus</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -3393,16 +3841,19 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--flagitiosorum flagitiosum flagitiosumque-->
-         <tok val="flagitios(or)?um(que)?"/>
+      <ana>
+         <tok val="flagitiosorum"/>
+         <tok val="flagitiosum"/>
+         <tok val="flagitiosumque"/>
          <lm>
             <l>flagitiosus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--flagitiosum flagitiosumque-->
-         <tok val="flagitiosum(que)?"/>
+      <ana>
+         <tok val="flagitiosum"/>
+         <tok val="flagitiosumque"/>
          <lm>
             <l>flagitiosus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -3438,15 +3889,17 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--flagran flagras-->
-         <tok val="flagra[sn]"/>
+      <ana>
+         <tok val="flagran"/>
+         <tok val="flagras"/>
          <lm>
             <l>flagro</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--flagranti flagrantique-->
-         <tok val="flagranti(que)?"/>
+      <ana>
+         <tok val="flagranti"/>
+         <tok val="flagrantique"/>
          <lm>
             <l>flagro</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -3491,8 +3944,9 @@
             <m cert="0.166666666666666667">v - - p p p a m v c</m>
          </lm>
       </ana>
-      <ana><!--flagrantissima flagrantissimaque-->
-         <tok val="flagrantissima(que)?"/>
+      <ana>
+         <tok val="flagrantissima"/>
+         <tok val="flagrantissimaque"/>
          <lm>
             <l>flagro</l>
             <m cert="0.166666666666666667">v - - s p p a f n s</m>
@@ -3545,8 +3999,9 @@
             <m cert="0.25">v - - s p p a n b s</m>
          </lm>
       </ana>
-      <ana><!--flagrantissimum flagrantissumum-->
-         <tok val="flagrantiss[ui]mum"/>
+      <ana>
+         <tok val="flagrantissimum"/>
+         <tok val="flagrantissumum"/>
          <lm>
             <l>flagro</l>
             <m cert="0.2">v - - p p p a n g s</m>
@@ -3596,8 +4051,10 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--flagrarunt flagravere flagraverunt-->
-         <tok val="flagra(ve)?r(unt|e)"/>
+      <ana>
+         <tok val="flagrarunt"/>
+         <tok val="flagravere"/>
+         <tok val="flagraverunt"/>
          <lm>
             <l>flagro</l>
             <m>v - 3 p r i a</m>
@@ -3662,8 +4119,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--flagrauerit flagraverit-->
-         <tok val="flagra[vu]erit"/>
+      <ana>
+         <tok val="flagrauerit"/>
+         <tok val="flagraverit"/>
          <lm>
             <l>flagro</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -3758,8 +4216,9 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--flamini flaminii-->
-         <tok val="flamini[i]?"/>
+      <ana>
+         <tok val="flamini"/>
+         <tok val="flaminii"/>
          <lm>
             <l>flaminius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -3923,8 +4382,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--flammante flammanti-->
-         <tok val="flammant[ie]"/>
+      <ana>
+         <tok val="flammante"/>
+         <tok val="flammanti"/>
          <lm>
             <l>flammo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -4312,8 +4772,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--flammiuomus flammivomus-->
-         <tok val="flammi[vu]omus"/>
+      <ana>
+         <tok val="flammiuomus"/>
+         <tok val="flammivomus"/>
          <lm>
             <l>flammivomus</l>
             <m>a - - s - - - m n</m>
@@ -4357,8 +4818,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--flan flas-->
-         <tok val="fla[sn]"/>
+      <ana>
+         <tok val="flan"/>
+         <tok val="flas"/>
          <lm>
             <l>flo</l>
             <m>v - 2 s p i a</m>
@@ -4440,8 +4902,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--flantes flantis-->
-         <tok val="flant[ie]s"/>
+      <ana>
+         <tok val="flantes"/>
+         <tok val="flantis"/>
          <lm>
             <l>flo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -4571,8 +5034,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--flatili flatilique-->
-         <tok val="flatili(que)?"/>
+      <ana>
+         <tok val="flatili"/>
+         <tok val="flatilique"/>
          <lm>
             <l>flatilis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -4657,8 +5121,9 @@
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--flatur flaturque-->
-         <tok val="flatur(que)?"/>
+      <ana>
+         <tok val="flatur"/>
+         <tok val="flaturque"/>
          <lm>
             <l>flo</l>
             <m>v - 3 s p i p</m>
@@ -4779,8 +5244,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--flauas flavas-->
-         <tok val="fla[vu]as"/>
+      <ana>
+         <tok val="flauas"/>
+         <tok val="flavas"/>
          <lm>
             <l>flavus</l>
             <m>a - - p - - - f a</m>
@@ -4793,8 +5259,10 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--flauente flauenti flaventi-->
-         <tok val="fla[uv]ent[ie]"/>
+      <ana>
+         <tok val="flauente"/>
+         <tok val="flauenti"/>
+         <tok val="flaventi"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -4802,16 +5270,19 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--flauentem flauentemque flaventem-->
-         <tok val="fla[vu]entem(que)?"/>
+      <ana>
+         <tok val="flauentem"/>
+         <tok val="flauentemque"/>
+         <tok val="flaventem"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--flauenti flaventi-->
-         <tok val="fla[vu]enti"/>
+      <ana>
+         <tok val="flauenti"/>
+         <tok val="flaventi"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -4819,8 +5290,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--flauentibus flaventibus-->
-         <tok val="fla[vu]entibus"/>
+      <ana>
+         <tok val="flauentibus"/>
+         <tok val="flaventibus"/>
          <lm>
             <l>flaveo</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -4831,8 +5303,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--flauerit flaverit-->
-         <tok val="fla[vu]erit"/>
+      <ana>
+         <tok val="flauerit"/>
+         <tok val="flaverit"/>
          <lm>
             <l>flo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -4853,8 +5326,9 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--flauescente flavescente-->
-         <tok val="fla[vu]escente"/>
+      <ana>
+         <tok val="flauescente"/>
+         <tok val="flavescente"/>
          <lm>
             <l>flavesco</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -4862,8 +5336,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--flauescentibus flavescentibus-->
-         <tok val="fla[vu]escentibus"/>
+      <ana>
+         <tok val="flauescentibus"/>
+         <tok val="flavescentibus"/>
          <lm>
             <l>flavesco</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -4874,22 +5349,25 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--flauescet flavescet-->
-         <tok val="fla[vu]escet"/>
+      <ana>
+         <tok val="flauescet"/>
+         <tok val="flavescet"/>
          <lm>
             <l>flavesco</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--flauescunt flavescunt-->
-         <tok val="fla[vu]escunt"/>
+      <ana>
+         <tok val="flauescunt"/>
+         <tok val="flavescunt"/>
          <lm>
             <l>flavesco</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--flauisse flavisse-->
-         <tok val="fla[vu]isse"/>
+      <ana>
+         <tok val="flauisse"/>
+         <tok val="flavisse"/>
          <lm>
             <l>flo</l>
             <m>v - - - r n a</m>

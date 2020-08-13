@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusmec">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:mec">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to mec</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-mec.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>MEC</tok-starts-with>
       <tok-starts-with>MEc</tok-starts-with>
       <tok-starts-with>Mec</tok-starts-with>
       <tok-starts-with>mec</tok-starts-with>
       <tok-starts-with>méc</tok-starts-with>
-      <ana><!--MECHANICA Mechanica mechanica mechanicaque-->
-         <tok val="[mM]?(echanica)?(que|MECHANICA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:33:07.677-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:33:07.677-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-mec.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="MECHANICA"/>
+         <tok val="Mechanica"/>
+         <tok val="mechanica"/>
+         <tok val="mechanicaque"/>
          <lm cert="0.5">
             <l>mechanica</l>
             <m cert="0.166666666666666667">n - - s - - - f n</m>
@@ -58,8 +69,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MECHANICAE Mechanicae mechanicae-->
-         <tok val="[mM]?(echanicae|MECHANICAE)"/>
+      <ana>
+         <tok val="MECHANICAE"/>
+         <tok val="Mechanicae"/>
+         <tok val="mechanicae"/>
          <lm cert="0.5">
             <l>mechanicus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -75,8 +88,11 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--MECHANICAM MEchanicam Mechanicam mechanicam-->
-         <tok val="[M]?(e|E|me)?(chanicam|MECHANICAM)"/>
+      <ana>
+         <tok val="MECHANICAM"/>
+         <tok val="MEchanicam"/>
+         <tok val="Mechanicam"/>
+         <tok val="mechanicam"/>
          <lm cert="0.5">
             <l>mechanicus</l>
             <m>a - - s - - - f a</m>
@@ -86,8 +102,10 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--MECHANICARUM Mechanicarum mechanicarum-->
-         <tok val="[mM]?(echanicarum|MECHANICARUM)"/>
+      <ana>
+         <tok val="MECHANICARUM"/>
+         <tok val="Mechanicarum"/>
+         <tok val="mechanicarum"/>
          <lm cert="0.5">
             <l>mechanica</l>
             <m>n - - p - - - f g</m>
@@ -97,8 +115,10 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--MECHANICAS Mechanicas mechanicas-->
-         <tok val="[mM]?(echanicas|MECHANICAS)"/>
+      <ana>
+         <tok val="MECHANICAS"/>
+         <tok val="Mechanicas"/>
+         <tok val="mechanicas"/>
          <lm cert="0.5">
             <l>mechanicus</l>
             <m>a - - p - - - f a</m>
@@ -108,8 +128,12 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--MECHANICE Mechanice Mechanicen mechanice-->
-         <tok val="[Mm]?(echanice)?(n|MECHANICE)?"/>
+      <ana>
+         <tok val="MECHANICE"/>
+         <tok val="Mechanice"/>
+         <tok val="Mechanicen"/>
+         <tok val="mechanice"/>
+         <tok val="mechanicen"/>
          <lm>
             <l>mechanicus</l>
             <m cert="0.333333333333333333">d</m>
@@ -117,15 +141,23 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--MECHANICE Mechanice Mechanicen Mechanicum mechanice mechanicum-->
-         <tok val="[Mm]?(echanic)?[e]?(n|um|e|MECHANICE)?"/>
+      <ana>
+         <tok val="MECHANICE"/>
+         <tok val="Mechanice"/>
+         <tok val="Mechanicen"/>
+         <tok val="Mechanicum"/>
+         <tok val="mechanice"/>
+         <tok val="mechanicen"/>
+         <tok val="mechanicum"/>
          <lm>
             <l>mechanicus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MECHANICI Mechanici mechanici-->
-         <tok val="[mM]?(echanici|MECHANICI)"/>
+      <ana>
+         <tok val="MECHANICI"/>
+         <tok val="Mechanici"/>
+         <tok val="mechanici"/>
          <lm>
             <l>mechanicus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -137,8 +169,12 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--MECHANICIS Mechanicis Mechanicisque mechanicis mechanicisque-->
-         <tok val="[mM]?(echanicis)?(que|MECHANICIS)?"/>
+      <ana>
+         <tok val="MECHANICIS"/>
+         <tok val="Mechanicis"/>
+         <tok val="Mechanicisque"/>
+         <tok val="mechanicis"/>
+         <tok val="mechanicisque"/>
          <lm cert="0.5">
             <l>mechanicus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -158,8 +194,12 @@
             <m cert="0.25">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--MECHANICORUM Mechanicorum Mechanicum mechanicorum mechanicum-->
-         <tok val="[mM]?(echanic)?(or)?(um|MECHANICORUM)"/>
+      <ana>
+         <tok val="MECHANICORUM"/>
+         <tok val="Mechanicorum"/>
+         <tok val="Mechanicum"/>
+         <tok val="mechanicorum"/>
+         <tok val="mechanicum"/>
          <lm cert="0.5">
             <l>mechanicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -171,22 +211,32 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--MECVM Mecum mecum mecumque mecumst mecúm mécum-->
-         <tok val="[mM]?(e|mé|me)?[c]?[uú]?[m]?(st|que|MECVM)?"/>
+      <ana>
+         <tok val="MECVM"/>
+         <tok val="Mecum"/>
+         <tok val="mecum"/>
+         <tok val="mecumque"/>
+         <tok val="mecumst"/>
+         <tok val="mecvm"/>
+         <tok val="mecúm"/>
+         <tok val="mécum"/>
          <lm>
             <l>ego</l>
             <m>p p - s - - - - b</m>
          </lm>
       </ana>
-      <ana><!--Mecastor mecastor mecástor-->
-         <tok val="[mM]ec[aá]stor"/>
+      <ana>
+         <tok val="Mecastor"/>
+         <tok val="mecastor"/>
+         <tok val="mecástor"/>
          <lm>
             <l>mecastor</l>
             <m>i</m>
          </lm>
       </ana>
-      <ana><!--Mechanico mechanico-->
-         <tok val="[mM]echanico"/>
+      <ana>
+         <tok val="Mechanico"/>
+         <tok val="mechanico"/>
          <lm>
             <l>mechanicus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -197,16 +247,18 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Mechanicos mechanicos-->
-         <tok val="[mM]echanicos"/>
+      <ana>
+         <tok val="Mechanicos"/>
+         <tok val="mechanicos"/>
          <lm>
             <l>mechanicus</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Mechanicum mechanicum-->
-         <tok val="[mM]echanicum"/>
+      <ana>
+         <tok val="Mechanicum"/>
+         <tok val="mechanicum"/>
          <lm>
             <l>mechanicus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -215,8 +267,9 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Mechanicus mechanicus-->
-         <tok val="[mM]echanicus"/>
+      <ana>
+         <tok val="Mechanicus"/>
+         <tok val="mechanicus"/>
          <lm>
             <l>mechanicus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -225,13 +278,15 @@
       </ana>
       <ana>
          <tok val="Meconem"/>
+         <tok val="meconem"/>
          <lm>
             <l>mecon</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Meconitis meconitis-->
-         <tok val="[mM]econitis"/>
+      <ana>
+         <tok val="Meconitis"/>
+         <tok val="meconitis"/>
          <lm>
             <l>meconites</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -273,8 +328,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--meconio meconion-->
-         <tok val="meconio[n]?"/>
+      <ana>
+         <tok val="meconio"/>
+         <tok val="meconion"/>
          <lm>
             <l>meconium</l>
             <m cert="0.5">n - - s - - - n d</m>

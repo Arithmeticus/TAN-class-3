@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussod">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sod">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sod</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sod.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SOD</tok-starts-with>
       <tok-starts-with>Sod</tok-starts-with>
       <tok-starts-with>sod</tok-starts-with>
-      <ana><!--SODALES Sodales sodales sodalesque-->
-         <tok val="[sS]?(odales)?(que|SODALES)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:46:21.016-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:46:21.016-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sod.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SODALES"/>
+         <tok val="Sodales"/>
+         <tok val="sodales"/>
+         <tok val="sodalesque"/>
          <lm>
             <l>sodalis</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -45,8 +56,14 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--SODALES SODALIS Sodales Sodalis sodales sodalesque sodalis-->
-         <tok val="[S]?(ODAL)?[IE]?(S|odalis|odales|sodales|sodalis|sodalesque)"/>
+      <ana>
+         <tok val="SODALES"/>
+         <tok val="SODALIS"/>
+         <tok val="Sodales"/>
+         <tok val="Sodalis"/>
+         <tok val="sodales"/>
+         <tok val="sodalesque"/>
+         <tok val="sodalis"/>
          <lm>
             <l>sodalis</l>
             <m cert="0.5">n - - p - - - m a</m>
@@ -55,6 +72,7 @@
       </ana>
       <ana>
          <tok val="SODALICIARIA"/>
+         <tok val="sodaliciaria"/>
          <lm cert="0.5">
             <l>sodaliciaria</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -71,8 +89,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--SODALIS Sodalis sodalis-->
-         <tok val="[sS]?(odalis|SODALIS)"/>
+      <ana>
+         <tok val="SODALIS"/>
+         <tok val="Sodalis"/>
+         <tok val="sodalis"/>
          <lm>
             <l>sodalis</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -81,15 +101,19 @@
             <m cert="0.25">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--SODALITAS Sodalitas sodalitas sodalitasque-->
-         <tok val="[sS]?(odalitas)?(que|SODALITAS)?"/>
+      <ana>
+         <tok val="SODALITAS"/>
+         <tok val="Sodalitas"/>
+         <tok val="sodalitas"/>
+         <tok val="sodalitasque"/>
          <lm>
             <l>sodalitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Sodalibus sodalibus-->
-         <tok val="[sS]odalibus"/>
+      <ana>
+         <tok val="Sodalibus"/>
+         <tok val="sodalibus"/>
          <lm>
             <l>sodalis</l>
             <m cert="0.25">n - - p - - - m b</m>
@@ -98,8 +122,9 @@
             <m cert="0.25">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Sodaliciis sodaliciis-->
-         <tok val="[sS]odaliciis"/>
+      <ana>
+         <tok val="Sodaliciis"/>
+         <tok val="sodaliciis"/>
          <lm cert="0.5">
             <l>sodalicius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -115,8 +140,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sodalitates sodalitates-->
-         <tok val="[sS]odalitates"/>
+      <ana>
+         <tok val="Sodalitates"/>
+         <tok val="sodalitates"/>
          <lm>
             <l>sodalitas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -126,6 +152,7 @@
       </ana>
       <ana>
          <tok val="Sodano"/>
+         <tok val="sodano"/>
          <lm>
             <l>Sodanus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -134,6 +161,7 @@
       </ana>
       <ana>
          <tok val="Sodanus"/>
+         <tok val="sodanus"/>
          <lm>
             <l>Sodanus</l>
             <m>n e - s - - - m n</m>
@@ -141,6 +169,7 @@
       </ana>
       <ana>
          <tok val="Sodii"/>
+         <tok val="sodii"/>
          <lm>
             <l>Sodii</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -149,6 +178,7 @@
       </ana>
       <ana>
          <tok val="Sodoma"/>
+         <tok val="sodoma"/>
          <lm cert="0.5">
             <l>Sodomum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -164,6 +194,7 @@
       </ana>
       <ana>
          <tok val="Sodomae"/>
+         <tok val="sodomae"/>
          <lm>
             <l>Sodoma</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -174,6 +205,7 @@
       </ana>
       <ana>
          <tok val="Sodomam"/>
+         <tok val="sodomam"/>
          <lm>
             <l>Sodoma</l>
             <m>n e - s - - - f a</m>
@@ -181,6 +213,7 @@
       </ana>
       <ana>
          <tok val="Sodomi"/>
+         <tok val="sodomi"/>
          <lm cert="0.5">
             <l>Sodomum</l>
             <m>n e - s - - - n g</m>
@@ -193,6 +226,7 @@
       </ana>
       <ana>
          <tok val="Sodomis"/>
+         <tok val="sodomis"/>
          <lm cert="0.333333333333333333">
             <l>Sodoma</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -211,6 +245,7 @@
       </ana>
       <ana>
          <tok val="Sodomitae"/>
+         <tok val="sodomitae"/>
          <lm>
             <l>Sodomitae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -219,6 +254,7 @@
       </ana>
       <ana>
          <tok val="Sodomitas"/>
+         <tok val="sodomitas"/>
          <lm>
             <l>Sodomitae</l>
             <m>n e - p - - - m a</m>
@@ -226,13 +262,17 @@
       </ana>
       <ana>
          <tok val="Sodomiticus"/>
+         <tok val="sodomiticus"/>
          <lm>
             <l>Sodomiticus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sodomorum Sodomum-->
-         <tok val="Sodom(or)?um"/>
+      <ana>
+         <tok val="Sodomorum"/>
+         <tok val="Sodomum"/>
+         <tok val="sodomorum"/>
+         <tok val="sodomum"/>
          <lm cert="0.5">
             <l>Sodomum</l>
             <m>n e - p - - - n g</m>
@@ -244,6 +284,7 @@
       </ana>
       <ana>
          <tok val="Sodomum"/>
+         <tok val="sodomum"/>
          <lm>
             <l>Sodomum</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -251,22 +292,26 @@
             <m cert="0.333333333333333333">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--sodale sodali sodáli-->
-         <tok val="sod[aá]l[ie]"/>
+      <ana>
+         <tok val="sodale"/>
+         <tok val="sodali"/>
+         <tok val="sodáli"/>
          <lm>
             <l>sodalis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--sodale sodali-->
-         <tok val="sodal[ie]"/>
+      <ana>
+         <tok val="sodale"/>
+         <tok val="sodali"/>
          <lm>
             <l>sodalis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--sodalem sodalemne-->
-         <tok val="sodalem(ne)?"/>
+      <ana>
+         <tok val="sodalem"/>
+         <tok val="sodalemne"/>
          <lm>
             <l>sodalis</l>
             <m cert="0.5">n - - s - - - f a</m>
@@ -281,8 +326,9 @@
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--sodalici sodalicii-->
-         <tok val="sodalici[i]?"/>
+      <ana>
+         <tok val="sodalici"/>
+         <tok val="sodalicii"/>
          <lm cert="0.5">
             <l>sodalicius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -342,8 +388,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--sodaliciorum sodalicium-->
-         <tok val="sodalici(or)?um"/>
+      <ana>
+         <tok val="sodaliciorum"/>
+         <tok val="sodalicium"/>
          <lm cert="0.5">
             <l>sodalicius</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -406,8 +453,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--sodalium sodaliumque-->
-         <tok val="sodalium(que)?"/>
+      <ana>
+         <tok val="sodalium"/>
+         <tok val="sodaliumque"/>
          <lm>
             <l>sodalis</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -423,6 +471,7 @@
       </ana>
       <ana>
          <tok val="Sodali"/>
+         <tok val="sodali"/>
          <lm>
             <l>sodalis</l>
             <m cert="0.5">n - - s - - - c b</m>

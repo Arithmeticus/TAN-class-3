@@ -1,51 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusopt">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:opt">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to opt</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-opt.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>OPT</tok-starts-with>
       <tok-starts-with>Opt</tok-starts-with>
       <tok-starts-with>opt</tok-starts-with>
       <tok-starts-with>ópt</tok-starts-with>
       <tok-starts-with>Ópt</tok-starts-with>
-      <ana><!--OPTAMUS Optamus optamus optamusque-->
-         <tok val="[oO]?(ptamus)?(que|OPTAMUS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:37:09.985-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:37:09.985-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-opt.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="OPTAMUS"/>
+         <tok val="Optamus"/>
+         <tok val="optamus"/>
+         <tok val="optamusque"/>
          <lm>
             <l>opto</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--OPTIMAE Optimae optimae optimaeque optumae-->
-         <tok val="[oO]?(pt)?[iu]?(mae)?(que|OPTIMAE)?"/>
+      <ana>
+         <tok val="OPTIMAE"/>
+         <tok val="Optimae"/>
+         <tok val="optimae"/>
+         <tok val="optimaeque"/>
+         <tok val="optumae"/>
          <lm>
             <l>bonus</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -54,29 +69,69 @@
             <m cert="0.25">a - - s - - - f g s</m>
          </lm>
       </ana>
-      <ana><!--OPTIME Optime Optimeque Optume Optumest-->
-         <tok val="O(pt)?[ui]?(me)?(st|que|PTIME)?"/>
+      <ana>
+         <tok val="OPTIME"/>
+         <tok val="Optime"/>
+         <tok val="Optimeque"/>
+         <tok val="Optume"/>
+         <tok val="Optumest"/>
+         <tok val="optime"/>
+         <tok val="optimeque"/>
+         <tok val="optume"/>
+         <tok val="optumest"/>
          <lm>
             <l>optume</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--OPTIME Optime Optimeque Optume Optumest optime optimeque optimest optume optumeque optumest-->
-         <tok val="[oO]?(pt)?[iu]?(me)?(que|st|OPTIME)?"/>
+      <ana>
+         <tok val="OPTIME"/>
+         <tok val="Optime"/>
+         <tok val="Optimeque"/>
+         <tok val="Optume"/>
+         <tok val="Optumest"/>
+         <tok val="optime"/>
+         <tok val="optimeque"/>
+         <tok val="optimest"/>
+         <tok val="optume"/>
+         <tok val="optumeque"/>
+         <tok val="optumest"/>
          <lm>
             <l>bonus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--OPTIME Optime Optimeque Optimum Optume Optumest Optumum optime optimeque optimest optimum optimumque optimumst optume optumeque optumest optumum optumumst-->
-         <tok val="[oO]?(pt)?[iu]?[m]?(eq)?[u]?(e|mst|m|est|um|umque|OPTIME)"/>
+      <ana>
+         <tok val="OPTIME"/>
+         <tok val="Optime"/>
+         <tok val="Optimeque"/>
+         <tok val="Optimum"/>
+         <tok val="Optume"/>
+         <tok val="Optumest"/>
+         <tok val="Optumum"/>
+         <tok val="optime"/>
+         <tok val="optimeque"/>
+         <tok val="optimest"/>
+         <tok val="optimum"/>
+         <tok val="optimumque"/>
+         <tok val="optimumst"/>
+         <tok val="optume"/>
+         <tok val="optumeque"/>
+         <tok val="optumest"/>
+         <tok val="optumum"/>
+         <tok val="optumumst"/>
          <lm>
             <l>bonus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--OPTIMO Optimo Optumo optimo optimoque optumo-->
-         <tok val="[Oo]?(pt)?[ui]?(mo)?(que|OPTIMO)?"/>
+      <ana>
+         <tok val="OPTIMO"/>
+         <tok val="Optimo"/>
+         <tok val="Optumo"/>
+         <tok val="optimo"/>
+         <tok val="optimoque"/>
+         <tok val="optumo"/>
          <lm>
             <l>bonus</l>
             <m cert="0.333333333333333333">a - - s - - - n b s</m>
@@ -84,50 +139,73 @@
             <m cert="0.333333333333333333">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--OPTIMO Optimo Optumo optimo optimoque optumo óptimo-->
-         <tok val="[Ooó]?(pt)?[ui]?(mo)?(que|OPTIMO)?"/>
+      <ana>
+         <tok val="OPTIMO"/>
+         <tok val="Optimo"/>
+         <tok val="Optumo"/>
+         <tok val="optimo"/>
+         <tok val="optimoque"/>
+         <tok val="optumo"/>
+         <tok val="óptimo"/>
          <lm>
             <l>bonus</l>
             <m>a - - s - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--OPTIMVS Optimus Optimvs Optumus optimus optimusque optimust optumus optumusque-->
-         <tok val="[oO]?(pt)?[iu]?[m]?[uv]?[s]?(t|que|OPTIMVS)?"/>
+      <ana>
+         <tok val="OPTIMVS"/>
+         <tok val="Optimus"/>
+         <tok val="Optimvs"/>
+         <tok val="Optumus"/>
+         <tok val="optimus"/>
+         <tok val="optimusque"/>
+         <tok val="optimust"/>
+         <tok val="optimvs"/>
+         <tok val="optumus"/>
+         <tok val="optumusque"/>
          <lm>
             <l>bonus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--OPTO Opto opto-->
-         <tok val="[oO]?(pto|OPTO)"/>
+      <ana>
+         <tok val="OPTO"/>
+         <tok val="Opto"/>
+         <tok val="opto"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Opta opta optan optaue-->
-         <tok val="[oO]pta(n|ue)?"/>
+      <ana>
+         <tok val="Opta"/>
+         <tok val="opta"/>
+         <tok val="optan"/>
+         <tok val="optaue"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Optabam optabam-->
-         <tok val="[oO]ptabam"/>
+      <ana>
+         <tok val="Optabam"/>
+         <tok val="optabam"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Optabat optabat-->
-         <tok val="[oO]ptabat"/>
+      <ana>
+         <tok val="Optabat"/>
+         <tok val="optabat"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Optabilis optabilis-->
-         <tok val="[oO]ptabilis"/>
+      <ana>
+         <tok val="Optabilis"/>
+         <tok val="optabilis"/>
          <lm>
             <l>optabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -139,8 +217,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Optabilis optabiles optabilis-->
-         <tok val="[oO]ptabil[ie]s"/>
+      <ana>
+         <tok val="Optabilis"/>
+         <tok val="optabiles"/>
+         <tok val="optabilis"/>
          <lm>
             <l>optabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -149,41 +229,52 @@
       </ana>
       <ana>
          <tok val="Optabiliter"/>
+         <tok val="optabiliter"/>
          <lm>
             <l>optabiliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Optabis Optabisque optabis-->
-         <tok val="[oO]ptabis(que)?"/>
+      <ana>
+         <tok val="Optabis"/>
+         <tok val="Optabisque"/>
+         <tok val="optabis"/>
+         <tok val="optabisque"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Optabit optabit-->
-         <tok val="[oO]ptabit"/>
+      <ana>
+         <tok val="Optabit"/>
+         <tok val="optabit"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Optabo optabo-->
-         <tok val="[oO]ptabo"/>
+      <ana>
+         <tok val="Optabo"/>
+         <tok val="optabo"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Optabunt optabunt optabuntque-->
-         <tok val="[oO]ptabunt(que)?"/>
+      <ana>
+         <tok val="Optabunt"/>
+         <tok val="optabunt"/>
+         <tok val="optabuntque"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Optanda optanda optandaque optandaue-->
-         <tok val="[oO]ptanda[q]?(ue)?"/>
+      <ana>
+         <tok val="Optanda"/>
+         <tok val="optanda"/>
+         <tok val="optandaque"/>
+         <tok val="optandaue"/>
          <lm>
             <l>opto</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -194,8 +285,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Optando optando-->
-         <tok val="[oO]ptando"/>
+      <ana>
+         <tok val="Optando"/>
+         <tok val="optando"/>
          <lm>
             <l>opto</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -206,8 +298,10 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Optandum optandum optandumque-->
-         <tok val="[oO]ptandum(que)?"/>
+      <ana>
+         <tok val="Optandum"/>
+         <tok val="optandum"/>
+         <tok val="optandumque"/>
          <lm>
             <l>opto</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -219,22 +313,28 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Optandus optandun optandus optandusque-->
-         <tok val="[oO]ptandu(s|n|sque)"/>
+      <ana>
+         <tok val="Optandus"/>
+         <tok val="optandun"/>
+         <tok val="optandus"/>
+         <tok val="optandusque"/>
          <lm>
             <l>opto</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Optant optant optantque-->
-         <tok val="[oO]ptant(que)?"/>
+      <ana>
+         <tok val="Optant"/>
+         <tok val="optant"/>
+         <tok val="optantque"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Optantibus optantibus-->
-         <tok val="[oO]ptantibus"/>
+      <ana>
+         <tok val="Optantibus"/>
+         <tok val="optantibus"/>
          <lm>
             <l>opto</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -245,93 +345,128 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Optare optare-->
-         <tok val="[oO]ptare"/>
+      <ana>
+         <tok val="Optare"/>
+         <tok val="optare"/>
          <lm>
             <l>opto</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Optare optare optaris-->
-         <tok val="[oO]ptar(e|is)"/>
+      <ana>
+         <tok val="Optare"/>
+         <tok val="optare"/>
+         <tok val="optaris"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Optarent optarent-->
-         <tok val="[oO]ptarent"/>
+      <ana>
+         <tok val="Optarent"/>
+         <tok val="optarent"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Optaret Optaretne optaret optaretne-->
-         <tok val="[oO]ptaret(ne)?"/>
+      <ana>
+         <tok val="Optaret"/>
+         <tok val="Optaretne"/>
+         <tok val="optaret"/>
+         <tok val="optaretne"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Optarim Optaverim optarim optauerim optaverim-->
-         <tok val="[oO]pta[vu]?[e]?rim"/>
+      <ana>
+         <tok val="Optarim"/>
+         <tok val="Optaverim"/>
+         <tok val="optarim"/>
+         <tok val="optauerim"/>
+         <tok val="optaverim"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Optarit optarit optauerit optaverit-->
-         <tok val="[oO]pta[vu]?[e]?rit"/>
+      <ana>
+         <tok val="Optarit"/>
+         <tok val="optarit"/>
+         <tok val="optauerit"/>
+         <tok val="optaverit"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Optarunt Optavere Optaverunt optarunt optauere optavere optaverunt-->
-         <tok val="[oO]pta(ve|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="Optarunt"/>
+         <tok val="Optavere"/>
+         <tok val="Optaverunt"/>
+         <tok val="optarunt"/>
+         <tok val="optauere"/>
+         <tok val="optavere"/>
+         <tok val="optaverunt"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Optas optan optas Optás óptas-->
-         <tok val="[oOó]pt[a]?(s|n|ás|as)"/>
+      <ana>
+         <tok val="Optas"/>
+         <tok val="Optás"/>
+         <tok val="optan"/>
+         <tok val="optas"/>
+         <tok val="optás"/>
+         <tok val="óptas"/>
          <lm>
             <l>optimas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Optas optan optas-->
-         <tok val="[oO]pta[sn]"/>
+      <ana>
+         <tok val="Optas"/>
+         <tok val="optan"/>
+         <tok val="optas"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Optasset optasset optassetque optavisset-->
-         <tok val="[oO]pta(vi)?sset(que)?"/>
+      <ana>
+         <tok val="Optasset"/>
+         <tok val="optasset"/>
+         <tok val="optassetque"/>
+         <tok val="optavisset"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Optasti optasti optastique-->
-         <tok val="[oO]ptasti(que)?"/>
+      <ana>
+         <tok val="Optasti"/>
+         <tok val="optasti"/>
+         <tok val="optastique"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Optat optat-->
-         <tok val="[oO]ptat"/>
+      <ana>
+         <tok val="Optat"/>
+         <tok val="optat"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Optata optata optataque-->
-         <tok val="[oO]ptata(que)?"/>
+      <ana>
+         <tok val="Optata"/>
+         <tok val="optata"/>
+         <tok val="optataque"/>
          <lm cert="0.5">
             <l>opto</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -348,8 +483,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Optatae optatae-->
-         <tok val="[oO]ptatae"/>
+      <ana>
+         <tok val="Optatae"/>
+         <tok val="optatae"/>
          <lm>
             <l>opto</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -358,15 +494,18 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Optatam optatam optatamque-->
-         <tok val="[oO]ptatam(que)?"/>
+      <ana>
+         <tok val="Optatam"/>
+         <tok val="optatam"/>
+         <tok val="optatamque"/>
          <lm>
             <l>opto</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Optate optate-->
-         <tok val="[oO]ptate"/>
+      <ana>
+         <tok val="Optate"/>
+         <tok val="optate"/>
          <lm cert="0.5">
             <l>optimas</l>
             <m>n - - s - - - f b</m>
@@ -377,8 +516,11 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Optate Optatum optate optatum-->
-         <tok val="[oO]ptat(um|e)"/>
+      <ana>
+         <tok val="Optate"/>
+         <tok val="Optatum"/>
+         <tok val="optate"/>
+         <tok val="optatum"/>
          <lm cert="0.5">
             <l>optatum</l>
             <m>n - - s - - - n v</m>
@@ -388,15 +530,21 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Optati optati optatique Óptati-->
-         <tok val="[oOÓ]ptati(que)?"/>
+      <ana>
+         <tok val="Optati"/>
+         <tok val="optati"/>
+         <tok val="optatique"/>
+         <tok val="Óptati"/>
+         <tok val="óptati"/>
          <lm>
             <l>opto</l>
             <m>v - - s r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Optati optati optatique-->
-         <tok val="[oO]ptati(que)?"/>
+      <ana>
+         <tok val="Optati"/>
+         <tok val="optati"/>
+         <tok val="optatique"/>
          <lm cert="0.333333333333333333">
             <l>optatum</l>
             <m>n - - s - - - n g</m>
@@ -412,16 +560,19 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Optatio optatio-->
-         <tok val="[oO]ptatio"/>
+      <ana>
+         <tok val="Optatio"/>
+         <tok val="optatio"/>
          <lm>
             <l>optatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Optatis optatis optatisque-->
-         <tok val="[oO]ptatis(que)?"/>
+      <ana>
+         <tok val="Optatis"/>
+         <tok val="optatis"/>
+         <tok val="optatisque"/>
          <lm cert="0.333333333333333333">
             <l>opto</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -442,8 +593,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Optatissimi optatissimi-->
-         <tok val="[oO]ptatissimi"/>
+      <ana>
+         <tok val="Optatissimi"/>
+         <tok val="optatissimi"/>
          <lm>
             <l>opto</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -452,8 +604,9 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Optatissimum optatissimum-->
-         <tok val="[oO]ptatissimum"/>
+      <ana>
+         <tok val="Optatissimum"/>
+         <tok val="optatissimum"/>
          <lm>
             <l>opto</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -463,29 +616,36 @@
             <m cert="0.2">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Optatissimum optatissime optatissimum-->
-         <tok val="[oO]ptatissim(um|e)"/>
+      <ana>
+         <tok val="Optatissimum"/>
+         <tok val="optatissime"/>
+         <tok val="optatissimum"/>
          <lm>
             <l>opto</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Optatissimus optatissime optatissimus-->
-         <tok val="[oO]ptatissim(us|e)"/>
+      <ana>
+         <tok val="Optatissimus"/>
+         <tok val="optatissime"/>
+         <tok val="optatissimus"/>
          <lm>
             <l>opto</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Optatissimus optatissimus-->
-         <tok val="[oO]ptatissimus"/>
+      <ana>
+         <tok val="Optatissimus"/>
+         <tok val="optatissimus"/>
          <lm>
             <l>opto</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Optatiuo optatiuo optativo-->
-         <tok val="[oO]ptati[uv]o"/>
+      <ana>
+         <tok val="Optatiuo"/>
+         <tok val="optatiuo"/>
+         <tok val="optativo"/>
          <lm>
             <l>optativus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -494,15 +654,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Optativus optativus-->
-         <tok val="[oO]ptativus"/>
+      <ana>
+         <tok val="Optativus"/>
+         <tok val="optativus"/>
          <lm>
             <l>optativus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Optato optato-->
-         <tok val="[oO]ptato"/>
+      <ana>
+         <tok val="Optato"/>
+         <tok val="optato"/>
          <lm cert="0.5">
             <l>opto</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -518,24 +680,28 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Optatos optatos optatosque-->
-         <tok val="[oO]ptatos(que)?"/>
+      <ana>
+         <tok val="Optatos"/>
+         <tok val="optatos"/>
+         <tok val="optatosque"/>
          <lm>
             <l>opto</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Optatum optatum-->
-         <tok val="[oO]ptatum"/>
+      <ana>
+         <tok val="Optatum"/>
+         <tok val="optatum"/>
          <lm cert="0.333333333333333333">
             <l>optimas</l>
             <m>n - - p - - - f g</m>
          </lm>
          <lm cert="0.333333333333333333">
             <l>opto</l>
-            <m cert="0.333333333333333333">v - - s r p p m a</m>
-            <m cert="0.333333333333333333">v - - s r p p n n</m>
-            <m cert="0.333333333333333333">v - - s r p p n a</m>
+            <m cert="0.25">v - - s r p p m a</m>
+            <m cert="0.25">v - - s r p p n n</m>
+            <m cert="0.25">v - - s r p p n a</m>
+            <m cert="0.25">v - - - - u - - a</m>
          </lm>
          <lm cert="0.333333333333333333">
             <l>optatum</l>
@@ -543,8 +709,10 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Optatum optatorum optatum-->
-         <tok val="[oO]ptat(or)?um"/>
+      <ana>
+         <tok val="Optatum"/>
+         <tok val="optatorum"/>
+         <tok val="optatum"/>
          <lm cert="0.5">
             <l>opto</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -556,56 +724,66 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Optatum"/>
-         <lm>
-            <l>opto</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Optatus optatus optátus-->
-         <tok val="[oO]pt[aá]tus"/>
+         <tok val="Optatus"/>
+         <tok val="optatus"/>
+         <tok val="optátus"/>
          <lm>
             <l>opto</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Optauit Optavit Optavitque optauit optauitque optavit optavitque-->
-         <tok val="[oO]pta[vu]it(que)?"/>
+      <ana>
+         <tok val="Optauit"/>
+         <tok val="Optavit"/>
+         <tok val="Optavitque"/>
+         <tok val="optauit"/>
+         <tok val="optauitque"/>
+         <tok val="optavit"/>
+         <tok val="optavitque"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Optavi optaui optauique optavi-->
-         <tok val="[oO]pta[vu]i(que)?"/>
+      <ana>
+         <tok val="Optavi"/>
+         <tok val="optaui"/>
+         <tok val="optauique"/>
+         <tok val="optavi"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Optem optem-->
-         <tok val="[oO]ptem"/>
+      <ana>
+         <tok val="Optem"/>
+         <tok val="optem"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Opter opter-->
-         <tok val="[oO]pter"/>
+      <ana>
+         <tok val="Opter"/>
+         <tok val="opter"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Optet optet-->
-         <tok val="[oO]ptet"/>
+      <ana>
+         <tok val="Optet"/>
+         <tok val="optet"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Optica Optice optica optice-->
-         <tok val="[Oo]ptic[ea]"/>
+      <ana>
+         <tok val="Optica"/>
+         <tok val="Optice"/>
+         <tok val="optica"/>
+         <tok val="optice"/>
          <lm>
             <l>optice</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -613,8 +791,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Opticae opticae-->
-         <tok val="[oO]pticae"/>
+      <ana>
+         <tok val="Opticae"/>
+         <tok val="opticae"/>
          <lm>
             <l>optice</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -622,15 +801,20 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Opticae Optices opticae optices-->
-         <tok val="[Oo]ptic[a]?e[s]?"/>
+      <ana>
+         <tok val="Opticae"/>
+         <tok val="Optices"/>
+         <tok val="opticae"/>
+         <tok val="optices"/>
          <lm>
             <l>optice</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Opticam opticam opticen-->
-         <tok val="[oO]ptic(am|en)"/>
+      <ana>
+         <tok val="Opticam"/>
+         <tok val="opticam"/>
+         <tok val="opticen"/>
          <lm>
             <l>optice</l>
             <m>n - - s - - - f a</m>
@@ -638,53 +822,65 @@
       </ana>
       <ana>
          <tok val="Opticarum"/>
+         <tok val="opticarum"/>
          <lm>
             <l>optice</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Opticis opticis-->
-         <tok val="[oO]pticis"/>
+      <ana>
+         <tok val="Opticis"/>
+         <tok val="opticis"/>
          <lm>
             <l>optice</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Optima Optuma optima optiman optimaque optuma optumast-->
-         <tok val="[oO]pt[iu]ma(n|st|que)?"/>
+      <ana>
+         <tok val="Optima"/>
+         <tok val="Optuma"/>
+         <tok val="optima"/>
+         <tok val="optiman"/>
+         <tok val="optimaque"/>
+         <tok val="optuma"/>
+         <tok val="optumast"/>
          <lm>
             <l>bonus</l>
-            <m cert="0.2">a - - p - - - n a s</m>
-            <m cert="0.2">a - - s - - - f n s</m>
-            <m cert="0.2">a - - s - - - f v s</m>
-            <m cert="0.2">a - - p - - - n n s</m>
-            <m cert="0.2">a - - p - - - n v s</m>
+            <m cert="0.166666666666666667">a - - p - - - n a s</m>
+            <m cert="0.166666666666666667">a - - s - - - f n s</m>
+            <m cert="0.166666666666666667">a - - s - - - f b s</m>
+            <m cert="0.166666666666666667">a - - s - - - f v s</m>
+            <m cert="0.166666666666666667">a - - p - - - n n s</m>
+            <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Optima Optuma optima optiman optimaque optuma optumast-->
-         <tok val="[oO]pt[ui]ma(n|st|que)?"/>
-         <lm>
-            <l>bonus</l>
-            <m>a - - s - - - f b s</m>
-         </lm>
-      </ana>
-      <ana><!--Optimam optimam optimamque optumam-->
-         <tok val="[oO]pt[iu]mam(que)?"/>
+      <ana>
+         <tok val="Optimam"/>
+         <tok val="optimam"/>
+         <tok val="optimamque"/>
+         <tok val="optumam"/>
          <lm>
             <l>bonus</l>
             <m>a - - s - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--Optimas optiman optimas optimasque optumas-->
-         <tok val="[oO]pt[iu]ma(s|n|sque)"/>
+      <ana>
+         <tok val="Optimas"/>
+         <tok val="optiman"/>
+         <tok val="optimas"/>
+         <tok val="optimasque"/>
+         <tok val="optumas"/>
          <lm>
             <l>bonus</l>
             <m>a - - p - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--Optimas optiman optimas optimasque-->
-         <tok val="[oO]ptima(s|n|sque)"/>
+      <ana>
+         <tok val="Optimas"/>
+         <tok val="optiman"/>
+         <tok val="optimas"/>
+         <tok val="optimasque"/>
          <lm>
             <l>optimas</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -693,23 +889,30 @@
             <m cert="0.25">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Optimas optimas optimasque-->
-         <tok val="[oO]ptimas(que)?"/>
+      <ana>
+         <tok val="Optimas"/>
+         <tok val="optimas"/>
+         <tok val="optimasque"/>
          <lm>
             <l>optimas</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Optimates optimates optimatis optumates-->
-         <tok val="[oO]pt[iu]mat[ei]s"/>
+      <ana>
+         <tok val="Optimates"/>
+         <tok val="optimates"/>
+         <tok val="optimatis"/>
+         <tok val="optumates"/>
          <lm>
             <l>optimas</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Optimates optimates optumates-->
-         <tok val="[oO]pt[iu]mates"/>
+      <ana>
+         <tok val="Optimates"/>
+         <tok val="optimates"/>
+         <tok val="optumates"/>
          <lm>
             <l>optimas</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -718,8 +921,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Optimatibus optimatibus optumatibus-->
-         <tok val="[oO]pt[iu]matibus"/>
+      <ana>
+         <tok val="Optimatibus"/>
+         <tok val="optimatibus"/>
+         <tok val="optumatibus"/>
          <lm>
             <l>optimas</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -730,8 +935,12 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Optimi optimi optimine optimique optumi-->
-         <tok val="[oO]pt[iu]mi(ne|que)?"/>
+      <ana>
+         <tok val="Optimi"/>
+         <tok val="optimi"/>
+         <tok val="optimine"/>
+         <tok val="optimique"/>
+         <tok val="optumi"/>
          <lm>
             <l>bonus</l>
             <m cert="0.333333333333333333">a - - p - - - m n s</m>
@@ -739,15 +948,23 @@
             <m cert="0.333333333333333333">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Optimi optimi optimine optimique optumi optumí-->
-         <tok val="[oO]pt[iu]m[i]?(ne|í|ique)?"/>
+      <ana>
+         <tok val="Optimi"/>
+         <tok val="optimi"/>
+         <tok val="optimine"/>
+         <tok val="optimique"/>
+         <tok val="optumi"/>
+         <tok val="optumí"/>
          <lm>
             <l>bonus</l>
             <m>a - - s - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--Optimis optimis optimisque optumis-->
-         <tok val="[oO]pt[iu]mis(que)?"/>
+      <ana>
+         <tok val="Optimis"/>
+         <tok val="optimis"/>
+         <tok val="optimisque"/>
+         <tok val="optumis"/>
          <lm>
             <l>bonus</l>
             <m cert="0.166666666666666667">a - - p - - - n d s</m>
@@ -758,29 +975,50 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--Optimitas optimitas-->
-         <tok val="[oO]ptimitas"/>
+      <ana>
+         <tok val="Optimitas"/>
+         <tok val="optimitas"/>
          <lm>
             <l>optimitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Optimos optimos optimosque optumos-->
-         <tok val="[oO]pt[iu]mos(que)?"/>
+      <ana>
+         <tok val="Optimos"/>
+         <tok val="optimos"/>
+         <tok val="optimosque"/>
+         <tok val="optumos"/>
          <lm>
             <l>bonus</l>
             <m>a - - p - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--Optimum Optumum optimorum optimorumque optimum optimumque optimumst optumorum optumum optumumst optimúm óptimum-->
-         <tok val="[oOó]pt(im)?(or|imor|im)?[ui]m(q|or)?[u]?(e|m|umst|st|um|úm)?"/>
+      <ana>
+         <tok val="Optimum"/>
+         <tok val="Optumum"/>
+         <tok val="optimorum"/>
+         <tok val="optimorumque"/>
+         <tok val="optimum"/>
+         <tok val="optimumque"/>
+         <tok val="optimumst"/>
+         <tok val="optimúm"/>
+         <tok val="optumorum"/>
+         <tok val="optumum"/>
+         <tok val="optumumst"/>
+         <tok val="óptimum"/>
          <lm>
             <l>bonus</l>
             <m>a - - p - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Optimum Optumum optimum optimumque optimumst optumum optumumst-->
-         <tok val="[oO]pt[ui]mum(st|que)?"/>
+      <ana>
+         <tok val="Optimum"/>
+         <tok val="Optumum"/>
+         <tok val="optimum"/>
+         <tok val="optimumque"/>
+         <tok val="optimumst"/>
+         <tok val="optumum"/>
+         <tok val="optumumst"/>
          <lm>
             <l>bonus</l>
             <m cert="0.333333333333333333">a - - s - - - n a s</m>
@@ -788,29 +1026,45 @@
             <m cert="0.333333333333333333">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Optimum Optumum optimorum optimorumque optimum optimumque optimumst optumorum optumum optumumst-->
-         <tok val="[oO]pt(im)?(or|imor|im)?um(q|or)?[u]?(e|m|umst|st|um)?"/>
+      <ana>
+         <tok val="Optimum"/>
+         <tok val="Optumum"/>
+         <tok val="optimorum"/>
+         <tok val="optimorumque"/>
+         <tok val="optimum"/>
+         <tok val="optimumque"/>
+         <tok val="optimumst"/>
+         <tok val="optumorum"/>
+         <tok val="optumum"/>
+         <tok val="optumumst"/>
          <lm>
             <l>bonus</l>
             <m>a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--Optine optine optinen Óptine-->
-         <tok val="[oOÓ]ptine[n]?"/>
+      <ana>
+         <tok val="Optine"/>
+         <tok val="optine"/>
+         <tok val="optinen"/>
+         <tok val="Óptine"/>
+         <tok val="óptine"/>
          <lm>
             <l>obtineo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Optineat optineat-->
-         <tok val="[oO]ptineat"/>
+      <ana>
+         <tok val="Optineat"/>
+         <tok val="optineat"/>
          <lm>
             <l>obtineo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Optinendum optinendum optinendumque-->
-         <tok val="[oO]ptinendum(que)?"/>
+      <ana>
+         <tok val="Optinendum"/>
+         <tok val="optinendum"/>
+         <tok val="optinendumque"/>
          <lm>
             <l>obtineo</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -822,15 +1076,17 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Optinuit optinuit-->
-         <tok val="[oO]ptinuit"/>
+      <ana>
+         <tok val="Optinuit"/>
+         <tok val="optinuit"/>
          <lm>
             <l>obtineo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Optio optio-->
-         <tok val="[oO]ptio"/>
+      <ana>
+         <tok val="Optio"/>
+         <tok val="optio"/>
          <lm>
             <l>optio</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -839,8 +1095,9 @@
             <m cert="0.25">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Optionatus optionatus-->
-         <tok val="[oO]ptionatus"/>
+      <ana>
+         <tok val="Optionatus"/>
+         <tok val="optionatus"/>
          <lm>
             <l>optionatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -849,24 +1106,28 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Optione optione-->
-         <tok val="[oO]ptione"/>
+      <ana>
+         <tok val="Optione"/>
+         <tok val="optione"/>
          <lm>
             <l>optio</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Optionem optionem optionemque-->
-         <tok val="[oO]ptionem(que)?"/>
+      <ana>
+         <tok val="Optionem"/>
+         <tok val="optionem"/>
+         <tok val="optionemque"/>
          <lm>
             <l>optio</l>
             <m cert="0.5">n - - s - - - f a</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Optiones optiones-->
-         <tok val="[oO]ptiones"/>
+      <ana>
+         <tok val="Optiones"/>
+         <tok val="optiones"/>
          <lm>
             <l>optio</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -877,8 +1138,9 @@
             <m cert="0.166666666666666667">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Optivo optivo-->
-         <tok val="[oO]ptivo"/>
+      <ana>
+         <tok val="Optivo"/>
+         <tok val="optivo"/>
          <lm>
             <l>optivus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -887,8 +1149,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Optutu optutu-->
-         <tok val="[oO]ptutu"/>
+      <ana>
+         <tok val="Optutu"/>
+         <tok val="optutu"/>
          <lm>
             <l>obtueor</l>
             <m>a - - s - - - n d</m>
@@ -931,8 +1194,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--optabilem optabilemque-->
-         <tok val="optabilem(que)?"/>
+      <ana>
+         <tok val="optabilem"/>
+         <tok val="optabilemque"/>
          <lm>
             <l>optabilis</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -1009,8 +1273,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--optabiliter optabilius-->
-         <tok val="optabili(us|ter)"/>
+      <ana>
+         <tok val="optabiliter"/>
+         <tok val="optabilius"/>
          <lm>
             <l>optabilis</l>
             <m>d</m>
@@ -1081,8 +1346,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--optandos optandosque-->
-         <tok val="optandos(que)?"/>
+      <ana>
+         <tok val="optandos"/>
+         <tok val="optandosque"/>
          <lm>
             <l>opto</l>
             <m>v - - p p g p m a</m>
@@ -1101,8 +1367,10 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--optante optanti optantique-->
-         <tok val="optant(i|e|ique)"/>
+      <ana>
+         <tok val="optante"/>
+         <tok val="optanti"/>
+         <tok val="optantique"/>
          <lm>
             <l>opto</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1110,8 +1378,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--optantem optantemque-->
-         <tok val="optantem(que)?"/>
+      <ana>
+         <tok val="optantem"/>
+         <tok val="optantemque"/>
          <lm>
             <l>opto</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1128,16 +1397,18 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--optantes optantis-->
-         <tok val="optant[ie]s"/>
+      <ana>
+         <tok val="optantes"/>
+         <tok val="optantis"/>
          <lm>
             <l>opto</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--optanti optantique-->
-         <tok val="optanti(que)?"/>
+      <ana>
+         <tok val="optanti"/>
+         <tok val="optantique"/>
          <lm>
             <l>opto</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -1161,8 +1432,10 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--optaram optaueram optaveram-->
-         <tok val="opta[vu]?(e|)ram"/>
+      <ana>
+         <tok val="optaram"/>
+         <tok val="optaueram"/>
+         <tok val="optaveram"/>
          <lm>
             <l>opto</l>
             <m>v - 1 s l i a</m>
@@ -1175,8 +1448,10 @@
             <m>v - 1 p l i a</m>
          </lm>
       </ana>
-      <ana><!--optarat optauerat optaverat-->
-         <tok val="opta[vu]?(e|)rat"/>
+      <ana>
+         <tok val="optarat"/>
+         <tok val="optauerat"/>
+         <tok val="optaverat"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s l i a</m>
@@ -1224,22 +1499,27 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--optarint optauerint optaverint-->
-         <tok val="opta[vu]?(e|)rint"/>
+      <ana>
+         <tok val="optarint"/>
+         <tok val="optauerint"/>
+         <tok val="optaverint"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--optaris optaueris optaveris-->
-         <tok val="opta[vu]?(e|)ris"/>
+      <ana>
+         <tok val="optaris"/>
+         <tok val="optaueris"/>
+         <tok val="optaveris"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--optasse optavisse-->
-         <tok val="opta(vi)?sse"/>
+      <ana>
+         <tok val="optasse"/>
+         <tok val="optavisse"/>
          <lm>
             <l>opto</l>
             <m>v - - - r n a</m>
@@ -1266,8 +1546,9 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--optastis optavistis-->
-         <tok val="opta(vi)?stis"/>
+      <ana>
+         <tok val="optastis"/>
+         <tok val="optavistis"/>
          <lm>
             <l>opto</l>
             <m>v - 2 p r i a</m>
@@ -1472,37 +1753,43 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--optauerant optaverant-->
-         <tok val="opta[vu]erant"/>
+      <ana>
+         <tok val="optauerant"/>
+         <tok val="optaverant"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--optauerimus optaverimus-->
-         <tok val="opta[vu]erimus"/>
+      <ana>
+         <tok val="optauerimus"/>
+         <tok val="optaverimus"/>
          <lm>
             <l>opto</l>
             <m cert="0.5">v - 1 p t i a</m>
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--optauerint optaverint-->
-         <tok val="opta[vu]erint"/>
+      <ana>
+         <tok val="optauerint"/>
+         <tok val="optaverint"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--optaueris optaveris optassis-->
-         <tok val="opta[vu]?(er|ss)is"/>
+      <ana>
+         <tok val="optassis"/>
+         <tok val="optaueris"/>
+         <tok val="optaveris"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--optauerit optaverit-->
-         <tok val="opta[vu]erit"/>
+      <ana>
+         <tok val="optauerit"/>
+         <tok val="optaverit"/>
          <lm>
             <l>opto</l>
             <m>v - 3 s t i a</m>
@@ -1515,8 +1802,9 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--optauimus optavimus-->
-         <tok val="opta[vu]imus"/>
+      <ana>
+         <tok val="optauimus"/>
+         <tok val="optavimus"/>
          <lm>
             <l>opto</l>
             <m>v - 1 p r i a</m>
@@ -1536,8 +1824,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--optent optentque-->
-         <tok val="optent(que)?"/>
+      <ana>
+         <tok val="optent"/>
+         <tok val="optentque"/>
          <lm>
             <l>opto</l>
             <m>v - 3 p p s a</m>
@@ -1611,8 +1900,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--optes óptes-->
-         <tok val="[óo]ptes"/>
+      <ana>
+         <tok val="optes"/>
+         <tok val="óptes"/>
          <lm>
             <l>opto</l>
             <m>v - 2 s p s a</m>
@@ -1639,8 +1929,10 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--optigere optigerunt optígere-->
-         <tok val="opt[íi]ger(e|unt)"/>
+      <ana>
+         <tok val="optigere"/>
+         <tok val="optigerunt"/>
+         <tok val="optígere"/>
          <lm>
             <l>obtingo</l>
             <m>v - 3 p r i a</m>
@@ -1690,15 +1982,18 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--optigit optigít óptigit-->
-         <tok val="[oó]ptig[íi]t"/>
+      <ana>
+         <tok val="optigit"/>
+         <tok val="optigít"/>
+         <tok val="óptigit"/>
          <lm>
             <l>obtingo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--optimarum optumarum-->
-         <tok val="opt[ui]marum"/>
+      <ana>
+         <tok val="optimarum"/>
+         <tok val="optumarum"/>
          <lm>
             <l>bonus</l>
             <m>a - - p - - - f g s</m>
@@ -1712,8 +2007,9 @@
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--optimati optumati-->
-         <tok val="opt[ui]mati"/>
+      <ana>
+         <tok val="optimati"/>
+         <tok val="optumati"/>
          <lm>
             <l>optimas</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -1730,8 +2026,10 @@
             <m cert="0.333333333333333333">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--optimatium optimatiumque optumatium-->
-         <tok val="opt[ui]matium(que)?"/>
+      <ana>
+         <tok val="optimatium"/>
+         <tok val="optimatiumque"/>
+         <tok val="optumatium"/>
          <lm>
             <l>optimas</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -1739,8 +2037,17 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--optime optimeque optimest optume optumeque optumest óptime Optumést-->
-         <tok val="[oóO]pt[ui]m[e]?(que|st|ést)?"/>
+      <ana>
+         <tok val="Optumest"/>
+         <tok val="Optumést"/>
+         <tok val="optime"/>
+         <tok val="optimeque"/>
+         <tok val="optimest"/>
+         <tok val="optume"/>
+         <tok val="optumeque"/>
+         <tok val="optumest"/>
+         <tok val="optumést"/>
+         <tok val="óptime"/>
          <lm>
             <l>bonus</l>
             <m>d - - - - - - - - s</m>
@@ -1837,8 +2144,10 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--optinen optines óptines-->
-         <tok val="[oó]ptine[sn]"/>
+      <ana>
+         <tok val="optinen"/>
+         <tok val="optines"/>
+         <tok val="óptines"/>
          <lm>
             <l>obtineo</l>
             <m>v - 2 s p i a</m>
@@ -1880,8 +2189,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--optinendi óptinendi-->
-         <tok val="[óo]ptinendi"/>
+      <ana>
+         <tok val="optinendi"/>
+         <tok val="óptinendi"/>
          <lm>
             <l>obtineo</l>
             <m>v - - p p g p m v</m>
@@ -1924,8 +2234,10 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--optinente optinenti optinentique-->
-         <tok val="optinent(i|e|ique)"/>
+      <ana>
+         <tok val="optinente"/>
+         <tok val="optinenti"/>
+         <tok val="optinentique"/>
          <lm>
             <l>obtineo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1953,8 +2265,9 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--optinenti optinentique-->
-         <tok val="optinenti(que)?"/>
+      <ana>
+         <tok val="optinenti"/>
+         <tok val="optinentique"/>
          <lm>
             <l>obtineo</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -1997,8 +2310,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--optinere óptinere-->
-         <tok val="[óo]ptinere"/>
+      <ana>
+         <tok val="optinere"/>
+         <tok val="óptinere"/>
          <lm>
             <l>obtineo</l>
             <m>v - - - p n a</m>
@@ -2040,15 +2354,17 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--optineri optinerier-->
-         <tok val="optineri(er)?"/>
+      <ana>
+         <tok val="optineri"/>
+         <tok val="optinerier"/>
          <lm>
             <l>obtineo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--optinet optinetque-->
-         <tok val="optinet(que)?"/>
+      <ana>
+         <tok val="optinet"/>
+         <tok val="optinetque"/>
          <lm>
             <l>obtineo</l>
             <m>v - 3 s p i a</m>
@@ -2101,8 +2417,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--optinget óptinget-->
-         <tok val="[óo]ptinget"/>
+      <ana>
+         <tok val="optinget"/>
+         <tok val="óptinget"/>
          <lm>
             <l>obtingo</l>
             <m>v - 3 s f i a</m>
@@ -2129,8 +2446,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--optinuere optinuerunt-->
-         <tok val="optinuer(unt|e)"/>
+      <ana>
+         <tok val="optinuere"/>
+         <tok val="optinuerunt"/>
          <lm>
             <l>obtineo</l>
             <m>v - 3 p r i a</m>
@@ -2220,8 +2538,9 @@
             <m cert="0.5">n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--optiui optivi-->
-         <tok val="opti[vu]i"/>
+      <ana>
+         <tok val="optiui"/>
+         <tok val="optivi"/>
          <lm>
             <l>optivus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -2261,8 +2580,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--optuere optuére-->
-         <tok val="optu[ée]re"/>
+      <ana>
+         <tok val="optuere"/>
+         <tok val="optuére"/>
          <lm>
             <l>obtueor</l>
             <m>v - 2 s p m p</m>
@@ -2289,8 +2609,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--optutum optutumque-->
-         <tok val="optutum(que)?"/>
+      <ana>
+         <tok val="optutum"/>
+         <tok val="optutumque"/>
          <lm>
             <l>obtueor</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -2310,20 +2631,27 @@
          </lm>
       </ana>
       <ana>
+         <tok val="optuma"/>
          <tok val="optúma"/>
          <lm>
             <l>bonus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Optúme óptume Óptume-->
-         <tok val="[ÓóO]pt[uú]me"/>
+      <ana>
+         <tok val="Optume"/>
+         <tok val="Optúme"/>
+         <tok val="optume"/>
+         <tok val="optúme"/>
+         <tok val="Óptume"/>
+         <tok val="óptume"/>
          <lm>
             <l>bonus</l>
             <m>d</m>
          </lm>
       </ana>
       <ana>
+         <tok val="optumi"/>
          <tok val="óptumi"/>
          <lm>
             <l>bonus</l>
@@ -2331,6 +2659,7 @@
          </lm>
       </ana>
       <ana>
+         <tok val="optumo"/>
          <tok val="óptumo"/>
          <lm>
             <l>bonus</l>
@@ -2338,6 +2667,7 @@
          </lm>
       </ana>
       <ana>
+         <tok val="optumorum"/>
          <tok val="óptumorum"/>
          <lm>
             <l>bonus</l>
@@ -2345,6 +2675,7 @@
          </lm>
       </ana>
       <ana>
+         <tok val="optumum"/>
          <tok val="óptumum"/>
          <lm>
             <l>bonus</l>
@@ -2352,6 +2683,7 @@
          </lm>
       </ana>
       <ana>
+         <tok val="optumus"/>
          <tok val="óptumus"/>
          <lm>
             <l>bonus</l>
@@ -2580,8 +2912,9 @@
             <m cert="0.333333333333333333">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--optrudere optrúdere-->
-         <tok val="optr[úu]dere"/>
+      <ana>
+         <tok val="optrudere"/>
+         <tok val="optrúdere"/>
          <lm>
             <l>obtrudo</l>
             <m>v - - - p n a</m>
@@ -2594,8 +2927,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--optulere optulerunt-->
-         <tok val="optuler(unt|e)"/>
+      <ana>
+         <tok val="optulere"/>
+         <tok val="optulerunt"/>
          <lm>
             <l>offero</l>
             <m>v - 3 p r i a</m>
@@ -2667,6 +3001,7 @@
       </ana>
       <ana>
          <tok val="Optunso"/>
+         <tok val="optunso"/>
          <lm>
             <l>obtundo</l>
             <m cert="0.25">v - - s r p p m b</m>

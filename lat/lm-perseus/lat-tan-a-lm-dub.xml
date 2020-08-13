@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdub">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dub">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dub</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dub.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DUb</tok-starts-with>
       <tok-starts-with>Dub</tok-starts-with>
       <tok-starts-with>dub</tok-starts-with>
       <tok-starts-with>dúb</tok-starts-with>
-      <ana><!--DUbitatur Dubitatur dubitatur dubitaturque-->
-         <tok val="[D]?(u|U|du)bitatur(que)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:12.899-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:12.899-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dub.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DUbitatur"/>
+         <tok val="Dubitatur"/>
+         <tok val="dubitatur"/>
+         <tok val="dubitaturque"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Dubia dubia dubiaque dúbia-->
-         <tok val="[dD]?(u|dú|du)bia(que)?"/>
+      <ana>
+         <tok val="Dubia"/>
+         <tok val="dubia"/>
+         <tok val="dubiaque"/>
+         <tok val="dúbia"/>
          <lm>
             <l>dubius</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Dubia dubia dubiaque-->
-         <tok val="[dD]ubia(que)?"/>
+      <ana>
+         <tok val="Dubia"/>
+         <tok val="dubia"/>
+         <tok val="dubiaque"/>
          <lm>
             <l>dubius</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -61,8 +77,10 @@
             <m cert="0.2">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Dubiae dubiae dubiaeque-->
-         <tok val="[dD]ubiae(que)?"/>
+      <ana>
+         <tok val="Dubiae"/>
+         <tok val="dubiae"/>
+         <tok val="dubiaeque"/>
          <lm>
             <l>dubius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -71,22 +89,28 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Dubiam dubiam dubiamque-->
-         <tok val="[dD]ubiam(que)?"/>
+      <ana>
+         <tok val="Dubiam"/>
+         <tok val="dubiam"/>
+         <tok val="dubiamque"/>
          <lm>
             <l>dubius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dubias dubias dubiasque-->
-         <tok val="[dD]ubias(que)?"/>
+      <ana>
+         <tok val="Dubias"/>
+         <tok val="dubias"/>
+         <tok val="dubiasque"/>
          <lm>
             <l>dubius</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dubie dubie dubieque-->
-         <tok val="[dD]ubie(que)?"/>
+      <ana>
+         <tok val="Dubie"/>
+         <tok val="dubie"/>
+         <tok val="dubieque"/>
          <lm cert="0.5">
             <l>dubie</l>
             <m>d</m>
@@ -96,31 +120,46 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Dubie Dubium Dubiumne dubie dubieque dubium dubiumne dubiumque dubiumst-->
-         <tok val="[dD]ubi(eq)?[u]?[m]?(ne|st|que|e)?"/>
+      <ana>
+         <tok val="Dubie"/>
+         <tok val="Dubium"/>
+         <tok val="Dubiumne"/>
+         <tok val="dubie"/>
+         <tok val="dubieque"/>
+         <tok val="dubium"/>
+         <tok val="dubiumne"/>
+         <tok val="dubiumque"/>
+         <tok val="dubiumst"/>
          <lm>
             <l>dubius</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Dubii dubi dubii dubiique-->
-         <tok val="[dD]ubi(i|ique)?"/>
+      <ana>
+         <tok val="Dubii"/>
+         <tok val="dubi"/>
+         <tok val="dubii"/>
+         <tok val="dubiique"/>
          <lm>
             <l>dubius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Dubii dubii dubiique-->
-         <tok val="[dD]ubii(que)?"/>
+      <ana>
+         <tok val="Dubii"/>
+         <tok val="dubii"/>
+         <tok val="dubiique"/>
          <lm>
             <l>dubius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Dubiis dubiis dubiisque-->
-         <tok val="[dD]ubiis(que)?"/>
+      <ana>
+         <tok val="Dubiis"/>
+         <tok val="dubiis"/>
+         <tok val="dubiisque"/>
          <lm>
             <l>dubius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -131,8 +170,11 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Dubio dubio dubioque dubiost-->
-         <tok val="[dD]ubio(st|que)?"/>
+      <ana>
+         <tok val="Dubio"/>
+         <tok val="dubio"/>
+         <tok val="dubioque"/>
+         <tok val="dubiost"/>
          <lm>
             <l>dubius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -141,8 +183,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Dubiosus dubiosus-->
-         <tok val="[dD]ubiosus"/>
+      <ana>
+         <tok val="Dubiosus"/>
+         <tok val="dubiosus"/>
          <lm>
             <l>dubiosus</l>
             <m>a - - s - - - m n</m>
@@ -150,6 +193,7 @@
       </ana>
       <ana>
          <tok val="Dubis"/>
+         <tok val="dubis"/>
          <lm>
             <l>Dubis</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -159,6 +203,7 @@
       </ana>
       <ana>
          <tok val="Dubitabilia"/>
+         <tok val="dubitabilia"/>
          <lm>
             <l>dubitabilis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -166,8 +211,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Dubitabilis dubitabilis-->
-         <tok val="[dD]ubitabilis"/>
+      <ana>
+         <tok val="Dubitabilis"/>
+         <tok val="dubitabilis"/>
          <lm>
             <l>dubitabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -181,43 +227,50 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Dubitabis dubitabis dubitabisne-->
-         <tok val="[dD]ubitabis(ne)?"/>
+      <ana>
+         <tok val="Dubitabis"/>
+         <tok val="dubitabis"/>
+         <tok val="dubitabisne"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Dubitabit dubitabit-->
-         <tok val="[dD]ubitabit"/>
+      <ana>
+         <tok val="Dubitabit"/>
+         <tok val="dubitabit"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Dubitabitis dubitabitis-->
-         <tok val="[dD]ubitabitis"/>
+      <ana>
+         <tok val="Dubitabitis"/>
+         <tok val="dubitabitis"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Dubitabitur dubitabitur-->
-         <tok val="[dD]ubitabitur"/>
+      <ana>
+         <tok val="Dubitabitur"/>
+         <tok val="dubitabitur"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Dubitamus dubitamus-->
-         <tok val="[dD]ubitamus"/>
+      <ana>
+         <tok val="Dubitamus"/>
+         <tok val="dubitamus"/>
          <lm>
             <l>dubito</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Dubitandi dubitandi-->
-         <tok val="[dD]ubitandi"/>
+      <ana>
+         <tok val="Dubitandi"/>
+         <tok val="dubitandi"/>
          <lm>
             <l>dubito</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -227,8 +280,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Dubitandum dubitandum-->
-         <tok val="[dD]ubitandum"/>
+      <ana>
+         <tok val="Dubitandum"/>
+         <tok val="dubitandum"/>
          <lm>
             <l>dubito</l>
             <m cert="0.166666666666666667">v - - s p g p n a</m>
@@ -239,15 +293,18 @@
             <m cert="0.166666666666666667">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Dubitandum dubitande dubitandum-->
-         <tok val="[dD]ubitand(um|e)"/>
+      <ana>
+         <tok val="Dubitandum"/>
+         <tok val="dubitande"/>
+         <tok val="dubitandum"/>
          <lm>
             <l>dubito</l>
             <m>v - - s p g p n v</m>
          </lm>
       </ana>
-      <ana><!--Dubitans dubitans-->
-         <tok val="[dD]ubitans"/>
+      <ana>
+         <tok val="Dubitans"/>
+         <tok val="dubitans"/>
          <lm>
             <l>dubito</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -259,15 +316,18 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Dubitanter dubitanter-->
-         <tok val="[dD]ubitanter"/>
+      <ana>
+         <tok val="Dubitanter"/>
+         <tok val="dubitanter"/>
          <lm>
             <l>dubitanter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Dubitanti dubitanti dubitantique-->
-         <tok val="[dD]ubitanti(que)?"/>
+      <ana>
+         <tok val="Dubitanti"/>
+         <tok val="dubitanti"/>
+         <tok val="dubitantique"/>
          <lm>
             <l>dubito</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -275,8 +335,11 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Dubitanti dubitante dubitanti dubitantique-->
-         <tok val="[dD]ubitant(i|e|ique)"/>
+      <ana>
+         <tok val="Dubitanti"/>
+         <tok val="dubitante"/>
+         <tok val="dubitanti"/>
+         <tok val="dubitantique"/>
          <lm>
             <l>dubito</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -284,58 +347,74 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Dubitantur dubitantur-->
-         <tok val="[dD]ubitantur"/>
+      <ana>
+         <tok val="Dubitantur"/>
+         <tok val="dubitantur"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Dubitare dubitare-->
-         <tok val="[dD]ubitare"/>
+      <ana>
+         <tok val="Dubitare"/>
+         <tok val="dubitare"/>
          <lm>
             <l>dubito</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Dubitare dubitare dubitaris-->
-         <tok val="[dD]ubitar(e|is)"/>
+      <ana>
+         <tok val="Dubitare"/>
+         <tok val="dubitare"/>
+         <tok val="dubitaris"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Dubitaret dubitaret dubitaretque-->
-         <tok val="[dD]ubitaret(que)?"/>
+      <ana>
+         <tok val="Dubitaret"/>
+         <tok val="dubitaret"/>
+         <tok val="dubitaretque"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Dubitari dubitari dubitarique-->
-         <tok val="[dD]ubitari(que)?"/>
+      <ana>
+         <tok val="Dubitari"/>
+         <tok val="dubitari"/>
+         <tok val="dubitarique"/>
          <lm>
             <l>dubito</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Dubitas dubitan dubitas dubitasne-->
-         <tok val="[dD]ubita[s]?[n]?[es]?"/>
+      <ana>
+         <tok val="Dubitas"/>
+         <tok val="dubitan"/>
+         <tok val="dubitas"/>
+         <tok val="dubitasne"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Dubitat dubitat dubitatque dubitatve-->
-         <tok val="[dD]ubitat(ve|que)?"/>
+      <ana>
+         <tok val="Dubitat"/>
+         <tok val="dubitat"/>
+         <tok val="dubitatque"/>
+         <tok val="dubitatve"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Dubitata dubitata dubitataque-->
-         <tok val="[dD]ubitata(que)?"/>
+      <ana>
+         <tok val="Dubitata"/>
+         <tok val="dubitata"/>
+         <tok val="dubitataque"/>
          <lm>
             <l>dubito</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -346,45 +425,55 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Dubitate dubitate-->
-         <tok val="[dD]ubitate"/>
+      <ana>
+         <tok val="Dubitate"/>
+         <tok val="dubitate"/>
          <lm>
             <l>dubito</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Dubitate Dubitatum dubitate dubitatum dubitatumque-->
-         <tok val="[dD]ubitat(um|e|umque)"/>
+      <ana>
+         <tok val="Dubitate"/>
+         <tok val="Dubitatum"/>
+         <tok val="dubitate"/>
+         <tok val="dubitatum"/>
+         <tok val="dubitatumque"/>
          <lm>
             <l>dubito</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Dubitatio dubitatio dubitation-->
-         <tok val="[dD]ubitatio[n]?"/>
+      <ana>
+         <tok val="Dubitatio"/>
+         <tok val="dubitatio"/>
+         <tok val="dubitation"/>
          <lm>
             <l>dubitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Dubitatione dubitatione-->
-         <tok val="[dD]ubitatione"/>
+      <ana>
+         <tok val="Dubitatione"/>
+         <tok val="dubitatione"/>
          <lm>
             <l>dubitatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Dubitationem dubitationem-->
-         <tok val="[dD]ubitationem"/>
+      <ana>
+         <tok val="Dubitationem"/>
+         <tok val="dubitationem"/>
          <lm>
             <l>dubitatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dubitationes dubitationes-->
-         <tok val="[dD]ubitationes"/>
+      <ana>
+         <tok val="Dubitationes"/>
+         <tok val="dubitationes"/>
          <lm>
             <l>dubitatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -392,22 +481,25 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Dubitationi dubitationi-->
-         <tok val="[dD]ubitationi"/>
+      <ana>
+         <tok val="Dubitationi"/>
+         <tok val="dubitationi"/>
          <lm>
             <l>dubitatio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Dubitationis dubitationis-->
-         <tok val="[dD]ubitationis"/>
+      <ana>
+         <tok val="Dubitationis"/>
+         <tok val="dubitationis"/>
          <lm>
             <l>dubitatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Dubitatis dubitatis-->
-         <tok val="[dD]ubitatis"/>
+      <ana>
+         <tok val="Dubitatis"/>
+         <tok val="dubitatis"/>
          <lm>
             <l>dubito</l>
             <m cert="0.166666666666666667">v - 2 p p i a</m>
@@ -418,15 +510,19 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Dubitatis dubitatis dubitátis-->
-         <tok val="[dD]ubit[aá]tis"/>
+      <ana>
+         <tok val="Dubitatis"/>
+         <tok val="dubitatis"/>
+         <tok val="dubitátis"/>
          <lm>
             <l>dubito</l>
             <m>v - - p r p p f d</m>
          </lm>
       </ana>
-      <ana><!--Dubitatiue dubitati dubitatiue-->
-         <tok val="[dD]ubitati(ue|)"/>
+      <ana>
+         <tok val="Dubitatiue"/>
+         <tok val="dubitati"/>
+         <tok val="dubitatiue"/>
          <lm>
             <l>dubito</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -435,8 +531,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Dubitatum dubitatum dubitatumque-->
-         <tok val="[dD]ubitatum(que)?"/>
+      <ana>
+         <tok val="Dubitatum"/>
+         <tok val="dubitatum"/>
+         <tok val="dubitatumque"/>
          <lm>
             <l>dubito</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -448,34 +546,47 @@
       </ana>
       <ana>
          <tok val="Dubitatum"/>
+         <tok val="dubitatum"/>
          <lm>
             <l>dubito</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Dubitatus dubitatus dubitatunque-->
-         <tok val="[dD]ubitatu(s|nque)"/>
+      <ana>
+         <tok val="Dubitatus"/>
+         <tok val="dubitatunque"/>
+         <tok val="dubitatus"/>
          <lm>
             <l>dubito</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Dubitavit dubitauit dubitavit dubitavitque-->
-         <tok val="[dD]ubita[vu]it(que)?"/>
+      <ana>
+         <tok val="Dubitavit"/>
+         <tok val="dubitauit"/>
+         <tok val="dubitavit"/>
+         <tok val="dubitavitque"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Dubito dubito dubitoque-->
-         <tok val="[dD]ubito(que)?"/>
+      <ana>
+         <tok val="Dubito"/>
+         <tok val="dubito"/>
+         <tok val="dubitoque"/>
          <lm>
             <l>dubito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Dubium Dubiumne dubium dubiumne dubiumque dubiumst-->
-         <tok val="[dD]ubium(ne|st|que)?"/>
+      <ana>
+         <tok val="Dubium"/>
+         <tok val="Dubiumne"/>
+         <tok val="dubium"/>
+         <tok val="dubiumne"/>
+         <tok val="dubiumque"/>
+         <tok val="dubiumst"/>
          <lm>
             <l>dubius</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -483,23 +594,35 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Dubium Dubiumne dubiorum dubium dubiumne dubiumque dubiumst-->
-         <tok val="[dD]ubi(or)?um(ne|st|que)?"/>
+      <ana>
+         <tok val="Dubium"/>
+         <tok val="Dubiumne"/>
+         <tok val="dubiorum"/>
+         <tok val="dubium"/>
+         <tok val="dubiumne"/>
+         <tok val="dubiumque"/>
+         <tok val="dubiumst"/>
          <lm>
             <l>dubius</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Dubium Dubiumne-->
-         <tok val="Dubium(ne)?"/>
+      <ana>
+         <tok val="Dubium"/>
+         <tok val="Dubiumne"/>
+         <tok val="dubium"/>
+         <tok val="dubiumne"/>
          <lm>
             <l>Dubis</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Dubius dubius dubiusne dubiusque-->
-         <tok val="[dD]ubius(ne|que)?"/>
+      <ana>
+         <tok val="Dubius"/>
+         <tok val="dubius"/>
+         <tok val="dubiusne"/>
+         <tok val="dubiusque"/>
          <lm>
             <l>dubius</l>
             <m>a - - s - - - m n</m>
@@ -533,8 +656,10 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--dubios dubiosque dubiost-->
-         <tok val="dubios(t|que)?"/>
+      <ana>
+         <tok val="dubios"/>
+         <tok val="dubiosque"/>
+         <tok val="dubiost"/>
          <lm>
             <l>dubius</l>
             <m>a - - p - - - m a</m>
@@ -562,8 +687,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--dubita dubitan-->
-         <tok val="dubita[n]?"/>
+      <ana>
+         <tok val="dubita"/>
+         <tok val="dubitan"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 s p m a</m>
@@ -583,8 +709,9 @@
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--dubitabant dubitabantque-->
-         <tok val="dubitabant(que)?"/>
+      <ana>
+         <tok val="dubitabant"/>
+         <tok val="dubitabantque"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 p i i a</m>
@@ -707,8 +834,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--dubitantem dubitantemque-->
-         <tok val="dubitantem(que)?"/>
+      <ana>
+         <tok val="dubitantem"/>
+         <tok val="dubitantemque"/>
          <lm>
             <l>dubito</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -725,8 +853,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--dubitantes dubitantis-->
-         <tok val="dubitant[ie]s"/>
+      <ana>
+         <tok val="dubitantes"/>
+         <tok val="dubitantis"/>
          <lm>
             <l>dubito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -779,8 +908,10 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--dubitarat dubitauerat dubitaverat-->
-         <tok val="dubita[vu]?(e|)rat"/>
+      <ana>
+         <tok val="dubitarat"/>
+         <tok val="dubitauerat"/>
+         <tok val="dubitaverat"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s l i a</m>
@@ -828,43 +959,57 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--dubitarim dubitauerim dubitaverim-->
-         <tok val="dubita[vu]?(e|)rim"/>
+      <ana>
+         <tok val="dubitarim"/>
+         <tok val="dubitauerim"/>
+         <tok val="dubitaverim"/>
          <lm>
             <l>dubito</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--dubitarint dubitauerint dubitaverint-->
-         <tok val="dubita[vu]?(e|)rint"/>
+      <ana>
+         <tok val="dubitarint"/>
+         <tok val="dubitauerint"/>
+         <tok val="dubitaverint"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--dubitaris dubitaueris dubitaveris-->
-         <tok val="dubita[vu]?(e|)ris"/>
+      <ana>
+         <tok val="dubitaris"/>
+         <tok val="dubitaueris"/>
+         <tok val="dubitaveris"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--dubitarit dubitauerit dubitaverit-->
-         <tok val="dubita[vu]?(e|)rit"/>
+      <ana>
+         <tok val="dubitarit"/>
+         <tok val="dubitauerit"/>
+         <tok val="dubitaverit"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--dubitarunt dubitauere dubitauerunt dubitavere dubitaverunt-->
-         <tok val="dubita[vu]?(e|ve|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="dubitarunt"/>
+         <tok val="dubitauere"/>
+         <tok val="dubitauerunt"/>
+         <tok val="dubitavere"/>
+         <tok val="dubitaverunt"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--dubitasse dubitasseque dubitavisse-->
-         <tok val="dubita(vi)?sse(que)?"/>
+      <ana>
+         <tok val="dubitasse"/>
+         <tok val="dubitasseque"/>
+         <tok val="dubitavisse"/>
          <lm>
             <l>dubito</l>
             <m>v - - - r n a</m>
@@ -891,8 +1036,9 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--dubitasset dubitavisset-->
-         <tok val="dubita(vi)?sset"/>
+      <ana>
+         <tok val="dubitasset"/>
+         <tok val="dubitavisset"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s l s a</m>
@@ -934,8 +1080,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--dubitatiua dubitativa-->
-         <tok val="dubitati[vu]a"/>
+      <ana>
+         <tok val="dubitatiua"/>
+         <tok val="dubitativa"/>
          <lm>
             <l>dubitativus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -946,8 +1093,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--dubitatiue dubitative-->
-         <tok val="dubitati[vu]e"/>
+      <ana>
+         <tok val="dubitatiue"/>
+         <tok val="dubitative"/>
          <lm>
             <l>dubitativus</l>
             <m cert="0.333333333333333333">d</m>
@@ -977,8 +1125,9 @@
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--dubitatum dubitatumque-->
-         <tok val="dubitatum(que)?"/>
+      <ana>
+         <tok val="dubitatum"/>
+         <tok val="dubitatumque"/>
          <lm>
             <l>dubito</l>
             <m>a - - s - - - n n</m>
@@ -1001,8 +1150,9 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--dubitaturum dubitaturumne-->
-         <tok val="dubitaturum(ne)?"/>
+      <ana>
+         <tok val="dubitaturum"/>
+         <tok val="dubitaturumne"/>
          <lm>
             <l>dubito</l>
             <m cert="0.166666666666666667">v - - s f p a n v</m>
@@ -1020,44 +1170,50 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--dubitauerint dubitaverint-->
-         <tok val="dubita[vu]erint"/>
+      <ana>
+         <tok val="dubitauerint"/>
+         <tok val="dubitaverint"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--dubitaueris dubitaveris-->
-         <tok val="dubita[vu]eris"/>
+      <ana>
+         <tok val="dubitaueris"/>
+         <tok val="dubitaveris"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--dubitauerit dubitaverit-->
-         <tok val="dubita[vu]erit"/>
+      <ana>
+         <tok val="dubitauerit"/>
+         <tok val="dubitaverit"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--dubitaueritis dubitaveritis-->
-         <tok val="dubita[vu]eritis"/>
+      <ana>
+         <tok val="dubitaueritis"/>
+         <tok val="dubitaveritis"/>
          <lm>
             <l>dubito</l>
             <m cert="0.5">v - 2 p r s a</m>
             <m cert="0.5">v - 2 p t i a</m>
          </lm>
       </ana>
-      <ana><!--dubitaui dubitavi-->
-         <tok val="dubita[vu]i"/>
+      <ana>
+         <tok val="dubitaui"/>
+         <tok val="dubitavi"/>
          <lm>
             <l>dubito</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--dubitauimus dubitavimus-->
-         <tok val="dubita[vu]imus"/>
+      <ana>
+         <tok val="dubitauimus"/>
+         <tok val="dubitavimus"/>
          <lm>
             <l>dubito</l>
             <m>v - 1 p r i a</m>
@@ -1070,15 +1226,19 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--dubitem dubitemne dubitemue dubitemve-->
-         <tok val="dubitem[unv]?(e|)"/>
+      <ana>
+         <tok val="dubitem"/>
+         <tok val="dubitemne"/>
+         <tok val="dubitemue"/>
+         <tok val="dubitemve"/>
          <lm>
             <l>dubito</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--dubitemus dubitemusne-->
-         <tok val="dubitemus(ne)?"/>
+      <ana>
+         <tok val="dubitemus"/>
+         <tok val="dubitemusne"/>
          <lm>
             <l>dubito</l>
             <m>v - 1 p p s a</m>
@@ -1091,15 +1251,17 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--dubites dubitesve-->
-         <tok val="dubites(ve)?"/>
+      <ana>
+         <tok val="dubites"/>
+         <tok val="dubitesve"/>
          <lm>
             <l>dubito</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--dubitet dubitetque-->
-         <tok val="dubitet(que)?"/>
+      <ana>
+         <tok val="dubitet"/>
+         <tok val="dubitetque"/>
          <lm>
             <l>dubito</l>
             <m>v - 3 s p s a</m>

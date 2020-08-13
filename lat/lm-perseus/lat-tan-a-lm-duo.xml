@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusduo">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:duo">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to duo</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-duo.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DUO</tok-starts-with>
       <tok-starts-with>DUo</tok-starts-with>
@@ -38,15 +15,55 @@
       <tok-starts-with>duo</tok-starts-with>
       <tok-starts-with>dúo</tok-starts-with>
       <tok-starts-with>duó</tok-starts-with>
-      <ana><!--DUOBUS Duobus duobus duobusque duobusue duóbus-->
-         <tok val="[dD]?[u]?[oó]?(bus)?[q]?(ue|DUOBUS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:21.53-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:21.53-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-duo.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DUOBUS"/>
+         <tok val="Duobus"/>
+         <tok val="duobus"/>
+         <tok val="duobusque"/>
+         <tok val="duobusue"/>
+         <tok val="duóbus"/>
          <lm>
             <l>duo</l>
             <m>m - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--DUOBUS Duobus duobus duobusque duobusue-->
-         <tok val="[dD]?(uobus)?[q]?(ue|DUOBUS)?"/>
+      <ana>
+         <tok val="DUOBUS"/>
+         <tok val="Duobus"/>
+         <tok val="duobus"/>
+         <tok val="duobusque"/>
+         <tok val="duobusue"/>
          <lm>
             <l>duo</l>
             <m cert="0.333333333333333333">m - - p - - - m d</m>
@@ -54,15 +71,22 @@
             <m cert="0.333333333333333333">m - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--DUODECIM Duodecim duodecim duodecimque Duodecimn-->
-         <tok val="[Dd]?(uodecim)?(n|que|DUODECIM)?"/>
+      <ana>
+         <tok val="DUODECIM"/>
+         <tok val="Duodecim"/>
+         <tok val="Duodecimn"/>
+         <tok val="duodecim"/>
+         <tok val="duodecimn"/>
+         <tok val="duodecimque"/>
          <lm>
             <l>duodecim</l>
             <m>m</m>
          </lm>
       </ana>
-      <ana><!--DUODECIMUM Duodecimum duodecimum-->
-         <tok val="[dD]?(uodecimum|DUODECIMUM)"/>
+      <ana>
+         <tok val="DUODECIMUM"/>
+         <tok val="Duodecimum"/>
+         <tok val="duodecimum"/>
          <lm>
             <l>duodecimus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -73,57 +97,87 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--DUODECIMUS Duodecimus duodecimus-->
-         <tok val="[dD]?(uodecimus|DUODECIMUS)"/>
+      <ana>
+         <tok val="DUODECIMUS"/>
+         <tok val="Duodecimus"/>
+         <tok val="duodecimus"/>
          <lm>
             <l>duodecimus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--DUorum Duorum duorum duorumque duorumve duorúm-->
-         <tok val="[dD]?(u|DU|du)or[uú]m(ve|que)?"/>
+      <ana>
+         <tok val="DUorum"/>
+         <tok val="Duorum"/>
+         <tok val="duorum"/>
+         <tok val="duorumque"/>
+         <tok val="duorumve"/>
+         <tok val="duorúm"/>
          <lm>
             <l>duo</l>
             <m>m - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--DUorum Duorum duorum duorumque duorumve-->
-         <tok val="[dD]?(u|DU|du)orum(ve|que)?"/>
+      <ana>
+         <tok val="DUorum"/>
+         <tok val="Duorum"/>
+         <tok val="duorum"/>
+         <tok val="duorumque"/>
+         <tok val="duorumve"/>
          <lm>
             <l>duo</l>
             <m>m - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--DUos Duos Duosque duos duosque duosve duós-->
-         <tok val="[dD]?(u|DU)?(o|duó)s(qu|v)?[e]?"/>
+      <ana>
+         <tok val="DUos"/>
+         <tok val="Duos"/>
+         <tok val="Duosque"/>
+         <tok val="duos"/>
+         <tok val="duosque"/>
+         <tok val="duosve"/>
+         <tok val="duós"/>
          <lm>
             <l>duo</l>
             <m>m - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Duo Duoque duo duoque duove-->
-         <tok val="[dD]uo(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Duo"/>
+         <tok val="Duoque"/>
+         <tok val="duo"/>
+         <tok val="duoque"/>
+         <tok val="duove"/>
          <lm>
             <l>duo</l>
             <m>m - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Duo Duoque duo duoque duove dúo-->
-         <tok val="[dD]?(u|dú)o(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Duo"/>
+         <tok val="Duoque"/>
+         <tok val="duo"/>
+         <tok val="duoque"/>
+         <tok val="duove"/>
+         <tok val="dúo"/>
          <lm>
             <l>duo</l>
             <m>m - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Duo duo-->
-         <tok val="[dD]uo"/>
+      <ana>
+         <tok val="Duo"/>
+         <tok val="duo"/>
          <lm>
             <l>duo</l>
             <m>m - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Duodecima duodecima duodecimave duodecuma-->
-         <tok val="[dD]uodec[iu]ma(ve)?"/>
+      <ana>
+         <tok val="Duodecima"/>
+         <tok val="duodecima"/>
+         <tok val="duodecimave"/>
+         <tok val="duodecuma"/>
          <lm>
             <l>duodecimus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -134,8 +188,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Duodecimo duodecimo-->
-         <tok val="[dD]uodecimo"/>
+      <ana>
+         <tok val="Duodecimo"/>
+         <tok val="duodecimo"/>
          <lm>
             <l>duodecimus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -144,8 +199,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Duodenarii duodenarii-->
-         <tok val="[dD]uodenarii"/>
+      <ana>
+         <tok val="Duodenarii"/>
+         <tok val="duodenarii"/>
          <lm>
             <l>duodenarius</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -156,6 +212,7 @@
       </ana>
       <ana>
          <tok val="Duodenarium"/>
+         <tok val="duodenarium"/>
          <lm>
             <l>duodenarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -166,15 +223,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Duodenarius duodenarius-->
-         <tok val="[dD]uodenarius"/>
+      <ana>
+         <tok val="Duodenarius"/>
+         <tok val="duodenarius"/>
          <lm>
             <l>duodenarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Duodequadragesimo duodequadragesimo-->
-         <tok val="[dD]uodequadragesimo"/>
+      <ana>
+         <tok val="Duodequadragesimo"/>
+         <tok val="duodequadragesimo"/>
          <lm>
             <l>duodequadragesimus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -185,6 +244,7 @@
       </ana>
       <ana>
          <tok val="Duodequadragesimus"/>
+         <tok val="duodequadragesimus"/>
          <lm>
             <l>duodequadragesimus</l>
             <m>a - - s - - - m n</m>
@@ -192,13 +252,17 @@
       </ana>
       <ana>
          <tok val="Duodeuicesimus"/>
+         <tok val="duodeuicesimus"/>
          <lm>
             <l>duodevicesimus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Duodeuiginti Duodeviginti duodeuiginti duodeviginti-->
-         <tok val="[Dd]uode[vu]iginti"/>
+      <ana>
+         <tok val="Duodeuiginti"/>
+         <tok val="Duodeviginti"/>
+         <tok val="duodeuiginti"/>
+         <tok val="duodeviginti"/>
          <lm>
             <l>duodeviginti</l>
             <m>m</m>
@@ -206,15 +270,13 @@
       </ana>
       <ana>
          <tok val="Duoviri"/>
-         <lm>
+         <tok val="duoviri"/>
+         <lm cert="0.5">
             <l>duoviri</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
-      </ana>
-      <ana><!--Duoviri duoviri-->
-         <tok val="[dD]uoviri"/>
-         <lm>
+         <lm cert="0.5">
             <l>duovir</l>
             <m>n - - s - - - m g</m>
          </lm>
@@ -301,22 +363,25 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--duodecimam duodecumam-->
-         <tok val="duodec[ui]mam"/>
+      <ana>
+         <tok val="duodecimam"/>
+         <tok val="duodecumam"/>
          <lm>
             <l>duodecimus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--duodecimas duodecumas-->
-         <tok val="duodec[ui]mas"/>
+      <ana>
+         <tok val="duodecimas"/>
+         <tok val="duodecumas"/>
          <lm>
             <l>duodecimus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--duodecimi Duodecimi-->
-         <tok val="[Dd]uodecimi"/>
+      <ana>
+         <tok val="Duodecimi"/>
+         <tok val="duodecimi"/>
          <lm>
             <l>duodecimus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -420,15 +485,17 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--duodeuicesimam duodevicesimam-->
-         <tok val="duode[vu]icesimam"/>
+      <ana>
+         <tok val="duodeuicesimam"/>
+         <tok val="duodevicesimam"/>
          <lm>
             <l>duodevicesimus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--duodeuicesimo duodevicesimo-->
-         <tok val="duode[vu]icesimo"/>
+      <ana>
+         <tok val="duodeuicesimo"/>
+         <tok val="duodevicesimo"/>
          <lm>
             <l>duodevicesimus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -437,8 +504,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--duodeuicesimum duodevicesimum-->
-         <tok val="duode[vu]icesimum"/>
+      <ana>
+         <tok val="duodeuicesimum"/>
+         <tok val="duodevicesimum"/>
          <lm>
             <l>duodevicesimus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -528,8 +596,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--duodeni duodenique-->
-         <tok val="duodeni(que)?"/>
+      <ana>
+         <tok val="duodeni"/>
+         <tok val="duodenique"/>
          <lm>
             <l>duodeni</l>
             <m cert="0.25">a - - p - - - m n</m>
@@ -569,8 +638,9 @@
             <m cert="0.166666666666666667">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--duodequadraginta Duodequadraginta-->
-         <tok val="[Dd]uodequadraginta"/>
+      <ana>
+         <tok val="Duodequadraginta"/>
+         <tok val="duodequadraginta"/>
          <lm>
             <l>duodequadraginta</l>
             <m>m - - p</m>

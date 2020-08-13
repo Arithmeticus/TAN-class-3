@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseustrie">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:trie">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to trie</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-trie.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>TRIE</tok-starts-with>
       <tok-starts-with>Trie</tok-starts-with>
       <tok-starts-with>trie</tok-starts-with>
-      <ana><!--TRIENNIVM Triennium triennium-->
-         <tok val="[tT]?(riennium|TRIENNIVM)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:50:26.062-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:50:26.062-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-trie.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="TRIENNIVM"/>
+         <tok val="Triennium"/>
+         <tok val="triennium"/>
+         <tok val="triennivm"/>
          <lm cert="0.5">
             <l>triennis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -45,28 +56,24 @@
          </lm>
          <lm cert="0.5">
             <l>triennium</l>
-            <m cert="0.333333333333333333">n - - s - - - n v</m>
-            <m cert="0.333333333333333333">n - - s - - - n a</m>
-            <m cert="0.333333333333333333">n - - s - - - n n</m>
+            <m cert="0.25">n - - s - - - n v</m>
+            <m cert="0.25">n - - s - - - n a</m>
+            <m cert="0.25">n - - s - - - n n</m>
+            <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--TRIENNIVM Triennium-->
-         <tok val="T(riennium|RIENNIVM)"/>
-         <lm>
-            <l>triennium</l>
-            <m>n - - p - - - n g</m>
-         </lm>
-      </ana>
-      <ana><!--Triennio triennio-->
-         <tok val="[tT]riennio"/>
+      <ana>
+         <tok val="Triennio"/>
+         <tok val="triennio"/>
          <lm>
             <l>triennium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Triennis triennis-->
-         <tok val="[tT]riennis"/>
+      <ana>
+         <tok val="Triennis"/>
+         <tok val="triennis"/>
          <lm>
             <l>triennis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -80,8 +87,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Triens triens-->
-         <tok val="[tT]riens"/>
+      <ana>
+         <tok val="Triens"/>
+         <tok val="triens"/>
          <lm>
             <l>triens</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -90,6 +98,7 @@
       </ana>
       <ana>
          <tok val="Trientalia"/>
+         <tok val="trientalia"/>
          <lm>
             <l>trientalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -97,8 +106,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Trientalis trientalis-->
-         <tok val="[tT]rientalis"/>
+      <ana>
+         <tok val="Trientalis"/>
+         <tok val="trientalis"/>
          <lm>
             <l>trientalis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -112,8 +122,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Trientarium trientarium-->
-         <tok val="[tT]rientarium"/>
+      <ana>
+         <tok val="Trientarium"/>
+         <tok val="trientarium"/>
          <lm>
             <l>trientarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -124,22 +135,25 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Trientarius trientarius-->
-         <tok val="[tT]rientarius"/>
+      <ana>
+         <tok val="Trientarius"/>
+         <tok val="trientarius"/>
          <lm>
             <l>trientarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Trientem trientem-->
-         <tok val="[tT]rientem"/>
+      <ana>
+         <tok val="Trientem"/>
+         <tok val="trientem"/>
          <lm>
             <l>triens</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Trierarchus trierarchus-->
-         <tok val="[tT]rierarchus"/>
+      <ana>
+         <tok val="Trierarchus"/>
+         <tok val="trierarchus"/>
          <lm>
             <l>trierarchus</l>
             <m>n - - s - - - m n</m>
@@ -147,6 +161,7 @@
       </ana>
       <ana>
          <tok val="Trieres"/>
+         <tok val="trieres"/>
          <lm>
             <l>trieris</l>
             <m cert="0.166666666666666667">a - - p - - - f n</m>
@@ -157,8 +172,11 @@
             <m cert="0.166666666666666667">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Trieres Trieris trieris-->
-         <tok val="[Tt]rier[ie]s"/>
+      <ana>
+         <tok val="Trieres"/>
+         <tok val="Trieris"/>
+         <tok val="trieres"/>
+         <tok val="trieris"/>
          <lm>
             <l>trieris</l>
             <m cert="0.333333333333333333">n - - p - - - f a</m>
@@ -166,8 +184,9 @@
             <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Trieris trieris-->
-         <tok val="[tT]rieris"/>
+      <ana>
+         <tok val="Trieris"/>
+         <tok val="trieris"/>
          <lm>
             <l>trieris</l>
             <m cert="0.111111111111111111">n - - s - - - f n</m>
@@ -181,8 +200,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Trieterica trieterica-->
-         <tok val="[tT]rieterica"/>
+      <ana>
+         <tok val="Trieterica"/>
+         <tok val="trieterica"/>
          <lm cert="0.5">
             <l>trieterica</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -199,15 +219,17 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Trietericus trietericus-->
-         <tok val="[tT]rietericus"/>
+      <ana>
+         <tok val="Trietericus"/>
+         <tok val="trietericus"/>
          <lm>
             <l>trietericus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Trieteris trieteris-->
-         <tok val="[tT]rieteris"/>
+      <ana>
+         <tok val="Trieteris"/>
+         <tok val="trieteris"/>
          <lm>
             <l>trieteris</l>
             <m>n - - s - - - f n</m>
@@ -242,8 +264,9 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--trienni triennii-->
-         <tok val="trienni[i]?"/>
+      <ana>
+         <tok val="trienni"/>
+         <tok val="triennii"/>
          <lm>
             <l>triennium</l>
             <m>n - - s - - - n g</m>
@@ -271,8 +294,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--trientabulum trientabulumque-->
-         <tok val="trientabulum(que)?"/>
+      <ana>
+         <tok val="trientabulum"/>
+         <tok val="trientabulumque"/>
          <lm>
             <l>trientabulum</l>
             <m cert="0.25">n - - s - - - n a</m>
@@ -314,8 +338,10 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--triente trienteve trienti-->
-         <tok val="trient[e]?(ve|i)?"/>
+      <ana>
+         <tok val="triente"/>
+         <tok val="trienteve"/>
+         <tok val="trienti"/>
          <lm>
             <l>triens</l>
             <m>n - - s - - - m b</m>
@@ -329,8 +355,9 @@
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--trientes trientis-->
-         <tok val="trient[ie]s"/>
+      <ana>
+         <tok val="trientes"/>
+         <tok val="trientis"/>
          <lm>
             <l>triens</l>
             <m>n - - p - - - m a</m>
@@ -449,8 +476,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--trieterida trieteridem-->
-         <tok val="trieterid(em|a)"/>
+      <ana>
+         <tok val="trieterida"/>
+         <tok val="trieteridem"/>
          <lm>
             <l>trieteris</l>
             <m>n - - s - - - f a</m>

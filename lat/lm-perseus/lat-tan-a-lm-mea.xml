@@ -1,44 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusmea">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:mea">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to mea</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-mea.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>MEA</tok-starts-with>
       <tok-starts-with>Mea</tok-starts-with>
       <tok-starts-with>mea</tok-starts-with>
       <tok-starts-with>meá</tok-starts-with>
       <tok-starts-with>méa</tok-starts-with>
-      <ana><!--MEA Mea Mean mea mean meane meaque meast meá méa-->
-         <tok val="[mM]?[e]?[a]?[n]?(e|st|que|á|méa|MEA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:33:06.604-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:33:06.604-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-mea.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="MEA"/>
+         <tok val="Mea"/>
+         <tok val="Mean"/>
+         <tok val="mea"/>
+         <tok val="mean"/>
+         <tok val="meane"/>
+         <tok val="meaque"/>
+         <tok val="meast"/>
+         <tok val="meá"/>
+         <tok val="méa"/>
          <lm>
             <l>meus</l>
             <m cert="0.333333333333333333">p s - p - - - n a</m>
@@ -46,8 +63,15 @@
             <m cert="0.333333333333333333">p s - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--MEA Mea Mean mea mean meane meaque meast-->
-         <tok val="[mM]?(ea)?[n]?(e|st|que|MEA)?"/>
+      <ana>
+         <tok val="MEA"/>
+         <tok val="Mea"/>
+         <tok val="Mean"/>
+         <tok val="mea"/>
+         <tok val="mean"/>
+         <tok val="meane"/>
+         <tok val="meaque"/>
+         <tok val="meast"/>
          <lm cert="0.333333333333333333">
             <l>meum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -63,24 +87,36 @@
             <m>p s - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MEA Mea Mean mea mean meane meaque meast meást meá méa-->
-         <tok val="[mM]?[e]?[a]?[n]?(e|ást|ast|á|aque|méa|MEA)?"/>
+      <ana>
+         <tok val="MEA"/>
+         <tok val="Mea"/>
+         <tok val="Mean"/>
+         <tok val="mea"/>
+         <tok val="mean"/>
+         <tok val="meane"/>
+         <tok val="meaque"/>
+         <tok val="meast"/>
+         <tok val="meá"/>
+         <tok val="meást"/>
+         <tok val="méa"/>
          <lm>
             <l>meus</l>
             <m cert="0.5">p s - p - - - n n</m>
             <m cert="0.5">p s - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--MEATOR meator-->
-         <tok val="(meator|MEATOR)"/>
+      <ana>
+         <tok val="MEATOR"/>
+         <tok val="meator"/>
          <lm>
             <l>meator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Meabilis meabilis-->
-         <tok val="[mM]eabilis"/>
+      <ana>
+         <tok val="Meabilis"/>
+         <tok val="meabilis"/>
          <lm>
             <l>meabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -94,8 +130,12 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Meae meae meaeque meaest meaé-->
-         <tok val="[mM]ea[e]?(st|é|eque)?"/>
+      <ana>
+         <tok val="Meae"/>
+         <tok val="meae"/>
+         <tok val="meaeque"/>
+         <tok val="meaest"/>
+         <tok val="meaé"/>
          <lm>
             <l>meus</l>
             <m cert="0.333333333333333333">p s - p - - - f v</m>
@@ -103,22 +143,38 @@
             <m cert="0.333333333333333333">p s - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Meae meae meaeque meaest meai meaé méae-->
-         <tok val="(m|M|méa)e[a]?[e]?(st|i|é|aeque)?"/>
+      <ana>
+         <tok val="Meae"/>
+         <tok val="meae"/>
+         <tok val="meaeque"/>
+         <tok val="meaest"/>
+         <tok val="meai"/>
+         <tok val="meaé"/>
+         <tok val="méae"/>
          <lm>
             <l>meus</l>
             <m>p s - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Meam Meamne meam meamne meamque meám méam-->
-         <tok val="[mM]?[e]?[aá]?[m]?(ne|que|méam)?"/>
+      <ana>
+         <tok val="Meam"/>
+         <tok val="Meamne"/>
+         <tok val="meam"/>
+         <tok val="meamne"/>
+         <tok val="meamque"/>
+         <tok val="meám"/>
+         <tok val="méam"/>
          <lm>
             <l>meus</l>
             <m>p s - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mean Meas mean meas measque-->
-         <tok val="[Mm]ea(s|n|sque)"/>
+      <ana>
+         <tok val="Mean"/>
+         <tok val="Meas"/>
+         <tok val="mean"/>
+         <tok val="meas"/>
+         <tok val="measque"/>
          <lm cert="0.5">
             <l>meus</l>
             <m>p s - p - - - f a</m>
@@ -128,23 +184,29 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Mearum mearum mearumque Mearúm-->
-         <tok val="[mM]ear[uú]m(que)?"/>
+      <ana>
+         <tok val="Mearum"/>
+         <tok val="Mearúm"/>
+         <tok val="mearum"/>
+         <tok val="mearumque"/>
+         <tok val="mearúm"/>
          <lm>
             <l>meus</l>
             <m>p s - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Meatibus meatibus-->
-         <tok val="[mM]eatibus"/>
+      <ana>
+         <tok val="Meatibus"/>
+         <tok val="meatibus"/>
          <lm>
             <l>meatus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Meatus meatus-->
-         <tok val="[mM]eatus"/>
+      <ana>
+         <tok val="Meatus"/>
+         <tok val="meatus"/>
          <lm cert="0.5">
             <l>meatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -269,8 +331,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--meante meanti-->
-         <tok val="meant[ie]"/>
+      <ana>
+         <tok val="meante"/>
+         <tok val="meanti"/>
          <lm>
             <l>meo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -286,8 +349,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--meantes meantesque-->
-         <tok val="meantes(que)?"/>
+      <ana>
+         <tok val="meantes"/>
+         <tok val="meantesque"/>
          <lm>
             <l>meo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -296,8 +360,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--meantes meantis meantesque-->
-         <tok val="meant[ie]s(que)?"/>
+      <ana>
+         <tok val="meantes"/>
+         <tok val="meantesque"/>
+         <tok val="meantis"/>
          <lm>
             <l>meo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -343,8 +409,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--meantium meantum-->
-         <tok val="meant[i]?um"/>
+      <ana>
+         <tok val="meantium"/>
+         <tok val="meantum"/>
          <lm>
             <l>meo</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -360,8 +427,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--meare mearis-->
-         <tok val="mear(is|e)"/>
+      <ana>
+         <tok val="meare"/>
+         <tok val="mearis"/>
          <lm>
             <l>meo</l>
             <m>v - 2 s p i p</m>
@@ -388,8 +456,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--measse meavisse-->
-         <tok val="mea(vi)?sse"/>
+      <ana>
+         <tok val="measse"/>
+         <tok val="meavisse"/>
          <lm>
             <l>meo</l>
             <m>v - - - r n a</m>
@@ -438,8 +507,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--meatu meatuque-->
-         <tok val="meatu(que)?"/>
+      <ana>
+         <tok val="meatu"/>
+         <tok val="meatuque"/>
          <lm cert="0.5">
             <l>meo</l>
             <m>a - - s - - - n d</m>
@@ -456,8 +526,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--meatum meatumque-->
-         <tok val="meatum(que)?"/>
+      <ana>
+         <tok val="meatum"/>
+         <tok val="meatumque"/>
          <lm cert="0.5">
             <l>meo</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -471,8 +542,10 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--meatum meatumque meatorum-->
-         <tok val="meat(or)?um(que)?"/>
+      <ana>
+         <tok val="meatorum"/>
+         <tok val="meatum"/>
+         <tok val="meatumque"/>
          <lm>
             <l>meo</l>
             <m cert="0.5">v - - p r p p m g</m>

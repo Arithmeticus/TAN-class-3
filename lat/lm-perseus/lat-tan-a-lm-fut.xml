@@ -1,49 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfut">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fut">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fut</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fut.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FUT</tok-starts-with>
       <tok-starts-with>Fut</tok-starts-with>
       <tok-starts-with>fut</tok-starts-with>
-      <ana><!--FUTIM futim-->
-         <tok val="(futim|FUTIM)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:25:18.806-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:25:18.806-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fut.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FUTIM"/>
+         <tok val="futim"/>
          <lm>
             <l>futis</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FUTURUM Futurum futurum futurumque futurumst futurumve-->
-         <tok val="[fF]?(uturum)?(st|ve|que|FUTURUM)?"/>
+      <ana>
+         <tok val="FUTURUM"/>
+         <tok val="Futurum"/>
+         <tok val="futurum"/>
+         <tok val="futurumque"/>
+         <tok val="futurumst"/>
+         <tok val="futurumve"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -57,8 +71,16 @@
             <m cert="0.333333333333333333">v - - s f p a n n</m>
          </lm>
       </ana>
-      <ana><!--FUTURUM Futurorum Futurum futurorum futurorumque futurum futurumque futurumst futurumve-->
-         <tok val="[fF]?(utur)?(or)?(um)?(que|st|ve|FUTURUM)?"/>
+      <ana>
+         <tok val="FUTURUM"/>
+         <tok val="Futurorum"/>
+         <tok val="Futurum"/>
+         <tok val="futurorum"/>
+         <tok val="futurorumque"/>
+         <tok val="futurum"/>
+         <tok val="futurumque"/>
+         <tok val="futurumst"/>
+         <tok val="futurumve"/>
          <lm cert="0.5">
             <l>sum</l>
             <m cert="0.5">v - - p f p a n g</m>
@@ -70,8 +92,14 @@
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--FUTURUM Futurum future futurum futurumque futurumst futurumve-->
-         <tok val="[fF]?(utur)?(um)?(st|ve|que|e|FUTURUM)?"/>
+      <ana>
+         <tok val="FUTURUM"/>
+         <tok val="Futurum"/>
+         <tok val="future"/>
+         <tok val="futurum"/>
+         <tok val="futurumque"/>
+         <tok val="futurumst"/>
+         <tok val="futurumve"/>
          <lm cert="0.5">
             <l>sum</l>
             <m>v - - s f p a n v</m>
@@ -81,15 +109,18 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Futatim futatim-->
-         <tok val="[fF]utatim"/>
+      <ana>
+         <tok val="Futatim"/>
+         <tok val="futatim"/>
          <lm>
             <l>futatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Futile futile futtile-->
-         <tok val="[fF]u[t]?tile"/>
+      <ana>
+         <tok val="Futile"/>
+         <tok val="futile"/>
+         <tok val="futtile"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -97,24 +128,34 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Futilem futilem futtilem-->
-         <tok val="[fF]u[t]?tilem"/>
+      <ana>
+         <tok val="Futilem"/>
+         <tok val="futilem"/>
+         <tok val="futtilem"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Futiles Futilis futiles futilis futilisque futtiles futtilis-->
-         <tok val="[fF]u[t]?til[ei]s(que)?"/>
+      <ana>
+         <tok val="Futiles"/>
+         <tok val="Futilis"/>
+         <tok val="futiles"/>
+         <tok val="futilis"/>
+         <tok val="futilisque"/>
+         <tok val="futtiles"/>
+         <tok val="futtilis"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Futiles futiles futtiles-->
-         <tok val="[fF]u[t]?tiles"/>
+      <ana>
+         <tok val="Futiles"/>
+         <tok val="futiles"/>
+         <tok val="futtiles"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -123,8 +164,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Futilia futilia futtilia-->
-         <tok val="[fF]u[t]?tilia"/>
+      <ana>
+         <tok val="Futilia"/>
+         <tok val="futilia"/>
+         <tok val="futtilia"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -132,8 +175,11 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Futilis futilis futilisque futtilis-->
-         <tok val="[fF]u[t]?tilis(que)?"/>
+      <ana>
+         <tok val="Futilis"/>
+         <tok val="futilis"/>
+         <tok val="futilisque"/>
+         <tok val="futtilis"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -145,8 +191,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Futilitas futilitas futtilitas-->
-         <tok val="[fF]u[t]?tilitas"/>
+      <ana>
+         <tok val="Futilitas"/>
+         <tok val="futilitas"/>
+         <tok val="futtilitas"/>
          <lm>
             <l>futtilitas</l>
             <m>n - - s - - - f n</m>
@@ -154,6 +202,7 @@
       </ana>
       <ana>
          <tok val="Futilitate"/>
+         <tok val="futilitate"/>
          <lm>
             <l>futtilitas</l>
             <m>n - - s - - - f b</m>
@@ -161,21 +210,24 @@
       </ana>
       <ana>
          <tok val="Futiliter"/>
+         <tok val="futiliter"/>
          <lm>
             <l>futtiliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Futio futio-->
-         <tok val="[fF]utio"/>
+      <ana>
+         <tok val="Futio"/>
+         <tok val="futio"/>
          <lm>
             <l>futio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Futis futis-->
-         <tok val="[fF]utis"/>
+      <ana>
+         <tok val="Futis"/>
+         <tok val="futis"/>
          <lm>
             <l>futis</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -183,15 +235,21 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Futuo futuo-->
-         <tok val="[fF]utuo"/>
+      <ana>
+         <tok val="Futuo"/>
+         <tok val="futuo"/>
          <lm>
             <l>futuo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Futura futura futuraque futurast futuraue futurave-->
-         <tok val="[fF]utura[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Futura"/>
+         <tok val="futura"/>
+         <tok val="futuraque"/>
+         <tok val="futurast"/>
+         <tok val="futuraue"/>
+         <tok val="futurave"/>
          <lm cert="0.5">
             <l>sum</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -211,8 +269,10 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Futurae futurae futuraeque-->
-         <tok val="[fF]uturae(que)?"/>
+      <ana>
+         <tok val="Futurae"/>
+         <tok val="futurae"/>
+         <tok val="futuraeque"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -228,8 +288,10 @@
             <m cert="0.25">v - - p f p a f n</m>
          </lm>
       </ana>
-      <ana><!--Futuram futuram futuramque-->
-         <tok val="[fF]uturam(que)?"/>
+      <ana>
+         <tok val="Futuram"/>
+         <tok val="futuram"/>
+         <tok val="futuramque"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m>a - - s - - - f a</m>
@@ -239,8 +301,9 @@
             <m>v - - s f p a f a</m>
          </lm>
       </ana>
-      <ana><!--Futuras futuras-->
-         <tok val="[fF]uturas"/>
+      <ana>
+         <tok val="Futuras"/>
+         <tok val="futuras"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m>a - - p - - - f a</m>
@@ -250,8 +313,10 @@
             <m>v - - p f p a f a</m>
          </lm>
       </ana>
-      <ana><!--Futuri futuri futurique-->
-         <tok val="[fF]uturi(que)?"/>
+      <ana>
+         <tok val="Futuri"/>
+         <tok val="futuri"/>
+         <tok val="futurique"/>
          <lm cert="0.5">
             <l>sum</l>
             <m cert="0.25">v - - s f p a n g</m>
@@ -267,8 +332,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Futuro futuro futurove-->
-         <tok val="[fF]uturo(ve)?"/>
+      <ana>
+         <tok val="Futuro"/>
+         <tok val="futuro"/>
+         <tok val="futurove"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -284,8 +351,10 @@
             <m cert="0.25">v - - s f p a n d</m>
          </lm>
       </ana>
-      <ana><!--Futuros futuros futurosque-->
-         <tok val="[fF]uturos(que)?"/>
+      <ana>
+         <tok val="Futuros"/>
+         <tok val="futuros"/>
+         <tok val="futurosque"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m>a - - p - - - m a</m>
@@ -295,8 +364,12 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--Futurus futurus futurusne futurusque futurusve-->
-         <tok val="[fF]uturus[vn]?(e|que)?"/>
+      <ana>
+         <tok val="Futurus"/>
+         <tok val="futurus"/>
+         <tok val="futurusne"/>
+         <tok val="futurusque"/>
+         <tok val="futurusve"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m>a - - s - - - m n</m>
@@ -306,8 +379,10 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--futili futtili futtilique-->
-         <tok val="fu[t]?tili(que)?"/>
+      <ana>
+         <tok val="futili"/>
+         <tok val="futtili"/>
+         <tok val="futtilique"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -318,8 +393,9 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--futilibus futtilibus-->
-         <tok val="fu[t]?tilibus"/>
+      <ana>
+         <tok val="futilibus"/>
+         <tok val="futtilibus"/>
          <lm>
             <l>futtilis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -330,8 +406,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--futilitatis futtilitatis-->
-         <tok val="fu[t]?tilitatis"/>
+      <ana>
+         <tok val="futilitatis"/>
+         <tok val="futtilitatis"/>
          <lm>
             <l>futtilitas</l>
             <m>n - - s - - - f g</m>
@@ -346,15 +423,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--futtile futtili futtilique-->
-         <tok val="futtil(i|e|ique)"/>
+      <ana>
+         <tok val="futtile"/>
+         <tok val="futtili"/>
+         <tok val="futtilique"/>
          <lm>
             <l>futtile</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--futtili futtilique-->
-         <tok val="futtili(que)?"/>
+      <ana>
+         <tok val="futtili"/>
+         <tok val="futtilique"/>
          <lm>
             <l>futtile</l>
             <m>n - - s - - - n d</m>
@@ -377,8 +457,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--futtilis futtiliter-->
-         <tok val="futtili(ter|s)"/>
+      <ana>
+         <tok val="futtilis"/>
+         <tok val="futtiliter"/>
          <lm>
             <l>futtilis</l>
             <m>d</m>
@@ -484,8 +565,9 @@
             <m>v - - p f p a f g</m>
          </lm>
       </ana>
-      <ana><!--futurarum futurarumque-->
-         <tok val="futurarum(que)?"/>
+      <ana>
+         <tok val="futurarum"/>
+         <tok val="futurarumque"/>
          <lm>
             <l>futurus</l>
             <m>a - - p - - - f g</m>
@@ -503,8 +585,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--futuris futurisque-->
-         <tok val="futuris(que)?"/>
+      <ana>
+         <tok val="futuris"/>
+         <tok val="futurisque"/>
          <lm cert="0.5">
             <l>futurus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -596,8 +679,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--fututorum fututum-->
-         <tok val="futut(or)?um"/>
+      <ana>
+         <tok val="fututorum"/>
+         <tok val="fututum"/>
          <lm>
             <l>futuo</l>
             <m cert="0.5">v - - p r p p m g</m>

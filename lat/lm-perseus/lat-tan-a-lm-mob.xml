@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusmob">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:mob">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to mob</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-mob.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>MOB</tok-starts-with>
       <tok-starts-with>Mob</tok-starts-with>
       <tok-starts-with>mob</tok-starts-with>
-      <ana><!--MOBILITATE Mobilitate mobilitate mobilitateque-->
-         <tok val="[mM]?(obilitate)?(que|MOBILITATE)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:33:56.975-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:33:56.975-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-mob.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="MOBILITATE"/>
+         <tok val="Mobilitate"/>
+         <tok val="mobilitate"/>
+         <tok val="mobilitateque"/>
          <lm cert="0.5">
             <l>mobilitas</l>
             <m>n - - s - - - f b</m>
@@ -47,15 +58,23 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--MOBILITATE Mobilitate mobilitate mobilitateque mobilitatum-->
-         <tok val="[mM]?(obilitat)?[e]?(que|um|MOBILITATE)?"/>
+      <ana>
+         <tok val="MOBILITATE"/>
+         <tok val="Mobilitate"/>
+         <tok val="mobilitate"/>
+         <tok val="mobilitateque"/>
+         <tok val="mobilitatum"/>
          <lm>
             <l>mobilito</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Mobile mobile mobilene mobileque mobilest-->
-         <tok val="[mM]obile(ne|st|que)?"/>
+      <ana>
+         <tok val="Mobile"/>
+         <tok val="mobile"/>
+         <tok val="mobilene"/>
+         <tok val="mobileque"/>
+         <tok val="mobilest"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -63,24 +82,33 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Mobilem mobilem-->
-         <tok val="[mM]obilem"/>
+      <ana>
+         <tok val="Mobilem"/>
+         <tok val="mobilem"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Mobiles Mobilis mobiles mobilesque mobilis mobilisque mobilisue-->
-         <tok val="[mM]obil[ie]?[s]?[q]?(ue|is|es)"/>
+      <ana>
+         <tok val="Mobiles"/>
+         <tok val="Mobilis"/>
+         <tok val="mobiles"/>
+         <tok val="mobilesque"/>
+         <tok val="mobilis"/>
+         <tok val="mobilisque"/>
+         <tok val="mobilisue"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mobiles mobiles mobilesque-->
-         <tok val="[mM]obiles(que)?"/>
+      <ana>
+         <tok val="Mobiles"/>
+         <tok val="mobiles"/>
+         <tok val="mobilesque"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -89,8 +117,12 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mobili mobili mobilique mobiliue mobilive-->
-         <tok val="[mM]obili[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Mobili"/>
+         <tok val="mobili"/>
+         <tok val="mobilique"/>
+         <tok val="mobiliue"/>
+         <tok val="mobilive"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -101,8 +133,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Mobilia mobilia-->
-         <tok val="[mM]obilia"/>
+      <ana>
+         <tok val="Mobilia"/>
+         <tok val="mobilia"/>
          <lm cert="0.5">
             <l>mobilis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -116,8 +149,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Mobilibus Mobilibusque mobilibus mobilibusque-->
-         <tok val="[mM]obilibus(que)?"/>
+      <ana>
+         <tok val="Mobilibus"/>
+         <tok val="Mobilibusque"/>
+         <tok val="mobilibus"/>
+         <tok val="mobilibusque"/>
          <lm cert="0.5">
             <l>mobilis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -133,8 +169,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Mobilior mobilior mobiliorque-->
-         <tok val="[mM]obilior(que)?"/>
+      <ana>
+         <tok val="Mobilior"/>
+         <tok val="mobilior"/>
+         <tok val="mobiliorque"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -143,8 +181,11 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Mobilis mobilis mobilisque mobilisue-->
-         <tok val="[mM]obilis[q]?(ue)?"/>
+      <ana>
+         <tok val="Mobilis"/>
+         <tok val="mobilis"/>
+         <tok val="mobilisque"/>
+         <tok val="mobilisue"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -156,8 +197,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Mobilissimo mobilissimo-->
-         <tok val="[mM]obilissimo"/>
+      <ana>
+         <tok val="Mobilissimo"/>
+         <tok val="mobilissimo"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -166,16 +208,19 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--Mobilissimus mobilissimus-->
-         <tok val="[mM]obilissimus"/>
+      <ana>
+         <tok val="Mobilissimus"/>
+         <tok val="mobilissimus"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.5">a - - s - - - m v s</m>
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Mobilitas mobilitas mobilitasque-->
-         <tok val="[mM]obilitas(que)?"/>
+      <ana>
+         <tok val="Mobilitas"/>
+         <tok val="mobilitas"/>
+         <tok val="mobilitasque"/>
          <lm cert="0.5">
             <l>mobilitas</l>
             <m>n - - s - - - f n</m>
@@ -185,36 +230,43 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Mobilitatem mobilitatem-->
-         <tok val="[mM]obilitatem"/>
+      <ana>
+         <tok val="Mobilitatem"/>
+         <tok val="mobilitatem"/>
          <lm>
             <l>mobilitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mobiliter mobiliter mobilius-->
-         <tok val="[mM]obili(ter|us)"/>
+      <ana>
+         <tok val="Mobiliter"/>
+         <tok val="mobiliter"/>
+         <tok val="mobilius"/>
          <lm>
             <l>mobilis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Mobiliter mobiliter-->
-         <tok val="[mM]obiliter"/>
+      <ana>
+         <tok val="Mobiliter"/>
+         <tok val="mobiliter"/>
          <lm>
             <l>mobilito</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Mobilito mobilito-->
-         <tok val="[mM]obilito"/>
+      <ana>
+         <tok val="Mobilito"/>
+         <tok val="mobilito"/>
          <lm>
             <l>mobilito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Mobilium mobilium mobiliumque-->
-         <tok val="[mM]obilium(que)?"/>
+      <ana>
+         <tok val="Mobilium"/>
+         <tok val="mobilium"/>
+         <tok val="mobiliumque"/>
          <lm cert="0.5">
             <l>mobilis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -233,8 +285,9 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--mobiliorem mobilioremque-->
-         <tok val="mobiliorem(que)?"/>
+      <ana>
+         <tok val="mobiliorem"/>
+         <tok val="mobilioremque"/>
          <lm>
             <l>mobilis</l>
             <m cert="0.5">a - - s - - - f a c</m>

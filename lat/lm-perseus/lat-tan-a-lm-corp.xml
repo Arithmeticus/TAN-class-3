@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscorp">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:corp">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to corp</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-corp.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CORP</tok-starts-with>
       <tok-starts-with>COrp</tok-starts-with>
       <tok-starts-with>Corp</tok-starts-with>
       <tok-starts-with>corp</tok-starts-with>
       <tok-starts-with>córp</tok-starts-with>
-      <ana><!--CORPORA COrpora Corpora corpora corporaque corporave-->
-         <tok val="[cC]?(o|CO|co)?(rpora)?(ve|que|CORPORA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:17:57.468-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:17:57.468-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-corp.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CORPORA"/>
+         <tok val="COrpora"/>
+         <tok val="Corpora"/>
+         <tok val="corpora"/>
+         <tok val="corporaque"/>
+         <tok val="corporave"/>
          <lm cert="0.5">
             <l>corpus</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -50,44 +63,78 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--CORPORE Corpore corpore corporeve córpore-->
-         <tok val="[cC]?(o|có)?(rpore)?(ve|CORPORE)?"/>
+      <ana>
+         <tok val="CORPORE"/>
+         <tok val="Corpore"/>
+         <tok val="corpore"/>
+         <tok val="corporeve"/>
+         <tok val="córpore"/>
          <lm>
             <l>corpus</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--CORPOREAM corpoream corporeamque-->
-         <tok val="(corpoream)?(que|CORPOREAM)?"/>
+      <ana>
+         <tok val="CORPOREAM"/>
+         <tok val="corpoream"/>
+         <tok val="corporeamque"/>
          <lm>
             <l>corporeus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--CORPORIBVS Corporibus corporibus corporibusque-->
-         <tok val="[cC]?(orporibus)?(que|CORPORIBVS)?"/>
+      <ana>
+         <tok val="CORPORIBVS"/>
+         <tok val="Corporibus"/>
+         <tok val="corporibus"/>
+         <tok val="corporibusque"/>
+         <tok val="corporibvs"/>
          <lm>
             <l>corpus</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--CORPORIS Corporis corporis corporisque corporist corporisue corporisve-->
-         <tok val="[cC]?(orporis)?(v|u|qu)?(e|t|CORPORIS)?"/>
+      <ana>
+         <tok val="CORPORIS"/>
+         <tok val="Corporis"/>
+         <tok val="corporis"/>
+         <tok val="corporisque"/>
+         <tok val="corporist"/>
+         <tok val="corporisue"/>
+         <tok val="corporisve"/>
          <lm>
             <l>corpus</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CORPORUM CORPORVM Corporum corporum corporumque-->
-         <tok val="(CORPOR)?[VU]?(M|corporum|Corporum|corporumque)"/>
+      <ana>
+         <tok val="CORPORUM"/>
+         <tok val="CORPORVM"/>
+         <tok val="Corporum"/>
+         <tok val="corporum"/>
+         <tok val="corporumque"/>
+         <tok val="corporvm"/>
          <lm>
             <l>corpus</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CORPUS CORPVS Corpor Corpus Corpusne Corpusque Corpvs corpor corpus corpusne corpusque corpusue corpusve-->
-         <tok val="[cC]?(orpus)?[q]?[unv]?(e|CORPVS|CORPUS|Corpvs|corpor|Corpor)?"/>
+      <ana>
+         <tok val="CORPUS"/>
+         <tok val="CORPVS"/>
+         <tok val="Corpor"/>
+         <tok val="Corpus"/>
+         <tok val="Corpusne"/>
+         <tok val="Corpusque"/>
+         <tok val="Corpvs"/>
+         <tok val="corpor"/>
+         <tok val="corpus"/>
+         <tok val="corpusne"/>
+         <tok val="corpusque"/>
+         <tok val="corpusue"/>
+         <tok val="corpusve"/>
+         <tok val="corpvs"/>
          <lm>
             <l>corpus</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -95,23 +142,32 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--CORPVSCVLORVM Corpusculorum Corpusculum corpusculorum corpusculum-->
-         <tok val="[cC]?(orpuscul)?(or)?(um|CORPVSCVLORVM)"/>
+      <ana>
+         <tok val="CORPVSCVLORVM"/>
+         <tok val="Corpusculorum"/>
+         <tok val="Corpusculum"/>
+         <tok val="corpusculorum"/>
+         <tok val="corpusculum"/>
+         <tok val="corpvscvlorvm"/>
          <lm>
             <l>corpusculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Corporales Corporalis corporales corporalis-->
-         <tok val="[Cc]orporal[ie]s"/>
+      <ana>
+         <tok val="Corporales"/>
+         <tok val="Corporalis"/>
+         <tok val="corporales"/>
+         <tok val="corporalis"/>
          <lm>
             <l>corporalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Corporales corporales-->
-         <tok val="[cC]orporales"/>
+      <ana>
+         <tok val="Corporales"/>
+         <tok val="corporales"/>
          <lm>
             <l>corporalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -120,8 +176,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Corporalia corporalia-->
-         <tok val="[cC]orporalia"/>
+      <ana>
+         <tok val="Corporalia"/>
+         <tok val="corporalia"/>
          <lm>
             <l>corporalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -129,8 +186,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Corporalibus corporalibus-->
-         <tok val="[cC]orporalibus"/>
+      <ana>
+         <tok val="Corporalibus"/>
+         <tok val="corporalibus"/>
          <lm>
             <l>corporalis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -141,8 +199,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Corporalis corporalis-->
-         <tok val="[cC]orporalis"/>
+      <ana>
+         <tok val="Corporalis"/>
+         <tok val="corporalis"/>
          <lm>
             <l>corporalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -156,13 +215,15 @@
       </ana>
       <ana>
          <tok val="Corporari"/>
+         <tok val="corporari"/>
          <lm>
             <l>corporo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Corporatio corporatio-->
-         <tok val="[cC]orporatio"/>
+      <ana>
+         <tok val="Corporatio"/>
+         <tok val="corporatio"/>
          <lm>
             <l>corporatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -171,13 +232,15 @@
       </ana>
       <ana>
          <tok val="Corporationis"/>
+         <tok val="corporationis"/>
          <lm>
             <l>corporatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Corporatura corporatura-->
-         <tok val="[cC]orporatura"/>
+      <ana>
+         <tok val="Corporatura"/>
+         <tok val="corporatura"/>
          <lm cert="0.5">
             <l>corporo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -194,8 +257,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Corporatus corporatus-->
-         <tok val="[cC]orporatus"/>
+      <ana>
+         <tok val="Corporatus"/>
+         <tok val="corporatus"/>
          <lm cert="0.5">
             <l>corporatus</l>
             <m>n - - s - - - m n</m>
@@ -205,8 +269,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Corporea corporea-->
-         <tok val="[cC]orporea"/>
+      <ana>
+         <tok val="Corporea"/>
+         <tok val="corporea"/>
          <lm>
             <l>corporeus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -217,8 +282,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Corporeae corporeae corporeaeque-->
-         <tok val="[cC]orporeae(que)?"/>
+      <ana>
+         <tok val="Corporeae"/>
+         <tok val="corporeae"/>
+         <tok val="corporeaeque"/>
          <lm>
             <l>corporeus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -227,15 +294,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Corporearum corporearum-->
-         <tok val="[cC]orporearum"/>
+      <ana>
+         <tok val="Corporearum"/>
+         <tok val="corporearum"/>
          <lm>
             <l>corporeus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Corporei corporei-->
-         <tok val="[cC]orporei"/>
+      <ana>
+         <tok val="Corporei"/>
+         <tok val="corporei"/>
          <lm>
             <l>corporeus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -244,8 +313,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Corporeo corporeo-->
-         <tok val="[cC]orporeo"/>
+      <ana>
+         <tok val="Corporeo"/>
+         <tok val="corporeo"/>
          <lm>
             <l>corporeus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -254,8 +324,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Corporeum corporeum-->
-         <tok val="[cC]orporeum"/>
+      <ana>
+         <tok val="Corporeum"/>
+         <tok val="corporeum"/>
          <lm>
             <l>corporeus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -264,30 +335,39 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Corporeum corporeorum corporeum-->
-         <tok val="[cC]orpore(or)?um"/>
+      <ana>
+         <tok val="Corporeum"/>
+         <tok val="corporeorum"/>
+         <tok val="corporeum"/>
          <lm>
             <l>corporeus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Corporeus corporeus corporeusque-->
-         <tok val="[cC]orporeus(que)?"/>
+      <ana>
+         <tok val="Corporeus"/>
+         <tok val="corporeus"/>
+         <tok val="corporeusque"/>
          <lm>
             <l>corporeus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Corpori corpori corporique corporist-->
-         <tok val="[cC]orpori(st|que)?"/>
+      <ana>
+         <tok val="Corpori"/>
+         <tok val="corpori"/>
+         <tok val="corporique"/>
+         <tok val="corporist"/>
          <lm>
             <l>corpus</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Corpulentia corpulentia corpulentiaque-->
-         <tok val="[cC]orpulentia(que)?"/>
+      <ana>
+         <tok val="Corpulentia"/>
+         <tok val="corpulentia"/>
+         <tok val="corpulentiaque"/>
          <lm>
             <l>corpulentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -295,15 +375,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Corpulentior corpulentior córpulentior-->
-         <tok val="[cC]?(o|có)rpulentior"/>
+      <ana>
+         <tok val="Corpulentior"/>
+         <tok val="corpulentior"/>
+         <tok val="córpulentior"/>
          <lm>
             <l>corpulentus</l>
             <m>a - - s - - - m v c</m>
          </lm>
       </ana>
-      <ana><!--Corpulentior corpulentior-->
-         <tok val="[cC]orpulentior"/>
+      <ana>
+         <tok val="Corpulentior"/>
+         <tok val="corpulentior"/>
          <lm>
             <l>corpulentus</l>
             <m cert="0.333333333333333333">a - - s - - - f n c</m>
@@ -311,8 +394,9 @@
             <m cert="0.333333333333333333">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Corpulentum corpulentum-->
-         <tok val="[cC]orpulentum"/>
+      <ana>
+         <tok val="Corpulentum"/>
+         <tok val="corpulentum"/>
          <lm>
             <l>corpulentus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -323,15 +407,18 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Corpulentus corpulentus-->
-         <tok val="[cC]orpulentus"/>
+      <ana>
+         <tok val="Corpulentus"/>
+         <tok val="corpulentus"/>
          <lm>
             <l>corpulentus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Corpuscula corpuscula corpusculave-->
-         <tok val="[cC]orpuscula(ve)?"/>
+      <ana>
+         <tok val="Corpuscula"/>
+         <tok val="corpuscula"/>
+         <tok val="corpusculave"/>
          <lm>
             <l>corpusculum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -339,23 +426,27 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Corpusculum corpusculum corpúsculum-->
-         <tok val="[cC]orp[uú]sculum"/>
+      <ana>
+         <tok val="Corpusculum"/>
+         <tok val="corpusculum"/>
+         <tok val="corpúsculum"/>
          <lm>
             <l>corpusculum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Corpusculum corpusculum-->
-         <tok val="[cC]orpusculum"/>
+      <ana>
+         <tok val="Corpusculum"/>
+         <tok val="corpusculum"/>
          <lm>
             <l>corpusculum</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--corporale corporalest-->
-         <tok val="corporale(st)?"/>
+      <ana>
+         <tok val="corporale"/>
+         <tok val="corporalest"/>
          <lm>
             <l>corporalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -397,8 +488,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--corporalium corporaliumque-->
-         <tok val="corporalium(que)?"/>
+      <ana>
+         <tok val="corporalium"/>
+         <tok val="corporaliumque"/>
          <lm>
             <l>corporalis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -517,8 +609,9 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--corporatur corporaturque-->
-         <tok val="corporatur(que)?"/>
+      <ana>
+         <tok val="corporatur"/>
+         <tok val="corporaturque"/>
          <lm>
             <l>corporo</l>
             <m>v - 3 s p i p</m>
@@ -552,15 +645,17 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--corporeas corporeasque-->
-         <tok val="corporeas(que)?"/>
+      <ana>
+         <tok val="corporeas"/>
+         <tok val="corporeasque"/>
          <lm>
             <l>corporeus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--corporeis corporeisque-->
-         <tok val="corporeis(que)?"/>
+      <ana>
+         <tok val="corporeis"/>
+         <tok val="corporeisque"/>
          <lm>
             <l>corporeus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -631,8 +726,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--corpulentiam corpulentiamque-->
-         <tok val="corpulentiam(que)?"/>
+      <ana>
+         <tok val="corpulentiam"/>
+         <tok val="corpulentiamque"/>
          <lm>
             <l>corpulentia</l>
             <m>n - - s - - - f a</m>
@@ -667,8 +763,9 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--corpulentis corpulentisque-->
-         <tok val="corpulentis(que)?"/>
+      <ana>
+         <tok val="corpulentis"/>
+         <tok val="corpulentisque"/>
          <lm>
             <l>corpulentus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>

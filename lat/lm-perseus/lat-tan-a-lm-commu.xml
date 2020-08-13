@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscommu">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:commu">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to commu</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-commu.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>COMMU</tok-starts-with>
       <tok-starts-with>Commu</tok-starts-with>
       <tok-starts-with>commu</tok-starts-with>
       <tok-starts-with>commú</tok-starts-with>
-      <ana><!--COMMUNIBUS Communibus communibus communibusque-->
-         <tok val="[cC]?(ommunibus)?(que|COMMUNIBUS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:16:06.115-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:16:06.115-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-commu.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="COMMUNIBUS"/>
+         <tok val="Communibus"/>
+         <tok val="communibus"/>
+         <tok val="communibusque"/>
          <lm cert="0.5">
             <l>communis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -55,13 +66,16 @@
       </ana>
       <ana>
          <tok val="Commulceo"/>
+         <tok val="commulceo"/>
          <lm>
             <l>commulceo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Commune commune communest-->
-         <tok val="[cC]ommune(st)?"/>
+      <ana>
+         <tok val="Commune"/>
+         <tok val="commune"/>
+         <tok val="communest"/>
          <lm cert="0.5">
             <l>communis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -75,31 +89,48 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Commune Communi commune communest communi communique-->
-         <tok val="[cC]ommun[e]?(st|i|e|ique)?"/>
+      <ana>
+         <tok val="Commune"/>
+         <tok val="Communi"/>
+         <tok val="commune"/>
+         <tok val="communest"/>
+         <tok val="communi"/>
+         <tok val="communique"/>
          <lm>
             <l>commune</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Communem Communemque communem communemque-->
-         <tok val="[cC]ommunem(que)?"/>
+      <ana>
+         <tok val="Communem"/>
+         <tok val="Communemque"/>
+         <tok val="communem"/>
+         <tok val="communemque"/>
          <lm>
             <l>communis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Communes Communis communes communesne communesque communis communisque-->
-         <tok val="[cC]ommun[ie]s(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Communes"/>
+         <tok val="Communis"/>
+         <tok val="communes"/>
+         <tok val="communesne"/>
+         <tok val="communesque"/>
+         <tok val="communis"/>
+         <tok val="communisque"/>
          <lm>
             <l>communis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Communes communes communesne communesque-->
-         <tok val="[cC]ommunes(ne|que)?"/>
+      <ana>
+         <tok val="Communes"/>
+         <tok val="communes"/>
+         <tok val="communesne"/>
+         <tok val="communesque"/>
          <lm>
             <l>communis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -108,8 +139,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Communi communi communique-->
-         <tok val="[cC]ommuni(que)?"/>
+      <ana>
+         <tok val="Communi"/>
+         <tok val="communi"/>
+         <tok val="communique"/>
          <lm cert="0.333333333333333333">
             <l>communis</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -128,8 +161,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Communia communia communiaque-->
-         <tok val="[cC]ommunia(que)?"/>
+      <ana>
+         <tok val="Communia"/>
+         <tok val="communia"/>
+         <tok val="communiaque"/>
          <lm cert="0.5">
             <l>communis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -143,38 +178,44 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Communica communica-->
-         <tok val="[cC]ommunica"/>
+      <ana>
+         <tok val="Communica"/>
+         <tok val="communica"/>
          <lm>
             <l>communico</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Communicare communicare-->
-         <tok val="[cC]ommunicare"/>
+      <ana>
+         <tok val="Communicare"/>
+         <tok val="communicare"/>
          <lm>
             <l>communico</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Communicare communicare communicaris-->
-         <tok val="[cC]ommunicar(e|is)"/>
+      <ana>
+         <tok val="Communicare"/>
+         <tok val="communicare"/>
+         <tok val="communicaris"/>
          <lm>
             <l>communico</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Communicatio communicatio-->
-         <tok val="[cC]ommunicatio"/>
+      <ana>
+         <tok val="Communicatio"/>
+         <tok val="communicatio"/>
          <lm>
             <l>communicatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Communicato communicato-->
-         <tok val="[cC]ommunicato"/>
+      <ana>
+         <tok val="Communicato"/>
+         <tok val="communicato"/>
          <lm>
             <l>communico</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -185,8 +226,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Communicatus communicatus-->
-         <tok val="[cC]ommunicatus"/>
+      <ana>
+         <tok val="Communicatus"/>
+         <tok val="communicatus"/>
          <lm cert="0.5">
             <l>communicatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -199,22 +241,27 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Communicavit communicauit communicavit-->
-         <tok val="[cC]ommunica[vu]it"/>
+      <ana>
+         <tok val="Communicavit"/>
+         <tok val="communicauit"/>
+         <tok val="communicavit"/>
          <lm>
             <l>communico</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Communico communico-->
-         <tok val="[cC]ommunico"/>
+      <ana>
+         <tok val="Communico"/>
+         <tok val="communico"/>
          <lm>
             <l>communico</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Communio communio communion-->
-         <tok val="[cC]ommunio[n]?"/>
+      <ana>
+         <tok val="Communio"/>
+         <tok val="communio"/>
+         <tok val="communion"/>
          <lm>
             <l>communio</l>
             <m cert="0.333333333333333333">v - 1 s p i a</m>
@@ -222,22 +269,27 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Communionem communionem communionemque-->
-         <tok val="[cC]ommunionem(que)?"/>
+      <ana>
+         <tok val="Communionem"/>
+         <tok val="communionem"/>
+         <tok val="communionemque"/>
          <lm>
             <l>communio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Communire communire-->
-         <tok val="[cC]ommunire"/>
+      <ana>
+         <tok val="Communire"/>
+         <tok val="communire"/>
          <lm>
             <l>communio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Communis communis communisque-->
-         <tok val="[cC]ommunis(que)?"/>
+      <ana>
+         <tok val="Communis"/>
+         <tok val="communis"/>
+         <tok val="communisque"/>
          <lm cert="0.333333333333333333">
             <l>communio</l>
             <m>v - 2 s p i a</m>
@@ -257,15 +309,17 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Communissimam communissimam-->
-         <tok val="[cC]ommunissimam"/>
+      <ana>
+         <tok val="Communissimam"/>
+         <tok val="communissimam"/>
          <lm>
             <l>communis</l>
             <m>a - - s - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--Communita communita-->
-         <tok val="[cC]ommunita"/>
+      <ana>
+         <tok val="Communita"/>
+         <tok val="communita"/>
          <lm cert="0.5">
             <l>communio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -280,8 +334,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Communitas communitas-->
-         <tok val="[cC]ommunitas"/>
+      <ana>
+         <tok val="Communitas"/>
+         <tok val="communitas"/>
          <lm cert="0.333333333333333333">
             <l>communio</l>
             <m>v - - p r p p f a</m>
@@ -297,29 +352,37 @@
       </ana>
       <ana>
          <tok val="Communite"/>
+         <tok val="communite"/>
          <lm>
             <l>communio</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Communite communitum-->
-         <tok val="[cC]ommunit(um|e)"/>
+      <ana>
+         <tok val="Communite"/>
+         <tok val="communite"/>
+         <tok val="communitum"/>
          <lm>
             <l>communio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Communiter communiter communiterque communiterue communiterve-->
-         <tok val="[cC]ommuniter[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Communiter"/>
+         <tok val="communiter"/>
+         <tok val="communiterque"/>
+         <tok val="communiterue"/>
+         <tok val="communiterve"/>
          <lm>
             <l>communiter</l>
             <m cert="0.5">d</m>
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Communitus communitus-->
-         <tok val="[cC]ommunitus"/>
+      <ana>
+         <tok val="Communitus"/>
+         <tok val="communitus"/>
          <lm cert="0.5">
             <l>communitus</l>
             <m>d</m>
@@ -329,8 +392,10 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Communium communium communiumque-->
-         <tok val="[cC]ommunium(que)?"/>
+      <ana>
+         <tok val="Communium"/>
+         <tok val="communium"/>
+         <tok val="communiumque"/>
          <lm cert="0.5">
             <l>communis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -344,6 +409,7 @@
       </ana>
       <ana>
          <tok val="Commurare"/>
+         <tok val="commurare"/>
          <lm>
             <l>commuro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -351,8 +417,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Commurmuratio commurmuratio-->
-         <tok val="[cC]ommurmuratio"/>
+      <ana>
+         <tok val="Commurmuratio"/>
+         <tok val="commurmuratio"/>
          <lm>
             <l>commurmuratio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -361,20 +428,24 @@
       </ana>
       <ana>
          <tok val="Commurmuro"/>
+         <tok val="commurmuro"/>
          <lm>
             <l>commurmuro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Commurmuror commurmuror-->
-         <tok val="[cC]ommurmuror"/>
+      <ana>
+         <tok val="Commurmuror"/>
+         <tok val="commurmuror"/>
          <lm>
             <l>commurmuror</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Commutabilis commutabilis commutabilisque-->
-         <tok val="[cC]ommutabilis(que)?"/>
+      <ana>
+         <tok val="Commutabilis"/>
+         <tok val="commutabilis"/>
+         <tok val="commutabilisque"/>
          <lm>
             <l>commutabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -386,23 +457,28 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Commutabilis commutabiles commutabilis commutabilisque-->
-         <tok val="[cC]ommutabil[ie]s(que)?"/>
+      <ana>
+         <tok val="Commutabilis"/>
+         <tok val="commutabiles"/>
+         <tok val="commutabilis"/>
+         <tok val="commutabilisque"/>
          <lm>
             <l>commutabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Commutabimus commutabimus-->
-         <tok val="[cC]ommutabimus"/>
+      <ana>
+         <tok val="Commutabimus"/>
+         <tok val="commutabimus"/>
          <lm>
             <l>commuto</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Commutandis commutandis-->
-         <tok val="[cC]ommutandis"/>
+      <ana>
+         <tok val="Commutandis"/>
+         <tok val="commutandis"/>
          <lm>
             <l>commuto</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -413,15 +489,17 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--Commutant commutant-->
-         <tok val="[cC]ommutant"/>
+      <ana>
+         <tok val="Commutant"/>
+         <tok val="commutant"/>
          <lm>
             <l>commuto</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Commutare commutare-->
-         <tok val="[cC]ommutare"/>
+      <ana>
+         <tok val="Commutare"/>
+         <tok val="commutare"/>
          <lm>
             <l>commuto</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -429,15 +507,19 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Commutari commutari commutarique-->
-         <tok val="[cC]ommutari(que)?"/>
+      <ana>
+         <tok val="Commutari"/>
+         <tok val="commutari"/>
+         <tok val="commutarique"/>
          <lm>
             <l>commuto</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Commutata commutata commutataque-->
-         <tok val="[cC]ommutata(que)?"/>
+      <ana>
+         <tok val="Commutata"/>
+         <tok val="commutata"/>
+         <tok val="commutataque"/>
          <lm>
             <l>commuto</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -448,23 +530,28 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Commutatio commutatio-->
-         <tok val="[cC]ommutatio"/>
+      <ana>
+         <tok val="Commutatio"/>
+         <tok val="commutatio"/>
          <lm>
             <l>commutatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Commutationem commutationem commutationemque-->
-         <tok val="[cC]ommutationem(que)?"/>
+      <ana>
+         <tok val="Commutationem"/>
+         <tok val="commutationem"/>
+         <tok val="commutationemque"/>
          <lm>
             <l>commutatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Commutationes commutationes commutationesque-->
-         <tok val="[cC]ommutationes(que)?"/>
+      <ana>
+         <tok val="Commutationes"/>
+         <tok val="commutationes"/>
+         <tok val="commutationesque"/>
          <lm>
             <l>commutatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -472,8 +559,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Commutato commutato-->
-         <tok val="[cC]ommutato"/>
+      <ana>
+         <tok val="Commutato"/>
+         <tok val="commutato"/>
          <lm>
             <l>commuto</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -484,8 +572,10 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Commutatus commutatus commutatust-->
-         <tok val="[cC]ommutatus[t]?"/>
+      <ana>
+         <tok val="Commutatus"/>
+         <tok val="commutatus"/>
+         <tok val="commutatust"/>
          <lm cert="0.5">
             <l>commutatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -498,8 +588,10 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Commuto commuto commúto-->
-         <tok val="[cC]omm[uú]to"/>
+      <ana>
+         <tok val="Commuto"/>
+         <tok val="commuto"/>
+         <tok val="commúto"/>
          <lm>
             <l>commuto</l>
             <m>v - 1 s p i a</m>
@@ -624,8 +716,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--communibat communiebat-->
-         <tok val="communi[e]?bat"/>
+      <ana>
+         <tok val="communibat"/>
+         <tok val="communiebat"/>
          <lm>
             <l>communio</l>
             <m>v - 3 s i i a</m>
@@ -758,8 +851,10 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--communicandorum communicandum communicandumque-->
-         <tok val="communicand(or)?um(que)?"/>
+      <ana>
+         <tok val="communicandorum"/>
+         <tok val="communicandum"/>
+         <tok val="communicandumque"/>
          <lm>
             <l>communico</l>
             <m cert="0.5">v - - p p g p n g</m>
@@ -773,8 +868,9 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--communicandum communicandumque-->
-         <tok val="communicandum(que)?"/>
+      <ana>
+         <tok val="communicandum"/>
+         <tok val="communicandumque"/>
          <lm>
             <l>communico</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -784,8 +880,9 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--communicans communicansque-->
-         <tok val="communicans(que)?"/>
+      <ana>
+         <tok val="communicans"/>
+         <tok val="communicansque"/>
          <lm>
             <l>communico</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -822,8 +919,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--communicantes communicantis-->
-         <tok val="communicant[ie]s"/>
+      <ana>
+         <tok val="communicantes"/>
+         <tok val="communicantis"/>
          <lm>
             <l>communico</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -935,22 +1033,26 @@
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--communicaris communicaveris-->
-         <tok val="communica(ve)?ris"/>
+      <ana>
+         <tok val="communicaris"/>
+         <tok val="communicaveris"/>
          <lm>
             <l>communico</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--communicarit communicaverit-->
-         <tok val="communica(ve)?rit"/>
+      <ana>
+         <tok val="communicarit"/>
+         <tok val="communicaverit"/>
          <lm>
             <l>communico</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--communicarunt communicauerunt communicaverunt-->
-         <tok val="communica[vu]?(e|)runt"/>
+      <ana>
+         <tok val="communicarunt"/>
+         <tok val="communicauerunt"/>
+         <tok val="communicaverunt"/>
          <lm>
             <l>communico</l>
             <m>v - 3 p r i a</m>
@@ -963,8 +1065,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--communicasse communicavisse-->
-         <tok val="communica(vi)?sse"/>
+      <ana>
+         <tok val="communicasse"/>
+         <tok val="communicavisse"/>
          <lm>
             <l>communico</l>
             <m>v - - - r n a</m>
@@ -1058,8 +1161,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--communicationem communicationemque-->
-         <tok val="communicationem(que)?"/>
+      <ana>
+         <tok val="communicationem"/>
+         <tok val="communicationemque"/>
          <lm>
             <l>communicatio</l>
             <m>n - - s - - - f a</m>
@@ -1177,8 +1281,9 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--communicaui communicavi-->
-         <tok val="communica[vu]i"/>
+      <ana>
+         <tok val="communicaui"/>
+         <tok val="communicavi"/>
          <lm>
             <l>communico</l>
             <m>v - 1 s r i a</m>
@@ -1219,8 +1324,9 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--communicent communicentque-->
-         <tok val="communicent(que)?"/>
+      <ana>
+         <tok val="communicent"/>
+         <tok val="communicentque"/>
          <lm>
             <l>communico</l>
             <m>v - 3 p p s a</m>
@@ -1240,8 +1346,9 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--communices communicesque-->
-         <tok val="communices(que)?"/>
+      <ana>
+         <tok val="communices"/>
+         <tok val="communicesque"/>
          <lm>
             <l>communico</l>
             <m>v - 2 s p s a</m>
@@ -1347,8 +1454,10 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--communiit communiuit communivit-->
-         <tok val="communi[uv]?it"/>
+      <ana>
+         <tok val="communiit"/>
+         <tok val="communiuit"/>
+         <tok val="communivit"/>
          <lm>
             <l>communio</l>
             <m>v - 3 s r i a</m>
@@ -1454,8 +1563,9 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--communisset communivisset-->
-         <tok val="commun(iv)?isset"/>
+      <ana>
+         <tok val="communisset"/>
+         <tok val="communivisset"/>
          <lm>
             <l>communio</l>
             <m>v - 3 s l s a</m>
@@ -1490,15 +1600,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--communissime communissimus-->
-         <tok val="communissim(us|e)"/>
+      <ana>
+         <tok val="communissime"/>
+         <tok val="communissimus"/>
          <lm>
             <l>communis</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--communissime communissimum-->
-         <tok val="communissim(um|e)"/>
+      <ana>
+         <tok val="communissime"/>
+         <tok val="communissimum"/>
          <lm>
             <l>communis</l>
             <m>a - - s - - - n v s</m>
@@ -1559,8 +1671,9 @@
             <m cert="0.333333333333333333">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--communitatem communitatemque-->
-         <tok val="communitatem(que)?"/>
+      <ana>
+         <tok val="communitatem"/>
+         <tok val="communitatemque"/>
          <lm>
             <l>communitas</l>
             <m>n - - s - - - f a</m>
@@ -1669,8 +1782,10 @@
             <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--communiuere communiuerunt communivere-->
-         <tok val="communi[vu]er(e|unt)"/>
+      <ana>
+         <tok val="communiuere"/>
+         <tok val="communiuerunt"/>
+         <tok val="communivere"/>
          <lm>
             <l>communio</l>
             <m>v - 3 p r i a</m>
@@ -1747,8 +1862,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--commuta commutan-->
-         <tok val="commuta[n]?"/>
+      <ana>
+         <tok val="commuta"/>
+         <tok val="commutan"/>
          <lm>
             <l>commuto</l>
             <m>v - 2 s p m a</m>
@@ -1865,8 +1981,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--commutan commutas-->
-         <tok val="commuta[sn]"/>
+      <ana>
+         <tok val="commutan"/>
+         <tok val="commutas"/>
          <lm>
             <l>commuto</l>
             <m>v - 2 s p i a</m>
@@ -2035,15 +2152,17 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--commutarit commutauerit-->
-         <tok val="commuta(ue)?rit"/>
+      <ana>
+         <tok val="commutarit"/>
+         <tok val="commutauerit"/>
          <lm>
             <l>commuto</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--commutarunt commutaverunt-->
-         <tok val="commuta(ve)?runt"/>
+      <ana>
+         <tok val="commutarunt"/>
+         <tok val="commutaverunt"/>
          <lm>
             <l>commuto</l>
             <m>v - 3 p r i a</m>
@@ -2099,8 +2218,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--commutate commutatum-->
-         <tok val="commutat(um|e)"/>
+      <ana>
+         <tok val="commutate"/>
+         <tok val="commutatum"/>
          <lm>
             <l>commuto</l>
             <m>v - - s r p p n v</m>
@@ -2145,8 +2265,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--commutationum commutationumque-->
-         <tok val="commutationum(que)?"/>
+      <ana>
+         <tok val="commutationum"/>
+         <tok val="commutationumque"/>
          <lm>
             <l>commutatio</l>
             <m>n - - p - - - f g</m>
@@ -2207,8 +2328,9 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--commutauerat commutaverat-->
-         <tok val="commuta[vu]erat"/>
+      <ana>
+         <tok val="commutauerat"/>
+         <tok val="commutaverat"/>
          <lm>
             <l>commuto</l>
             <m>v - 3 s l i a</m>
@@ -2228,8 +2350,9 @@
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--commutauit commutavit-->
-         <tok val="commuta[vu]it"/>
+      <ana>
+         <tok val="commutauit"/>
+         <tok val="commutavit"/>
          <lm>
             <l>commuto</l>
             <m>v - 3 s r i a</m>
@@ -2299,8 +2422,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--commutet commútet-->
-         <tok val="comm[úu]tet"/>
+      <ana>
+         <tok val="commutet"/>
+         <tok val="commútet"/>
          <lm>
             <l>commuto</l>
             <m>v - 3 s p s a</m>

@@ -1,60 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusaem">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:aem">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to aem</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-aem.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>AEM</tok-starts-with>
       <tok-starts-with>AEm</tok-starts-with>
       <tok-starts-with>Aem</tok-starts-with>
       <tok-starts-with>aem</tok-starts-with>
       <tok-starts-with>aém</tok-starts-with>
-      <ana><!--AEMILII Aemilii-->
-         <tok val="A(emilii|EMILII)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:09:10.063-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:09:10.063-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-aem.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="AEMILII"/>
+         <tok val="Aemilii"/>
+         <tok val="aemilii"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.5">n e - p - - - m v</m>
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEMILII Aemili Aemilii-->
-         <tok val="A(emili)?(i|EMILII)?"/>
+      <ana>
+         <tok val="AEMILII"/>
+         <tok val="Aemili"/>
+         <tok val="Aemilii"/>
+         <tok val="aemili"/>
+         <tok val="aemilii"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--AEMILIO AEmilio Aemilio Aemilioque-->
-         <tok val="[A]?[eE]?(milio)?(que|AEMILIO)?"/>
+      <ana>
+         <tok val="AEMILIO"/>
+         <tok val="AEmilio"/>
+         <tok val="Aemilio"/>
+         <tok val="Aemilioque"/>
+         <tok val="aemilio"/>
+         <tok val="aemilioque"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -63,29 +82,45 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEMVLOR Aemulor aemulor-->
-         <tok val="[aA]?(emulor|AEMVLOR)"/>
+      <ana>
+         <tok val="AEMVLOR"/>
+         <tok val="Aemulor"/>
+         <tok val="aemulor"/>
+         <tok val="aemvlor"/>
          <lm>
             <l>aemulor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AEmilius Aemilius-->
-         <tok val="A[eE]milius"/>
+      <ana>
+         <tok val="AEmilius"/>
+         <tok val="Aemilius"/>
+         <tok val="aemilius"/>
          <lm>
             <l>Aemilius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEmula Aemula Aemvla aemula aemulaque aémula-->
-         <tok val="[A]?[eE]?[m]?(u|v|aemu|aému)la(que)?"/>
+      <ana>
+         <tok val="AEmula"/>
+         <tok val="Aemula"/>
+         <tok val="Aemvla"/>
+         <tok val="aemula"/>
+         <tok val="aemulaque"/>
+         <tok val="aemvla"/>
+         <tok val="aémula"/>
          <lm>
             <l>aemulus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--AEmula Aemula Aemvla aemula aemulaque-->
-         <tok val="[A]?[eE]?[m]?(u|v|aemu)la(que)?"/>
+      <ana>
+         <tok val="AEmula"/>
+         <tok val="Aemula"/>
+         <tok val="Aemvla"/>
+         <tok val="aemula"/>
+         <tok val="aemulaque"/>
+         <tok val="aemvla"/>
          <lm cert="0.5">
             <l>aemulus</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -99,38 +134,46 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--AEmulandus aemulandus-->
-         <tok val="(ae|AE)mulandus"/>
+      <ana>
+         <tok val="AEmulandus"/>
+         <tok val="aemulandus"/>
          <lm>
             <l>aemulor</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--AEmulari aemulari aemularique-->
-         <tok val="(ae|AE)mulari(que)?"/>
+      <ana>
+         <tok val="AEmulari"/>
+         <tok val="aemulari"/>
+         <tok val="aemularique"/>
          <lm>
             <l>aemulor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--AEmulatio Aemulatio aemulatio-->
-         <tok val="[A]?(e|E|ae)mulatio"/>
+      <ana>
+         <tok val="AEmulatio"/>
+         <tok val="Aemulatio"/>
+         <tok val="aemulatio"/>
          <lm>
             <l>aemulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--AEmulator aemulator aemulatorque-->
-         <tok val="(ae|AE)mulator(que)?"/>
+      <ana>
+         <tok val="AEmulator"/>
+         <tok val="aemulator"/>
+         <tok val="aemulatorque"/>
          <lm>
             <l>aemulator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--AEmulatus aemulatus-->
-         <tok val="(ae|AE)mulatus"/>
+      <ana>
+         <tok val="AEmulatus"/>
+         <tok val="aemulatus"/>
          <lm cert="0.5">
             <l>aemulatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -143,15 +186,21 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--AEmulus Aemulus aemulus aemulusque-->
-         <tok val="[A]?(e|E|ae)mulus(que)?"/>
+      <ana>
+         <tok val="AEmulus"/>
+         <tok val="Aemulus"/>
+         <tok val="aemulus"/>
+         <tok val="aemulusque"/>
          <lm>
             <l>aemulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aemi Aemin-->
-         <tok val="Aemi[n]?"/>
+      <ana>
+         <tok val="Aemi"/>
+         <tok val="Aemin"/>
+         <tok val="aemi"/>
+         <tok val="aemin"/>
          <lm>
             <l>aemo</l>
             <m cert="0.5">v - - - p n p</m>
@@ -160,6 +209,7 @@
       </ana>
       <ana>
          <tok val="Aemilia"/>
+         <tok val="aemilia"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -170,8 +220,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Aemiliae Aemiliaeque-->
-         <tok val="Aemiliae(que)?"/>
+      <ana>
+         <tok val="Aemiliae"/>
+         <tok val="Aemiliaeque"/>
+         <tok val="aemiliae"/>
+         <tok val="aemiliaeque"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -182,6 +235,7 @@
       </ana>
       <ana>
          <tok val="Aemiliam"/>
+         <tok val="aemiliam"/>
          <lm>
             <l>Aemilius</l>
             <m>a e - s - - - f a</m>
@@ -189,6 +243,7 @@
       </ana>
       <ana>
          <tok val="Aemiliana"/>
+         <tok val="aemiliana"/>
          <lm>
             <l>Aemilianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -199,8 +254,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Aemiliane Aemilianum-->
-         <tok val="Aemilian(um|e)"/>
+      <ana>
+         <tok val="Aemiliane"/>
+         <tok val="Aemilianum"/>
+         <tok val="aemiliane"/>
+         <tok val="aemilianum"/>
          <lm>
             <l>Aemilianus</l>
             <m>a e - s - - - n v</m>
@@ -208,6 +266,7 @@
       </ana>
       <ana>
          <tok val="Aemiliane"/>
+         <tok val="aemiliane"/>
          <lm>
             <l>Aemilianus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -216,6 +275,7 @@
       </ana>
       <ana>
          <tok val="Aemiliani"/>
+         <tok val="aemiliani"/>
          <lm>
             <l>Aemilianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -226,6 +286,7 @@
       </ana>
       <ana>
          <tok val="Aemilianis"/>
+         <tok val="aemilianis"/>
          <lm>
             <l>Aemilianus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -238,6 +299,7 @@
       </ana>
       <ana>
          <tok val="Aemiliano"/>
+         <tok val="aemiliano"/>
          <lm>
             <l>Aemilianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -248,6 +310,7 @@
       </ana>
       <ana>
          <tok val="Aemilianos"/>
+         <tok val="aemilianos"/>
          <lm>
             <l>Aemilianus</l>
             <m>a e - p - - - m a</m>
@@ -255,6 +318,7 @@
       </ana>
       <ana>
          <tok val="Aemilianum"/>
+         <tok val="aemilianum"/>
          <lm>
             <l>Aemilianus</l>
             <m cert="0.2">a e - p - - - m g</m>
@@ -266,6 +330,7 @@
       </ana>
       <ana>
          <tok val="Aemilianus"/>
+         <tok val="aemilianus"/>
          <lm>
             <l>Aemilianus</l>
             <m>a e - s - - - m n</m>
@@ -273,6 +338,7 @@
       </ana>
       <ana>
          <tok val="Aemiliis"/>
+         <tok val="aemiliis"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.166666666666666667">n e - p - - - m b</m>
@@ -283,8 +349,13 @@
             <m cert="0.166666666666666667">a e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aemiliorum Aemilium Aemilivm-->
-         <tok val="Aemili(or)?[uv]m"/>
+      <ana>
+         <tok val="Aemiliorum"/>
+         <tok val="Aemilium"/>
+         <tok val="Aemilivm"/>
+         <tok val="aemiliorum"/>
+         <tok val="aemilium"/>
+         <tok val="aemilivm"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -293,13 +364,17 @@
       </ana>
       <ana>
          <tok val="Aemilios"/>
+         <tok val="aemilios"/>
          <lm>
             <l>Aemilius</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aemilium Aemilivm-->
-         <tok val="Aemili[vu]m"/>
+      <ana>
+         <tok val="Aemilium"/>
+         <tok val="Aemilivm"/>
+         <tok val="aemilium"/>
+         <tok val="aemilivm"/>
          <lm>
             <l>Aemilius</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -310,13 +385,17 @@
       </ana>
       <ana>
          <tok val="Aemin"/>
+         <tok val="aemin"/>
          <lm>
             <l>aemo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aemo Aemon-->
-         <tok val="Aemo[n]?"/>
+      <ana>
+         <tok val="Aemo"/>
+         <tok val="Aemon"/>
+         <tok val="aemo"/>
+         <tok val="aemon"/>
          <lm>
             <l>aemo</l>
             <m>v - 1 s p i a</m>
@@ -324,6 +403,7 @@
       </ana>
       <ana>
          <tok val="Aemonides"/>
+         <tok val="aemonides"/>
          <lm>
             <l>Haemonis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -331,22 +411,26 @@
             <m cert="0.333333333333333333">n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aemulatione aemulatione-->
-         <tok val="[aA]emulatione"/>
+      <ana>
+         <tok val="Aemulatione"/>
+         <tok val="aemulatione"/>
          <lm>
             <l>aemulatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aemulatur aemulatur aemulaturque-->
-         <tok val="[aA]emulatur(que)?"/>
+      <ana>
+         <tok val="Aemulatur"/>
+         <tok val="aemulatur"/>
+         <tok val="aemulaturque"/>
          <lm>
             <l>aemulor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aemuli aemuli-->
-         <tok val="[aA]emuli"/>
+      <ana>
+         <tok val="Aemuli"/>
+         <tok val="aemuli"/>
          <lm>
             <l>aemulus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -357,6 +441,7 @@
       </ana>
       <ana>
          <tok val="Aemulius"/>
+         <tok val="aemulius"/>
          <lm>
             <l>aemulus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -365,8 +450,10 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Aemulum aemulum aemulumque-->
-         <tok val="[aA]emulum(que)?"/>
+      <ana>
+         <tok val="Aemulum"/>
+         <tok val="aemulum"/>
+         <tok val="aemulumque"/>
          <lm>
             <l>aemulus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -374,16 +461,22 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aemulum aemulorum aemulum aemulumque-->
-         <tok val="[aA]emul(or)?um(que)?"/>
+      <ana>
+         <tok val="Aemulum"/>
+         <tok val="aemulorum"/>
+         <tok val="aemulum"/>
+         <tok val="aemulumque"/>
          <lm>
             <l>aemulus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Aemulum aemule aemulum aemulumque-->
-         <tok val="[aA]emul(um)?(que|e)?"/>
+      <ana>
+         <tok val="Aemulum"/>
+         <tok val="aemule"/>
+         <tok val="aemulum"/>
+         <tok val="aemulumque"/>
          <lm>
             <l>aemulus</l>
             <m>a - - s - - - n v</m>
@@ -551,8 +644,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--aemulantes aemulantis-->
-         <tok val="aemulant[ie]s"/>
+      <ana>
+         <tok val="aemulantes"/>
+         <tok val="aemulantis"/>
          <lm>
             <l>aemulor</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -598,8 +692,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--aemulare aemularis-->
-         <tok val="aemular(is|e)"/>
+      <ana>
+         <tok val="aemulare"/>
+         <tok val="aemularis"/>
          <lm>
             <l>aemulor</l>
             <m>v - 2 s p i p</m>
@@ -626,8 +721,10 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--aemularis aemulaueris aemulaveris-->
-         <tok val="aemula[vu]?(e|)ris"/>
+      <ana>
+         <tok val="aemularis"/>
+         <tok val="aemulaueris"/>
+         <tok val="aemulaveris"/>
          <lm>
             <l>aemulor</l>
             <m>v - 2 s r s a</m>
@@ -644,8 +741,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aemulata aemulataque-->
-         <tok val="aemulata(que)?"/>
+      <ana>
+         <tok val="aemulata"/>
+         <tok val="aemulataque"/>
          <lm>
             <l>aemulor</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -689,8 +787,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--aemulationis aemulationisque-->
-         <tok val="aemulationis(que)?"/>
+      <ana>
+         <tok val="aemulationis"/>
+         <tok val="aemulationisque"/>
          <lm>
             <l>aemulatio</l>
             <m>n - - s - - - f g</m>
@@ -734,8 +833,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--aemulaueris aemulaveris-->
-         <tok val="aemula[vu]eris"/>
+      <ana>
+         <tok val="aemulaueris"/>
+         <tok val="aemulaveris"/>
          <lm>
             <l>aemulor</l>
             <m>v - 2 s t i a</m>
@@ -810,8 +910,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--aemulos aémulos-->
-         <tok val="a[ée]mulos"/>
+      <ana>
+         <tok val="aemulos"/>
+         <tok val="aémulos"/>
          <lm>
             <l>aemulus</l>
             <m>a - - p - - - m a</m>

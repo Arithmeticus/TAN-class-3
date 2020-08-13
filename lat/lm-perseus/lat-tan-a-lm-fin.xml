@@ -1,67 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfin">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fin">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fin</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fin.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FIN</tok-starts-with>
       <tok-starts-with>FIn</tok-starts-with>
       <tok-starts-with>Fin</tok-starts-with>
       <tok-starts-with>fin</tok-starts-with>
       <tok-starts-with>fín</tok-starts-with>
-      <ana><!--FINDO Findo findo-->
-         <tok val="[fF]?(indo|FINDO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:24:17.893-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:24:17.893-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fin.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FINDO"/>
+         <tok val="Findo"/>
+         <tok val="findo"/>
          <lm>
             <l>findo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--FINE Fine Fini fine fineque fini finique-->
-         <tok val="[fF]?(in)?[ie]?(que|i|e|FINE)"/>
+      <ana>
+         <tok val="FINE"/>
+         <tok val="Fine"/>
+         <tok val="Fini"/>
+         <tok val="fine"/>
+         <tok val="fineque"/>
+         <tok val="fini"/>
+         <tok val="finique"/>
          <lm>
             <l>finis</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--FINEM Finem finem finemque finemve-->
-         <tok val="[fF]?(inem)?(ve|que|FINEM)?"/>
+      <ana>
+         <tok val="FINEM"/>
+         <tok val="Finem"/>
+         <tok val="finem"/>
+         <tok val="finemque"/>
+         <tok val="finemve"/>
          <lm>
             <l>finis</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FINES Fines fines finesque finesue-->
-         <tok val="[fF]?(ines)?[q]?(ue|FINES)?"/>
+      <ana>
+         <tok val="FINES"/>
+         <tok val="Fines"/>
+         <tok val="fines"/>
+         <tok val="finesque"/>
+         <tok val="finesue"/>
          <lm>
             <l>finis</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -70,23 +94,38 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--FINES FINIS FInis Fines Finis fines finesque finesue finis finisque-->
-         <tok val="(fin)?(isqu)?[e]?[s]?[q]?(ue|s|FINIS|FINES|Finis|FInis|Fines|finis)?"/>
+      <ana>
+         <tok val="FINES"/>
+         <tok val="FINIS"/>
+         <tok val="FInis"/>
+         <tok val="Fines"/>
+         <tok val="Finis"/>
+         <tok val="fines"/>
+         <tok val="finesque"/>
+         <tok val="finesue"/>
+         <tok val="finis"/>
+         <tok val="finisque"/>
          <lm>
             <l>finis</l>
             <m cert="0.5">n - - p - - - m a</m>
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FINGO Fingo fingo-->
-         <tok val="[fF]?(ingo|FINGO)"/>
+      <ana>
+         <tok val="FINGO"/>
+         <tok val="Fingo"/>
+         <tok val="fingo"/>
          <lm>
             <l>fingo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--FINIBVS Finibus finibus finibusque-->
-         <tok val="[fF]?(inibus)?(que|FINIBVS)?"/>
+      <ana>
+         <tok val="FINIBVS"/>
+         <tok val="Finibus"/>
+         <tok val="finibus"/>
+         <tok val="finibusque"/>
+         <tok val="finibvs"/>
          <lm>
             <l>finis</l>
             <m cert="0.25">n - - p - - - m b</m>
@@ -95,8 +134,12 @@
             <m cert="0.25">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--FINIS FInis Finis finis finisque-->
-         <tok val="[F]?(i|I|fi)?(nis)?(que|FINIS)?"/>
+      <ana>
+         <tok val="FINIS"/>
+         <tok val="FInis"/>
+         <tok val="Finis"/>
+         <tok val="finis"/>
+         <tok val="finisque"/>
          <lm cert="0.5">
             <l>finis</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -109,37 +152,44 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--FINITIONEM finitionem-->
-         <tok val="(finitionem|FINITIONEM)"/>
+      <ana>
+         <tok val="FINITIONEM"/>
+         <tok val="finitionem"/>
          <lm>
             <l>finitio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FINIVNTO finiunto-->
-         <tok val="(finiunto|FINIVNTO)"/>
+      <ana>
+         <tok val="FINIVNTO"/>
+         <tok val="finiunto"/>
+         <tok val="finivnto"/>
          <lm>
             <l>finio</l>
             <m>v - 3 p f m a</m>
          </lm>
       </ana>
-      <ana><!--FInge Finge finge-->
-         <tok val="[F]?(i|I|fi)nge"/>
+      <ana>
+         <tok val="FInge"/>
+         <tok val="Finge"/>
+         <tok val="finge"/>
          <lm>
             <l>fingo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Fin fin-->
-         <tok val="[fF]in"/>
+      <ana>
+         <tok val="Fin"/>
+         <tok val="fin"/>
          <lm>
             <l>fio</l>
             <m cert="0.5">v - 2 s p i a</m>
             <m cert="0.5">v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Finale finale-->
-         <tok val="[fF]inale"/>
+      <ana>
+         <tok val="Finale"/>
+         <tok val="finale"/>
          <lm>
             <l>finalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -147,8 +197,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Finalibus finalibus-->
-         <tok val="[fF]inalibus"/>
+      <ana>
+         <tok val="Finalibus"/>
+         <tok val="finalibus"/>
          <lm>
             <l>finalis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -159,15 +210,19 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Finde finde finden-->
-         <tok val="[fF]inde[n]?"/>
+      <ana>
+         <tok val="Finde"/>
+         <tok val="finde"/>
+         <tok val="finden"/>
          <lm>
             <l>findo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Findere findere finderen-->
-         <tok val="[fF]indere[n]?"/>
+      <ana>
+         <tok val="Findere"/>
+         <tok val="findere"/>
+         <tok val="finderen"/>
          <lm>
             <l>findo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -176,106 +231,124 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Findetur findetur-->
-         <tok val="[fF]indetur"/>
+      <ana>
+         <tok val="Findetur"/>
+         <tok val="findetur"/>
          <lm>
             <l>findo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Findi findi-->
-         <tok val="[fF]indi"/>
+      <ana>
+         <tok val="Findi"/>
+         <tok val="findi"/>
          <lm>
             <l>findo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Findit findit finditque-->
-         <tok val="[fF]indit(que)?"/>
+      <ana>
+         <tok val="Findit"/>
+         <tok val="findit"/>
+         <tok val="finditque"/>
          <lm>
             <l>findo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Findite findite-->
-         <tok val="[fF]indite"/>
+      <ana>
+         <tok val="Findite"/>
+         <tok val="findite"/>
          <lm>
             <l>findo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Finditur finditur-->
-         <tok val="[fF]inditur"/>
+      <ana>
+         <tok val="Finditur"/>
+         <tok val="finditur"/>
          <lm>
             <l>findo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Findunt findunt-->
-         <tok val="[fF]indunt"/>
+      <ana>
+         <tok val="Findunt"/>
+         <tok val="findunt"/>
          <lm>
             <l>findo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Fingamus fingamus-->
-         <tok val="[fF]ingamus"/>
+      <ana>
+         <tok val="Fingamus"/>
+         <tok val="fingamus"/>
          <lm>
             <l>fingo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Fingas fingas fingasque-->
-         <tok val="[fF]ingas(que)?"/>
+      <ana>
+         <tok val="Fingas"/>
+         <tok val="fingas"/>
+         <tok val="fingasque"/>
          <lm>
             <l>fingo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Fingat fingat fingatque-->
-         <tok val="[fF]ingat(que)?"/>
+      <ana>
+         <tok val="Fingat"/>
+         <tok val="fingat"/>
+         <tok val="fingatque"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Fingatur fingatur-->
-         <tok val="[fF]ingatur"/>
+      <ana>
+         <tok val="Fingatur"/>
+         <tok val="fingatur"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Fingebam fingebam-->
-         <tok val="[fF]ingebam"/>
+      <ana>
+         <tok val="Fingebam"/>
+         <tok val="fingebam"/>
          <lm>
             <l>fingo</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Fingebant fingebant-->
-         <tok val="[fF]ingebant"/>
+      <ana>
+         <tok val="Fingebant"/>
+         <tok val="fingebant"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Fingebas fingebas-->
-         <tok val="[fF]ingebas"/>
+      <ana>
+         <tok val="Fingebas"/>
+         <tok val="fingebas"/>
          <lm>
             <l>fingo</l>
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Fingebat fingebat-->
-         <tok val="[fF]ingebat"/>
+      <ana>
+         <tok val="Fingebat"/>
+         <tok val="fingebat"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Fingenda fingenda-->
-         <tok val="[fF]ingenda"/>
+      <ana>
+         <tok val="Fingenda"/>
+         <tok val="fingenda"/>
          <lm>
             <l>fingo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -286,8 +359,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Fingendis fingendis-->
-         <tok val="[fF]ingendis"/>
+      <ana>
+         <tok val="Fingendis"/>
+         <tok val="fingendis"/>
          <lm>
             <l>fingo</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -298,8 +372,9 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--Fingens fingens-->
-         <tok val="[fF]ingens"/>
+      <ana>
+         <tok val="Fingens"/>
+         <tok val="fingens"/>
          <lm>
             <l>fingo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -311,94 +386,117 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Fingent fingent-->
-         <tok val="[fF]ingent"/>
+      <ana>
+         <tok val="Fingent"/>
+         <tok val="fingent"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Fingere fingere fingereque-->
-         <tok val="[fF]ingere(que)?"/>
+      <ana>
+         <tok val="Fingere"/>
+         <tok val="fingere"/>
+         <tok val="fingereque"/>
          <lm>
             <l>fingo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Fingere Fingeris fingere fingereque fingeris-->
-         <tok val="[fF]inger(is|e|eque)"/>
+      <ana>
+         <tok val="Fingere"/>
+         <tok val="Fingeris"/>
+         <tok val="fingere"/>
+         <tok val="fingereque"/>
+         <tok val="fingeris"/>
          <lm>
             <l>fingo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Finges finges-->
-         <tok val="[fF]inges"/>
+      <ana>
+         <tok val="Finges"/>
+         <tok val="finges"/>
          <lm>
             <l>fingo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Finget finget fingetque-->
-         <tok val="[fF]inget(que)?"/>
+      <ana>
+         <tok val="Finget"/>
+         <tok val="finget"/>
+         <tok val="fingetque"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Fingi fingi fingique-->
-         <tok val="[fF]ingi(que)?"/>
+      <ana>
+         <tok val="Fingi"/>
+         <tok val="fingi"/>
+         <tok val="fingique"/>
          <lm>
             <l>fingo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Fingis fingis fingisque-->
-         <tok val="[fF]ingis(que)?"/>
+      <ana>
+         <tok val="Fingis"/>
+         <tok val="fingis"/>
+         <tok val="fingisque"/>
          <lm>
             <l>fingo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fingit fingit fingitque-->
-         <tok val="[fF]ingit(que)?"/>
+      <ana>
+         <tok val="Fingit"/>
+         <tok val="fingit"/>
+         <tok val="fingitque"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fingite fingite-->
-         <tok val="[fF]ingite"/>
+      <ana>
+         <tok val="Fingite"/>
+         <tok val="fingite"/>
          <lm>
             <l>fingo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Fingitur fingitur-->
-         <tok val="[fF]ingitur"/>
+      <ana>
+         <tok val="Fingitur"/>
+         <tok val="fingitur"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Fingunt fingunt finguntque-->
-         <tok val="[fF]ingunt(que)?"/>
+      <ana>
+         <tok val="Fingunt"/>
+         <tok val="fingunt"/>
+         <tok val="finguntque"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Finguntur finguntur-->
-         <tok val="[fF]inguntur"/>
+      <ana>
+         <tok val="Finguntur"/>
+         <tok val="finguntur"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Fini fini finique-->
-         <tok val="[fF]ini(que)?"/>
+      <ana>
+         <tok val="Fini"/>
+         <tok val="fini"/>
+         <tok val="finique"/>
          <lm cert="0.5">
             <l>finio</l>
             <m>v - 2 s p m a</m>
@@ -409,71 +507,92 @@
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Finiamus finiamus-->
-         <tok val="[fF]iniamus"/>
+      <ana>
+         <tok val="Finiamus"/>
+         <tok val="finiamus"/>
          <lm>
             <l>finio</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Finiat finiat-->
-         <tok val="[fF]iniat"/>
+      <ana>
+         <tok val="Finiat"/>
+         <tok val="finiat"/>
          <lm>
             <l>finio</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Finieram finieram-->
-         <tok val="[fF]inieram"/>
+      <ana>
+         <tok val="Finieram"/>
+         <tok val="finieram"/>
          <lm>
             <l>finio</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Finierat finierat finiuerat finiverat-->
-         <tok val="[fF]ini[uv]?erat"/>
+      <ana>
+         <tok val="Finierat"/>
+         <tok val="finierat"/>
+         <tok val="finiuerat"/>
+         <tok val="finiverat"/>
          <lm>
             <l>finio</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Finiit Finiuit finiit finiuit finivit finivitque-->
-         <tok val="[Ff]ini[uv]?it(que)?"/>
+      <ana>
+         <tok val="Finiit"/>
+         <tok val="Finiuit"/>
+         <tok val="finiit"/>
+         <tok val="finiuit"/>
+         <tok val="finivit"/>
+         <tok val="finivitque"/>
          <lm>
             <l>finio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Finio finio-->
-         <tok val="[fF]inio"/>
+      <ana>
+         <tok val="Finio"/>
+         <tok val="finio"/>
          <lm>
             <l>finio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Finire finire finireque-->
-         <tok val="[fF]inire(que)?"/>
+      <ana>
+         <tok val="Finire"/>
+         <tok val="finire"/>
+         <tok val="finireque"/>
          <lm>
             <l>finio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Finiri finiri-->
-         <tok val="[fF]iniri"/>
+      <ana>
+         <tok val="Finiri"/>
+         <tok val="finiri"/>
          <lm>
             <l>finio</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Finit finit finitque-->
-         <tok val="[fF]init(que)?"/>
+      <ana>
+         <tok val="Finit"/>
+         <tok val="finit"/>
+         <tok val="finitque"/>
          <lm>
             <l>finio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Finita finita finitaque finitast finitaue-->
-         <tok val="[fF]inita[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Finita"/>
+         <tok val="finita"/>
+         <tok val="finitaque"/>
+         <tok val="finitast"/>
+         <tok val="finitaue"/>
          <lm>
             <l>finio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -484,8 +603,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Finitae finitae-->
-         <tok val="[fF]initae"/>
+      <ana>
+         <tok val="Finitae"/>
+         <tok val="finitae"/>
          <lm>
             <l>finio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -494,23 +614,31 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Finite finite-->
-         <tok val="[fF]inite"/>
+      <ana>
+         <tok val="Finite"/>
+         <tok val="finite"/>
          <lm>
             <l>finio</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Finite Finitum finite finitum finitumque finitumst-->
-         <tok val="[fF]init(um)?(st|e|umque)?"/>
+      <ana>
+         <tok val="Finite"/>
+         <tok val="Finitum"/>
+         <tok val="finite"/>
+         <tok val="finitum"/>
+         <tok val="finitumque"/>
+         <tok val="finitumst"/>
          <lm>
             <l>finio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Finitima finitima finituma-->
-         <tok val="[fF]init[iu]ma"/>
+      <ana>
+         <tok val="Finitima"/>
+         <tok val="finitima"/>
+         <tok val="finituma"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -521,16 +649,21 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Finitimi finitimi finitimique-->
-         <tok val="[fF]initimi(que)?"/>
+      <ana>
+         <tok val="Finitimi"/>
+         <tok val="finitimi"/>
+         <tok val="finitimique"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Finitimi finitimi finitimique finitumi-->
-         <tok val="[fF]init[iu]mi(que)?"/>
+      <ana>
+         <tok val="Finitimi"/>
+         <tok val="finitimi"/>
+         <tok val="finitimique"/>
+         <tok val="finitumi"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -539,8 +672,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Finitimo finitimo-->
-         <tok val="[fF]initimo"/>
+      <ana>
+         <tok val="Finitimo"/>
+         <tok val="finitimo"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -549,22 +683,29 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Finitimos finitimos finitimosque finitumos-->
-         <tok val="[fF]init[iu]mos(que)?"/>
+      <ana>
+         <tok val="Finitimos"/>
+         <tok val="finitimos"/>
+         <tok val="finitimosque"/>
+         <tok val="finitumos"/>
          <lm>
             <l>finitimus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Finitimos finitimos finitimosque-->
-         <tok val="[fF]initimos(que)?"/>
+      <ana>
+         <tok val="Finitimos"/>
+         <tok val="finitimos"/>
+         <tok val="finitimosque"/>
          <lm>
             <l>finitimus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Finitimum finitimorum finitimum-->
-         <tok val="[fF]initim(or)?um"/>
+      <ana>
+         <tok val="Finitimum"/>
+         <tok val="finitimorum"/>
+         <tok val="finitimum"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -572,8 +713,9 @@
             <m cert="0.333333333333333333">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Finitimum finitimum-->
-         <tok val="[fF]initimum"/>
+      <ana>
+         <tok val="Finitimum"/>
+         <tok val="finitimum"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -582,37 +724,47 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Finitimus finitimus finitimusque finitumus-->
-         <tok val="[fF]init[iu]mus(que)?"/>
+      <ana>
+         <tok val="Finitimus"/>
+         <tok val="finitimus"/>
+         <tok val="finitimusque"/>
+         <tok val="finitumus"/>
          <lm>
             <l>finitimus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Finitio finitio finition-->
-         <tok val="[fF]initio[n]?"/>
+      <ana>
+         <tok val="Finitio"/>
+         <tok val="finitio"/>
+         <tok val="finition"/>
          <lm>
             <l>finitio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Finitioni finitioni-->
-         <tok val="[fF]initioni"/>
+      <ana>
+         <tok val="Finitioni"/>
+         <tok val="finitioni"/>
          <lm>
             <l>finitio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Finitionis finitionis-->
-         <tok val="[fF]initionis"/>
+      <ana>
+         <tok val="Finitionis"/>
+         <tok val="finitionis"/>
          <lm>
             <l>finitio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Finitis finitis finitisque Finitisque-->
-         <tok val="[Ff]initis(que)?"/>
+      <ana>
+         <tok val="Finitis"/>
+         <tok val="Finitisque"/>
+         <tok val="finitis"/>
+         <tok val="finitisque"/>
          <lm>
             <l>finio</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -624,8 +776,10 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Finitiuis finitiuis finitivis-->
-         <tok val="[fF]initi[uv]is"/>
+      <ana>
+         <tok val="Finitiuis"/>
+         <tok val="finitiuis"/>
+         <tok val="finitivis"/>
          <lm>
             <l>finitivus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -636,8 +790,11 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Finito finito finitoque FINITOQUE-->
-         <tok val="[fF]?(inito)?(que|FINITOQUE)?"/>
+      <ana>
+         <tok val="FINITOQUE"/>
+         <tok val="Finito"/>
+         <tok val="finito"/>
+         <tok val="finitoque"/>
          <lm>
             <l>finio</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -648,38 +805,48 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Finitor finitor-->
-         <tok val="[fF]initor"/>
+      <ana>
+         <tok val="Finitor"/>
+         <tok val="finitor"/>
          <lm>
             <l>finitor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Finitorem finitorem-->
-         <tok val="[fF]initorem"/>
+      <ana>
+         <tok val="Finitorem"/>
+         <tok val="finitorem"/>
          <lm>
             <l>finitor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Finitu finitu-->
-         <tok val="[fF]initu"/>
+      <ana>
+         <tok val="Finitu"/>
+         <tok val="finitu"/>
          <lm>
             <l>finio</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Finitum finitorum finitum finitumque finitumst-->
-         <tok val="[fF]init(or)?um(st|que)?"/>
+      <ana>
+         <tok val="Finitum"/>
+         <tok val="finitorum"/>
+         <tok val="finitum"/>
+         <tok val="finitumque"/>
+         <tok val="finitumst"/>
          <lm>
             <l>finio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Finitum finitum finitumque finitumst-->
-         <tok val="[fF]initum(st|que)?"/>
+      <ana>
+         <tok val="Finitum"/>
+         <tok val="finitum"/>
+         <tok val="finitumque"/>
+         <tok val="finitumst"/>
          <lm>
             <l>finio</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -689,57 +856,72 @@
       </ana>
       <ana>
          <tok val="Finitum"/>
+         <tok val="finitum"/>
          <lm>
             <l>finio</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Finitur finitur finiturque-->
-         <tok val="[fF]initur(que)?"/>
+      <ana>
+         <tok val="Finitur"/>
+         <tok val="finitur"/>
+         <tok val="finiturque"/>
          <lm>
             <l>finio</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Finiturus finiturus-->
-         <tok val="[fF]initurus"/>
+      <ana>
+         <tok val="Finiturus"/>
+         <tok val="finiturus"/>
          <lm>
             <l>finio</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Finitus Finitusque finitus-->
-         <tok val="[fF]initus(que)?"/>
+      <ana>
+         <tok val="Finitus"/>
+         <tok val="Finitusque"/>
+         <tok val="finitus"/>
+         <tok val="finitusque"/>
          <lm>
             <l>finio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Finium finium finiumque-->
-         <tok val="[fF]inium(que)?"/>
+      <ana>
+         <tok val="Finium"/>
+         <tok val="finium"/>
+         <tok val="finiumque"/>
          <lm>
             <l>finis</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Finxere Finxerunt finxere finxerunt-->
-         <tok val="[fF]inxer(unt|e)"/>
+      <ana>
+         <tok val="Finxere"/>
+         <tok val="Finxerunt"/>
+         <tok val="finxere"/>
+         <tok val="finxerunt"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Finxerit finxerit-->
-         <tok val="[fF]inxerit"/>
+      <ana>
+         <tok val="Finxerit"/>
+         <tok val="finxerit"/>
          <lm>
             <l>fingo</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Finxit finxit finxitque-->
-         <tok val="[fF]inxit(que)?"/>
+      <ana>
+         <tok val="Finxit"/>
+         <tok val="finxit"/>
+         <tok val="finxitque"/>
          <lm>
             <l>fingo</l>
             <m>v - 3 s r i a</m>
@@ -763,8 +945,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--finales finalis-->
-         <tok val="final[ie]s"/>
+      <ana>
+         <tok val="finales"/>
+         <tok val="finalis"/>
          <lm>
             <l>finalis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -848,8 +1031,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--findat findatque-->
-         <tok val="findat(que)?"/>
+      <ana>
+         <tok val="findat"/>
+         <tok val="findatque"/>
          <lm>
             <l>findo</l>
             <m>v - 3 s p s a</m>
@@ -1121,8 +1305,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--fingendi fingendique-->
-         <tok val="fingendi(que)?"/>
+      <ana>
+         <tok val="fingendi"/>
+         <tok val="fingendique"/>
          <lm>
             <l>fingo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1144,8 +1329,10 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--fingendorum fingendorumque fingendum-->
-         <tok val="fingend(or)?um(que)?"/>
+      <ana>
+         <tok val="fingendorum"/>
+         <tok val="fingendorumque"/>
+         <tok val="fingendum"/>
          <lm>
             <l>fingo</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -1177,8 +1364,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--fingente fingenti-->
-         <tok val="fingent[ie]"/>
+      <ana>
+         <tok val="fingente"/>
+         <tok val="fingenti"/>
          <lm>
             <l>fingo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1194,8 +1382,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--fingentesque fingentes-->
-         <tok val="fingentes(que)?"/>
+      <ana>
+         <tok val="fingentes"/>
+         <tok val="fingentesque"/>
          <lm>
             <l>fingo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1204,8 +1393,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--fingentesque fingentis fingentes-->
-         <tok val="fingent[ei]s(que)?"/>
+      <ana>
+         <tok val="fingentes"/>
+         <tok val="fingentesque"/>
+         <tok val="fingentis"/>
          <lm>
             <l>fingo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1221,8 +1412,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--fingentibus fingentibusque-->
-         <tok val="fingentibus(que)?"/>
+      <ana>
+         <tok val="fingentibus"/>
+         <tok val="fingentibusque"/>
          <lm>
             <l>fingo</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -1336,15 +1528,17 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--fingimus Fingimus-->
-         <tok val="[Ff]ingimus"/>
+      <ana>
+         <tok val="Fingimus"/>
+         <tok val="fingimus"/>
          <lm>
             <l>fingo</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--fingitis fíngitis-->
-         <tok val="f[íi]ngitis"/>
+      <ana>
+         <tok val="fingitis"/>
+         <tok val="fíngitis"/>
          <lm>
             <l>fingo</l>
             <m>v - 2 p p i a</m>
@@ -1443,8 +1637,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--finien finies-->
-         <tok val="finie[sn]"/>
+      <ana>
+         <tok val="finien"/>
+         <tok val="finies"/>
          <lm>
             <l>finio</l>
             <m>v - 2 s f i a</m>
@@ -1504,8 +1699,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--finiendis finiundis-->
-         <tok val="fini[ue]ndis"/>
+      <ana>
+         <tok val="finiendis"/>
+         <tok val="finiundis"/>
          <lm>
             <l>finio</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -1516,8 +1712,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--finiendo finiundo-->
-         <tok val="fini[ue]ndo"/>
+      <ana>
+         <tok val="finiendo"/>
+         <tok val="finiundo"/>
          <lm>
             <l>finio</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1555,8 +1752,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--finiens finiensque-->
-         <tok val="finiens(que)?"/>
+      <ana>
+         <tok val="finiens"/>
+         <tok val="finiensque"/>
          <lm>
             <l>finio</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -1568,8 +1766,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--finiente finienti-->
-         <tok val="finient[ie]"/>
+      <ana>
+         <tok val="finiente"/>
+         <tok val="finienti"/>
          <lm>
             <l>finio</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1625,15 +1824,18 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--finierant finiverant Finierant-->
-         <tok val="[fF]ini[v]?erant"/>
+      <ana>
+         <tok val="Finierant"/>
+         <tok val="finierant"/>
+         <tok val="finiverant"/>
          <lm>
             <l>finio</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--finiere finierunt-->
-         <tok val="finier(unt|e)"/>
+      <ana>
+         <tok val="finiere"/>
+         <tok val="finierunt"/>
          <lm>
             <l>finio</l>
             <m>v - 3 p r i a</m>
@@ -1647,8 +1849,9 @@
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--finiere finieris-->
-         <tok val="finier(is|e)"/>
+      <ana>
+         <tok val="finiere"/>
+         <tok val="finieris"/>
          <lm>
             <l>finio</l>
             <m>v - 2 s f i p</m>
@@ -1699,8 +1902,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--finii finiui-->
-         <tok val="fini[u]?i"/>
+      <ana>
+         <tok val="finii"/>
+         <tok val="finiui"/>
          <lm>
             <l>finio</l>
             <m>v - 1 s r i a</m>
@@ -1769,8 +1973,9 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--finisset finivisset-->
-         <tok val="fini(vi)?sset"/>
+      <ana>
+         <tok val="finisset"/>
+         <tok val="finivisset"/>
          <lm>
             <l>finio</l>
             <m>v - 3 s l s a</m>
@@ -1783,8 +1988,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--finitam finitamque-->
-         <tok val="finitam(que)?"/>
+      <ana>
+         <tok val="finitam"/>
+         <tok val="finitamque"/>
          <lm>
             <l>finio</l>
             <m>v - - s r p p f a</m>
@@ -1804,8 +2010,9 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--finiti finitique-->
-         <tok val="finiti(que)?"/>
+      <ana>
+         <tok val="finiti"/>
+         <tok val="finitique"/>
          <lm>
             <l>finio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1814,8 +2021,9 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--finitimae finitumae-->
-         <tok val="finit[ui]mae"/>
+      <ana>
+         <tok val="finitimae"/>
+         <tok val="finitumae"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1831,22 +2039,27 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--finitimarum finitimarumque-->
-         <tok val="finitimarum(que)?"/>
+      <ana>
+         <tok val="finitimarum"/>
+         <tok val="finitimarumque"/>
          <lm>
             <l>finitimus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--finitimas finitimasque-->
-         <tok val="finitimas(que)?"/>
+      <ana>
+         <tok val="finitimas"/>
+         <tok val="finitimasque"/>
          <lm>
             <l>finitimus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--finitimis finitimisque finitumis finitumisque-->
-         <tok val="finit[ui]mis(que)?"/>
+      <ana>
+         <tok val="finitimis"/>
+         <tok val="finitimisque"/>
+         <tok val="finitumis"/>
+         <tok val="finitumisque"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1857,23 +2070,27 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--finitimis finitimisque-->
-         <tok val="finitimis(que)?"/>
+      <ana>
+         <tok val="finitimis"/>
+         <tok val="finitimisque"/>
          <lm>
             <l>finitimus</l>
             <m cert="0.5">n - - p - - - m d</m>
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--finitione finitionen-->
-         <tok val="finitione[n]?"/>
+      <ana>
+         <tok val="finitione"/>
+         <tok val="finitionen"/>
          <lm>
             <l>finitio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--finitionen finitiones finitionesque-->
-         <tok val="finitione(s|n|sque)"/>
+      <ana>
+         <tok val="finitionen"/>
+         <tok val="finitiones"/>
+         <tok val="finitionesque"/>
          <lm>
             <l>finitio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1881,8 +2098,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--finitionibus finitionibusque-->
-         <tok val="finitionibus(que)?"/>
+      <ana>
+         <tok val="finitionibus"/>
+         <tok val="finitionibusque"/>
          <lm>
             <l>finitio</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -1904,8 +2122,9 @@
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--finitiua finitiva-->
-         <tok val="finiti[vu]a"/>
+      <ana>
+         <tok val="finitiua"/>
+         <tok val="finitiva"/>
          <lm>
             <l>finitivus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1916,15 +2135,17 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--finitiuam finitivam-->
-         <tok val="finiti[vu]am"/>
+      <ana>
+         <tok val="finitiuam"/>
+         <tok val="finitivam"/>
          <lm>
             <l>finitivus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--finitiui finitivi-->
-         <tok val="finiti[vu]i"/>
+      <ana>
+         <tok val="finitiui"/>
+         <tok val="finitivi"/>
          <lm>
             <l>finitivus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1933,8 +2154,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--finitiuum finitivum-->
-         <tok val="finiti[vu]um"/>
+      <ana>
+         <tok val="finitiuum"/>
+         <tok val="finitivum"/>
          <lm>
             <l>finitivus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1943,16 +2165,19 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--finitiuum finitivorum finitivum-->
-         <tok val="finiti[v]?(or|u)?um"/>
+      <ana>
+         <tok val="finitiuum"/>
+         <tok val="finitivorum"/>
+         <tok val="finitivum"/>
          <lm>
             <l>finitivus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--finitiuus finitivus-->
-         <tok val="finiti[vu]us"/>
+      <ana>
+         <tok val="finitiuus"/>
+         <tok val="finitivus"/>
          <lm>
             <l>finitivus</l>
             <m>a - - s - - - m n</m>
@@ -2030,8 +2255,10 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--finitum finitumque finitumst-->
-         <tok val="finitum(st|que)?"/>
+      <ana>
+         <tok val="finitum"/>
+         <tok val="finitumque"/>
+         <tok val="finitumst"/>
          <lm>
             <l>finio</l>
             <m>a - - s - - - n n</m>
@@ -2073,8 +2300,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--finiuntur finiunturque-->
-         <tok val="finiuntur(que)?"/>
+      <ana>
+         <tok val="finiuntur"/>
+         <tok val="finiunturque"/>
          <lm>
             <l>finio</l>
             <m>v - 3 p p i p</m>

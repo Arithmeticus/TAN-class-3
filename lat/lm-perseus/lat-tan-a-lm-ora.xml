@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusora">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ora">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ora</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ora.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ORA</tok-starts-with>
       <tok-starts-with>Ora</tok-starts-with>
@@ -39,30 +16,81 @@
       <tok-starts-with>orá</tok-starts-with>
       <tok-starts-with>Óra</tok-starts-with>
       <tok-starts-with>Orá</tok-starts-with>
-      <ana><!--ORACVLO Oraculo oraculo oraclo-->
-         <tok val="[oO]?(rac)?[u]?(lo|ORACVLO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:37:14.573-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:37:14.573-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ora.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ORACVLO"/>
+         <tok val="Oraculo"/>
+         <tok val="oraclo"/>
+         <tok val="oraculo"/>
+         <tok val="oracvlo"/>
          <lm>
             <l>oraculum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--ORATIO Oratio Oration oratio oration oratioque oratiost orátiost-->
-         <tok val="[Oo]?[r]?[aá]?(tio)?(n|st|que|ORATIO)?"/>
+      <ana>
+         <tok val="ORATIO"/>
+         <tok val="Oratio"/>
+         <tok val="Oration"/>
+         <tok val="oratio"/>
+         <tok val="oration"/>
+         <tok val="oratioque"/>
+         <tok val="oratiost"/>
+         <tok val="orátiost"/>
          <lm>
             <l>oratio</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--ORATIO Oratio Oration oratio oration oratioque oratiost-->
-         <tok val="[Oo]?(ratio)?(n|st|que|ORATIO)?"/>
+      <ana>
+         <tok val="ORATIO"/>
+         <tok val="Oratio"/>
+         <tok val="Oration"/>
+         <tok val="oratio"/>
+         <tok val="oration"/>
+         <tok val="oratioque"/>
+         <tok val="oratiost"/>
          <lm>
             <l>oratio</l>
             <m>n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--ORATO Oratone orato-->
-         <tok val="[oO]?(rato)?(ne|ORATO)?"/>
+      <ana>
+         <tok val="ORATO"/>
+         <tok val="Oratone"/>
+         <tok val="orato"/>
+         <tok val="oratone"/>
          <lm cert="0.5">
             <l>oro</l>
             <m cert="0.2">v - - s r p p n d</m>
@@ -77,30 +105,45 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--ORATO Oratone orato órato-->
-         <tok val="[óoO]?(rato)?(ne|ORATO)?"/>
+      <ana>
+         <tok val="ORATO"/>
+         <tok val="Oratone"/>
+         <tok val="orato"/>
+         <tok val="oratone"/>
+         <tok val="órato"/>
          <lm>
             <l>oro</l>
             <m>v - - s r p p m b</m>
          </lm>
       </ana>
-      <ana><!--ORATORES Oratores oratores oratoresque óratores-->
-         <tok val="[oOó]?(ratores)?(que|ORATORES)?"/>
+      <ana>
+         <tok val="ORATORES"/>
+         <tok val="Oratores"/>
+         <tok val="oratores"/>
+         <tok val="oratoresque"/>
+         <tok val="óratores"/>
          <lm>
             <l>orator</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ORATORES Oratores oratores oratoresque-->
-         <tok val="[oO]?(ratores)?(que|ORATORES)?"/>
+      <ana>
+         <tok val="ORATORES"/>
+         <tok val="Oratores"/>
+         <tok val="oratores"/>
+         <tok val="oratoresque"/>
          <lm>
             <l>orator</l>
             <m cert="0.5">n - - p - - - m v</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Ora Oraque ora oraque orave-->
-         <tok val="[oO]ra(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Ora"/>
+         <tok val="Oraque"/>
+         <tok val="ora"/>
+         <tok val="oraque"/>
+         <tok val="orave"/>
          <lm cert="0.5">
             <l>ora</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -112,96 +155,114 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Ora Oraque ora-->
-         <tok val="[Oo]ra(que)?"/>
+      <ana>
+         <tok val="Ora"/>
+         <tok val="Oraque"/>
+         <tok val="ora"/>
+         <tok val="oraque"/>
          <lm>
             <l>os</l>
-            <m cert="0.5">n - - p - - - n a</m>
-            <m cert="0.5">n - - p - - - n n</m>
+            <m cert="0.333333333333333333">n - - p - - - n a</m>
+            <m cert="0.333333333333333333">n - - p - - - n n</m>
+            <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Ora Oraque-->
-         <tok val="Ora(que)?"/>
-         <lm>
-            <l>os</l>
-            <m>n - - p - - - n v</m>
-         </lm>
-      </ana>
-      <ana><!--Orabam orabam-->
-         <tok val="[oO]rabam"/>
+      <ana>
+         <tok val="Orabam"/>
+         <tok val="orabam"/>
          <lm>
             <l>oro</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Orabat orabat orabatque-->
-         <tok val="[oO]rabat(que)?"/>
+      <ana>
+         <tok val="Orabat"/>
+         <tok val="orabat"/>
+         <tok val="orabatque"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Orabunt orabunt-->
-         <tok val="[oO]rabunt"/>
+      <ana>
+         <tok val="Orabunt"/>
+         <tok val="orabunt"/>
          <lm>
             <l>oro</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Oracula oracla oracula-->
-         <tok val="[oO]rac[u]?la"/>
+      <ana>
+         <tok val="Oracula"/>
+         <tok val="oracla"/>
+         <tok val="oracula"/>
          <lm>
             <l>oraculum</l>
             <m>n - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Oracula oracula-->
-         <tok val="[oO]racula"/>
+      <ana>
+         <tok val="Oracula"/>
+         <tok val="oracula"/>
          <lm>
             <l>oraculum</l>
             <m cert="0.5">n - - p - - - n n</m>
             <m cert="0.5">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Oraculi oraculi oracli-->
-         <tok val="[oO]rac[u]?li"/>
+      <ana>
+         <tok val="Oraculi"/>
+         <tok val="oracli"/>
+         <tok val="oraculi"/>
          <lm>
             <l>oraculum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oraculis oraculis oraculisque oraclis-->
-         <tok val="[oO]rac[u]?lis(que)?"/>
+      <ana>
+         <tok val="Oraculis"/>
+         <tok val="oraclis"/>
+         <tok val="oraculis"/>
+         <tok val="oraculisque"/>
          <lm>
             <l>oraculum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Oraculorum Oraculum oraculorum oraculorumque oraculum-->
-         <tok val="[oO]racul(or)?um(que)?"/>
+      <ana>
+         <tok val="Oraculorum"/>
+         <tok val="Oraculum"/>
+         <tok val="oraculorum"/>
+         <tok val="oraculorumque"/>
+         <tok val="oraculum"/>
          <lm>
             <l>oraculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oraculum oraculum-->
-         <tok val="[oO]raculum"/>
+      <ana>
+         <tok val="Oraculum"/>
+         <tok val="oraculum"/>
          <lm>
             <l>oraculum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Oraculum oraculum oraclum-->
-         <tok val="[oO]rac[u]?lum"/>
+      <ana>
+         <tok val="Oraculum"/>
+         <tok val="oraclum"/>
+         <tok val="oraculum"/>
          <lm>
             <l>oraculum</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Orae orae oraeque-->
-         <tok val="[oO]rae(que)?"/>
+      <ana>
+         <tok val="Orae"/>
+         <tok val="orae"/>
+         <tok val="oraeque"/>
          <lm>
             <l>ora</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -210,22 +271,27 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Oram oram oramque-->
-         <tok val="[oO]ram(que)?"/>
+      <ana>
+         <tok val="Oram"/>
+         <tok val="oram"/>
+         <tok val="oramque"/>
          <lm>
             <l>ora</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Oramus oramus-->
-         <tok val="[oO]ramus"/>
+      <ana>
+         <tok val="Oramus"/>
+         <tok val="oramus"/>
          <lm>
             <l>oro</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Oranda oranda orandaque-->
-         <tok val="[oO]randa(que)?"/>
+      <ana>
+         <tok val="Oranda"/>
+         <tok val="oranda"/>
+         <tok val="orandaque"/>
          <lm>
             <l>oro</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -236,8 +302,10 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Orandi orandi orandique-->
-         <tok val="[oO]randi(que)?"/>
+      <ana>
+         <tok val="Orandi"/>
+         <tok val="orandi"/>
+         <tok val="orandique"/>
          <lm>
             <l>oro</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -247,8 +315,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Orando orando-->
-         <tok val="[oO]rando"/>
+      <ana>
+         <tok val="Orando"/>
+         <tok val="orando"/>
          <lm>
             <l>oro</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -259,8 +328,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Orandum orandum-->
-         <tok val="[oO]randum"/>
+      <ana>
+         <tok val="Orandum"/>
+         <tok val="orandum"/>
          <lm>
             <l>oro</l>
             <m cert="0.166666666666666667">v - - s p g p n a</m>
@@ -271,22 +341,27 @@
             <m cert="0.166666666666666667">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Orandum orande orandum-->
-         <tok val="[oO]rand(um|e)"/>
+      <ana>
+         <tok val="Orandum"/>
+         <tok val="orande"/>
+         <tok val="orandum"/>
          <lm>
             <l>oro</l>
             <m>v - - s p g p n v</m>
          </lm>
       </ana>
-      <ana><!--Orandus orandus-->
-         <tok val="[oO]randus"/>
+      <ana>
+         <tok val="Orandus"/>
+         <tok val="orandus"/>
          <lm>
             <l>oro</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Orans orans oransque-->
-         <tok val="[oO]rans(que)?"/>
+      <ana>
+         <tok val="Orans"/>
+         <tok val="orans"/>
+         <tok val="oransque"/>
          <lm>
             <l>oro</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -298,23 +373,30 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Orant orant orantque oránt-->
-         <tok val="[oO]r[aá]nt(que)?"/>
+      <ana>
+         <tok val="Orant"/>
+         <tok val="orant"/>
+         <tok val="orantque"/>
+         <tok val="oránt"/>
          <lm>
             <l>oro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Orantem orantem orantemque-->
-         <tok val="[oO]rantem(que)?"/>
+      <ana>
+         <tok val="Orantem"/>
+         <tok val="orantem"/>
+         <tok val="orantemque"/>
          <lm>
             <l>oro</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Orantes orantes orantesque-->
-         <tok val="[oO]rantes(que)?"/>
+      <ana>
+         <tok val="Orantes"/>
+         <tok val="orantes"/>
+         <tok val="orantesque"/>
          <lm>
             <l>oro</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -323,16 +405,23 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Orantes Orantis orantes orantesque orantis orantisque-->
-         <tok val="[oO]rant[ie]s(que)?"/>
+      <ana>
+         <tok val="Orantes"/>
+         <tok val="Orantis"/>
+         <tok val="orantes"/>
+         <tok val="orantesque"/>
+         <tok val="orantis"/>
+         <tok val="orantisque"/>
          <lm>
             <l>oro</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Oranti oranti orantique-->
-         <tok val="[oO]ranti(que)?"/>
+      <ana>
+         <tok val="Oranti"/>
+         <tok val="oranti"/>
+         <tok val="orantique"/>
          <lm>
             <l>oro</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -340,8 +429,11 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Oranti orante oranti orantique-->
-         <tok val="[oO]rant(i|e|ique)"/>
+      <ana>
+         <tok val="Oranti"/>
+         <tok val="orante"/>
+         <tok val="oranti"/>
+         <tok val="orantique"/>
          <lm>
             <l>oro</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -349,8 +441,10 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Orantis orantis orantisque-->
-         <tok val="[oO]rantis(que)?"/>
+      <ana>
+         <tok val="Orantis"/>
+         <tok val="orantis"/>
+         <tok val="orantisque"/>
          <lm>
             <l>oro</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -358,23 +452,30 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Orare orare orareque-->
-         <tok val="[oO]rare(que)?"/>
+      <ana>
+         <tok val="Orare"/>
+         <tok val="orare"/>
+         <tok val="orareque"/>
          <lm>
             <l>oro</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Orare orare orareque oráre órare-->
-         <tok val="[oOó]r[aá]re(que)?"/>
+      <ana>
+         <tok val="Orare"/>
+         <tok val="orare"/>
+         <tok val="orareque"/>
+         <tok val="oráre"/>
+         <tok val="órare"/>
          <lm>
             <l>oro</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Orario orario-->
-         <tok val="[oO]rario"/>
+      <ana>
+         <tok val="Orario"/>
+         <tok val="orario"/>
          <lm cert="0.5">
             <l>orarius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -388,8 +489,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Orarium orarium-->
-         <tok val="[oO]rarium"/>
+      <ana>
+         <tok val="Orarium"/>
+         <tok val="orarium"/>
          <lm cert="0.5">
             <l>orarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -407,15 +509,18 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Orarum orarum-->
-         <tok val="[oO]rarum"/>
+      <ana>
+         <tok val="Orarum"/>
+         <tok val="orarum"/>
          <lm>
             <l>ora</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Oras oras orasque-->
-         <tok val="[oO]ras(que)?"/>
+      <ana>
+         <tok val="Oras"/>
+         <tok val="oras"/>
+         <tok val="orasque"/>
          <lm cert="0.5">
             <l>oro</l>
             <m>v - 2 s p i a</m>
@@ -425,8 +530,12 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Orat orat oratque órat Órat-->
-         <tok val="[oOóÓ]rat(que)?"/>
+      <ana>
+         <tok val="Orat"/>
+         <tok val="orat"/>
+         <tok val="oratque"/>
+         <tok val="Órat"/>
+         <tok val="órat"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s p i a</m>
@@ -434,16 +543,14 @@
       </ana>
       <ana>
          <tok val="Orata"/>
-         <lm>
+         <tok val="orata"/>
+         <lm cert="0.333333333333333333">
             <l>Orata</l>
             <m cert="0.333333333333333333">n e - s - - - m n</m>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
             <m cert="0.333333333333333333">n e - s - - - m v</m>
          </lm>
-      </ana>
-      <ana><!--Orata orata-->
-         <tok val="[oO]rata"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>oro</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
             <m cert="0.166666666666666667">v - - p r p p n v</m>
@@ -452,7 +559,7 @@
             <m cert="0.166666666666666667">v - - s r p p f n</m>
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>oratum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
             <m cert="0.333333333333333333">n - - p - - - n n</m>
@@ -461,17 +568,15 @@
       </ana>
       <ana>
          <tok val="Oratae"/>
-         <lm>
+         <tok val="oratae"/>
+         <lm cert="0.5">
             <l>Orata</l>
             <m cert="0.25">n e - s - - - m d</m>
             <m cert="0.25">n e - p - - - m n</m>
             <m cert="0.25">n e - s - - - m g</m>
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
-      </ana>
-      <ana><!--Oratae oratae-->
-         <tok val="[oO]ratae"/>
-         <lm>
+         <lm cert="0.5">
             <l>oro</l>
             <m cert="0.25">v - - s r p p f d</m>
             <m cert="0.25">v - - s r p p f g</m>
@@ -479,30 +584,32 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Oratam oratam-->
-         <tok val="[oO]ratam"/>
-         <lm>
+      <ana>
+         <tok val="Oratam"/>
+         <tok val="oratam"/>
+         <lm cert="0.5">
             <l>oro</l>
             <m>v - - s r p p f a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Oratam"/>
-         <lm>
+         <lm cert="0.5">
             <l>Orata</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Orate orate-->
-         <tok val="[oO]rate"/>
+      <ana>
+         <tok val="Orate"/>
+         <tok val="orate"/>
          <lm>
             <l>oro</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Orate Oratum orate oratum-->
-         <tok val="[oO]rat(um|e)"/>
+      <ana>
+         <tok val="Orate"/>
+         <tok val="Oratum"/>
+         <tok val="orate"/>
+         <tok val="oratum"/>
          <lm cert="0.5">
             <l>oratum</l>
             <m>n - - s - - - n v</m>
@@ -512,8 +619,9 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Orati orati-->
-         <tok val="[oO]rati"/>
+      <ana>
+         <tok val="Orati"/>
+         <tok val="orati"/>
          <lm cert="0.5">
             <l>oro</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -526,29 +634,37 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oratim oratim-->
-         <tok val="[oO]ratim"/>
+      <ana>
+         <tok val="Oratim"/>
+         <tok val="oratim"/>
          <lm>
             <l>oratim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Oratione oratione orationeque-->
-         <tok val="[oO]ratione(que)?"/>
+      <ana>
+         <tok val="Oratione"/>
+         <tok val="oratione"/>
+         <tok val="orationeque"/>
          <lm>
             <l>oratio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Orationem orationem orationemque orátionem-->
-         <tok val="[oO]r[aá]tionem(que)?"/>
+      <ana>
+         <tok val="Orationem"/>
+         <tok val="orationem"/>
+         <tok val="orationemque"/>
+         <tok val="orátionem"/>
          <lm>
             <l>oratio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Orationes orationes orationesque-->
-         <tok val="[oO]rationes(que)?"/>
+      <ana>
+         <tok val="Orationes"/>
+         <tok val="orationes"/>
+         <tok val="orationesque"/>
          <lm>
             <l>oratio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -556,30 +672,37 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Orationi orationi-->
-         <tok val="[oO]rationi"/>
+      <ana>
+         <tok val="Orationi"/>
+         <tok val="orationi"/>
          <lm>
             <l>oratio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Orationibus orationibus-->
-         <tok val="[oO]rationibus"/>
+      <ana>
+         <tok val="Orationibus"/>
+         <tok val="orationibus"/>
          <lm>
             <l>oratio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Orationis orationis orationisque orátionis Orátionis-->
-         <tok val="[oO]r[aá]tionis(que)?"/>
+      <ana>
+         <tok val="Orationis"/>
+         <tok val="Orátionis"/>
+         <tok val="orationis"/>
+         <tok val="orationisque"/>
+         <tok val="orátionis"/>
          <lm>
             <l>oratio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Orationum orationum-->
-         <tok val="[oO]rationum"/>
+      <ana>
+         <tok val="Orationum"/>
+         <tok val="orationum"/>
          <lm>
             <l>oratio</l>
             <m>n - - p - - - f g</m>
@@ -587,15 +710,13 @@
       </ana>
       <ana>
          <tok val="Oratis"/>
-         <lm>
+         <tok val="oratis"/>
+         <lm cert="0.333333333333333333">
             <l>Orata</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Oratis oratis-->
-         <tok val="[oO]ratis"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>oro</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
             <m cert="0.142857142857142857">v - - p r p p n d</m>
@@ -605,14 +726,15 @@
             <m cert="0.142857142857142857">v - - p r p p m d</m>
             <m cert="0.142857142857142857">v - - p r p p n b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>oratum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Oratiuncula oratiuncula-->
-         <tok val="[oO]ratiuncula"/>
+      <ana>
+         <tok val="Oratiuncula"/>
+         <tok val="oratiuncula"/>
          <lm>
             <l>oratiuncula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -620,15 +742,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Oratiunculam oratiunculam-->
-         <tok val="[oO]ratiunculam"/>
+      <ana>
+         <tok val="Oratiunculam"/>
+         <tok val="oratiunculam"/>
          <lm>
             <l>oratiuncula</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Oratiunculas oratiunculas-->
-         <tok val="[oO]ratiunculas"/>
+      <ana>
+         <tok val="Oratiunculas"/>
+         <tok val="oratiunculas"/>
          <lm>
             <l>oratiuncula</l>
             <m>n - - p - - - f a</m>
@@ -636,13 +760,16 @@
       </ana>
       <ana>
          <tok val="Oratius"/>
+         <tok val="oratius"/>
          <lm>
             <l>oro</l>
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Oratius oratiun oratius-->
-         <tok val="[oO]ratiu[sn]"/>
+      <ana>
+         <tok val="Oratius"/>
+         <tok val="oratiun"/>
+         <tok val="oratius"/>
          <lm>
             <l>oro</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -650,51 +777,66 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Orator orator oratór ORATOR oratorque-->
-         <tok val="[oO]?(rat)?[oó]?[r]?(que|ORATOR)?"/>
+      <ana>
+         <tok val="ORATOR"/>
+         <tok val="Orator"/>
+         <tok val="orator"/>
+         <tok val="oratorque"/>
+         <tok val="oratór"/>
          <lm>
             <l>orator</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Orator orator ORATOR oratorque-->
-         <tok val="[oO]?(rator)?(que|ORATOR)?"/>
+      <ana>
+         <tok val="ORATOR"/>
+         <tok val="Orator"/>
+         <tok val="orator"/>
+         <tok val="oratorque"/>
          <lm>
             <l>orator</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Oratore oratore-->
-         <tok val="[oO]ratore"/>
+      <ana>
+         <tok val="Oratore"/>
+         <tok val="oratore"/>
          <lm>
             <l>orator</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Oratorem oratorem oratoremne ORATOREM-->
-         <tok val="[oO]?(ratorem)?(ne|ORATOREM)?"/>
+      <ana>
+         <tok val="ORATOREM"/>
+         <tok val="Oratorem"/>
+         <tok val="oratorem"/>
+         <tok val="oratoremne"/>
          <lm>
             <l>orator</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Oratori oratori oratorii-->
-         <tok val="[oO]ratori[i]?"/>
+      <ana>
+         <tok val="Oratori"/>
+         <tok val="oratori"/>
+         <tok val="oratorii"/>
          <lm>
             <l>oratorius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oratori oratori-->
-         <tok val="[oO]ratori"/>
+      <ana>
+         <tok val="Oratori"/>
+         <tok val="oratori"/>
          <lm>
             <l>orator</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Oratoria oratoria-->
-         <tok val="[oO]ratoria"/>
+      <ana>
+         <tok val="Oratoria"/>
+         <tok val="oratoria"/>
          <lm cert="0.333333333333333333">
             <l>oratoria</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -717,8 +859,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Oratoriae oratoriae oratoriaeque-->
-         <tok val="[oO]ratoriae(que)?"/>
+      <ana>
+         <tok val="Oratoriae"/>
+         <tok val="oratoriae"/>
+         <tok val="oratoriaeque"/>
          <lm cert="0.5">
             <l>oratorius</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -734,16 +878,19 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Oratoribus oratoribus oratoribusque-->
-         <tok val="[oO]ratoribus(que)?"/>
+      <ana>
+         <tok val="Oratoribus"/>
+         <tok val="oratoribus"/>
+         <tok val="oratoribusque"/>
          <lm>
             <l>orator</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Oratoriis oratoriis-->
-         <tok val="[oO]ratoriis"/>
+      <ana>
+         <tok val="Oratoriis"/>
+         <tok val="oratoriis"/>
          <lm cert="0.333333333333333333">
             <l>oratorium</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -764,15 +911,18 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Oratoris oratoris oratorisque-->
-         <tok val="[oO]ratoris(que)?"/>
+      <ana>
+         <tok val="Oratoris"/>
+         <tok val="oratoris"/>
+         <tok val="oratorisque"/>
          <lm>
             <l>orator</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Oratorium oratorium-->
-         <tok val="[oO]ratorium"/>
+      <ana>
+         <tok val="Oratorium"/>
+         <tok val="oratorium"/>
          <lm cert="0.5">
             <l>oratorius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -788,8 +938,10 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oratorium oratorie oratorium-->
-         <tok val="[oO]ratori(um|e)"/>
+      <ana>
+         <tok val="Oratorium"/>
+         <tok val="oratorie"/>
+         <tok val="oratorium"/>
          <lm cert="0.5">
             <l>oratorium</l>
             <m>n - - s - - - n v</m>
@@ -799,22 +951,29 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Oratorius oratorius-->
-         <tok val="[oO]ratorius"/>
+      <ana>
+         <tok val="Oratorius"/>
+         <tok val="oratorius"/>
          <lm>
             <l>oratorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oratorum oratorum oratorumque-->
-         <tok val="[oO]ratorum(que)?"/>
+      <ana>
+         <tok val="Oratorum"/>
+         <tok val="oratorum"/>
+         <tok val="oratorumque"/>
          <lm>
             <l>orator</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Oratorum Oratum oratorum oratorumque oratum-->
-         <tok val="[oO]rat(or)?um(que)?"/>
+      <ana>
+         <tok val="Oratorum"/>
+         <tok val="Oratum"/>
+         <tok val="oratorum"/>
+         <tok val="oratorumque"/>
+         <tok val="oratum"/>
          <lm cert="0.5">
             <l>oro</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -825,8 +984,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oratu oratu-->
-         <tok val="[oO]ratu"/>
+      <ana>
+         <tok val="Oratu"/>
+         <tok val="oratu"/>
          <lm cert="0.5">
             <l>oratus</l>
             <m>n - - s - - - m b</m>
@@ -836,13 +996,15 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Oratum oratum-->
-         <tok val="[oO]ratum"/>
+      <ana>
+         <tok val="Oratum"/>
+         <tok val="oratum"/>
          <lm cert="0.333333333333333333">
             <l>oro</l>
-            <m cert="0.333333333333333333">v - - s r p p m a</m>
-            <m cert="0.333333333333333333">v - - s r p p n n</m>
-            <m cert="0.333333333333333333">v - - s r p p n a</m>
+            <m cert="0.25">v - - s r p p m a</m>
+            <m cert="0.25">v - - s r p p n n</m>
+            <m cert="0.25">v - - s r p p n a</m>
+            <m cert="0.25">v - - - - u - - a</m>
          </lm>
          <lm cert="0.333333333333333333">
             <l>oratum</l>
@@ -855,14 +1017,8 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Oratum"/>
-         <lm>
-            <l>oro</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Oratus oratus-->
-         <tok val="[oO]ratus"/>
+         <tok val="Oratus"/>
+         <tok val="oratus"/>
          <lm cert="0.5">
             <l>oratus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -875,29 +1031,37 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Oraveris oraueris oraveris orassis-->
-         <tok val="[oO]ra[vu]?(er|ss)is"/>
+      <ana>
+         <tok val="Oraveris"/>
+         <tok val="orassis"/>
+         <tok val="oraueris"/>
+         <tok val="oraveris"/>
          <lm>
             <l>oro</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Oraveris oraueris oraveris-->
-         <tok val="[oO]ra[vu]eris"/>
+      <ana>
+         <tok val="Oraveris"/>
+         <tok val="oraueris"/>
+         <tok val="oraveris"/>
          <lm>
             <l>oro</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--ora oraque orave-->
-         <tok val="ora(ve|que)?"/>
+      <ana>
+         <tok val="ora"/>
+         <tok val="oraque"/>
+         <tok val="orave"/>
          <lm>
             <l>aurum</l>
             <m>n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--orabant orabantque-->
-         <tok val="orabant(que)?"/>
+      <ana>
+         <tok val="orabant"/>
+         <tok val="orabantque"/>
          <lm>
             <l>oro</l>
             <m>v - 3 p i i a</m>
@@ -939,8 +1103,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--orabit orabitque-->
-         <tok val="orabit(que)?"/>
+      <ana>
+         <tok val="orabit"/>
+         <tok val="orabitque"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s f i a</m>
@@ -953,8 +1118,9 @@
             <m>v - 2 p f i a</m>
          </lm>
       </ana>
-      <ana><!--orabo órabo-->
-         <tok val="[óo]rabo"/>
+      <ana>
+         <tok val="orabo"/>
+         <tok val="órabo"/>
          <lm>
             <l>oro</l>
             <m>v - 1 s f i a</m>
@@ -1033,8 +1199,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--orantibus orantibusque-->
-         <tok val="orantibus(que)?"/>
+      <ana>
+         <tok val="orantibus"/>
+         <tok val="orantibusque"/>
          <lm>
             <l>oro</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -1061,8 +1228,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--oraque orave-->
-         <tok val="ora(v|qu)e"/>
+      <ana>
+         <tok val="oraque"/>
+         <tok val="orave"/>
          <lm>
             <l>aurum</l>
             <m cert="0.5">n - - p - - - n a</m>
@@ -1076,8 +1244,9 @@
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--orarent orarentque-->
-         <tok val="orarent(que)?"/>
+      <ana>
+         <tok val="orarent"/>
+         <tok val="orarentque"/>
          <lm>
             <l>oro</l>
             <m>v - 3 p i s a</m>
@@ -1162,8 +1331,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--orarit orauerit oraverit-->
-         <tok val="ora[vu]?(e|)rit"/>
+      <ana>
+         <tok val="orarit"/>
+         <tok val="orauerit"/>
+         <tok val="oraverit"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s r s a</m>
@@ -1176,15 +1347,22 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--orarunt orauere oravere oraverunt oraveruntque-->
-         <tok val="o(ra)?(ve)?r(unt|avere|auere|averuntque)"/>
+      <ana>
+         <tok val="orarunt"/>
+         <tok val="orauere"/>
+         <tok val="oravere"/>
+         <tok val="oraverunt"/>
+         <tok val="oraveruntque"/>
          <lm>
             <l>oro</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--orasse orasseque orauisse oravisse-->
-         <tok val="ora[vu]?[i]?sse(que)?"/>
+      <ana>
+         <tok val="orasse"/>
+         <tok val="orasseque"/>
+         <tok val="orauisse"/>
+         <tok val="oravisse"/>
          <lm>
             <l>oro</l>
             <m>v - - - r n a</m>
@@ -1197,22 +1375,25 @@
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--orassent oravissent-->
-         <tok val="ora(vi)?ssent"/>
+      <ana>
+         <tok val="orassent"/>
+         <tok val="oravissent"/>
          <lm>
             <l>oro</l>
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--orasset orassetque-->
-         <tok val="orasset(que)?"/>
+      <ana>
+         <tok val="orasset"/>
+         <tok val="orassetque"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--orasti oravisti-->
-         <tok val="ora(vi)?sti"/>
+      <ana>
+         <tok val="orasti"/>
+         <tok val="oravisti"/>
          <lm>
             <l>oro</l>
             <m>v - 2 s r i a</m>
@@ -1225,8 +1406,9 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--oratiun oratius-->
-         <tok val="oratiu[sn]"/>
+      <ana>
+         <tok val="oratiun"/>
+         <tok val="oratius"/>
          <lm>
             <l>oro</l>
             <m>d</m>
@@ -1261,8 +1443,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--oratorias ORATORIAS-->
-         <tok val="(ORATORIAS|oratorias)"/>
+      <ana>
+         <tok val="ORATORIAS"/>
+         <tok val="oratorias"/>
          <lm cert="0.5">
             <l>oratorius</l>
             <m>a - - p - - - f a</m>
@@ -1320,8 +1503,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--oratricem óratricem-->
-         <tok val="[óo]ratricem"/>
+      <ana>
+         <tok val="oratricem"/>
+         <tok val="óratricem"/>
          <lm>
             <l>oratrix</l>
             <m>n - - s - - - f a</m>
@@ -1384,29 +1568,37 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--orauerat oraverat-->
-         <tok val="ora[vu]erat"/>
+      <ana>
+         <tok val="orauerat"/>
+         <tok val="oraverat"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--orauerit oraverit-->
-         <tok val="ora[vu]erit"/>
+      <ana>
+         <tok val="orauerit"/>
+         <tok val="oraverit"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--oraui oravi oravique-->
-         <tok val="ora[vu]i(que)?"/>
+      <ana>
+         <tok val="oraui"/>
+         <tok val="oravi"/>
+         <tok val="oravique"/>
          <lm>
             <l>oro</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--orauit orauitque oravit oravitque orávit-->
-         <tok val="or[a]?(v|u|áv)it(que)?"/>
+      <ana>
+         <tok val="orauit"/>
+         <tok val="orauitque"/>
+         <tok val="oravit"/>
+         <tok val="oravitque"/>
+         <tok val="orávit"/>
          <lm>
             <l>oro</l>
             <m>v - 3 s r i a</m>

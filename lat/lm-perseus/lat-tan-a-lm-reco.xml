@@ -1,57 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusreco">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:reco">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to reco</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-reco.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>RECO</tok-starts-with>
       <tok-starts-with>Reco</tok-starts-with>
       <tok-starts-with>reco</tok-starts-with>
       <tok-starts-with>Recó</tok-starts-with>
-      <ana><!--RECOQVO Recoquo-->
-         <tok val="R(ecoquo|ECOQVO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:42:58.706-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:42:58.706-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-reco.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="RECOQVO"/>
+         <tok val="Recoquo"/>
+         <tok val="recoquo"/>
+         <tok val="recoqvo"/>
          <lm>
             <l>recoquo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--RECORDATIONIS recordationis-->
-         <tok val="(recordationis|RECORDATIONIS)"/>
+      <ana>
+         <tok val="RECORDATIONIS"/>
+         <tok val="recordationis"/>
          <lm>
             <l>recordatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Recocto recocto-->
-         <tok val="[rR]ecocto"/>
+      <ana>
+         <tok val="Recocto"/>
+         <tok val="recocto"/>
          <lm>
             <l>recoquo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -60,15 +73,17 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Recoctus recoctus-->
-         <tok val="[rR]ecoctus"/>
+      <ana>
+         <tok val="Recoctus"/>
+         <tok val="recoctus"/>
          <lm>
             <l>recoquo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Recogito recogito-->
-         <tok val="[rR]ecogito"/>
+      <ana>
+         <tok val="Recogito"/>
+         <tok val="recogito"/>
          <lm cert="0.5">
             <l>recogito</l>
             <m>v - 1 s p i a</m>
@@ -79,8 +94,9 @@
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Recognitio recognitio-->
-         <tok val="[rR]ecognitio"/>
+      <ana>
+         <tok val="Recognitio"/>
+         <tok val="recognitio"/>
          <lm>
             <l>recognitio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -89,6 +105,7 @@
       </ana>
       <ana>
          <tok val="Recognitiones"/>
+         <tok val="recognitiones"/>
          <lm>
             <l>recognitio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -96,15 +113,18 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Recognosce recognosce recognoscen-->
-         <tok val="[rR]ecognosce[n]?"/>
+      <ana>
+         <tok val="Recognosce"/>
+         <tok val="recognosce"/>
+         <tok val="recognoscen"/>
          <lm>
             <l>recognosco</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Recognoscere recognoscere-->
-         <tok val="[rR]ecognoscere"/>
+      <ana>
+         <tok val="Recognoscere"/>
+         <tok val="recognoscere"/>
          <lm>
             <l>recognosco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -113,22 +133,25 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Recognosco recognosco-->
-         <tok val="[rR]ecognosco"/>
+      <ana>
+         <tok val="Recognosco"/>
+         <tok val="recognosco"/>
          <lm>
             <l>recognosco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Recognoscunt recognoscunt-->
-         <tok val="[rR]ecognoscunt"/>
+      <ana>
+         <tok val="Recognoscunt"/>
+         <tok val="recognoscunt"/>
          <lm>
             <l>recognosco</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Recolere recolere-->
-         <tok val="[rR]ecolere"/>
+      <ana>
+         <tok val="Recolere"/>
+         <tok val="recolere"/>
          <lm>
             <l>recolo</l>
             <m cert="0.2">v - 2 s p m p</m>
@@ -138,15 +161,17 @@
             <m cert="0.2">v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Recollige recollige-->
-         <tok val="[rR]ecollige"/>
+      <ana>
+         <tok val="Recollige"/>
+         <tok val="recollige"/>
          <lm>
             <l>recolligo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Recolligere recolligere-->
-         <tok val="[rR]ecolligere"/>
+      <ana>
+         <tok val="Recolligere"/>
+         <tok val="recolligere"/>
          <lm>
             <l>recolligo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -155,22 +180,26 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Recolligo recolligo-->
-         <tok val="[rR]ecolligo"/>
+      <ana>
+         <tok val="Recolligo"/>
+         <tok val="recolligo"/>
          <lm>
             <l>recolligo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Recolo recolo-->
-         <tok val="[rR]ecolo"/>
+      <ana>
+         <tok val="Recolo"/>
+         <tok val="recolo"/>
          <lm>
             <l>recolo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Recolunt recolant recolunt-->
-         <tok val="[rR]ecol[ua]nt"/>
+      <ana>
+         <tok val="Recolunt"/>
+         <tok val="recolant"/>
+         <tok val="recolunt"/>
          <lm>
             <l>recolo</l>
             <m>v - 3 p p i a</m>
@@ -178,6 +207,7 @@
       </ana>
       <ana>
          <tok val="Recompono"/>
+         <tok val="recompono"/>
          <lm>
             <l>recompono</l>
             <m>v - 1 s p i a</m>
@@ -185,13 +215,15 @@
       </ana>
       <ana>
          <tok val="Recompositus"/>
+         <tok val="recompositus"/>
          <lm>
             <l>recompono</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Reconciliare reconciliare-->
-         <tok val="[rR]econciliare"/>
+      <ana>
+         <tok val="Reconciliare"/>
+         <tok val="reconciliare"/>
          <lm>
             <l>reconcilio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -199,8 +231,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Reconciliata reconciliata reconciliataque-->
-         <tok val="[rR]econciliata(que)?"/>
+      <ana>
+         <tok val="Reconciliata"/>
+         <tok val="reconciliata"/>
+         <tok val="reconciliataque"/>
          <lm>
             <l>reconcilio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -211,59 +245,69 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Reconciliatio reconciliatio-->
-         <tok val="[rR]econciliatio"/>
+      <ana>
+         <tok val="Reconciliatio"/>
+         <tok val="reconciliatio"/>
          <lm>
             <l>reconciliatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Reconciliationis reconciliationis-->
-         <tok val="[rR]econciliationis"/>
+      <ana>
+         <tok val="Reconciliationis"/>
+         <tok val="reconciliationis"/>
          <lm>
             <l>reconciliatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Reconciliator reconciliator-->
-         <tok val="[rR]econciliator"/>
+      <ana>
+         <tok val="Reconciliator"/>
+         <tok val="reconciliator"/>
          <lm>
             <l>reconciliator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Reconciliatus reconciliatus-->
-         <tok val="[rR]econciliatus"/>
+      <ana>
+         <tok val="Reconciliatus"/>
+         <tok val="reconciliatus"/>
          <lm>
             <l>reconcilio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Reconciliavit reconciliauit reconciliavit-->
-         <tok val="[rR]econcilia[vu]it"/>
+      <ana>
+         <tok val="Reconciliavit"/>
+         <tok val="reconciliauit"/>
+         <tok val="reconciliavit"/>
          <lm>
             <l>reconcilio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Reconcilio reconcilio-->
-         <tok val="[rR]econcilio"/>
+      <ana>
+         <tok val="Reconcilio"/>
+         <tok val="reconcilio"/>
          <lm>
             <l>reconcilio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Reconcinno reconcinno-->
-         <tok val="[rR]econcinno"/>
+      <ana>
+         <tok val="Reconcinno"/>
+         <tok val="reconcinno"/>
          <lm>
             <l>reconcinno</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Recondere recondere reconderen-->
-         <tok val="[rR]econdere[n]?"/>
+      <ana>
+         <tok val="Recondere"/>
+         <tok val="recondere"/>
+         <tok val="reconderen"/>
          <lm>
             <l>recondo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -272,22 +316,26 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Recondi recondi-->
-         <tok val="[rR]econdi"/>
+      <ana>
+         <tok val="Recondi"/>
+         <tok val="recondi"/>
          <lm>
             <l>recondo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Recondit recondit-->
-         <tok val="[rR]econdit"/>
+      <ana>
+         <tok val="Recondit"/>
+         <tok val="recondit"/>
          <lm>
             <l>recondo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Reconditae reconditae reconditaeque-->
-         <tok val="[rR]econditae(que)?"/>
+      <ana>
+         <tok val="Reconditae"/>
+         <tok val="reconditae"/>
+         <tok val="reconditaeque"/>
          <lm>
             <l>recondo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -296,22 +344,25 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Reconditur reconditur-->
-         <tok val="[rR]econditur"/>
+      <ana>
+         <tok val="Reconditur"/>
+         <tok val="reconditur"/>
          <lm>
             <l>recondo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Reconditus reconditus-->
-         <tok val="[rR]econditus"/>
+      <ana>
+         <tok val="Reconditus"/>
+         <tok val="reconditus"/>
          <lm>
             <l>recondo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Recondo recondo-->
-         <tok val="[rR]econdo"/>
+      <ana>
+         <tok val="Recondo"/>
+         <tok val="recondo"/>
          <lm>
             <l>recondo</l>
             <m>v - 1 s p i a</m>
@@ -319,6 +370,7 @@
       </ana>
       <ana>
          <tok val="Reconduco"/>
+         <tok val="reconduco"/>
          <lm>
             <l>reconduco</l>
             <m>v - 1 s p i a</m>
@@ -326,6 +378,7 @@
       </ana>
       <ana>
          <tok val="Reconductae"/>
+         <tok val="reconductae"/>
          <lm>
             <l>reconduco</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -336,13 +389,15 @@
       </ana>
       <ana>
          <tok val="Reconflor"/>
+         <tok val="reconflor"/>
          <lm>
             <l>reconflo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Recoquere recoquere-->
-         <tok val="[rR]ecoquere"/>
+      <ana>
+         <tok val="Recoquere"/>
+         <tok val="recoquere"/>
          <lm>
             <l>recoquo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -351,30 +406,34 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Recoquunt recoquunt-->
-         <tok val="[rR]ecoquunt"/>
+      <ana>
+         <tok val="Recoquunt"/>
+         <tok val="recoquunt"/>
          <lm>
             <l>recoquo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Recordabar recordabar-->
-         <tok val="[rR]ecordabar"/>
+      <ana>
+         <tok val="Recordabar"/>
+         <tok val="recordabar"/>
          <lm>
             <l>recordor</l>
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Recordamini recordamini-->
-         <tok val="[rR]ecordamini"/>
+      <ana>
+         <tok val="Recordamini"/>
+         <tok val="recordamini"/>
          <lm>
             <l>recordor</l>
             <m cert="0.5">v - 2 p p i p</m>
             <m cert="0.5">v - 2 p p m p</m>
          </lm>
       </ana>
-      <ana><!--Recordanda recordanda-->
-         <tok val="[rR]ecordanda"/>
+      <ana>
+         <tok val="Recordanda"/>
+         <tok val="recordanda"/>
          <lm>
             <l>recordor</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -385,8 +444,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Recordans recordans-->
-         <tok val="[rR]ecordans"/>
+      <ana>
+         <tok val="Recordans"/>
+         <tok val="recordans"/>
          <lm>
             <l>recordor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -398,29 +458,34 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Recordare recordare-->
-         <tok val="[rR]ecordare"/>
+      <ana>
+         <tok val="Recordare"/>
+         <tok val="recordare"/>
          <lm>
             <l>recordor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Recordare recordare recordaris-->
-         <tok val="[rR]ecordar(e|is)"/>
+      <ana>
+         <tok val="Recordare"/>
+         <tok val="recordare"/>
+         <tok val="recordaris"/>
          <lm>
             <l>recordor</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Recordari recordari-->
-         <tok val="[rR]ecordari"/>
+      <ana>
+         <tok val="Recordari"/>
+         <tok val="recordari"/>
          <lm>
             <l>recordor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Recordata recordata-->
-         <tok val="[rR]ecordata"/>
+      <ana>
+         <tok val="Recordata"/>
+         <tok val="recordata"/>
          <lm>
             <l>recordor</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -431,23 +496,26 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Recordatio recordatio-->
-         <tok val="[rR]ecordatio"/>
+      <ana>
+         <tok val="Recordatio"/>
+         <tok val="recordatio"/>
          <lm>
             <l>recordatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Recordatione recordatione-->
-         <tok val="[rR]ecordatione"/>
+      <ana>
+         <tok val="Recordatione"/>
+         <tok val="recordatione"/>
          <lm>
             <l>recordatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Recordationes recordationes-->
-         <tok val="[rR]ecordationes"/>
+      <ana>
+         <tok val="Recordationes"/>
+         <tok val="recordationes"/>
          <lm>
             <l>recordatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -455,15 +523,21 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Recordatus recordatus recordatusque Recórdatus-->
-         <tok val="[rR]ec[oó]rdatus(que)?"/>
+      <ana>
+         <tok val="Recordatus"/>
+         <tok val="Recórdatus"/>
+         <tok val="recordatus"/>
+         <tok val="recordatusque"/>
+         <tok val="recórdatus"/>
          <lm>
             <l>recordatus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Recordatus recordatus recordatusque-->
-         <tok val="[rR]ecordatus(que)?"/>
+      <ana>
+         <tok val="Recordatus"/>
+         <tok val="recordatus"/>
+         <tok val="recordatusque"/>
          <lm cert="0.5">
             <l>recordatus</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -475,8 +549,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Recordor recordor-->
-         <tok val="[rR]ecordor"/>
+      <ana>
+         <tok val="Recordor"/>
+         <tok val="recordor"/>
          <lm>
             <l>recordor</l>
             <m>v - 1 s p i p</m>
@@ -484,6 +559,7 @@
       </ana>
       <ana>
          <tok val="Recorrigo"/>
+         <tok val="recorrigo"/>
          <lm>
             <l>recorrigo</l>
             <m>v - 1 s p i a</m>
@@ -557,8 +633,9 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--recogita Recogita-->
-         <tok val="[Rr]ecogita"/>
+      <ana>
+         <tok val="Recogita"/>
+         <tok val="recogita"/>
          <lm>
             <l>recogito</l>
             <m>v - 2 s p m a</m>
@@ -591,8 +668,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--recogitant Recogitant-->
-         <tok val="[Rr]ecogitant"/>
+      <ana>
+         <tok val="Recogitant"/>
+         <tok val="recogitant"/>
          <lm>
             <l>recogito</l>
             <m>v - 3 p p i a</m>
@@ -640,8 +718,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--recogitate Recogitate-->
-         <tok val="[Rr]ecogitate"/>
+      <ana>
+         <tok val="Recogitate"/>
+         <tok val="recogitate"/>
          <lm>
             <l>recogito</l>
             <m cert="0.333333333333333333">v - 2 p p m a</m>
@@ -878,8 +957,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--recognoscen recognosces-->
-         <tok val="recognosce[sn]"/>
+      <ana>
+         <tok val="recognoscen"/>
+         <tok val="recognosces"/>
          <lm>
             <l>recognosco</l>
             <m>v - 2 s f i a</m>
@@ -986,8 +1066,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--recognoscentes recognoscentis-->
-         <tok val="recognoscent[ie]s"/>
+      <ana>
+         <tok val="recognoscentes"/>
+         <tok val="recognoscentis"/>
          <lm>
             <l>recognosco</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1071,8 +1152,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--recognoscite Recognoscite-->
-         <tok val="[Rr]ecognoscite"/>
+      <ana>
+         <tok val="Recognoscite"/>
+         <tok val="recognoscite"/>
          <lm>
             <l>recognosco</l>
             <m>v - 2 p p m a</m>
@@ -1092,8 +1174,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--recognoui recognovi-->
-         <tok val="recogno[vu]i"/>
+      <ana>
+         <tok val="recognoui"/>
+         <tok val="recognovi"/>
          <lm>
             <l>recognosco</l>
             <m>v - 1 s r i a</m>
@@ -1113,8 +1196,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--recognouit recognovit-->
-         <tok val="recogno[vu]it"/>
+      <ana>
+         <tok val="recognouit"/>
+         <tok val="recognovit"/>
          <lm>
             <l>recognosco</l>
             <m>v - 3 s r i a</m>
@@ -1156,8 +1240,9 @@
             <m cert="0.142857142857142857">v - - p r p p m d</m>
          </lm>
       </ana>
-      <ana><!--recolatis recolitis-->
-         <tok val="recol[ia]tis"/>
+      <ana>
+         <tok val="recolatis"/>
+         <tok val="recolitis"/>
          <lm>
             <l>recolo</l>
             <m>v - 2 p p i a</m>
@@ -1733,8 +1818,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--reconciliarem reconciliaremque-->
-         <tok val="reconciliarem(que)?"/>
+      <ana>
+         <tok val="reconciliarem"/>
+         <tok val="reconciliaremque"/>
          <lm>
             <l>reconcilio</l>
             <m>v - 1 s i s a</m>
@@ -1796,8 +1882,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--reconciliat reconciliatue-->
-         <tok val="reconciliat(ue)?"/>
+      <ana>
+         <tok val="reconciliat"/>
+         <tok val="reconciliatue"/>
          <lm>
             <l>reconcilio</l>
             <m>v - 3 s p i a</m>
@@ -1813,8 +1900,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--reconciliatam reconciliatamque-->
-         <tok val="reconciliatam(que)?"/>
+      <ana>
+         <tok val="reconciliatam"/>
+         <tok val="reconciliatamque"/>
          <lm>
             <l>reconcilio</l>
             <m>v - - s r p p f a</m>
@@ -1853,8 +1941,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--reconciliationibus reconciliationibusque-->
-         <tok val="reconciliationibus(que)?"/>
+      <ana>
+         <tok val="reconciliationibus"/>
+         <tok val="reconciliationibusque"/>
          <lm>
             <l>reconciliatio</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -2070,8 +2159,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--reconde recondeque-->
-         <tok val="reconde(que)?"/>
+      <ana>
+         <tok val="reconde"/>
+         <tok val="recondeque"/>
          <lm>
             <l>recondo</l>
             <m>v - 2 s p m a</m>
@@ -2241,8 +2331,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--reconditarum reconditarumque-->
-         <tok val="reconditarum(que)?"/>
+      <ana>
+         <tok val="reconditarum"/>
+         <tok val="reconditarumque"/>
          <lm>
             <l>recondo</l>
             <m>v - - p r p p f g</m>
@@ -2351,8 +2442,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--reconditorum reconditum-->
-         <tok val="recondit(or)?um"/>
+      <ana>
+         <tok val="reconditorum"/>
+         <tok val="reconditum"/>
          <lm cert="0.5">
             <l>recondo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -2431,8 +2523,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--reconduntur recondunturque-->
-         <tok val="reconduntur(que)?"/>
+      <ana>
+         <tok val="reconduntur"/>
+         <tok val="recondunturque"/>
          <lm>
             <l>recondo</l>
             <m>v - 3 p p i p</m>
@@ -2638,8 +2731,9 @@
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--recordabere recordaberis-->
-         <tok val="recordaber(is|e)"/>
+      <ana>
+         <tok val="recordabere"/>
+         <tok val="recordaberis"/>
          <lm>
             <l>recordor</l>
             <m>v - 2 s f i p</m>
@@ -2953,8 +3047,9 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--recordere recorderis-->
-         <tok val="recorder(is|e)"/>
+      <ana>
+         <tok val="recordere"/>
+         <tok val="recorderis"/>
          <lm>
             <l>recordor</l>
             <m>v - 2 s p s p</m>

@@ -1,51 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusaug">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:aug">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to aug</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-aug.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>AUG</tok-starts-with>
       <tok-starts-with>Aug</tok-starts-with>
       <tok-starts-with>aug</tok-starts-with>
       <tok-starts-with>aúg</tok-starts-with>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:12:01.296-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:12:01.296-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-aug.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
       <ana>
          <tok val="AUGURINO"/>
+         <tok val="augurino"/>
          <lm>
             <l>Augurinus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--AUGUSTA Augusta augusta-->
-         <tok val="[aA]?(ugusta|AUGUSTA)"/>
+      <ana>
+         <tok val="AUGUSTA"/>
+         <tok val="Augusta"/>
+         <tok val="augusta"/>
          <lm>
             <l>augustus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -56,15 +67,23 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AUGUSTA Augusta augusta augustaque-->
-         <tok val="[aA]?(ugusta)?(que|AUGUSTA)?"/>
+      <ana>
+         <tok val="AUGUSTA"/>
+         <tok val="Augusta"/>
+         <tok val="augusta"/>
+         <tok val="augustaque"/>
          <lm>
             <l>augusto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--AUGUSTI Augusti Augustin augusti augustine-->
-         <tok val="[Aa]?(ugusti)?(n|ne|AUGUSTI)?"/>
+      <ana>
+         <tok val="AUGUSTI"/>
+         <tok val="Augusti"/>
+         <tok val="Augustin"/>
+         <tok val="augusti"/>
+         <tok val="augustin"/>
+         <tok val="augustine"/>
          <lm>
             <l>augustus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -73,8 +92,11 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AUGUSTISSIMAE Augustissimae augustissimae augustissimaeque-->
-         <tok val="[aA]?(ugustissimae)?(que|AUGUSTISSIMAE)?"/>
+      <ana>
+         <tok val="AUGUSTISSIMAE"/>
+         <tok val="Augustissimae"/>
+         <tok val="augustissimae"/>
+         <tok val="augustissimaeque"/>
          <lm>
             <l>augustus</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -83,8 +105,11 @@
             <m cert="0.25">a - - s - - - f g s</m>
          </lm>
       </ana>
-      <ana><!--AUGUSTISSIMO Augustissimo augustissimo augustissumo-->
-         <tok val="[aA]?(ugustiss)?[iu]?(mo|AUGUSTISSIMO)"/>
+      <ana>
+         <tok val="AUGUSTISSIMO"/>
+         <tok val="Augustissimo"/>
+         <tok val="augustissimo"/>
+         <tok val="augustissumo"/>
          <lm>
             <l>augustus</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -93,8 +118,10 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--AUGUSTIUS Augustius augustius-->
-         <tok val="[aA]?(ugustius|AUGUSTIUS)"/>
+      <ana>
+         <tok val="AUGUSTIUS"/>
+         <tok val="Augustius"/>
+         <tok val="augustius"/>
          <lm>
             <l>augustus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -103,64 +130,79 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Auge Augen Augenque auge augen augenque-->
-         <tok val="[Aa]uge(n|nque)?"/>
+      <ana>
+         <tok val="Auge"/>
+         <tok val="Augen"/>
+         <tok val="Augenque"/>
+         <tok val="auge"/>
+         <tok val="augen"/>
+         <tok val="augenque"/>
          <lm>
             <l>augeo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Augeantur augeantur-->
-         <tok val="[aA]ugeantur"/>
+      <ana>
+         <tok val="Augeantur"/>
+         <tok val="augeantur"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Augeas augeas-->
-         <tok val="[aA]ugeas"/>
+      <ana>
+         <tok val="Augeas"/>
+         <tok val="augeas"/>
          <lm>
             <l>augeo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Augeat augeat augeatque-->
-         <tok val="[aA]ugeat(que)?"/>
+      <ana>
+         <tok val="Augeat"/>
+         <tok val="augeat"/>
+         <tok val="augeatque"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Augeatur augeatur-->
-         <tok val="[aA]ugeatur"/>
+      <ana>
+         <tok val="Augeatur"/>
+         <tok val="augeatur"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Augebant augebant-->
-         <tok val="[aA]ugebant"/>
+      <ana>
+         <tok val="Augebant"/>
+         <tok val="augebant"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Augebat augebat augebatque-->
-         <tok val="[aA]ugebat(que)?"/>
+      <ana>
+         <tok val="Augebat"/>
+         <tok val="augebat"/>
+         <tok val="augebatque"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Augebatur augebatur-->
-         <tok val="[aA]ugebatur"/>
+      <ana>
+         <tok val="Augebatur"/>
+         <tok val="augebatur"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Augebit augebit-->
-         <tok val="[aA]ugebit"/>
+      <ana>
+         <tok val="Augebit"/>
+         <tok val="augebit"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s f i a</m>
@@ -168,6 +210,7 @@
       </ana>
       <ana>
          <tok val="Augei"/>
+         <tok val="augei"/>
          <lm>
             <l>Augeus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -175,15 +218,22 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Augen Augenque Auges augen augenque auges-->
-         <tok val="[aA]uge(nque|s|n)"/>
+      <ana>
+         <tok val="Augen"/>
+         <tok val="Augenque"/>
+         <tok val="Auges"/>
+         <tok val="augen"/>
+         <tok val="augenque"/>
+         <tok val="auges"/>
          <lm>
             <l>augeo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Augenda augenda augendaque-->
-         <tok val="[aA]ugenda(que)?"/>
+      <ana>
+         <tok val="Augenda"/>
+         <tok val="augenda"/>
+         <tok val="augendaque"/>
          <lm>
             <l>augeo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -194,8 +244,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Augendae augendae-->
-         <tok val="[aA]ugendae"/>
+      <ana>
+         <tok val="Augendae"/>
+         <tok val="augendae"/>
          <lm>
             <l>augeo</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -204,8 +255,10 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Augendi augendi augendique-->
-         <tok val="[aA]ugendi(que)?"/>
+      <ana>
+         <tok val="Augendi"/>
+         <tok val="augendi"/>
+         <tok val="augendique"/>
          <lm>
             <l>augeo</l>
             <m cert="0.25">v - - p p g p m v</m>
@@ -214,15 +267,17 @@
             <m cert="0.25">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Augendi augendi-->
-         <tok val="[aA]ugendi"/>
+      <ana>
+         <tok val="Augendi"/>
+         <tok val="augendi"/>
          <lm>
             <l>augeo</l>
             <m>v - - s p d a n g</m>
          </lm>
       </ana>
-      <ana><!--Augendo augendo-->
-         <tok val="[aA]ugendo"/>
+      <ana>
+         <tok val="Augendo"/>
+         <tok val="augendo"/>
          <lm>
             <l>augeo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -233,15 +288,17 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Augendus augendus-->
-         <tok val="[aA]ugendus"/>
+      <ana>
+         <tok val="Augendus"/>
+         <tok val="augendus"/>
          <lm>
             <l>augeo</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Augens augens-->
-         <tok val="[aA]ugens"/>
+      <ana>
+         <tok val="Augens"/>
+         <tok val="augens"/>
          <lm>
             <l>augeo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -253,15 +310,19 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Augent augent augentque aúgent-->
-         <tok val="[aA]?(u|aú|au)gent(que)?"/>
+      <ana>
+         <tok val="Augent"/>
+         <tok val="augent"/>
+         <tok val="augentque"/>
+         <tok val="aúgent"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Augentia augentia-->
-         <tok val="[aA]ugentia"/>
+      <ana>
+         <tok val="Augentia"/>
+         <tok val="augentia"/>
          <lm>
             <l>augeo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -269,8 +330,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Augentur augentur-->
-         <tok val="[aA]ugentur"/>
+      <ana>
+         <tok val="Augentur"/>
+         <tok val="augentur"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 p p i p</m>
@@ -278,21 +340,21 @@
       </ana>
       <ana>
          <tok val="Augeo"/>
-         <lm>
+         <tok val="augeo"/>
+         <lm cert="0.5">
             <l>Augeus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Augeo augeo-->
-         <tok val="[aA]ugeo"/>
-         <lm>
+         <lm cert="0.5">
             <l>augeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Augere augere augereque-->
-         <tok val="[aA]ugere(que)?"/>
+      <ana>
+         <tok val="Augere"/>
+         <tok val="augere"/>
+         <tok val="augereque"/>
          <lm>
             <l>augeo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -300,15 +362,19 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Augeri augeri augerier augerique-->
-         <tok val="[aA]ugeri(er|que)?"/>
+      <ana>
+         <tok val="Augeri"/>
+         <tok val="augeri"/>
+         <tok val="augerier"/>
+         <tok val="augerique"/>
          <lm>
             <l>augeo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Augescere augescere-->
-         <tok val="[aA]ugescere"/>
+      <ana>
+         <tok val="Augescere"/>
+         <tok val="augescere"/>
          <lm>
             <l>augesco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -317,29 +383,36 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Augesco augesco-->
-         <tok val="[aA]ugesco"/>
+      <ana>
+         <tok val="Augesco"/>
+         <tok val="augesco"/>
          <lm>
             <l>augesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Augescunt augescunt-->
-         <tok val="[aA]ugescunt"/>
+      <ana>
+         <tok val="Augescunt"/>
+         <tok val="augescunt"/>
          <lm>
             <l>augesco</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Auget auget augetque-->
-         <tok val="[aA]uget(que)?"/>
+      <ana>
+         <tok val="Auget"/>
+         <tok val="auget"/>
+         <tok val="augetque"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Augetur augetur augeturque augeturve-->
-         <tok val="[aA]ugetur(ve|que)?"/>
+      <ana>
+         <tok val="Augetur"/>
+         <tok val="augetur"/>
+         <tok val="augeturque"/>
+         <tok val="augeturve"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s p i p</m>
@@ -347,6 +420,7 @@
       </ana>
       <ana>
          <tok val="Augeus"/>
+         <tok val="augeus"/>
          <lm>
             <l>Augeus</l>
             <m>n e - s - - - m n</m>
@@ -354,14 +428,16 @@
       </ana>
       <ana>
          <tok val="Auginum"/>
+         <tok val="auginum"/>
          <lm>
             <l>auginos</l>
             <m cert="0.5">n - - p - - - f g</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Augmen augmen-->
-         <tok val="[aA]ugmen"/>
+      <ana>
+         <tok val="Augmen"/>
+         <tok val="augmen"/>
          <lm>
             <l>augmen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -369,23 +445,29 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Augmento augmento-->
-         <tok val="[aA]ugmento"/>
+      <ana>
+         <tok val="Augmento"/>
+         <tok val="augmento"/>
          <lm>
             <l>augmento</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Augmento augmento augumento-->
-         <tok val="[aA]ug[u]?mento"/>
+      <ana>
+         <tok val="Augmento"/>
+         <tok val="augmento"/>
+         <tok val="augumento"/>
          <lm>
             <l>augmentum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Augmentum augmentum augmentumque augumentum-->
-         <tok val="[aA]ug[u]?mentum(que)?"/>
+      <ana>
+         <tok val="Augmentum"/>
+         <tok val="augmentum"/>
+         <tok val="augmentumque"/>
+         <tok val="augumentum"/>
          <lm>
             <l>augmentum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -394,22 +476,26 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Augmine augmine-->
-         <tok val="[aA]ugmine"/>
+      <ana>
+         <tok val="Augmine"/>
+         <tok val="augmine"/>
          <lm>
             <l>augmen</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Augur augur augurque-->
-         <tok val="[aA]ugur(que)?"/>
+      <ana>
+         <tok val="Augur"/>
+         <tok val="augur"/>
+         <tok val="augurque"/>
          <lm>
             <l>augur</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Auguraculum auguraculum-->
-         <tok val="[aA]uguraculum"/>
+      <ana>
+         <tok val="Auguraculum"/>
+         <tok val="auguraculum"/>
          <lm>
             <l>auguraculum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -418,8 +504,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Augurale augurale-->
-         <tok val="[aA]ugurale"/>
+      <ana>
+         <tok val="Augurale"/>
+         <tok val="augurale"/>
          <lm>
             <l>augurale</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -427,15 +514,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Augurale augurale augurali-->
-         <tok val="[aA]ugural[ei]"/>
+      <ana>
+         <tok val="Augurale"/>
+         <tok val="augurale"/>
+         <tok val="augurali"/>
          <lm>
             <l>augurale</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Auguralia auguralia-->
-         <tok val="[aA]uguralia"/>
+      <ana>
+         <tok val="Auguralia"/>
+         <tok val="auguralia"/>
          <lm>
             <l>augurale</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -443,8 +533,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Auguralis auguralis-->
-         <tok val="[aA]uguralis"/>
+      <ana>
+         <tok val="Auguralis"/>
+         <tok val="auguralis"/>
          <lm>
             <l>augurale</l>
             <m>n - - s - - - n g</m>
@@ -452,6 +543,7 @@
       </ana>
       <ana>
          <tok val="Augurare"/>
+         <tok val="augurare"/>
          <lm cert="0.5">
             <l>auguro</l>
             <m>v - - - p n a</m>
@@ -461,22 +553,26 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Augurare auguraris-->
-         <tok val="[aA]ugurar(is|e)"/>
+      <ana>
+         <tok val="Augurare"/>
+         <tok val="augurare"/>
+         <tok val="auguraris"/>
          <lm>
             <l>auguror</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Augurari augurari-->
-         <tok val="[aA]ugurari"/>
+      <ana>
+         <tok val="Augurari"/>
+         <tok val="augurari"/>
          <lm>
             <l>auguror</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Augurat augurat-->
-         <tok val="[aA]ugurat"/>
+      <ana>
+         <tok val="Augurat"/>
+         <tok val="augurat"/>
          <lm>
             <l>auguro</l>
             <m>v - 3 s p i a</m>
@@ -484,6 +580,7 @@
       </ana>
       <ana>
          <tok val="Augurati"/>
+         <tok val="augurati"/>
          <lm>
             <l>auguror</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -492,8 +589,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Augurato augurato-->
-         <tok val="[aA]ugurato"/>
+      <ana>
+         <tok val="Augurato"/>
+         <tok val="augurato"/>
          <lm cert="0.5">
             <l>auguror</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -507,8 +605,9 @@
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Auguratorium auguratorium-->
-         <tok val="[aA]uguratorium"/>
+      <ana>
+         <tok val="Auguratorium"/>
+         <tok val="auguratorium"/>
          <lm>
             <l>auguratorium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -517,8 +616,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Auguratum auguratum-->
-         <tok val="[aA]uguratum"/>
+      <ana>
+         <tok val="Auguratum"/>
+         <tok val="auguratum"/>
          <lm cert="0.5">
             <l>auguror</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -534,8 +634,10 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Auguratus auguratus auguratusque-->
-         <tok val="[aA]uguratus(que)?"/>
+      <ana>
+         <tok val="Auguratus"/>
+         <tok val="auguratus"/>
+         <tok val="auguratusque"/>
          <lm cert="0.5">
             <l>auguratus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -548,15 +650,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Augure augure-->
-         <tok val="[aA]ugure"/>
+      <ana>
+         <tok val="Augure"/>
+         <tok val="augure"/>
          <lm>
             <l>augur</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Augurem augurem-->
-         <tok val="[aA]ugurem"/>
+      <ana>
+         <tok val="Augurem"/>
+         <tok val="augurem"/>
          <lm cert="0.5">
             <l>auguro</l>
             <m>v - 1 s p s a</m>
@@ -566,8 +670,10 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Augures augures auguresque-->
-         <tok val="[aA]ugures(que)?"/>
+      <ana>
+         <tok val="Augures"/>
+         <tok val="augures"/>
+         <tok val="auguresque"/>
          <lm cert="0.5">
             <l>augur</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -579,22 +685,27 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Auguri auguri augurii Augurii-->
-         <tok val="[aA]uguri[i]?"/>
+      <ana>
+         <tok val="Auguri"/>
+         <tok val="Augurii"/>
+         <tok val="auguri"/>
+         <tok val="augurii"/>
          <lm>
             <l>augurium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Auguri auguri-->
-         <tok val="[aA]uguri"/>
+      <ana>
+         <tok val="Auguri"/>
+         <tok val="auguri"/>
          <lm>
             <l>augur</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Auguria auguria-->
-         <tok val="[aA]uguria"/>
+      <ana>
+         <tok val="Auguria"/>
+         <tok val="auguria"/>
          <lm>
             <l>augurium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -602,16 +713,19 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Auguribus auguribus-->
-         <tok val="[aA]uguribus"/>
+      <ana>
+         <tok val="Auguribus"/>
+         <tok val="auguribus"/>
          <lm>
             <l>augur</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Auguriis auguriis auguriisque-->
-         <tok val="[aA]uguriis(que)?"/>
+      <ana>
+         <tok val="Auguriis"/>
+         <tok val="auguriis"/>
+         <tok val="auguriisque"/>
          <lm>
             <l>augurium</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -620,6 +734,7 @@
       </ana>
       <ana>
          <tok val="Augurini"/>
+         <tok val="augurini"/>
          <lm>
             <l>Augurinus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -629,6 +744,7 @@
       </ana>
       <ana>
          <tok val="Augurinum"/>
+         <tok val="augurinum"/>
          <lm>
             <l>Augurinus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -637,28 +753,35 @@
       </ana>
       <ana>
          <tok val="Augurinus"/>
+         <tok val="augurinus"/>
          <lm>
             <l>Augurinus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Augurio augurio augurioque-->
-         <tok val="[aA]ugurio(que)?"/>
+      <ana>
+         <tok val="Augurio"/>
+         <tok val="augurio"/>
+         <tok val="augurioque"/>
          <lm>
             <l>augurium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Auguris auguris-->
-         <tok val="[aA]uguris"/>
+      <ana>
+         <tok val="Auguris"/>
+         <tok val="auguris"/>
          <lm>
             <l>augur</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Augurium augurium auguriumque auguriumue-->
-         <tok val="[aA]ugurium[q]?(ue)?"/>
+      <ana>
+         <tok val="Augurium"/>
+         <tok val="augurium"/>
+         <tok val="auguriumque"/>
+         <tok val="auguriumue"/>
          <lm>
             <l>augurium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -666,22 +789,30 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Augurium auguriorum auguriorumque augurium auguriumque auguriumue-->
-         <tok val="[aA]uguri(or)?um[q]?(ue)?"/>
+      <ana>
+         <tok val="Augurium"/>
+         <tok val="auguriorum"/>
+         <tok val="auguriorumque"/>
+         <tok val="augurium"/>
+         <tok val="auguriumque"/>
+         <tok val="auguriumue"/>
          <lm>
             <l>augurium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Auguror auguror-->
-         <tok val="[aA]uguror"/>
+      <ana>
+         <tok val="Auguror"/>
+         <tok val="auguror"/>
          <lm>
             <l>auguror</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Augurum augurum augurumque-->
-         <tok val="[aA]ugurum(que)?"/>
+      <ana>
+         <tok val="Augurum"/>
+         <tok val="augurum"/>
+         <tok val="augurumque"/>
          <lm>
             <l>augur</l>
             <m>n - - p - - - m g</m>
@@ -689,6 +820,7 @@
       </ana>
       <ana>
          <tok val="Augusta"/>
+         <tok val="augusta"/>
          <lm>
             <l>Augusta</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -698,17 +830,15 @@
       </ana>
       <ana>
          <tok val="Augustae"/>
-         <lm>
+         <tok val="augustae"/>
+         <lm cert="0.5">
             <l>Augusta</l>
             <m cert="0.25">n e - p - - - f n</m>
             <m cert="0.25">n e - s - - - f g</m>
             <m cert="0.25">n e - s - - - f d</m>
             <m cert="0.25">n e - p - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Augustae augustae-->
-         <tok val="[aA]ugustae"/>
-         <lm>
+         <lm cert="0.5">
             <l>augustus</l>
             <m cert="0.25">a - - p - - - f n</m>
             <m cert="0.25">a - - s - - - f d</m>
@@ -718,6 +848,7 @@
       </ana>
       <ana>
          <tok val="Augustale"/>
+         <tok val="augustale"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -727,6 +858,7 @@
       </ana>
       <ana>
          <tok val="Augustales"/>
+         <tok val="augustales"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -735,8 +867,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Augustales Augustalis-->
-         <tok val="Augustal[ie]s"/>
+      <ana>
+         <tok val="Augustales"/>
+         <tok val="Augustalis"/>
+         <tok val="augustales"/>
+         <tok val="augustalis"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -745,6 +880,7 @@
       </ana>
       <ana>
          <tok val="Augustali"/>
+         <tok val="augustali"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -757,6 +893,7 @@
       </ana>
       <ana>
          <tok val="Augustalia"/>
+         <tok val="augustalia"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.333333333333333333">a e - p - - - n n</m>
@@ -766,6 +903,7 @@
       </ana>
       <ana>
          <tok val="Augustalibus"/>
+         <tok val="augustalibus"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -778,6 +916,7 @@
       </ana>
       <ana>
          <tok val="Augustalicius"/>
+         <tok val="augustalicius"/>
          <lm>
             <l>Augustalicius</l>
             <m>n e - s - - - m n</m>
@@ -785,6 +924,7 @@
       </ana>
       <ana>
          <tok val="Augustalis"/>
+         <tok val="augustalis"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -798,6 +938,7 @@
       </ana>
       <ana>
          <tok val="Augustalitas"/>
+         <tok val="augustalitas"/>
          <lm>
             <l>Augustalitas</l>
             <m>n e - s - - - f n</m>
@@ -805,6 +946,7 @@
       </ana>
       <ana>
          <tok val="Augustalium"/>
+         <tok val="augustalium"/>
          <lm>
             <l>Augustalis</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -814,20 +956,19 @@
       </ana>
       <ana>
          <tok val="Augustam"/>
-         <lm>
+         <tok val="augustam"/>
+         <lm cert="0.5">
             <l>Augusta</l>
             <m>n e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Augustam augustam-->
-         <tok val="[aA]ugustam"/>
-         <lm>
+         <lm cert="0.5">
             <l>augustus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Augustamnica"/>
+         <tok val="augustamnica"/>
          <lm>
             <l>Augustamnica</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -837,6 +978,7 @@
       </ana>
       <ana>
          <tok val="Augustana"/>
+         <tok val="augustana"/>
          <lm>
             <l>Augustanus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -849,6 +991,7 @@
       </ana>
       <ana>
          <tok val="Augustanae"/>
+         <tok val="augustanae"/>
          <lm>
             <l>Augustanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -857,8 +1000,11 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Augustaneus Augustanus-->
-         <tok val="Augustan[e]?us"/>
+      <ana>
+         <tok val="Augustaneus"/>
+         <tok val="Augustanus"/>
+         <tok val="augustaneus"/>
+         <tok val="augustanus"/>
          <lm>
             <l>Augustanus</l>
             <m>a e - s - - - m n</m>
@@ -866,6 +1012,7 @@
       </ana>
       <ana>
          <tok val="Augustani"/>
+         <tok val="augustani"/>
          <lm cert="0.5">
             <l>Augustanus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -881,6 +1028,7 @@
       </ana>
       <ana>
          <tok val="Augustanos"/>
+         <tok val="augustanos"/>
          <lm cert="0.5">
             <l>Augustani</l>
             <m>n e - p - - - m a</m>
@@ -892,6 +1040,7 @@
       </ana>
       <ana>
          <tok val="Augustarum"/>
+         <tok val="augustarum"/>
          <lm cert="0.5">
             <l>Augusta</l>
             <m>n e - p - - - f g</m>
@@ -901,41 +1050,42 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Augustas augustas-->
-         <tok val="[aA]ugustas"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Augustas"/>
+         <tok val="augustas"/>
+         <lm cert="0.333333333333333333">
             <l>augusto</l>
             <m>v - 2 s p i a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>augustus</l>
             <m>a - - p - - - f a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Augustas"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>Augusta</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Auguste"/>
-         <lm>
+         <tok val="auguste"/>
+         <lm cert="0.5">
             <l>Augustus</l>
             <m>n e - s - - - m v</m>
          </lm>
-      </ana>
-      <ana><!--Auguste auguste-->
-         <tok val="[aA]uguste"/>
-         <lm>
+         <lm cert="0.5">
             <l>augustus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Auguste Augustum Augustumque auguste augustum-->
-         <tok val="[aA]ugust(um|e|umque)"/>
+      <ana>
+         <tok val="Auguste"/>
+         <tok val="Augustum"/>
+         <tok val="Augustumque"/>
+         <tok val="auguste"/>
+         <tok val="augustum"/>
+         <tok val="augustumque"/>
          <lm>
             <l>augustus</l>
             <m>a - - s - - - n v</m>
@@ -943,6 +1093,7 @@
       </ana>
       <ana>
          <tok val="Augustei"/>
+         <tok val="augustei"/>
          <lm cert="0.5">
             <l>Augusteus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -957,6 +1108,7 @@
       </ana>
       <ana>
          <tok val="Augusteum"/>
+         <tok val="augusteum"/>
          <lm cert="0.5">
             <l>Augusteum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -976,13 +1128,17 @@
       </ana>
       <ana>
          <tok val="Augusteus"/>
+         <tok val="augusteus"/>
          <lm>
             <l>Augusteus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Augusti Augustin-->
-         <tok val="Augusti[n]?"/>
+      <ana>
+         <tok val="Augusti"/>
+         <tok val="Augustin"/>
+         <tok val="augusti"/>
+         <tok val="augustin"/>
          <lm>
             <l>Augustus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -990,22 +1146,17 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Augustin Augustis-->
-         <tok val="Augusti[sn]"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Augustin"/>
+         <tok val="Augustis"/>
+         <tok val="augustin"/>
+         <tok val="augustis"/>
+         <lm cert="0.333333333333333333">
             <l>Augustus</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
-         <lm cert="0.5">
-            <l>Augusta</l>
-            <m cert="0.5">n e - p - - - f d</m>
-            <m cert="0.5">n e - p - - - f b</m>
-         </lm>
-      </ana>
-      <ana><!--Augustin Augustis augustis-->
-         <tok val="[Aa]ugusti[sn]"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>augustus</l>
             <m cert="0.166666666666666667">a - - p - - - f d</m>
             <m cert="0.166666666666666667">a - - p - - - m b</m>
@@ -1014,16 +1165,29 @@
             <m cert="0.166666666666666667">a - - p - - - n d</m>
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
+         <lm cert="0.333333333333333333">
+            <l>Augusta</l>
+            <m cert="0.5">n e - p - - - f d</m>
+            <m cert="0.5">n e - p - - - f b</m>
+         </lm>
       </ana>
-      <ana><!--Augustine Augustinen Augustinum-->
-         <tok val="Augustin[e]?(n|um)?"/>
+      <ana>
+         <tok val="Augustine"/>
+         <tok val="Augustinen"/>
+         <tok val="Augustinum"/>
+         <tok val="augustine"/>
+         <tok val="augustinen"/>
+         <tok val="augustinum"/>
          <lm>
             <l>Augustinus</l>
             <m>a e - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Augustine Augustinen-->
-         <tok val="Augustine[n]?"/>
+      <ana>
+         <tok val="Augustine"/>
+         <tok val="Augustinen"/>
+         <tok val="augustine"/>
+         <tok val="augustinen"/>
          <lm>
             <l>Augustinus</l>
             <m cert="0.333333333333333333">a e - s - - - m v</m>
@@ -1033,6 +1197,7 @@
       </ana>
       <ana>
          <tok val="Augustini"/>
+         <tok val="augustini"/>
          <lm>
             <l>Augustinus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -1046,6 +1211,7 @@
       </ana>
       <ana>
          <tok val="Augustino"/>
+         <tok val="augustino"/>
          <lm>
             <l>Augustinus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -1056,8 +1222,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Augustinorum Augustinum-->
-         <tok val="Augustin(or)?um"/>
+      <ana>
+         <tok val="Augustinorum"/>
+         <tok val="Augustinum"/>
+         <tok val="augustinorum"/>
+         <tok val="augustinum"/>
          <lm>
             <l>Augustinus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -1067,6 +1236,7 @@
       </ana>
       <ana>
          <tok val="Augustinum"/>
+         <tok val="augustinum"/>
          <lm>
             <l>Augustinus</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -1077,6 +1247,7 @@
       </ana>
       <ana>
          <tok val="Augustinus"/>
+         <tok val="augustinus"/>
          <lm>
             <l>Augustinus</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -1085,27 +1256,34 @@
       </ana>
       <ana>
          <tok val="Augustissime"/>
+         <tok val="augustissime"/>
          <lm>
             <l>augustus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Augustissime Augustissimus augustissimus-->
-         <tok val="[aA]ugustissim(us|e)"/>
+      <ana>
+         <tok val="Augustissime"/>
+         <tok val="Augustissimus"/>
+         <tok val="augustissime"/>
+         <tok val="augustissimus"/>
          <lm>
             <l>augustus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Augustissime augustissimum-->
-         <tok val="[aA]ugustissim(um|e)"/>
+      <ana>
+         <tok val="Augustissime"/>
+         <tok val="augustissime"/>
+         <tok val="augustissimum"/>
          <lm>
             <l>augustus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Augustissimi augustissimi-->
-         <tok val="[aA]ugustissimi"/>
+      <ana>
+         <tok val="Augustissimi"/>
+         <tok val="augustissimi"/>
          <lm>
             <l>augustus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -1114,15 +1292,18 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Augustissimus augustissimus-->
-         <tok val="[aA]ugustissimus"/>
+      <ana>
+         <tok val="Augustissimus"/>
+         <tok val="augustissimus"/>
          <lm>
             <l>augustus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Augusto augusto augustoque-->
-         <tok val="[aA]ugusto(que)?"/>
+      <ana>
+         <tok val="Augusto"/>
+         <tok val="augusto"/>
+         <tok val="augustoque"/>
          <lm>
             <l>augustus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1133,14 +1314,18 @@
       </ana>
       <ana>
          <tok val="Augusto"/>
+         <tok val="augusto"/>
          <lm>
             <l>Augustus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Augusto augusto augustoque AUGUSTO-->
-         <tok val="[aA]?(ugusto)?(que|AUGUSTO)?"/>
+      <ana>
+         <tok val="AUGUSTO"/>
+         <tok val="Augusto"/>
+         <tok val="augusto"/>
+         <tok val="augustoque"/>
          <lm>
             <l>augusto</l>
             <m>v - 1 s p i a</m>
@@ -1148,6 +1333,7 @@
       </ana>
       <ana>
          <tok val="Augustodunum"/>
+         <tok val="augustodunum"/>
          <lm>
             <l>Augustodunum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1156,60 +1342,67 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Augustorum Augustum Augustumque augustum-->
-         <tok val="[Aa]ugust(or)?um(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Augustorum"/>
+         <tok val="Augustum"/>
+         <tok val="Augustumque"/>
+         <tok val="augustorum"/>
+         <tok val="augustum"/>
+         <tok val="augustumque"/>
+         <lm cert="0.5">
             <l>augustus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Augustorum Augustum Augustumque-->
-         <tok val="August(or)?um(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>Augustus</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Augustos augustos-->
-         <tok val="[aA]ugustos"/>
-         <lm>
+      <ana>
+         <tok val="Augustos"/>
+         <tok val="augustos"/>
+         <lm cert="0.5">
             <l>augustus</l>
             <m>a - - p - - - m a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Augustos"/>
-         <lm>
+         <lm cert="0.5">
             <l>Augustus</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Augustum Augustumque augustum-->
-         <tok val="[aA]ugustum(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Augustum"/>
+         <tok val="Augustumque"/>
+         <tok val="augustum"/>
+         <tok val="augustumque"/>
+         <lm cert="0.5">
             <l>augustus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Augustum Augustumque-->
-         <tok val="Augustum(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>Augustus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Augustus Augustusne-->
-         <tok val="Augustus(ne)?"/>
+      <ana>
+         <tok val="Augustus"/>
+         <tok val="Augustusne"/>
+         <tok val="augustus"/>
+         <tok val="augustusne"/>
          <lm>
             <l>Augustus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Augustus Augustusne augustus augustusque-->
-         <tok val="[Aa]ugustus(ne|que)?"/>
+      <ana>
+         <tok val="Augustus"/>
+         <tok val="Augustusne"/>
+         <tok val="augustus"/>
+         <tok val="augustusne"/>
+         <tok val="augustusque"/>
          <lm>
             <l>augustus</l>
             <m>a - - s - - - m n</m>
@@ -1250,8 +1443,10 @@
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--augebantur augebanturque Augebantur-->
-         <tok val="[Aa]ugebantur(que)?"/>
+      <ana>
+         <tok val="Augebantur"/>
+         <tok val="augebantur"/>
+         <tok val="augebanturque"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 p i i p</m>
@@ -1271,8 +1466,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--augebitur augebiturne-->
-         <tok val="augebitur(ne)?"/>
+      <ana>
+         <tok val="augebitur"/>
+         <tok val="augebiturne"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s f i p</m>
@@ -1285,8 +1481,9 @@
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--augebunt augebuntque-->
-         <tok val="augebunt(que)?"/>
+      <ana>
+         <tok val="augebunt"/>
+         <tok val="augebuntque"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 p f i a</m>
@@ -1320,8 +1517,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--augendarum augendarumque-->
-         <tok val="augendarum(que)?"/>
+      <ana>
+         <tok val="augendarum"/>
+         <tok val="augendarumque"/>
          <lm>
             <l>augeo</l>
             <m>v - - p p g p f g</m>
@@ -1334,8 +1532,10 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--augendis augendisque Augendis-->
-         <tok val="[Aa]ugendis(que)?"/>
+      <ana>
+         <tok val="Augendis"/>
+         <tok val="augendis"/>
+         <tok val="augendisque"/>
          <lm>
             <l>augeo</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -1353,8 +1553,9 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--augendum augendumque-->
-         <tok val="augendum(que)?"/>
+      <ana>
+         <tok val="augendum"/>
+         <tok val="augendumque"/>
          <lm>
             <l>augeo</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1366,8 +1567,10 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--augente augenti augenteque-->
-         <tok val="augent(i|e|eque)"/>
+      <ana>
+         <tok val="augente"/>
+         <tok val="augenteque"/>
+         <tok val="augenti"/>
          <lm>
             <l>augeo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1393,8 +1596,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--augentes augentis-->
-         <tok val="augent[ie]s"/>
+      <ana>
+         <tok val="augentes"/>
+         <tok val="augentis"/>
          <lm>
             <l>augeo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1487,15 +1691,17 @@
             <m>v - 2 p i s a</m>
          </lm>
       </ana>
-      <ana><!--augeretur augereturque-->
-         <tok val="augeretur(que)?"/>
+      <ana>
+         <tok val="augeretur"/>
+         <tok val="augereturque"/>
          <lm>
             <l>augeo</l>
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--augescant augescantque-->
-         <tok val="augescant(que)?"/>
+      <ana>
+         <tok val="augescant"/>
+         <tok val="augescantque"/>
          <lm>
             <l>augesco</l>
             <m>v - 3 p p s a</m>
@@ -1665,8 +1871,9 @@
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--augmenta augmentave-->
-         <tok val="augmenta(ve)?"/>
+      <ana>
+         <tok val="augmenta"/>
+         <tok val="augmentave"/>
          <lm cert="0.5">
             <l>augmentum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1751,8 +1958,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--augura auguran-->
-         <tok val="augura[n]?"/>
+      <ana>
+         <tok val="augura"/>
+         <tok val="auguran"/>
          <lm>
             <l>auguro</l>
             <m>v - 2 s p m a</m>
@@ -1815,8 +2023,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--auguran auguras-->
-         <tok val="augura[sn]"/>
+      <ana>
+         <tok val="auguran"/>
+         <tok val="auguras"/>
          <lm>
             <l>auguro</l>
             <m>v - 2 s p i a</m>
@@ -1883,8 +2092,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--augurantes augurantis-->
-         <tok val="augurant[ie]s"/>
+      <ana>
+         <tok val="augurantes"/>
+         <tok val="augurantis"/>
          <lm>
             <l>auguror</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1942,8 +2152,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--augurata augurataque-->
-         <tok val="augurata(que)?"/>
+      <ana>
+         <tok val="augurata"/>
+         <tok val="augurataque"/>
          <lm>
             <l>auguror</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -2069,8 +2280,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--augustior augustiorque-->
-         <tok val="augustior(que)?"/>
+      <ana>
+         <tok val="augustior"/>
+         <tok val="augustiorque"/>
          <lm>
             <l>augustus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -2095,8 +2307,9 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--augustiorem augustioremque-->
-         <tok val="augustiorem(que)?"/>
+      <ana>
+         <tok val="augustiorem"/>
+         <tok val="augustioremque"/>
          <lm>
             <l>augustus</l>
             <m cert="0.5">a - - s - - - f a c</m>
@@ -2115,8 +2328,9 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--augustioribus augustioribusque-->
-         <tok val="augustioribus(que)?"/>
+      <ana>
+         <tok val="augustioribus"/>
+         <tok val="augustioribusque"/>
          <lm>
             <l>augustus</l>
             <m cert="0.5">a - - p - - - - b c</m>

@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusacr">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:acr">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to acr</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-acr.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ACR</tok-starts-with>
       <tok-starts-with>Acr</tok-starts-with>
       <tok-starts-with>acr</tok-starts-with>
       <tok-starts-with>ácr</tok-starts-with>
-      <ana><!--ACRIOR Acrior acrior acriorque-->
-         <tok val="[aA]?(crior)?(que|ACRIOR)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:08:13.11-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:08:13.11-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-acr.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ACRIOR"/>
+         <tok val="Acrior"/>
+         <tok val="acrior"/>
+         <tok val="acriorque"/>
          <lm>
             <l>acer2</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -46,15 +57,20 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--ACROAMA Acroama acroama-->
-         <tok val="[aA]?(croama|ACROAMA)"/>
+      <ana>
+         <tok val="ACROAMA"/>
+         <tok val="Acroama"/>
+         <tok val="acroama"/>
          <lm>
             <l>acroama</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Acra Acran acra acran-->
-         <tok val="[Aa]cra[n]?"/>
+      <ana>
+         <tok val="Acra"/>
+         <tok val="Acran"/>
+         <tok val="acra"/>
+         <tok val="acran"/>
          <lm>
             <l>acra</l>
             <m cert="0.142857142857142857">n - - s - - - f b</m>
@@ -66,8 +82,9 @@
             <m cert="0.142857142857142857">v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Acrae acrae-->
-         <tok val="[aA]crae"/>
+      <ana>
+         <tok val="Acrae"/>
+         <tok val="acrae"/>
          <lm>
             <l>acra</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -78,6 +95,7 @@
       </ana>
       <ana>
          <tok val="Acraea"/>
+         <tok val="acraea"/>
          <lm>
             <l>Acraeus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -90,6 +108,7 @@
       </ana>
       <ana>
          <tok val="Acraeam"/>
+         <tok val="acraeam"/>
          <lm>
             <l>Acraeus</l>
             <m>a e - s - - - f a</m>
@@ -97,6 +116,7 @@
       </ana>
       <ana>
          <tok val="Acraei"/>
+         <tok val="acraei"/>
          <lm>
             <l>Acraeus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -107,6 +127,7 @@
       </ana>
       <ana>
          <tok val="Acraephia"/>
+         <tok val="acraephia"/>
          <lm>
             <l>Acraephia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -116,6 +137,7 @@
       </ana>
       <ana>
          <tok val="Acraephiae"/>
+         <tok val="acraephiae"/>
          <lm>
             <l>Acraephia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -126,6 +148,7 @@
       </ana>
       <ana>
          <tok val="Acraeus"/>
+         <tok val="acraeus"/>
          <lm>
             <l>Acraeus</l>
             <m>a e - s - - - m n</m>
@@ -133,6 +156,7 @@
       </ana>
       <ana>
          <tok val="Acragantis"/>
+         <tok val="acragantis"/>
          <lm>
             <l>Acragas</l>
             <m>n e - s - - - m g</m>
@@ -140,14 +164,18 @@
       </ana>
       <ana>
          <tok val="Acragas"/>
+         <tok val="acragas"/>
          <lm>
             <l>Acragas</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Acran Acras acran-->
-         <tok val="[Aa]cra[sn]"/>
+      <ana>
+         <tok val="Acran"/>
+         <tok val="Acras"/>
+         <tok val="acran"/>
+         <tok val="acras"/>
          <lm>
             <l>acra</l>
             <m cert="0.5">v - 2 s p i a</m>
@@ -156,6 +184,7 @@
       </ana>
       <ana>
          <tok val="Acrato"/>
+         <tok val="acrato"/>
          <lm>
             <l>acra</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -166,8 +195,10 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Acratophoron acratophoro acratophoron-->
-         <tok val="[aA]cratophoro[n]?"/>
+      <ana>
+         <tok val="Acratophoron"/>
+         <tok val="acratophoro"/>
+         <tok val="acratophoron"/>
          <lm>
             <l>acratophorum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -176,6 +207,7 @@
       </ana>
       <ana>
          <tok val="Acratum"/>
+         <tok val="acratum"/>
          <lm>
             <l>acra</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -187,8 +219,9 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Acre acre-->
-         <tok val="[aA]cre"/>
+      <ana>
+         <tok val="Acre"/>
+         <tok val="acre"/>
          <lm>
             <l>acer2</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -196,16 +229,18 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Acredo acredo-->
-         <tok val="[aA]credo"/>
+      <ana>
+         <tok val="Acredo"/>
+         <tok val="acredo"/>
          <lm>
             <l>acredo</l>
             <m cert="0.5">v - 1 s p i a</m>
             <m cert="0.5">n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Acredula acredula-->
-         <tok val="[aA]credula"/>
+      <ana>
+         <tok val="Acredula"/>
+         <tok val="acredula"/>
          <lm>
             <l>acredula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -213,8 +248,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Acrem acrem acremque-->
-         <tok val="[aA]crem(que)?"/>
+      <ana>
+         <tok val="Acrem"/>
+         <tok val="acrem"/>
+         <tok val="acremque"/>
          <lm cert="0.5">
             <l>acer2</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -225,16 +262,22 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Acres Acris acres acresque acris-->
-         <tok val="[Aa]cr[ie]s(que)?"/>
+      <ana>
+         <tok val="Acres"/>
+         <tok val="Acris"/>
+         <tok val="acres"/>
+         <tok val="acresque"/>
+         <tok val="acris"/>
          <lm>
             <l>acer2</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Acres acres acresque-->
-         <tok val="[aA]cres(que)?"/>
+      <ana>
+         <tok val="Acres"/>
+         <tok val="acres"/>
+         <tok val="acresque"/>
          <lm cert="0.5">
             <l>acer2</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -247,8 +290,10 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Acri acri acrique-->
-         <tok val="[aA]cri(que)?"/>
+      <ana>
+         <tok val="Acri"/>
+         <tok val="acri"/>
+         <tok val="acrique"/>
          <lm>
             <l>acer2</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -259,15 +304,18 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Acria acria ácria-->
-         <tok val="[aAá]cria"/>
+      <ana>
+         <tok val="Acria"/>
+         <tok val="acria"/>
+         <tok val="ácria"/>
          <lm>
             <l>acer2</l>
             <m>a - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Acria acria-->
-         <tok val="[aA]cria"/>
+      <ana>
+         <tok val="Acria"/>
+         <tok val="acria"/>
          <lm>
             <l>acer2</l>
             <m cert="0.5">a - - p - - - n v</m>
@@ -276,14 +324,16 @@
       </ana>
       <ana>
          <tok val="Acriae"/>
+         <tok val="acriae"/>
          <lm>
             <l>Acriae</l>
             <m cert="0.5">n e - p - - - f n</m>
             <m cert="0.5">n e - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Acribus acribus-->
-         <tok val="[aA]cribus"/>
+      <ana>
+         <tok val="Acribus"/>
+         <tok val="acribus"/>
          <lm>
             <l>acer2</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -294,8 +344,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Acrifolium acrifolium-->
-         <tok val="[aA]crifolium"/>
+      <ana>
+         <tok val="Acrifolium"/>
+         <tok val="acrifolium"/>
          <lm>
             <l>acrifolium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -306,6 +357,7 @@
       </ana>
       <ana>
          <tok val="Acriis"/>
+         <tok val="acriis"/>
          <lm>
             <l>Acriae</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -314,6 +366,7 @@
       </ana>
       <ana>
          <tok val="Acrillae"/>
+         <tok val="acrillae"/>
          <lm>
             <l>Acrillae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -322,13 +375,15 @@
       </ana>
       <ana>
          <tok val="Acrillas"/>
+         <tok val="acrillas"/>
          <lm>
             <l>Acrillae</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Acrimonia acrimonia-->
-         <tok val="[aA]crimonia"/>
+      <ana>
+         <tok val="Acrimonia"/>
+         <tok val="acrimonia"/>
          <lm>
             <l>acrimonia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -336,15 +391,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Acrimoniam acrimoniam-->
-         <tok val="[aA]crimoniam"/>
+      <ana>
+         <tok val="Acrimoniam"/>
+         <tok val="acrimoniam"/>
          <lm>
             <l>acrimonia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Acriora acriora-->
-         <tok val="[aA]criora"/>
+      <ana>
+         <tok val="Acriora"/>
+         <tok val="acriora"/>
          <lm>
             <l>acer2</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -352,8 +409,10 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--Acriores acriores acrioresque-->
-         <tok val="[aA]criores(que)?"/>
+      <ana>
+         <tok val="Acriores"/>
+         <tok val="acriores"/>
+         <tok val="acrioresque"/>
          <lm>
             <l>acer2</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -364,38 +423,42 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Acriori acriori-->
-         <tok val="[aA]criori"/>
+      <ana>
+         <tok val="Acriori"/>
+         <tok val="acriori"/>
          <lm>
             <l>acer2</l>
-            <m>a - - s - - - n d c</m>
-         </lm>
-      </ana>
-      <ana><!--Acrioribus acrioribus-->
-         <tok val="[aA]crioribus"/>
-         <lm>
-            <l>acer2</l>
-            <m>a - - p - - - n b c</m>
+            <m cert="0.333333333333333333">a - - s - - - n d c</m>
+            <m cert="0.333333333333333333">a - - s - - - m d c</m>
+            <m cert="0.333333333333333333">a - - s - - - f d c</m>
          </lm>
       </ana>
       <ana>
          <tok val="Acrioribus"/>
+         <tok val="acrioribus"/>
          <lm>
             <l>acer2</l>
-            <m cert="0.333333333333333333">a - - p - - - n d c</m>
-            <m cert="0.333333333333333333">a - - p - - - m d c</m>
-            <m cert="0.333333333333333333">a - - p - - - f d c</m>
+            <m cert="0.166666666666666667">a - - p - - - n b c</m>
+            <m cert="0.166666666666666667">a - - p - - - n d c</m>
+            <m cert="0.166666666666666667">a - - p - - - m b c</m>
+            <m cert="0.166666666666666667">a - - p - - - f b c</m>
+            <m cert="0.166666666666666667">a - - p - - - m d c</m>
+            <m cert="0.166666666666666667">a - - p - - - f d c</m>
          </lm>
       </ana>
-      <ana><!--Acrioris acrioris-->
-         <tok val="[aA]crioris"/>
+      <ana>
+         <tok val="Acrioris"/>
+         <tok val="acrioris"/>
          <lm>
             <l>acer2</l>
-            <m>a - - s - - - n g c</m>
+            <m cert="0.333333333333333333">a - - s - - - n g c</m>
+            <m cert="0.333333333333333333">a - - s - - - f g c</m>
+            <m cert="0.333333333333333333">a - - s - - - m g c</m>
          </lm>
       </ana>
-      <ana><!--Acris acris-->
-         <tok val="[aA]cris"/>
+      <ana>
+         <tok val="Acris"/>
+         <tok val="acris"/>
          <lm cert="0.5">
             <l>acra</l>
             <m cert="0.25">n - - p - - - n d</m>
@@ -412,6 +475,7 @@
       </ana>
       <ana>
          <tok val="Acrisii"/>
+         <tok val="acrisii"/>
          <lm>
             <l>Acrisius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -421,6 +485,7 @@
       </ana>
       <ana>
          <tok val="Acrisio"/>
+         <tok val="acrisio"/>
          <lm>
             <l>Acrisius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -429,6 +494,7 @@
       </ana>
       <ana>
          <tok val="Acrisione"/>
+         <tok val="acrisione"/>
          <lm>
             <l>Acrisione</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -438,6 +504,7 @@
       </ana>
       <ana>
          <tok val="Acrisioneas"/>
+         <tok val="acrisioneas"/>
          <lm>
             <l>Acrisioneus</l>
             <m>a e - p - - - f a</m>
@@ -445,6 +512,7 @@
       </ana>
       <ana>
          <tok val="Acrisioneis"/>
+         <tok val="acrisioneis"/>
          <lm>
             <l>Acrisioneus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -457,6 +525,7 @@
       </ana>
       <ana>
          <tok val="Acrisioneos"/>
+         <tok val="acrisioneos"/>
          <lm>
             <l>Acrisioneus</l>
             <m>a e - p - - - m a</m>
@@ -464,6 +533,7 @@
       </ana>
       <ana>
          <tok val="Acrisioneus"/>
+         <tok val="acrisioneus"/>
          <lm>
             <l>Acrisioneus</l>
             <m>a e - s - - - m n</m>
@@ -471,21 +541,28 @@
       </ana>
       <ana>
          <tok val="Acrisioniades"/>
+         <tok val="acrisioniades"/>
          <lm>
             <l>Acrisioniades</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Acrisium Acrisivm-->
-         <tok val="Acrisi[vu]m"/>
+      <ana>
+         <tok val="Acrisium"/>
+         <tok val="Acrisivm"/>
+         <tok val="acrisium"/>
+         <tok val="acrisivm"/>
          <lm>
             <l>Acrisius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Acrisius Acrisiusque-->
-         <tok val="Acrisius(que)?"/>
+      <ana>
+         <tok val="Acrisius"/>
+         <tok val="Acrisiusque"/>
+         <tok val="acrisius"/>
+         <tok val="acrisiusque"/>
          <lm>
             <l>Acrisius</l>
             <m>n e - s - - - m n</m>
@@ -493,6 +570,7 @@
       </ana>
       <ana>
          <tok val="Acritan"/>
+         <tok val="acritan"/>
          <lm>
             <l>Acritas</l>
             <m>n e - s - - - m a</m>
@@ -500,51 +578,55 @@
       </ana>
       <ana>
          <tok val="Acritas"/>
-         <lm>
+         <tok val="acritas"/>
+         <lm cert="0.5">
             <l>Acritas</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
-      </ana>
-      <ana><!--Acritas acritas-->
-         <tok val="[aA]critas"/>
-         <lm>
+         <lm cert="0.5">
             <l>acritas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Acriter acriter acriterque-->
-         <tok val="[aA]criter(que)?"/>
+      <ana>
+         <tok val="Acriter"/>
+         <tok val="acriter"/>
+         <tok val="acriterque"/>
          <lm>
             <l>acriter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Acritudo acritudo-->
-         <tok val="[aA]critudo"/>
+      <ana>
+         <tok val="Acritudo"/>
+         <tok val="acritudo"/>
          <lm>
             <l>acritudo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Acrius acriusque acriusue-->
-         <tok val="[aA]crius[q]?(ue|)"/>
-         <lm>
+      <ana>
+         <tok val="Acrius"/>
+         <tok val="acrius"/>
+         <tok val="acriusque"/>
+         <tok val="acriusue"/>
+         <lm cert="0.5">
             <l>acer</l>
             <m>d - - - - - - - - c</m>
          </lm>
-      </ana>
-      <ana><!--Acrius acrius acriusque acriusue-->
-         <tok val="[aA]crius[q]?(ue)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>acer2</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
             <m cert="0.333333333333333333">a - - s - - - n v c</m>
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Acro acro acron acrost-->
-         <tok val="[aA]cro(n|st)?"/>
+      <ana>
+         <tok val="Acro"/>
+         <tok val="acro"/>
+         <tok val="acron"/>
+         <tok val="acrost"/>
          <lm cert="0.5">
             <l>acra</l>
             <m>v - 1 s p i a</m>
@@ -555,30 +637,37 @@
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Acroamaticus acroamaticus-->
-         <tok val="[aA]croamaticus"/>
+      <ana>
+         <tok val="Acroamaticus"/>
+         <tok val="acroamaticus"/>
          <lm>
             <l>acroamaticus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Acroasis acroasin acroasis-->
-         <tok val="[aA]croasi[sn]"/>
+      <ana>
+         <tok val="Acroasis"/>
+         <tok val="acroasin"/>
+         <tok val="acroasis"/>
          <lm>
             <l>acroasis</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Acroasis acroases acroasin acroasis-->
-         <tok val="[aA]croas[ie]?(s|in)"/>
+      <ana>
+         <tok val="Acroasis"/>
+         <tok val="acroases"/>
+         <tok val="acroasin"/>
+         <tok val="acroasis"/>
          <lm>
             <l>acroasis</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Acroaticos acroaticos-->
-         <tok val="[aA]croaticos"/>
+      <ana>
+         <tok val="Acroaticos"/>
+         <tok val="acroaticos"/>
          <lm>
             <l>acroaticus</l>
             <m>a - - p - - - m a</m>
@@ -586,6 +675,7 @@
       </ana>
       <ana>
          <tok val="Acroceraunia"/>
+         <tok val="acroceraunia"/>
          <lm>
             <l>Acroceraunia</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -595,6 +685,7 @@
       </ana>
       <ana>
          <tok val="Acrocerauniis"/>
+         <tok val="acrocerauniis"/>
          <lm>
             <l>Acroceraunia</l>
             <m cert="0.5">n e - p - - - n d</m>
@@ -603,28 +694,36 @@
       </ana>
       <ana>
          <tok val="Acroceraunium"/>
+         <tok val="acroceraunium"/>
          <lm>
             <l>Acroceraunia</l>
             <m>n e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Acrochordon acrochordon-->
-         <tok val="[aA]crochordon"/>
+      <ana>
+         <tok val="Acrochordon"/>
+         <tok val="acrochordon"/>
          <lm>
             <l>acrochordon</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Acrocorintho Acrocorinthon-->
-         <tok val="Acrocorintho[n]?"/>
+      <ana>
+         <tok val="Acrocorintho"/>
+         <tok val="Acrocorinthon"/>
+         <tok val="acrocorintho"/>
+         <tok val="acrocorinthon"/>
          <lm>
             <l>Acrocorinthus</l>
             <m cert="0.5">n e - s - - - f b</m>
             <m cert="0.5">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Acrocorinthon Acrocorinthos-->
-         <tok val="Acrocorintho[sn]"/>
+      <ana>
+         <tok val="Acrocorinthon"/>
+         <tok val="Acrocorinthos"/>
+         <tok val="acrocorinthon"/>
+         <tok val="acrocorinthos"/>
          <lm>
             <l>Acrocorinthus</l>
             <m>n e - p - - - f a</m>
@@ -632,6 +731,7 @@
       </ana>
       <ana>
          <tok val="Acrocorinthum"/>
+         <tok val="acrocorinthum"/>
          <lm>
             <l>Acrocorinthus</l>
             <m cert="0.5">n e - s - - - f a</m>
@@ -640,6 +740,7 @@
       </ana>
       <ana>
          <tok val="Acrocorinthus"/>
+         <tok val="acrocorinthus"/>
          <lm>
             <l>Acrocorinthus</l>
             <m>n e - s - - - f n</m>
@@ -647,13 +748,15 @@
       </ana>
       <ana>
          <tok val="Acron"/>
+         <tok val="acron"/>
          <lm>
             <l>Acron</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Acrone acrone-->
-         <tok val="[aA]crone"/>
+      <ana>
+         <tok val="Acrone"/>
+         <tok val="acrone"/>
          <lm>
             <l>acro</l>
             <m>n - - s - - - m b</m>
@@ -661,6 +764,7 @@
       </ana>
       <ana>
          <tok val="Acronum"/>
+         <tok val="acronum"/>
          <lm>
             <l>acro</l>
             <m>n - - p - - - m g</m>
@@ -668,6 +772,7 @@
       </ana>
       <ana>
          <tok val="Acrota"/>
+         <tok val="acrota"/>
          <lm>
             <l>Acrota</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -675,8 +780,9 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Acroteria acroteria-->
-         <tok val="[aA]croteria"/>
+      <ana>
+         <tok val="Acroteria"/>
+         <tok val="acroteria"/>
          <lm>
             <l>acroteria</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -784,20 +890,13 @@
             <m cert="0.333333333333333333">a - - s - - - f b c</m>
          </lm>
       </ana>
-      <ana><!--acriorem acrioremque-->
-         <tok val="acriorem(que)?"/>
+      <ana>
+         <tok val="acriorem"/>
+         <tok val="acrioremque"/>
          <lm>
             <l>acer2</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
-         </lm>
-      </ana>
-      <ana><!--acrioribus Acrioribus-->
-         <tok val="[Aa]crioribus"/>
-         <lm>
-            <l>acer2</l>
-            <m cert="0.5">a - - p - - - m b c</m>
-            <m cert="0.5">a - - p - - - f b c</m>
          </lm>
       </ana>
       <ana>
@@ -830,8 +929,9 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--acrius ácrius-->
-         <tok val="[áa]crius"/>
+      <ana>
+         <tok val="acrius"/>
+         <tok val="ácrius"/>
          <lm>
             <l>acer2</l>
             <m>d - - - - - - - - c</m>
@@ -888,8 +988,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--acroamatice acroamaticum-->
-         <tok val="acroamatic(um|e)"/>
+      <ana>
+         <tok val="acroamatice"/>
+         <tok val="acroamaticum"/>
          <lm>
             <l>acroamaticus</l>
             <m>a - - s - - - n v</m>
@@ -933,8 +1034,9 @@
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--acroasi acroasin-->
-         <tok val="acroasi[n]?"/>
+      <ana>
+         <tok val="acroasi"/>
+         <tok val="acroasin"/>
          <lm>
             <l>acroasis</l>
             <m cert="0.5">n - - s - - - f b</m>
@@ -1068,22 +1170,6 @@
          <lm>
             <l>acra</l>
             <m>n - - p - - - n g</m>
-         </lm>
-      </ana>
-      <ana><!--acrioris Acrioris-->
-         <tok val="[Aa]crioris"/>
-         <lm>
-            <l>acer2</l>
-            <m cert="0.5">a - - s - - - f g c</m>
-            <m cert="0.5">a - - s - - - m g c</m>
-         </lm>
-      </ana>
-      <ana><!--acriori Acriori-->
-         <tok val="[Aa]criori"/>
-         <lm>
-            <l>acer2</l>
-            <m cert="0.5">a - - s - - - m d c</m>
-            <m cert="0.5">a - - s - - - f d c</m>
          </lm>
       </ana>
       <ana>

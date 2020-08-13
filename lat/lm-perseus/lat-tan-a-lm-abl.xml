@@ -1,58 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusabl">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:abl">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to abl</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-abl.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ABL</tok-starts-with>
       <tok-starts-with>Abl</tok-starts-with>
       <tok-starts-with>abl</tok-starts-with>
       <tok-starts-with>ábl</tok-starts-with>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:07:36.998-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:07:36.998-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-abl.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
       <ana>
          <tok val="ABLATUM"/>
+         <tok val="ablatum"/>
          <lm>
             <l>aufero</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--ABLATUM Ablatum ablatorum ablatum ablatumque ablatumve-->
-         <tok val="[aA]?(blat)?(or)?(um)?(ve|que|ABLATUM)?"/>
+      <ana>
+         <tok val="ABLATUM"/>
+         <tok val="Ablatum"/>
+         <tok val="ablatorum"/>
+         <tok val="ablatum"/>
+         <tok val="ablatumque"/>
+         <tok val="ablatumve"/>
          <lm>
             <l>aufero</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--ABLATUM Ablatum ablatum ablatumque ablatumve-->
-         <tok val="[aA]?(blatum)?(ve|que|ABLATUM)?"/>
+      <ana>
+         <tok val="ABLATUM"/>
+         <tok val="Ablatum"/>
+         <tok val="ablatum"/>
+         <tok val="ablatumque"/>
+         <tok val="ablatumve"/>
          <lm>
             <l>aufero</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -60,8 +78,13 @@
             <m cert="0.333333333333333333">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--ABLATUM Ablatum ablate ablatum ablatumque ablatumve-->
-         <tok val="[aA]?(blat)?(um)?(ve|que|e|ABLATUM)?"/>
+      <ana>
+         <tok val="ABLATUM"/>
+         <tok val="Ablatum"/>
+         <tok val="ablate"/>
+         <tok val="ablatum"/>
+         <tok val="ablatumque"/>
+         <tok val="ablatumve"/>
          <lm>
             <l>aufero</l>
             <m>v - - s r p p n v</m>
@@ -69,13 +92,15 @@
       </ana>
       <ana>
          <tok val="Ablacto"/>
+         <tok val="ablacto"/>
          <lm>
             <l>ablacto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ablaqueatio ablaqueatio-->
-         <tok val="[aA]blaqueatio"/>
+      <ana>
+         <tok val="Ablaqueatio"/>
+         <tok val="ablaqueatio"/>
          <lm>
             <l>ablaqueatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -84,20 +109,24 @@
       </ana>
       <ana>
          <tok val="Ablaqueationem"/>
+         <tok val="ablaqueationem"/>
          <lm>
             <l>ablaqueatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Ablaqueationis ablaqueationis-->
-         <tok val="[aA]blaqueationis"/>
+      <ana>
+         <tok val="Ablaqueationis"/>
+         <tok val="ablaqueationis"/>
          <lm>
             <l>ablaqueatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Ablata ablata ablataque-->
-         <tok val="[aA]blata(que)?"/>
+      <ana>
+         <tok val="Ablata"/>
+         <tok val="ablata"/>
+         <tok val="ablataque"/>
          <lm>
             <l>aufero</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -108,15 +137,18 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Ablatino ablatino-->
-         <tok val="[aA]blatino"/>
+      <ana>
+         <tok val="Ablatino"/>
+         <tok val="ablatino"/>
          <lm>
             <l>ablatino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ablatis ablatis ablatisque-->
-         <tok val="[aA]blatis(que)?"/>
+      <ana>
+         <tok val="Ablatis"/>
+         <tok val="ablatis"/>
+         <tok val="ablatisque"/>
          <lm cert="0.5">
             <l>aufero</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -131,8 +163,11 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ablatiui Ablativi ablatiui ablativi-->
-         <tok val="[Aa]blati[vu]i"/>
+      <ana>
+         <tok val="Ablatiui"/>
+         <tok val="Ablativi"/>
+         <tok val="ablatiui"/>
+         <tok val="ablativi"/>
          <lm cert="0.5">
             <l>ablativus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -144,39 +179,50 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Ablatiuis ablatiuis ablativis-->
-         <tok val="[aA]blati[uv]is"/>
+      <ana>
+         <tok val="Ablatiuis"/>
+         <tok val="ablatiuis"/>
+         <tok val="ablativis"/>
          <lm>
             <l>ablativus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Ablatiuo ablatiuo ablativo-->
-         <tok val="[aA]blati[uv]o"/>
+      <ana>
+         <tok val="Ablatiuo"/>
+         <tok val="ablatiuo"/>
+         <tok val="ablativo"/>
          <lm>
             <l>ablativus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Ablatiuum ablatiuum ablativum ablativumque-->
-         <tok val="[aA]blati[uv]um(que)?"/>
+      <ana>
+         <tok val="Ablatiuum"/>
+         <tok val="ablatiuum"/>
+         <tok val="ablativum"/>
+         <tok val="ablativumque"/>
          <lm>
             <l>ablativus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Ablatiuus Ablativus ablatiuus ablativus-->
-         <tok val="[Aa]blati[vu]us"/>
+      <ana>
+         <tok val="Ablatiuus"/>
+         <tok val="Ablativus"/>
+         <tok val="ablatiuus"/>
+         <tok val="ablativus"/>
          <lm>
             <l>ablativus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ablato ablato-->
-         <tok val="[aA]blato"/>
+      <ana>
+         <tok val="Ablato"/>
+         <tok val="ablato"/>
          <lm>
             <l>aufero</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -185,15 +231,20 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Ablatum ablatum ablatumque ablatumve-->
-         <tok val="[aA]blatum(ve|que)?"/>
+      <ana>
+         <tok val="Ablatum"/>
+         <tok val="ablatum"/>
+         <tok val="ablatumque"/>
+         <tok val="ablatumve"/>
          <lm>
             <l>aufero</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Ablatus ablatus ablatusque-->
-         <tok val="[aA]blatus(que)?"/>
+      <ana>
+         <tok val="Ablatus"/>
+         <tok val="ablatus"/>
+         <tok val="ablatusque"/>
          <lm>
             <l>aufero</l>
             <m>v - - s r p p m n</m>
@@ -201,6 +252,7 @@
       </ana>
       <ana>
          <tok val="Ablectae"/>
+         <tok val="ablectae"/>
          <lm>
             <l>ablego</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -209,8 +261,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Ablegandae ablegandae-->
-         <tok val="[aA]blegandae"/>
+      <ana>
+         <tok val="Ablegandae"/>
+         <tok val="ablegandae"/>
          <lm>
             <l>ablego</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -219,15 +272,17 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Ablegandus ablegandus-->
-         <tok val="[aA]blegandus"/>
+      <ana>
+         <tok val="Ablegandus"/>
+         <tok val="ablegandus"/>
          <lm>
             <l>ablego</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Ablegare ablegare-->
-         <tok val="[aA]blegare"/>
+      <ana>
+         <tok val="Ablegare"/>
+         <tok val="ablegare"/>
          <lm>
             <l>ablego</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -235,23 +290,26 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Ablegatio ablegatio-->
-         <tok val="[aA]blegatio"/>
+      <ana>
+         <tok val="Ablegatio"/>
+         <tok val="ablegatio"/>
          <lm>
             <l>ablegatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ablego ablego-->
-         <tok val="[aA]blego"/>
+      <ana>
+         <tok val="Ablego"/>
+         <tok val="ablego"/>
          <lm>
             <l>ablego</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ablepsia ablepsia-->
-         <tok val="[aA]blepsia"/>
+      <ana>
+         <tok val="Ablepsia"/>
+         <tok val="ablepsia"/>
          <lm>
             <l>ablepsia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -259,37 +317,42 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Abligurierat abligurierat-->
-         <tok val="[aA]bligurierat"/>
+      <ana>
+         <tok val="Abligurierat"/>
+         <tok val="abligurierat"/>
          <lm>
             <l>abligurrio</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Abligurio abligurio-->
-         <tok val="[aA]bligurio"/>
+      <ana>
+         <tok val="Abligurio"/>
+         <tok val="abligurio"/>
          <lm>
             <l>abligurrio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Abloco abloco-->
-         <tok val="[aA]bloco"/>
+      <ana>
+         <tok val="Abloco"/>
+         <tok val="abloco"/>
          <lm>
             <l>abloco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Abluam abluam-->
-         <tok val="[aA]bluam"/>
+      <ana>
+         <tok val="Abluam"/>
+         <tok val="abluam"/>
          <lm>
             <l>abluo</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Abluantur abluantur-->
-         <tok val="[aA]bluantur"/>
+      <ana>
+         <tok val="Abluantur"/>
+         <tok val="abluantur"/>
          <lm>
             <l>abluo</l>
             <m>v - 3 p p s p</m>
@@ -297,20 +360,24 @@
       </ana>
       <ana>
          <tok val="Abludo"/>
+         <tok val="abludo"/>
          <lm>
             <l>abludo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ablue ablue abluen-->
-         <tok val="[aA]blue[n]?"/>
+      <ana>
+         <tok val="Ablue"/>
+         <tok val="ablue"/>
+         <tok val="abluen"/>
          <lm>
             <l>abluo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Abluere abluere-->
-         <tok val="[aA]bluere"/>
+      <ana>
+         <tok val="Abluere"/>
+         <tok val="abluere"/>
          <lm>
             <l>abluo</l>
             <m cert="0.2">v - 3 p r i a</m>
@@ -320,45 +387,52 @@
             <m cert="0.2">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Abluero abluero-->
-         <tok val="[aA]bluero"/>
+      <ana>
+         <tok val="Abluero"/>
+         <tok val="abluero"/>
          <lm>
             <l>abluo</l>
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Abluit abluit-->
-         <tok val="[aA]bluit"/>
+      <ana>
+         <tok val="Abluit"/>
+         <tok val="abluit"/>
          <lm>
             <l>abluo</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Abluitur abluitur abluiturque-->
-         <tok val="[aA]bluitur(que)?"/>
+      <ana>
+         <tok val="Abluitur"/>
+         <tok val="abluitur"/>
+         <tok val="abluiturque"/>
          <lm>
             <l>abluo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Abluo abluo-->
-         <tok val="[aA]bluo"/>
+      <ana>
+         <tok val="Abluo"/>
+         <tok val="abluo"/>
          <lm>
             <l>abluo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ablutio ablutio-->
-         <tok val="[aA]blutio"/>
+      <ana>
+         <tok val="Ablutio"/>
+         <tok val="ablutio"/>
          <lm>
             <l>ablutio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ablutus ablutus-->
-         <tok val="[aA]blutus"/>
+      <ana>
+         <tok val="Ablutus"/>
+         <tok val="ablutus"/>
          <lm>
             <l>abluo</l>
             <m>v - - s r p p m n</m>
@@ -602,8 +676,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--ablatos ablatosque-->
-         <tok val="ablatos(que)?"/>
+      <ana>
+         <tok val="ablatos"/>
+         <tok val="ablatosque"/>
          <lm>
             <l>aufero</l>
             <m>v - - p r p p m a</m>
@@ -640,15 +715,17 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--ablaturus ablaturusque-->
-         <tok val="ablaturus(que)?"/>
+      <ana>
+         <tok val="ablaturus"/>
+         <tok val="ablaturusque"/>
          <lm>
             <l>aufero</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--ablecti ablegati-->
-         <tok val="able(ga|c)ti"/>
+      <ana>
+         <tok val="ablecti"/>
+         <tok val="ablegati"/>
          <lm>
             <l>ablego</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -705,8 +782,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--ablegant ablegantque-->
-         <tok val="ablegant(que)?"/>
+      <ana>
+         <tok val="ablegant"/>
+         <tok val="ablegantque"/>
          <lm>
             <l>ablego</l>
             <m>v - 3 p p i a</m>
@@ -832,8 +910,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--ablegatos ablegatosque-->
-         <tok val="ablegatos(que)?"/>
+      <ana>
+         <tok val="ablegatos"/>
+         <tok val="ablegatosque"/>
          <lm>
             <l>ablego</l>
             <m>v - - p r p p m a</m>
@@ -859,8 +938,10 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--ablegauit ablegavit áblegavit-->
-         <tok val="[aá]blega[vu]it"/>
+      <ana>
+         <tok val="ablegauit"/>
+         <tok val="ablegavit"/>
+         <tok val="áblegavit"/>
          <lm>
             <l>ablego</l>
             <m>v - 3 s r i a</m>
@@ -1210,8 +1291,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--abluentes abluentis-->
-         <tok val="abluent[ie]s"/>
+      <ana>
+         <tok val="abluentes"/>
+         <tok val="abluentis"/>
          <lm>
             <l>abluo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1445,8 +1527,9 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--abluuium abluvium-->
-         <tok val="ablu[vu]ium"/>
+      <ana>
+         <tok val="abluuium"/>
+         <tok val="abluvium"/>
          <lm>
             <l>abluvium</l>
             <m cert="0.25">n - - s - - - n v</m>

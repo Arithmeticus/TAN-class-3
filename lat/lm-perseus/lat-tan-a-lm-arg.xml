@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusarg">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:arg">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to arg</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-arg.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ARG</tok-starts-with>
       <tok-starts-with>Arg</tok-starts-with>
       <tok-starts-with>arg</tok-starts-with>
       <tok-starts-with>árg</tok-starts-with>
-      <ana><!--ARGENTARIAE Argentariae argentariae-->
-         <tok val="[aA]?(rgentariae|ARGENTARIAE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:11:01.762-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:11:01.762-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-arg.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ARGENTARIAE"/>
+         <tok val="Argentariae"/>
+         <tok val="argentariae"/>
          <lm cert="0.5">
             <l>argentarius</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -53,8 +63,10 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--ARGENTARIARVM argentariarum-->
-         <tok val="(argentariarum|ARGENTARIARVM)"/>
+      <ana>
+         <tok val="ARGENTARIARVM"/>
+         <tok val="argentariarum"/>
+         <tok val="argentariarvm"/>
          <lm cert="0.5">
             <l>argentaria</l>
             <m>n - - p - - - f g</m>
@@ -64,8 +76,10 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--ARGENTEAE Argenteae argenteae-->
-         <tok val="[aA]?(rgenteae|ARGENTEAE)"/>
+      <ana>
+         <tok val="ARGENTEAE"/>
+         <tok val="Argenteae"/>
+         <tok val="argenteae"/>
          <lm>
             <l>argenteus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -74,29 +88,60 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--ARGENTO Argento argento argentoque argentost argentoue argentove argénto-->
-         <tok val="[aA]?(rg)?[eé]?(nto)?[q]?[uv]?(e|st|ARGENTO)?"/>
+      <ana>
+         <tok val="ARGENTO"/>
+         <tok val="Argento"/>
+         <tok val="argento"/>
+         <tok val="argentoque"/>
+         <tok val="argentost"/>
+         <tok val="argentoue"/>
+         <tok val="argentove"/>
+         <tok val="argénto"/>
          <lm>
             <l>argentum</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--ARGENTO Argento argento argentoque argentost argentoue argentove-->
-         <tok val="[aA]?(rgento)?[q]?[uv]?(e|st|ARGENTO)?"/>
+      <ana>
+         <tok val="ARGENTO"/>
+         <tok val="Argento"/>
+         <tok val="argento"/>
+         <tok val="argentoque"/>
+         <tok val="argentost"/>
+         <tok val="argentoue"/>
+         <tok val="argentove"/>
          <lm>
             <l>argentum</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--ARGENTVM Argentum argente argentum argentumque argentumst argentumue argentumve argentúm argéntum árgentum-->
-         <tok val="[aAá]?(rg)?[eé]?(nt)?[uú]?[m]?[q]?[uv]?(e|st|ARGENTVM)?"/>
+      <ana>
+         <tok val="ARGENTVM"/>
+         <tok val="Argentum"/>
+         <tok val="argente"/>
+         <tok val="argentum"/>
+         <tok val="argentumque"/>
+         <tok val="argentumst"/>
+         <tok val="argentumue"/>
+         <tok val="argentumve"/>
+         <tok val="argentvm"/>
+         <tok val="argentúm"/>
+         <tok val="argéntum"/>
+         <tok val="árgentum"/>
          <lm>
             <l>argentum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--ARGENTVM Argentum argentum argentumque argentumst argentumue argentumve-->
-         <tok val="[aA]?(rgentum)?[q]?[uv]?(e|st|ARGENTVM)?"/>
+      <ana>
+         <tok val="ARGENTVM"/>
+         <tok val="Argentum"/>
+         <tok val="argentum"/>
+         <tok val="argentumque"/>
+         <tok val="argentumst"/>
+         <tok val="argentumue"/>
+         <tok val="argentumve"/>
+         <tok val="argentvm"/>
          <lm>
             <l>argentum</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -104,8 +149,14 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--ARGOLICO Argolico Argolicoue Argolicove-->
-         <tok val="A(rgolico)?[vu]?(e|RGOLICO)?"/>
+      <ana>
+         <tok val="ARGOLICO"/>
+         <tok val="Argolico"/>
+         <tok val="Argolicoue"/>
+         <tok val="Argolicove"/>
+         <tok val="argolico"/>
+         <tok val="argolicoue"/>
+         <tok val="argolicove"/>
          <lm>
             <l>Argolicus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -114,15 +165,25 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--ARGUM Arge Argen Argum-->
-         <tok val="A(rg)?[e]?(n|um|RGUM)?"/>
+      <ana>
+         <tok val="ARGUM"/>
+         <tok val="Arge"/>
+         <tok val="Argen"/>
+         <tok val="Argum"/>
+         <tok val="arge"/>
+         <tok val="argen"/>
+         <tok val="argum"/>
          <lm>
             <l>Argus</l>
             <m>a e - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--ARGUM Argorum Argum-->
-         <tok val="A(rg)?(or)?(um|RGUM)"/>
+      <ana>
+         <tok val="ARGUM"/>
+         <tok val="Argorum"/>
+         <tok val="Argum"/>
+         <tok val="argorum"/>
+         <tok val="argum"/>
          <lm>
             <l>Argus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -130,8 +191,10 @@
             <m cert="0.333333333333333333">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--ARGUM Argum-->
-         <tok val="A(rgum|RGUM)"/>
+      <ana>
+         <tok val="ARGUM"/>
+         <tok val="Argum"/>
+         <tok val="argum"/>
          <lm>
             <l>Argus</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -140,23 +203,39 @@
             <m cert="0.25">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--ARGUMENTA Argumenta argumenta argumentan argumentaque argúmenta árgumenta argúmentaque-->
-         <tok val="[aAá]?(rg)?[uú]?(menta)?(n|que|ARGUMENTA)?"/>
+      <ana>
+         <tok val="ARGUMENTA"/>
+         <tok val="Argumenta"/>
+         <tok val="argumenta"/>
+         <tok val="argumentan"/>
+         <tok val="argumentaque"/>
+         <tok val="argúmenta"/>
+         <tok val="argúmentaque"/>
+         <tok val="árgumenta"/>
          <lm>
             <l>argumentum</l>
             <m>n - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--ARGUMENTA Argumenta argumenta argumentan argumentaque-->
-         <tok val="[aA]?(rgumenta)?(n|que|ARGUMENTA)?"/>
+      <ana>
+         <tok val="ARGUMENTA"/>
+         <tok val="Argumenta"/>
+         <tok val="argumenta"/>
+         <tok val="argumentan"/>
+         <tok val="argumentaque"/>
          <lm>
             <l>argumentum</l>
             <m cert="0.5">n - - p - - - n n</m>
             <m cert="0.5">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--ARGVMENTVM Argumentum argumentum argumentumque argumentumst-->
-         <tok val="[aA]?(rgumentum)?(st|que|ARGVMENTVM)?"/>
+      <ana>
+         <tok val="ARGVMENTVM"/>
+         <tok val="Argumentum"/>
+         <tok val="argumentum"/>
+         <tok val="argumentumque"/>
+         <tok val="argumentumst"/>
+         <tok val="argvmentvm"/>
          <lm>
             <l>argumentum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -164,15 +243,26 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--ARGVMENTVM Argumentorum Argumentum argumentorum argumentorumque argumentum argumentumque argumentumst-->
-         <tok val="[aA]?(rgument)?(or)?(um)?(que|st|ARGVMENTVM)?"/>
+      <ana>
+         <tok val="ARGVMENTVM"/>
+         <tok val="Argumentorum"/>
+         <tok val="Argumentum"/>
+         <tok val="argumentorum"/>
+         <tok val="argumentorumque"/>
+         <tok val="argumentum"/>
+         <tok val="argumentumque"/>
+         <tok val="argumentumst"/>
+         <tok val="argvmentvm"/>
          <lm>
             <l>argumentum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--ARGVO Arguo arguo-->
-         <tok val="[aA]?(rguo|ARGVO)"/>
+      <ana>
+         <tok val="ARGVO"/>
+         <tok val="Arguo"/>
+         <tok val="arguo"/>
+         <tok val="argvo"/>
          <lm>
             <l>arguo</l>
             <m>v - 1 s p i a</m>
@@ -180,6 +270,7 @@
       </ana>
       <ana>
          <tok val="Arga"/>
+         <tok val="arga"/>
          <lm>
             <l>Argus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -192,6 +283,7 @@
       </ana>
       <ana>
          <tok val="Arganthi"/>
+         <tok val="arganthi"/>
          <lm>
             <l>Arganthus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -201,6 +293,7 @@
       </ana>
       <ana>
          <tok val="Arganthoniacos"/>
+         <tok val="arganthoniacos"/>
          <lm>
             <l>Arganthoniacus</l>
             <m>a e - p - - - m a</m>
@@ -208,6 +301,7 @@
       </ana>
       <ana>
          <tok val="Arganthoniacus"/>
+         <tok val="arganthoniacus"/>
          <lm>
             <l>Arganthoniacus</l>
             <m>a e - s - - - m n</m>
@@ -215,6 +309,7 @@
       </ana>
       <ana>
          <tok val="Arganthonium"/>
+         <tok val="arganthonium"/>
          <lm>
             <l>Arganthonius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -223,6 +318,7 @@
       </ana>
       <ana>
          <tok val="Arganthonius"/>
+         <tok val="arganthonius"/>
          <lm>
             <l>Arganthonius</l>
             <m>n e - s - - - m n</m>
@@ -230,21 +326,30 @@
       </ana>
       <ana>
          <tok val="Arganthus"/>
+         <tok val="arganthus"/>
          <lm>
             <l>Arganthus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Arge Argen-->
-         <tok val="Arge[n]?"/>
+      <ana>
+         <tok val="Arge"/>
+         <tok val="Argen"/>
+         <tok val="arge"/>
+         <tok val="argen"/>
          <lm>
             <l>Argus</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Arge Argen Argius-->
-         <tok val="Arg[e]?(n|ius)?"/>
+      <ana>
+         <tok val="Arge"/>
+         <tok val="Argen"/>
+         <tok val="Argius"/>
+         <tok val="arge"/>
+         <tok val="argen"/>
+         <tok val="argius"/>
          <lm>
             <l>Argus</l>
             <m>d e</m>
@@ -252,6 +357,7 @@
       </ana>
       <ana>
          <tok val="Argea"/>
+         <tok val="argea"/>
          <lm>
             <l>Argeus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -264,6 +370,7 @@
       </ana>
       <ana>
          <tok val="Argeas"/>
+         <tok val="argeas"/>
          <lm>
             <l>Argeus</l>
             <m>a e - p - - - f a</m>
@@ -271,6 +378,7 @@
       </ana>
       <ana>
          <tok val="Argei"/>
+         <tok val="argei"/>
          <lm cert="0.5">
             <l>Argeus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -284,8 +392,9 @@
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Argema argema-->
-         <tok val="[aA]rgema"/>
+      <ana>
+         <tok val="Argema"/>
+         <tok val="argema"/>
          <lm cert="0.5">
             <l>argemon</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -297,24 +406,28 @@
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Argemon argemo argemon-->
-         <tok val="[aA]rgemo[n]?"/>
+      <ana>
+         <tok val="Argemon"/>
+         <tok val="argemo"/>
+         <tok val="argemon"/>
          <lm>
             <l>argemon</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Argennon argennon-->
-         <tok val="[aA]rgennon"/>
+      <ana>
+         <tok val="Argennon"/>
+         <tok val="argennon"/>
          <lm>
             <l>argennon</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Argenta argenta-->
-         <tok val="[aA]rgenta"/>
+      <ana>
+         <tok val="Argenta"/>
+         <tok val="argenta"/>
          <lm>
             <l>argentum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -324,6 +437,7 @@
       </ana>
       <ana>
          <tok val="Argentanum"/>
+         <tok val="argentanum"/>
          <lm>
             <l>Argentanum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -332,8 +446,9 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Argentaria argentaria-->
-         <tok val="[aA]rgentaria"/>
+      <ana>
+         <tok val="Argentaria"/>
+         <tok val="argentaria"/>
          <lm cert="0.333333333333333333">
             <l>argentaria</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -355,15 +470,19 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Argentaria argentaria ARGENTARI-->
-         <tok val="[aA]?(rgentaria|ARGENTARI)"/>
+      <ana>
+         <tok val="ARGENTARI"/>
+         <tok val="Argentaria"/>
+         <tok val="argentari"/>
+         <tok val="argentaria"/>
          <lm>
             <l>argentarium</l>
             <m>n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Argentariam argentariam-->
-         <tok val="[aA]rgentariam"/>
+      <ana>
+         <tok val="Argentariam"/>
+         <tok val="argentariam"/>
          <lm cert="0.5">
             <l>argentarius</l>
             <m>a - - s - - - f a</m>
@@ -373,49 +492,54 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argentarii argentarii ARGENTARI ARGENTARII-->
-         <tok val="(ARGENTARI)?(I|argentarii|Argentarii)?"/>
-         <lm>
-            <l>argentarius</l>
-            <m>n - - p - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--Argentarii argentarii ARGENTARII-->
-         <tok val="[aA]?(rgentarii|ARGENTARII)"/>
-         <lm>
-            <l>argentarius</l>
-            <m>n - - p - - - m v</m>
-         </lm>
-      </ana>
-      <ana><!--Argentarii argentari argentarii ARGENTARI ARGENTARII-->
-         <tok val="(argentari)?(i|ARGENTARII|ARGENTARI|Argentarii)?"/>
+      <ana>
+         <tok val="ARGENTARI"/>
+         <tok val="ARGENTARII"/>
+         <tok val="Argentarii"/>
+         <tok val="argentari"/>
+         <tok val="argentarii"/>
          <lm cert="0.5">
             <l>argentarius</l>
-            <m>n - - s - - - m g</m>
+            <m cert="0.5">n - - p - - - m n</m>
+            <m cert="0.5">n - - s - - - m g</m>
          </lm>
          <lm cert="0.5">
             <l>argentarium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Argentarii argentari argentarii-->
-         <tok val="[aA]rgentari[i]?"/>
+      <ana>
+         <tok val="ARGENTARII"/>
+         <tok val="Argentarii"/>
+         <tok val="argentarii"/>
+         <lm>
+            <l>argentarius</l>
+            <m>n - - p - - - m v</m>
+         </lm>
+      </ana>
+      <ana>
+         <tok val="Argentarii"/>
+         <tok val="argentari"/>
+         <tok val="argentarii"/>
          <lm>
             <l>argentarius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Argentarii argentarii-->
-         <tok val="[aA]rgentarii"/>
+      <ana>
+         <tok val="Argentarii"/>
+         <tok val="argentarii"/>
          <lm>
             <l>argentarius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argentariis argentariis argentariisque-->
-         <tok val="[aA]rgentariis(que)?"/>
+      <ana>
+         <tok val="Argentariis"/>
+         <tok val="argentariis"/>
+         <tok val="argentariisque"/>
          <lm cert="0.333333333333333333">
             <l>argentarius</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -438,8 +562,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Argentario argentario-->
-         <tok val="[aA]rgentario"/>
+      <ana>
+         <tok val="Argentario"/>
+         <tok val="argentario"/>
          <lm cert="0.5">
             <l>argentarius</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -455,23 +580,28 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Argentarium argentarium árgentarium-->
-         <tok val="[aAá]rgentarium"/>
+      <ana>
+         <tok val="Argentarium"/>
+         <tok val="argentarium"/>
+         <tok val="árgentarium"/>
          <lm>
             <l>argentarius</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Argentarium argentariorum argentarium-->
-         <tok val="[aA]rgentari(or)?um"/>
+      <ana>
+         <tok val="Argentarium"/>
+         <tok val="argentariorum"/>
+         <tok val="argentarium"/>
          <lm>
             <l>argentarius</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Argentarium argentarium-->
-         <tok val="[aA]rgentarium"/>
+      <ana>
+         <tok val="Argentarium"/>
+         <tok val="argentarium"/>
          <lm cert="0.5">
             <l>argentarius</l>
             <m cert="0.25">a - - s - - - n a</m>
@@ -486,8 +616,11 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Argentarium argentariorum argentarium argentariorumque-->
-         <tok val="[aA]rgentari(or)?um(que)?"/>
+      <ana>
+         <tok val="Argentarium"/>
+         <tok val="argentariorum"/>
+         <tok val="argentariorumque"/>
+         <tok val="argentarium"/>
          <lm cert="0.5">
             <l>argentarius</l>
             <m>n - - p - - - m g</m>
@@ -497,16 +630,18 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Argentarius argentarius-->
-         <tok val="[aA]rgentarius"/>
+      <ana>
+         <tok val="Argentarius"/>
+         <tok val="argentarius"/>
          <lm>
             <l>argentarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argentati argentati-->
-         <tok val="[aA]rgentati"/>
+      <ana>
+         <tok val="Argentati"/>
+         <tok val="argentati"/>
          <lm>
             <l>argentatus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -515,15 +650,18 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Argentatus argentatus-->
-         <tok val="[aA]rgentatus"/>
+      <ana>
+         <tok val="Argentatus"/>
+         <tok val="argentatus"/>
          <lm>
             <l>argentatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argentea argentea argenteaque-->
-         <tok val="[aA]rgentea(que)?"/>
+      <ana>
+         <tok val="Argentea"/>
+         <tok val="argentea"/>
+         <tok val="argenteaque"/>
          <lm>
             <l>argenteus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -534,15 +672,20 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Argenteam argenteam argenteamque argenteamve-->
-         <tok val="[aA]rgenteam(ve|que)?"/>
+      <ana>
+         <tok val="Argenteam"/>
+         <tok val="argenteam"/>
+         <tok val="argenteamque"/>
+         <tok val="argenteamve"/>
          <lm>
             <l>argenteus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argenteo argenteo argenteoque-->
-         <tok val="[aA]rgenteo(que)?"/>
+      <ana>
+         <tok val="Argenteo"/>
+         <tok val="argenteo"/>
+         <tok val="argenteoque"/>
          <lm>
             <l>argenteus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -551,8 +694,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Argenteum argenteum argenteumque-->
-         <tok val="[aA]rgenteum(que)?"/>
+      <ana>
+         <tok val="Argenteum"/>
+         <tok val="argenteum"/>
+         <tok val="argenteumque"/>
          <lm>
             <l>argenteus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -561,23 +706,34 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Argenteum argenteorum argenteum argenteumque-->
-         <tok val="[aA]rgente(or)?um(que)?"/>
+      <ana>
+         <tok val="Argenteum"/>
+         <tok val="argenteorum"/>
+         <tok val="argenteum"/>
+         <tok val="argenteumque"/>
          <lm>
             <l>argenteus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Argenteus argenteus-->
-         <tok val="[aA]rgenteus"/>
+      <ana>
+         <tok val="Argenteus"/>
+         <tok val="argenteus"/>
          <lm>
             <l>argenteus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argenti argenti argentique argentiue argentive argentí argénti árgenti-->
-         <tok val="[aAá]rg[eé]nt[i]?[q]?[uv]?[eíi]?"/>
+      <ana>
+         <tok val="Argenti"/>
+         <tok val="argenti"/>
+         <tok val="argentique"/>
+         <tok val="argentiue"/>
+         <tok val="argentive"/>
+         <tok val="argentí"/>
+         <tok val="argénti"/>
+         <tok val="árgenti"/>
          <lm>
             <l>argentum</l>
             <m>n - - s - - - n g</m>
@@ -585,6 +741,7 @@
       </ana>
       <ana>
          <tok val="Argentia"/>
+         <tok val="argentia"/>
          <lm>
             <l>Argentia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -594,6 +751,7 @@
       </ana>
       <ana>
          <tok val="Argentiexterebronides"/>
+         <tok val="argentiexterebronides"/>
          <lm>
             <l>Argentiexterebronides</l>
             <m>n e - s - - - m n</m>
@@ -601,6 +759,7 @@
       </ana>
       <ana>
          <tok val="Argentifodina"/>
+         <tok val="argentifodina"/>
          <lm>
             <l>argentifodina</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -610,6 +769,7 @@
       </ana>
       <ana>
          <tok val="Argentinus"/>
+         <tok val="argentinus"/>
          <lm>
             <l>Argentinus</l>
             <m>n e - s - - - m n</m>
@@ -617,6 +777,7 @@
       </ana>
       <ana>
          <tok val="Argentorati"/>
+         <tok val="argentorati"/>
          <lm>
             <l>Argentoratus</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -626,6 +787,7 @@
       </ana>
       <ana>
          <tok val="Argentoratum"/>
+         <tok val="argentoratum"/>
          <lm>
             <l>Argentoratus</l>
             <m cert="0.5">n e - s - - - f a</m>
@@ -634,6 +796,7 @@
       </ana>
       <ana>
          <tok val="Argentoratus"/>
+         <tok val="argentoratus"/>
          <lm>
             <l>Argentoratus</l>
             <m>n e - s - - - f n</m>
@@ -641,6 +804,7 @@
       </ana>
       <ana>
          <tok val="Argeo"/>
+         <tok val="argeo"/>
          <lm>
             <l>Argeus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -649,8 +813,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Argeorum Argeum-->
-         <tok val="Arge(or)?um"/>
+      <ana>
+         <tok val="Argeorum"/>
+         <tok val="Argeum"/>
+         <tok val="argeorum"/>
+         <tok val="argeum"/>
          <lm cert="0.5">
             <l>Argeus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -663,6 +830,7 @@
       </ana>
       <ana>
          <tok val="Argeos"/>
+         <tok val="argeos"/>
          <lm cert="0.5">
             <l>Argei</l>
             <m>n e - p - - - m a</m>
@@ -672,15 +840,21 @@
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Argeste Argesten argeste argesten-->
-         <tok val="[Aa]rgeste[n]?"/>
+      <ana>
+         <tok val="Argeste"/>
+         <tok val="Argesten"/>
+         <tok val="argeste"/>
+         <tok val="argesten"/>
          <lm>
             <l>argestes</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Argesten Argestes argesten argestes-->
-         <tok val="[Aa]rgeste[sn]"/>
+      <ana>
+         <tok val="Argesten"/>
+         <tok val="Argestes"/>
+         <tok val="argesten"/>
+         <tok val="argestes"/>
          <lm>
             <l>argestes</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -691,6 +865,7 @@
       </ana>
       <ana>
          <tok val="Argeum"/>
+         <tok val="argeum"/>
          <lm>
             <l>Argeus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -701,13 +876,19 @@
       </ana>
       <ana>
          <tok val="Argeus"/>
+         <tok val="argeus"/>
          <lm>
             <l>Argeus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argi Argique Argiue-->
-         <tok val="Argi[q]?(ue|)"/>
+      <ana>
+         <tok val="Argi"/>
+         <tok val="Argique"/>
+         <tok val="Argiue"/>
+         <tok val="argi"/>
+         <tok val="argique"/>
+         <tok val="argiue"/>
          <lm>
             <l>Argus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -719,8 +900,11 @@
             <m cert="0.142857142857142857">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Argia Argian-->
-         <tok val="Argia[n]?"/>
+      <ana>
+         <tok val="Argia"/>
+         <tok val="Argian"/>
+         <tok val="argia"/>
+         <tok val="argian"/>
          <lm>
             <l>Argia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -730,6 +914,7 @@
       </ana>
       <ana>
          <tok val="Argiae"/>
+         <tok val="argiae"/>
          <lm>
             <l>Argia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -740,6 +925,7 @@
       </ana>
       <ana>
          <tok val="Argiam"/>
+         <tok val="argiam"/>
          <lm>
             <l>Argia</l>
             <m>n e - s - - - f a</m>
@@ -747,6 +933,7 @@
       </ana>
       <ana>
          <tok val="Argian"/>
+         <tok val="argian"/>
          <lm>
             <l>Argia</l>
             <m>n e - p - - - f a</m>
@@ -754,6 +941,7 @@
       </ana>
       <ana>
          <tok val="Argiletanam"/>
+         <tok val="argiletanam"/>
          <lm>
             <l>Argiletanus</l>
             <m>a e - s - - - f a</m>
@@ -761,6 +949,7 @@
       </ana>
       <ana>
          <tok val="Argiletanas"/>
+         <tok val="argiletanas"/>
          <lm>
             <l>Argiletanus</l>
             <m>a e - p - - - f a</m>
@@ -768,6 +957,7 @@
       </ana>
       <ana>
          <tok val="Argiletani"/>
+         <tok val="argiletani"/>
          <lm>
             <l>Argiletanus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -778,6 +968,7 @@
       </ana>
       <ana>
          <tok val="Argiletanus"/>
+         <tok val="argiletanus"/>
          <lm>
             <l>Argiletanus</l>
             <m>a e - s - - - m n</m>
@@ -785,6 +976,7 @@
       </ana>
       <ana>
          <tok val="Argileti"/>
+         <tok val="argileti"/>
          <lm>
             <l>Argiletum</l>
             <m>n e - s - - - n g</m>
@@ -792,6 +984,7 @@
       </ana>
       <ana>
          <tok val="Argiletum"/>
+         <tok val="argiletum"/>
          <lm>
             <l>Argiletum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -800,8 +993,9 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Argilla argilla-->
-         <tok val="[aA]rgilla"/>
+      <ana>
+         <tok val="Argilla"/>
+         <tok val="argilla"/>
          <lm>
             <l>argilla</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -809,15 +1003,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Argillaceus argillaceus-->
-         <tok val="[aA]rgillaceus"/>
+      <ana>
+         <tok val="Argillaceus"/>
+         <tok val="argillaceus"/>
          <lm>
             <l>argillaceus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argillosa argillosa-->
-         <tok val="[aA]rgillosa"/>
+      <ana>
+         <tok val="Argillosa"/>
+         <tok val="argillosa"/>
          <lm>
             <l>argillosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -828,15 +1024,19 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Argillosus argillosus-->
-         <tok val="[aA]rgillosus"/>
+      <ana>
+         <tok val="Argillosus"/>
+         <tok val="argillosus"/>
          <lm>
             <l>argillosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Arginusae Arginussae-->
-         <tok val="Arginus[s]?ae"/>
+      <ana>
+         <tok val="Arginusae"/>
+         <tok val="Arginussae"/>
+         <tok val="arginusae"/>
+         <tok val="arginussae"/>
          <lm>
             <l>Arginusae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -845,6 +1045,7 @@
       </ana>
       <ana>
          <tok val="Arginusis"/>
+         <tok val="arginusis"/>
          <lm>
             <l>Arginusae</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -853,6 +1054,7 @@
       </ana>
       <ana>
          <tok val="Arginussas"/>
+         <tok val="arginussas"/>
          <lm>
             <l>Arginusae</l>
             <m>n e - p - - - f a</m>
@@ -860,6 +1062,7 @@
       </ana>
       <ana>
          <tok val="Argiphontes"/>
+         <tok val="argiphontes"/>
          <lm>
             <l>Argiphontes</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -868,8 +1071,13 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Argis Argisque Argisue-->
-         <tok val="Argis[q]?(ue|)"/>
+      <ana>
+         <tok val="Argis"/>
+         <tok val="Argisque"/>
+         <tok val="Argisue"/>
+         <tok val="argis"/>
+         <tok val="argisque"/>
+         <tok val="argisue"/>
          <lm>
             <l>Argus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -884,6 +1092,7 @@
       </ana>
       <ana>
          <tok val="Argithea"/>
+         <tok val="argithea"/>
          <lm>
             <l>Argithea</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -893,6 +1102,7 @@
       </ana>
       <ana>
          <tok val="Argitheae"/>
+         <tok val="argitheae"/>
          <lm>
             <l>Argithea</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -903,20 +1113,30 @@
       </ana>
       <ana>
          <tok val="Argitheam"/>
+         <tok val="argitheam"/>
          <lm>
             <l>Argithea</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argitisque argitis argitisque-->
-         <tok val="[aA]rgitis(que|)"/>
+      <ana>
+         <tok val="Argitisque"/>
+         <tok val="argitis"/>
+         <tok val="argitisque"/>
          <lm>
             <l>argitis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Argiua Argiuaque Argiva Argivaque-->
-         <tok val="Argi[vu]a(que)?"/>
+      <ana>
+         <tok val="Argiua"/>
+         <tok val="Argiuaque"/>
+         <tok val="Argiva"/>
+         <tok val="Argivaque"/>
+         <tok val="argiua"/>
+         <tok val="argiuaque"/>
+         <tok val="argiva"/>
+         <tok val="argivaque"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -927,8 +1147,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Argiuae Argivae-->
-         <tok val="Argi[vu]ae"/>
+      <ana>
+         <tok val="Argiuae"/>
+         <tok val="Argivae"/>
+         <tok val="argiuae"/>
+         <tok val="argivae"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -937,30 +1160,52 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Argiuam Argivam-->
-         <tok val="Argi[vu]am"/>
+      <ana>
+         <tok val="Argiuam"/>
+         <tok val="Argivam"/>
+         <tok val="argiuam"/>
+         <tok val="argivam"/>
          <lm>
             <l>Argivus</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argiue Argiuom Argiuum Argive Argivom Argivum Argivumque-->
-         <tok val="Argi[u]?[uo]?(m|vom|vum|ve|ue|vumque)"/>
+      <ana>
+         <tok val="Argiue"/>
+         <tok val="Argiuom"/>
+         <tok val="Argiuum"/>
+         <tok val="Argive"/>
+         <tok val="Argivom"/>
+         <tok val="Argivum"/>
+         <tok val="Argivumque"/>
+         <tok val="argiue"/>
+         <tok val="argiuom"/>
+         <tok val="argiuum"/>
+         <tok val="argive"/>
+         <tok val="argivom"/>
+         <tok val="argivum"/>
+         <tok val="argivumque"/>
          <lm>
             <l>Argivus</l>
             <m>a e - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Argiue Argive-->
-         <tok val="Argi[vu]e"/>
+      <ana>
+         <tok val="Argiue"/>
+         <tok val="Argive"/>
+         <tok val="argiue"/>
+         <tok val="argive"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">d e</m>
          </lm>
       </ana>
-      <ana><!--Argiui Argivi-->
-         <tok val="Argi[vu]i"/>
+      <ana>
+         <tok val="Argiui"/>
+         <tok val="Argivi"/>
+         <tok val="argiui"/>
+         <tok val="argivi"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -969,8 +1214,13 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Argiuis Argivis Argivisque-->
-         <tok val="Argi[vu]is(que)?"/>
+      <ana>
+         <tok val="Argiuis"/>
+         <tok val="Argivis"/>
+         <tok val="Argivisque"/>
+         <tok val="argiuis"/>
+         <tok val="argivis"/>
+         <tok val="argivisque"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -981,8 +1231,11 @@
             <m cert="0.166666666666666667">a e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Argiuo Argivo-->
-         <tok val="Argi[vu]o"/>
+      <ana>
+         <tok val="Argiuo"/>
+         <tok val="Argivo"/>
+         <tok val="argiuo"/>
+         <tok val="argivo"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -991,8 +1244,17 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Argiuom Argiuum Argivom Argivum Argivumque-->
-         <tok val="Argi[u]?[uo]?(m|vom|vum|vumque)"/>
+      <ana>
+         <tok val="Argiuom"/>
+         <tok val="Argiuum"/>
+         <tok val="Argivom"/>
+         <tok val="Argivum"/>
+         <tok val="Argivumque"/>
+         <tok val="argiuom"/>
+         <tok val="argiuum"/>
+         <tok val="argivom"/>
+         <tok val="argivum"/>
+         <tok val="argivumque"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.333333333333333333">a e - s - - - m a</m>
@@ -1000,16 +1262,28 @@
             <m cert="0.333333333333333333">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Argiuorum Argiuum Argivorum Argivum Argivumque-->
-         <tok val="Argi[vu]?(or|u|v)um(que)?"/>
+      <ana>
+         <tok val="Argiuorum"/>
+         <tok val="Argiuum"/>
+         <tok val="Argivorum"/>
+         <tok val="Argivum"/>
+         <tok val="Argivumque"/>
+         <tok val="argiuorum"/>
+         <tok val="argiuum"/>
+         <tok val="argivorum"/>
+         <tok val="argivum"/>
+         <tok val="argivumque"/>
          <lm>
             <l>Argivus</l>
             <m cert="0.5">a e - p - - - m g</m>
             <m cert="0.5">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Argiuos Argivos-->
-         <tok val="Argi[vu]os"/>
+      <ana>
+         <tok val="Argiuos"/>
+         <tok val="Argivos"/>
+         <tok val="argiuos"/>
+         <tok val="argivos"/>
          <lm>
             <l>Argivus</l>
             <m>a e - p - - - m a</m>
@@ -1017,6 +1291,7 @@
       </ana>
       <ana>
          <tok val="Argius"/>
+         <tok val="argius"/>
          <lm>
             <l>Argus</l>
             <m cert="0.333333333333333333">a e - s - - - n a c</m>
@@ -1024,8 +1299,11 @@
             <m cert="0.333333333333333333">a e - s - - - n v c</m>
          </lm>
       </ana>
-      <ana><!--Argiuus Argivus-->
-         <tok val="Argi[vu]us"/>
+      <ana>
+         <tok val="Argiuus"/>
+         <tok val="Argivus"/>
+         <tok val="argiuus"/>
+         <tok val="argivus"/>
          <lm>
             <l>Argivus</l>
             <m>a e - s - - - m n</m>
@@ -1033,13 +1311,17 @@
       </ana>
       <ana>
          <tok val="Argivas"/>
+         <tok val="argivas"/>
          <lm>
             <l>Argivus</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argo Argon-->
-         <tok val="Argo[n]?"/>
+      <ana>
+         <tok val="Argo"/>
+         <tok val="Argon"/>
+         <tok val="argo"/>
+         <tok val="argon"/>
          <lm cert="0.5">
             <l>Argo</l>
             <m cert="0.333333333333333333">n e - s - - - f a</m>
@@ -1056,15 +1338,23 @@
             <m cert="0.166666666666666667">a e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Argo Argoi Argon-->
-         <tok val="Argo[in]?"/>
+      <ana>
+         <tok val="Argo"/>
+         <tok val="Argoi"/>
+         <tok val="Argon"/>
+         <tok val="argo"/>
+         <tok val="argoi"/>
+         <tok val="argon"/>
          <lm>
             <l>Argo</l>
             <m>n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Argoa Argoaque-->
-         <tok val="Argoa(que)?"/>
+      <ana>
+         <tok val="Argoa"/>
+         <tok val="Argoaque"/>
+         <tok val="argoa"/>
+         <tok val="argoaque"/>
          <lm>
             <l>Argous</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1075,8 +1365,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Argoae Argoaeque-->
-         <tok val="Argoae(que)?"/>
+      <ana>
+         <tok val="Argoae"/>
+         <tok val="Argoaeque"/>
+         <tok val="argoae"/>
+         <tok val="argoaeque"/>
          <lm>
             <l>Argous</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1087,6 +1380,7 @@
       </ana>
       <ana>
          <tok val="Argoi"/>
+         <tok val="argoi"/>
          <lm>
             <l>Argous</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1097,6 +1391,7 @@
       </ana>
       <ana>
          <tok val="Argolica"/>
+         <tok val="argolica"/>
          <lm>
             <l>Argolicus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1107,8 +1402,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Argolicae Argolicaeque-->
-         <tok val="Argolicae(que)?"/>
+      <ana>
+         <tok val="Argolicae"/>
+         <tok val="Argolicaeque"/>
+         <tok val="argolicae"/>
+         <tok val="argolicaeque"/>
          <lm>
             <l>Argolicus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1117,22 +1415,31 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Argolicam Argolicamque-->
-         <tok val="Argolicam(que)?"/>
+      <ana>
+         <tok val="Argolicam"/>
+         <tok val="Argolicamque"/>
+         <tok val="argolicam"/>
+         <tok val="argolicamque"/>
          <lm>
             <l>Argolicus</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argolicas Argolicasque-->
-         <tok val="Argolicas(que)?"/>
+      <ana>
+         <tok val="Argolicas"/>
+         <tok val="Argolicasque"/>
+         <tok val="argolicas"/>
+         <tok val="argolicasque"/>
          <lm>
             <l>Argolicus</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argolici Argolicique-->
-         <tok val="Argolici(que)?"/>
+      <ana>
+         <tok val="Argolici"/>
+         <tok val="Argolicique"/>
+         <tok val="argolici"/>
+         <tok val="argolicique"/>
          <lm>
             <l>Argolicus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1141,8 +1448,11 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Argolicis Argolicisque-->
-         <tok val="Argolicis(que)?"/>
+      <ana>
+         <tok val="Argolicis"/>
+         <tok val="Argolicisque"/>
+         <tok val="argolicis"/>
+         <tok val="argolicisque"/>
          <lm>
             <l>Argolicus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1153,8 +1463,11 @@
             <m cert="0.166666666666666667">a e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Argolicos Argolicosque-->
-         <tok val="Argolicos(que)?"/>
+      <ana>
+         <tok val="Argolicos"/>
+         <tok val="Argolicosque"/>
+         <tok val="argolicos"/>
+         <tok val="argolicosque"/>
          <lm>
             <l>Argolicus</l>
             <m>a e - p - - - m a</m>
@@ -1162,6 +1475,7 @@
       </ana>
       <ana>
          <tok val="Argolicum"/>
+         <tok val="argolicum"/>
          <lm>
             <l>Argolicus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1172,8 +1486,11 @@
             <m cert="0.166666666666666667">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Argolicus Argolicusque-->
-         <tok val="Argolicus(que)?"/>
+      <ana>
+         <tok val="Argolicus"/>
+         <tok val="Argolicusque"/>
+         <tok val="argolicus"/>
+         <tok val="argolicusque"/>
          <lm>
             <l>Argolicus</l>
             <m>a e - s - - - m n</m>
@@ -1181,6 +1498,7 @@
       </ana>
       <ana>
          <tok val="Argolide"/>
+         <tok val="argolide"/>
          <lm>
             <l>Argolis</l>
             <m>n e - s - - - f b</m>
@@ -1188,6 +1506,7 @@
       </ana>
       <ana>
          <tok val="Argolides"/>
+         <tok val="argolides"/>
          <lm>
             <l>Argolis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -1197,6 +1516,7 @@
       </ana>
       <ana>
          <tok val="Argolidum"/>
+         <tok val="argolidum"/>
          <lm>
             <l>Argolis</l>
             <m>n e - p - - - f g</m>
@@ -1204,13 +1524,19 @@
       </ana>
       <ana>
          <tok val="Argolis"/>
+         <tok val="argolis"/>
          <lm>
             <l>Argolis</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Argon Argos Argosque-->
-         <tok val="Argo(s|n|sque)"/>
+      <ana>
+         <tok val="Argon"/>
+         <tok val="Argos"/>
+         <tok val="Argosque"/>
+         <tok val="argon"/>
+         <tok val="argos"/>
+         <tok val="argosque"/>
          <lm>
             <l>Argus</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -1219,6 +1545,7 @@
       </ana>
       <ana>
          <tok val="Argonautae"/>
+         <tok val="argonautae"/>
          <lm>
             <l>Argonautae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1227,6 +1554,7 @@
       </ana>
       <ana>
          <tok val="Argonautarum"/>
+         <tok val="argonautarum"/>
          <lm>
             <l>Argonautae</l>
             <m>n e - p - - - m g</m>
@@ -1234,6 +1562,7 @@
       </ana>
       <ana>
          <tok val="Argonautas"/>
+         <tok val="argonautas"/>
          <lm>
             <l>Argonautae</l>
             <m>n e - p - - - m a</m>
@@ -1241,6 +1570,7 @@
       </ana>
       <ana>
          <tok val="Argonautica"/>
+         <tok val="argonautica"/>
          <lm cert="0.5">
             <l>Argonautica</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1259,6 +1589,7 @@
       </ana>
       <ana>
          <tok val="Argonautis"/>
+         <tok val="argonautis"/>
          <lm>
             <l>Argonautae</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1267,6 +1598,7 @@
       </ana>
       <ana>
          <tok val="Argoo"/>
+         <tok val="argoo"/>
          <lm>
             <l>Argous</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1277,6 +1609,7 @@
       </ana>
       <ana>
          <tok val="Argoos"/>
+         <tok val="argoos"/>
          <lm>
             <l>Argous</l>
             <m>a e - p - - - m a</m>
@@ -1284,42 +1617,49 @@
       </ana>
       <ana>
          <tok val="Argous"/>
+         <tok val="argous"/>
          <lm>
             <l>Argous</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Arguar arguar-->
-         <tok val="[aA]rguar"/>
+      <ana>
+         <tok val="Arguar"/>
+         <tok val="arguar"/>
          <lm>
             <l>arguo</l>
             <m cert="0.5">v - 1 s f i p</m>
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Arguat arguat-->
-         <tok val="[aA]rguat"/>
+      <ana>
+         <tok val="Arguat"/>
+         <tok val="arguat"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Arguebant arguebant-->
-         <tok val="[aA]rguebant"/>
+      <ana>
+         <tok val="Arguebant"/>
+         <tok val="arguebant"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Arguebatur arguebatur arguebaturve-->
-         <tok val="[aA]rguebatur(ve)?"/>
+      <ana>
+         <tok val="Arguebatur"/>
+         <tok val="arguebatur"/>
+         <tok val="arguebaturve"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Arguens arguens-->
-         <tok val="[aA]rguens"/>
+      <ana>
+         <tok val="Arguens"/>
+         <tok val="arguens"/>
          <lm>
             <l>arguo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1331,8 +1671,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Arguere arguere-->
-         <tok val="[aA]rguere"/>
+      <ana>
+         <tok val="Arguere"/>
+         <tok val="arguere"/>
          <lm>
             <l>arguo</l>
             <m cert="0.333333333333333333">v - 3 p r i a</m>
@@ -1340,89 +1681,103 @@
             <m cert="0.333333333333333333">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Arguere arguere argueris-->
-         <tok val="[aA]rguer(e|is)"/>
+      <ana>
+         <tok val="Arguere"/>
+         <tok val="arguere"/>
+         <tok val="argueris"/>
          <lm>
             <l>arguo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Arguerim arguerim-->
-         <tok val="[aA]rguerim"/>
+      <ana>
+         <tok val="Arguerim"/>
+         <tok val="arguerim"/>
          <lm>
             <l>arguo</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Arguerint arguerint-->
-         <tok val="[aA]rguerint"/>
+      <ana>
+         <tok val="Arguerint"/>
+         <tok val="arguerint"/>
          <lm>
             <l>arguo</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--Arguet arguet-->
-         <tok val="[aA]rguet"/>
+      <ana>
+         <tok val="Arguet"/>
+         <tok val="arguet"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Argui argui-->
-         <tok val="[aA]rgui"/>
+      <ana>
+         <tok val="Argui"/>
+         <tok val="argui"/>
          <lm>
             <l>arguo</l>
             <m cert="0.5">v - - - p n p</m>
             <m cert="0.5">v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Arguimur arguimur-->
-         <tok val="[aA]rguimur"/>
+      <ana>
+         <tok val="Arguimur"/>
+         <tok val="arguimur"/>
          <lm>
             <l>arguo</l>
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Arguis arguis-->
-         <tok val="[aA]rguis"/>
+      <ana>
+         <tok val="Arguis"/>
+         <tok val="arguis"/>
          <lm>
             <l>arguo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Arguit arguit-->
-         <tok val="[aA]rguit"/>
+      <ana>
+         <tok val="Arguit"/>
+         <tok val="arguit"/>
          <lm>
             <l>arguo</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Arguitur arguitur arguiturque-->
-         <tok val="[aA]rguitur(que)?"/>
+      <ana>
+         <tok val="Arguitur"/>
+         <tok val="arguitur"/>
+         <tok val="arguiturque"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Argumentabatur argumentabatur-->
-         <tok val="[aA]rgumentabatur"/>
+      <ana>
+         <tok val="Argumentabatur"/>
+         <tok val="argumentabatur"/>
          <lm>
             <l>argumentor</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Argumentabimur argumentabimur-->
-         <tok val="[aA]rgumentabimur"/>
+      <ana>
+         <tok val="Argumentabimur"/>
+         <tok val="argumentabimur"/>
          <lm>
             <l>argumentor</l>
             <m>v - 1 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Argumentandi argumentandi-->
-         <tok val="[aA]rgumentandi"/>
+      <ana>
+         <tok val="Argumentandi"/>
+         <tok val="argumentandi"/>
          <lm>
             <l>argumentor</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1432,101 +1787,124 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Argumentari argumentari-->
-         <tok val="[aA]rgumentari"/>
+      <ana>
+         <tok val="Argumentari"/>
+         <tok val="argumentari"/>
          <lm>
             <l>argumentor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Argumentatio argumentatio-->
-         <tok val="[aA]rgumentatio"/>
+      <ana>
+         <tok val="Argumentatio"/>
+         <tok val="argumentatio"/>
          <lm>
             <l>argumentatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Argumentatione argumentatione-->
-         <tok val="[aA]rgumentatione"/>
+      <ana>
+         <tok val="Argumentatione"/>
+         <tok val="argumentatione"/>
          <lm>
             <l>argumentatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Argumentationem argumentationem-->
-         <tok val="[aA]rgumentationem"/>
+      <ana>
+         <tok val="Argumentationem"/>
+         <tok val="argumentationem"/>
          <lm>
             <l>argumentatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argumentationis argumentationis-->
-         <tok val="[aA]rgumentationis"/>
+      <ana>
+         <tok val="Argumentationis"/>
+         <tok val="argumentationis"/>
          <lm>
             <l>argumentatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Argumentatus argumentatus-->
-         <tok val="[aA]rgumentatus"/>
+      <ana>
+         <tok val="Argumentatus"/>
+         <tok val="argumentatus"/>
          <lm>
             <l>argumentor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Argumenti argumenti argumentique-->
-         <tok val="[aA]rgumenti(que)?"/>
+      <ana>
+         <tok val="Argumenti"/>
+         <tok val="argumenti"/>
+         <tok val="argumentique"/>
          <lm>
             <l>argumentum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Argumentis argumentis argumentisque-->
-         <tok val="[aA]rgumentis(que)?"/>
+      <ana>
+         <tok val="Argumentis"/>
+         <tok val="argumentis"/>
+         <tok val="argumentisque"/>
          <lm>
             <l>argumentum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Argumento argumento argumentoque argumentost argúmento-->
-         <tok val="[aA]rg[uú]mento(st|que)?"/>
+      <ana>
+         <tok val="Argumento"/>
+         <tok val="argumento"/>
+         <tok val="argumentoque"/>
+         <tok val="argumentost"/>
+         <tok val="argúmento"/>
          <lm>
             <l>argumentum</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Argumento argumento argumentoque argumentost-->
-         <tok val="[aA]rgumento(st|que)?"/>
+      <ana>
+         <tok val="Argumento"/>
+         <tok val="argumento"/>
+         <tok val="argumentoque"/>
+         <tok val="argumentost"/>
          <lm>
             <l>argumentum</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Argumentor argumentor-->
-         <tok val="[aA]rgumentor"/>
+      <ana>
+         <tok val="Argumentor"/>
+         <tok val="argumentor"/>
          <lm>
             <l>argumentor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Argumentosus argumentosus-->
-         <tok val="[aA]rgumentosus"/>
+      <ana>
+         <tok val="Argumentosus"/>
+         <tok val="argumentosus"/>
          <lm>
             <l>argumentosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Arguor arguor-->
-         <tok val="[aA]rguor"/>
+      <ana>
+         <tok val="Arguor"/>
+         <tok val="arguor"/>
          <lm>
             <l>arguo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Argus Argusque-->
-         <tok val="Argus(que)?"/>
+      <ana>
+         <tok val="Argus"/>
+         <tok val="Argusque"/>
+         <tok val="argus"/>
+         <tok val="argusque"/>
          <lm cert="0.5">
             <l>Argo</l>
             <m>n e - s - - - f g</m>
@@ -1537,8 +1915,11 @@
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Arguta Argvta arguta-->
-         <tok val="[Aa]rg[vu]ta"/>
+      <ana>
+         <tok val="Arguta"/>
+         <tok val="Argvta"/>
+         <tok val="arguta"/>
+         <tok val="argvta"/>
          <lm>
             <l>arguo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1549,8 +1930,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Argutae argutae-->
-         <tok val="[aA]rgutae"/>
+      <ana>
+         <tok val="Argutae"/>
+         <tok val="argutae"/>
          <lm>
             <l>arguo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1559,31 +1941,41 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Argutatio argutatio-->
-         <tok val="[aA]rgutatio"/>
+      <ana>
+         <tok val="Argutatio"/>
+         <tok val="argutatio"/>
          <lm>
             <l>argutatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Argutator argutator-->
-         <tok val="[aA]rgutator"/>
+      <ana>
+         <tok val="Argutator"/>
+         <tok val="argutator"/>
          <lm>
             <l>argutator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Argute Argutum argute arguteque argutum argutumque Argutumque-->
-         <tok val="[Aa]rgut(eq)?[u]?[m]?(que|e)?"/>
+      <ana>
+         <tok val="Argute"/>
+         <tok val="Argutum"/>
+         <tok val="Argutumque"/>
+         <tok val="argute"/>
+         <tok val="arguteque"/>
+         <tok val="argutum"/>
+         <tok val="argutumque"/>
          <lm>
             <l>arguo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Argute argute arguteque-->
-         <tok val="[aA]rgute(que)?"/>
+      <ana>
+         <tok val="Argute"/>
+         <tok val="argute"/>
+         <tok val="arguteque"/>
          <lm cert="0.5">
             <l>arguo</l>
             <m>v - - s r p p m v</m>
@@ -1593,8 +1985,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Arguti arguti-->
-         <tok val="[aA]rguti"/>
+      <ana>
+         <tok val="Arguti"/>
+         <tok val="arguti"/>
          <lm>
             <l>arguo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1603,23 +1996,26 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Argutiae argutiae-->
-         <tok val="[aA]rgutiae"/>
+      <ana>
+         <tok val="Argutiae"/>
+         <tok val="argutiae"/>
          <lm>
             <l>argutiae</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Argutias argutias-->
-         <tok val="[aA]rgutias"/>
+      <ana>
+         <tok val="Argutias"/>
+         <tok val="argutias"/>
          <lm>
             <l>argutiae</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Argutiola argutiola-->
-         <tok val="[aA]rgutiola"/>
+      <ana>
+         <tok val="Argutiola"/>
+         <tok val="argutiola"/>
          <lm>
             <l>argutiola</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1627,8 +2023,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Argutis argutis-->
-         <tok val="[aA]rgutis"/>
+      <ana>
+         <tok val="Argutis"/>
+         <tok val="argutis"/>
          <lm>
             <l>arguo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1639,8 +2036,9 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Arguto arguto-->
-         <tok val="[aA]rguto"/>
+      <ana>
+         <tok val="Arguto"/>
+         <tok val="arguto"/>
          <lm>
             <l>arguo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1649,29 +2047,39 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Argutor argutor-->
-         <tok val="[aA]rgutor"/>
+      <ana>
+         <tok val="Argutor"/>
+         <tok val="argutor"/>
          <lm>
             <l>argutor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Argutos argutos-->
-         <tok val="[aA]rgutos"/>
-         <lm>
+      <ana>
+         <tok val="Argutos"/>
+         <tok val="argutos"/>
+         <lm cert="0.5">
             <l>arguo</l>
             <m>v - - p r p p m a</m>
          </lm>
+         <lm cert="0.5">
+            <l>argutus</l>
+            <m>a - - p - - - m a</m>
+         </lm>
       </ana>
-      <ana><!--Argutulus argutulus-->
-         <tok val="[aA]rgutulus"/>
+      <ana>
+         <tok val="Argutulus"/>
+         <tok val="argutulus"/>
          <lm>
             <l>argutulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argutum argutum argutumque Argutumque-->
-         <tok val="[Aa]rgutum(que)?"/>
+      <ana>
+         <tok val="Argutum"/>
+         <tok val="Argutumque"/>
+         <tok val="argutum"/>
+         <tok val="argutumque"/>
          <lm>
             <l>arguo</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -1681,15 +2089,19 @@
             <m cert="0.2">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Argutum argutum argutumque-->
-         <tok val="[aA]rgutum(que)?"/>
+      <ana>
+         <tok val="Argutum"/>
+         <tok val="argutum"/>
+         <tok val="argutumque"/>
          <lm>
             <l>arguo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Argutus argutus argutust-->
-         <tok val="[aA]rgutus[t]?"/>
+      <ana>
+         <tok val="Argutus"/>
+         <tok val="argutus"/>
+         <tok val="argutust"/>
          <lm>
             <l>arguo</l>
             <m>v - - s r p p m n</m>
@@ -1697,6 +2109,7 @@
       </ana>
       <ana>
          <tok val="Argynne"/>
+         <tok val="argynne"/>
          <lm>
             <l>Argynnus</l>
             <m>n e - s - - - m v</m>
@@ -1704,6 +2117,7 @@
       </ana>
       <ana>
          <tok val="Argynni"/>
+         <tok val="argynni"/>
          <lm>
             <l>Argynnus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1713,13 +2127,15 @@
       </ana>
       <ana>
          <tok val="Argynnus"/>
+         <tok val="argynnus"/>
          <lm>
             <l>Argynnus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argyraspides argyraspides-->
-         <tok val="[aA]rgyraspides"/>
+      <ana>
+         <tok val="Argyraspides"/>
+         <tok val="argyraspides"/>
          <lm>
             <l>argyraspis</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -1730,15 +2146,19 @@
             <m cert="0.166666666666666667">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Argyre argyre-->
-         <tok val="[aA]rgyre"/>
+      <ana>
+         <tok val="Argyre"/>
+         <tok val="argyre"/>
          <lm>
             <l>argyros</l>
             <m>n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Argyripa Argyrippa-->
-         <tok val="Argyri[p]?pa"/>
+      <ana>
+         <tok val="Argyripa"/>
+         <tok val="Argyrippa"/>
+         <tok val="argyripa"/>
+         <tok val="argyrippa"/>
          <lm>
             <l>Argyrippa</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1748,6 +2168,7 @@
       </ana>
       <ana>
          <tok val="Argyripae"/>
+         <tok val="argyripae"/>
          <lm>
             <l>Argyrippa</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1758,6 +2179,7 @@
       </ana>
       <ana>
          <tok val="Argyripam"/>
+         <tok val="argyripam"/>
          <lm>
             <l>Argyrippa</l>
             <m>n e - s - - - f a</m>
@@ -1765,6 +2187,7 @@
       </ana>
       <ana>
          <tok val="Argyrippe"/>
+         <tok val="argyrippe"/>
          <lm>
             <l>Argyrippus</l>
             <m>n e - s - - - m v</m>
@@ -1772,6 +2195,7 @@
       </ana>
       <ana>
          <tok val="Argyrippo"/>
+         <tok val="argyrippo"/>
          <lm>
             <l>Argyrippus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1780,6 +2204,7 @@
       </ana>
       <ana>
          <tok val="Argyrippum"/>
+         <tok val="argyrippum"/>
          <lm>
             <l>Argyrippus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1788,13 +2213,16 @@
       </ana>
       <ana>
          <tok val="Argyrippus"/>
+         <tok val="argyrippus"/>
          <lm>
             <l>Argyrippus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Argyritis argyritin argyritis-->
-         <tok val="[aA]rgyriti[sn]"/>
+      <ana>
+         <tok val="Argyritis"/>
+         <tok val="argyritin"/>
+         <tok val="argyritis"/>
          <lm>
             <l>argyritis</l>
             <m>n - - s - - - f n</m>
@@ -1842,8 +2270,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--argentari ARGENTARI-->
-         <tok val="(ARGENTARI|argentari)"/>
+      <ana>
+         <tok val="ARGENTARI"/>
+         <tok val="argentari"/>
          <lm>
             <l>argentarius</l>
             <m>n - - s - - - m v</m>
@@ -1916,8 +2345,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--argentei argenteique-->
-         <tok val="argentei(que)?"/>
+      <ana>
+         <tok val="argentei"/>
+         <tok val="argenteique"/>
          <lm>
             <l>argenteus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1926,8 +2356,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--argenteis argenteisque-->
-         <tok val="argenteis(que)?"/>
+      <ana>
+         <tok val="argenteis"/>
+         <tok val="argenteisque"/>
          <lm>
             <l>argenteus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1938,8 +2369,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--argenteos argenteosque-->
-         <tok val="argenteos(que)?"/>
+      <ana>
+         <tok val="argenteos"/>
+         <tok val="argenteosque"/>
          <lm>
             <l>argenteus</l>
             <m>a - - p - - - m a</m>
@@ -2094,8 +2526,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--argillam argillamque-->
-         <tok val="argillam(que)?"/>
+      <ana>
+         <tok val="argillam"/>
+         <tok val="argillamque"/>
          <lm>
             <l>argilla</l>
             <m>n - - s - - - f a</m>
@@ -2163,8 +2596,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--arguan arguas-->
-         <tok val="argua[sn]"/>
+      <ana>
+         <tok val="arguan"/>
+         <tok val="arguas"/>
          <lm>
             <l>arguo</l>
             <m>v - 2 s p s a</m>
@@ -2184,8 +2618,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--arguare arguaris-->
-         <tok val="arguar(is|e)"/>
+      <ana>
+         <tok val="arguare"/>
+         <tok val="arguaris"/>
          <lm>
             <l>arguo</l>
             <m>v - 2 s p s p</m>
@@ -2233,8 +2668,9 @@
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--arguebat Arguebat-->
-         <tok val="[Aa]rguebat"/>
+      <ana>
+         <tok val="Arguebat"/>
+         <tok val="arguebat"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 s i i a</m>
@@ -2276,8 +2712,9 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--arguendi arguendique-->
-         <tok val="arguendi(que)?"/>
+      <ana>
+         <tok val="arguendi"/>
+         <tok val="arguendique"/>
          <lm>
             <l>arguo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -2326,8 +2763,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--arguente arguenti-->
-         <tok val="arguent[ie]"/>
+      <ana>
+         <tok val="arguente"/>
+         <tok val="arguenti"/>
          <lm>
             <l>arguo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -2353,8 +2791,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--arguentes arguentis-->
-         <tok val="arguent[ie]s"/>
+      <ana>
+         <tok val="arguentes"/>
+         <tok val="arguentis"/>
          <lm>
             <l>arguo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2370,8 +2809,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--arguentibus arguentibusque-->
-         <tok val="arguentibus(que)?"/>
+      <ana>
+         <tok val="arguentibus"/>
+         <tok val="arguentibusque"/>
          <lm>
             <l>arguo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -2449,8 +2889,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--argueret argueretque-->
-         <tok val="argueret(que)?"/>
+      <ana>
+         <tok val="argueret"/>
+         <tok val="argueretque"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 s i s a</m>
@@ -2695,8 +3136,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--argumentare argumentaris-->
-         <tok val="argumentar(is|e)"/>
+      <ana>
+         <tok val="argumentare"/>
+         <tok val="argumentaris"/>
          <lm>
             <l>argumentor</l>
             <m>v - 2 s p i p</m>
@@ -2876,8 +3318,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--arguont arguunt-->
-         <tok val="argu[uo]nt"/>
+      <ana>
+         <tok val="arguont"/>
+         <tok val="arguunt"/>
          <lm>
             <l>arguo</l>
             <m>v - 3 p p i a</m>
@@ -2931,15 +3374,17 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--argutare argutaris-->
-         <tok val="argutar(is|e)"/>
+      <ana>
+         <tok val="argutare"/>
+         <tok val="argutaris"/>
          <lm>
             <l>argutor</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--argutari argutarier-->
-         <tok val="argutari(er)?"/>
+      <ana>
+         <tok val="argutari"/>
+         <tok val="argutarier"/>
          <lm>
             <l>argutor</l>
             <m>v - - - p n p</m>
@@ -3091,8 +3536,9 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--argutissime argutissimeque-->
-         <tok val="argutissime(que)?"/>
+      <ana>
+         <tok val="argutissime"/>
+         <tok val="argutissimeque"/>
          <lm>
             <l>argutus</l>
             <m cert="0.5">a - - s - - - m v s</m>
@@ -3113,8 +3559,9 @@
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--argutius argutiusque-->
-         <tok val="argutius(que)?"/>
+      <ana>
+         <tok val="argutius"/>
+         <tok val="argutiusque"/>
          <lm>
             <l>argutus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -3242,15 +3689,9 @@
             <m cert="0.166666666666666667">a - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--argutos Argutos-->
-         <tok val="[Aa]rgutos"/>
-         <lm>
-            <l>argutus</l>
-            <m>a - - p - - - m a</m>
-         </lm>
-      </ana>
-      <ana><!--argutum argutumque-->
-         <tok val="argutum(que)?"/>
+      <ana>
+         <tok val="argutum"/>
+         <tok val="argutumque"/>
          <lm>
             <l>argutus</l>
             <m cert="0.333333333333333333">a - - s - - - m a</m>
@@ -3258,8 +3699,9 @@
             <m cert="0.333333333333333333">a - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--argutus argutust-->
-         <tok val="argutus[t]?"/>
+      <ana>
+         <tok val="argutus"/>
+         <tok val="argutust"/>
          <lm>
             <l>argutus</l>
             <m>a - - s - - - m n</m>
@@ -3293,6 +3735,7 @@
       </ana>
       <ana>
          <tok val="Argutumque"/>
+         <tok val="argutumque"/>
          <lm>
             <l>arguo</l>
             <m>n - - s - - - n n</m>

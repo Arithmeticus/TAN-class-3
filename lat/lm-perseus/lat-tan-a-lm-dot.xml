@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdot">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dot">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dot</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dot.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DOT</tok-starts-with>
       <tok-starts-with>Dot</tok-starts-with>
       <tok-starts-with>dot</tok-starts-with>
       <tok-starts-with>dót</tok-starts-with>
-      <ana><!--DOTIBUS Dotibus dotibus dotibusque-->
-         <tok val="[dD]?(otibus)?(que|DOTIBUS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:08.284-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:08.284-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dot.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DOTIBUS"/>
+         <tok val="Dotibus"/>
+         <tok val="dotibus"/>
+         <tok val="dotibusque"/>
          <lm>
             <l>dos</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Dotale dotale-->
-         <tok val="[dD]otale"/>
+      <ana>
+         <tok val="Dotale"/>
+         <tok val="dotale"/>
          <lm>
             <l>dotalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -53,24 +65,32 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Dotalem dotalem-->
-         <tok val="[dD]otalem"/>
+      <ana>
+         <tok val="Dotalem"/>
+         <tok val="dotalem"/>
          <lm>
             <l>dotalis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Dotales Dotalis dotales dotalesque dotalis dotalisque-->
-         <tok val="[dD]otal[ie]s(que)?"/>
+      <ana>
+         <tok val="Dotales"/>
+         <tok val="Dotalis"/>
+         <tok val="dotales"/>
+         <tok val="dotalesque"/>
+         <tok val="dotalis"/>
+         <tok val="dotalisque"/>
          <lm>
             <l>dotalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dotales dotales dotalesque-->
-         <tok val="[dD]otales(que)?"/>
+      <ana>
+         <tok val="Dotales"/>
+         <tok val="dotales"/>
+         <tok val="dotalesque"/>
          <lm>
             <l>dotalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -79,8 +99,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Dotalia dotalia dotaliaque-->
-         <tok val="[dD]otalia(que)?"/>
+      <ana>
+         <tok val="Dotalia"/>
+         <tok val="dotalia"/>
+         <tok val="dotaliaque"/>
          <lm>
             <l>dotalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -88,8 +110,10 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Dotalis dotalis dotalisque-->
-         <tok val="[dD]otalis(que)?"/>
+      <ana>
+         <tok val="Dotalis"/>
+         <tok val="dotalis"/>
+         <tok val="dotalisque"/>
          <lm>
             <l>dotalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -103,13 +127,15 @@
       </ana>
       <ana>
          <tok val="Dotari"/>
+         <tok val="dotari"/>
          <lm>
             <l>doto</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Dotata dotata-->
-         <tok val="[dD]otata"/>
+      <ana>
+         <tok val="Dotata"/>
+         <tok val="dotata"/>
          <lm>
             <l>doto</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -120,8 +146,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Dotatae dotatae-->
-         <tok val="[dD]otatae"/>
+      <ana>
+         <tok val="Dotatae"/>
+         <tok val="dotatae"/>
          <lm>
             <l>doto</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -130,8 +157,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Dotatissima dotatissima-->
-         <tok val="[dD]otatissima"/>
+      <ana>
+         <tok val="Dotatissima"/>
+         <tok val="dotatissima"/>
          <lm>
             <l>doto</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -142,22 +170,26 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Dotatus dotatus-->
-         <tok val="[dD]otatus"/>
+      <ana>
+         <tok val="Dotatus"/>
+         <tok val="dotatus"/>
          <lm>
             <l>doto</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Dote dote dóte-->
-         <tok val="[dD]?(o|dó)te"/>
+      <ana>
+         <tok val="Dote"/>
+         <tok val="dote"/>
+         <tok val="dóte"/>
          <lm>
             <l>dos</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Dotem dotem-->
-         <tok val="[dD]otem"/>
+      <ana>
+         <tok val="Dotem"/>
+         <tok val="dotem"/>
          <lm cert="0.5">
             <l>doto</l>
             <m>v - 1 s p s a</m>
@@ -167,8 +199,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dotes dotes-->
-         <tok val="[dD]otes"/>
+      <ana>
+         <tok val="Dotes"/>
+         <tok val="dotes"/>
          <lm cert="0.5">
             <l>dos</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -179,47 +212,56 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Dotes Dotis dotes dotis dotisque-->
-         <tok val="[Dd]ot[ie]s(que)?"/>
+      <ana>
+         <tok val="Dotes"/>
+         <tok val="Dotis"/>
+         <tok val="dotes"/>
+         <tok val="dotis"/>
+         <tok val="dotisque"/>
          <lm>
             <l>dos</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Doti doti-->
-         <tok val="[dD]oti"/>
+      <ana>
+         <tok val="Doti"/>
+         <tok val="doti"/>
          <lm>
             <l>dos</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Dotis dotis dotisque-->
-         <tok val="[dD]otis(que)?"/>
+      <ana>
+         <tok val="Dotis"/>
+         <tok val="dotis"/>
+         <tok val="dotisque"/>
          <lm>
             <l>dos</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Dotium dotium dotum-->
-         <tok val="[dD]ot[i]?um"/>
+      <ana>
+         <tok val="Dotium"/>
+         <tok val="dotium"/>
+         <tok val="dotum"/>
          <lm>
             <l>dos</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Doto Dotoque-->
-         <tok val="Doto(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Doto"/>
+         <tok val="Dotoque"/>
+         <tok val="doto"/>
+         <tok val="dotoque"/>
+         <lm cert="0.5">
             <l>Doto</l>
             <m cert="0.25">n e - s - - - f a</m>
             <m cert="0.25">n e - s - - - f n</m>
             <m cert="0.25">n e - s - - - f b</m>
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
-      </ana>
-      <ana><!--Doto Dotoque doto-->
-         <tok val="[dD]oto(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>doto</l>
             <m>v - 1 s p i a</m>
          </lm>
@@ -306,8 +348,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--dotatam dotátam-->
-         <tok val="dot[áa]tam"/>
+      <ana>
+         <tok val="dotatam"/>
+         <tok val="dotátam"/>
          <lm>
             <l>doto</l>
             <m>v - - s r p p f a</m>
@@ -356,8 +399,10 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--dotauit dotavit dotavitque-->
-         <tok val="dota[vu]it(que)?"/>
+      <ana>
+         <tok val="dotauit"/>
+         <tok val="dotavit"/>
+         <tok val="dotavitque"/>
          <lm>
             <l>doto</l>
             <m>v - 3 s r i a</m>

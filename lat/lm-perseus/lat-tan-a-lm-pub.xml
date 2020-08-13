@@ -1,43 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspub">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:pub">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to pub</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-pub.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PUB</tok-starts-with>
       <tok-starts-with>Pub</tok-starts-with>
       <tok-starts-with>pub</tok-starts-with>
       <tok-starts-with>púb</tok-starts-with>
-      <ana><!--PUBLICA Publica publica publican publicaque publicaue-->
-         <tok val="[pP]?(ublica)?[q]?(ue|n|PUBLICA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:41:49.326-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:41:49.326-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-pub.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PUBLICA"/>
+         <tok val="Publica"/>
+         <tok val="publica"/>
+         <tok val="publican"/>
+         <tok val="publicaque"/>
+         <tok val="publicaue"/>
          <lm cert="0.5">
             <l>publico</l>
             <m>v - 2 s p m a</m>
@@ -52,8 +65,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--PUBLICAE Publicae publicae publicaeque-->
-         <tok val="[pP]?(ublicae)?(que|PUBLICAE)?"/>
+      <ana>
+         <tok val="PUBLICAE"/>
+         <tok val="Publicae"/>
+         <tok val="publicae"/>
+         <tok val="publicaeque"/>
          <lm>
             <l>publicus</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
@@ -61,44 +77,74 @@
             <m cert="0.333333333333333333">a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--PUBLICAE Publicae publicae publicaeque publicai-->
-         <tok val="[pP]?(ublica)?(e|i|eque|PUBLICAE)"/>
+      <ana>
+         <tok val="PUBLICAE"/>
+         <tok val="Publicae"/>
+         <tok val="publicae"/>
+         <tok val="publicaeque"/>
+         <tok val="publicai"/>
          <lm>
             <l>publicus</l>
             <m>a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--PUBLICE Publice publice publiceque publicius-->
-         <tok val="[pP]?(ublic)?[e]?(que|ius|PUBLICE)?"/>
+      <ana>
+         <tok val="PUBLICE"/>
+         <tok val="Publice"/>
+         <tok val="publice"/>
+         <tok val="publiceque"/>
+         <tok val="publicius"/>
          <lm>
             <l>publicus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--PUBLICE Publice Publicum publice publiceque publicum publicumst publicumue publicumque-->
-         <tok val="[pP]?(ublic)?(um)?[q]?(ue|st|e|eque|PUBLICE)?"/>
+      <ana>
+         <tok val="PUBLICE"/>
+         <tok val="Publice"/>
+         <tok val="Publicum"/>
+         <tok val="publice"/>
+         <tok val="publiceque"/>
+         <tok val="publicum"/>
+         <tok val="publicumque"/>
+         <tok val="publicumst"/>
+         <tok val="publicumue"/>
          <lm>
             <l>publicus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--PUBLICE Publice publice publiceque-->
-         <tok val="[pP]?(ublice)?(que|PUBLICE)?"/>
+      <ana>
+         <tok val="PUBLICE"/>
+         <tok val="Publice"/>
+         <tok val="publice"/>
+         <tok val="publiceque"/>
          <lm>
             <l>publicus</l>
             <m cert="0.5">a - - s - - - m v</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--PUBLICO Publico publico publicone publicoque publicoue publicó-->
-         <tok val="[pP]?(ublic)?[o]?[q]?[un]?(e|ó|PUBLICO)?"/>
+      <ana>
+         <tok val="PUBLICO"/>
+         <tok val="Publico"/>
+         <tok val="publico"/>
+         <tok val="publicone"/>
+         <tok val="publicoque"/>
+         <tok val="publicoue"/>
+         <tok val="publicó"/>
          <lm>
             <l>publicus</l>
             <m>a - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--PUBLICO Publico publico publicone publicoque publicoue-->
-         <tok val="[pP]?(ublico)?[q]?[un]?(e|PUBLICO)?"/>
+      <ana>
+         <tok val="PUBLICO"/>
+         <tok val="Publico"/>
+         <tok val="publico"/>
+         <tok val="publicone"/>
+         <tok val="publicoque"/>
+         <tok val="publicoue"/>
          <lm cert="0.5">
             <l>publicus</l>
             <m cert="0.2">n - - s - - - m b</m>
@@ -112,22 +158,29 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pube pube puben pubere-->
-         <tok val="[pP]ube(n|re)?"/>
+      <ana>
+         <tok val="Pube"/>
+         <tok val="pube"/>
+         <tok val="puben"/>
+         <tok val="pubere"/>
          <lm>
             <l>pubes</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Pubem pubem pubemque puberem-->
-         <tok val="[pP]ube(re)?m(que)?"/>
+      <ana>
+         <tok val="Pubem"/>
+         <tok val="pubem"/>
+         <tok val="pubemque"/>
+         <tok val="puberem"/>
          <lm>
             <l>pubes</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pubens pubens-->
-         <tok val="[pP]ubens"/>
+      <ana>
+         <tok val="Pubens"/>
+         <tok val="pubens"/>
          <lm>
             <l>pubens</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -139,16 +192,21 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Pubentes pubentes pubentesque pubentis-->
-         <tok val="[pP]ubent[ei]s(que)?"/>
+      <ana>
+         <tok val="Pubentes"/>
+         <tok val="pubentes"/>
+         <tok val="pubentesque"/>
+         <tok val="pubentis"/>
          <lm>
             <l>pubens</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pubentes pubentes pubentesque-->
-         <tok val="[pP]ubentes(que)?"/>
+      <ana>
+         <tok val="Pubentes"/>
+         <tok val="pubentes"/>
+         <tok val="pubentesque"/>
          <lm>
             <l>pubens</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -157,8 +215,13 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Puber Pubes puben puber pubes pubesque-->
-         <tok val="[Pp]ube(s|r|n|sque)"/>
+      <ana>
+         <tok val="Puber"/>
+         <tok val="Pubes"/>
+         <tok val="puben"/>
+         <tok val="puber"/>
+         <tok val="pubes"/>
+         <tok val="pubesque"/>
          <lm>
             <l>pubes</l>
             <m cert="0.5">a - - s - - - f n</m>
@@ -167,6 +230,7 @@
       </ana>
       <ana>
          <tok val="Puberes"/>
+         <tok val="puberes"/>
          <lm>
             <l>pubes</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -174,8 +238,13 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Puberes Pubes puben puberes pubes pubesque-->
-         <tok val="[pP]ube(re)?(s|n|sque)"/>
+      <ana>
+         <tok val="Puberes"/>
+         <tok val="Pubes"/>
+         <tok val="puben"/>
+         <tok val="puberes"/>
+         <tok val="pubes"/>
+         <tok val="pubesque"/>
          <lm>
             <l>pubes</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -183,15 +252,18 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Puberi puberi-->
-         <tok val="[pP]uberi"/>
+      <ana>
+         <tok val="Puberi"/>
+         <tok val="puberi"/>
          <lm>
             <l>pubes</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Puberi puberi pubi-->
-         <tok val="[pP]ub(er|)i"/>
+      <ana>
+         <tok val="Puberi"/>
+         <tok val="puberi"/>
+         <tok val="pubi"/>
          <lm>
             <l>pubes</l>
             <m>n - - s - - - f d</m>
@@ -199,43 +271,53 @@
       </ana>
       <ana>
          <tok val="Puberibus"/>
+         <tok val="puberibus"/>
          <lm>
             <l>pubes</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Puberibus puberibus puberibusque-->
-         <tok val="[pP]uberibus(que)?"/>
+      <ana>
+         <tok val="Puberibus"/>
+         <tok val="puberibus"/>
+         <tok val="puberibusque"/>
          <lm>
             <l>pubes</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Pubertas pubertas-->
-         <tok val="[pP]ubertas"/>
+      <ana>
+         <tok val="Pubertas"/>
+         <tok val="pubertas"/>
          <lm>
             <l>pubertas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Pubes puben pubes pubesque pubis-->
-         <tok val="[pP]ub[e]?(s|n|is|esque)"/>
+      <ana>
+         <tok val="Pubes"/>
+         <tok val="puben"/>
+         <tok val="pubes"/>
+         <tok val="pubesque"/>
+         <tok val="pubis"/>
          <lm>
             <l>pubes</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Pubescant pubescant-->
-         <tok val="[pP]ubescant"/>
+      <ana>
+         <tok val="Pubescant"/>
+         <tok val="pubescant"/>
          <lm>
             <l>pubesco</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Pubescens pubescens-->
-         <tok val="[pP]ubescens"/>
+      <ana>
+         <tok val="Pubescens"/>
+         <tok val="pubescens"/>
          <lm>
             <l>pubesco</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -247,8 +329,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Pubescere pubescere-->
-         <tok val="[pP]ubescere"/>
+      <ana>
+         <tok val="Pubescere"/>
+         <tok val="pubescere"/>
          <lm>
             <l>pubesco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -257,22 +340,25 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Pubescit pubescit-->
-         <tok val="[pP]ubescit"/>
+      <ana>
+         <tok val="Pubescit"/>
+         <tok val="pubescit"/>
          <lm>
             <l>pubesco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pubesco pubesco-->
-         <tok val="[pP]ubesco"/>
+      <ana>
+         <tok val="Pubesco"/>
+         <tok val="pubesco"/>
          <lm>
             <l>pubesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pubescunt pubescunt-->
-         <tok val="[pP]ubescunt"/>
+      <ana>
+         <tok val="Pubescunt"/>
+         <tok val="pubescunt"/>
          <lm>
             <l>pubesco</l>
             <m>v - 3 p p i a</m>
@@ -280,13 +366,17 @@
       </ana>
       <ana>
          <tok val="Publi"/>
+         <tok val="publi"/>
          <lm>
             <l>Publius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Publi Publii-->
-         <tok val="Publi[i]?"/>
+      <ana>
+         <tok val="Publi"/>
+         <tok val="Publii"/>
+         <tok val="publi"/>
+         <tok val="publii"/>
          <lm>
             <l>Publius</l>
             <m>n e - s - - - m g</m>
@@ -294,20 +384,25 @@
       </ana>
       <ana>
          <tok val="Publianus"/>
+         <tok val="publianus"/>
          <lm>
             <l>Publianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Publicam publicam publicamne publicamque-->
-         <tok val="[pP]ublicam(ne|que)?"/>
+      <ana>
+         <tok val="Publicam"/>
+         <tok val="publicam"/>
+         <tok val="publicamne"/>
+         <tok val="publicamque"/>
          <lm>
             <l>publicus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Publicani publicani-->
-         <tok val="[pP]ublicani"/>
+      <ana>
+         <tok val="Publicani"/>
+         <tok val="publicani"/>
          <lm>
             <l>publicanus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -319,8 +414,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Publicanis publicanis-->
-         <tok val="[pP]ublicanis"/>
+      <ana>
+         <tok val="Publicanis"/>
+         <tok val="publicanis"/>
          <lm>
             <l>publicanus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -333,8 +429,9 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Publicano publicano-->
-         <tok val="[pP]ublicano"/>
+      <ana>
+         <tok val="Publicano"/>
+         <tok val="publicano"/>
          <lm>
             <l>publicanus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -345,16 +442,18 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Publicanus publicanus-->
-         <tok val="[pP]ublicanus"/>
+      <ana>
+         <tok val="Publicanus"/>
+         <tok val="publicanus"/>
          <lm>
             <l>publicanus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Publicare publicare-->
-         <tok val="[pP]ublicare"/>
+      <ana>
+         <tok val="Publicare"/>
+         <tok val="publicare"/>
          <lm>
             <l>publico</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -362,15 +461,20 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Publicarum publicarum publicarumque-->
-         <tok val="[pP]ublicarum(que)?"/>
+      <ana>
+         <tok val="Publicarum"/>
+         <tok val="publicarum"/>
+         <tok val="publicarumque"/>
          <lm>
             <l>publicus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Publicas publican publicas publicasque-->
-         <tok val="[pP]ublica(s|n|sque)"/>
+      <ana>
+         <tok val="Publicas"/>
+         <tok val="publican"/>
+         <tok val="publicas"/>
+         <tok val="publicasque"/>
          <lm cert="0.5">
             <l>publico</l>
             <m>v - 2 s p i a</m>
@@ -380,31 +484,35 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Publicat publicat-->
-         <tok val="[pP]ublicat"/>
+      <ana>
+         <tok val="Publicat"/>
+         <tok val="publicat"/>
          <lm>
             <l>publico</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Publicatio publicatio-->
-         <tok val="[pP]ublicatio"/>
+      <ana>
+         <tok val="Publicatio"/>
+         <tok val="publicatio"/>
          <lm>
             <l>publicatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Publicatione publicatione-->
-         <tok val="[pP]ublicatione"/>
+      <ana>
+         <tok val="Publicatione"/>
+         <tok val="publicatione"/>
          <lm>
             <l>publicatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Publici publici-->
-         <tok val="[pP]ublici"/>
-         <lm>
+      <ana>
+         <tok val="Publici"/>
+         <tok val="publici"/>
+         <lm cert="0.5">
             <l>publicus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
             <m cert="0.142857142857142857">n - - p - - - m v</m>
@@ -414,16 +522,14 @@
             <m cert="0.142857142857142857">a - - p - - - m n</m>
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Publici"/>
-         <lm>
+         <lm cert="0.5">
             <l>Publicius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
       <ana>
          <tok val="Publicia"/>
+         <tok val="publicia"/>
          <lm>
             <l>Publicius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -436,6 +542,7 @@
       </ana>
       <ana>
          <tok val="Publiciana"/>
+         <tok val="publiciana"/>
          <lm>
             <l>Publicianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -448,6 +555,7 @@
       </ana>
       <ana>
          <tok val="Publicianae"/>
+         <tok val="publicianae"/>
          <lm>
             <l>Publicianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -458,6 +566,7 @@
       </ana>
       <ana>
          <tok val="Publicianam"/>
+         <tok val="publicianam"/>
          <lm>
             <l>Publicianus</l>
             <m>a e - s - - - f a</m>
@@ -465,6 +574,7 @@
       </ana>
       <ana>
          <tok val="Publicianum"/>
+         <tok val="publicianum"/>
          <lm>
             <l>Publicianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -477,6 +587,7 @@
       </ana>
       <ana>
          <tok val="Publicianus"/>
+         <tok val="publicianus"/>
          <lm>
             <l>Publicianus</l>
             <m>a e - s - - - m n</m>
@@ -484,6 +595,7 @@
       </ana>
       <ana>
          <tok val="Publicii"/>
+         <tok val="publicii"/>
          <lm>
             <l>Publicius</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -497,6 +609,7 @@
       </ana>
       <ana>
          <tok val="Publiciis"/>
+         <tok val="publiciis"/>
          <lm>
             <l>Publicius</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -511,6 +624,7 @@
       </ana>
       <ana>
          <tok val="Publicio"/>
+         <tok val="publicio"/>
          <lm>
             <l>Publicius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -523,14 +637,18 @@
       </ana>
       <ana>
          <tok val="Publicios"/>
+         <tok val="publicios"/>
          <lm>
             <l>Publicius</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Publicis publicis publicisne publicisque-->
-         <tok val="[pP]ublicis(ne|que)?"/>
+      <ana>
+         <tok val="Publicis"/>
+         <tok val="publicis"/>
+         <tok val="publicisne"/>
+         <tok val="publicisque"/>
          <lm>
             <l>publicus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -543,15 +661,19 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Publicitus publicitus-->
-         <tok val="[pP]ublicitus"/>
+      <ana>
+         <tok val="Publicitus"/>
+         <tok val="publicitus"/>
          <lm>
             <l>publicitus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Publicium Publiciumque-->
-         <tok val="Publicium(que)?"/>
+      <ana>
+         <tok val="Publicium"/>
+         <tok val="Publiciumque"/>
+         <tok val="publicium"/>
+         <tok val="publiciumque"/>
          <lm>
             <l>Publicius</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -566,6 +688,7 @@
       </ana>
       <ana>
          <tok val="Publicius"/>
+         <tok val="publicius"/>
          <lm cert="0.5">
             <l>Publicius</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -573,20 +696,15 @@
          </lm>
          <lm cert="0.5">
             <l>publicus</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Publicius publicius-->
-         <tok val="[pP]ublicius"/>
-         <lm>
-            <l>publicus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
       <ana>
          <tok val="Publicola"/>
+         <tok val="publicola"/>
          <lm>
             <l>Poplicula</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -596,6 +714,7 @@
       </ana>
       <ana>
          <tok val="Publicolae"/>
+         <tok val="publicolae"/>
          <lm>
             <l>Poplicula</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -606,6 +725,7 @@
       </ana>
       <ana>
          <tok val="Publicolam"/>
+         <tok val="publicolam"/>
          <lm>
             <l>Poplicula</l>
             <m>n e - s - - - m a</m>
@@ -613,6 +733,7 @@
       </ana>
       <ana>
          <tok val="Publicolarum"/>
+         <tok val="publicolarum"/>
          <lm>
             <l>Poplicula</l>
             <m>n e - p - - - m g</m>
@@ -620,6 +741,7 @@
       </ana>
       <ana>
          <tok val="Publicolas"/>
+         <tok val="publicolas"/>
          <lm>
             <l>Poplicula</l>
             <m>n e - p - - - m a</m>
@@ -627,14 +749,22 @@
       </ana>
       <ana>
          <tok val="Publicolis"/>
+         <tok val="publicolis"/>
          <lm>
             <l>Poplicula</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Publicorum Publicum publicorum publicorumque publicum publicumst publicumue publicumque-->
-         <tok val="[pP]ublic(or)?um[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Publicorum"/>
+         <tok val="Publicum"/>
+         <tok val="publicorum"/>
+         <tok val="publicorumque"/>
+         <tok val="publicum"/>
+         <tok val="publicumque"/>
+         <tok val="publicumst"/>
+         <tok val="publicumue"/>
          <lm>
             <l>publicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -642,15 +772,24 @@
             <m cert="0.333333333333333333">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Publicum publicum publicumst publicumue públicum publicumque-->
-         <tok val="[pP]?(u|pú)blicum[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Publicum"/>
+         <tok val="publicum"/>
+         <tok val="publicumque"/>
+         <tok val="publicumst"/>
+         <tok val="publicumue"/>
+         <tok val="públicum"/>
          <lm>
             <l>publicus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Publicum publicum publicumst publicumue publicumque-->
-         <tok val="[pP]ublicum[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Publicum"/>
+         <tok val="publicum"/>
+         <tok val="publicumque"/>
+         <tok val="publicumst"/>
+         <tok val="publicumue"/>
          <lm>
             <l>publicus</l>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
@@ -658,8 +797,10 @@
             <m cert="0.333333333333333333">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Publicus publicus publicusque-->
-         <tok val="[pP]ublicus(que)?"/>
+      <ana>
+         <tok val="Publicus"/>
+         <tok val="publicus"/>
+         <tok val="publicusque"/>
          <lm>
             <l>publicus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -668,6 +809,7 @@
       </ana>
       <ana>
          <tok val="Publii"/>
+         <tok val="publii"/>
          <lm>
             <l>Publius</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -676,14 +818,18 @@
       </ana>
       <ana>
          <tok val="Publiis"/>
+         <tok val="publiis"/>
          <lm>
             <l>Publius</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Publili Publilii-->
-         <tok val="Publili[i]?"/>
+      <ana>
+         <tok val="Publili"/>
+         <tok val="Publilii"/>
+         <tok val="publili"/>
+         <tok val="publilii"/>
          <lm>
             <l>Publilius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -692,6 +838,7 @@
       </ana>
       <ana>
          <tok val="Publilia"/>
+         <tok val="publilia"/>
          <lm>
             <l>Publilius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -704,6 +851,7 @@
       </ana>
       <ana>
          <tok val="Publiliam"/>
+         <tok val="publiliam"/>
          <lm>
             <l>Publilius</l>
             <m>a e - s - - - f a</m>
@@ -711,6 +859,7 @@
       </ana>
       <ana>
          <tok val="Publilianam"/>
+         <tok val="publilianam"/>
          <lm>
             <l>Publilianus</l>
             <m>a e - s - - - f a</m>
@@ -718,6 +867,7 @@
       </ana>
       <ana>
          <tok val="Publilianum"/>
+         <tok val="publilianum"/>
          <lm>
             <l>Publilianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -730,6 +880,7 @@
       </ana>
       <ana>
          <tok val="Publilianus"/>
+         <tok val="publilianus"/>
          <lm>
             <l>Publilianus</l>
             <m>a e - s - - - m n</m>
@@ -737,6 +888,7 @@
       </ana>
       <ana>
          <tok val="Publilii"/>
+         <tok val="publilii"/>
          <lm>
             <l>Publilius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -745,6 +897,7 @@
       </ana>
       <ana>
          <tok val="Publilio"/>
+         <tok val="publilio"/>
          <lm>
             <l>Publilius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -753,8 +906,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Publilium Publiliumque-->
-         <tok val="Publilium(que)?"/>
+      <ana>
+         <tok val="Publilium"/>
+         <tok val="Publiliumque"/>
+         <tok val="publilium"/>
+         <tok val="publiliumque"/>
          <lm>
             <l>Publilius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -767,13 +923,17 @@
       </ana>
       <ana>
          <tok val="Publilius"/>
+         <tok val="publilius"/>
          <lm>
             <l>Publilius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Publio Publione-->
-         <tok val="Publio(ne)?"/>
+      <ana>
+         <tok val="Publio"/>
+         <tok val="Publione"/>
+         <tok val="publio"/>
+         <tok val="publione"/>
          <lm>
             <l>Publius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -782,6 +942,7 @@
       </ana>
       <ana>
          <tok val="Publipor"/>
+         <tok val="publipor"/>
          <lm>
             <l>Publipor</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -790,6 +951,7 @@
       </ana>
       <ana>
          <tok val="Publipores"/>
+         <tok val="publipores"/>
          <lm>
             <l>Publipor</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -799,21 +961,32 @@
       </ana>
       <ana>
          <tok val="Publiporis"/>
+         <tok val="publiporis"/>
          <lm>
             <l>Publipor</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Publium Publiumne Publiumque-->
-         <tok val="Publium(ne|que)?"/>
+      <ana>
+         <tok val="Publium"/>
+         <tok val="Publiumne"/>
+         <tok val="Publiumque"/>
+         <tok val="publium"/>
+         <tok val="publiumne"/>
+         <tok val="publiumque"/>
          <lm>
             <l>Publius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Publius Publiusne Publiusque-->
-         <tok val="Publius(ne|que)?"/>
+      <ana>
+         <tok val="Publius"/>
+         <tok val="Publiusne"/>
+         <tok val="Publiusque"/>
+         <tok val="publius"/>
+         <tok val="publiusne"/>
+         <tok val="publiusque"/>
          <lm>
             <l>Publius</l>
             <m>n e - s - - - m n</m>
@@ -880,8 +1053,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--puberibus puberibusque-->
-         <tok val="puberibus(que)?"/>
+      <ana>
+         <tok val="puberibus"/>
+         <tok val="puberibusque"/>
          <lm>
             <l>puberes</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -895,8 +1069,9 @@
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--puberis pubis-->
-         <tok val="pub(er)?is"/>
+      <ana>
+         <tok val="puberis"/>
+         <tok val="pubis"/>
          <lm>
             <l>pubes</l>
             <m>n - - s - - - f g</m>
@@ -963,8 +1138,10 @@
             <m cert="0.5">v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--pubescente pubescenti Pubescente-->
-         <tok val="[pP]ubescent[ie]"/>
+      <ana>
+         <tok val="Pubescente"/>
+         <tok val="pubescente"/>
+         <tok val="pubescenti"/>
          <lm>
             <l>pubesco</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -972,16 +1149,18 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--pubescentem Pubescentem-->
-         <tok val="[Pp]ubescentem"/>
+      <ana>
+         <tok val="Pubescentem"/>
+         <tok val="pubescentem"/>
          <lm>
             <l>pubesco</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--pubescentes pubescentesque-->
-         <tok val="pubescentes(que)?"/>
+      <ana>
+         <tok val="pubescentes"/>
+         <tok val="pubescentesque"/>
          <lm>
             <l>pubesco</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -990,8 +1169,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--pubescentes pubescentesque pubescentis-->
-         <tok val="pubescent[ie]s(que)?"/>
+      <ana>
+         <tok val="pubescentes"/>
+         <tok val="pubescentesque"/>
+         <tok val="pubescentis"/>
          <lm>
             <l>pubesco</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1081,8 +1262,11 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--publica publican publicaque publicaue-->
-         <tok val="publica[q]?(ue|n)?"/>
+      <ana>
+         <tok val="publica"/>
+         <tok val="publican"/>
+         <tok val="publicaque"/>
+         <tok val="publicaue"/>
          <lm>
             <l>publica</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1104,8 +1288,9 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--publicae publicaeque-->
-         <tok val="publicae(que)?"/>
+      <ana>
+         <tok val="publicae"/>
+         <tok val="publicaeque"/>
          <lm>
             <l>publica</l>
             <m cert="0.333333333333333333">n - - s - - - f d</m>
@@ -1113,15 +1298,19 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--publicae publicaeque publicai-->
-         <tok val="publica(i|e|eque)"/>
+      <ana>
+         <tok val="publicae"/>
+         <tok val="publicaeque"/>
+         <tok val="publicai"/>
          <lm>
             <l>publica</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--publicam publicamne publicamque-->
-         <tok val="publicam(ne|que)?"/>
+      <ana>
+         <tok val="publicam"/>
+         <tok val="publicamne"/>
+         <tok val="publicamque"/>
          <lm>
             <l>publica</l>
             <m>n - - s - - - f a</m>
@@ -1134,8 +1323,10 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--publican publicas publicasque-->
-         <tok val="publica(s|n|sque)"/>
+      <ana>
+         <tok val="publican"/>
+         <tok val="publicas"/>
+         <tok val="publicasque"/>
          <lm>
             <l>publica</l>
             <m>n - - p - - - f a</m>
@@ -1248,15 +1439,18 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--publicane publicanum-->
-         <tok val="publican(um|e)"/>
+      <ana>
+         <tok val="publicane"/>
+         <tok val="publicanum"/>
          <lm>
             <l>publicanus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--publicanorum publicanorumque publicanum-->
-         <tok val="publican(or)?um(que)?"/>
+      <ana>
+         <tok val="publicanorum"/>
+         <tok val="publicanorumque"/>
+         <tok val="publicanum"/>
          <lm>
             <l>publicanus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -1305,8 +1499,9 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--publicarat publicaverat-->
-         <tok val="publica(ve)?rat"/>
+      <ana>
+         <tok val="publicarat"/>
+         <tok val="publicaverat"/>
          <lm>
             <l>publico</l>
             <m>v - 3 s l i a</m>
@@ -1333,8 +1528,9 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--publicaret publicaretque-->
-         <tok val="publicaret(que)?"/>
+      <ana>
+         <tok val="publicaret"/>
+         <tok val="publicaretque"/>
          <lm>
             <l>publico</l>
             <m>v - 3 s i s a</m>
@@ -1359,8 +1555,10 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--publicarit publicauerit publicaverit-->
-         <tok val="publica[vu]?(e|)rit"/>
+      <ana>
+         <tok val="publicarit"/>
+         <tok val="publicauerit"/>
+         <tok val="publicaverit"/>
          <lm>
             <l>publico</l>
             <m>v - 3 s r s a</m>
@@ -1373,15 +1571,18 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--publicarum publicarumque-->
-         <tok val="publicarum(que)?"/>
+      <ana>
+         <tok val="publicarum"/>
+         <tok val="publicarumque"/>
          <lm>
             <l>publica</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--publicarunt publicauere publicauerunt-->
-         <tok val="publica(ue)?r(unt|e)"/>
+      <ana>
+         <tok val="publicarunt"/>
+         <tok val="publicauere"/>
+         <tok val="publicauerunt"/>
          <lm>
             <l>publico</l>
             <m>v - 3 p r i a</m>
@@ -1401,8 +1602,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--publicata publicataue-->
-         <tok val="publicata(ue)?"/>
+      <ana>
+         <tok val="publicata"/>
+         <tok val="publicataue"/>
          <lm>
             <l>publico</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1481,8 +1683,9 @@
             <m cert="0.142857142857142857">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--publicato publicatoque-->
-         <tok val="publicato(que)?"/>
+      <ana>
+         <tok val="publicato"/>
+         <tok val="publicatoque"/>
          <lm>
             <l>publico</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -1535,15 +1738,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--publicauerit publicaverit-->
-         <tok val="publica[vu]erit"/>
+      <ana>
+         <tok val="publicauerit"/>
+         <tok val="publicaverit"/>
          <lm>
             <l>publico</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--publicauit publicavit-->
-         <tok val="publica[vu]it"/>
+      <ana>
+         <tok val="publicauit"/>
+         <tok val="publicavit"/>
          <lm>
             <l>publico</l>
             <m>v - 3 s r i a</m>
@@ -1584,22 +1789,26 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--publicis publicisne publicisque-->
-         <tok val="publicis(ne|que)?"/>
+      <ana>
+         <tok val="publicis"/>
+         <tok val="publicisne"/>
+         <tok val="publicisque"/>
          <lm>
             <l>publica</l>
             <m>n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--publicis publicisne-->
-         <tok val="publicis(ne)?"/>
+      <ana>
+         <tok val="publicis"/>
+         <tok val="publicisne"/>
          <lm>
             <l>publica</l>
             <m>n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--publicos Publicos-->
-         <tok val="[Pp]ublicos"/>
+      <ana>
+         <tok val="Publicos"/>
+         <tok val="publicos"/>
          <lm>
             <l>publicus</l>
             <m cert="0.5">a - - p - - - m a</m>

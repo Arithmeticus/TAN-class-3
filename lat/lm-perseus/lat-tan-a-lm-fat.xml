@@ -1,50 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfat">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fat">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fat</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fat.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FAT</tok-starts-with>
       <tok-starts-with>Fat</tok-starts-with>
       <tok-starts-with>fat</tok-starts-with>
       <tok-starts-with>fát</tok-starts-with>
-      <ana><!--FAT Fat fat-->
-         <tok val="[fF]?(at|FAT)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:23:50.91-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:23:50.91-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fat.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FAT"/>
+         <tok val="Fat"/>
+         <tok val="fat"/>
          <lm>
             <l>for</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--FATALIS Fatalis fatalis fatalisque-->
-         <tok val="[fF]?(atalis)?(que|FATALIS)?"/>
+      <ana>
+         <tok val="FATALIS"/>
+         <tok val="Fatalis"/>
+         <tok val="fatalis"/>
+         <tok val="fatalisque"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -56,23 +69,37 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--FATALIS Fatales Fatalis fatales fatalesque fatalis fatalisque-->
-         <tok val="[fF]?(atal)?[ie]?[s]?(que|FATALIS)?"/>
+      <ana>
+         <tok val="FATALIS"/>
+         <tok val="Fatales"/>
+         <tok val="Fatalis"/>
+         <tok val="fatales"/>
+         <tok val="fatalesque"/>
+         <tok val="fatalis"/>
+         <tok val="fatalisque"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FATEOR Fateor fateor fateorque fateór Fateór-->
-         <tok val="[fF]?(ate)?[oó]?[r]?(que|FATEOR)?"/>
+      <ana>
+         <tok val="FATEOR"/>
+         <tok val="Fateor"/>
+         <tok val="Fateór"/>
+         <tok val="fateor"/>
+         <tok val="fateorque"/>
+         <tok val="fateór"/>
          <lm>
             <l>fateor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--FATI Fati fati fatique-->
-         <tok val="[fF]?(ati)?(que|FATI)?"/>
+      <ana>
+         <tok val="FATI"/>
+         <tok val="Fati"/>
+         <tok val="fati"/>
+         <tok val="fatique"/>
          <lm cert="0.5">
             <l>for</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -85,8 +112,13 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--FATIDICORVM Fatidicorum Fatidicum fatidicorum fatidicum-->
-         <tok val="[fF]?(atidic)?(or)?(um|FATIDICORVM)"/>
+      <ana>
+         <tok val="FATIDICORVM"/>
+         <tok val="Fatidicorum"/>
+         <tok val="Fatidicum"/>
+         <tok val="fatidicorum"/>
+         <tok val="fatidicorvm"/>
+         <tok val="fatidicum"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -94,15 +126,21 @@
             <m cert="0.333333333333333333">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--FATIGO Fatigo fatigo-->
-         <tok val="[fF]?(atigo|FATIGO)"/>
+      <ana>
+         <tok val="FATIGO"/>
+         <tok val="Fatigo"/>
+         <tok val="fatigo"/>
          <lm>
             <l>fatigo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--FATIS Fatis Fatisque fatis fatisque-->
-         <tok val="[fF]?(atis)?(que|FATIS)?"/>
+      <ana>
+         <tok val="FATIS"/>
+         <tok val="Fatis"/>
+         <tok val="Fatisque"/>
+         <tok val="fatis"/>
+         <tok val="fatisque"/>
          <lm cert="0.5">
             <l>for</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -119,15 +157,28 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--FATISCO Fatisco fatisco-->
-         <tok val="[fF]?(atisco|FATISCO)"/>
+      <ana>
+         <tok val="FATISCO"/>
+         <tok val="Fatisco"/>
+         <tok val="fatisco"/>
          <lm>
             <l>fatisco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--FATORVM FATVM Fatorum Fatum fatorum fatorumque fatum fatumque fatumue FATUM-->
-         <tok val="[fF]?(at)?(or)?(um)?[qq]?(ue|FATVM|FATORVM|Fatum|fatum|FATUM)?"/>
+      <ana>
+         <tok val="FATORVM"/>
+         <tok val="FATUM"/>
+         <tok val="FATVM"/>
+         <tok val="Fatorum"/>
+         <tok val="Fatum"/>
+         <tok val="fatorum"/>
+         <tok val="fatorumque"/>
+         <tok val="fatorvm"/>
+         <tok val="fatum"/>
+         <tok val="fatumque"/>
+         <tok val="fatumue"/>
+         <tok val="fatvm"/>
          <lm cert="0.5">
             <l>for</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -138,15 +189,28 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--FATVM fatum fatumque fatumue-->
-         <tok val="(fatum)?[q]?(ue|FATVM)?"/>
+      <ana>
+         <tok val="FATVM"/>
+         <tok val="fatum"/>
+         <tok val="fatumque"/>
+         <tok val="fatumue"/>
+         <tok val="fatvm"/>
          <lm>
             <l>for</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--FATVM Fatum fate faten fatom fatum fatumque fatumue FATUM-->
-         <tok val="[fF]?(at)?(um)?[q]?(ue|en|e|um|om|FATUM|FATVM)"/>
+      <ana>
+         <tok val="FATUM"/>
+         <tok val="FATVM"/>
+         <tok val="Fatum"/>
+         <tok val="fate"/>
+         <tok val="faten"/>
+         <tok val="fatom"/>
+         <tok val="fatum"/>
+         <tok val="fatumque"/>
+         <tok val="fatumue"/>
+         <tok val="fatvm"/>
          <lm cert="0.5">
             <l>fatum</l>
             <m>n - - s - - - n v</m>
@@ -156,8 +220,15 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--FATVM Fatum fatom fatum fatumque fatumue FATUM-->
-         <tok val="[fF]?(at)?[uo]?[m]?[q]?(ue|FATUM|FATVM)?"/>
+      <ana>
+         <tok val="FATUM"/>
+         <tok val="FATVM"/>
+         <tok val="Fatum"/>
+         <tok val="fatom"/>
+         <tok val="fatum"/>
+         <tok val="fatumque"/>
+         <tok val="fatumue"/>
+         <tok val="fatvm"/>
          <lm cert="0.5">
             <l>for</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -170,22 +241,34 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--FATVM Fatum fatum fatumque fatumue-->
-         <tok val="[fF]?(atum)?[q]?(ue|FATVM)?"/>
+      <ana>
+         <tok val="FATVM"/>
+         <tok val="Fatum"/>
+         <tok val="fatum"/>
+         <tok val="fatumque"/>
+         <tok val="fatumue"/>
+         <tok val="fatvm"/>
          <lm>
             <l>fatus2</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fata Fataque fata fataque fáta-->
-         <tok val="[fF]?(a|fá)ta(que)?"/>
+      <ana>
+         <tok val="Fata"/>
+         <tok val="Fataque"/>
+         <tok val="fata"/>
+         <tok val="fataque"/>
+         <tok val="fáta"/>
          <lm>
             <l>for</l>
             <m>v - - s r p p f b</m>
          </lm>
       </ana>
-      <ana><!--Fata Fataque fata fataque-->
-         <tok val="[fF]ata(que)?"/>
+      <ana>
+         <tok val="Fata"/>
+         <tok val="Fataque"/>
+         <tok val="fata"/>
+         <tok val="fataque"/>
          <lm cert="0.5">
             <l>fatum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -201,8 +284,9 @@
             <m cert="0.2">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Fatale fatale-->
-         <tok val="[fF]atale"/>
+      <ana>
+         <tok val="Fatale"/>
+         <tok val="fatale"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -210,16 +294,19 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Fatalem fatalem-->
-         <tok val="[fF]atalem"/>
+      <ana>
+         <tok val="Fatalem"/>
+         <tok val="fatalem"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fatales fatales fatalesque-->
-         <tok val="[fF]atales(que)?"/>
+      <ana>
+         <tok val="Fatales"/>
+         <tok val="fatales"/>
+         <tok val="fatalesque"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -228,8 +315,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fatali fatali fatalique-->
-         <tok val="[fF]atali(que)?"/>
+      <ana>
+         <tok val="Fatali"/>
+         <tok val="fatali"/>
+         <tok val="fatalique"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -240,8 +329,11 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Fatalia Fataliaque fatalia fataliaque-->
-         <tok val="[fF]atalia(que)?"/>
+      <ana>
+         <tok val="Fatalia"/>
+         <tok val="Fataliaque"/>
+         <tok val="fatalia"/>
+         <tok val="fataliaque"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -249,8 +341,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Fatalibus fatalibus-->
-         <tok val="[fF]atalibus"/>
+      <ana>
+         <tok val="Fatalibus"/>
+         <tok val="fatalibus"/>
          <lm>
             <l>fatalis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -263,6 +356,7 @@
       </ana>
       <ana>
          <tok val="Fataliter"/>
+         <tok val="fataliter"/>
          <lm>
             <l>fataliter</l>
             <m>d</m>
@@ -270,6 +364,7 @@
       </ana>
       <ana>
          <tok val="Fatatum"/>
+         <tok val="fatatum"/>
          <lm>
             <l>fator</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -281,43 +376,51 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Fateamur fateamur-->
-         <tok val="[fF]ateamur"/>
+      <ana>
+         <tok val="Fateamur"/>
+         <tok val="fateamur"/>
          <lm>
             <l>fateor</l>
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Fatear fatear fatearque-->
-         <tok val="[fF]atear(que)?"/>
+      <ana>
+         <tok val="Fatear"/>
+         <tok val="fatear"/>
+         <tok val="fatearque"/>
          <lm>
             <l>fateor</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Fateatur fateatur fateaturque-->
-         <tok val="[fF]ateatur(que)?"/>
+      <ana>
+         <tok val="Fateatur"/>
+         <tok val="fateatur"/>
+         <tok val="fateaturque"/>
          <lm>
             <l>fateor</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Fatebatur fatebatur-->
-         <tok val="[fF]atebatur"/>
+      <ana>
+         <tok val="Fatebatur"/>
+         <tok val="fatebatur"/>
          <lm>
             <l>fateor</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Fatebor fatebor-->
-         <tok val="[fF]atebor"/>
+      <ana>
+         <tok val="Fatebor"/>
+         <tok val="fatebor"/>
          <lm>
             <l>fateor</l>
             <m>v - 1 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Fatemur fatemur-->
-         <tok val="[fF]atemur"/>
+      <ana>
+         <tok val="Fatemur"/>
+         <tok val="fatemur"/>
          <lm cert="0.5">
             <l>fateor</l>
             <m>v - 1 p p i p</m>
@@ -327,8 +430,10 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Fatendum fatendum fatendumst-->
-         <tok val="[fF]atendum(st)?"/>
+      <ana>
+         <tok val="Fatendum"/>
+         <tok val="fatendum"/>
+         <tok val="fatendumst"/>
          <lm>
             <l>fateor</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -342,27 +447,35 @@
       </ana>
       <ana>
          <tok val="Fatendus"/>
+         <tok val="fatendus"/>
          <lm>
             <l>fateor</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Fateo fateo-->
-         <tok val="[fF]ateo"/>
+      <ana>
+         <tok val="Fateo"/>
+         <tok val="fateo"/>
          <lm>
             <l>fateor</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fatere fatere-->
-         <tok val="[fF]atere"/>
+      <ana>
+         <tok val="Fatere"/>
+         <tok val="fatere"/>
          <lm>
             <l>fateor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Fatere Fateris fatere faterin fateris faterisque-->
-         <tok val="[fF]ater[i]?(s|n|e|isque)"/>
+      <ana>
+         <tok val="Fatere"/>
+         <tok val="Fateris"/>
+         <tok val="fatere"/>
+         <tok val="faterin"/>
+         <tok val="fateris"/>
+         <tok val="faterisque"/>
          <lm cert="0.5">
             <l>fateor</l>
             <m>v - 2 s p i p</m>
@@ -372,22 +485,31 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Fateri fateri faterier faterin faterique fatéri-->
-         <tok val="[fF]at[eé]ri(n|er|que)?"/>
+      <ana>
+         <tok val="Fateri"/>
+         <tok val="fateri"/>
+         <tok val="faterier"/>
+         <tok val="faterin"/>
+         <tok val="faterique"/>
+         <tok val="fatéri"/>
          <lm>
             <l>fateor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Fates faten fates-->
-         <tok val="[fF]ate[sn]"/>
+      <ana>
+         <tok val="Fates"/>
+         <tok val="faten"/>
+         <tok val="fates"/>
          <lm>
             <l>fateor</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fatetur fatetur fateturque-->
-         <tok val="[fF]atetur(que)?"/>
+      <ana>
+         <tok val="Fatetur"/>
+         <tok val="fatetur"/>
+         <tok val="fateturque"/>
          <lm cert="0.5">
             <l>fator</l>
             <m>v - 3 s p s p</m>
@@ -397,15 +519,17 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Faticanus faticanus-->
-         <tok val="[fF]aticanus"/>
+      <ana>
+         <tok val="Faticanus"/>
+         <tok val="faticanus"/>
          <lm>
             <l>faticanus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Faticinae faticinae-->
-         <tok val="[fF]aticinae"/>
+      <ana>
+         <tok val="Faticinae"/>
+         <tok val="faticinae"/>
          <lm>
             <l>faticinus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -414,15 +538,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Faticinus faticinus-->
-         <tok val="[fF]aticinus"/>
+      <ana>
+         <tok val="Faticinus"/>
+         <tok val="faticinus"/>
          <lm>
             <l>faticinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fatidica fatidica-->
-         <tok val="[fF]atidica"/>
+      <ana>
+         <tok val="Fatidica"/>
+         <tok val="fatidica"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -433,8 +559,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Fatidicae fatidicae-->
-         <tok val="[fF]atidicae"/>
+      <ana>
+         <tok val="Fatidicae"/>
+         <tok val="fatidicae"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -445,6 +572,7 @@
       </ana>
       <ana>
          <tok val="Fatidice"/>
+         <tok val="fatidice"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.333333333333333333">d</m>
@@ -452,15 +580,19 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Fatidice Fatidicum fatidicum-->
-         <tok val="[fF]atidic(um|e)"/>
+      <ana>
+         <tok val="Fatidice"/>
+         <tok val="Fatidicum"/>
+         <tok val="fatidice"/>
+         <tok val="fatidicum"/>
          <lm>
             <l>fatidicus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Fatidici fatidici-->
-         <tok val="[fF]atidici"/>
+      <ana>
+         <tok val="Fatidici"/>
+         <tok val="fatidici"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -472,8 +604,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Fatidicis fatidicis-->
-         <tok val="[fF]atidicis"/>
+      <ana>
+         <tok val="Fatidicis"/>
+         <tok val="fatidicis"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -486,8 +619,9 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Fatidicum fatidicum-->
-         <tok val="[fF]atidicum"/>
+      <ana>
+         <tok val="Fatidicum"/>
+         <tok val="fatidicum"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -496,24 +630,28 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fatidicus fatidicus-->
-         <tok val="[fF]atidicus"/>
+      <ana>
+         <tok val="Fatidicus"/>
+         <tok val="fatidicus"/>
          <lm>
             <l>fatidicus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fatifer fatifer-->
-         <tok val="[fF]atifer"/>
+      <ana>
+         <tok val="Fatifer"/>
+         <tok val="fatifer"/>
          <lm>
             <l>fatifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Fatiferum fatiferum fatiferumque-->
-         <tok val="[fF]atiferum(que)?"/>
+      <ana>
+         <tok val="Fatiferum"/>
+         <tok val="fatiferum"/>
+         <tok val="fatiferumque"/>
          <lm>
             <l>fatifer</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -524,22 +662,26 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fatigabat fatigabat fatigabatque-->
-         <tok val="[fF]atigabat(que)?"/>
+      <ana>
+         <tok val="Fatigabat"/>
+         <tok val="fatigabat"/>
+         <tok val="fatigabatque"/>
          <lm>
             <l>fatigo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Fatigant fatigant-->
-         <tok val="[fF]atigant"/>
+      <ana>
+         <tok val="Fatigant"/>
+         <tok val="fatigant"/>
          <lm>
             <l>fatigo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Fatigare fatigare-->
-         <tok val="[fF]atigare"/>
+      <ana>
+         <tok val="Fatigare"/>
+         <tok val="fatigare"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -547,22 +689,25 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Fatigari fatigari-->
-         <tok val="[fF]atigari"/>
+      <ana>
+         <tok val="Fatigari"/>
+         <tok val="fatigari"/>
          <lm>
             <l>fatigo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Fatigat fatigat-->
-         <tok val="[fF]atigat"/>
+      <ana>
+         <tok val="Fatigat"/>
+         <tok val="fatigat"/>
          <lm>
             <l>fatigo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fatigata fatigata-->
-         <tok val="[fF]atigata"/>
+      <ana>
+         <tok val="Fatigata"/>
+         <tok val="fatigata"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -573,8 +718,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Fatigati fatigati-->
-         <tok val="[fF]atigati"/>
+      <ana>
+         <tok val="Fatigati"/>
+         <tok val="fatigati"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -583,30 +729,34 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Fatigatio fatigatio-->
-         <tok val="[fF]atigatio"/>
+      <ana>
+         <tok val="Fatigatio"/>
+         <tok val="fatigatio"/>
          <lm>
             <l>fatigatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Fatigationem fatigationem-->
-         <tok val="[fF]atigationem"/>
+      <ana>
+         <tok val="Fatigationem"/>
+         <tok val="fatigationem"/>
          <lm>
             <l>fatigatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fatigationi fatigationi-->
-         <tok val="[fF]atigationi"/>
+      <ana>
+         <tok val="Fatigationi"/>
+         <tok val="fatigationi"/>
          <lm>
             <l>fatigatio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Fatigato fatigato-->
-         <tok val="[fF]atigato"/>
+      <ana>
+         <tok val="Fatigato"/>
+         <tok val="fatigato"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -617,16 +767,21 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Fatigatum fatigatum fatigatumque fatigatorum-->
-         <tok val="[fF]atigat(or)?um(que)?"/>
+      <ana>
+         <tok val="Fatigatum"/>
+         <tok val="fatigatorum"/>
+         <tok val="fatigatum"/>
+         <tok val="fatigatumque"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Fatigatum fatigatum fatigatumque-->
-         <tok val="[fF]atigatum(que)?"/>
+      <ana>
+         <tok val="Fatigatum"/>
+         <tok val="fatigatum"/>
+         <tok val="fatigatumque"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -634,8 +789,11 @@
             <m cert="0.333333333333333333">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Fatigatum fatigate fatigatum fatigatumque-->
-         <tok val="[fF]atigat(um)?(que|e)?"/>
+      <ana>
+         <tok val="Fatigatum"/>
+         <tok val="fatigate"/>
+         <tok val="fatigatum"/>
+         <tok val="fatigatumque"/>
          <lm>
             <l>fatigo</l>
             <m>v - - s r p p n v</m>
@@ -643,34 +801,41 @@
       </ana>
       <ana>
          <tok val="Fatigatum"/>
+         <tok val="fatigatum"/>
          <lm>
             <l>fatigo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Fatigatus fatigatus-->
-         <tok val="[fF]atigatus"/>
+      <ana>
+         <tok val="Fatigatus"/>
+         <tok val="fatigatus"/>
          <lm>
             <l>fatigo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Fatigaverat fatigarat fatigauerat fatigaverat-->
-         <tok val="[fF]atiga[vu]?(e|)rat"/>
+      <ana>
+         <tok val="Fatigaverat"/>
+         <tok val="fatigarat"/>
+         <tok val="fatigauerat"/>
+         <tok val="fatigaverat"/>
          <lm>
             <l>fatigo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Fatiloquus fatiloquus-->
-         <tok val="[fF]atiloquus"/>
+      <ana>
+         <tok val="Fatiloquus"/>
+         <tok val="fatiloquus"/>
          <lm>
             <l>fatiloquus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fatiscere fatiscere-->
-         <tok val="[fF]atiscere"/>
+      <ana>
+         <tok val="Fatiscere"/>
+         <tok val="fatiscere"/>
          <lm>
             <l>fatisco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -679,15 +844,20 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Fatiscit fatiscit-->
-         <tok val="[fF]atiscit"/>
+      <ana>
+         <tok val="Fatiscit"/>
+         <tok val="fatiscit"/>
          <lm>
             <l>fatisco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fato fato fatone fatoque fatove-->
-         <tok val="[fF]ato[vn]?(e|que)?"/>
+      <ana>
+         <tok val="Fato"/>
+         <tok val="fato"/>
+         <tok val="fatone"/>
+         <tok val="fatoque"/>
+         <tok val="fatove"/>
          <lm cert="0.5">
             <l>for</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -703,8 +873,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Fatu fatu-->
-         <tok val="[fF]atu"/>
+      <ana>
+         <tok val="Fatu"/>
+         <tok val="fatu"/>
          <lm cert="0.5">
             <l>fatus2</l>
             <m>n - - s - - - m b</m>
@@ -714,8 +885,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Fatua fatua-->
-         <tok val="[fF]atua"/>
+      <ana>
+         <tok val="Fatua"/>
+         <tok val="fatua"/>
          <lm cert="0.5">
             <l>fatua</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -732,8 +904,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Fatuae fatuae-->
-         <tok val="[fF]atuae"/>
+      <ana>
+         <tok val="Fatuae"/>
+         <tok val="fatuae"/>
          <lm cert="0.5">
             <l>fatuus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -749,8 +922,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Fatuam fatuam-->
-         <tok val="[fF]atuam"/>
+      <ana>
+         <tok val="Fatuam"/>
+         <tok val="fatuam"/>
          <lm cert="0.5">
             <l>fatuus</l>
             <m>a - - s - - - f a</m>
@@ -760,15 +934,22 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fatui Fatuin fatui fatuí-->
-         <tok val="[Ff]atu[i]?[ní]?"/>
+      <ana>
+         <tok val="Fatui"/>
+         <tok val="Fatuin"/>
+         <tok val="fatui"/>
+         <tok val="fatuin"/>
+         <tok val="fatuí"/>
          <lm>
             <l>fatuus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fatui Fatuin fatui-->
-         <tok val="[Ff]atui[n]?"/>
+      <ana>
+         <tok val="Fatui"/>
+         <tok val="Fatuin"/>
+         <tok val="fatui"/>
+         <tok val="fatuin"/>
          <lm cert="0.5">
             <l>fatuus</l>
             <m cert="0.166666666666666667">a - - s - - - m g</m>
@@ -783,8 +964,11 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Fatuin Fatuis fatuis-->
-         <tok val="[Ff]atui[sn]"/>
+      <ana>
+         <tok val="Fatuin"/>
+         <tok val="Fatuis"/>
+         <tok val="fatuin"/>
+         <tok val="fatuis"/>
          <lm cert="0.5">
             <l>fatuus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -802,8 +986,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Fatuitas fatuitas-->
-         <tok val="[fF]atuitas"/>
+      <ana>
+         <tok val="Fatuitas"/>
+         <tok val="fatuitas"/>
          <lm>
             <l>fatuitas</l>
             <m>n - - s - - - f n</m>
@@ -811,35 +996,40 @@
       </ana>
       <ana>
          <tok val="Fatum"/>
+         <tok val="fatum"/>
          <lm>
             <l>for</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Fatuor fatuor-->
-         <tok val="[fF]atuor"/>
+      <ana>
+         <tok val="Fatuor"/>
+         <tok val="fatuor"/>
          <lm>
             <l>fatuor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Fatuos fatuos-->
-         <tok val="[fF]atuos"/>
+      <ana>
+         <tok val="Fatuos"/>
+         <tok val="fatuos"/>
          <lm>
             <l>fatuus</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fatur fatur-->
-         <tok val="[fF]atur"/>
+      <ana>
+         <tok val="Fatur"/>
+         <tok val="fatur"/>
          <lm>
             <l>for</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Fatus fatus-->
-         <tok val="[fF]atus"/>
+      <ana>
+         <tok val="Fatus"/>
+         <tok val="fatus"/>
          <lm cert="0.5">
             <l>fatus2</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -852,8 +1042,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Fatuus fatuus-->
-         <tok val="[fF]atuus"/>
+      <ana>
+         <tok val="Fatuus"/>
+         <tok val="fatuus"/>
          <lm>
             <l>fatuus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -867,8 +1058,9 @@
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--fataliter fataliterque-->
-         <tok val="fataliter(que)?"/>
+      <ana>
+         <tok val="fataliter"/>
+         <tok val="fataliterque"/>
          <lm>
             <l>fatalis</l>
             <m>d</m>
@@ -897,8 +1089,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--fate faten-->
-         <tok val="fate[n]?"/>
+      <ana>
+         <tok val="fate"/>
+         <tok val="faten"/>
          <lm cert="0.5">
             <l>for</l>
             <m cert="0.5">v - 2 p p m a</m>
@@ -923,8 +1116,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--fateare fatearis-->
-         <tok val="fatear(is|e)"/>
+      <ana>
+         <tok val="fateare"/>
+         <tok val="fatearis"/>
          <lm>
             <l>fateor</l>
             <m>v - 2 s p s p</m>
@@ -951,15 +1145,17 @@
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--fatebare fatebaris-->
-         <tok val="fatebar(is|e)"/>
+      <ana>
+         <tok val="fatebare"/>
+         <tok val="fatebaris"/>
          <lm>
             <l>fateor</l>
             <m>v - 2 s i i p</m>
          </lm>
       </ana>
-      <ana><!--fatebere fateberis-->
-         <tok val="fateber(is|e)"/>
+      <ana>
+         <tok val="fatebere"/>
+         <tok val="fateberis"/>
          <lm>
             <l>fateor</l>
             <m>v - 2 s f i p</m>
@@ -972,8 +1168,9 @@
             <m>v - 1 p f i p</m>
          </lm>
       </ana>
-      <ana><!--fatebitur fatebiturque-->
-         <tok val="fatebitur(que)?"/>
+      <ana>
+         <tok val="fatebitur"/>
+         <tok val="fatebiturque"/>
          <lm>
             <l>fateor</l>
             <m>v - 3 s f i p</m>
@@ -1033,8 +1230,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--fatente fatenti-->
-         <tok val="fatent[ie]"/>
+      <ana>
+         <tok val="fatente"/>
+         <tok val="fatenti"/>
          <lm>
             <l>fateor</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1060,8 +1258,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--fatentes fatentis-->
-         <tok val="fatent[ie]s"/>
+      <ana>
+         <tok val="fatentes"/>
+         <tok val="fatentis"/>
          <lm>
             <l>fateor</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1199,8 +1398,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--fatidicam fatidicamque-->
-         <tok val="fatidicam(que)?"/>
+      <ana>
+         <tok val="fatidicam"/>
+         <tok val="fatidicamque"/>
          <lm>
             <l>fatidicus</l>
             <m>a - - s - - - f a</m>
@@ -1260,8 +1460,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--fatiga fatigan-->
-         <tok val="fatiga[n]?"/>
+      <ana>
+         <tok val="fatiga"/>
+         <tok val="fatigan"/>
          <lm>
             <l>fatigo</l>
             <m>v - 2 s p m a</m>
@@ -1367,8 +1568,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--fatigan fatigas-->
-         <tok val="fatiga[sn]"/>
+      <ana>
+         <tok val="fatigan"/>
+         <tok val="fatigas"/>
          <lm>
             <l>fatigo</l>
             <m>v - 2 s p i a</m>
@@ -1488,8 +1690,10 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--fatigarunt fatigauerunt fatigaverunt-->
-         <tok val="fatiga[vu]?(e|)runt"/>
+      <ana>
+         <tok val="fatigarunt"/>
+         <tok val="fatigauerunt"/>
+         <tok val="fatigaverunt"/>
          <lm>
             <l>fatigo</l>
             <m>v - 3 p r i a</m>
@@ -1523,8 +1727,9 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--fatigatae Fatigatae-->
-         <tok val="[Ff]atigatae"/>
+      <ana>
+         <tok val="Fatigatae"/>
+         <tok val="fatigatae"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -1578,8 +1783,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--fatigatis Fatigatis-->
-         <tok val="[Ff]atigatis"/>
+      <ana>
+         <tok val="Fatigatis"/>
+         <tok val="fatigatis"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.142857142857142857">v - - p r p p f d</m>
@@ -1624,8 +1830,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--fatigatum fatigatumque-->
-         <tok val="fatigatum(que)?"/>
+      <ana>
+         <tok val="fatigatum"/>
+         <tok val="fatigatumque"/>
          <lm>
             <l>fatigo</l>
             <m>a - - s - - - n n</m>
@@ -1652,23 +1859,26 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--fatigauerit fatigaverit-->
-         <tok val="fatiga[vu]erit"/>
+      <ana>
+         <tok val="fatigauerit"/>
+         <tok val="fatigaverit"/>
          <lm>
             <l>fatigo</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--fatigaui fatigavi-->
-         <tok val="fatiga[vu]i"/>
+      <ana>
+         <tok val="fatigaui"/>
+         <tok val="fatigavi"/>
          <lm>
             <l>fatigo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--fatigauit fatigavit-->
-         <tok val="fatiga[vu]it"/>
+      <ana>
+         <tok val="fatigauit"/>
+         <tok val="fatigavit"/>
          <lm>
             <l>fatigo</l>
             <m>v - 3 s r i a</m>
@@ -1681,8 +1891,9 @@
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--fatigem fatígem-->
-         <tok val="fat[íi]gem"/>
+      <ana>
+         <tok val="fatigem"/>
+         <tok val="fatígem"/>
          <lm>
             <l>fatigo</l>
             <m>v - 1 s p s a</m>
@@ -1965,8 +2176,9 @@
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--fatuas fatuasque-->
-         <tok val="fatuas(que)?"/>
+      <ana>
+         <tok val="fatuas"/>
+         <tok val="fatuasque"/>
          <lm cert="0.5">
             <l>fatuus</l>
             <m>a - - p - - - f a</m>
@@ -1976,8 +2188,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--fatue Fatue-->
-         <tok val="[Ff]atue"/>
+      <ana>
+         <tok val="Fatue"/>
+         <tok val="fatue"/>
          <lm cert="0.5">
             <l>fatue</l>
             <m>d</m>
@@ -1987,8 +2200,9 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--fatue fatuum-->
-         <tok val="fatu(um|e)"/>
+      <ana>
+         <tok val="fatue"/>
+         <tok val="fatuum"/>
          <lm>
             <l>fatuus</l>
             <m>a - - s - - - n v</m>
@@ -2051,8 +2265,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--fatuorum fatuum-->
-         <tok val="fatu(or)?um"/>
+      <ana>
+         <tok val="fatuorum"/>
+         <tok val="fatuum"/>
          <lm>
             <l>fatuus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2130,6 +2345,7 @@
       </ana>
       <ana>
          <tok val="FATUM"/>
+         <tok val="fatum"/>
          <lm>
             <l>for</l>
             <m>n - - s - - - n n</m>

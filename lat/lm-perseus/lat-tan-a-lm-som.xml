@@ -1,72 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussom">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:som">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to som</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-som.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SOM</tok-starts-with>
       <tok-starts-with>Som</tok-starts-with>
       <tok-starts-with>som</tok-starts-with>
       <tok-starts-with>sóm</tok-starts-with>
-      <ana><!--SOMNIIS Somniis somniis-->
-         <tok val="[sS]?(omniis|SOMNIIS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:46:26.772-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:46:26.772-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-som.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SOMNIIS"/>
+         <tok val="Somniis"/>
+         <tok val="somniis"/>
          <lm>
             <l>somnium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SOMNO Somno somno somnone somnoque somnó somnóne-->
-         <tok val="[sS]?(omn)?[óo]?(ne|o|ó|oque|SOMNO)"/>
+      <ana>
+         <tok val="SOMNO"/>
+         <tok val="Somno"/>
+         <tok val="somno"/>
+         <tok val="somnone"/>
+         <tok val="somnoque"/>
+         <tok val="somnó"/>
+         <tok val="somnóne"/>
          <lm>
             <l>somnus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--SOMNO Somno somno somnone somnoque-->
-         <tok val="[sS]?(omno)?(ne|que|SOMNO)?"/>
+      <ana>
+         <tok val="SOMNO"/>
+         <tok val="Somno"/>
+         <tok val="somno"/>
+         <tok val="somnone"/>
+         <tok val="somnoque"/>
          <lm>
             <l>somnus</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Somne somne-->
-         <tok val="[sS]omne"/>
+      <ana>
+         <tok val="Somne"/>
+         <tok val="somne"/>
          <lm>
             <l>somnus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Somni somni somnique-->
-         <tok val="[sS]omni(que)?"/>
+      <ana>
+         <tok val="Somni"/>
+         <tok val="somni"/>
+         <tok val="somnique"/>
          <lm>
             <l>somnus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -74,15 +97,21 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Somni somni somnii somnique-->
-         <tok val="[sS]omni(i|que)?"/>
+      <ana>
+         <tok val="Somni"/>
+         <tok val="somni"/>
+         <tok val="somnii"/>
+         <tok val="somnique"/>
          <lm>
             <l>somnium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Somnia somnia somnian somniaque-->
-         <tok val="[sS]omnia(n|que)?"/>
+      <ana>
+         <tok val="Somnia"/>
+         <tok val="somnia"/>
+         <tok val="somnian"/>
+         <tok val="somniaque"/>
          <lm cert="0.5">
             <l>somnium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -94,8 +123,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Somniare somniare-->
-         <tok val="[sS]omniare"/>
+      <ana>
+         <tok val="Somniare"/>
+         <tok val="somniare"/>
          <lm>
             <l>somnio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -103,50 +133,61 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Somniari somniari-->
-         <tok val="[sS]omniari"/>
+      <ana>
+         <tok val="Somniari"/>
+         <tok val="somniari"/>
          <lm>
             <l>somnio</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Somnias somnian somnias-->
-         <tok val="[sS]omnia[sn]"/>
+      <ana>
+         <tok val="Somnias"/>
+         <tok val="somnian"/>
+         <tok val="somnias"/>
          <lm>
             <l>somnio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Somniculose somniculose sómniculóse-->
-         <tok val="[sS]?(o|só)mnicul[oó]se"/>
+      <ana>
+         <tok val="Somniculose"/>
+         <tok val="somniculose"/>
+         <tok val="sómniculóse"/>
          <lm>
             <l>somniculosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Somniculose Somniculosum somniculose somniculosum-->
-         <tok val="[sS]omniculos(um|e)"/>
+      <ana>
+         <tok val="Somniculose"/>
+         <tok val="Somniculosum"/>
+         <tok val="somniculose"/>
+         <tok val="somniculosum"/>
          <lm>
             <l>somniculosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Somniculose somniculose-->
-         <tok val="[sS]omniculose"/>
+      <ana>
+         <tok val="Somniculose"/>
+         <tok val="somniculose"/>
          <lm>
             <l>somniculosus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Somniculosos somniculosos-->
-         <tok val="[sS]omniculosos"/>
+      <ana>
+         <tok val="Somniculosos"/>
+         <tok val="somniculosos"/>
          <lm>
             <l>somniculosus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Somniculosum somniculosum-->
-         <tok val="[sS]omniculosum"/>
+      <ana>
+         <tok val="Somniculosum"/>
+         <tok val="somniculosum"/>
          <lm>
             <l>somniculosus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -156,23 +197,26 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Somniculosus somniculosus-->
-         <tok val="[sS]omniculosus"/>
+      <ana>
+         <tok val="Somniculosus"/>
+         <tok val="somniculosus"/>
          <lm>
             <l>somniculosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Somnifer somnifer-->
-         <tok val="[sS]omnifer"/>
+      <ana>
+         <tok val="Somnifer"/>
+         <tok val="somnifer"/>
          <lm>
             <l>somnifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Somniferum somniferum-->
-         <tok val="[sS]omniferum"/>
+      <ana>
+         <tok val="Somniferum"/>
+         <tok val="somniferum"/>
          <lm>
             <l>somnifer</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -183,15 +227,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Somnificus somnificus-->
-         <tok val="[sS]omnificus"/>
+      <ana>
+         <tok val="Somnificus"/>
+         <tok val="somnificus"/>
          <lm>
             <l>somnificus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Somnio somnio-->
-         <tok val="[sS]omnio"/>
+      <ana>
+         <tok val="Somnio"/>
+         <tok val="somnio"/>
          <lm cert="0.5">
             <l>somnio</l>
             <m>v - 1 s p i a</m>
@@ -202,22 +248,31 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Somniorum Somnium somniorum somnium somniumne SOMNIUM-->
-         <tok val="[sS]?(omni)?(or)?(um)?(ne|SOMNIUM)?"/>
+      <ana>
+         <tok val="SOMNIUM"/>
+         <tok val="Somniorum"/>
+         <tok val="Somnium"/>
+         <tok val="somniorum"/>
+         <tok val="somnium"/>
+         <tok val="somniumne"/>
          <lm>
             <l>somnium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Somniosus somniosus-->
-         <tok val="[sS]omniosus"/>
+      <ana>
+         <tok val="Somniosus"/>
+         <tok val="somniosus"/>
          <lm>
             <l>somniosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Somnium somnium somniumne SOMNIUM-->
-         <tok val="[sS]?(omnium)?(ne|SOMNIUM)?"/>
+      <ana>
+         <tok val="SOMNIUM"/>
+         <tok val="Somnium"/>
+         <tok val="somnium"/>
+         <tok val="somniumne"/>
          <lm>
             <l>somnium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -225,37 +280,50 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Somnolentus somnolentus somnulentus-->
-         <tok val="[sS]omn[ou]lentus"/>
+      <ana>
+         <tok val="Somnolentus"/>
+         <tok val="somnolentus"/>
+         <tok val="somnulentus"/>
          <lm>
             <l>somnulentus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Somnos somnos somnosque-->
-         <tok val="[sS]omnos(que)?"/>
+      <ana>
+         <tok val="Somnos"/>
+         <tok val="somnos"/>
+         <tok val="somnosque"/>
          <lm>
             <l>somnus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Somnum somnum somnumque-->
-         <tok val="[sS]omnum(que)?"/>
+      <ana>
+         <tok val="Somnum"/>
+         <tok val="somnum"/>
+         <tok val="somnumque"/>
          <lm>
             <l>somnus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Somnus Somnusque somnus somnusque somnust somnusue sómnus-->
-         <tok val="[sS]?(o|só)mnus[q]?(ue|t|que)?"/>
+      <ana>
+         <tok val="Somnus"/>
+         <tok val="Somnusque"/>
+         <tok val="somnus"/>
+         <tok val="somnusque"/>
+         <tok val="somnust"/>
+         <tok val="somnusue"/>
+         <tok val="sómnus"/>
          <lm>
             <l>somnus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--somniabam sómniabam-->
-         <tok val="s[óo]mniabam"/>
+      <ana>
+         <tok val="somniabam"/>
+         <tok val="sómniabam"/>
          <lm>
             <l>somnio</l>
             <m>v - 1 s i i a</m>
@@ -347,8 +415,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--somniante somnianti-->
-         <tok val="somniant[ie]"/>
+      <ana>
+         <tok val="somniante"/>
+         <tok val="somnianti"/>
          <lm>
             <l>somnio</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -366,8 +435,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--somniantes somniantis-->
-         <tok val="somniant[ie]s"/>
+      <ana>
+         <tok val="somniantes"/>
+         <tok val="somniantis"/>
          <lm>
             <l>somnio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -434,8 +504,9 @@
             <m>v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--somniarunt somniaverunt-->
-         <tok val="somnia(ve)?runt"/>
+      <ana>
+         <tok val="somniarunt"/>
+         <tok val="somniaverunt"/>
          <lm>
             <l>somnio</l>
             <m>v - 3 p r i a</m>
@@ -462,8 +533,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--somniat Somniat-->
-         <tok val="[Ss]omniat"/>
+      <ana>
+         <tok val="Somniat"/>
+         <tok val="somniat"/>
          <lm>
             <l>somnio</l>
             <m>v - 3 s p i a</m>
@@ -548,15 +620,17 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--somniaui somniavi-->
-         <tok val="somnia[vu]i"/>
+      <ana>
+         <tok val="somniaui"/>
+         <tok val="somniavi"/>
          <lm>
             <l>somnio</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--somniauit somniavit-->
-         <tok val="somnia[vu]it"/>
+      <ana>
+         <tok val="somniauit"/>
+         <tok val="somniavit"/>
          <lm>
             <l>somnio</l>
             <m>v - 3 s r i a</m>
@@ -605,8 +679,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--somniculosam Somniculosam-->
-         <tok val="[Ss]omniculosam"/>
+      <ana>
+         <tok val="Somniculosam"/>
+         <tok val="somniculosam"/>
          <lm>
             <l>somniculosus</l>
             <m>a - - s - - - f a</m>
@@ -749,8 +824,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--somnis somnisque-->
-         <tok val="somnis(que)?"/>
+      <ana>
+         <tok val="somnis"/>
+         <tok val="somnisque"/>
          <lm>
             <l>somnus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -774,8 +850,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--somnolentis somnulentis-->
-         <tok val="somn[uo]lentis"/>
+      <ana>
+         <tok val="somnolentis"/>
+         <tok val="somnulentis"/>
          <lm>
             <l>somnulentus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>

@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusrap">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:rap">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to rap</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-rap.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>RAP</tok-starts-with>
       <tok-starts-with>Rap</tok-starts-with>
       <tok-starts-with>rap</tok-starts-with>
       <tok-starts-with>ráp</tok-starts-with>
-      <ana><!--RAPHANOS Raphanos raphanos-->
-         <tok val="[rR]?(aphanos|RAPHANOS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:42:41.587-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:42:41.587-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-rap.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="RAPHANOS"/>
+         <tok val="Raphanos"/>
+         <tok val="raphanos"/>
          <lm>
             <l>raphanus</l>
             <m cert="0.5">n - - p - - - m a</m>
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--RAPIO Rapio rapio-->
-         <tok val="[rR]?(apio|RAPIO)"/>
+      <ana>
+         <tok val="RAPIO"/>
+         <tok val="Rapio"/>
+         <tok val="rapio"/>
          <lm>
             <l>rapio</l>
             <m>v - 1 s p i a</m>
@@ -53,6 +65,7 @@
       </ana>
       <ana>
          <tok val="RAPSATA"/>
+         <tok val="rapsata"/>
          <lm>
             <l>rapso</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -63,8 +76,14 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--RAPTA Rapta Raptaque rapta raptaque raptast raptave-->
-         <tok val="[rR]?(apta)?(que|st|ve|RAPTA)?"/>
+      <ana>
+         <tok val="RAPTA"/>
+         <tok val="Rapta"/>
+         <tok val="Raptaque"/>
+         <tok val="rapta"/>
+         <tok val="raptaque"/>
+         <tok val="raptast"/>
+         <tok val="raptave"/>
          <lm cert="0.25">
             <l>rapta</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -91,30 +110,43 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--RAPVM Rape Rapum rape rapum-->
-         <tok val="[rR]?(ap)?(um|e|RAPVM)"/>
+      <ana>
+         <tok val="RAPVM"/>
+         <tok val="Rape"/>
+         <tok val="Rapum"/>
+         <tok val="rape"/>
+         <tok val="rapum"/>
+         <tok val="rapvm"/>
          <lm>
             <l>rapum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--RAPVM Rapum rapum-->
-         <tok val="[rR]?(apum|RAPVM)"/>
+      <ana>
+         <tok val="RAPVM"/>
+         <tok val="Rapum"/>
+         <tok val="rapum"/>
+         <tok val="rapvm"/>
          <lm>
             <l>rapum</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--RAPVM Rapum raporum rapum-->
-         <tok val="[rR]?(ap)?(or)?(um|RAPVM)"/>
+      <ana>
+         <tok val="RAPVM"/>
+         <tok val="Rapum"/>
+         <tok val="raporum"/>
+         <tok val="rapum"/>
+         <tok val="rapvm"/>
          <lm>
             <l>rapum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Rapa rapa-->
-         <tok val="[rR]apa"/>
+      <ana>
+         <tok val="Rapa"/>
+         <tok val="rapa"/>
          <lm cert="0.5">
             <l>rapa</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -130,6 +162,7 @@
       </ana>
       <ana>
          <tok val="Rapace"/>
+         <tok val="rapace"/>
          <lm>
             <l>rapax</l>
             <m cert="0.333333333333333333">a - - s - - - m b</m>
@@ -137,8 +170,11 @@
             <m cert="0.333333333333333333">a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Rapaces rapaces rapacesque rapacis-->
-         <tok val="[rR]apac[ei]s(que)?"/>
+      <ana>
+         <tok val="Rapaces"/>
+         <tok val="rapaces"/>
+         <tok val="rapacesque"/>
+         <tok val="rapacis"/>
          <lm>
             <l>rapax</l>
             <m cert="0.25">a - - p - - - m a</m>
@@ -147,16 +183,19 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Rapaces rapaces rapacesque-->
-         <tok val="[rR]apaces(que)?"/>
+      <ana>
+         <tok val="Rapaces"/>
+         <tok val="rapaces"/>
+         <tok val="rapacesque"/>
          <lm>
             <l>rapax</l>
             <m cert="0.5">a - - p - - - f v</m>
             <m cert="0.5">a - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Rapaci rapaci-->
-         <tok val="[rR]apaci"/>
+      <ana>
+         <tok val="Rapaci"/>
+         <tok val="rapaci"/>
          <lm>
             <l>rapax</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -164,8 +203,9 @@
             <m cert="0.333333333333333333">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Rapacia rapacia-->
-         <tok val="[rR]apacia"/>
+      <ana>
+         <tok val="Rapacia"/>
+         <tok val="rapacia"/>
          <lm>
             <l>rapacia</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -173,8 +213,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Rapacis rapacis-->
-         <tok val="[rR]apacis"/>
+      <ana>
+         <tok val="Rapacis"/>
+         <tok val="rapacis"/>
          <lm>
             <l>rapax</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -182,8 +223,9 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Rapacissimi rapacissimi-->
-         <tok val="[rR]apacissimi"/>
+      <ana>
+         <tok val="Rapacissimi"/>
+         <tok val="rapacissimi"/>
          <lm>
             <l>rapax</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -192,22 +234,26 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Rapacitas rapacitas-->
-         <tok val="[rR]apacitas"/>
+      <ana>
+         <tok val="Rapacitas"/>
+         <tok val="rapacitas"/>
          <lm>
             <l>rapacitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Rapaciter rapacius-->
-         <tok val="[rR]apaci(us|ter)"/>
+      <ana>
+         <tok val="Rapaciter"/>
+         <tok val="rapaciter"/>
+         <tok val="rapacius"/>
          <lm>
             <l>rapax</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Rapae rapae-->
-         <tok val="[rR]apae"/>
+      <ana>
+         <tok val="Rapae"/>
+         <tok val="rapae"/>
          <lm>
             <l>rapa</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -216,22 +262,25 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Raparum raparum-->
-         <tok val="[rR]aparum"/>
+      <ana>
+         <tok val="Raparum"/>
+         <tok val="raparum"/>
          <lm>
             <l>rapa</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Rapas rapas-->
-         <tok val="[rR]apas"/>
+      <ana>
+         <tok val="Rapas"/>
+         <tok val="rapas"/>
          <lm>
             <l>rapa</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Rapax rapax-->
-         <tok val="[rR]apax"/>
+      <ana>
+         <tok val="Rapax"/>
+         <tok val="rapax"/>
          <lm>
             <l>rapax</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -242,37 +291,45 @@
             <m cert="0.166666666666666667">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Rapax rapax rapáx-->
-         <tok val="[rR]ap[aá]x"/>
+      <ana>
+         <tok val="Rapax"/>
+         <tok val="rapax"/>
+         <tok val="rapáx"/>
          <lm>
             <l>rapax</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Rape rape-->
-         <tok val="[rR]ape"/>
+      <ana>
+         <tok val="Rape"/>
+         <tok val="rape"/>
          <lm>
             <l>rapio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Rapere rapere-->
-         <tok val="[rR]apere"/>
+      <ana>
+         <tok val="Rapere"/>
+         <tok val="rapere"/>
          <lm>
             <l>rapio</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Rapere rapere raperis-->
-         <tok val="[rR]aper(e|is)"/>
+      <ana>
+         <tok val="Rapere"/>
+         <tok val="rapere"/>
+         <tok val="raperis"/>
          <lm>
             <l>rapio</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Raphani raphani raphanique-->
-         <tok val="[rR]aphani(que)?"/>
+      <ana>
+         <tok val="Raphani"/>
+         <tok val="raphani"/>
+         <tok val="raphanique"/>
          <lm>
             <l>raphanus</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -283,8 +340,9 @@
             <m cert="0.166666666666666667">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Raphaninum raphaninum-->
-         <tok val="[rR]aphaninum"/>
+      <ana>
+         <tok val="Raphaninum"/>
+         <tok val="raphaninum"/>
          <lm>
             <l>raphaninus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -295,22 +353,25 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Raphaninus raphaninus-->
-         <tok val="[rR]aphaninus"/>
+      <ana>
+         <tok val="Raphaninus"/>
+         <tok val="raphaninus"/>
          <lm>
             <l>raphaninus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Raphanitis raphanitis-->
-         <tok val="[rR]aphanitis"/>
+      <ana>
+         <tok val="Raphanitis"/>
+         <tok val="raphanitis"/>
          <lm>
             <l>raphanitis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Raphanum raphanum-->
-         <tok val="[rR]aphanum"/>
+      <ana>
+         <tok val="Raphanum"/>
+         <tok val="raphanum"/>
          <lm>
             <l>raphanus</l>
             <m cert="0.25">n - - p - - - m g</m>
@@ -319,16 +380,19 @@
             <m cert="0.25">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Raphanus raphanus-->
-         <tok val="[rR]aphanus"/>
+      <ana>
+         <tok val="Raphanus"/>
+         <tok val="raphanus"/>
          <lm>
             <l>raphanus</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Rapi rapi rapique-->
-         <tok val="[rR]api(que)?"/>
+      <ana>
+         <tok val="Rapi"/>
+         <tok val="rapi"/>
+         <tok val="rapique"/>
          <lm cert="0.5">
             <l>rapio</l>
             <m>v - - - p n p</m>
@@ -338,22 +402,28 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Rapiamus Rapiamvs rapiamus-->
-         <tok val="[Rr]apiam[vu]s"/>
+      <ana>
+         <tok val="Rapiamus"/>
+         <tok val="Rapiamvs"/>
+         <tok val="rapiamus"/>
+         <tok val="rapiamvs"/>
          <lm>
             <l>rapio</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Rapiat rapiat rapiatque-->
-         <tok val="[rR]apiat(que)?"/>
+      <ana>
+         <tok val="Rapiat"/>
+         <tok val="rapiat"/>
+         <tok val="rapiatque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Rapiatur rapiatur-->
-         <tok val="[rR]apiatur"/>
+      <ana>
+         <tok val="Rapiatur"/>
+         <tok val="rapiatur"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 s p s p</m>
@@ -361,6 +431,7 @@
       </ana>
       <ana>
          <tok val="Rapicia"/>
+         <tok val="rapicia"/>
          <lm>
             <l>rapicius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -371,8 +442,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Rapicium rapiciorum rapicium-->
-         <tok val="[rR]apici(or)?um"/>
+      <ana>
+         <tok val="Rapicium"/>
+         <tok val="rapiciorum"/>
+         <tok val="rapicium"/>
          <lm cert="0.5">
             <l>rapicii</l>
             <m>n - - p - - - m g</m>
@@ -383,8 +456,9 @@
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Rapicium rapicium-->
-         <tok val="[rR]apicium"/>
+      <ana>
+         <tok val="Rapicium"/>
+         <tok val="rapicium"/>
          <lm>
             <l>rapicius</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -393,8 +467,10 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Rapida rapida rapidaque-->
-         <tok val="[rR]apida(que)?"/>
+      <ana>
+         <tok val="Rapida"/>
+         <tok val="rapida"/>
+         <tok val="rapidaque"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -405,8 +481,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Rapidae rapidae-->
-         <tok val="[rR]apidae"/>
+      <ana>
+         <tok val="Rapidae"/>
+         <tok val="rapidae"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -415,8 +492,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Rapidam rapidam-->
-         <tok val="[rR]apidam"/>
+      <ana>
+         <tok val="Rapidam"/>
+         <tok val="rapidam"/>
          <lm>
             <l>rapidus</l>
             <m>a - - s - - - f a</m>
@@ -424,34 +502,48 @@
       </ana>
       <ana>
          <tok val="Rapidarum"/>
+         <tok val="rapidarum"/>
          <lm>
             <l>rapidus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Rapide rapide rapideque rapidius-->
-         <tok val="[rR]apid[e]?(que|ius)?"/>
+      <ana>
+         <tok val="Rapide"/>
+         <tok val="rapide"/>
+         <tok val="rapideque"/>
+         <tok val="rapidius"/>
          <lm>
             <l>rapidus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Rapide Rapidum rapide rapideque rapidum-->
-         <tok val="[rR]apid(um|e|eque)"/>
+      <ana>
+         <tok val="Rapide"/>
+         <tok val="Rapidum"/>
+         <tok val="rapide"/>
+         <tok val="rapideque"/>
+         <tok val="rapidum"/>
          <lm>
             <l>rapidus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Rapide rapide rapideque-->
-         <tok val="[rR]apide(que)?"/>
+      <ana>
+         <tok val="Rapide"/>
+         <tok val="rapide"/>
+         <tok val="rapideque"/>
          <lm>
             <l>rapidus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Rapidi rapidi rapidique rapidiue rapidive-->
-         <tok val="[rR]apidi[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Rapidi"/>
+         <tok val="rapidi"/>
+         <tok val="rapidique"/>
+         <tok val="rapidiue"/>
+         <tok val="rapidive"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -460,8 +552,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Rapidis rapidis rapidisque-->
-         <tok val="[rR]apidis(que)?"/>
+      <ana>
+         <tok val="Rapidis"/>
+         <tok val="rapidis"/>
+         <tok val="rapidisque"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -472,8 +566,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Rapidissima rapidissima-->
-         <tok val="[rR]apidissima"/>
+      <ana>
+         <tok val="Rapidissima"/>
+         <tok val="rapidissima"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -484,15 +579,18 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Rapiditas rapiditas-->
-         <tok val="[rR]apiditas"/>
+      <ana>
+         <tok val="Rapiditas"/>
+         <tok val="rapiditas"/>
          <lm>
             <l>rapiditas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Rapido rapido rapidoque-->
-         <tok val="[rR]apido(que)?"/>
+      <ana>
+         <tok val="Rapido"/>
+         <tok val="rapido"/>
+         <tok val="rapidoque"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -501,8 +599,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Rapidum rapidum-->
-         <tok val="[rR]apidum"/>
+      <ana>
+         <tok val="Rapidum"/>
+         <tok val="rapidum"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -510,23 +609,28 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Rapidum rapidorum rapidum-->
-         <tok val="[rR]apid(or)?um"/>
+      <ana>
+         <tok val="Rapidum"/>
+         <tok val="rapidorum"/>
+         <tok val="rapidum"/>
          <lm>
             <l>rapidus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Rapidus rapidus rapidusque-->
-         <tok val="[rR]apidus(que)?"/>
+      <ana>
+         <tok val="Rapidus"/>
+         <tok val="rapidus"/>
+         <tok val="rapidusque"/>
          <lm>
             <l>rapidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Rapienda rapienda-->
-         <tok val="[rR]apienda"/>
+      <ana>
+         <tok val="Rapienda"/>
+         <tok val="rapienda"/>
          <lm>
             <l>rapio</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -537,15 +641,18 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Rapiendus rapiendus-->
-         <tok val="[rR]apiendus"/>
+      <ana>
+         <tok val="Rapiendus"/>
+         <tok val="rapiendus"/>
          <lm>
             <l>rapio</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Rapiens rapiens rapiensque-->
-         <tok val="[rR]apiens(que)?"/>
+      <ana>
+         <tok val="Rapiens"/>
+         <tok val="rapiens"/>
+         <tok val="rapiensque"/>
          <lm>
             <l>rapio</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -557,15 +664,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Rapientur rapientur-->
-         <tok val="[rR]apientur"/>
+      <ana>
+         <tok val="Rapientur"/>
+         <tok val="rapientur"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Rapina rapina-->
-         <tok val="[rR]apina"/>
+      <ana>
+         <tok val="Rapina"/>
+         <tok val="rapina"/>
          <lm>
             <l>rapina</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -573,8 +682,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Rapinae rapinae-->
-         <tok val="[rR]apinae"/>
+      <ana>
+         <tok val="Rapinae"/>
+         <tok val="rapinae"/>
          <lm>
             <l>rapina</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -583,43 +693,55 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Rapit rapit rapitque-->
-         <tok val="[rR]apit(que)?"/>
+      <ana>
+         <tok val="Rapit"/>
+         <tok val="rapit"/>
+         <tok val="rapitque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Rapite rapite rápite-->
-         <tok val="[rR]?(a|rá)pite"/>
+      <ana>
+         <tok val="Rapite"/>
+         <tok val="rapite"/>
+         <tok val="rápite"/>
          <lm>
             <l>rapio</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Rapitur rapitur rapiturque-->
-         <tok val="[rR]apitur(que)?"/>
+      <ana>
+         <tok val="Rapitur"/>
+         <tok val="rapitur"/>
+         <tok val="rapiturque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Rapiunt rapiunt rapiuntque-->
-         <tok val="[rR]apiunt(que)?"/>
+      <ana>
+         <tok val="Rapiunt"/>
+         <tok val="rapiunt"/>
+         <tok val="rapiuntque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Rapiuntur rapiuntur-->
-         <tok val="[rR]apiuntur"/>
+      <ana>
+         <tok val="Rapiuntur"/>
+         <tok val="rapiuntur"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Rapo Rapon rapo-->
-         <tok val="[Rr]apo[n]?"/>
+      <ana>
+         <tok val="Rapo"/>
+         <tok val="Rapon"/>
+         <tok val="rapo"/>
+         <tok val="rapon"/>
          <lm cert="0.5">
             <l>rapo</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -631,15 +753,18 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Rapsa rapsa-->
-         <tok val="[rR]apsa"/>
+      <ana>
+         <tok val="Rapsa"/>
+         <tok val="rapsa"/>
          <lm>
             <l>rapso</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Raptae raptae raptaeque-->
-         <tok val="[rR]aptae(que)?"/>
+      <ana>
+         <tok val="Raptae"/>
+         <tok val="raptae"/>
+         <tok val="raptaeque"/>
          <lm cert="0.5">
             <l>rapio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -655,8 +780,12 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Raptam Raptamque raptam raptamque raptamve-->
-         <tok val="[rR]aptam(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Raptam"/>
+         <tok val="Raptamque"/>
+         <tok val="raptam"/>
+         <tok val="raptamque"/>
+         <tok val="raptamve"/>
          <lm cert="0.5">
             <l>rapio</l>
             <m>v - - s r p p f a</m>
@@ -666,22 +795,26 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Raptant raptant-->
-         <tok val="[rR]aptant"/>
+      <ana>
+         <tok val="Raptant"/>
+         <tok val="raptant"/>
          <lm>
             <l>rapto</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Raptari raptari raptarier-->
-         <tok val="[rR]aptari(er)?"/>
+      <ana>
+         <tok val="Raptari"/>
+         <tok val="raptari"/>
+         <tok val="raptarier"/>
          <lm>
             <l>rapto</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Raptarum raptarum-->
-         <tok val="[rR]aptarum"/>
+      <ana>
+         <tok val="Raptarum"/>
+         <tok val="raptarum"/>
          <lm cert="0.5">
             <l>rapta</l>
             <m>n - - p - - - f g</m>
@@ -691,8 +824,10 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--Raptas raptas raptasque-->
-         <tok val="[rR]aptas(que)?"/>
+      <ana>
+         <tok val="Raptas"/>
+         <tok val="raptas"/>
+         <tok val="raptasque"/>
          <lm cert="0.333333333333333333">
             <l>rapio</l>
             <m>v - - p r p p f a</m>
@@ -706,22 +841,27 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Raptat raptat raptát-->
-         <tok val="[rR]apt[aá]t"/>
+      <ana>
+         <tok val="Raptat"/>
+         <tok val="raptat"/>
+         <tok val="raptát"/>
          <lm>
             <l>rapto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Raptatus raptatus-->
-         <tok val="[rR]aptatus"/>
+      <ana>
+         <tok val="Raptatus"/>
+         <tok val="raptatus"/>
          <lm>
             <l>rapto</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Rapti rapti raptique-->
-         <tok val="[rR]apti(que)?"/>
+      <ana>
+         <tok val="Rapti"/>
+         <tok val="rapti"/>
+         <tok val="raptique"/>
          <lm cert="0.5">
             <l>rapio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -734,30 +874,40 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Rapti Rapui rapti raptique rapui-->
-         <tok val="[Rr]ap[ut]i(que)?"/>
+      <ana>
+         <tok val="Rapti"/>
+         <tok val="Rapui"/>
+         <tok val="rapti"/>
+         <tok val="raptique"/>
+         <tok val="rapui"/>
          <lm>
             <l>rapio</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Raptim Raptimque raptim raptimque-->
-         <tok val="[rR]aptim(que)?"/>
+      <ana>
+         <tok val="Raptim"/>
+         <tok val="Raptimque"/>
+         <tok val="raptim"/>
+         <tok val="raptimque"/>
          <lm>
             <l>raptim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Raptio raptio-->
-         <tok val="[rR]aptio"/>
+      <ana>
+         <tok val="Raptio"/>
+         <tok val="raptio"/>
          <lm>
             <l>raptio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Raptis raptis raptisque-->
-         <tok val="[rR]aptis(que)?"/>
+      <ana>
+         <tok val="Raptis"/>
+         <tok val="raptis"/>
+         <tok val="raptisque"/>
          <lm cert="0.333333333333333333">
             <l>rapio</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -778,8 +928,10 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Rapto rapto raptoque-->
-         <tok val="[rR]apto(que)?"/>
+      <ana>
+         <tok val="Rapto"/>
+         <tok val="rapto"/>
+         <tok val="raptoque"/>
          <lm cert="0.333333333333333333">
             <l>rapio</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -797,8 +949,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Raptor raptor-->
-         <tok val="[rR]aptor"/>
+      <ana>
+         <tok val="Raptor"/>
+         <tok val="raptor"/>
          <lm cert="0.5">
             <l>raptor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -809,30 +962,40 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Raptorem raptorem-->
-         <tok val="[rR]aptorem"/>
+      <ana>
+         <tok val="Raptorem"/>
+         <tok val="raptorem"/>
          <lm>
             <l>raptor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Raptores raptores raptoresque raptóres-->
-         <tok val="[rR]apt[oó]res(que)?"/>
+      <ana>
+         <tok val="Raptores"/>
+         <tok val="raptores"/>
+         <tok val="raptoresque"/>
+         <tok val="raptóres"/>
          <lm>
             <l>raptor</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Raptores raptores raptoresque-->
-         <tok val="[rR]aptores(que)?"/>
+      <ana>
+         <tok val="Raptores"/>
+         <tok val="raptores"/>
+         <tok val="raptoresque"/>
          <lm>
             <l>raptor</l>
             <m cert="0.5">n - - p - - - m v</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Raptum raptorum raptum raptumque raptumue-->
-         <tok val="[rR]apt(or)?um[q]?(ue)?"/>
+      <ana>
+         <tok val="Raptum"/>
+         <tok val="raptorum"/>
+         <tok val="raptum"/>
+         <tok val="raptumque"/>
+         <tok val="raptumue"/>
          <lm cert="0.5">
             <l>rapio</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -843,8 +1006,12 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Raptum rapte raptum raptumque raptumue-->
-         <tok val="[rR]apt(um)?[q]?(ue|e)?"/>
+      <ana>
+         <tok val="Raptum"/>
+         <tok val="rapte"/>
+         <tok val="raptum"/>
+         <tok val="raptumque"/>
+         <tok val="raptumue"/>
          <lm cert="0.5">
             <l>raptum</l>
             <m>n - - s - - - n v</m>
@@ -854,8 +1021,11 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Raptum raptum raptumque raptumue-->
-         <tok val="[rR]aptum[q]?(ue)?"/>
+      <ana>
+         <tok val="Raptum"/>
+         <tok val="raptum"/>
+         <tok val="raptumque"/>
+         <tok val="raptumue"/>
          <lm cert="0.333333333333333333">
             <l>rapio</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -874,13 +1044,15 @@
       </ana>
       <ana>
          <tok val="Raptum"/>
+         <tok val="raptum"/>
          <lm>
             <l>rapio</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Raptura raptura-->
-         <tok val="[rR]aptura"/>
+      <ana>
+         <tok val="Raptura"/>
+         <tok val="raptura"/>
          <lm>
             <l>rapio</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -891,22 +1063,27 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--Rapturos rapturos-->
-         <tok val="[rR]apturos"/>
+      <ana>
+         <tok val="Rapturos"/>
+         <tok val="rapturos"/>
          <lm>
             <l>rapio</l>
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--Rapturusque rapturus rapturusque-->
-         <tok val="[rR]apturus(que|)"/>
+      <ana>
+         <tok val="Rapturusque"/>
+         <tok val="rapturus"/>
+         <tok val="rapturusque"/>
          <lm>
             <l>rapio</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Raptus raptus raptusque-->
-         <tok val="[rR]aptus(que)?"/>
+      <ana>
+         <tok val="Raptus"/>
+         <tok val="raptus"/>
+         <tok val="raptusque"/>
          <lm cert="0.5">
             <l>raptus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -919,29 +1096,36 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Rapuere Rapuerunt rapuere rapuerunt-->
-         <tok val="[rR]apuer(unt|e)"/>
+      <ana>
+         <tok val="Rapuere"/>
+         <tok val="Rapuerunt"/>
+         <tok val="rapuere"/>
+         <tok val="rapuerunt"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Rapuisti rapuisti-->
-         <tok val="[rR]apuisti"/>
+      <ana>
+         <tok val="Rapuisti"/>
+         <tok val="rapuisti"/>
          <lm>
             <l>rapio</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Rapuit rapuit rapuitque-->
-         <tok val="[rR]apuit(que)?"/>
+      <ana>
+         <tok val="Rapuit"/>
+         <tok val="rapuit"/>
+         <tok val="rapuitque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Rapulum rapulum-->
-         <tok val="[rR]apulum"/>
+      <ana>
+         <tok val="Rapulum"/>
+         <tok val="rapulum"/>
          <lm>
             <l>rapulum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -950,8 +1134,10 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Rapvla rapula-->
-         <tok val="[rR]ap[uv]la"/>
+      <ana>
+         <tok val="Rapvla"/>
+         <tok val="rapula"/>
+         <tok val="rapvla"/>
          <lm>
             <l>rapulum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1012,8 +1198,9 @@
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--rapaciorum rapacium-->
-         <tok val="rapaci(or)?um"/>
+      <ana>
+         <tok val="rapaciorum"/>
+         <tok val="rapacium"/>
          <lm>
             <l>rapacia</l>
             <m>n - - p - - - n g</m>
@@ -1161,8 +1348,10 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--raperet raperetne raperetque-->
-         <tok val="raperet(ne|que)?"/>
+      <ana>
+         <tok val="raperet"/>
+         <tok val="raperetne"/>
+         <tok val="raperetque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 s i s a</m>
@@ -1212,8 +1401,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--rapiam rapiamque-->
-         <tok val="rapiam(que)?"/>
+      <ana>
+         <tok val="rapiam"/>
+         <tok val="rapiamque"/>
          <lm>
             <l>rapio</l>
             <m cert="0.5">v - 1 s p s a</m>
@@ -1227,8 +1417,9 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--rapiantur rapianturque-->
-         <tok val="rapiantur(que)?"/>
+      <ana>
+         <tok val="rapiantur"/>
+         <tok val="rapianturque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 p p s p</m>
@@ -1270,8 +1461,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--rapidas rapidasque-->
-         <tok val="rapidas(que)?"/>
+      <ana>
+         <tok val="rapidas"/>
+         <tok val="rapidasque"/>
          <lm>
             <l>rapidus</l>
             <m>a - - p - - - f a</m>
@@ -1311,15 +1503,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--rapidissime rapidissimus-->
-         <tok val="rapidissim(us|e)"/>
+      <ana>
+         <tok val="rapidissime"/>
+         <tok val="rapidissimus"/>
          <lm>
             <l>rapidus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--rapidissime rapidissimum-->
-         <tok val="rapidissim(um|e)"/>
+      <ana>
+         <tok val="rapidissime"/>
+         <tok val="rapidissimum"/>
          <lm>
             <l>rapidus</l>
             <m>a - - s - - - n v s</m>
@@ -1456,8 +1650,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--rapien rapies-->
-         <tok val="rapie[sn]"/>
+      <ana>
+         <tok val="rapien"/>
+         <tok val="rapies"/>
          <lm>
             <l>rapio</l>
             <m>v - 2 s f i a</m>
@@ -1498,8 +1693,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--rapiendo rapiendoque-->
-         <tok val="rapiendo(que)?"/>
+      <ana>
+         <tok val="rapiendo"/>
+         <tok val="rapiendoque"/>
          <lm>
             <l>rapio</l>
             <m cert="0.25">v - - s p g p m d</m>
@@ -1543,8 +1739,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--rapiente rapienti-->
-         <tok val="rapient[ie]"/>
+      <ana>
+         <tok val="rapiente"/>
+         <tok val="rapienti"/>
          <lm>
             <l>rapio</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1570,8 +1767,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--rapientes rapientis-->
-         <tok val="rapient[ie]s"/>
+      <ana>
+         <tok val="rapientes"/>
+         <tok val="rapientis"/>
          <lm>
             <l>rapio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1633,8 +1831,9 @@
             <m>v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--rapiet rapietque-->
-         <tok val="rapiet(que)?"/>
+      <ana>
+         <tok val="rapiet"/>
+         <tok val="rapietque"/>
          <lm>
             <l>rapio</l>
             <m>v - 3 s f i a</m>
@@ -1654,8 +1853,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--rapinam rapinamque-->
-         <tok val="rapinam(que)?"/>
+      <ana>
+         <tok val="rapinam"/>
+         <tok val="rapinamque"/>
          <lm>
             <l>rapina</l>
             <m>n - - s - - - f a</m>
@@ -1668,8 +1868,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--rapinas rapinasque-->
-         <tok val="rapinas(que)?"/>
+      <ana>
+         <tok val="rapinas"/>
+         <tok val="rapinasque"/>
          <lm>
             <l>rapina</l>
             <m>n - - p - - - f a</m>
@@ -1709,8 +1910,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--rapinis rapinisque-->
-         <tok val="rapinis(que)?"/>
+      <ana>
+         <tok val="rapinis"/>
+         <tok val="rapinisque"/>
          <lm>
             <l>rapina</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -1808,8 +2010,9 @@
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--raptabat raptabatque-->
-         <tok val="raptabat(que)?"/>
+      <ana>
+         <tok val="raptabat"/>
+         <tok val="raptabatque"/>
          <lm>
             <l>rapto</l>
             <m>v - 3 s i i a</m>
@@ -1915,8 +2118,9 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--raptata raptataque-->
-         <tok val="raptata(que)?"/>
+      <ana>
+         <tok val="raptata"/>
+         <tok val="raptataque"/>
          <lm>
             <l>rapto</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1952,22 +2156,25 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--raptatur raptaturque-->
-         <tok val="raptatur(que)?"/>
+      <ana>
+         <tok val="raptatur"/>
+         <tok val="raptaturque"/>
          <lm>
             <l>rapto</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--raptauerat raptaverat-->
-         <tok val="rapta[vu]erat"/>
+      <ana>
+         <tok val="raptauerat"/>
+         <tok val="raptaverat"/>
          <lm>
             <l>rapto</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--raptaverit raptarit-->
-         <tok val="rapta(ve)?rit"/>
+      <ana>
+         <tok val="raptarit"/>
+         <tok val="raptaverit"/>
          <lm>
             <l>rapto</l>
             <m>v - 3 s r s a</m>
@@ -2088,8 +2295,9 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--raptoris raptorisque-->
-         <tok val="raptoris(que)?"/>
+      <ana>
+         <tok val="raptoris"/>
+         <tok val="raptorisque"/>
          <lm>
             <l>raptor</l>
             <m>n - - s - - - m g</m>
@@ -2109,8 +2317,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--raptos raptosque-->
-         <tok val="raptos(que)?"/>
+      <ana>
+         <tok val="raptos"/>
+         <tok val="raptosque"/>
          <lm>
             <l>rapio</l>
             <m>v - - p r p p m a</m>
@@ -2124,8 +2333,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--raptu raptuque-->
-         <tok val="raptu(que)?"/>
+      <ana>
+         <tok val="raptu"/>
+         <tok val="raptuque"/>
          <lm cert="0.5">
             <l>raptus</l>
             <m>n - - s - - - m b</m>
@@ -2135,8 +2345,10 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--raptum raptumque raptumue-->
-         <tok val="raptum[q]?(ue|)"/>
+      <ana>
+         <tok val="raptum"/>
+         <tok val="raptumque"/>
+         <tok val="raptumue"/>
          <lm>
             <l>rapio</l>
             <m>a - - s - - - n n</m>
@@ -2172,8 +2384,9 @@
             <m cert="0.25">v - - s f p a n d</m>
          </lm>
       </ana>
-      <ana><!--rapturum rapturumque-->
-         <tok val="rapturum(que)?"/>
+      <ana>
+         <tok val="rapturum"/>
+         <tok val="rapturumque"/>
          <lm>
             <l>rapio</l>
             <m cert="0.166666666666666667">v - - s f p a n v</m>

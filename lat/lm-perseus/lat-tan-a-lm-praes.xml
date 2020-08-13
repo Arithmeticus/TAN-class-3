@@ -1,51 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspraes">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:praes">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to praes</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-praes.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PRAES</tok-starts-with>
       <tok-starts-with>PRaes</tok-starts-with>
       <tok-starts-with>Praes</tok-starts-with>
       <tok-starts-with>praes</tok-starts-with>
       <tok-starts-with>praés</tok-starts-with>
-      <ana><!--PRAES Praes praes-->
-         <tok val="[pP]?(raes|PRAES)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:40:43.294-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:40:43.294-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-praes.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PRAES"/>
+         <tok val="Praes"/>
+         <tok val="praes"/>
          <lm>
             <l>praes</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--PRAESENS PRaesens Praesens praesens praesensque Praesensque-->
-         <tok val="[Pp]?(r|PR|pr)?(aesens)?(que|PRAESENS)?"/>
+      <ana>
+         <tok val="PRAESENS"/>
+         <tok val="PRaesens"/>
+         <tok val="Praesens"/>
+         <tok val="Praesensque"/>
+         <tok val="praesens"/>
+         <tok val="praesensque"/>
          <lm>
             <l>praesens</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -57,8 +72,12 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--PRAESENTEM Praesentem Praesentemque praesentem praesentemque-->
-         <tok val="[pP]?(raesentem)?(que|PRAESENTEM)?"/>
+      <ana>
+         <tok val="PRAESENTEM"/>
+         <tok val="Praesentem"/>
+         <tok val="Praesentemque"/>
+         <tok val="praesentem"/>
+         <tok val="praesentemque"/>
          <lm cert="0.5">
             <l>praesens</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -69,15 +88,25 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--PRAESENTI Praesente Praesenti praesente praesenti praesentique praésente praesénti-->
-         <tok val="[Pp]?(ra)?[eé]?[s]?[eé]?(nt)?(i|e|ique|PRAESENTI)"/>
+      <ana>
+         <tok val="PRAESENTI"/>
+         <tok val="Praesente"/>
+         <tok val="Praesenti"/>
+         <tok val="praesente"/>
+         <tok val="praesenti"/>
+         <tok val="praesentique"/>
+         <tok val="praesénti"/>
+         <tok val="praésente"/>
          <lm>
             <l>praesens</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--PRAESENTI Praesenti praesenti praesentique-->
-         <tok val="[pP]?(raesenti)?(que|PRAESENTI)?"/>
+      <ana>
+         <tok val="PRAESENTI"/>
+         <tok val="Praesenti"/>
+         <tok val="praesenti"/>
+         <tok val="praesentique"/>
          <lm cert="0.5">
             <l>praesens</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -89,16 +118,22 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--PRAESENTI Praesente Praesenti praesente praesenti praesentique-->
-         <tok val="[Pp]?(raesent)?(i|e|ique|PRAESENTI)"/>
+      <ana>
+         <tok val="PRAESENTI"/>
+         <tok val="Praesente"/>
+         <tok val="Praesenti"/>
+         <tok val="praesente"/>
+         <tok val="praesenti"/>
+         <tok val="praesentique"/>
          <lm>
             <l>praesens</l>
             <m cert="0.5">a - - s - - - m b</m>
             <m cert="0.5">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--PRAESENTIAE praesentiae-->
-         <tok val="(praesentiae|PRAESENTIAE)"/>
+      <ana>
+         <tok val="PRAESENTIAE"/>
+         <tok val="praesentiae"/>
          <lm>
             <l>praesentia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -107,8 +142,12 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--PRAESENTIBVS Praesentibus Praesentibvs praesentibus-->
-         <tok val="[Pp]?(raesentib)?[vu]?(s|PRAESENTIBVS)"/>
+      <ana>
+         <tok val="PRAESENTIBVS"/>
+         <tok val="Praesentibus"/>
+         <tok val="Praesentibvs"/>
+         <tok val="praesentibus"/>
+         <tok val="praesentibvs"/>
          <lm cert="0.5">
             <l>praesens</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -124,29 +163,43 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--PRAESEPIO Praesepio praesepi praesepio-->
-         <tok val="[pP]?(raesepi)?(o|PRAESEPIO)?"/>
+      <ana>
+         <tok val="PRAESEPIO"/>
+         <tok val="Praesepio"/>
+         <tok val="praesepi"/>
+         <tok val="praesepio"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--PRAESEPIO Praesepe Praesepio praesaepe praesepe praesepi praesepio-->
-         <tok val="[pP]?(raes)?[a]?(ep)?(e|io|i|PRAESEPIO)"/>
+      <ana>
+         <tok val="PRAESEPIO"/>
+         <tok val="Praesepe"/>
+         <tok val="Praesepio"/>
+         <tok val="praesaepe"/>
+         <tok val="praesepe"/>
+         <tok val="praesepi"/>
+         <tok val="praesepio"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--PRAESIDEO Praesideo praesideo-->
-         <tok val="[pP]?(raesideo|PRAESIDEO)"/>
+      <ana>
+         <tok val="PRAESIDEO"/>
+         <tok val="Praesideo"/>
+         <tok val="praesideo"/>
          <lm>
             <l>praesideo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PRAESIDIA Praesidia praesidia praesidiaque-->
-         <tok val="[pP]?(raesidia)?(que|PRAESIDIA)?"/>
+      <ana>
+         <tok val="PRAESIDIA"/>
+         <tok val="Praesidia"/>
+         <tok val="praesidia"/>
+         <tok val="praesidiaque"/>
          <lm>
             <l>praesidium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -154,22 +207,31 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--PRAESIDIIS Praesidiis praesidiis praesidiisque praésidiis-->
-         <tok val="[pP]?(ra)?[eé]?(sidiis)?(que|PRAESIDIIS)?"/>
+      <ana>
+         <tok val="PRAESIDIIS"/>
+         <tok val="Praesidiis"/>
+         <tok val="praesidiis"/>
+         <tok val="praesidiisque"/>
+         <tok val="praésidiis"/>
          <lm>
             <l>praesidium</l>
             <m>n - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--PRAESIDIIS Praesidiis praesidiis praesidiisque-->
-         <tok val="[pP]?(raesidiis)?(que|PRAESIDIIS)?"/>
+      <ana>
+         <tok val="PRAESIDIIS"/>
+         <tok val="Praesidiis"/>
+         <tok val="praesidiis"/>
+         <tok val="praesidiisque"/>
          <lm>
             <l>praesidium</l>
             <m>n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--PRAESTANTISSIMI praestantissimi praestantissumi-->
-         <tok val="(praestantiss)?[ui]?(mi|PRAESTANTISSIMI)"/>
+      <ana>
+         <tok val="PRAESTANTISSIMI"/>
+         <tok val="praestantissimi"/>
+         <tok val="praestantissumi"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.25">v - - p p p a m v s</m>
@@ -178,8 +240,11 @@
             <m cert="0.25">v - - s p p a m g s</m>
          </lm>
       </ana>
-      <ana><!--PRAESTANTISSIMO Praestantissimo praestantissimo praestantissimoque-->
-         <tok val="[pP]?(raestantissimo)?(que|PRAESTANTISSIMO)?"/>
+      <ana>
+         <tok val="PRAESTANTISSIMO"/>
+         <tok val="Praestantissimo"/>
+         <tok val="praestantissimo"/>
+         <tok val="praestantissimoque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.25">v - - s p p a m b s</m>
@@ -188,8 +253,11 @@
             <m cert="0.25">v - - s p p a n b s</m>
          </lm>
       </ana>
-      <ana><!--PRAESTITI Praestiti praestati praestiti-->
-         <tok val="[pP]?(raest)?[ia]?(ti|PRAESTITI)"/>
+      <ana>
+         <tok val="PRAESTITI"/>
+         <tok val="Praestiti"/>
+         <tok val="praestati"/>
+         <tok val="praestiti"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -198,8 +266,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--PRAESTITI Praestiti praestiti-->
-         <tok val="[pP]?(raestiti|PRAESTITI)"/>
+      <ana>
+         <tok val="PRAESTITI"/>
+         <tok val="Praestiti"/>
+         <tok val="praestiti"/>
          <lm cert="0.5">
             <l>praesto2</l>
             <m>v - 1 s r i a</m>
@@ -210,15 +280,24 @@
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--PRAESTO Praesto praesto praestoque praestost praéstost-->
-         <tok val="[pP]?(ra)?[ée]?(sto)?(st|que|PRAESTO)?"/>
+      <ana>
+         <tok val="PRAESTO"/>
+         <tok val="Praesto"/>
+         <tok val="praesto"/>
+         <tok val="praestoque"/>
+         <tok val="praestost"/>
+         <tok val="praéstost"/>
          <lm>
             <l>praestus</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--PRAESTO Praesto praesto praestoque praestost-->
-         <tok val="[pP]?(raesto)?(st|que|PRAESTO)?"/>
+      <ana>
+         <tok val="PRAESTO"/>
+         <tok val="Praesto"/>
+         <tok val="praesto"/>
+         <tok val="praestoque"/>
+         <tok val="praestost"/>
          <lm cert="0.5">
             <l>praesto2</l>
             <m>v - 1 s p i a</m>
@@ -230,15 +309,20 @@
             <m cert="0.333333333333333333">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--PRAESVM Praesum praesum-->
-         <tok val="[pP]?(raesum|PRAESVM)"/>
+      <ana>
+         <tok val="PRAESVM"/>
+         <tok val="Praesum"/>
+         <tok val="praesum"/>
+         <tok val="praesvm"/>
          <lm>
             <l>praesum</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesaga praesaga praesagaque-->
-         <tok val="[pP]raesaga(que)?"/>
+      <ana>
+         <tok val="Praesaga"/>
+         <tok val="praesaga"/>
+         <tok val="praesagaque"/>
          <lm cert="0.5">
             <l>praesagus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -253,8 +337,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Praesagia praesagia-->
-         <tok val="[pP]raesagia"/>
+      <ana>
+         <tok val="Praesagia"/>
+         <tok val="praesagia"/>
          <lm>
             <l>praesagium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -262,15 +347,19 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Praesagibat Praesagiebat praesagibat praesagiebat-->
-         <tok val="[Pp]raesagi[e]?bat"/>
+      <ana>
+         <tok val="Praesagibat"/>
+         <tok val="Praesagiebat"/>
+         <tok val="praesagibat"/>
+         <tok val="praesagiebat"/>
          <lm>
             <l>praesagio</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Praesagio praesagio-->
-         <tok val="[pP]raesagio"/>
+      <ana>
+         <tok val="Praesagio"/>
+         <tok val="praesagio"/>
          <lm cert="0.5">
             <l>praesagio</l>
             <m>v - 1 s p i a</m>
@@ -281,66 +370,77 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Praesagire praesagire-->
-         <tok val="[pP]raesagire"/>
+      <ana>
+         <tok val="Praesagire"/>
+         <tok val="praesagire"/>
          <lm>
             <l>praesagio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Praesagit praesagit-->
-         <tok val="[pP]raesagit"/>
+      <ana>
+         <tok val="Praesagit"/>
+         <tok val="praesagit"/>
          <lm>
             <l>praesagio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesagitio praesagitio-->
-         <tok val="[pP]raesagitio"/>
+      <ana>
+         <tok val="Praesagitio"/>
+         <tok val="praesagitio"/>
          <lm>
             <l>praesagitio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Praesagium praesagien praesagium-->
-         <tok val="[pP]raesagi(um|en)"/>
+      <ana>
+         <tok val="Praesagium"/>
+         <tok val="praesagien"/>
+         <tok val="praesagium"/>
          <lm>
             <l>praesagium</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Praesagium praesagium-->
-         <tok val="[pP]raesagium"/>
+      <ana>
+         <tok val="Praesagium"/>
+         <tok val="praesagium"/>
          <lm>
             <l>praesagium</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Praesagium praesagiorum praesagium-->
-         <tok val="[pP]raesagi(or)?um"/>
+      <ana>
+         <tok val="Praesagium"/>
+         <tok val="praesagiorum"/>
+         <tok val="praesagium"/>
          <lm>
             <l>praesagium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praesagiunt praesagiunt-->
-         <tok val="[pP]raesagiunt"/>
+      <ana>
+         <tok val="Praesagiunt"/>
+         <tok val="praesagiunt"/>
          <lm>
             <l>praesagio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesagus praesagus-->
-         <tok val="[pP]raesagus"/>
+      <ana>
+         <tok val="Praesagus"/>
+         <tok val="praesagus"/>
          <lm>
             <l>praesagus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praesanata praesanata-->
-         <tok val="[pP]raesanata"/>
+      <ana>
+         <tok val="Praesanata"/>
+         <tok val="praesanata"/>
          <lm>
             <l>praesano</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -353,6 +453,7 @@
       </ana>
       <ana>
          <tok val="Praesanatus"/>
+         <tok val="praesanatus"/>
          <lm>
             <l>praesano</l>
             <m>v - - s r p p m n</m>
@@ -360,13 +461,15 @@
       </ana>
       <ana>
          <tok val="Praescateo"/>
+         <tok val="praescateo"/>
          <lm>
             <l>praescato</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praescia praescia-->
-         <tok val="[pP]raescia"/>
+      <ana>
+         <tok val="Praescia"/>
+         <tok val="praescia"/>
          <lm>
             <l>praescius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -377,8 +480,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Praescio praescio-->
-         <tok val="[pP]raescio"/>
+      <ana>
+         <tok val="Praescio"/>
+         <tok val="praescio"/>
          <lm cert="0.5">
             <l>praescius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -393,20 +497,23 @@
       </ana>
       <ana>
          <tok val="Praescisco"/>
+         <tok val="praescisco"/>
          <lm>
             <l>praescisco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praescisse praescisse-->
-         <tok val="[pP]raescisse"/>
+      <ana>
+         <tok val="Praescisse"/>
+         <tok val="praescisse"/>
          <lm>
             <l>praescio</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Praescita praescita-->
-         <tok val="[pP]raescita"/>
+      <ana>
+         <tok val="Praescita"/>
+         <tok val="praescita"/>
          <lm cert="0.5">
             <l>praescio</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -423,74 +530,85 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Praescius praescius-->
-         <tok val="[pP]raescius"/>
+      <ana>
+         <tok val="Praescius"/>
+         <tok val="praescius"/>
          <lm>
             <l>praescius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praescribere praescribere-->
-         <tok val="[pP]raescribere"/>
+      <ana>
+         <tok val="Praescribere"/>
+         <tok val="praescribere"/>
          <lm>
             <l>praescribo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Praescribere praescribere praescriberis-->
-         <tok val="[pP]raescriber(e|is)"/>
+      <ana>
+         <tok val="Praescribere"/>
+         <tok val="praescribere"/>
+         <tok val="praescriberis"/>
          <lm>
             <l>praescribo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Praescribet praescribet-->
-         <tok val="[pP]raescribet"/>
+      <ana>
+         <tok val="Praescribet"/>
+         <tok val="praescribet"/>
          <lm>
             <l>praescribo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Praescribis praescribis-->
-         <tok val="[pP]raescribis"/>
+      <ana>
+         <tok val="Praescribis"/>
+         <tok val="praescribis"/>
          <lm>
             <l>praescribo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praescribit praescribit-->
-         <tok val="[pP]raescribit"/>
+      <ana>
+         <tok val="Praescribit"/>
+         <tok val="praescribit"/>
          <lm>
             <l>praescribo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praescribo praescribo-->
-         <tok val="[pP]raescribo"/>
+      <ana>
+         <tok val="Praescribo"/>
+         <tok val="praescribo"/>
          <lm>
             <l>praescribo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praescriptio praescriptio-->
-         <tok val="[pP]raescriptio"/>
+      <ana>
+         <tok val="Praescriptio"/>
+         <tok val="praescriptio"/>
          <lm>
             <l>praescriptio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Praescriptione praescriptione-->
-         <tok val="[pP]raescriptione"/>
+      <ana>
+         <tok val="Praescriptione"/>
+         <tok val="praescriptione"/>
          <lm>
             <l>praescriptio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Praescriptiones praescriptiones-->
-         <tok val="[pP]raescriptiones"/>
+      <ana>
+         <tok val="Praescriptiones"/>
+         <tok val="praescriptiones"/>
          <lm>
             <l>praescriptio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -498,15 +616,18 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Praescriptos praescriptos-->
-         <tok val="[pP]raescriptos"/>
+      <ana>
+         <tok val="Praescriptos"/>
+         <tok val="praescriptos"/>
          <lm>
             <l>praescribo</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Praescriptum praescriptorum praescriptum-->
-         <tok val="[pP]raescript(or)?um"/>
+      <ana>
+         <tok val="Praescriptum"/>
+         <tok val="praescriptorum"/>
+         <tok val="praescriptum"/>
          <lm cert="0.5">
             <l>praescribo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -517,8 +638,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praescriptum praescriptum-->
-         <tok val="[pP]raescriptum"/>
+      <ana>
+         <tok val="Praescriptum"/>
+         <tok val="praescriptum"/>
          <lm cert="0.333333333333333333">
             <l>praescriptum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -527,10 +649,11 @@
          </lm>
          <lm cert="0.333333333333333333">
             <l>praescribo</l>
-            <m cert="0.25">v - - s r p p m a</m>
-            <m cert="0.25">v - - s r p p n n</m>
-            <m cert="0.25">v - - s r p p n a</m>
-            <m cert="0.25">v - - s r p p n v</m>
+            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.2">v - - s r p p n n</m>
+            <m cert="0.2">v - - s r p p n a</m>
+            <m cert="0.2">v - - s r p p n v</m>
+            <m cert="0.2">v - - - - u - - a</m>
          </lm>
          <lm cert="0.333333333333333333">
             <l>praescriptus</l>
@@ -538,21 +661,16 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Praescriptum"/>
-         <lm>
-            <l>praescribo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana>
          <tok val="Praeseco"/>
+         <tok val="praeseco"/>
          <lm>
             <l>praeseco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesectis praesectis-->
-         <tok val="[pP]raesectis"/>
+      <ana>
+         <tok val="Praesectis"/>
+         <tok val="praesectis"/>
          <lm>
             <l>praeseco</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -563,8 +681,9 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Praesegmen praesegmen-->
-         <tok val="[pP]raesegmen"/>
+      <ana>
+         <tok val="Praesegmen"/>
+         <tok val="praesegmen"/>
          <lm>
             <l>praesegmen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -572,15 +691,17 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Praesensus praesensus-->
-         <tok val="[pP]raesensus"/>
+      <ana>
+         <tok val="Praesensus"/>
+         <tok val="praesensus"/>
          <lm>
             <l>praesentio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Praesentaneum praesentaneum-->
-         <tok val="[pP]raesentaneum"/>
+      <ana>
+         <tok val="Praesentaneum"/>
+         <tok val="praesentaneum"/>
          <lm cert="0.5">
             <l>praesentaneus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -596,8 +717,10 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praesentaneum praesentanee praesentaneum-->
-         <tok val="[pP]raesentane(um|e)"/>
+      <ana>
+         <tok val="Praesentaneum"/>
+         <tok val="praesentanee"/>
+         <tok val="praesentaneum"/>
          <lm cert="0.5">
             <l>praesentaneum</l>
             <m>n - - s - - - n v</m>
@@ -607,15 +730,17 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Praesentaneus praesentaneus-->
-         <tok val="[pP]raesentaneus"/>
+      <ana>
+         <tok val="Praesentaneus"/>
+         <tok val="praesentaneus"/>
          <lm>
             <l>praesentaneus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praesentare praesentare-->
-         <tok val="[pP]raesentare"/>
+      <ana>
+         <tok val="Praesentare"/>
+         <tok val="praesentare"/>
          <lm>
             <l>praesento</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -623,8 +748,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Praesentariis praesentariis-->
-         <tok val="[pP]raesentariis"/>
+      <ana>
+         <tok val="Praesentariis"/>
+         <tok val="praesentariis"/>
          <lm>
             <l>praesentarius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -635,15 +761,18 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Praesentarius praesentarius-->
-         <tok val="[pP]raesentarius"/>
+      <ana>
+         <tok val="Praesentarius"/>
+         <tok val="praesentarius"/>
          <lm>
             <l>praesentarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praesentia praesentia praesentiaque-->
-         <tok val="[pP]raesentia(que)?"/>
+      <ana>
+         <tok val="Praesentia"/>
+         <tok val="praesentia"/>
+         <tok val="praesentiaque"/>
          <lm cert="0.5">
             <l>praesentia</l>
             <m cert="0.166666666666666667">n - - s - - - f n</m>
@@ -660,8 +789,10 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Praesentiam praesentiam praesentiamque-->
-         <tok val="[pP]raesentiam(que)?"/>
+      <ana>
+         <tok val="Praesentiam"/>
+         <tok val="praesentiam"/>
+         <tok val="praesentiamque"/>
          <lm cert="0.5">
             <l>praesentio</l>
             <m cert="0.5">v - 1 s f i a</m>
@@ -674,28 +805,38 @@
       </ana>
       <ana>
          <tok val="Praesentio"/>
+         <tok val="praesentio"/>
          <lm>
             <l>praesentio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesentire praesentire-->
-         <tok val="[pP]raesentire"/>
+      <ana>
+         <tok val="Praesentire"/>
+         <tok val="praesentire"/>
          <lm>
             <l>praesentio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Praesentis Praesentisque praesentes praesentis praesentisque praesentesque-->
-         <tok val="[pP]raesent[ie]s(que)?"/>
+      <ana>
+         <tok val="Praesentis"/>
+         <tok val="Praesentisque"/>
+         <tok val="praesentes"/>
+         <tok val="praesentesque"/>
+         <tok val="praesentis"/>
+         <tok val="praesentisque"/>
          <lm>
             <l>praesens</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Praesentis Praesentisque praesentis praesentisque-->
-         <tok val="[pP]raesentis(que)?"/>
+      <ana>
+         <tok val="Praesentis"/>
+         <tok val="Praesentisque"/>
+         <tok val="praesentis"/>
+         <tok val="praesentisque"/>
          <lm cert="0.5">
             <l>praesens</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -707,15 +848,18 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesentisco praesentisco-->
-         <tok val="[pP]raesentisco"/>
+      <ana>
+         <tok val="Praesentisco"/>
+         <tok val="praesentisco"/>
          <lm>
             <l>praesentisco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesentissimum praesentissimum praesentissumum-->
-         <tok val="[pP]raesentiss[iu]mum"/>
+      <ana>
+         <tok val="Praesentissimum"/>
+         <tok val="praesentissimum"/>
+         <tok val="praesentissumum"/>
          <lm>
             <l>praesens</l>
             <m cert="0.166666666666666667">a - - p - - - n g s</m>
@@ -726,8 +870,9 @@
             <m cert="0.166666666666666667">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Praesentit praesentit-->
-         <tok val="[pP]raesentit"/>
+      <ana>
+         <tok val="Praesentit"/>
+         <tok val="praesentit"/>
          <lm>
             <l>praesentio</l>
             <m>v - 3 s p i a</m>
@@ -735,13 +880,17 @@
       </ana>
       <ana>
          <tok val="Praesentius"/>
+         <tok val="praesentius"/>
          <lm>
             <l>praesens</l>
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Praesentius praesentius praesentiusque praesentiusue-->
-         <tok val="[pP]raesentius[q]?(ue)?"/>
+      <ana>
+         <tok val="Praesentius"/>
+         <tok val="praesentius"/>
+         <tok val="praesentiusque"/>
+         <tok val="praesentiusue"/>
          <lm>
             <l>praesens</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -749,8 +898,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Praesento praesento-->
-         <tok val="[pP]raesento"/>
+      <ana>
+         <tok val="Praesento"/>
+         <tok val="praesento"/>
          <lm>
             <l>praesento</l>
             <m>v - 1 s p i a</m>
@@ -758,13 +908,15 @@
       </ana>
       <ana>
          <tok val="Praesentor"/>
+         <tok val="praesentor"/>
          <lm>
             <l>praesento</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Praesepe praesepe-->
-         <tok val="[pP]raesepe"/>
+      <ana>
+         <tok val="Praesepe"/>
+         <tok val="praesepe"/>
          <lm>
             <l>praesepis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -772,8 +924,13 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Praesepe Praesepium praesaepe praesaepium praesepe praesepium-->
-         <tok val="[pP]raes[a]?ep(ium|e)"/>
+      <ana>
+         <tok val="Praesepe"/>
+         <tok val="Praesepium"/>
+         <tok val="praesaepe"/>
+         <tok val="praesaepium"/>
+         <tok val="praesepe"/>
+         <tok val="praesepium"/>
          <lm>
             <l>praesaepe</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -781,8 +938,14 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Praesepe Praesepia praesaepe praesaepia praesepe praesepi praesepia-->
-         <tok val="[pP]raes[a]?ep(ia|e|i)"/>
+      <ana>
+         <tok val="Praesepe"/>
+         <tok val="Praesepia"/>
+         <tok val="praesaepe"/>
+         <tok val="praesaepia"/>
+         <tok val="praesepe"/>
+         <tok val="praesepi"/>
+         <tok val="praesepia"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - s - - - f b</m>
@@ -790,13 +953,15 @@
       </ana>
       <ana>
          <tok val="Praesepelio"/>
+         <tok val="praesepelio"/>
          <lm>
             <l>praesepelio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesepes praesepes-->
-         <tok val="[pP]raesepes"/>
+      <ana>
+         <tok val="Praesepes"/>
+         <tok val="praesepes"/>
          <lm>
             <l>praesepis</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -805,38 +970,53 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praesepes praesaepes praesaepias praesaepis praesepes praesepis-->
-         <tok val="[pP]raes[a]?ep[i]?[a]?(s|es|is)"/>
+      <ana>
+         <tok val="Praesepes"/>
+         <tok val="praesaepes"/>
+         <tok val="praesaepias"/>
+         <tok val="praesaepis"/>
+         <tok val="praesepes"/>
+         <tok val="praesepis"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Praesepes praesepes praesepis-->
-         <tok val="[pP]raesep[ei]s"/>
+      <ana>
+         <tok val="Praesepes"/>
+         <tok val="praesepes"/>
+         <tok val="praesepis"/>
          <lm>
             <l>praesepis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Praesepes praesaepes praesepes-->
-         <tok val="[pP]raes[a]?epes"/>
+      <ana>
+         <tok val="Praesepes"/>
+         <tok val="praesaepes"/>
+         <tok val="praesepes"/>
          <lm>
             <l>praesaepe</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Praesepia praesaepia praesaepis praesepia praesepis-->
-         <tok val="[pP]raes[a]?epi[as]"/>
+      <ana>
+         <tok val="Praesepia"/>
+         <tok val="praesaepia"/>
+         <tok val="praesaepis"/>
+         <tok val="praesepia"/>
+         <tok val="praesepis"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Praesepia praesaepia praesepia-->
-         <tok val="[pP]raes[a]?epia"/>
+      <ana>
+         <tok val="Praesepia"/>
+         <tok val="praesaepia"/>
+         <tok val="praesepia"/>
          <lm>
             <l>praesaepe</l>
             <m cert="0.25">n - - p - - - n a</m>
@@ -845,8 +1025,9 @@
             <m cert="0.25">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Praesepia praesepia-->
-         <tok val="[pP]raesepia"/>
+      <ana>
+         <tok val="Praesepia"/>
+         <tok val="praesepia"/>
          <lm>
             <l>praesepis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -854,8 +1035,12 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Praesepibus praesaepibus praesaepiis praesepibus praesepiis-->
-         <tok val="[pP]raes[a]?epi(bu|i)s"/>
+      <ana>
+         <tok val="Praesepibus"/>
+         <tok val="praesaepibus"/>
+         <tok val="praesaepiis"/>
+         <tok val="praesepibus"/>
+         <tok val="praesepiis"/>
          <lm>
             <l>praesaepe</l>
             <m cert="0.25">n - - p - - - n d</m>
@@ -864,8 +1049,9 @@
             <m cert="0.25">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Praesepibus praesepibus-->
-         <tok val="[pP]raesepibus"/>
+      <ana>
+         <tok val="Praesepibus"/>
+         <tok val="praesepibus"/>
          <lm>
             <l>praesepis</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -876,16 +1062,19 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Praesepium praesaepium praesepium-->
-         <tok val="[pP]raes[a]?epium"/>
+      <ana>
+         <tok val="Praesepium"/>
+         <tok val="praesaepium"/>
+         <tok val="praesepium"/>
          <lm>
             <l>praesaepe</l>
             <m cert="0.5">n - - p - - - f g</m>
             <m cert="0.5">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praesepium praesepium-->
-         <tok val="[pP]raesepium"/>
+      <ana>
+         <tok val="Praesepium"/>
+         <tok val="praesepium"/>
          <lm>
             <l>praesepis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -895,13 +1084,16 @@
       </ana>
       <ana>
          <tok val="Praesero"/>
+         <tok val="praesero"/>
          <lm>
             <l>praesero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesertim praesertim praesértim-->
-         <tok val="[pP]raes[eé]rtim"/>
+      <ana>
+         <tok val="Praesertim"/>
+         <tok val="praesertim"/>
+         <tok val="praesértim"/>
          <lm>
             <l>praesertim</l>
             <m>d</m>
@@ -909,6 +1101,7 @@
       </ana>
       <ana>
          <tok val="Praeseruio"/>
+         <tok val="praeseruio"/>
          <lm>
             <l>praeservio</l>
             <m>v - 1 s p i a</m>
@@ -916,6 +1109,7 @@
       </ana>
       <ana>
          <tok val="Praeseruo"/>
+         <tok val="praeseruo"/>
          <lm>
             <l>praeservo</l>
             <m>v - 1 s p i a</m>
@@ -923,6 +1117,7 @@
       </ana>
       <ana>
          <tok val="Praeside"/>
+         <tok val="praeside"/>
          <lm>
             <l>praesidero</l>
             <m>v - 2 s p m a</m>
@@ -930,29 +1125,27 @@
       </ana>
       <ana>
          <tok val="Praesidere"/>
+         <tok val="praesidere"/>
          <lm>
             <l>praesidero</l>
-            <m cert="0.333333333333333333">v - 2 s p m p</m>
-            <m cert="0.333333333333333333">v - - - p n a</m>
-            <m cert="0.333333333333333333">v - 2 s p i p</m>
+            <m cert="0.25">v - 2 s p m p</m>
+            <m cert="0.25">v - - - p n a</m>
+            <m cert="0.25">v - 2 s p i p</m>
+            <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Praesidere praesidere-->
-         <tok val="[pP]raesidere"/>
-         <lm>
-            <l>praesidero</l>
-            <m>v - 2 s f i p</m>
-         </lm>
-      </ana>
-      <ana><!--Praesidero praesidero-->
-         <tok val="[pP]raesidero"/>
+      <ana>
+         <tok val="Praesidero"/>
+         <tok val="praesidero"/>
          <lm>
             <l>praesidero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesides praesides praesidesque-->
-         <tok val="[pP]raesides(que)?"/>
+      <ana>
+         <tok val="Praesides"/>
+         <tok val="praesides"/>
+         <tok val="praesidesque"/>
          <lm cert="0.5">
             <l>praesidero</l>
             <m>v - 2 s f i a</m>
@@ -962,8 +1155,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesidet praesidet-->
-         <tok val="[pP]raesidet"/>
+      <ana>
+         <tok val="Praesidet"/>
+         <tok val="praesidet"/>
          <lm cert="0.5">
             <l>praesidero</l>
             <m>v - 3 s f i a</m>
@@ -973,22 +1167,28 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesidi praesidi praésidi-->
-         <tok val="[pP]ra[eé]sidi"/>
+      <ana>
+         <tok val="Praesidi"/>
+         <tok val="praesidi"/>
+         <tok val="praésidi"/>
          <lm>
             <l>praesidero</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Praesidi praesidi praesidii praesidiique-->
-         <tok val="[pP]raesidi(i|ique)?"/>
+      <ana>
+         <tok val="Praesidi"/>
+         <tok val="praesidi"/>
+         <tok val="praesidii"/>
+         <tok val="praesidiique"/>
          <lm>
             <l>praesidium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praesidiariae praesidiariae-->
-         <tok val="[pP]raesidiariae"/>
+      <ana>
+         <tok val="Praesidiariae"/>
+         <tok val="praesidiariae"/>
          <lm>
             <l>praesidiarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -997,8 +1197,10 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Praesidiarii praesidiari praesidiarii-->
-         <tok val="[pP]raesidiari[i]?"/>
+      <ana>
+         <tok val="Praesidiarii"/>
+         <tok val="praesidiari"/>
+         <tok val="praesidiarii"/>
          <lm cert="0.5">
             <l>praesidiarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -1009,38 +1211,49 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praesidiarii praesidiarii-->
-         <tok val="[pP]raesidiarii"/>
+      <ana>
+         <tok val="Praesidiarii"/>
+         <tok val="praesidiarii"/>
          <lm>
             <l>praesidiarius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praesidiarius praesidiarius-->
-         <tok val="[pP]raesidiarius"/>
+      <ana>
+         <tok val="Praesidiarius"/>
+         <tok val="praesidiarius"/>
          <lm>
             <l>praesidiarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praesidio praesidio praesidioque-->
-         <tok val="[pP]raesidio(que)?"/>
+      <ana>
+         <tok val="Praesidio"/>
+         <tok val="praesidio"/>
+         <tok val="praesidioque"/>
          <lm>
             <l>praesidium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Praesidis praesidis-->
-         <tok val="[pP]raesidis"/>
+      <ana>
+         <tok val="Praesidis"/>
+         <tok val="praesidis"/>
          <lm>
             <l>praesidero</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesidium Praesidiumque Praesidivm praesidium praesidiumque praesidiumue-->
-         <tok val="[pP]raesidi[uv]m[q]?(ue)?"/>
+      <ana>
+         <tok val="Praesidium"/>
+         <tok val="Praesidiumque"/>
+         <tok val="Praesidivm"/>
+         <tok val="praesidium"/>
+         <tok val="praesidiumque"/>
+         <tok val="praesidiumue"/>
+         <tok val="praesidivm"/>
          <lm>
             <l>praesidium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1048,15 +1261,23 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Praesidium Praesidiumque Praesidivm praesidiorum praesidium praesidiumque praesidiumue-->
-         <tok val="[pP]raesidi(or)?[uv]m[q]?(ue)?"/>
+      <ana>
+         <tok val="Praesidium"/>
+         <tok val="Praesidiumque"/>
+         <tok val="Praesidivm"/>
+         <tok val="praesidiorum"/>
+         <tok val="praesidium"/>
+         <tok val="praesidiumque"/>
+         <tok val="praesidiumue"/>
+         <tok val="praesidivm"/>
          <lm>
             <l>praesidium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praesignificare praesignificare-->
-         <tok val="[pP]raesignificare"/>
+      <ana>
+         <tok val="Praesignificare"/>
+         <tok val="praesignificare"/>
          <lm>
             <l>praesignifico</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1066,13 +1287,15 @@
       </ana>
       <ana>
          <tok val="Praesignifico"/>
+         <tok val="praesignifico"/>
          <lm>
             <l>praesignifico</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesignis praesignis-->
-         <tok val="[pP]raesignis"/>
+      <ana>
+         <tok val="Praesignis"/>
+         <tok val="praesignis"/>
          <lm>
             <l>praesignis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1088,13 +1311,15 @@
       </ana>
       <ana>
          <tok val="Praesigno"/>
+         <tok val="praesigno"/>
          <lm>
             <l>praesigno</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesonuisse praesonuisse-->
-         <tok val="[pP]raesonuisse"/>
+      <ana>
+         <tok val="Praesonuisse"/>
+         <tok val="praesonuisse"/>
          <lm>
             <l>praesono</l>
             <m>v - - - r n a</m>
@@ -1102,27 +1327,32 @@
       </ana>
       <ana>
          <tok val="Praespargo"/>
+         <tok val="praespargo"/>
          <lm>
             <l>praespargo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praespicio praespicio-->
-         <tok val="[pP]raespicio"/>
+      <ana>
+         <tok val="Praespicio"/>
+         <tok val="praespicio"/>
          <lm>
             <l>praespicio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praest praest-->
-         <tok val="[pP]raest"/>
+      <ana>
+         <tok val="Praest"/>
+         <tok val="praest"/>
          <lm>
             <l>prae</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Praesta praesta praestan-->
-         <tok val="[pP]raesta[n]?"/>
+      <ana>
+         <tok val="Praesta"/>
+         <tok val="praesta"/>
+         <tok val="praestan"/>
          <lm cert="0.5">
             <l>praestus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1137,22 +1367,26 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Praestabant praestabant-->
-         <tok val="[pP]raestabant"/>
+      <ana>
+         <tok val="Praestabant"/>
+         <tok val="praestabant"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Praestabat praestabat praestabatque-->
-         <tok val="[pP]raestabat(que)?"/>
+      <ana>
+         <tok val="Praestabat"/>
+         <tok val="praestabat"/>
+         <tok val="praestabatque"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Praestabilis praestabilis-->
-         <tok val="[pP]raestabilis"/>
+      <ana>
+         <tok val="Praestabilis"/>
+         <tok val="praestabilis"/>
          <lm>
             <l>praestabilis</l>
             <m cert="0.125">v - 2 s p i a</m>
@@ -1165,23 +1399,28 @@
             <m cert="0.125">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praestabilis praestabiles praestabilis-->
-         <tok val="[pP]raestabil[ie]s"/>
+      <ana>
+         <tok val="Praestabilis"/>
+         <tok val="praestabiles"/>
+         <tok val="praestabilis"/>
          <lm>
             <l>praestabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Praestabis praestabis-->
-         <tok val="[pP]raestabis"/>
+      <ana>
+         <tok val="Praestabis"/>
+         <tok val="praestabis"/>
          <lm>
             <l>praesto2</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Praestabit praestabit praestabitque-->
-         <tok val="[pP]raestabit(que)?"/>
+      <ana>
+         <tok val="Praestabit"/>
+         <tok val="praestabit"/>
+         <tok val="praestabitque"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 s f i a</m>
@@ -1189,6 +1428,7 @@
       </ana>
       <ana>
          <tok val="Praestana"/>
+         <tok val="praestana"/>
          <lm>
             <l>Praestana</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1196,8 +1436,9 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Praestanda praestanda-->
-         <tok val="[pP]raestanda"/>
+      <ana>
+         <tok val="Praestanda"/>
+         <tok val="praestanda"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1208,8 +1449,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Praestandum praestandum-->
-         <tok val="[pP]raestandum"/>
+      <ana>
+         <tok val="Praestandum"/>
+         <tok val="praestandum"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -1219,16 +1461,20 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Praestandum praestandorum praestandum-->
-         <tok val="[pP]raestand(or)?um"/>
+      <ana>
+         <tok val="Praestandum"/>
+         <tok val="praestandorum"/>
+         <tok val="praestandum"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Praestans praestans praestansque-->
-         <tok val="[pP]raestans(que)?"/>
+      <ana>
+         <tok val="Praestans"/>
+         <tok val="praestans"/>
+         <tok val="praestansque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1240,15 +1486,19 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Praestant praestant-->
-         <tok val="[pP]raestant"/>
+      <ana>
+         <tok val="Praestant"/>
+         <tok val="praestant"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Praestante Praestanti praestante praestanti-->
-         <tok val="[Pp]raestant[ie]"/>
+      <ana>
+         <tok val="Praestante"/>
+         <tok val="Praestanti"/>
+         <tok val="praestante"/>
+         <tok val="praestanti"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1256,8 +1506,10 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Praestantes praestantes praestantesque-->
-         <tok val="[pP]raestantes(que)?"/>
+      <ana>
+         <tok val="Praestantes"/>
+         <tok val="praestantes"/>
+         <tok val="praestantesque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1266,16 +1518,20 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Praestantes praestantes praestantesque praestantis-->
-         <tok val="[pP]raestant[ei]s(que)?"/>
+      <ana>
+         <tok val="Praestantes"/>
+         <tok val="praestantes"/>
+         <tok val="praestantesque"/>
+         <tok val="praestantis"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Praestanti praestanti-->
-         <tok val="[pP]raestanti"/>
+      <ana>
+         <tok val="Praestanti"/>
+         <tok val="praestanti"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -1283,8 +1539,10 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Praestantia praestantia praestantiaque-->
-         <tok val="[pP]raestantia(que)?"/>
+      <ana>
+         <tok val="Praestantia"/>
+         <tok val="praestantia"/>
+         <tok val="praestantiaque"/>
          <lm cert="0.5">
             <l>praestantia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1298,15 +1556,20 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Praestantiam praestantiam praestantiamque-->
-         <tok val="[pP]raestantiam(que)?"/>
+      <ana>
+         <tok val="Praestantiam"/>
+         <tok val="praestantiam"/>
+         <tok val="praestantiamque"/>
          <lm>
             <l>praestantia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Praestantior praestantior praestantiorne praestantiorque-->
-         <tok val="[pP]raestantior(ne|que)?"/>
+      <ana>
+         <tok val="Praestantior"/>
+         <tok val="praestantior"/>
+         <tok val="praestantiorne"/>
+         <tok val="praestantiorque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.25">v - - s p p a m v c</m>
@@ -1315,8 +1578,11 @@
             <m cert="0.25">v - - s p p a f n c</m>
          </lm>
       </ana>
-      <ana><!--Praestantissima praestantissima praestantissimaque praestantissuma-->
-         <tok val="[pP]raestantiss[iu]ma(que)?"/>
+      <ana>
+         <tok val="Praestantissima"/>
+         <tok val="praestantissima"/>
+         <tok val="praestantissimaque"/>
+         <tok val="praestantissuma"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.166666666666666667">v - - s p p a f n s</m>
@@ -1327,8 +1593,9 @@
             <m cert="0.166666666666666667">v - - s p p a f b s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissimae praestantissimae-->
-         <tok val="[pP]raestantissimae"/>
+      <ana>
+         <tok val="Praestantissimae"/>
+         <tok val="praestantissimae"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.25">v - - p p p a f v s</m>
@@ -1337,29 +1604,40 @@
             <m cert="0.25">v - - s p p a f g s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissime praestantissime-->
-         <tok val="[pP]raestantissime"/>
+      <ana>
+         <tok val="Praestantissime"/>
+         <tok val="praestantissime"/>
          <lm>
             <l>praesto2</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissime Praestantissimum praestantissime praestantissimum praestantissimumque-->
-         <tok val="[pP]raestantissim(um|e|umque)"/>
+      <ana>
+         <tok val="Praestantissime"/>
+         <tok val="Praestantissimum"/>
+         <tok val="praestantissime"/>
+         <tok val="praestantissimum"/>
+         <tok val="praestantissimumque"/>
          <lm>
             <l>praesto2</l>
             <m>v - - s p p a n v s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissime Praestantissimus praestantissime praestantissimus-->
-         <tok val="[pP]raestantissim(us|e)"/>
+      <ana>
+         <tok val="Praestantissime"/>
+         <tok val="Praestantissimus"/>
+         <tok val="praestantissime"/>
+         <tok val="praestantissimus"/>
          <lm>
             <l>praesto2</l>
             <m>v - - s p p a m v s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissimis praestantissimis praestantissimisque praestantissumis-->
-         <tok val="[pP]raestantiss[iu]mis(que)?"/>
+      <ana>
+         <tok val="Praestantissimis"/>
+         <tok val="praestantissimis"/>
+         <tok val="praestantissimisque"/>
+         <tok val="praestantissumis"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.166666666666666667">v - - p p p a m b s</m>
@@ -1370,23 +1648,29 @@
             <m cert="0.166666666666666667">v - - p p p a n d s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissimos praestantissimos-->
-         <tok val="[pP]raestantissimos"/>
+      <ana>
+         <tok val="Praestantissimos"/>
+         <tok val="praestantissimos"/>
          <lm>
             <l>praesto2</l>
             <m>v - - p p p a m a s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissimum praestantissimorum praestantissimum praestantissimumque-->
-         <tok val="[pP]raestantissim(or)?um(que)?"/>
+      <ana>
+         <tok val="Praestantissimum"/>
+         <tok val="praestantissimorum"/>
+         <tok val="praestantissimum"/>
+         <tok val="praestantissimumque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.5">v - - p p p a n g s</m>
             <m cert="0.5">v - - p p p a m g s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissimum praestantissimum praestantissimumque-->
-         <tok val="[pP]raestantissimum(que)?"/>
+      <ana>
+         <tok val="Praestantissimum"/>
+         <tok val="praestantissimum"/>
+         <tok val="praestantissimumque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.333333333333333333">v - - s p p a n n s</m>
@@ -1394,8 +1678,9 @@
             <m cert="0.333333333333333333">v - - s p p a n a s</m>
          </lm>
       </ana>
-      <ana><!--Praestantissimus praestantissimus-->
-         <tok val="[pP]raestantissimus"/>
+      <ana>
+         <tok val="Praestantissimus"/>
+         <tok val="praestantissimus"/>
          <lm>
             <l>praesto2</l>
             <m>v - - s p p a m n s</m>
@@ -1403,22 +1688,19 @@
       </ana>
       <ana>
          <tok val="Praestantius"/>
+         <tok val="praestantius"/>
          <lm>
             <l>praesto2</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">v - - s p p a n n c</m>
+            <m cert="0.25">v - - s p p a n a c</m>
+            <m cert="0.25">v - - s p p a n v c</m>
          </lm>
       </ana>
-      <ana><!--Praestantius praestantius-->
-         <tok val="[pP]raestantius"/>
-         <lm>
-            <l>praesto2</l>
-            <m cert="0.333333333333333333">v - - s p p a n n c</m>
-            <m cert="0.333333333333333333">v - - s p p a n a c</m>
-            <m cert="0.333333333333333333">v - - s p p a n v c</m>
-         </lm>
-      </ana>
-      <ana><!--Praestare praestare praestareque-->
-         <tok val="[pP]raestare(que)?"/>
+      <ana>
+         <tok val="Praestare"/>
+         <tok val="praestare"/>
+         <tok val="praestareque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1426,8 +1708,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Praestas praestan praestas-->
-         <tok val="[pP]raesta[sn]"/>
+      <ana>
+         <tok val="Praestas"/>
+         <tok val="praestan"/>
+         <tok val="praestas"/>
          <lm cert="0.5">
             <l>praesto2</l>
             <m>v - 2 s p i a</m>
@@ -1437,37 +1721,43 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Praestat praestat praestatque-->
-         <tok val="[pP]raestat(que)?"/>
+      <ana>
+         <tok val="Praestat"/>
+         <tok val="praestat"/>
+         <tok val="praestatque"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praestatio praestatio-->
-         <tok val="[pP]raestatio"/>
+      <ana>
+         <tok val="Praestatio"/>
+         <tok val="praestatio"/>
          <lm>
             <l>praestatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Praestatur praestatur-->
-         <tok val="[pP]raestatur"/>
+      <ana>
+         <tok val="Praestatur"/>
+         <tok val="praestatur"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Praestent praestent-->
-         <tok val="[pP]raestent"/>
+      <ana>
+         <tok val="Praestent"/>
+         <tok val="praestent"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Praester praester-->
-         <tok val="[pP]raester"/>
+      <ana>
+         <tok val="Praester"/>
+         <tok val="praester"/>
          <lm>
             <l>praesto2</l>
             <m>v - 1 s p s p</m>
@@ -1475,13 +1765,15 @@
       </ana>
       <ana>
          <tok val="Praesterno"/>
+         <tok val="praesterno"/>
          <lm>
             <l>praesterno</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praestes praestes-->
-         <tok val="[pP]raestes"/>
+      <ana>
+         <tok val="Praestes"/>
+         <tok val="praestes"/>
          <lm cert="0.5">
             <l>praestes</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1492,22 +1784,28 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Praestet Praestetne praestet praestetne praestetque-->
-         <tok val="[pP]raestet(ne|que)?"/>
+      <ana>
+         <tok val="Praestet"/>
+         <tok val="Praestetne"/>
+         <tok val="praestet"/>
+         <tok val="praestetne"/>
+         <tok val="praestetque"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Praestetis praestetis-->
-         <tok val="[pP]raestetis"/>
+      <ana>
+         <tok val="Praestetis"/>
+         <tok val="praestetis"/>
          <lm>
             <l>praesto2</l>
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Praesti praesti-->
-         <tok val="[pP]raesti"/>
+      <ana>
+         <tok val="Praesti"/>
+         <tok val="praesti"/>
          <lm>
             <l>praestus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1516,39 +1814,44 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Praestigiae praestigiae-->
-         <tok val="[pP]raestigiae"/>
+      <ana>
+         <tok val="Praestigiae"/>
+         <tok val="praestigiae"/>
          <lm>
             <l>praestigiae</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Praestigiator praestigiator-->
-         <tok val="[pP]raestigiator"/>
+      <ana>
+         <tok val="Praestigiator"/>
+         <tok val="praestigiator"/>
          <lm>
             <l>praestigiator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Praestigiatrix praestigiatrix-->
-         <tok val="[pP]raestigiatrix"/>
+      <ana>
+         <tok val="Praestigiatrix"/>
+         <tok val="praestigiatrix"/>
          <lm>
             <l>praestigiatrix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Praestino praestino-->
-         <tok val="[pP]raestino"/>
+      <ana>
+         <tok val="Praestino"/>
+         <tok val="praestino"/>
          <lm>
             <l>praestino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praestita praestita-->
-         <tok val="[pP]raestita"/>
+      <ana>
+         <tok val="Praestita"/>
+         <tok val="praestita"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1559,46 +1862,53 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Praestiterat praestiterat-->
-         <tok val="[pP]raestiterat"/>
+      <ana>
+         <tok val="Praestiterat"/>
+         <tok val="praestiterat"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Praestiterint praestiterint-->
-         <tok val="[pP]raestiterint"/>
+      <ana>
+         <tok val="Praestiterint"/>
+         <tok val="praestiterint"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--Praestiteris praestiteris-->
-         <tok val="[pP]raestiteris"/>
+      <ana>
+         <tok val="Praestiteris"/>
+         <tok val="praestiteris"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Praestiterit praestiterit-->
-         <tok val="[pP]raestiterit"/>
+      <ana>
+         <tok val="Praestiterit"/>
+         <tok val="praestiterit"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Praestiterunt praestitere praestiterunt-->
-         <tok val="[pP]raestiter(unt|e)"/>
+      <ana>
+         <tok val="Praestiterunt"/>
+         <tok val="praestitere"/>
+         <tok val="praestiterunt"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Praestitibus praestitibus-->
-         <tok val="[pP]raestitibus"/>
+      <ana>
+         <tok val="Praestitibus"/>
+         <tok val="praestitibus"/>
          <lm>
             <l>praestes</l>
             <m cert="0.25">n - - p - - - m b</m>
@@ -1607,36 +1917,43 @@
             <m cert="0.25">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Praestitisti praestitisti-->
-         <tok val="[pP]raestitisti"/>
+      <ana>
+         <tok val="Praestitisti"/>
+         <tok val="praestitisti"/>
          <lm>
             <l>praesto2</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Praestitit praestitit praestititque-->
-         <tok val="[pP]raestitit(que)?"/>
+      <ana>
+         <tok val="Praestitit"/>
+         <tok val="praestitit"/>
+         <tok val="praestititque"/>
          <lm>
             <l>praesto2</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Praestituentur praestituentur-->
-         <tok val="[pP]raestituentur"/>
+      <ana>
+         <tok val="Praestituentur"/>
+         <tok val="praestituentur"/>
          <lm>
             <l>praestituo</l>
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Praestituere praestituere praestituerunt-->
-         <tok val="[pP]raestituer(e|unt)"/>
+      <ana>
+         <tok val="Praestituere"/>
+         <tok val="praestituere"/>
+         <tok val="praestituerunt"/>
          <lm>
             <l>praestituo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Praestituere praestituere-->
-         <tok val="[pP]raestituere"/>
+      <ana>
+         <tok val="Praestituere"/>
+         <tok val="praestituere"/>
          <lm>
             <l>praestituo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1645,36 +1962,42 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Praestituo praestituo-->
-         <tok val="[pP]raestituo"/>
+      <ana>
+         <tok val="Praestituo"/>
+         <tok val="praestituo"/>
          <lm>
             <l>praestituo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesto praesto-->
-         <tok val="[pP]raesto"/>
+      <ana>
+         <tok val="Praesto"/>
+         <tok val="praesto"/>
          <lm>
             <l>praesto</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Praestolor praestolor-->
-         <tok val="[pP]raestolor"/>
+      <ana>
+         <tok val="Praestolor"/>
+         <tok val="praestolor"/>
          <lm>
             <l>praestolor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Praestos praestost-->
-         <tok val="[pP]raestos[t]?"/>
+      <ana>
+         <tok val="Praestos"/>
+         <tok val="praestos"/>
+         <tok val="praestost"/>
          <lm>
             <l>praestus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Praestricta praestricta-->
-         <tok val="[pP]raestricta"/>
+      <ana>
+         <tok val="Praestricta"/>
+         <tok val="praestricta"/>
          <lm>
             <l>praestringo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1685,8 +2008,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Praestringere praestringere-->
-         <tok val="[pP]raestringere"/>
+      <ana>
+         <tok val="Praestringere"/>
+         <tok val="praestringere"/>
          <lm>
             <l>praestringo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1695,8 +2019,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Praestringitur praestringitur-->
-         <tok val="[pP]raestringitur"/>
+      <ana>
+         <tok val="Praestringitur"/>
+         <tok val="praestringitur"/>
          <lm>
             <l>praestringo</l>
             <m>v - 3 s p i p</m>
@@ -1704,13 +2029,15 @@
       </ana>
       <ana>
          <tok val="Praestringo"/>
+         <tok val="praestringo"/>
          <lm>
             <l>praestringo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praestructus praestructus-->
-         <tok val="[pP]raestructus"/>
+      <ana>
+         <tok val="Praestructus"/>
+         <tok val="praestructus"/>
          <lm>
             <l>praestruo</l>
             <m>v - - s r p p m n</m>
@@ -1718,6 +2045,7 @@
       </ana>
       <ana>
          <tok val="Praestruo"/>
+         <tok val="praestruo"/>
          <lm>
             <l>praestruo</l>
             <m>v - 1 s p i a</m>
@@ -1725,13 +2053,15 @@
       </ana>
       <ana>
          <tok val="Praesudo"/>
+         <tok val="praesudo"/>
          <lm>
             <l>praesudo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesulatus praesulatus-->
-         <tok val="[pP]raesulatus"/>
+      <ana>
+         <tok val="Praesulatus"/>
+         <tok val="praesulatus"/>
          <lm cert="0.5">
             <l>praesulatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1746,13 +2076,15 @@
       </ana>
       <ana>
          <tok val="Praesulsus"/>
+         <tok val="praesulsus"/>
          <lm>
             <l>praesulsus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Praesultor praesultor-->
-         <tok val="[pP]raesultor"/>
+      <ana>
+         <tok val="Praesultor"/>
+         <tok val="praesultor"/>
          <lm cert="0.5">
             <l>praesultor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1763,15 +2095,17 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Praesume praesume-->
-         <tok val="[pP]raesume"/>
+      <ana>
+         <tok val="Praesume"/>
+         <tok val="praesume"/>
          <lm>
             <l>praesumo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Praesumere praesumere-->
-         <tok val="[pP]raesumere"/>
+      <ana>
+         <tok val="Praesumere"/>
+         <tok val="praesumere"/>
          <lm>
             <l>praesumo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1780,29 +2114,34 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Praesumo praesumo-->
-         <tok val="[pP]raesumo"/>
+      <ana>
+         <tok val="Praesumo"/>
+         <tok val="praesumo"/>
          <lm>
             <l>praesumo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Praesumpsi praesumpsi-->
-         <tok val="[pP]raesumpsi"/>
+      <ana>
+         <tok val="Praesumpsi"/>
+         <tok val="praesumpsi"/>
          <lm>
             <l>praesumo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Praesumpsit praesumpsit praesumsit-->
-         <tok val="[pP]raesum[p]?sit"/>
+      <ana>
+         <tok val="Praesumpsit"/>
+         <tok val="praesumpsit"/>
+         <tok val="praesumsit"/>
          <lm>
             <l>praesumo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Praesumpta praesumpta-->
-         <tok val="[pP]raesumpta"/>
+      <ana>
+         <tok val="Praesumpta"/>
+         <tok val="praesumpta"/>
          <lm>
             <l>praesumo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1813,15 +2152,17 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Praesumptus praesumptus-->
-         <tok val="[pP]raesumptus"/>
+      <ana>
+         <tok val="Praesumptus"/>
+         <tok val="praesumptus"/>
          <lm>
             <l>praesumo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Praesunt praesunt-->
-         <tok val="[pP]raesunt"/>
+      <ana>
+         <tok val="Praesunt"/>
+         <tok val="praesunt"/>
          <lm>
             <l>praesum</l>
             <m>v - 3 p p i a</m>
@@ -1829,13 +2170,16 @@
       </ana>
       <ana>
          <tok val="Praesuo"/>
+         <tok val="praesuo"/>
          <lm>
             <l>praesuo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--praesaepem praesepem praesepim-->
-         <tok val="praes[a]?ep[ei]m"/>
+      <ana>
+         <tok val="praesaepem"/>
+         <tok val="praesepem"/>
+         <tok val="praesepim"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - s - - - f a</m>
@@ -1862,15 +2206,19 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--praesaepis praesepi praesepii praesepis-->
-         <tok val="praes[a]?epi[si]?"/>
+      <ana>
+         <tok val="praesaepis"/>
+         <tok val="praesepi"/>
+         <tok val="praesepii"/>
+         <tok val="praesepis"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--praesaepis praesepis-->
-         <tok val="praes[a]?epis"/>
+      <ana>
+         <tok val="praesaepis"/>
+         <tok val="praesepis"/>
          <lm>
             <l>praesaepe</l>
             <m>n - - s - - - f g</m>
@@ -1936,8 +2284,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--praesagauerant praesagaverant-->
-         <tok val="praesaga[vu]erant"/>
+      <ana>
+         <tok val="praesagauerant"/>
+         <tok val="praesagaverant"/>
          <lm>
             <l>praesago</l>
             <m>v - 3 p l i a</m>
@@ -1958,8 +2307,10 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--praesage praesagum praesagumque-->
-         <tok val="praesag(um)?(que|e)?"/>
+      <ana>
+         <tok val="praesage"/>
+         <tok val="praesagum"/>
+         <tok val="praesagumque"/>
          <lm>
             <l>praesagus</l>
             <m>a - - s - - - n v</m>
@@ -1986,8 +2337,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--praesagi praesagii-->
-         <tok val="praesagi[i]?"/>
+      <ana>
+         <tok val="praesagi"/>
+         <tok val="praesagii"/>
          <lm>
             <l>praesagium</l>
             <m>n - - s - - - n g</m>
@@ -2057,8 +2409,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--praesagientes praesagientis-->
-         <tok val="praesagient[ie]s"/>
+      <ana>
+         <tok val="praesagientes"/>
+         <tok val="praesagientis"/>
          <lm>
             <l>praesagio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2230,8 +2583,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--praesagum praesagumque-->
-         <tok val="praesagum(que)?"/>
+      <ana>
+         <tok val="praesagum"/>
+         <tok val="praesagumque"/>
          <lm>
             <l>praesagus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -2361,8 +2715,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--praesci praescii-->
-         <tok val="praesci[i]?"/>
+      <ana>
+         <tok val="praesci"/>
+         <tok val="praescii"/>
          <lm>
             <l>praescius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -2461,8 +2816,9 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--praescientia praescientiane-->
-         <tok val="praescientia(ne)?"/>
+      <ana>
+         <tok val="praescientia"/>
+         <tok val="praescientiane"/>
          <lm cert="0.5">
             <l>praescio</l>
             <m cert="0.333333333333333333">v - - p p p a n a</m>
@@ -2516,8 +2872,10 @@
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--praesciit praesciuit praescivit-->
-         <tok val="praesci[uv]?it"/>
+      <ana>
+         <tok val="praesciit"/>
+         <tok val="praesciuit"/>
+         <tok val="praescivit"/>
          <lm>
             <l>praescio</l>
             <m>v - 3 s r i a</m>
@@ -2678,8 +3036,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--praescitum praescitorum-->
-         <tok val="praescit(or)?um"/>
+      <ana>
+         <tok val="praescitorum"/>
+         <tok val="praescitum"/>
          <lm cert="0.5">
             <l>praescio</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -2704,8 +3063,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--praesciui praescivi-->
-         <tok val="praesci[vu]i"/>
+      <ana>
+         <tok val="praesciui"/>
+         <tok val="praescivi"/>
          <lm>
             <l>praescio</l>
             <m>v - 1 s r i a</m>
@@ -2752,8 +3112,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--praescribat praescribatque-->
-         <tok val="praescribat(que)?"/>
+      <ana>
+         <tok val="praescribat"/>
+         <tok val="praescribatque"/>
          <lm>
             <l>praescribo</l>
             <m>v - 3 s p s a</m>
@@ -3337,8 +3698,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--praesedit praeseditque-->
-         <tok val="praesedit(que)?"/>
+      <ana>
+         <tok val="praesedit"/>
+         <tok val="praeseditque"/>
          <lm>
             <l>praesedeo</l>
             <m>v - 3 s r i a</m>
@@ -3519,8 +3881,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--praesensum praesensumque-->
-         <tok val="praesensum(que)?"/>
+      <ana>
+         <tok val="praesensum"/>
+         <tok val="praesensumque"/>
          <lm>
             <l>praesentio</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -3671,15 +4034,18 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--praesentarie praesentarieque praesentarium-->
-         <tok val="praesentari[e]?(que|um)?"/>
+      <ana>
+         <tok val="praesentarie"/>
+         <tok val="praesentarieque"/>
+         <tok val="praesentarium"/>
          <lm>
             <l>praesentarius</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--praesentarie praesentarieque-->
-         <tok val="praesentarie(que)?"/>
+      <ana>
+         <tok val="praesentarie"/>
+         <tok val="praesentarieque"/>
          <lm>
             <l>praesentarius</l>
             <m>a - - s - - - m v</m>
@@ -3785,8 +4151,11 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--praesenter praesentius praesentiusque praesentiusue-->
-         <tok val="praesent(ius)?[q]?(ue|er)?"/>
+      <ana>
+         <tok val="praesenter"/>
+         <tok val="praesentius"/>
+         <tok val="praesentiusque"/>
+         <tok val="praesentiusue"/>
          <lm>
             <l>praesens</l>
             <m>d</m>
@@ -3799,8 +4168,9 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--praesentes praesentesque-->
-         <tok val="praesentes(que)?"/>
+      <ana>
+         <tok val="praesentes"/>
+         <tok val="praesentesque"/>
          <lm cert="0.5">
             <l>praesens</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -4021,8 +4391,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--praesentium praesentiumque-->
-         <tok val="praesentium(que)?"/>
+      <ana>
+         <tok val="praesentium"/>
+         <tok val="praesentiumque"/>
          <lm cert="0.5">
             <l>praesens</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -4206,8 +4577,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--praeseruiens praeserviens-->
-         <tok val="praeser[vu]iens"/>
+      <ana>
+         <tok val="praeseruiens"/>
+         <tok val="praeserviens"/>
          <lm>
             <l>praeservio</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -4219,8 +4591,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--praeseruire praeservire-->
-         <tok val="praeser[vu]ire"/>
+      <ana>
+         <tok val="praeseruire"/>
+         <tok val="praeservire"/>
          <lm>
             <l>praeservio</l>
             <m>v - - - p n a</m>
@@ -4294,16 +4667,19 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--praesidales praesidalis praesidialis-->
-         <tok val="praesid[i]?al[ie]s"/>
+      <ana>
+         <tok val="praesidales"/>
+         <tok val="praesidalis"/>
+         <tok val="praesidialis"/>
          <lm>
             <l>praesidalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--praesidalis praesidialis-->
-         <tok val="praesid[i]?alis"/>
+      <ana>
+         <tok val="praesidalis"/>
+         <tok val="praesidialis"/>
          <lm>
             <l>praesidalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -4385,8 +4761,9 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--praesidebo praesidébo-->
-         <tok val="praesid[ée]bo"/>
+      <ana>
+         <tok val="praesidebo"/>
+         <tok val="praesidébo"/>
          <lm>
             <l>praesideo</l>
             <m>v - 1 s f i a</m>
@@ -4435,8 +4812,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--praesident Praesident-->
-         <tok val="[Pp]raesident"/>
+      <ana>
+         <tok val="Praesident"/>
+         <tok val="praesident"/>
          <lm cert="0.5">
             <l>praesidero</l>
             <m>v - 3 p f i a</m>
@@ -4446,8 +4824,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--praesidente praesidenti-->
-         <tok val="praesident[ie]"/>
+      <ana>
+         <tok val="praesidente"/>
+         <tok val="praesidenti"/>
          <lm>
             <l>praesideo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -4463,8 +4842,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--praesidentes praesidentesque-->
-         <tok val="praesidentes(que)?"/>
+      <ana>
+         <tok val="praesidentes"/>
+         <tok val="praesidentesque"/>
          <lm>
             <l>praesideo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -4473,8 +4853,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--praesidentes praesidentis praesidentesque-->
-         <tok val="praesident[ie]s(que)?"/>
+      <ana>
+         <tok val="praesidentes"/>
+         <tok val="praesidentesque"/>
+         <tok val="praesidentis"/>
          <lm>
             <l>praesideo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -5043,8 +5425,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--praestabo praestaboque-->
-         <tok val="praestabo(que)?"/>
+      <ana>
+         <tok val="praestabo"/>
+         <tok val="praestaboque"/>
          <lm>
             <l>praesto2</l>
             <m>v - 1 s f i a</m>
@@ -5158,8 +5541,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--praestantem praestantemque-->
-         <tok val="praestantem(que)?"/>
+      <ana>
+         <tok val="praestantem"/>
+         <tok val="praestantemque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -5173,8 +5557,10 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--praestantiae praestantiaeue praestantiaeque-->
-         <tok val="praestantiae[q]?(ue|)"/>
+      <ana>
+         <tok val="praestantiae"/>
+         <tok val="praestantiaeque"/>
+         <tok val="praestantiaeue"/>
          <lm>
             <l>praestantia</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -5219,8 +5605,9 @@
             <m cert="0.5">v - - s p p a m a c</m>
          </lm>
       </ana>
-      <ana><!--praestantiores praestantioresque-->
-         <tok val="praestantiores(que)?"/>
+      <ana>
+         <tok val="praestantiores"/>
+         <tok val="praestantioresque"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.166666666666666667">v - - p p p a f n c</m>
@@ -5231,8 +5618,9 @@
             <m cert="0.166666666666666667">v - - p p p a m v c</m>
          </lm>
       </ana>
-      <ana><!--praestantiori praestantiorique-->
-         <tok val="praestantiori(que)?"/>
+      <ana>
+         <tok val="praestantiori"/>
+         <tok val="praestantiorique"/>
          <lm>
             <l>praesto2</l>
             <m>v - - s p p a - d c</m>
@@ -5269,8 +5657,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--praestantissimam praestantissumam-->
-         <tok val="praestantiss[ui]mam"/>
+      <ana>
+         <tok val="praestantissimam"/>
+         <tok val="praestantissumam"/>
          <lm>
             <l>praesto2</l>
             <m>v - - s p p a f a s</m>
@@ -5369,8 +5758,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--praestari praestarique-->
-         <tok val="praestari(que)?"/>
+      <ana>
+         <tok val="praestari"/>
+         <tok val="praestarique"/>
          <lm>
             <l>praesto2</l>
             <m>v - - - p n p</m>
@@ -5470,15 +5860,17 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--praestatu praestitu-->
-         <tok val="praest[ia]tu"/>
+      <ana>
+         <tok val="praestatu"/>
+         <tok val="praestitu"/>
          <lm>
             <l>praesto2</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--praestatum praestitum-->
-         <tok val="praest[ia]tum"/>
+      <ana>
+         <tok val="praestatum"/>
+         <tok val="praestitum"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -5489,8 +5881,10 @@
             <m cert="0.166666666666666667">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--praestatum praestite praestitum-->
-         <tok val="praest[ia]t(um|e)"/>
+      <ana>
+         <tok val="praestatum"/>
+         <tok val="praestite"/>
+         <tok val="praestitum"/>
          <lm>
             <l>praesto2</l>
             <m>v - - s r p p n v</m>
@@ -5518,15 +5912,17 @@
             <m cert="0.25">v - - p f p a m n</m>
          </lm>
       </ana>
-      <ana><!--praestaturos praestituros-->
-         <tok val="praest[ia]turos"/>
+      <ana>
+         <tok val="praestaturos"/>
+         <tok val="praestituros"/>
          <lm>
             <l>praesto2</l>
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--praestaturum praestiturum-->
-         <tok val="praest[ia]turum"/>
+      <ana>
+         <tok val="praestaturum"/>
+         <tok val="praestiturum"/>
          <lm>
             <l>praesto2</l>
             <m cert="0.166666666666666667">v - - s f p a n v</m>
@@ -5537,8 +5933,9 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--praestaturus praestiturus-->
-         <tok val="praest[ia]turus"/>
+      <ana>
+         <tok val="praestaturus"/>
+         <tok val="praestiturus"/>
          <lm>
             <l>praesto2</l>
             <m>v - - s f p a m n</m>
@@ -5553,8 +5950,9 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--praestem praestemque-->
-         <tok val="praestem(que)?"/>
+      <ana>
+         <tok val="praestem"/>
+         <tok val="praestemque"/>
          <lm>
             <l>praesto2</l>
             <m>v - 1 s p s a</m>
@@ -5588,8 +5986,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--praesternebant praésternebant-->
-         <tok val="pra[ée]sternebant"/>
+      <ana>
+         <tok val="praesternebant"/>
+         <tok val="praésternebant"/>
          <lm>
             <l>praesterno</l>
             <m>v - 3 p i i a</m>
@@ -5884,22 +6283,25 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--praestinaui praestinavi-->
-         <tok val="praestina[vu]i"/>
+      <ana>
+         <tok val="praestinaui"/>
+         <tok val="praestinavi"/>
          <lm>
             <l>praestino</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--praestinauit praestinavit-->
-         <tok val="praestina[vu]it"/>
+      <ana>
+         <tok val="praestinauit"/>
+         <tok val="praestinavit"/>
          <lm>
             <l>praestino</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--praestinem praéstinem-->
-         <tok val="pra[ée]stinem"/>
+      <ana>
+         <tok val="praestinem"/>
+         <tok val="praéstinem"/>
          <lm>
             <l>praestino</l>
             <m>v - 1 s p s a</m>
@@ -6003,8 +6405,9 @@
             <m cert="0.166666666666666667">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--praestitimus praestítimus-->
-         <tok val="praest[íi]timus"/>
+      <ana>
+         <tok val="praestitimus"/>
+         <tok val="praestítimus"/>
          <lm>
             <l>praesto2</l>
             <m>v - 1 p r i a</m>
@@ -6174,8 +6577,9 @@
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--praestituitur praestituiturque-->
-         <tok val="praestituitur(que)?"/>
+      <ana>
+         <tok val="praestituitur"/>
+         <tok val="praestituiturque"/>
          <lm>
             <l>praestituo</l>
             <m>v - 3 s p i p</m>
@@ -6196,8 +6600,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--praestituta praestitutast-->
-         <tok val="praestituta(st)?"/>
+      <ana>
+         <tok val="praestituta"/>
+         <tok val="praestitutast"/>
          <lm>
             <l>praestituo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -6343,8 +6748,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--praestolantes praestolantis-->
-         <tok val="praestolant[ie]s"/>
+      <ana>
+         <tok val="praestolantes"/>
+         <tok val="praestolantis"/>
          <lm>
             <l>praestolor</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -6383,8 +6789,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--praestolare praestolaris-->
-         <tok val="praestolar(is|e)"/>
+      <ana>
+         <tok val="praestolare"/>
+         <tok val="praestolaris"/>
          <lm>
             <l>praestolor</l>
             <m>v - 2 s p i p</m>
@@ -6397,8 +6804,9 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--praestolari praestolarier-->
-         <tok val="praestolari(er)?"/>
+      <ana>
+         <tok val="praestolari"/>
+         <tok val="praestolarier"/>
          <lm>
             <l>praestolor</l>
             <m>v - - - p n p</m>
@@ -6608,8 +7016,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--praestringentis praestringentes-->
-         <tok val="praestringent[ei]s"/>
+      <ana>
+         <tok val="praestringentes"/>
+         <tok val="praestringentis"/>
          <lm>
             <l>praestringo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -7232,8 +7641,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--praesumit Praesumit-->
-         <tok val="[Pp]raesumit"/>
+      <ana>
+         <tok val="Praesumit"/>
+         <tok val="praesumit"/>
          <lm>
             <l>praesumo</l>
             <m>v - 3 s p i a</m>
@@ -7283,8 +7693,9 @@
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--praesumpserit praesumserit-->
-         <tok val="praesum[p]?serit"/>
+      <ana>
+         <tok val="praesumpserit"/>
+         <tok val="praesumserit"/>
          <lm>
             <l>praesumo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -7308,8 +7719,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--praesumpte praesumptum-->
-         <tok val="praesumpt(um|e)"/>
+      <ana>
+         <tok val="praesumpte"/>
+         <tok val="praesumptum"/>
          <lm>
             <l>praesumo</l>
             <m>v - - s r p p n v</m>
@@ -7379,8 +7791,9 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--praesumptiose praesumptiosum-->
-         <tok val="praesumptios(um|e)"/>
+      <ana>
+         <tok val="praesumptiose"/>
+         <tok val="praesumptiosum"/>
          <lm>
             <l>praesumptiosus</l>
             <m>a - - s - - - n v</m>
@@ -7412,8 +7825,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--praesumpto praesumto-->
-         <tok val="praesum[p]?to"/>
+      <ana>
+         <tok val="praesumpto"/>
+         <tok val="praesumto"/>
          <lm>
             <l>praesumo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -7614,8 +8028,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--praesurgentes praesurgentis-->
-         <tok val="praesurgent[ie]s"/>
+      <ana>
+         <tok val="praesurgentes"/>
+         <tok val="praesurgentis"/>
          <lm>
             <l>praesurgo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -7696,15 +8111,18 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--praesidem praesidemque praesidemue-->
-         <tok val="praesidem[q]?(ue|)"/>
+      <ana>
+         <tok val="praesidem"/>
+         <tok val="praesidemque"/>
+         <tok val="praesidemue"/>
          <lm>
             <l>praeses</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--praesides praesidesque-->
-         <tok val="praesides(que)?"/>
+      <ana>
+         <tok val="praesides"/>
+         <tok val="praesidesque"/>
          <lm>
             <l>praeses</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -7732,7 +8150,7 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--praescierint-->
+      <ana>
          <tok val="praescierint"/>
          <lm>
             <l>praescio</l>
@@ -7873,8 +8291,9 @@
             <m cert="0.166666666666666667">a - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--praesidalem praesidialem-->
-         <tok val="praesid[i]?alem"/>
+      <ana>
+         <tok val="praesidalem"/>
+         <tok val="praesidialem"/>
          <lm>
             <l>praesidalis</l>
             <m cert="0.5">a - - s - - - f a</m>

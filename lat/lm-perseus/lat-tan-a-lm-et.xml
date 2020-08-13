@@ -1,65 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuset">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:et">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to et</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-et.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ET</tok-starts-with>
       <tok-starts-with>Et</tok-starts-with>
       <tok-starts-with>et</tok-starts-with>
       <tok-starts-with>ét</tok-starts-with>
       <tok-starts-with>Ét</tok-starts-with>
-      <ana><!--ET Et Etne et etne etque etue ét Ét-->
-         <tok val="(Etn)?[e]?[t]?[q]?[un]?(e|Et|et|ET|ét|Ét)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:22:34.655-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:22:34.655-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-et.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ET"/>
+         <tok val="Et"/>
+         <tok val="Etne"/>
+         <tok val="et"/>
+         <tok val="etne"/>
+         <tok val="etque"/>
+         <tok val="etue"/>
+         <tok val="Ét"/>
+         <tok val="ét"/>
          <lm>
             <l>et</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--ET Et Etne et etne etque etue-->
-         <tok val="(Etn)?[e]?[t]?[q]?[un]?(e|Et|et|ET)?"/>
+      <ana>
+         <tok val="ET"/>
+         <tok val="Et"/>
+         <tok val="Etne"/>
+         <tok val="et"/>
+         <tok val="etne"/>
+         <tok val="etque"/>
+         <tok val="etue"/>
          <lm>
             <l>et</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--ETIAM Etiam Etiamne Etiamnest Etiamque etiam etiamn etiamne etiamnest etiamque etiamst etiám étiam etiámne étiamne Etiám Étiam-->
-         <tok val="[eEéÉ]?(ti)?[aá]?[m]?[n]?(e|nest|ne|que|st|ETIAM)?"/>
+      <ana>
+         <tok val="ETIAM"/>
+         <tok val="Etiam"/>
+         <tok val="Etiamne"/>
+         <tok val="Etiamnest"/>
+         <tok val="Etiamque"/>
+         <tok val="Etiám"/>
+         <tok val="etiam"/>
+         <tok val="etiamn"/>
+         <tok val="etiamne"/>
+         <tok val="etiamnest"/>
+         <tok val="etiamque"/>
+         <tok val="etiamst"/>
+         <tok val="etiám"/>
+         <tok val="etiámne"/>
+         <tok val="Étiam"/>
+         <tok val="étiam"/>
+         <tok val="étiamne"/>
          <lm>
             <l>etiam</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--ETRVRIAE Etruriae Etruriaeque-->
-         <tok val="E(truriae)?(que|TRVRIAE)?"/>
+      <ana>
+         <tok val="ETRVRIAE"/>
+         <tok val="Etruriae"/>
+         <tok val="Etruriaeque"/>
+         <tok val="etruriae"/>
+         <tok val="etruriaeque"/>
+         <tok val="etrvriae"/>
          <lm>
             <l>Etruria</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -68,22 +111,32 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--ETSI Etsi etsi etsist etsí étsi-->
-         <tok val="[eEé]?(ts)?[i]?(st|í|i|ETSI)?"/>
+      <ana>
+         <tok val="ETSI"/>
+         <tok val="Etsi"/>
+         <tok val="etsi"/>
+         <tok val="etsist"/>
+         <tok val="etsí"/>
+         <tok val="étsi"/>
          <lm>
             <l>etsi</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--Etan eta ETa-->
-         <tok val="[eE]?(t|ET)a[n]?"/>
+      <ana>
+         <tok val="ETa"/>
+         <tok val="Etan"/>
+         <tok val="eta"/>
+         <tok val="etan"/>
          <lm>
             <l>expleo</l>
             <m>v - - s r p p f b</m>
          </lm>
       </ana>
-      <ana><!--Etan eta-->
-         <tok val="[eE]ta[n]?"/>
+      <ana>
+         <tok val="Etan"/>
+         <tok val="eta"/>
+         <tok val="etan"/>
          <lm cert="0.5">
             <l>eta</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -99,29 +152,39 @@
             <m cert="0.2">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Etan etas-->
-         <tok val="[eE]ta[sn]"/>
+      <ana>
+         <tok val="Etan"/>
+         <tok val="etan"/>
+         <tok val="etas"/>
          <lm>
             <l>expleo</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Ete Etene ete etene etum-->
-         <tok val="[eE]t[e]?(ne|um)?"/>
+      <ana>
+         <tok val="Ete"/>
+         <tok val="Etene"/>
+         <tok val="ete"/>
+         <tok val="etene"/>
+         <tok val="etum"/>
          <lm>
             <l>expleo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Ete Etene ete etene-->
-         <tok val="[eE]te(ne)?"/>
+      <ana>
+         <tok val="Ete"/>
+         <tok val="Etene"/>
+         <tok val="ete"/>
+         <tok val="etene"/>
          <lm>
             <l>expleo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Etenim etenim-->
-         <tok val="[eE]tenim"/>
+      <ana>
+         <tok val="Etenim"/>
+         <tok val="etenim"/>
          <lm>
             <l>etenim</l>
             <m>c</m>
@@ -129,6 +192,7 @@
       </ana>
       <ana>
          <tok val="Eteoclea"/>
+         <tok val="eteoclea"/>
          <lm>
             <l>Eteocleus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -141,6 +205,7 @@
       </ana>
       <ana>
          <tok val="Eteocleas"/>
+         <tok val="eteocleas"/>
          <lm>
             <l>Eteocleus</l>
             <m>a e - p - - - f a</m>
@@ -148,6 +213,7 @@
       </ana>
       <ana>
          <tok val="Eteocleos"/>
+         <tok val="eteocleos"/>
          <lm>
             <l>Eteocleus</l>
             <m>a e - p - - - m a</m>
@@ -155,6 +221,7 @@
       </ana>
       <ana>
          <tok val="Eteocleus"/>
+         <tok val="eteocleus"/>
          <lm>
             <l>Eteocleus</l>
             <m>a e - s - - - m n</m>
@@ -162,6 +229,7 @@
       </ana>
       <ana>
          <tok val="Etereianus"/>
+         <tok val="etereianus"/>
          <lm>
             <l>Etereianus</l>
             <m>a e - s - - - m n</m>
@@ -169,20 +237,24 @@
       </ana>
       <ana>
          <tok val="Etereius"/>
+         <tok val="etereius"/>
          <lm>
             <l>Etereius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Etesia etesia etesias-->
-         <tok val="[eE]tesia[s]?"/>
+      <ana>
+         <tok val="Etesia"/>
+         <tok val="etesia"/>
+         <tok val="etesias"/>
          <lm>
             <l>etesias</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Etesia etesia-->
-         <tok val="[eE]tesia"/>
+      <ana>
+         <tok val="Etesia"/>
+         <tok val="etesia"/>
          <lm cert="0.5">
             <l>etesias</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -200,14 +272,17 @@
       </ana>
       <ana>
          <tok val="Etesiae"/>
+         <tok val="etesiae"/>
          <lm>
             <l>etesias</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Etesiae etesiae etesiaeque-->
-         <tok val="[eE]tesiae(que)?"/>
+      <ana>
+         <tok val="Etesiae"/>
+         <tok val="etesiae"/>
+         <tok val="etesiaeque"/>
          <lm cert="0.5">
             <l>etesius</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -223,13 +298,16 @@
       </ana>
       <ana>
          <tok val="Etesiarum"/>
+         <tok val="etesiarum"/>
          <lm>
             <l>etesias</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Etesiarum etesiarum etesiarumque-->
-         <tok val="[eE]tesiarum(que)?"/>
+      <ana>
+         <tok val="Etesiarum"/>
+         <tok val="etesiarum"/>
+         <tok val="etesiarumque"/>
          <lm>
             <l>etesius</l>
             <m>a - - p - - - f g</m>
@@ -237,15 +315,13 @@
       </ana>
       <ana>
          <tok val="Etesiis"/>
-         <lm>
+         <tok val="etesiis"/>
+         <lm cert="0.5">
             <l>etesias</l>
             <m cert="0.5">n - - p - - - m d</m>
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
-      </ana>
-      <ana><!--Etesiis etesiis-->
-         <tok val="[eE]tesiis"/>
-         <lm>
+         <lm cert="0.5">
             <l>etesius</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
             <m cert="0.166666666666666667">a - - p - - - f d</m>
@@ -255,8 +331,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Etesium etesium-->
-         <tok val="[eE]tesium"/>
+      <ana>
+         <tok val="Etesium"/>
+         <tok val="etesium"/>
          <lm>
             <l>etesius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -267,15 +344,19 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Etesius etesius-->
-         <tok val="[eE]tesius"/>
+      <ana>
+         <tok val="Etesius"/>
+         <tok val="etesius"/>
          <lm>
             <l>etesius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ethica Ethice ethice-->
-         <tok val="[Ee]thic[ea]"/>
+      <ana>
+         <tok val="Ethica"/>
+         <tok val="Ethice"/>
+         <tok val="ethica"/>
+         <tok val="ethice"/>
          <lm>
             <l>ethice</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -283,8 +364,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ethica ethica-->
-         <tok val="[eE]thica"/>
+      <ana>
+         <tok val="Ethica"/>
+         <tok val="ethica"/>
          <lm>
             <l>ethicus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
@@ -295,22 +377,26 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Ethicam ethicam-->
-         <tok val="[eE]thicam"/>
+      <ana>
+         <tok val="Ethicam"/>
+         <tok val="ethicam"/>
          <lm>
             <l>ethicus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Ethicam ethicen-->
-         <tok val="[eE]thic(en|am)"/>
+      <ana>
+         <tok val="Ethicam"/>
+         <tok val="ethicam"/>
+         <tok val="ethicen"/>
          <lm>
             <l>ethice</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Ethice ethice-->
-         <tok val="[eE]thice"/>
+      <ana>
+         <tok val="Ethice"/>
+         <tok val="ethice"/>
          <lm>
             <l>ethicus</l>
             <m cert="0.333333333333333333">d</m>
@@ -320,6 +406,7 @@
       </ana>
       <ana>
          <tok val="Ethici"/>
+         <tok val="ethici"/>
          <lm>
             <l>ethicus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -328,9 +415,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ethicis ethicis-->
-         <tok val="[eE]thicis"/>
-         <lm>
+      <ana>
+         <tok val="Ethicis"/>
+         <tok val="ethicis"/>
+         <lm cert="0.5">
             <l>ethicus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
             <m cert="0.166666666666666667">a - - p - - - f d</m>
@@ -339,25 +427,24 @@
             <m cert="0.166666666666666667">a - - p - - - n d</m>
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Ethicis"/>
-         <lm>
+         <lm cert="0.5">
             <l>ethice</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ethicorum ethicorum-->
-         <tok val="[eE]thicorum"/>
+      <ana>
+         <tok val="Ethicorum"/>
+         <tok val="ethicorum"/>
          <lm>
             <l>ethicus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Ethicus ethicus-->
-         <tok val="[eE]thicus"/>
+      <ana>
+         <tok val="Ethicus"/>
+         <tok val="ethicus"/>
          <lm>
             <l>ethicus</l>
             <m>a - - s - - - m n</m>
@@ -365,6 +452,7 @@
       </ana>
       <ana>
          <tok val="Ethnica"/>
+         <tok val="ethnica"/>
          <lm>
             <l>ethnicus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -375,8 +463,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ethnicorum ethnicorum-->
-         <tok val="[eE]thnicorum"/>
+      <ana>
+         <tok val="Ethnicorum"/>
+         <tok val="ethnicorum"/>
          <lm>
             <l>ethnicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -384,16 +473,19 @@
             <m cert="0.333333333333333333">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Ethnicus ethnicus-->
-         <tok val="[eE]thnicus"/>
+      <ana>
+         <tok val="Ethnicus"/>
+         <tok val="ethnicus"/>
          <lm>
             <l>ethnicus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ethologia ethologia ethologian-->
-         <tok val="[eE]thologia[n]?"/>
+      <ana>
+         <tok val="Ethologia"/>
+         <tok val="ethologia"/>
+         <tok val="ethologian"/>
          <lm>
             <l>ethologia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -401,15 +493,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ethologus ethologus-->
-         <tok val="[eE]thologus"/>
+      <ana>
+         <tok val="Ethologus"/>
+         <tok val="ethologus"/>
          <lm>
             <l>ethologus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ethopoeia ethopoeia-->
-         <tok val="[eE]thopoeia"/>
+      <ana>
+         <tok val="Ethopoeia"/>
+         <tok val="ethopoeia"/>
          <lm>
             <l>ethopoeia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -417,22 +511,29 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Etiamnum etiamnum etiamnunc Etiamnunc-->
-         <tok val="[Ee]tiamnu(nc|m)"/>
+      <ana>
+         <tok val="Etiamnum"/>
+         <tok val="Etiamnunc"/>
+         <tok val="etiamnum"/>
+         <tok val="etiamnunc"/>
          <lm>
             <l>etiamnum</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Etiamsi etiamsi-->
-         <tok val="[eE]tiamsi"/>
+      <ana>
+         <tok val="Etiamsi"/>
+         <tok val="etiamsi"/>
          <lm>
             <l>etiamsi</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--Etin eti etin etine-->
-         <tok val="[eE]ti[n]?[en]?"/>
+      <ana>
+         <tok val="Etin"/>
+         <tok val="eti"/>
+         <tok val="etin"/>
+         <tok val="etine"/>
          <lm>
             <l>expleo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -441,8 +542,10 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Etin etin etis-->
-         <tok val="[eE]ti[ns]"/>
+      <ana>
+         <tok val="Etin"/>
+         <tok val="etin"/>
+         <tok val="etis"/>
          <lm cert="0.5">
             <l>expleo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -458,8 +561,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Eton eto eton-->
-         <tok val="[eE]to[n]?"/>
+      <ana>
+         <tok val="Eton"/>
+         <tok val="eto"/>
+         <tok val="eton"/>
          <lm>
             <l>expleo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -468,15 +573,19 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Eton eton-->
-         <tok val="[eE]ton"/>
+      <ana>
+         <tok val="Eton"/>
+         <tok val="eton"/>
          <lm>
             <l>expleo</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Etruria Etruriaque-->
-         <tok val="Etruria(que)?"/>
+      <ana>
+         <tok val="Etruria"/>
+         <tok val="Etruriaque"/>
+         <tok val="etruria"/>
+         <tok val="etruriaque"/>
          <lm>
             <l>Etruria</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -484,15 +593,25 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Etruriam Etruriamque-->
-         <tok val="Etruriam(que)?"/>
+      <ana>
+         <tok val="Etruriam"/>
+         <tok val="Etruriamque"/>
+         <tok val="etruriam"/>
+         <tok val="etruriamque"/>
          <lm>
             <l>Etruria</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Etrusca Etruscan Etruscaque Etrvsca-->
-         <tok val="Etr[uv]sca(n|que)?"/>
+      <ana>
+         <tok val="Etrusca"/>
+         <tok val="Etruscan"/>
+         <tok val="Etruscaque"/>
+         <tok val="Etrvsca"/>
+         <tok val="etrusca"/>
+         <tok val="etruscan"/>
+         <tok val="etruscaque"/>
+         <tok val="etrvsca"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.2">a e - p - - - n n</m>
@@ -504,13 +623,17 @@
       </ana>
       <ana>
          <tok val="Etrusca"/>
+         <tok val="etrusca"/>
          <lm>
             <l>Etrsucus</l>
             <m>a e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Etruscae Etruscaeque-->
-         <tok val="Etruscae(que)?"/>
+      <ana>
+         <tok val="Etruscae"/>
+         <tok val="Etruscaeque"/>
+         <tok val="etruscae"/>
+         <tok val="etruscaeque"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -521,20 +644,29 @@
       </ana>
       <ana>
          <tok val="Etruscam"/>
+         <tok val="etruscam"/>
          <lm>
             <l>Etruscus</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Etruscan Etruscas-->
-         <tok val="Etrusca[sn]"/>
+      <ana>
+         <tok val="Etruscan"/>
+         <tok val="Etruscas"/>
+         <tok val="etruscan"/>
+         <tok val="etruscas"/>
          <lm>
             <l>Etruscus</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Etruscan Etruscaque Etrvsca-->
-         <tok val="Etr[vu]sca(n|que)?"/>
+      <ana>
+         <tok val="Etruscan"/>
+         <tok val="Etruscaque"/>
+         <tok val="Etrvsca"/>
+         <tok val="etruscan"/>
+         <tok val="etruscaque"/>
+         <tok val="etrvsca"/>
          <lm>
             <l>Etruscus</l>
             <m>a e - s - - - f n</m>
@@ -542,13 +674,17 @@
       </ana>
       <ana>
          <tok val="Etruscarum"/>
+         <tok val="etruscarum"/>
          <lm>
             <l>Etruscus</l>
             <m>a e - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Etrusce Etruscum-->
-         <tok val="Etrusc(um|e)"/>
+      <ana>
+         <tok val="Etrusce"/>
+         <tok val="Etruscum"/>
+         <tok val="etrusce"/>
+         <tok val="etruscum"/>
          <lm>
             <l>Etruscus</l>
             <m>a e - s - - - n v</m>
@@ -556,14 +692,20 @@
       </ana>
       <ana>
          <tok val="Etrusce"/>
+         <tok val="etrusce"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">d e</m>
          </lm>
       </ana>
-      <ana><!--Etrusci Etruscique Etrvsci-->
-         <tok val="Etr[vu]sci(que)?"/>
+      <ana>
+         <tok val="Etrusci"/>
+         <tok val="Etruscique"/>
+         <tok val="Etrvsci"/>
+         <tok val="etrusci"/>
+         <tok val="etruscique"/>
+         <tok val="etrvsci"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -572,8 +714,13 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Etruscis Etruscisne Etruscisque-->
-         <tok val="Etruscis(ne|que)?"/>
+      <ana>
+         <tok val="Etruscis"/>
+         <tok val="Etruscisne"/>
+         <tok val="Etruscisque"/>
+         <tok val="etruscis"/>
+         <tok val="etruscisne"/>
+         <tok val="etruscisque"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
@@ -584,8 +731,11 @@
             <m cert="0.166666666666666667">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Etrusco Etrvsco-->
-         <tok val="Etr[vu]sco"/>
+      <ana>
+         <tok val="Etrusco"/>
+         <tok val="Etrvsco"/>
+         <tok val="etrusco"/>
+         <tok val="etrvsco"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -594,16 +744,24 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Etruscorum Etruscum-->
-         <tok val="Etrusc(or)?um"/>
+      <ana>
+         <tok val="Etruscorum"/>
+         <tok val="Etruscum"/>
+         <tok val="etruscorum"/>
+         <tok val="etruscum"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.5">a e - p - - - m g</m>
             <m cert="0.5">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Etruscos Etruscosque Etrvscos-->
-         <tok val="Etr[vu]scos(que)?"/>
+      <ana>
+         <tok val="Etruscos"/>
+         <tok val="Etruscosque"/>
+         <tok val="Etrvscos"/>
+         <tok val="etruscos"/>
+         <tok val="etruscosque"/>
+         <tok val="etrvscos"/>
          <lm>
             <l>Etruscus</l>
             <m>a e - p - - - m a</m>
@@ -611,6 +769,7 @@
       </ana>
       <ana>
          <tok val="Etruscum"/>
+         <tok val="etruscum"/>
          <lm>
             <l>Etruscus</l>
             <m cert="0.333333333333333333">a e - s - - - m a</m>
@@ -620,20 +779,23 @@
       </ana>
       <ana>
          <tok val="Etruscus"/>
+         <tok val="etruscus"/>
          <lm>
             <l>Etruscus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Etus etus-->
-         <tok val="[eE]tus"/>
+      <ana>
+         <tok val="Etus"/>
+         <tok val="etus"/>
          <lm>
             <l>expleo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Etymologia etymologia-->
-         <tok val="[eE]tymologia"/>
+      <ana>
+         <tok val="Etymologia"/>
+         <tok val="etymologia"/>
          <lm>
             <l>etymologia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -641,8 +803,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Etymologica etymologica etymologice-->
-         <tok val="[eE]tymologic[ae]"/>
+      <ana>
+         <tok val="Etymologica"/>
+         <tok val="etymologica"/>
+         <tok val="etymologice"/>
          <lm>
             <l>etymologice</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -650,8 +814,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Etymologica etymologica-->
-         <tok val="[eE]tymologica"/>
+      <ana>
+         <tok val="Etymologica"/>
+         <tok val="etymologica"/>
          <lm>
             <l>etymologicus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
@@ -664,6 +829,7 @@
       </ana>
       <ana>
          <tok val="Etymologici"/>
+         <tok val="etymologici"/>
          <lm>
             <l>etymologicus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -672,8 +838,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Etymologicon etymologicon-->
-         <tok val="[eE]tymologicon"/>
+      <ana>
+         <tok val="Etymologicon"/>
+         <tok val="etymologicon"/>
          <lm>
             <l>etymologicus</l>
             <m cert="0.2">a - - p - - - m a</m>
@@ -685,6 +852,7 @@
       </ana>
       <ana>
          <tok val="Etymologicum"/>
+         <tok val="etymologicum"/>
          <lm>
             <l>etymologicus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -694,23 +862,28 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Etymologicum etymologice-->
-         <tok val="[eE]tymologic(e|um)"/>
+      <ana>
+         <tok val="Etymologicum"/>
+         <tok val="etymologice"/>
+         <tok val="etymologicum"/>
          <lm>
             <l>etymologicus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Etymon etymo etymon-->
-         <tok val="[eE]tymo[n]?"/>
+      <ana>
+         <tok val="Etymon"/>
+         <tok val="etymo"/>
+         <tok val="etymon"/>
          <lm>
             <l>etymon</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--etae etaeque-->
-         <tok val="etae(que)?"/>
+      <ana>
+         <tok val="etae"/>
+         <tok val="etaeque"/>
          <lm>
             <l>expleo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -760,16 +933,18 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--etesiae etesiaeque-->
-         <tok val="etesiae(que)?"/>
+      <ana>
+         <tok val="etesiae"/>
+         <tok val="etesiaeque"/>
          <lm>
             <l>etesiae</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--etesiarum etesiarumque-->
-         <tok val="etesiarum(que)?"/>
+      <ana>
+         <tok val="etesiarum"/>
+         <tok val="etesiarumque"/>
          <lm>
             <l>etesiae</l>
             <m>n - - p - - - m g</m>
@@ -883,8 +1058,9 @@
             <m cert="0.25">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--ethnici Ethnici-->
-         <tok val="[Ee]thnici"/>
+      <ana>
+         <tok val="Ethnici"/>
+         <tok val="ethnici"/>
          <lm>
             <l>ethnicus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -949,8 +1125,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--etiamtum etiamtunc-->
-         <tok val="etiamtu(nc|m)"/>
+      <ana>
+         <tok val="etiamtum"/>
+         <tok val="etiamtunc"/>
          <lm>
             <l>etiamtum</l>
             <m>d</m>
@@ -976,8 +1153,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--etorum etum-->
-         <tok val="et(or)?um"/>
+      <ana>
+         <tok val="etorum"/>
+         <tok val="etum"/>
          <lm cert="0.5">
             <l>expleo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -1017,8 +1195,9 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--etyma Etyma-->
-         <tok val="[Ee]tyma"/>
+      <ana>
+         <tok val="Etyma"/>
+         <tok val="etyma"/>
          <lm>
             <l>etymon</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>

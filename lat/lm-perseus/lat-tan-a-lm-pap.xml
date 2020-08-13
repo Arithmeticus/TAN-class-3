@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspap">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:pap">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to pap</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-pap.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PAP</tok-starts-with>
       <tok-starts-with>Pap</tok-starts-with>
       <tok-starts-with>pap</tok-starts-with>
-      <ana><!--PAPAE Papae papae-->
-         <tok val="[pP]?(apae|PAPAE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:37:52.708-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:37:52.708-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-pap.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PAPAE"/>
+         <tok val="Papae"/>
+         <tok val="papae"/>
          <lm cert="0.5">
             <l>papa</l>
             <m cert="0.125">n - - p - - - m n</m>
@@ -53,8 +63,10 @@
             <m>i</m>
          </lm>
       </ana>
-      <ana><!--PAPIRIO Papirio-->
-         <tok val="P(apirio|APIRIO)"/>
+      <ana>
+         <tok val="PAPIRIO"/>
+         <tok val="Papirio"/>
+         <tok val="papirio"/>
          <lm>
             <l>Papirius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -63,22 +75,32 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--PAPIRIVS Papirius Papirivs-->
-         <tok val="P(apiri)?[vu]?(s|APIRIVS)"/>
+      <ana>
+         <tok val="PAPIRIVS"/>
+         <tok val="Papirius"/>
+         <tok val="Papirivs"/>
+         <tok val="papirius"/>
+         <tok val="papirivs"/>
          <lm>
             <l>Papirius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--PAPPVS Pappus pappus-->
-         <tok val="[pP]?(appus|PAPPVS)"/>
+      <ana>
+         <tok val="PAPPVS"/>
+         <tok val="Pappus"/>
+         <tok val="pappus"/>
+         <tok val="pappvs"/>
          <lm>
             <l>pappus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--PAPVLA Papula papula-->
-         <tok val="[pP]?(apula|PAPVLA)"/>
+      <ana>
+         <tok val="PAPVLA"/>
+         <tok val="Papula"/>
+         <tok val="papula"/>
+         <tok val="papvla"/>
          <lm cert="0.5">
             <l>papula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -90,15 +112,19 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--PAPYRIVS Papyrius papyrius-->
-         <tok val="[pP]?(apyrius|PAPYRIVS)"/>
+      <ana>
+         <tok val="PAPYRIVS"/>
+         <tok val="Papyrius"/>
+         <tok val="papyrius"/>
+         <tok val="papyrivs"/>
          <lm>
             <l>papyrius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Papa papa-->
-         <tok val="[pP]apa"/>
+      <ana>
+         <tok val="Papa"/>
+         <tok val="papa"/>
          <lm>
             <l>papa</l>
             <m cert="0.166666666666666667">n - - s - - - f b</m>
@@ -109,31 +135,39 @@
             <m cert="0.166666666666666667">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Papam papam-->
-         <tok val="[pP]apam"/>
+      <ana>
+         <tok val="Papam"/>
+         <tok val="papam"/>
          <lm>
             <l>papa</l>
             <m cert="0.5">n - - s - - - f a</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Papas papas-->
-         <tok val="[pP]apas"/>
+      <ana>
+         <tok val="Papas"/>
+         <tok val="papas"/>
          <lm>
             <l>papa</l>
             <m cert="0.5">n - - p - - - f a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Papauer Papaver papauer papaver papaverque-->
-         <tok val="[Pp]apa[vu]er(que)?"/>
+      <ana>
+         <tok val="Papauer"/>
+         <tok val="Papaver"/>
+         <tok val="papauer"/>
+         <tok val="papaver"/>
+         <tok val="papaverque"/>
          <lm>
             <l>papaver</l>
             <m>n - - s - - - n</m>
          </lm>
       </ana>
-      <ana><!--Papauera papauera papavera-->
-         <tok val="[pP]apa[uv]era"/>
+      <ana>
+         <tok val="Papauera"/>
+         <tok val="papauera"/>
+         <tok val="papavera"/>
          <lm>
             <l>papaver</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -143,6 +177,7 @@
       </ana>
       <ana>
          <tok val="Papauerata"/>
+         <tok val="papauerata"/>
          <lm>
             <l>papaveratus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -153,8 +188,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Papaueratae papaveratae-->
-         <tok val="[pP]apa[vu]eratae"/>
+      <ana>
+         <tok val="Papaueratae"/>
+         <tok val="papaueratae"/>
+         <tok val="papaveratae"/>
          <lm>
             <l>papaveratus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -163,15 +200,18 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Papaueratus papaveratus-->
-         <tok val="[pP]apa[vu]eratus"/>
+      <ana>
+         <tok val="Papaueratus"/>
+         <tok val="papaueratus"/>
+         <tok val="papaveratus"/>
          <lm>
             <l>papaveratus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Papauereae papauereae-->
-         <tok val="[pP]apauereae"/>
+      <ana>
+         <tok val="Papauereae"/>
+         <tok val="papauereae"/>
          <lm>
             <l>papavereus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -180,22 +220,29 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Papauereus papavereus-->
-         <tok val="[pP]apa[vu]ereus"/>
+      <ana>
+         <tok val="Papauereus"/>
+         <tok val="papauereus"/>
+         <tok val="papavereus"/>
          <lm>
             <l>papavereus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Papaveris papaueris papaveris-->
-         <tok val="[pP]apa[vu]eris"/>
+      <ana>
+         <tok val="Papaveris"/>
+         <tok val="papaueris"/>
+         <tok val="papaveris"/>
          <lm>
             <l>papaver</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Paphi Paphique-->
-         <tok val="Paphi(que)?"/>
+      <ana>
+         <tok val="Paphi"/>
+         <tok val="Paphique"/>
+         <tok val="paphi"/>
+         <tok val="paphique"/>
          <lm>
             <l>Paphos</l>
             <m cert="0.166666666666666667">n e - p - - - f n</m>
@@ -206,8 +253,13 @@
             <m cert="0.166666666666666667">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Paphi Paphii Paphique-->
-         <tok val="Paphi(i|que)?"/>
+      <ana>
+         <tok val="Paphi"/>
+         <tok val="Paphii"/>
+         <tok val="Paphique"/>
+         <tok val="paphi"/>
+         <tok val="paphii"/>
+         <tok val="paphique"/>
          <lm>
             <l>Paphius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -216,6 +268,7 @@
       </ana>
       <ana>
          <tok val="Paphia"/>
+         <tok val="paphia"/>
          <lm>
             <l>Paphius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -226,8 +279,11 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Paphia Paphie-->
-         <tok val="Paphi[ea]"/>
+      <ana>
+         <tok val="Paphia"/>
+         <tok val="Paphie"/>
+         <tok val="paphia"/>
+         <tok val="paphie"/>
          <lm>
             <l>Paphie</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -237,13 +293,17 @@
       </ana>
       <ana>
          <tok val="Paphiacus"/>
+         <tok val="paphiacus"/>
          <lm>
             <l>Paphiacus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Paphiae Paphiaeque-->
-         <tok val="Paphiae(que)?"/>
+      <ana>
+         <tok val="Paphiae"/>
+         <tok val="Paphiaeque"/>
+         <tok val="paphiae"/>
+         <tok val="paphiaeque"/>
          <lm cert="0.5">
             <l>Paphie</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -259,8 +319,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Paphiam Paphien-->
-         <tok val="Paphi(en|am)"/>
+      <ana>
+         <tok val="Paphiam"/>
+         <tok val="Paphien"/>
+         <tok val="paphiam"/>
+         <tok val="paphien"/>
          <lm>
             <l>Paphie</l>
             <m>n e - s - - - f a</m>
@@ -268,6 +331,7 @@
       </ana>
       <ana>
          <tok val="Paphiam"/>
+         <tok val="paphiam"/>
          <lm>
             <l>Paphius</l>
             <m>a e - s - - - f a</m>
@@ -275,6 +339,7 @@
       </ana>
       <ana>
          <tok val="Paphias"/>
+         <tok val="paphias"/>
          <lm cert="0.5">
             <l>Paphius</l>
             <m>a e - p - - - f a</m>
@@ -286,6 +351,7 @@
       </ana>
       <ana>
          <tok val="Paphie"/>
+         <tok val="paphie"/>
          <lm>
             <l>Paphius</l>
             <m cert="0.5">a e - s - - - n v</m>
@@ -294,6 +360,7 @@
       </ana>
       <ana>
          <tok val="Paphii"/>
+         <tok val="paphii"/>
          <lm cert="0.5">
             <l>Paphius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -307,6 +374,7 @@
       </ana>
       <ana>
          <tok val="Paphio"/>
+         <tok val="paphio"/>
          <lm>
             <l>Paphius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -315,8 +383,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Paphios Paphiosque-->
-         <tok val="Paphios(que)?"/>
+      <ana>
+         <tok val="Paphios"/>
+         <tok val="Paphiosque"/>
+         <tok val="paphios"/>
+         <tok val="paphiosque"/>
          <lm cert="0.5">
             <l>Paphii</l>
             <m>n e - p - - - m a</m>
@@ -328,6 +399,7 @@
       </ana>
       <ana>
          <tok val="Paphius"/>
+         <tok val="paphius"/>
          <lm>
             <l>Paphius</l>
             <m>a e - s - - - m n</m>
@@ -335,6 +407,7 @@
       </ana>
       <ana>
          <tok val="Paphlagoni"/>
+         <tok val="paphlagoni"/>
          <lm>
             <l>Paphlagonius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -343,6 +416,7 @@
       </ana>
       <ana>
          <tok val="Paphlagonia"/>
+         <tok val="paphlagonia"/>
          <lm cert="0.5">
             <l>Paphlagonius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -361,6 +435,7 @@
       </ana>
       <ana>
          <tok val="Paphlagoniae"/>
+         <tok val="paphlagoniae"/>
          <lm cert="0.5">
             <l>Paphlagonia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -378,6 +453,7 @@
       </ana>
       <ana>
          <tok val="Paphlagoniam"/>
+         <tok val="paphlagoniam"/>
          <lm cert="0.5">
             <l>Paphlagonia</l>
             <m>n e - s - - - f a</m>
@@ -387,8 +463,11 @@
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Papho Paphon-->
-         <tok val="Papho[n]?"/>
+      <ana>
+         <tok val="Papho"/>
+         <tok val="Paphon"/>
+         <tok val="papho"/>
+         <tok val="paphon"/>
          <lm>
             <l>Paphos</l>
             <m cert="0.25">n e - s - - - m b</m>
@@ -397,8 +476,13 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Paphon Paphos Paphosque-->
-         <tok val="Papho(s|n|sque)"/>
+      <ana>
+         <tok val="Paphon"/>
+         <tok val="Paphos"/>
+         <tok val="Paphosque"/>
+         <tok val="paphon"/>
+         <tok val="paphos"/>
+         <tok val="paphosque"/>
          <lm>
             <l>Paphos</l>
             <m cert="0.25">n e - s - - - m n</m>
@@ -409,6 +493,7 @@
       </ana>
       <ana>
          <tok val="Paphum"/>
+         <tok val="paphum"/>
          <lm>
             <l>Paphos</l>
             <m cert="0.25">n e - s - - - f a</m>
@@ -417,8 +502,11 @@
             <m cert="0.25">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Papi Papin-->
-         <tok val="Papi[n]?"/>
+      <ana>
+         <tok val="Papi"/>
+         <tok val="Papin"/>
+         <tok val="papi"/>
+         <tok val="papin"/>
          <lm>
             <l>Papius</l>
             <m cert="0.25">n e - s - - - m v</m>
@@ -429,6 +517,7 @@
       </ana>
       <ana>
          <tok val="Papia"/>
+         <tok val="papia"/>
          <lm>
             <l>Papius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -441,6 +530,7 @@
       </ana>
       <ana>
          <tok val="Papiae"/>
+         <tok val="papiae"/>
          <lm>
             <l>Papius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -451,6 +541,7 @@
       </ana>
       <ana>
          <tok val="Papiam"/>
+         <tok val="papiam"/>
          <lm>
             <l>Papius</l>
             <m>a e - s - - - f a</m>
@@ -458,6 +549,7 @@
       </ana>
       <ana>
          <tok val="Papias"/>
+         <tok val="papias"/>
          <lm>
             <l>Papius</l>
             <m>a e - p - - - f a</m>
@@ -465,6 +557,7 @@
       </ana>
       <ana>
          <tok val="Papili"/>
+         <tok val="papili"/>
          <lm>
             <l>Papilus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -472,23 +565,27 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Papilio papilio papilion-->
-         <tok val="[pP]apilio[n]?"/>
+      <ana>
+         <tok val="Papilio"/>
+         <tok val="papilio"/>
+         <tok val="papilion"/>
          <lm>
             <l>papilio</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Papilionum papilionum-->
-         <tok val="[pP]apilionum"/>
+      <ana>
+         <tok val="Papilionum"/>
+         <tok val="papilionum"/>
          <lm>
             <l>papilio</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Papilla papilla-->
-         <tok val="[pP]apilla"/>
+      <ana>
+         <tok val="Papilla"/>
+         <tok val="papilla"/>
          <lm>
             <l>papilla</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -498,13 +595,16 @@
       </ana>
       <ana>
          <tok val="Papilus"/>
+         <tok val="papilus"/>
          <lm>
             <l>Papilus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Papin papis-->
-         <tok val="[pP]api[sn]"/>
+      <ana>
+         <tok val="Papin"/>
+         <tok val="papin"/>
+         <tok val="papis"/>
          <lm>
             <l>papa</l>
             <m cert="0.25">n - - p - - - m d</m>
@@ -515,6 +615,7 @@
       </ana>
       <ana>
          <tok val="Papini"/>
+         <tok val="papini"/>
          <lm>
             <l>Papinus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -524,6 +625,7 @@
       </ana>
       <ana>
          <tok val="Papiniani"/>
+         <tok val="papiniani"/>
          <lm>
             <l>Papinianus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -533,6 +635,7 @@
       </ana>
       <ana>
          <tok val="Papiniano"/>
+         <tok val="papiniano"/>
          <lm>
             <l>Papinianus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -541,6 +644,7 @@
       </ana>
       <ana>
          <tok val="Papinianum"/>
+         <tok val="papinianum"/>
          <lm>
             <l>Papinianus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -549,6 +653,7 @@
       </ana>
       <ana>
          <tok val="Papinianus"/>
+         <tok val="papinianus"/>
          <lm>
             <l>Papinianus</l>
             <m>n e - s - - - m n</m>
@@ -556,6 +661,7 @@
       </ana>
       <ana>
          <tok val="Papinum"/>
+         <tok val="papinum"/>
          <lm>
             <l>Papinus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -564,6 +670,7 @@
       </ana>
       <ana>
          <tok val="Papinus"/>
+         <tok val="papinus"/>
          <lm>
             <l>Papinus</l>
             <m>n e - s - - - m n</m>
@@ -571,6 +678,7 @@
       </ana>
       <ana>
          <tok val="Papio"/>
+         <tok val="papio"/>
          <lm>
             <l>Papius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -581,8 +689,13 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Papiri Papirii Papirique-->
-         <tok val="Papiri(i|que)?"/>
+      <ana>
+         <tok val="Papiri"/>
+         <tok val="Papirii"/>
+         <tok val="Papirique"/>
+         <tok val="papiri"/>
+         <tok val="papirii"/>
+         <tok val="papirique"/>
          <lm>
             <l>Papirius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -591,6 +704,7 @@
       </ana>
       <ana>
          <tok val="Papiria"/>
+         <tok val="papiria"/>
          <lm>
             <l>Papirius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -603,6 +717,7 @@
       </ana>
       <ana>
          <tok val="Papiriae"/>
+         <tok val="papiriae"/>
          <lm>
             <l>Papirius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -613,6 +728,7 @@
       </ana>
       <ana>
          <tok val="Papiriam"/>
+         <tok val="papiriam"/>
          <lm>
             <l>Papirius</l>
             <m>a e - s - - - f a</m>
@@ -620,6 +736,7 @@
       </ana>
       <ana>
          <tok val="Papirianae"/>
+         <tok val="papirianae"/>
          <lm>
             <l>Papirianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -630,13 +747,17 @@
       </ana>
       <ana>
          <tok val="Papirianam"/>
+         <tok val="papirianam"/>
          <lm>
             <l>Papirianus</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Papiriane Papirianum-->
-         <tok val="Papirian(um|e)"/>
+      <ana>
+         <tok val="Papiriane"/>
+         <tok val="Papirianum"/>
+         <tok val="papiriane"/>
+         <tok val="papirianum"/>
          <lm>
             <l>Papirianus</l>
             <m>a e - s - - - n v</m>
@@ -644,6 +765,7 @@
       </ana>
       <ana>
          <tok val="Papiriane"/>
+         <tok val="papiriane"/>
          <lm>
             <l>Papirianus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -652,6 +774,7 @@
       </ana>
       <ana>
          <tok val="Papiriano"/>
+         <tok val="papiriano"/>
          <lm>
             <l>Papirianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -662,6 +785,7 @@
       </ana>
       <ana>
          <tok val="Papirianum"/>
+         <tok val="papirianum"/>
          <lm>
             <l>Papirianus</l>
             <m cert="0.2">a e - p - - - m g</m>
@@ -673,6 +797,7 @@
       </ana>
       <ana>
          <tok val="Papirianus"/>
+         <tok val="papirianus"/>
          <lm>
             <l>Papirianus</l>
             <m>a e - s - - - m n</m>
@@ -680,6 +805,7 @@
       </ana>
       <ana>
          <tok val="Papirii"/>
+         <tok val="papirii"/>
          <lm>
             <l>Papirius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -688,6 +814,7 @@
       </ana>
       <ana>
          <tok val="Papiriis"/>
+         <tok val="papiriis"/>
          <lm>
             <l>Papirius</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -700,13 +827,17 @@
       </ana>
       <ana>
          <tok val="Papirios"/>
+         <tok val="papirios"/>
          <lm>
             <l>Papirius</l>
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Papirium Papirivm-->
-         <tok val="Papiri[vu]m"/>
+      <ana>
+         <tok val="Papirium"/>
+         <tok val="Papirivm"/>
+         <tok val="papirium"/>
+         <tok val="papirivm"/>
          <lm>
             <l>Papirius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -719,6 +850,7 @@
       </ana>
       <ana>
          <tok val="Papisii"/>
+         <tok val="papisii"/>
          <lm>
             <l>Papisius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -728,6 +860,7 @@
       </ana>
       <ana>
          <tok val="Papisius"/>
+         <tok val="papisius"/>
          <lm>
             <l>Papisius</l>
             <m>n e - s - - - m n</m>
@@ -735,6 +868,7 @@
       </ana>
       <ana>
          <tok val="Papium"/>
+         <tok val="papium"/>
          <lm>
             <l>Papius</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -749,21 +883,24 @@
       </ana>
       <ana>
          <tok val="Papius"/>
+         <tok val="papius"/>
          <lm>
             <l>Papius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pappa pappa-->
-         <tok val="[pP]appa"/>
+      <ana>
+         <tok val="Pappa"/>
+         <tok val="pappa"/>
          <lm>
             <l>pappo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Pappare pappare-->
-         <tok val="[pP]appare"/>
+      <ana>
+         <tok val="Pappare"/>
+         <tok val="pappare"/>
          <lm>
             <l>pappo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -771,15 +908,17 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Pappas pappas-->
-         <tok val="[pP]appas"/>
+      <ana>
+         <tok val="Pappas"/>
+         <tok val="pappas"/>
          <lm>
             <l>pappo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pappi pappi-->
-         <tok val="[pP]appi"/>
+      <ana>
+         <tok val="Pappi"/>
+         <tok val="pappi"/>
          <lm>
             <l>pappus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -787,8 +926,10 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pappo pappo pappon-->
-         <tok val="[pP]appo[n]?"/>
+      <ana>
+         <tok val="Pappo"/>
+         <tok val="pappo"/>
+         <tok val="pappon"/>
          <lm cert="0.5">
             <l>pappo</l>
             <m>v - 1 s p i a</m>
@@ -799,23 +940,28 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Pappum pappum-->
-         <tok val="[pP]appum"/>
+      <ana>
+         <tok val="Pappum"/>
+         <tok val="pappum"/>
          <lm>
             <l>pappus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Papularum papularum-->
-         <tok val="[pP]apularum"/>
+      <ana>
+         <tok val="Papularum"/>
+         <tok val="papularum"/>
          <lm>
             <l>papula</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Papulas papulas papulasque papulasve-->
-         <tok val="[pP]apulas(ve|que)?"/>
+      <ana>
+         <tok val="Papulas"/>
+         <tok val="papulas"/>
+         <tok val="papulasque"/>
+         <tok val="papulasve"/>
          <lm cert="0.5">
             <l>papulo</l>
             <m>v - 2 s p i a</m>
@@ -827,6 +973,7 @@
       </ana>
       <ana>
          <tok val="Papyra"/>
+         <tok val="papyra"/>
          <lm>
             <l>papyrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -836,6 +983,7 @@
       </ana>
       <ana>
          <tok val="Papyraceae"/>
+         <tok val="papyraceae"/>
          <lm>
             <l>papyraceus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -846,13 +994,16 @@
       </ana>
       <ana>
          <tok val="Papyraceas"/>
+         <tok val="papyraceas"/>
          <lm>
             <l>papyraceus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Papyri papyri papyrin-->
-         <tok val="[pP]apyri[n]?"/>
+      <ana>
+         <tok val="Papyri"/>
+         <tok val="papyri"/>
+         <tok val="papyrin"/>
          <lm cert="0.333333333333333333">
             <l>papyrus</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -874,6 +1025,7 @@
       </ana>
       <ana>
          <tok val="Papyria"/>
+         <tok val="papyria"/>
          <lm>
             <l>papyrius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -884,8 +1036,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Papyrifer papyrifer-->
-         <tok val="[pP]apyrifer"/>
+      <ana>
+         <tok val="Papyrifer"/>
+         <tok val="papyrifer"/>
          <lm>
             <l>papyrifer</l>
             <m cert="0.5">a - - s - - - m n</m>
@@ -894,6 +1047,7 @@
       </ana>
       <ana>
          <tok val="Papyrium"/>
+         <tok val="papyrium"/>
          <lm>
             <l>papyrius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -904,8 +1058,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Papyrum papyrum-->
-         <tok val="[pP]apyrum"/>
+      <ana>
+         <tok val="Papyrum"/>
+         <tok val="papyrum"/>
          <lm cert="0.5">
             <l>papyrus</l>
             <m cert="0.25">n - - p - - - f g</m>
@@ -920,15 +1075,18 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Papyrum papyre papyrum-->
-         <tok val="[pP]apyr(um|e)"/>
+      <ana>
+         <tok val="Papyrum"/>
+         <tok val="papyre"/>
+         <tok val="papyrum"/>
          <lm>
             <l>papyrum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Papyrus papyrus-->
-         <tok val="[pP]apyrus"/>
+      <ana>
+         <tok val="Papyrus"/>
+         <tok val="papyrus"/>
          <lm>
             <l>papyrus</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -945,22 +1103,25 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--papauere papavere-->
-         <tok val="papa[vu]ere"/>
+      <ana>
+         <tok val="papauere"/>
+         <tok val="papavere"/>
          <lm>
             <l>papaver</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--papaueri papaveri-->
-         <tok val="papa[vu]eri"/>
+      <ana>
+         <tok val="papaueri"/>
+         <tok val="papaveri"/>
          <lm>
             <l>papaver</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--papauerum papaverum-->
-         <tok val="papa[vu]erum"/>
+      <ana>
+         <tok val="papauerum"/>
+         <tok val="papaverum"/>
          <lm>
             <l>papaver</l>
             <m>n - - p - - - n g</m>
@@ -1005,8 +1166,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--papiliones papilionesque-->
-         <tok val="papiliones(que)?"/>
+      <ana>
+         <tok val="papiliones"/>
+         <tok val="papilionesque"/>
          <lm>
             <l>papilio</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1096,8 +1258,10 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--pappon pappos papposque-->
-         <tok val="pappo(s|n|sque)"/>
+      <ana>
+         <tok val="pappon"/>
+         <tok val="pappos"/>
+         <tok val="papposque"/>
          <lm>
             <l>pappus</l>
             <m>n - - p - - - m a</m>
@@ -1233,8 +1397,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--papyrin papyris-->
-         <tok val="papyri[sn]"/>
+      <ana>
+         <tok val="papyrin"/>
+         <tok val="papyris"/>
          <lm cert="0.5">
             <l>papyrus</l>
             <m cert="0.25">n - - p - - - m d</m>
@@ -1287,8 +1452,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--papyro papyron-->
-         <tok val="papyro[n]?"/>
+      <ana>
+         <tok val="papyro"/>
+         <tok val="papyron"/>
          <lm cert="0.5">
             <l>papyrus</l>
             <m cert="0.25">n - - s - - - f b</m>
@@ -1302,8 +1468,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--papyron papyros-->
-         <tok val="papyro[sn]"/>
+      <ana>
+         <tok val="papyron"/>
+         <tok val="papyros"/>
          <lm>
             <l>papyrus</l>
             <m cert="0.5">n - - p - - - f a</m>

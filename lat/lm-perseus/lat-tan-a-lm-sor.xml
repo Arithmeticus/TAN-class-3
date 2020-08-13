@@ -1,64 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussor">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sor">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sor</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sor.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SOR</tok-starts-with>
       <tok-starts-with>Sor</tok-starts-with>
       <tok-starts-with>sor</tok-starts-with>
       <tok-starts-with>sór</tok-starts-with>
-      <ana><!--SORANUS Soranus-->
-         <tok val="S(oranus|ORANUS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:46:30.438-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:46:30.438-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sor.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SORANUS"/>
+         <tok val="Soranus"/>
+         <tok val="soranus"/>
          <lm>
             <l>Soranus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SOROR Soror soror sororque sororue sorór sóror Sorór-->
-         <tok val="[sS]?(or|s|sór|S)?(or)?[q]?(ue|ór|SOROR)?"/>
+      <ana>
+         <tok val="SOROR"/>
+         <tok val="Soror"/>
+         <tok val="Sorór"/>
+         <tok val="soror"/>
+         <tok val="sororque"/>
+         <tok val="sororue"/>
+         <tok val="sorór"/>
+         <tok val="sóror"/>
          <lm>
             <l>soror</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--SOROR Soror soror sororque sororue-->
-         <tok val="[sS]?(oror)?[q]?(ue|SOROR)?"/>
+      <ana>
+         <tok val="SOROR"/>
+         <tok val="Soror"/>
+         <tok val="soror"/>
+         <tok val="sororque"/>
+         <tok val="sororue"/>
          <lm>
             <l>soror</l>
             <m>n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--SORORES Sorores sorores sororesque-->
-         <tok val="[sS]?(orores)?(que|SORORES)?"/>
+      <ana>
+         <tok val="SORORES"/>
+         <tok val="Sorores"/>
+         <tok val="sorores"/>
+         <tok val="sororesque"/>
          <lm>
             <l>soror</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -66,8 +90,11 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--SORORI Sorori sorori sororiue-->
-         <tok val="[sS]?(orori)?(ue|SORORI)?"/>
+      <ana>
+         <tok val="SORORI"/>
+         <tok val="Sorori"/>
+         <tok val="sorori"/>
+         <tok val="sororiue"/>
          <lm cert="0.5">
             <l>sororius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -78,8 +105,15 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--SORS Sors Sortis sors sorsque sortis sortisque sortist-->
-         <tok val="[sS]?(or)?(ti)?[s]?(t|que|SORS)?"/>
+      <ana>
+         <tok val="SORS"/>
+         <tok val="Sors"/>
+         <tok val="Sortis"/>
+         <tok val="sors"/>
+         <tok val="sorsque"/>
+         <tok val="sortis"/>
+         <tok val="sortisque"/>
+         <tok val="sortist"/>
          <lm>
             <l>sors</l>
             <m>n - - s - - - f n</m>
@@ -87,13 +121,17 @@
       </ana>
       <ana>
          <tok val="SORTIANTVR"/>
+         <tok val="sortiantvr"/>
          <lm>
             <l>sortior</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Sora Soran-->
-         <tok val="Sora[n]?"/>
+      <ana>
+         <tok val="Sora"/>
+         <tok val="Soran"/>
+         <tok val="sora"/>
+         <tok val="soran"/>
          <lm>
             <l>Sora</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -101,8 +139,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Soracte Soracten-->
-         <tok val="Soracte[n]?"/>
+      <ana>
+         <tok val="Soracte"/>
+         <tok val="Soracten"/>
+         <tok val="soracte"/>
+         <tok val="soracten"/>
          <lm>
             <l>Soracte</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -113,6 +154,7 @@
       </ana>
       <ana>
          <tok val="Soractia"/>
+         <tok val="soractia"/>
          <lm cert="0.5">
             <l>Soracte</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -128,13 +170,17 @@
       </ana>
       <ana>
          <tok val="Soractis"/>
+         <tok val="soractis"/>
          <lm>
             <l>Soracte</l>
             <m>n e - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sorae Soraeque-->
-         <tok val="Sorae(que)?"/>
+      <ana>
+         <tok val="Sorae"/>
+         <tok val="Soraeque"/>
+         <tok val="sorae"/>
+         <tok val="soraeque"/>
          <lm>
             <l>Sora</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -145,6 +191,7 @@
       </ana>
       <ana>
          <tok val="Soram"/>
+         <tok val="soram"/>
          <lm>
             <l>Sora</l>
             <m>n e - s - - - f a</m>
@@ -152,6 +199,7 @@
       </ana>
       <ana>
          <tok val="Soran"/>
+         <tok val="soran"/>
          <lm>
             <l>Sora</l>
             <m>n e - p - - - f a</m>
@@ -159,6 +207,7 @@
       </ana>
       <ana>
          <tok val="Soranaque"/>
+         <tok val="soranaque"/>
          <lm>
             <l>Soranus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -171,6 +220,7 @@
       </ana>
       <ana>
          <tok val="Sorani"/>
+         <tok val="sorani"/>
          <lm>
             <l>Soranus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -179,8 +229,11 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sorano Soranoque-->
-         <tok val="Sorano(que)?"/>
+      <ana>
+         <tok val="Sorano"/>
+         <tok val="Soranoque"/>
+         <tok val="sorano"/>
+         <tok val="soranoque"/>
          <lm>
             <l>Soranus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -189,8 +242,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Soranorum Soranum-->
-         <tok val="Soran(or)?um"/>
+      <ana>
+         <tok val="Soranorum"/>
+         <tok val="Soranum"/>
+         <tok val="soranorum"/>
+         <tok val="soranum"/>
          <lm>
             <l>Soranus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -199,6 +255,7 @@
       </ana>
       <ana>
          <tok val="Soranos"/>
+         <tok val="soranos"/>
          <lm>
             <l>Soranus</l>
             <m>a e - p - - - m a</m>
@@ -206,6 +263,7 @@
       </ana>
       <ana>
          <tok val="Soranum"/>
+         <tok val="soranum"/>
          <lm>
             <l>Soranus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -214,8 +272,9 @@
             <m cert="0.25">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Sorba sorba-->
-         <tok val="[sS]orba"/>
+      <ana>
+         <tok val="Sorba"/>
+         <tok val="sorba"/>
          <lm>
             <l>sorbum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -223,37 +282,46 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sorbeo sorbeo-->
-         <tok val="[sS]orbeo"/>
+      <ana>
+         <tok val="Sorbeo"/>
+         <tok val="sorbeo"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sorbere sorbere sorbereque-->
-         <tok val="[sS]orbere(que)?"/>
+      <ana>
+         <tok val="Sorbere"/>
+         <tok val="sorbere"/>
+         <tok val="sorbereque"/>
          <lm>
             <l>sorbeo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Sorbere sorbere sorbereque sorberis-->
-         <tok val="[sS]orber[e]?(que|is)?"/>
+      <ana>
+         <tok val="Sorbere"/>
+         <tok val="sorbere"/>
+         <tok val="sorbereque"/>
+         <tok val="sorberis"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Sorbet sorbet sorbetque-->
-         <tok val="[sS]orbet(que)?"/>
+      <ana>
+         <tok val="Sorbet"/>
+         <tok val="sorbet"/>
+         <tok val="sorbetque"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sorbi sorbi-->
-         <tok val="[sS]orbi"/>
+      <ana>
+         <tok val="Sorbi"/>
+         <tok val="sorbi"/>
          <lm cert="0.5">
             <l>sorbum</l>
             <m>n - - s - - - n g</m>
@@ -265,8 +333,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Sorbilis sorbilis-->
-         <tok val="[sS]orbilis"/>
+      <ana>
+         <tok val="Sorbilis"/>
+         <tok val="sorbilis"/>
          <lm>
             <l>sorbilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -280,15 +349,17 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sorbillo sorbillo-->
-         <tok val="[sS]orbillo"/>
+      <ana>
+         <tok val="Sorbillo"/>
+         <tok val="sorbillo"/>
          <lm>
             <l>sorbillo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sorbitio sorbitio-->
-         <tok val="[sS]orbitio"/>
+      <ana>
+         <tok val="Sorbitio"/>
+         <tok val="sorbitio"/>
          <lm cert="0.5">
             <l>sorbitio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -300,8 +371,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sorbitiuncula sorbitiuncula-->
-         <tok val="[sS]orbitiuncula"/>
+      <ana>
+         <tok val="Sorbitiuncula"/>
+         <tok val="sorbitiuncula"/>
          <lm>
             <l>sorbitiuncula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -309,8 +381,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Sorbum sorborum sorbum sorbumve-->
-         <tok val="[sS]orb(or)?um(ve)?"/>
+      <ana>
+         <tok val="Sorbum"/>
+         <tok val="sorborum"/>
+         <tok val="sorbum"/>
+         <tok val="sorbumve"/>
          <lm cert="0.5">
             <l>sorbus</l>
             <m>n - - p - - - f g</m>
@@ -320,15 +395,20 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sorbum sorbe sorbum sorbumve-->
-         <tok val="[sS]orb(um)?(ve|e)?"/>
+      <ana>
+         <tok val="Sorbum"/>
+         <tok val="sorbe"/>
+         <tok val="sorbum"/>
+         <tok val="sorbumve"/>
          <lm>
             <l>sorbum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sorbum sorbum sorbumve-->
-         <tok val="[sS]orbum(ve)?"/>
+      <ana>
+         <tok val="Sorbum"/>
+         <tok val="sorbum"/>
+         <tok val="sorbumve"/>
          <lm cert="0.5">
             <l>sorbum</l>
             <m cert="0.5">n - - s - - - n a</m>
@@ -339,15 +419,19 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sorbus sorbus-->
-         <tok val="[sS]orbus"/>
+      <ana>
+         <tok val="Sorbus"/>
+         <tok val="sorbus"/>
          <lm>
             <l>sorbus</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Sorde sorde sordeque sordest-->
-         <tok val="[sS]orde(st|que)?"/>
+      <ana>
+         <tok val="Sorde"/>
+         <tok val="sorde"/>
+         <tok val="sordeque"/>
+         <tok val="sordest"/>
          <lm cert="0.5">
             <l>sordes</l>
             <m>n - - s - - - f b</m>
@@ -357,37 +441,44 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Sordent sordent-->
-         <tok val="[sS]ordent"/>
+      <ana>
+         <tok val="Sordent"/>
+         <tok val="sordent"/>
          <lm>
             <l>sordeo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Sordeo sordeo-->
-         <tok val="[sS]ordeo"/>
+      <ana>
+         <tok val="Sordeo"/>
+         <tok val="sordeo"/>
          <lm>
             <l>sordeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sordere sordere-->
-         <tok val="[sS]ordere"/>
+      <ana>
+         <tok val="Sordere"/>
+         <tok val="sordere"/>
          <lm>
             <l>sordeo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Sordere sordere sordére-->
-         <tok val="[sS]ord[eé]re"/>
+      <ana>
+         <tok val="Sordere"/>
+         <tok val="sordere"/>
+         <tok val="sordére"/>
          <lm>
             <l>sordeo</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Sordes sordes sordesque-->
-         <tok val="[sS]ordes(que)?"/>
+      <ana>
+         <tok val="Sordes"/>
+         <tok val="sordes"/>
+         <tok val="sordesque"/>
          <lm cert="0.5">
             <l>sordes</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -400,30 +491,38 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sordesco sordesco-->
-         <tok val="[sS]ordesco"/>
+      <ana>
+         <tok val="Sordesco"/>
+         <tok val="sordesco"/>
          <lm>
             <l>sordesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sordet sordet sordetque-->
-         <tok val="[sS]ordet(que)?"/>
+      <ana>
+         <tok val="Sordet"/>
+         <tok val="sordet"/>
+         <tok val="sordetque"/>
          <lm>
             <l>sordeo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sordibus sordibus-->
-         <tok val="[sS]ordibus"/>
+      <ana>
+         <tok val="Sordibus"/>
+         <tok val="sordibus"/>
          <lm>
             <l>sordes</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Sordida Sordidaque sordida sordidaque sordidast-->
-         <tok val="[sS]ordida(que|st)?"/>
+      <ana>
+         <tok val="Sordida"/>
+         <tok val="Sordidaque"/>
+         <tok val="sordida"/>
+         <tok val="sordidaque"/>
+         <tok val="sordidast"/>
          <lm cert="0.5">
             <l>sordidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -438,15 +537,18 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Sordidae sordidae sórdidae-->
-         <tok val="[sS]?(o|só)rdidae"/>
+      <ana>
+         <tok val="Sordidae"/>
+         <tok val="sordidae"/>
+         <tok val="sórdidae"/>
          <lm>
             <l>sordidus</l>
             <m>a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Sordidae sordidae-->
-         <tok val="[sS]ordidae"/>
+      <ana>
+         <tok val="Sordidae"/>
+         <tok val="sordidae"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
@@ -454,8 +556,9 @@
             <m cert="0.333333333333333333">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sordidatus sordidatus-->
-         <tok val="[sS]ordidatus"/>
+      <ana>
+         <tok val="Sordidatus"/>
+         <tok val="sordidatus"/>
          <lm cert="0.5">
             <l>sordidatus</l>
             <m>a - - s - - - m n</m>
@@ -465,29 +568,40 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Sordide sordide sordidius-->
-         <tok val="[sS]ordid(e|ius)"/>
+      <ana>
+         <tok val="Sordide"/>
+         <tok val="sordide"/>
+         <tok val="sordidius"/>
          <lm>
             <l>sordidus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Sordide Sordidum Sordidvm sordide sordidum sordidumque-->
-         <tok val="[Ss]ordid[vu]?(m|e|umque)"/>
+      <ana>
+         <tok val="Sordide"/>
+         <tok val="Sordidum"/>
+         <tok val="Sordidvm"/>
+         <tok val="sordide"/>
+         <tok val="sordidum"/>
+         <tok val="sordidumque"/>
+         <tok val="sordidvm"/>
          <lm>
             <l>sordidus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sordide sordide-->
-         <tok val="[sS]ordide"/>
+      <ana>
+         <tok val="Sordide"/>
+         <tok val="sordide"/>
          <lm>
             <l>sordidus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Sordidi sordidi sordidique-->
-         <tok val="[sS]ordidi(que)?"/>
+      <ana>
+         <tok val="Sordidi"/>
+         <tok val="sordidi"/>
+         <tok val="sordidique"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -496,8 +610,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sordidior sordidior-->
-         <tok val="[sS]ordidior"/>
+      <ana>
+         <tok val="Sordidior"/>
+         <tok val="sordidior"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -506,8 +621,10 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Sordidis sordidis sordidisque-->
-         <tok val="[sS]ordidis(que)?"/>
+      <ana>
+         <tok val="Sordidis"/>
+         <tok val="sordidis"/>
+         <tok val="sordidisque"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -518,8 +635,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Sordidissima sordidissima-->
-         <tok val="[sS]ordidissima"/>
+      <ana>
+         <tok val="Sordidissima"/>
+         <tok val="sordidissima"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -530,8 +648,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Sordidissimorum sordidissimorum sordidissimum sordidissimumque-->
-         <tok val="[sS]ordidissim(or)?um(que)?"/>
+      <ana>
+         <tok val="Sordidissimorum"/>
+         <tok val="sordidissimorum"/>
+         <tok val="sordidissimum"/>
+         <tok val="sordidissimumque"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.5">a - - p - - - n g s</m>
@@ -540,22 +661,19 @@
       </ana>
       <ana>
          <tok val="Sordidius"/>
+         <tok val="sordidius"/>
          <lm>
             <l>sordidus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Sordidius sordidius-->
-         <tok val="[sS]ordidius"/>
-         <lm>
-            <l>sordidus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Sordido sordido sordidoque-->
-         <tok val="[sS]ordido(que)?"/>
+      <ana>
+         <tok val="Sordido"/>
+         <tok val="sordido"/>
+         <tok val="sordidoque"/>
          <lm cert="0.5">
             <l>sordidus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -568,8 +686,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sordidula sordidula-->
-         <tok val="[sS]ordidula"/>
+      <ana>
+         <tok val="Sordidula"/>
+         <tok val="sordidula"/>
          <lm>
             <l>sordidulus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -580,15 +699,20 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sordidulus sordidulus-->
-         <tok val="[sS]ordidulus"/>
+      <ana>
+         <tok val="Sordidulus"/>
+         <tok val="sordidulus"/>
          <lm>
             <l>sordidulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sordidum Sordidvm sordidum sordidumque-->
-         <tok val="[Ss]ordid[vu]m(que)?"/>
+      <ana>
+         <tok val="Sordidum"/>
+         <tok val="Sordidvm"/>
+         <tok val="sordidum"/>
+         <tok val="sordidumque"/>
+         <tok val="sordidvm"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -596,23 +720,33 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sordidum Sordidvm sordidorum sordidum sordidumque-->
-         <tok val="[sS]ordid(or)?[uv]m(que)?"/>
+      <ana>
+         <tok val="Sordidum"/>
+         <tok val="Sordidvm"/>
+         <tok val="sordidorum"/>
+         <tok val="sordidum"/>
+         <tok val="sordidumque"/>
+         <tok val="sordidvm"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sordidus Sordidvs sordidus sordidusque-->
-         <tok val="[Ss]ordid[vu]s(que)?"/>
+      <ana>
+         <tok val="Sordidus"/>
+         <tok val="Sordidvs"/>
+         <tok val="sordidus"/>
+         <tok val="sordidusque"/>
+         <tok val="sordidvs"/>
          <lm>
             <l>sordidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sorditudo sorditudo-->
-         <tok val="[sS]orditudo"/>
+      <ana>
+         <tok val="Sorditudo"/>
+         <tok val="sorditudo"/>
          <lm>
             <l>sorditudo</l>
             <m>n - - s - - - f n</m>
@@ -620,6 +754,7 @@
       </ana>
       <ana>
          <tok val="Sordones"/>
+         <tok val="sordones"/>
          <lm>
             <l>Sordones</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -629,13 +764,16 @@
       </ana>
       <ana>
          <tok val="Sordonum"/>
+         <tok val="sordonum"/>
          <lm>
             <l>Sordones</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sorex sorex sorexue-->
-         <tok val="[sS]orex(ue)?"/>
+      <ana>
+         <tok val="Sorex"/>
+         <tok val="sorex"/>
+         <tok val="sorexue"/>
          <lm>
             <l>sorex</l>
             <m>n - - s - - - m n</m>
@@ -643,6 +781,7 @@
       </ana>
       <ana>
          <tok val="Soricaria"/>
+         <tok val="soricaria"/>
          <lm>
             <l>Soricaria</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -652,13 +791,15 @@
       </ana>
       <ana>
          <tok val="Soricariam"/>
+         <tok val="soricariam"/>
          <lm>
             <l>Soricaria</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sorici sorici-->
-         <tok val="[sS]orici"/>
+      <ana>
+         <tok val="Sorici"/>
+         <tok val="sorici"/>
          <lm>
             <l>sorex</l>
             <m>n - - s - - - m d</m>
@@ -666,20 +807,23 @@
       </ana>
       <ana>
          <tok val="Soricinos"/>
+         <tok val="soricinos"/>
          <lm>
             <l>soricinus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Soricinus soricinus-->
-         <tok val="[sS]oricinus"/>
+      <ana>
+         <tok val="Soricinus"/>
+         <tok val="soricinus"/>
          <lm>
             <l>soricinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Soritae soritae-->
-         <tok val="[sS]oritae"/>
+      <ana>
+         <tok val="Soritae"/>
+         <tok val="soritae"/>
          <lm>
             <l>sorites</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -687,36 +831,45 @@
             <m cert="0.333333333333333333">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Soritae soritae soriti-->
-         <tok val="[sS]orit(ae|i)"/>
+      <ana>
+         <tok val="Soritae"/>
+         <tok val="soritae"/>
+         <tok val="soriti"/>
          <lm>
             <l>sorites</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sorites sorites-->
-         <tok val="[sS]orites"/>
+      <ana>
+         <tok val="Sorites"/>
+         <tok val="sorites"/>
          <lm>
             <l>sorites</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sorore sorore sororeve-->
-         <tok val="[sS]orore(ve)?"/>
+      <ana>
+         <tok val="Sorore"/>
+         <tok val="sorore"/>
+         <tok val="sororeve"/>
          <lm>
             <l>soror</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sororem sororem sororemque sororemue-->
-         <tok val="[sS]ororem[q]?(ue)?"/>
+      <ana>
+         <tok val="Sororem"/>
+         <tok val="sororem"/>
+         <tok val="sororemque"/>
+         <tok val="sororemue"/>
          <lm>
             <l>soror</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sororia sororia-->
-         <tok val="[sS]ororia"/>
+      <ana>
+         <tok val="Sororia"/>
+         <tok val="sororia"/>
          <lm cert="0.5">
             <l>sororius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -731,8 +884,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Sororiae sororiae-->
-         <tok val="[sS]ororiae"/>
+      <ana>
+         <tok val="Sororiae"/>
+         <tok val="sororiae"/>
          <lm>
             <l>sororius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -741,8 +895,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sororiantes sororiantes-->
-         <tok val="[sS]ororiantes"/>
+      <ana>
+         <tok val="Sororiantes"/>
+         <tok val="sororiantes"/>
          <lm>
             <l>sororio</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -753,16 +908,19 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Sororibus sororibus sororibusque-->
-         <tok val="[sS]ororibus(que)?"/>
+      <ana>
+         <tok val="Sororibus"/>
+         <tok val="sororibus"/>
+         <tok val="sororibusque"/>
          <lm>
             <l>soror</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Sororicida sororicida-->
-         <tok val="[sS]ororicida"/>
+      <ana>
+         <tok val="Sororicida"/>
+         <tok val="sororicida"/>
          <lm>
             <l>sororicida</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -770,15 +928,18 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Sororis sororis sororisque-->
-         <tok val="[sS]ororis(que)?"/>
+      <ana>
+         <tok val="Sororis"/>
+         <tok val="sororis"/>
+         <tok val="sororisque"/>
          <lm>
             <l>soror</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sororium sororium-->
-         <tok val="[sS]ororium"/>
+      <ana>
+         <tok val="Sororium"/>
+         <tok val="sororium"/>
          <lm>
             <l>sororius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -789,37 +950,55 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sororum sororum sororumque-->
-         <tok val="[sS]ororum(que)?"/>
+      <ana>
+         <tok val="Sororum"/>
+         <tok val="sororum"/>
+         <tok val="sororumque"/>
          <lm>
             <l>soror</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sorte Sorti sorte sorteque sorti sortique sortist-->
-         <tok val="[sS]ort[ie]?(que|ist|i|e)"/>
+      <ana>
+         <tok val="Sorte"/>
+         <tok val="Sorti"/>
+         <tok val="sorte"/>
+         <tok val="sorteque"/>
+         <tok val="sorti"/>
+         <tok val="sortique"/>
+         <tok val="sortist"/>
          <lm>
             <l>sors</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sortem sortem sortemque-->
-         <tok val="[sS]ortem(que)?"/>
+      <ana>
+         <tok val="Sortem"/>
+         <tok val="sortem"/>
+         <tok val="sortemque"/>
          <lm>
             <l>sors</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sortes sortes sortesque-->
-         <tok val="[sS]ortes(que)?"/>
+      <ana>
+         <tok val="Sortes"/>
+         <tok val="sortes"/>
+         <tok val="sortesque"/>
          <lm>
             <l>sors</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Sortes Sortis sortes sortesque sortis sortisque sortist-->
-         <tok val="[sS]ort[ie]s(t|que)?"/>
+      <ana>
+         <tok val="Sortes"/>
+         <tok val="Sortis"/>
+         <tok val="sortes"/>
+         <tok val="sortesque"/>
+         <tok val="sortis"/>
+         <tok val="sortisque"/>
+         <tok val="sortist"/>
          <lm>
             <l>sors</l>
             <m>n - - p - - - f a</m>
@@ -827,20 +1006,26 @@
       </ana>
       <ana>
          <tok val="Sorti"/>
+         <tok val="sorti"/>
          <lm>
             <l>sortior</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Sorti sorti sortique sortist-->
-         <tok val="[sS]orti(st|que)?"/>
+      <ana>
+         <tok val="Sorti"/>
+         <tok val="sorti"/>
+         <tok val="sortique"/>
+         <tok val="sortist"/>
          <lm>
             <l>sors</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Sorticula sorticula sorticulaque-->
-         <tok val="[sS]orticula(que)?"/>
+      <ana>
+         <tok val="Sorticula"/>
+         <tok val="sorticula"/>
+         <tok val="sorticulaque"/>
          <lm>
             <l>sorticula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -850,6 +1035,7 @@
       </ana>
       <ana>
          <tok val="Sortientes"/>
+         <tok val="sortientes"/>
          <lm>
             <l>sortior</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -862,13 +1048,15 @@
       </ana>
       <ana>
          <tok val="Sortietur"/>
+         <tok val="sortietur"/>
          <lm>
             <l>sortior</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Sortilegi sortilegi-->
-         <tok val="[sS]ortilegi"/>
+      <ana>
+         <tok val="Sortilegi"/>
+         <tok val="sortilegi"/>
          <lm>
             <l>sortilegus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -880,8 +1068,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sortilegis sortilegis-->
-         <tok val="[sS]ortilegis"/>
+      <ana>
+         <tok val="Sortilegis"/>
+         <tok val="sortilegis"/>
          <lm>
             <l>sortilegus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -894,8 +1083,9 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sortilegus sortilegus-->
-         <tok val="[sS]ortilegus"/>
+      <ana>
+         <tok val="Sortilegus"/>
+         <tok val="sortilegus"/>
          <lm>
             <l>sortilegus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -904,6 +1094,7 @@
       </ana>
       <ana>
          <tok val="Sortior"/>
+         <tok val="sortior"/>
          <lm>
             <l>sortior</l>
             <m>v - 1 s p i p</m>
@@ -911,6 +1102,7 @@
       </ana>
       <ana>
          <tok val="Sortiri"/>
+         <tok val="sortiri"/>
          <lm>
             <l>sortior</l>
             <m>v - - - p n p</m>
@@ -918,13 +1110,17 @@
       </ana>
       <ana>
          <tok val="Sortis"/>
+         <tok val="sortis"/>
          <lm>
             <l>sortior</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sortis sortis sortisque sortist-->
-         <tok val="[sS]ortis(t|que)?"/>
+      <ana>
+         <tok val="Sortis"/>
+         <tok val="sortis"/>
+         <tok val="sortisque"/>
+         <tok val="sortist"/>
          <lm>
             <l>sors</l>
             <m>n - - s - - - f g</m>
@@ -932,6 +1128,7 @@
       </ana>
       <ana>
          <tok val="Sortita"/>
+         <tok val="sortita"/>
          <lm>
             <l>sortior</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -942,8 +1139,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Sortita sortita sortitaque-->
-         <tok val="[sS]ortita(que)?"/>
+      <ana>
+         <tok val="Sortita"/>
+         <tok val="sortita"/>
+         <tok val="sortitaque"/>
          <lm>
             <l>sortitus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
@@ -956,6 +1155,7 @@
       </ana>
       <ana>
          <tok val="Sortiti"/>
+         <tok val="sortiti"/>
          <lm>
             <l>sortior</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -964,8 +1164,10 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Sortiti sortiti sortitique-->
-         <tok val="[sS]ortiti(que)?"/>
+      <ana>
+         <tok val="Sortiti"/>
+         <tok val="sortiti"/>
+         <tok val="sortitique"/>
          <lm>
             <l>sortitus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -974,34 +1176,35 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sortitio sortitio sortitioque-->
-         <tok val="[sS]ortitio(que)?"/>
+      <ana>
+         <tok val="Sortitio"/>
+         <tok val="sortitio"/>
+         <tok val="sortitioque"/>
          <lm>
             <l>sortitio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Sortitione sortitione-->
-         <tok val="[sS]ortitione"/>
+      <ana>
+         <tok val="Sortitione"/>
+         <tok val="sortitione"/>
          <lm>
             <l>sortitio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sortito sortito-->
-         <tok val="[sS]ortito"/>
-         <lm>
+      <ana>
+         <tok val="Sortito"/>
+         <tok val="sortito"/>
+         <lm cert="0.5">
             <l>sortitus</l>
             <m cert="0.25">a - - s - - - m d</m>
             <m cert="0.25">a - - s - - - m b</m>
             <m cert="0.25">a - - s - - - n b</m>
             <m cert="0.25">a - - s - - - n d</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Sortito"/>
-         <lm>
+         <lm cert="0.5">
             <l>sortior</l>
             <m cert="0.166666666666666667">v - - s r p p n b</m>
             <m cert="0.166666666666666667">v - - s r p p m b</m>
@@ -1011,30 +1214,30 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Sortitor sortitor-->
-         <tok val="[sS]ortitor"/>
+      <ana>
+         <tok val="Sortitor"/>
+         <tok val="sortitor"/>
          <lm>
             <l>sortitor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Sortitos sortitos-->
-         <tok val="[sS]ortitos"/>
-         <lm>
+      <ana>
+         <tok val="Sortitos"/>
+         <tok val="sortitos"/>
+         <lm cert="0.5">
             <l>sortitus</l>
             <m>a - - p - - - m a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Sortitos"/>
-         <lm>
+         <lm cert="0.5">
             <l>sortior</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Sortitum"/>
+         <tok val="sortitum"/>
          <lm cert="0.5">
             <l>sortitus</l>
             <m>a - - s - - - n n</m>
@@ -1049,8 +1252,10 @@
             <m cert="0.166666666666666667">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Sortitum sortitum sortitumque-->
-         <tok val="[sS]ortitum(que)?"/>
+      <ana>
+         <tok val="Sortitum"/>
+         <tok val="sortitum"/>
+         <tok val="sortitumque"/>
          <lm cert="0.5">
             <l>sortitus</l>
             <m cert="0.2">a - - p - - - n g</m>
@@ -1064,8 +1269,11 @@
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Sortitum sortite sortitum sortitumque-->
-         <tok val="[sS]ortit(um)?(que|e)?"/>
+      <ana>
+         <tok val="Sortitum"/>
+         <tok val="sortite"/>
+         <tok val="sortitum"/>
+         <tok val="sortitumque"/>
          <lm>
             <l>sortitus</l>
             <m>a - - s - - - n v</m>
@@ -1073,13 +1281,16 @@
       </ana>
       <ana>
          <tok val="Sortitur"/>
+         <tok val="sortitur"/>
          <lm>
             <l>sortior</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Sortitus sortitus sortitusque-->
-         <tok val="[sS]ortitus(que)?"/>
+      <ana>
+         <tok val="Sortitus"/>
+         <tok val="sortitus"/>
+         <tok val="sortitusque"/>
          <lm>
             <l>sortitus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -1091,13 +1302,15 @@
       </ana>
       <ana>
          <tok val="Sortitus"/>
+         <tok val="sortitus"/>
          <lm>
             <l>sortior</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Sortium sortium-->
-         <tok val="[sS]ortium"/>
+      <ana>
+         <tok val="Sortium"/>
+         <tok val="sortium"/>
          <lm>
             <l>sors</l>
             <m>n - - p - - - f g</m>
@@ -1131,8 +1344,9 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--sorbean sorbeas-->
-         <tok val="sorbea[sn]"/>
+      <ana>
+         <tok val="sorbean"/>
+         <tok val="sorbeas"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 2 s p s a</m>
@@ -1166,8 +1380,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--sorbebat sorbebatque-->
-         <tok val="sorbebat(que)?"/>
+      <ana>
+         <tok val="sorbebat"/>
+         <tok val="sorbebatque"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 3 s i i a</m>
@@ -1206,8 +1421,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--sorbendo sorbendoque-->
-         <tok val="sorbendo(que)?"/>
+      <ana>
+         <tok val="sorbendo"/>
+         <tok val="sorbendoque"/>
          <lm>
             <l>sorbeo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1238,8 +1454,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--sorbens sorbensque-->
-         <tok val="sorbens(que)?"/>
+      <ana>
+         <tok val="sorbens"/>
+         <tok val="sorbensque"/>
          <lm>
             <l>sorbeo</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -1251,8 +1468,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--sorbent sorbentque-->
-         <tok val="sorbent(que)?"/>
+      <ana>
+         <tok val="sorbent"/>
+         <tok val="sorbentque"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 3 p p i a</m>
@@ -1334,8 +1552,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--sorbetur sorbeturque-->
-         <tok val="sorbetur(que)?"/>
+      <ana>
+         <tok val="sorbetur"/>
+         <tok val="sorbeturque"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 3 s p i p</m>
@@ -1438,8 +1657,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--sorbis sorbisque-->
-         <tok val="sorbis(que)?"/>
+      <ana>
+         <tok val="sorbis"/>
+         <tok val="sorbisque"/>
          <lm cert="0.5">
             <l>sorbum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -1533,8 +1753,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--sorbuere sorbuerunt-->
-         <tok val="sorbuer(unt|e)"/>
+      <ana>
+         <tok val="sorbuere"/>
+         <tok val="sorbuerunt"/>
          <lm>
             <l>sorbeo</l>
             <m>v - 3 p r i a</m>
@@ -1761,8 +1982,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--sordi sordique-->
-         <tok val="sordi(que)?"/>
+      <ana>
+         <tok val="sordi"/>
+         <tok val="sordique"/>
          <lm>
             <l>sordes</l>
             <m>n - - s - - - f d</m>
@@ -1777,8 +1999,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--sordidam sordidamque-->
-         <tok val="sordidam(que)?"/>
+      <ana>
+         <tok val="sordidam"/>
+         <tok val="sordidamque"/>
          <lm>
             <l>sordidus</l>
             <m>a - - s - - - f a</m>
@@ -1925,8 +2148,9 @@
             <m cert="0.25">v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--sordidatum sordidatorum-->
-         <tok val="sordidat(or)?um"/>
+      <ana>
+         <tok val="sordidatorum"/>
+         <tok val="sordidatum"/>
          <lm cert="0.5">
             <l>sordidatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1974,8 +2198,9 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--sordidioribus sordidioribusque-->
-         <tok val="sordidioribus(que)?"/>
+      <ana>
+         <tok val="sordidioribus"/>
+         <tok val="sordidioribusque"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.5">a - - p - - - - b c</m>
@@ -2013,15 +2238,18 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--sordidissime sordidissimus-->
-         <tok val="sordidissim(us|e)"/>
+      <ana>
+         <tok val="sordidissime"/>
+         <tok val="sordidissimus"/>
          <lm>
             <l>sordidus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--sordidissime sordidissimum sordidissimumque-->
-         <tok val="sordidissim(um)?(que|e)?"/>
+      <ana>
+         <tok val="sordidissime"/>
+         <tok val="sordidissimum"/>
+         <tok val="sordidissimumque"/>
          <lm>
             <l>sordidus</l>
             <m>a - - s - - - n v s</m>
@@ -2037,8 +2265,9 @@
             <m cert="0.25">a - - p - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--sordidissimis sordidissimisque-->
-         <tok val="sordidissimis(que)?"/>
+      <ana>
+         <tok val="sordidissimis"/>
+         <tok val="sordidissimisque"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.166666666666666667">a - - p - - - n d s</m>
@@ -2059,8 +2288,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--sordidissimum sordidissimumque-->
-         <tok val="sordidissimum(que)?"/>
+      <ana>
+         <tok val="sordidissimum"/>
+         <tok val="sordidissimumque"/>
          <lm>
             <l>sordidus</l>
             <m cert="0.333333333333333333">a - - s - - - n a s</m>
@@ -2075,8 +2305,9 @@
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--sordidos sordidosque-->
-         <tok val="sordidos(que)?"/>
+      <ana>
+         <tok val="sordidos"/>
+         <tok val="sordidosque"/>
          <lm>
             <l>sordidus</l>
             <m>a - - p - - - m a</m>
@@ -2090,8 +2321,9 @@
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--sordis sordisque-->
-         <tok val="sordis(que)?"/>
+      <ana>
+         <tok val="sordis"/>
+         <tok val="sordisque"/>
          <lm>
             <l>sordes</l>
             <m>n - - s - - - f g</m>
@@ -2104,8 +2336,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--sorditie sorditiei-->
-         <tok val="sorditie[i]?"/>
+      <ana>
+         <tok val="sorditie"/>
+         <tok val="sorditiei"/>
          <lm>
             <l>sordities</l>
             <m cert="0.5">n - - s - - - f g</m>
@@ -2149,8 +2382,10 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--sordumque sordium sordiumque-->
-         <tok val="sord[i]?um(que|)"/>
+      <ana>
+         <tok val="sordium"/>
+         <tok val="sordiumque"/>
+         <tok val="sordumque"/>
          <lm>
             <l>sordes</l>
             <m>n - - p - - - f g</m>
@@ -2213,8 +2448,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--soritam soriten-->
-         <tok val="sorit(en|am)"/>
+      <ana>
+         <tok val="soritam"/>
+         <tok val="soriten"/>
          <lm>
             <l>sorites</l>
             <m>n - - s - - - m a</m>
@@ -2328,8 +2564,10 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--sorti sortique sortist-->
-         <tok val="sorti(st|que)?"/>
+      <ana>
+         <tok val="sorti"/>
+         <tok val="sortique"/>
+         <tok val="sortist"/>
          <lm>
             <l>sortio</l>
             <m>v - 2 s p m a</m>
@@ -2480,8 +2718,9 @@
             <m cert="0.333333333333333333">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--sortiere sortiris-->
-         <tok val="sorti[e]?r(is|e)"/>
+      <ana>
+         <tok val="sortiere"/>
+         <tok val="sortiris"/>
          <lm>
             <l>sortio</l>
             <m>v - 2 s p i p</m>
@@ -2551,8 +2790,10 @@
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--sortirentur sortirenturue sortirenturve-->
-         <tok val="sortirentur[vu]?(e|)"/>
+      <ana>
+         <tok val="sortirentur"/>
+         <tok val="sortirenturue"/>
+         <tok val="sortirenturve"/>
          <lm>
             <l>sortio</l>
             <m>v - 3 p i s p</m>
@@ -2579,8 +2820,10 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--sortis sortisque sortist-->
-         <tok val="sortis(t|que)?"/>
+      <ana>
+         <tok val="sortis"/>
+         <tok val="sortisque"/>
+         <tok val="sortist"/>
          <lm>
             <l>sortio</l>
             <m>v - 2 s p i a</m>
@@ -2593,8 +2836,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--sortita sortitaque-->
-         <tok val="sortita(que)?"/>
+      <ana>
+         <tok val="sortita"/>
+         <tok val="sortitaque"/>
          <lm>
             <l>sortio</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -2646,15 +2890,18 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--sortite sortitum sortitumque-->
-         <tok val="sortit(um)?(que|e)?"/>
+      <ana>
+         <tok val="sortite"/>
+         <tok val="sortitum"/>
+         <tok val="sortitumque"/>
          <lm>
             <l>sortio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--sortiti sortitique-->
-         <tok val="sortiti(que)?"/>
+      <ana>
+         <tok val="sortiti"/>
+         <tok val="sortitique"/>
          <lm>
             <l>sortio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2749,8 +2996,9 @@
             <m>v - - - - u - - b</m>
          </lm>
       </ana>
-      <ana><!--sortitum sortitumque-->
-         <tok val="sortitum(que)?"/>
+      <ana>
+         <tok val="sortitum"/>
+         <tok val="sortitumque"/>
          <lm cert="0.5">
             <l>sortior</l>
             <m>a - - s - - - n n</m>
@@ -2764,8 +3012,9 @@
             <m cert="0.2">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--sortitur sortiturque-->
-         <tok val="sortitur(que)?"/>
+      <ana>
+         <tok val="sortitur"/>
+         <tok val="sortiturque"/>
          <lm>
             <l>sortio</l>
             <m>v - 3 s p i p</m>
@@ -2807,8 +3056,9 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--sortitus sortitusque-->
-         <tok val="sortitus(que)?"/>
+      <ana>
+         <tok val="sortitus"/>
+         <tok val="sortitusque"/>
          <lm>
             <l>sortio</l>
             <m>v - - s r p p m n</m>

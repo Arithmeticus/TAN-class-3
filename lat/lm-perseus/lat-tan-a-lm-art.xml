@@ -1,59 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusart">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:art">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to art</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-art.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ART</tok-starts-with>
       <tok-starts-with>ARt</tok-starts-with>
       <tok-starts-with>Art</tok-starts-with>
       <tok-starts-with>art</tok-starts-with>
       <tok-starts-with>árt</tok-starts-with>
-      <ana><!--ARTEMIDORVM Artemidorum Artemidorvm-->
-         <tok val="A(rtemidor)?[vu]?(m|RTEMIDORVM)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:11:14.214-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:11:14.214-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-art.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ARTEMIDORVM"/>
+         <tok val="Artemidorum"/>
+         <tok val="Artemidorvm"/>
+         <tok val="artemidorum"/>
+         <tok val="artemidorvm"/>
          <lm>
             <l>Artemidorus</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--ARTEMIDORVS Artemidorus-->
-         <tok val="A(rtemidorus|RTEMIDORVS)"/>
+      <ana>
+         <tok val="ARTEMIDORVS"/>
+         <tok val="Artemidorus"/>
+         <tok val="artemidorus"/>
+         <tok val="artemidorvs"/>
          <lm>
             <l>Artemidorus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ARTES Artes arten artes artesque-->
-         <tok val="[aA]?(rte)?(s|n|sque|ARTES)"/>
+      <ana>
+         <tok val="ARTES"/>
+         <tok val="Artes"/>
+         <tok val="arten"/>
+         <tok val="artes"/>
+         <tok val="artesque"/>
          <lm cert="0.5">
             <l>ars</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -64,52 +83,85 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--ARTES ARTIS Artes Artis arten artes artesque artis artisne artisque-->
-         <tok val="(art)?[ie]?[s]?(qu|n)?(e|ARTIS|ARTES|Artis|Artes|artes|arten)?"/>
+      <ana>
+         <tok val="ARTES"/>
+         <tok val="ARTIS"/>
+         <tok val="Artes"/>
+         <tok val="Artis"/>
+         <tok val="arten"/>
+         <tok val="artes"/>
+         <tok val="artesque"/>
+         <tok val="artis"/>
+         <tok val="artisne"/>
+         <tok val="artisque"/>
          <lm>
             <l>ars</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--ARTIBUS Artibus Artubus artibus artibusque artubus-->
-         <tok val="[Aa]?(rt)?[ui]?(bus)?(que|ARTIBUS)?"/>
+      <ana>
+         <tok val="ARTIBUS"/>
+         <tok val="Artibus"/>
+         <tok val="Artubus"/>
+         <tok val="artibus"/>
+         <tok val="artibusque"/>
+         <tok val="artubus"/>
          <lm>
             <l>artus2</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--ARTIBUS Artibus artibus artibusque-->
-         <tok val="[aA]?(rtibus)?(que|ARTIBUS)?"/>
+      <ana>
+         <tok val="ARTIBUS"/>
+         <tok val="Artibus"/>
+         <tok val="artibus"/>
+         <tok val="artibusque"/>
          <lm>
             <l>ars</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--ARTICVLORVM Articulorum Articulum articulorum articulorumque articulum-->
-         <tok val="[aA]?(rticul)?(or)?(um)?(que|ARTICVLORVM)?"/>
+      <ana>
+         <tok val="ARTICVLORVM"/>
+         <tok val="Articulorum"/>
+         <tok val="Articulum"/>
+         <tok val="articulorum"/>
+         <tok val="articulorumque"/>
+         <tok val="articulum"/>
+         <tok val="articvlorvm"/>
          <lm>
             <l>articulus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--ARTICVLOS Articulos articulos articulosque-->
-         <tok val="[aA]?(rticulos)?(que|ARTICVLOS)?"/>
+      <ana>
+         <tok val="ARTICVLOS"/>
+         <tok val="Articulos"/>
+         <tok val="articulos"/>
+         <tok val="articulosque"/>
+         <tok val="articvlos"/>
          <lm>
             <l>articulus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--ARTIFEX Artifex artifex-->
-         <tok val="[aA]?(rtifex|ARTIFEX)"/>
+      <ana>
+         <tok val="ARTIFEX"/>
+         <tok val="Artifex"/>
+         <tok val="artifex"/>
          <lm>
             <l>artifex</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ARTIS Artis artis artisne artisque-->
-         <tok val="[aA]?(rtis)?(ne|que|ARTIS)?"/>
+      <ana>
+         <tok val="ARTIS"/>
+         <tok val="Artis"/>
+         <tok val="artis"/>
+         <tok val="artisne"/>
+         <tok val="artisque"/>
          <lm cert="0.25">
             <l>artum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -133,8 +185,12 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--ARTIVM Artium artium artiumque-->
-         <tok val="[aA]?(rtium)?(que|ARTIVM)?"/>
+      <ana>
+         <tok val="ARTIVM"/>
+         <tok val="Artium"/>
+         <tok val="artium"/>
+         <tok val="artiumque"/>
+         <tok val="artivm"/>
          <lm>
             <l>artius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -145,15 +201,26 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--ARTIVM ARTVM Artium artium artiumque artum artumque-->
-         <tok val="(art)?[i]?(umque|ARTVM|ARTIVM|artum|artium|Artium)"/>
+      <ana>
+         <tok val="ARTIVM"/>
+         <tok val="ARTVM"/>
+         <tok val="Artium"/>
+         <tok val="artium"/>
+         <tok val="artiumque"/>
+         <tok val="artivm"/>
+         <tok val="artum"/>
+         <tok val="artumque"/>
+         <tok val="artvm"/>
          <lm>
             <l>ars</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--ARTVM artum artumque-->
-         <tok val="(artum)?(que|ARTVM)?"/>
+      <ana>
+         <tok val="ARTVM"/>
+         <tok val="artum"/>
+         <tok val="artumque"/>
+         <tok val="artvm"/>
          <lm cert="0.333333333333333333">
             <l>artus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -173,8 +240,15 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--ARTVM Arte arte arten arteque artum artumque-->
-         <tok val="[aA]?(rt)?(umqu)?[e]?(n|que|um|ARTVM)?"/>
+      <ana>
+         <tok val="ARTVM"/>
+         <tok val="Arte"/>
+         <tok val="arte"/>
+         <tok val="arten"/>
+         <tok val="arteque"/>
+         <tok val="artum"/>
+         <tok val="artumque"/>
+         <tok val="artvm"/>
          <lm cert="0.5">
             <l>artum</l>
             <m>n - - s - - - n v</m>
@@ -184,8 +258,12 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--ARTVS Artus artus artusque-->
-         <tok val="[aA]?(rtus)?(que|ARTVS)?"/>
+      <ana>
+         <tok val="ARTVS"/>
+         <tok val="Artus"/>
+         <tok val="artus"/>
+         <tok val="artusque"/>
+         <tok val="artvs"/>
          <lm cert="0.5">
             <l>artus2</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -198,8 +276,10 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ARtificia Artificia artificia-->
-         <tok val="[A]?(r|R|ar)tificia"/>
+      <ana>
+         <tok val="ARtificia"/>
+         <tok val="Artificia"/>
+         <tok val="artificia"/>
          <lm>
             <l>artificium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -207,8 +287,10 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Arta arta artaque-->
-         <tok val="[aA]rta(que)?"/>
+      <ana>
+         <tok val="Arta"/>
+         <tok val="arta"/>
+         <tok val="artaque"/>
          <lm cert="0.333333333333333333">
             <l>artum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -229,8 +311,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Artaba artaba Artabanne-->
-         <tok val="[aA]rtaba(nne)?"/>
+      <ana>
+         <tok val="Artaba"/>
+         <tok val="Artabanne"/>
+         <tok val="artaba"/>
+         <tok val="artabanne"/>
          <lm>
             <l>artaba</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -240,6 +325,7 @@
       </ana>
       <ana>
          <tok val="Artabane"/>
+         <tok val="artabane"/>
          <lm>
             <l>Artabanus</l>
             <m>n e - s - - - m v</m>
@@ -247,6 +333,7 @@
       </ana>
       <ana>
          <tok val="Artabani"/>
+         <tok val="artabani"/>
          <lm>
             <l>Artabanus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -256,6 +343,7 @@
       </ana>
       <ana>
          <tok val="Artabano"/>
+         <tok val="artabano"/>
          <lm>
             <l>Artabanus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -264,6 +352,7 @@
       </ana>
       <ana>
          <tok val="Artabanum"/>
+         <tok val="artabanum"/>
          <lm>
             <l>Artabanus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -272,6 +361,7 @@
       </ana>
       <ana>
          <tok val="Artabanus"/>
+         <tok val="artabanus"/>
          <lm>
             <l>Artabanus</l>
             <m>n e - s - - - m n</m>
@@ -279,6 +369,7 @@
       </ana>
       <ana>
          <tok val="Artacie"/>
+         <tok val="artacie"/>
          <lm>
             <l>Artacie</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -288,21 +379,24 @@
       </ana>
       <ana>
          <tok val="Artaciis"/>
+         <tok val="artaciis"/>
          <lm>
             <l>Artacie</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Artam artam-->
-         <tok val="[aA]rtam"/>
+      <ana>
+         <tok val="Artam"/>
+         <tok val="artam"/>
          <lm>
             <l>artus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Artatus artatus-->
-         <tok val="[aA]rtatus"/>
+      <ana>
+         <tok val="Artatus"/>
+         <tok val="artatus"/>
          <lm>
             <l>arto</l>
             <m>v - - s r p p m n</m>
@@ -310,28 +404,38 @@
       </ana>
       <ana>
          <tok val="Artauasden"/>
+         <tok val="artauasden"/>
          <lm>
             <l>Artavasdes</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Artauasden Artavasdes-->
-         <tok val="Arta[vu]asde[sn]"/>
+      <ana>
+         <tok val="Artauasden"/>
+         <tok val="Artavasdes"/>
+         <tok val="artauasden"/>
+         <tok val="artavasdes"/>
          <lm>
             <l>Artavasdes</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artauasden Artavasden-->
-         <tok val="Arta[vu]asden"/>
+      <ana>
+         <tok val="Artauasden"/>
+         <tok val="Artavasden"/>
+         <tok val="artauasden"/>
+         <tok val="artavasden"/>
          <lm>
             <l>Artavasdes</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Artauasdi Artavasdi-->
-         <tok val="Arta[vu]asdi"/>
+      <ana>
+         <tok val="Artauasdi"/>
+         <tok val="Artavasdi"/>
+         <tok val="artauasdi"/>
+         <tok val="artavasdi"/>
          <lm>
             <l>Artavasdes</l>
             <m>n e - s - - - m g</m>
@@ -339,6 +443,7 @@
       </ana>
       <ana>
          <tok val="Artavasdis"/>
+         <tok val="artavasdis"/>
          <lm cert="0.5">
             <l>Artavasdes</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -351,6 +456,7 @@
       </ana>
       <ana>
          <tok val="Artaxata"/>
+         <tok val="artaxata"/>
          <lm>
             <l>Artaxata</l>
             <m cert="0.166666666666666667">n e - p - - - n n</m>
@@ -363,6 +469,7 @@
       </ana>
       <ana>
          <tok val="Artaxatis"/>
+         <tok val="artaxatis"/>
          <lm>
             <l>Artaxata</l>
             <m cert="0.25">n e - p - - - f d</m>
@@ -371,8 +478,11 @@
             <m cert="0.25">n e - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Artaxerxe Artaxerxen-->
-         <tok val="Artaxerxe[n]?"/>
+      <ana>
+         <tok val="Artaxerxe"/>
+         <tok val="Artaxerxen"/>
+         <tok val="artaxerxe"/>
+         <tok val="artaxerxen"/>
          <lm>
             <l>Artaxerxes</l>
             <m>n e - s - - - m b</m>
@@ -380,13 +490,17 @@
       </ana>
       <ana>
          <tok val="Artaxerxem"/>
+         <tok val="artaxerxem"/>
          <lm>
             <l>Artaxerxes</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Artaxerxen Artaxerxes-->
-         <tok val="Artaxerxe[sn]"/>
+      <ana>
+         <tok val="Artaxerxen"/>
+         <tok val="Artaxerxes"/>
+         <tok val="artaxerxen"/>
+         <tok val="artaxerxes"/>
          <lm>
             <l>Artaxerxes</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -397,6 +511,7 @@
       </ana>
       <ana>
          <tok val="Artaxerxi"/>
+         <tok val="artaxerxi"/>
          <lm>
             <l>Artaxerxes</l>
             <m>n e - s - - - m d</m>
@@ -404,35 +519,48 @@
       </ana>
       <ana>
          <tok val="Artaxerxis"/>
+         <tok val="artaxerxis"/>
          <lm>
             <l>Artaxerxes</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Arte arte arten arteque árte-->
-         <tok val="[aAá]rte(n|que)?"/>
+      <ana>
+         <tok val="Arte"/>
+         <tok val="arte"/>
+         <tok val="arten"/>
+         <tok val="arteque"/>
+         <tok val="árte"/>
          <lm>
             <l>ars</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Arte arte arten arteque-->
-         <tok val="[aA]rte(n|que)?"/>
+      <ana>
+         <tok val="Arte"/>
+         <tok val="arte"/>
+         <tok val="arten"/>
+         <tok val="arteque"/>
          <lm>
             <l>artus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Artem artem artemque ártem-->
-         <tok val="[aAá]rtem(que)?"/>
+      <ana>
+         <tok val="Artem"/>
+         <tok val="artem"/>
+         <tok val="artemque"/>
+         <tok val="ártem"/>
          <lm>
             <l>arto</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Artem artem artemque-->
-         <tok val="[aA]rtem(que)?"/>
+      <ana>
+         <tok val="Artem"/>
+         <tok val="artem"/>
+         <tok val="artemque"/>
          <lm>
             <l>ars</l>
             <m>n - - s - - - f a</m>
@@ -440,6 +568,7 @@
       </ana>
       <ana>
          <tok val="Artemidore"/>
+         <tok val="artemidore"/>
          <lm>
             <l>Artemidorus</l>
             <m>n e - s - - - m v</m>
@@ -447,6 +576,7 @@
       </ana>
       <ana>
          <tok val="Artemidori"/>
+         <tok val="artemidori"/>
          <lm>
             <l>Artemidorus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -456,6 +586,7 @@
       </ana>
       <ana>
          <tok val="Artemidoro"/>
+         <tok val="artemidoro"/>
          <lm>
             <l>Artemidorus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -464,24 +595,23 @@
       </ana>
       <ana>
          <tok val="Artemisia"/>
-         <lm>
+         <tok val="artemisia"/>
+         <lm cert="0.5">
             <l>Artemisium</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
             <m cert="0.333333333333333333">n e - p - - - n v</m>
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
-      </ana>
-      <ana><!--Artemisia artemisia-->
-         <tok val="[aA]rtemisia"/>
-         <lm>
+         <lm cert="0.5">
             <l>Artemisia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Artemisiae artemisiae-->
-         <tok val="[aA]rtemisiae"/>
+      <ana>
+         <tok val="Artemisiae"/>
+         <tok val="artemisiae"/>
          <lm>
             <l>Artemisia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -490,8 +620,9 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Artemisiam artemisiam-->
-         <tok val="[aA]rtemisiam"/>
+      <ana>
+         <tok val="Artemisiam"/>
+         <tok val="artemisiam"/>
          <lm>
             <l>Artemisia</l>
             <m>n e - s - - - f a</m>
@@ -499,6 +630,7 @@
       </ana>
       <ana>
          <tok val="Artemisio"/>
+         <tok val="artemisio"/>
          <lm>
             <l>Artemisium</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -507,6 +639,7 @@
       </ana>
       <ana>
          <tok val="Artemisium"/>
+         <tok val="artemisium"/>
          <lm>
             <l>Artemisium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -515,8 +648,11 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Artemita Artemite-->
-         <tok val="Artemit[ea]"/>
+      <ana>
+         <tok val="Artemita"/>
+         <tok val="Artemite"/>
+         <tok val="artemita"/>
+         <tok val="artemite"/>
          <lm>
             <l>Artemite</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -524,8 +660,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Artemitam Artemiten-->
-         <tok val="Artemit(en|am)"/>
+      <ana>
+         <tok val="Artemitam"/>
+         <tok val="Artemiten"/>
+         <tok val="artemitam"/>
+         <tok val="artemiten"/>
          <lm>
             <l>Artemite</l>
             <m>n e - s - - - f a</m>
@@ -533,28 +672,35 @@
       </ana>
       <ana>
          <tok val="Artemo"/>
+         <tok val="artemo"/>
          <lm>
             <l>Artemo</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artemon artemon ARTEMON-->
-         <tok val="[aA]?(rtemon|ARTEMON)"/>
+      <ana>
+         <tok val="ARTEMON"/>
+         <tok val="Artemon"/>
+         <tok val="artemon"/>
          <lm>
             <l>artemon</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artemone artemone-->
-         <tok val="[aA]rtemone"/>
+      <ana>
+         <tok val="Artemone"/>
+         <tok val="artemone"/>
          <lm>
             <l>artemon</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Artemonem artemonem Artemona-->
-         <tok val="[aA]rtemon(em|a)"/>
+      <ana>
+         <tok val="Artemona"/>
+         <tok val="Artemonem"/>
+         <tok val="artemona"/>
+         <tok val="artemonem"/>
          <lm>
             <l>artemon</l>
             <m>n - - s - - - m a</m>
@@ -562,20 +708,24 @@
       </ana>
       <ana>
          <tok val="Artemoni"/>
+         <tok val="artemoni"/>
          <lm>
             <l>artemon</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Artemonis artemonis-->
-         <tok val="[aA]rtemonis"/>
+      <ana>
+         <tok val="Artemonis"/>
+         <tok val="artemonis"/>
          <lm>
             <l>artemon</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Arteria arteria arteriaque-->
-         <tok val="[aA]rteria(que)?"/>
+      <ana>
+         <tok val="Arteria"/>
+         <tok val="arteria"/>
+         <tok val="arteriaque"/>
          <lm cert="0.5">
             <l>arteria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -589,8 +739,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Arteriace arteriace-->
-         <tok val="[aA]rteriace"/>
+      <ana>
+         <tok val="Arteriace"/>
+         <tok val="arteriace"/>
          <lm cert="0.5">
             <l>arteriace</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -603,15 +754,19 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Arteriace arteriace arteriacum-->
-         <tok val="[aA]rteriac(e|um)"/>
+      <ana>
+         <tok val="Arteriace"/>
+         <tok val="arteriace"/>
+         <tok val="arteriacum"/>
          <lm>
             <l>arteriacus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Arteriae arteriae arteriaeque-->
-         <tok val="[aA]rteriae(que)?"/>
+      <ana>
+         <tok val="Arteriae"/>
+         <tok val="arteriae"/>
+         <tok val="arteriaeque"/>
          <lm>
             <l>arteria</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -620,29 +775,34 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Arterias arterias arteriasue-->
-         <tok val="[aA]rterias(ue)?"/>
+      <ana>
+         <tok val="Arterias"/>
+         <tok val="arterias"/>
+         <tok val="arteriasue"/>
          <lm>
             <l>arteria</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Arthriticus arthriticus-->
-         <tok val="[aA]rthriticus"/>
+      <ana>
+         <tok val="Arthriticus"/>
+         <tok val="arthriticus"/>
          <lm>
             <l>arthriticus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Arthritis arthritis-->
-         <tok val="[aA]rthritis"/>
+      <ana>
+         <tok val="Arthritis"/>
+         <tok val="arthritis"/>
          <lm>
             <l>arthritis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Arti arti-->
-         <tok val="[aA]rti"/>
+      <ana>
+         <tok val="Arti"/>
+         <tok val="arti"/>
          <lm cert="0.25">
             <l>artus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -663,8 +823,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Articulamentum articulamentum-->
-         <tok val="[aA]rticulamentum"/>
+      <ana>
+         <tok val="Articulamentum"/>
+         <tok val="articulamentum"/>
          <lm>
             <l>articulamentum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -672,15 +833,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Articulamentum articulamentorum articulamentum-->
-         <tok val="[aA]rticulament(or)?um"/>
+      <ana>
+         <tok val="Articulamentum"/>
+         <tok val="articulamentorum"/>
+         <tok val="articulamentum"/>
          <lm>
             <l>articulamentum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Articularis articularis-->
-         <tok val="[aA]rticularis"/>
+      <ana>
+         <tok val="Articularis"/>
+         <tok val="articularis"/>
          <lm cert="0.5">
             <l>articulo</l>
             <m>v - 2 s r s a</m>
@@ -698,15 +862,18 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Articularis articulare articularis-->
-         <tok val="[aA]rticular(is|e)"/>
+      <ana>
+         <tok val="Articularis"/>
+         <tok val="articulare"/>
+         <tok val="articularis"/>
          <lm>
             <l>articulo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Articularius articularius-->
-         <tok val="[aA]rticularius"/>
+      <ana>
+         <tok val="Articularius"/>
+         <tok val="articularius"/>
          <lm cert="0.5">
             <l>articularis</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -719,8 +886,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Articulate articulate-->
-         <tok val="[aA]rticulate"/>
+      <ana>
+         <tok val="Articulate"/>
+         <tok val="articulate"/>
          <lm cert="0.5">
             <l>articulo</l>
             <m cert="0.5">v - 2 p p m a</m>
@@ -732,8 +900,10 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Articulate articulate articulatum-->
-         <tok val="[aA]rticulat(e|um)"/>
+      <ana>
+         <tok val="Articulate"/>
+         <tok val="articulate"/>
+         <tok val="articulatum"/>
          <lm cert="0.5">
             <l>articulatus</l>
             <m>a - - s - - - n v</m>
@@ -743,23 +913,28 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Articulatim articulatim articulatimque-->
-         <tok val="[aA]rticulatim(que)?"/>
+      <ana>
+         <tok val="Articulatim"/>
+         <tok val="articulatim"/>
+         <tok val="articulatimque"/>
          <lm>
             <l>articulatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Articulatio articulatio-->
-         <tok val="[aA]rticulatio"/>
+      <ana>
+         <tok val="Articulatio"/>
+         <tok val="articulatio"/>
          <lm>
             <l>articulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Articuli articuli articulique-->
-         <tok val="[aA]rticuli(que)?"/>
+      <ana>
+         <tok val="Articuli"/>
+         <tok val="articuli"/>
+         <tok val="articulique"/>
          <lm>
             <l>articulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -767,16 +942,19 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Articulis articulis articulisque-->
-         <tok val="[aA]rticulis(que)?"/>
+      <ana>
+         <tok val="Articulis"/>
+         <tok val="articulis"/>
+         <tok val="articulisque"/>
          <lm>
             <l>articulus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Articulo articulo-->
-         <tok val="[aA]rticulo"/>
+      <ana>
+         <tok val="Articulo"/>
+         <tok val="articulo"/>
          <lm cert="0.5">
             <l>articulo</l>
             <m>v - 1 s p i a</m>
@@ -787,8 +965,10 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Articulosa articulosa articulosaque-->
-         <tok val="[aA]rticulosa(que)?"/>
+      <ana>
+         <tok val="Articulosa"/>
+         <tok val="articulosa"/>
+         <tok val="articulosaque"/>
          <lm>
             <l>articulosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -799,43 +979,51 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Articulosus articulosus-->
-         <tok val="[aA]rticulosus"/>
+      <ana>
+         <tok val="Articulosus"/>
+         <tok val="articulosus"/>
          <lm>
             <l>articulosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Articulum articulum-->
-         <tok val="[aA]rticulum"/>
+      <ana>
+         <tok val="Articulum"/>
+         <tok val="articulum"/>
          <lm>
             <l>articulus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Articulus articulus-->
-         <tok val="[aA]rticulus"/>
+      <ana>
+         <tok val="Articulus"/>
+         <tok val="articulus"/>
          <lm>
             <l>articulus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artifice artifice-->
-         <tok val="[aA]rtifice"/>
+      <ana>
+         <tok val="Artifice"/>
+         <tok val="artifice"/>
          <lm>
             <l>artifex</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Artificem artificem artificemque-->
-         <tok val="[aA]rtificem(que)?"/>
+      <ana>
+         <tok val="Artificem"/>
+         <tok val="artificem"/>
+         <tok val="artificemque"/>
          <lm>
             <l>artifex</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Artifices artifices artificesque-->
-         <tok val="[aA]rtifices(que)?"/>
+      <ana>
+         <tok val="Artifices"/>
+         <tok val="artifices"/>
+         <tok val="artificesque"/>
          <lm>
             <l>artifex</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -843,22 +1031,29 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Artifici Artificii artifici artificii artificique-->
-         <tok val="[Aa]rtifici(i|que)?"/>
+      <ana>
+         <tok val="Artifici"/>
+         <tok val="Artificii"/>
+         <tok val="artifici"/>
+         <tok val="artificii"/>
+         <tok val="artificique"/>
          <lm>
             <l>artificium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Artifici artifici artificique-->
-         <tok val="[aA]rtifici(que)?"/>
+      <ana>
+         <tok val="Artifici"/>
+         <tok val="artifici"/>
+         <tok val="artificique"/>
          <lm>
             <l>artifex</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Artificialis artificialis-->
-         <tok val="[aA]rtificialis"/>
+      <ana>
+         <tok val="Artificialis"/>
+         <tok val="artificialis"/>
          <lm>
             <l>artificialis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -870,8 +1065,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Artificialis artificiales artificialis-->
-         <tok val="[aA]rtificial[ie]s"/>
+      <ana>
+         <tok val="Artificialis"/>
+         <tok val="artificiales"/>
+         <tok val="artificialis"/>
          <lm>
             <l>artificialis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -880,37 +1077,44 @@
       </ana>
       <ana>
          <tok val="Artificialiter"/>
+         <tok val="artificialiter"/>
          <lm>
             <l>artificialis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Artificibus artificibus-->
-         <tok val="[aA]rtificibus"/>
+      <ana>
+         <tok val="Artificibus"/>
+         <tok val="artificibus"/>
          <lm>
             <l>artifex</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Artificiis artificiis-->
-         <tok val="[aA]rtificiis"/>
+      <ana>
+         <tok val="Artificiis"/>
+         <tok val="artificiis"/>
          <lm>
             <l>artificium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Artificio artificio artificioque-->
-         <tok val="[aA]rtificio(que)?"/>
+      <ana>
+         <tok val="Artificio"/>
+         <tok val="artificio"/>
+         <tok val="artificioque"/>
          <lm>
             <l>artificium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Artificiosa artificiosa artificiosaque-->
-         <tok val="[aA]rtificiosa(que)?"/>
+      <ana>
+         <tok val="Artificiosa"/>
+         <tok val="artificiosa"/>
+         <tok val="artificiosaque"/>
          <lm>
             <l>artificiosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -921,23 +1125,30 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Artificiose artificiose-->
-         <tok val="[aA]rtificiose"/>
+      <ana>
+         <tok val="Artificiose"/>
+         <tok val="artificiose"/>
          <lm>
             <l>artificiosus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Artificiose Artificiosum artificiose artificiosum artificiosumque-->
-         <tok val="[aA]rtificios(um|e|umque)"/>
+      <ana>
+         <tok val="Artificiose"/>
+         <tok val="Artificiosum"/>
+         <tok val="artificiose"/>
+         <tok val="artificiosum"/>
+         <tok val="artificiosumque"/>
          <lm>
             <l>artificiosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Artificiosum artificiosum artificiosumque-->
-         <tok val="[aA]rtificiosum(que)?"/>
+      <ana>
+         <tok val="Artificiosum"/>
+         <tok val="artificiosum"/>
+         <tok val="artificiosumque"/>
          <lm>
             <l>artificiosus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -945,30 +1156,36 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Artificiosum artificiosorum artificiosum artificiosumque-->
-         <tok val="[aA]rtificios(or)?um(que)?"/>
+      <ana>
+         <tok val="Artificiosum"/>
+         <tok val="artificiosorum"/>
+         <tok val="artificiosum"/>
+         <tok val="artificiosumque"/>
          <lm>
             <l>artificiosus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Artificiosus artificiosus-->
-         <tok val="[aA]rtificiosus"/>
+      <ana>
+         <tok val="Artificiosus"/>
+         <tok val="artificiosus"/>
          <lm>
             <l>artificiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artificis artificis-->
-         <tok val="[aA]rtificis"/>
+      <ana>
+         <tok val="Artificis"/>
+         <tok val="artificis"/>
          <lm>
             <l>artifex</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Artificium artificium-->
-         <tok val="[aA]rtificium"/>
+      <ana>
+         <tok val="Artificium"/>
+         <tok val="artificium"/>
          <lm>
             <l>artificium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -976,22 +1193,28 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Artificium artificiorum artificium-->
-         <tok val="[aA]rtifici(or)?um"/>
+      <ana>
+         <tok val="Artificium"/>
+         <tok val="artificiorum"/>
+         <tok val="artificium"/>
          <lm>
             <l>artificium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Artificum artificum artificumque-->
-         <tok val="[aA]rtificum(que)?"/>
+      <ana>
+         <tok val="Artificum"/>
+         <tok val="artificum"/>
+         <tok val="artificumque"/>
          <lm>
             <l>artifex</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Artior artior artiorque-->
-         <tok val="[aA]rtior(que)?"/>
+      <ana>
+         <tok val="Artior"/>
+         <tok val="artior"/>
+         <tok val="artiorque"/>
          <lm cert="0.5">
             <l>artus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1004,29 +1227,36 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Artissime artissime-->
-         <tok val="[aA]rtissime"/>
+      <ana>
+         <tok val="Artissime"/>
+         <tok val="artissime"/>
          <lm>
             <l>artus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Artissime artissime artissume-->
-         <tok val="[aA]rtiss[iu]me"/>
+      <ana>
+         <tok val="Artissime"/>
+         <tok val="artissime"/>
+         <tok val="artissume"/>
          <lm>
             <l>artus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Artissime artissime artissimum artissume-->
-         <tok val="[aA]rtiss[iu]m(e|um)"/>
+      <ana>
+         <tok val="Artissime"/>
+         <tok val="artissime"/>
+         <tok val="artissimum"/>
+         <tok val="artissume"/>
          <lm>
             <l>artus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Artissimis artissimis-->
-         <tok val="[aA]rtissimis"/>
+      <ana>
+         <tok val="Artissimis"/>
+         <tok val="artissimis"/>
          <lm>
             <l>artus</l>
             <m cert="0.166666666666666667">a - - p - - - f d s</m>
@@ -1037,8 +1267,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--Artius artius-->
-         <tok val="[aA]rtius"/>
+      <ana>
+         <tok val="Artius"/>
+         <tok val="artius"/>
          <lm cert="0.5">
             <l>artus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -1051,8 +1282,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Arto arto-->
-         <tok val="[aA]rto"/>
+      <ana>
+         <tok val="Arto"/>
+         <tok val="arto"/>
          <lm cert="0.333333333333333333">
             <l>artus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1070,22 +1302,25 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Artocopus artocopus-->
-         <tok val="[aA]rtocopus"/>
+      <ana>
+         <tok val="Artocopus"/>
+         <tok val="artocopus"/>
          <lm>
             <l>artocopus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artolaganus artolaganus-->
-         <tok val="[aA]rtolaganus"/>
+      <ana>
+         <tok val="Artolaganus"/>
+         <tok val="artolaganus"/>
          <lm>
             <l>artolaganus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artopta artopta-->
-         <tok val="[aA]rtopta"/>
+      <ana>
+         <tok val="Artopta"/>
+         <tok val="artopta"/>
          <lm>
             <l>artopta</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -1093,8 +1328,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Artor artor-->
-         <tok val="[aA]rtor"/>
+      <ana>
+         <tok val="Artor"/>
+         <tok val="artor"/>
          <lm>
             <l>arto</l>
             <m>v - 1 s p i p</m>
@@ -1102,6 +1338,7 @@
       </ana>
       <ana>
          <tok val="Artotrogus"/>
+         <tok val="artotrogus"/>
          <lm>
             <l>Artotrogus</l>
             <m>n e - s - - - m n</m>
@@ -1109,6 +1346,7 @@
       </ana>
       <ana>
          <tok val="Artotyritae"/>
+         <tok val="artotyritae"/>
          <lm>
             <l>Artotyritae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1117,13 +1355,15 @@
       </ana>
       <ana>
          <tok val="Artuasdes"/>
+         <tok val="artuasdes"/>
          <lm>
             <l>Artuasdes</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Artuum artuum-->
-         <tok val="[aA]rtuum"/>
+      <ana>
+         <tok val="Artuum"/>
+         <tok val="artuum"/>
          <lm>
             <l>artus2</l>
             <m>n - - p - - - m g</m>
@@ -1139,8 +1379,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--artabas Artabanne-->
-         <tok val="[Aa]rtaba(nne|s)"/>
+      <ana>
+         <tok val="Artabanne"/>
+         <tok val="artabanne"/>
+         <tok val="artabas"/>
          <lm cert="0.5">
             <l>arto</l>
             <m>v - 2 s i i a</m>
@@ -1171,8 +1413,9 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--artae artaeque-->
-         <tok val="artae(que)?"/>
+      <ana>
+         <tok val="artae"/>
+         <tok val="artaeque"/>
          <lm>
             <l>artus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1288,8 +1531,9 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--artat artatque-->
-         <tok val="artat(que)?"/>
+      <ana>
+         <tok val="artat"/>
+         <tok val="artatque"/>
          <lm>
             <l>arto</l>
             <m>v - 3 s p i a</m>
@@ -1372,8 +1616,9 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--artatur Artatur-->
-         <tok val="[Aa]rtatur"/>
+      <ana>
+         <tok val="Artatur"/>
+         <tok val="artatur"/>
          <lm>
             <l>arto</l>
             <m>v - 3 s p i p</m>
@@ -1387,8 +1632,10 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--artauit artavit artavitque-->
-         <tok val="arta[vu]it(que)?"/>
+      <ana>
+         <tok val="artauit"/>
+         <tok val="artavit"/>
+         <tok val="artavitque"/>
          <lm>
             <l>arto</l>
             <m>v - 3 s r i a</m>
@@ -1450,15 +1697,17 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--arteriam arteriamque-->
-         <tok val="arteriam(que)?"/>
+      <ana>
+         <tok val="arteriam"/>
+         <tok val="arteriamque"/>
          <lm>
             <l>arteria</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--arteriarum arteriarumque-->
-         <tok val="arteriarum(que)?"/>
+      <ana>
+         <tok val="arteriarum"/>
+         <tok val="arteriarumque"/>
          <lm>
             <l>arteria</l>
             <m>n - - p - - - f g</m>
@@ -1613,8 +1862,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--articulariis articulariisque-->
-         <tok val="articulariis(que)?"/>
+      <ana>
+         <tok val="articulariis"/>
+         <tok val="articulariisque"/>
          <lm>
             <l>articularius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1876,8 +2126,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--artificiosam artificiosamque-->
-         <tok val="artificiosam(que)?"/>
+      <ana>
+         <tok val="artificiosam"/>
+         <tok val="artificiosamque"/>
          <lm>
             <l>artificiosus</l>
             <m>a - - s - - - f a</m>
@@ -1900,8 +2151,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--artificiosis artificiosisque-->
-         <tok val="artificiosis(que)?"/>
+      <ana>
+         <tok val="artificiosis"/>
+         <tok val="artificiosisque"/>
          <lm>
             <l>artificiosus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1988,8 +2240,9 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--artiorem artioremque-->
-         <tok val="artiorem(que)?"/>
+      <ana>
+         <tok val="artiorem"/>
+         <tok val="artioremque"/>
          <lm>
             <l>artus</l>
             <m cert="0.5">a - - s - - - f a c</m>
@@ -2124,8 +2377,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--artito artitoque-->
-         <tok val="artito(que)?"/>
+      <ana>
+         <tok val="artito"/>
+         <tok val="artitoque"/>
          <lm>
             <l>artio</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -2220,8 +2474,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--artos artosque-->
-         <tok val="artos(que)?"/>
+      <ana>
+         <tok val="artos"/>
+         <tok val="artosque"/>
          <lm>
             <l>artus</l>
             <m>a - - p - - - m a</m>
@@ -2257,6 +2512,7 @@
       </ana>
       <ana>
          <tok val="ARTEMISIA"/>
+         <tok val="artemisia"/>
          <lm>
             <l>artemisia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>

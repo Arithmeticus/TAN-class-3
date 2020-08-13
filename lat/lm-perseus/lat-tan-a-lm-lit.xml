@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuslit">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:lit">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to lit</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-lit.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>LIT</tok-starts-with>
       <tok-starts-with>Lit</tok-starts-with>
       <tok-starts-with>lit</tok-starts-with>
       <tok-starts-with>lít</tok-starts-with>
       <tok-starts-with>Lít</tok-starts-with>
-      <ana><!--LITATIS litatis-->
-         <tok val="(litatis|LITATIS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:32:02.323-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:32:02.323-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-lit.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="LITATIS"/>
+         <tok val="litatis"/>
          <lm>
             <l>lito</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -50,8 +59,16 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--LITERA Litera Literaque Littera Litteraque litera littera litteraque-->
-         <tok val="[Ll]?[i]?[t]?(tera)?(que|LITERA)?"/>
+      <ana>
+         <tok val="LITERA"/>
+         <tok val="Litera"/>
+         <tok val="Literaque"/>
+         <tok val="Littera"/>
+         <tok val="Litteraque"/>
+         <tok val="litera"/>
+         <tok val="literaque"/>
+         <tok val="littera"/>
+         <tok val="litteraque"/>
          <lm>
             <l>littera</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -59,8 +76,15 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--LITERAE LITTERAE Literae Litterae literae literaeque litterae litteraeque-->
-         <tok val="(li)?[t]?(teraeque|LITTERAE|LITERAE|Litterae|Literae|litterae|literae)"/>
+      <ana>
+         <tok val="LITERAE"/>
+         <tok val="LITTERAE"/>
+         <tok val="Literae"/>
+         <tok val="Litterae"/>
+         <tok val="literae"/>
+         <tok val="literaeque"/>
+         <tok val="litterae"/>
+         <tok val="litteraeque"/>
          <lm>
             <l>littera</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -68,30 +92,54 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--LITERAE LITTERAE Literae Litterae literae literaeque literain litterae litteraeque-->
-         <tok val="(li)?[t]?(teraeque|LITTERAE|LITERAE|Litterae|Literae|litterae|literae|literain)"/>
+      <ana>
+         <tok val="LITERAE"/>
+         <tok val="LITTERAE"/>
+         <tok val="Literae"/>
+         <tok val="Litterae"/>
+         <tok val="literae"/>
+         <tok val="literaeque"/>
+         <tok val="literain"/>
+         <tok val="litterae"/>
+         <tok val="litteraeque"/>
          <lm>
             <l>littera</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--LITERIS Litere Literis litere literis-->
-         <tok val="[lL]?(iter)?(is|e|LITERIS)"/>
+      <ana>
+         <tok val="LITERIS"/>
+         <tok val="Litere"/>
+         <tok val="Literis"/>
+         <tok val="litere"/>
+         <tok val="literis"/>
          <lm>
             <l>lito</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--LITERIS LITTERIS Literis Litteris Litterisque literis litteris litterisque-->
-         <tok val="(LI)?[T]?(TERIS|Litteris|Literis|litteris|literis|litterisque|Litterisque)"/>
+      <ana>
+         <tok val="LITERIS"/>
+         <tok val="LITTERIS"/>
+         <tok val="Literis"/>
+         <tok val="Litteris"/>
+         <tok val="Litterisque"/>
+         <tok val="literis"/>
+         <tok val="litteris"/>
+         <tok val="litterisque"/>
          <lm>
             <l>littera</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--LITES Lites liten lites litesque litesve-->
-         <tok val="[lL]?(ite)?[s]?(ve|n|sque|LITES)?"/>
+      <ana>
+         <tok val="LITES"/>
+         <tok val="Lites"/>
+         <tok val="liten"/>
+         <tok val="lites"/>
+         <tok val="litesque"/>
+         <tok val="litesve"/>
          <lm cert="0.5">
             <l>lis</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -104,16 +152,28 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--LITES Lites Litis liten lites litesque litesve litis litisque-->
-         <tok val="[lL]?(it)?[ie]?[s]?(qu|v)?(e|en|is|LITES)?"/>
+      <ana>
+         <tok val="LITES"/>
+         <tok val="Lites"/>
+         <tok val="Litis"/>
+         <tok val="liten"/>
+         <tok val="lites"/>
+         <tok val="litesque"/>
+         <tok val="litesve"/>
+         <tok val="litis"/>
+         <tok val="litisque"/>
          <lm>
             <l>lis</l>
             <m cert="0.5">n - - p - - - m a</m>
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--LITIBVS Litibus litibus litibusque-->
-         <tok val="[lL]?(itibus)?(que|LITIBVS)?"/>
+      <ana>
+         <tok val="LITIBVS"/>
+         <tok val="Litibus"/>
+         <tok val="litibus"/>
+         <tok val="litibusque"/>
+         <tok val="litibvs"/>
          <lm cert="0.5">
             <l>litus2</l>
             <m>n - - p - - - m b</m>
@@ -124,36 +184,68 @@
             <m cert="0.5">n - - p - - - - d</m>
          </lm>
       </ana>
-      <ana><!--LITIBVS Litibus litibus litibusque litíbus-->
-         <tok val="[lL]?(it)?[ií]?(bus)?(que|LITIBVS)?"/>
+      <ana>
+         <tok val="LITIBVS"/>
+         <tok val="Litibus"/>
+         <tok val="litibus"/>
+         <tok val="litibusque"/>
+         <tok val="litibvs"/>
+         <tok val="litíbus"/>
          <lm>
             <l>litus2</l>
             <m>n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--LITO Lito lito-->
-         <tok val="[lL]?(ito|LITO)"/>
+      <ana>
+         <tok val="LITO"/>
+         <tok val="Lito"/>
+         <tok val="lito"/>
          <lm>
             <l>lito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--LITTERAS Literas Litteras literas litteras litterasque litterasue litterás-->
-         <tok val="[lL]?[i]?[t]?(ter)?[aá]?[s]?[q]?(ue|LITTERAS)?"/>
+      <ana>
+         <tok val="LITTERAS"/>
+         <tok val="Literas"/>
+         <tok val="Litteras"/>
+         <tok val="literas"/>
+         <tok val="litteras"/>
+         <tok val="litterasque"/>
+         <tok val="litterasue"/>
+         <tok val="litterás"/>
          <lm>
             <l>littera</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--LITVS Litus Litvs litus litusque litust litusue litusve Lítus-->
-         <tok val="[lL]?(i|Lí)?[t]?[uv]?[s]?[q]?(ue|t|ve|LITVS)?"/>
+      <ana>
+         <tok val="LITVS"/>
+         <tok val="Litus"/>
+         <tok val="Litvs"/>
+         <tok val="Lítus"/>
+         <tok val="litus"/>
+         <tok val="litusque"/>
+         <tok val="litust"/>
+         <tok val="litusue"/>
+         <tok val="litusve"/>
+         <tok val="litvs"/>
+         <tok val="lítus"/>
          <lm>
             <l>litus2</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--LITVS Litus Litvs litus litusque litust litusue litusve-->
-         <tok val="[lL]?(it)?[uv]?[s]?[q]?(ue|t|ve|LITVS)?"/>
+      <ana>
+         <tok val="LITVS"/>
+         <tok val="Litus"/>
+         <tok val="Litvs"/>
+         <tok val="litus"/>
+         <tok val="litusque"/>
+         <tok val="litust"/>
+         <tok val="litusue"/>
+         <tok val="litusve"/>
+         <tok val="litvs"/>
          <lm>
             <l>litus2</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -161,8 +253,18 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--LITVS Littus Litus Litvs littus litus litusque litust litusue litusve-->
-         <tok val="[lL]?[i]?[t]?[t]?[uv]?[s]?[q]?(ue|t|ve|LITVS)?"/>
+      <ana>
+         <tok val="LITVS"/>
+         <tok val="Littus"/>
+         <tok val="Litus"/>
+         <tok val="Litvs"/>
+         <tok val="littus"/>
+         <tok val="litus"/>
+         <tok val="litusque"/>
+         <tok val="litust"/>
+         <tok val="litusue"/>
+         <tok val="litusve"/>
+         <tok val="litvs"/>
          <lm>
             <l>litus3</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -172,6 +274,7 @@
       </ana>
       <ana>
          <tok val="Litana"/>
+         <tok val="litana"/>
          <lm>
             <l>Litanasilva</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -181,43 +284,52 @@
       </ana>
       <ana>
          <tok val="Litanam"/>
+         <tok val="litanam"/>
          <lm>
             <l>Litanasilva</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Litare litare-->
-         <tok val="[lL]itare"/>
+      <ana>
+         <tok val="Litare"/>
+         <tok val="litare"/>
          <lm>
             <l>lito</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Litare litare litaris-->
-         <tok val="[lL]itar(e|is)"/>
+      <ana>
+         <tok val="Litare"/>
+         <tok val="litare"/>
+         <tok val="litaris"/>
          <lm>
             <l>lito</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Litatio litatio-->
-         <tok val="[lL]itatio"/>
+      <ana>
+         <tok val="Litatio"/>
+         <tok val="litatio"/>
          <lm>
             <l>litatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lite lite liten-->
-         <tok val="[lL]ite[n]?"/>
+      <ana>
+         <tok val="Lite"/>
+         <tok val="lite"/>
+         <tok val="liten"/>
          <lm>
             <l>lis</l>
             <m>n - - s - - - - b</m>
          </lm>
       </ana>
-      <ana><!--Litem litem litemque-->
-         <tok val="[lL]item(que)?"/>
+      <ana>
+         <tok val="Litem"/>
+         <tok val="litem"/>
+         <tok val="litemque"/>
          <lm cert="0.5">
             <l>lito</l>
             <m>v - 1 s p s a</m>
@@ -228,36 +340,49 @@
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Litemus litemus-->
-         <tok val="[lL]itemus"/>
+      <ana>
+         <tok val="Litemus"/>
+         <tok val="litemus"/>
          <lm>
             <l>lito</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Liter liter literque-->
-         <tok val="[lL]iter(que)?"/>
+      <ana>
+         <tok val="Liter"/>
+         <tok val="liter"/>
+         <tok val="literque"/>
          <lm>
             <l>lito</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Literam literam litteram LITTERAM-->
-         <tok val="[lL]?[i]?[t]?(teram|LITTERAM)"/>
+      <ana>
+         <tok val="LITTERAM"/>
+         <tok val="Literam"/>
+         <tok val="literam"/>
+         <tok val="litteram"/>
          <lm>
             <l>littera</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Literarum Litterarum literarum litterarum litterarumque-->
-         <tok val="[Ll]i[t]?terarum(que)?"/>
+      <ana>
+         <tok val="Literarum"/>
+         <tok val="Litterarum"/>
+         <tok val="literarum"/>
+         <tok val="litterarum"/>
+         <tok val="litterarumque"/>
          <lm>
             <l>littera</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Literati Litterati literati litterati-->
-         <tok val="[Ll]i[t]?terati"/>
+      <ana>
+         <tok val="Literati"/>
+         <tok val="Litterati"/>
+         <tok val="literati"/>
+         <tok val="litterati"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -266,8 +391,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Literato literato litterato-->
-         <tok val="[lL]i[t]?terato"/>
+      <ana>
+         <tok val="Literato"/>
+         <tok val="literato"/>
+         <tok val="litterato"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -276,8 +403,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Literatum literatum litteratum-->
-         <tok val="[lL]i[t]?teratum"/>
+      <ana>
+         <tok val="Literatum"/>
+         <tok val="literatum"/>
+         <tok val="litteratum"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -285,23 +414,34 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Literatum literatorum literatum litteratorum litteratum-->
-         <tok val="[lL]i[t]?terat(or)?um"/>
+      <ana>
+         <tok val="Literatum"/>
+         <tok val="literatorum"/>
+         <tok val="literatum"/>
+         <tok val="litteratorum"/>
+         <tok val="litteratum"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Literatum Litterate literate literatum litterate litteratum-->
-         <tok val="[lL]i[t]?terat(um|e)"/>
+      <ana>
+         <tok val="Literatum"/>
+         <tok val="Litterate"/>
+         <tok val="literate"/>
+         <tok val="literatum"/>
+         <tok val="litterate"/>
+         <tok val="litteratum"/>
          <lm>
             <l>litteratus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Literatura literatura litteratura-->
-         <tok val="[lL]i[t]?teratura"/>
+      <ana>
+         <tok val="Literatura"/>
+         <tok val="literatura"/>
+         <tok val="litteratura"/>
          <lm>
             <l>litteratura</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -311,6 +451,7 @@
       </ana>
       <ana>
          <tok val="Literna"/>
+         <tok val="literna"/>
          <lm cert="0.5">
             <l>Liternum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -327,8 +468,11 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Literni Liternique-->
-         <tok val="Literni(que)?"/>
+      <ana>
+         <tok val="Literni"/>
+         <tok val="Liternique"/>
+         <tok val="literni"/>
+         <tok val="liternique"/>
          <lm cert="0.5">
             <l>Liternus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -343,6 +487,7 @@
       </ana>
       <ana>
          <tok val="Liternina"/>
+         <tok val="liternina"/>
          <lm>
             <l>Literninus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -355,6 +500,7 @@
       </ana>
       <ana>
          <tok val="Liternino"/>
+         <tok val="liternino"/>
          <lm>
             <l>Literninus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -365,6 +511,7 @@
       </ana>
       <ana>
          <tok val="Literninum"/>
+         <tok val="literninum"/>
          <lm>
             <l>Literninus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -377,6 +524,7 @@
       </ana>
       <ana>
          <tok val="Literninus"/>
+         <tok val="literninus"/>
          <lm>
             <l>Literninus</l>
             <m>a e - s - - - m n</m>
@@ -384,6 +532,7 @@
       </ana>
       <ana>
          <tok val="Liternum"/>
+         <tok val="liternum"/>
          <lm cert="0.5">
             <l>Liternum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -403,36 +552,45 @@
       </ana>
       <ana>
          <tok val="Liternus"/>
+         <tok val="liternus"/>
          <lm>
             <l>Liternus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Literulis Litterulis literulis litterulis-->
-         <tok val="[Ll]i[t]?terulis"/>
+      <ana>
+         <tok val="Literulis"/>
+         <tok val="Litterulis"/>
+         <tok val="literulis"/>
+         <tok val="litterulis"/>
          <lm>
             <l>litterula</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Litetis litetis-->
-         <tok val="[lL]itetis"/>
+      <ana>
+         <tok val="Litetis"/>
+         <tok val="litetis"/>
          <lm>
             <l>lito</l>
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Lithospermo Lithospermon lithospermo lithospermon-->
-         <tok val="[Ll]ithospermo[n]?"/>
+      <ana>
+         <tok val="Lithospermo"/>
+         <tok val="Lithospermon"/>
+         <tok val="lithospermo"/>
+         <tok val="lithospermon"/>
          <lm>
             <l>lithospermon</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lithostrota lithostrota-->
-         <tok val="[lL]ithostrota"/>
+      <ana>
+         <tok val="Lithostrota"/>
+         <tok val="lithostrota"/>
          <lm cert="0.5">
             <l>lithostrotum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -449,15 +607,19 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Lithostrotus lithostrotus-->
-         <tok val="[lL]ithostrotus"/>
+      <ana>
+         <tok val="Lithostrotus"/>
+         <tok val="lithostrotus"/>
          <lm>
             <l>lithostrotus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Liti Litine liti-->
-         <tok val="[Ll]iti(ne)?"/>
+      <ana>
+         <tok val="Liti"/>
+         <tok val="Litine"/>
+         <tok val="liti"/>
+         <tok val="litine"/>
          <lm>
             <l>lis</l>
             <m>n - - s - - - - d</m>
@@ -465,13 +627,15 @@
       </ana>
       <ana>
          <tok val="Litigabis"/>
+         <tok val="litigabis"/>
          <lm>
             <l>litigo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Litigare litigare-->
-         <tok val="[lL]itigare"/>
+      <ana>
+         <tok val="Litigare"/>
+         <tok val="litigare"/>
          <lm>
             <l>litigo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -479,30 +643,35 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Litigat litigat-->
-         <tok val="[lL]itigat"/>
+      <ana>
+         <tok val="Litigat"/>
+         <tok val="litigat"/>
          <lm>
             <l>litigo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Litigator litigator-->
-         <tok val="[lL]itigator"/>
+      <ana>
+         <tok val="Litigator"/>
+         <tok val="litigator"/>
          <lm>
             <l>litigator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Litigavit litigauit litigavit-->
-         <tok val="[lL]itiga[vu]it"/>
+      <ana>
+         <tok val="Litigavit"/>
+         <tok val="litigauit"/>
+         <tok val="litigavit"/>
          <lm>
             <l>litigo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Litigiosa litigiosa-->
-         <tok val="[lL]itigiosa"/>
+      <ana>
+         <tok val="Litigiosa"/>
+         <tok val="litigiosa"/>
          <lm>
             <l>litigiosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -513,15 +682,17 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Litigiosam litigiosam-->
-         <tok val="[lL]itigiosam"/>
+      <ana>
+         <tok val="Litigiosam"/>
+         <tok val="litigiosam"/>
          <lm>
             <l>litigiosus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Litigiosi litigiosi-->
-         <tok val="[lL]itigiosi"/>
+      <ana>
+         <tok val="Litigiosi"/>
+         <tok val="litigiosi"/>
          <lm>
             <l>litigiosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -530,15 +701,17 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Litigiosus litigiosus-->
-         <tok val="[lL]itigiosus"/>
+      <ana>
+         <tok val="Litigiosus"/>
+         <tok val="litigiosus"/>
          <lm>
             <l>litigiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Litigium litigium-->
-         <tok val="[lL]itigium"/>
+      <ana>
+         <tok val="Litigium"/>
+         <tok val="litigium"/>
          <lm>
             <l>litigium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -547,36 +720,50 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Litigo litigo-->
-         <tok val="[lL]itigo"/>
+      <ana>
+         <tok val="Litigo"/>
+         <tok val="litigo"/>
          <lm>
             <l>litigo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Litis litis litisque-->
-         <tok val="[lL]itis(que)?"/>
+      <ana>
+         <tok val="Litis"/>
+         <tok val="litis"/>
+         <tok val="litisque"/>
          <lm>
             <l>lis</l>
             <m>n - - s - - - - g</m>
          </lm>
       </ana>
-      <ana><!--Litium litium litiumst litum litumque litiúm-->
-         <tok val="[lL]it[i]?(u|iú)m(st|que)?"/>
+      <ana>
+         <tok val="Litium"/>
+         <tok val="litium"/>
+         <tok val="litiumst"/>
+         <tok val="litiúm"/>
+         <tok val="litum"/>
+         <tok val="litumque"/>
          <lm>
             <l>lis</l>
             <m>n - - p - - - - g</m>
          </lm>
       </ana>
-      <ana><!--Litor litor-->
-         <tok val="[lL]itor"/>
+      <ana>
+         <tok val="Litor"/>
+         <tok val="litor"/>
          <lm>
             <l>lito</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Litora Litoraque Littora litora litoraque littora-->
-         <tok val="[Ll]i[t]?tora(que)?"/>
+      <ana>
+         <tok val="Litora"/>
+         <tok val="Litoraque"/>
+         <tok val="Littora"/>
+         <tok val="litora"/>
+         <tok val="litoraque"/>
+         <tok val="littora"/>
          <lm>
             <l>litus3</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -584,8 +771,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Litoralis litoralis-->
-         <tok val="[lL]itoralis"/>
+      <ana>
+         <tok val="Litoralis"/>
+         <tok val="litoralis"/>
          <lm>
             <l>litoralis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -597,23 +785,29 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Litoralis litorales litoralis-->
-         <tok val="[lL]itoral[ie]s"/>
+      <ana>
+         <tok val="Litoralis"/>
+         <tok val="litorales"/>
+         <tok val="litoralis"/>
          <lm>
             <l>litoralis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Litore Littore litore littore-->
-         <tok val="[Ll]i[t]?tore"/>
+      <ana>
+         <tok val="Litore"/>
+         <tok val="Littore"/>
+         <tok val="litore"/>
+         <tok val="littore"/>
          <lm>
             <l>litus3</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Litoreis litoreis-->
-         <tok val="[lL]itoreis"/>
+      <ana>
+         <tok val="Litoreis"/>
+         <tok val="litoreis"/>
          <lm>
             <l>litoreus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -624,53 +818,67 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Litoribus litoribus litoribusque littoribus-->
-         <tok val="[lL]i[t]?toribus(que)?"/>
+      <ana>
+         <tok val="Litoribus"/>
+         <tok val="litoribus"/>
+         <tok val="litoribusque"/>
+         <tok val="littoribus"/>
          <lm>
             <l>litus3</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Litoris litoris littoris-->
-         <tok val="[lL]i[t]?toris"/>
+      <ana>
+         <tok val="Litoris"/>
+         <tok val="litoris"/>
+         <tok val="littoris"/>
          <lm>
             <l>litus3</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Litterarii litterari litterarii-->
-         <tok val="[lL]itterari[i]?"/>
+      <ana>
+         <tok val="Litterarii"/>
+         <tok val="litterari"/>
+         <tok val="litterarii"/>
          <lm>
             <l>litterarius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Litterarii litterarii-->
-         <tok val="[lL]itterarii"/>
+      <ana>
+         <tok val="Litterarii"/>
+         <tok val="litterarii"/>
          <lm>
             <l>litterarius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Litterate litteratius litteratiusque-->
-         <tok val="[lL]itterat(ius)?(que|e)?"/>
+      <ana>
+         <tok val="Litterate"/>
+         <tok val="litterate"/>
+         <tok val="litteratius"/>
+         <tok val="litteratiusque"/>
          <lm>
             <l>litteratus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Litterate literate litterate-->
-         <tok val="[lL]i[t]?terate"/>
+      <ana>
+         <tok val="Litterate"/>
+         <tok val="literate"/>
+         <tok val="litterate"/>
          <lm>
             <l>litteratus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Litteratores litteratores-->
-         <tok val="[lL]itteratores"/>
+      <ana>
+         <tok val="Litteratores"/>
+         <tok val="litteratores"/>
          <lm>
             <l>litterator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -678,8 +886,10 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Litterulae literulae litterulae-->
-         <tok val="[lL]i[t]?terulae"/>
+      <ana>
+         <tok val="Litterulae"/>
+         <tok val="literulae"/>
+         <tok val="litterulae"/>
          <lm>
             <l>litterula</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -688,8 +898,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Littorum litorum littorum-->
-         <tok val="[lL]i[t]?torum"/>
+      <ana>
+         <tok val="Littorum"/>
+         <tok val="litorum"/>
+         <tok val="littorum"/>
          <lm>
             <l>litus3</l>
             <m>n - - p - - - n g</m>
@@ -697,6 +909,7 @@
       </ana>
       <ana>
          <tok val="Litubium"/>
+         <tok val="litubium"/>
          <lm>
             <l>Litubium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -705,23 +918,28 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Lituo lituo-->
-         <tok val="[lL]ituo"/>
+      <ana>
+         <tok val="Lituo"/>
+         <tok val="lituo"/>
          <lm>
             <l>lituus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lituos lituos lituosque-->
-         <tok val="[lL]ituos(que)?"/>
+      <ana>
+         <tok val="Lituos"/>
+         <tok val="lituos"/>
+         <tok val="lituosque"/>
          <lm>
             <l>lituus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Litura litura lituraque-->
-         <tok val="[lL]itura(que)?"/>
+      <ana>
+         <tok val="Litura"/>
+         <tok val="litura"/>
+         <tok val="lituraque"/>
          <lm cert="0.5">
             <l>litura</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -733,8 +951,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Liturae liturae lituraeque-->
-         <tok val="[lL]iturae(que)?"/>
+      <ana>
+         <tok val="Liturae"/>
+         <tok val="liturae"/>
+         <tok val="lituraeque"/>
          <lm>
             <l>litura</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -743,15 +963,17 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lituram lituram-->
-         <tok val="[lL]ituram"/>
+      <ana>
+         <tok val="Lituram"/>
+         <tok val="lituram"/>
          <lm>
             <l>litura</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lituras lituras-->
-         <tok val="[lL]ituras"/>
+      <ana>
+         <tok val="Lituras"/>
+         <tok val="lituras"/>
          <lm cert="0.5">
             <l>lituro</l>
             <m>v - 2 s p i a</m>
@@ -761,23 +983,27 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lituris lituris-->
-         <tok val="[lL]ituris"/>
+      <ana>
+         <tok val="Lituris"/>
+         <tok val="lituris"/>
          <lm>
             <l>litura</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lituro lituro-->
-         <tok val="[lL]ituro"/>
+      <ana>
+         <tok val="Lituro"/>
+         <tok val="lituro"/>
          <lm>
             <l>lituro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--lita litane litia-->
-         <tok val="lit[i]?a(ne)?"/>
+      <ana>
+         <tok val="lita"/>
+         <tok val="litane"/>
+         <tok val="litia"/>
          <lm>
             <l>lis</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -785,8 +1011,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--lita litane-->
-         <tok val="lita(ne)?"/>
+      <ana>
+         <tok val="lita"/>
+         <tok val="litane"/>
          <lm>
             <l>lito</l>
             <m>v - 2 s p m a</m>
@@ -938,8 +1165,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--litant litantque-->
-         <tok val="litant(que)?"/>
+      <ana>
+         <tok val="litant"/>
+         <tok val="litantque"/>
          <lm>
             <l>lito</l>
             <m>v - 3 p p i a</m>
@@ -955,8 +1183,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--litantes litantis-->
-         <tok val="litant[ie]s"/>
+      <ana>
+         <tok val="litantes"/>
+         <tok val="litantis"/>
          <lm>
             <l>lito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1105,8 +1334,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--litate litatum-->
-         <tok val="litat(um|e)"/>
+      <ana>
+         <tok val="litate"/>
+         <tok val="litatum"/>
          <lm>
             <l>lito</l>
             <m>v - - s r p p n v</m>
@@ -1181,22 +1411,25 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--litauerunt litavere-->
-         <tok val="lita[vu]er(e|unt)"/>
+      <ana>
+         <tok val="litauerunt"/>
+         <tok val="litavere"/>
          <lm>
             <l>lito</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--litaui litavi-->
-         <tok val="lita[vu]i"/>
+      <ana>
+         <tok val="litaui"/>
+         <tok val="litavi"/>
          <lm>
             <l>lito</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--litauit litavit-->
-         <tok val="lita[vu]it"/>
+      <ana>
+         <tok val="litauit"/>
+         <tok val="litavit"/>
          <lm>
             <l>lito</l>
             <m>v - 3 s r i a</m>
@@ -1230,8 +1463,10 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--literatae litteratae litterataeque-->
-         <tok val="li[t]?teratae(que)?"/>
+      <ana>
+         <tok val="literatae"/>
+         <tok val="litteratae"/>
+         <tok val="litterataeque"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1240,23 +1475,26 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--literate litterate-->
-         <tok val="li[t]?terate"/>
+      <ana>
+         <tok val="literate"/>
+         <tok val="litterate"/>
          <lm>
             <l>litterate</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--literatio litteratio-->
-         <tok val="li[t]?teratio"/>
+      <ana>
+         <tok val="literatio"/>
+         <tok val="litteratio"/>
          <lm>
             <l>litteratio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--literatis litteratis-->
-         <tok val="li[t]?teratis"/>
+      <ana>
+         <tok val="literatis"/>
+         <tok val="litteratis"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1267,16 +1505,19 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--literatissimum litteratissimorum litteratissimum-->
-         <tok val="li[t]?teratissim(or)?um"/>
+      <ana>
+         <tok val="literatissimum"/>
+         <tok val="litteratissimorum"/>
+         <tok val="litteratissimum"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.5">a - - p - - - n g s</m>
             <m cert="0.5">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--literatissimum litteratissimum-->
-         <tok val="li[t]?teratissimum"/>
+      <ana>
+         <tok val="literatissimum"/>
+         <tok val="litteratissimum"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.25">a - - s - - - n a s</m>
@@ -1285,15 +1526,17 @@
             <m cert="0.25">a - - s - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--literatorum litteratorum-->
-         <tok val="li[t]?teratorum"/>
+      <ana>
+         <tok val="literatorum"/>
+         <tok val="litteratorum"/>
          <lm>
             <l>litterator</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--literaturae litteraturae-->
-         <tok val="li[t]?teraturae"/>
+      <ana>
+         <tok val="literaturae"/>
+         <tok val="litteraturae"/>
          <lm>
             <l>litteratura</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -1302,29 +1545,33 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--literaturam litteraturam-->
-         <tok val="li[t]?teraturam"/>
+      <ana>
+         <tok val="literaturam"/>
+         <tok val="litteraturam"/>
          <lm>
             <l>litteratura</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--literatus litteratus-->
-         <tok val="li[t]?teratus"/>
+      <ana>
+         <tok val="literatus"/>
+         <tok val="litteratus"/>
          <lm>
             <l>litteratus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--literosus litterosus-->
-         <tok val="li[t]?terosus"/>
+      <ana>
+         <tok val="literosus"/>
+         <tok val="litterosus"/>
          <lm>
             <l>litterosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--literula litterula-->
-         <tok val="li[t]?terula"/>
+      <ana>
+         <tok val="literula"/>
+         <tok val="litterula"/>
          <lm>
             <l>litterula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1332,8 +1579,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--literulas litterulas-->
-         <tok val="li[t]?terulas"/>
+      <ana>
+         <tok val="literulas"/>
+         <tok val="litterulas"/>
          <lm>
             <l>litterula</l>
             <m>n - - p - - - f a</m>
@@ -1563,8 +1811,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--litigante litiganti-->
-         <tok val="litigant[ie]"/>
+      <ana>
+         <tok val="litigante"/>
+         <tok val="litiganti"/>
          <lm>
             <l>litigo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1590,8 +1839,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--litigantes litigantis-->
-         <tok val="litigant[ie]s"/>
+      <ana>
+         <tok val="litigantes"/>
+         <tok val="litigantis"/>
          <lm>
             <l>litigo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1672,8 +1922,9 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--litigas litigasque-->
-         <tok val="litigas(que)?"/>
+      <ana>
+         <tok val="litigas"/>
+         <tok val="litigasque"/>
          <lm>
             <l>litigo</l>
             <m>v - 2 s p i a</m>
@@ -1793,8 +2044,10 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--litigatorum litigatum litigatumque-->
-         <tok val="litigat(or)?um(que)?"/>
+      <ana>
+         <tok val="litigatorum"/>
+         <tok val="litigatum"/>
+         <tok val="litigatumque"/>
          <lm>
             <l>litigo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -1812,8 +2065,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--litigatum litigatumque-->
-         <tok val="litigatum(que)?"/>
+      <ana>
+         <tok val="litigatum"/>
+         <tok val="litigatumque"/>
          <lm cert="0.5">
             <l>litigo</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1855,15 +2109,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--litigaverat litigauerat-->
-         <tok val="litiga[uv]erat"/>
+      <ana>
+         <tok val="litigauerat"/>
+         <tok val="litigaverat"/>
          <lm>
             <l>litigo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--litigavimus litigauimus-->
-         <tok val="litiga[uv]imus"/>
+      <ana>
+         <tok val="litigauimus"/>
+         <tok val="litigavimus"/>
          <lm>
             <l>litigo</l>
             <m>v - 1 p r i a</m>
@@ -1901,8 +2157,9 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--litiger litigere-->
-         <tok val="litiger[e]?"/>
+      <ana>
+         <tok val="litiger"/>
+         <tok val="litigere"/>
          <lm>
             <l>litiger</l>
             <m>a - - s - - - m v</m>
@@ -1920,8 +2177,9 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--litiges lítiges-->
-         <tok val="l[íi]tiges"/>
+      <ana>
+         <tok val="litiges"/>
+         <tok val="lítiges"/>
          <lm>
             <l>litigo</l>
             <m>v - 2 s p s a</m>
@@ -1964,15 +2222,17 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--litigiose litigiosius-->
-         <tok val="litigios(ius|e)"/>
+      <ana>
+         <tok val="litigiose"/>
+         <tok val="litigiosius"/>
          <lm>
             <l>litigiosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--litigiose litigiosum-->
-         <tok val="litigios(um|e)"/>
+      <ana>
+         <tok val="litigiose"/>
+         <tok val="litigiosum"/>
          <lm>
             <l>litigiosus</l>
             <m>a - - s - - - n v</m>
@@ -2026,8 +2286,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--litigiosorum litigiosum-->
-         <tok val="litigios(or)?um"/>
+      <ana>
+         <tok val="litigiosorum"/>
+         <tok val="litigiosum"/>
          <lm>
             <l>litigiosus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2137,8 +2398,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--litoream litoreamque-->
-         <tok val="litoream(que)?"/>
+      <ana>
+         <tok val="litoream"/>
+         <tok val="litoreamque"/>
          <lm>
             <l>litoreus</l>
             <m>a - - s - - - f a</m>
@@ -2197,8 +2459,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--litori littori-->
-         <tok val="li[t]?tori"/>
+      <ana>
+         <tok val="litori"/>
+         <tok val="littori"/>
          <lm>
             <l>litus3</l>
             <m>n - - s - - - n d</m>
@@ -2243,8 +2506,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--litterales litteralis-->
-         <tok val="litteral[ie]s"/>
+      <ana>
+         <tok val="litterales"/>
+         <tok val="litteralis"/>
          <lm>
             <l>litteralis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -2327,8 +2591,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--litterata litteratast-->
-         <tok val="litterata(st)?"/>
+      <ana>
+         <tok val="litterata"/>
+         <tok val="litteratast"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2395,8 +2660,9 @@
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--litteratius litteratiusque-->
-         <tok val="litteratius(que)?"/>
+      <ana>
+         <tok val="litteratius"/>
+         <tok val="litteratiusque"/>
          <lm>
             <l>litteratus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -2502,8 +2768,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--litui lituique-->
-         <tok val="litui(que)?"/>
+      <ana>
+         <tok val="litui"/>
+         <tok val="lituique"/>
          <lm cert="0.5">
             <l>lituus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2523,8 +2790,9 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--litum litumque-->
-         <tok val="litum(que)?"/>
+      <ana>
+         <tok val="litum"/>
+         <tok val="litumque"/>
          <lm>
             <l>litus2</l>
             <m>n - - s - - - m a</m>
@@ -2565,8 +2833,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--lituum lituumque-->
-         <tok val="lituum(que)?"/>
+      <ana>
+         <tok val="lituum"/>
+         <tok val="lituumque"/>
          <lm cert="0.5">
             <l>litus2</l>
             <m>n - - p - - - m g</m>
@@ -2576,8 +2845,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--lituus lituusque-->
-         <tok val="lituus(que)?"/>
+      <ana>
+         <tok val="lituus"/>
+         <tok val="lituusque"/>
          <lm>
             <l>lituus</l>
             <m>n - - s - - - m n</m>

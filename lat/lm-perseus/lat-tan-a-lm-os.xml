@@ -1,65 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusos">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:os">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to os</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-os.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>OS</tok-starts-with>
       <tok-starts-with>Os</tok-starts-with>
       <tok-starts-with>os</tok-starts-with>
       <tok-starts-with>ós</tok-starts-with>
       <tok-starts-with>Ós</tok-starts-with>
-      <ana><!--OS osne osque-->
-         <tok val="(os)?(qu|n)?(e|OS)"/>
-         <lm>
-            <l>os</l>
-            <m>2</m>
-         </lm>
-      </ana>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:37:31.305-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:37:31.305-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-os.xml</change>
+      <change when="2020-07-23" who="kalvesmaki">Clarified 2 lexemes for os</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
       <ana>
          <tok val="OS"/>
+         <tok val="Os"/>
+         <tok val="os"/>
          <lm>
-            <l>os</l>
-            <m>2</m>
-         </lm>
-      </ana>
-      <ana><!--OS Os os-->
-         <tok val="[O]?(s|S|os)"/>
-         <lm>
-            <l>os</l>
+            <l def-ref="1" cert="0.5">os</l>
+            <l def-ref="2" cert="0.5">os</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--OSA Osa Osann osa osaque-->
-         <tok val="[Oo]?(sa)?(nn|que|OSA)?"/>
+      <ana>
+         <tok val="OSA"/>
+         <tok val="Osa"/>
+         <tok val="Osann"/>
+         <tok val="osa"/>
+         <tok val="osann"/>
+         <tok val="osaque"/>
          <lm>
             <l>osus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -70,22 +73,34 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--OSCINIS Oscinis oscinis-->
-         <tok val="[oO]?(scinis|OSCINIS)"/>
+      <ana>
+         <tok val="OSCINIS"/>
+         <tok val="Oscinis"/>
+         <tok val="oscinis"/>
          <lm>
             <l>oscen</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--OSCITO Oscito oscito-->
-         <tok val="[oO]?(scito|OSCITO)"/>
+      <ana>
+         <tok val="OSCITO"/>
+         <tok val="Oscito"/>
+         <tok val="oscito"/>
          <lm>
             <l>oscito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--OSSA Ossa Ossan Ossaque ossa ossaque ossaue ossave-->
-         <tok val="[oO]?(ssa)?[q]?(ue|n|que|ve|OSSA)?"/>
+      <ana>
+         <tok val="OSSA"/>
+         <tok val="Ossa"/>
+         <tok val="Ossan"/>
+         <tok val="Ossaque"/>
+         <tok val="ossa"/>
+         <tok val="ossan"/>
+         <tok val="ossaque"/>
+         <tok val="ossaue"/>
+         <tok val="ossave"/>
          <lm>
             <l>os2</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -93,8 +108,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--OSSVARIA Ossuaria ossuaria-->
-         <tok val="[oO]?(ssuaria|OSSVARIA)"/>
+      <ana>
+         <tok val="OSSVARIA"/>
+         <tok val="Ossuaria"/>
+         <tok val="ossuaria"/>
+         <tok val="ossvaria"/>
          <lm cert="0.5">
             <l>ossuarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -111,65 +129,104 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--OSTENDAT Ostendat ostendat ostendatque-->
-         <tok val="[oO]?(stendat)?(que|OSTENDAT)?"/>
+      <ana>
+         <tok val="OSTENDAT"/>
+         <tok val="Ostendat"/>
+         <tok val="ostendat"/>
+         <tok val="ostendatque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--OSTENDIMVS Ostendimus ostendimus-->
-         <tok val="[oO]?(stendimus|OSTENDIMVS)"/>
+      <ana>
+         <tok val="OSTENDIMVS"/>
+         <tok val="Ostendimus"/>
+         <tok val="ostendimus"/>
+         <tok val="ostendimvs"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - 1 p r i a</m>
             <m cert="0.5">v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--OSTENDITUR Ostenditur ostenditur-->
-         <tok val="[oO]?(stenditur|OSTENDITUR)"/>
+      <ana>
+         <tok val="OSTENDITUR"/>
+         <tok val="Ostenditur"/>
+         <tok val="ostenditur"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--OSTENDO Ostendo ostendo-->
-         <tok val="[oO]?(stendo|OSTENDO)"/>
+      <ana>
+         <tok val="OSTENDO"/>
+         <tok val="Ostendo"/>
+         <tok val="ostendo"/>
          <lm>
             <l>ostendo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--OSTIVM Ostien Ostium ostium ostiumque ostiumst-->
-         <tok val="[oO]?(sti)?(um)?(st|que|en|OSTIVM)?"/>
+      <ana>
+         <tok val="OSTIVM"/>
+         <tok val="Ostien"/>
+         <tok val="Ostium"/>
+         <tok val="ostien"/>
+         <tok val="ostium"/>
+         <tok val="ostiumque"/>
+         <tok val="ostiumst"/>
+         <tok val="ostivm"/>
          <lm>
             <l>ostium</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--OSTIVM Ostium ostium ostiumque ostiumst óstium Óstium-->
-         <tok val="[oOóÓ]?(stium)?(st|que|OSTIVM)?"/>
+      <ana>
+         <tok val="OSTIVM"/>
+         <tok val="Ostium"/>
+         <tok val="ostium"/>
+         <tok val="ostiumque"/>
+         <tok val="ostiumst"/>
+         <tok val="ostivm"/>
+         <tok val="Óstium"/>
+         <tok val="óstium"/>
          <lm>
             <l>ostium</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--OSTIVM Ostium ostium ostiumque ostiumst-->
-         <tok val="[oO]?(stium)?(st|que|OSTIVM)?"/>
+      <ana>
+         <tok val="OSTIVM"/>
+         <tok val="Ostium"/>
+         <tok val="ostium"/>
+         <tok val="ostiumque"/>
+         <tok val="ostiumst"/>
+         <tok val="ostivm"/>
          <lm>
             <l>ostium</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--OSTIVM Ostiorum Ostium ostiorum ostium ostiumque ostiumst-->
-         <tok val="[oO]?(sti)?(or)?(um)?(st|que|OSTIVM)?"/>
+      <ana>
+         <tok val="OSTIVM"/>
+         <tok val="Ostiorum"/>
+         <tok val="Ostium"/>
+         <tok val="ostiorum"/>
+         <tok val="ostium"/>
+         <tok val="ostiumque"/>
+         <tok val="ostiumst"/>
+         <tok val="ostivm"/>
          <lm>
             <l>ostium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--OSTREA Ostrea ostrea ostreaque-->
-         <tok val="[oO]?(strea)?(que|OSTREA)?"/>
+      <ana>
+         <tok val="OSTREA"/>
+         <tok val="Ostrea"/>
+         <tok val="ostrea"/>
+         <tok val="ostreaque"/>
          <lm cert="0.5">
             <l>ostrea</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -183,8 +240,12 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--OSTREIS Ostreis ostreis ostreisque ostreisve-->
-         <tok val="[oO]?(streis)?(ve|que|OSTREIS)?"/>
+      <ana>
+         <tok val="OSTREIS"/>
+         <tok val="Ostreis"/>
+         <tok val="ostreis"/>
+         <tok val="ostreisque"/>
+         <tok val="ostreisve"/>
          <lm cert="0.5">
             <l>ostreum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -196,23 +257,33 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--OStendemus Ostendemus ostendemus ostendemusque-->
-         <tok val="[O]?(s|S|os)tendemus(que)?"/>
+      <ana>
+         <tok val="OStendemus"/>
+         <tok val="Ostendemus"/>
+         <tok val="ostendemus"/>
+         <tok val="ostendemusque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Os os-->
-         <tok val="[oO]s"/>
-         <lm>
+      <ana>
+         <tok val="Os"/>
+         <tok val="os"/>
+         <lm cert="0.5">
             <l>os2</l>
-            <m cert="0.5">n - - s - - - n v</m>
-            <m cert="0.5">n - - s - - - n a</m>
+            <m cert="0.333333333333333333">n - - s - - - n v</m>
+            <m cert="0.333333333333333333">n - - s - - - n a</m>
+            <m cert="0.333333333333333333">n - - s - - - n n</m>
+         </lm>
+         <lm cert="0.5">
+            <l>os</l>
+            <m>n - - s - - - n v</m>
          </lm>
       </ana>
       <ana>
          <tok val="Osae"/>
+         <tok val="osae"/>
          <lm>
             <l>osus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -221,15 +292,20 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Osann osas-->
-         <tok val="[oO]sa(s|nn)"/>
+      <ana>
+         <tok val="Osann"/>
+         <tok val="osann"/>
+         <tok val="osas"/>
          <lm>
             <l>osus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Osca Oscan-->
-         <tok val="Osca[n]?"/>
+      <ana>
+         <tok val="Osca"/>
+         <tok val="Oscan"/>
+         <tok val="osca"/>
+         <tok val="oscan"/>
          <lm>
             <l>Osca</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -239,6 +315,7 @@
       </ana>
       <ana>
          <tok val="Oscae"/>
+         <tok val="oscae"/>
          <lm>
             <l>Osca</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -249,6 +326,7 @@
       </ana>
       <ana>
          <tok val="Oscam"/>
+         <tok val="oscam"/>
          <lm>
             <l>Osca</l>
             <m>n e - s - - - f a</m>
@@ -256,20 +334,23 @@
       </ana>
       <ana>
          <tok val="Oscan"/>
+         <tok val="oscan"/>
          <lm>
             <l>Osca</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Oscedo oscedo-->
-         <tok val="[oO]scedo"/>
+      <ana>
+         <tok val="Oscedo"/>
+         <tok val="oscedo"/>
          <lm>
             <l>oscedo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Oscen oscen-->
-         <tok val="[oO]scen"/>
+      <ana>
+         <tok val="Oscen"/>
+         <tok val="oscen"/>
          <lm>
             <l>oscen</l>
             <m>n - - s - - - m n</m>
@@ -277,6 +358,7 @@
       </ana>
       <ana>
          <tok val="Oscenses"/>
+         <tok val="oscenses"/>
          <lm cert="0.5">
             <l>Oscensis</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -290,8 +372,11 @@
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oscenses Oscensis-->
-         <tok val="Oscens[ie]s"/>
+      <ana>
+         <tok val="Oscenses"/>
+         <tok val="Oscensis"/>
+         <tok val="oscenses"/>
+         <tok val="oscensis"/>
          <lm cert="0.5">
             <l>Oscensis</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -304,6 +389,7 @@
       </ana>
       <ana>
          <tok val="Oscensi"/>
+         <tok val="oscensi"/>
          <lm>
             <l>Oscensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -316,6 +402,7 @@
       </ana>
       <ana>
          <tok val="Oscensibus"/>
+         <tok val="oscensibus"/>
          <lm cert="0.5">
             <l>Oscenses</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -333,6 +420,7 @@
       </ana>
       <ana>
          <tok val="Oscensis"/>
+         <tok val="oscensis"/>
          <lm>
             <l>Oscensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -346,14 +434,16 @@
       </ana>
       <ana>
          <tok val="Osci"/>
+         <tok val="osci"/>
          <lm>
             <l>Osci</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Oscilla oscilla-->
-         <tok val="[oO]scilla"/>
+      <ana>
+         <tok val="Oscilla"/>
+         <tok val="oscilla"/>
          <lm cert="0.5">
             <l>oscillum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -365,15 +455,17 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Oscillabitur oscillabitur-->
-         <tok val="[oO]scillabitur"/>
+      <ana>
+         <tok val="Oscillabitur"/>
+         <tok val="oscillabitur"/>
          <lm>
             <l>oscillo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Oscillantes oscillantes-->
-         <tok val="[oO]scillantes"/>
+      <ana>
+         <tok val="Oscillantes"/>
+         <tok val="oscillantes"/>
          <lm>
             <l>oscillo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -382,16 +474,19 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Oscillantes oscillantes oscillantis-->
-         <tok val="[oO]scillant[ei]s"/>
+      <ana>
+         <tok val="Oscillantes"/>
+         <tok val="oscillantes"/>
+         <tok val="oscillantis"/>
          <lm>
             <l>oscillo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Oscillantium oscillantium-->
-         <tok val="[oO]scillantium"/>
+      <ana>
+         <tok val="Oscillantium"/>
+         <tok val="oscillantium"/>
          <lm>
             <l>oscillo</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -399,8 +494,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--Oscillari oscillari-->
-         <tok val="[oO]scillari"/>
+      <ana>
+         <tok val="Oscillari"/>
+         <tok val="oscillari"/>
          <lm>
             <l>oscillo</l>
             <m>v - - - p n p</m>
@@ -408,21 +504,24 @@
       </ana>
       <ana>
          <tok val="Oscillat"/>
+         <tok val="oscillat"/>
          <lm>
             <l>oscillo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Oscillatio oscillatio-->
-         <tok val="[oO]scillatio"/>
+      <ana>
+         <tok val="Oscillatio"/>
+         <tok val="oscillatio"/>
          <lm>
             <l>oscillatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Oscillationes oscillationes-->
-         <tok val="[oO]scillationes"/>
+      <ana>
+         <tok val="Oscillationes"/>
+         <tok val="oscillationes"/>
          <lm>
             <l>oscillatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -430,15 +529,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Oscillationis oscillationis-->
-         <tok val="[oO]scillationis"/>
+      <ana>
+         <tok val="Oscillationis"/>
+         <tok val="oscillationis"/>
          <lm>
             <l>oscillatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Oscillationum oscillationum-->
-         <tok val="[oO]scillationum"/>
+      <ana>
+         <tok val="Oscillationum"/>
+         <tok val="oscillationum"/>
          <lm>
             <l>oscillatio</l>
             <m>n - - p - - - f g</m>
@@ -446,20 +547,23 @@
       </ana>
       <ana>
          <tok val="Oscillentur"/>
+         <tok val="oscillentur"/>
          <lm>
             <l>oscillo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Oscilletur oscilletur-->
-         <tok val="[oO]scilletur"/>
+      <ana>
+         <tok val="Oscilletur"/>
+         <tok val="oscilletur"/>
          <lm>
             <l>oscillo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Oscillo oscillo-->
-         <tok val="[oO]scillo"/>
+      <ana>
+         <tok val="Oscillo"/>
+         <tok val="oscillo"/>
          <lm cert="0.5">
             <l>oscillo</l>
             <m>v - 1 s p i a</m>
@@ -470,8 +574,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Oscillum oscillum-->
-         <tok val="[oO]scillum"/>
+      <ana>
+         <tok val="Oscillum"/>
+         <tok val="oscillum"/>
          <lm>
             <l>oscillum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -479,22 +584,26 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Oscillum oscillorum oscillum-->
-         <tok val="[oO]scill(or)?um"/>
+      <ana>
+         <tok val="Oscillum"/>
+         <tok val="oscillorum"/>
+         <tok val="oscillum"/>
          <lm>
             <l>oscillum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oscinem oscinem-->
-         <tok val="[oO]scinem"/>
+      <ana>
+         <tok val="Oscinem"/>
+         <tok val="oscinem"/>
          <lm>
             <l>oscen</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Oscines oscines-->
-         <tok val="[oO]scines"/>
+      <ana>
+         <tok val="Oscines"/>
+         <tok val="oscines"/>
          <lm>
             <l>oscen</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -502,8 +611,10 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Oscinum oscinum oscinumque-->
-         <tok val="[oO]scinum(que)?"/>
+      <ana>
+         <tok val="Oscinum"/>
+         <tok val="oscinum"/>
+         <tok val="oscinumque"/>
          <lm>
             <l>oscen</l>
             <m>n - - p - - - m g</m>
@@ -511,6 +622,7 @@
       </ana>
       <ana>
          <tok val="Oscis"/>
+         <tok val="oscis"/>
          <lm cert="0.5">
             <l>Osca</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -524,6 +636,7 @@
       </ana>
       <ana>
          <tok val="Oscitabunde"/>
+         <tok val="oscitabunde"/>
          <lm>
             <l>oscitabundus</l>
             <m cert="0.333333333333333333">d</m>
@@ -533,6 +646,7 @@
       </ana>
       <ana>
          <tok val="Oscitans"/>
+         <tok val="oscitans"/>
          <lm>
             <l>oscitor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -544,15 +658,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Oscitant oscitant-->
-         <tok val="[oO]scitant"/>
+      <ana>
+         <tok val="Oscitant"/>
+         <tok val="oscitant"/>
          <lm>
             <l>oscito</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Oscitanter oscitanter-->
-         <tok val="[oO]scitanter"/>
+      <ana>
+         <tok val="Oscitanter"/>
+         <tok val="oscitanter"/>
          <lm>
             <l>oscitanter</l>
             <m>d</m>
@@ -560,6 +676,7 @@
       </ana>
       <ana>
          <tok val="Oscitantes"/>
+         <tok val="oscitantes"/>
          <lm>
             <l>oscitor</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -570,38 +687,39 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Oscitare oscitare-->
-         <tok val="[oO]scitare"/>
-         <lm>
+      <ana>
+         <tok val="Oscitare"/>
+         <tok val="oscitare"/>
+         <lm cert="0.5">
             <l>oscito</l>
             <m>v - - - p n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Oscitare"/>
-         <lm>
+         <lm cert="0.5">
             <l>oscitor</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Oscitat oscitat-->
-         <tok val="[oO]scitat"/>
+      <ana>
+         <tok val="Oscitat"/>
+         <tok val="oscitat"/>
          <lm>
             <l>oscito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Oscitatio oscitatio-->
-         <tok val="[oO]scitatio"/>
+      <ana>
+         <tok val="Oscitatio"/>
+         <tok val="oscitatio"/>
          <lm>
             <l>oscitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Oscitationes oscitationes-->
-         <tok val="[oO]scitationes"/>
+      <ana>
+         <tok val="Oscitationes"/>
+         <tok val="oscitationes"/>
          <lm>
             <l>oscitatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -611,13 +729,19 @@
       </ana>
       <ana>
          <tok val="Oscitor"/>
+         <tok val="oscitor"/>
          <lm>
             <l>oscitor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Oscorum Oscorumque Oscum-->
-         <tok val="Osc(or)?um(que)?"/>
+      <ana>
+         <tok val="Oscorum"/>
+         <tok val="Oscorumque"/>
+         <tok val="Oscum"/>
+         <tok val="oscorum"/>
+         <tok val="oscorumque"/>
+         <tok val="oscum"/>
          <lm>
             <l>Osci</l>
             <m>n e - p - - - m g</m>
@@ -625,13 +749,17 @@
       </ana>
       <ana>
          <tok val="Oscos"/>
+         <tok val="oscos"/>
          <lm>
             <l>Osci</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Oscula Osculaque oscula osculaque-->
-         <tok val="[oO]scula(que)?"/>
+      <ana>
+         <tok val="Oscula"/>
+         <tok val="Osculaque"/>
+         <tok val="oscula"/>
+         <tok val="osculaque"/>
          <lm cert="0.5">
             <l>osculum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -643,15 +771,18 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Osculari osculari ósculari-->
-         <tok val="[oOó]sculari"/>
+      <ana>
+         <tok val="Osculari"/>
+         <tok val="osculari"/>
+         <tok val="ósculari"/>
          <lm>
             <l>osculor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Osculatio osculatio-->
-         <tok val="[oO]sculatio"/>
+      <ana>
+         <tok val="Osculatio"/>
+         <tok val="osculatio"/>
          <lm>
             <l>osculatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -660,28 +791,40 @@
       </ana>
       <ana>
          <tok val="Osculor"/>
+         <tok val="osculor"/>
          <lm>
             <l>osculor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Osculum osclum osculum osculumque-->
-         <tok val="[oO]sc[u]?lum(que)?"/>
+      <ana>
+         <tok val="Osculum"/>
+         <tok val="osclum"/>
+         <tok val="osculum"/>
+         <tok val="osculumque"/>
          <lm>
             <l>osculum</l>
             <m cert="0.5">n - - s - - - n v</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Osculum osclum osculum osculumque oscúlum-->
-         <tok val="[oO]sc[uú]?lum(que)?"/>
+      <ana>
+         <tok val="Osculum"/>
+         <tok val="osclum"/>
+         <tok val="osculum"/>
+         <tok val="osculumque"/>
+         <tok val="oscúlum"/>
          <lm>
             <l>osculum</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Osculum osclum osculorum osculum osculumque-->
-         <tok val="[oO]sc[u]?l(or)?um(que)?"/>
+      <ana>
+         <tok val="Osculum"/>
+         <tok val="osclum"/>
+         <tok val="osculorum"/>
+         <tok val="osculum"/>
+         <tok val="osculumque"/>
          <lm>
             <l>osculum</l>
             <m>n - - p - - - n g</m>
@@ -689,6 +832,7 @@
       </ana>
       <ana>
          <tok val="Osdroena"/>
+         <tok val="osdroena"/>
          <lm>
             <l>Osdroena</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -698,29 +842,34 @@
       </ana>
       <ana>
          <tok val="Osdroenis"/>
+         <tok val="osdroenis"/>
          <lm>
             <l>Osdroena</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ose ose-->
-         <tok val="[oO]se"/>
+      <ana>
+         <tok val="Ose"/>
+         <tok val="ose"/>
          <lm>
             <l>osus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Ose ose osum-->
-         <tok val="[oO]s(e|um)"/>
+      <ana>
+         <tok val="Ose"/>
+         <tok val="ose"/>
+         <tok val="osum"/>
          <lm>
             <l>osus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Osi osi-->
-         <tok val="[oO]si"/>
+      <ana>
+         <tok val="Osi"/>
+         <tok val="osi"/>
          <lm>
             <l>osus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -731,6 +880,7 @@
       </ana>
       <ana>
          <tok val="Osinium"/>
+         <tok val="osinium"/>
          <lm>
             <l>Osinius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -739,6 +889,7 @@
       </ana>
       <ana>
          <tok val="Osinius"/>
+         <tok val="osinius"/>
          <lm>
             <l>Osinius</l>
             <m>n e - s - - - m n</m>
@@ -746,6 +897,7 @@
       </ana>
       <ana>
          <tok val="Osireostaphe"/>
+         <tok val="osireostaphe"/>
          <lm>
             <l>Osireostaphe</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -755,13 +907,15 @@
       </ana>
       <ana>
          <tok val="Osiritis"/>
+         <tok val="osiritis"/>
          <lm>
             <l>Osiritis</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Osis osis-->
-         <tok val="[oO]sis"/>
+      <ana>
+         <tok val="Osis"/>
+         <tok val="osis"/>
          <lm>
             <l>osus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -774,28 +928,34 @@
       </ana>
       <ana>
          <tok val="Osismos"/>
+         <tok val="osismos"/>
          <lm>
             <l>Osismi</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Osor osor ossor-->
-         <tok val="[o]?[sO]?sor"/>
+      <ana>
+         <tok val="Osor"/>
+         <tok val="osor"/>
+         <tok val="ossor"/>
          <lm>
             <l>osor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Osorem osorem-->
-         <tok val="[oO]sorem"/>
+      <ana>
+         <tok val="Osorem"/>
+         <tok val="osorem"/>
          <lm>
             <l>osor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Osos osos OSOS-->
-         <tok val="[oO]?(sos|OSOS)"/>
+      <ana>
+         <tok val="OSOS"/>
+         <tok val="Osos"/>
+         <tok val="osos"/>
          <lm>
             <l>osus</l>
             <m>a - - p - - - m a</m>
@@ -803,6 +963,7 @@
       </ana>
       <ana>
          <tok val="Osphagum"/>
+         <tok val="osphagum"/>
          <lm>
             <l>Osphagus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -811,13 +972,19 @@
       </ana>
       <ana>
          <tok val="Osphagus"/>
+         <tok val="osphagus"/>
          <lm>
             <l>Osphagus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ossa Ossan Ossaque-->
-         <tok val="Ossa(n|que)?"/>
+      <ana>
+         <tok val="Ossa"/>
+         <tok val="Ossan"/>
+         <tok val="Ossaque"/>
+         <tok val="ossa"/>
+         <tok val="ossan"/>
+         <tok val="ossaque"/>
          <lm>
             <l>Ossa</l>
             <m cert="0.166666666666666667">n e - s - - - m n</m>
@@ -830,6 +997,7 @@
       </ana>
       <ana>
          <tok val="Ossae"/>
+         <tok val="ossae"/>
          <lm>
             <l>Ossa</l>
             <m cert="0.125">n e - p - - - f n</m>
@@ -844,6 +1012,7 @@
       </ana>
       <ana>
          <tok val="Ossaea"/>
+         <tok val="ossaea"/>
          <lm>
             <l>Ossaeus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -856,6 +1025,7 @@
       </ana>
       <ana>
          <tok val="Ossaeae"/>
+         <tok val="ossaeae"/>
          <lm>
             <l>Ossaeus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -866,6 +1036,7 @@
       </ana>
       <ana>
          <tok val="Ossaeam"/>
+         <tok val="ossaeam"/>
          <lm>
             <l>Ossaeus</l>
             <m>a e - s - - - f a</m>
@@ -873,6 +1044,7 @@
       </ana>
       <ana>
          <tok val="Ossaei"/>
+         <tok val="ossaei"/>
          <lm>
             <l>Ossaeus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -883,6 +1055,7 @@
       </ana>
       <ana>
          <tok val="Ossaeis"/>
+         <tok val="ossaeis"/>
          <lm>
             <l>Ossaeus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -895,6 +1068,7 @@
       </ana>
       <ana>
          <tok val="Ossaeus"/>
+         <tok val="ossaeus"/>
          <lm>
             <l>Ossaeus</l>
             <m>a e - s - - - m n</m>
@@ -902,6 +1076,7 @@
       </ana>
       <ana>
          <tok val="Ossam"/>
+         <tok val="ossam"/>
          <lm>
             <l>Ossa</l>
             <m cert="0.5">n e - s - - - f a</m>
@@ -910,21 +1085,26 @@
       </ana>
       <ana>
          <tok val="Ossan"/>
+         <tok val="ossan"/>
          <lm>
             <l>Ossa</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Osse osse ossum ósse-->
-         <tok val="[oOó]ss(e|um)"/>
+      <ana>
+         <tok val="Osse"/>
+         <tok val="osse"/>
+         <tok val="ossum"/>
+         <tok val="ósse"/>
          <lm>
             <l>ossum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Ossea ossea-->
-         <tok val="[oO]ssea"/>
+      <ana>
+         <tok val="Ossea"/>
+         <tok val="ossea"/>
          <lm>
             <l>osseus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -935,8 +1115,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Osseum osseum-->
-         <tok val="[oO]sseum"/>
+      <ana>
+         <tok val="Osseum"/>
+         <tok val="osseum"/>
          <lm>
             <l>osseus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -947,30 +1128,35 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Osseus osseus-->
-         <tok val="[oO]sseus"/>
+      <ana>
+         <tok val="Osseus"/>
+         <tok val="osseus"/>
          <lm>
             <l>osseus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ossibus ossibus ossibusque-->
-         <tok val="[oO]ssibus(que)?"/>
+      <ana>
+         <tok val="Ossibus"/>
+         <tok val="ossibus"/>
+         <tok val="ossibusque"/>
          <lm>
             <l>os2</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Ossiculatim ossiculatim-->
-         <tok val="[oO]ssiculatim"/>
+      <ana>
+         <tok val="Ossiculatim"/>
+         <tok val="ossiculatim"/>
          <lm>
             <l>ossiculatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Ossiculum ossiculum-->
-         <tok val="[oO]ssiculum"/>
+      <ana>
+         <tok val="Ossiculum"/>
+         <tok val="ossiculum"/>
          <lm>
             <l>ossiculum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -978,15 +1164,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Ossiculum ossiculorum ossiculum-->
-         <tok val="[oO]ssicul(or)?um"/>
+      <ana>
+         <tok val="Ossiculum"/>
+         <tok val="ossiculorum"/>
+         <tok val="ossiculum"/>
          <lm>
             <l>ossiculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ossifraga ossifraga-->
-         <tok val="[oO]ssifraga"/>
+      <ana>
+         <tok val="Ossifraga"/>
+         <tok val="ossifraga"/>
          <lm cert="0.5">
             <l>ossifraga</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1003,16 +1192,18 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Ossifragus ossifragus-->
-         <tok val="[oO]ssifragus"/>
+      <ana>
+         <tok val="Ossifragus"/>
+         <tok val="ossifragus"/>
          <lm>
             <l>ossifragus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ossilegium ossilegium-->
-         <tok val="[oO]ssilegium"/>
+      <ana>
+         <tok val="Ossilegium"/>
+         <tok val="ossilegium"/>
          <lm>
             <l>ossilegium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1023,6 +1214,7 @@
       </ana>
       <ana>
          <tok val="Ossipaga"/>
+         <tok val="ossipaga"/>
          <lm>
             <l>Ossipaga</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1032,28 +1224,27 @@
       </ana>
       <ana>
          <tok val="Ossis"/>
-         <lm>
+         <tok val="ossis"/>
+         <lm cert="0.333333333333333333">
             <l>Ossa</l>
             <m cert="0.25">n e - p - - - m b</m>
             <m cert="0.25">n e - p - - - m d</m>
             <m cert="0.25">n e - p - - - f d</m>
             <m cert="0.25">n e - p - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Ossis ossis-->
-         <tok val="[oO]ssis"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>ossum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>os2</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ossium ossium-->
-         <tok val="[oO]ssium"/>
+      <ana>
+         <tok val="Ossium"/>
+         <tok val="ossium"/>
          <lm>
             <l>os2</l>
             <m>n - - p - - - n g</m>
@@ -1061,6 +1252,7 @@
       </ana>
       <ana>
          <tok val="Ostae"/>
+         <tok val="ostae"/>
          <lm>
             <l>ostes</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1068,44 +1260,54 @@
             <m cert="0.333333333333333333">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Ostae osti-->
-         <tok val="[oO]st(i|ae)"/>
+      <ana>
+         <tok val="Ostae"/>
+         <tok val="ostae"/>
+         <tok val="osti"/>
          <lm>
             <l>ostes</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Osten osten-->
-         <tok val="[oO]sten"/>
+      <ana>
+         <tok val="Osten"/>
+         <tok val="osten"/>
          <lm>
             <l>ostes</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Ostendam ostendam-->
-         <tok val="[oO]stendam"/>
+      <ana>
+         <tok val="Ostendam"/>
+         <tok val="ostendam"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Ostende ostende ostenden óstende-->
-         <tok val="[oOó]stende[n]?"/>
+      <ana>
+         <tok val="Ostende"/>
+         <tok val="ostende"/>
+         <tok val="ostenden"/>
+         <tok val="óstende"/>
          <lm>
             <l>ostendo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Ostendebat ostendebat ostendebatque-->
-         <tok val="[oO]stendebat(que)?"/>
+      <ana>
+         <tok val="Ostendebat"/>
+         <tok val="ostendebat"/>
+         <tok val="ostendebatque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Ostendendum ostendendum-->
-         <tok val="[oO]stendendum"/>
+      <ana>
+         <tok val="Ostendendum"/>
+         <tok val="ostendendum"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1117,89 +1319,116 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Ostendent ostendent-->
-         <tok val="[oO]stendent"/>
+      <ana>
+         <tok val="Ostendent"/>
+         <tok val="ostendent"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Ostendere ostendere ostendereque ostenderunt ostenderuntque-->
-         <tok val="[oO]stender(untqu)?(e|unt|eque)"/>
+      <ana>
+         <tok val="Ostendere"/>
+         <tok val="ostendere"/>
+         <tok val="ostendereque"/>
+         <tok val="ostenderunt"/>
+         <tok val="ostenderuntque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Ostendere ostendere ostendereque-->
-         <tok val="[oO]stendere(que)?"/>
+      <ana>
+         <tok val="Ostendere"/>
+         <tok val="ostendere"/>
+         <tok val="ostendereque"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Ostendere ostendere ostendereque ostenderis-->
-         <tok val="[oO]stender[e]?(que|is)?"/>
+      <ana>
+         <tok val="Ostendere"/>
+         <tok val="ostendere"/>
+         <tok val="ostendereque"/>
+         <tok val="ostenderis"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Ostendetur ostendetur ostendeturque-->
-         <tok val="[oO]stendetur(que)?"/>
+      <ana>
+         <tok val="Ostendetur"/>
+         <tok val="ostendetur"/>
+         <tok val="ostendeturque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Ostendi ostendi ostendique-->
-         <tok val="[oO]stendi(que)?"/>
+      <ana>
+         <tok val="Ostendi"/>
+         <tok val="ostendi"/>
+         <tok val="ostendique"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - - - p n p</m>
             <m cert="0.5">v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Ostendis ostendis ostendisque-->
-         <tok val="[oO]stendis(que)?"/>
+      <ana>
+         <tok val="Ostendis"/>
+         <tok val="ostendis"/>
+         <tok val="ostendisque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ostendissem ostendissem-->
-         <tok val="[oO]stendissem"/>
+      <ana>
+         <tok val="Ostendissem"/>
+         <tok val="ostendissem"/>
          <lm>
             <l>ostendo</l>
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Ostendit Ostenditque ostendit ostenditque-->
-         <tok val="[oO]stendit(que)?"/>
+      <ana>
+         <tok val="Ostendit"/>
+         <tok val="Ostenditque"/>
+         <tok val="ostendit"/>
+         <tok val="ostenditque"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ostendunt ostendunt ostenduntque-->
-         <tok val="[oO]stendunt(que)?"/>
+      <ana>
+         <tok val="Ostendunt"/>
+         <tok val="ostendunt"/>
+         <tok val="ostenduntque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Ostenduntur ostenduntur ostendunturque-->
-         <tok val="[oO]stenduntur(que)?"/>
+      <ana>
+         <tok val="Ostenduntur"/>
+         <tok val="ostenduntur"/>
+         <tok val="ostendunturque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Ostensa Ostenta ostensa ostenta-->
-         <tok val="[Oo]sten[ts]a"/>
+      <ana>
+         <tok val="Ostensa"/>
+         <tok val="Ostenta"/>
+         <tok val="ostensa"/>
+         <tok val="ostenta"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1210,8 +1439,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Ostensae ostensae-->
-         <tok val="[oO]stensae"/>
+      <ana>
+         <tok val="Ostensae"/>
+         <tok val="ostensae"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1220,8 +1450,11 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Ostenso Ostento ostenso ostento-->
-         <tok val="[Oo]sten[ts]o"/>
+      <ana>
+         <tok val="Ostenso"/>
+         <tok val="Ostento"/>
+         <tok val="ostenso"/>
+         <tok val="ostento"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1230,23 +1463,41 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Ostensum Ostensvm ostensum ostentum ostentumque-->
-         <tok val="[Oo]sten[s]?[vu]?(m|tum|tumque)"/>
+      <ana>
+         <tok val="Ostensum"/>
+         <tok val="Ostensvm"/>
+         <tok val="ostensum"/>
+         <tok val="ostensvm"/>
+         <tok val="ostentum"/>
+         <tok val="ostentumque"/>
          <lm>
             <l>ostendo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Ostensum Ostensvm Ostentum ostensum ostentorum ostentum ostentumque-->
-         <tok val="[oO]sten[t]?(or)?(u|sv|su|tu)m(que)?"/>
+      <ana>
+         <tok val="Ostensum"/>
+         <tok val="Ostensvm"/>
+         <tok val="Ostentum"/>
+         <tok val="ostensum"/>
+         <tok val="ostensvm"/>
+         <tok val="ostentorum"/>
+         <tok val="ostentum"/>
+         <tok val="ostentumque"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Ostensum Ostensvm Ostentum ostensum ostentum ostentumque-->
-         <tok val="[Oo]sten[s]?[vu]?(m|tum|sum|tumque)"/>
+      <ana>
+         <tok val="Ostensum"/>
+         <tok val="Ostensvm"/>
+         <tok val="Ostentum"/>
+         <tok val="ostensum"/>
+         <tok val="ostensvm"/>
+         <tok val="ostentum"/>
+         <tok val="ostentumque"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -1254,22 +1505,33 @@
             <m cert="0.333333333333333333">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Ostensum Ostensvm Ostentum ostensum ostente ostentum ostentumque-->
-         <tok val="[Oo]sten[s]?[vu]?(m|tum|sum|tumque|te)"/>
+      <ana>
+         <tok val="Ostensum"/>
+         <tok val="Ostensvm"/>
+         <tok val="Ostentum"/>
+         <tok val="ostensum"/>
+         <tok val="ostensvm"/>
+         <tok val="ostente"/>
+         <tok val="ostentum"/>
+         <tok val="ostentumque"/>
          <lm>
             <l>ostendo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Ostensus Ostentus ostensus ostentus-->
-         <tok val="[Oo]sten[ts]us"/>
+      <ana>
+         <tok val="Ostensus"/>
+         <tok val="Ostentus"/>
+         <tok val="ostensus"/>
+         <tok val="ostentus"/>
          <lm>
             <l>ostendo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Ostenta ostenta-->
-         <tok val="[oO]stenta"/>
+      <ana>
+         <tok val="Ostenta"/>
+         <tok val="ostenta"/>
          <lm cert="0.5">
             <l>ostentum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1281,8 +1543,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Ostentans ostentans ostentansque-->
-         <tok val="[oO]stentans(que)?"/>
+      <ana>
+         <tok val="Ostentans"/>
+         <tok val="ostentans"/>
+         <tok val="ostentansque"/>
          <lm>
             <l>ostento</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1294,15 +1558,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Ostentant ostentant-->
-         <tok val="[oO]stentant"/>
+      <ana>
+         <tok val="Ostentant"/>
+         <tok val="ostentant"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Ostentare ostentare-->
-         <tok val="[oO]stentare"/>
+      <ana>
+         <tok val="Ostentare"/>
+         <tok val="ostentare"/>
          <lm>
             <l>ostento</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1310,8 +1576,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Ostentas ostentas-->
-         <tok val="[oO]stentas"/>
+      <ana>
+         <tok val="Ostentas"/>
+         <tok val="ostentas"/>
          <lm cert="0.5">
             <l>ostendo</l>
             <m>v - - p r p p f a</m>
@@ -1321,15 +1588,19 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ostentat ostentat ostentatque osténtat-->
-         <tok val="[oO]st[eé]ntat(que)?"/>
+      <ana>
+         <tok val="Ostentat"/>
+         <tok val="ostentat"/>
+         <tok val="ostentatque"/>
+         <tok val="osténtat"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Ostentata ostentata-->
-         <tok val="[oO]stentata"/>
+      <ana>
+         <tok val="Ostentata"/>
+         <tok val="ostentata"/>
          <lm>
             <l>ostento</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1340,38 +1611,44 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Ostentatio ostentatio ostentation-->
-         <tok val="[oO]stentatio[n]?"/>
+      <ana>
+         <tok val="Ostentatio"/>
+         <tok val="ostentatio"/>
+         <tok val="ostentation"/>
          <lm>
             <l>ostentatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ostentatione ostentatione-->
-         <tok val="[oO]stentatione"/>
+      <ana>
+         <tok val="Ostentatione"/>
+         <tok val="ostentatione"/>
          <lm>
             <l>ostentatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ostentator ostentator-->
-         <tok val="[oO]stentator"/>
+      <ana>
+         <tok val="Ostentator"/>
+         <tok val="ostentator"/>
          <lm>
             <l>ostentator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Ostentatus ostentatus-->
-         <tok val="[oO]stentatus"/>
+      <ana>
+         <tok val="Ostentatus"/>
+         <tok val="ostentatus"/>
          <lm>
             <l>ostento</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Ostento ostento-->
-         <tok val="[oO]stento"/>
+      <ana>
+         <tok val="Ostento"/>
+         <tok val="ostento"/>
          <lm cert="0.5">
             <l>ostento</l>
             <m>v - 1 s p i a</m>
@@ -1382,22 +1659,28 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Ostentui ostentui-->
-         <tok val="[oO]stentui"/>
+      <ana>
+         <tok val="Ostentui"/>
+         <tok val="ostentui"/>
          <lm>
             <l>ostentus</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Ostentum ostente ostentum ostentumque-->
-         <tok val="[oO]stent(um)?(que|e)?"/>
+      <ana>
+         <tok val="Ostentum"/>
+         <tok val="ostente"/>
+         <tok val="ostentum"/>
+         <tok val="ostentumque"/>
          <lm>
             <l>ostentum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Ostentum ostentum ostentumque-->
-         <tok val="[oO]stentum(que)?"/>
+      <ana>
+         <tok val="Ostentum"/>
+         <tok val="ostentum"/>
+         <tok val="ostentumque"/>
          <lm cert="0.5">
             <l>ostentum</l>
             <m cert="0.5">n - - s - - - n a</m>
@@ -1408,8 +1691,11 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Ostentum ostentorum ostentum ostentumque-->
-         <tok val="[oO]stent(or)?um(que)?"/>
+      <ana>
+         <tok val="Ostentum"/>
+         <tok val="ostentorum"/>
+         <tok val="ostentum"/>
+         <tok val="ostentumque"/>
          <lm>
             <l>ostentum</l>
             <m>n - - p - - - n g</m>
@@ -1417,13 +1703,15 @@
       </ana>
       <ana>
          <tok val="Ostentum"/>
+         <tok val="ostentum"/>
          <lm>
             <l>ostendo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Ostentus ostentus-->
-         <tok val="[oO]stentus"/>
+      <ana>
+         <tok val="Ostentus"/>
+         <tok val="ostentus"/>
          <lm>
             <l>ostentus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1434,16 +1722,14 @@
       </ana>
       <ana>
          <tok val="Ostia"/>
-         <lm>
+         <tok val="ostia"/>
+         <lm cert="0.5">
             <l>Ostia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Ostia ostia-->
-         <tok val="[oO]stia"/>
-         <lm>
+         <lm cert="0.5">
             <l>ostium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
             <m cert="0.333333333333333333">n - - p - - - n n</m>
@@ -1452,6 +1738,7 @@
       </ana>
       <ana>
          <tok val="Ostiae"/>
+         <tok val="ostiae"/>
          <lm>
             <l>Ostia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1462,21 +1749,25 @@
       </ana>
       <ana>
          <tok val="Ostiam"/>
+         <tok val="ostiam"/>
          <lm>
             <l>Ostia</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Ostiari ostiari-->
-         <tok val="[oO]stiari"/>
+      <ana>
+         <tok val="Ostiari"/>
+         <tok val="ostiari"/>
          <lm>
             <l>ostiarius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Ostiari ostiari ostiarii-->
-         <tok val="[oO]stiari[i]?"/>
+      <ana>
+         <tok val="Ostiari"/>
+         <tok val="ostiari"/>
+         <tok val="ostiarii"/>
          <lm cert="0.5">
             <l>ostiarius</l>
             <m cert="0.5">n - - s - - - m g</m>
@@ -1487,8 +1778,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ostiarium ostiarium-->
-         <tok val="[oO]stiarium"/>
+      <ana>
+         <tok val="Ostiarium"/>
+         <tok val="ostiarium"/>
          <lm cert="0.5">
             <l>ostiarius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1504,8 +1796,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Ostiarium ostiariorum ostiarium-->
-         <tok val="[oO]stiari(or)?um"/>
+      <ana>
+         <tok val="Ostiarium"/>
+         <tok val="ostiariorum"/>
+         <tok val="ostiarium"/>
          <lm cert="0.5">
             <l>ostiarius</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -1517,16 +1811,18 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ostiarius ostiarius-->
-         <tok val="[oO]stiarius"/>
+      <ana>
+         <tok val="Ostiarius"/>
+         <tok val="ostiarius"/>
          <lm>
             <l>ostiarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ostiatim ostiatim-->
-         <tok val="[oO]stiatim"/>
+      <ana>
+         <tok val="Ostiatim"/>
+         <tok val="ostiatim"/>
          <lm>
             <l>ostiatim</l>
             <m>d</m>
@@ -1534,6 +1830,7 @@
       </ana>
       <ana>
          <tok val="Ostiense"/>
+         <tok val="ostiense"/>
          <lm>
             <l>Ostiensis</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -1541,8 +1838,11 @@
             <m cert="0.333333333333333333">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Ostiensem Ostiensemque-->
-         <tok val="Ostiensem(que)?"/>
+      <ana>
+         <tok val="Ostiensem"/>
+         <tok val="Ostiensemque"/>
+         <tok val="ostiensem"/>
+         <tok val="ostiensemque"/>
          <lm>
             <l>Ostiensis</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -1551,6 +1851,7 @@
       </ana>
       <ana>
          <tok val="Ostienses"/>
+         <tok val="ostienses"/>
          <lm>
             <l>Ostiensis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1559,8 +1860,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Ostienses Ostiensis-->
-         <tok val="Ostiens[ie]s"/>
+      <ana>
+         <tok val="Ostienses"/>
+         <tok val="Ostiensis"/>
+         <tok val="ostienses"/>
+         <tok val="ostiensis"/>
          <lm>
             <l>Ostiensis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -1569,6 +1873,7 @@
       </ana>
       <ana>
          <tok val="Ostiensi"/>
+         <tok val="ostiensi"/>
          <lm>
             <l>Ostiensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -1581,6 +1886,7 @@
       </ana>
       <ana>
          <tok val="Ostiensibus"/>
+         <tok val="ostiensibus"/>
          <lm>
             <l>Ostiensis</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1593,6 +1899,7 @@
       </ana>
       <ana>
          <tok val="Ostiensis"/>
+         <tok val="ostiensis"/>
          <lm>
             <l>Ostiensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -1604,8 +1911,10 @@
             <m cert="0.142857142857142857">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ostii osti ostii-->
-         <tok val="[oO]sti[i]?"/>
+      <ana>
+         <tok val="Ostii"/>
+         <tok val="osti"/>
+         <tok val="ostii"/>
          <lm>
             <l>ostium</l>
             <m>n - - s - - - n g</m>
@@ -1613,30 +1922,36 @@
       </ana>
       <ana>
          <tok val="Ostiis"/>
+         <tok val="ostiis"/>
          <lm>
             <l>Ostia</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ostiis ostiis ostiisque-->
-         <tok val="[oO]stiis(que)?"/>
+      <ana>
+         <tok val="Ostiis"/>
+         <tok val="ostiis"/>
+         <tok val="ostiisque"/>
          <lm>
             <l>ostium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Ostio ostio ostioque-->
-         <tok val="[oO]stio(que)?"/>
+      <ana>
+         <tok val="Ostio"/>
+         <tok val="ostio"/>
+         <tok val="ostioque"/>
          <lm>
             <l>ostium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Ostiola ostiola-->
-         <tok val="[oO]stiola"/>
+      <ana>
+         <tok val="Ostiola"/>
+         <tok val="ostiola"/>
          <lm>
             <l>ostiolum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1644,8 +1959,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Ostiolum ostiolum-->
-         <tok val="[oO]stiolum"/>
+      <ana>
+         <tok val="Ostiolum"/>
+         <tok val="ostiolum"/>
          <lm>
             <l>ostiolum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1656,6 +1972,7 @@
       </ana>
       <ana>
          <tok val="Ostorii"/>
+         <tok val="ostorii"/>
          <lm>
             <l>Ostorius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1665,6 +1982,7 @@
       </ana>
       <ana>
          <tok val="Ostorio"/>
+         <tok val="ostorio"/>
          <lm>
             <l>Ostorius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1673,21 +1991,27 @@
       </ana>
       <ana>
          <tok val="Ostorium"/>
+         <tok val="ostorium"/>
          <lm>
             <l>Ostorius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Ostorius Ostoriusque-->
-         <tok val="Ostorius(que)?"/>
+      <ana>
+         <tok val="Ostorius"/>
+         <tok val="Ostoriusque"/>
+         <tok val="ostorius"/>
+         <tok val="ostoriusque"/>
          <lm>
             <l>Ostorius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ostra ostra ostraque-->
-         <tok val="[oO]stra(que)?"/>
+      <ana>
+         <tok val="Ostra"/>
+         <tok val="ostra"/>
+         <tok val="ostraque"/>
          <lm>
             <l>ostrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1695,23 +2019,26 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Ostracias ostracias-->
-         <tok val="[oO]stracias"/>
+      <ana>
+         <tok val="Ostracias"/>
+         <tok val="ostracias"/>
          <lm>
             <l>ostracias</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Ostracine ostracine-->
-         <tok val="[oO]stracine"/>
+      <ana>
+         <tok val="Ostracine"/>
+         <tok val="ostracine"/>
          <lm>
             <l>ostracium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ostracitae ostracitae-->
-         <tok val="[oO]stracitae"/>
+      <ana>
+         <tok val="Ostracitae"/>
+         <tok val="ostracitae"/>
          <lm>
             <l>ostracites</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1720,15 +2047,17 @@
             <m cert="0.25">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Ostracites ostracites-->
-         <tok val="[oO]stracites"/>
+      <ana>
+         <tok val="Ostracites"/>
+         <tok val="ostracites"/>
          <lm>
             <l>ostracites</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ostracitis ostracitis-->
-         <tok val="[oO]stracitis"/>
+      <ana>
+         <tok val="Ostracitis"/>
+         <tok val="ostracitis"/>
          <lm cert="0.5">
             <l>ostracites</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1739,8 +2068,9 @@
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Ostreae ostreae-->
-         <tok val="[oO]streae"/>
+      <ana>
+         <tok val="Ostreae"/>
+         <tok val="ostreae"/>
          <lm>
             <l>ostrea</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1751,6 +2081,7 @@
       </ana>
       <ana>
          <tok val="Ostreariae"/>
+         <tok val="ostreariae"/>
          <lm>
             <l>ostrearius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1759,22 +2090,25 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Ostrearius ostrearius-->
-         <tok val="[oO]strearius"/>
+      <ana>
+         <tok val="Ostrearius"/>
+         <tok val="ostrearius"/>
          <lm>
             <l>ostrearius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ostrearum ostrearum-->
-         <tok val="[oO]strearum"/>
+      <ana>
+         <tok val="Ostrearum"/>
+         <tok val="ostrearum"/>
          <lm>
             <l>ostrea</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Ostreatum ostreatum-->
-         <tok val="[oO]streatum"/>
+      <ana>
+         <tok val="Ostreatum"/>
+         <tok val="ostreatum"/>
          <lm>
             <l>ostreatus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1785,22 +2119,28 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Ostreatus ostreatus-->
-         <tok val="[oO]streatus"/>
+      <ana>
+         <tok val="Ostreatus"/>
+         <tok val="ostreatus"/>
          <lm>
             <l>ostreatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ostreorumque Ostreum ostreorum ostreum-->
-         <tok val="[oO]stre(or)?um(que)?"/>
+      <ana>
+         <tok val="Ostreorumque"/>
+         <tok val="Ostreum"/>
+         <tok val="ostreorum"/>
+         <tok val="ostreorumque"/>
+         <tok val="ostreum"/>
          <lm>
             <l>ostreum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ostreum ostreum-->
-         <tok val="[oO]streum"/>
+      <ana>
+         <tok val="Ostreum"/>
+         <tok val="ostreum"/>
          <lm>
             <l>ostreum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1808,16 +2148,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Ostrifer ostrifer-->
-         <tok val="[oO]strifer"/>
+      <ana>
+         <tok val="Ostrifer"/>
+         <tok val="ostrifer"/>
          <lm>
             <l>ostrifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Ostrina ostrina-->
-         <tok val="[oO]strina"/>
+      <ana>
+         <tok val="Ostrina"/>
+         <tok val="ostrina"/>
          <lm>
             <l>ostrinus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1828,15 +2170,19 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ostrinus ostrinus-->
-         <tok val="[oO]strinus"/>
+      <ana>
+         <tok val="Ostrinus"/>
+         <tok val="ostrinus"/>
          <lm>
             <l>ostrinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ostro Ostroque ostro ostroque-->
-         <tok val="[oO]stro(que)?"/>
+      <ana>
+         <tok val="Ostro"/>
+         <tok val="Ostroque"/>
+         <tok val="ostro"/>
+         <tok val="ostroque"/>
          <lm>
             <l>ostrum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1845,6 +2191,7 @@
       </ana>
       <ana>
          <tok val="Ostrogotha"/>
+         <tok val="ostrogotha"/>
          <lm>
             <l>Ostrogotha</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -1854,6 +2201,7 @@
       </ana>
       <ana>
          <tok val="Ostrogothae"/>
+         <tok val="ostrogothae"/>
          <lm>
             <l>Ostrogotha</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -1862,8 +2210,10 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Ostrum ostrum ostrumque-->
-         <tok val="[oO]strum(que)?"/>
+      <ana>
+         <tok val="Ostrum"/>
+         <tok val="ostrum"/>
+         <tok val="ostrumque"/>
          <lm>
             <l>ostrum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1871,15 +2221,19 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Ostrum ostrorum ostrum ostrumque-->
-         <tok val="[oO]st(ro)?rum(que)?"/>
+      <ana>
+         <tok val="Ostrum"/>
+         <tok val="ostrorum"/>
+         <tok val="ostrum"/>
+         <tok val="ostrumque"/>
          <lm>
             <l>ostrum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ostrya ostrya-->
-         <tok val="[oO]strya"/>
+      <ana>
+         <tok val="Ostrya"/>
+         <tok val="ostrya"/>
          <lm>
             <l>ostrya</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1887,15 +2241,19 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Osus osurus osus osusque-->
-         <tok val="[oO]su(ru)?s(que)?"/>
+      <ana>
+         <tok val="Osus"/>
+         <tok val="osurus"/>
+         <tok val="osus"/>
+         <tok val="osusque"/>
          <lm>
             <l>osus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Osyris osyris-->
-         <tok val="[oO]syris"/>
+      <ana>
+         <tok val="Osyris"/>
+         <tok val="osyris"/>
          <lm>
             <l>osyris</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1903,8 +2261,12 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--os osne osque ós Os-->
-         <tok val="[oóO]s(ne|que)?"/>
+      <ana>
+         <tok val="Os"/>
+         <tok val="os"/>
+         <tok val="osne"/>
+         <tok val="osque"/>
+         <tok val="ós"/>
          <lm>
             <l>os</l>
             <m>n - - s - - - n a</m>
@@ -1956,8 +2318,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--oscillante oscillanti-->
-         <tok val="oscillant[ie]"/>
+      <ana>
+         <tok val="oscillante"/>
+         <tok val="oscillanti"/>
          <lm>
             <l>oscillo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2144,8 +2507,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--oscitante oscitanti-->
-         <tok val="oscitant[ie]"/>
+      <ana>
+         <tok val="oscitante"/>
+         <tok val="oscitanti"/>
          <lm>
             <l>oscito</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2161,8 +2525,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--oscitantes oscitantesque-->
-         <tok val="oscitantes(que)?"/>
+      <ana>
+         <tok val="oscitantes"/>
+         <tok val="oscitantesque"/>
          <lm>
             <l>oscito</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -2171,8 +2536,11 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--oscitantes oscitantesque oscitantis oscitantisque-->
-         <tok val="oscitant[ie]s(que)?"/>
+      <ana>
+         <tok val="oscitantes"/>
+         <tok val="oscitantesque"/>
+         <tok val="oscitantis"/>
+         <tok val="oscitantisque"/>
          <lm>
             <l>oscito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2219,8 +2587,9 @@
             <m cert="0.25">v - - s p p a f n c</m>
          </lm>
       </ana>
-      <ana><!--oscitantis oscitantisque-->
-         <tok val="oscitantis(que)?"/>
+      <ana>
+         <tok val="oscitantis"/>
+         <tok val="oscitantisque"/>
          <lm>
             <l>oscito</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -2244,8 +2613,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--oscitare oscitaris-->
-         <tok val="oscitar(is|e)"/>
+      <ana>
+         <tok val="oscitare"/>
+         <tok val="oscitaris"/>
          <lm>
             <l>oscito</l>
             <m>v - 2 s p i p</m>
@@ -2300,8 +2670,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--oscitauit oscitavit-->
-         <tok val="oscita[vu]it"/>
+      <ana>
+         <tok val="oscitauit"/>
+         <tok val="oscitavit"/>
          <lm>
             <l>oscito</l>
             <m>v - 3 s r i a</m>
@@ -2451,8 +2822,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--osculantes osculantis-->
-         <tok val="osculant[ie]s"/>
+      <ana>
+         <tok val="osculantes"/>
+         <tok val="osculantis"/>
          <lm>
             <l>osculo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2516,8 +2888,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--osculare oscularis-->
-         <tok val="oscular(is|e)"/>
+      <ana>
+         <tok val="osculare"/>
+         <tok val="oscularis"/>
          <lm>
             <l>osculo</l>
             <m>v - 2 s p i p</m>
@@ -2551,8 +2924,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--osculata osculataque-->
-         <tok val="osculata(que)?"/>
+      <ana>
+         <tok val="osculata"/>
+         <tok val="osculataque"/>
          <lm>
             <l>osculo</l>
             <m cert="0.2">v - - p r p p n a</m>
@@ -2593,8 +2967,9 @@
             <m>v - - s r p p f n</m>
          </lm>
       </ana>
-      <ana><!--osculati osculatique-->
-         <tok val="osculati(que)?"/>
+      <ana>
+         <tok val="osculati"/>
+         <tok val="osculatique"/>
          <lm>
             <l>osculo</l>
             <m cert="0.333333333333333333">v - - s r p p n g</m>
@@ -2649,8 +3024,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--osculatus osculatusque-->
-         <tok val="osculatus(que)?"/>
+      <ana>
+         <tok val="osculatus"/>
+         <tok val="osculatusque"/>
          <lm>
             <l>osculo</l>
             <m>v - - s r p p m n</m>
@@ -2677,15 +3053,17 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--osculi ósculi-->
-         <tok val="[óo]sculi"/>
+      <ana>
+         <tok val="osculi"/>
+         <tok val="ósculi"/>
          <lm>
             <l>osculum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--osculis osculisque-->
-         <tok val="osculis(que)?"/>
+      <ana>
+         <tok val="osculis"/>
+         <tok val="osculisque"/>
          <lm>
             <l>osculum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -2746,12 +3124,13 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--osne osque-->
-         <tok val="os(qu|n)e"/>
+      <ana>
+         <tok val="osne"/>
+         <tok val="osque"/>
          <lm>
-            <l>os</l>
-            <m cert="0.5">2</m>
-            <m cert="0.5">2</m>
+            <l cert="0.5" def-ref="1">os</l>
+            <l cert="0.5" def-ref="2">os</l>
+            <m>n - - s - - - n n</m>
          </lm>
       </ana>
       <ana>
@@ -2794,8 +3173,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--osorum osum-->
-         <tok val="os(or)?um"/>
+      <ana>
+         <tok val="osorum"/>
+         <tok val="osum"/>
          <lm>
             <l>osus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2825,8 +3205,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--ossarium ossuarium-->
-         <tok val="oss[u]?arium"/>
+      <ana>
+         <tok val="ossarium"/>
+         <tok val="ossuarium"/>
          <lm>
             <l>ossuarium</l>
             <m cert="0.25">n - - s - - - n a</m>
@@ -2835,8 +3216,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--osseae ósseae-->
-         <tok val="[óo]sseae"/>
+      <ana>
+         <tok val="osseae"/>
+         <tok val="ósseae"/>
          <lm>
             <l>osseus</l>
             <m>a - - p - - - f v</m>
@@ -2868,8 +3250,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--osseis osseisve-->
-         <tok val="osseis(ve)?"/>
+      <ana>
+         <tok val="osseis"/>
+         <tok val="osseisve"/>
          <lm>
             <l>osseus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2897,8 +3280,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--ossi ossique-->
-         <tok val="ossi(que)?"/>
+      <ana>
+         <tok val="ossi"/>
+         <tok val="ossique"/>
          <lm cert="0.5">
             <l>os2</l>
             <m>n - - s - - - n d</m>
@@ -2908,8 +3292,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--ossicula ossucula-->
-         <tok val="oss[ui]cula"/>
+      <ana>
+         <tok val="ossicula"/>
+         <tok val="ossucula"/>
          <lm>
             <l>ossiculum</l>
             <m>n - - p - - - n a</m>
@@ -3148,8 +3533,9 @@
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--ostendamus ostendamusque-->
-         <tok val="ostendamus(que)?"/>
+      <ana>
+         <tok val="ostendamus"/>
+         <tok val="ostendamusque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 1 p p s a</m>
@@ -3169,8 +3555,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--ostendas ostendasque-->
-         <tok val="ostendas(que)?"/>
+      <ana>
+         <tok val="ostendas"/>
+         <tok val="ostendasque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 2 s p s a</m>
@@ -3183,8 +3570,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--ostendebant ostendebantque-->
-         <tok val="ostendebant(que)?"/>
+      <ana>
+         <tok val="ostendebant"/>
+         <tok val="ostendebantque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 p i i a</m>
@@ -3211,8 +3599,10 @@
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--ostenden ostendes Ostendes-->
-         <tok val="[oO]stende[sn]"/>
+      <ana>
+         <tok val="Ostendes"/>
+         <tok val="ostenden"/>
+         <tok val="ostendes"/>
          <lm>
             <l>ostendo</l>
             <m>v - 2 s f i a</m>
@@ -3270,8 +3660,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--ostendens ostendensque-->
-         <tok val="ostendens(que)?"/>
+      <ana>
+         <tok val="ostendens"/>
+         <tok val="ostendensque"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -3283,8 +3674,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--ostendente ostendenti-->
-         <tok val="ostendent[ie]"/>
+      <ana>
+         <tok val="ostendente"/>
+         <tok val="ostendenti"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3310,8 +3702,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--ostendentes ostendentis-->
-         <tok val="ostendent[ie]s"/>
+      <ana>
+         <tok val="ostendentes"/>
+         <tok val="ostendentis"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3406,8 +3799,9 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--ostenderent ostenderentque-->
-         <tok val="ostenderent(que)?"/>
+      <ana>
+         <tok val="ostenderent"/>
+         <tok val="ostenderentque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 p i s a</m>
@@ -3427,8 +3821,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--ostenderet ostenderetque-->
-         <tok val="ostenderet(que)?"/>
+      <ana>
+         <tok val="ostenderet"/>
+         <tok val="ostenderetque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 s i s a</m>
@@ -3472,8 +3867,9 @@
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--ostenderit ostenderitque-->
-         <tok val="ostenderit(que)?"/>
+      <ana>
+         <tok val="ostenderit"/>
+         <tok val="ostenderitque"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -3495,8 +3891,9 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--ostendet Ostendet-->
-         <tok val="[Oo]stendet"/>
+      <ana>
+         <tok val="Ostendet"/>
+         <tok val="ostendet"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 s f i a</m>
@@ -3537,15 +3934,17 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--ostendisset ostendissetque-->
-         <tok val="ostendisset(que)?"/>
+      <ana>
+         <tok val="ostendisset"/>
+         <tok val="ostendissetque"/>
          <lm>
             <l>ostendo</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--ostendisti ostendistique-->
-         <tok val="ostendisti(que)?"/>
+      <ana>
+         <tok val="ostendisti"/>
+         <tok val="ostendistique"/>
          <lm>
             <l>ostendo</l>
             <m>v - 2 s r i a</m>
@@ -3587,15 +3986,18 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--ostensam ostentam-->
-         <tok val="osten[ts]am"/>
+      <ana>
+         <tok val="ostensam"/>
+         <tok val="ostentam"/>
          <lm>
             <l>ostendo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--ostensi ostensiue ostenti-->
-         <tok val="osten[st]i(ue)?"/>
+      <ana>
+         <tok val="ostensi"/>
+         <tok val="ostensiue"/>
+         <tok val="ostenti"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -3622,8 +4024,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ostensionales ostensionalis-->
-         <tok val="ostensional[ie]s"/>
+      <ana>
+         <tok val="ostensionales"/>
+         <tok val="ostensionalis"/>
          <lm>
             <l>ostensionalis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -3664,8 +4067,10 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--ostensis ostentis ostentisque-->
-         <tok val="osten[ts]is(que)?"/>
+      <ana>
+         <tok val="ostensis"/>
+         <tok val="ostentis"/>
+         <tok val="ostentisque"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -3694,8 +4099,9 @@
             <m cert="0.25">v - - p f p a m n</m>
          </lm>
       </ana>
-      <ana><!--ostensurum ostenturum-->
-         <tok val="osten[ts]urum"/>
+      <ana>
+         <tok val="ostensurum"/>
+         <tok val="ostenturum"/>
          <lm>
             <l>ostendo</l>
             <m cert="0.166666666666666667">v - - s f p a n v</m>
@@ -3706,15 +4112,17 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--ostensurus ostenturus-->
-         <tok val="osten[ts]urus"/>
+      <ana>
+         <tok val="ostensurus"/>
+         <tok val="ostenturus"/>
          <lm>
             <l>ostendo</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--ostentabant ostentabantque-->
-         <tok val="ostentabant(que)?"/>
+      <ana>
+         <tok val="ostentabant"/>
+         <tok val="ostentabantque"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 p i i a</m>
@@ -3859,8 +4267,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--ostentante ostentanti-->
-         <tok val="ostentant[ie]"/>
+      <ana>
+         <tok val="ostentante"/>
+         <tok val="ostentanti"/>
          <lm>
             <l>ostento</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3886,8 +4295,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--ostentantes ostentantis-->
-         <tok val="ostentant[ie]s"/>
+      <ana>
+         <tok val="ostentantes"/>
+         <tok val="ostentantis"/>
          <lm>
             <l>ostento</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3931,8 +4341,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--ostentarat ostentaverat-->
-         <tok val="ostenta(ve)?rat"/>
+      <ana>
+         <tok val="ostentarat"/>
+         <tok val="ostentaverat"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 s l i a</m>
@@ -3992,8 +4403,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--ostentari ostentarier-->
-         <tok val="ostentari(er)?"/>
+      <ana>
+         <tok val="ostentari"/>
+         <tok val="ostentarier"/>
          <lm>
             <l>ostento</l>
             <m>v - - - p n p</m>
@@ -4064,8 +4476,9 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--ostentasset ostentavisset-->
-         <tok val="ostenta(vi)?sset"/>
+      <ana>
+         <tok val="ostentasset"/>
+         <tok val="ostentavisset"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 s l s a</m>
@@ -4098,8 +4511,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ostentationem ostentationemque-->
-         <tok val="ostentationem(que)?"/>
+      <ana>
+         <tok val="ostentationem"/>
+         <tok val="ostentationemque"/>
          <lm>
             <l>ostentatio</l>
             <m>n - - s - - - f a</m>
@@ -4128,8 +4542,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--ostentato ostentatoque-->
-         <tok val="ostentato(que)?"/>
+      <ana>
+         <tok val="ostentato"/>
+         <tok val="ostentatoque"/>
          <lm>
             <l>ostento</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -4201,22 +4616,25 @@
             <m cert="0.25">v - - s f p a n d</m>
          </lm>
       </ana>
-      <ana><!--ostentauerant ostentaverant-->
-         <tok val="ostenta[vu]erant"/>
+      <ana>
+         <tok val="ostentauerant"/>
+         <tok val="ostentaverant"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--ostentauere ostentavere-->
-         <tok val="ostenta[vu]ere"/>
+      <ana>
+         <tok val="ostentauere"/>
+         <tok val="ostentavere"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--ostentauit ostentavit-->
-         <tok val="ostenta[vu]it"/>
+      <ana>
+         <tok val="ostentauit"/>
+         <tok val="ostentavit"/>
          <lm>
             <l>ostento</l>
             <m>v - 3 s r i a</m>
@@ -4279,8 +4697,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--ostentis ostentisque-->
-         <tok val="ostentis(que)?"/>
+      <ana>
+         <tok val="ostentis"/>
+         <tok val="ostentisque"/>
          <lm>
             <l>ostentum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -4372,8 +4791,9 @@
             <m>a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--ostiariis ostiaris-->
-         <tok val="ostiar[i]?is"/>
+      <ana>
+         <tok val="ostiariis"/>
+         <tok val="ostiaris"/>
          <lm cert="0.5">
             <l>ostiarius</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -4595,8 +5015,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ostri ostrique-->
-         <tok val="ostri(que)?"/>
+      <ana>
+         <tok val="ostri"/>
+         <tok val="ostrique"/>
          <lm>
             <l>ostrum</l>
             <m>n - - s - - - n g</m>
@@ -4719,17 +5140,6 @@
             <l>osyris</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - f d</m>
-         </lm>
-      </ana>
-      <ana><!--os Os-->
-         <tok val="[Oo]s"/>
-         <lm cert="0.5">
-            <l>os</l>
-            <m>n - - s - - - n v</m>
-         </lm>
-         <lm cert="0.5">
-            <l>os2</l>
-            <m>n - - s - - - n n</m>
          </lm>
       </ana>
       <ana>

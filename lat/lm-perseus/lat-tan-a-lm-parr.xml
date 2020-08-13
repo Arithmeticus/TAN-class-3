@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusparr">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:parr">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to parr</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-parr.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PARR</tok-starts-with>
       <tok-starts-with>Parr</tok-starts-with>
       <tok-starts-with>parr</tok-starts-with>
-      <ana><!--PARRA Parra parra-->
-         <tok val="[pP]?(arra|PARRA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:38:06.348-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:38:06.348-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-parr.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PARRA"/>
+         <tok val="Parra"/>
+         <tok val="parra"/>
          <lm>
             <l>parra</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -46,6 +56,7 @@
       </ana>
       <ana>
          <tok val="Parra"/>
+         <tok val="parra"/>
          <lm>
             <l>Parra</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -55,20 +66,23 @@
       </ana>
       <ana>
          <tok val="Parram"/>
-         <lm>
+         <tok val="parram"/>
+         <lm cert="0.5">
             <l>Parra</l>
             <m>n e - s - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Parram parram-->
-         <tok val="[pP]arram"/>
-         <lm>
+         <lm cert="0.5">
             <l>parra</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Parrhasi Parrhasii Parrhasiique-->
-         <tok val="Parrhasi(i|ique)?"/>
+      <ana>
+         <tok val="Parrhasi"/>
+         <tok val="Parrhasii"/>
+         <tok val="Parrhasiique"/>
+         <tok val="parrhasi"/>
+         <tok val="parrhasii"/>
+         <tok val="parrhasiique"/>
          <lm>
             <l>Parrhasius</l>
             <m cert="0.333333333333333333">a e - s - - - n g</m>
@@ -76,8 +90,11 @@
             <m cert="0.333333333333333333">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Parrhasi Parrhasie-->
-         <tok val="Parrhasi[e]?"/>
+      <ana>
+         <tok val="Parrhasi"/>
+         <tok val="Parrhasie"/>
+         <tok val="parrhasi"/>
+         <tok val="parrhasie"/>
          <lm>
             <l>Parrhasius</l>
             <m>n e - s - - - m v</m>
@@ -85,6 +102,7 @@
       </ana>
       <ana>
          <tok val="Parrhasia"/>
+         <tok val="parrhasia"/>
          <lm cert="0.5">
             <l>Parrhasius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -101,8 +119,11 @@
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Parrhasiae Parrhasiaeque-->
-         <tok val="Parrhasiae(que)?"/>
+      <ana>
+         <tok val="Parrhasiae"/>
+         <tok val="Parrhasiaeque"/>
+         <tok val="parrhasiae"/>
+         <tok val="parrhasiaeque"/>
          <lm cert="0.5">
             <l>Parrhasia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -120,6 +141,7 @@
       </ana>
       <ana>
          <tok val="Parrhasiam"/>
+         <tok val="parrhasiam"/>
          <lm cert="0.5">
             <l>Parrhasia</l>
             <m>n e - s - - - f a</m>
@@ -131,6 +153,7 @@
       </ana>
       <ana>
          <tok val="Parrhasias"/>
+         <tok val="parrhasias"/>
          <lm cert="0.5">
             <l>Parrhasius</l>
             <m>a e - p - - - f a</m>
@@ -142,6 +165,7 @@
       </ana>
       <ana>
          <tok val="Parrhasides"/>
+         <tok val="parrhasides"/>
          <lm>
             <l>Parrhasis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -149,8 +173,13 @@
             <m cert="0.333333333333333333">n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Parrhasie Parrhasium Parrhasiumque-->
-         <tok val="Parrhasi(um)?(que|e)?"/>
+      <ana>
+         <tok val="Parrhasie"/>
+         <tok val="Parrhasium"/>
+         <tok val="Parrhasiumque"/>
+         <tok val="parrhasie"/>
+         <tok val="parrhasium"/>
+         <tok val="parrhasiumque"/>
          <lm>
             <l>Parrhasius</l>
             <m>a e - s - - - n v</m>
@@ -158,13 +187,17 @@
       </ana>
       <ana>
          <tok val="Parrhasie"/>
+         <tok val="parrhasie"/>
          <lm>
             <l>Parrhasius</l>
             <m>a e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Parrhasii Parrhasiique-->
-         <tok val="Parrhasii(que)?"/>
+      <ana>
+         <tok val="Parrhasii"/>
+         <tok val="Parrhasiique"/>
+         <tok val="parrhasii"/>
+         <tok val="parrhasiique"/>
          <lm>
             <l>Parrhasius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -175,6 +208,7 @@
       </ana>
       <ana>
          <tok val="Parrhasiis"/>
+         <tok val="parrhasiis"/>
          <lm cert="0.5">
             <l>Parrhasia</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -194,6 +228,7 @@
       </ana>
       <ana>
          <tok val="Parrhasio"/>
+         <tok val="parrhasio"/>
          <lm>
             <l>Parrhasius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -204,8 +239,13 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Parrhasiorum Parrhasium Parrhasiumque-->
-         <tok val="Parrhasi(or)?um(que)?"/>
+      <ana>
+         <tok val="Parrhasiorum"/>
+         <tok val="Parrhasium"/>
+         <tok val="Parrhasiumque"/>
+         <tok val="parrhasiorum"/>
+         <tok val="parrhasium"/>
+         <tok val="parrhasiumque"/>
          <lm>
             <l>Parrhasius</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -215,6 +255,7 @@
       </ana>
       <ana>
          <tok val="Parrhasios"/>
+         <tok val="parrhasios"/>
          <lm>
             <l>Parrhasius</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -223,13 +264,17 @@
       </ana>
       <ana>
          <tok val="Parrhasis"/>
+         <tok val="parrhasis"/>
          <lm>
             <l>Parrhasis</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Parrhasium Parrhasiumque-->
-         <tok val="Parrhasium(que)?"/>
+      <ana>
+         <tok val="Parrhasium"/>
+         <tok val="Parrhasiumque"/>
+         <tok val="parrhasium"/>
+         <tok val="parrhasiumque"/>
          <lm>
             <l>Parrhasius</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -238,23 +283,28 @@
             <m cert="0.25">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Parrhasius Parrhasivs-->
-         <tok val="Parrhasi[vu]s"/>
+      <ana>
+         <tok val="Parrhasius"/>
+         <tok val="Parrhasivs"/>
+         <tok val="parrhasius"/>
+         <tok val="parrhasivs"/>
          <lm>
             <l>Parrhasius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Parrhesiastes parrhesiastes-->
-         <tok val="[pP]arrhesiastes"/>
+      <ana>
+         <tok val="Parrhesiastes"/>
+         <tok val="parrhesiastes"/>
          <lm>
             <l>parrhesiastes</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Parricida parricida-->
-         <tok val="[pP]arricida"/>
+      <ana>
+         <tok val="Parricida"/>
+         <tok val="parricida"/>
          <lm>
             <l>parricida</l>
             <m cert="0.166666666666666667">n - - s - - - f b</m>
@@ -265,8 +315,10 @@
             <m cert="0.166666666666666667">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Parricidae parricidae parricidaeque-->
-         <tok val="[pP]arricidae(que)?"/>
+      <ana>
+         <tok val="Parricidae"/>
+         <tok val="parricidae"/>
+         <tok val="parricidaeque"/>
          <lm>
             <l>parricida</l>
             <m cert="0.125">n - - p - - - m n</m>
@@ -279,23 +331,28 @@
             <m cert="0.125">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Parricidam parricidam-->
-         <tok val="[pP]arricidam"/>
+      <ana>
+         <tok val="Parricidam"/>
+         <tok val="parricidam"/>
          <lm>
             <l>parricida</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Parricidi Parricidii parricidi parricidii-->
-         <tok val="[Pp]arricidi[i]?"/>
+      <ana>
+         <tok val="Parricidi"/>
+         <tok val="Parricidii"/>
+         <tok val="parricidi"/>
+         <tok val="parricidii"/>
          <lm>
             <l>parricidium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Parricidia parricidia-->
-         <tok val="[pP]arricidia"/>
+      <ana>
+         <tok val="Parricidia"/>
+         <tok val="parricidia"/>
          <lm>
             <l>parricidium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -303,24 +360,29 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Parricidiis parricidiis-->
-         <tok val="[pP]arricidiis"/>
+      <ana>
+         <tok val="Parricidiis"/>
+         <tok val="parricidiis"/>
          <lm>
             <l>parricidium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Parricidio parricidio parricidioque-->
-         <tok val="[pP]arricidio(que)?"/>
+      <ana>
+         <tok val="Parricidio"/>
+         <tok val="parricidio"/>
+         <tok val="parricidioque"/>
          <lm>
             <l>parricidium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Parricidium parricidium parricidiumque-->
-         <tok val="[pP]arricidium(que)?"/>
+      <ana>
+         <tok val="Parricidium"/>
+         <tok val="parricidium"/>
+         <tok val="parricidiumque"/>
          <lm>
             <l>parricidium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -328,8 +390,11 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Parricidium parricidiorum parricidium parricidiumque-->
-         <tok val="[pP]arricidi(or)?um(que)?"/>
+      <ana>
+         <tok val="Parricidium"/>
+         <tok val="parricidiorum"/>
+         <tok val="parricidium"/>
+         <tok val="parricidiumque"/>
          <lm>
             <l>parricidium</l>
             <m>n - - p - - - n g</m>

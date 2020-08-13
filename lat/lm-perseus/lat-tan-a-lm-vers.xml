@@ -1,60 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusvers">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:vers">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to vers</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-vers.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Vers</tok-starts-with>
       <tok-starts-with>vers</tok-starts-with>
       <tok-starts-with>VERS</tok-starts-with>
-      <ana><!--Versa Versaque versane-->
-         <tok val="[Vv]ersa(que|ne)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T05:06:07.493-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T05:06:07.493-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-vers.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="Versa"/>
+         <tok val="Versaque"/>
+         <tok val="versa"/>
+         <tok val="versane"/>
+         <tok val="versaque"/>
          <lm>
             <l>verto</l>
-            <m cert="0.25">v - - p r p p n a</m>
-            <m cert="0.25">v - - p r p p n v</m>
-            <m cert="0.25">v - - s r p p f v</m>
-            <m cert="0.25">v - - p r p p n n</m>
+            <m cert="0.166666666666666667">v - - p r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p f b</m>
+            <m cert="0.166666666666666667">v - - s r p p f n</m>
+            <m cert="0.166666666666666667">v - - p r p p n v</m>
+            <m cert="0.166666666666666667">v - - s r p p f v</m>
+            <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Versa Versaque versa versane-->
-         <tok val="[vV]ersa(ne|que)?"/>
-         <lm>
-            <l>verto</l>
-            <m cert="0.5">v - - s r p p f b</m>
-            <m cert="0.5">v - - s r p p f n</m>
-         </lm>
-      </ana>
-      <ana><!--Versa Versaque versa versan versaque versane-->
-         <tok val="[vV]ersa[n]?(e|que)?"/>
+      <ana>
+         <tok val="Versa"/>
+         <tok val="Versaque"/>
+         <tok val="versa"/>
+         <tok val="versan"/>
+         <tok val="versane"/>
+         <tok val="versaque"/>
          <lm>
             <l>verso</l>
             <m>v - 2 s p m a</m>
@@ -62,13 +73,15 @@
       </ana>
       <ana>
          <tok val="Versabatur"/>
+         <tok val="versabatur"/>
          <lm>
             <l>versor</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Versabilis versabilis-->
-         <tok val="[vV]ersabilis"/>
+      <ana>
+         <tok val="Versabilis"/>
+         <tok val="versabilis"/>
          <lm>
             <l>versabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -80,30 +93,35 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Versabilis versabilis versabiles-->
-         <tok val="[vV]ersabil[ie]s"/>
+      <ana>
+         <tok val="Versabilis"/>
+         <tok val="versabiles"/>
+         <tok val="versabilis"/>
          <lm>
             <l>versabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Versabo versabo-->
-         <tok val="[vV]ersabo"/>
+      <ana>
+         <tok val="Versabo"/>
+         <tok val="versabo"/>
          <lm>
             <l>verso</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Versabundus versabundus-->
-         <tok val="[vV]ersabundus"/>
+      <ana>
+         <tok val="Versabundus"/>
+         <tok val="versabundus"/>
          <lm>
             <l>versabundus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Versabunt versabunt-->
-         <tok val="[vV]ersabunt"/>
+      <ana>
+         <tok val="Versabunt"/>
+         <tok val="versabunt"/>
          <lm>
             <l>verso</l>
             <m>v - 3 p f i a</m>
@@ -111,6 +129,7 @@
       </ana>
       <ana>
          <tok val="Versae"/>
+         <tok val="versae"/>
          <lm>
             <l>verto</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -121,6 +140,7 @@
       </ana>
       <ana>
          <tok val="Versans"/>
+         <tok val="versans"/>
          <lm>
             <l>versor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -134,6 +154,7 @@
       </ana>
       <ana>
          <tok val="Versantes"/>
+         <tok val="versantes"/>
          <lm>
             <l>versor</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -142,38 +163,42 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Versantes versantisque-->
-         <tok val="[vV]ersant(isqu)?e[s]?"/>
+      <ana>
+         <tok val="Versantes"/>
+         <tok val="versantes"/>
+         <tok val="versantisque"/>
          <lm>
             <l>versor</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Versantque versant versantque versantue-->
-         <tok val="[vV]ersant[q]?(ue|)"/>
+      <ana>
+         <tok val="Versantque"/>
+         <tok val="versant"/>
+         <tok val="versantque"/>
+         <tok val="versantue"/>
          <lm>
             <l>verso</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Versantur versantur-->
-         <tok val="[vV]ersantur"/>
+      <ana>
+         <tok val="Versantur"/>
+         <tok val="versantur"/>
          <lm>
             <l>versor</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Versare versare-->
-         <tok val="[vV]ersare"/>
-         <lm>
+      <ana>
+         <tok val="Versare"/>
+         <tok val="versare"/>
+         <lm cert="0.5">
             <l>verso</l>
             <m>v - - - p n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Versare"/>
-         <lm>
+         <lm cert="0.5">
             <l>versor</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
@@ -181,20 +206,24 @@
       </ana>
       <ana>
          <tok val="Versarem"/>
+         <tok val="versarem"/>
          <lm>
             <l>verso</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Versari versari-->
-         <tok val="[vV]ersari"/>
+      <ana>
+         <tok val="Versari"/>
+         <tok val="versari"/>
          <lm>
             <l>versor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Versat versat versatque-->
-         <tok val="[vV]ersat(que)?"/>
+      <ana>
+         <tok val="Versat"/>
+         <tok val="versat"/>
+         <tok val="versatque"/>
          <lm>
             <l>verso</l>
             <m>v - 3 s p i a</m>
@@ -202,6 +231,7 @@
       </ana>
       <ana>
          <tok val="Versata"/>
+         <tok val="versata"/>
          <lm>
             <l>versor</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -214,6 +244,7 @@
       </ana>
       <ana>
          <tok val="Versatam"/>
+         <tok val="versatam"/>
          <lm>
             <l>versor</l>
             <m>v - - s r p p f a</m>
@@ -221,6 +252,7 @@
       </ana>
       <ana>
          <tok val="Versati"/>
+         <tok val="versati"/>
          <lm>
             <l>versor</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -229,8 +261,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Versatilis versatilis-->
-         <tok val="[vV]ersatilis"/>
+      <ana>
+         <tok val="Versatilis"/>
+         <tok val="versatilis"/>
          <lm>
             <l>versatilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -242,16 +275,19 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Versatilis versatiles versatilis-->
-         <tok val="[vV]ersatil[ie]s"/>
+      <ana>
+         <tok val="Versatilis"/>
+         <tok val="versatiles"/>
+         <tok val="versatilis"/>
          <lm>
             <l>versatilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Versatio versatio-->
-         <tok val="[vV]ersatio"/>
+      <ana>
+         <tok val="Versatio"/>
+         <tok val="versatio"/>
          <lm>
             <l>versatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -260,17 +296,15 @@
       </ana>
       <ana>
          <tok val="Versato"/>
-         <lm>
+         <tok val="versato"/>
+         <lm cert="0.5">
             <l>versor</l>
             <m cert="0.25">v - - s r p p n d</m>
             <m cert="0.25">v - - s r p p n b</m>
             <m cert="0.25">v - - s r p p m b</m>
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
-      </ana>
-      <ana><!--Versato versato-->
-         <tok val="[vV]ersato"/>
-         <lm>
+         <lm cert="0.5">
             <l>verso</l>
             <m cert="0.5">v - 2 s f m a</m>
             <m cert="0.5">v - 3 s f m a</m>
@@ -278,6 +312,7 @@
       </ana>
       <ana>
          <tok val="Versatur"/>
+         <tok val="versatur"/>
          <lm>
             <l>versor</l>
             <m>v - 3 s p i p</m>
@@ -285,13 +320,17 @@
       </ana>
       <ana>
          <tok val="Versatus"/>
+         <tok val="versatus"/>
          <lm>
             <l>versor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Verse Versum-->
-         <tok val="Vers(um|e)"/>
+      <ana>
+         <tok val="Verse"/>
+         <tok val="Versum"/>
+         <tok val="verse"/>
+         <tok val="versum"/>
          <lm>
             <l>verto</l>
             <m>v - - s r p p n v</m>
@@ -299,13 +338,15 @@
       </ana>
       <ana>
          <tok val="Verse"/>
+         <tok val="verse"/>
          <lm>
             <l>verto</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Versemus versemus-->
-         <tok val="[vV]ersemus"/>
+      <ana>
+         <tok val="Versemus"/>
+         <tok val="versemus"/>
          <lm>
             <l>verso</l>
             <m>v - 1 p p s a</m>
@@ -313,6 +354,7 @@
       </ana>
       <ana>
          <tok val="Versetur"/>
+         <tok val="versetur"/>
          <lm>
             <l>versor</l>
             <m>v - 3 s p s p</m>
@@ -320,6 +362,7 @@
       </ana>
       <ana>
          <tok val="Versi"/>
+         <tok val="versi"/>
          <lm>
             <l>verto</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -328,23 +371,29 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Versibus Versibvs versibus versubus-->
-         <tok val="[Vv]ers[iu]b[vu]s"/>
+      <ana>
+         <tok val="Versibus"/>
+         <tok val="Versibvs"/>
+         <tok val="versibus"/>
+         <tok val="versibvs"/>
+         <tok val="versubus"/>
          <lm>
             <l>versus3</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Versicolore versicolore-->
-         <tok val="[vV]ersicolore"/>
+      <ana>
+         <tok val="Versicolore"/>
+         <tok val="versicolore"/>
          <lm>
             <l>versicolorus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Versicoloria versicoloria-->
-         <tok val="[vV]ersicoloria"/>
+      <ana>
+         <tok val="Versicoloria"/>
+         <tok val="versicoloria"/>
          <lm>
             <l>versicoloria</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -352,16 +401,18 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Versicoloris versicoloris-->
-         <tok val="[vV]ersicoloris"/>
+      <ana>
+         <tok val="Versicoloris"/>
+         <tok val="versicoloris"/>
          <lm>
             <l>versicolorus</l>
             <m cert="0.5">a - - p - - - m d</m>
             <m cert="0.5">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Versiculi versiculi-->
-         <tok val="[vV]ersiculi"/>
+      <ana>
+         <tok val="Versiculi"/>
+         <tok val="versiculi"/>
          <lm>
             <l>versiculus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -369,38 +420,44 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Versiculos versiculos-->
-         <tok val="[vV]ersiculos"/>
+      <ana>
+         <tok val="Versiculos"/>
+         <tok val="versiculos"/>
          <lm>
             <l>versiculus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Versiculus versiculus-->
-         <tok val="[vV]ersiculus"/>
+      <ana>
+         <tok val="Versiculus"/>
+         <tok val="versiculus"/>
          <lm>
             <l>versiculus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Versificatio versificatio versification-->
-         <tok val="[vV]ersificatio[n]?"/>
+      <ana>
+         <tok val="Versificatio"/>
+         <tok val="versificatio"/>
+         <tok val="versification"/>
          <lm>
             <l>versificatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Versificator versificator-->
-         <tok val="[vV]ersificator"/>
+      <ana>
+         <tok val="Versificator"/>
+         <tok val="versificator"/>
          <lm>
             <l>versificator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Versifico versifico-->
-         <tok val="[vV]ersifico"/>
+      <ana>
+         <tok val="Versifico"/>
+         <tok val="versifico"/>
          <lm cert="0.5">
             <l>versificus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -413,15 +470,17 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Versificus versificus-->
-         <tok val="[vV]ersificus"/>
+      <ana>
+         <tok val="Versificus"/>
+         <tok val="versificus"/>
          <lm>
             <l>versificus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Versipellis versipellis-->
-         <tok val="[vV]ersipellis"/>
+      <ana>
+         <tok val="Versipellis"/>
+         <tok val="versipellis"/>
          <lm>
             <l>versipellis</l>
             <m cert="0.111111111111111111">n - - s - - - m g</m>
@@ -435,8 +494,10 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Versipellis versipelles versipellis-->
-         <tok val="[vV]ersipell[ie]s"/>
+      <ana>
+         <tok val="Versipellis"/>
+         <tok val="versipelles"/>
+         <tok val="versipellis"/>
          <lm>
             <l>versipellis</l>
             <m cert="0.333333333333333333">n - - p - - - m a</m>
@@ -446,24 +507,20 @@
       </ana>
       <ana>
          <tok val="Versis"/>
+         <tok val="versis"/>
          <lm>
             <l>verto</l>
-            <m cert="0.2">v - - p r p p n d</m>
-            <m cert="0.2">v - - p r p p f d</m>
-            <m cert="0.2">v - - p r p p n b</m>
-            <m cert="0.2">v - - p r p p m d</m>
-            <m cert="0.2">v - - p r p p m b</m>
-         </lm>
-      </ana>
-      <ana><!--Versis versis-->
-         <tok val="[vV]ersis"/>
-         <lm>
-            <l>verto</l>
-            <m>v - - p r p p f b</m>
+            <m cert="0.166666666666666667">v - - p r p p n d</m>
+            <m cert="0.166666666666666667">v - - p r p p f d</m>
+            <m cert="0.166666666666666667">v - - p r p p n b</m>
+            <m cert="0.166666666666666667">v - - p r p p m d</m>
+            <m cert="0.166666666666666667">v - - p r p p f b</m>
+            <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
       <ana>
          <tok val="Versius"/>
+         <tok val="versius"/>
          <lm>
             <l>verto</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -472,8 +529,10 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Verso verso versoque-->
-         <tok val="[vV]erso(que)?"/>
+      <ana>
+         <tok val="Verso"/>
+         <tok val="verso"/>
+         <tok val="versoque"/>
          <lm>
             <l>verso</l>
             <m>v - 1 s p i a</m>
@@ -481,6 +540,7 @@
       </ana>
       <ana>
          <tok val="Verso"/>
+         <tok val="verso"/>
          <lm>
             <l>verto</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -491,13 +551,15 @@
       </ana>
       <ana>
          <tok val="Versor"/>
+         <tok val="versor"/>
          <lm>
             <l>versor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Versoria versoria-->
-         <tok val="[vV]ersoria"/>
+      <ana>
+         <tok val="Versoria"/>
+         <tok val="versoria"/>
          <lm>
             <l>versoria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -507,13 +569,17 @@
       </ana>
       <ana>
          <tok val="Versoriam"/>
+         <tok val="versoriam"/>
          <lm>
             <l>versoria</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Versorum Versum-->
-         <tok val="Vers(or)?um"/>
+      <ana>
+         <tok val="Versorum"/>
+         <tok val="Versum"/>
+         <tok val="versorum"/>
+         <tok val="versum"/>
          <lm>
             <l>verto</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -522,27 +588,27 @@
       </ana>
       <ana>
          <tok val="Versos"/>
+         <tok val="versos"/>
          <lm>
             <l>verto</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Versu versu-->
-         <tok val="[vV]ersu"/>
-         <lm>
+      <ana>
+         <tok val="Versu"/>
+         <tok val="versu"/>
+         <lm cert="0.5">
             <l>versus3</l>
             <m>n - - s - - - m b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Versu"/>
-         <lm>
+         <lm cert="0.5">
             <l>verto</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Versui versui-->
-         <tok val="[vV]ersui"/>
+      <ana>
+         <tok val="Versui"/>
+         <tok val="versui"/>
          <lm>
             <l>versus3</l>
             <m>n - - s - - - m d</m>
@@ -550,6 +616,7 @@
       </ana>
       <ana>
          <tok val="Versum"/>
+         <tok val="versum"/>
          <lm>
             <l>verto</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -558,8 +625,10 @@
             <m cert="0.25">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Versum versum versumque-->
-         <tok val="[vV]ersum(que)?"/>
+      <ana>
+         <tok val="Versum"/>
+         <tok val="versum"/>
+         <tok val="versumque"/>
          <lm cert="0.5">
             <l>versum</l>
             <m>d</m>
@@ -571,7 +640,8 @@
       </ana>
       <ana>
          <tok val="Versura"/>
-         <lm>
+         <tok val="versura"/>
+         <lm cert="0.5">
             <l>verto</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
             <m cert="0.166666666666666667">v - - s f p a f b</m>
@@ -580,10 +650,7 @@
             <m cert="0.166666666666666667">v - - s f p a f v</m>
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
-      </ana>
-      <ana><!--Versura versura-->
-         <tok val="[vV]ersura"/>
-         <lm>
+         <lm cert="0.5">
             <l>versura</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -592,20 +659,20 @@
       </ana>
       <ana>
          <tok val="Versuram"/>
-         <lm>
+         <tok val="versuram"/>
+         <lm cert="0.5">
             <l>verto</l>
             <m>v - - s f p a f a</m>
          </lm>
-      </ana>
-      <ana><!--Versuram versuram-->
-         <tok val="[vV]ersuram"/>
-         <lm>
+         <lm cert="0.5">
             <l>versura</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Versus versus versusque-->
-         <tok val="[vV]ersus(que)?"/>
+      <ana>
+         <tok val="Versus"/>
+         <tok val="versus"/>
+         <tok val="versusque"/>
          <lm cert="0.5">
             <l>versus3</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -618,15 +685,18 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Versus VERSUS-->
-         <tok val="V(ERSUS|ersus)"/>
+      <ana>
+         <tok val="VERSUS"/>
+         <tok val="Versus"/>
+         <tok val="versus"/>
          <lm>
             <l>verto</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Versuta versuta-->
-         <tok val="[vV]ersuta"/>
+      <ana>
+         <tok val="Versuta"/>
+         <tok val="versuta"/>
          <lm>
             <l>versutus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -637,29 +707,35 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Versute versute versutius-->
-         <tok val="[vV]ersut(e|ius)"/>
+      <ana>
+         <tok val="Versute"/>
+         <tok val="versute"/>
+         <tok val="versutius"/>
          <lm>
             <l>versutus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Versute versute versutum-->
-         <tok val="[vV]ersut(e|um)"/>
+      <ana>
+         <tok val="Versute"/>
+         <tok val="versute"/>
+         <tok val="versutum"/>
          <lm>
             <l>versutus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Versute versute-->
-         <tok val="[vV]ersute"/>
+      <ana>
+         <tok val="Versute"/>
+         <tok val="versute"/>
          <lm>
             <l>versutus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Versuti versuti-->
-         <tok val="[vV]ersuti"/>
+      <ana>
+         <tok val="Versuti"/>
+         <tok val="versuti"/>
          <lm>
             <l>versutus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -668,44 +744,51 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Versutiloquus versutiloquus-->
-         <tok val="[vV]ersutiloquus"/>
+      <ana>
+         <tok val="Versutiloquus"/>
+         <tok val="versutiloquus"/>
          <lm>
             <l>versutiloquus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Versutos versutos versutosque-->
-         <tok val="[vV]ersutos(que)?"/>
+      <ana>
+         <tok val="Versutos"/>
+         <tok val="versutos"/>
+         <tok val="versutosque"/>
          <lm>
             <l>versutus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Versutus versutus-->
-         <tok val="[vV]ersutus"/>
+      <ana>
+         <tok val="Versutus"/>
+         <tok val="versutus"/>
          <lm>
             <l>versutus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Versuum versuum versuumve-->
-         <tok val="[vV]ersuum(ve)?"/>
+      <ana>
+         <tok val="Versuum"/>
+         <tok val="versuum"/>
+         <tok val="versuumve"/>
          <lm>
             <l>versus3</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--versa versan versaque versane-->
-         <tok val="versa[n]?(e|que)?"/>
+      <ana>
+         <tok val="versa"/>
+         <tok val="versan"/>
+         <tok val="versane"/>
+         <tok val="versaque"/>
          <lm>
             <l>verro</l>
-            <m cert="0.166666666666666667">v - - p r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p f v</m>
-            <m cert="0.166666666666666667">v - - p r p p n v</m>
-            <m cert="0.166666666666666667">v - - p r p p n n</m>
-            <m cert="0.166666666666666667">v - - s r p p f b</m>
-            <m cert="0.166666666666666667">v - - s r p p f n</m>
+            <m cert="0.25">v - - p r p p n a</m>
+            <m cert="0.25">v - - s r p p f v</m>
+            <m cert="0.25">v - - p r p p n v</m>
+            <m cert="0.25">v - - p r p p n n</m>
          </lm>
       </ana>
       <ana>
@@ -743,8 +826,9 @@
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--versabere versaberis-->
-         <tok val="versaber(is|e)"/>
+      <ana>
+         <tok val="versabere"/>
+         <tok val="versaberis"/>
          <lm>
             <l>verso</l>
             <m>v - 2 s f i p</m>
@@ -823,8 +907,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--versae versaeque-->
-         <tok val="versae(que)?"/>
+      <ana>
+         <tok val="versae"/>
+         <tok val="versaeque"/>
          <lm>
             <l>verro</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -833,8 +918,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--versam versamque-->
-         <tok val="versam(que)?"/>
+      <ana>
+         <tok val="versam"/>
+         <tok val="versamque"/>
          <lm>
             <l>verro</l>
             <m>v - - s r p p f a</m>
@@ -862,8 +948,10 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--versan versas versasque-->
-         <tok val="versa(s|n|sque)"/>
+      <ana>
+         <tok val="versan"/>
+         <tok val="versas"/>
+         <tok val="versasque"/>
          <lm cert="0.5">
             <l>verso</l>
             <m>v - 2 s p i a</m>
@@ -871,6 +959,16 @@
          <lm cert="0.5">
             <l>verro</l>
             <m>v - - p r p p f a</m>
+         </lm>
+      </ana>
+      <ana>
+         <tok val="versan"/>
+         <tok val="versane"/>
+         <tok val="versaque"/>
+         <lm>
+            <l>verro</l>
+            <m cert="0.5">v - - s r p p f b</m>
+            <m cert="0.5">v - - s r p p f n</m>
          </lm>
       </ana>
       <ana>
@@ -908,8 +1006,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--versando versandoque-->
-         <tok val="versando(que)?"/>
+      <ana>
+         <tok val="versando"/>
+         <tok val="versandoque"/>
          <lm>
             <l>verso</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -947,8 +1046,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--versans versansque-->
-         <tok val="versans(que)?"/>
+      <ana>
+         <tok val="versans"/>
+         <tok val="versansque"/>
          <lm>
             <l>verso</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -960,8 +1060,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--versante versanti-->
-         <tok val="versant[ie]"/>
+      <ana>
+         <tok val="versante"/>
+         <tok val="versanti"/>
          <lm>
             <l>verso</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -969,8 +1070,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--versantem versantemque-->
-         <tok val="versantem(que)?"/>
+      <ana>
+         <tok val="versantem"/>
+         <tok val="versantemque"/>
          <lm>
             <l>verso</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -987,8 +1089,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--versantes versantis versantisque-->
-         <tok val="versant[ie]s(que)?"/>
+      <ana>
+         <tok val="versantes"/>
+         <tok val="versantis"/>
+         <tok val="versantisque"/>
          <lm>
             <l>verso</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1025,8 +1129,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--versantis versantisque-->
-         <tok val="versantis(que)?"/>
+      <ana>
+         <tok val="versantis"/>
+         <tok val="versantisque"/>
          <lm>
             <l>verso</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -1050,8 +1155,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--versarat versaverat-->
-         <tok val="versa(ve)?rat"/>
+      <ana>
+         <tok val="versarat"/>
+         <tok val="versaverat"/>
          <lm>
             <l>verso</l>
             <m>v - 3 s l i a</m>
@@ -1064,8 +1170,10 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--versare versaris versarisque-->
-         <tok val="versar(is)?(que|e)?"/>
+      <ana>
+         <tok val="versare"/>
+         <tok val="versaris"/>
+         <tok val="versarisque"/>
          <lm>
             <l>verso</l>
             <m>v - 2 s p i p</m>
@@ -1127,15 +1235,17 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--versarier versarique-->
-         <tok val="versari(qu)?e[r]?"/>
+      <ana>
+         <tok val="versarier"/>
+         <tok val="versarique"/>
          <lm>
             <l>verso</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--versaris versarisque-->
-         <tok val="versaris(que)?"/>
+      <ana>
+         <tok val="versaris"/>
+         <tok val="versarisque"/>
          <lm>
             <l>verso</l>
             <m>v - 2 s r s a</m>
@@ -1162,8 +1272,10 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--versasti versavisti versávisti-->
-         <tok val="vers[áa]?(vi|a)sti"/>
+      <ana>
+         <tok val="versasti"/>
+         <tok val="versavisti"/>
+         <tok val="versávisti"/>
          <lm>
             <l>verso</l>
             <m>v - 2 s r i a</m>
@@ -1213,15 +1325,17 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--versate versatum-->
-         <tok val="versat(um|e)"/>
+      <ana>
+         <tok val="versate"/>
+         <tok val="versatum"/>
          <lm>
             <l>verso</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--versati versatique-->
-         <tok val="versati(que)?"/>
+      <ana>
+         <tok val="versati"/>
+         <tok val="versatique"/>
          <lm>
             <l>verso</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1435,22 +1549,26 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--versatus versatusque-->
-         <tok val="versatus(que)?"/>
+      <ana>
+         <tok val="versatus"/>
+         <tok val="versatusque"/>
          <lm>
             <l>verso</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--versavit versavitque-->
-         <tok val="versavit(que)?"/>
+      <ana>
+         <tok val="versavit"/>
+         <tok val="versavitque"/>
          <lm>
             <l>verso</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--verse versum versumque-->
-         <tok val="vers(um)?(que|e)?"/>
+      <ana>
+         <tok val="verse"/>
+         <tok val="versum"/>
+         <tok val="versumque"/>
          <lm>
             <l>verro</l>
             <m>v - - s r p p n v</m>
@@ -1477,8 +1595,9 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--versentur versenturque-->
-         <tok val="versentur(que)?"/>
+      <ana>
+         <tok val="versentur"/>
+         <tok val="versenturque"/>
          <lm>
             <l>verso</l>
             <m>v - 3 p p s p</m>
@@ -1491,8 +1610,9 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--versere verseris-->
-         <tok val="verser(is|e)"/>
+      <ana>
+         <tok val="versere"/>
+         <tok val="verseris"/>
          <lm>
             <l>verso</l>
             <m>v - 2 s p s p</m>
@@ -1519,15 +1639,17 @@
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--versetur verseturque-->
-         <tok val="versetur(que)?"/>
+      <ana>
+         <tok val="versetur"/>
+         <tok val="verseturque"/>
          <lm>
             <l>verso</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--versi versique-->
-         <tok val="versi(que)?"/>
+      <ana>
+         <tok val="versi"/>
+         <tok val="versique"/>
          <lm>
             <l>verro</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1583,8 +1705,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--versiculorum versiculum-->
-         <tok val="versicul(or)?um"/>
+      <ana>
+         <tok val="versiculorum"/>
+         <tok val="versiculum"/>
          <lm>
             <l>versiculus</l>
             <m>n - - p - - - m g</m>
@@ -1726,8 +1849,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--versipelle versipelli-->
-         <tok val="versipell[ie]"/>
+      <ana>
+         <tok val="versipelle"/>
+         <tok val="versipelli"/>
          <lm>
             <l>versipellis</l>
             <m>n - - s - - - m b</m>
@@ -1764,8 +1888,9 @@
             <m cert="0.25">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--versis versisque-->
-         <tok val="versis(que)?"/>
+      <ana>
+         <tok val="versis"/>
+         <tok val="versisque"/>
          <lm>
             <l>verro</l>
             <m cert="0.2">v - - p r p p f d</m>
@@ -1802,8 +1927,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--verso versoque-->
-         <tok val="verso(que)?"/>
+      <ana>
+         <tok val="verso"/>
+         <tok val="versoque"/>
          <lm>
             <l>verro</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1812,23 +1938,27 @@
             <m cert="0.25">v - - s r p p n b</m>
          </lm>
       </ana>
-      <ana><!--versor versorque-->
-         <tok val="versor(que)?"/>
+      <ana>
+         <tok val="versor"/>
+         <tok val="versorque"/>
          <lm>
             <l>verso</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--versorum versum versumque-->
-         <tok val="vers(or)?um(que)?"/>
+      <ana>
+         <tok val="versorum"/>
+         <tok val="versum"/>
+         <tok val="versumque"/>
          <lm>
             <l>verro</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--versos versosque-->
-         <tok val="versos(que)?"/>
+      <ana>
+         <tok val="versos"/>
+         <tok val="versosque"/>
          <lm>
             <l>verro</l>
             <m>v - - p r p p m a</m>
@@ -1841,8 +1971,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--versum versumque-->
-         <tok val="versum(que)?"/>
+      <ana>
+         <tok val="versum"/>
+         <tok val="versumque"/>
          <lm>
             <l>verro</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1909,8 +2040,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--versure versurum-->
-         <tok val="versur(um|e)"/>
+      <ana>
+         <tok val="versure"/>
+         <tok val="versurum"/>
          <lm>
             <l>verro</l>
             <m>v - - s f p a n v</m>
@@ -1968,8 +2100,10 @@
             <m cert="0.2">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--versus versusque VERSUS-->
-         <tok val="(versus)?(que|VERSUS)?"/>
+      <ana>
+         <tok val="VERSUS"/>
+         <tok val="versus"/>
+         <tok val="versusque"/>
          <lm>
             <l>verro</l>
             <m>v - - s r p p m n</m>
@@ -2101,8 +2235,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--versutoque versuto-->
-         <tok val="versuto(que)?"/>
+      <ana>
+         <tok val="versuto"/>
+         <tok val="versutoque"/>
          <lm>
             <l>versutus</l>
             <m cert="0.25">a - - s - - - n b</m>

@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdei">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dei">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dei</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dei.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DEI</tok-starts-with>
       <tok-starts-with>DEi</tok-starts-with>
       <tok-starts-with>Dei</tok-starts-with>
       <tok-starts-with>dei</tok-starts-with>
       <tok-starts-with>deí</tok-starts-with>
-      <ana><!--DEI DEi Dei Deique dei deique-->
-         <tok val="[dD]?(e|DE)?[i]?(que|DEI|Dei|dei)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:19:18.021-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:19:18.021-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dei.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DEI"/>
+         <tok val="DEi"/>
+         <tok val="Dei"/>
+         <tok val="Deique"/>
+         <tok val="dei"/>
+         <tok val="deique"/>
          <lm cert="0.5">
             <l>deus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -51,8 +64,10 @@
             <m cert="0.5">v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--DEIANIRA Deianira-->
-         <tok val="D(eianira|EIANIRA)"/>
+      <ana>
+         <tok val="DEIANIRA"/>
+         <tok val="Deianira"/>
+         <tok val="deianira"/>
          <lm>
             <l>Deianira</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -60,22 +75,33 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--DEIERO Deiero deiero-->
-         <tok val="[dD]?(eiero|DEIERO)"/>
+      <ana>
+         <tok val="DEIERO"/>
+         <tok val="Deiero"/>
+         <tok val="deiero"/>
          <lm>
             <l>deeo</l>
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--DEIN DEINDE DEinde Dein Deinde dein deinde deínde-->
-         <tok val="[D]?(e|E|de)?(i|deí)?(nde|DEINDE|DEIN|Dein|dein)"/>
+      <ana>
+         <tok val="DEIN"/>
+         <tok val="DEINDE"/>
+         <tok val="DEinde"/>
+         <tok val="Dein"/>
+         <tok val="Deinde"/>
+         <tok val="dein"/>
+         <tok val="deinde"/>
+         <tok val="deínde"/>
          <lm>
             <l>deinde</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--DEIOTARO Deiotaro-->
-         <tok val="D(eiotaro|EIOTARO)"/>
+      <ana>
+         <tok val="DEIOTARO"/>
+         <tok val="Deiotaro"/>
+         <tok val="deiotaro"/>
          <lm>
             <l>Deiotarus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -84,6 +110,7 @@
       </ana>
       <ana>
          <tok val="Deianirae"/>
+         <tok val="deianirae"/>
          <lm>
             <l>Deianira</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -94,83 +121,108 @@
       </ana>
       <ana>
          <tok val="Deianiram"/>
+         <tok val="deianiram"/>
          <lm>
             <l>Deianira</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Deice Deicere deice deicere-->
-         <tok val="[dD]eice(re)?"/>
+      <ana>
+         <tok val="Deice"/>
+         <tok val="Deicere"/>
+         <tok val="deice"/>
+         <tok val="deicere"/>
          <lm>
             <l>deicio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Deicere deicere-->
-         <tok val="[dD]eicere"/>
+      <ana>
+         <tok val="Deicere"/>
+         <tok val="deicere"/>
          <lm>
             <l>deicio</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Deicere deicere deici-->
-         <tok val="[dD]eic(ere|i)"/>
+      <ana>
+         <tok val="Deicere"/>
+         <tok val="deicere"/>
+         <tok val="deici"/>
          <lm>
             <l>deicio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Deicere Deicis deicere deiceris deicis-->
-         <tok val="[dD]eic(ere|is|eris)"/>
+      <ana>
+         <tok val="Deicere"/>
+         <tok val="Deicis"/>
+         <tok val="deicere"/>
+         <tok val="deiceris"/>
+         <tok val="deicis"/>
          <lm>
             <l>deicio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deicere deicere deiceris-->
-         <tok val="[dD]eicer(e|is)"/>
+      <ana>
+         <tok val="Deicere"/>
+         <tok val="deicere"/>
+         <tok val="deiceris"/>
          <lm>
             <l>deicio</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Deicior deicio deicior-->
-         <tok val="[dD]eicio[r]?"/>
+      <ana>
+         <tok val="Deicior"/>
+         <tok val="deicio"/>
+         <tok val="deicior"/>
          <lm>
             <l>deicio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deicior deicior-->
-         <tok val="[dD]eicior"/>
+      <ana>
+         <tok val="Deicior"/>
+         <tok val="deicior"/>
          <lm>
             <l>deicio</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Deicit Deicitur deicit deicitur-->
-         <tok val="[dD]eicit(ur)?"/>
+      <ana>
+         <tok val="Deicit"/>
+         <tok val="Deicitur"/>
+         <tok val="deicit"/>
+         <tok val="deicitur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deicitur deicitur-->
-         <tok val="[dD]eicitur"/>
+      <ana>
+         <tok val="Deicitur"/>
+         <tok val="deicitur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Deiciunt deiciunt deiciuntur-->
-         <tok val="[dD]eiciunt(ur)?"/>
+      <ana>
+         <tok val="Deiciunt"/>
+         <tok val="deiciunt"/>
+         <tok val="deiciuntur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Deidamia Deidamian-->
-         <tok val="Deidamia[n]?"/>
+      <ana>
+         <tok val="Deidamia"/>
+         <tok val="Deidamian"/>
+         <tok val="deidamia"/>
+         <tok val="deidamian"/>
          <lm>
             <l>Deidamia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -180,6 +232,7 @@
       </ana>
       <ana>
          <tok val="Deidamiae"/>
+         <tok val="deidamiae"/>
          <lm>
             <l>Deidamia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -190,6 +243,7 @@
       </ana>
       <ana>
          <tok val="Deidamiam"/>
+         <tok val="deidamiam"/>
          <lm>
             <l>Deidamia</l>
             <m>n e - s - - - f a</m>
@@ -197,34 +251,40 @@
       </ana>
       <ana>
          <tok val="Deidamian"/>
+         <tok val="deidamian"/>
          <lm>
             <l>Deidamia</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Deieci deieci-->
-         <tok val="[dD]eieci"/>
+      <ana>
+         <tok val="Deieci"/>
+         <tok val="deieci"/>
          <lm>
             <l>deicio</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Deiecisse deiecisse-->
-         <tok val="[dD]eiecisse"/>
+      <ana>
+         <tok val="Deiecisse"/>
+         <tok val="deiecisse"/>
          <lm>
             <l>deicio</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Deiecit deiecit-->
-         <tok val="[dD]eiecit"/>
+      <ana>
+         <tok val="Deiecit"/>
+         <tok val="deiecit"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Deiecta deiecta deiectaque-->
-         <tok val="[dD]eiecta(que)?"/>
+      <ana>
+         <tok val="Deiecta"/>
+         <tok val="deiecta"/>
+         <tok val="deiectaque"/>
          <lm cert="0.5">
             <l>deicio</l>
             <m cert="0.166666666666666667">v - - s r p p f v</m>
@@ -239,8 +299,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Deiectae deiectae deiectaeque-->
-         <tok val="[dD]eiectae(que)?"/>
+      <ana>
+         <tok val="Deiectae"/>
+         <tok val="deiectae"/>
+         <tok val="deiectaeque"/>
          <lm>
             <l>deicio</l>
             <m cert="0.25">v - - p r p p f v</m>
@@ -249,15 +311,18 @@
             <m cert="0.25">v - - p r p p f n</m>
          </lm>
       </ana>
-      <ana><!--Deiectam deiectam deiectamque-->
-         <tok val="[dD]eiectam(que)?"/>
+      <ana>
+         <tok val="Deiectam"/>
+         <tok val="deiectam"/>
+         <tok val="deiectamque"/>
          <lm>
             <l>deicio</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Deiecti deiecti-->
-         <tok val="[dD]eiecti"/>
+      <ana>
+         <tok val="Deiecti"/>
+         <tok val="deiecti"/>
          <lm>
             <l>deicio</l>
             <m cert="0.25">v - - p r p p m v</m>
@@ -266,31 +331,38 @@
             <m cert="0.25">v - - s r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Deiectio deiectio deiectione-->
-         <tok val="[dD]eiectio(ne)?"/>
+      <ana>
+         <tok val="Deiectio"/>
+         <tok val="deiectio"/>
+         <tok val="deiectione"/>
          <lm>
             <l>deiectio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Deiectionem deiectionem deiectionemque-->
-         <tok val="[dD]eiectionem(que)?"/>
+      <ana>
+         <tok val="Deiectionem"/>
+         <tok val="deiectionem"/>
+         <tok val="deiectionemque"/>
          <lm>
             <l>deiectio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Deiectionibus deiectionibus-->
-         <tok val="[dD]eiectionibus"/>
+      <ana>
+         <tok val="Deiectionibus"/>
+         <tok val="deiectionibus"/>
          <lm>
             <l>deiectio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Deiectis deiectis deiectisque-->
-         <tok val="[dD]eiectis(que)?"/>
+      <ana>
+         <tok val="Deiectis"/>
+         <tok val="deiectis"/>
+         <tok val="deiectisque"/>
          <lm>
             <l>deicio</l>
             <m cert="0.166666666666666667">v - - p r p p m b</m>
@@ -301,8 +373,10 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--Deiecto deiecto deiectoque-->
-         <tok val="[dD]eiecto(que)?"/>
+      <ana>
+         <tok val="Deiecto"/>
+         <tok val="deiecto"/>
+         <tok val="deiectoque"/>
          <lm cert="0.5">
             <l>deicio</l>
             <m cert="0.25">v - - s r p p m d</m>
@@ -315,15 +389,18 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deiectos deiectos-->
-         <tok val="[dD]eiectos"/>
+      <ana>
+         <tok val="Deiectos"/>
+         <tok val="deiectos"/>
          <lm>
             <l>deicio</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Deiectum deiectum deiectumque-->
-         <tok val="[dD]eiectum(que)?"/>
+      <ana>
+         <tok val="Deiectum"/>
+         <tok val="deiectum"/>
+         <tok val="deiectumque"/>
          <lm cert="0.5">
             <l>deicio</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -337,16 +414,21 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Deiectum deiectorum deiectum deiectumque-->
-         <tok val="[dD]eiect(or)?um(que)?"/>
+      <ana>
+         <tok val="Deiectum"/>
+         <tok val="deiectorum"/>
+         <tok val="deiectum"/>
+         <tok val="deiectumque"/>
          <lm>
             <l>deicio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Deiecturum deiecturum deiecturumque-->
-         <tok val="[dD]eiecturum(que)?"/>
+      <ana>
+         <tok val="Deiecturum"/>
+         <tok val="deiecturum"/>
+         <tok val="deiecturumque"/>
          <lm>
             <l>deicio</l>
             <m cert="0.166666666666666667">v - - p f p a n g</m>
@@ -357,8 +439,10 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Deiectus deiectus deiectusque-->
-         <tok val="[dD]eiectus(que)?"/>
+      <ana>
+         <tok val="Deiectus"/>
+         <tok val="deiectus"/>
+         <tok val="deiectusque"/>
          <lm>
             <l>deiectus2</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -367,29 +451,36 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Deiectus deiectus deiectusque Deiectusque-->
-         <tok val="[Dd]eiectus(que)?"/>
+      <ana>
+         <tok val="Deiectus"/>
+         <tok val="Deiectusque"/>
+         <tok val="deiectus"/>
+         <tok val="deiectusque"/>
          <lm>
             <l>deicio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Deiera deiera-->
-         <tok val="[dD]eiera"/>
+      <ana>
+         <tok val="Deiera"/>
+         <tok val="deiera"/>
          <lm>
             <l>deiero</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Deierat deierat-->
-         <tok val="[dD]eierat"/>
+      <ana>
+         <tok val="Deierat"/>
+         <tok val="deierat"/>
          <lm>
             <l>deeo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Deinceps deinceps deincepsque-->
-         <tok val="[dD]einceps(que)?"/>
+      <ana>
+         <tok val="Deinceps"/>
+         <tok val="deinceps"/>
+         <tok val="deincepsque"/>
          <lm>
             <l>deinceps</l>
             <m>d</m>
@@ -397,6 +488,7 @@
       </ana>
       <ana>
          <tok val="Deion"/>
+         <tok val="deion"/>
          <lm>
             <l>Deion</l>
             <m>n e - s - - - m n</m>
@@ -404,6 +496,7 @@
       </ana>
       <ana>
          <tok val="Deioneus"/>
+         <tok val="deioneus"/>
          <lm>
             <l>Deioneus</l>
             <m>n e - s - - - m n</m>
@@ -411,6 +504,7 @@
       </ana>
       <ana>
          <tok val="Deionidenque"/>
+         <tok val="deionidenque"/>
          <lm>
             <l>Deionides</l>
             <m>n e - s - - - m a</m>
@@ -418,6 +512,7 @@
       </ana>
       <ana>
          <tok val="Deionides"/>
+         <tok val="deionides"/>
          <lm>
             <l>Deionides</l>
             <m>n e - s - - - m n</m>
@@ -425,6 +520,7 @@
       </ana>
       <ana>
          <tok val="Deionis"/>
+         <tok val="deionis"/>
          <lm>
             <l>Deion</l>
             <m>n e - s - - - m g</m>
@@ -432,6 +528,7 @@
       </ana>
       <ana>
          <tok val="Deiopea"/>
+         <tok val="deiopea"/>
          <lm>
             <l>Deiopea</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -441,6 +538,7 @@
       </ana>
       <ana>
          <tok val="Deiopeam"/>
+         <tok val="deiopeam"/>
          <lm>
             <l>Deiopea</l>
             <m>n e - s - - - f a</m>
@@ -448,6 +546,7 @@
       </ana>
       <ana>
          <tok val="Deiotari"/>
+         <tok val="deiotari"/>
          <lm>
             <l>Deiotarus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -457,6 +556,7 @@
       </ana>
       <ana>
          <tok val="Deiotarum"/>
+         <tok val="deiotarum"/>
          <lm>
             <l>Deiotarus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -465,6 +565,7 @@
       </ana>
       <ana>
          <tok val="Deiotarus"/>
+         <tok val="deiotarus"/>
          <lm>
             <l>Deiotarus</l>
             <m>n e - s - - - m n</m>
@@ -472,6 +573,7 @@
       </ana>
       <ana>
          <tok val="Deipassianus"/>
+         <tok val="deipassianus"/>
          <lm>
             <l>Deipassianus</l>
             <m>n e - s - - - m n</m>
@@ -479,6 +581,7 @@
       </ana>
       <ana>
          <tok val="Deiphobe"/>
+         <tok val="deiphobe"/>
          <lm cert="0.5">
             <l>Deiphobus</l>
             <m>n e - s - - - m v</m>
@@ -492,6 +595,7 @@
       </ana>
       <ana>
          <tok val="Deiphobi"/>
+         <tok val="deiphobi"/>
          <lm>
             <l>Deiphobus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -501,22 +605,29 @@
       </ana>
       <ana>
          <tok val="Deiphobo"/>
+         <tok val="deiphobo"/>
          <lm>
             <l>Deiphobus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Deiphobum Deiphobumque-->
-         <tok val="Deiphobum(que)?"/>
+      <ana>
+         <tok val="Deiphobum"/>
+         <tok val="Deiphobumque"/>
+         <tok val="deiphobum"/>
+         <tok val="deiphobumque"/>
          <lm>
             <l>Deiphobus</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Deiphobus Deiphobusque-->
-         <tok val="Deiphobus(que)?"/>
+      <ana>
+         <tok val="Deiphobus"/>
+         <tok val="Deiphobusque"/>
+         <tok val="deiphobus"/>
+         <tok val="deiphobusque"/>
          <lm>
             <l>Deiphobus</l>
             <m>n e - s - - - m n</m>
@@ -524,13 +635,16 @@
       </ana>
       <ana>
          <tok val="Deiri"/>
+         <tok val="deiri"/>
          <lm>
             <l>deeo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Deis deis deisque-->
-         <tok val="[dD]eis(que)?"/>
+      <ana>
+         <tok val="Deis"/>
+         <tok val="deis"/>
+         <tok val="deisque"/>
          <lm cert="0.333333333333333333">
             <l>deus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -546,8 +660,9 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Deitas deitas-->
-         <tok val="[dD]eitas"/>
+      <ana>
+         <tok val="Deitas"/>
+         <tok val="deitas"/>
          <lm cert="0.5">
             <l>deeo</l>
             <m>v - - p r p p f a</m>
@@ -560,6 +675,7 @@
       </ana>
       <ana>
          <tok val="Deiugo"/>
+         <tok val="deiugo"/>
          <lm>
             <l>deiugo</l>
             <m>v - 1 s p i a</m>
@@ -567,6 +683,7 @@
       </ana>
       <ana>
          <tok val="Deiungo"/>
+         <tok val="deiungo"/>
          <lm>
             <l>deiungo</l>
             <m>v - 1 s p i a</m>
@@ -574,6 +691,7 @@
       </ana>
       <ana>
          <tok val="Deiurium"/>
+         <tok val="deiurium"/>
          <lm>
             <l>deiurium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -584,6 +702,7 @@
       </ana>
       <ana>
          <tok val="Deiuro"/>
+         <tok val="deiuro"/>
          <lm>
             <l>deiuro</l>
             <m>v - 1 s p i a</m>
@@ -591,13 +710,15 @@
       </ana>
       <ana>
          <tok val="Deiuuo"/>
+         <tok val="deiuuo"/>
          <lm>
             <l>deiuvo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--deicerent deicerentur-->
-         <tok val="deicerent(ur)?"/>
+      <ana>
+         <tok val="deicerent"/>
+         <tok val="deicerentur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 p i s a</m>
@@ -618,8 +739,9 @@
             <m cert="0.5">v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--deiceret deiceretur-->
-         <tok val="deiceret(ur)?"/>
+      <ana>
+         <tok val="deiceret"/>
+         <tok val="deiceretur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 s i s a</m>
@@ -639,23 +761,27 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--deiciam deiciamque deiciar-->
-         <tok val="deicia(r|m|mque)"/>
+      <ana>
+         <tok val="deiciam"/>
+         <tok val="deiciamque"/>
+         <tok val="deiciar"/>
          <lm>
             <l>deicio</l>
             <m cert="0.5">v - 1 s p s a</m>
             <m cert="0.5">v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--deician deicias-->
-         <tok val="deicia[sn]"/>
+      <ana>
+         <tok val="deician"/>
+         <tok val="deicias"/>
          <lm>
             <l>deicio</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--deiciant deiciantur-->
-         <tok val="deiciant(ur)?"/>
+      <ana>
+         <tok val="deiciant"/>
+         <tok val="deiciantur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 p p s a</m>
@@ -676,8 +802,9 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--deiciat deiciatur-->
-         <tok val="deiciat(ur)?"/>
+      <ana>
+         <tok val="deiciat"/>
+         <tok val="deiciatur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 s p s a</m>
@@ -720,8 +847,9 @@
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--deiciebat deiciebatur-->
-         <tok val="deiciebat(ur)?"/>
+      <ana>
+         <tok val="deiciebat"/>
+         <tok val="deiciebatur"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 s i i a</m>
@@ -828,8 +956,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--deicientem deiicientem-->
-         <tok val="de[i]?icientem"/>
+      <ana>
+         <tok val="deicientem"/>
+         <tok val="deiicientem"/>
          <lm>
             <l>deicio</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -913,8 +1042,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--deiecere deiecerunt-->
-         <tok val="deiecer(unt|e)"/>
+      <ana>
+         <tok val="deiecere"/>
+         <tok val="deiecerunt"/>
          <lm>
             <l>deicio</l>
             <m>v - 3 p r i a</m>
@@ -1084,8 +1214,9 @@
             <m>v - - - - u - - b</m>
          </lm>
       </ana>
-      <ana><!--deiectu deiectuque-->
-         <tok val="deiectu(que)?"/>
+      <ana>
+         <tok val="deiectu"/>
+         <tok val="deiectuque"/>
          <lm>
             <l>deiectus2</l>
             <m>n - - s - - - m b</m>
@@ -1218,15 +1349,18 @@
             <m>v - 2 p l i a</m>
          </lm>
       </ana>
-      <ana><!--deierauerant deieraverant-->
-         <tok val="deiera[vu]erant"/>
+      <ana>
+         <tok val="deierauerant"/>
+         <tok val="deieraverant"/>
          <lm>
             <l>deiero</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--deierauit deieravit deierávit-->
-         <tok val="deier[a]?(v|u|áv)it"/>
+      <ana>
+         <tok val="deierauit"/>
+         <tok val="deieravit"/>
+         <tok val="deierávit"/>
          <lm>
             <l>deiero</l>
             <m>v - 3 s r i a</m>
@@ -1338,8 +1472,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--deitatis Deitatis-->
-         <tok val="[Dd]eitatis"/>
+      <ana>
+         <tok val="Deitatis"/>
+         <tok val="deitatis"/>
          <lm>
             <l>deitas</l>
             <m cert="0.125">v - - p r p p n d</m>

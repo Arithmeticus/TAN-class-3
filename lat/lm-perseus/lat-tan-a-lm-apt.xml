@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusapt">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:apt">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to apt</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-apt.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>APT</tok-starts-with>
       <tok-starts-with>Apt</tok-starts-with>
       <tok-starts-with>apt</tok-starts-with>
-      <ana><!--APTO Apto apto aptoque-->
-         <tok val="[aA]?(pto)?(que|APTO)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:10:47.4-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:10:47.4-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-apt.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="APTO"/>
+         <tok val="Apto"/>
+         <tok val="apto"/>
+         <tok val="aptoque"/>
          <lm cert="0.5">
             <l>aptus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -49,15 +60,24 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--APTVS Aptus aptun aptus aptusque-->
-         <tok val="[aA]?(ptu)?(s|n|sque|APTVS)"/>
+      <ana>
+         <tok val="APTVS"/>
+         <tok val="Aptus"/>
+         <tok val="aptun"/>
+         <tok val="aptus"/>
+         <tok val="aptusque"/>
+         <tok val="aptvs"/>
          <lm>
             <l>aptus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Apta Aptaque apta aptan aptaque-->
-         <tok val="[aA]pta(n|que)?"/>
+      <ana>
+         <tok val="Apta"/>
+         <tok val="Aptaque"/>
+         <tok val="apta"/>
+         <tok val="aptan"/>
+         <tok val="aptaque"/>
          <lm cert="0.5">
             <l>aptus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -72,8 +92,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Aptae aptae aptaeque-->
-         <tok val="[aA]ptae(que)?"/>
+      <ana>
+         <tok val="Aptae"/>
+         <tok val="aptae"/>
+         <tok val="aptaeque"/>
          <lm>
             <l>aptus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -82,8 +104,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Aptandum aptandum-->
-         <tok val="[aA]ptandum"/>
+      <ana>
+         <tok val="Aptandum"/>
+         <tok val="aptandum"/>
          <lm>
             <l>apto</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -95,59 +118,71 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Aptantem aptantem-->
-         <tok val="[aA]ptantem"/>
+      <ana>
+         <tok val="Aptantem"/>
+         <tok val="aptantem"/>
          <lm>
             <l>apto</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Aptantur aptantur-->
-         <tok val="[aA]ptantur"/>
+      <ana>
+         <tok val="Aptantur"/>
+         <tok val="aptantur"/>
          <lm>
             <l>apto</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Aptare aptare-->
-         <tok val="[aA]ptare"/>
+      <ana>
+         <tok val="Aptare"/>
+         <tok val="aptare"/>
          <lm>
             <l>apto</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Aptare aptare aptaris-->
-         <tok val="[aA]ptar(e|is)"/>
+      <ana>
+         <tok val="Aptare"/>
+         <tok val="aptare"/>
+         <tok val="aptaris"/>
          <lm>
             <l>apto</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aptari aptari aptarique-->
-         <tok val="[aA]ptari(que)?"/>
+      <ana>
+         <tok val="Aptari"/>
+         <tok val="aptari"/>
+         <tok val="aptarique"/>
          <lm>
             <l>apto</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Aptasti aptasti-->
-         <tok val="[aA]ptasti"/>
+      <ana>
+         <tok val="Aptasti"/>
+         <tok val="aptasti"/>
          <lm>
             <l>apto</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Aptat aptat aptatque-->
-         <tok val="[aA]ptat(que)?"/>
+      <ana>
+         <tok val="Aptat"/>
+         <tok val="aptat"/>
+         <tok val="aptatque"/>
          <lm>
             <l>apto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aptata aptata aptataque-->
-         <tok val="[aA]ptata(que)?"/>
+      <ana>
+         <tok val="Aptata"/>
+         <tok val="aptata"/>
+         <tok val="aptataque"/>
          <lm>
             <l>apto</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -158,8 +193,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Aptatae aptatae-->
-         <tok val="[aA]ptatae"/>
+      <ana>
+         <tok val="Aptatae"/>
+         <tok val="aptatae"/>
          <lm>
             <l>apto</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -168,23 +204,27 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Aptate aptate-->
-         <tok val="[aA]ptate"/>
+      <ana>
+         <tok val="Aptate"/>
+         <tok val="aptate"/>
          <lm>
             <l>apto</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Aptate aptate aptatum-->
-         <tok val="[aA]ptat(e|um)"/>
+      <ana>
+         <tok val="Aptate"/>
+         <tok val="aptate"/>
+         <tok val="aptatum"/>
          <lm>
             <l>apto</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Aptato aptato-->
-         <tok val="[aA]ptato"/>
+      <ana>
+         <tok val="Aptato"/>
+         <tok val="aptato"/>
          <lm>
             <l>apto</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -195,44 +235,60 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Aptatus aptatus-->
-         <tok val="[aA]ptatus"/>
+      <ana>
+         <tok val="Aptatus"/>
+         <tok val="aptatus"/>
          <lm>
             <l>apto</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Apte apte apten apteque-->
-         <tok val="[aA]pte(n|que)?"/>
+      <ana>
+         <tok val="Apte"/>
+         <tok val="apte"/>
+         <tok val="apten"/>
+         <tok val="apteque"/>
          <lm>
             <l>aptus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Apte Aptum Aptvm apte apten apteque aptum aptumne aptumque-->
-         <tok val="[aA]pt(umn)?[e]?(n|um|vm|umque|eque)?"/>
+      <ana>
+         <tok val="Apte"/>
+         <tok val="Aptum"/>
+         <tok val="Aptvm"/>
+         <tok val="apte"/>
+         <tok val="apten"/>
+         <tok val="apteque"/>
+         <tok val="aptum"/>
+         <tok val="aptumne"/>
+         <tok val="aptumque"/>
+         <tok val="aptvm"/>
          <lm>
             <l>aptus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Aptentur aptentur-->
-         <tok val="[aA]ptentur"/>
+      <ana>
+         <tok val="Aptentur"/>
+         <tok val="aptentur"/>
          <lm>
             <l>apto</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Aptetur aptetur-->
-         <tok val="[aA]ptetur"/>
+      <ana>
+         <tok val="Aptetur"/>
+         <tok val="aptetur"/>
          <lm>
             <l>apto</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Apti apti-->
-         <tok val="[aA]pti"/>
+      <ana>
+         <tok val="Apti"/>
+         <tok val="apti"/>
          <lm>
             <l>aptus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -241,8 +297,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Aptior aptior aptiorque-->
-         <tok val="[aA]ptior(que)?"/>
+      <ana>
+         <tok val="Aptior"/>
+         <tok val="aptior"/>
+         <tok val="aptiorque"/>
          <lm>
             <l>aptus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -251,8 +309,10 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Aptis aptis aptisque-->
-         <tok val="[aA]ptis(que)?"/>
+      <ana>
+         <tok val="Aptis"/>
+         <tok val="aptis"/>
+         <tok val="aptisque"/>
          <lm>
             <l>aptus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -263,8 +323,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Aptissima aptissima-->
-         <tok val="[aA]ptissima"/>
+      <ana>
+         <tok val="Aptissima"/>
+         <tok val="aptissima"/>
          <lm>
             <l>aptus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -275,29 +336,44 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Aptissime aptissime aptissimeque-->
-         <tok val="[aA]ptissime(que)?"/>
+      <ana>
+         <tok val="Aptissime"/>
+         <tok val="aptissime"/>
+         <tok val="aptissimeque"/>
          <lm>
             <l>aptus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Aptissime Aptissimus aptissime aptissimeque aptissimus-->
-         <tok val="[aA]ptissim(us|e|eque)"/>
+      <ana>
+         <tok val="Aptissime"/>
+         <tok val="Aptissimus"/>
+         <tok val="aptissime"/>
+         <tok val="aptissimeque"/>
+         <tok val="aptissimus"/>
          <lm>
             <l>aptus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Aptissime Aptissimum aptissime aptissimeque aptissimum aptissimumque aptissumum-->
-         <tok val="[aA]ptiss[iu]m(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Aptissime"/>
+         <tok val="Aptissimum"/>
+         <tok val="aptissime"/>
+         <tok val="aptissimeque"/>
+         <tok val="aptissimum"/>
+         <tok val="aptissimumque"/>
+         <tok val="aptissumum"/>
          <lm>
             <l>aptus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Aptissimum aptissimum aptissimumque aptissumum-->
-         <tok val="[aA]ptiss[iu]mum(que)?"/>
+      <ana>
+         <tok val="Aptissimum"/>
+         <tok val="aptissimum"/>
+         <tok val="aptissimumque"/>
+         <tok val="aptissumum"/>
          <lm>
             <l>aptus</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -307,15 +383,19 @@
             <m cert="0.2">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Aptissimus aptissimus-->
-         <tok val="[aA]ptissimus"/>
+      <ana>
+         <tok val="Aptissimus"/>
+         <tok val="aptissimus"/>
          <lm>
             <l>aptus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Aptius Aptiusque aptius aptiusque-->
-         <tok val="[aA]ptius(que)?"/>
+      <ana>
+         <tok val="Aptius"/>
+         <tok val="Aptiusque"/>
+         <tok val="aptius"/>
+         <tok val="aptiusque"/>
          <lm>
             <l>aptus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -324,8 +404,13 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Aptum Aptvm aptum aptumne aptumque-->
-         <tok val="[aA]pt[uv]m(ne|que)?"/>
+      <ana>
+         <tok val="Aptum"/>
+         <tok val="Aptvm"/>
+         <tok val="aptum"/>
+         <tok val="aptumne"/>
+         <tok val="aptumque"/>
+         <tok val="aptvm"/>
          <lm>
             <l>aptus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -333,8 +418,14 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aptum Aptvm aptorum aptum aptumne aptumque-->
-         <tok val="[aA]pt(or)?[uv]m(ne|que)?"/>
+      <ana>
+         <tok val="Aptum"/>
+         <tok val="Aptvm"/>
+         <tok val="aptorum"/>
+         <tok val="aptum"/>
+         <tok val="aptumne"/>
+         <tok val="aptumque"/>
+         <tok val="aptvm"/>
          <lm>
             <l>aptus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -355,8 +446,9 @@
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--aptabat aptabatque-->
-         <tok val="aptabat(que)?"/>
+      <ana>
+         <tok val="aptabat"/>
+         <tok val="aptabatque"/>
          <lm>
             <l>apto</l>
             <m>v - 3 s i i a</m>
@@ -390,8 +482,9 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--aptam aptamque-->
-         <tok val="aptam(que)?"/>
+      <ana>
+         <tok val="aptam"/>
+         <tok val="aptamque"/>
          <lm>
             <l>aptus</l>
             <m>a - - s - - - f a</m>
@@ -411,8 +504,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--aptan aptas-->
-         <tok val="apta[sn]"/>
+      <ana>
+         <tok val="aptan"/>
+         <tok val="aptas"/>
          <lm cert="0.5">
             <l>apto</l>
             <m>v - 2 s p i a</m>
@@ -422,8 +516,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aptanda aptandaque-->
-         <tok val="aptanda(que)?"/>
+      <ana>
+         <tok val="aptanda"/>
+         <tok val="aptandaque"/>
          <lm>
             <l>apto</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -481,8 +576,9 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--aptando aptandove-->
-         <tok val="aptando(ve)?"/>
+      <ana>
+         <tok val="aptando"/>
+         <tok val="aptandove"/>
          <lm>
             <l>apto</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -513,8 +609,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--aptant aptantque-->
-         <tok val="aptant(que)?"/>
+      <ana>
+         <tok val="aptant"/>
+         <tok val="aptantque"/>
          <lm>
             <l>apto</l>
             <m>v - 3 p p i a</m>
@@ -541,8 +638,10 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--aptarat aptaueratque aptaverat-->
-         <tok val="apta(ve|ue)?rat(que)?"/>
+      <ana>
+         <tok val="aptarat"/>
+         <tok val="aptaueratque"/>
+         <tok val="aptaverat"/>
          <lm>
             <l>apto</l>
             <m>v - 3 s l i a</m>
@@ -576,8 +675,10 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--aptaris aptaueris aptaveris-->
-         <tok val="apta[vu]?(e|)ris"/>
+      <ana>
+         <tok val="aptaris"/>
+         <tok val="aptaueris"/>
+         <tok val="aptaveris"/>
          <lm>
             <l>apto</l>
             <m>v - 2 s r s a</m>
@@ -597,8 +698,11 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--aptarunt aptauerunt aptavere aptaverunt-->
-         <tok val="apta[vu]?(e|ve)?r(unt|e)"/>
+      <ana>
+         <tok val="aptarunt"/>
+         <tok val="aptauerunt"/>
+         <tok val="aptavere"/>
+         <tok val="aptaverunt"/>
          <lm>
             <l>apto</l>
             <m>v - 3 p r i a</m>
@@ -618,22 +722,25 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--aptatam aptatamque-->
-         <tok val="aptatam(que)?"/>
+      <ana>
+         <tok val="aptatam"/>
+         <tok val="aptatamque"/>
          <lm>
             <l>apto</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--aptatas aptatasque-->
-         <tok val="aptatas(que)?"/>
+      <ana>
+         <tok val="aptatas"/>
+         <tok val="aptatasque"/>
          <lm>
             <l>apto</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--aptati aptatique-->
-         <tok val="aptati(que)?"/>
+      <ana>
+         <tok val="aptati"/>
+         <tok val="aptatique"/>
          <lm>
             <l>apto</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -681,22 +788,25 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--aptaueris aptaveris-->
-         <tok val="apta[vu]eris"/>
+      <ana>
+         <tok val="aptaueris"/>
+         <tok val="aptaveris"/>
          <lm>
             <l>apto</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--aptauimus aptavimus-->
-         <tok val="apta[vu]imus"/>
+      <ana>
+         <tok val="aptauimus"/>
+         <tok val="aptavimus"/>
          <lm>
             <l>apto</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--aptauit aptavit-->
-         <tok val="apta[vu]it"/>
+      <ana>
+         <tok val="aptauit"/>
+         <tok val="aptavit"/>
          <lm>
             <l>apto</l>
             <m>v - 3 s r i a</m>
@@ -730,8 +840,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--apten aptes-->
-         <tok val="apte[sn]"/>
+      <ana>
+         <tok val="apten"/>
+         <tok val="aptes"/>
          <lm>
             <l>apto</l>
             <m>v - 2 s p s a</m>
@@ -767,16 +878,18 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--aptiorem aptioremque-->
-         <tok val="aptiorem(que)?"/>
+      <ana>
+         <tok val="aptiorem"/>
+         <tok val="aptioremque"/>
          <lm>
             <l>aptus</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--aptiores aptioresque-->
-         <tok val="aptiores(que)?"/>
+      <ana>
+         <tok val="aptiores"/>
+         <tok val="aptioresque"/>
          <lm>
             <l>aptus</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>

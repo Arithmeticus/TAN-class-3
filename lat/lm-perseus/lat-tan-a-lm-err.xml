@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuserr">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:err">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to err</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-err.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ERR</tok-starts-with>
       <tok-starts-with>Err</tok-starts-with>
       <tok-starts-with>err</tok-starts-with>
-      <ana><!--ERRATA Errata errata-->
-         <tok val="[eE]?(rrata|ERRATA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:22:27.957-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:22:27.957-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-err.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ERRATA"/>
+         <tok val="Errata"/>
+         <tok val="errata"/>
          <lm cert="0.5">
             <l>erro</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -53,8 +63,12 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--ERRO Erro erro erroque erroue-->
-         <tok val="[eE]?(rro)?[q]?(ue|ERRO)?"/>
+      <ana>
+         <tok val="ERRO"/>
+         <tok val="Erro"/>
+         <tok val="erro"/>
+         <tok val="erroque"/>
+         <tok val="erroue"/>
          <lm>
             <l>erro</l>
             <m cert="0.333333333333333333">v - 1 s p i a</m>
@@ -62,36 +76,43 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--ERRORE Errore errore-->
-         <tok val="[eE]?(rrore|ERRORE)"/>
+      <ana>
+         <tok val="ERRORE"/>
+         <tok val="Errore"/>
+         <tok val="errore"/>
          <lm>
             <l>error</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Erra erra erran-->
-         <tok val="[eE]rra[n]?"/>
+      <ana>
+         <tok val="Erra"/>
+         <tok val="erra"/>
+         <tok val="erran"/>
          <lm>
             <l>erro</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Errabas errabas-->
-         <tok val="[eE]rrabas"/>
+      <ana>
+         <tok val="Errabas"/>
+         <tok val="errabas"/>
          <lm>
             <l>erro</l>
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Errabat errabat-->
-         <tok val="[eE]rrabat"/>
+      <ana>
+         <tok val="Errabat"/>
+         <tok val="errabat"/>
          <lm>
             <l>erro</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Errabunda errabunda-->
-         <tok val="[eE]rrabunda"/>
+      <ana>
+         <tok val="Errabunda"/>
+         <tok val="errabunda"/>
          <lm>
             <l>errabundus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -102,8 +123,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Errabundae errabundae-->
-         <tok val="[eE]rrabundae"/>
+      <ana>
+         <tok val="Errabundae"/>
+         <tok val="errabundae"/>
          <lm>
             <l>errabundus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -112,22 +134,27 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Errabundus errabundus-->
-         <tok val="[eE]rrabundus"/>
+      <ana>
+         <tok val="Errabundus"/>
+         <tok val="errabundus"/>
          <lm>
             <l>errabundus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Erramus Erramusque erramus erramusque-->
-         <tok val="[eE]rramus(que)?"/>
+      <ana>
+         <tok val="Erramus"/>
+         <tok val="Erramusque"/>
+         <tok val="erramus"/>
+         <tok val="erramusque"/>
          <lm>
             <l>erro</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Errans errans-->
-         <tok val="[eE]rrans"/>
+      <ana>
+         <tok val="Errans"/>
+         <tok val="errans"/>
          <lm>
             <l>erro</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -139,23 +166,31 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Errant errant errantque-->
-         <tok val="[eE]rrant(que)?"/>
+      <ana>
+         <tok val="Errant"/>
+         <tok val="errant"/>
+         <tok val="errantque"/>
          <lm>
             <l>erro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Errantem Errantemque errantem errantemque-->
-         <tok val="[eE]rrantem(que)?"/>
+      <ana>
+         <tok val="Errantem"/>
+         <tok val="Errantemque"/>
+         <tok val="errantem"/>
+         <tok val="errantemque"/>
          <lm>
             <l>erro</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Errantes Errantesque errantes errantesque-->
-         <tok val="[eE]rrantes(que)?"/>
+      <ana>
+         <tok val="Errantes"/>
+         <tok val="Errantesque"/>
+         <tok val="errantes"/>
+         <tok val="errantesque"/>
          <lm>
             <l>erro</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -164,16 +199,24 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Errantes Errantesque Errantis errantes errantesque errantis errantisque-->
-         <tok val="[eE]rrant[ei]s(que)?"/>
+      <ana>
+         <tok val="Errantes"/>
+         <tok val="Errantesque"/>
+         <tok val="Errantis"/>
+         <tok val="errantes"/>
+         <tok val="errantesque"/>
+         <tok val="errantis"/>
+         <tok val="errantisque"/>
          <lm>
             <l>erro</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Erranti erranti errantique-->
-         <tok val="[eE]rranti(que)?"/>
+      <ana>
+         <tok val="Erranti"/>
+         <tok val="erranti"/>
+         <tok val="errantique"/>
          <lm>
             <l>erro</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -181,8 +224,11 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Erranti errante erranti errantique-->
-         <tok val="[eE]rrant(i|e|ique)"/>
+      <ana>
+         <tok val="Erranti"/>
+         <tok val="errante"/>
+         <tok val="erranti"/>
+         <tok val="errantique"/>
          <lm>
             <l>erro</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -190,8 +236,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Errantia errantia-->
-         <tok val="[eE]rrantia"/>
+      <ana>
+         <tok val="Errantia"/>
+         <tok val="errantia"/>
          <lm cert="0.5">
             <l>errantia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -205,8 +252,10 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Errantis errantis errantisque-->
-         <tok val="[eE]rrantis(que)?"/>
+      <ana>
+         <tok val="Errantis"/>
+         <tok val="errantis"/>
+         <tok val="errantisque"/>
          <lm>
             <l>erro</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -214,8 +263,9 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Errantium errantium-->
-         <tok val="[eE]rrantium"/>
+      <ana>
+         <tok val="Errantium"/>
+         <tok val="errantium"/>
          <lm>
             <l>erro</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -223,30 +273,38 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--Errare errare errareque-->
-         <tok val="[eE]rrare(que)?"/>
+      <ana>
+         <tok val="Errare"/>
+         <tok val="errare"/>
+         <tok val="errareque"/>
          <lm>
             <l>erro</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Errare errare errareque erraris-->
-         <tok val="[eE]rrar[e]?(que|is)?"/>
+      <ana>
+         <tok val="Errare"/>
+         <tok val="errare"/>
+         <tok val="errareque"/>
+         <tok val="erraris"/>
          <lm>
             <l>erro</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Erras erran erras-->
-         <tok val="[eE]rra[sn]"/>
+      <ana>
+         <tok val="Erras"/>
+         <tok val="erran"/>
+         <tok val="erras"/>
          <lm>
             <l>erro</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Errasti errasti-->
-         <tok val="[eE]rrasti"/>
+      <ana>
+         <tok val="Errasti"/>
+         <tok val="errasti"/>
          <lm>
             <l>erro</l>
             <m>v - 2 s r i a</m>
@@ -254,20 +312,24 @@
       </ana>
       <ana>
          <tok val="Errastis"/>
+         <tok val="errastis"/>
          <lm>
             <l>erro</l>
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Errat errat erratque-->
-         <tok val="[eE]rrat(que)?"/>
+      <ana>
+         <tok val="Errat"/>
+         <tok val="errat"/>
+         <tok val="erratque"/>
          <lm>
             <l>erro</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Errati errati-->
-         <tok val="[eE]rrati"/>
+      <ana>
+         <tok val="Errati"/>
+         <tok val="errati"/>
          <lm cert="0.5">
             <l>erro</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -280,8 +342,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Erratica erratica-->
-         <tok val="[eE]rratica"/>
+      <ana>
+         <tok val="Erratica"/>
+         <tok val="erratica"/>
          <lm>
             <l>erraticus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -292,8 +355,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Erraticae erraticae-->
-         <tok val="[eE]rraticae"/>
+      <ana>
+         <tok val="Erraticae"/>
+         <tok val="erraticae"/>
          <lm>
             <l>erraticus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -302,15 +366,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Erraticarum erraticarum-->
-         <tok val="[eE]rraticarum"/>
+      <ana>
+         <tok val="Erraticarum"/>
+         <tok val="erraticarum"/>
          <lm>
             <l>erraticus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Erraticum erraticum-->
-         <tok val="[eE]rraticum"/>
+      <ana>
+         <tok val="Erraticum"/>
+         <tok val="erraticum"/>
          <lm>
             <l>erraticus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -321,23 +387,26 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Erraticus erraticus-->
-         <tok val="[eE]rraticus"/>
+      <ana>
+         <tok val="Erraticus"/>
+         <tok val="erraticus"/>
          <lm>
             <l>erraticus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Erratio erratio-->
-         <tok val="[eE]rratio"/>
+      <ana>
+         <tok val="Erratio"/>
+         <tok val="erratio"/>
          <lm>
             <l>erratio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Erratis erratis-->
-         <tok val="[eE]rratis"/>
+      <ana>
+         <tok val="Erratis"/>
+         <tok val="erratis"/>
          <lm cert="0.5">
             <l>erro</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -354,15 +423,20 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Erratorum erratorum-->
-         <tok val="[eE]rratorum"/>
+      <ana>
+         <tok val="Erratorum"/>
+         <tok val="erratorum"/>
          <lm>
             <l>errator</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Erratorum Erratum erratorum erratum erratumque-->
-         <tok val="[eE]rrat(or)?um(que)?"/>
+      <ana>
+         <tok val="Erratorum"/>
+         <tok val="Erratum"/>
+         <tok val="erratorum"/>
+         <tok val="erratum"/>
+         <tok val="erratumque"/>
          <lm cert="0.5">
             <l>erro</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -373,8 +447,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Erratum erratum erratumque-->
-         <tok val="[eE]rratum(que)?"/>
+      <ana>
+         <tok val="Erratum"/>
+         <tok val="erratum"/>
+         <tok val="erratumque"/>
          <lm cert="0.333333333333333333">
             <l>erratum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -395,20 +471,23 @@
       </ana>
       <ana>
          <tok val="Erratum"/>
+         <tok val="erratum"/>
          <lm>
             <l>erro</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Erratur erratur-->
-         <tok val="[eE]rratur"/>
+      <ana>
+         <tok val="Erratur"/>
+         <tok val="erratur"/>
          <lm>
             <l>erro</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Erratus erratus-->
-         <tok val="[eE]rratus"/>
+      <ana>
+         <tok val="Erratus"/>
+         <tok val="erratus"/>
          <lm cert="0.5">
             <l>erratus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -421,71 +500,96 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Errauit Erravit errauit errauitne erravit erravitne-->
-         <tok val="[eE]rra[vu]it(ne)?"/>
+      <ana>
+         <tok val="Errauit"/>
+         <tok val="Erravit"/>
+         <tok val="errauit"/>
+         <tok val="errauitne"/>
+         <tok val="erravit"/>
+         <tok val="erravitne"/>
          <lm>
             <l>erro</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Erravere errarunt errauere errauerunt erravere erraverunt-->
-         <tok val="[eE]rra[vu]?(e|ve|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="Erravere"/>
+         <tok val="errarunt"/>
+         <tok val="errauere"/>
+         <tok val="errauerunt"/>
+         <tok val="erravere"/>
+         <tok val="erraverunt"/>
          <lm>
             <l>erro</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Erraverim errauerim erraverim-->
-         <tok val="[eE]rra[vu]erim"/>
+      <ana>
+         <tok val="Erraverim"/>
+         <tok val="errauerim"/>
+         <tok val="erraverim"/>
          <lm>
             <l>erro</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Erravi erraui erravi-->
-         <tok val="[eE]rra[vu]i"/>
+      <ana>
+         <tok val="Erravi"/>
+         <tok val="erraui"/>
+         <tok val="erravi"/>
          <lm>
             <l>erro</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Erremus erremus-->
-         <tok val="[eE]rremus"/>
+      <ana>
+         <tok val="Erremus"/>
+         <tok val="erremus"/>
          <lm>
             <l>erro</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Erret erret-->
-         <tok val="[eE]rret"/>
+      <ana>
+         <tok val="Erret"/>
+         <tok val="erret"/>
          <lm>
             <l>erro</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Erronem erronem-->
-         <tok val="[eE]rronem"/>
+      <ana>
+         <tok val="Erronem"/>
+         <tok val="erronem"/>
          <lm>
             <l>erro</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Erroneus erroneus-->
-         <tok val="[eE]rroneus"/>
+      <ana>
+         <tok val="Erroneus"/>
+         <tok val="erroneus"/>
          <lm>
             <l>erroneus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Error Errorque error errorque errór-->
-         <tok val="[eE]rr[oó]r(que)?"/>
+      <ana>
+         <tok val="Error"/>
+         <tok val="Errorque"/>
+         <tok val="error"/>
+         <tok val="errorque"/>
+         <tok val="errór"/>
          <lm>
             <l>error</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Error Errorque error errorque-->
-         <tok val="[eE]rror(que)?"/>
+      <ana>
+         <tok val="Error"/>
+         <tok val="Errorque"/>
+         <tok val="error"/>
+         <tok val="errorque"/>
          <lm cert="0.5">
             <l>erro</l>
             <m>v - 1 s p i p</m>
@@ -495,15 +599,19 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Errorem errorem erroremque-->
-         <tok val="[eE]rrorem(que)?"/>
+      <ana>
+         <tok val="Errorem"/>
+         <tok val="errorem"/>
+         <tok val="erroremque"/>
          <lm>
             <l>error</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Errores errores erroresque-->
-         <tok val="[eE]rrores(que)?"/>
+      <ana>
+         <tok val="Errores"/>
+         <tok val="errores"/>
+         <tok val="erroresque"/>
          <lm>
             <l>error</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -511,23 +619,29 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Erroribus erroribus erroribusque-->
-         <tok val="[eE]rroribus(que)?"/>
+      <ana>
+         <tok val="Erroribus"/>
+         <tok val="erroribus"/>
+         <tok val="erroribusque"/>
          <lm>
             <l>error</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Erroris erroris errorisque-->
-         <tok val="[eE]rroris(que)?"/>
+      <ana>
+         <tok val="Erroris"/>
+         <tok val="erroris"/>
+         <tok val="errorisque"/>
          <lm>
             <l>error</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Errorum errorum errorumque-->
-         <tok val="[eE]rrorum(que)?"/>
+      <ana>
+         <tok val="Errorum"/>
+         <tok val="errorum"/>
+         <tok val="errorumque"/>
          <lm>
             <l>error</l>
             <m>n - - p - - - m g</m>
@@ -728,8 +842,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--erraret erraretque-->
-         <tok val="erraret(que)?"/>
+      <ana>
+         <tok val="erraret"/>
+         <tok val="erraretque"/>
          <lm>
             <l>erro</l>
             <m>v - 3 s i s a</m>
@@ -756,15 +871,17 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--erraris erraveris-->
-         <tok val="erra(ve)?ris"/>
+      <ana>
+         <tok val="erraris"/>
+         <tok val="erraveris"/>
          <lm>
             <l>erro</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--errasse erravisse-->
-         <tok val="erra(vi)?sse"/>
+      <ana>
+         <tok val="errasse"/>
+         <tok val="erravisse"/>
          <lm>
             <l>erro</l>
             <m>v - - - r n a</m>
@@ -953,8 +1070,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--erratum erratumque-->
-         <tok val="erratum(que)?"/>
+      <ana>
+         <tok val="erratum"/>
+         <tok val="erratumque"/>
          <lm>
             <l>erro</l>
             <m>a - - s - - - n n</m>
@@ -970,8 +1088,9 @@
             <m cert="0.25">v - - p f p a m n</m>
          </lm>
       </ana>
-      <ana><!--errauerat erraverat-->
-         <tok val="erra[vu]erat"/>
+      <ana>
+         <tok val="errauerat"/>
+         <tok val="erraverat"/>
          <lm>
             <l>erro</l>
             <m>v - 3 s l i a</m>
@@ -993,16 +1112,18 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--errauerit erraverit-->
-         <tok val="erra[vu]erit"/>
+      <ana>
+         <tok val="errauerit"/>
+         <tok val="erraverit"/>
          <lm>
             <l>erro</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--errauimus erravimus-->
-         <tok val="erra[vu]imus"/>
+      <ana>
+         <tok val="errauimus"/>
+         <tok val="erravimus"/>
          <lm>
             <l>erro</l>
             <m>v - 1 p r i a</m>
@@ -1093,8 +1214,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--erroneis erroneisque-->
-         <tok val="erroneis(que)?"/>
+      <ana>
+         <tok val="erroneis"/>
+         <tok val="erroneisque"/>
          <lm>
             <l>erroneus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>

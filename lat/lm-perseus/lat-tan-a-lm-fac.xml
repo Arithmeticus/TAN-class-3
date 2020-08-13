@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfac">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fac">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fac</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fac.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FAC</tok-starts-with>
       <tok-starts-with>FAc</tok-starts-with>
@@ -38,58 +15,133 @@
       <tok-starts-with>fac</tok-starts-with>
       <tok-starts-with>fác</tok-starts-with>
       <tok-starts-with>Fác</tok-starts-with>
-      <ana><!--FAC FAc Fac Face fac face facque fác-->
-         <tok val="[Ff]?(a|FA)?[c]?(e|que|FAC|fác)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:23:37.411-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:23:37.411-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fac.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FAC"/>
+         <tok val="FAc"/>
+         <tok val="Fac"/>
+         <tok val="Face"/>
+         <tok val="fac"/>
+         <tok val="face"/>
+         <tok val="facque"/>
+         <tok val="fác"/>
          <lm>
             <l>facio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--FACERE Facere facere faceren facerest facereve-->
-         <tok val="[fF]?(acere)?(n|st|ve|FACERE)?"/>
+      <ana>
+         <tok val="FACERE"/>
+         <tok val="Facere"/>
+         <tok val="facere"/>
+         <tok val="faceren"/>
+         <tok val="facerest"/>
+         <tok val="facereve"/>
          <lm>
             <l>facio</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--FACERE Facere facere faceren facerest facereve faceré fácere Fácere-->
-         <tok val="[fF]?(a|fá|Fá)?(cer)?[e]?(n|st|ve|é|e|FACERE)?"/>
+      <ana>
+         <tok val="FACERE"/>
+         <tok val="Facere"/>
+         <tok val="Fácere"/>
+         <tok val="facere"/>
+         <tok val="faceren"/>
+         <tok val="facerest"/>
+         <tok val="facereve"/>
+         <tok val="faceré"/>
+         <tok val="fácere"/>
          <lm>
             <l>facio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--FACIAS Facias facian facias faciasne faciasque faciás-->
-         <tok val="[fF]?(aci)?[a]?[s]?[n]?(e|s|ás|asque|FACIAS)?"/>
+      <ana>
+         <tok val="FACIAS"/>
+         <tok val="Facias"/>
+         <tok val="facian"/>
+         <tok val="facias"/>
+         <tok val="faciasne"/>
+         <tok val="faciasque"/>
+         <tok val="faciás"/>
          <lm>
             <l>facio</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--FACIATIS faciatis-->
-         <tok val="(faciatis|FACIATIS)"/>
+      <ana>
+         <tok val="FACIATIS"/>
+         <tok val="faciatis"/>
          <lm>
             <l>facio</l>
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--FACIEM Faciem Faciemque faciem faciemque-->
-         <tok val="[fF]?(aciem)?(que|FACIEM)?"/>
+      <ana>
+         <tok val="FACIEM"/>
+         <tok val="Faciem"/>
+         <tok val="Faciemque"/>
+         <tok val="faciem"/>
+         <tok val="faciemque"/>
          <lm>
             <l>facies</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FACIES Facies facien facies faciesque faciesve Faciés fácies-->
-         <tok val="[fF]?(a|fá|fa)?(ci)?[e]?[s]?(ve|n|és|es|esque|FACIES)?"/>
+      <ana>
+         <tok val="FACIES"/>
+         <tok val="Facies"/>
+         <tok val="Faciés"/>
+         <tok val="facien"/>
+         <tok val="facies"/>
+         <tok val="faciesque"/>
+         <tok val="faciesve"/>
+         <tok val="faciés"/>
+         <tok val="fácies"/>
          <lm>
             <l>facio</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--FACIES Facies facien facies faciesque faciesve-->
-         <tok val="[fF]?(acie)?[s]?(ve|n|sque|FACIES)?"/>
+      <ana>
+         <tok val="FACIES"/>
+         <tok val="Facies"/>
+         <tok val="facien"/>
+         <tok val="facies"/>
+         <tok val="faciesque"/>
+         <tok val="faciesve"/>
          <lm>
             <l>facies</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -97,36 +149,59 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--FACIET Faciet faciet facietque facietve fáciet-->
-         <tok val="[fF]?(a|fá|fa)?(ciet)?(ve|que|FACIET)?"/>
+      <ana>
+         <tok val="FACIET"/>
+         <tok val="Faciet"/>
+         <tok val="faciet"/>
+         <tok val="facietque"/>
+         <tok val="facietve"/>
+         <tok val="fáciet"/>
          <lm>
             <l>facio</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--FACIO Facio facio facioque fácio-->
-         <tok val="[fF]?(a|fá|fa)?(cio)?(que|FACIO)?"/>
+      <ana>
+         <tok val="FACIO"/>
+         <tok val="Facio"/>
+         <tok val="facio"/>
+         <tok val="facioque"/>
+         <tok val="fácio"/>
          <lm>
             <l>facio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--FACITO Facito facito facitoque facitó fácito-->
-         <tok val="[fF]?(a|fá|fa)?(cit)?(o|ó|oque|FACITO)"/>
+      <ana>
+         <tok val="FACITO"/>
+         <tok val="Facito"/>
+         <tok val="facito"/>
+         <tok val="facitoque"/>
+         <tok val="facitó"/>
+         <tok val="fácito"/>
          <lm>
             <l>facio</l>
             <m>v - 2 s f m a</m>
          </lm>
       </ana>
-      <ana><!--FACITO Facito facito facitoque-->
-         <tok val="[fF]?(acito)?(que|FACITO)?"/>
+      <ana>
+         <tok val="FACITO"/>
+         <tok val="Facito"/>
+         <tok val="facito"/>
+         <tok val="facitoque"/>
          <lm>
             <l>facio</l>
             <m>v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--FACIVNDO Faciendo Faciundo faciendo faciendoque faciundo-->
-         <tok val="[Ff]?(aci)?[ue]?(ndo)?(que|FACIVNDO)?"/>
+      <ana>
+         <tok val="FACIVNDO"/>
+         <tok val="Faciendo"/>
+         <tok val="Faciundo"/>
+         <tok val="faciendo"/>
+         <tok val="faciendoque"/>
+         <tok val="faciundo"/>
+         <tok val="facivndo"/>
          <lm>
             <l>facio</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -137,15 +212,30 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--FACTA Facta Factaque facta factan factaque factast factaue fácta-->
-         <tok val="[fF]?(a|fá)?(cta)?[q]?(ue|n|que|st|FACTA)?"/>
+      <ana>
+         <tok val="FACTA"/>
+         <tok val="Facta"/>
+         <tok val="Factaque"/>
+         <tok val="facta"/>
+         <tok val="factan"/>
+         <tok val="factaque"/>
+         <tok val="factast"/>
+         <tok val="factaue"/>
+         <tok val="fácta"/>
          <lm>
             <l>facio</l>
             <m>v - - s r p p f b</m>
          </lm>
       </ana>
-      <ana><!--FACTA Facta Factaque facta factan factaque factast factaue-->
-         <tok val="[fF]?(acta)?[q]?(ue|n|que|st|FACTA)?"/>
+      <ana>
+         <tok val="FACTA"/>
+         <tok val="Facta"/>
+         <tok val="Factaque"/>
+         <tok val="facta"/>
+         <tok val="factan"/>
+         <tok val="factaque"/>
+         <tok val="factast"/>
+         <tok val="factaue"/>
          <lm cert="0.5">
             <l>factum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -161,15 +251,20 @@
             <m cert="0.2">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--FACTIONE Factione factione-->
-         <tok val="[fF]?(actione|FACTIONE)"/>
+      <ana>
+         <tok val="FACTIONE"/>
+         <tok val="Factione"/>
+         <tok val="factione"/>
          <lm>
             <l>factio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--FACTIS Factis factis factisque-->
-         <tok val="[fF]?(actis)?(que|FACTIS)?"/>
+      <ana>
+         <tok val="FACTIS"/>
+         <tok val="Factis"/>
+         <tok val="factis"/>
+         <tok val="factisque"/>
          <lm cert="0.5">
             <l>facio</l>
             <m cert="0.2">v - - p r p p n d</m>
@@ -184,15 +279,33 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--FACTIS Factis factis factisque fáctis-->
-         <tok val="[fF]?(a|fá|fa)?(ctis)?(que|FACTIS)?"/>
+      <ana>
+         <tok val="FACTIS"/>
+         <tok val="Factis"/>
+         <tok val="factis"/>
+         <tok val="factisque"/>
+         <tok val="fáctis"/>
          <lm>
             <l>facio</l>
             <m>v - - p r p p f d</m>
          </lm>
       </ana>
-      <ana><!--FACTVM Factorum Factum Factumne Factumque Factumst factorum factorumque factum factumne factumque factumst factumue factumve-->
-         <tok val="[fF]?(act)?(or)?(um)?[qq]?(ue|ne|st|ve|FACTVM)?"/>
+      <ana>
+         <tok val="FACTVM"/>
+         <tok val="Factorum"/>
+         <tok val="Factum"/>
+         <tok val="Factumne"/>
+         <tok val="Factumque"/>
+         <tok val="Factumst"/>
+         <tok val="factorum"/>
+         <tok val="factorumque"/>
+         <tok val="factum"/>
+         <tok val="factumne"/>
+         <tok val="factumque"/>
+         <tok val="factumst"/>
+         <tok val="factumue"/>
+         <tok val="factumve"/>
+         <tok val="factvm"/>
          <lm cert="0.5">
             <l>facio</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -203,8 +316,20 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--FACTVM Factum Factumne Factumque Factumst facte factum factumne factumque factumst factumue factumve-->
-         <tok val="[fF]?(act)?(um)?[q]?[un]?(e|st|ve|FACTVM)?"/>
+      <ana>
+         <tok val="FACTVM"/>
+         <tok val="Factum"/>
+         <tok val="Factumne"/>
+         <tok val="Factumque"/>
+         <tok val="Factumst"/>
+         <tok val="facte"/>
+         <tok val="factum"/>
+         <tok val="factumne"/>
+         <tok val="factumque"/>
+         <tok val="factumst"/>
+         <tok val="factumue"/>
+         <tok val="factumve"/>
+         <tok val="factvm"/>
          <lm cert="0.5">
             <l>factum</l>
             <m>n - - s - - - n v</m>
@@ -214,8 +339,19 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--FACTVM Factum Factumne Factumque Factumst factum factumne factumque factumst factumue factumve-->
-         <tok val="[fF]?(actum)?[q]?[un]?(e|st|ve|FACTVM)?"/>
+      <ana>
+         <tok val="FACTVM"/>
+         <tok val="Factum"/>
+         <tok val="Factumne"/>
+         <tok val="Factumque"/>
+         <tok val="Factumst"/>
+         <tok val="factum"/>
+         <tok val="factumne"/>
+         <tok val="factumque"/>
+         <tok val="factumst"/>
+         <tok val="factumue"/>
+         <tok val="factumve"/>
+         <tok val="factvm"/>
          <lm cert="0.333333333333333333">
             <l>facio</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -232,22 +368,46 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--FACTVM Factum Factumne Factumque Factumst-->
-         <tok val="F(actum)?(ne|st|que|ACTVM)?"/>
+      <ana>
+         <tok val="FACTVM"/>
+         <tok val="Factum"/>
+         <tok val="Factumne"/>
+         <tok val="Factumque"/>
+         <tok val="Factumst"/>
+         <tok val="factum"/>
+         <tok val="factumne"/>
+         <tok val="factumque"/>
+         <tok val="factumst"/>
+         <tok val="factvm"/>
          <lm>
             <l>facio</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--FACTVS Factus Factusne factus factusque factust fáctus-->
-         <tok val="[fF]?(a|fá|fa)?(ctus)?(t|ne|que|FACTVS)?"/>
+      <ana>
+         <tok val="FACTVS"/>
+         <tok val="Factus"/>
+         <tok val="Factusne"/>
+         <tok val="factus"/>
+         <tok val="factusne"/>
+         <tok val="factusque"/>
+         <tok val="factust"/>
+         <tok val="factvs"/>
+         <tok val="fáctus"/>
          <lm>
             <l>factus2</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--FACTVS Factus Factusne factus factusque factust-->
-         <tok val="[fF]?(actus)?(t|ne|que|FACTVS)?"/>
+      <ana>
+         <tok val="FACTVS"/>
+         <tok val="Factus"/>
+         <tok val="Factusne"/>
+         <tok val="factus"/>
+         <tok val="factusne"/>
+         <tok val="factusque"/>
+         <tok val="factust"/>
+         <tok val="factvs"/>
          <lm cert="0.5">
             <l>factus2</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -259,15 +419,22 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--FACULTAS Facultas facultas facultasque facultasue-->
-         <tok val="[fF]?(acultas)?[q]?(ue|FACULTAS)?"/>
+      <ana>
+         <tok val="FACULTAS"/>
+         <tok val="Facultas"/>
+         <tok val="facultas"/>
+         <tok val="facultasque"/>
+         <tok val="facultasue"/>
          <lm>
             <l>facultas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--FACULTATES Facultates facultates facultatesque-->
-         <tok val="[fF]?(acultates)?(que|FACULTATES)?"/>
+      <ana>
+         <tok val="FACULTATES"/>
+         <tok val="Facultates"/>
+         <tok val="facultates"/>
+         <tok val="facultatesque"/>
          <lm>
             <l>facultas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -275,59 +442,109 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--FAcilis Facilis Facilisque facilis facilisque facillimae-->
-         <tok val="[fF]?(a|FA|fa)cil[l]?i[s]?(que|mae)?"/>
+      <ana>
+         <tok val="FAcilis"/>
+         <tok val="Facilis"/>
+         <tok val="Facilisque"/>
+         <tok val="facilis"/>
+         <tok val="facilisque"/>
+         <tok val="facillimae"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--FAcilis Faciles Facilis Facilisque facilen faciles facilesque facilis facilisque facillimos-->
-         <tok val="[fF]?(a|FA|Fa|fa)cil[ie]?[s]?(que|en|is|limos)?"/>
+      <ana>
+         <tok val="FAcilis"/>
+         <tok val="Faciles"/>
+         <tok val="Facilis"/>
+         <tok val="Facilisque"/>
+         <tok val="facilen"/>
+         <tok val="faciles"/>
+         <tok val="facilesque"/>
+         <tok val="facilis"/>
+         <tok val="facilisque"/>
+         <tok val="facillimos"/>
          <lm>
             <l>facilis</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--FAcilis Facilis Facilisque Facillima facilis facilisque facillima-->
-         <tok val="[fF]?(a|FA|fa)cil[l]?i(sque|ma|s)"/>
+      <ana>
+         <tok val="FAcilis"/>
+         <tok val="Facilis"/>
+         <tok val="Facilisque"/>
+         <tok val="Facillima"/>
+         <tok val="facilis"/>
+         <tok val="facilisque"/>
+         <tok val="facillima"/>
          <lm>
             <l>facilis</l>
             <m cert="0.5">a - - s - - - f n</m>
             <m cert="0.5">a - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--FAcilis Facilis Facilisque Facillimi facilis facilisque facillimi-->
-         <tok val="[fF]?(a|FA|fa)cil[l]?i(sque|mi|s)"/>
+      <ana>
+         <tok val="FAcilis"/>
+         <tok val="Facilis"/>
+         <tok val="Facilisque"/>
+         <tok val="Facillimi"/>
+         <tok val="facilis"/>
+         <tok val="facilisque"/>
+         <tok val="facillimi"/>
          <lm>
             <l>facilis</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--FAcilis Faciles Facilis Facilisque facilen faciles facilesque facilis facilisque-->
-         <tok val="[fF]?(a|FA|Fa|fa)cil[ie]?[s]?(que|en|is)?"/>
+      <ana>
+         <tok val="FAcilis"/>
+         <tok val="Faciles"/>
+         <tok val="Facilis"/>
+         <tok val="Facilisque"/>
+         <tok val="facilen"/>
+         <tok val="faciles"/>
+         <tok val="facilesque"/>
+         <tok val="facilis"/>
+         <tok val="facilisque"/>
          <lm>
             <l>facilis</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--FAcilis Facilis Facilisque Facillimus facilis facilisque facillimus-->
-         <tok val="[fF]?(a|FA|fa)cil[l]?i(sq|m)?[u]?[es]"/>
+      <ana>
+         <tok val="FAcilis"/>
+         <tok val="Facilis"/>
+         <tok val="Facilisque"/>
+         <tok val="Facillimus"/>
+         <tok val="facilis"/>
+         <tok val="facilisque"/>
+         <tok val="facillimus"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--FAcilis Facilis Facilisque Facillime facilis facilisque facillime facillimeque-->
-         <tok val="[fF]?(a|FA|fa)cil[l]?i(squ|m)?(e|s|meque)"/>
+      <ana>
+         <tok val="FAcilis"/>
+         <tok val="Facilis"/>
+         <tok val="Facilisque"/>
+         <tok val="Facillime"/>
+         <tok val="facilis"/>
+         <tok val="facilisque"/>
+         <tok val="facillime"/>
+         <tok val="facillimeque"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Face face Fáce-->
-         <tok val="[fF]?(a|Fá)ce"/>
+      <ana>
+         <tok val="Face"/>
+         <tok val="Fáce"/>
+         <tok val="face"/>
+         <tok val="fáce"/>
          <lm>
             <l>fax</l>
             <m>n - - s - - - f b</m>
@@ -335,6 +552,7 @@
       </ana>
       <ana>
          <tok val="Facelinae"/>
+         <tok val="facelinae"/>
          <lm>
             <l>Facelinus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -345,6 +563,7 @@
       </ana>
       <ana>
          <tok val="Facelinus"/>
+         <tok val="facelinus"/>
          <lm>
             <l>Facelinus</l>
             <m>a e - s - - - m n</m>
@@ -352,6 +571,7 @@
       </ana>
       <ana>
          <tok val="Facelitidis"/>
+         <tok val="facelitidis"/>
          <lm>
             <l>Facelitis</l>
             <m>n e - s - - - f g</m>
@@ -359,41 +579,53 @@
       </ana>
       <ana>
          <tok val="Facelitis"/>
+         <tok val="facelitis"/>
          <lm>
             <l>Facelitis</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Facem facem facemque-->
-         <tok val="[fF]acem(que)?"/>
+      <ana>
+         <tok val="Facem"/>
+         <tok val="facem"/>
+         <tok val="facemque"/>
          <lm>
             <l>fax</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Facerem facerem faceremque facerém-->
-         <tok val="[fF]acer[eé]m(que)?"/>
+      <ana>
+         <tok val="Facerem"/>
+         <tok val="facerem"/>
+         <tok val="faceremque"/>
+         <tok val="facerém"/>
          <lm>
             <l>facio</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Faceremus faceremus-->
-         <tok val="[fF]aceremus"/>
+      <ana>
+         <tok val="Faceremus"/>
+         <tok val="faceremus"/>
          <lm>
             <l>facio</l>
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Faceres faceren faceres fáceres-->
-         <tok val="[fF]?(a|fá)cere[sn]"/>
+      <ana>
+         <tok val="Faceres"/>
+         <tok val="faceren"/>
+         <tok val="faceres"/>
+         <tok val="fáceres"/>
          <lm>
             <l>facio</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Faces faces facesque-->
-         <tok val="[fF]aces(que)?"/>
+      <ana>
+         <tok val="Faces"/>
+         <tok val="faces"/>
+         <tok val="facesque"/>
          <lm>
             <l>fax</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -401,22 +633,25 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Facessant facessant-->
-         <tok val="[fF]acessant"/>
+      <ana>
+         <tok val="Facessant"/>
+         <tok val="facessant"/>
          <lm>
             <l>facesso</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Facesse facesse-->
-         <tok val="[fF]acesse"/>
+      <ana>
+         <tok val="Facesse"/>
+         <tok val="facesse"/>
          <lm>
             <l>facesso</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Facessere facessere-->
-         <tok val="[fF]acessere"/>
+      <ana>
+         <tok val="Facessere"/>
+         <tok val="facessere"/>
          <lm>
             <l>facesso</l>
             <m cert="0.333333333333333333">v - 3 p r i a</m>
@@ -424,30 +659,35 @@
             <m cert="0.333333333333333333">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Facessere facessere facesseris-->
-         <tok val="[fF]acesser(e|is)"/>
+      <ana>
+         <tok val="Facessere"/>
+         <tok val="facessere"/>
+         <tok val="facesseris"/>
          <lm>
             <l>facesso</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Facesso facesso-->
-         <tok val="[fF]acesso"/>
+      <ana>
+         <tok val="Facesso"/>
+         <tok val="facesso"/>
          <lm>
             <l>facesso</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Facessunt facessunt-->
-         <tok val="[fF]acessunt"/>
+      <ana>
+         <tok val="Facessunt"/>
+         <tok val="facessunt"/>
          <lm>
             <l>facesso</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Faceta faceta-->
-         <tok val="[fF]aceta"/>
+      <ana>
+         <tok val="Faceta"/>
+         <tok val="faceta"/>
          <lm>
             <l>facetus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -458,29 +698,37 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Facete facete facetius-->
-         <tok val="[fF]acet(e|ius)"/>
+      <ana>
+         <tok val="Facete"/>
+         <tok val="facete"/>
+         <tok val="facetius"/>
          <lm>
             <l>facetus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Facete Facetum facete facetum-->
-         <tok val="[fF]acet(um|e)"/>
+      <ana>
+         <tok val="Facete"/>
+         <tok val="Facetum"/>
+         <tok val="facete"/>
+         <tok val="facetum"/>
          <lm>
             <l>facetus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Facete facete-->
-         <tok val="[fF]acete"/>
+      <ana>
+         <tok val="Facete"/>
+         <tok val="facete"/>
          <lm>
             <l>facetus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Facetiae facetiae facetiaeque-->
-         <tok val="[fF]acetiae(que)?"/>
+      <ana>
+         <tok val="Facetiae"/>
+         <tok val="facetiae"/>
+         <tok val="facetiaeque"/>
          <lm>
             <l>facetiae</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -489,30 +737,36 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Facetiarum facetiarum-->
-         <tok val="[fF]acetiarum"/>
+      <ana>
+         <tok val="Facetiarum"/>
+         <tok val="facetiarum"/>
          <lm>
             <l>facetiae</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Facetias facetias facetiasque-->
-         <tok val="[fF]acetias(que)?"/>
+      <ana>
+         <tok val="Facetias"/>
+         <tok val="facetias"/>
+         <tok val="facetiasque"/>
          <lm>
             <l>facetiae</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Facetiis facetiis facetiisque-->
-         <tok val="[fF]acetiis(que)?"/>
+      <ana>
+         <tok val="Facetiis"/>
+         <tok val="facetiis"/>
+         <tok val="facetiisque"/>
          <lm>
             <l>facetiae</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Facetissimi facetissimi-->
-         <tok val="[fF]acetissimi"/>
+      <ana>
+         <tok val="Facetissimi"/>
+         <tok val="facetissimi"/>
          <lm>
             <l>facetus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -521,15 +775,19 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Facetissimus facetissime facetissimus-->
-         <tok val="[fF]acetissim(us|e)"/>
+      <ana>
+         <tok val="Facetissimus"/>
+         <tok val="facetissime"/>
+         <tok val="facetissimus"/>
          <lm>
             <l>facetus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Facetissimus facetissimus facetissumus-->
-         <tok val="[fF]acetiss[iu]mus"/>
+      <ana>
+         <tok val="Facetissimus"/>
+         <tok val="facetissimus"/>
+         <tok val="facetissumus"/>
          <lm>
             <l>facetus</l>
             <m>a - - s - - - m n s</m>
@@ -537,22 +795,19 @@
       </ana>
       <ana>
          <tok val="Facetius"/>
+         <tok val="facetius"/>
          <lm>
             <l>facetus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Facetius facetius-->
-         <tok val="[fF]acetius"/>
-         <lm>
-            <l>facetus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Faceto faceto facetoque-->
-         <tok val="[fF]aceto(que)?"/>
+      <ana>
+         <tok val="Faceto"/>
+         <tok val="faceto"/>
+         <tok val="facetoque"/>
          <lm>
             <l>facetus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -561,38 +816,49 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Facetum facetum facétum-->
-         <tok val="[fF]ac[eé]tum"/>
+      <ana>
+         <tok val="Facetum"/>
+         <tok val="facetum"/>
+         <tok val="facétum"/>
          <lm>
             <l>facetus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Facetum facetorum facetum-->
-         <tok val="[fF]acet(or)?um"/>
+      <ana>
+         <tok val="Facetum"/>
+         <tok val="facetorum"/>
+         <tok val="facetum"/>
          <lm>
             <l>facetus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Facetum facetum-->
-         <tok val="[fF]acetum"/>
+      <ana>
+         <tok val="Facetum"/>
+         <tok val="facetum"/>
          <lm>
             <l>facetus</l>
             <m cert="0.5">a - - s - - - n a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Facetus Facetvs facetus-->
-         <tok val="[Ff]acet[vu]s"/>
+      <ana>
+         <tok val="Facetus"/>
+         <tok val="Facetvs"/>
+         <tok val="facetus"/>
+         <tok val="facetvs"/>
          <lm>
             <l>facetus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Faci faci facin facine-->
-         <tok val="[fF]aci[n]?[e]?"/>
+      <ana>
+         <tok val="Faci"/>
+         <tok val="faci"/>
+         <tok val="facin"/>
+         <tok val="facine"/>
          <lm cert="0.5">
             <l>facio</l>
             <m>v - - - p n p</m>
@@ -602,101 +868,145 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Faciam Faciamque faciam faciamque-->
-         <tok val="[fF]aciam(que)?"/>
+      <ana>
+         <tok val="Faciam"/>
+         <tok val="Faciamque"/>
+         <tok val="faciam"/>
+         <tok val="faciamque"/>
          <lm>
             <l>facio</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Faciam Faciamque faciam faciamque faciám fáciam Fáciam-->
-         <tok val="[fF]?(a|fá|Fá)ci[aá]m(que)?"/>
+      <ana>
+         <tok val="Faciam"/>
+         <tok val="Faciamque"/>
+         <tok val="Fáciam"/>
+         <tok val="faciam"/>
+         <tok val="faciamque"/>
+         <tok val="faciám"/>
+         <tok val="fáciam"/>
          <lm>
             <l>facio</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Faciamus faciamus faciamús-->
-         <tok val="[fF]aciam[uú]s"/>
+      <ana>
+         <tok val="Faciamus"/>
+         <tok val="faciamus"/>
+         <tok val="faciamús"/>
          <lm>
             <l>facio</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Faciant faciant faciantque faciánt fáciant-->
-         <tok val="[fF]?(a|fá|fa)ci[aá]nt(que)?"/>
+      <ana>
+         <tok val="Faciant"/>
+         <tok val="faciant"/>
+         <tok val="faciantque"/>
+         <tok val="faciánt"/>
+         <tok val="fáciant"/>
          <lm>
             <l>facio</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Faciat Faciatque faciat faciatque fáciat-->
-         <tok val="[fF]?(a|fá)ciat(que)?"/>
+      <ana>
+         <tok val="Faciat"/>
+         <tok val="Faciatque"/>
+         <tok val="faciat"/>
+         <tok val="faciatque"/>
+         <tok val="fáciat"/>
          <lm>
             <l>facio</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Faciatur faciatur-->
-         <tok val="[fF]aciatur"/>
+      <ana>
+         <tok val="Faciatur"/>
+         <tok val="faciatur"/>
          <lm>
             <l>facio</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Facibus facibus facibusque-->
-         <tok val="[fF]acibus(que)?"/>
+      <ana>
+         <tok val="Facibus"/>
+         <tok val="facibus"/>
+         <tok val="facibusque"/>
          <lm>
             <l>fax</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Facie facie facien facieque faciest FACIE-->
-         <tok val="[fF]?(acie)?(n|st|que|FACIE)?"/>
+      <ana>
+         <tok val="FACIE"/>
+         <tok val="Facie"/>
+         <tok val="facie"/>
+         <tok val="facien"/>
+         <tok val="facieque"/>
+         <tok val="faciest"/>
          <lm>
             <l>facies</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Facie Faciei facie faciei facien facieque faciest-->
-         <tok val="[Ff]acie(i|n|st|que)?"/>
+      <ana>
+         <tok val="Facie"/>
+         <tok val="Faciei"/>
+         <tok val="facie"/>
+         <tok val="faciei"/>
+         <tok val="facien"/>
+         <tok val="facieque"/>
+         <tok val="faciest"/>
          <lm>
             <l>facies</l>
             <m cert="0.5">n - - s - - - f g</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Faciebant faciebant faciebantque-->
-         <tok val="[fF]aciebant(que)?"/>
+      <ana>
+         <tok val="Faciebant"/>
+         <tok val="faciebant"/>
+         <tok val="faciebantque"/>
          <lm>
             <l>facio</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Faciebas faciebas-->
-         <tok val="[fF]aciebas"/>
+      <ana>
+         <tok val="Faciebas"/>
+         <tok val="faciebas"/>
          <lm>
             <l>facio</l>
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Faciebat faciebat faciebatque fáciebat-->
-         <tok val="[fF]?(a|fá|fa)ciebat(que)?"/>
+      <ana>
+         <tok val="Faciebat"/>
+         <tok val="faciebat"/>
+         <tok val="faciebatque"/>
+         <tok val="fáciebat"/>
          <lm>
             <l>facio</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Faciemus faciemus faciemusque-->
-         <tok val="[fF]aciemus(que)?"/>
+      <ana>
+         <tok val="Faciemus"/>
+         <tok val="faciemus"/>
+         <tok val="faciemusque"/>
          <lm>
             <l>facio</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Faciendae faciendae faciendaest faciundae-->
-         <tok val="[fF]aci[eu]ndae(st)?"/>
+      <ana>
+         <tok val="Faciendae"/>
+         <tok val="faciendae"/>
+         <tok val="faciendaest"/>
+         <tok val="faciundae"/>
          <lm>
             <l>facio</l>
             <m cert="0.333333333333333333">v - - p p g p f n</m>
@@ -704,15 +1014,23 @@
             <m cert="0.333333333333333333">v - - s p g p f d</m>
          </lm>
       </ana>
-      <ana><!--Faciendae faciendae faciendaest faciendai faciundae-->
-         <tok val="[fF]aci[eu]nda[e]?(st|i|e)?"/>
+      <ana>
+         <tok val="Faciendae"/>
+         <tok val="faciendae"/>
+         <tok val="faciendaest"/>
+         <tok val="faciendai"/>
+         <tok val="faciundae"/>
          <lm>
             <l>facio</l>
             <m>v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Faciendi faciendi faciendique faciendive faciundi-->
-         <tok val="[fF]aci[eu]ndi(ve|que)?"/>
+      <ana>
+         <tok val="Faciendi"/>
+         <tok val="faciendi"/>
+         <tok val="faciendique"/>
+         <tok val="faciendive"/>
+         <tok val="faciundi"/>
          <lm>
             <l>facio</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -722,8 +1040,11 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Faciendis faciendis faciendisque faciundis-->
-         <tok val="[fF]aci[eu]ndis(que)?"/>
+      <ana>
+         <tok val="Faciendis"/>
+         <tok val="faciendis"/>
+         <tok val="faciendisque"/>
+         <tok val="faciundis"/>
          <lm>
             <l>facio</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -734,8 +1055,16 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--Faciendum Faciundum faciendum faciendumne faciendumque faciendumst faciendumve faciundum faciundumst-->
-         <tok val="[fF]aci[eu]ndum[vn]?(e|st|que)?"/>
+      <ana>
+         <tok val="Faciendum"/>
+         <tok val="Faciundum"/>
+         <tok val="faciendum"/>
+         <tok val="faciendumne"/>
+         <tok val="faciendumque"/>
+         <tok val="faciendumst"/>
+         <tok val="faciendumve"/>
+         <tok val="faciundum"/>
+         <tok val="faciundumst"/>
          <lm>
             <l>facio</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -745,16 +1074,28 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Faciendum Faciundum faciendorum faciendum faciendumne faciendumque faciendumst faciendumve faciundorum faciundum faciundumst-->
-         <tok val="[fF]aci[eu]nd(or)?um[vn]?(e|st|que)?"/>
+      <ana>
+         <tok val="Faciendum"/>
+         <tok val="Faciundum"/>
+         <tok val="faciendorum"/>
+         <tok val="faciendum"/>
+         <tok val="faciendumne"/>
+         <tok val="faciendumque"/>
+         <tok val="faciendumst"/>
+         <tok val="faciendumve"/>
+         <tok val="faciundorum"/>
+         <tok val="faciundum"/>
+         <tok val="faciundumst"/>
          <lm>
             <l>facio</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Faciens faciens faciensque-->
-         <tok val="[fF]aciens(que)?"/>
+      <ana>
+         <tok val="Faciens"/>
+         <tok val="faciens"/>
+         <tok val="faciensque"/>
          <lm>
             <l>facio</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -766,66 +1107,123 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Facient facient facientque-->
-         <tok val="[fF]acient(que)?"/>
+      <ana>
+         <tok val="Facient"/>
+         <tok val="facient"/>
+         <tok val="facientque"/>
          <lm>
             <l>facio</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Facile Facilest Facillimum facile facilen facileque facilest facillimum facillimumque facillimumquest facilé fácile-->
-         <tok val="[fF]?(a|fá|fa)cil(limumqu)?[e]?(st|n|limum|est|e|é|eque)?"/>
+      <ana>
+         <tok val="Facile"/>
+         <tok val="Facilest"/>
+         <tok val="Facillimum"/>
+         <tok val="facile"/>
+         <tok val="facilen"/>
+         <tok val="facileque"/>
+         <tok val="facilest"/>
+         <tok val="facillimum"/>
+         <tok val="facillimumque"/>
+         <tok val="facillimumquest"/>
+         <tok val="facilé"/>
+         <tok val="fácile"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Facile Facilest Facillimum facile facilen facileque facilest facillimum facillimumque facillimumquest-->
-         <tok val="[fF]acil(limumqu)?[e]?(st|n|limum|est|e|eque)?"/>
+      <ana>
+         <tok val="Facile"/>
+         <tok val="Facilest"/>
+         <tok val="Facillimum"/>
+         <tok val="facile"/>
+         <tok val="facilen"/>
+         <tok val="facileque"/>
+         <tok val="facilest"/>
+         <tok val="facillimum"/>
+         <tok val="facillimumque"/>
+         <tok val="facillimumquest"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Facile Facilest Facillime Facillimum facile facilen facileque facilest facillime facillimeque facillimum facillimumque facillimumquest-->
-         <tok val="[fF]acil(limumqu)?[e]?(st|n|limum|lime|limeque|est|e|eque)?"/>
+      <ana>
+         <tok val="Facile"/>
+         <tok val="Facilest"/>
+         <tok val="Facillime"/>
+         <tok val="Facillimum"/>
+         <tok val="facile"/>
+         <tok val="facilen"/>
+         <tok val="facileque"/>
+         <tok val="facilest"/>
+         <tok val="facillime"/>
+         <tok val="facillimeque"/>
+         <tok val="facillimum"/>
+         <tok val="facillimumque"/>
+         <tok val="facillimumquest"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Facilem facilem facilemque facillimam-->
-         <tok val="[fF]acil(e|li)m(que|am)?"/>
+      <ana>
+         <tok val="Facilem"/>
+         <tok val="facilem"/>
+         <tok val="facilemque"/>
+         <tok val="facillimam"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Facilem Facillimum facilem facilemque facillimum facillimumque facillimumquest-->
-         <tok val="[fF]acil(li|e)m(um)?(que)?(st|que)?"/>
+      <ana>
+         <tok val="Facilem"/>
+         <tok val="Facillimum"/>
+         <tok val="facilem"/>
+         <tok val="facilemque"/>
+         <tok val="facillimum"/>
+         <tok val="facillimumque"/>
+         <tok val="facillimumquest"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Faciles facilen faciles facilesque facillimae-->
-         <tok val="[fF]acil(lima)?e(s|n|sque)?"/>
+      <ana>
+         <tok val="Faciles"/>
+         <tok val="facilen"/>
+         <tok val="faciles"/>
+         <tok val="facilesque"/>
+         <tok val="facillimae"/>
          <lm>
             <l>facilis</l>
             <m cert="0.5">a - - p - - - f v</m>
             <m cert="0.5">a - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Faciles Facillimi facilen faciles facilesque facillimi-->
-         <tok val="[fF]acil(limi|es|en|esque)"/>
+      <ana>
+         <tok val="Faciles"/>
+         <tok val="Facillimi"/>
+         <tok val="facilen"/>
+         <tok val="faciles"/>
+         <tok val="facilesque"/>
+         <tok val="facillimi"/>
          <lm>
             <l>facilis</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Facili facili facilique faciliue facillimo facillimoque-->
-         <tok val="[fF]acil[l]?i[q]?(ue|moque|mo)?"/>
+      <ana>
+         <tok val="Facili"/>
+         <tok val="facili"/>
+         <tok val="facilique"/>
+         <tok val="faciliue"/>
+         <tok val="facillimo"/>
+         <tok val="facillimoque"/>
          <lm>
             <l>facilis</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -834,37 +1232,57 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Facili facili facilique faciliue facillimae-->
-         <tok val="[fF]acil[l]?i[q]?(ue|mae)?"/>
+      <ana>
+         <tok val="Facili"/>
+         <tok val="facili"/>
+         <tok val="facilique"/>
+         <tok val="faciliue"/>
+         <tok val="facillimae"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Facili Facillima facili facilique faciliue facillima-->
-         <tok val="[fF]acil[i]?[q]?(ue|lima|i)"/>
+      <ana>
+         <tok val="Facili"/>
+         <tok val="Facillima"/>
+         <tok val="facili"/>
+         <tok val="facilique"/>
+         <tok val="faciliue"/>
+         <tok val="facillima"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Facilia Facillima facilia faciliaque facillima facilía-->
-         <tok val="[fF]acil[l]?[i]?[m]?(a|ía|iaque)"/>
+      <ana>
+         <tok val="Facilia"/>
+         <tok val="Facillima"/>
+         <tok val="facilia"/>
+         <tok val="faciliaque"/>
+         <tok val="facillima"/>
+         <tok val="facilía"/>
          <lm>
             <l>facilis</l>
             <m>a - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Facilia Facillima facilia faciliaque facillima-->
-         <tok val="[fF]acil[l]?i[m]?a(que)?"/>
+      <ana>
+         <tok val="Facilia"/>
+         <tok val="Facillima"/>
+         <tok val="facilia"/>
+         <tok val="faciliaque"/>
+         <tok val="facillima"/>
          <lm>
             <l>facilis</l>
             <m cert="0.5">a - - p - - - n v</m>
             <m cert="0.5">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Facilior facilior faciliorque-->
-         <tok val="[fF]acilior(que)?"/>
+      <ana>
+         <tok val="Facilior"/>
+         <tok val="facilior"/>
+         <tok val="faciliorque"/>
          <lm>
             <l>facilis</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -873,8 +1291,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Faciliora faciliora-->
-         <tok val="[fF]aciliora"/>
+      <ana>
+         <tok val="Faciliora"/>
+         <tok val="faciliora"/>
          <lm>
             <l>facilis</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -882,81 +1301,96 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--Faciliore faciliore-->
-         <tok val="[fF]aciliore"/>
+      <ana>
+         <tok val="Faciliore"/>
+         <tok val="faciliore"/>
          <lm>
             <l>facilis</l>
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--Facilitas facilitas-->
-         <tok val="[fF]acilitas"/>
+      <ana>
+         <tok val="Facilitas"/>
+         <tok val="facilitas"/>
          <lm>
             <l>facilitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Facilitate facilitate facilitaten facilitateque-->
-         <tok val="[fF]acilitate(n|que)?"/>
+      <ana>
+         <tok val="Facilitate"/>
+         <tok val="facilitate"/>
+         <tok val="facilitaten"/>
+         <tok val="facilitateque"/>
          <lm>
             <l>facilitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Facilitatem facilitatem facilitatemque-->
-         <tok val="[fF]acilitatem(que)?"/>
+      <ana>
+         <tok val="Facilitatem"/>
+         <tok val="facilitatem"/>
+         <tok val="facilitatemque"/>
          <lm>
             <l>facilitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Facilitatis facilitatis-->
-         <tok val="[fF]acilitatis"/>
+      <ana>
+         <tok val="Facilitatis"/>
+         <tok val="facilitatis"/>
          <lm>
             <l>facilitas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Facilius Faciliusne Faciliusque facilius-->
-         <tok val="[Ff]acilius(ne|que)?"/>
+      <ana>
+         <tok val="Facilius"/>
+         <tok val="Faciliusne"/>
+         <tok val="Faciliusque"/>
+         <tok val="facilius"/>
+         <tok val="faciliusne"/>
+         <tok val="faciliusque"/>
          <lm>
             <l>facilis</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Facilius Faciliusne Faciliusque facilius faciliusne faciliusque-->
-         <tok val="[fF]acilius(qu|n)?[e]?"/>
-         <lm>
-            <l>facilis</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Facillime facillime facillimeque-->
-         <tok val="[fF]acillime(que)?"/>
+      <ana>
+         <tok val="Facillime"/>
+         <tok val="facillime"/>
+         <tok val="facillimeque"/>
          <lm>
             <l>facilis</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Facillimum facilium facillimum facillimumque facillimumquest-->
-         <tok val="[fF]acil(l|)i(m|)um(que)?(st)?"/>
+      <ana>
+         <tok val="Facillimum"/>
+         <tok val="facilium"/>
+         <tok val="facillimum"/>
+         <tok val="facillimumque"/>
+         <tok val="facillimumquest"/>
          <lm>
             <l>facilis</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Facimus facimus-->
-         <tok val="[fF]acimus"/>
+      <ana>
+         <tok val="Facimus"/>
+         <tok val="facimus"/>
          <lm>
             <l>facio</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Facinora facinora-->
-         <tok val="[fF]acinora"/>
+      <ana>
+         <tok val="Facinora"/>
+         <tok val="facinora"/>
          <lm>
             <l>facinus</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -964,15 +1398,19 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Facinoris facinoris facinorisque-->
-         <tok val="[fF]acinoris(que)?"/>
+      <ana>
+         <tok val="Facinoris"/>
+         <tok val="facinoris"/>
+         <tok val="facinorisque"/>
          <lm>
             <l>facinus</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Facinorosa facinorosa facinorosaque-->
-         <tok val="[fF]acinorosa(que)?"/>
+      <ana>
+         <tok val="Facinorosa"/>
+         <tok val="facinorosa"/>
+         <tok val="facinorosaque"/>
          <lm>
             <l>facinorosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -983,79 +1421,113 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Facinorum facinorum-->
-         <tok val="[fF]acinorum"/>
+      <ana>
+         <tok val="Facinorum"/>
+         <tok val="facinorum"/>
          <lm>
             <l>facinus</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Facinus facinus facinusque-->
-         <tok val="[fF]acinus(que)?"/>
+      <ana>
+         <tok val="Facinus"/>
+         <tok val="facinus"/>
+         <tok val="facinusque"/>
          <lm>
             <l>facinus</l>
             <m cert="0.5">n - - s - - - n v</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Facinus facinus facinusque facinús fácinus-->
-         <tok val="[fF]?(a|fá|fa)cin[uú]s(que)?"/>
+      <ana>
+         <tok val="Facinus"/>
+         <tok val="facinus"/>
+         <tok val="facinusque"/>
+         <tok val="facinús"/>
+         <tok val="fácinus"/>
          <lm>
             <l>facinus</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Facis facin facis facisne facisque facís fácis Fácis-->
-         <tok val="[fF]?(a|fá|Fá)c[i]?[s]?[n]?(e|s|sque|ís|is)?"/>
+      <ana>
+         <tok val="Facis"/>
+         <tok val="Fácis"/>
+         <tok val="facin"/>
+         <tok val="facis"/>
+         <tok val="facisne"/>
+         <tok val="facisque"/>
+         <tok val="facís"/>
+         <tok val="fácis"/>
          <lm>
             <l>facio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Facis facin facis facisne facisque-->
-         <tok val="[fF]aci[s]?[n]?(e|s|sque)?"/>
+      <ana>
+         <tok val="Facis"/>
+         <tok val="facin"/>
+         <tok val="facis"/>
+         <tok val="facisne"/>
+         <tok val="facisque"/>
          <lm>
             <l>fax</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Facit Facitne facit facitne facitque fácit-->
-         <tok val="[fF]?(a|fá)cit(ne|que)?"/>
+      <ana>
+         <tok val="Facit"/>
+         <tok val="Facitne"/>
+         <tok val="facit"/>
+         <tok val="facitne"/>
+         <tok val="facitque"/>
+         <tok val="fácit"/>
          <lm>
             <l>facio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Facite facite-->
-         <tok val="[fF]acite"/>
+      <ana>
+         <tok val="Facite"/>
+         <tok val="facite"/>
          <lm>
             <l>facio</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Facitis facitis fácitis-->
-         <tok val="[fF]?(a|fá)citis"/>
+      <ana>
+         <tok val="Facitis"/>
+         <tok val="facitis"/>
+         <tok val="fácitis"/>
          <lm>
             <l>facio</l>
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Facitote facitote-->
-         <tok val="[fF]acitote"/>
+      <ana>
+         <tok val="Facitote"/>
+         <tok val="facitote"/>
          <lm>
             <l>facio</l>
             <m>v - 2 p f m a</m>
          </lm>
       </ana>
-      <ana><!--Faciunt Faciuntne faciunt faciuntne faciuntque fáciunt-->
-         <tok val="[fF]?(a|fá|fa)ciunt(ne|que)?"/>
+      <ana>
+         <tok val="Faciunt"/>
+         <tok val="Faciuntne"/>
+         <tok val="faciunt"/>
+         <tok val="faciuntne"/>
+         <tok val="faciuntque"/>
+         <tok val="fáciunt"/>
          <lm>
             <l>facio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Factae factae factaeque-->
-         <tok val="[fF]actae(que)?"/>
+      <ana>
+         <tok val="Factae"/>
+         <tok val="factae"/>
+         <tok val="factaeque"/>
          <lm>
             <l>facio</l>
             <m cert="0.333333333333333333">v - - s r p p f d</m>
@@ -1063,22 +1535,29 @@
             <m cert="0.333333333333333333">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Factae factae factaeque factaé-->
-         <tok val="[fF]acta(e|é|eque)"/>
+      <ana>
+         <tok val="Factae"/>
+         <tok val="factae"/>
+         <tok val="factaeque"/>
+         <tok val="factaé"/>
          <lm>
             <l>facio</l>
             <m>v - - s r p p f g</m>
          </lm>
       </ana>
-      <ana><!--Factam factam factamque-->
-         <tok val="[fF]actam(que)?"/>
+      <ana>
+         <tok val="Factam"/>
+         <tok val="factam"/>
+         <tok val="factamque"/>
          <lm>
             <l>facio</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Facti facti factique-->
-         <tok val="[fF]acti(que)?"/>
+      <ana>
+         <tok val="Facti"/>
+         <tok val="facti"/>
+         <tok val="factique"/>
          <lm cert="0.5">
             <l>facio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1091,8 +1570,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Facticii facticii-->
-         <tok val="[fF]acticii"/>
+      <ana>
+         <tok val="Facticii"/>
+         <tok val="facticii"/>
          <lm>
             <l>facticius</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1101,23 +1581,28 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Factio factio factioque factiost-->
-         <tok val="[fF]actio(st|que)?"/>
+      <ana>
+         <tok val="Factio"/>
+         <tok val="factio"/>
+         <tok val="factioque"/>
+         <tok val="factiost"/>
          <lm>
             <l>factio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Factionem factionem-->
-         <tok val="[fF]actionem"/>
+      <ana>
+         <tok val="Factionem"/>
+         <tok val="factionem"/>
          <lm>
             <l>factio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Factiones factiones-->
-         <tok val="[fF]actiones"/>
+      <ana>
+         <tok val="Factiones"/>
+         <tok val="factiones"/>
          <lm>
             <l>factio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1125,15 +1610,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Factiosus factiosus-->
-         <tok val="[fF]actiosus"/>
+      <ana>
+         <tok val="Factiosus"/>
+         <tok val="factiosus"/>
          <lm>
             <l>factiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Factitare factitare-->
-         <tok val="[fF]actitare"/>
+      <ana>
+         <tok val="Factitare"/>
+         <tok val="factitare"/>
          <lm>
             <l>factito</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1141,24 +1628,28 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Factitatio factitatio-->
-         <tok val="[fF]actitatio"/>
+      <ana>
+         <tok val="Factitatio"/>
+         <tok val="factitatio"/>
          <lm>
             <l>factitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Factitator factitator-->
-         <tok val="[fF]actitator"/>
+      <ana>
+         <tok val="Factitator"/>
+         <tok val="factitator"/>
          <lm>
             <l>factitator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Factitatum factitatum FACTITATUM-->
-         <tok val="[fF]?(actitatum|FACTITATUM)"/>
+      <ana>
+         <tok val="FACTITATUM"/>
+         <tok val="Factitatum"/>
+         <tok val="factitatum"/>
          <lm>
             <l>factito</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -1171,34 +1662,51 @@
       </ana>
       <ana>
          <tok val="Factitatum"/>
+         <tok val="factitatum"/>
          <lm>
             <l>factito</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Factitavit factitauit factitavit-->
-         <tok val="[fF]actita[vu]it"/>
+      <ana>
+         <tok val="Factitavit"/>
+         <tok val="factitauit"/>
+         <tok val="factitavit"/>
          <lm>
             <l>factito</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Factito factito-->
-         <tok val="[fF]actito"/>
+      <ana>
+         <tok val="Factito"/>
+         <tok val="factito"/>
          <lm>
             <l>factito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Facto Factoque facto factoque factost factoue fácto factove-->
-         <tok val="[fF]?(a|fá)cto[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Facto"/>
+         <tok val="Factoque"/>
+         <tok val="facto"/>
+         <tok val="factoque"/>
+         <tok val="factost"/>
+         <tok val="factoue"/>
+         <tok val="factove"/>
+         <tok val="fácto"/>
          <lm>
             <l>facio</l>
             <m>v - - s r p p n d</m>
          </lm>
       </ana>
-      <ana><!--Facto Factoque facto factoque factost factoue factove-->
-         <tok val="[fF]acto[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Facto"/>
+         <tok val="Factoque"/>
+         <tok val="facto"/>
+         <tok val="factoque"/>
+         <tok val="factost"/>
+         <tok val="factoue"/>
+         <tok val="factove"/>
          <lm cert="0.5">
             <l>facio</l>
             <m cert="0.333333333333333333">v - - s r p p n b</m>
@@ -1211,37 +1719,48 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Factor factor factorque-->
-         <tok val="[fF]actor(que)?"/>
+      <ana>
+         <tok val="Factor"/>
+         <tok val="factor"/>
+         <tok val="factorque"/>
          <lm>
             <l>factor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Factorum factorum factorumque-->
-         <tok val="[fF]actorum(que)?"/>
+      <ana>
+         <tok val="Factorum"/>
+         <tok val="factorum"/>
+         <tok val="factorumque"/>
          <lm>
             <l>factor</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Factu factu fáctu-->
-         <tok val="[fF]?(a|fá)ctu"/>
+      <ana>
+         <tok val="Factu"/>
+         <tok val="factu"/>
+         <tok val="fáctu"/>
          <lm>
             <l>facio</l>
             <m>v - - - - u - - b</m>
          </lm>
       </ana>
-      <ana><!--Factu factu factuque-->
-         <tok val="[fF]actu(que)?"/>
+      <ana>
+         <tok val="Factu"/>
+         <tok val="factu"/>
+         <tok val="factuque"/>
          <lm>
             <l>factus2</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Factura factura facturave facturaque-->
-         <tok val="[fF]actura(ve|que)?"/>
+      <ana>
+         <tok val="Factura"/>
+         <tok val="factura"/>
+         <tok val="facturaque"/>
+         <tok val="facturave"/>
          <lm cert="0.5">
             <l>facio</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -1258,8 +1777,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Facturi facturi-->
-         <tok val="[fF]acturi"/>
+      <ana>
+         <tok val="Facturi"/>
+         <tok val="facturi"/>
          <lm>
             <l>facio</l>
             <m cert="0.25">v - - s f p a n g</m>
@@ -1268,8 +1788,12 @@
             <m cert="0.25">v - - s f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Facturum facturum facturumque facturumue facturumve-->
-         <tok val="[fF]acturum[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Facturum"/>
+         <tok val="facturum"/>
+         <tok val="facturumque"/>
+         <tok val="facturumue"/>
+         <tok val="facturumve"/>
          <lm>
             <l>facio</l>
             <m cert="0.2">v - - p f p a n g</m>
@@ -1279,22 +1803,34 @@
             <m cert="0.2">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Facturum facturum facturumque facturumue facturumve fácturum-->
-         <tok val="[fF]?(a|fá)cturum[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Facturum"/>
+         <tok val="facturum"/>
+         <tok val="facturumque"/>
+         <tok val="facturumue"/>
+         <tok val="facturumve"/>
+         <tok val="fácturum"/>
          <lm>
             <l>facio</l>
             <m>v - - s f p a n v</m>
          </lm>
       </ana>
-      <ana><!--Facturus facturus facturusne facturusque facturust facturusue factúrus-->
-         <tok val="[fF]act[uú]rus[q]?(ue|t|ne)?"/>
+      <ana>
+         <tok val="Facturus"/>
+         <tok val="facturus"/>
+         <tok val="facturusne"/>
+         <tok val="facturusque"/>
+         <tok val="facturust"/>
+         <tok val="facturusue"/>
+         <tok val="factúrus"/>
          <lm>
             <l>facio</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Facula facula-->
-         <tok val="[fF]acula"/>
+      <ana>
+         <tok val="Facula"/>
+         <tok val="facula"/>
          <lm>
             <l>facula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1302,51 +1838,64 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Facultate facultate-->
-         <tok val="[fF]acultate"/>
+      <ana>
+         <tok val="Facultate"/>
+         <tok val="facultate"/>
          <lm>
             <l>facultas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Facultatem facultatem facultatemque-->
-         <tok val="[fF]acultatem(que)?"/>
+      <ana>
+         <tok val="Facultatem"/>
+         <tok val="facultatem"/>
+         <tok val="facultatemque"/>
          <lm>
             <l>facultas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Facultati facultati-->
-         <tok val="[fF]acultati"/>
+      <ana>
+         <tok val="Facultati"/>
+         <tok val="facultati"/>
          <lm>
             <l>facultas</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Facultatibus facultatibus facultatibusque-->
-         <tok val="[fF]acultatibus(que)?"/>
+      <ana>
+         <tok val="Facultatibus"/>
+         <tok val="facultatibus"/>
+         <tok val="facultatibusque"/>
          <lm>
             <l>facultas</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Facultatis facultatis facultatisque-->
-         <tok val="[fF]acultatis(que)?"/>
+      <ana>
+         <tok val="Facultatis"/>
+         <tok val="facultatis"/>
+         <tok val="facultatisque"/>
          <lm>
             <l>facultas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Facultatum facultatium facultatum facultatumque-->
-         <tok val="[fF]acultat[i]?um(que)?"/>
+      <ana>
+         <tok val="Facultatum"/>
+         <tok val="facultatium"/>
+         <tok val="facultatum"/>
+         <tok val="facultatumque"/>
          <lm>
             <l>facultas</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Facunda facunda facundaque-->
-         <tok val="[fF]acunda(que)?"/>
+      <ana>
+         <tok val="Facunda"/>
+         <tok val="facunda"/>
+         <tok val="facundaque"/>
          <lm>
             <l>facundus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1357,29 +1906,37 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Facunde facunde facundius-->
-         <tok val="[fF]acund(e|ius)"/>
+      <ana>
+         <tok val="Facunde"/>
+         <tok val="facunde"/>
+         <tok val="facundius"/>
          <lm>
             <l>facundus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Facunde Facundum facunde facundum-->
-         <tok val="[fF]acund(um|e)"/>
+      <ana>
+         <tok val="Facunde"/>
+         <tok val="Facundum"/>
+         <tok val="facunde"/>
+         <tok val="facundum"/>
          <lm>
             <l>facundus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Facunde facunde-->
-         <tok val="[fF]acunde"/>
+      <ana>
+         <tok val="Facunde"/>
+         <tok val="facunde"/>
          <lm>
             <l>facundus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Facundi facundi facundique-->
-         <tok val="[fF]acundi(que)?"/>
+      <ana>
+         <tok val="Facundi"/>
+         <tok val="facundi"/>
+         <tok val="facundique"/>
          <lm>
             <l>facundus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1388,8 +1945,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Facundia facundia facundiaque-->
-         <tok val="[fF]acundia(que)?"/>
+      <ana>
+         <tok val="Facundia"/>
+         <tok val="facundia"/>
+         <tok val="facundiaque"/>
          <lm>
             <l>facundia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1397,8 +1956,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Facundiae facundiae facundiaeque-->
-         <tok val="[fF]acundiae(que)?"/>
+      <ana>
+         <tok val="Facundiae"/>
+         <tok val="facundiae"/>
+         <tok val="facundiaeque"/>
          <lm>
             <l>facundia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1407,15 +1968,17 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Facundiosus facundiosus-->
-         <tok val="[fF]acundiosus"/>
+      <ana>
+         <tok val="Facundiosus"/>
+         <tok val="facundiosus"/>
          <lm>
             <l>facundiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Facundo facundo-->
-         <tok val="[fF]acundo"/>
+      <ana>
+         <tok val="Facundo"/>
+         <tok val="facundo"/>
          <lm>
             <l>facundus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1424,15 +1987,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Facundos facundos-->
-         <tok val="[fF]acundos"/>
+      <ana>
+         <tok val="Facundos"/>
+         <tok val="facundos"/>
          <lm>
             <l>facundus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Facundum facundum-->
-         <tok val="[fF]acundum"/>
+      <ana>
+         <tok val="Facundum"/>
+         <tok val="facundum"/>
          <lm>
             <l>facundus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1442,8 +2007,9 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Facundus facundus-->
-         <tok val="[fF]acundus"/>
+      <ana>
+         <tok val="Facundus"/>
+         <tok val="facundus"/>
          <lm>
             <l>facundus</l>
             <m>a - - s - - - m n</m>
@@ -1451,6 +2017,7 @@
       </ana>
       <ana>
          <tok val="Facutalis"/>
+         <tok val="facutalis"/>
          <lm>
             <l>Fagutalis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -1464,15 +2031,19 @@
             <m cert="0.111111111111111111">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--facerent facerentque-->
-         <tok val="facerent(que)?"/>
+      <ana>
+         <tok val="facerent"/>
+         <tok val="facerentque"/>
          <lm>
             <l>facio</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--faceret faceretne faceretque FACERET-->
-         <tok val="(faceret)?(ne|que|FACERET)?"/>
+      <ana>
+         <tok val="FACERET"/>
+         <tok val="faceret"/>
+         <tok val="faceretne"/>
+         <tok val="faceretque"/>
          <lm>
             <l>facio</l>
             <m>v - 3 s i s a</m>
@@ -1618,8 +2189,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--facetia facetiast-->
-         <tok val="facetia(st)?"/>
+      <ana>
+         <tok val="facetia"/>
+         <tok val="facetiast"/>
          <lm>
             <l>facetiae</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1682,8 +2254,9 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--facetissime facetissimum-->
-         <tok val="facetissim(um|e)"/>
+      <ana>
+         <tok val="facetissime"/>
+         <tok val="facetissimum"/>
          <lm>
             <l>facetus</l>
             <m>a - - s - - - n v s</m>
@@ -1751,8 +2324,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--facienda faciunda-->
-         <tok val="faci[ue]nda"/>
+      <ana>
+         <tok val="facienda"/>
+         <tok val="faciunda"/>
          <lm>
             <l>facio</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1763,8 +2337,9 @@
             <m cert="0.166666666666666667">v - - p p g p n n</m>
          </lm>
       </ana>
-      <ana><!--faciendam faciundam-->
-         <tok val="faci[ue]ndam"/>
+      <ana>
+         <tok val="faciendam"/>
+         <tok val="faciundam"/>
          <lm>
             <l>facio</l>
             <m>v - - s p g p f a</m>
@@ -1777,29 +2352,34 @@
             <m>v - - p p g p f g</m>
          </lm>
       </ana>
-      <ana><!--faciendas faciundas-->
-         <tok val="faci[ue]ndas"/>
+      <ana>
+         <tok val="faciendas"/>
+         <tok val="faciundas"/>
          <lm>
             <l>facio</l>
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--faciendos faciendosque faciundos-->
-         <tok val="faci[ue]ndos(que)?"/>
+      <ana>
+         <tok val="faciendos"/>
+         <tok val="faciendosque"/>
+         <tok val="faciundos"/>
          <lm>
             <l>facio</l>
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--faciendus faciendun-->
-         <tok val="faciendu[ns]"/>
+      <ana>
+         <tok val="faciendun"/>
+         <tok val="faciendus"/>
          <lm>
             <l>facio</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--faciente facienti-->
-         <tok val="facient[ie]"/>
+      <ana>
+         <tok val="faciente"/>
+         <tok val="facienti"/>
          <lm>
             <l>facio</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1825,8 +2405,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--facientes facientis-->
-         <tok val="facient[ie]s"/>
+      <ana>
+         <tok val="facientes"/>
+         <tok val="facientis"/>
          <lm>
             <l>facio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1851,8 +2432,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--facientibus facientibusque-->
-         <tok val="facientibus(que)?"/>
+      <ana>
+         <tok val="facientibus"/>
+         <tok val="facientibusque"/>
          <lm>
             <l>facio</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -1895,22 +2477,29 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--facietis facietisque faciétis-->
-         <tok val="faci[ée]tis(que)?"/>
+      <ana>
+         <tok val="facietis"/>
+         <tok val="facietisque"/>
+         <tok val="faciétis"/>
          <lm>
             <l>facio</l>
             <m>v - 2 p f i a</m>
          </lm>
       </ana>
-      <ana><!--facile faciliter facilius faciliusne faciliusque-->
-         <tok val="facil[i]?(us)?(ne|que|ter|e)?"/>
+      <ana>
+         <tok val="facile"/>
+         <tok val="faciliter"/>
+         <tok val="facilius"/>
+         <tok val="faciliusne"/>
+         <tok val="faciliusque"/>
          <lm>
             <l>facilis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--facilibus facillimis-->
-         <tok val="facil[l]?i(mi|bu)s"/>
+      <ana>
+         <tok val="facilibus"/>
+         <tok val="facillimis"/>
          <lm>
             <l>facilis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1921,8 +2510,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--faciliorem facilioremque-->
-         <tok val="faciliorem(que)?"/>
+      <ana>
+         <tok val="faciliorem"/>
+         <tok val="facilioremque"/>
          <lm>
             <l>facilis</l>
             <m cert="0.5">a - - s - - - f a c</m>
@@ -1978,8 +2568,9 @@
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--facilitaten facilitates-->
-         <tok val="facilitate[sn]"/>
+      <ana>
+         <tok val="facilitaten"/>
+         <tok val="facilitates"/>
          <lm>
             <l>facilitas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -2008,8 +2599,10 @@
             <m>a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--facinerosorum facinorosorum facinorosum-->
-         <tok val="facin[oe]ros(or|)um"/>
+      <ana>
+         <tok val="facinerosorum"/>
+         <tok val="facinorosorum"/>
+         <tok val="facinorosum"/>
          <lm>
             <l>facinorosus</l>
             <m>a - - p - - - m g</m>
@@ -2119,8 +2712,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--facinorosorum facinorosum-->
-         <tok val="facinoros(or)?um"/>
+      <ana>
+         <tok val="facinorosorum"/>
+         <tok val="facinorosum"/>
          <lm>
             <l>facinorosus</l>
             <m>a - - p - - - n g</m>
@@ -2143,8 +2737,9 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--facinorosus facinorosusque-->
-         <tok val="facinorosus(que)?"/>
+      <ana>
+         <tok val="facinorosus"/>
+         <tok val="facinorosusque"/>
          <lm>
             <l>facinorosus</l>
             <m>a - - s - - - m n</m>
@@ -2181,8 +2776,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--factan factas-->
-         <tok val="facta[sn]"/>
+      <ana>
+         <tok val="factan"/>
+         <tok val="factas"/>
          <lm>
             <l>facio</l>
             <m>v - - p r p p f a</m>
@@ -2285,16 +2881,18 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--factionibus factionibusque-->
-         <tok val="factionibus(que)?"/>
+      <ana>
+         <tok val="factionibus"/>
+         <tok val="factionibusque"/>
          <lm>
             <l>factio</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--factionis factionisque-->
-         <tok val="factionis(que)?"/>
+      <ana>
+         <tok val="factionis"/>
+         <tok val="factionisque"/>
          <lm>
             <l>factio</l>
             <m>n - - s - - - f g</m>
@@ -2344,8 +2942,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--factiose factiosum-->
-         <tok val="factios(um|e)"/>
+      <ana>
+         <tok val="factiose"/>
+         <tok val="factiosum"/>
          <lm>
             <l>factiosus</l>
             <m>a - - s - - - n v</m>
@@ -2383,16 +2982,18 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--factiosorum factiosum-->
-         <tok val="factios(or)?um"/>
+      <ana>
+         <tok val="factiosorum"/>
+         <tok val="factiosum"/>
          <lm>
             <l>factiosus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--factiosos factiososque-->
-         <tok val="factiosos(que)?"/>
+      <ana>
+         <tok val="factiosos"/>
+         <tok val="factiososque"/>
          <lm>
             <l>factiosus</l>
             <m>a - - p - - - m a</m>
@@ -2455,8 +3056,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--factitarat factitaverat-->
-         <tok val="factita(ve)?rat"/>
+      <ana>
+         <tok val="factitarat"/>
+         <tok val="factitaverat"/>
          <lm>
             <l>factito</l>
             <m>v - 3 s l i a</m>
@@ -2483,15 +3085,18 @@
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--factitarit factitaverit-->
-         <tok val="factita(ve)?rit"/>
+      <ana>
+         <tok val="factitarit"/>
+         <tok val="factitaverit"/>
          <lm>
             <l>factito</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--factitarunt factitavere factitaverunt-->
-         <tok val="factita(ve)?r(unt|e)"/>
+      <ana>
+         <tok val="factitarunt"/>
+         <tok val="factitavere"/>
+         <tok val="factitaverunt"/>
          <lm>
             <l>factito</l>
             <m>v - 3 p r i a</m>
@@ -2504,8 +3109,10 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--factitasse factitauisse factitavisse-->
-         <tok val="factita[vu]?(i|)sse"/>
+      <ana>
+         <tok val="factitasse"/>
+         <tok val="factitauisse"/>
+         <tok val="factitavisse"/>
          <lm>
             <l>factito</l>
             <m>v - - - r n a</m>
@@ -2585,8 +3192,9 @@
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--factitauerant factitaverant-->
-         <tok val="factita[vu]erant"/>
+      <ana>
+         <tok val="factitauerant"/>
+         <tok val="factitaverant"/>
          <lm>
             <l>factito</l>
             <m>v - 3 p l i a</m>
@@ -2689,22 +3297,35 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--factos factosque factost-->
-         <tok val="factos(t|que)?"/>
+      <ana>
+         <tok val="factos"/>
+         <tok val="factosque"/>
+         <tok val="factost"/>
          <lm>
             <l>facio</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--factuin factuist-->
-         <tok val="factui(st|n)"/>
+      <ana>
+         <tok val="factuin"/>
+         <tok val="factuist"/>
          <lm>
             <l>factus2</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--factum factumne factumque factumst factumue factumve factúm fáctum fáctumst Fáctum-->
-         <tok val="[f]?(a|á|Fá)ct[uú]m[q]?[unv]?(e|st)?"/>
+      <ana>
+         <tok val="Factum"/>
+         <tok val="Fáctum"/>
+         <tok val="factum"/>
+         <tok val="factumne"/>
+         <tok val="factumque"/>
+         <tok val="factumst"/>
+         <tok val="factumue"/>
+         <tok val="factumve"/>
+         <tok val="factúm"/>
+         <tok val="fáctum"/>
+         <tok val="fáctumst"/>
          <lm>
             <l>facio</l>
             <m>a - - s - - - n n</m>
@@ -2783,8 +3404,9 @@
             <m cert="0.25">v - - s f p a n d</m>
          </lm>
       </ana>
-      <ana><!--facturos facturosque-->
-         <tok val="facturos(que)?"/>
+      <ana>
+         <tok val="facturos"/>
+         <tok val="facturosque"/>
          <lm>
             <l>facio</l>
             <m>v - - p f p a m a</m>
@@ -2869,8 +3491,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--facundiam facundiamque-->
-         <tok val="facundiam(que)?"/>
+      <ana>
+         <tok val="facundiam"/>
+         <tok val="facundiamque"/>
          <lm>
             <l>facundia</l>
             <m>n - - s - - - f a</m>
@@ -2966,15 +3589,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--facundissime facundissimus-->
-         <tok val="facundissim(us|e)"/>
+      <ana>
+         <tok val="facundissime"/>
+         <tok val="facundissimus"/>
          <lm>
             <l>facundus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--facundissime facundissimum-->
-         <tok val="facundissim(um|e)"/>
+      <ana>
+         <tok val="facundissime"/>
+         <tok val="facundissimum"/>
          <lm>
             <l>facundus</l>
             <m>a - - s - - - n v s</m>
@@ -3013,8 +3638,9 @@
             <m cert="0.2">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--facundissimus facundissumus-->
-         <tok val="facundiss[ui]mus"/>
+      <ana>
+         <tok val="facundissimus"/>
+         <tok val="facundissumus"/>
          <lm>
             <l>facundus</l>
             <m>a - - s - - - m n s</m>
@@ -3091,6 +3717,7 @@
       </ana>
       <ana>
          <tok val="FACTITATUM"/>
+         <tok val="factitatum"/>
          <lm>
             <l>factito</l>
             <m>n - - s - - - n n</m>

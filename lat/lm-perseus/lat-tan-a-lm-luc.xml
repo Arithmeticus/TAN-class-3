@@ -1,50 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusluc">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:luc">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to luc</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-luc.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>LUC</tok-starts-with>
       <tok-starts-with>Luc</tok-starts-with>
       <tok-starts-with>luc</tok-starts-with>
       <tok-starts-with>lúc</tok-starts-with>
-      <ana><!--LUCAN Lucam Lucan-->
-         <tok val="L(uca)?(n|m|UCAN)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:32:13.052-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:32:13.052-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-luc.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="LUCAN"/>
+         <tok val="Lucam"/>
+         <tok val="Lucan"/>
+         <tok val="lucam"/>
+         <tok val="lucan"/>
          <lm>
             <l>Lucas</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--LUCIUS Lucius Luciusne Luciusque-->
-         <tok val="L(ucius)?(ne|que|UCIUS)?"/>
+      <ana>
+         <tok val="LUCIUS"/>
+         <tok val="Lucius"/>
+         <tok val="Luciusne"/>
+         <tok val="Luciusque"/>
+         <tok val="lucius"/>
+         <tok val="luciusne"/>
+         <tok val="luciusque"/>
          <lm>
             <l>Lucius</l>
             <m>n e - s - - - m n</m>
@@ -52,6 +70,7 @@
       </ana>
       <ana>
          <tok val="Luca"/>
+         <tok val="luca"/>
          <lm cert="0.5">
             <l>Lucas</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -64,15 +83,23 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Luca Lucas-->
-         <tok val="Luca[s]?"/>
+      <ana>
+         <tok val="Luca"/>
+         <tok val="Lucas"/>
+         <tok val="luca"/>
+         <tok val="lucas"/>
          <lm>
             <l>Lucas</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucae Lucaen Lucaeque-->
-         <tok val="Lucae(n|que)?"/>
+      <ana>
+         <tok val="Lucae"/>
+         <tok val="Lucaen"/>
+         <tok val="Lucaeque"/>
+         <tok val="lucae"/>
+         <tok val="lucaen"/>
+         <tok val="lucaeque"/>
          <lm cert="0.5">
             <l>Luca</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -90,6 +117,7 @@
       </ana>
       <ana>
          <tok val="Lucage"/>
+         <tok val="lucage"/>
          <lm>
             <l>Lucagus</l>
             <m>n e - s - - - m v</m>
@@ -97,6 +125,7 @@
       </ana>
       <ana>
          <tok val="Lucagus"/>
+         <tok val="lucagus"/>
          <lm>
             <l>Lucagus</l>
             <m>n e - s - - - m n</m>
@@ -104,13 +133,17 @@
       </ana>
       <ana>
          <tok val="Lucam"/>
+         <tok val="lucam"/>
          <lm>
             <l>Luca</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lucana Lucanaque-->
-         <tok val="Lucana(que)?"/>
+      <ana>
+         <tok val="Lucana"/>
+         <tok val="Lucanaque"/>
+         <tok val="lucana"/>
+         <tok val="lucanaque"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -121,8 +154,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Lucanae Lucanaeque-->
-         <tok val="Lucanae(que)?"/>
+      <ana>
+         <tok val="Lucanae"/>
+         <tok val="Lucanaeque"/>
+         <tok val="lucanae"/>
+         <tok val="lucanaeque"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -133,20 +169,27 @@
       </ana>
       <ana>
          <tok val="Lucanam"/>
+         <tok val="lucanam"/>
          <lm>
             <l>Lucanus</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lucanas Lucanasque-->
-         <tok val="Lucanas(que)?"/>
+      <ana>
+         <tok val="Lucanas"/>
+         <tok val="Lucanasque"/>
+         <tok val="lucanas"/>
+         <tok val="lucanasque"/>
          <lm>
             <l>Lucanus</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lucane Lucanum-->
-         <tok val="Lucan(um|e)"/>
+      <ana>
+         <tok val="Lucane"/>
+         <tok val="Lucanum"/>
+         <tok val="lucane"/>
+         <tok val="lucanum"/>
          <lm>
             <l>Lucanus</l>
             <m>a e - s - - - n v</m>
@@ -154,14 +197,18 @@
       </ana>
       <ana>
          <tok val="Lucane"/>
+         <tok val="lucane"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lucane Lucanius-->
-         <tok val="Lucan(ius|e)"/>
+      <ana>
+         <tok val="Lucane"/>
+         <tok val="Lucanius"/>
+         <tok val="lucane"/>
+         <tok val="lucanius"/>
          <lm>
             <l>Lucanus</l>
             <m>d e</m>
@@ -169,6 +216,7 @@
       </ana>
       <ana>
          <tok val="Lucani"/>
+         <tok val="lucani"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -180,8 +228,11 @@
             <m cert="0.142857142857142857">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lucania Lucaniaque-->
-         <tok val="Lucania(que)?"/>
+      <ana>
+         <tok val="Lucania"/>
+         <tok val="Lucaniaque"/>
+         <tok val="lucania"/>
+         <tok val="lucaniaque"/>
          <lm>
             <l>Lucania</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -189,8 +240,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lucaniae Lucaniaeque-->
-         <tok val="Lucaniae(que)?"/>
+      <ana>
+         <tok val="Lucaniae"/>
+         <tok val="Lucaniaeque"/>
+         <tok val="lucaniae"/>
+         <tok val="lucaniaeque"/>
          <lm>
             <l>Lucania</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -199,8 +253,11 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lucaniam Lucaniamque-->
-         <tok val="Lucaniam(que)?"/>
+      <ana>
+         <tok val="Lucaniam"/>
+         <tok val="Lucaniamque"/>
+         <tok val="lucaniam"/>
+         <tok val="lucaniamque"/>
          <lm>
             <l>Lucania</l>
             <m>n e - s - - - f a</m>
@@ -208,7 +265,8 @@
       </ana>
       <ana>
          <tok val="Lucanica"/>
-         <lm>
+         <tok val="lucanica"/>
+         <lm cert="0.5">
             <l>Lucanicus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
             <m cert="0.166666666666666667">a e - p - - - n v</m>
@@ -217,10 +275,7 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Lucanica lucanica-->
-         <tok val="[lL]ucanica"/>
-         <lm>
+         <lm cert="0.5">
             <l>lucanica</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -229,20 +284,19 @@
       </ana>
       <ana>
          <tok val="Lucanicas"/>
-         <lm>
+         <tok val="lucanicas"/>
+         <lm cert="0.5">
             <l>Lucanicus</l>
             <m>a e - p - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Lucanicas lucanicas-->
-         <tok val="[lL]ucanicas"/>
-         <lm>
+         <lm cert="0.5">
             <l>lucanica</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Lucanicum"/>
+         <tok val="lucanicum"/>
          <lm>
             <l>Lucanicus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -255,6 +309,7 @@
       </ana>
       <ana>
          <tok val="Lucanicus"/>
+         <tok val="lucanicus"/>
          <lm>
             <l>Lucanicus</l>
             <m>a e - s - - - m n</m>
@@ -262,6 +317,7 @@
       </ana>
       <ana>
          <tok val="Lucanis"/>
+         <tok val="lucanis"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -276,6 +332,7 @@
       </ana>
       <ana>
          <tok val="Lucanius"/>
+         <tok val="lucanius"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.333333333333333333">a e - s - - - n a c</m>
@@ -285,6 +342,7 @@
       </ana>
       <ana>
          <tok val="Lucano"/>
+         <tok val="lucano"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -295,8 +353,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lucanorum Lucanum-->
-         <tok val="Lucan(or)?um"/>
+      <ana>
+         <tok val="Lucanorum"/>
+         <tok val="Lucanum"/>
+         <tok val="lucanorum"/>
+         <tok val="lucanum"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -306,6 +367,7 @@
       </ana>
       <ana>
          <tok val="Lucanos"/>
+         <tok val="lucanos"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -314,6 +376,7 @@
       </ana>
       <ana>
          <tok val="Lucanum"/>
+         <tok val="lucanum"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -324,21 +387,24 @@
       </ana>
       <ana>
          <tok val="Lucanus"/>
+         <tok val="lucanus"/>
          <lm>
             <l>Lucanus</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucar lucar-->
-         <tok val="[lL]ucar"/>
+      <ana>
+         <tok val="Lucar"/>
+         <tok val="lucar"/>
          <lm>
             <l>lucar</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Lucaria lucaria-->
-         <tok val="[lL]ucaria"/>
+      <ana>
+         <tok val="Lucaria"/>
+         <tok val="lucaria"/>
          <lm cert="0.5">
             <l>lucaris</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -354,6 +420,7 @@
       </ana>
       <ana>
          <tok val="Lucarium"/>
+         <tok val="lucarium"/>
          <lm cert="0.5">
             <l>lucaris</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -367,6 +434,7 @@
       </ana>
       <ana>
          <tok val="Lucas"/>
+         <tok val="lucas"/>
          <lm cert="0.5">
             <l>Lucas</l>
             <m>n e - p - - - m a</m>
@@ -378,6 +446,7 @@
       </ana>
       <ana>
          <tok val="Luccei"/>
+         <tok val="luccei"/>
          <lm>
             <l>Lucceius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -386,6 +455,7 @@
       </ana>
       <ana>
          <tok val="Lucceio"/>
+         <tok val="lucceio"/>
          <lm>
             <l>Lucceius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -394,6 +464,7 @@
       </ana>
       <ana>
          <tok val="Lucceium"/>
+         <tok val="lucceium"/>
          <lm>
             <l>Lucceius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -402,13 +473,18 @@
       </ana>
       <ana>
          <tok val="Lucceius"/>
+         <tok val="lucceius"/>
          <lm>
             <l>Lucceius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Luce Lucen luce luceque-->
-         <tok val="[Ll]uce(n|que)?"/>
+      <ana>
+         <tok val="Luce"/>
+         <tok val="Lucen"/>
+         <tok val="luce"/>
+         <tok val="lucen"/>
+         <tok val="luceque"/>
          <lm cert="0.333333333333333333">
             <l>lux</l>
             <m cert="0.5">n - - s - - - f b</m>
@@ -423,15 +499,17 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lucebat lucebat-->
-         <tok val="[lL]ucebat"/>
+      <ana>
+         <tok val="Lucebat"/>
+         <tok val="lucebat"/>
          <lm>
             <l>luceo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Lucebit lucebit-->
-         <tok val="[lL]ucebit"/>
+      <ana>
+         <tok val="Lucebit"/>
+         <tok val="lucebit"/>
          <lm>
             <l>luceo</l>
             <m>v - 3 s f i a</m>
@@ -439,6 +517,7 @@
       </ana>
       <ana>
          <tok val="Luceium"/>
+         <tok val="luceium"/>
          <lm>
             <l>Luceium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -447,8 +526,9 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Lucellum lucellum-->
-         <tok val="[lL]ucellum"/>
+      <ana>
+         <tok val="Lucellum"/>
+         <tok val="lucellum"/>
          <lm>
             <l>lucellum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -457,16 +537,23 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lucem lucem lucemque luca-->
-         <tok val="[lL]uc(em)?(que|a)?"/>
+      <ana>
+         <tok val="Lucem"/>
+         <tok val="luca"/>
+         <tok val="lucem"/>
+         <tok val="lucemque"/>
          <lm>
             <l>lux</l>
             <m cert="0.5">n - - s - - - f a</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lucen Luces luces lucesque-->
-         <tok val="[Ll]uce(s|n|sque)"/>
+      <ana>
+         <tok val="Lucen"/>
+         <tok val="Luces"/>
+         <tok val="lucen"/>
+         <tok val="luces"/>
+         <tok val="lucesque"/>
          <lm cert="0.5">
             <l>lux</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -481,8 +568,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Lucens lucens-->
-         <tok val="[lL]ucens"/>
+      <ana>
+         <tok val="Lucens"/>
+         <tok val="lucens"/>
          <lm>
             <l>luceo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -496,6 +584,7 @@
       </ana>
       <ana>
          <tok val="Lucenses"/>
+         <tok val="lucenses"/>
          <lm>
             <l>Lucensis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -504,8 +593,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Lucenses Lucensis-->
-         <tok val="Lucens[ie]s"/>
+      <ana>
+         <tok val="Lucenses"/>
+         <tok val="Lucensis"/>
+         <tok val="lucenses"/>
+         <tok val="lucensis"/>
          <lm>
             <l>Lucensis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -514,6 +606,7 @@
       </ana>
       <ana>
          <tok val="Lucensis"/>
+         <tok val="lucensis"/>
          <lm>
             <l>Lucensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -525,23 +618,28 @@
             <m cert="0.142857142857142857">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lucent lucent-->
-         <tok val="[lL]ucent"/>
+      <ana>
+         <tok val="Lucent"/>
+         <tok val="lucent"/>
          <lm>
             <l>luceo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Lucentem lucentem lucentemque-->
-         <tok val="[lL]ucentem(que)?"/>
+      <ana>
+         <tok val="Lucentem"/>
+         <tok val="lucentem"/>
+         <tok val="lucentemque"/>
          <lm>
             <l>luceo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Lucentes lucentes lucentesque-->
-         <tok val="[lL]ucentes(que)?"/>
+      <ana>
+         <tok val="Lucentes"/>
+         <tok val="lucentes"/>
+         <tok val="lucentesque"/>
          <lm>
             <l>luceo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -550,16 +648,21 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Lucentes Lucentis lucentes lucentesque lucentis-->
-         <tok val="[Ll]ucent[ie]s(que)?"/>
+      <ana>
+         <tok val="Lucentes"/>
+         <tok val="Lucentis"/>
+         <tok val="lucentes"/>
+         <tok val="lucentesque"/>
+         <tok val="lucentis"/>
          <lm>
             <l>luceo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Lucentia lucentia-->
-         <tok val="[lL]ucentia"/>
+      <ana>
+         <tok val="Lucentia"/>
+         <tok val="lucentia"/>
          <lm>
             <l>luceo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -567,8 +670,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Lucentis lucentis-->
-         <tok val="[lL]ucentis"/>
+      <ana>
+         <tok val="Lucentis"/>
+         <tok val="lucentis"/>
          <lm>
             <l>luceo</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -576,15 +680,17 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Luceo luceo-->
-         <tok val="[lL]uceo"/>
+      <ana>
+         <tok val="Luceo"/>
+         <tok val="luceo"/>
          <lm>
             <l>luceo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Lucere lucere-->
-         <tok val="[lL]ucere"/>
+      <ana>
+         <tok val="Lucere"/>
+         <tok val="lucere"/>
          <lm>
             <l>luceo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -594,13 +700,19 @@
       </ana>
       <ana>
          <tok val="Lucerem"/>
+         <tok val="lucerem"/>
          <lm>
             <l>luceo</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Luceres Lucereses Luceresque-->
-         <tok val="Luceres(es|que)?"/>
+      <ana>
+         <tok val="Luceres"/>
+         <tok val="Lucereses"/>
+         <tok val="Luceresque"/>
+         <tok val="luceres"/>
+         <tok val="lucereses"/>
+         <tok val="luceresque"/>
          <lm>
             <l>Luceres</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -608,8 +720,11 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Luceres Luceresque-->
-         <tok val="Luceres(que)?"/>
+      <ana>
+         <tok val="Luceres"/>
+         <tok val="Luceresque"/>
+         <tok val="luceres"/>
+         <tok val="luceresque"/>
          <lm>
             <l>luceo</l>
             <m>v - 2 s i s a</m>
@@ -617,6 +732,7 @@
       </ana>
       <ana>
          <tok val="Luceria"/>
+         <tok val="luceria"/>
          <lm>
             <l>Luceria</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -626,6 +742,7 @@
       </ana>
       <ana>
          <tok val="Luceriae"/>
+         <tok val="luceriae"/>
          <lm>
             <l>Luceria</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -636,6 +753,7 @@
       </ana>
       <ana>
          <tok val="Luceriam"/>
+         <tok val="luceriam"/>
          <lm>
             <l>Luceria</l>
             <m>n e - s - - - f a</m>
@@ -643,6 +761,7 @@
       </ana>
       <ana>
          <tok val="Lucerias"/>
+         <tok val="lucerias"/>
          <lm>
             <l>Luceria</l>
             <m>n e - p - - - f a</m>
@@ -650,6 +769,7 @@
       </ana>
       <ana>
          <tok val="Luceribusque"/>
+         <tok val="luceribusque"/>
          <lm>
             <l>Luceres</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -658,6 +778,7 @@
       </ana>
       <ana>
          <tok val="Lucerini"/>
+         <tok val="lucerini"/>
          <lm cert="0.5">
             <l>Lucerinus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -673,6 +794,7 @@
       </ana>
       <ana>
          <tok val="Lucerinum"/>
+         <tok val="lucerinum"/>
          <lm cert="0.5">
             <l>Lucerinus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -687,8 +809,10 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lucerna lucerna lucernaque-->
-         <tok val="[lL]ucerna(que)?"/>
+      <ana>
+         <tok val="Lucerna"/>
+         <tok val="lucerna"/>
+         <tok val="lucernaque"/>
          <lm>
             <l>lucerna</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -696,8 +820,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lucernae lucernae-->
-         <tok val="[lL]ucernae"/>
+      <ana>
+         <tok val="Lucernae"/>
+         <tok val="lucernae"/>
          <lm>
             <l>lucerna</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -706,30 +831,35 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lucernam lucernam lucernamque-->
-         <tok val="[lL]ucernam(que)?"/>
+      <ana>
+         <tok val="Lucernam"/>
+         <tok val="lucernam"/>
+         <tok val="lucernamque"/>
          <lm>
             <l>lucerna</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lucernarum lucernarum-->
-         <tok val="[lL]ucernarum"/>
+      <ana>
+         <tok val="Lucernarum"/>
+         <tok val="lucernarum"/>
          <lm>
             <l>lucerna</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Lucernis lucernis-->
-         <tok val="[lL]ucernis"/>
+      <ana>
+         <tok val="Lucernis"/>
+         <tok val="lucernis"/>
          <lm>
             <l>lucerna</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lucernula lucernula-->
-         <tok val="[lL]ucernula"/>
+      <ana>
+         <tok val="Lucernula"/>
+         <tok val="lucernula"/>
          <lm>
             <l>lucernula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -737,15 +867,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lucesco lucesco-->
-         <tok val="[lL]ucesco"/>
+      <ana>
+         <tok val="Lucesco"/>
+         <tok val="lucesco"/>
          <lm>
             <l>lucesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Lucet lucet lucetque-->
-         <tok val="[lL]ucet(que)?"/>
+      <ana>
+         <tok val="Lucet"/>
+         <tok val="lucet"/>
+         <tok val="lucetque"/>
          <lm>
             <l>luceo</l>
             <m>v - 3 s p i a</m>
@@ -753,6 +886,7 @@
       </ana>
       <ana>
          <tok val="Lucetia"/>
+         <tok val="lucetia"/>
          <lm>
             <l>Lucetia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -762,6 +896,7 @@
       </ana>
       <ana>
          <tok val="Lucetiam"/>
+         <tok val="lucetiam"/>
          <lm>
             <l>Lucetia</l>
             <m>n e - s - - - f a</m>
@@ -769,6 +904,7 @@
       </ana>
       <ana>
          <tok val="Lucetium"/>
+         <tok val="lucetium"/>
          <lm>
             <l>Lucetius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -777,50 +913,56 @@
       </ana>
       <ana>
          <tok val="Lucetius"/>
+         <tok val="lucetius"/>
          <lm>
             <l>Lucetius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Luci Lucique Lucus luci lucique lucus lucusque lucusue lucusve-->
-         <tok val="[lL]uc(iq)?[u]?[s]?[q]?(u|sv)?[esi]"/>
+      <ana>
+         <tok val="Luci"/>
+         <tok val="Lucique"/>
+         <tok val="Lucus"/>
+         <tok val="luci"/>
+         <tok val="lucique"/>
+         <tok val="lucus"/>
+         <tok val="lucusque"/>
+         <tok val="lucusue"/>
+         <tok val="lucusve"/>
          <lm>
             <l>lucus</l>
-            <m>n - - p - - - m n</m>
+            <m cert="0.5">n - - p - - - m n</m>
+            <m cert="0.5">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Luci Lucique luci lucique-->
-         <tok val="[lL]uci(que)?"/>
-         <lm cert="0.333333333333333333">
+      <ana>
+         <tok val="Luci"/>
+         <tok val="Lucique"/>
+         <tok val="luci"/>
+         <tok val="lucique"/>
+         <lm cert="0.25">
             <l>luci</l>
             <m>d</m>
          </lm>
-         <lm cert="0.333333333333333333">
+         <lm cert="0.25">
             <l>lucus</l>
             <m>n - - p - - - m v</m>
          </lm>
-         <lm cert="0.333333333333333333">
+         <lm cert="0.25">
+            <l>Lucius</l>
+            <m>n e - s - - - m v</m>
+         </lm>
+         <lm cert="0.25">
             <l>lux</l>
             <m cert="0.5">n - - s - - - m d</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Luci Lucique Lucus lucus lucusque lucusue lucusve-->
-         <tok val="[lL]uc(iq)?[u]?[s]?[q]?[uv]?[ei]?"/>
-         <lm>
-            <l>lucus</l>
-            <m>n - - s - - - m g</m>
-         </lm>
-      </ana>
-      <ana><!--Luci Lucique-->
-         <tok val="Luci(que)?"/>
-         <lm>
-            <l>Lucius</l>
-            <m>n e - s - - - m v</m>
-         </lm>
-      </ana>
-      <ana><!--Lucia Lucian-->
-         <tok val="Lucia[n]?"/>
+      <ana>
+         <tok val="Lucia"/>
+         <tok val="Lucian"/>
+         <tok val="lucia"/>
+         <tok val="lucian"/>
          <lm>
             <l>Lycia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -830,6 +972,7 @@
       </ana>
       <ana>
          <tok val="Luciae"/>
+         <tok val="luciae"/>
          <lm>
             <l>Lycia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -840,6 +983,7 @@
       </ana>
       <ana>
          <tok val="Luciam"/>
+         <tok val="luciam"/>
          <lm>
             <l>Lycia</l>
             <m>n e - s - - - f a</m>
@@ -847,6 +991,7 @@
       </ana>
       <ana>
          <tok val="Lucian"/>
+         <tok val="lucian"/>
          <lm>
             <l>Lycia</l>
             <m>n e - p - - - f a</m>
@@ -854,22 +999,20 @@
       </ana>
       <ana>
          <tok val="Lucibus"/>
+         <tok val="lucibus"/>
          <lm>
             <l>lux</l>
-            <m cert="0.5">n - - p - - - m b</m>
-            <m cert="0.5">n - - p - - - m d</m>
+            <m cert="0.25">n - - p - - - m b</m>
+            <m cert="0.25">n - - p - - - m d</m>
+            <m cert="0.25">n - - p - - - f b</m>
+            <m cert="0.25">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lucibus lucibus-->
-         <tok val="[lL]ucibus"/>
-         <lm>
-            <l>lux</l>
-            <m cert="0.5">n - - p - - - f b</m>
-            <m cert="0.5">n - - p - - - f d</m>
-         </lm>
-      </ana>
-      <ana><!--Lucida Lucidaque lucida lucidaque-->
-         <tok val="[lL]ucida(que)?"/>
+      <ana>
+         <tok val="Lucida"/>
+         <tok val="Lucidaque"/>
+         <tok val="lucida"/>
+         <tok val="lucidaque"/>
          <lm>
             <l>lucidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -880,43 +1023,58 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Lucidam lucidam-->
-         <tok val="[lL]ucidam"/>
+      <ana>
+         <tok val="Lucidam"/>
+         <tok val="lucidam"/>
          <lm>
             <l>lucidus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lucidas lucidas-->
-         <tok val="[lL]ucidas"/>
+      <ana>
+         <tok val="Lucidas"/>
+         <tok val="lucidas"/>
          <lm>
             <l>lucidus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lucide lucide lucideque lucideve lucidius-->
-         <tok val="[lL]ucid[e]?(ve|que|ius)?"/>
+      <ana>
+         <tok val="Lucide"/>
+         <tok val="lucide"/>
+         <tok val="lucideque"/>
+         <tok val="lucideve"/>
+         <tok val="lucidius"/>
          <lm>
             <l>lucidus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Lucide Lucidum lucide lucideque lucideve lucidum-->
-         <tok val="[lL]ucid[e]?(ve|um|e|eque)?"/>
+      <ana>
+         <tok val="Lucide"/>
+         <tok val="Lucidum"/>
+         <tok val="lucide"/>
+         <tok val="lucideque"/>
+         <tok val="lucideve"/>
+         <tok val="lucidum"/>
          <lm>
             <l>lucidus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Lucide lucide lucideque lucideve-->
-         <tok val="[lL]ucide(ve|que)?"/>
+      <ana>
+         <tok val="Lucide"/>
+         <tok val="lucide"/>
+         <tok val="lucideque"/>
+         <tok val="lucideve"/>
          <lm>
             <l>lucidus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lucidi lucidi-->
-         <tok val="[lL]ucidi"/>
+      <ana>
+         <tok val="Lucidi"/>
+         <tok val="lucidi"/>
          <lm>
             <l>lucidus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -925,8 +1083,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lucidior lucidior-->
-         <tok val="[lL]ucidior"/>
+      <ana>
+         <tok val="Lucidior"/>
+         <tok val="lucidior"/>
          <lm>
             <l>lucidus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -937,22 +1096,18 @@
       </ana>
       <ana>
          <tok val="Lucidius"/>
+         <tok val="lucidius"/>
          <lm>
             <l>lucidus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Lucidius lucidius-->
-         <tok val="[lL]ucidius"/>
-         <lm>
-            <l>lucidus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Lucido lucido-->
-         <tok val="[lL]ucido"/>
+      <ana>
+         <tok val="Lucido"/>
+         <tok val="lucido"/>
          <lm>
             <l>lucidus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -961,8 +1116,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Lucidum lucidum-->
-         <tok val="[lL]ucidum"/>
+      <ana>
+         <tok val="Lucidum"/>
+         <tok val="lucidum"/>
          <lm>
             <l>lucidus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -972,23 +1128,26 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lucidus lucidus-->
-         <tok val="[lL]ucidus"/>
+      <ana>
+         <tok val="Lucidus"/>
+         <tok val="lucidus"/>
          <lm>
             <l>lucidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucifer lucifer-->
-         <tok val="[lL]ucifer"/>
+      <ana>
+         <tok val="Lucifer"/>
+         <tok val="lucifer"/>
          <lm>
             <l>lucifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lucifera lucifera-->
-         <tok val="[lL]ucifera"/>
+      <ana>
+         <tok val="Lucifera"/>
+         <tok val="lucifera"/>
          <lm>
             <l>lucifer</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -999,8 +1158,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Luciferae luciferae-->
-         <tok val="[lL]uciferae"/>
+      <ana>
+         <tok val="Luciferae"/>
+         <tok val="luciferae"/>
          <lm>
             <l>lucifer</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1009,22 +1169,25 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Luciferam luciferam-->
-         <tok val="[lL]uciferam"/>
+      <ana>
+         <tok val="Luciferam"/>
+         <tok val="luciferam"/>
          <lm>
             <l>lucifer</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Luciferas luciferas-->
-         <tok val="[lL]uciferas"/>
+      <ana>
+         <tok val="Luciferas"/>
+         <tok val="luciferas"/>
          <lm>
             <l>lucifer</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Luciferi luciferi-->
-         <tok val="[lL]uciferi"/>
+      <ana>
+         <tok val="Luciferi"/>
+         <tok val="luciferi"/>
          <lm>
             <l>lucifer</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1035,6 +1198,7 @@
       </ana>
       <ana>
          <tok val="Luciferis"/>
+         <tok val="luciferis"/>
          <lm>
             <l>lucifer</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1045,8 +1209,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Lucifero lucifero-->
-         <tok val="[lL]ucifero"/>
+      <ana>
+         <tok val="Lucifero"/>
+         <tok val="lucifero"/>
          <lm>
             <l>lucifer</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1055,15 +1220,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Luciferos luciferos-->
-         <tok val="[lL]uciferos"/>
+      <ana>
+         <tok val="Luciferos"/>
+         <tok val="luciferos"/>
          <lm>
             <l>lucifer</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Luciferum luciferum-->
-         <tok val="[lL]uciferum"/>
+      <ana>
+         <tok val="Luciferum"/>
+         <tok val="luciferum"/>
          <lm>
             <l>lucifer</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1074,8 +1241,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lucifico lucifico-->
-         <tok val="[lL]ucifico"/>
+      <ana>
+         <tok val="Lucifico"/>
+         <tok val="lucifico"/>
          <lm cert="0.5">
             <l>lucificus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1088,8 +1256,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Lucifuga lucifuga-->
-         <tok val="[lL]ucifuga"/>
+      <ana>
+         <tok val="Lucifuga"/>
+         <tok val="lucifuga"/>
          <lm cert="0.5">
             <l>lucifuga</l>
             <m cert="0.166666666666666667">n - - s - - - f n</m>
@@ -1109,8 +1278,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Lucifugae lucifugae lucifugaeque-->
-         <tok val="[lL]ucifugae(que)?"/>
+      <ana>
+         <tok val="Lucifugae"/>
+         <tok val="lucifugae"/>
+         <tok val="lucifugaeque"/>
          <lm cert="0.5">
             <l>lucifuga</l>
             <m cert="0.125">n - - p - - - m n</m>
@@ -1130,15 +1301,19 @@
             <m cert="0.25">a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lucifugus lucifugus-->
-         <tok val="[lL]ucifugus"/>
+      <ana>
+         <tok val="Lucifugus"/>
+         <tok val="lucifugus"/>
          <lm>
             <l>lucifugus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucii Luciique-->
-         <tok val="Lucii(que)?"/>
+      <ana>
+         <tok val="Lucii"/>
+         <tok val="Luciique"/>
+         <tok val="lucii"/>
+         <tok val="luciique"/>
          <lm>
             <l>Lucius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1148,6 +1323,7 @@
       </ana>
       <ana>
          <tok val="Luciis"/>
+         <tok val="luciis"/>
          <lm cert="0.5">
             <l>Lycia</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -1159,8 +1335,11 @@
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lucili Lucilii-->
-         <tok val="Lucili[i]?"/>
+      <ana>
+         <tok val="Lucili"/>
+         <tok val="Lucilii"/>
+         <tok val="lucili"/>
+         <tok val="lucilii"/>
          <lm>
             <l>Lucilius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -1169,6 +1348,7 @@
       </ana>
       <ana>
          <tok val="Lucilia"/>
+         <tok val="lucilia"/>
          <lm>
             <l>Lucilius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1181,6 +1361,7 @@
       </ana>
       <ana>
          <tok val="Luciliana"/>
+         <tok val="luciliana"/>
          <lm>
             <l>Lucilianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1193,6 +1374,7 @@
       </ana>
       <ana>
          <tok val="Lucilianae"/>
+         <tok val="lucilianae"/>
          <lm>
             <l>Lucilianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1203,6 +1385,7 @@
       </ana>
       <ana>
          <tok val="Luciliani"/>
+         <tok val="luciliani"/>
          <lm>
             <l>Lucilianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1213,6 +1396,7 @@
       </ana>
       <ana>
          <tok val="Luciliano"/>
+         <tok val="luciliano"/>
          <lm>
             <l>Lucilianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1223,6 +1407,7 @@
       </ana>
       <ana>
          <tok val="Lucilianos"/>
+         <tok val="lucilianos"/>
          <lm>
             <l>Lucilianus</l>
             <m>a e - p - - - m a</m>
@@ -1230,6 +1415,7 @@
       </ana>
       <ana>
          <tok val="Lucilianum"/>
+         <tok val="lucilianum"/>
          <lm>
             <l>Lucilianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1242,6 +1428,7 @@
       </ana>
       <ana>
          <tok val="Lucilianus"/>
+         <tok val="lucilianus"/>
          <lm>
             <l>Lucilianus</l>
             <m>a e - s - - - m n</m>
@@ -1249,6 +1436,7 @@
       </ana>
       <ana>
          <tok val="Lucilii"/>
+         <tok val="lucilii"/>
          <lm>
             <l>Lucilius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -1257,6 +1445,7 @@
       </ana>
       <ana>
          <tok val="Lucilio"/>
+         <tok val="lucilio"/>
          <lm>
             <l>Lucilius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1267,6 +1456,7 @@
       </ana>
       <ana>
          <tok val="Lucilios"/>
+         <tok val="lucilios"/>
          <lm>
             <l>Lucilius</l>
             <m>a e - p - - - m a</m>
@@ -1274,6 +1464,7 @@
       </ana>
       <ana>
          <tok val="Lucilium"/>
+         <tok val="lucilium"/>
          <lm>
             <l>Lucilius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1286,23 +1477,24 @@
       </ana>
       <ana>
          <tok val="Lucilius"/>
+         <tok val="lucilius"/>
          <lm>
             <l>Lucilius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucina Lucinaque-->
-         <tok val="Lucina(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Lucina"/>
+         <tok val="Lucinaque"/>
+         <tok val="lucina"/>
+         <tok val="lucinaque"/>
+         <lm cert="0.5">
             <l>Lucina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Lucina Lucinaque lucina-->
-         <tok val="[lL]ucina(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>lucinus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1312,19 +1504,19 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Lucinae Lucinaeque-->
-         <tok val="Lucinae(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Lucinae"/>
+         <tok val="Lucinaeque"/>
+         <tok val="lucinae"/>
+         <tok val="lucinaeque"/>
+         <lm cert="0.5">
             <l>Lucina</l>
             <m cert="0.25">n e - p - - - f n</m>
             <m cert="0.25">n e - s - - - f g</m>
             <m cert="0.25">n e - s - - - f d</m>
             <m cert="0.25">n e - p - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Lucinae Lucinaeque lucinae-->
-         <tok val="[lL]ucinae(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>lucinus</l>
             <m cert="0.25">a - - p - - - f n</m>
             <m cert="0.25">a - - s - - - f d</m>
@@ -1334,6 +1526,7 @@
       </ana>
       <ana>
          <tok val="Lucinam"/>
+         <tok val="lucinam"/>
          <lm cert="0.5">
             <l>Lucina</l>
             <m>n e - s - - - f a</m>
@@ -1345,6 +1538,7 @@
       </ana>
       <ana>
          <tok val="Lucini"/>
+         <tok val="lucini"/>
          <lm>
             <l>lucinus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1353,8 +1547,11 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lucio Lucioque-->
-         <tok val="Lucio(que)?"/>
+      <ana>
+         <tok val="Lucio"/>
+         <tok val="Lucioque"/>
+         <tok val="lucio"/>
+         <tok val="lucioque"/>
          <lm>
             <l>Lucius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1363,74 +1560,118 @@
       </ana>
       <ana>
          <tok val="Lucios"/>
+         <tok val="lucios"/>
          <lm>
             <l>Lucius</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lucis Lucisne-->
-         <tok val="Lucis(ne)?"/>
+      <ana>
+         <tok val="Lucis"/>
+         <tok val="Lucisne"/>
+         <tok val="lucis"/>
+         <tok val="lucisne"/>
          <lm>
             <l>Luca</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Lucis Lucisne lucibus lucis lucisque-->
-         <tok val="[Ll]uci(bu)?s(ne|que)?"/>
+      <ana>
+         <tok val="Lucis"/>
+         <tok val="Lucisne"/>
+         <tok val="lucibus"/>
+         <tok val="lucis"/>
+         <tok val="lucisne"/>
+         <tok val="lucisque"/>
          <lm>
             <l>lucus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lucis Lucisne lucis lucisque-->
-         <tok val="[Ll]ucis(ne|que)?"/>
+      <ana>
+         <tok val="Lucis"/>
+         <tok val="Lucisne"/>
+         <tok val="lucis"/>
+         <tok val="lucisne"/>
+         <tok val="lucisque"/>
          <lm>
             <l>lux</l>
             <m cert="0.5">n - - s - - - m g</m>
             <m cert="0.5">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Lucium Luciumque Luciumue-->
-         <tok val="Lucium[q]?(ue|)"/>
+      <ana>
+         <tok val="Lucium"/>
+         <tok val="Luciumque"/>
+         <tok val="Luciumue"/>
+         <tok val="lucium"/>
+         <tok val="luciumque"/>
+         <tok val="luciumue"/>
          <lm>
             <l>Lucius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lucmo Lucumo lucmon lucumo-->
-         <tok val="[Ll]uc[u]?mo[n]?"/>
+      <ana>
+         <tok val="Lucmo"/>
+         <tok val="Lucumo"/>
+         <tok val="lucmo"/>
+         <tok val="lucmon"/>
+         <tok val="lucumo"/>
          <lm>
             <l>lucumo</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Luco Lucon luco lucoque lucu lucuque-->
-         <tok val="[Ll]uc[o]?(n|uque|oque|o|u)?"/>
+      <ana>
+         <tok val="Luco"/>
+         <tok val="Lucon"/>
+         <tok val="luco"/>
+         <tok val="lucon"/>
+         <tok val="lucoque"/>
+         <tok val="lucu"/>
+         <tok val="lucuque"/>
          <lm>
             <l>lucus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Luco Lucon luco lucoque-->
-         <tok val="[Ll]uco(n|que)?"/>
+      <ana>
+         <tok val="Luco"/>
+         <tok val="Lucon"/>
+         <tok val="luco"/>
+         <tok val="lucon"/>
+         <tok val="lucoque"/>
          <lm>
             <l>lucus</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lucon Lucos Lucosque Lucus lucos lucosque lucus lucusque lucusue lucusve-->
-         <tok val="[lL]uc(osq)?[u]?[s]?[q]?(u|sv)?(e|s|os|on|us)"/>
+      <ana>
+         <tok val="Lucon"/>
+         <tok val="Lucos"/>
+         <tok val="Lucosque"/>
+         <tok val="Lucus"/>
+         <tok val="lucon"/>
+         <tok val="lucos"/>
+         <tok val="lucosque"/>
+         <tok val="lucus"/>
+         <tok val="lucusque"/>
+         <tok val="lucusue"/>
+         <tok val="lucusve"/>
          <lm>
             <l>lucus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lucra lucra lucran-->
-         <tok val="[lL]ucra[n]?"/>
+      <ana>
+         <tok val="Lucra"/>
+         <tok val="lucra"/>
+         <tok val="lucran"/>
          <lm>
             <l>lucrum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1440,6 +1681,7 @@
       </ana>
       <ana>
          <tok val="Lucrando"/>
+         <tok val="lucrando"/>
          <lm>
             <l>lucror</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1450,15 +1692,18 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Lucrari lucrari-->
-         <tok val="[lL]ucrari"/>
+      <ana>
+         <tok val="Lucrari"/>
+         <tok val="lucrari"/>
          <lm>
             <l>lucror</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Lucratiua lucratiua lucrativa-->
-         <tok val="[lL]ucrati[uv]a"/>
+      <ana>
+         <tok val="Lucratiua"/>
+         <tok val="lucratiua"/>
+         <tok val="lucrativa"/>
          <lm>
             <l>lucrativus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1469,22 +1714,30 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Lucratiuus lucrativus-->
-         <tok val="[lL]ucrati[vu]us"/>
+      <ana>
+         <tok val="Lucratiuus"/>
+         <tok val="lucratiuus"/>
+         <tok val="lucrativus"/>
          <lm>
             <l>lucrativus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucratus lucratus-->
-         <tok val="[lL]ucratus"/>
+      <ana>
+         <tok val="Lucratus"/>
+         <tok val="lucratus"/>
          <lm>
             <l>lucror</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Lucre Lucrum lucrum lucrumque lucrumst-->
-         <tok val="[lL]ucr(um)?(st|que|e)?"/>
+      <ana>
+         <tok val="Lucre"/>
+         <tok val="Lucrum"/>
+         <tok val="lucre"/>
+         <tok val="lucrum"/>
+         <tok val="lucrumque"/>
+         <tok val="lucrumst"/>
          <lm>
             <l>lucrum</l>
             <m>n - - s - - - n v</m>
@@ -1492,21 +1745,28 @@
       </ana>
       <ana>
          <tok val="Lucrer"/>
+         <tok val="lucrer"/>
          <lm>
             <l>lucror</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Lucreti Lucretii-->
-         <tok val="Lucreti[i]?"/>
+      <ana>
+         <tok val="Lucreti"/>
+         <tok val="Lucretii"/>
+         <tok val="lucreti"/>
+         <tok val="lucretii"/>
          <lm>
             <l>Lucretius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lucretia Lucretian-->
-         <tok val="Lucretia[n]?"/>
+      <ana>
+         <tok val="Lucretia"/>
+         <tok val="Lucretian"/>
+         <tok val="lucretia"/>
+         <tok val="lucretian"/>
          <lm>
             <l>Lucretius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1519,6 +1779,7 @@
       </ana>
       <ana>
          <tok val="Lucretiae"/>
+         <tok val="lucretiae"/>
          <lm>
             <l>Lucretius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1529,6 +1790,7 @@
       </ana>
       <ana>
          <tok val="Lucretiam"/>
+         <tok val="lucretiam"/>
          <lm>
             <l>Lucretius</l>
             <m>a e - s - - - f a</m>
@@ -1536,6 +1798,7 @@
       </ana>
       <ana>
          <tok val="Lucretian"/>
+         <tok val="lucretian"/>
          <lm>
             <l>Lucretius</l>
             <m>a e - p - - - f a</m>
@@ -1543,6 +1806,7 @@
       </ana>
       <ana>
          <tok val="Lucretii"/>
+         <tok val="lucretii"/>
          <lm>
             <l>Lucretius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -1551,6 +1815,7 @@
       </ana>
       <ana>
          <tok val="Lucretilem"/>
+         <tok val="lucretilem"/>
          <lm>
             <l>Lucretilis</l>
             <m>n e - s - - - m a</m>
@@ -1558,6 +1823,7 @@
       </ana>
       <ana>
          <tok val="Lucretilis"/>
+         <tok val="lucretilis"/>
          <lm>
             <l>Lucretilis</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1567,6 +1833,7 @@
       </ana>
       <ana>
          <tok val="Lucretino"/>
+         <tok val="lucretino"/>
          <lm>
             <l>Lucretinus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1577,6 +1844,7 @@
       </ana>
       <ana>
          <tok val="Lucretio"/>
+         <tok val="lucretio"/>
          <lm>
             <l>Lucretius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1587,6 +1855,7 @@
       </ana>
       <ana>
          <tok val="Lucretium"/>
+         <tok val="lucretium"/>
          <lm>
             <l>Lucretius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1599,28 +1868,42 @@
       </ana>
       <ana>
          <tok val="Lucretius"/>
+         <tok val="lucretius"/>
          <lm>
             <l>Lucretius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucri Lucrii lucri lucrique lucrist Lucridem-->
-         <tok val="[Ll]ucri(i|st|que|dem)?"/>
+      <ana>
+         <tok val="Lucri"/>
+         <tok val="Lucridem"/>
+         <tok val="Lucrii"/>
+         <tok val="lucri"/>
+         <tok val="lucridem"/>
+         <tok val="lucrii"/>
+         <tok val="lucrique"/>
+         <tok val="lucrist"/>
          <lm>
             <l>lucrius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lucri lucri lucrique lucrist Lucridem-->
-         <tok val="[lL]ucri(st|que|dem)?"/>
+      <ana>
+         <tok val="Lucri"/>
+         <tok val="Lucridem"/>
+         <tok val="lucri"/>
+         <tok val="lucridem"/>
+         <tok val="lucrique"/>
+         <tok val="lucrist"/>
          <lm>
             <l>lucrum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lucrifacere lucrifacere-->
-         <tok val="[lL]ucrifacere"/>
+      <ana>
+         <tok val="Lucrifacere"/>
+         <tok val="lucrifacere"/>
          <lm>
             <l>lucrifacio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1628,8 +1911,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Lucrifacio lucrifacio-->
-         <tok val="[lL]ucrifacio"/>
+      <ana>
+         <tok val="Lucrifacio"/>
+         <tok val="lucrifacio"/>
          <lm>
             <l>lucrifacio</l>
             <m>v - 1 s p i a</m>
@@ -1637,13 +1921,15 @@
       </ana>
       <ana>
          <tok val="Lucrifactus"/>
+         <tok val="lucrifactus"/>
          <lm>
             <l>lucrifio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Lucrificabilis lucrificabilis-->
-         <tok val="[lL]ucrificabilis"/>
+      <ana>
+         <tok val="Lucrificabilis"/>
+         <tok val="lucrificabilis"/>
          <lm>
             <l>lucrificabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1659,6 +1945,7 @@
       </ana>
       <ana>
          <tok val="Lucrifio"/>
+         <tok val="lucrifio"/>
          <lm>
             <l>lucrifio</l>
             <m>v - 1 s p i a</m>
@@ -1666,6 +1953,7 @@
       </ana>
       <ana>
          <tok val="Lucrifuga"/>
+         <tok val="lucrifuga"/>
          <lm>
             <l>lucrifuga</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -1675,6 +1963,7 @@
       </ana>
       <ana>
          <tok val="Lucrii"/>
+         <tok val="lucrii"/>
          <lm>
             <l>lucrius</l>
             <m cert="0.5">a - - p - - - m v</m>
@@ -1683,6 +1972,7 @@
       </ana>
       <ana>
          <tok val="Lucrina"/>
+         <tok val="lucrina"/>
          <lm cert="0.5">
             <l>Lucrina</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1699,8 +1989,11 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lucrinae Lucrinaeque-->
-         <tok val="Lucrinae(que)?"/>
+      <ana>
+         <tok val="Lucrinae"/>
+         <tok val="Lucrinaeque"/>
+         <tok val="lucrinae"/>
+         <tok val="lucrinaeque"/>
          <lm>
             <l>Lucrinus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1711,6 +2004,7 @@
       </ana>
       <ana>
          <tok val="Lucrinam"/>
+         <tok val="lucrinam"/>
          <lm>
             <l>Lucrinus</l>
             <m>a e - s - - - f a</m>
@@ -1718,6 +2012,7 @@
       </ana>
       <ana>
          <tok val="Lucrinenses"/>
+         <tok val="lucrinenses"/>
          <lm>
             <l>Lucrinensis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1726,8 +2021,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Lucrinenses Lucrinensis-->
-         <tok val="Lucrinens[ie]s"/>
+      <ana>
+         <tok val="Lucrinenses"/>
+         <tok val="Lucrinensis"/>
+         <tok val="lucrinenses"/>
+         <tok val="lucrinensis"/>
          <lm>
             <l>Lucrinensis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -1736,6 +2034,7 @@
       </ana>
       <ana>
          <tok val="Lucrinensibus"/>
+         <tok val="lucrinensibus"/>
          <lm>
             <l>Lucrinensis</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1748,6 +2047,7 @@
       </ana>
       <ana>
          <tok val="Lucrinensis"/>
+         <tok val="lucrinensis"/>
          <lm>
             <l>Lucrinensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -1761,6 +2061,7 @@
       </ana>
       <ana>
          <tok val="Lucrini"/>
+         <tok val="lucrini"/>
          <lm>
             <l>Lucrinus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -1774,6 +2075,7 @@
       </ana>
       <ana>
          <tok val="Lucrinis"/>
+         <tok val="lucrinis"/>
          <lm cert="0.5">
             <l>Lucrinus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -1791,8 +2093,11 @@
             <m cert="0.5">n e - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lucrino Lucrinoque-->
-         <tok val="Lucrino(que)?"/>
+      <ana>
+         <tok val="Lucrino"/>
+         <tok val="Lucrinoque"/>
+         <tok val="lucrino"/>
+         <tok val="lucrinoque"/>
          <lm>
             <l>Lucrinus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -1803,8 +2108,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lucrinum Lucrinumque-->
-         <tok val="Lucrinum(que)?"/>
+      <ana>
+         <tok val="Lucrinum"/>
+         <tok val="Lucrinumque"/>
+         <tok val="lucrinum"/>
+         <tok val="lucrinumque"/>
          <lm cert="0.5">
             <l>Lucrinus</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -1823,6 +2131,7 @@
       </ana>
       <ana>
          <tok val="Lucrinus"/>
+         <tok val="lucrinus"/>
          <lm>
             <l>Lucrinus</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -1831,6 +2140,7 @@
       </ana>
       <ana>
          <tok val="Lucrio"/>
+         <tok val="lucrio"/>
          <lm cert="0.5">
             <l>lucrius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1846,6 +2156,7 @@
       </ana>
       <ana>
          <tok val="Lucrionem"/>
+         <tok val="lucrionem"/>
          <lm cert="0.5">
             <l>Lucrio</l>
             <m>n e - s - - - m a</m>
@@ -1857,6 +2168,7 @@
       </ana>
       <ana>
          <tok val="Lucripeta"/>
+         <tok val="lucripeta"/>
          <lm>
             <l>lucripeta</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -1864,31 +2176,39 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lucris lucris lucrisque lucrist-->
-         <tok val="[lL]ucris(t|que)?"/>
+      <ana>
+         <tok val="Lucris"/>
+         <tok val="lucris"/>
+         <tok val="lucrisque"/>
+         <tok val="lucrist"/>
          <lm>
             <l>lucrum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lucro lucro lucroque lucrost-->
-         <tok val="[lL]ucro(st|que)?"/>
+      <ana>
+         <tok val="Lucro"/>
+         <tok val="lucro"/>
+         <tok val="lucroque"/>
+         <tok val="lucrost"/>
          <lm>
             <l>lucrum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lucror lucror-->
-         <tok val="[lL]ucror"/>
+      <ana>
+         <tok val="Lucror"/>
+         <tok val="lucror"/>
          <lm>
             <l>lucror</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Lucrosa lucrosa-->
-         <tok val="[lL]ucrosa"/>
+      <ana>
+         <tok val="Lucrosa"/>
+         <tok val="lucrosa"/>
          <lm>
             <l>lucrosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1899,36 +2219,51 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Lucrosus lucrosus-->
-         <tok val="[lL]ucrosus"/>
+      <ana>
+         <tok val="Lucrosus"/>
+         <tok val="lucrosus"/>
          <lm>
             <l>lucrosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucrum lucrum lucrumque lucrumst lucrúm-->
-         <tok val="[lL]ucr[uú]m(st|que)?"/>
+      <ana>
+         <tok val="Lucrum"/>
+         <tok val="lucrum"/>
+         <tok val="lucrumque"/>
+         <tok val="lucrumst"/>
+         <tok val="lucrúm"/>
          <lm>
             <l>lucrum</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Lucrum lucrum lucrumque lucrumst-->
-         <tok val="[lL]ucrum(st|que)?"/>
+      <ana>
+         <tok val="Lucrum"/>
+         <tok val="lucrum"/>
+         <tok val="lucrumque"/>
+         <tok val="lucrumst"/>
          <lm>
             <l>lucrum</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Lucrum lucrorum lucrum lucrumque lucrumst-->
-         <tok val="[lL]uc(ro)?rum(st|que)?"/>
+      <ana>
+         <tok val="Lucrum"/>
+         <tok val="lucrorum"/>
+         <tok val="lucrum"/>
+         <tok val="lucrumque"/>
+         <tok val="lucrumst"/>
          <lm>
             <l>lucrum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lucta lucta luctan luctaque-->
-         <tok val="[lL]ucta(n|que)?"/>
+      <ana>
+         <tok val="Lucta"/>
+         <tok val="lucta"/>
+         <tok val="luctan"/>
+         <tok val="luctaque"/>
          <lm cert="0.5">
             <l>lucta</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1945,15 +2280,17 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Luctabitur luctabitur-->
-         <tok val="[lL]uctabitur"/>
+      <ana>
+         <tok val="Luctabitur"/>
+         <tok val="luctabitur"/>
          <lm>
             <l>luctor</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Luctamen luctamen-->
-         <tok val="[lL]uctamen"/>
+      <ana>
+         <tok val="Luctamen"/>
+         <tok val="luctamen"/>
          <lm>
             <l>luctamen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -1961,8 +2298,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Luctandum luctandum-->
-         <tok val="[lL]uctandum"/>
+      <ana>
+         <tok val="Luctandum"/>
+         <tok val="luctandum"/>
          <lm>
             <l>luctor</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1974,8 +2312,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Luctans luctans-->
-         <tok val="[lL]uctans"/>
+      <ana>
+         <tok val="Luctans"/>
+         <tok val="luctans"/>
          <lm>
             <l>luctor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1987,8 +2326,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Luctantes luctantes-->
-         <tok val="[lL]uctantes"/>
+      <ana>
+         <tok val="Luctantes"/>
+         <tok val="luctantes"/>
          <lm>
             <l>luctor</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1997,16 +2337,20 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Luctantes luctantes luctantis luctantisque-->
-         <tok val="[lL]uctant[ei]s(que)?"/>
+      <ana>
+         <tok val="Luctantes"/>
+         <tok val="luctantes"/>
+         <tok val="luctantis"/>
+         <tok val="luctantisque"/>
          <lm>
             <l>luctor</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Luctanti luctanti-->
-         <tok val="[lL]uctanti"/>
+      <ana>
+         <tok val="Luctanti"/>
+         <tok val="luctanti"/>
          <lm>
             <l>luctor</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -2014,8 +2358,10 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Luctanti luctante luctanti-->
-         <tok val="[lL]uctant[ie]"/>
+      <ana>
+         <tok val="Luctanti"/>
+         <tok val="luctante"/>
+         <tok val="luctanti"/>
          <lm>
             <l>luctor</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -2023,8 +2369,10 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Luctantia luctantia luctantiaque-->
-         <tok val="[lL]uctantia(que)?"/>
+      <ana>
+         <tok val="Luctantia"/>
+         <tok val="luctantia"/>
+         <tok val="luctantiaque"/>
          <lm>
             <l>luctor</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -2032,36 +2380,44 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Luctantur luctantur-->
-         <tok val="[lL]uctantur"/>
+      <ana>
+         <tok val="Luctantur"/>
+         <tok val="luctantur"/>
          <lm>
             <l>luctor</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Luctari luctari luctarier-->
-         <tok val="[lL]uctari(er)?"/>
+      <ana>
+         <tok val="Luctari"/>
+         <tok val="luctari"/>
+         <tok val="luctarier"/>
          <lm>
             <l>luctor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Luctaris luctaris-->
-         <tok val="[lL]uctaris"/>
+      <ana>
+         <tok val="Luctaris"/>
+         <tok val="luctaris"/>
          <lm>
             <l>luctor</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Luctaris luctare luctaris Luctare-->
-         <tok val="[lL]uctar(is|e)"/>
+      <ana>
+         <tok val="Luctare"/>
+         <tok val="Luctaris"/>
+         <tok val="luctare"/>
+         <tok val="luctaris"/>
          <lm>
             <l>luctor</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Luctati luctati-->
-         <tok val="[lL]uctati"/>
+      <ana>
+         <tok val="Luctati"/>
+         <tok val="luctati"/>
          <lm>
             <l>luctor</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2072,13 +2428,15 @@
       </ana>
       <ana>
          <tok val="Luctatianus"/>
+         <tok val="luctatianus"/>
          <lm>
             <l>Luctatianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Luctatio luctatio-->
-         <tok val="[lL]uctatio"/>
+      <ana>
+         <tok val="Luctatio"/>
+         <tok val="luctatio"/>
          <lm>
             <l>luctatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -2087,6 +2445,7 @@
       </ana>
       <ana>
          <tok val="Luctatius"/>
+         <tok val="luctatius"/>
          <lm>
             <l>luctor</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -2095,22 +2454,28 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Luctator luctator luctátor-->
-         <tok val="[lL]uct[aá]tor"/>
+      <ana>
+         <tok val="Luctator"/>
+         <tok val="luctator"/>
+         <tok val="luctátor"/>
          <lm>
             <l>luctator</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Luctator luctator-->
-         <tok val="[lL]uctator"/>
+      <ana>
+         <tok val="Luctator"/>
+         <tok val="luctator"/>
          <lm>
             <l>luctator</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Luctatus Luctatusque luctatus luctatusque-->
-         <tok val="[lL]uctatus(que)?"/>
+      <ana>
+         <tok val="Luctatus"/>
+         <tok val="Luctatusque"/>
+         <tok val="luctatus"/>
+         <tok val="luctatusque"/>
          <lm cert="0.5">
             <l>luctatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2123,8 +2488,12 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Lucte Luctum luctum luctumque-->
-         <tok val="[lL]uct(um)?(que|e)?"/>
+      <ana>
+         <tok val="Lucte"/>
+         <tok val="Luctum"/>
+         <tok val="lucte"/>
+         <tok val="luctum"/>
+         <tok val="luctumque"/>
          <lm>
             <l>lugeo</l>
             <m>v - - s r p p n v</m>
@@ -2132,6 +2501,7 @@
       </ana>
       <ana>
          <tok val="Lucte"/>
+         <tok val="lucte"/>
          <lm>
             <l>lugeo</l>
             <m>v - - s r p p m v</m>
@@ -2139,13 +2509,15 @@
       </ana>
       <ana>
          <tok val="Lucter"/>
+         <tok val="lucter"/>
          <lm>
             <l>luctor</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Lucti lucti-->
-         <tok val="[lL]ucti"/>
+      <ana>
+         <tok val="Lucti"/>
+         <tok val="lucti"/>
          <lm>
             <l>lugeo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2154,24 +2526,27 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Luctibus luctibus-->
-         <tok val="[lL]uctibus"/>
+      <ana>
+         <tok val="Luctibus"/>
+         <tok val="luctibus"/>
          <lm>
             <l>luctus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Luctifer luctifer-->
-         <tok val="[lL]uctifer"/>
+      <ana>
+         <tok val="Luctifer"/>
+         <tok val="luctifer"/>
          <lm>
             <l>luctifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Luctifica luctifica-->
-         <tok val="[lL]uctifica"/>
+      <ana>
+         <tok val="Luctifica"/>
+         <tok val="luctifica"/>
          <lm>
             <l>luctificus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2182,8 +2557,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Luctificum luctificum-->
-         <tok val="[lL]uctificum"/>
+      <ana>
+         <tok val="Luctificum"/>
+         <tok val="luctificum"/>
          <lm>
             <l>luctificus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -2194,8 +2570,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Luctificus luctificus-->
-         <tok val="[lL]uctificus"/>
+      <ana>
+         <tok val="Luctificus"/>
+         <tok val="luctificus"/>
          <lm>
             <l>luctificus</l>
             <m>a - - s - - - m n</m>
@@ -2203,13 +2580,15 @@
       </ana>
       <ana>
          <tok val="Luctisonos"/>
+         <tok val="luctisonos"/>
          <lm>
             <l>luctisonus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Luctisonus luctisonus-->
-         <tok val="[lL]uctisonus"/>
+      <ana>
+         <tok val="Luctisonus"/>
+         <tok val="luctisonus"/>
          <lm>
             <l>luctisonus</l>
             <m>a - - s - - - m n</m>
@@ -2217,13 +2596,15 @@
       </ana>
       <ana>
          <tok val="Luctitor"/>
+         <tok val="luctitor"/>
          <lm>
             <l>luctito</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Lucto lucto-->
-         <tok val="[lL]ucto"/>
+      <ana>
+         <tok val="Lucto"/>
+         <tok val="lucto"/>
          <lm>
             <l>lugeo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -2232,29 +2613,36 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Luctor luctor-->
-         <tok val="[lL]uctor"/>
+      <ana>
+         <tok val="Luctor"/>
+         <tok val="luctor"/>
          <lm>
             <l>luctor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Luctu luctu-->
-         <tok val="[lL]uctu"/>
+      <ana>
+         <tok val="Luctu"/>
+         <tok val="luctu"/>
          <lm>
             <l>lugeo</l>
             <m>v - - - - u - - b</m>
          </lm>
       </ana>
-      <ana><!--Luctu luctu luctuque luctuue-->
-         <tok val="[lL]uctu[q]?(ue)?"/>
+      <ana>
+         <tok val="Luctu"/>
+         <tok val="luctu"/>
+         <tok val="luctuque"/>
+         <tok val="luctuue"/>
          <lm>
             <l>luctus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Luctum luctum luctumque-->
-         <tok val="[lL]uctum(que)?"/>
+      <ana>
+         <tok val="Luctum"/>
+         <tok val="luctum"/>
+         <tok val="luctumque"/>
          <lm cert="0.5">
             <l>lugeo</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -2270,13 +2658,15 @@
       </ana>
       <ana>
          <tok val="Luctum"/>
+         <tok val="luctum"/>
          <lm>
             <l>lugeo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Luctuosum luctuosum-->
-         <tok val="[lL]uctuosum"/>
+      <ana>
+         <tok val="Luctuosum"/>
+         <tok val="luctuosum"/>
          <lm>
             <l>luctuosus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -2286,22 +2676,29 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Luctuosum luctuose luctuosum-->
-         <tok val="[lL]uctuos(um|e)"/>
+      <ana>
+         <tok val="Luctuosum"/>
+         <tok val="luctuose"/>
+         <tok val="luctuosum"/>
          <lm>
             <l>luctuosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Luctuosus luctuosus-->
-         <tok val="[lL]uctuosus"/>
+      <ana>
+         <tok val="Luctuosus"/>
+         <tok val="luctuosus"/>
          <lm>
             <l>luctuosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Luctus Luctusque luctus luctusque luctusue-->
-         <tok val="[lL]uctus[q]?(ue)?"/>
+      <ana>
+         <tok val="Luctus"/>
+         <tok val="Luctusque"/>
+         <tok val="luctus"/>
+         <tok val="luctusque"/>
+         <tok val="luctusue"/>
          <lm cert="0.5">
             <l>luctus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2314,8 +2711,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Lucubrare lucubrare-->
-         <tok val="[lL]ucubrare"/>
+      <ana>
+         <tok val="Lucubrare"/>
+         <tok val="lucubrare"/>
          <lm>
             <l>lucubro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -2323,8 +2721,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Lucubrata lucubrata-->
-         <tok val="[lL]ucubrata"/>
+      <ana>
+         <tok val="Lucubrata"/>
+         <tok val="lucubrata"/>
          <lm>
             <l>lucubro</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -2335,23 +2734,28 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Lucubratio Lucubration lucubratio-->
-         <tok val="[Ll]ucubratio[n]?"/>
+      <ana>
+         <tok val="Lucubratio"/>
+         <tok val="Lucubration"/>
+         <tok val="lucubratio"/>
+         <tok val="lucubration"/>
          <lm>
             <l>lucubratio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lucubrationum lucubrationum-->
-         <tok val="[lL]ucubrationum"/>
+      <ana>
+         <tok val="Lucubrationum"/>
+         <tok val="lucubrationum"/>
          <lm>
             <l>lucubratio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Lucubratoria lucubratoria-->
-         <tok val="[lL]ucubratoria"/>
+      <ana>
+         <tok val="Lucubratoria"/>
+         <tok val="lucubratoria"/>
          <lm>
             <l>lucubratorius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2362,48 +2766,48 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Lucubratoriam lucubratoriam-->
-         <tok val="[lL]ucubratoriam"/>
+      <ana>
+         <tok val="Lucubratoriam"/>
+         <tok val="lucubratoriam"/>
          <lm>
             <l>lucubratorius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lucubratum lucubratum-->
-         <tok val="[lL]ucubratum"/>
+      <ana>
+         <tok val="Lucubratum"/>
+         <tok val="lucubratum"/>
          <lm>
             <l>lucubro</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Lucubratum"/>
-         <lm>
-            <l>lucubro</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Lucubro lucubro-->
-         <tok val="[lL]ucubro"/>
+         <tok val="Lucubro"/>
+         <tok val="lucubro"/>
          <lm>
             <l>lucubro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Luculenta luculenta lúculenta-->
-         <tok val="[lL]?(u|lú)culenta"/>
+      <ana>
+         <tok val="Luculenta"/>
+         <tok val="luculenta"/>
+         <tok val="lúculenta"/>
          <lm>
             <l>luculentus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Luculenta luculenta-->
-         <tok val="[lL]uculenta"/>
+      <ana>
+         <tok val="Luculenta"/>
+         <tok val="luculenta"/>
          <lm>
             <l>luculentus</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -2413,8 +2817,9 @@
             <m cert="0.2">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Luculentae luculentae-->
-         <tok val="[lL]uculentae"/>
+      <ana>
+         <tok val="Luculentae"/>
+         <tok val="luculentae"/>
          <lm>
             <l>luculentus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2423,29 +2828,37 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Luculentam luculentam luculentamque-->
-         <tok val="[lL]uculentam(que)?"/>
+      <ana>
+         <tok val="Luculentam"/>
+         <tok val="luculentam"/>
+         <tok val="luculentamque"/>
          <lm>
             <l>luculentus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Luculente luculente luculentius-->
-         <tok val="[lL]uculent(e|ius)"/>
+      <ana>
+         <tok val="Luculente"/>
+         <tok val="luculente"/>
+         <tok val="luculentius"/>
          <lm>
             <l>luculentus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Luculente Luculentum luculente luculentum-->
-         <tok val="[lL]uculent(um|e)"/>
+      <ana>
+         <tok val="Luculente"/>
+         <tok val="Luculentum"/>
+         <tok val="luculente"/>
+         <tok val="luculentum"/>
          <lm>
             <l>luculentus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Luculente luculente-->
-         <tok val="[lL]uculente"/>
+      <ana>
+         <tok val="Luculente"/>
+         <tok val="luculente"/>
          <lm>
             <l>luculentus</l>
             <m>a - - s - - - m v</m>
@@ -2453,6 +2866,7 @@
       </ana>
       <ana>
          <tok val="Luculentissimae"/>
+         <tok val="luculentissimae"/>
          <lm>
             <l>luculentus</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -2461,29 +2875,35 @@
             <m cert="0.25">a - - s - - - f g s</m>
          </lm>
       </ana>
-      <ana><!--Luculentissime luculentissime-->
-         <tok val="[lL]uculentissime"/>
+      <ana>
+         <tok val="Luculentissime"/>
+         <tok val="luculentissime"/>
          <lm>
             <l>luculentus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Luculentissime luculentissime luculentissimus-->
-         <tok val="[lL]uculentissim(e|us)"/>
+      <ana>
+         <tok val="Luculentissime"/>
+         <tok val="luculentissime"/>
+         <tok val="luculentissimus"/>
          <lm>
             <l>luculentus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Luculentissime luculentissime luculentissimum-->
-         <tok val="[lL]uculentissim(e|um)"/>
+      <ana>
+         <tok val="Luculentissime"/>
+         <tok val="luculentissime"/>
+         <tok val="luculentissimum"/>
          <lm>
             <l>luculentus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Luculentum luculentum-->
-         <tok val="[lL]uculentum"/>
+      <ana>
+         <tok val="Luculentum"/>
+         <tok val="luculentum"/>
          <lm>
             <l>luculentus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -2493,8 +2913,9 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Luculentus luculentus-->
-         <tok val="[lL]uculentus"/>
+      <ana>
+         <tok val="Luculentus"/>
+         <tok val="luculentus"/>
          <lm>
             <l>luculentus</l>
             <m>a - - s - - - m n</m>
@@ -2502,6 +2923,7 @@
       </ana>
       <ana>
          <tok val="Lucullana"/>
+         <tok val="lucullana"/>
          <lm>
             <l>Lucullanus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -2514,6 +2936,7 @@
       </ana>
       <ana>
          <tok val="Lucullanae"/>
+         <tok val="lucullanae"/>
          <lm>
             <l>Lucullanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -2524,6 +2947,7 @@
       </ana>
       <ana>
          <tok val="Lucullano"/>
+         <tok val="lucullano"/>
          <lm>
             <l>Lucullanus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -2534,6 +2958,7 @@
       </ana>
       <ana>
          <tok val="Lucullanus"/>
+         <tok val="lucullanus"/>
          <lm>
             <l>Lucullanus</l>
             <m>a e - s - - - m n</m>
@@ -2541,6 +2966,7 @@
       </ana>
       <ana>
          <tok val="Luculle"/>
+         <tok val="luculle"/>
          <lm>
             <l>Lucullus</l>
             <m>n e - s - - - m v</m>
@@ -2548,6 +2974,7 @@
       </ana>
       <ana>
          <tok val="Luculleas"/>
+         <tok val="luculleas"/>
          <lm>
             <l>Luculleus</l>
             <m>a e - p - - - f a</m>
@@ -2555,6 +2982,7 @@
       </ana>
       <ana>
          <tok val="Lucullei"/>
+         <tok val="lucullei"/>
          <lm>
             <l>Luculleus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2565,6 +2993,7 @@
       </ana>
       <ana>
          <tok val="Luculleo"/>
+         <tok val="luculleo"/>
          <lm>
             <l>Luculleus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -2575,6 +3004,7 @@
       </ana>
       <ana>
          <tok val="Luculleus"/>
+         <tok val="luculleus"/>
          <lm>
             <l>Luculleus</l>
             <m>a e - s - - - m n</m>
@@ -2582,6 +3012,7 @@
       </ana>
       <ana>
          <tok val="Luculli"/>
+         <tok val="luculli"/>
          <lm>
             <l>Lucullus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -2591,6 +3022,7 @@
       </ana>
       <ana>
          <tok val="Lucullianam"/>
+         <tok val="lucullianam"/>
          <lm>
             <l>Lucullianus</l>
             <m>a e - s - - - f a</m>
@@ -2598,6 +3030,7 @@
       </ana>
       <ana>
          <tok val="Lucullianis"/>
+         <tok val="lucullianis"/>
          <lm>
             <l>Lucullianus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2610,6 +3043,7 @@
       </ana>
       <ana>
          <tok val="Lucullianos"/>
+         <tok val="lucullianos"/>
          <lm>
             <l>Lucullianus</l>
             <m>a e - p - - - m a</m>
@@ -2617,6 +3051,7 @@
       </ana>
       <ana>
          <tok val="Lucullianus"/>
+         <tok val="lucullianus"/>
          <lm>
             <l>Lucullianus</l>
             <m>a e - s - - - m n</m>
@@ -2624,22 +3059,29 @@
       </ana>
       <ana>
          <tok val="Lucullis"/>
+         <tok val="lucullis"/>
          <lm>
             <l>Lucullus</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lucullo Luculloque-->
-         <tok val="Lucullo(que)?"/>
+      <ana>
+         <tok val="Lucullo"/>
+         <tok val="Luculloque"/>
+         <tok val="lucullo"/>
+         <tok val="luculloque"/>
          <lm>
             <l>Lucullus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lucullorum Lucullum-->
-         <tok val="Lucull(or)?um"/>
+      <ana>
+         <tok val="Lucullorum"/>
+         <tok val="Lucullum"/>
+         <tok val="lucullorum"/>
+         <tok val="lucullum"/>
          <lm>
             <l>Lucullus</l>
             <m>n e - p - - - m g</m>
@@ -2647,6 +3089,7 @@
       </ana>
       <ana>
          <tok val="Lucullos"/>
+         <tok val="lucullos"/>
          <lm>
             <l>Lucullus</l>
             <m>n e - p - - - m a</m>
@@ -2654,6 +3097,7 @@
       </ana>
       <ana>
          <tok val="Lucullum"/>
+         <tok val="lucullum"/>
          <lm>
             <l>Lucullus</l>
             <m>n e - s - - - m a</m>
@@ -2661,6 +3105,7 @@
       </ana>
       <ana>
          <tok val="Lucullus"/>
+         <tok val="lucullus"/>
          <lm>
             <l>Lucullus</l>
             <m>n e - s - - - m n</m>
@@ -2668,20 +3113,26 @@
       </ana>
       <ana>
          <tok val="Lucum"/>
+         <tok val="lucum"/>
          <lm>
             <l>lux</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lucum lucum lucumque-->
-         <tok val="[lL]ucum(que)?"/>
+      <ana>
+         <tok val="Lucum"/>
+         <tok val="lucum"/>
+         <tok val="lucumque"/>
          <lm>
             <l>lux</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Lucum lucom lucum lucumque-->
-         <tok val="[lL]uc[uo]m(que)?"/>
+      <ana>
+         <tok val="Lucum"/>
+         <tok val="lucom"/>
+         <tok val="lucum"/>
+         <tok val="lucumque"/>
          <lm>
             <l>lucus</l>
             <m>n - - s - - - m a</m>
@@ -2689,6 +3140,7 @@
       </ana>
       <ana>
          <tok val="Lucumone"/>
+         <tok val="lucumone"/>
          <lm>
             <l>lucumo</l>
             <m>n - - s - - - m b</m>
@@ -2696,13 +3148,15 @@
       </ana>
       <ana>
          <tok val="Lucumonem"/>
+         <tok val="lucumonem"/>
          <lm>
             <l>lucumo</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lucumones lucumones-->
-         <tok val="[lL]ucumones"/>
+      <ana>
+         <tok val="Lucumones"/>
+         <tok val="lucumones"/>
          <lm>
             <l>lucumo</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2712,6 +3166,7 @@
       </ana>
       <ana>
          <tok val="Lucumoni"/>
+         <tok val="lucumoni"/>
          <lm cert="0.5">
             <l>Lucumonius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -2722,8 +3177,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lucumonibus lucumonibus-->
-         <tok val="[lL]ucumonibus"/>
+      <ana>
+         <tok val="Lucumonibus"/>
+         <tok val="lucumonibus"/>
          <lm>
             <l>lucumo</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -2732,6 +3188,7 @@
       </ana>
       <ana>
          <tok val="Lucumonis"/>
+         <tok val="lucumonis"/>
          <lm>
             <l>lucumo</l>
             <m>n - - s - - - m g</m>
@@ -2739,20 +3196,26 @@
       </ana>
       <ana>
          <tok val="Lucumonius"/>
+         <tok val="lucumonius"/>
          <lm>
             <l>Lucumonius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lucus lucus lucusque lucusue lucusve-->
-         <tok val="[lL]ucus[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Lucus"/>
+         <tok val="lucus"/>
+         <tok val="lucusque"/>
+         <tok val="lucusue"/>
+         <tok val="lucusve"/>
          <lm>
             <l>lucus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--lucanicae Lucanicae-->
-         <tok val="[Ll]ucanicae"/>
+      <ana>
+         <tok val="Lucanicae"/>
+         <tok val="lucanicae"/>
          <lm>
             <l>lucanica</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -2877,8 +3340,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--lucente lucenti-->
-         <tok val="lucent[ie]"/>
+      <ana>
+         <tok val="lucente"/>
+         <tok val="lucenti"/>
          <lm>
             <l>luceo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3058,15 +3522,18 @@
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--luci lucii lucique-->
-         <tok val="luci(i|que)?"/>
+      <ana>
+         <tok val="luci"/>
+         <tok val="lucii"/>
+         <tok val="lucique"/>
          <lm>
             <l>lucius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--luci lucique-->
-         <tok val="luci(que)?"/>
+      <ana>
+         <tok val="luci"/>
+         <tok val="lucique"/>
          <lm>
             <l>lucius</l>
             <m>n - - s - - - m v</m>
@@ -3168,8 +3635,9 @@
             <m cert="0.5">a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--lucidissime lucidissimum-->
-         <tok val="lucidissim(um|e)"/>
+      <ana>
+         <tok val="lucidissime"/>
+         <tok val="lucidissimum"/>
          <lm>
             <l>lucidus</l>
             <m>a - - s - - - n v s</m>
@@ -3371,8 +3839,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--lucorum lucum-->
-         <tok val="luc(or)?um"/>
+      <ana>
+         <tok val="lucorum"/>
+         <tok val="lucum"/>
          <lm>
             <l>lucus</l>
             <m>n - - p - - - m g</m>
@@ -3436,8 +3905,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--lucrare lucraris-->
-         <tok val="lucrar(is|e)"/>
+      <ana>
+         <tok val="lucrare"/>
+         <tok val="lucraris"/>
          <lm>
             <l>lucror</l>
             <m>v - 2 s p i p</m>
@@ -3523,8 +3993,9 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--lucratiuis lucrativis-->
-         <tok val="lucrati[vu]is"/>
+      <ana>
+         <tok val="lucratiuis"/>
+         <tok val="lucrativis"/>
          <lm>
             <l>lucrativus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -3698,8 +4169,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--lucrifugas lúcrifugas-->
-         <tok val="l[úu]crifugas"/>
+      <ana>
+         <tok val="lucrifugas"/>
+         <tok val="lúcrifugas"/>
          <lm>
             <l>lucrifuga</l>
             <m>n - - p - - - m a</m>
@@ -3722,15 +4194,17 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--lucrose lucrosius-->
-         <tok val="lucros(ius|e)"/>
+      <ana>
+         <tok val="lucrose"/>
+         <tok val="lucrosius"/>
          <lm>
             <l>lucrosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--lucrose lucrosum-->
-         <tok val="lucros(um|e)"/>
+      <ana>
+         <tok val="lucrose"/>
+         <tok val="lucrosum"/>
          <lm>
             <l>lucrosus</l>
             <m>a - - s - - - n v</m>
@@ -3893,8 +4367,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--luctan luctas-->
-         <tok val="lucta[sn]"/>
+      <ana>
+         <tok val="luctan"/>
+         <tok val="luctas"/>
          <lm cert="0.5">
             <l>lucta</l>
             <m>n - - p - - - f a</m>
@@ -3934,16 +4409,19 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--luctantem luctantemque Luctantem-->
-         <tok val="[Ll]uctantem(que)?"/>
+      <ana>
+         <tok val="Luctantem"/>
+         <tok val="luctantem"/>
+         <tok val="luctantemque"/>
          <lm>
             <l>luctor</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--luctantis luctantisque-->
-         <tok val="luctantis(que)?"/>
+      <ana>
+         <tok val="luctantis"/>
+         <tok val="luctantisque"/>
          <lm>
             <l>luctor</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -3960,8 +4438,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--luctare Luctare-->
-         <tok val="[Ll]uctare"/>
+      <ana>
+         <tok val="Luctare"/>
+         <tok val="luctare"/>
          <lm>
             <l>luctor</l>
             <m>v - 2 s p m p</m>
@@ -3974,8 +4453,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--luctata luctataque-->
-         <tok val="luctata(que)?"/>
+      <ana>
+         <tok val="luctata"/>
+         <tok val="luctataque"/>
          <lm>
             <l>luctor</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -4080,8 +4560,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--luctatur luctaturque-->
-         <tok val="luctatur(que)?"/>
+      <ana>
+         <tok val="luctatur"/>
+         <tok val="luctaturque"/>
          <lm>
             <l>luctor</l>
             <m>v - 3 s p i p</m>
@@ -4228,8 +4709,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--luctum luctumque-->
-         <tok val="luctum(que)?"/>
+      <ana>
+         <tok val="luctum"/>
+         <tok val="luctumque"/>
          <lm>
             <l>lugeo</l>
             <m>a - - s - - - n n</m>
@@ -4257,8 +4739,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--luctuosam luctuosamque-->
-         <tok val="luctuosam(que)?"/>
+      <ana>
+         <tok val="luctuosam"/>
+         <tok val="luctuosamque"/>
          <lm>
             <l>luctuosus</l>
             <m>a - - s - - - f a</m>
@@ -4271,8 +4754,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--luctuose luctuosius-->
-         <tok val="luctuos(ius|e)"/>
+      <ana>
+         <tok val="luctuose"/>
+         <tok val="luctuosius"/>
          <lm>
             <l>luctuosus</l>
             <m>d</m>
@@ -4360,8 +4844,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--luctuque luctuue-->
-         <tok val="luctu[q]?ue"/>
+      <ana>
+         <tok val="luctuque"/>
+         <tok val="luctuue"/>
          <lm>
             <l>lugeo</l>
             <m>a - - s - - - n d</m>
@@ -4544,8 +5029,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--lucubraverat lucubrauerat-->
-         <tok val="lucubra[uv]erat"/>
+      <ana>
+         <tok val="lucubrauerat"/>
+         <tok val="lucubraverat"/>
          <lm>
             <l>lucubro</l>
             <m>v - 3 s l i a</m>
@@ -4558,8 +5044,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--lucule luculen-->
-         <tok val="lucule[n]?"/>
+      <ana>
+         <tok val="lucule"/>
+         <tok val="luculen"/>
          <lm>
             <l>luculus</l>
             <m>n - - s - - - m v</m>
@@ -4797,8 +5284,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--lucustae Lucustae-->
-         <tok val="[Ll]ucustae"/>
+      <ana>
+         <tok val="Lucustae"/>
+         <tok val="lucustae"/>
          <lm>
             <l>locusta</l>
             <m>n - - p - - - f n</m>
@@ -4924,6 +5412,7 @@
       </ana>
       <ana>
          <tok val="Lucterius"/>
+         <tok val="lucterius"/>
          <lm>
             <l>Lucterius</l>
             <m>n e - s - - - m n</m>
@@ -4931,6 +5420,7 @@
       </ana>
       <ana>
          <tok val="Lucterium"/>
+         <tok val="lucterium"/>
          <lm>
             <l>Lucterius</l>
             <m>n e - s - - - m a</m>
@@ -4938,6 +5428,7 @@
       </ana>
       <ana>
          <tok val="Lucterio"/>
+         <tok val="lucterio"/>
          <lm>
             <l>Lucterius</l>
             <m cert="0.5">n e - s - - - m d</m>

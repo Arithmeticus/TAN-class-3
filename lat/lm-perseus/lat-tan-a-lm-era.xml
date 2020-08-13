@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusera">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:era">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to era</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-era.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ERA</tok-starts-with>
       <tok-starts-with>ERa</tok-starts-with>
@@ -38,22 +15,69 @@
       <tok-starts-with>era</tok-starts-with>
       <tok-starts-with>erá</tok-starts-with>
       <tok-starts-with>éra</tok-starts-with>
-      <ana><!--ERANT Erant Erantque erant erantque érant-->
-         <tok val="[eEé]?(rant)?(que|ERANT)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:22:20.471-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:22:20.471-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-era.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="ERANT"/>
+         <tok val="Erant"/>
+         <tok val="Erantque"/>
+         <tok val="erant"/>
+         <tok val="erantque"/>
+         <tok val="érant"/>
          <lm>
             <l>sum</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--ERAT ERat Erat Eratne Eratque erat eratne eratque erát érat-->
-         <tok val="[eE]?(r|ER)?(a|erá|éra)?[t]?(qu|n)?(e|ERAT)?"/>
+      <ana>
+         <tok val="ERAT"/>
+         <tok val="ERat"/>
+         <tok val="Erat"/>
+         <tok val="Eratne"/>
+         <tok val="Eratque"/>
+         <tok val="erat"/>
+         <tok val="eratne"/>
+         <tok val="eratque"/>
+         <tok val="erát"/>
+         <tok val="érat"/>
          <lm>
             <l>sum</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--ERATOSTHENES Eratosthenes-->
-         <tok val="E(ratosthenes|RATOSTHENES)"/>
+      <ana>
+         <tok val="ERATOSTHENES"/>
+         <tok val="Eratosthenes"/>
+         <tok val="eratosthenes"/>
          <lm>
             <l>Eratosthenes</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -62,8 +86,13 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Era Eran Erast era eran-->
-         <tok val="[Ee]ra(n|st)?"/>
+      <ana>
+         <tok val="Era"/>
+         <tok val="Eran"/>
+         <tok val="Erast"/>
+         <tok val="era"/>
+         <tok val="eran"/>
+         <tok val="erast"/>
          <lm>
             <l>era</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -71,8 +100,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Eradenda eradenda-->
-         <tok val="[eE]radenda"/>
+      <ana>
+         <tok val="Eradenda"/>
+         <tok val="eradenda"/>
          <lm>
             <l>erado</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -83,8 +113,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Eradicans eradicans-->
-         <tok val="[eE]radicans"/>
+      <ana>
+         <tok val="Eradicans"/>
+         <tok val="eradicans"/>
          <lm>
             <l>eradico</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -96,8 +127,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Eradico eradico-->
-         <tok val="[eE]radico"/>
+      <ana>
+         <tok val="Eradico"/>
+         <tok val="eradico"/>
          <lm>
             <l>eradico</l>
             <m>v - 1 s p i a</m>
@@ -105,6 +137,7 @@
       </ana>
       <ana>
          <tok val="Eradio"/>
+         <tok val="eradio"/>
          <lm>
             <l>exradio</l>
             <m>v - 1 s p i a</m>
@@ -112,13 +145,16 @@
       </ana>
       <ana>
          <tok val="Erado"/>
+         <tok val="erado"/>
          <lm>
             <l>erado</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Erae erae eraeque-->
-         <tok val="[eE]rae(que)?"/>
+      <ana>
+         <tok val="Erae"/>
+         <tok val="erae"/>
+         <tok val="eraeque"/>
          <lm>
             <l>era</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -126,29 +162,41 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Erae erae eraeque eraéque-->
-         <tok val="[eE]ra[ée]?(qu)?e"/>
+      <ana>
+         <tok val="Erae"/>
+         <tok val="erae"/>
+         <tok val="eraeque"/>
+         <tok val="eraéque"/>
          <lm>
             <l>era</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Eram eram eramque erám erámque-->
-         <tok val="[eE]r[áa]m(que)?"/>
+      <ana>
+         <tok val="Eram"/>
+         <tok val="eram"/>
+         <tok val="eramque"/>
+         <tok val="erám"/>
+         <tok val="erámque"/>
          <lm>
             <l>sum</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Eram eram eramque-->
-         <tok val="[eE]ram(que)?"/>
+      <ana>
+         <tok val="Eram"/>
+         <tok val="eram"/>
+         <tok val="eramque"/>
          <lm>
             <l>era</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Eran Eras eran eras-->
-         <tok val="[Ee]ra[sn]"/>
+      <ana>
+         <tok val="Eran"/>
+         <tok val="Eras"/>
+         <tok val="eran"/>
+         <tok val="eras"/>
          <lm cert="0.5">
             <l>sum</l>
             <m>v - 2 s i i a</m>
@@ -160,6 +208,7 @@
       </ana>
       <ana>
          <tok val="Erana"/>
+         <tok val="erana"/>
          <lm>
             <l>Erana</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -169,6 +218,7 @@
       </ana>
       <ana>
          <tok val="Eranam"/>
+         <tok val="eranam"/>
          <lm>
             <l>Erana</l>
             <m>n e - s - - - f a</m>
@@ -176,6 +226,7 @@
       </ana>
       <ana>
          <tok val="Erani"/>
+         <tok val="erani"/>
          <lm>
             <l>eranus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -185,14 +236,16 @@
       </ana>
       <ana>
          <tok val="Erano"/>
+         <tok val="erano"/>
          <lm>
             <l>eranus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Erasi erasi-->
-         <tok val="[eE]rasi"/>
+      <ana>
+         <tok val="Erasi"/>
+         <tok val="erasi"/>
          <lm>
             <l>erado</l>
             <m cert="0.2">v - - s r p p n g</m>
@@ -204,6 +257,7 @@
       </ana>
       <ana>
          <tok val="Erasini"/>
+         <tok val="erasini"/>
          <lm>
             <l>Erasinus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -213,6 +267,7 @@
       </ana>
       <ana>
          <tok val="Erasinus"/>
+         <tok val="erasinus"/>
          <lm>
             <l>Erasinus</l>
             <m>n e - s - - - m n</m>
@@ -220,6 +275,7 @@
       </ana>
       <ana>
          <tok val="Erasistrati"/>
+         <tok val="erasistrati"/>
          <lm>
             <l>Erasistratus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -229,6 +285,7 @@
       </ana>
       <ana>
          <tok val="Erasistrato"/>
+         <tok val="erasistrato"/>
          <lm>
             <l>Erasistratus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -237,6 +294,7 @@
       </ana>
       <ana>
          <tok val="Erasistratum"/>
+         <tok val="erasistratum"/>
          <lm>
             <l>Erasistratus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -245,6 +303,7 @@
       </ana>
       <ana>
          <tok val="Erasistratus"/>
+         <tok val="erasistratus"/>
          <lm>
             <l>Erasistratus</l>
             <m>n e - s - - - m n</m>
@@ -252,13 +311,15 @@
       </ana>
       <ana>
          <tok val="Erasu"/>
+         <tok val="erasu"/>
          <lm>
             <l>erado</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Erasus erasus-->
-         <tok val="[eE]rasus"/>
+      <ana>
+         <tok val="Erasus"/>
+         <tok val="erasus"/>
          <lm>
             <l>erado</l>
             <m>v - - s r p p m n</m>
@@ -266,6 +327,7 @@
       </ana>
       <ana>
          <tok val="Erate"/>
+         <tok val="erate"/>
          <lm>
             <l>eremus</l>
             <m cert="0.5">v - - s r p p n v</m>
@@ -274,6 +336,7 @@
       </ana>
       <ana>
          <tok val="Eratine"/>
+         <tok val="eratine"/>
          <lm>
             <l>Eratine</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -283,6 +346,7 @@
       </ana>
       <ana>
          <tok val="Erato"/>
+         <tok val="erato"/>
          <lm>
             <l>Erato</l>
             <m cert="0.25">n e - s - - - f a</m>
@@ -291,8 +355,10 @@
             <m cert="0.25">n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Erato erato eraton-->
-         <tok val="[eE]rato[n]?"/>
+      <ana>
+         <tok val="Erato"/>
+         <tok val="erato"/>
+         <tok val="eraton"/>
          <lm>
             <l>eremus</l>
             <m cert="0.25">v - - s r p p n b</m>
@@ -301,8 +367,10 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Eratos eraton-->
-         <tok val="[eE]rato[ns]"/>
+      <ana>
+         <tok val="Eratos"/>
+         <tok val="eraton"/>
+         <tok val="eratos"/>
          <lm>
             <l>eremus</l>
             <m>v - - p r p p m a</m>
@@ -310,6 +378,7 @@
       </ana>
       <ana>
          <tok val="Eratosthene"/>
+         <tok val="eratosthene"/>
          <lm>
             <l>Eratosthenes</l>
             <m>n e - s - - - m b</m>
@@ -317,6 +386,7 @@
       </ana>
       <ana>
          <tok val="Eratosthenem"/>
+         <tok val="eratosthenem"/>
          <lm>
             <l>Eratosthenes</l>
             <m>n e - s - - - m a</m>
@@ -324,6 +394,7 @@
       </ana>
       <ana>
          <tok val="Eratostheni"/>
+         <tok val="eratostheni"/>
          <lm>
             <l>Eratosthenes</l>
             <m>n e - s - - - m d</m>
@@ -331,6 +402,7 @@
       </ana>
       <ana>
          <tok val="Eratosthenis"/>
+         <tok val="eratosthenis"/>
          <lm>
             <l>Eratosthenes</l>
             <m>n e - s - - - m g</m>
@@ -485,8 +557,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--eradicabo erádicabo-->
-         <tok val="er[áa]dicabo"/>
+      <ana>
+         <tok val="eradicabo"/>
+         <tok val="erádicabo"/>
          <lm>
             <l>eradico</l>
             <m>v - 1 s f i a</m>
@@ -511,8 +584,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--eradicare eradicarest-->
-         <tok val="eradicare(st)?"/>
+      <ana>
+         <tok val="eradicare"/>
+         <tok val="eradicarest"/>
          <lm>
             <l>eradico</l>
             <m cert="0.333333333333333333">v - - - p n a</m>
@@ -604,8 +678,9 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--eradicatus eradícatus-->
-         <tok val="erad[íi]catus"/>
+      <ana>
+         <tok val="eradicatus"/>
+         <tok val="eradícatus"/>
          <lm>
             <l>eradico</l>
             <m>v - - s r p p m n</m>
@@ -763,8 +838,9 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--erase erasum-->
-         <tok val="eras(um|e)"/>
+      <ana>
+         <tok val="erase"/>
+         <tok val="erasum"/>
          <lm>
             <l>erado</l>
             <m>v - - s r p p n v</m>
@@ -836,8 +912,9 @@
             <m cert="0.25">v - - s r p p n b</m>
          </lm>
       </ana>
-      <ana><!--erasorum erasum-->
-         <tok val="eras(or)?um"/>
+      <ana>
+         <tok val="erasorum"/>
+         <tok val="erasum"/>
          <lm>
             <l>erado</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -899,8 +976,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--erati eratin-->
-         <tok val="erati[n]?"/>
+      <ana>
+         <tok val="erati"/>
+         <tok val="eratin"/>
          <lm>
             <l>eremus</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -909,8 +987,9 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--eratin eratis-->
-         <tok val="erati[sn]"/>
+      <ana>
+         <tok val="eratin"/>
+         <tok val="eratis"/>
          <lm cert="0.5">
             <l>eremus</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>

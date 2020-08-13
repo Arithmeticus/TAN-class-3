@@ -1,50 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseushos">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:hos">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to hos</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-hos.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>HOS</tok-starts-with>
       <tok-starts-with>Hos</tok-starts-with>
       <tok-starts-with>hos</tok-starts-with>
       <tok-starts-with>hós</tok-starts-with>
-      <ana><!--HOSPES Hospes hospes hospesque hóspes-->
-         <tok val="[hH]?(o|hó|ho)?(spes)?(que|HOSPES)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:27:10.517-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:27:10.517-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-hos.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="HOSPES"/>
+         <tok val="Hospes"/>
+         <tok val="hospes"/>
+         <tok val="hospesque"/>
+         <tok val="hóspes"/>
          <lm>
             <l>hospes</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--HOSPITALEM Hospitalem hospitalem-->
-         <tok val="[hH]?(ospitalem|HOSPITALEM)"/>
+      <ana>
+         <tok val="HOSPITALEM"/>
+         <tok val="Hospitalem"/>
+         <tok val="hospitalem"/>
          <lm>
             <l>hospitalis</l>
             <m cert="0.333333333333333333">a - - s - - - f a</m>
@@ -52,8 +66,11 @@
             <m cert="0.333333333333333333">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--HOSTIAE Hostiae hostiae hostiaeque-->
-         <tok val="[hH]?(ostiae)?(que|HOSTIAE)?"/>
+      <ana>
+         <tok val="HOSTIAE"/>
+         <tok val="Hostiae"/>
+         <tok val="hostiae"/>
+         <tok val="hostiaeque"/>
          <lm>
             <l>hostia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -62,22 +79,37 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--HOSTIO Hostio hostio-->
-         <tok val="[hH]?(ostio|HOSTIO)"/>
+      <ana>
+         <tok val="HOSTIO"/>
+         <tok val="Hostio"/>
+         <tok val="hostio"/>
          <lm>
             <l>hostio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--HOSTIS Hostis Hostisne hostis hostisne hostisque hostisue hóstis-->
-         <tok val="[hH]?(o|hó)?(stis)?[q]?[un]?(e|HOSTIS)?"/>
+      <ana>
+         <tok val="HOSTIS"/>
+         <tok val="Hostis"/>
+         <tok val="Hostisne"/>
+         <tok val="hostis"/>
+         <tok val="hostisne"/>
+         <tok val="hostisque"/>
+         <tok val="hostisue"/>
+         <tok val="hóstis"/>
          <lm>
             <l>hostus</l>
             <m>n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--HOSTIS Hostis Hostisne hostis hostisne hostisque hostisue-->
-         <tok val="[hH]?(ostis)?[q]?[un]?(e|HOSTIS)?"/>
+      <ana>
+         <tok val="HOSTIS"/>
+         <tok val="Hostis"/>
+         <tok val="Hostisne"/>
+         <tok val="hostis"/>
+         <tok val="hostisne"/>
+         <tok val="hostisque"/>
+         <tok val="hostisue"/>
          <lm cert="0.333333333333333333">
             <l>hostis</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -94,31 +126,57 @@
             <m>n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--HOSTIS Hostes Hostis Hostisne hostes hostesne hostesque hostesue hostesve hostis hostisne hostisque hostisue-->
-         <tok val="[hH]?(ost)?(isu|isqu|isn)?[e]?[s]?[q]?(ue|sne|sve|is|es|HOSTIS)?"/>
+      <ana>
+         <tok val="HOSTIS"/>
+         <tok val="Hostes"/>
+         <tok val="Hostis"/>
+         <tok val="Hostisne"/>
+         <tok val="hostes"/>
+         <tok val="hostesne"/>
+         <tok val="hostesque"/>
+         <tok val="hostesue"/>
+         <tok val="hostesve"/>
+         <tok val="hostis"/>
+         <tok val="hostisne"/>
+         <tok val="hostisque"/>
+         <tok val="hostisue"/>
          <lm>
             <l>hostis</l>
             <m cert="0.5">n - - p - - - m a</m>
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--HOSTVM Hostum hostum-->
-         <tok val="[hH]?(ostum|HOSTVM)"/>
+      <ana>
+         <tok val="HOSTVM"/>
+         <tok val="Hostum"/>
+         <tok val="hostum"/>
+         <tok val="hostvm"/>
          <lm>
             <l>hostus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Hos Hosce Hosne hos hosce hosne hosque host hós hósce-->
-         <tok val="[hH]?(o|hó|Ho|ho)s(t|ne|ce|que)?"/>
+      <ana>
+         <tok val="Hos"/>
+         <tok val="Hosce"/>
+         <tok val="Hosne"/>
+         <tok val="hos"/>
+         <tok val="hosce"/>
+         <tok val="hosne"/>
+         <tok val="hosque"/>
+         <tok val="host"/>
+         <tok val="hós"/>
+         <tok val="hósce"/>
          <lm>
             <l>hic</l>
             <m>p d - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Hospita hospita hospitaque-->
-         <tok val="[hH]ospita(que)?"/>
+      <ana>
+         <tok val="Hospita"/>
+         <tok val="hospita"/>
+         <tok val="hospitaque"/>
          <lm cert="0.5">
             <l>hospita</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -135,8 +193,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Hospitale hospitale-->
-         <tok val="[hH]ospitale"/>
+      <ana>
+         <tok val="Hospitale"/>
+         <tok val="hospitale"/>
          <lm>
             <l>hospitalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -144,15 +203,21 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Hospitale Hospitali hospitale hospitali hospitalique-->
-         <tok val="[Hh]ospital(i|e|ique)"/>
+      <ana>
+         <tok val="Hospitale"/>
+         <tok val="Hospitali"/>
+         <tok val="hospitale"/>
+         <tok val="hospitali"/>
+         <tok val="hospitalique"/>
          <lm>
             <l>hospitalis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Hospitali hospitali hospitalique-->
-         <tok val="[hH]ospitali(que)?"/>
+      <ana>
+         <tok val="Hospitali"/>
+         <tok val="hospitali"/>
+         <tok val="hospitalique"/>
          <lm>
             <l>hospitalis</l>
             <m cert="0.142857142857142857">a - - s - - - m d</m>
@@ -164,8 +229,9 @@
             <m cert="0.142857142857142857">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Hospitalia hospitalia-->
-         <tok val="[hH]ospitalia"/>
+      <ana>
+         <tok val="Hospitalia"/>
+         <tok val="hospitalia"/>
          <lm cert="0.5">
             <l>hospitalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -179,8 +245,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Hospitalis hospitalis-->
-         <tok val="[hH]ospitalis"/>
+      <ana>
+         <tok val="Hospitalis"/>
+         <tok val="hospitalis"/>
          <lm>
             <l>hospitalis</l>
             <m cert="0.111111111111111111">n - - s - - - m g</m>
@@ -194,8 +261,10 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hospitalis hospitales hospitalis-->
-         <tok val="[hH]ospital[ie]s"/>
+      <ana>
+         <tok val="Hospitalis"/>
+         <tok val="hospitales"/>
+         <tok val="hospitalis"/>
          <lm>
             <l>hospitalis</l>
             <m cert="0.333333333333333333">n - - p - - - m a</m>
@@ -203,36 +272,43 @@
             <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Hospitalitas hospitalitas-->
-         <tok val="[hH]ospitalitas"/>
+      <ana>
+         <tok val="Hospitalitas"/>
+         <tok val="hospitalitas"/>
          <lm>
             <l>hospitalitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Hospitari hospitari-->
-         <tok val="[hH]ospitari"/>
+      <ana>
+         <tok val="Hospitari"/>
+         <tok val="hospitari"/>
          <lm>
             <l>hospitor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Hospitatur hospitatur-->
-         <tok val="[hH]ospitatur"/>
+      <ana>
+         <tok val="Hospitatur"/>
+         <tok val="hospitatur"/>
          <lm>
             <l>hospitor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Hospitem hospitem hóspitem-->
-         <tok val="[hH]?(o|hó)spitem"/>
+      <ana>
+         <tok val="Hospitem"/>
+         <tok val="hospitem"/>
+         <tok val="hóspitem"/>
          <lm>
             <l>hospes</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Hospites hospites hospitesque-->
-         <tok val="[hH]ospites(que)?"/>
+      <ana>
+         <tok val="Hospites"/>
+         <tok val="hospites"/>
+         <tok val="hospitesque"/>
          <lm>
             <l>hospes</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -240,8 +316,10 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Hospitia hospitia hospitiaque-->
-         <tok val="[hH]ospitia(que)?"/>
+      <ana>
+         <tok val="Hospitia"/>
+         <tok val="hospitia"/>
+         <tok val="hospitiaque"/>
          <lm>
             <l>hospitium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -249,37 +327,49 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Hospitii hospiti hospitii hospitiique hospitique-->
-         <tok val="[hH]ospiti[i]?(que|i)?"/>
+      <ana>
+         <tok val="Hospitii"/>
+         <tok val="hospiti"/>
+         <tok val="hospitii"/>
+         <tok val="hospitiique"/>
+         <tok val="hospitique"/>
          <lm>
             <l>hospitium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hospitiis hospitiis hospitiisque-->
-         <tok val="[hH]ospitiis(que)?"/>
+      <ana>
+         <tok val="Hospitiis"/>
+         <tok val="hospitiis"/>
+         <tok val="hospitiisque"/>
          <lm>
             <l>hospitium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Hospitio hospitio hospitioque hóspitio-->
-         <tok val="[hH]?(o|hó|ho)spitio(que)?"/>
+      <ana>
+         <tok val="Hospitio"/>
+         <tok val="hospitio"/>
+         <tok val="hospitioque"/>
+         <tok val="hóspitio"/>
          <lm>
             <l>hospitium</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Hospitio hospitio hospitioque-->
-         <tok val="[hH]ospitio(que)?"/>
+      <ana>
+         <tok val="Hospitio"/>
+         <tok val="hospitio"/>
+         <tok val="hospitioque"/>
          <lm>
             <l>hospitium</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Hospitiolum hospitiolum-->
-         <tok val="[hH]ospitiolum"/>
+      <ana>
+         <tok val="Hospitiolum"/>
+         <tok val="hospitiolum"/>
          <lm>
             <l>hospitiolum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -288,8 +378,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hospitis hospitis-->
-         <tok val="[hH]ospitis"/>
+      <ana>
+         <tok val="Hospitis"/>
+         <tok val="hospitis"/>
          <lm cert="0.333333333333333333">
             <l>hospitus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -309,74 +400,110 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Hospitium Hospitivm hospitium hospitiumque-->
-         <tok val="[Hh]ospiti[vu]m(que)?"/>
+      <ana>
+         <tok val="Hospitium"/>
+         <tok val="Hospitivm"/>
+         <tok val="hospitium"/>
+         <tok val="hospitiumque"/>
+         <tok val="hospitivm"/>
          <lm>
             <l>hospitium</l>
             <m cert="0.5">n - - s - - - n v</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Hospitium Hospitivm hospitium hospitiumque hospítium-->
-         <tok val="[Hh]osp[ií]ti[vu]m(que)?"/>
+      <ana>
+         <tok val="Hospitium"/>
+         <tok val="Hospitivm"/>
+         <tok val="hospitium"/>
+         <tok val="hospitiumque"/>
+         <tok val="hospitivm"/>
+         <tok val="hospítium"/>
          <lm>
             <l>hospitium</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Hospitium Hospitivm hospitiorum hospitium hospitiumque-->
-         <tok val="[hH]ospiti(or)?[uv]m(que)?"/>
+      <ana>
+         <tok val="Hospitium"/>
+         <tok val="Hospitivm"/>
+         <tok val="hospitiorum"/>
+         <tok val="hospitium"/>
+         <tok val="hospitiumque"/>
+         <tok val="hospitivm"/>
          <lm>
             <l>hospitium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hospitor hospitor-->
-         <tok val="[hH]ospitor"/>
+      <ana>
+         <tok val="Hospitor"/>
+         <tok val="hospitor"/>
          <lm>
             <l>hospitor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Hospitus hospitus hospitusque-->
-         <tok val="[hH]ospitus(que)?"/>
+      <ana>
+         <tok val="Hospitus"/>
+         <tok val="hospitus"/>
+         <tok val="hospitusque"/>
          <lm>
             <l>hospitus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Hoste Hosti hoste hosti hostique-->
-         <tok val="[Hh]ost(i|e|ique)"/>
+      <ana>
+         <tok val="Hoste"/>
+         <tok val="Hosti"/>
+         <tok val="hoste"/>
+         <tok val="hosti"/>
+         <tok val="hostique"/>
          <lm>
             <l>hostis</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Hoste hoste-->
-         <tok val="[hH]oste"/>
+      <ana>
+         <tok val="Hoste"/>
+         <tok val="hoste"/>
          <lm>
             <l>hostus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Hostem hostem hostemque hostemue-->
-         <tok val="[hH]ostem[q]?(ue)?"/>
+      <ana>
+         <tok val="Hostem"/>
+         <tok val="hostem"/>
+         <tok val="hostemque"/>
+         <tok val="hostemue"/>
          <lm>
             <l>hostis</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Hostes hostes hostesne hostesque hostesue hostesve hóstes-->
-         <tok val="[hH]?(o|hó)stes[q]?[unv]?[e]?"/>
+      <ana>
+         <tok val="Hostes"/>
+         <tok val="hostes"/>
+         <tok val="hostesne"/>
+         <tok val="hostesque"/>
+         <tok val="hostesue"/>
+         <tok val="hostesve"/>
+         <tok val="hóstes"/>
          <lm>
             <l>hostis</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Hostes hostes hostesne hostesque hostesue hostesve-->
-         <tok val="[hH]ostes[q]?[unv]?[e]?"/>
+      <ana>
+         <tok val="Hostes"/>
+         <tok val="hostes"/>
+         <tok val="hostesne"/>
+         <tok val="hostesque"/>
+         <tok val="hostesue"/>
+         <tok val="hostesve"/>
          <lm>
             <l>hostis</l>
             <m cert="0.333333333333333333">n - - p - - - m v</m>
@@ -384,8 +511,10 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Hosti hosti hostique-->
-         <tok val="[hH]osti(que)?"/>
+      <ana>
+         <tok val="Hosti"/>
+         <tok val="hosti"/>
+         <tok val="hostique"/>
          <lm cert="0.333333333333333333">
             <l>hostus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -402,17 +531,23 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Hosti Hostii-->
-         <tok val="Hosti[i]?"/>
+      <ana>
+         <tok val="Hosti"/>
+         <tok val="Hostii"/>
+         <tok val="hosti"/>
+         <tok val="hostii"/>
          <lm>
             <l>Hostius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Hostia Hostiaque-->
-         <tok val="Hostia(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Hostia"/>
+         <tok val="Hostiaque"/>
+         <tok val="hostia"/>
+         <tok val="hostiaque"/>
+         <lm cert="0.5">
             <l>Hostius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
             <m cert="0.166666666666666667">a e - p - - - n v</m>
@@ -421,10 +556,7 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Hostia Hostiaque hostia hostiaque-->
-         <tok val="[hH]ostia(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>hostia</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -433,6 +565,7 @@
       </ana>
       <ana>
          <tok val="Hostiae"/>
+         <tok val="hostiae"/>
          <lm>
             <l>Hostius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -443,32 +576,35 @@
       </ana>
       <ana>
          <tok val="Hostiam"/>
-         <lm>
+         <tok val="hostiam"/>
+         <lm cert="0.333333333333333333">
             <l>Hostius</l>
             <m>a e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Hostiam hostiam-->
-         <tok val="[hH]ostiam"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>hostio</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>hostia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Hostiatus hostiatus-->
-         <tok val="[hH]ostiatus"/>
+      <ana>
+         <tok val="Hostiatus"/>
+         <tok val="hostiatus"/>
          <lm>
             <l>hostiatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Hostibus hostibus hostibusne hostibusque hostibusue-->
-         <tok val="[hH]ostibus[q]?[un]?[e]?"/>
+      <ana>
+         <tok val="Hostibus"/>
+         <tok val="hostibus"/>
+         <tok val="hostibusne"/>
+         <tok val="hostibusque"/>
+         <tok val="hostibusue"/>
          <lm>
             <l>hostis</l>
             <m cert="0.333333333333333333">n - - p - - - m b</m>
@@ -476,15 +612,23 @@
             <m cert="0.333333333333333333">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Hostibus hostibus hostibusne hostibusque hostibusue Hostíbus hóstibus-->
-         <tok val="[hH]?(o|hó)st[ií]bus[q]?[un]?[e]?"/>
+      <ana>
+         <tok val="Hostibus"/>
+         <tok val="Hostíbus"/>
+         <tok val="hostibus"/>
+         <tok val="hostibusne"/>
+         <tok val="hostibusque"/>
+         <tok val="hostibusue"/>
+         <tok val="hostíbus"/>
+         <tok val="hóstibus"/>
          <lm>
             <l>hostis</l>
             <m>n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Hostica hostica-->
-         <tok val="[hH]ostica"/>
+      <ana>
+         <tok val="Hostica"/>
+         <tok val="hostica"/>
          <lm cert="0.5">
             <l>hosticum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -501,8 +645,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Hosticum hosticum-->
-         <tok val="[hH]osticum"/>
+      <ana>
+         <tok val="Hosticum"/>
+         <tok val="hosticum"/>
          <lm cert="0.5">
             <l>hosticus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -520,8 +665,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hosticus hosticus-->
-         <tok val="[hH]osticus"/>
+      <ana>
+         <tok val="Hosticus"/>
+         <tok val="hosticus"/>
          <lm>
             <l>hosticus</l>
             <m>a - - s - - - m n</m>
@@ -529,14 +675,17 @@
       </ana>
       <ana>
          <tok val="Hostii"/>
+         <tok val="hostii"/>
          <lm>
             <l>Hostius</l>
             <m cert="0.5">a e - p - - - m v</m>
             <m cert="0.5">a e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Hostii hostii hostiui-->
-         <tok val="[hH]osti[u]?i"/>
+      <ana>
+         <tok val="Hostii"/>
+         <tok val="hostii"/>
+         <tok val="hostiui"/>
          <lm>
             <l>hostio</l>
             <m>v - 1 s r i a</m>
@@ -544,6 +693,7 @@
       </ana>
       <ana>
          <tok val="Hostiis"/>
+         <tok val="hostiis"/>
          <lm>
             <l>Hostius</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -554,22 +704,28 @@
             <m cert="0.166666666666666667">a e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Hostiis hostiis hostiisque-->
-         <tok val="[hH]ostiis(que)?"/>
+      <ana>
+         <tok val="Hostiis"/>
+         <tok val="hostiis"/>
+         <tok val="hostiisque"/>
          <lm>
             <l>hostia</l>
             <m>n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Hostiis hostiis hostiisque hóstiis-->
-         <tok val="[hH]?(o|hó|ho)stiis(que)?"/>
+      <ana>
+         <tok val="Hostiis"/>
+         <tok val="hostiis"/>
+         <tok val="hostiisque"/>
+         <tok val="hóstiis"/>
          <lm>
             <l>hostia</l>
             <m>n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Hostile hostile-->
-         <tok val="[hH]ostile"/>
+      <ana>
+         <tok val="Hostile"/>
+         <tok val="hostile"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -577,24 +733,33 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Hostilem hostilem hostilemque-->
-         <tok val="[hH]ostilem(que)?"/>
+      <ana>
+         <tok val="Hostilem"/>
+         <tok val="hostilem"/>
+         <tok val="hostilemque"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Hostiles Hostilis hostiles hostilesque hostilis hostilisque-->
-         <tok val="[hH]ostil[ie]s(que)?"/>
+      <ana>
+         <tok val="Hostiles"/>
+         <tok val="Hostilis"/>
+         <tok val="hostiles"/>
+         <tok val="hostilesque"/>
+         <tok val="hostilis"/>
+         <tok val="hostilisque"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Hostiles hostiles hostilesque-->
-         <tok val="[hH]ostiles(que)?"/>
+      <ana>
+         <tok val="Hostiles"/>
+         <tok val="hostiles"/>
+         <tok val="hostilesque"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -603,16 +768,24 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Hostili Hostilii Hostilique-->
-         <tok val="Hostili(i|que)?"/>
+      <ana>
+         <tok val="Hostili"/>
+         <tok val="Hostilii"/>
+         <tok val="Hostilique"/>
+         <tok val="hostili"/>
+         <tok val="hostilii"/>
+         <tok val="hostilique"/>
          <lm>
             <l>Hostilius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Hostili Hostilique hostili hostilique-->
-         <tok val="[hH]ostili(que)?"/>
+      <ana>
+         <tok val="Hostili"/>
+         <tok val="Hostilique"/>
+         <tok val="hostili"/>
+         <tok val="hostilique"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -625,6 +798,7 @@
       </ana>
       <ana>
          <tok val="Hostilia"/>
+         <tok val="hostilia"/>
          <lm>
             <l>Hostilius</l>
             <m cert="0.333333333333333333">a e - s - - - f n</m>
@@ -632,8 +806,10 @@
             <m cert="0.333333333333333333">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Hostilia hostilia hostiliaque-->
-         <tok val="[hH]ostilia(que)?"/>
+      <ana>
+         <tok val="Hostilia"/>
+         <tok val="hostilia"/>
+         <tok val="hostiliaque"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -643,6 +819,7 @@
       </ana>
       <ana>
          <tok val="Hostiliae"/>
+         <tok val="hostiliae"/>
          <lm>
             <l>Hostilius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -653,6 +830,7 @@
       </ana>
       <ana>
          <tok val="Hostiliam"/>
+         <tok val="hostiliam"/>
          <lm>
             <l>Hostilius</l>
             <m>a e - s - - - f a</m>
@@ -660,6 +838,7 @@
       </ana>
       <ana>
          <tok val="Hostilii"/>
+         <tok val="hostilii"/>
          <lm>
             <l>Hostilius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -668,6 +847,7 @@
       </ana>
       <ana>
          <tok val="Hostilina"/>
+         <tok val="hostilina"/>
          <lm>
             <l>Hostilina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -677,6 +857,7 @@
       </ana>
       <ana>
          <tok val="Hostilio"/>
+         <tok val="hostilio"/>
          <lm>
             <l>Hostilius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -687,6 +868,7 @@
       </ana>
       <ana>
          <tok val="Hostiliorum"/>
+         <tok val="hostiliorum"/>
          <lm cert="0.5">
             <l>hostilis</l>
             <m>a - - p - - - - g c</m>
@@ -697,8 +879,10 @@
             <m cert="0.5">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hostilis hostilis hostilisque-->
-         <tok val="[hH]ostilis(que)?"/>
+      <ana>
+         <tok val="Hostilis"/>
+         <tok val="hostilis"/>
+         <tok val="hostilisque"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -710,8 +894,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hostilitas hostilitas-->
-         <tok val="[hH]ostilitas"/>
+      <ana>
+         <tok val="Hostilitas"/>
+         <tok val="hostilitas"/>
          <lm>
             <l>hostilitas</l>
             <m>n - - s - - - f n</m>
@@ -719,6 +904,7 @@
       </ana>
       <ana>
          <tok val="Hostiliter"/>
+         <tok val="hostiliter"/>
          <lm>
             <l>hostiliter</l>
             <m>d</m>
@@ -726,6 +912,7 @@
       </ana>
       <ana>
          <tok val="Hostilium"/>
+         <tok val="hostilium"/>
          <lm>
             <l>Hostilius</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -734,8 +921,10 @@
             <m cert="0.25">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Hostilium hostilium hostiliumque-->
-         <tok val="[hH]ostilium(que)?"/>
+      <ana>
+         <tok val="Hostilium"/>
+         <tok val="hostilium"/>
+         <tok val="hostiliumque"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -745,26 +934,23 @@
       </ana>
       <ana>
          <tok val="Hostilius"/>
+         <tok val="hostilius"/>
          <lm cert="0.5">
             <l>hostilis</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>Hostilius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Hostilius hostilius-->
-         <tok val="[hH]ostilius"/>
-         <lm>
-            <l>hostilis</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Hostimentum hostimentum hostimentumst-->
-         <tok val="[hH]ostimentum(st)?"/>
+      <ana>
+         <tok val="Hostimentum"/>
+         <tok val="hostimentum"/>
+         <tok val="hostimentumst"/>
          <lm>
             <l>hostimentum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -775,6 +961,7 @@
       </ana>
       <ana>
          <tok val="Hostio"/>
+         <tok val="hostio"/>
          <lm>
             <l>Hostius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -785,6 +972,7 @@
       </ana>
       <ana>
          <tok val="Hostium"/>
+         <tok val="hostium"/>
          <lm>
             <l>Hostius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -795,15 +983,24 @@
             <m cert="0.166666666666666667">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hostium hostium hostiumque hostiumst hostiumue-->
-         <tok val="[hH]ostium[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Hostium"/>
+         <tok val="hostium"/>
+         <tok val="hostiumque"/>
+         <tok val="hostiumst"/>
+         <tok val="hostiumue"/>
          <lm>
             <l>hostis</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Hostium hostium hostiumque hostiumst hostiumue hóstium-->
-         <tok val="[hH]?(o|hó)stium[q]?(ue|st)?"/>
+      <ana>
+         <tok val="Hostium"/>
+         <tok val="hostium"/>
+         <tok val="hostiumque"/>
+         <tok val="hostiumst"/>
+         <tok val="hostiumue"/>
+         <tok val="hóstium"/>
          <lm>
             <l>hostis</l>
             <m>n - - p - - - m g</m>
@@ -811,6 +1008,7 @@
       </ana>
       <ana>
          <tok val="Hostius"/>
+         <tok val="hostius"/>
          <lm>
             <l>Hostius</l>
             <m>a e - s - - - m n</m>
@@ -818,14 +1016,16 @@
       </ana>
       <ana>
          <tok val="Hosto"/>
+         <tok val="hosto"/>
          <lm>
             <l>hostus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Hostorium hostorium-->
-         <tok val="[hH]ostorium"/>
+      <ana>
+         <tok val="Hostorium"/>
+         <tok val="hostorium"/>
          <lm>
             <l>hostorium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -834,8 +1034,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Hostus hostus-->
-         <tok val="[hH]ostus"/>
+      <ana>
+         <tok val="Hostus"/>
+         <tok val="hostus"/>
          <lm>
             <l>hostus</l>
             <m>n - - s - - - m n</m>
@@ -873,8 +1074,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--hospitae hospitai-->
-         <tok val="hospita[ie]"/>
+      <ana>
+         <tok val="hospitae"/>
+         <tok val="hospitai"/>
          <lm cert="0.5">
             <l>hospitus</l>
             <m>a - - s - - - f g</m>
@@ -951,15 +1153,17 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--hospitaliter hospitalius-->
-         <tok val="hospitali(us|ter)"/>
+      <ana>
+         <tok val="hospitaliter"/>
+         <tok val="hospitalius"/>
          <lm>
             <l>hospitalis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--hospitalium hospitaliumque-->
-         <tok val="hospitalium(que)?"/>
+      <ana>
+         <tok val="hospitalium"/>
+         <tok val="hospitaliumque"/>
          <lm cert="0.5">
             <l>hospitalis</l>
             <m cert="0.25">n - - p - - - m g</m>
@@ -1088,22 +1292,28 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--hospite hóspite Hospite-->
-         <tok val="[h]?(ó|o|Ho)spite"/>
+      <ana>
+         <tok val="Hospite"/>
+         <tok val="hospite"/>
+         <tok val="hóspite"/>
          <lm>
             <l>hospitus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--hospite hospitum hospitumque Hospite-->
-         <tok val="[Hh]ospit(umqu)?(e|um)"/>
+      <ana>
+         <tok val="Hospite"/>
+         <tok val="hospite"/>
+         <tok val="hospitum"/>
+         <tok val="hospitumque"/>
          <lm>
             <l>hospitus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--hospite Hospite-->
-         <tok val="[Hh]ospite"/>
+      <ana>
+         <tok val="Hospite"/>
+         <tok val="hospite"/>
          <lm cert="0.5">
             <l>hospes</l>
             <m>n - - s - - - m b</m>
@@ -1120,8 +1330,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--hospiti hospitique-->
-         <tok val="hospiti(que)?"/>
+      <ana>
+         <tok val="hospiti"/>
+         <tok val="hospitique"/>
          <lm cert="0.5">
             <l>hospitus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1134,8 +1345,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--hospitibus hospitibusque-->
-         <tok val="hospitibus(que)?"/>
+      <ana>
+         <tok val="hospitibus"/>
+         <tok val="hospitibusque"/>
          <lm>
             <l>hospes</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -1175,8 +1387,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--hospitum hospitumque-->
-         <tok val="hospitum(que)?"/>
+      <ana>
+         <tok val="hospitum"/>
+         <tok val="hospitumque"/>
          <lm cert="0.5">
             <l>hospitus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1204,15 +1417,17 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--hostiarum Hostiarum-->
-         <tok val="[Hh]ostiarum"/>
+      <ana>
+         <tok val="Hostiarum"/>
+         <tok val="hostiarum"/>
          <lm>
             <l>hostia</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--hostias hóstias-->
-         <tok val="h[óo]stias"/>
+      <ana>
+         <tok val="hostias"/>
+         <tok val="hóstias"/>
          <lm>
             <l>hostio</l>
             <m>v - 2 s p s a</m>
@@ -1225,8 +1440,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--hostiatasque hóstiatásque-->
-         <tok val="h[óo]stiat[áa]sque"/>
+      <ana>
+         <tok val="hostiatasque"/>
+         <tok val="hóstiatásque"/>
          <lm>
             <l>hostiatus</l>
             <m>a - - p - - - f a</m>
@@ -1270,8 +1486,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--hosticis hosticisque-->
-         <tok val="hosticis(que)?"/>
+      <ana>
+         <tok val="hosticis"/>
+         <tok val="hosticisque"/>
          <lm cert="0.5">
             <l>hosticus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1318,8 +1535,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--hostifice hostificum-->
-         <tok val="hostific(um|e)"/>
+      <ana>
+         <tok val="hostifice"/>
+         <tok val="hostificum"/>
          <lm>
             <l>hostificus</l>
             <m>a - - s - - - n v</m>
@@ -1343,8 +1561,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--hostilibus hostilibusque-->
-         <tok val="hostilibus(que)?"/>
+      <ana>
+         <tok val="hostilibus"/>
+         <tok val="hostilibusque"/>
          <lm>
             <l>hostilis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1369,8 +1588,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--hostiliter hostilius-->
-         <tok val="hostili(us|ter)"/>
+      <ana>
+         <tok val="hostiliter"/>
+         <tok val="hostilius"/>
          <lm>
             <l>hostilis</l>
             <m>d</m>

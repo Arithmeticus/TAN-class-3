@@ -1,52 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusmod">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:mod">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to mod</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-mod.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>MOD</tok-starts-with>
       <tok-starts-with>MOd</tok-starts-with>
       <tok-starts-with>Mod</tok-starts-with>
       <tok-starts-with>mod</tok-starts-with>
       <tok-starts-with>mód</tok-starts-with>
-      <ana><!--MODICE Modice modice modiceque-->
-         <tok val="[mM]?(odice)?(que|MODICE)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:33:58.828-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:33:58.828-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-mod.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="MODICE"/>
+         <tok val="Modice"/>
+         <tok val="modice"/>
+         <tok val="modiceque"/>
          <lm>
             <l>modicus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--MODICE Modice Modicom Modicum modice modiceque modicum-->
-         <tok val="[Mm]?(odic)?[uo]?(m|e|eque|MODICE)"/>
+      <ana>
+         <tok val="MODICE"/>
+         <tok val="Modice"/>
+         <tok val="Modicom"/>
+         <tok val="Modicum"/>
+         <tok val="modice"/>
+         <tok val="modiceque"/>
+         <tok val="modicom"/>
+         <tok val="modicum"/>
          <lm cert="0.5">
             <l>modicum</l>
             <m>n - - s - - - n v</m>
@@ -56,29 +74,55 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MODIS Modin Modis modis modisque modist modisue-->
-         <tok val="[mM]?(odi)?[s]?[q]?(ue|t|n|MODIS)?"/>
+      <ana>
+         <tok val="MODIS"/>
+         <tok val="Modin"/>
+         <tok val="Modis"/>
+         <tok val="modin"/>
+         <tok val="modis"/>
+         <tok val="modisque"/>
+         <tok val="modist"/>
+         <tok val="modisue"/>
          <lm>
             <l>modus</l>
             <m>n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--MODIS Modin Modis modis modisque modist modisue modís módis-->
-         <tok val="[mM]?(o|mó)?[d]?[i]?[s]?[q]?(ue|t|n|ís|is|MODIS)?"/>
+      <ana>
+         <tok val="MODIS"/>
+         <tok val="Modin"/>
+         <tok val="Modis"/>
+         <tok val="modin"/>
+         <tok val="modis"/>
+         <tok val="modisque"/>
+         <tok val="modist"/>
+         <tok val="modisue"/>
+         <tok val="modís"/>
+         <tok val="módis"/>
          <lm>
             <l>modus</l>
             <m>n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--MODIVM Modium modiorum modium modiumque módiorum-->
-         <tok val="[m]?(ó|o|Mo|mo)?(di)?(or)?(um)?(que|MODIVM)?"/>
+      <ana>
+         <tok val="MODIVM"/>
+         <tok val="Modium"/>
+         <tok val="modiorum"/>
+         <tok val="modium"/>
+         <tok val="modiumque"/>
+         <tok val="modivm"/>
+         <tok val="módiorum"/>
          <lm>
             <l>modius</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--MODIVM Modium modium modiumque-->
-         <tok val="[mM]?(odium)?(que|MODIVM)?"/>
+      <ana>
+         <tok val="MODIVM"/>
+         <tok val="Modium"/>
+         <tok val="modium"/>
+         <tok val="modiumque"/>
+         <tok val="modivm"/>
          <lm cert="0.5">
             <l>modium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -90,86 +134,159 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--MODIVM Modium modiorum modium modiumque-->
-         <tok val="[mM]?(odi)?(or)?(um)?(que|MODIVM)?"/>
+      <ana>
+         <tok val="MODIVM"/>
+         <tok val="Modium"/>
+         <tok val="modiorum"/>
+         <tok val="modium"/>
+         <tok val="modiumque"/>
+         <tok val="modivm"/>
          <lm>
             <l>modium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--MODIVS Modius modius modiusque-->
-         <tok val="[mM]?(odius)?(que|MODIVS)?"/>
+      <ana>
+         <tok val="MODIVS"/>
+         <tok val="Modius"/>
+         <tok val="modius"/>
+         <tok val="modiusque"/>
+         <tok val="modivs"/>
          <lm>
             <l>modius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--MODO MOdo Modo Modon Modone modo modocunque modon modone modoque modoquest modost modove modó módo Modó-->
-         <tok val="[Mm]?(o|MO|mo|mó|Mo)?[d]?[o]?[n]?(e|quest|que|ve|cunque|st|ó|o|MODO)?"/>
+      <ana>
+         <tok val="MODO"/>
+         <tok val="MOdo"/>
+         <tok val="Modo"/>
+         <tok val="Modon"/>
+         <tok val="Modone"/>
+         <tok val="Modó"/>
+         <tok val="modo"/>
+         <tok val="modocunque"/>
+         <tok val="modon"/>
+         <tok val="modone"/>
+         <tok val="modoque"/>
+         <tok val="modoquest"/>
+         <tok val="modost"/>
+         <tok val="modove"/>
+         <tok val="modó"/>
+         <tok val="módo"/>
          <lm>
             <l>modo</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--MODO MOdo Modo Modon Modone modo modocunque modon modone modoque modoquest modost modove-->
-         <tok val="[Mm]?(o|MO)?(do)?[n]?(e|quest|que|ve|cunque|st|MODO)?"/>
+      <ana>
+         <tok val="MODO"/>
+         <tok val="MOdo"/>
+         <tok val="Modo"/>
+         <tok val="Modon"/>
+         <tok val="Modone"/>
+         <tok val="modo"/>
+         <tok val="modocunque"/>
+         <tok val="modon"/>
+         <tok val="modone"/>
+         <tok val="modoque"/>
+         <tok val="modoquest"/>
+         <tok val="modost"/>
+         <tok val="modove"/>
          <lm>
             <l>modus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--MODORVM MODVM Modorum Modum modorum modorumque modum modumque modumst-->
-         <tok val="[mM]?(od)?(or)?(um)?(que|MODVM|MODORVM|Modum|modum|modumst)?"/>
+      <ana>
+         <tok val="MODORVM"/>
+         <tok val="MODVM"/>
+         <tok val="Modorum"/>
+         <tok val="Modum"/>
+         <tok val="modorum"/>
+         <tok val="modorumque"/>
+         <tok val="modorvm"/>
+         <tok val="modum"/>
+         <tok val="modumque"/>
+         <tok val="modumst"/>
+         <tok val="modvm"/>
          <lm>
             <l>modus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--MODOS Modon Modos modon modos modosque modost-->
-         <tok val="[mM]?(odo)?[s]?(t|n|sque|MODOS)?"/>
+      <ana>
+         <tok val="MODOS"/>
+         <tok val="Modon"/>
+         <tok val="Modos"/>
+         <tok val="modon"/>
+         <tok val="modos"/>
+         <tok val="modosque"/>
+         <tok val="modost"/>
          <lm>
             <l>modus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--MODVLOR Modulor modulor-->
-         <tok val="[mM]?(odulor|MODVLOR)"/>
+      <ana>
+         <tok val="MODVLOR"/>
+         <tok val="Modulor"/>
+         <tok val="modulor"/>
+         <tok val="modvlor"/>
          <lm>
             <l>modulor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--MODVM Modum modum modumque modumst-->
-         <tok val="[mM]?(odum)?(st|que|MODVM)?"/>
+      <ana>
+         <tok val="MODVM"/>
+         <tok val="Modum"/>
+         <tok val="modum"/>
+         <tok val="modumque"/>
+         <tok val="modumst"/>
+         <tok val="modvm"/>
          <lm>
             <l>modus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--MODVS Modus modun modus modusque modusve-->
-         <tok val="[mM]?(odu)?[s]?(ve|n|sque|MODVS)?"/>
+      <ana>
+         <tok val="MODVS"/>
+         <tok val="Modus"/>
+         <tok val="modun"/>
+         <tok val="modus"/>
+         <tok val="modusque"/>
+         <tok val="modusve"/>
+         <tok val="modvs"/>
          <lm>
             <l>modus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mode Modest mode modest-->
-         <tok val="[mM]ode(st)?"/>
+      <ana>
+         <tok val="Mode"/>
+         <tok val="Modest"/>
+         <tok val="mode"/>
+         <tok val="modest"/>
          <lm>
             <l>modus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Modera Moderan modera moderan-->
-         <tok val="[Mm]odera[n]?"/>
+      <ana>
+         <tok val="Modera"/>
+         <tok val="Moderan"/>
+         <tok val="modera"/>
+         <tok val="moderan"/>
          <lm>
             <l>modero</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Moderabilis moderabilis-->
-         <tok val="[mM]oderabilis"/>
+      <ana>
+         <tok val="Moderabilis"/>
+         <tok val="moderabilis"/>
          <lm>
             <l>moderabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -183,8 +300,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Moderamen moderamen-->
-         <tok val="[mM]oderamen"/>
+      <ana>
+         <tok val="Moderamen"/>
+         <tok val="moderamen"/>
          <lm>
             <l>moderamen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -192,8 +310,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Moderamina moderamina-->
-         <tok val="[mM]oderamina"/>
+      <ana>
+         <tok val="Moderamina"/>
+         <tok val="moderamina"/>
          <lm>
             <l>moderamen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -201,15 +320,18 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Moderamine moderamine-->
-         <tok val="[mM]oderamine"/>
+      <ana>
+         <tok val="Moderamine"/>
+         <tok val="moderamine"/>
          <lm>
             <l>moderamen</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Moderan moderan moderas-->
-         <tok val="[mM]odera[ns]"/>
+      <ana>
+         <tok val="Moderan"/>
+         <tok val="moderan"/>
+         <tok val="moderas"/>
          <lm>
             <l>modero</l>
             <m>v - 2 s p i a</m>
@@ -217,6 +339,7 @@
       </ana>
       <ana>
          <tok val="Moderandis"/>
+         <tok val="moderandis"/>
          <lm>
             <l>moderor</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -229,6 +352,7 @@
       </ana>
       <ana>
          <tok val="Moderandum"/>
+         <tok val="moderandum"/>
          <lm>
             <l>moderor</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -242,6 +366,7 @@
       </ana>
       <ana>
          <tok val="Moderans"/>
+         <tok val="moderans"/>
          <lm>
             <l>moderor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -253,8 +378,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Moderanter moderanter-->
-         <tok val="[mM]oderanter"/>
+      <ana>
+         <tok val="Moderanter"/>
+         <tok val="moderanter"/>
          <lm>
             <l>moderanter</l>
             <m>d</m>
@@ -262,6 +388,7 @@
       </ana>
       <ana>
          <tok val="Moderantes"/>
+         <tok val="moderantes"/>
          <lm>
             <l>moderor</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -272,16 +399,14 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Moderare moderare-->
-         <tok val="[mM]oderare"/>
-         <lm>
+      <ana>
+         <tok val="Moderare"/>
+         <tok val="moderare"/>
+         <lm cert="0.5">
             <l>modero</l>
             <m>v - - - p n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Moderare"/>
-         <lm>
+         <lm cert="0.5">
             <l>moderor</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
@@ -289,6 +414,7 @@
       </ana>
       <ana>
          <tok val="Moderari"/>
+         <tok val="moderari"/>
          <lm>
             <l>moderor</l>
             <m>v - - - p n p</m>
@@ -296,7 +422,8 @@
       </ana>
       <ana>
          <tok val="Moderata"/>
-         <lm>
+         <tok val="moderata"/>
+         <lm cert="0.5">
             <l>moderor</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
             <m cert="0.166666666666666667">v - - p r p p n v</m>
@@ -305,10 +432,7 @@
             <m cert="0.166666666666666667">v - - s r p p f n</m>
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
-      </ana>
-      <ana><!--Moderata moderata-->
-         <tok val="[mM]oderata"/>
-         <lm>
+         <lm cert="0.5">
             <l>moderatus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -318,8 +442,10 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Moderate moderate moderateque-->
-         <tok val="[mM]oderate(que)?"/>
+      <ana>
+         <tok val="Moderate"/>
+         <tok val="moderate"/>
+         <tok val="moderateque"/>
          <lm cert="0.5">
             <l>modero</l>
             <m>v - 2 p p m a</m>
@@ -329,22 +455,36 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Moderate Moderatim moderate moderateque moderatim moderatius moderatiusque-->
-         <tok val="[mM]oderat(im|e|iusque|ius|eque)"/>
+      <ana>
+         <tok val="Moderate"/>
+         <tok val="Moderatim"/>
+         <tok val="moderate"/>
+         <tok val="moderateque"/>
+         <tok val="moderatim"/>
+         <tok val="moderatius"/>
+         <tok val="moderatiusque"/>
          <lm>
             <l>moderatus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Moderate Moderatum moderate moderateque moderatum moderatumque-->
-         <tok val="[mM]oderat(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Moderate"/>
+         <tok val="Moderatum"/>
+         <tok val="moderate"/>
+         <tok val="moderateque"/>
+         <tok val="moderatum"/>
+         <tok val="moderatumque"/>
          <lm>
             <l>moderatus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Moderate Moderatum-->
-         <tok val="Moderat(um|e)"/>
+      <ana>
+         <tok val="Moderate"/>
+         <tok val="Moderatum"/>
+         <tok val="moderate"/>
+         <tok val="moderatum"/>
          <lm>
             <l>moderor</l>
             <m>v - - s r p p n v</m>
@@ -352,6 +492,7 @@
       </ana>
       <ana>
          <tok val="Moderate"/>
+         <tok val="moderate"/>
          <lm>
             <l>moderor</l>
             <m>v - - s r p p m v</m>
@@ -359,15 +500,14 @@
       </ana>
       <ana>
          <tok val="Moderati"/>
-         <lm>
+         <tok val="moderati"/>
+         <lm cert="0.5">
             <l>moderor</l>
-            <m cert="0.333333333333333333">v - - s r p p n g</m>
-            <m cert="0.333333333333333333">v - - p r p p m v</m>
-            <m cert="0.333333333333333333">v - - s r p p m g</m>
+            <m cert="0.25">v - - s r p p n g</m>
+            <m cert="0.25">v - - p r p p m v</m>
+            <m cert="0.25">v - - s r p p m g</m>
+            <m cert="0.25">v - - p r p p m n</m>
          </lm>
-      </ana>
-      <ana><!--Moderati moderati-->
-         <tok val="[mM]oderati"/>
          <lm cert="0.5">
             <l>moderatus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -375,35 +515,38 @@
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-         <lm cert="0.5">
-            <l>moderor</l>
-            <m>v - - p r p p m n</m>
-         </lm>
       </ana>
-      <ana><!--Moderatio moderatio moderatioque-->
-         <tok val="[mM]oderatio(que)?"/>
+      <ana>
+         <tok val="Moderatio"/>
+         <tok val="moderatio"/>
+         <tok val="moderatioque"/>
          <lm>
             <l>moderatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Moderatione moderatione-->
-         <tok val="[mM]oderatione"/>
+      <ana>
+         <tok val="Moderatione"/>
+         <tok val="moderatione"/>
          <lm>
             <l>moderatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Moderationem moderationem moderationemque-->
-         <tok val="[mM]oderationem(que)?"/>
+      <ana>
+         <tok val="Moderationem"/>
+         <tok val="moderationem"/>
+         <tok val="moderationemque"/>
          <lm>
             <l>moderatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Moderationis moderationis moderationisque-->
-         <tok val="[mM]oderationis(que)?"/>
+      <ana>
+         <tok val="Moderationis"/>
+         <tok val="moderationis"/>
+         <tok val="moderationisque"/>
          <lm>
             <l>moderatio</l>
             <m>n - - s - - - f g</m>
@@ -411,6 +554,7 @@
       </ana>
       <ana>
          <tok val="Moderatior"/>
+         <tok val="moderatior"/>
          <lm>
             <l>moderor</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -419,8 +563,10 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Moderatis moderatis moderatisque-->
-         <tok val="[mM]oderatis(que)?"/>
+      <ana>
+         <tok val="Moderatis"/>
+         <tok val="moderatis"/>
+         <tok val="moderatisque"/>
          <lm cert="0.5">
             <l>modero</l>
             <m>v - 2 p p i a</m>
@@ -437,6 +583,7 @@
       </ana>
       <ana>
          <tok val="Moderatis"/>
+         <tok val="moderatis"/>
          <lm>
             <l>moderor</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -447,24 +594,24 @@
             <m cert="0.166666666666666667">v - - p r p p n b</m>
          </lm>
       </ana>
-      <ana><!--Moderatius moderatius-->
-         <tok val="[mM]oderatius"/>
-         <lm>
+      <ana>
+         <tok val="Moderatius"/>
+         <tok val="moderatius"/>
+         <lm cert="0.5">
             <l>moderatus</l>
             <m>d - - - - - - - - c</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Moderatius"/>
-         <lm>
+         <lm cert="0.5">
             <l>moderor</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
             <m cert="0.333333333333333333">a - - s - - - n v c</m>
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Moderato moderato moderatoque-->
-         <tok val="[mM]oderato(que)?"/>
+      <ana>
+         <tok val="Moderato"/>
+         <tok val="moderato"/>
+         <tok val="moderatoque"/>
          <lm cert="0.5">
             <l>moderatus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -480,6 +627,7 @@
       </ana>
       <ana>
          <tok val="Moderato"/>
+         <tok val="moderato"/>
          <lm>
             <l>moderor</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -488,24 +636,29 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Moderator moderator moderatorque-->
-         <tok val="[mM]oderator(que)?"/>
+      <ana>
+         <tok val="Moderator"/>
+         <tok val="moderator"/>
+         <tok val="moderatorque"/>
          <lm>
             <l>moderator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Moderatrix moderatrix-->
-         <tok val="[mM]oderatrix"/>
+      <ana>
+         <tok val="Moderatrix"/>
+         <tok val="moderatrix"/>
          <lm>
             <l>moderatrix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Moderatum moderatum moderatumque-->
-         <tok val="[mM]oderatum(que)?"/>
+      <ana>
+         <tok val="Moderatum"/>
+         <tok val="moderatum"/>
+         <tok val="moderatumque"/>
          <lm>
             <l>moderatus</l>
             <m cert="0.25">a - - p - - - n g</m>
@@ -516,6 +669,7 @@
       </ana>
       <ana>
          <tok val="Moderatum"/>
+         <tok val="moderatum"/>
          <lm>
             <l>moderor</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -526,15 +680,18 @@
             <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Moderatur moderatur-->
-         <tok val="[mM]oderatur"/>
+      <ana>
+         <tok val="Moderatur"/>
+         <tok val="moderatur"/>
          <lm>
             <l>moderor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Moderatus moderatus moderatusque-->
-         <tok val="[mM]oderatus(que)?"/>
+      <ana>
+         <tok val="Moderatus"/>
+         <tok val="moderatus"/>
+         <tok val="moderatusque"/>
          <lm>
             <l>moderatus</l>
             <m>a - - s - - - m n</m>
@@ -542,20 +699,23 @@
       </ana>
       <ana>
          <tok val="Moderatus"/>
+         <tok val="moderatus"/>
          <lm>
             <l>moderor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Modernus modernus-->
-         <tok val="[mM]odernus"/>
+      <ana>
+         <tok val="Modernus"/>
+         <tok val="modernus"/>
          <lm>
             <l>modernus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Modero modero-->
-         <tok val="[mM]odero"/>
+      <ana>
+         <tok val="Modero"/>
+         <tok val="modero"/>
          <lm>
             <l>modero</l>
             <m>v - 1 s p i a</m>
@@ -563,13 +723,15 @@
       </ana>
       <ana>
          <tok val="Moderor"/>
+         <tok val="moderor"/>
          <lm>
             <l>moderor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Modesta modesta-->
-         <tok val="[mM]odesta"/>
+      <ana>
+         <tok val="Modesta"/>
+         <tok val="modesta"/>
          <lm>
             <l>modestus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -580,29 +742,43 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Modeste modeste modesteque modestius modéste módeste-->
-         <tok val="[mM]?(o|mó|mo)d[eé]st[e]?(que|ius)?"/>
+      <ana>
+         <tok val="Modeste"/>
+         <tok val="modeste"/>
+         <tok val="modesteque"/>
+         <tok val="modestius"/>
+         <tok val="modéste"/>
+         <tok val="módeste"/>
          <lm>
             <l>modestus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Modeste Modestum modeste modesteque modestum modestumque-->
-         <tok val="[mM]odest(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Modeste"/>
+         <tok val="Modestum"/>
+         <tok val="modeste"/>
+         <tok val="modesteque"/>
+         <tok val="modestum"/>
+         <tok val="modestumque"/>
          <lm>
             <l>modestus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Modeste modeste modesteque-->
-         <tok val="[mM]odeste(que)?"/>
+      <ana>
+         <tok val="Modeste"/>
+         <tok val="modeste"/>
+         <tok val="modesteque"/>
          <lm>
             <l>modestus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Modesti modesti modestique-->
-         <tok val="[mM]odesti(que)?"/>
+      <ana>
+         <tok val="Modesti"/>
+         <tok val="modesti"/>
+         <tok val="modestique"/>
          <lm>
             <l>modestus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -611,8 +787,11 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Modestia modestia modestian modestiaque-->
-         <tok val="[mM]odestia(n|que)?"/>
+      <ana>
+         <tok val="Modestia"/>
+         <tok val="modestia"/>
+         <tok val="modestian"/>
+         <tok val="modestiaque"/>
          <lm>
             <l>modestia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -620,8 +799,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Modestiae modestiae modestiaeque-->
-         <tok val="[mM]odestiae(que)?"/>
+      <ana>
+         <tok val="Modestiae"/>
+         <tok val="modestiae"/>
+         <tok val="modestiaeque"/>
          <lm>
             <l>modestia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -632,6 +813,7 @@
       </ana>
       <ana>
          <tok val="Modestino"/>
+         <tok val="modestino"/>
          <lm>
             <l>Modestinus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -640,13 +822,15 @@
       </ana>
       <ana>
          <tok val="Modestinus"/>
+         <tok val="modestinus"/>
          <lm>
             <l>Modestinus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Modestis modestis-->
-         <tok val="[mM]odestis"/>
+      <ana>
+         <tok val="Modestis"/>
+         <tok val="modestis"/>
          <lm>
             <l>modestus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -659,29 +843,29 @@
       </ana>
       <ana>
          <tok val="Modestius"/>
+         <tok val="modestius"/>
          <lm>
             <l>modestus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Modestius modestius-->
-         <tok val="[mM]odestius"/>
-         <lm>
-            <l>modestus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Modesto modesto modestoque modésto-->
-         <tok val="[mM]od[eé]sto(que)?"/>
+      <ana>
+         <tok val="Modesto"/>
+         <tok val="modesto"/>
+         <tok val="modestoque"/>
+         <tok val="modésto"/>
          <lm>
             <l>modestus</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Modesto modesto modestoque-->
-         <tok val="[mM]odesto(que)?"/>
+      <ana>
+         <tok val="Modesto"/>
+         <tok val="modesto"/>
+         <tok val="modestoque"/>
          <lm>
             <l>modestus</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -689,8 +873,10 @@
             <m cert="0.333333333333333333">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Modestum modestum modestumque-->
-         <tok val="[mM]odestum(que)?"/>
+      <ana>
+         <tok val="Modestum"/>
+         <tok val="modestum"/>
+         <tok val="modestumque"/>
          <lm>
             <l>modestus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -700,22 +886,36 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Modestus modestus-->
-         <tok val="[mM]odestus"/>
+      <ana>
+         <tok val="Modestus"/>
+         <tok val="modestus"/>
          <lm>
             <l>modestus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Modi Modin modi modicumque modique modist modí-->
-         <tok val="[Mm]od[i]?(n|que|cumque|st|í)?"/>
+      <ana>
+         <tok val="Modi"/>
+         <tok val="Modin"/>
+         <tok val="modi"/>
+         <tok val="modicumque"/>
+         <tok val="modin"/>
+         <tok val="modique"/>
+         <tok val="modist"/>
+         <tok val="modí"/>
          <lm>
             <l>modus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Modi Modin modi modicumque modique modist-->
-         <tok val="[Mm]odi(n|que|cumque|st)?"/>
+      <ana>
+         <tok val="Modi"/>
+         <tok val="Modin"/>
+         <tok val="modi"/>
+         <tok val="modicumque"/>
+         <tok val="modin"/>
+         <tok val="modique"/>
+         <tok val="modist"/>
          <lm cert="0.5">
             <l>modus</l>
             <m>n - - p - - - m v</m>
@@ -725,22 +925,33 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Modi Modin modi-->
-         <tok val="[Mm]odi[n]?"/>
+      <ana>
+         <tok val="Modi"/>
+         <tok val="Modin"/>
+         <tok val="modi"/>
+         <tok val="modin"/>
          <lm>
             <l>modus</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Modi Modin modi modicumque modii modique modist-->
-         <tok val="[Mm]odi(n|i|que|cumque|st)?"/>
+      <ana>
+         <tok val="Modi"/>
+         <tok val="Modin"/>
+         <tok val="modi"/>
+         <tok val="modicumque"/>
+         <tok val="modii"/>
+         <tok val="modin"/>
+         <tok val="modique"/>
+         <tok val="modist"/>
          <lm>
             <l>modium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Modialis modialis-->
-         <tok val="[mM]odialis"/>
+      <ana>
+         <tok val="Modialis"/>
+         <tok val="modialis"/>
          <lm>
             <l>modialis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -752,16 +963,20 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Modialis modiales modialis-->
-         <tok val="[mM]odial[ie]s"/>
+      <ana>
+         <tok val="Modialis"/>
+         <tok val="modiales"/>
+         <tok val="modialis"/>
          <lm>
             <l>modialis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Modica modica modicaque-->
-         <tok val="[mM]odica(que)?"/>
+      <ana>
+         <tok val="Modica"/>
+         <tok val="modica"/>
+         <tok val="modicaque"/>
          <lm cert="0.5">
             <l>modicum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -778,8 +993,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Modicae modicae modicaeque-->
-         <tok val="[mM]odicae(que)?"/>
+      <ana>
+         <tok val="Modicae"/>
+         <tok val="modicae"/>
+         <tok val="modicaeque"/>
          <lm>
             <l>modicus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -788,29 +1005,33 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Modicam modicam-->
-         <tok val="[mM]odicam"/>
+      <ana>
+         <tok val="Modicam"/>
+         <tok val="modicam"/>
          <lm>
             <l>modicus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Modicas modicas-->
-         <tok val="[mM]odicas"/>
+      <ana>
+         <tok val="Modicas"/>
+         <tok val="modicas"/>
          <lm>
             <l>modicus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Modicellus modicellus-->
-         <tok val="[mM]odicellus"/>
+      <ana>
+         <tok val="Modicellus"/>
+         <tok val="modicellus"/>
          <lm>
             <l>modicellus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Modici modici-->
-         <tok val="[mM]odici"/>
+      <ana>
+         <tok val="Modici"/>
+         <tok val="modici"/>
          <lm cert="0.5">
             <l>modicus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -823,8 +1044,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Modicis modicis modicisque-->
-         <tok val="[mM]odicis(que)?"/>
+      <ana>
+         <tok val="Modicis"/>
+         <tok val="modicis"/>
+         <tok val="modicisque"/>
          <lm cert="0.5">
             <l>modicus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -840,8 +1063,11 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Modico Modicoque modico modicoque-->
-         <tok val="[mM]odico(que)?"/>
+      <ana>
+         <tok val="Modico"/>
+         <tok val="Modicoque"/>
+         <tok val="modico"/>
+         <tok val="modicoque"/>
          <lm cert="0.5">
             <l>modicus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -855,8 +1081,11 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Modicom Modicum modicum-->
-         <tok val="[Mm]odic[uo]m"/>
+      <ana>
+         <tok val="Modicom"/>
+         <tok val="Modicum"/>
+         <tok val="modicom"/>
+         <tok val="modicum"/>
          <lm cert="0.5">
             <l>modicus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -869,8 +1098,10 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Modicum modicorum modicum-->
-         <tok val="[mM]odic(or)?um"/>
+      <ana>
+         <tok val="Modicum"/>
+         <tok val="modicorum"/>
+         <tok val="modicum"/>
          <lm cert="0.5">
             <l>modicus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -881,15 +1112,18 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Modicus modicun modicus-->
-         <tok val="[mM]odicu[sn]"/>
+      <ana>
+         <tok val="Modicus"/>
+         <tok val="modicun"/>
+         <tok val="modicus"/>
          <lm>
             <l>modicus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Modificatio modificatio-->
-         <tok val="[mM]odificatio"/>
+      <ana>
+         <tok val="Modificatio"/>
+         <tok val="modificatio"/>
          <lm>
             <l>modificatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -898,13 +1132,15 @@
       </ana>
       <ana>
          <tok val="Modificor"/>
+         <tok val="modificor"/>
          <lm>
             <l>modificor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Modio modio-->
-         <tok val="[mM]odio"/>
+      <ana>
+         <tok val="Modio"/>
+         <tok val="modio"/>
          <lm cert="0.5">
             <l>modium</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -916,8 +1152,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Modioli modioli-->
-         <tok val="[mM]odioli"/>
+      <ana>
+         <tok val="Modioli"/>
+         <tok val="modioli"/>
          <lm cert="0.5">
             <l>modiolus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -929,22 +1166,27 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Modiolus modiolus modiolusque-->
-         <tok val="[mM]odiolus(que)?"/>
+      <ana>
+         <tok val="Modiolus"/>
+         <tok val="modiolus"/>
+         <tok val="modiolusque"/>
          <lm>
             <l>modiolus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Modios modios modiosque-->
-         <tok val="[mM]odios(que)?"/>
+      <ana>
+         <tok val="Modios"/>
+         <tok val="modios"/>
+         <tok val="modiosque"/>
          <lm>
             <l>modius</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Modulamen modulamen-->
-         <tok val="[mM]odulamen"/>
+      <ana>
+         <tok val="Modulamen"/>
+         <tok val="modulamen"/>
          <lm>
             <l>modulamen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -952,8 +1194,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Modulanda modulanda modulandaque-->
-         <tok val="[mM]odulanda(que)?"/>
+      <ana>
+         <tok val="Modulanda"/>
+         <tok val="modulanda"/>
+         <tok val="modulandaque"/>
          <lm>
             <l>modulor</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -964,8 +1208,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Modulans modulans-->
-         <tok val="[mM]odulans"/>
+      <ana>
+         <tok val="Modulans"/>
+         <tok val="modulans"/>
          <lm>
             <l>modulor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -977,15 +1222,18 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Modulari modulari-->
-         <tok val="[mM]odulari"/>
+      <ana>
+         <tok val="Modulari"/>
+         <tok val="modulari"/>
          <lm>
             <l>modulor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Modulata modulata modulataque-->
-         <tok val="[mM]odulata(que)?"/>
+      <ana>
+         <tok val="Modulata"/>
+         <tok val="modulata"/>
+         <tok val="modulataque"/>
          <lm>
             <l>modulor</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -996,16 +1244,19 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Modulate modulate modulateque-->
-         <tok val="[mM]odulate(que)?"/>
+      <ana>
+         <tok val="Modulate"/>
+         <tok val="modulate"/>
+         <tok val="modulateque"/>
          <lm>
             <l>modulor</l>
             <m cert="0.5">v - - s r p p n v</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Modulati modulati-->
-         <tok val="[mM]odulati"/>
+      <ana>
+         <tok val="Modulati"/>
+         <tok val="modulati"/>
          <lm>
             <l>modulor</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1014,31 +1265,35 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Modulatio modulatio-->
-         <tok val="[mM]odulatio"/>
+      <ana>
+         <tok val="Modulatio"/>
+         <tok val="modulatio"/>
          <lm>
             <l>modulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Modulatione modulatione-->
-         <tok val="[mM]odulatione"/>
+      <ana>
+         <tok val="Modulatione"/>
+         <tok val="modulatione"/>
          <lm>
             <l>modulatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Modulator modulator-->
-         <tok val="[mM]odulator"/>
+      <ana>
+         <tok val="Modulator"/>
+         <tok val="modulator"/>
          <lm>
             <l>modulator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Modulatus modulatus-->
-         <tok val="[mM]odulatus"/>
+      <ana>
+         <tok val="Modulatus"/>
+         <tok val="modulatus"/>
          <lm cert="0.5">
             <l>modulatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1051,8 +1306,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Moduli moduli-->
-         <tok val="[mM]oduli"/>
+      <ana>
+         <tok val="Moduli"/>
+         <tok val="moduli"/>
          <lm>
             <l>modulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1060,15 +1316,18 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Modulos modulos modulosque-->
-         <tok val="[mM]odulos(que)?"/>
+      <ana>
+         <tok val="Modulos"/>
+         <tok val="modulos"/>
+         <tok val="modulosque"/>
          <lm>
             <l>modulus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Modulus modulus-->
-         <tok val="[mM]odulus"/>
+      <ana>
+         <tok val="Modulus"/>
+         <tok val="modulus"/>
          <lm>
             <l>modulus</l>
             <m>n - - s - - - m n</m>
@@ -1081,15 +1340,17 @@
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--moderabatur moderabaturque-->
-         <tok val="moderabatur(que)?"/>
+      <ana>
+         <tok val="moderabatur"/>
+         <tok val="moderabaturque"/>
          <lm>
             <l>modero</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--moderabere moderaberis-->
-         <tok val="moderaber(is|e)"/>
+      <ana>
+         <tok val="moderabere"/>
+         <tok val="moderaberis"/>
          <lm>
             <l>modero</l>
             <m>v - 2 s f i p</m>
@@ -1201,8 +1462,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--moderandi moderandique-->
-         <tok val="moderandi(que)?"/>
+      <ana>
+         <tok val="moderandi"/>
+         <tok val="moderandique"/>
          <lm>
             <l>modero</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1236,15 +1498,18 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--moderandosque Moderandos-->
-         <tok val="[Mm]oderandos(que)?"/>
+      <ana>
+         <tok val="Moderandos"/>
+         <tok val="moderandos"/>
+         <tok val="moderandosque"/>
          <lm>
             <l>modero</l>
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--moderandum moderandumque-->
-         <tok val="moderandum(que)?"/>
+      <ana>
+         <tok val="moderandum"/>
+         <tok val="moderandumque"/>
          <lm>
             <l>modero</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1285,8 +1550,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--moderantem moderantemque-->
-         <tok val="moderantem(que)?"/>
+      <ana>
+         <tok val="moderantem"/>
+         <tok val="moderantemque"/>
          <lm>
             <l>modero</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1303,8 +1569,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--moderantes moderantis-->
-         <tok val="moderant[ie]s"/>
+      <ana>
+         <tok val="moderantes"/>
+         <tok val="moderantis"/>
          <lm>
             <l>modero</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1357,8 +1624,9 @@
             <m>v - 3 p f m a</m>
          </lm>
       </ana>
-      <ana><!--moderantur moderanturque-->
-         <tok val="moderantur(que)?"/>
+      <ana>
+         <tok val="moderantur"/>
+         <tok val="moderanturque"/>
          <lm>
             <l>modero</l>
             <m>v - 3 p p i p</m>
@@ -1371,8 +1639,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--moderare moderaris-->
-         <tok val="moderar(is|e)"/>
+      <ana>
+         <tok val="moderare"/>
+         <tok val="moderaris"/>
          <lm>
             <l>modero</l>
             <m>v - 2 s p i p</m>
@@ -1385,8 +1654,9 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--moderareris moderarere-->
-         <tok val="moderarer(e|is)"/>
+      <ana>
+         <tok val="moderarere"/>
+         <tok val="moderareris"/>
          <lm>
             <l>modero</l>
             <m>v - 2 s i s p</m>
@@ -1399,15 +1669,18 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--moderari moderarier moderarique-->
-         <tok val="moderari(er|que)?"/>
+      <ana>
+         <tok val="moderari"/>
+         <tok val="moderarier"/>
+         <tok val="moderarique"/>
          <lm>
             <l>modero</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--moderaris moderaveris-->
-         <tok val="modera(ve)?ris"/>
+      <ana>
+         <tok val="moderaris"/>
+         <tok val="moderaveris"/>
          <lm>
             <l>modero</l>
             <m>v - 2 s r s a</m>
@@ -1442,8 +1715,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--moderatam moderatamque-->
-         <tok val="moderatam(que)?"/>
+      <ana>
+         <tok val="moderatam"/>
+         <tok val="moderatamque"/>
          <lm cert="0.5">
             <l>modero</l>
             <m>v - - s r p p f a</m>
@@ -1464,15 +1738,19 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--moderate moderateque moderatum moderatumque-->
-         <tok val="moderat(um|e)?[q]?[u]?[em]"/>
+      <ana>
+         <tok val="moderate"/>
+         <tok val="moderateque"/>
+         <tok val="moderatum"/>
+         <tok val="moderatumque"/>
          <lm>
             <l>modero</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--moderate moderateque-->
-         <tok val="moderate(que)?"/>
+      <ana>
+         <tok val="moderate"/>
+         <tok val="moderateque"/>
          <lm>
             <l>modero</l>
             <m>v - - s r p p m v</m>
@@ -1540,8 +1818,9 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--moderatis moderatisque-->
-         <tok val="moderatis(que)?"/>
+      <ana>
+         <tok val="moderatis"/>
+         <tok val="moderatisque"/>
          <lm>
             <l>modero</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1564,29 +1843,35 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--moderatissime moderatissimeque-->
-         <tok val="moderatissime(que)?"/>
+      <ana>
+         <tok val="moderatissime"/>
+         <tok val="moderatissimeque"/>
          <lm>
             <l>moderatus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--moderatissime moderatissimeque moderatissimus-->
-         <tok val="moderatissim[e]?(que|us)?"/>
+      <ana>
+         <tok val="moderatissime"/>
+         <tok val="moderatissimeque"/>
+         <tok val="moderatissimus"/>
          <lm>
             <l>moderatus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--moderatissime moderatissimeque moderatissimum-->
-         <tok val="moderatissim[e]?(que|um)?"/>
+      <ana>
+         <tok val="moderatissime"/>
+         <tok val="moderatissimeque"/>
+         <tok val="moderatissimum"/>
          <lm>
             <l>moderatus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--moderatissimi moderatissimique-->
-         <tok val="moderatissimi(que)?"/>
+      <ana>
+         <tok val="moderatissimi"/>
+         <tok val="moderatissimique"/>
          <lm>
             <l>moderatus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -1630,8 +1915,9 @@
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--moderatius moderatiusque-->
-         <tok val="moderatius(que)?"/>
+      <ana>
+         <tok val="moderatius"/>
+         <tok val="moderatiusque"/>
          <lm>
             <l>moderatus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -1639,8 +1925,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--moderato moderatoque-->
-         <tok val="moderato(que)?"/>
+      <ana>
+         <tok val="moderato"/>
+         <tok val="moderatoque"/>
          <lm>
             <l>modero</l>
             <m cert="0.25">v - - s r p p m b</m>
@@ -1663,8 +1950,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--moderatores moderatoresque-->
-         <tok val="moderatores(que)?"/>
+      <ana>
+         <tok val="moderatores"/>
+         <tok val="moderatoresque"/>
          <lm>
             <l>moderator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1726,8 +2014,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--moderatum moderatumque-->
-         <tok val="moderatum(que)?"/>
+      <ana>
+         <tok val="moderatum"/>
+         <tok val="moderatumque"/>
          <lm cert="0.5">
             <l>moderatus</l>
             <m>a - - s - - - n n</m>
@@ -1741,8 +2030,9 @@
             <m cert="0.2">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--moderatus moderatusque-->
-         <tok val="moderatus(que)?"/>
+      <ana>
+         <tok val="moderatus"/>
+         <tok val="moderatusque"/>
          <lm>
             <l>modero</l>
             <m>v - - s r p p m n</m>
@@ -1762,8 +2052,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--moderere modereris-->
-         <tok val="moderer(is|e)"/>
+      <ana>
+         <tok val="moderere"/>
+         <tok val="modereris"/>
          <lm>
             <l>modero</l>
             <m>v - 2 s p s p</m>
@@ -1776,8 +2067,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--moderetur modereturque-->
-         <tok val="moderetur(que)?"/>
+      <ana>
+         <tok val="moderetur"/>
+         <tok val="modereturque"/>
          <lm>
             <l>modero</l>
             <m>v - 3 s p s p</m>
@@ -1861,8 +2153,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--modestiam modestiamque-->
-         <tok val="modestiam(que)?"/>
+      <ana>
+         <tok val="modestiam"/>
+         <tok val="modestiamque"/>
          <lm>
             <l>modestia</l>
             <m>n - - s - - - f a</m>
@@ -1931,15 +2224,20 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--modestissime modestissimus modestissimusque modestissume-->
-         <tok val="modestiss[ui]m(usqu)?(e|us)"/>
+      <ana>
+         <tok val="modestissime"/>
+         <tok val="modestissimus"/>
+         <tok val="modestissimusque"/>
+         <tok val="modestissume"/>
          <lm>
             <l>modestus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--modestissime modestissimum modestissume-->
-         <tok val="modestiss[ui]m(e|um)"/>
+      <ana>
+         <tok val="modestissime"/>
+         <tok val="modestissimum"/>
+         <tok val="modestissume"/>
          <lm>
             <l>modestus</l>
             <m>a - - s - - - n v s</m>
@@ -1995,8 +2293,9 @@
             <m cert="0.2">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--modestissimus modestissimusque-->
-         <tok val="modestissimus(que)?"/>
+      <ana>
+         <tok val="modestissimus"/>
+         <tok val="modestissimusque"/>
          <lm>
             <l>modestus</l>
             <m>a - - s - - - m n s</m>
@@ -2101,8 +2400,9 @@
             <m cert="0.5">a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--modicissime modicissimus-->
-         <tok val="modicissim(us|e)"/>
+      <ana>
+         <tok val="modicissime"/>
+         <tok val="modicissimus"/>
          <lm>
             <l>modicus</l>
             <m>a - - s - - - m v s</m>
@@ -2122,8 +2422,11 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--modicumque modii modique modist-->
-         <tok val="modi(cum)?(que|st|i)"/>
+      <ana>
+         <tok val="modicumque"/>
+         <tok val="modii"/>
+         <tok val="modique"/>
+         <tok val="modist"/>
          <lm>
             <l>modius</l>
             <m>n - - s - - - m g</m>
@@ -2153,8 +2456,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--modificare modificaris-->
-         <tok val="modificar(is|e)"/>
+      <ana>
+         <tok val="modificare"/>
+         <tok val="modificaris"/>
          <lm>
             <l>modifico</l>
             <m>v - 2 s p i p</m>
@@ -2271,8 +2575,9 @@
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--modiis modiisque-->
-         <tok val="modiis(que)?"/>
+      <ana>
+         <tok val="modiis"/>
+         <tok val="modiisque"/>
          <lm cert="0.5">
             <l>modius</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -2336,8 +2641,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--modiolorum modiolum-->
-         <tok val="modiol(or)?um"/>
+      <ana>
+         <tok val="modiolorum"/>
+         <tok val="modiolum"/>
          <lm cert="0.5">
             <l>modiolus</l>
             <m>n - - p - - - m g</m>
@@ -2519,8 +2825,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--modulareque modularis-->
-         <tok val="modular(is|eque)"/>
+      <ana>
+         <tok val="modulareque"/>
+         <tok val="modularis"/>
          <lm>
             <l>modulor</l>
             <m>v - 2 s p i p</m>
@@ -2627,8 +2934,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--modulatiores modulatioresque-->
-         <tok val="modulatiores(que)?"/>
+      <ana>
+         <tok val="modulatiores"/>
+         <tok val="modulatioresque"/>
          <lm>
             <l>modulor</l>
             <m cert="0.166666666666666667">a - - p - - - m v c</m>
@@ -2669,15 +2977,20 @@
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--modulatius modulatiusque modulatiusue modulatiusve-->
-         <tok val="modulatius[q]?[uv]?(e|)"/>
+      <ana>
+         <tok val="modulatius"/>
+         <tok val="modulatiusque"/>
+         <tok val="modulatiusue"/>
+         <tok val="modulatiusve"/>
          <lm>
             <l>modulor</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--modulatius modulatiusque modulatiusue-->
-         <tok val="modulatius[q]?(ue|)"/>
+      <ana>
+         <tok val="modulatius"/>
+         <tok val="modulatiusque"/>
+         <tok val="modulatiusue"/>
          <lm>
             <l>modulor</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -2751,8 +3064,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--modulis modulisque-->
-         <tok val="modulis(que)?"/>
+      <ana>
+         <tok val="modulis"/>
+         <tok val="modulisque"/>
          <lm>
             <l>modulus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -2767,8 +3081,10 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--modulorum modulorumque modulum-->
-         <tok val="modul(or)?um(que)?"/>
+      <ana>
+         <tok val="modulorum"/>
+         <tok val="modulorumque"/>
+         <tok val="modulum"/>
          <lm>
             <l>modulus</l>
             <m>n - - p - - - m g</m>
@@ -2799,6 +3115,7 @@
       </ana>
       <ana>
          <tok val="Moderandos"/>
+         <tok val="moderandos"/>
          <lm>
             <l>moderor</l>
             <m>v - - p p g p m a</m>

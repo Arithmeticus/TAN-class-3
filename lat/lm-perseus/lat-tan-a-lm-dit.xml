@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdit">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dit">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dit</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dit.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Dit</tok-starts-with>
       <tok-starts-with>dit</tok-starts-with>
-      <ana><!--Ditata ditata ditataque-->
-         <tok val="[dD]itata(que)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:20:49.439-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:20:49.439-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dit.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="Ditata"/>
+         <tok val="ditata"/>
+         <tok val="ditataque"/>
          <lm>
             <l>dito</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -46,15 +56,19 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Ditatus ditatus ditatusque-->
-         <tok val="[dD]itatus(que)?"/>
+      <ana>
+         <tok val="Ditatus"/>
+         <tok val="ditatus"/>
+         <tok val="ditatusque"/>
          <lm>
             <l>dito</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Ditavit ditauit ditavit-->
-         <tok val="[dD]ita[vu]it"/>
+      <ana>
+         <tok val="Ditavit"/>
+         <tok val="ditauit"/>
+         <tok val="ditavit"/>
          <lm>
             <l>dito</l>
             <m>v - 3 s r i a</m>
@@ -62,40 +76,49 @@
       </ana>
       <ana>
          <tok val="Dite"/>
+         <tok val="dite"/>
          <lm>
             <l>dis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Ditem Ditemque ditem ditemque-->
-         <tok val="[dD]item(que)?"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Ditem"/>
+         <tok val="Ditemque"/>
+         <tok val="ditem"/>
+         <tok val="ditemque"/>
+         <lm cert="0.333333333333333333">
             <l>dives</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>dito</l>
             <m>v - 1 s p s a</m>
          </lm>
-      </ana>
-      <ana><!--Ditem Ditemque-->
-         <tok val="Ditem(que)?"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>dis</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Dites Ditis Ditisque dites ditesque ditis ditisque-->
-         <tok val="[dD]it[ie]s(que)?"/>
+      <ana>
+         <tok val="Dites"/>
+         <tok val="Ditis"/>
+         <tok val="Ditisque"/>
+         <tok val="dites"/>
+         <tok val="ditesque"/>
+         <tok val="ditis"/>
+         <tok val="ditisque"/>
          <lm>
             <l>dives</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dites dites ditesque-->
-         <tok val="[dD]ites(que)?"/>
+      <ana>
+         <tok val="Dites"/>
+         <tok val="dites"/>
+         <tok val="ditesque"/>
          <lm cert="0.5">
             <l>dives</l>
             <m cert="0.333333333333333333">a - - p - - - f v</m>
@@ -107,15 +130,19 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Dites dites ditesque dités-->
-         <tok val="[dD]it[eé]s(que)?"/>
+      <ana>
+         <tok val="Dites"/>
+         <tok val="dites"/>
+         <tok val="ditesque"/>
+         <tok val="dités"/>
          <lm>
             <l>dives</l>
             <m>a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ditescere ditescere-->
-         <tok val="[dD]itescere"/>
+      <ana>
+         <tok val="Ditescere"/>
+         <tok val="ditescere"/>
          <lm>
             <l>ditesco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -124,15 +151,17 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Ditesco ditesco-->
-         <tok val="[dD]itesco"/>
+      <ana>
+         <tok val="Ditesco"/>
+         <tok val="ditesco"/>
          <lm>
             <l>ditesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Dithyrambi dithyrambi-->
-         <tok val="[dD]ithyrambi"/>
+      <ana>
+         <tok val="Dithyrambi"/>
+         <tok val="dithyrambi"/>
          <lm>
             <l>dithyrambus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -140,8 +169,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Dithyrambici dithyrambici-->
-         <tok val="[dD]ithyrambici"/>
+      <ana>
+         <tok val="Dithyrambici"/>
+         <tok val="dithyrambici"/>
          <lm>
             <l>dithyrambicus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -150,22 +180,26 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Dithyramborum dithyramborum-->
-         <tok val="[dD]ithyramborum"/>
+      <ana>
+         <tok val="Dithyramborum"/>
+         <tok val="dithyramborum"/>
          <lm>
             <l>dithyrambus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Dithyrambus dithyrambus-->
-         <tok val="[dD]ithyrambus"/>
+      <ana>
+         <tok val="Dithyrambus"/>
+         <tok val="dithyrambus"/>
          <lm>
             <l>dithyrambus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Diti diti ditique-->
-         <tok val="[dD]iti(que)?"/>
+      <ana>
+         <tok val="Diti"/>
+         <tok val="diti"/>
+         <tok val="ditique"/>
          <lm>
             <l>dives</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -175,13 +209,15 @@
       </ana>
       <ana>
          <tok val="Diti"/>
+         <tok val="diti"/>
          <lm>
             <l>dis</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Ditia ditia-->
-         <tok val="[dD]itia"/>
+      <ana>
+         <tok val="Ditia"/>
+         <tok val="ditia"/>
          <lm>
             <l>dives</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -189,8 +225,10 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Ditibus ditibus ditibusque-->
-         <tok val="[dD]itibus(que)?"/>
+      <ana>
+         <tok val="Ditibus"/>
+         <tok val="ditibus"/>
+         <tok val="ditibusque"/>
          <lm>
             <l>dives</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -201,23 +239,27 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Ditio ditio-->
-         <tok val="[dD]itio"/>
+      <ana>
+         <tok val="Ditio"/>
+         <tok val="ditio"/>
          <lm>
             <l>ditio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ditione ditione ditioneque-->
-         <tok val="[dD]itione(que)?"/>
+      <ana>
+         <tok val="Ditione"/>
+         <tok val="ditione"/>
+         <tok val="ditioneque"/>
          <lm>
             <l>ditio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ditiones ditiones-->
-         <tok val="[dD]itiones"/>
+      <ana>
+         <tok val="Ditiones"/>
+         <tok val="ditiones"/>
          <lm>
             <l>ditio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -225,22 +267,26 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Ditioni ditioni-->
-         <tok val="[dD]itioni"/>
+      <ana>
+         <tok val="Ditioni"/>
+         <tok val="ditioni"/>
          <lm>
             <l>ditio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Ditionis ditionis ditionisque-->
-         <tok val="[dD]itionis(que)?"/>
+      <ana>
+         <tok val="Ditionis"/>
+         <tok val="ditionis"/>
+         <tok val="ditionisque"/>
          <lm>
             <l>ditio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Ditior ditior-->
-         <tok val="[dD]itior"/>
+      <ana>
+         <tok val="Ditior"/>
+         <tok val="ditior"/>
          <lm>
             <l>dives</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -249,8 +295,11 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Ditis Ditisque ditis ditisque-->
-         <tok val="[dD]itis(que)?"/>
+      <ana>
+         <tok val="Ditis"/>
+         <tok val="Ditisque"/>
+         <tok val="ditis"/>
+         <tok val="ditisque"/>
          <lm>
             <l>dives</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -260,6 +309,7 @@
       </ana>
       <ana>
          <tok val="Ditis"/>
+         <tok val="ditis"/>
          <lm>
             <l>Dis</l>
             <m>n e - s - - - m g</m>
@@ -267,13 +317,16 @@
       </ana>
       <ana>
          <tok val="Ditisque"/>
+         <tok val="ditisque"/>
          <lm>
             <l>dis</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Ditissima ditissima ditissimaque-->
-         <tok val="[dD]itissima(que)?"/>
+      <ana>
+         <tok val="Ditissima"/>
+         <tok val="ditissima"/>
+         <tok val="ditissimaque"/>
          <lm>
             <l>dives</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -284,29 +337,34 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Ditissimus ditissime ditissimus-->
-         <tok val="[dD]itissim(us|e)"/>
+      <ana>
+         <tok val="Ditissimus"/>
+         <tok val="ditissime"/>
+         <tok val="ditissimus"/>
          <lm>
             <l>dives</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Ditissimus ditissimus-->
-         <tok val="[dD]itissimus"/>
+      <ana>
+         <tok val="Ditissimus"/>
+         <tok val="ditissimus"/>
          <lm>
             <l>dives</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Dito dito-->
-         <tok val="[dD]ito"/>
+      <ana>
+         <tok val="Dito"/>
+         <tok val="dito"/>
          <lm>
             <l>dito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--dita ditaque-->
-         <tok val="dita(que)?"/>
+      <ana>
+         <tok val="dita"/>
+         <tok val="ditaque"/>
          <lm>
             <l>dito</l>
             <m>v - 2 s p m a</m>
@@ -382,8 +440,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--ditantes ditantis-->
-         <tok val="ditant[ie]s"/>
+      <ana>
+         <tok val="ditantes"/>
+         <tok val="ditantis"/>
          <lm>
             <l>dito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -429,8 +488,9 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--ditarit ditaverit-->
-         <tok val="dita(ve)?rit"/>
+      <ana>
+         <tok val="ditarit"/>
+         <tok val="ditaverit"/>
          <lm>
             <l>dito</l>
             <m>v - 3 s r s a</m>
@@ -457,8 +517,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--ditat ditatque-->
-         <tok val="ditat(que)?"/>
+      <ana>
+         <tok val="ditat"/>
+         <tok val="ditatque"/>
          <lm>
             <l>dito</l>
             <m>v - 3 s p i a</m>
@@ -479,8 +540,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--ditate ditatum-->
-         <tok val="ditat(um|e)"/>
+      <ana>
+         <tok val="ditate"/>
+         <tok val="ditatum"/>
          <lm>
             <l>dito</l>
             <m>v - - s r p p n v</m>
@@ -543,15 +605,17 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--ditauerat ditaverat-->
-         <tok val="dita[vu]erat"/>
+      <ana>
+         <tok val="ditauerat"/>
+         <tok val="ditaverat"/>
          <lm>
             <l>dito</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--ditauere ditavere-->
-         <tok val="dita[vu]ere"/>
+      <ana>
+         <tok val="ditauere"/>
+         <tok val="ditavere"/>
          <lm>
             <l>dito</l>
             <m>v - 3 p r i a</m>
@@ -578,8 +642,9 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--ditenturque ditentur-->
-         <tok val="ditentur(que)?"/>
+      <ana>
+         <tok val="ditentur"/>
+         <tok val="ditenturque"/>
          <lm>
             <l>dito</l>
             <m>v - 3 p p s p</m>
@@ -713,8 +778,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--ditionem ditionemque-->
-         <tok val="ditionem(que)?"/>
+      <ana>
+         <tok val="ditionem"/>
+         <tok val="ditionemque"/>
          <lm>
             <l>ditio</l>
             <m>n - - s - - - f a</m>
@@ -808,15 +874,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--ditissime ditissimum-->
-         <tok val="ditissim(um|e)"/>
+      <ana>
+         <tok val="ditissime"/>
+         <tok val="ditissimum"/>
          <lm>
             <l>dives</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--ditissimi ditissimique-->
-         <tok val="ditissimi(que)?"/>
+      <ana>
+         <tok val="ditissimi"/>
+         <tok val="ditissimique"/>
          <lm>
             <l>dives</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -847,8 +915,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--ditissimos ditissimosque-->
-         <tok val="ditissimos(que)?"/>
+      <ana>
+         <tok val="ditissimos"/>
+         <tok val="ditissimosque"/>
          <lm>
             <l>dives</l>
             <m>a - - p - - - m a s</m>

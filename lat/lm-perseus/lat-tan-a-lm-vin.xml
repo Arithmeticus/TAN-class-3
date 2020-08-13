@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusvin">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:vin">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to vin</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-vin.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Vin</tok-starts-with>
       <tok-starts-with>vin</tok-starts-with>
       <tok-starts-with>Vín</tok-starts-with>
       <tok-starts-with>vín</tok-starts-with>
       <tok-starts-with>VIN</tok-starts-with>
-      <ana><!--Vin vin Vín-->
-         <tok val="[vV]?(i|Ví)n"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T05:06:29.255-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T05:06:29.255-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-vin.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="Vin"/>
+         <tok val="Vín"/>
+         <tok val="vin"/>
+         <tok val="vín"/>
          <lm>
             <l>vis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Vin vin-->
-         <tok val="[vV]in"/>
+      <ana>
+         <tok val="Vin"/>
+         <tok val="vin"/>
          <lm cert="0.5">
             <l>volo</l>
             <m>v - 2 s p i a</m>
@@ -56,8 +68,11 @@
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vina Vinaque vina vinaque-->
-         <tok val="[vV]ina(que)?"/>
+      <ana>
+         <tok val="Vina"/>
+         <tok val="Vinaque"/>
+         <tok val="vina"/>
+         <tok val="vinaque"/>
          <lm>
             <l>vinum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -65,8 +80,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vinacea vinacea-->
-         <tok val="[vV]inacea"/>
+      <ana>
+         <tok val="Vinacea"/>
+         <tok val="vinacea"/>
          <lm cert="0.333333333333333333">
             <l>vinacea</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -89,8 +105,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vinacei vinacei-->
-         <tok val="[vV]inacei"/>
+      <ana>
+         <tok val="Vinacei"/>
+         <tok val="vinacei"/>
          <lm cert="0.5">
             <l>vinaceus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -106,8 +123,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vinaceorum vinaceorum vinaceum-->
-         <tok val="[vV]inace(or|)um"/>
+      <ana>
+         <tok val="Vinaceorum"/>
+         <tok val="vinaceorum"/>
+         <tok val="vinaceum"/>
          <lm cert="0.5">
             <l>vinaceus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -119,8 +138,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vinaceus vinaceus-->
-         <tok val="[vV]inaceus"/>
+      <ana>
+         <tok val="Vinaceus"/>
+         <tok val="vinaceus"/>
          <lm>
             <l>vinaceus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -129,6 +149,7 @@
       </ana>
       <ana>
          <tok val="Vinale"/>
+         <tok val="vinale"/>
          <lm>
             <l>vinalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -136,26 +157,25 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vinalia vinalia-->
-         <tok val="[vV]inalia"/>
-         <lm>
+      <ana>
+         <tok val="Vinalia"/>
+         <tok val="vinalia"/>
+         <lm cert="0.5">
             <l>vinalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
             <m cert="0.333333333333333333">a - - p - - - n v</m>
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Vinalia"/>
-         <lm>
+         <lm cert="0.5">
             <l>Vinalia</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
             <m cert="0.333333333333333333">n e - p - - - n v</m>
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Vinaria vinaria-->
-         <tok val="[vV]inaria"/>
+      <ana>
+         <tok val="Vinaria"/>
+         <tok val="vinaria"/>
          <lm cert="0.5">
             <l>vinarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -172,8 +192,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vinarii vinarii-->
-         <tok val="[vV]inarii"/>
+      <ana>
+         <tok val="Vinarii"/>
+         <tok val="vinarii"/>
          <lm cert="0.5">
             <l>vinarius</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -189,8 +210,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vinarium vinarium-->
-         <tok val="[vV]inarium"/>
+      <ana>
+         <tok val="Vinarium"/>
+         <tok val="vinarium"/>
          <lm cert="0.5">
             <l>vinarius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -206,8 +228,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Vinarium vinariorum vinarium-->
-         <tok val="[vV]inari(or)?um"/>
+      <ana>
+         <tok val="Vinarium"/>
+         <tok val="vinariorum"/>
+         <tok val="vinarium"/>
          <lm cert="0.5">
             <l>vinarius</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -219,86 +243,104 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vinarius vinarius-->
-         <tok val="[vV]inarius"/>
+      <ana>
+         <tok val="Vinarius"/>
+         <tok val="vinarius"/>
          <lm>
             <l>vinarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vincam vincam-->
-         <tok val="[vV]incam"/>
+      <ana>
+         <tok val="Vincam"/>
+         <tok val="vincam"/>
          <lm>
             <l>vinco</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Vincam vincam víncam-->
-         <tok val="[vV]?(i|ví)ncam"/>
+      <ana>
+         <tok val="Vincam"/>
+         <tok val="vincam"/>
+         <tok val="víncam"/>
          <lm>
             <l>vinco</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vincamus vincamus-->
-         <tok val="[vV]incamus"/>
+      <ana>
+         <tok val="Vincamus"/>
+         <tok val="vincamus"/>
          <lm>
             <l>vinco</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Vincantur vincantur-->
-         <tok val="[vV]incantur"/>
+      <ana>
+         <tok val="Vincantur"/>
+         <tok val="vincantur"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Vincare vincare vincaris-->
-         <tok val="[vV]incar(e|is)"/>
+      <ana>
+         <tok val="Vincare"/>
+         <tok val="vincare"/>
+         <tok val="vincaris"/>
          <lm>
             <l>vinco</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Vincas vincas vincasque vincásque-->
-         <tok val="[vV]inc[áa]s(que)?"/>
+      <ana>
+         <tok val="Vincas"/>
+         <tok val="vincas"/>
+         <tok val="vincasque"/>
+         <tok val="vincásque"/>
          <lm>
             <l>vinco</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vincat vincat vincatque-->
-         <tok val="[vV]incat(que)?"/>
+      <ana>
+         <tok val="Vincat"/>
+         <tok val="vincat"/>
+         <tok val="vincatque"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vince vince vincen-->
-         <tok val="[vV]ince[n]?"/>
+      <ana>
+         <tok val="Vince"/>
+         <tok val="vince"/>
+         <tok val="vincen"/>
          <lm>
             <l>vinco</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vincebant vincebant-->
-         <tok val="[vV]incebant"/>
+      <ana>
+         <tok val="Vincebant"/>
+         <tok val="vincebant"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Vincemus vincemus-->
-         <tok val="[vV]incemus"/>
+      <ana>
+         <tok val="Vincemus"/>
+         <tok val="vincemus"/>
          <lm>
             <l>vinco</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Vincenda vincenda-->
-         <tok val="[vV]incenda"/>
+      <ana>
+         <tok val="Vincenda"/>
+         <tok val="vincenda"/>
          <lm>
             <l>vinco</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -309,8 +351,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Vincendum vincendum-->
-         <tok val="[vV]incendum"/>
+      <ana>
+         <tok val="Vincendum"/>
+         <tok val="vincendum"/>
          <lm>
             <l>vinco</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -322,15 +365,17 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Vincendus vincendus-->
-         <tok val="[vV]incendus"/>
+      <ana>
+         <tok val="Vincendus"/>
+         <tok val="vincendus"/>
          <lm>
             <l>vinco</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Vincens vincens-->
-         <tok val="[vV]incens"/>
+      <ana>
+         <tok val="Vincens"/>
+         <tok val="vincens"/>
          <lm>
             <l>vinco</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -342,15 +387,18 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Vincent vincent-->
-         <tok val="[vV]incent"/>
+      <ana>
+         <tok val="Vincent"/>
+         <tok val="vincent"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Vincentem vincentem vincentemque-->
-         <tok val="[vV]incentem(que)?"/>
+      <ana>
+         <tok val="Vincentem"/>
+         <tok val="vincentem"/>
+         <tok val="vincentemque"/>
          <lm>
             <l>vinco</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -359,6 +407,7 @@
       </ana>
       <ana>
          <tok val="Vincentes"/>
+         <tok val="vincentes"/>
          <lm>
             <l>vinco</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -367,16 +416,19 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Vincentes vincentis-->
-         <tok val="[vV]incent[ie]s"/>
+      <ana>
+         <tok val="Vincentes"/>
+         <tok val="vincentes"/>
+         <tok val="vincentis"/>
          <lm>
             <l>vinco</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Vincenti vincenti-->
-         <tok val="[vV]incenti"/>
+      <ana>
+         <tok val="Vincenti"/>
+         <tok val="vincenti"/>
          <lm>
             <l>vinco</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -384,8 +436,10 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Vincenti vincente vincenti-->
-         <tok val="[vV]incent[ie]"/>
+      <ana>
+         <tok val="Vincenti"/>
+         <tok val="vincente"/>
+         <tok val="vincenti"/>
          <lm>
             <l>vinco</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -395,6 +449,7 @@
       </ana>
       <ana>
          <tok val="Vincentius"/>
+         <tok val="vincentius"/>
          <lm>
             <l>vinco</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -403,72 +458,90 @@
             <m cert="0.25">v - - s p p a n v c</m>
          </lm>
       </ana>
-      <ana><!--Vincere vincere-->
-         <tok val="[vV]incere"/>
+      <ana>
+         <tok val="Vincere"/>
+         <tok val="vincere"/>
          <lm>
             <l>vinco</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Vincere vincere VINCERE-->
-         <tok val="[vV]?(incere|VINCERE)"/>
+      <ana>
+         <tok val="VINCERE"/>
+         <tok val="Vincere"/>
+         <tok val="vincere"/>
          <lm>
             <l>vinco</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Vincere Vinceris vincere vinceris-->
-         <tok val="[vV]incer(is|e)"/>
+      <ana>
+         <tok val="Vincere"/>
+         <tok val="Vinceris"/>
+         <tok val="vincere"/>
+         <tok val="vinceris"/>
          <lm>
             <l>vinco</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Vinces vincen vinces-->
-         <tok val="[vV]ince[sn]"/>
+      <ana>
+         <tok val="Vinces"/>
+         <tok val="vincen"/>
+         <tok val="vinces"/>
          <lm>
             <l>vinco</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Vincet vincet vincetque-->
-         <tok val="[vV]incet(que)?"/>
+      <ana>
+         <tok val="Vincet"/>
+         <tok val="vincet"/>
+         <tok val="vincetque"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Vincetur vincetur-->
-         <tok val="[vV]incetur"/>
+      <ana>
+         <tok val="Vincetur"/>
+         <tok val="vincetur"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Vinci vinci vincier vincique-->
-         <tok val="[vV]inci(er|que)?"/>
+      <ana>
+         <tok val="Vinci"/>
+         <tok val="vinci"/>
+         <tok val="vincier"/>
+         <tok val="vincique"/>
          <lm>
             <l>vinco</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Vinci vinci vincique-->
-         <tok val="[vV]inci(que)?"/>
+      <ana>
+         <tok val="Vinci"/>
+         <tok val="vinci"/>
+         <tok val="vincique"/>
          <lm>
             <l>vincio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vinciat vinciat-->
-         <tok val="[vV]inciat"/>
+      <ana>
+         <tok val="Vinciat"/>
+         <tok val="vinciat"/>
          <lm>
             <l>vincio</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vincibilis vincibilis-->
-         <tok val="[vV]incibilis"/>
+      <ana>
+         <tok val="Vincibilis"/>
+         <tok val="vincibilis"/>
          <lm>
             <l>vincibilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -484,6 +557,7 @@
       </ana>
       <ana>
          <tok val="Vinciendi"/>
+         <tok val="vinciendi"/>
          <lm>
             <l>vincio</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -493,29 +567,34 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Vincimus vincimus-->
-         <tok val="[vV]incimus"/>
+      <ana>
+         <tok val="Vincimus"/>
+         <tok val="vincimus"/>
          <lm>
             <l>vinco</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Vincio vincio-->
-         <tok val="[vV]incio"/>
+      <ana>
+         <tok val="Vincio"/>
+         <tok val="vincio"/>
          <lm>
             <l>vincio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vincire vincire-->
-         <tok val="[vV]incire"/>
+      <ana>
+         <tok val="Vincire"/>
+         <tok val="vincire"/>
          <lm>
             <l>vincio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Vinciri vinciri vincirique-->
-         <tok val="[vV]inciri(que)?"/>
+      <ana>
+         <tok val="Vinciri"/>
+         <tok val="vinciri"/>
+         <tok val="vincirique"/>
          <lm>
             <l>vincio</l>
             <m>v - - - p n p</m>
@@ -523,13 +602,16 @@
       </ana>
       <ana>
          <tok val="Vincis"/>
+         <tok val="vincis"/>
          <lm>
             <l>vinco</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vincit vincit vincitque-->
-         <tok val="[vV]incit(que)?"/>
+      <ana>
+         <tok val="Vincit"/>
+         <tok val="vincit"/>
+         <tok val="vincitque"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 s p i a</m>
@@ -537,49 +619,77 @@
       </ana>
       <ana>
          <tok val="Vincite"/>
+         <tok val="vincite"/>
          <lm>
             <l>vinco</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Vincitur vincitur-->
-         <tok val="[vV]incitur"/>
+      <ana>
+         <tok val="Vincitur"/>
+         <tok val="vincitur"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vincla Vinclaque Vincula vincla vincula vinculaque víncla-->
-         <tok val="[Vv]?(i|ví)nc[u]?la(que)?"/>
+      <ana>
+         <tok val="Vincla"/>
+         <tok val="Vinclaque"/>
+         <tok val="Vincula"/>
+         <tok val="vincla"/>
+         <tok val="vinclaque"/>
+         <tok val="vincula"/>
+         <tok val="vinculaque"/>
+         <tok val="víncla"/>
          <lm>
             <l>vinculum</l>
             <m>n - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Vincla Vinclaque Vincula vincula vinculaque-->
-         <tok val="[Vv]inc[u]?la(que)?"/>
+      <ana>
+         <tok val="Vincla"/>
+         <tok val="Vinclaque"/>
+         <tok val="Vincula"/>
+         <tok val="vincla"/>
+         <tok val="vinclaque"/>
+         <tok val="vincula"/>
+         <tok val="vinculaque"/>
          <lm>
             <l>vinculum</l>
             <m cert="0.5">n - - p - - - n n</m>
             <m cert="0.5">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vinclis Vinculis vinculis vinculisque vínculis-->
-         <tok val="[Vv]?(i|ví|vi)nc[u]?lis(que)?"/>
+      <ana>
+         <tok val="Vinclis"/>
+         <tok val="Vinculis"/>
+         <tok val="vinclis"/>
+         <tok val="vinculis"/>
+         <tok val="vinculisque"/>
+         <tok val="vínculis"/>
          <lm>
             <l>vinculum</l>
             <m>n - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Vinclis Vinculis vinculis vinculisque-->
-         <tok val="[Vv]inc[u]?lis(que)?"/>
+      <ana>
+         <tok val="Vinclis"/>
+         <tok val="Vinculis"/>
+         <tok val="vinclis"/>
+         <tok val="vinculis"/>
+         <tok val="vinculisque"/>
          <lm>
             <l>vinculum</l>
             <m>n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vinclum Vinculum vinculum vinculumque-->
-         <tok val="[Vv]inc[u]?lum(que)?"/>
+      <ana>
+         <tok val="Vinclum"/>
+         <tok val="Vinculum"/>
+         <tok val="vinclum"/>
+         <tok val="vinculum"/>
+         <tok val="vinculumque"/>
          <lm>
             <l>vinculum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -587,29 +697,40 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Vinclum Vinculum vinculorum vinculum vinculumque-->
-         <tok val="[Vv]inc[u]?l(or)?um(que)?"/>
+      <ana>
+         <tok val="Vinclum"/>
+         <tok val="Vinculum"/>
+         <tok val="vinclum"/>
+         <tok val="vinculorum"/>
+         <tok val="vinculum"/>
+         <tok val="vinculumque"/>
          <lm>
             <l>vinculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vinco vinco vincon-->
-         <tok val="[vV]inco[n]?"/>
+      <ana>
+         <tok val="Vinco"/>
+         <tok val="vinco"/>
+         <tok val="vincon"/>
          <lm>
             <l>vinco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vincor vincor-->
-         <tok val="[vV]incor"/>
+      <ana>
+         <tok val="Vincor"/>
+         <tok val="vincor"/>
          <lm>
             <l>vinco</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vincta Vinctaque vincta vinctaque-->
-         <tok val="[vV]incta(que)?"/>
+      <ana>
+         <tok val="Vincta"/>
+         <tok val="Vinctaque"/>
+         <tok val="vincta"/>
+         <tok val="vinctaque"/>
          <lm>
             <l>vincio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -620,8 +741,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Vinctae vinctae-->
-         <tok val="[vV]inctae"/>
+      <ana>
+         <tok val="Vinctae"/>
+         <tok val="vinctae"/>
          <lm>
             <l>vincio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -630,22 +752,27 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Vinctam vinctam-->
-         <tok val="[vV]inctam"/>
+      <ana>
+         <tok val="Vinctam"/>
+         <tok val="vinctam"/>
          <lm>
             <l>vincio</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Vinctas vinctas vinctasque-->
-         <tok val="[vV]inctas(que)?"/>
+      <ana>
+         <tok val="Vinctas"/>
+         <tok val="vinctas"/>
+         <tok val="vinctasque"/>
          <lm>
             <l>vincio</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Vincti vincti vinctique-->
-         <tok val="[vV]incti(que)?"/>
+      <ana>
+         <tok val="Vincti"/>
+         <tok val="vincti"/>
+         <tok val="vinctique"/>
          <lm>
             <l>vincio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -654,8 +781,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Vincto vincto vinctoque-->
-         <tok val="[vV]incto(que)?"/>
+      <ana>
+         <tok val="Vincto"/>
+         <tok val="vincto"/>
+         <tok val="vinctoque"/>
          <lm>
             <l>vincio</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -664,15 +793,18 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Vinctos vinctos vinctosque-->
-         <tok val="[vV]inctos(que)?"/>
+      <ana>
+         <tok val="Vinctos"/>
+         <tok val="vinctos"/>
+         <tok val="vinctosque"/>
          <lm>
             <l>vincio</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Vinctu vinctu-->
-         <tok val="[vV]inctu"/>
+      <ana>
+         <tok val="Vinctu"/>
+         <tok val="vinctu"/>
          <lm cert="0.5">
             <l>vincio</l>
             <m>v - - - - u - - b</m>
@@ -682,8 +814,11 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Vinctum Vinctumque vinctum vinctumque-->
-         <tok val="[vV]inctum(que)?"/>
+      <ana>
+         <tok val="Vinctum"/>
+         <tok val="Vinctumque"/>
+         <tok val="vinctum"/>
+         <tok val="vinctumque"/>
          <lm cert="0.5">
             <l>vincio</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -696,23 +831,33 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vinctum Vinctumque vinctorum vinctum vinctumque-->
-         <tok val="[vV]inct(or)?um(que)?"/>
+      <ana>
+         <tok val="Vinctum"/>
+         <tok val="Vinctumque"/>
+         <tok val="vinctorum"/>
+         <tok val="vinctum"/>
+         <tok val="vinctumque"/>
          <lm>
             <l>vincio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Vinctum Vinctumque vinctum vinctumque vincte-->
-         <tok val="[vV]inct(um)?(que|e)?"/>
+      <ana>
+         <tok val="Vinctum"/>
+         <tok val="Vinctumque"/>
+         <tok val="vincte"/>
+         <tok val="vinctum"/>
+         <tok val="vinctumque"/>
          <lm>
             <l>vincio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Vinctura vinctura vincturaque-->
-         <tok val="[vV]inctura(que)?"/>
+      <ana>
+         <tok val="Vinctura"/>
+         <tok val="vinctura"/>
+         <tok val="vincturaque"/>
          <lm cert="0.5">
             <l>vincio</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -729,55 +874,64 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vinctus Vinctusque vinctus vinctusque vinctust vínctus-->
-         <tok val="[vV]?(i|ví)nctus(t|que)?"/>
+      <ana>
+         <tok val="Vinctus"/>
+         <tok val="Vinctusque"/>
+         <tok val="vinctus"/>
+         <tok val="vinctusque"/>
+         <tok val="vinctust"/>
+         <tok val="vínctus"/>
          <lm>
             <l>vinctus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinctus Vinctusque vinctus vinctusque vinctust-->
-         <tok val="[vV]inctus(t|que)?"/>
+      <ana>
+         <tok val="Vinctus"/>
+         <tok val="Vinctusque"/>
+         <tok val="vinctus"/>
+         <tok val="vinctusque"/>
+         <tok val="vinctust"/>
          <lm cert="0.5">
             <l>vinctus</l>
-            <m cert="0.5">n - - s - - - m g</m>
-            <m cert="0.5">n - - p - - - m a</m>
+            <m cert="0.333333333333333333">n - - s - - - m g</m>
+            <m cert="0.333333333333333333">n - - s - - - m n</m>
+            <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
          <lm cert="0.5">
             <l>vincio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Vinctus Vinctusque vinctusque vinctust-->
-         <tok val="[vV]inctus(que|t)?"/>
-         <lm>
-            <l>vinctus</l>
-            <m>n - - s - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--Vincula vincula vinculaque-->
-         <tok val="[vV]incula(que)?"/>
+      <ana>
+         <tok val="Vincula"/>
+         <tok val="vincula"/>
+         <tok val="vinculaque"/>
          <lm>
             <l>vinculo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vinculi vinculi-->
-         <tok val="[vV]inculi"/>
+      <ana>
+         <tok val="Vinculi"/>
+         <tok val="vinculi"/>
          <lm>
             <l>vinculum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vincunt vincunt vincuntque-->
-         <tok val="[vV]incunt(que)?"/>
+      <ana>
+         <tok val="Vincunt"/>
+         <tok val="vincunt"/>
+         <tok val="vincuntque"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Vincuntur vincuntur-->
-         <tok val="[vV]incuntur"/>
+      <ana>
+         <tok val="Vincuntur"/>
+         <tok val="vincuntur"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 p p i p</m>
@@ -785,6 +939,7 @@
       </ana>
       <ana>
          <tok val="Vindelicam"/>
+         <tok val="vindelicam"/>
          <lm>
             <l>Vindelicus</l>
             <m>a e - s - - - f a</m>
@@ -792,6 +947,7 @@
       </ana>
       <ana>
          <tok val="Vindelici"/>
+         <tok val="vindelici"/>
          <lm cert="0.5">
             <l>Vindelicus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -807,6 +963,7 @@
       </ana>
       <ana>
          <tok val="Vindelicis"/>
+         <tok val="vindelicis"/>
          <lm cert="0.5">
             <l>Vindelici</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -824,6 +981,7 @@
       </ana>
       <ana>
          <tok val="Vindelico"/>
+         <tok val="vindelico"/>
          <lm>
             <l>Vindelicus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -832,8 +990,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vindelicorum Vindelicorumque-->
-         <tok val="Vindelicorum(que)?"/>
+      <ana>
+         <tok val="Vindelicorum"/>
+         <tok val="Vindelicorumque"/>
+         <tok val="vindelicorum"/>
+         <tok val="vindelicorumque"/>
          <lm cert="0.5">
             <l>Vindelicus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -844,8 +1005,11 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vindelicos Vindelicosque-->
-         <tok val="Vindelicos(que)?"/>
+      <ana>
+         <tok val="Vindelicos"/>
+         <tok val="Vindelicosque"/>
+         <tok val="vindelicos"/>
+         <tok val="vindelicosque"/>
          <lm cert="0.5">
             <l>Vindelici</l>
             <m>n e - p - - - m a</m>
@@ -857,20 +1021,26 @@
       </ana>
       <ana>
          <tok val="Vindelicus"/>
+         <tok val="vindelicus"/>
          <lm>
             <l>Vindelicus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vindemia vindemia vindemiaque vindémia-->
-         <tok val="[vV]ind[eé]mia(que)?"/>
+      <ana>
+         <tok val="Vindemia"/>
+         <tok val="vindemia"/>
+         <tok val="vindemiaque"/>
+         <tok val="vindémia"/>
          <lm>
             <l>vindemia</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vindemia vindemia vindemiaque-->
-         <tok val="[vV]indemia(que)?"/>
+      <ana>
+         <tok val="Vindemia"/>
+         <tok val="vindemia"/>
+         <tok val="vindemiaque"/>
          <lm cert="0.5">
             <l>vindemia</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -881,8 +1051,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vindemiae vindemiae-->
-         <tok val="[vV]indemiae"/>
+      <ana>
+         <tok val="Vindemiae"/>
+         <tok val="vindemiae"/>
          <lm>
             <l>vindemia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -891,22 +1062,26 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vindemiam vindemiam-->
-         <tok val="[vV]indemiam"/>
+      <ana>
+         <tok val="Vindemiam"/>
+         <tok val="vindemiam"/>
          <lm>
             <l>vindemia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vindemiarum vindemiarum-->
-         <tok val="[vV]indemiarum"/>
+      <ana>
+         <tok val="Vindemiarum"/>
+         <tok val="vindemiarum"/>
          <lm>
             <l>vindemia</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vindemias vindemias vindemiasque-->
-         <tok val="[vV]indemias(que)?"/>
+      <ana>
+         <tok val="Vindemias"/>
+         <tok val="vindemias"/>
+         <tok val="vindemiasque"/>
          <lm cert="0.5">
             <l>vindemio</l>
             <m>v - 2 s p i a</m>
@@ -916,30 +1091,36 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vindemiator Vindemitor vindemiator vindemitor-->
-         <tok val="[Vv]indemi[a]?tor"/>
+      <ana>
+         <tok val="Vindemiator"/>
+         <tok val="Vindemitor"/>
+         <tok val="vindemiator"/>
+         <tok val="vindemitor"/>
          <lm>
             <l>vindemiator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vindemiatorius vindemiatorius-->
-         <tok val="[vV]indemiatorius"/>
+      <ana>
+         <tok val="Vindemiatorius"/>
+         <tok val="vindemiatorius"/>
          <lm>
             <l>vindemiatorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vindemio vindemio-->
-         <tok val="[vV]indemio"/>
+      <ana>
+         <tok val="Vindemio"/>
+         <tok val="vindemio"/>
          <lm>
             <l>vindemio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vindemiola vindemiola-->
-         <tok val="[vV]indemiola"/>
+      <ana>
+         <tok val="Vindemiola"/>
+         <tok val="vindemiola"/>
          <lm>
             <l>vindemiola</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -947,23 +1128,29 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vindex vindex vindexque-->
-         <tok val="[vV]index(que)?"/>
+      <ana>
+         <tok val="Vindex"/>
+         <tok val="vindex"/>
+         <tok val="vindexque"/>
          <lm>
             <l>vindex</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vindica vindica vindican-->
-         <tok val="[vV]indica[n]?"/>
+      <ana>
+         <tok val="Vindica"/>
+         <tok val="vindica"/>
+         <tok val="vindican"/>
          <lm>
             <l>vindico</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Vindicandum vindicandum vindicandumque-->
-         <tok val="[vV]indicandum(que)?"/>
+      <ana>
+         <tok val="Vindicandum"/>
+         <tok val="vindicandum"/>
+         <tok val="vindicandumque"/>
          <lm>
             <l>vindico</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -973,82 +1160,100 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Vindicandum vindicandorum vindicandum vindicandumque-->
-         <tok val="[vV]indicand(or)?um(que)?"/>
+      <ana>
+         <tok val="Vindicandum"/>
+         <tok val="vindicandorum"/>
+         <tok val="vindicandum"/>
+         <tok val="vindicandumque"/>
          <lm>
             <l>vindico</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Vindicantur vindicantur-->
-         <tok val="[vV]indicantur"/>
+      <ana>
+         <tok val="Vindicantur"/>
+         <tok val="vindicantur"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Vindicare vindicare-->
-         <tok val="[vV]indicare"/>
+      <ana>
+         <tok val="Vindicare"/>
+         <tok val="vindicare"/>
          <lm>
             <l>vindico</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Vindicare vindicare vindicaris-->
-         <tok val="[vV]indicar(e|is)"/>
+      <ana>
+         <tok val="Vindicare"/>
+         <tok val="vindicare"/>
+         <tok val="vindicaris"/>
          <lm>
             <l>vindico</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vindicari vindicari-->
-         <tok val="[vV]indicari"/>
+      <ana>
+         <tok val="Vindicari"/>
+         <tok val="vindicari"/>
          <lm>
             <l>vindico</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Vindicat vindicat-->
-         <tok val="[vV]indicat"/>
+      <ana>
+         <tok val="Vindicat"/>
+         <tok val="vindicat"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vindicate vindicate-->
-         <tok val="[vV]indicate"/>
+      <ana>
+         <tok val="Vindicate"/>
+         <tok val="vindicate"/>
          <lm>
             <l>vindico</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Vindicate Vindicatum vindicate vindicatum vindicatumque-->
-         <tok val="[vV]indicat(um|e|umque)"/>
+      <ana>
+         <tok val="Vindicate"/>
+         <tok val="Vindicatum"/>
+         <tok val="vindicate"/>
+         <tok val="vindicatum"/>
+         <tok val="vindicatumque"/>
          <lm>
             <l>vindico</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Vindicatio vindicatio-->
-         <tok val="[vV]indicatio"/>
+      <ana>
+         <tok val="Vindicatio"/>
+         <tok val="vindicatio"/>
          <lm>
             <l>vindicatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vindicationem vindicationem-->
-         <tok val="[vV]indicationem"/>
+      <ana>
+         <tok val="Vindicationem"/>
+         <tok val="vindicationem"/>
          <lm>
             <l>vindicatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vindicatum vindicatum vindicatumque-->
-         <tok val="[vV]indicatum(que)?"/>
+      <ana>
+         <tok val="Vindicatum"/>
+         <tok val="vindicatum"/>
+         <tok val="vindicatumque"/>
          <lm>
             <l>vindico</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -1060,28 +1265,35 @@
       </ana>
       <ana>
          <tok val="Vindicatum"/>
+         <tok val="vindicatum"/>
          <lm>
             <l>vindico</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Vindicaui vindicavi Vindicavi-->
-         <tok val="[Vv]indica[vu]i"/>
+      <ana>
+         <tok val="Vindicaui"/>
+         <tok val="Vindicavi"/>
+         <tok val="vindicaui"/>
+         <tok val="vindicavi"/>
          <lm>
             <l>vindico</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Vindice vindice vindicen-->
-         <tok val="[vV]indice[n]?"/>
+      <ana>
+         <tok val="Vindice"/>
+         <tok val="vindice"/>
+         <tok val="vindicen"/>
          <lm>
             <l>vindex</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Vindicem vindicem-->
-         <tok val="[vV]indicem"/>
+      <ana>
+         <tok val="Vindicem"/>
+         <tok val="vindicem"/>
          <lm cert="0.5">
             <l>vindico</l>
             <m>v - 1 s p s a</m>
@@ -1092,8 +1304,10 @@
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vindices vindicen vindices-->
-         <tok val="[vV]indice[sn]"/>
+      <ana>
+         <tok val="Vindices"/>
+         <tok val="vindicen"/>
+         <tok val="vindices"/>
          <lm cert="0.5">
             <l>vindex</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -1108,8 +1322,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Vindicet vindicet-->
-         <tok val="[vV]indicet"/>
+      <ana>
+         <tok val="Vindicet"/>
+         <tok val="vindicet"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 s p s a</m>
@@ -1117,31 +1332,27 @@
       </ana>
       <ana>
          <tok val="Vindici"/>
-         <lm>
+         <tok val="vindici"/>
+         <lm cert="0.5">
             <l>Vindicius</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Vindici vindici-->
-         <tok val="[vV]indici"/>
-         <lm>
+         <lm cert="0.5">
             <l>vindex</l>
             <m cert="0.5">n - - s - - - m d</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vindiciae vindiciae-->
-         <tok val="[vV]indiciae"/>
-         <lm>
+      <ana>
+         <tok val="Vindiciae"/>
+         <tok val="vindiciae"/>
+         <lm cert="0.5">
             <l>vindicia</l>
             <m cert="0.5">n - - s - - - f g</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Vindiciae"/>
-         <lm>
+         <lm cert="0.5">
             <l>vindiciae</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
@@ -1149,13 +1360,15 @@
       </ana>
       <ana>
          <tok val="Vindicias"/>
+         <tok val="vindicias"/>
          <lm>
             <l>vindiciae</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vindicibus vindicibus-->
-         <tok val="[vV]indicibus"/>
+      <ana>
+         <tok val="Vindicibus"/>
+         <tok val="vindicibus"/>
          <lm>
             <l>vindex</l>
             <m cert="0.25">n - - p - - - m b</m>
@@ -1166,6 +1379,7 @@
       </ana>
       <ana>
          <tok val="Vindiciis"/>
+         <tok val="vindiciis"/>
          <lm cert="0.5">
             <l>Vindicius</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1179,14 +1393,16 @@
       </ana>
       <ana>
          <tok val="Vindicio"/>
+         <tok val="vindicio"/>
          <lm>
             <l>Vindicius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Vindicis vindicis-->
-         <tok val="[vV]indicis"/>
+      <ana>
+         <tok val="Vindicis"/>
+         <tok val="vindicis"/>
          <lm>
             <l>vindex</l>
             <m cert="0.5">n - - s - - - m g</m>
@@ -1195,20 +1411,23 @@
       </ana>
       <ana>
          <tok val="Vindicius"/>
+         <tok val="vindicius"/>
          <lm>
             <l>Vindicius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vindico vindico-->
-         <tok val="[vV]indico"/>
+      <ana>
+         <tok val="Vindico"/>
+         <tok val="vindico"/>
          <lm>
             <l>vindico</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Vindicta vindicta-->
-         <tok val="[vV]indicta"/>
+      <ana>
+         <tok val="Vindicta"/>
+         <tok val="vindicta"/>
          <lm>
             <l>vindicta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1216,8 +1435,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vindictae vindictae vindictaeque-->
-         <tok val="[vV]indictae(que)?"/>
+      <ana>
+         <tok val="Vindictae"/>
+         <tok val="vindictae"/>
+         <tok val="vindictaeque"/>
          <lm>
             <l>vindicta</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1226,8 +1447,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vindictam vindictam-->
-         <tok val="[vV]indictam"/>
+      <ana>
+         <tok val="Vindictam"/>
+         <tok val="vindictam"/>
          <lm>
             <l>vindicta</l>
             <m>n - - s - - - f a</m>
@@ -1235,6 +1457,7 @@
       </ana>
       <ana>
          <tok val="Vindulli"/>
+         <tok val="vindulli"/>
          <lm>
             <l>Vindullus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1244,6 +1467,7 @@
       </ana>
       <ana>
          <tok val="Vindullum"/>
+         <tok val="vindullum"/>
          <lm>
             <l>Vindullus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1252,13 +1476,16 @@
       </ana>
       <ana>
          <tok val="Vindullus"/>
+         <tok val="vindullus"/>
          <lm>
             <l>Vindullus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinea vinea vineave-->
-         <tok val="[vV]inea(ve)?"/>
+      <ana>
+         <tok val="Vinea"/>
+         <tok val="vinea"/>
+         <tok val="vineave"/>
          <lm cert="0.5">
             <l>vinea</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1275,8 +1502,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vineae vineae vineaeque vineaeve-->
-         <tok val="[vV]ineae(ve|que)?"/>
+      <ana>
+         <tok val="Vineae"/>
+         <tok val="vineae"/>
+         <tok val="vineaeque"/>
+         <tok val="vineaeve"/>
          <lm cert="0.5">
             <l>vineus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1292,8 +1522,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Vinealis vinealis-->
-         <tok val="[vV]inealis"/>
+      <ana>
+         <tok val="Vinealis"/>
+         <tok val="vinealis"/>
          <lm>
             <l>vinealis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1307,29 +1538,37 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vineam vineam vineamque vineám-->
-         <tok val="[vV]ine[aá]m(que)?"/>
+      <ana>
+         <tok val="Vineam"/>
+         <tok val="vineam"/>
+         <tok val="vineamque"/>
+         <tok val="vineám"/>
          <lm>
             <l>vineus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vineam vineam vineamque-->
-         <tok val="[vV]ineam(que)?"/>
+      <ana>
+         <tok val="Vineam"/>
+         <tok val="vineam"/>
+         <tok val="vineamque"/>
          <lm>
             <l>vinea</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vinearius vinearius-->
-         <tok val="[vV]inearius"/>
+      <ana>
+         <tok val="Vinearius"/>
+         <tok val="vinearius"/>
          <lm>
             <l>vinearius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinearum vinearum vinearumque-->
-         <tok val="[vV]inearum(que)?"/>
+      <ana>
+         <tok val="Vinearum"/>
+         <tok val="vinearum"/>
+         <tok val="vinearumque"/>
          <lm cert="0.5">
             <l>vinea</l>
             <m>n - - p - - - f g</m>
@@ -1339,8 +1578,10 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Vineas vineas vineasque-->
-         <tok val="[vV]ineas(que)?"/>
+      <ana>
+         <tok val="Vineas"/>
+         <tok val="vineas"/>
+         <tok val="vineasque"/>
          <lm cert="0.5">
             <l>vineus</l>
             <m>a - - p - - - f a</m>
@@ -1350,8 +1591,11 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vineta vineta vinetane vinetaque-->
-         <tok val="[vV]ineta(ne|que)?"/>
+      <ana>
+         <tok val="Vineta"/>
+         <tok val="vineta"/>
+         <tok val="vinetane"/>
+         <tok val="vinetaque"/>
          <lm>
             <l>vinetum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1359,8 +1603,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vinetum vinetum-->
-         <tok val="[vV]inetum"/>
+      <ana>
+         <tok val="Vinetum"/>
+         <tok val="vinetum"/>
          <lm>
             <l>vinetum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1369,15 +1614,20 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vini vini vinique viní-->
-         <tok val="[vV]in(i|í|ique)"/>
+      <ana>
+         <tok val="Vini"/>
+         <tok val="vini"/>
+         <tok val="vinique"/>
+         <tok val="viní"/>
          <lm>
             <l>vinus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vini vini vinique-->
-         <tok val="[vV]ini(que)?"/>
+      <ana>
+         <tok val="Vini"/>
+         <tok val="vini"/>
+         <tok val="vinique"/>
          <lm cert="0.5">
             <l>vinus</l>
             <m cert="0.5">n - - p - - - m v</m>
@@ -1390,13 +1640,17 @@
       </ana>
       <ana>
          <tok val="Vinici"/>
+         <tok val="vinici"/>
          <lm>
             <l>Vinicius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vinici Vinicii-->
-         <tok val="Vinici[i]?"/>
+      <ana>
+         <tok val="Vinici"/>
+         <tok val="Vinicii"/>
+         <tok val="vinici"/>
+         <tok val="vinicii"/>
          <lm>
             <l>Vinicius</l>
             <m>n e - s - - - m g</m>
@@ -1404,6 +1658,7 @@
       </ana>
       <ana>
          <tok val="Vinicii"/>
+         <tok val="vinicii"/>
          <lm>
             <l>Vinicius</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1412,6 +1667,7 @@
       </ana>
       <ana>
          <tok val="Vinicio"/>
+         <tok val="vinicio"/>
          <lm>
             <l>Vinicius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1420,6 +1676,7 @@
       </ana>
       <ana>
          <tok val="Vinicium"/>
+         <tok val="vinicium"/>
          <lm>
             <l>Vinicius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1428,13 +1685,15 @@
       </ana>
       <ana>
          <tok val="Vinicius"/>
+         <tok val="vinicius"/>
          <lm>
             <l>Vinicius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinis vinis-->
-         <tok val="[vV]inis"/>
+      <ana>
+         <tok val="Vinis"/>
+         <tok val="vinis"/>
          <lm cert="0.5">
             <l>vinus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1446,30 +1705,37 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vinitor vinitor vinitorque-->
-         <tok val="[vV]initor(que)?"/>
+      <ana>
+         <tok val="Vinitor"/>
+         <tok val="vinitor"/>
+         <tok val="vinitorque"/>
          <lm>
             <l>vinitor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vinitorius vinitorius-->
-         <tok val="[vV]initorius"/>
+      <ana>
+         <tok val="Vinitorius"/>
+         <tok val="vinitorius"/>
          <lm>
             <l>vinitorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinnulus vinnulus-->
-         <tok val="[vV]innulus"/>
+      <ana>
+         <tok val="Vinnulus"/>
+         <tok val="vinnulus"/>
          <lm>
             <l>vinnulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vino vino vinoque vinost-->
-         <tok val="[vV]ino(st|que)?"/>
+      <ana>
+         <tok val="Vino"/>
+         <tok val="vino"/>
+         <tok val="vinoque"/>
+         <tok val="vinost"/>
          <lm cert="0.5">
             <l>vinum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1481,8 +1747,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Vinolenta vinolenta-->
-         <tok val="[vV]inolenta"/>
+      <ana>
+         <tok val="Vinolenta"/>
+         <tok val="vinolenta"/>
          <lm>
             <l>vinolentus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1493,8 +1760,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vinolentia vinolentia vinolentiaque-->
-         <tok val="[vV]inolentia(que)?"/>
+      <ana>
+         <tok val="Vinolentia"/>
+         <tok val="vinolentia"/>
+         <tok val="vinolentiaque"/>
          <lm>
             <l>vinolentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1502,37 +1771,54 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vinolentorum vinolentorum vinolentum-->
-         <tok val="[vV]inolent(or|)um"/>
+      <ana>
+         <tok val="Vinolentorum"/>
+         <tok val="vinolentorum"/>
+         <tok val="vinolentum"/>
          <lm>
             <l>vinolentus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vinolentus vinolentus-->
-         <tok val="[vV]inolentus"/>
+      <ana>
+         <tok val="Vinolentus"/>
+         <tok val="vinolentus"/>
          <lm>
             <l>vinolentus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinorum Vinum vinorum vinorumque vinum vinumque vinumve vínum-->
-         <tok val="[vV]?(i|ví)n(or)?um(que|ve)?"/>
+      <ana>
+         <tok val="Vinorum"/>
+         <tok val="Vinum"/>
+         <tok val="vinorum"/>
+         <tok val="vinorumque"/>
+         <tok val="vinum"/>
+         <tok val="vinumque"/>
+         <tok val="vinumve"/>
+         <tok val="vínum"/>
          <lm>
             <l>vinus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Vinorum Vinum vinorum vinorumque vinum vinumque vinumve-->
-         <tok val="[vV]in(or)?um(que|ve)?"/>
+      <ana>
+         <tok val="Vinorum"/>
+         <tok val="Vinum"/>
+         <tok val="vinorum"/>
+         <tok val="vinorumque"/>
+         <tok val="vinum"/>
+         <tok val="vinumque"/>
+         <tok val="vinumve"/>
          <lm>
             <l>vinum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vinosa vinosa-->
-         <tok val="[vV]inosa"/>
+      <ana>
+         <tok val="Vinosa"/>
+         <tok val="vinosa"/>
          <lm>
             <l>vinosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1543,8 +1829,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Vinosior vinosior-->
-         <tok val="[vV]inosior"/>
+      <ana>
+         <tok val="Vinosior"/>
+         <tok val="vinosior"/>
          <lm>
             <l>vinosus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1553,22 +1840,30 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Vinosus vinosus-->
-         <tok val="[vV]inosus"/>
+      <ana>
+         <tok val="Vinosus"/>
+         <tok val="vinosus"/>
          <lm>
             <l>vinosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinum vine vinum vinumque vinumve-->
-         <tok val="[vV]in(um)?(ve|que|e)?"/>
+      <ana>
+         <tok val="Vinum"/>
+         <tok val="vine"/>
+         <tok val="vinum"/>
+         <tok val="vinumque"/>
+         <tok val="vinumve"/>
          <lm>
             <l>vinum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vinum vinum vinumque vinumve-->
-         <tok val="[vV]inum(ve|que)?"/>
+      <ana>
+         <tok val="Vinum"/>
+         <tok val="vinum"/>
+         <tok val="vinumque"/>
+         <tok val="vinumve"/>
          <lm cert="0.5">
             <l>vinum</l>
             <m cert="0.5">n - - s - - - n a</m>
@@ -1579,22 +1874,26 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vinus vinus-->
-         <tok val="[vV]inus"/>
+      <ana>
+         <tok val="Vinus"/>
+         <tok val="vinus"/>
          <lm>
             <l>vinus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vinxerat vinxerat-->
-         <tok val="[vV]inxerat"/>
+      <ana>
+         <tok val="Vinxerat"/>
+         <tok val="vinxerat"/>
          <lm>
             <l>vincio</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Vinxit vinxit vinxitque-->
-         <tok val="[vV]inxit(que)?"/>
+      <ana>
+         <tok val="Vinxit"/>
+         <tok val="vinxit"/>
+         <tok val="vinxitque"/>
          <lm>
             <l>vincio</l>
             <m>v - 3 s r i a</m>
@@ -1903,8 +2202,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--vincendo vincendoque-->
-         <tok val="vincendo(que)?"/>
+      <ana>
+         <tok val="vincendo"/>
+         <tok val="vincendoque"/>
          <lm>
             <l>vinco</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1915,8 +2215,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--vincendos vincendosque-->
-         <tok val="vincendos(que)?"/>
+      <ana>
+         <tok val="vincendos"/>
+         <tok val="vincendosque"/>
          <lm>
             <l>vinco</l>
             <m>v - - p p g p m a</m>
@@ -1943,8 +2244,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--vincentium Vincentium-->
-         <tok val="[Vv]incentium"/>
+      <ana>
+         <tok val="Vincentium"/>
+         <tok val="vincentium"/>
          <lm>
             <l>vinco</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -2015,8 +2317,9 @@
             <m>v - 2 p i s a</m>
          </lm>
       </ana>
-      <ana><!--vinceretur vincereturque-->
-         <tok val="vinceretur(que)?"/>
+      <ana>
+         <tok val="vinceretur"/>
+         <tok val="vincereturque"/>
          <lm>
             <l>vinco</l>
             <m>v - 3 s i s p</m>
@@ -2280,8 +2583,9 @@
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--vincitis vincítis-->
-         <tok val="vinc[íi]tis"/>
+      <ana>
+         <tok val="vincitis"/>
+         <tok val="vincítis"/>
          <lm>
             <l>vincio</l>
             <m>v - 2 p p i a</m>
@@ -2316,15 +2620,17 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--vinciuntur vinciunturque-->
-         <tok val="vinciuntur(que)?"/>
+      <ana>
+         <tok val="vinciuntur"/>
+         <tok val="vinciunturque"/>
          <lm>
             <l>vincio</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--vincla vinclaque-->
-         <tok val="vincla(que)?"/>
+      <ana>
+         <tok val="vincla"/>
+         <tok val="vinclaque"/>
          <lm>
             <l>vinclum</l>
             <m cert="0.5">n - - p - - - n v</m>
@@ -2345,24 +2651,27 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--vinclis vinclisque-->
-         <tok val="vinclis(que)?"/>
+      <ana>
+         <tok val="vinclis"/>
+         <tok val="vinclisque"/>
          <lm>
             <l>vinclum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--vinclo vincloque-->
-         <tok val="vinclo(que)?"/>
+      <ana>
+         <tok val="vinclo"/>
+         <tok val="vincloque"/>
          <lm>
             <l>vinclum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--vinclorum vinclum-->
-         <tok val="vincl(or)?um"/>
+      <ana>
+         <tok val="vinclorum"/>
+         <tok val="vinclum"/>
          <lm>
             <l>vinclum</l>
             <m>n - - p - - - n g</m>
@@ -2399,8 +2708,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--vinctis vinctisque-->
-         <tok val="vinctis(que)?"/>
+      <ana>
+         <tok val="vinctis"/>
+         <tok val="vinctisque"/>
          <lm>
             <l>vincio</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -2471,8 +2781,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--vinculo vinculoque-->
-         <tok val="vinculo(que)?"/>
+      <ana>
+         <tok val="vinculo"/>
+         <tok val="vinculoque"/>
          <lm cert="0.5">
             <l>vinculo</l>
             <m>v - 1 s p i a</m>
@@ -2500,8 +2811,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--vindemiales vindemialis-->
-         <tok val="vindemial[ie]s"/>
+      <ana>
+         <tok val="vindemiales"/>
+         <tok val="vindemialis"/>
          <lm>
             <l>vindemialis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -2625,8 +2937,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--vindemiatoris vindemitoris-->
-         <tok val="vindemi[a]?toris"/>
+      <ana>
+         <tok val="vindemiatoris"/>
+         <tok val="vindemitoris"/>
          <lm>
             <l>vindemiator</l>
             <m>n - - s - - - m g</m>
@@ -2687,8 +3000,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--vindemiis vindemiisque-->
-         <tok val="vindemiis(que)?"/>
+      <ana>
+         <tok val="vindemiis"/>
+         <tok val="vindemiisque"/>
          <lm>
             <l>vindemia</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -2747,8 +3061,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--vindicabis vindicabisve-->
-         <tok val="vindicabis(ve)?"/>
+      <ana>
+         <tok val="vindicabis"/>
+         <tok val="vindicabisve"/>
          <lm>
             <l>vindico</l>
             <m>v - 2 s f i a</m>
@@ -2810,8 +3125,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--vindican vindicas-->
-         <tok val="vindica[sn]"/>
+      <ana>
+         <tok val="vindican"/>
+         <tok val="vindicas"/>
          <lm>
             <l>vindico</l>
             <m>v - 2 s p i a</m>
@@ -2864,8 +3180,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--vindicandis vindicandisque-->
-         <tok val="vindicandis(que)?"/>
+      <ana>
+         <tok val="vindicandis"/>
+         <tok val="vindicandisque"/>
          <lm>
             <l>vindico</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -2958,8 +3275,9 @@
             <m>v - 3 p f m a</m>
          </lm>
       </ana>
-      <ana><!--vindicarat vindicaverat-->
-         <tok val="vindica(ve)?rat"/>
+      <ana>
+         <tok val="vindicarat"/>
+         <tok val="vindicaverat"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 s l i a</m>
@@ -3021,29 +3339,35 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--vindicaris vindicaveris-->
-         <tok val="vindica(ve)?ris"/>
+      <ana>
+         <tok val="vindicaris"/>
+         <tok val="vindicaveris"/>
          <lm>
             <l>vindico</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--vindicarit vindicauerit vindicaverit-->
-         <tok val="vindica[vu]?(e|)rit"/>
+      <ana>
+         <tok val="vindicarit"/>
+         <tok val="vindicauerit"/>
+         <tok val="vindicaverit"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--vindicarunt vindicaverunt vindicavere-->
-         <tok val="vindica(ve)?r(unt|e)"/>
+      <ana>
+         <tok val="vindicarunt"/>
+         <tok val="vindicavere"/>
+         <tok val="vindicaverunt"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--vindicasse vindicavisse-->
-         <tok val="vindica(vi)?sse"/>
+      <ana>
+         <tok val="vindicasse"/>
+         <tok val="vindicavisse"/>
          <lm>
             <l>vindico</l>
             <m>v - - - r n a</m>
@@ -3056,8 +3380,9 @@
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--vindicassent vindicavissent-->
-         <tok val="vindica(vi)?ssent"/>
+      <ana>
+         <tok val="vindicassent"/>
+         <tok val="vindicavissent"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 p l s a</m>
@@ -3070,15 +3395,17 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--vindicasti vindicavisti-->
-         <tok val="vindica(vi)?sti"/>
+      <ana>
+         <tok val="vindicasti"/>
+         <tok val="vindicavisti"/>
          <lm>
             <l>vindico</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--vindicata vindicataque-->
-         <tok val="vindicata(que)?"/>
+      <ana>
+         <tok val="vindicata"/>
+         <tok val="vindicataque"/>
          <lm>
             <l>vindico</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -3099,8 +3426,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--vindicatam vindicatamque-->
-         <tok val="vindicatam(que)?"/>
+      <ana>
+         <tok val="vindicatam"/>
+         <tok val="vindicatamque"/>
          <lm>
             <l>vindico</l>
             <m>v - - s r p p f a</m>
@@ -3203,8 +3531,9 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--vindicaturam vindicaturamque-->
-         <tok val="vindicaturam(que)?"/>
+      <ana>
+         <tok val="vindicaturam"/>
+         <tok val="vindicaturamque"/>
          <lm>
             <l>vindico</l>
             <m>v - - s f p a f a</m>
@@ -3229,22 +3558,25 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--vindicatus vindicatusque-->
-         <tok val="vindicatus(que)?"/>
+      <ana>
+         <tok val="vindicatus"/>
+         <tok val="vindicatusque"/>
          <lm>
             <l>vindico</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--vindicauerit vindicaverit-->
-         <tok val="vindica[vu]erit"/>
+      <ana>
+         <tok val="vindicauerit"/>
+         <tok val="vindicaverit"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--vindicauit vindicavit-->
-         <tok val="vindica[vu]it"/>
+      <ana>
+         <tok val="vindicauit"/>
+         <tok val="vindicavit"/>
          <lm>
             <l>vindico</l>
             <m>v - 3 s r i a</m>
@@ -3467,8 +3799,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--vineis vineisque-->
-         <tok val="vineis(que)?"/>
+      <ana>
+         <tok val="vineis"/>
+         <tok val="vineisque"/>
          <lm cert="0.5">
             <l>vineus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -3738,8 +4071,9 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--vinxere vinxerunt-->
-         <tok val="vinxer(unt|e)"/>
+      <ana>
+         <tok val="vinxere"/>
+         <tok val="vinxerunt"/>
          <lm>
             <l>vincio</l>
             <m>v - 3 p r i a</m>
@@ -3859,6 +4193,7 @@
       </ana>
       <ana>
          <tok val="Vindemialem"/>
+         <tok val="vindemialem"/>
          <lm>
             <l>vindemialis</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -3971,6 +4306,7 @@
       </ana>
       <ana>
          <tok val="Vinius"/>
+         <tok val="vinius"/>
          <lm>
             <l>Vinius</l>
             <m>n e - s - - - m n</m>
@@ -3978,6 +4314,7 @@
       </ana>
       <ana>
          <tok val="Vinii"/>
+         <tok val="vinii"/>
          <lm>
             <l>Vinius</l>
             <m>n e - s - - - m g</m>
@@ -3985,6 +4322,7 @@
       </ana>
       <ana>
          <tok val="Vinio"/>
+         <tok val="vinio"/>
          <lm>
             <l>Vinius</l>
             <m cert="0.5">n e - s - - - m d</m>
@@ -3993,6 +4331,7 @@
       </ana>
       <ana>
          <tok val="Vinium"/>
+         <tok val="vinium"/>
          <lm>
             <l>Vinius</l>
             <m>n e - s - - - m a</m>

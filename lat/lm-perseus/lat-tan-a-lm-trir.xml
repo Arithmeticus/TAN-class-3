@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseustrir">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:trir">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to trir</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-trir.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>TRIR</tok-starts-with>
       <tok-starts-with>Trir</tok-starts-with>
       <tok-starts-with>trir</tok-starts-with>
-      <ana><!--TRIREME trireme triremen-->
-         <tok val="(trireme)?(n|TRIREME)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:50:36.966-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:50:36.966-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-trir.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="TRIREME"/>
+         <tok val="trireme"/>
+         <tok val="triremen"/>
          <lm>
             <l>triremis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -44,15 +54,21 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--TRIREME Triremi trireme triremen triremi-->
-         <tok val="[tT]?(rirem)?[e]?(n|i|TRIREME)?"/>
+      <ana>
+         <tok val="TRIREME"/>
+         <tok val="Triremi"/>
+         <tok val="trireme"/>
+         <tok val="triremen"/>
+         <tok val="triremi"/>
          <lm>
             <l>triremis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--TRIREMIS Triremis triremis-->
-         <tok val="[tT]?(riremis|TRIREMIS)"/>
+      <ana>
+         <tok val="TRIREMIS"/>
+         <tok val="Triremis"/>
+         <tok val="triremis"/>
          <lm>
             <l>triremis</l>
             <m cert="0.111111111111111111">n - - s - - - f n</m>
@@ -66,8 +82,14 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--TRIREMIS Triremes Triremis triremen triremes triremesque triremis-->
-         <tok val="[Tt]?(rirem)?[ie]?(s|en|is|esque|TRIREMIS)"/>
+      <ana>
+         <tok val="TRIREMIS"/>
+         <tok val="Triremes"/>
+         <tok val="Triremis"/>
+         <tok val="triremen"/>
+         <tok val="triremes"/>
+         <tok val="triremesque"/>
+         <tok val="triremis"/>
          <lm>
             <l>triremis</l>
             <m cert="0.333333333333333333">n - - p - - - f a</m>
@@ -75,23 +97,29 @@
             <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Triremem triremem-->
-         <tok val="[tT]riremem"/>
+      <ana>
+         <tok val="Triremem"/>
+         <tok val="triremem"/>
          <lm>
             <l>triremis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Triremem triremem triremim-->
-         <tok val="[tT]rirem[ei]m"/>
+      <ana>
+         <tok val="Triremem"/>
+         <tok val="triremem"/>
+         <tok val="triremim"/>
          <lm>
             <l>triremis</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Triremes triremen triremes triremesque-->
-         <tok val="[tT]rireme(s|n|sque)"/>
+      <ana>
+         <tok val="Triremes"/>
+         <tok val="triremen"/>
+         <tok val="triremes"/>
+         <tok val="triremesque"/>
          <lm>
             <l>triremis</l>
             <m cert="0.166666666666666667">a - - p - - - f n</m>
@@ -102,8 +130,9 @@
             <m cert="0.166666666666666667">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Triremi triremi-->
-         <tok val="[tT]riremi"/>
+      <ana>
+         <tok val="Triremi"/>
+         <tok val="triremi"/>
          <lm>
             <l>triremis</l>
             <m cert="0.142857142857142857">a - - s - - - m d</m>
@@ -115,8 +144,9 @@
             <m cert="0.142857142857142857">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Triremibus triremibus-->
-         <tok val="[tT]riremibus"/>
+      <ana>
+         <tok val="Triremibus"/>
+         <tok val="triremibus"/>
          <lm>
             <l>triremis</l>
             <m cert="0.125">a - - p - - - f b</m>
@@ -129,8 +159,9 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Triremium triremium-->
-         <tok val="[tT]riremium"/>
+      <ana>
+         <tok val="Triremium"/>
+         <tok val="triremium"/>
          <lm>
             <l>triremis</l>
             <m cert="0.25">a - - p - - - n g</m>

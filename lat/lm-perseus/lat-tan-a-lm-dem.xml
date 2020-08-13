@@ -1,58 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdem">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dem">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dem</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dem.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DEM</tok-starts-with>
       <tok-starts-with>DEm</tok-starts-with>
       <tok-starts-with>Dem</tok-starts-with>
       <tok-starts-with>dem</tok-starts-with>
       <tok-starts-with>dém</tok-starts-with>
-      <ana><!--DEM Dem dem demne demque dém-->
-         <tok val="[dD]?(e|dé)?[m]?(ne|que|DEM)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:19:24.234-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:19:24.234-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dem.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DEM"/>
+         <tok val="Dem"/>
+         <tok val="dem"/>
+         <tok val="demne"/>
+         <tok val="demque"/>
+         <tok val="dém"/>
          <lm>
             <l>do</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--DEMADIS Demadis-->
-         <tok val="D(emadis|EMADIS)"/>
+      <ana>
+         <tok val="DEMADIS"/>
+         <tok val="Demadis"/>
+         <tok val="demadis"/>
          <lm>
             <l>Demades</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--DEMANDO Demando-->
-         <tok val="D(emando|EMANDO)"/>
+      <ana>
+         <tok val="DEMANDO"/>
+         <tok val="Demando"/>
+         <tok val="demando"/>
          <lm cert="0.5">
             <l>demeo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -67,80 +84,106 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--DEMEA demean-->
-         <tok val="(demean|DEMEA)"/>
+      <ana>
+         <tok val="DEMEA"/>
+         <tok val="demea"/>
+         <tok val="demean"/>
          <lm>
             <l>de_meo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--DEMERGO Demergo demergo-->
-         <tok val="[dD]?(emergo|DEMERGO)"/>
+      <ana>
+         <tok val="DEMERGO"/>
+         <tok val="Demergo"/>
+         <tok val="demergo"/>
          <lm>
             <l>demergo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--DEMETIOR Demetior-->
-         <tok val="D(emetior|EMETIOR)"/>
+      <ana>
+         <tok val="DEMETIOR"/>
+         <tok val="Demetior"/>
+         <tok val="demetior"/>
          <lm>
             <l>demetior</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--DEMETRIVS Demetrius-->
-         <tok val="D(emetrius|EMETRIVS)"/>
+      <ana>
+         <tok val="DEMETRIVS"/>
+         <tok val="Demetrius"/>
+         <tok val="demetrius"/>
+         <tok val="demetrivs"/>
          <lm>
             <l>Demetrius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--DEMIPHO Demipho Demiphon-->
-         <tok val="D(emipho)?(n|EMIPHO)?"/>
+      <ana>
+         <tok val="DEMIPHO"/>
+         <tok val="Demipho"/>
+         <tok val="Demiphon"/>
+         <tok val="demipho"/>
+         <tok val="demiphon"/>
          <lm>
             <l>Demipho</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--DEMITIGO Demitigo-->
-         <tok val="D(emitigo|EMITIGO)"/>
+      <ana>
+         <tok val="DEMITIGO"/>
+         <tok val="Demitigo"/>
+         <tok val="demitigo"/>
          <lm>
             <l>demitigo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--DEMITTO Demitto demitto-->
-         <tok val="[dD]?(emitto|DEMITTO)"/>
+      <ana>
+         <tok val="DEMITTO"/>
+         <tok val="Demitto"/>
+         <tok val="demitto"/>
          <lm>
             <l>demitto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--DEMITVR demitur-->
-         <tok val="(demitur|DEMITVR)"/>
+      <ana>
+         <tok val="DEMITVR"/>
+         <tok val="demitur"/>
+         <tok val="demitvr"/>
          <lm>
             <l>demo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--DEMO Demo Demon Demost-->
-         <tok val="D(emo)?(n|st|EMO)?"/>
-         <lm>
+      <ana>
+         <tok val="DEMO"/>
+         <tok val="Demo"/>
+         <tok val="Demon"/>
+         <tok val="Demost"/>
+         <tok val="demo"/>
+         <tok val="demon"/>
+         <tok val="demost"/>
+         <lm cert="0.5">
             <l>demo</l>
             <m>v - 1 s p i a</m>
          </lm>
-      </ana>
-      <ana><!--DEMO Demo Demon Demost demo demon-->
-         <tok val="[Dd]?(emo)?(n|st|DEMO)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>demos</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--DEMOCRITI Democriti Democritique-->
-         <tok val="D(emocriti)?(que|EMOCRITI)?"/>
+      <ana>
+         <tok val="DEMOCRITI"/>
+         <tok val="Democriti"/>
+         <tok val="Democritique"/>
+         <tok val="democriti"/>
+         <tok val="democritique"/>
          <lm>
             <l>Democritus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -148,87 +191,127 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--DEMOCRITVM Democritum-->
-         <tok val="D(emocritum|EMOCRITVM)"/>
+      <ana>
+         <tok val="DEMOCRITVM"/>
+         <tok val="Democritum"/>
+         <tok val="democritum"/>
+         <tok val="democritvm"/>
          <lm>
             <l>Democritus</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--DEMOCRITVS Democritus-->
-         <tok val="D(emocritus|EMOCRITVS)"/>
+      <ana>
+         <tok val="DEMOCRITVS"/>
+         <tok val="Democritus"/>
+         <tok val="democritus"/>
+         <tok val="democritvs"/>
          <lm>
             <l>Democritus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--DEMONSTRATIO Demonstratio demonstratio demonstration demonstratioque-->
-         <tok val="[dD]?(emonstratio)?(n|que|DEMONSTRATIO)?"/>
+      <ana>
+         <tok val="DEMONSTRATIO"/>
+         <tok val="Demonstratio"/>
+         <tok val="demonstratio"/>
+         <tok val="demonstration"/>
+         <tok val="demonstratioque"/>
          <lm>
             <l>demonstratio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--DEMONSTRATIONIS Demonstrationis demonstrationis-->
-         <tok val="[dD]?(emonstrationis|DEMONSTRATIONIS)"/>
+      <ana>
+         <tok val="DEMONSTRATIONIS"/>
+         <tok val="Demonstrationis"/>
+         <tok val="demonstrationis"/>
          <lm>
             <l>demonstratio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--DEMOPHOONTI Demophoonti-->
-         <tok val="D(emophoonti|EMOPHOONTI)"/>
+      <ana>
+         <tok val="DEMOPHOONTI"/>
+         <tok val="Demophoonti"/>
+         <tok val="demophoonti"/>
          <lm>
             <l>Demophoon</l>
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--DEMUM DEmum Demum demum demumque demumst démum-->
-         <tok val="[dD]?(e|DE|dé|de)?(mum)?(st|que|DEMUM)?"/>
+      <ana>
+         <tok val="DEMUM"/>
+         <tok val="DEmum"/>
+         <tok val="Demum"/>
+         <tok val="demum"/>
+         <tok val="demumque"/>
+         <tok val="demumst"/>
+         <tok val="démum"/>
          <lm>
             <l>demos</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--DEMUM DEmum Demum demum demumque demumst-->
-         <tok val="[dD]?(e|DE|de)?(mum)?(st|que|DEMUM)?"/>
+      <ana>
+         <tok val="DEMUM"/>
+         <tok val="DEmum"/>
+         <tok val="Demum"/>
+         <tok val="demum"/>
+         <tok val="demumque"/>
+         <tok val="demumst"/>
          <lm>
             <l>demum</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--DEMUM DEmum Demum demom demum demumque demumst-->
-         <tok val="[dD]?(e|DE|de)?[m]?[uo]?[m]?(st|que|DEMUM)?"/>
+      <ana>
+         <tok val="DEMUM"/>
+         <tok val="DEmum"/>
+         <tok val="Demum"/>
+         <tok val="demom"/>
+         <tok val="demum"/>
+         <tok val="demumque"/>
+         <tok val="demumst"/>
          <lm>
             <l>demos</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--DEmotu demotu-->
-         <tok val="(de|DE)motu"/>
+      <ana>
+         <tok val="DEmotu"/>
+         <tok val="demotu"/>
          <lm>
             <l>demoveo</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Dema dema deman-->
-         <tok val="[dD]ema[n]?"/>
+      <ana>
+         <tok val="Dema"/>
+         <tok val="dema"/>
+         <tok val="deman"/>
          <lm>
             <l>demeo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Demade Demaden-->
-         <tok val="Demade[n]?"/>
+      <ana>
+         <tok val="Demade"/>
+         <tok val="Demaden"/>
+         <tok val="demade"/>
+         <tok val="demaden"/>
          <lm>
             <l>Demades</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Demaden Demades-->
-         <tok val="Demade[sn]"/>
+      <ana>
+         <tok val="Demaden"/>
+         <tok val="Demades"/>
+         <tok val="demaden"/>
+         <tok val="demades"/>
          <lm>
             <l>Demades</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -239,6 +322,7 @@
       </ana>
       <ana>
          <tok val="Demadeo"/>
+         <tok val="demadeo"/>
          <lm>
             <l>de_madeo</l>
             <m>v - 1 s p i a</m>
@@ -246,13 +330,15 @@
       </ana>
       <ana>
          <tok val="Demadi"/>
+         <tok val="demadi"/>
          <lm>
             <l>Demades</l>
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Demandare demandare-->
-         <tok val="[dD]emandare"/>
+      <ana>
+         <tok val="Demandare"/>
+         <tok val="demandare"/>
          <lm>
             <l>demando</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -260,8 +346,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demandata demandata-->
-         <tok val="[dD]emandata"/>
+      <ana>
+         <tok val="Demandata"/>
+         <tok val="demandata"/>
          <lm>
             <l>demando</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -274,6 +361,7 @@
       </ana>
       <ana>
          <tok val="Demano"/>
+         <tok val="demano"/>
          <lm>
             <l>demano</l>
             <m>v - 1 s p i a</m>
@@ -281,6 +369,7 @@
       </ana>
       <ana>
          <tok val="Demarata"/>
+         <tok val="demarata"/>
          <lm>
             <l>Demarata</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -290,6 +379,7 @@
       </ana>
       <ana>
          <tok val="Demaraten"/>
+         <tok val="demaraten"/>
          <lm>
             <l>Demaratus</l>
             <m>n e - s - - - m v</m>
@@ -297,6 +387,7 @@
       </ana>
       <ana>
          <tok val="Demarati"/>
+         <tok val="demarati"/>
          <lm>
             <l>Demaratus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -306,6 +397,7 @@
       </ana>
       <ana>
          <tok val="Demarato"/>
+         <tok val="demarato"/>
          <lm>
             <l>Demaratus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -314,6 +406,7 @@
       </ana>
       <ana>
          <tok val="Demaratum"/>
+         <tok val="demaratum"/>
          <lm>
             <l>Demaratus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -322,6 +415,7 @@
       </ana>
       <ana>
          <tok val="Demaratus"/>
+         <tok val="demaratus"/>
          <lm>
             <l>Demaratus</l>
             <m>n e - s - - - m n</m>
@@ -329,6 +423,7 @@
       </ana>
       <ana>
          <tok val="Demarcho"/>
+         <tok val="demarcho"/>
          <lm>
             <l>demarchus</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -337,21 +432,25 @@
       </ana>
       <ana>
          <tok val="Demarchum"/>
+         <tok val="demarchum"/>
          <lm>
             <l>demarchus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Demarchus demarchus-->
-         <tok val="[dD]emarchus"/>
+      <ana>
+         <tok val="Demarchus"/>
+         <tok val="demarchus"/>
          <lm>
             <l>demarchus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Demas deman demas-->
-         <tok val="[dD]ema[sn]"/>
+      <ana>
+         <tok val="Demas"/>
+         <tok val="deman"/>
+         <tok val="demas"/>
          <lm cert="0.5">
             <l>demeo</l>
             <m>v - 2 s p i a</m>
@@ -361,8 +460,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Dematur dematur-->
-         <tok val="[dD]ematur"/>
+      <ana>
+         <tok val="Dematur"/>
+         <tok val="dematur"/>
          <lm cert="0.5">
             <l>demo</l>
             <m>v - 3 s p s p</m>
@@ -372,8 +472,11 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Deme Demen deme demen-->
-         <tok val="[Dd]eme[n]?"/>
+      <ana>
+         <tok val="Deme"/>
+         <tok val="Demen"/>
+         <tok val="deme"/>
+         <tok val="demen"/>
          <lm cert="0.5">
             <l>demo</l>
             <m>v - 2 s p m a</m>
@@ -383,8 +486,11 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Demea Demean-->
-         <tok val="Demea[n]?"/>
+      <ana>
+         <tok val="Demea"/>
+         <tok val="Demean"/>
+         <tok val="demea"/>
+         <tok val="demean"/>
          <lm>
             <l>Demea</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -392,8 +498,9 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Demeaculum demeaculum-->
-         <tok val="[dD]emeaculum"/>
+      <ana>
+         <tok val="Demeaculum"/>
+         <tok val="demeaculum"/>
          <lm>
             <l>demeaculum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -404,6 +511,7 @@
       </ana>
       <ana>
          <tok val="Demeae"/>
+         <tok val="demeae"/>
          <lm>
             <l>Demea</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -414,20 +522,26 @@
       </ana>
       <ana>
          <tok val="Demeam"/>
+         <tok val="demeam"/>
          <lm>
             <l>Demea</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Demean Demeas-->
-         <tok val="Demea[sn]"/>
+      <ana>
+         <tok val="Demean"/>
+         <tok val="Demeas"/>
+         <tok val="demean"/>
+         <tok val="demeas"/>
          <lm>
             <l>Demea</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Demen demen demes-->
-         <tok val="[dD]eme[ns]"/>
+      <ana>
+         <tok val="Demen"/>
+         <tok val="demen"/>
+         <tok val="demes"/>
          <lm cert="0.5">
             <l>demo</l>
             <m>v - 2 s f i a</m>
@@ -437,8 +551,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Demendis demendis-->
-         <tok val="[dD]emendis"/>
+      <ana>
+         <tok val="Demendis"/>
+         <tok val="demendis"/>
          <lm>
             <l>demo</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -449,8 +564,10 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--Demens demens demensque-->
-         <tok val="[dD]emens(que)?"/>
+      <ana>
+         <tok val="Demens"/>
+         <tok val="demens"/>
+         <tok val="demensque"/>
          <lm cert="0.5">
             <l>demens</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -474,13 +591,17 @@
       </ana>
       <ana>
          <tok val="Demensum"/>
-         <lm>
+         <tok val="demensum"/>
+         <lm cert="0.333333333333333333">
             <l>demetior</l>
-            <m>a - - s - - - n n</m>
+            <m cert="0.142857142857142857">a - - s - - - n n</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
          </lm>
-      </ana>
-      <ana><!--Demensum demensum-->
-         <tok val="[dD]emensum"/>
          <lm cert="0.333333333333333333">
             <l>demensus</l>
             <m cert="0.2">a - - p - - - n g</m>
@@ -496,18 +617,10 @@
             <m cert="0.25">n - - s - - - n n</m>
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
-         <lm cert="0.333333333333333333">
-            <l>demetior</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
-         </lm>
       </ana>
-      <ana><!--Demensus demensus-->
-         <tok val="[dD]emensus"/>
+      <ana>
+         <tok val="Demensus"/>
+         <tok val="demensus"/>
          <lm cert="0.5">
             <l>demensus</l>
             <m>a - - s - - - m n</m>
@@ -519,6 +632,7 @@
       </ana>
       <ana>
          <tok val="Dementare"/>
+         <tok val="dementare"/>
          <lm>
             <l>demento</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -528,20 +642,19 @@
       </ana>
       <ana>
          <tok val="Dementer"/>
-         <lm>
+         <tok val="dementer"/>
+         <lm cert="0.5">
             <l>dementer</l>
             <m>d</m>
          </lm>
-      </ana>
-      <ana><!--Dementer dementer-->
-         <tok val="[dD]ementer"/>
-         <lm>
+         <lm cert="0.5">
             <l>demento</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Dementes dementes-->
-         <tok val="[dD]ementes"/>
+      <ana>
+         <tok val="Dementes"/>
+         <tok val="dementes"/>
          <lm cert="0.333333333333333333">
             <l>demens</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -561,8 +674,10 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Dementes dementes dementis-->
-         <tok val="[dD]ement[ei]s"/>
+      <ana>
+         <tok val="Dementes"/>
+         <tok val="dementes"/>
+         <tok val="dementis"/>
          <lm cert="0.5">
             <l>demo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -574,8 +689,10 @@
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dementia dementia dementiaque-->
-         <tok val="[dD]ementia(que)?"/>
+      <ana>
+         <tok val="Dementia"/>
+         <tok val="dementia"/>
+         <tok val="dementiaque"/>
          <lm cert="0.333333333333333333">
             <l>dementia</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -595,8 +712,9 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Dementiae dementiae-->
-         <tok val="[dD]ementiae"/>
+      <ana>
+         <tok val="Dementiae"/>
+         <tok val="dementiae"/>
          <lm>
             <l>dementia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -605,8 +723,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Dementiam dementiam-->
-         <tok val="[dD]ementiam"/>
+      <ana>
+         <tok val="Dementiam"/>
+         <tok val="dementiam"/>
          <lm cert="0.5">
             <l>dementio</l>
             <m cert="0.5">v - 1 s f i a</m>
@@ -617,15 +736,17 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Dementio dementio-->
-         <tok val="[dD]ementio"/>
+      <ana>
+         <tok val="Dementio"/>
+         <tok val="dementio"/>
          <lm>
             <l>dementio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Dementior dementior-->
-         <tok val="[dD]ementior"/>
+      <ana>
+         <tok val="Dementior"/>
+         <tok val="dementior"/>
          <lm cert="0.333333333333333333">
             <l>demo</l>
             <m cert="0.25">v - - s p p a m v c</m>
@@ -645,8 +766,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demento demento-->
-         <tok val="[dD]emento"/>
+      <ana>
+         <tok val="Demento"/>
+         <tok val="demento"/>
          <lm>
             <l>demento</l>
             <m>v - 1 s p i a</m>
@@ -654,13 +776,15 @@
       </ana>
       <ana>
          <tok val="Demeo"/>
+         <tok val="demeo"/>
          <lm>
             <l>de_meo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demere demere-->
-         <tok val="[dD]emere"/>
+      <ana>
+         <tok val="Demere"/>
+         <tok val="demere"/>
          <lm cert="0.333333333333333333">
             <l>demo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -679,6 +803,7 @@
       </ana>
       <ana>
          <tok val="Demereo"/>
+         <tok val="demereo"/>
          <lm>
             <l>demereo</l>
             <m>v - 1 s p i a</m>
@@ -686,50 +811,60 @@
       </ana>
       <ana>
          <tok val="Demereor"/>
+         <tok val="demereor"/>
          <lm>
             <l>demereo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demereri demereri-->
-         <tok val="[dD]emereri"/>
+      <ana>
+         <tok val="Demereri"/>
+         <tok val="demereri"/>
          <lm>
             <l>demereo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Demergatur demergatur-->
-         <tok val="[dD]emergatur"/>
+      <ana>
+         <tok val="Demergatur"/>
+         <tok val="demergatur"/>
          <lm>
             <l>demergo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Demergere demergere-->
-         <tok val="[dD]emergere"/>
+      <ana>
+         <tok val="Demergere"/>
+         <tok val="demergere"/>
          <lm>
             <l>demergo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Demergere demergere demergeris-->
-         <tok val="[dD]emerger(e|is)"/>
+      <ana>
+         <tok val="Demergere"/>
+         <tok val="demergere"/>
+         <tok val="demergeris"/>
          <lm>
             <l>demergo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Demergit demergit-->
-         <tok val="[dD]emergit"/>
+      <ana>
+         <tok val="Demergit"/>
+         <tok val="demergit"/>
          <lm>
             <l>demergo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demersa demersa demersaque demersaue-->
-         <tok val="[dD]emersa[q]?(ue)?"/>
+      <ana>
+         <tok val="Demersa"/>
+         <tok val="demersa"/>
+         <tok val="demersaque"/>
+         <tok val="demersaue"/>
          <lm cert="0.5">
             <l>demergo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -749,15 +884,17 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Demersit demersit-->
-         <tok val="[dD]emersit"/>
+      <ana>
+         <tok val="Demersit"/>
+         <tok val="demersit"/>
          <lm>
             <l>demergo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Demersus demersus-->
-         <tok val="[dD]emersus"/>
+      <ana>
+         <tok val="Demersus"/>
+         <tok val="demersus"/>
          <lm cert="0.5">
             <l>demergo</l>
             <m>v - - s r p p m n</m>
@@ -767,22 +904,25 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Demeruisse demeruisse-->
-         <tok val="[dD]emeruisse"/>
+      <ana>
+         <tok val="Demeruisse"/>
+         <tok val="demeruisse"/>
          <lm>
             <l>demereo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Demessus demessus-->
-         <tok val="[dD]emessus"/>
+      <ana>
+         <tok val="Demessus"/>
+         <tok val="demessus"/>
          <lm>
             <l>demeto</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Demet demet-->
-         <tok val="[dD]emet"/>
+      <ana>
+         <tok val="Demet"/>
+         <tok val="demet"/>
          <lm cert="0.5">
             <l>demeo</l>
             <m>v - 3 s p s a</m>
@@ -794,13 +934,15 @@
       </ana>
       <ana>
          <tok val="Demeter"/>
+         <tok val="demeter"/>
          <lm>
             <l>de_metor</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Demetere demetere-->
-         <tok val="[dD]emetere"/>
+      <ana>
+         <tok val="Demetere"/>
+         <tok val="demetere"/>
          <lm>
             <l>demeto</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -809,8 +951,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Demetiri demetiri-->
-         <tok val="[dD]emetiri"/>
+      <ana>
+         <tok val="Demetiri"/>
+         <tok val="demetiri"/>
          <lm>
             <l>demetior</l>
             <m>v - - - p n p</m>
@@ -818,6 +961,7 @@
       </ana>
       <ana>
          <tok val="Demetitis"/>
+         <tok val="demetitis"/>
          <lm>
             <l>demeto</l>
             <m>v - 2 p p i a</m>
@@ -825,13 +969,17 @@
       </ana>
       <ana>
          <tok val="Demeto"/>
+         <tok val="demeto"/>
          <lm>
             <l>demeto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demetri Demetrii-->
-         <tok val="Demetri[i]?"/>
+      <ana>
+         <tok val="Demetri"/>
+         <tok val="Demetrii"/>
+         <tok val="demetri"/>
+         <tok val="demetrii"/>
          <lm cert="0.5">
             <l>Demetrium</l>
             <m>n e - s - - - n g</m>
@@ -843,6 +991,7 @@
       </ana>
       <ana>
          <tok val="Demetri"/>
+         <tok val="demetri"/>
          <lm>
             <l>Demetrius</l>
             <m>n e - s - - - m v</m>
@@ -850,6 +999,7 @@
       </ana>
       <ana>
          <tok val="Demetriaco"/>
+         <tok val="demetriaco"/>
          <lm>
             <l>Demetriacus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -860,6 +1010,7 @@
       </ana>
       <ana>
          <tok val="Demetriacus"/>
+         <tok val="demetriacus"/>
          <lm>
             <l>Demetriacus</l>
             <m>a e - s - - - m n</m>
@@ -867,6 +1018,7 @@
       </ana>
       <ana>
          <tok val="Demetriade"/>
+         <tok val="demetriade"/>
          <lm>
             <l>Demetrias</l>
             <m>n e - s - - - f b</m>
@@ -874,6 +1026,7 @@
       </ana>
       <ana>
          <tok val="Demetriadem"/>
+         <tok val="demetriadem"/>
          <lm>
             <l>Demetrias</l>
             <m>n e - s - - - f a</m>
@@ -881,6 +1034,7 @@
       </ana>
       <ana>
          <tok val="Demetriadi"/>
+         <tok val="demetriadi"/>
          <lm>
             <l>Demetrias</l>
             <m>n e - s - - - f d</m>
@@ -888,6 +1042,7 @@
       </ana>
       <ana>
          <tok val="Demetriadis"/>
+         <tok val="demetriadis"/>
          <lm>
             <l>Demetrias</l>
             <m>n e - s - - - f g</m>
@@ -895,6 +1050,7 @@
       </ana>
       <ana>
          <tok val="Demetrias"/>
+         <tok val="demetrias"/>
          <lm>
             <l>Demetrias</l>
             <m>n e - s - - - f n</m>
@@ -902,14 +1058,18 @@
       </ana>
       <ana>
          <tok val="Demetrii"/>
+         <tok val="demetrii"/>
          <lm>
             <l>Demetrius</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Demetrio Demetrion-->
-         <tok val="Demetrio[n]?"/>
+      <ana>
+         <tok val="Demetrio"/>
+         <tok val="Demetrion"/>
+         <tok val="demetrio"/>
+         <tok val="demetrion"/>
          <lm cert="0.5">
             <l>Demetrius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -921,8 +1081,11 @@
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Demetrion Demetrios-->
-         <tok val="Demetrio[sn]"/>
+      <ana>
+         <tok val="Demetrion"/>
+         <tok val="Demetrios"/>
+         <tok val="demetrion"/>
+         <tok val="demetrios"/>
          <lm>
             <l>Demetrius</l>
             <m>n e - p - - - m a</m>
@@ -930,6 +1093,7 @@
       </ana>
       <ana>
          <tok val="Demetrium"/>
+         <tok val="demetrium"/>
          <lm cert="0.5">
             <l>Demetrium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -943,8 +1107,10 @@
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Demi demi demin-->
-         <tok val="[dD]emi[n]?"/>
+      <ana>
+         <tok val="Demi"/>
+         <tok val="demi"/>
+         <tok val="demin"/>
          <lm cert="0.5">
             <l>demos</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -956,8 +1122,11 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Demia Demian demia-->
-         <tok val="[Dd]emia[n]?"/>
+      <ana>
+         <tok val="Demia"/>
+         <tok val="Demian"/>
+         <tok val="demia"/>
+         <tok val="demian"/>
          <lm>
             <l>de_mio</l>
             <m>v - 2 s p m a</m>
@@ -965,6 +1134,7 @@
       </ana>
       <ana>
          <tok val="Demian"/>
+         <tok val="demian"/>
          <lm>
             <l>de_mio</l>
             <m>v - 2 s p i a</m>
@@ -972,13 +1142,15 @@
       </ana>
       <ana>
          <tok val="Demicant"/>
+         <tok val="demicant"/>
          <lm>
             <l>de_mico</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Demigrare demigrare-->
-         <tok val="[dD]emigrare"/>
+      <ana>
+         <tok val="Demigrare"/>
+         <tok val="demigrare"/>
          <lm>
             <l>demigro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -986,8 +1158,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demigro demigro-->
-         <tok val="[dD]emigro"/>
+      <ana>
+         <tok val="Demigro"/>
+         <tok val="demigro"/>
          <lm>
             <l>demigro</l>
             <m>v - 1 s p i a</m>
@@ -995,27 +1168,33 @@
       </ana>
       <ana>
          <tok val="Deminere"/>
+         <tok val="deminere"/>
          <lm>
             <l>de_minor</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Deminuerunt deminuere-->
-         <tok val="[dD]eminuer(e|unt)"/>
+      <ana>
+         <tok val="Deminuerunt"/>
+         <tok val="deminuere"/>
+         <tok val="deminuerunt"/>
          <lm>
             <l>deminuo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Deminuo deminuo-->
-         <tok val="[dD]eminuo"/>
+      <ana>
+         <tok val="Deminuo"/>
+         <tok val="deminuo"/>
          <lm>
             <l>deminuo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deminutio deminutio deminution-->
-         <tok val="[dD]eminutio[n]?"/>
+      <ana>
+         <tok val="Deminutio"/>
+         <tok val="deminutio"/>
+         <tok val="deminution"/>
          <lm>
             <l>deminutio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1024,6 +1203,7 @@
       </ana>
       <ana>
          <tok val="Demiphonem"/>
+         <tok val="demiphonem"/>
          <lm>
             <l>Demipho</l>
             <m>n e - s - - - m a</m>
@@ -1031,6 +1211,7 @@
       </ana>
       <ana>
          <tok val="Demiphoni"/>
+         <tok val="demiphoni"/>
          <lm>
             <l>Demipho</l>
             <m>n e - s - - - m d</m>
@@ -1038,27 +1219,34 @@
       </ana>
       <ana>
          <tok val="Demiraberis"/>
+         <tok val="demiraberis"/>
          <lm>
             <l>demiror</l>
             <m>v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Demirari demirari-->
-         <tok val="[dD]emirari"/>
+      <ana>
+         <tok val="Demirari"/>
+         <tok val="demirari"/>
          <lm>
             <l>demiror</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Demiror Demirorque demiror-->
-         <tok val="[dD]emiror(que)?"/>
+      <ana>
+         <tok val="Demiror"/>
+         <tok val="Demirorque"/>
+         <tok val="demiror"/>
+         <tok val="demirorque"/>
          <lm>
             <l>demiror</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demis demin demis-->
-         <tok val="[dD]emi[sn]"/>
+      <ana>
+         <tok val="Demis"/>
+         <tok val="demin"/>
+         <tok val="demis"/>
          <lm cert="0.5">
             <l>demos</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1069,29 +1257,39 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demisere demisere demiserunt-->
-         <tok val="[dD]emiser(e|unt)"/>
+      <ana>
+         <tok val="Demisere"/>
+         <tok val="demisere"/>
+         <tok val="demiserunt"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Demisisti demisisti-->
-         <tok val="[dD]emisisti"/>
+      <ana>
+         <tok val="Demisisti"/>
+         <tok val="demisisti"/>
          <lm>
             <l>demitto</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Demisit demisit-->
-         <tok val="[dD]emisit"/>
+      <ana>
+         <tok val="Demisit"/>
+         <tok val="demisit"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Demissa Demissaque Demissave demissa demissaque demissaue demissave-->
-         <tok val="[dD]emissa[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Demissa"/>
+         <tok val="Demissaque"/>
+         <tok val="Demissave"/>
+         <tok val="demissa"/>
+         <tok val="demissaque"/>
+         <tok val="demissaue"/>
+         <tok val="demissave"/>
          <lm cert="0.5">
             <l>demitto</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -1111,8 +1309,10 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Demissae demissae demissaeque-->
-         <tok val="[dD]emissae(que)?"/>
+      <ana>
+         <tok val="Demissae"/>
+         <tok val="demissae"/>
+         <tok val="demissaeque"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1128,8 +1328,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Demissam demissam-->
-         <tok val="[dD]emissam"/>
+      <ana>
+         <tok val="Demissam"/>
+         <tok val="demissam"/>
          <lm cert="0.5">
             <l>demitto</l>
             <m>v - - s r p p f a</m>
@@ -1139,15 +1340,23 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Demisse demisse demisseque demissius-->
-         <tok val="[dD]emiss[e]?(que|ius)?"/>
+      <ana>
+         <tok val="Demisse"/>
+         <tok val="demisse"/>
+         <tok val="demisseque"/>
+         <tok val="demissius"/>
          <lm>
             <l>demissus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Demisse Demissum demisse demisseque demissum demissumque-->
-         <tok val="[dD]emiss(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Demisse"/>
+         <tok val="Demissum"/>
+         <tok val="demisse"/>
+         <tok val="demisseque"/>
+         <tok val="demissum"/>
+         <tok val="demissumque"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m>a - - s - - - n v</m>
@@ -1157,8 +1366,10 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Demisse demisse demisseque-->
-         <tok val="[dD]emisse(que)?"/>
+      <ana>
+         <tok val="Demisse"/>
+         <tok val="demisse"/>
+         <tok val="demisseque"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m>a - - s - - - m v</m>
@@ -1168,8 +1379,11 @@
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Demissi Demissiue demissi-->
-         <tok val="[Dd]emissi(ue)?"/>
+      <ana>
+         <tok val="Demissi"/>
+         <tok val="Demissiue"/>
+         <tok val="demissi"/>
+         <tok val="demissiue"/>
          <lm cert="0.5">
             <l>demitto</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1185,8 +1399,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Demissio demissio demission-->
-         <tok val="[dD]emissio[n]?"/>
+      <ana>
+         <tok val="Demissio"/>
+         <tok val="demissio"/>
+         <tok val="demission"/>
          <lm>
             <l>demissio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1195,6 +1411,7 @@
       </ana>
       <ana>
          <tok val="Demissior"/>
+         <tok val="demissior"/>
          <lm>
             <l>demitto</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1205,6 +1422,7 @@
       </ana>
       <ana>
          <tok val="Demissiores"/>
+         <tok val="demissiores"/>
          <lm>
             <l>demitto</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -1215,8 +1433,10 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Demissis demissis demissisque-->
-         <tok val="[dD]emissis(que)?"/>
+      <ana>
+         <tok val="Demissis"/>
+         <tok val="demissis"/>
+         <tok val="demissisque"/>
          <lm cert="0.5">
             <l>demitto</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1238,6 +1458,7 @@
       </ana>
       <ana>
          <tok val="Demissius"/>
+         <tok val="demissius"/>
          <lm>
             <l>demitto</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -1246,8 +1467,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Demisso demisso-->
-         <tok val="[dD]emisso"/>
+      <ana>
+         <tok val="Demisso"/>
+         <tok val="demisso"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1263,8 +1485,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Demissos demissos-->
-         <tok val="[dD]emissos"/>
+      <ana>
+         <tok val="Demissos"/>
+         <tok val="demissos"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m>a - - p - - - m a</m>
@@ -1276,13 +1499,17 @@
       </ana>
       <ana>
          <tok val="Demissum"/>
+         <tok val="demissum"/>
          <lm>
             <l>demitto</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Demissum demissorum demissum demissumque-->
-         <tok val="[dD]emiss(or)?um(que)?"/>
+      <ana>
+         <tok val="Demissum"/>
+         <tok val="demissorum"/>
+         <tok val="demissum"/>
+         <tok val="demissumque"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1294,8 +1521,10 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Demissum demissum demissumque-->
-         <tok val="[dD]emissum(que)?"/>
+      <ana>
+         <tok val="Demissum"/>
+         <tok val="demissum"/>
+         <tok val="demissumque"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m cert="0.5">a - - s - - - n a</m>
@@ -1308,8 +1537,10 @@
             <m cert="0.333333333333333333">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Demissus demissus demissusque-->
-         <tok val="[dD]emissus(que)?"/>
+      <ana>
+         <tok val="Demissus"/>
+         <tok val="demissus"/>
+         <tok val="demissusque"/>
          <lm cert="0.5">
             <l>demissus</l>
             <m>a - - s - - - m n</m>
@@ -1319,36 +1550,43 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Demit demit demitque-->
-         <tok val="[dD]emit(que)?"/>
+      <ana>
+         <tok val="Demit"/>
+         <tok val="demit"/>
+         <tok val="demitque"/>
          <lm>
             <l>demo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demittantur demittantur-->
-         <tok val="[dD]emittantur"/>
+      <ana>
+         <tok val="Demittantur"/>
+         <tok val="demittantur"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Demittatur demittatur demittaturque-->
-         <tok val="[dD]emittatur(que)?"/>
+      <ana>
+         <tok val="Demittatur"/>
+         <tok val="demittatur"/>
+         <tok val="demittaturque"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Demitte demitte-->
-         <tok val="[dD]emitte"/>
+      <ana>
+         <tok val="Demitte"/>
+         <tok val="demitte"/>
          <lm>
             <l>demitto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Demittendi demittendi-->
-         <tok val="[dD]emittendi"/>
+      <ana>
+         <tok val="Demittendi"/>
+         <tok val="demittendi"/>
          <lm>
             <l>demitto</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1358,8 +1596,10 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Demittendum demittendum demittendumque-->
-         <tok val="[dD]emittendum(que)?"/>
+      <ana>
+         <tok val="Demittendum"/>
+         <tok val="demittendum"/>
+         <tok val="demittendumque"/>
          <lm>
             <l>demitto</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1371,8 +1611,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Demittendus demittendus-->
-         <tok val="[dD]emittendus"/>
+      <ana>
+         <tok val="Demittendus"/>
+         <tok val="demittendus"/>
          <lm>
             <l>demitto</l>
             <m>v - - s p g p m n</m>
@@ -1380,6 +1621,7 @@
       </ana>
       <ana>
          <tok val="Demittenti"/>
+         <tok val="demittenti"/>
          <lm>
             <l>demitto</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -1387,8 +1629,10 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Demittenti demittente-->
-         <tok val="[dD]emittent[ei]"/>
+      <ana>
+         <tok val="Demittenti"/>
+         <tok val="demittente"/>
+         <tok val="demittenti"/>
          <lm>
             <l>demitto</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1396,8 +1640,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Demittere demittere-->
-         <tok val="[dD]emittere"/>
+      <ana>
+         <tok val="Demittere"/>
+         <tok val="demittere"/>
          <lm>
             <l>demitto</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1406,36 +1651,43 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Demittet demittet-->
-         <tok val="[dD]emittet"/>
+      <ana>
+         <tok val="Demittet"/>
+         <tok val="demittet"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Demitti demitti-->
-         <tok val="[dD]emitti"/>
+      <ana>
+         <tok val="Demitti"/>
+         <tok val="demitti"/>
          <lm>
             <l>demitto</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Demittit demittit demittitque-->
-         <tok val="[dD]emittit(que)?"/>
+      <ana>
+         <tok val="Demittit"/>
+         <tok val="demittit"/>
+         <tok val="demittitque"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demittitur demittitur demittiturque-->
-         <tok val="[dD]emittitur(que)?"/>
+      <ana>
+         <tok val="Demittitur"/>
+         <tok val="demittitur"/>
+         <tok val="demittiturque"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demittunt demittunt-->
-         <tok val="[dD]emittunt"/>
+      <ana>
+         <tok val="Demittunt"/>
+         <tok val="demittunt"/>
          <lm>
             <l>demitto</l>
             <m>v - 3 p p i a</m>
@@ -1443,6 +1695,7 @@
       </ana>
       <ana>
          <tok val="Demiurgi"/>
+         <tok val="demiurgi"/>
          <lm>
             <l>demiurgus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1452,14 +1705,16 @@
       </ana>
       <ana>
          <tok val="Demiurgo"/>
+         <tok val="demiurgo"/>
          <lm>
             <l>demiurgus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Demiurgus demiurgus-->
-         <tok val="[dD]emiurgus"/>
+      <ana>
+         <tok val="Demiurgus"/>
+         <tok val="demiurgus"/>
          <lm>
             <l>demiurgus</l>
             <m>n - - s - - - m n</m>
@@ -1467,6 +1722,7 @@
       </ana>
       <ana>
          <tok val="Demochare"/>
+         <tok val="demochare"/>
          <lm>
             <l>Demochares</l>
             <m>n e - s - - - m b</m>
@@ -1474,6 +1730,7 @@
       </ana>
       <ana>
          <tok val="Demochares"/>
+         <tok val="demochares"/>
          <lm>
             <l>Demochares</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -1484,6 +1741,7 @@
       </ana>
       <ana>
          <tok val="Demochari"/>
+         <tok val="demochari"/>
          <lm>
             <l>Demochares</l>
             <m>n e - s - - - m d</m>
@@ -1491,6 +1749,7 @@
       </ana>
       <ana>
          <tok val="Democharis"/>
+         <tok val="democharis"/>
          <lm>
             <l>Demochares</l>
             <m>n e - s - - - m g</m>
@@ -1498,6 +1757,7 @@
       </ana>
       <ana>
          <tok val="Democritea"/>
+         <tok val="democritea"/>
          <lm cert="0.5">
             <l>Democritea</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1516,6 +1776,7 @@
       </ana>
       <ana>
          <tok val="Democriteo"/>
+         <tok val="democriteo"/>
          <lm>
             <l>Democriteus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1526,6 +1787,7 @@
       </ana>
       <ana>
          <tok val="Democriteum"/>
+         <tok val="democriteum"/>
          <lm cert="0.5">
             <l>Democriteus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1542,6 +1804,7 @@
       </ana>
       <ana>
          <tok val="Democritica"/>
+         <tok val="democritica"/>
          <lm>
             <l>Democriticus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1554,6 +1817,7 @@
       </ana>
       <ana>
          <tok val="Democriticae"/>
+         <tok val="democriticae"/>
          <lm>
             <l>Democriticus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1564,6 +1828,7 @@
       </ana>
       <ana>
          <tok val="Democriticam"/>
+         <tok val="democriticam"/>
          <lm>
             <l>Democriticus</l>
             <m>a e - s - - - f a</m>
@@ -1571,6 +1836,7 @@
       </ana>
       <ana>
          <tok val="Democritici"/>
+         <tok val="democritici"/>
          <lm>
             <l>Democriticus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1581,6 +1847,7 @@
       </ana>
       <ana>
          <tok val="Democriticis"/>
+         <tok val="democriticis"/>
          <lm>
             <l>Democriticus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1593,6 +1860,7 @@
       </ana>
       <ana>
          <tok val="Democriticos"/>
+         <tok val="democriticos"/>
          <lm>
             <l>Democriticus</l>
             <m>a e - p - - - m a</m>
@@ -1600,6 +1868,7 @@
       </ana>
       <ana>
          <tok val="Democriticus"/>
+         <tok val="democriticus"/>
          <lm>
             <l>Democriticus</l>
             <m>a e - s - - - m n</m>
@@ -1607,6 +1876,7 @@
       </ana>
       <ana>
          <tok val="Democritii"/>
+         <tok val="democritii"/>
          <lm>
             <l>Democritii</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1615,6 +1885,7 @@
       </ana>
       <ana>
          <tok val="Democrito"/>
+         <tok val="democrito"/>
          <lm>
             <l>Democritus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1623,13 +1894,17 @@
       </ana>
       <ana>
          <tok val="Democritos"/>
+         <tok val="democritos"/>
          <lm>
             <l>Democritus</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Demodoci Demodocique-->
-         <tok val="Demodoci(que)?"/>
+      <ana>
+         <tok val="Demodoci"/>
+         <tok val="Demodocique"/>
+         <tok val="demodoci"/>
+         <tok val="demodocique"/>
          <lm>
             <l>Demodocus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1639,6 +1914,7 @@
       </ana>
       <ana>
          <tok val="Demodocus"/>
+         <tok val="demodocus"/>
          <lm>
             <l>Demodocus</l>
             <m>n e - s - - - m n</m>
@@ -1646,6 +1922,7 @@
       </ana>
       <ana>
          <tok val="Demoleo"/>
+         <tok val="demoleo"/>
          <lm>
             <l>Demoleos</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1654,6 +1931,7 @@
       </ana>
       <ana>
          <tok val="Demoleon"/>
+         <tok val="demoleon"/>
          <lm>
             <l>Demoleon</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -1662,6 +1940,7 @@
       </ana>
       <ana>
          <tok val="Demoleos"/>
+         <tok val="demoleos"/>
          <lm>
             <l>Demoleos</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -1670,6 +1949,7 @@
       </ana>
       <ana>
          <tok val="Demoliendum"/>
+         <tok val="demoliendum"/>
          <lm>
             <l>demolior</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1681,8 +1961,10 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Demolio demolio demolion-->
-         <tok val="[dD]emolio[n]?"/>
+      <ana>
+         <tok val="Demolio"/>
+         <tok val="demolio"/>
+         <tok val="demolion"/>
          <lm>
             <l>demolio</l>
             <m>v - 1 s p i a</m>
@@ -1690,6 +1972,7 @@
       </ana>
       <ana>
          <tok val="Demolior"/>
+         <tok val="demolior"/>
          <lm>
             <l>demolior</l>
             <m>v - 1 s p i p</m>
@@ -1697,6 +1980,7 @@
       </ana>
       <ana>
          <tok val="Demoliri"/>
+         <tok val="demoliri"/>
          <lm>
             <l>demolior</l>
             <m>v - - - p n p</m>
@@ -1704,6 +1988,7 @@
       </ana>
       <ana>
          <tok val="Demoliti"/>
+         <tok val="demoliti"/>
          <lm>
             <l>demolior</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1712,8 +1997,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Demolitio demolitio-->
-         <tok val="[dD]emolitio"/>
+      <ana>
+         <tok val="Demolitio"/>
+         <tok val="demolitio"/>
          <lm>
             <l>demolitio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1722,13 +2008,18 @@
       </ana>
       <ana>
          <tok val="Demolitus"/>
+         <tok val="demolitus"/>
          <lm>
             <l>demolior</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Demon Demost demon demos-->
-         <tok val="[dD]emo(n|s|st)"/>
+      <ana>
+         <tok val="Demon"/>
+         <tok val="Demost"/>
+         <tok val="demon"/>
+         <tok val="demos"/>
+         <tok val="demost"/>
          <lm>
             <l>demos</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1737,6 +2028,7 @@
       </ana>
       <ana>
          <tok val="Demonere"/>
+         <tok val="demonere"/>
          <lm>
             <l>de_moneo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1746,34 +2038,39 @@
       </ana>
       <ana>
          <tok val="Demoneri"/>
+         <tok val="demoneri"/>
          <lm>
             <l>de_moneo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Demonstrabitur demonstrabitur-->
-         <tok val="[dD]emonstrabitur"/>
+      <ana>
+         <tok val="Demonstrabitur"/>
+         <tok val="demonstrabitur"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Demonstrabo demonstrabo-->
-         <tok val="[dD]emonstrabo"/>
+      <ana>
+         <tok val="Demonstrabo"/>
+         <tok val="demonstrabo"/>
          <lm>
             <l>demonstro</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstramus demonstramus-->
-         <tok val="[dD]emonstramus"/>
+      <ana>
+         <tok val="Demonstramus"/>
+         <tok val="demonstramus"/>
          <lm>
             <l>demonstro</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstranda demonstranda-->
-         <tok val="[dD]emonstranda"/>
+      <ana>
+         <tok val="Demonstranda"/>
+         <tok val="demonstranda"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1784,8 +2081,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Demonstrandum demonstrandum-->
-         <tok val="[dD]emonstrandum"/>
+      <ana>
+         <tok val="Demonstrandum"/>
+         <tok val="demonstrandum"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -1795,23 +2093,27 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Demonstrandum demonstrandorum demonstrandum-->
-         <tok val="[dD]emonstrand(or)?um"/>
+      <ana>
+         <tok val="Demonstrandum"/>
+         <tok val="demonstrandorum"/>
+         <tok val="demonstrandum"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Demonstrant demonstrant-->
-         <tok val="[dD]emonstrant"/>
+      <ana>
+         <tok val="Demonstrant"/>
+         <tok val="demonstrant"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstrare demonstrare-->
-         <tok val="[dD]emonstrare"/>
+      <ana>
+         <tok val="Demonstrare"/>
+         <tok val="demonstrare"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1819,36 +2121,49 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demonstrari demonstrari demonstrarier demonstrarique demonstrariue demonstrarive-->
-         <tok val="[dD]emonstrari[q]?[uv]?[e]?[r]?"/>
+      <ana>
+         <tok val="Demonstrari"/>
+         <tok val="demonstrari"/>
+         <tok val="demonstrarier"/>
+         <tok val="demonstrarique"/>
+         <tok val="demonstrariue"/>
+         <tok val="demonstrarive"/>
          <lm>
             <l>demonstro</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Demonstras demonstran demonstras-->
-         <tok val="[dD]emonstra[sn]"/>
+      <ana>
+         <tok val="Demonstras"/>
+         <tok val="demonstran"/>
+         <tok val="demonstras"/>
          <lm>
             <l>demonstro</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstrasse demonstrasse demonstrauisse demonstravisse-->
-         <tok val="[dD]emonstra[vu]?[i]?sse"/>
+      <ana>
+         <tok val="Demonstrasse"/>
+         <tok val="demonstrasse"/>
+         <tok val="demonstrauisse"/>
+         <tok val="demonstravisse"/>
          <lm>
             <l>demonstro</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Demonstrat demonstrat demonstratque-->
-         <tok val="[dD]emonstrat(que)?"/>
+      <ana>
+         <tok val="Demonstrat"/>
+         <tok val="demonstrat"/>
+         <tok val="demonstratque"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstrata demonstrata-->
-         <tok val="[dD]emonstrata"/>
+      <ana>
+         <tok val="Demonstrata"/>
+         <tok val="demonstrata"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1859,8 +2174,11 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Demonstrati demonstrati demonstratine demonstratiue-->
-         <tok val="[dD]emonstrati[un]?[e]?"/>
+      <ana>
+         <tok val="Demonstrati"/>
+         <tok val="demonstrati"/>
+         <tok val="demonstratine"/>
+         <tok val="demonstratiue"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1869,22 +2187,27 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Demonstratione demonstratione-->
-         <tok val="[dD]emonstratione"/>
+      <ana>
+         <tok val="Demonstratione"/>
+         <tok val="demonstratione"/>
          <lm>
             <l>demonstratio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Demonstrationem demonstrationem demonstrationemn-->
-         <tok val="[dD]emonstrationem[n]?"/>
+      <ana>
+         <tok val="Demonstrationem"/>
+         <tok val="demonstrationem"/>
+         <tok val="demonstrationemn"/>
          <lm>
             <l>demonstratio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Demonstrationes demonstrationes demonstrationesque-->
-         <tok val="[dD]emonstrationes(que)?"/>
+      <ana>
+         <tok val="Demonstrationes"/>
+         <tok val="demonstrationes"/>
+         <tok val="demonstrationesque"/>
          <lm>
             <l>demonstratio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1892,30 +2215,35 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Demonstrationi demonstrationi-->
-         <tok val="[dD]emonstrationi"/>
+      <ana>
+         <tok val="Demonstrationi"/>
+         <tok val="demonstrationi"/>
          <lm>
             <l>demonstratio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Demonstrationibus demonstrationibus-->
-         <tok val="[dD]emonstrationibus"/>
+      <ana>
+         <tok val="Demonstrationibus"/>
+         <tok val="demonstrationibus"/>
          <lm>
             <l>demonstratio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Demonstrationum demonstrationum-->
-         <tok val="[dD]emonstrationum"/>
+      <ana>
+         <tok val="Demonstrationum"/>
+         <tok val="demonstrationum"/>
          <lm>
             <l>demonstratio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Demonstratiua demonstratiua demonstrativa-->
-         <tok val="[dD]emonstrati[uv]a"/>
+      <ana>
+         <tok val="Demonstratiua"/>
+         <tok val="demonstratiua"/>
+         <tok val="demonstrativa"/>
          <lm cert="0.5">
             <l>demonstrativa</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1932,8 +2260,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Demonstratiuum Demonstrativum demonstratiuum demonstrativum-->
-         <tok val="[Dd]emonstrati[vu]um"/>
+      <ana>
+         <tok val="Demonstratiuum"/>
+         <tok val="Demonstrativum"/>
+         <tok val="demonstratiuum"/>
+         <tok val="demonstrativum"/>
          <lm>
             <l>demonstrativus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1941,30 +2272,42 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Demonstratiuum Demonstrativum demonstratiuum demonstrativorum demonstrativum-->
-         <tok val="[dD]emonstrati[v]?(or|u)?um"/>
+      <ana>
+         <tok val="Demonstratiuum"/>
+         <tok val="Demonstrativum"/>
+         <tok val="demonstratiuum"/>
+         <tok val="demonstrativorum"/>
+         <tok val="demonstrativum"/>
          <lm>
             <l>demonstrativus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Demonstratiuum Demonstrativum demonstratiue demonstratiuum demonstrative demonstrativum-->
-         <tok val="[Dd]emonstrati[vu]?(um|ve|ue)"/>
+      <ana>
+         <tok val="Demonstratiuum"/>
+         <tok val="Demonstrativum"/>
+         <tok val="demonstratiue"/>
+         <tok val="demonstratiuum"/>
+         <tok val="demonstrative"/>
+         <tok val="demonstrativum"/>
          <lm>
             <l>demonstrativus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Demonstratiuus demonstratiuus demonstrativus-->
-         <tok val="[dD]emonstrati[uv]us"/>
+      <ana>
+         <tok val="Demonstratiuus"/>
+         <tok val="demonstratiuus"/>
+         <tok val="demonstrativus"/>
          <lm>
             <l>demonstrativus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Demonstrato demonstrato-->
-         <tok val="[dD]emonstrato"/>
+      <ana>
+         <tok val="Demonstrato"/>
+         <tok val="demonstrato"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -1975,16 +2318,19 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Demonstrator demonstrator-->
-         <tok val="[dD]emonstrator"/>
+      <ana>
+         <tok val="Demonstrator"/>
+         <tok val="demonstrator"/>
          <lm>
             <l>demonstrator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Demonstratum demonstratum demonstratumque-->
-         <tok val="[dD]emonstratum(que)?"/>
+      <ana>
+         <tok val="Demonstratum"/>
+         <tok val="demonstratum"/>
+         <tok val="demonstratumque"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -1994,8 +2340,11 @@
             <m cert="0.2">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Demonstratum demonstrate demonstratum demonstratumque-->
-         <tok val="[dD]emonstrat(um)?(que|e)?"/>
+      <ana>
+         <tok val="Demonstratum"/>
+         <tok val="demonstrate"/>
+         <tok val="demonstratum"/>
+         <tok val="demonstratumque"/>
          <lm>
             <l>demonstro</l>
             <m>v - - s r p p n v</m>
@@ -2003,62 +2352,82 @@
       </ana>
       <ana>
          <tok val="Demonstratum"/>
+         <tok val="demonstratum"/>
          <lm>
             <l>demonstro</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Demonstratur demonstratur demonstraturque-->
-         <tok val="[dD]emonstratur(que)?"/>
+      <ana>
+         <tok val="Demonstratur"/>
+         <tok val="demonstratur"/>
+         <tok val="demonstraturque"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demonstratus demonstratus-->
-         <tok val="[dD]emonstratus"/>
+      <ana>
+         <tok val="Demonstratus"/>
+         <tok val="demonstratus"/>
          <lm>
             <l>demonstro</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Demonstraui demonstraui demonstravi demonstrávi démonstravi-->
-         <tok val="[dD]?(e|dé)monstr[a]?[uv]?(i|ávi|avi)"/>
+      <ana>
+         <tok val="Demonstraui"/>
+         <tok val="demonstraui"/>
+         <tok val="demonstravi"/>
+         <tok val="demonstrávi"/>
+         <tok val="démonstravi"/>
          <lm>
             <l>demonstro</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstrauit Demonstravit demonstrauit demonstrauitque demonstravit-->
-         <tok val="[Dd]emonstra[vu]it(que)?"/>
+      <ana>
+         <tok val="Demonstrauit"/>
+         <tok val="Demonstravit"/>
+         <tok val="demonstrauit"/>
+         <tok val="demonstrauitque"/>
+         <tok val="demonstravit"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstravimus demonstrauimus demonstrauimusque demonstravimus-->
-         <tok val="[dD]emonstra[vu]imus(que)?"/>
+      <ana>
+         <tok val="Demonstravimus"/>
+         <tok val="demonstrauimus"/>
+         <tok val="demonstrauimusque"/>
+         <tok val="demonstravimus"/>
          <lm>
             <l>demonstro</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Demonstremus demonstremus-->
-         <tok val="[dD]emonstremus"/>
+      <ana>
+         <tok val="Demonstremus"/>
+         <tok val="demonstremus"/>
          <lm>
             <l>demonstro</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Demonstro demonstro-->
-         <tok val="[dD]emonstro"/>
+      <ana>
+         <tok val="Demonstro"/>
+         <tok val="demonstro"/>
          <lm>
             <l>demonstro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demophile Demophilen-->
-         <tok val="Demophile[n]?"/>
+      <ana>
+         <tok val="Demophile"/>
+         <tok val="Demophilen"/>
+         <tok val="demophile"/>
+         <tok val="demophilen"/>
          <lm>
             <l>Demophilus</l>
             <m>n e - s - - - m v</m>
@@ -2066,6 +2435,7 @@
       </ana>
       <ana>
          <tok val="Demophilo"/>
+         <tok val="demophilo"/>
          <lm>
             <l>Demophilus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -2074,6 +2444,7 @@
       </ana>
       <ana>
          <tok val="Demophilos"/>
+         <tok val="demophilos"/>
          <lm>
             <l>Demophilus</l>
             <m>n e - p - - - m a</m>
@@ -2081,6 +2452,7 @@
       </ana>
       <ana>
          <tok val="Demophilum"/>
+         <tok val="demophilum"/>
          <lm>
             <l>Demophilus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -2089,6 +2461,7 @@
       </ana>
       <ana>
          <tok val="Demophilus"/>
+         <tok val="demophilus"/>
          <lm>
             <l>Demophilus</l>
             <m>n e - s - - - m n</m>
@@ -2096,6 +2469,7 @@
       </ana>
       <ana>
          <tok val="Demophoon"/>
+         <tok val="demophoon"/>
          <lm>
             <l>Demophoon</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -2104,6 +2478,7 @@
       </ana>
       <ana>
          <tok val="Demophoontem"/>
+         <tok val="demophoontem"/>
          <lm>
             <l>Demophoon</l>
             <m>n e - s - - - m a</m>
@@ -2111,20 +2486,23 @@
       </ana>
       <ana>
          <tok val="Demophoontis"/>
+         <tok val="demophoontis"/>
          <lm>
             <l>Demophoon</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Demorari demorari-->
-         <tok val="[dD]emorari"/>
+      <ana>
+         <tok val="Demorari"/>
+         <tok val="demorari"/>
          <lm>
             <l>demoror</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Demorati demorati-->
-         <tok val="[dD]emorati"/>
+      <ana>
+         <tok val="Demorati"/>
+         <tok val="demorati"/>
          <lm>
             <l>demoror</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2133,15 +2511,17 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Demoratos demoratos-->
-         <tok val="[dD]emoratos"/>
+      <ana>
+         <tok val="Demoratos"/>
+         <tok val="demoratos"/>
          <lm>
             <l>demoror</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Demoratus demoratus-->
-         <tok val="[dD]emoratus"/>
+      <ana>
+         <tok val="Demoratus"/>
+         <tok val="demoratus"/>
          <lm>
             <l>demoror</l>
             <m>v - - s r p p m n</m>
@@ -2149,41 +2529,48 @@
       </ana>
       <ana>
          <tok val="Demordeo"/>
+         <tok val="demordeo"/>
          <lm>
             <l>demordeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demorior demorior-->
-         <tok val="[dD]emorior"/>
+      <ana>
+         <tok val="Demorior"/>
+         <tok val="demorior"/>
          <lm>
             <l>demorior</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demoritur demoritur démoritur-->
-         <tok val="[dD]?(e|dé)moritur"/>
+      <ana>
+         <tok val="Demoritur"/>
+         <tok val="demoritur"/>
+         <tok val="démoritur"/>
          <lm>
             <l>demorior</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demoror demoror-->
-         <tok val="[dD]emoror"/>
+      <ana>
+         <tok val="Demoror"/>
+         <tok val="demoror"/>
          <lm>
             <l>demoror</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demorsus demorsus-->
-         <tok val="[dD]emorsus"/>
+      <ana>
+         <tok val="Demorsus"/>
+         <tok val="demorsus"/>
          <lm>
             <l>demordeo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Demortuae demortuae-->
-         <tok val="[dD]emortuae"/>
+      <ana>
+         <tok val="Demortuae"/>
+         <tok val="demortuae"/>
          <lm>
             <l>demorior</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -2192,8 +2579,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Demortuo demortuo-->
-         <tok val="[dD]emortuo"/>
+      <ana>
+         <tok val="Demortuo"/>
+         <tok val="demortuo"/>
          <lm>
             <l>demorior</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -2202,8 +2590,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Demortuus demortuus-->
-         <tok val="[dD]emortuus"/>
+      <ana>
+         <tok val="Demortuus"/>
+         <tok val="demortuus"/>
          <lm>
             <l>demorior</l>
             <m>v - - s r p p m n</m>
@@ -2211,13 +2600,17 @@
       </ana>
       <ana>
          <tok val="Demosthene"/>
+         <tok val="demosthene"/>
          <lm>
             <l>Demosthenes</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Demosthenem Demosthenen-->
-         <tok val="Demosthene[nm]"/>
+      <ana>
+         <tok val="Demosthenem"/>
+         <tok val="Demosthenen"/>
+         <tok val="demosthenem"/>
+         <tok val="demosthenen"/>
          <lm>
             <l>Demosthenes</l>
             <m>n e - s - - - m a</m>
@@ -2225,6 +2618,7 @@
       </ana>
       <ana>
          <tok val="Demosthenes"/>
+         <tok val="demosthenes"/>
          <lm>
             <l>Demosthenes</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -2235,6 +2629,7 @@
       </ana>
       <ana>
          <tok val="Demostheni"/>
+         <tok val="demostheni"/>
          <lm>
             <l>Demosthenes</l>
             <m>n e - s - - - m d</m>
@@ -2242,6 +2637,7 @@
       </ana>
       <ana>
          <tok val="Demosthenicarum"/>
+         <tok val="demosthenicarum"/>
          <lm>
             <l>Demosthenicus</l>
             <m>a e - p - - - f g</m>
@@ -2249,6 +2645,7 @@
       </ana>
       <ana>
          <tok val="Demosthenicis"/>
+         <tok val="demosthenicis"/>
          <lm>
             <l>Demosthenicus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2261,6 +2658,7 @@
       </ana>
       <ana>
          <tok val="Demosthenicum"/>
+         <tok val="demosthenicum"/>
          <lm>
             <l>Demosthenicus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -2273,13 +2671,17 @@
       </ana>
       <ana>
          <tok val="Demosthenicus"/>
+         <tok val="demosthenicus"/>
          <lm>
             <l>Demosthenicus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Demosthenis Demosthenisque-->
-         <tok val="Demosthenis(que)?"/>
+      <ana>
+         <tok val="Demosthenis"/>
+         <tok val="Demosthenisque"/>
+         <tok val="demosthenis"/>
+         <tok val="demosthenisque"/>
          <lm>
             <l>Demosthenes</l>
             <m>n e - s - - - m g</m>
@@ -2287,6 +2689,7 @@
       </ana>
       <ana>
          <tok val="Demostrati"/>
+         <tok val="demostrati"/>
          <lm>
             <l>Demostratus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -2296,6 +2699,7 @@
       </ana>
       <ana>
          <tok val="Demostrato"/>
+         <tok val="demostrato"/>
          <lm>
             <l>Demostratus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -2304,6 +2708,7 @@
       </ana>
       <ana>
          <tok val="Demostratum"/>
+         <tok val="demostratum"/>
          <lm>
             <l>Demostratus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -2312,27 +2717,33 @@
       </ana>
       <ana>
          <tok val="Demostratus"/>
+         <tok val="demostratus"/>
          <lm>
             <l>Demostratus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Demotus demotus-->
-         <tok val="[dD]emotus"/>
+      <ana>
+         <tok val="Demotus"/>
+         <tok val="demotus"/>
          <lm>
             <l>demoveo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Demoueo demoveo-->
-         <tok val="[dD]emo[vu]eo"/>
+      <ana>
+         <tok val="Demoueo"/>
+         <tok val="demoueo"/>
+         <tok val="demoveo"/>
          <lm>
             <l>demoveo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demouere demouere demovere-->
-         <tok val="[dD]emo[uv]ere"/>
+      <ana>
+         <tok val="Demouere"/>
+         <tok val="demouere"/>
+         <tok val="demovere"/>
          <lm>
             <l>demoveo</l>
             <m cert="0.25">v - 3 p r i a</m>
@@ -2341,15 +2752,19 @@
             <m cert="0.25">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demoueri Demoveri demoveri-->
-         <tok val="[Dd]emo[vu]eri"/>
+      <ana>
+         <tok val="Demoueri"/>
+         <tok val="Demoveri"/>
+         <tok val="demoueri"/>
+         <tok val="demoveri"/>
          <lm>
             <l>demoveo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Dempserat dempserat-->
-         <tok val="[dD]empserat"/>
+      <ana>
+         <tok val="Dempserat"/>
+         <tok val="dempserat"/>
          <lm>
             <l>demo</l>
             <m>v - 3 s l i a</m>
@@ -2357,13 +2772,16 @@
       </ana>
       <ana>
          <tok val="Demugio"/>
+         <tok val="demugio"/>
          <lm>
             <l>de_mugio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demugitae demugitaeque-->
-         <tok val="[dD]emugitae(que)?"/>
+      <ana>
+         <tok val="Demugitae"/>
+         <tok val="demugitae"/>
+         <tok val="demugitaeque"/>
          <lm>
             <l>demugitus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2372,8 +2790,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Demugitus demugitus-->
-         <tok val="[dD]emugitus"/>
+      <ana>
+         <tok val="Demugitus"/>
+         <tok val="demugitus"/>
          <lm>
             <l>demugitus</l>
             <m>a - - s - - - m n</m>
@@ -2381,13 +2800,15 @@
       </ana>
       <ana>
          <tok val="Demulceo"/>
+         <tok val="demulceo"/>
          <lm>
             <l>demulceo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demulcere demulcere-->
-         <tok val="[dD]emulcere"/>
+      <ana>
+         <tok val="Demulcere"/>
+         <tok val="demulcere"/>
          <lm>
             <l>demulceo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -2395,22 +2816,27 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demulcet demulcet-->
-         <tok val="[dD]emulcet"/>
+      <ana>
+         <tok val="Demulcet"/>
+         <tok val="demulcet"/>
          <lm>
             <l>demulceo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demus demun demus demusque-->
-         <tok val="[dD]emu(s|n|sque)"/>
+      <ana>
+         <tok val="Demus"/>
+         <tok val="demun"/>
+         <tok val="demus"/>
+         <tok val="demusque"/>
          <lm>
             <l>do</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Demussata demussata-->
-         <tok val="[dD]emussata"/>
+      <ana>
+         <tok val="Demussata"/>
+         <tok val="demussata"/>
          <lm>
             <l>demussatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2421,15 +2847,17 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Demutant demutant-->
-         <tok val="[dD]emutant"/>
+      <ana>
+         <tok val="Demutant"/>
+         <tok val="demutant"/>
          <lm>
             <l>demuto</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Demutare demutare-->
-         <tok val="[dD]emutare"/>
+      <ana>
+         <tok val="Demutare"/>
+         <tok val="demutare"/>
          <lm>
             <l>demuto</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -2437,8 +2865,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Demutatio demutatio-->
-         <tok val="[dD]emutatio"/>
+      <ana>
+         <tok val="Demutatio"/>
+         <tok val="demutatio"/>
          <lm>
             <l>demutatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -2447,13 +2876,15 @@
       </ana>
       <ana>
          <tok val="Demutilo"/>
+         <tok val="demutilo"/>
          <lm>
             <l>demutilo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Demuto demuto-->
-         <tok val="[dD]emuto"/>
+      <ana>
+         <tok val="Demuto"/>
+         <tok val="demuto"/>
          <lm>
             <l>demuto</l>
             <m>v - 1 s p i a</m>
@@ -2575,8 +3006,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--demandan demandas-->
-         <tok val="demanda[sn]"/>
+      <ana>
+         <tok val="demandan"/>
+         <tok val="demandas"/>
          <lm cert="0.5">
             <l>demando</l>
             <m>v - 2 s p i a</m>
@@ -2661,15 +3093,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--demandauerat demandaueratque-->
-         <tok val="demandauerat(que)?"/>
+      <ana>
+         <tok val="demandauerat"/>
+         <tok val="demandaueratque"/>
          <lm>
             <l>demando</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--demandauit demandavit-->
-         <tok val="demanda[vu]it"/>
+      <ana>
+         <tok val="demandauit"/>
+         <tok val="demandavit"/>
          <lm>
             <l>demando</l>
             <m>v - 3 s r i a</m>
@@ -2746,8 +3180,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--demat dematque-->
-         <tok val="demat(que)?"/>
+      <ana>
+         <tok val="demat"/>
+         <tok val="dematque"/>
          <lm cert="0.5">
             <l>demo</l>
             <m>v - 3 s p s a</m>
@@ -2815,8 +3250,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--demean demeas-->
-         <tok val="demea[sn]"/>
+      <ana>
+         <tok val="demean"/>
+         <tok val="demeas"/>
          <lm>
             <l>de_meo</l>
             <m>v - 2 s p i a</m>
@@ -2830,8 +3266,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--demeare demearis-->
-         <tok val="demear(is|e)"/>
+      <ana>
+         <tok val="demeare"/>
+         <tok val="demearis"/>
          <lm>
             <l>de_meo</l>
             <m>v - 2 s p i p</m>
@@ -3098,8 +3535,10 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--demente dementi dementique-->
-         <tok val="dement(i|e|ique)"/>
+      <ana>
+         <tok val="demente"/>
+         <tok val="dementi"/>
+         <tok val="dementique"/>
          <lm cert="0.5">
             <l>demens</l>
             <m cert="0.333333333333333333">a - - s - - - n b</m>
@@ -3130,15 +3569,17 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--dementer dementius-->
-         <tok val="dement(ius|er)"/>
+      <ana>
+         <tok val="dementer"/>
+         <tok val="dementius"/>
          <lm>
             <l>demens</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--dementi dementique-->
-         <tok val="dementi(que)?"/>
+      <ana>
+         <tok val="dementi"/>
+         <tok val="dementique"/>
          <lm cert="0.333333333333333333">
             <l>demo</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -3417,8 +3858,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--demerere demereris-->
-         <tok val="demerer(is|e)"/>
+      <ana>
+         <tok val="demerere"/>
+         <tok val="demereris"/>
          <lm cert="0.5">
             <l>demereo</l>
             <m>v - 2 s p i p</m>
@@ -3715,8 +4157,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--demersere demerserunt-->
-         <tok val="demerser(unt|e)"/>
+      <ana>
+         <tok val="demersere"/>
+         <tok val="demerserunt"/>
          <lm>
             <l>demergo</l>
             <m>v - 3 p r i a</m>
@@ -3861,8 +4304,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--demersorum demersum-->
-         <tok val="demers(or)?um"/>
+      <ana>
+         <tok val="demersorum"/>
+         <tok val="demersum"/>
          <lm cert="0.5">
             <l>demersus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -3874,8 +4318,9 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--demersos demersosve-->
-         <tok val="demersos(ve)?"/>
+      <ana>
+         <tok val="demersos"/>
+         <tok val="demersosve"/>
          <lm cert="0.5">
             <l>demersus</l>
             <m>a - - p - - - m a</m>
@@ -4330,8 +4775,9 @@
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--demigrarunt demigraverunt-->
-         <tok val="demigra(ve)?runt"/>
+      <ana>
+         <tok val="demigrarunt"/>
+         <tok val="demigraverunt"/>
          <lm>
             <l>demigro</l>
             <m>v - 3 p r i a</m>
@@ -4400,8 +4846,9 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--demigrauit demigravit-->
-         <tok val="demigra[vu]it"/>
+      <ana>
+         <tok val="demigrauit"/>
+         <tok val="demigravit"/>
          <lm>
             <l>demigro</l>
             <m>v - 3 s r i a</m>
@@ -4639,8 +5086,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--deminuta deminutaue-->
-         <tok val="deminuta(ue)?"/>
+      <ana>
+         <tok val="deminuta"/>
+         <tok val="deminutaue"/>
          <lm>
             <l>deminuo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -4651,8 +5099,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--deminutae deminutaeue-->
-         <tok val="deminutae(ue)?"/>
+      <ana>
+         <tok val="deminutae"/>
+         <tok val="deminutaeue"/>
          <lm>
             <l>deminuo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -4668,8 +5117,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--deminuti deminutique-->
-         <tok val="deminuti(que)?"/>
+      <ana>
+         <tok val="deminuti"/>
+         <tok val="deminutique"/>
          <lm>
             <l>deminuo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -4678,15 +5128,17 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--deminutione deminutioneque-->
-         <tok val="deminutione(que)?"/>
+      <ana>
+         <tok val="deminutione"/>
+         <tok val="deminutioneque"/>
          <lm>
             <l>deminutio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--deminutionem deminutionemque-->
-         <tok val="deminutionem(que)?"/>
+      <ana>
+         <tok val="deminutionem"/>
+         <tok val="deminutionemque"/>
          <lm>
             <l>deminutio</l>
             <m>n - - s - - - f a</m>
@@ -4763,8 +5215,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--deminutive deminutivum-->
-         <tok val="deminutiv(um|e)"/>
+      <ana>
+         <tok val="deminutive"/>
+         <tok val="deminutivum"/>
          <lm cert="0.5">
             <l>deminutivus</l>
             <m>a - - s - - - n v</m>
@@ -4798,8 +5251,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--deminuto deminutoque-->
-         <tok val="deminuto(que)?"/>
+      <ana>
+         <tok val="deminuto"/>
+         <tok val="deminutoque"/>
          <lm>
             <l>deminuo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -4815,8 +5269,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--deminutum deminutumque-->
-         <tok val="deminutum(que)?"/>
+      <ana>
+         <tok val="deminutum"/>
+         <tok val="deminutumque"/>
          <lm>
             <l>deminuo</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -5030,8 +5485,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--demissas demissasque-->
-         <tok val="demissas(que)?"/>
+      <ana>
+         <tok val="demissas"/>
+         <tok val="demissasque"/>
          <lm cert="0.5">
             <l>demitto</l>
             <m>v - - p r p p f a</m>
@@ -5155,8 +5611,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--demissum demissumque-->
-         <tok val="demissum(que)?"/>
+      <ana>
+         <tok val="demissum"/>
+         <tok val="demissumque"/>
          <lm>
             <l>demissus</l>
             <m>a - - s - - - n n</m>
@@ -5232,8 +5689,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--demittan demittas-->
-         <tok val="demitta[sn]"/>
+      <ana>
+         <tok val="demittan"/>
+         <tok val="demittas"/>
          <lm>
             <l>demitto</l>
             <m>v - 2 s p s a</m>
@@ -5454,8 +5912,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--demo demon-->
-         <tok val="demo[n]?"/>
+      <ana>
+         <tok val="demo"/>
+         <tok val="demon"/>
          <lm>
             <l>demeo</l>
             <m>v - 1 s p i a</m>
@@ -5762,8 +6221,9 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--demolitur demoliturque-->
-         <tok val="demolitur(que)?"/>
+      <ana>
+         <tok val="demolitur"/>
+         <tok val="demoliturque"/>
          <lm>
             <l>demolio</l>
             <m>v - 3 s p i p</m>
@@ -5783,8 +6243,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--demoliunt demoliuntque-->
-         <tok val="demoliunt(que)?"/>
+      <ana>
+         <tok val="demoliunt"/>
+         <tok val="demoliuntque"/>
          <lm>
             <l>demolio</l>
             <m>v - 3 p p i a</m>
@@ -5817,8 +6278,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--demonstra demonstran-->
-         <tok val="demonstra[n]?"/>
+      <ana>
+         <tok val="demonstra"/>
+         <tok val="demonstran"/>
          <lm>
             <l>demonstro</l>
             <m>v - 2 s p m a</m>
@@ -5879,8 +6341,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--demonstrabiles demonstrabilis-->
-         <tok val="demonstrabil[ie]s"/>
+      <ana>
+         <tok val="demonstrabiles"/>
+         <tok val="demonstrabilis"/>
          <lm>
             <l>demonstrabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -5982,8 +6445,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--demonstrando demonstrandoque-->
-         <tok val="demonstrando(que)?"/>
+      <ana>
+         <tok val="demonstrando"/>
+         <tok val="demonstrandoque"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -6014,8 +6478,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--demonstrante demonstranti-->
-         <tok val="demonstrant[ie]"/>
+      <ana>
+         <tok val="demonstrante"/>
+         <tok val="demonstranti"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -6041,8 +6506,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--demonstrantes demonstrantis demonstrantisque-->
-         <tok val="demonstrant[ie]s(que)?"/>
+      <ana>
+         <tok val="demonstrantes"/>
+         <tok val="demonstrantis"/>
+         <tok val="demonstrantisque"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -6079,8 +6546,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--demonstrantis demonstrantisque-->
-         <tok val="demonstrantis(que)?"/>
+      <ana>
+         <tok val="demonstrantis"/>
+         <tok val="demonstrantisque"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -6095,15 +6563,18 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--demonstraram demonstraveram-->
-         <tok val="demonstra(ve)?ram"/>
+      <ana>
+         <tok val="demonstraram"/>
+         <tok val="demonstraveram"/>
          <lm>
             <l>demonstro</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--demonstrarat demonstrauerat demonstraverat-->
-         <tok val="demonstra[vu]?(e|)rat"/>
+      <ana>
+         <tok val="demonstrarat"/>
+         <tok val="demonstrauerat"/>
+         <tok val="demonstraverat"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 s l i a</m>
@@ -6144,8 +6615,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--demonstraret demonstraretque-->
-         <tok val="demonstraret(que)?"/>
+      <ana>
+         <tok val="demonstraret"/>
+         <tok val="demonstraretque"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 s i s a</m>
@@ -6158,8 +6630,10 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--demonstrarunt demonstravere demonstraverunt-->
-         <tok val="demonstra(ve)?r(unt|e)"/>
+      <ana>
+         <tok val="demonstrarunt"/>
+         <tok val="demonstravere"/>
+         <tok val="demonstraverunt"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 p r i a</m>
@@ -6186,8 +6660,9 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--demonstrasset demonstravisset-->
-         <tok val="demonstra(vi)?sset"/>
+      <ana>
+         <tok val="demonstrasset"/>
+         <tok val="demonstravisset"/>
          <lm>
             <l>demonstro</l>
             <m>v - 3 s l s a</m>
@@ -6200,8 +6675,10 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--demonstratae demónstratae démonstratae-->
-         <tok val="d[eé]m[óo]nstratae"/>
+      <ana>
+         <tok val="demonstratae"/>
+         <tok val="demónstratae"/>
+         <tok val="démonstratae"/>
          <lm>
             <l>demonstro</l>
             <m>v - - s r p p f g</m>
@@ -6275,8 +6752,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--demonstratiuam demonstrativam-->
-         <tok val="demonstrati[vu]am"/>
+      <ana>
+         <tok val="demonstratiuam"/>
+         <tok val="demonstrativam"/>
          <lm cert="0.5">
             <l>demonstrativus</l>
             <m>a - - s - - - f a</m>
@@ -6297,16 +6775,18 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--demonstratiue demonstrative-->
-         <tok val="demonstrati[vu]e"/>
+      <ana>
+         <tok val="demonstratiue"/>
+         <tok val="demonstrative"/>
          <lm>
             <l>demonstrativus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--demonstratiui demonstrativi-->
-         <tok val="demonstrati[vu]i"/>
+      <ana>
+         <tok val="demonstratiui"/>
+         <tok val="demonstrativi"/>
          <lm>
             <l>demonstrativus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -6315,8 +6795,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--demonstratiuis demonstrativis-->
-         <tok val="demonstrati[vu]is"/>
+      <ana>
+         <tok val="demonstratiuis"/>
+         <tok val="demonstrativis"/>
          <lm cert="0.5">
             <l>demonstrativus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -6332,8 +6813,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--demonstratiuo demonstrativo-->
-         <tok val="demonstrati[vu]o"/>
+      <ana>
+         <tok val="demonstratiuo"/>
+         <tok val="demonstrativo"/>
          <lm>
             <l>demonstrativus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -6380,8 +6862,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--demonstratum demonstratumque-->
-         <tok val="demonstratum(que)?"/>
+      <ana>
+         <tok val="demonstratum"/>
+         <tok val="demonstratumque"/>
          <lm>
             <l>demonstro</l>
             <m>a - - s - - - n n</m>
@@ -6442,16 +6925,18 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--demonstrauerimus demonstraverimus-->
-         <tok val="demonstra[vu]erimus"/>
+      <ana>
+         <tok val="demonstrauerimus"/>
+         <tok val="demonstraverimus"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.5">v - 1 p t i a</m>
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--demonstraueris demonstraveris-->
-         <tok val="demonstra[vu]eris"/>
+      <ana>
+         <tok val="demonstraueris"/>
+         <tok val="demonstraveris"/>
          <lm>
             <l>demonstro</l>
             <m cert="0.5">v - 2 s t i a</m>
@@ -6516,8 +7001,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--demonstretis demónstretis-->
-         <tok val="dem[óo]nstretis"/>
+      <ana>
+         <tok val="demonstretis"/>
+         <tok val="demónstretis"/>
          <lm>
             <l>demonstro</l>
             <m>v - 2 p p s a</m>
@@ -6822,8 +7308,9 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--demortuorum demortuum-->
-         <tok val="demortu(or)?um"/>
+      <ana>
+         <tok val="demortuorum"/>
+         <tok val="demortuum"/>
          <lm>
             <l>demorior</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -6924,15 +7411,17 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--demouentur demoventur-->
-         <tok val="demo[vu]entur"/>
+      <ana>
+         <tok val="demouentur"/>
+         <tok val="demoventur"/>
          <lm>
             <l>demoveo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--demouerat demoverat-->
-         <tok val="demo[vu]erat"/>
+      <ana>
+         <tok val="demouerat"/>
+         <tok val="demoverat"/>
          <lm>
             <l>demoveo</l>
             <m>v - 3 s l i a</m>
@@ -6945,15 +7434,17 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--demouet demovet-->
-         <tok val="demo[vu]et"/>
+      <ana>
+         <tok val="demouet"/>
+         <tok val="demovet"/>
          <lm>
             <l>demoveo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--demouetur demovetur-->
-         <tok val="demo[vu]etur"/>
+      <ana>
+         <tok val="demouetur"/>
+         <tok val="demovetur"/>
          <lm>
             <l>demoveo</l>
             <m>v - 3 s p i p</m>
@@ -6966,8 +7457,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--demouisse demovisse-->
-         <tok val="demo[vu]isse"/>
+      <ana>
+         <tok val="demouisse"/>
+         <tok val="demovisse"/>
          <lm>
             <l>demoveo</l>
             <m>v - - - r n a</m>
@@ -7084,8 +7576,9 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--dempseris demseris-->
-         <tok val="dem[p]?seris"/>
+      <ana>
+         <tok val="dempseris"/>
+         <tok val="demseris"/>
          <lm>
             <l>demo</l>
             <m cert="0.5">v - 2 s t i a</m>
@@ -7107,8 +7600,10 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--dempsi Demsi-->
-         <tok val="[Dd]em[p]?si"/>
+      <ana>
+         <tok val="Demsi"/>
+         <tok val="dempsi"/>
+         <tok val="demsi"/>
          <lm>
             <l>demo</l>
             <m>v - 1 s r i a</m>
@@ -7149,8 +7644,9 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--dempsit démpsit-->
-         <tok val="d[ée]mpsit"/>
+      <ana>
+         <tok val="dempsit"/>
+         <tok val="démpsit"/>
          <lm>
             <l>demo</l>
             <m>v - 3 s r i a</m>
@@ -7185,8 +7681,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--demptis demptas-->
-         <tok val="dempt[ai]s"/>
+      <ana>
+         <tok val="demptas"/>
+         <tok val="demptis"/>
          <lm>
             <l>demo</l>
             <m>v - - p r p p f b</m>
@@ -7539,8 +8036,10 @@
             <m cert="0.2">v - - p r p p n d</m>
          </lm>
       </ana>
-      <ana><!--Dempta dempta demptaque-->
-         <tok val="[dD]empta(que)?"/>
+      <ana>
+         <tok val="Dempta"/>
+         <tok val="dempta"/>
+         <tok val="demptaque"/>
          <lm>
             <l>demo</l>
             <m cert="0.333333333333333333">v - - p r p p n n</m>
@@ -7548,8 +8047,11 @@
             <m cert="0.333333333333333333">v - - s r p p f n</m>
          </lm>
       </ana>
-      <ana><!--Dempta dempta demptamque demptaque-->
-         <tok val="[dD]empta[m]?(que)?"/>
+      <ana>
+         <tok val="Dempta"/>
+         <tok val="dempta"/>
+         <tok val="demptamque"/>
+         <tok val="demptaque"/>
          <lm>
             <l>demo</l>
             <m>v - - s r p p f b</m>
@@ -7571,8 +8073,9 @@
             <m cert="0.333333333333333333">v - - s r p p n g</m>
          </lm>
       </ana>
-      <ana><!--dempto demptoque-->
-         <tok val="dempto(que)?"/>
+      <ana>
+         <tok val="dempto"/>
+         <tok val="demptoque"/>
          <lm>
             <l>demo</l>
             <m cert="0.25">v - - s r p p m b</m>
@@ -7588,8 +8091,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--demptum Demptum-->
-         <tok val="[Dd]emptum"/>
+      <ana>
+         <tok val="Demptum"/>
+         <tok val="demptum"/>
          <lm>
             <l>demo</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -7597,8 +8101,10 @@
             <m cert="0.333333333333333333">v - - s r p p n n</m>
          </lm>
       </ana>
-      <ana><!--demptus Demptus demptusve-->
-         <tok val="[dD]emptus(ve)?"/>
+      <ana>
+         <tok val="Demptus"/>
+         <tok val="demptus"/>
+         <tok val="demptusve"/>
          <lm>
             <l>demo</l>
             <m>v - - s r p p m n</m>
@@ -7746,6 +8252,7 @@
       </ana>
       <ana>
          <tok val="Demodocumque"/>
+         <tok val="demodocumque"/>
          <lm>
             <l>Demodocus</l>
             <m>n e - s - - - m a</m>

@@ -1,43 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussero">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sero">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sero</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sero.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SERO</tok-starts-with>
       <tok-starts-with>SEro</tok-starts-with>
       <tok-starts-with>Sero</tok-starts-with>
       <tok-starts-with>sero</tok-starts-with>
-      <ana><!--SERO SEro Sero Seron sero seroque serost-->
-         <tok val="[Ss]?(e|SE|se)?(ro)?(n|st|que|SERO)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:45:41.5-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:45:41.5-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sero.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SERO"/>
+         <tok val="SEro"/>
+         <tok val="Sero"/>
+         <tok val="Seron"/>
+         <tok val="sero"/>
+         <tok val="seron"/>
+         <tok val="seroque"/>
+         <tok val="serost"/>
          <lm cert="0.333333333333333333">
             <l>serus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -55,8 +70,13 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Seron Seros seros serosque serost-->
-         <tok val="[sS]ero[s]?(t|n|sque)?"/>
+      <ana>
+         <tok val="Seron"/>
+         <tok val="Seros"/>
+         <tok val="seron"/>
+         <tok val="seros"/>
+         <tok val="serosque"/>
+         <tok val="serost"/>
          <lm>
             <l>serus</l>
             <m>a - - p - - - m a</m>
@@ -64,6 +84,7 @@
       </ana>
       <ana>
          <tok val="Seror"/>
+         <tok val="seror"/>
          <lm>
             <l>sero</l>
             <m>v - 1 s p i p</m>
@@ -71,13 +92,15 @@
       </ana>
       <ana>
          <tok val="Serosus"/>
+         <tok val="serosus"/>
          <lm>
             <l>serodo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Serotina serotina-->
-         <tok val="[sS]erotina"/>
+      <ana>
+         <tok val="Serotina"/>
+         <tok val="serotina"/>
          <lm>
             <l>serotinus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -88,8 +111,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Serotinae serotinae-->
-         <tok val="[sS]erotinae"/>
+      <ana>
+         <tok val="Serotinae"/>
+         <tok val="serotinae"/>
          <lm>
             <l>serotinus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -98,8 +122,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Serotini serotini-->
-         <tok val="[sS]erotini"/>
+      <ana>
+         <tok val="Serotini"/>
+         <tok val="serotini"/>
          <lm>
             <l>serotinus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -108,15 +133,17 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Serotinos serotinos-->
-         <tok val="[sS]erotinos"/>
+      <ana>
+         <tok val="Serotinos"/>
+         <tok val="serotinos"/>
          <lm>
             <l>serotinus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Serotinus serotinus-->
-         <tok val="[sS]erotinus"/>
+      <ana>
+         <tok val="Serotinus"/>
+         <tok val="serotinus"/>
          <lm>
             <l>serotinus</l>
             <m>a - - s - - - m n</m>
@@ -158,8 +185,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--serotine serotinum-->
-         <tok val="serotin(um|e)"/>
+      <ana>
+         <tok val="serotine"/>
+         <tok val="serotinum"/>
          <lm>
             <l>serotinus</l>
             <m>a - - s - - - n v</m>

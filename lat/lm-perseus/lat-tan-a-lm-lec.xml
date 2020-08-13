@@ -1,57 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuslec">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:lec">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to lec</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-lec.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>LEC</tok-starts-with>
       <tok-starts-with>Lec</tok-starts-with>
       <tok-starts-with>lec</tok-starts-with>
       <tok-starts-with>léc</tok-starts-with>
-      <ana><!--LECTICARIORVM lecticariorum lecticariorumque-->
-         <tok val="(lecticariorum)?(que|LECTICARIORVM)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:31:23.745-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:31:23.745-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-lec.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="LECTICARIORVM"/>
+         <tok val="lecticariorum"/>
+         <tok val="lecticariorumque"/>
+         <tok val="lecticariorvm"/>
          <lm>
             <l>lecticarius</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--LECTIONE lectione-->
-         <tok val="(lectione|LECTIONE)"/>
+      <ana>
+         <tok val="LECTIONE"/>
+         <tok val="lectione"/>
          <lm>
             <l>lectio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--LECTOR Lector lector-->
-         <tok val="[lL]?(ector|LECTOR)"/>
+      <ana>
+         <tok val="LECTOR"/>
+         <tok val="Lector"/>
+         <tok val="lector"/>
          <lm cert="0.5">
             <l>lector</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -62,36 +76,61 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--LECTOREM Lectorem Lectoremque lectorem-->
-         <tok val="[lL]?(ectorem)?(que|LECTOREM)?"/>
+      <ana>
+         <tok val="LECTOREM"/>
+         <tok val="Lectorem"/>
+         <tok val="Lectoremque"/>
+         <tok val="lectorem"/>
+         <tok val="lectoremque"/>
          <lm>
             <l>lector</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--LECTORI Lectori lectori-->
-         <tok val="[lL]?(ectori|LECTORI)"/>
+      <ana>
+         <tok val="LECTORI"/>
+         <tok val="Lectori"/>
+         <tok val="lectori"/>
          <lm>
             <l>lector</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--LECTVS Lecti Lectus lecti lectique lectus lectusque léctus-->
-         <tok val="[lL]?(e|lé|le|Le)?(ct)?(iq)?[u]?[s]?(que|e|i|LECTVS)?"/>
+      <ana>
+         <tok val="LECTVS"/>
+         <tok val="Lecti"/>
+         <tok val="Lectus"/>
+         <tok val="lecti"/>
+         <tok val="lectique"/>
+         <tok val="lectus"/>
+         <tok val="lectusque"/>
+         <tok val="lectvs"/>
+         <tok val="léctus"/>
          <lm>
             <l>lectus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--LECTVS Lecti Lectus lecti lectique lectus lectusque-->
-         <tok val="[lL]?(ect)?(iq)?[u]?[s]?(que|e|i|LECTVS)?"/>
+      <ana>
+         <tok val="LECTVS"/>
+         <tok val="Lecti"/>
+         <tok val="Lectus"/>
+         <tok val="lecti"/>
+         <tok val="lectique"/>
+         <tok val="lectus"/>
+         <tok val="lectusque"/>
+         <tok val="lectvs"/>
          <lm>
             <l>lectus</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--LECTVS Lectus lectus lectusque-->
-         <tok val="[lL]?(ectus)?(que|LECTVS)?"/>
+      <ana>
+         <tok val="LECTVS"/>
+         <tok val="Lectus"/>
+         <tok val="lectus"/>
+         <tok val="lectusque"/>
+         <tok val="lectvs"/>
          <lm cert="0.5">
             <l>lectus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -102,8 +141,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--LECTVS Lecton Lectos Lectus lectos lectosque lectus lectusque-->
-         <tok val="[lL]?(ect)?[uo]?[s]?(que|on|us|os|LECTVS)?"/>
+      <ana>
+         <tok val="LECTVS"/>
+         <tok val="Lecton"/>
+         <tok val="Lectos"/>
+         <tok val="Lectus"/>
+         <tok val="lecton"/>
+         <tok val="lectos"/>
+         <tok val="lectosque"/>
+         <tok val="lectus"/>
+         <tok val="lectusque"/>
+         <tok val="lectvs"/>
          <lm>
             <l>lectus</l>
             <m>n - - p - - - m a</m>
@@ -111,6 +159,7 @@
       </ana>
       <ana>
          <tok val="Lechaeae"/>
+         <tok val="lechaeae"/>
          <lm cert="0.5">
             <l>Lechaeae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -126,6 +175,7 @@
       </ana>
       <ana>
          <tok val="Lechaei"/>
+         <tok val="lechaei"/>
          <lm cert="0.5">
             <l>Lechaeus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -140,6 +190,7 @@
       </ana>
       <ana>
          <tok val="Lechaeis"/>
+         <tok val="lechaeis"/>
          <lm cert="0.333333333333333333">
             <l>Lechaeae</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -162,6 +213,7 @@
       </ana>
       <ana>
          <tok val="Lechaeo"/>
+         <tok val="lechaeo"/>
          <lm cert="0.5">
             <l>Lechaeus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -177,6 +229,7 @@
       </ana>
       <ana>
          <tok val="Lechaeum"/>
+         <tok val="lechaeum"/>
          <lm cert="0.5">
             <l>Lechaeum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -194,8 +247,11 @@
             <m cert="0.166666666666666667">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lecta Lectaque lecta lectaque-->
-         <tok val="[lL]ecta(que)?"/>
+      <ana>
+         <tok val="Lecta"/>
+         <tok val="Lectaque"/>
+         <tok val="lecta"/>
+         <tok val="lectaque"/>
          <lm cert="0.25">
             <l>lectum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -225,8 +281,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Lectae lectae-->
-         <tok val="[lL]ectae"/>
+      <ana>
+         <tok val="Lectae"/>
+         <tok val="lectae"/>
          <lm cert="0.5">
             <l>lectus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -242,8 +299,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Lecti lecti lectique-->
-         <tok val="[lL]ecti(que)?"/>
+      <ana>
+         <tok val="Lecti"/>
+         <tok val="lecti"/>
+         <tok val="lectique"/>
          <lm cert="0.333333333333333333">
             <l>lego2</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -264,8 +323,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lectica lectica lecticaque-->
-         <tok val="[lL]ectica(que)?"/>
+      <ana>
+         <tok val="Lectica"/>
+         <tok val="lectica"/>
+         <tok val="lecticaque"/>
          <lm>
             <l>lectica</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -273,8 +334,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lecticae lecticae-->
-         <tok val="[lL]ecticae"/>
+      <ana>
+         <tok val="Lecticae"/>
+         <tok val="lecticae"/>
          <lm>
             <l>lectica</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -283,30 +345,35 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lecticam lecticam-->
-         <tok val="[lL]ecticam"/>
+      <ana>
+         <tok val="Lecticam"/>
+         <tok val="lecticam"/>
          <lm>
             <l>lectica</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Lecticarii lecticarii-->
-         <tok val="[lL]ecticarii"/>
+      <ana>
+         <tok val="Lecticarii"/>
+         <tok val="lecticarii"/>
          <lm>
             <l>lecticarius</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lecticarii lecticari lecticarii-->
-         <tok val="[lL]ecticari[i]?"/>
+      <ana>
+         <tok val="Lecticarii"/>
+         <tok val="lecticari"/>
+         <tok val="lecticarii"/>
          <lm>
             <l>lecticarius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lecticariola lecticariola-->
-         <tok val="[lL]ecticariola"/>
+      <ana>
+         <tok val="Lecticariola"/>
+         <tok val="lecticariola"/>
          <lm>
             <l>lecticariola</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -314,15 +381,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lecticarius lecticarius-->
-         <tok val="[lL]ecticarius"/>
+      <ana>
+         <tok val="Lecticarius"/>
+         <tok val="lecticarius"/>
          <lm>
             <l>lecticarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lecticula lecticula-->
-         <tok val="[lL]ecticula"/>
+      <ana>
+         <tok val="Lecticula"/>
+         <tok val="lecticula"/>
          <lm>
             <l>lecticula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -330,16 +399,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lectio lectio-->
-         <tok val="[lL]ectio"/>
+      <ana>
+         <tok val="Lectio"/>
+         <tok val="lectio"/>
          <lm>
             <l>lectio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lectiones lectiones-->
-         <tok val="[lL]ectiones"/>
+      <ana>
+         <tok val="Lectiones"/>
+         <tok val="lectiones"/>
          <lm>
             <l>lectio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -347,30 +418,39 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Lectionum lectionum-->
-         <tok val="[lL]ectionum"/>
+      <ana>
+         <tok val="Lectionum"/>
+         <tok val="lectionum"/>
          <lm>
             <l>lectio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Lectis lectibus lectis lectisque-->
-         <tok val="[lL]ecti(bu)?s(que)?"/>
+      <ana>
+         <tok val="Lectis"/>
+         <tok val="lectibus"/>
+         <tok val="lectis"/>
+         <tok val="lectisque"/>
          <lm>
             <l>lectus</l>
             <m cert="0.5">n - - p - - - m d</m>
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Lectis lectis lectisque léctis-->
-         <tok val="[lL]?(e|lé|le)ctis(que)?"/>
+      <ana>
+         <tok val="Lectis"/>
+         <tok val="lectis"/>
+         <tok val="lectisque"/>
+         <tok val="léctis"/>
          <lm>
             <l>lego2</l>
             <m>v - - p r p p n d</m>
          </lm>
       </ana>
-      <ana><!--Lectis lectis lectisque-->
-         <tok val="[lL]ectis(que)?"/>
+      <ana>
+         <tok val="Lectis"/>
+         <tok val="lectis"/>
+         <tok val="lectisque"/>
          <lm cert="0.333333333333333333">
             <l>lectum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -396,6 +476,7 @@
       </ana>
       <ana>
          <tok val="Lectissima"/>
+         <tok val="lectissima"/>
          <lm>
             <l>lego2</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -408,6 +489,7 @@
       </ana>
       <ana>
          <tok val="Lectissimi"/>
+         <tok val="lectissimi"/>
          <lm>
             <l>lego2</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -418,14 +500,17 @@
       </ana>
       <ana>
          <tok val="Lectissimus"/>
+         <tok val="lectissimus"/>
          <lm>
             <l>lego2</l>
             <m cert="0.5">a - - s - - - m v s</m>
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Lectisternia lectisternia lectisterniaque-->
-         <tok val="[lL]ectisternia(que)?"/>
+      <ana>
+         <tok val="Lectisternia"/>
+         <tok val="lectisternia"/>
+         <tok val="lectisterniaque"/>
          <lm>
             <l>lectisternium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -433,16 +518,19 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Lectisterniator lectisterniator-->
-         <tok val="[lL]ectisterniator"/>
+      <ana>
+         <tok val="Lectisterniator"/>
+         <tok val="lectisterniator"/>
          <lm>
             <l>lectisterniator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lectisternium lectisternium lectisterniumque-->
-         <tok val="[lL]ectisternium(que)?"/>
+      <ana>
+         <tok val="Lectisternium"/>
+         <tok val="lectisternium"/>
+         <tok val="lectisterniumque"/>
          <lm>
             <l>lectisternium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -451,8 +539,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lectitare lectitare-->
-         <tok val="[lL]ectitare"/>
+      <ana>
+         <tok val="Lectitare"/>
+         <tok val="lectitare"/>
          <lm>
             <l>lectito</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -460,22 +549,32 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Lectito lectito-->
-         <tok val="[lL]ectito"/>
+      <ana>
+         <tok val="Lectito"/>
+         <tok val="lectito"/>
          <lm>
             <l>lectito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Lecto Lecton lecto lectoque lectó-->
-         <tok val="[Ll]ect[o]?(n|ó|oque)?"/>
+      <ana>
+         <tok val="Lecto"/>
+         <tok val="Lecton"/>
+         <tok val="lecto"/>
+         <tok val="lecton"/>
+         <tok val="lectoque"/>
+         <tok val="lectó"/>
          <lm>
             <l>lectus</l>
             <m>a - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lecto Lecton lecto lectoque-->
-         <tok val="[Ll]ecto(n|que)?"/>
+      <ana>
+         <tok val="Lecto"/>
+         <tok val="Lecton"/>
+         <tok val="lecto"/>
+         <tok val="lecton"/>
+         <tok val="lectoque"/>
          <lm cert="0.25">
             <l>lego2</l>
             <m cert="0.25">v - - s r p p n b</m>
@@ -499,22 +598,36 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Lecto Lecton lectoque lectu-->
-         <tok val="[Ll]ect[o]?(n|u|oque)?"/>
+      <ana>
+         <tok val="Lecto"/>
+         <tok val="Lecton"/>
+         <tok val="lecto"/>
+         <tok val="lecton"/>
+         <tok val="lectoque"/>
+         <tok val="lectu"/>
          <lm>
             <l>lectus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Lecto Lecton lectoque lectui-->
-         <tok val="[Ll]ect[o]?(n|ui|oque)?"/>
+      <ana>
+         <tok val="Lecto"/>
+         <tok val="Lecton"/>
+         <tok val="lecto"/>
+         <tok val="lecton"/>
+         <tok val="lectoque"/>
+         <tok val="lectui"/>
          <lm>
             <l>lectus</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lecton Lectos lectos lectosque-->
-         <tok val="[Ll]ecto(s|n|sque)"/>
+      <ana>
+         <tok val="Lecton"/>
+         <tok val="Lectos"/>
+         <tok val="lecton"/>
+         <tok val="lectos"/>
+         <tok val="lectosque"/>
          <lm cert="0.5">
             <l>lectus</l>
             <m>a - - p - - - m a</m>
@@ -524,8 +637,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Lectores lectores-->
-         <tok val="[lL]ectores"/>
+      <ana>
+         <tok val="Lectores"/>
+         <tok val="lectores"/>
          <lm>
             <l>lector</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -533,30 +647,45 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lectoribus lectoribus-->
-         <tok val="[lL]ectoribus"/>
+      <ana>
+         <tok val="Lectoribus"/>
+         <tok val="lectoribus"/>
          <lm>
             <l>lector</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lectoris lectoris-->
-         <tok val="[lL]ectoris"/>
+      <ana>
+         <tok val="Lectoris"/>
+         <tok val="lectoris"/>
          <lm>
             <l>lector</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lectorum Lectum Lectumst lectum lectumque lectumst-->
-         <tok val="[lL]ect(or)?um(st|que)?"/>
+      <ana>
+         <tok val="Lectorum"/>
+         <tok val="Lectum"/>
+         <tok val="Lectumst"/>
+         <tok val="lectorum"/>
+         <tok val="lectum"/>
+         <tok val="lectumque"/>
+         <tok val="lectumst"/>
          <lm>
             <l>lectus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lectorum Lectum Lectumst lectorum lectorumque lectum lectumque lectumst-->
-         <tok val="[lL]ect(or)?um(que|st)?"/>
+      <ana>
+         <tok val="Lectorum"/>
+         <tok val="Lectum"/>
+         <tok val="Lectumst"/>
+         <tok val="lectorum"/>
+         <tok val="lectorumque"/>
+         <tok val="lectum"/>
+         <tok val="lectumque"/>
+         <tok val="lectumst"/>
          <lm cert="0.333333333333333333">
             <l>lectus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -572,8 +701,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lectuli lectuli lectulique-->
-         <tok val="[lL]ectuli(que)?"/>
+      <ana>
+         <tok val="Lectuli"/>
+         <tok val="lectuli"/>
+         <tok val="lectulique"/>
          <lm>
             <l>lectulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -581,37 +712,49 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lectulo lectulo lectuloque-->
-         <tok val="[lL]ectulo(que)?"/>
+      <ana>
+         <tok val="Lectulo"/>
+         <tok val="lectulo"/>
+         <tok val="lectuloque"/>
          <lm>
             <l>lectulus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lectulorum lectulorum lectulum-->
-         <tok val="[lL]ectul(or|)um"/>
+      <ana>
+         <tok val="Lectulorum"/>
+         <tok val="lectulorum"/>
+         <tok val="lectulum"/>
          <lm>
             <l>lectulus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lectulos lectulos léctulos-->
-         <tok val="[lL]?(e|lé)ctulos"/>
+      <ana>
+         <tok val="Lectulos"/>
+         <tok val="lectulos"/>
+         <tok val="léctulos"/>
          <lm>
             <l>lectulus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lectulus lectulus-->
-         <tok val="[lL]ectulus"/>
+      <ana>
+         <tok val="Lectulus"/>
+         <tok val="lectulus"/>
          <lm>
             <l>lectulus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lectum Lectumst lecte lectum lectumque lectumst-->
-         <tok val="[lL]ect(um)?(st|que|e)?"/>
+      <ana>
+         <tok val="Lectum"/>
+         <tok val="Lectumst"/>
+         <tok val="lecte"/>
+         <tok val="lectum"/>
+         <tok val="lectumque"/>
+         <tok val="lectumst"/>
          <lm cert="0.333333333333333333">
             <l>lectum</l>
             <m>n - - s - - - n v</m>
@@ -625,8 +768,12 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Lectum Lectumst lectum lectumque lectumst-->
-         <tok val="[lL]ectum(st|que)?"/>
+      <ana>
+         <tok val="Lectum"/>
+         <tok val="Lectumst"/>
+         <tok val="lectum"/>
+         <tok val="lectumque"/>
+         <tok val="lectumst"/>
          <lm cert="0.333333333333333333">
             <l>lego2</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -647,6 +794,7 @@
       </ana>
       <ana>
          <tok val="Lectum"/>
+         <tok val="lectum"/>
          <lm>
             <l>lego2</l>
             <m>v - - - - u - - a</m>
@@ -654,20 +802,23 @@
       </ana>
       <ana>
          <tok val="Lectumst"/>
+         <tok val="lectumst"/>
          <lm>
             <l>lego2</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Lecturam lecturam-->
-         <tok val="[lL]ecturam"/>
+      <ana>
+         <tok val="Lecturam"/>
+         <tok val="lecturam"/>
          <lm>
             <l>lego2</l>
             <m>v - - s f p a f a</m>
          </lm>
       </ana>
-      <ana><!--Lecythus lecythus-->
-         <tok val="[lL]ecythus"/>
+      <ana>
+         <tok val="Lecythus"/>
+         <tok val="lecythus"/>
          <lm>
             <l>lecythus</l>
             <m>n - - s - - - m n</m>
@@ -687,8 +838,9 @@
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--lectam lectamque-->
-         <tok val="lectam(que)?"/>
+      <ana>
+         <tok val="lectam"/>
+         <tok val="lectamque"/>
          <lm cert="0.5">
             <l>lego2</l>
             <m>v - - s r p p f a</m>
@@ -720,8 +872,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--lectare lectaris-->
-         <tok val="lectar(is|e)"/>
+      <ana>
+         <tok val="lectare"/>
+         <tok val="lectaris"/>
          <lm>
             <l>lecto</l>
             <m>v - 2 s p i p</m>
@@ -741,8 +894,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--lectas lectasque-->
-         <tok val="lectas(que)?"/>
+      <ana>
+         <tok val="lectas"/>
+         <tok val="lectasque"/>
          <lm cert="0.333333333333333333">
             <l>lego2</l>
             <m>v - - p r p p f a</m>
@@ -770,8 +924,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--lecte lectius-->
-         <tok val="lect(ius|e)"/>
+      <ana>
+         <tok val="lecte"/>
+         <tok val="lectius"/>
          <lm>
             <l>lectus</l>
             <m>d</m>
@@ -810,8 +965,9 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--lecticariis lecticaris-->
-         <tok val="lecticar[i]?is"/>
+      <ana>
+         <tok val="lecticariis"/>
+         <tok val="lecticaris"/>
          <lm>
             <l>lecticarius</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -872,8 +1028,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--lectionem lectionemque-->
-         <tok val="lectionem(que)?"/>
+      <ana>
+         <tok val="lectionem"/>
+         <tok val="lectionemque"/>
          <lm>
             <l>lectio</l>
             <m>n - - s - - - f a</m>
@@ -886,16 +1043,19 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--lectionibus Lectionibus lectionibusque-->
-         <tok val="[Ll]ectionibus(que)?"/>
+      <ana>
+         <tok val="Lectionibus"/>
+         <tok val="lectionibus"/>
+         <tok val="lectionibusque"/>
          <lm>
             <l>lectio</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--lectionis Lectionis-->
-         <tok val="[Ll]ectionis"/>
+      <ana>
+         <tok val="Lectionis"/>
+         <tok val="lectionis"/>
          <lm>
             <l>lectio</l>
             <m>n - - s - - - f g</m>
@@ -918,8 +1078,9 @@
             <m>n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--lectissima lectissimaque-->
-         <tok val="lectissima(que)?"/>
+      <ana>
+         <tok val="lectissima"/>
+         <tok val="lectissimaque"/>
          <lm>
             <l>lectus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -947,8 +1108,9 @@
             <m>a - - s - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--lectissimas lectissimasque-->
-         <tok val="lectissimas(que)?"/>
+      <ana>
+         <tok val="lectissimas"/>
+         <tok val="lectissimasque"/>
          <lm>
             <l>lectus</l>
             <m>a - - p - - - f a s</m>
@@ -961,15 +1123,17 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--lectissime lectissimus-->
-         <tok val="lectissim(us|e)"/>
+      <ana>
+         <tok val="lectissime"/>
+         <tok val="lectissimus"/>
          <lm>
             <l>lectus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--lectissime lectissimum-->
-         <tok val="lectissim(um|e)"/>
+      <ana>
+         <tok val="lectissime"/>
+         <tok val="lectissimum"/>
          <lm>
             <l>lectus</l>
             <m>a - - s - - - n v s</m>
@@ -1007,8 +1171,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--lectissimorum lectissimum-->
-         <tok val="lectissim(or)?um"/>
+      <ana>
+         <tok val="lectissimorum"/>
+         <tok val="lectissimum"/>
          <lm>
             <l>lectus</l>
             <m cert="0.5">a - - p - - - n g s</m>
@@ -1045,8 +1210,9 @@
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--lectisternio lectisternioque-->
-         <tok val="lectisternio(que)?"/>
+      <ana>
+         <tok val="lectisternio"/>
+         <tok val="lectisternioque"/>
          <lm>
             <l>lectisternium</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1095,8 +1261,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--lectitandi lectitandique-->
-         <tok val="lectitandi(que)?"/>
+      <ana>
+         <tok val="lectitandi"/>
+         <tok val="lectitandique"/>
          <lm>
             <l>lectito</l>
             <m cert="0.25">v - - p p g p m v</m>
@@ -1204,8 +1371,10 @@
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--lectitarunt lectitauerunt lectitaverunt-->
-         <tok val="lectita[vu]?(e|)runt"/>
+      <ana>
+         <tok val="lectitarunt"/>
+         <tok val="lectitauerunt"/>
+         <tok val="lectitaverunt"/>
          <lm>
             <l>lectito</l>
             <m>v - 3 p r i a</m>
@@ -1218,8 +1387,10 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--lectitasse lectitavisse Lectitavisse-->
-         <tok val="[Ll]ectita(vi|)sse"/>
+      <ana>
+         <tok val="Lectitavisse"/>
+         <tok val="lectitasse"/>
+         <tok val="lectitavisse"/>
          <lm>
             <l>lectito</l>
             <m>v - - - r n a</m>
@@ -1232,8 +1403,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--lectitatos lectitatosque-->
-         <tok val="lectitatos(que)?"/>
+      <ana>
+         <tok val="lectitatos"/>
+         <tok val="lectitatosque"/>
          <lm>
             <l>lectito</l>
             <m>v - - p r p p m a</m>
@@ -1301,8 +1473,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--lectorum lectorumque-->
-         <tok val="lectorum(que)?"/>
+      <ana>
+         <tok val="lectorum"/>
+         <tok val="lectorumque"/>
          <lm>
             <l>lector</l>
             <m>n - - p - - - m g</m>
@@ -1397,8 +1570,10 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--lectum lectumque lectumst-->
-         <tok val="lectum(st|que)?"/>
+      <ana>
+         <tok val="lectum"/>
+         <tok val="lectumque"/>
+         <tok val="lectumst"/>
          <lm>
             <l>lectus</l>
             <m>a - - s - - - n n</m>
@@ -1423,8 +1598,10 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--lecture lecturum lecturumque-->
-         <tok val="lectur(um)?(que|e)?"/>
+      <ana>
+         <tok val="lecture"/>
+         <tok val="lecturum"/>
+         <tok val="lecturumque"/>
          <lm>
             <l>lego2</l>
             <m>v - - s f p a n v</m>
@@ -1491,8 +1668,9 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--lecturum lecturumque-->
-         <tok val="lecturum(que)?"/>
+      <ana>
+         <tok val="lecturum"/>
+         <tok val="lecturumque"/>
          <lm>
             <l>lego2</l>
             <m cert="0.2">v - - p f p a n g</m>

@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfos">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fos">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fos</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fos.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FOS</tok-starts-with>
       <tok-starts-with>Fos</tok-starts-with>
       <tok-starts-with>fos</tok-starts-with>
-      <ana><!--FOSSAE Fossae fossae fossaeque-->
-         <tok val="[fF]?(ossae)?(que|FOSSAE)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:24:47.694-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:24:47.694-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fos.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FOSSAE"/>
+         <tok val="Fossae"/>
+         <tok val="fossae"/>
+         <tok val="fossaeque"/>
          <lm cert="0.5">
             <l>fodio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -52,8 +63,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--FOSSILIS Fossilis fossilis-->
-         <tok val="[fF]?(ossilis|FOSSILIS)"/>
+      <ana>
+         <tok val="FOSSILIS"/>
+         <tok val="Fossilis"/>
+         <tok val="fossilis"/>
          <lm>
             <l>fossilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -65,8 +78,11 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--FOSSILIS Fossilis fossiles fossilis-->
-         <tok val="[fF]?(ossil)?[ie]?(s|FOSSILIS)"/>
+      <ana>
+         <tok val="FOSSILIS"/>
+         <tok val="Fossilis"/>
+         <tok val="fossiles"/>
+         <tok val="fossilis"/>
          <lm>
             <l>fossilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -75,14 +91,18 @@
       </ana>
       <ana>
          <tok val="Fosi"/>
+         <tok val="fosi"/>
          <lm>
             <l>Fosi</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Fossa fossa fossaque fossave-->
-         <tok val="[fF]ossa(ve|que)?"/>
+      <ana>
+         <tok val="Fossa"/>
+         <tok val="fossa"/>
+         <tok val="fossaque"/>
+         <tok val="fossave"/>
          <lm cert="0.333333333333333333">
             <l>fossa</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -103,8 +123,11 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Fossam fossam fossamque fossamue-->
-         <tok val="[fF]ossam[q]?(ue)?"/>
+      <ana>
+         <tok val="Fossam"/>
+         <tok val="fossam"/>
+         <tok val="fossamque"/>
+         <tok val="fossamue"/>
          <lm cert="0.5">
             <l>fodio</l>
             <m>v - - s r p p f a</m>
@@ -114,8 +137,10 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fossarum fossarum fossarumque-->
-         <tok val="[fF]ossarum(que)?"/>
+      <ana>
+         <tok val="Fossarum"/>
+         <tok val="fossarum"/>
+         <tok val="fossarumque"/>
          <lm cert="0.5">
             <l>fossa</l>
             <m>n - - p - - - f g</m>
@@ -125,8 +150,10 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--Fossas fossas fossasque-->
-         <tok val="[fF]ossas(que)?"/>
+      <ana>
+         <tok val="Fossas"/>
+         <tok val="fossas"/>
+         <tok val="fossasque"/>
          <lm cert="0.333333333333333333">
             <l>fodio</l>
             <m>v - - p r p p f a</m>
@@ -140,8 +167,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fossatum fossatum-->
-         <tok val="[fF]ossatum"/>
+      <ana>
+         <tok val="Fossatum"/>
+         <tok val="fossatum"/>
          <lm cert="0.333333333333333333">
             <l>fossatum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -151,12 +179,13 @@
          </lm>
          <lm cert="0.333333333333333333">
             <l>fosso</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
          <lm cert="0.333333333333333333">
             <l>fossatus</l>
@@ -165,14 +194,8 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Fossatum"/>
-         <lm>
-            <l>fosso</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Fossi fossi-->
-         <tok val="[fF]ossi"/>
+         <tok val="Fossi"/>
+         <tok val="fossi"/>
          <lm>
             <l>fodio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -181,8 +204,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Fossiciae fossiciae-->
-         <tok val="[fF]ossiciae"/>
+      <ana>
+         <tok val="Fossiciae"/>
+         <tok val="fossiciae"/>
          <lm>
             <l>fossicius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -191,8 +215,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Fossilia fossilia-->
-         <tok val="[fF]ossilia"/>
+      <ana>
+         <tok val="Fossilia"/>
+         <tok val="fossilia"/>
          <lm>
             <l>fossilis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -200,16 +225,18 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Fossio fossio-->
-         <tok val="[fF]ossio"/>
+      <ana>
+         <tok val="Fossio"/>
+         <tok val="fossio"/>
          <lm>
             <l>fossio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Fossiones fossiones-->
-         <tok val="[fF]ossiones"/>
+      <ana>
+         <tok val="Fossiones"/>
+         <tok val="fossiones"/>
          <lm>
             <l>fossio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -217,16 +244,19 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Fossionibus fossionibus-->
-         <tok val="[fF]ossionibus"/>
+      <ana>
+         <tok val="Fossionibus"/>
+         <tok val="fossionibus"/>
          <lm>
             <l>fossio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Fossis fossis fossisque-->
-         <tok val="[fF]ossis(que)?"/>
+      <ana>
+         <tok val="Fossis"/>
+         <tok val="fossis"/>
+         <tok val="fossisque"/>
          <lm cert="0.5">
             <l>fodio</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -242,8 +272,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Fosso fosso-->
-         <tok val="[fF]osso"/>
+      <ana>
+         <tok val="Fosso"/>
+         <tok val="fosso"/>
          <lm cert="0.5">
             <l>fodio</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -256,8 +287,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fossor fossor-->
-         <tok val="[fF]ossor"/>
+      <ana>
+         <tok val="Fossor"/>
+         <tok val="fossor"/>
          <lm cert="0.5">
             <l>fossor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -268,8 +300,10 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Fossores fossores fossoresque-->
-         <tok val="[fF]ossores(que)?"/>
+      <ana>
+         <tok val="Fossores"/>
+         <tok val="fossores"/>
+         <tok val="fossoresque"/>
          <lm>
             <l>fossor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -277,23 +311,29 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fossorum fossorum-->
-         <tok val="[fF]ossorum"/>
+      <ana>
+         <tok val="Fossorum"/>
+         <tok val="fossorum"/>
          <lm>
             <l>fossor</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Fossorum Fossum fossorum fossum fossumque-->
-         <tok val="[fF]oss(or)?um(que)?"/>
+      <ana>
+         <tok val="Fossorum"/>
+         <tok val="Fossum"/>
+         <tok val="fossorum"/>
+         <tok val="fossum"/>
+         <tok val="fossumque"/>
          <lm>
             <l>fodio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Fossula fossula-->
-         <tok val="[fF]ossula"/>
+      <ana>
+         <tok val="Fossula"/>
+         <tok val="fossula"/>
          <lm>
             <l>fossula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -301,8 +341,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Fossum fossum fossumque-->
-         <tok val="[fF]ossum(que)?"/>
+      <ana>
+         <tok val="Fossum"/>
+         <tok val="fossum"/>
+         <tok val="fossumque"/>
          <lm>
             <l>fodio</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -312,8 +354,9 @@
             <m cert="0.2">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Fossura fossura-->
-         <tok val="[fF]ossura"/>
+      <ana>
+         <tok val="Fossura"/>
+         <tok val="fossura"/>
          <lm cert="0.5">
             <l>fodio</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -520,8 +563,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--fossori fossorique-->
-         <tok val="fossori(que)?"/>
+      <ana>
+         <tok val="fossori"/>
+         <tok val="fossorique"/>
          <lm cert="0.5">
             <l>fossorius</l>
             <m cert="0.5">a - - s - - - m g</m>

@@ -1,42 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseustab">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:tab">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to tab</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-tab.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>TAB</tok-starts-with>
       <tok-starts-with>Tab</tok-starts-with>
       <tok-starts-with>tab</tok-starts-with>
-      <ana><!--TABES Tabes tabes tabesne tabesque-->
-         <tok val="[tT]?(abes)?(ne|que|TABES)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:48:34.36-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:48:34.36-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-tab.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="TABES"/>
+         <tok val="Tabes"/>
+         <tok val="tabes"/>
+         <tok val="tabesne"/>
+         <tok val="tabesque"/>
          <lm cert="0.5">
             <l>tabes</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -49,8 +61,12 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--TABVLA Tabula tabula tabulaque-->
-         <tok val="[tT]?(abula)?(que|TABVLA)?"/>
+      <ana>
+         <tok val="TABVLA"/>
+         <tok val="Tabula"/>
+         <tok val="tabula"/>
+         <tok val="tabulaque"/>
+         <tok val="tabvla"/>
          <lm>
             <l>tabula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -58,8 +74,15 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--TABVLAE Tabulae Tabvlae tabulae tabulaeque tabulaeue tabulaeve-->
-         <tok val="[tT]?(ab)?[uv]?(lae)?[q]?[uv]?(e|TABVLAE)?"/>
+      <ana>
+         <tok val="TABVLAE"/>
+         <tok val="Tabulae"/>
+         <tok val="Tabvlae"/>
+         <tok val="tabulae"/>
+         <tok val="tabulaeque"/>
+         <tok val="tabulaeue"/>
+         <tok val="tabulaeve"/>
+         <tok val="tabvlae"/>
          <lm>
             <l>tabula</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -68,20 +91,17 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--TABVLARIVS Tabularius-->
-         <tok val="T(abularius|ABVLARIVS)"/>
-         <lm>
-            <l>tabularis</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--TABVLARIVS Tabularius tabularius-->
-         <tok val="[tT]?(abularius|TABVLARIVS)"/>
+      <ana>
+         <tok val="TABVLARIVS"/>
+         <tok val="Tabularius"/>
+         <tok val="tabularius"/>
+         <tok val="tabvlarivs"/>
          <lm cert="0.5">
             <l>tabularis</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>tabularius</l>
@@ -89,23 +109,35 @@
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--TABVLAS Tabulas Tabulasque tabulas tabulasque tabulasve-->
-         <tok val="[tT]?(abulas)?(qu|v)?(e|TABVLAS)?"/>
+      <ana>
+         <tok val="TABVLAS"/>
+         <tok val="Tabulas"/>
+         <tok val="Tabulasque"/>
+         <tok val="tabulas"/>
+         <tok val="tabulasque"/>
+         <tok val="tabulasve"/>
+         <tok val="tabvlas"/>
          <lm>
             <l>tabula</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--TABVLIS Tabulis tabulis tabulisque-->
-         <tok val="[tT]?(abulis)?(que|TABVLIS)?"/>
+      <ana>
+         <tok val="TABVLIS"/>
+         <tok val="Tabulis"/>
+         <tok val="tabulis"/>
+         <tok val="tabulisque"/>
+         <tok val="tabvlis"/>
          <lm>
             <l>tabula</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--TABi tabi tabique-->
-         <tok val="(tab|TAB)i(que)?"/>
+      <ana>
+         <tok val="TABi"/>
+         <tok val="tabi"/>
+         <tok val="tabique"/>
          <lm>
             <l>tabes</l>
             <m>n - - s - - - f d</m>
@@ -113,6 +145,7 @@
       </ana>
       <ana>
          <tok val="Tabae"/>
+         <tok val="tabae"/>
          <lm>
             <l>Tabae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -121,13 +154,16 @@
       </ana>
       <ana>
          <tok val="Tabas"/>
+         <tok val="tabas"/>
          <lm>
             <l>Tabae</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Tabe tabe tabeque-->
-         <tok val="[tT]abe(que)?"/>
+      <ana>
+         <tok val="Tabe"/>
+         <tok val="tabe"/>
+         <tok val="tabeque"/>
          <lm cert="0.5">
             <l>tabes</l>
             <m>n - - s - - - f b</m>
@@ -139,13 +175,16 @@
       </ana>
       <ana>
          <tok val="Tabe"/>
+         <tok val="tabe"/>
          <lm>
             <l>Tabis</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Tabella tabella tabellaque-->
-         <tok val="[tT]abella(que)?"/>
+      <ana>
+         <tok val="Tabella"/>
+         <tok val="tabella"/>
+         <tok val="tabellaque"/>
          <lm>
             <l>tabella</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -153,8 +192,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Tabellae tabellae-->
-         <tok val="[tT]abellae"/>
+      <ana>
+         <tok val="Tabellae"/>
+         <tok val="tabellae"/>
          <lm>
             <l>tabella</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -163,15 +203,17 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Tabellam tabellam-->
-         <tok val="[tT]abellam"/>
+      <ana>
+         <tok val="Tabellam"/>
+         <tok val="tabellam"/>
          <lm>
             <l>tabella</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Tabellaria tabellaria-->
-         <tok val="[tT]abellaria"/>
+      <ana>
+         <tok val="Tabellaria"/>
+         <tok val="tabellaria"/>
          <lm>
             <l>tabellarius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -182,8 +224,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Tabellariae tabellariae-->
-         <tok val="[tT]abellariae"/>
+      <ana>
+         <tok val="Tabellariae"/>
+         <tok val="tabellariae"/>
          <lm>
             <l>tabellarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -192,8 +235,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Tabellarii tabellarii-->
-         <tok val="[tT]abellarii"/>
+      <ana>
+         <tok val="Tabellarii"/>
+         <tok val="tabellarii"/>
          <lm>
             <l>tabellarius</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -202,8 +246,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Tabellarii tabellari tabellarii-->
-         <tok val="[tT]abellari[i]?"/>
+      <ana>
+         <tok val="Tabellarii"/>
+         <tok val="tabellari"/>
+         <tok val="tabellarii"/>
          <lm>
             <l>tabellarius</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -211,39 +257,46 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Tabellarios tabellarios tabellariosque-->
-         <tok val="[tT]abellarios(que)?"/>
+      <ana>
+         <tok val="Tabellarios"/>
+         <tok val="tabellarios"/>
+         <tok val="tabellariosque"/>
          <lm>
             <l>tabellarius</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Tabellarius tabellarius-->
-         <tok val="[tT]abellarius"/>
+      <ana>
+         <tok val="Tabellarius"/>
+         <tok val="tabellarius"/>
          <lm>
             <l>tabellarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Tabellas tabellas tabellás-->
-         <tok val="[tT]abell[aá]s"/>
+      <ana>
+         <tok val="Tabellas"/>
+         <tok val="tabellas"/>
+         <tok val="tabellás"/>
          <lm>
             <l>tabella</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Tabellio tabellio-->
-         <tok val="[tT]abellio"/>
+      <ana>
+         <tok val="Tabellio"/>
+         <tok val="tabellio"/>
          <lm>
             <l>tabellio</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Tabelliones tabelliones-->
-         <tok val="[tT]abelliones"/>
+      <ana>
+         <tok val="Tabelliones"/>
+         <tok val="tabelliones"/>
          <lm>
             <l>tabellio</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -251,30 +304,38 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Tabellis tabellis-->
-         <tok val="[tT]abellis"/>
+      <ana>
+         <tok val="Tabellis"/>
+         <tok val="tabellis"/>
          <lm>
             <l>tabella</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Tabem Tabim-->
-         <tok val="Tab[ie]m"/>
+      <ana>
+         <tok val="Tabem"/>
+         <tok val="Tabim"/>
+         <tok val="tabem"/>
+         <tok val="tabim"/>
          <lm>
             <l>Tabis</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Tabem tabem tabemque-->
-         <tok val="[tT]abem(que)?"/>
+      <ana>
+         <tok val="Tabem"/>
+         <tok val="tabem"/>
+         <tok val="tabemque"/>
          <lm>
             <l>tabes</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Tabentes tabentes tabentesque-->
-         <tok val="[tT]abentes(que)?"/>
+      <ana>
+         <tok val="Tabentes"/>
+         <tok val="tabentes"/>
+         <tok val="tabentesque"/>
          <lm>
             <l>tabeo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -283,8 +344,11 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Tabentes tabentes tabentesque tabentis-->
-         <tok val="[tT]abent[ei]s(que)?"/>
+      <ana>
+         <tok val="Tabentes"/>
+         <tok val="tabentes"/>
+         <tok val="tabentesque"/>
+         <tok val="tabentis"/>
          <lm>
             <l>tabeo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -293,6 +357,7 @@
       </ana>
       <ana>
          <tok val="Tabentium"/>
+         <tok val="tabentium"/>
          <lm>
             <l>tabeo</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -300,15 +365,17 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--Tabeo tabeo-->
-         <tok val="[tT]abeo"/>
+      <ana>
+         <tok val="Tabeo"/>
+         <tok val="tabeo"/>
          <lm>
             <l>tabeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Taberna taberna-->
-         <tok val="[tT]aberna"/>
+      <ana>
+         <tok val="Taberna"/>
+         <tok val="taberna"/>
          <lm>
             <l>taberna</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -316,8 +383,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Tabernacula tabernacula tabernaculaque-->
-         <tok val="[tT]abernacula(que)?"/>
+      <ana>
+         <tok val="Tabernacula"/>
+         <tok val="tabernacula"/>
+         <tok val="tabernaculaque"/>
          <lm>
             <l>tabernaculum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -325,16 +394,19 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Tabernaculis tabernaculis tabernaculisque-->
-         <tok val="[tT]abernaculis(que)?"/>
+      <ana>
+         <tok val="Tabernaculis"/>
+         <tok val="tabernaculis"/>
+         <tok val="tabernaculisque"/>
          <lm>
             <l>tabernaculum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Tabernaculum tabernaculum-->
-         <tok val="[tT]abernaculum"/>
+      <ana>
+         <tok val="Tabernaculum"/>
+         <tok val="tabernaculum"/>
          <lm>
             <l>tabernaculum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -342,15 +414,19 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Tabernaculum tabernaculorum tabernaculum-->
-         <tok val="[tT]abernacul(or)?um"/>
+      <ana>
+         <tok val="Tabernaculum"/>
+         <tok val="tabernaculorum"/>
+         <tok val="tabernaculum"/>
          <lm>
             <l>tabernaculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Tabernae tabernae tabernaeque-->
-         <tok val="[tT]abernae(que)?"/>
+      <ana>
+         <tok val="Tabernae"/>
+         <tok val="tabernae"/>
+         <tok val="tabernaeque"/>
          <lm>
             <l>taberna</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -359,15 +435,17 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Tabernam tabernam-->
-         <tok val="[tT]abernam"/>
+      <ana>
+         <tok val="Tabernam"/>
+         <tok val="tabernam"/>
          <lm>
             <l>taberna</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Tabernarii tabernarii-->
-         <tok val="[tT]abernarii"/>
+      <ana>
+         <tok val="Tabernarii"/>
+         <tok val="tabernarii"/>
          <lm cert="0.5">
             <l>tabernarii</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -381,22 +459,26 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Tabernarius tabernarius-->
-         <tok val="[tT]abernarius"/>
+      <ana>
+         <tok val="Tabernarius"/>
+         <tok val="tabernarius"/>
          <lm>
             <l>tabernarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Tabernas tabernas-->
-         <tok val="[tT]abernas"/>
+      <ana>
+         <tok val="Tabernas"/>
+         <tok val="tabernas"/>
          <lm>
             <l>taberna</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Tabernis tabernis tabernisque-->
-         <tok val="[tT]abernis(que)?"/>
+      <ana>
+         <tok val="Tabernis"/>
+         <tok val="tabernis"/>
+         <tok val="tabernisque"/>
          <lm>
             <l>taberna</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -405,14 +487,18 @@
       </ana>
       <ana>
          <tok val="Tabes"/>
+         <tok val="tabes"/>
          <lm>
             <l>Tabis</l>
             <m cert="0.5">n e - p - - - m v</m>
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Tabes Tabis-->
-         <tok val="Tab[ie]s"/>
+      <ana>
+         <tok val="Tabes"/>
+         <tok val="Tabis"/>
+         <tok val="tabes"/>
+         <tok val="tabis"/>
          <lm>
             <l>Tabis</l>
             <m>n e - p - - - m a</m>
@@ -420,20 +506,23 @@
       </ana>
       <ana>
          <tok val="Tabescas"/>
+         <tok val="tabescas"/>
          <lm>
             <l>tabesco</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Tabescat tabescat-->
-         <tok val="[tT]abescat"/>
+      <ana>
+         <tok val="Tabescat"/>
+         <tok val="tabescat"/>
          <lm>
             <l>tabesco</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Tabescens tabescens-->
-         <tok val="[tT]abescens"/>
+      <ana>
+         <tok val="Tabescens"/>
+         <tok val="tabescens"/>
          <lm>
             <l>tabesco</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -445,8 +534,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Tabescere tabescere-->
-         <tok val="[tT]abescere"/>
+      <ana>
+         <tok val="Tabescere"/>
+         <tok val="tabescere"/>
          <lm>
             <l>tabesco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -455,22 +545,26 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Tabescit tabescit-->
-         <tok val="[tT]abescit"/>
+      <ana>
+         <tok val="Tabescit"/>
+         <tok val="tabescit"/>
          <lm>
             <l>tabesco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Tabesco tabesco-->
-         <tok val="[tT]abesco"/>
+      <ana>
+         <tok val="Tabesco"/>
+         <tok val="tabesco"/>
          <lm>
             <l>tabesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Tabida tabida tabidaque-->
-         <tok val="[tT]abida(que)?"/>
+      <ana>
+         <tok val="Tabida"/>
+         <tok val="tabida"/>
+         <tok val="tabidaque"/>
          <lm>
             <l>tabidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -481,8 +575,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Tabido tabido-->
-         <tok val="[tT]abido"/>
+      <ana>
+         <tok val="Tabido"/>
+         <tok val="tabido"/>
          <lm>
             <l>tabidus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -491,15 +586,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Tabidus tabidus-->
-         <tok val="[tT]abidus"/>
+      <ana>
+         <tok val="Tabidus"/>
+         <tok val="tabidus"/>
          <lm>
             <l>tabidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Tabifica tabifica-->
-         <tok val="[tT]abifica"/>
+      <ana>
+         <tok val="Tabifica"/>
+         <tok val="tabifica"/>
          <lm cert="0.5">
             <l>tabificus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -514,8 +611,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Tabificabilis tabificabilis-->
-         <tok val="[tT]abificabilis"/>
+      <ana>
+         <tok val="Tabificabilis"/>
+         <tok val="tabificabilis"/>
          <lm>
             <l>tabificabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -531,6 +629,7 @@
       </ana>
       <ana>
          <tok val="Tabifici"/>
+         <tok val="tabifici"/>
          <lm>
             <l>tabificus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -539,8 +638,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Tabificum tabificum-->
-         <tok val="[tT]abificum"/>
+      <ana>
+         <tok val="Tabificum"/>
+         <tok val="tabificum"/>
          <lm>
             <l>tabificus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -551,8 +651,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Tabificus tabificus-->
-         <tok val="[tT]abificus"/>
+      <ana>
+         <tok val="Tabificus"/>
+         <tok val="tabificus"/>
          <lm>
             <l>tabificus</l>
             <m>a - - s - - - m n</m>
@@ -560,33 +661,35 @@
       </ana>
       <ana>
          <tok val="Tabis"/>
-         <lm cert="0.5">
+         <tok val="tabis"/>
+         <lm cert="0.333333333333333333">
             <l>Tabae</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>Tabis</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">n e - s - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Tabis tabis-->
-         <tok val="[tT]abis"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>tabes</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Tabitudo tabitudo-->
-         <tok val="[tT]abitudo"/>
+      <ana>
+         <tok val="Tabitudo"/>
+         <tok val="tabitudo"/>
          <lm>
             <l>tabitudo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Tablinum Tabulinum tabulinum-->
-         <tok val="[Tt]ab[u]?linum"/>
+      <ana>
+         <tok val="Tablinum"/>
+         <tok val="Tabulinum"/>
+         <tok val="tablinum"/>
+         <tok val="tabulinum"/>
          <lm>
             <l>tabulinum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -597,6 +700,7 @@
       </ana>
       <ana>
          <tok val="Tabraca"/>
+         <tok val="tabraca"/>
          <lm>
             <l>Tabraca</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -604,29 +708,34 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Tabuerant tabuerant-->
-         <tok val="[tT]abuerant"/>
+      <ana>
+         <tok val="Tabuerant"/>
+         <tok val="tabuerant"/>
          <lm>
             <l>tabesco</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--Tabuit tabuit-->
-         <tok val="[tT]abuit"/>
+      <ana>
+         <tok val="Tabuit"/>
+         <tok val="tabuit"/>
          <lm>
             <l>tabesco</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Tabulam tabulam tabulamque-->
-         <tok val="[tT]abulam(que)?"/>
+      <ana>
+         <tok val="Tabulam"/>
+         <tok val="tabulam"/>
+         <tok val="tabulamque"/>
          <lm>
             <l>tabula</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Tabularium tabularium-->
-         <tok val="[tT]abularium"/>
+      <ana>
+         <tok val="Tabularium"/>
+         <tok val="tabularium"/>
          <lm cert="0.333333333333333333">
             <l>tabularius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -646,8 +755,10 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Tabularium tabulariorum tabularium-->
-         <tok val="[tT]abulari(or)?um"/>
+      <ana>
+         <tok val="Tabularium"/>
+         <tok val="tabulariorum"/>
+         <tok val="tabularium"/>
          <lm cert="0.5">
             <l>tabularius</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -659,15 +770,19 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Tabularum tabularum tabularumque-->
-         <tok val="[tT]abularum(que)?"/>
+      <ana>
+         <tok val="Tabularum"/>
+         <tok val="tabularum"/>
+         <tok val="tabularumque"/>
          <lm>
             <l>tabula</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Tabulata tabulata tabulataque-->
-         <tok val="[tT]abulata(que)?"/>
+      <ana>
+         <tok val="Tabulata"/>
+         <tok val="tabulata"/>
+         <tok val="tabulataque"/>
          <lm cert="0.5">
             <l>tabulatum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -684,16 +799,19 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Tabulatio tabulatio-->
-         <tok val="[tT]abulatio"/>
+      <ana>
+         <tok val="Tabulatio"/>
+         <tok val="tabulatio"/>
          <lm>
             <l>tabulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Tabulatis tabulatis tabulatisque-->
-         <tok val="[tT]abulatis(que)?"/>
+      <ana>
+         <tok val="Tabulatis"/>
+         <tok val="tabulatis"/>
+         <tok val="tabulatisque"/>
          <lm cert="0.5">
             <l>tabulatus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -709,8 +827,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Tabulatum tabulatum-->
-         <tok val="[tT]abulatum"/>
+      <ana>
+         <tok val="Tabulatum"/>
+         <tok val="tabulatum"/>
          <lm cert="0.5">
             <l>tabulatus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -725,8 +844,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Tabulatum tabulatorum tabulatum-->
-         <tok val="[tT]abulat(or)?um"/>
+      <ana>
+         <tok val="Tabulatum"/>
+         <tok val="tabulatorum"/>
+         <tok val="tabulatum"/>
          <lm cert="0.5">
             <l>tabulatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -737,15 +858,17 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Tabulatus tabulatus-->
-         <tok val="[tT]abulatus"/>
+      <ana>
+         <tok val="Tabulatus"/>
+         <tok val="tabulatus"/>
          <lm>
             <l>tabulatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Tabum tabum-->
-         <tok val="[tT]abum"/>
+      <ana>
+         <tok val="Tabum"/>
+         <tok val="tabum"/>
          <lm>
             <l>tabes</l>
             <m>n - - p - - - f g</m>
@@ -753,6 +876,7 @@
       </ana>
       <ana>
          <tok val="Taburni"/>
+         <tok val="taburni"/>
          <lm>
             <l>Taburnus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -762,6 +886,7 @@
       </ana>
       <ana>
          <tok val="Taburno"/>
+         <tok val="taburno"/>
          <lm>
             <l>Taburnus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -770,6 +895,7 @@
       </ana>
       <ana>
          <tok val="Taburnum"/>
+         <tok val="taburnum"/>
          <lm>
             <l>Taburnus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -778,6 +904,7 @@
       </ana>
       <ana>
          <tok val="Taburnus"/>
+         <tok val="taburnus"/>
          <lm>
             <l>Taburnus</l>
             <m>n e - s - - - m n</m>
@@ -923,8 +1050,9 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--tabellariorum tabellarium-->
-         <tok val="tabellari(or)?um"/>
+      <ana>
+         <tok val="tabellariorum"/>
+         <tok val="tabellarium"/>
          <lm>
             <l>tabellarius</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -992,15 +1120,17 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--tabent tabentque-->
-         <tok val="tabent(que)?"/>
+      <ana>
+         <tok val="tabent"/>
+         <tok val="tabentque"/>
          <lm>
             <l>tabeo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--tabente tabenti-->
-         <tok val="tabent[ie]"/>
+      <ana>
+         <tok val="tabente"/>
+         <tok val="tabenti"/>
          <lm>
             <l>tabeo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1034,15 +1164,17 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--tabere taberis-->
-         <tok val="taber(is|e)"/>
+      <ana>
+         <tok val="tabere"/>
+         <tok val="taberis"/>
          <lm>
             <l>tabeo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--tabernaclo tabernaculo-->
-         <tok val="tabernac[u]?lo"/>
+      <ana>
+         <tok val="tabernaclo"/>
+         <tok val="tabernaculo"/>
          <lm>
             <l>tabernaculum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1109,8 +1241,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--tabernarie tabernarium-->
-         <tok val="tabernari(um|e)"/>
+      <ana>
+         <tok val="tabernarie"/>
+         <tok val="tabernarium"/>
          <lm>
             <l>tabernarius</l>
             <m>a - - s - - - n v</m>
@@ -1145,8 +1278,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--tabernariorum tabernarium-->
-         <tok val="tabernari(or)?um"/>
+      <ana>
+         <tok val="tabernariorum"/>
+         <tok val="tabernarium"/>
          <lm cert="0.5">
             <l>tabernarii</l>
             <m>n - - p - - - m g</m>
@@ -1184,8 +1318,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--tabernola tabernula-->
-         <tok val="tabern[uo]la"/>
+      <ana>
+         <tok val="tabernola"/>
+         <tok val="tabernula"/>
          <lm>
             <l>tabernula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1275,8 +1410,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--tabescentes tabescentis-->
-         <tok val="tabescent[ie]s"/>
+      <ana>
+         <tok val="tabescentes"/>
+         <tok val="tabescentis"/>
          <lm>
             <l>tabesco</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1352,8 +1488,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--tabet tabetne-->
-         <tok val="tabet(ne)?"/>
+      <ana>
+         <tok val="tabet"/>
+         <tok val="tabetne"/>
          <lm>
             <l>tabeo</l>
             <m>v - 3 s p i a</m>
@@ -1383,8 +1520,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--tabidis Tabidis-->
-         <tok val="[Tt]abidis"/>
+      <ana>
+         <tok val="Tabidis"/>
+         <tok val="tabidis"/>
          <lm>
             <l>tabidus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1548,8 +1686,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--tabuere tabuerunt-->
-         <tok val="tabuer(unt|e)"/>
+      <ana>
+         <tok val="tabuere"/>
+         <tok val="tabuerunt"/>
          <lm>
             <l>tabesco</l>
             <m>v - 3 p r i a</m>
@@ -1614,8 +1753,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--tabulares tabularis-->
-         <tok val="tabular[ie]s"/>
+      <ana>
+         <tok val="tabulares"/>
+         <tok val="tabularis"/>
          <lm>
             <l>tabularis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -1638,8 +1778,9 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--tabulari tabularii-->
-         <tok val="tabulari[i]?"/>
+      <ana>
+         <tok val="tabulari"/>
+         <tok val="tabularii"/>
          <lm cert="0.5">
             <l>tabularius</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -1859,8 +2000,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--tabo taboque-->
-         <tok val="tabo(que)?"/>
+      <ana>
+         <tok val="tabo"/>
+         <tok val="taboque"/>
          <lm>
             <l>tabum</l>
             <m cert="0.5">n - - s - - - n b</m>

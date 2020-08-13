@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussem">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sem">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sem</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sem.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SEM</tok-starts-with>
       <tok-starts-with>Sem</tok-starts-with>
       <tok-starts-with>sem</tok-starts-with>
       <tok-starts-with>sém</tok-starts-with>
       <tok-starts-with>Sém</tok-starts-with>
-      <ana><!--SEMEN Semen semen semenque-->
-         <tok val="[sS]?(emen)?(que|SEMEN)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:45:23.838-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:45:23.838-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sem.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SEMEN"/>
+         <tok val="Semen"/>
+         <tok val="semen"/>
+         <tok val="semenque"/>
          <lm>
             <l>semen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -46,8 +57,12 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SEMINA Semina Seminaque semina seminaque-->
-         <tok val="[sS]?(emina)?(que|SEMINA)?"/>
+      <ana>
+         <tok val="SEMINA"/>
+         <tok val="Semina"/>
+         <tok val="Seminaque"/>
+         <tok val="semina"/>
+         <tok val="seminaque"/>
          <lm cert="0.5">
             <l>semen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -59,16 +74,24 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--SEMIS SEMISSIS Semis Semissis semin semis semissis-->
-         <tok val="[sS]?(emi)?[s]?(sis|n|SEMISSIS|SEMIS)?"/>
+      <ana>
+         <tok val="SEMIS"/>
+         <tok val="SEMISSIS"/>
+         <tok val="Semis"/>
+         <tok val="Semissis"/>
+         <tok val="semin"/>
+         <tok val="semis"/>
+         <tok val="semissis"/>
          <lm>
             <l>semis</l>
             <m cert="0.5">a - - s - - - f n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SEMISSIS Semissis semissis-->
-         <tok val="[sS]?(emissis|SEMISSIS)"/>
+      <ana>
+         <tok val="SEMISSIS"/>
+         <tok val="Semissis"/>
+         <tok val="semissis"/>
          <lm>
             <l>semis</l>
             <m cert="0.2">a - - s - - - f g</m>
@@ -78,16 +101,29 @@
             <m cert="0.2">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SEMISSIS Semisses Semissis semisses semissis-->
-         <tok val="[Ss]?(emiss)?[ie]?(s|SEMISSIS)"/>
+      <ana>
+         <tok val="SEMISSIS"/>
+         <tok val="Semisses"/>
+         <tok val="Semissis"/>
+         <tok val="semisses"/>
+         <tok val="semissis"/>
          <lm>
             <l>semis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--SEMPER Semper Semperne semper semperne semperque semperue sempér sémper Sémper-->
-         <tok val="[sS]?(e|sé|Sé)?(mp)?[eé]?[r]?[q]?[un]?(e|SEMPER)?"/>
+      <ana>
+         <tok val="SEMPER"/>
+         <tok val="Semper"/>
+         <tok val="Semperne"/>
+         <tok val="Sémper"/>
+         <tok val="semper"/>
+         <tok val="semperne"/>
+         <tok val="semperque"/>
+         <tok val="semperue"/>
+         <tok val="sempér"/>
+         <tok val="sémper"/>
          <lm>
             <l>semper</l>
             <m>d</m>
@@ -95,6 +131,7 @@
       </ana>
       <ana>
          <tok val="SEMPRONIANA"/>
+         <tok val="semproniana"/>
          <lm>
             <l>Sempronianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -105,8 +142,10 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--SEMPRONIO Sempronio-->
-         <tok val="S(empronio|EMPRONIO)"/>
+      <ana>
+         <tok val="SEMPRONIO"/>
+         <tok val="Sempronio"/>
+         <tok val="sempronio"/>
          <lm>
             <l>Sempronius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -117,15 +156,18 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SEMVNIS semunis-->
-         <tok val="(semunis|SEMVNIS)"/>
+      <ana>
+         <tok val="SEMVNIS"/>
+         <tok val="semunis"/>
+         <tok val="semvnis"/>
          <lm>
             <l>semunio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sembella sembella-->
-         <tok val="[sS]embella"/>
+      <ana>
+         <tok val="Sembella"/>
+         <tok val="sembella"/>
          <lm>
             <l>sembella</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -135,13 +177,15 @@
       </ana>
       <ana>
          <tok val="Semea"/>
+         <tok val="semea"/>
          <lm>
             <l>semet</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Semei semei-->
-         <tok val="[sS]emei"/>
+      <ana>
+         <tok val="Semei"/>
+         <tok val="semei"/>
          <lm>
             <l>semeio</l>
             <m>v - - - p n p</m>
@@ -149,6 +193,7 @@
       </ana>
       <ana>
          <tok val="Semeiam"/>
+         <tok val="semeiam"/>
          <lm>
             <l>semeio</l>
             <m cert="0.5">v - 1 s f i a</m>
@@ -157,6 +202,7 @@
       </ana>
       <ana>
          <tok val="Semeias"/>
+         <tok val="semeias"/>
          <lm>
             <l>semeio</l>
             <m>v - 2 s p s a</m>
@@ -164,20 +210,29 @@
       </ana>
       <ana>
          <tok val="Semeis"/>
+         <tok val="semeis"/>
          <lm>
             <l>semeio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Semel semel semelne semelque semelve sémel-->
-         <tok val="[sS]?(e|sé)mel[vn]?(e|que)?"/>
+      <ana>
+         <tok val="Semel"/>
+         <tok val="semel"/>
+         <tok val="semelne"/>
+         <tok val="semelque"/>
+         <tok val="semelve"/>
+         <tok val="sémel"/>
          <lm>
             <l>semel</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Semela Semelast-->
-         <tok val="Semela(st)?"/>
+      <ana>
+         <tok val="Semela"/>
+         <tok val="Semelast"/>
+         <tok val="semela"/>
+         <tok val="semelast"/>
          <lm>
             <l>Semela</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -187,6 +242,7 @@
       </ana>
       <ana>
          <tok val="Semelae"/>
+         <tok val="semelae"/>
          <lm>
             <l>Semela</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -197,6 +253,7 @@
       </ana>
       <ana>
          <tok val="Semelam"/>
+         <tok val="semelam"/>
          <lm>
             <l>Semela</l>
             <m>n e - s - - - f a</m>
@@ -204,6 +261,7 @@
       </ana>
       <ana>
          <tok val="Semelei"/>
+         <tok val="semelei"/>
          <lm>
             <l>Semeleus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -214,6 +272,7 @@
       </ana>
       <ana>
          <tok val="Semeleia"/>
+         <tok val="semeleia"/>
          <lm>
             <l>Semeleius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -224,8 +283,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Semeleius Semeleivs-->
-         <tok val="Semelei[vu]s"/>
+      <ana>
+         <tok val="Semeleius"/>
+         <tok val="Semeleivs"/>
+         <tok val="semeleius"/>
+         <tok val="semeleivs"/>
          <lm cert="0.5">
             <l>Semeleus</l>
             <m cert="0.25">a e - s - - - n a c</m>
@@ -240,50 +302,60 @@
       </ana>
       <ana>
          <tok val="Semeleus"/>
+         <tok val="semeleus"/>
          <lm>
             <l>Semeleus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sementem sementem-->
-         <tok val="[sS]ementem"/>
+      <ana>
+         <tok val="Sementem"/>
+         <tok val="sementem"/>
          <lm>
             <l>semento</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Sementem Sementim sementem sementim-->
-         <tok val="[Ss]ement[ie]m"/>
+      <ana>
+         <tok val="Sementem"/>
+         <tok val="Sementim"/>
+         <tok val="sementem"/>
+         <tok val="sementim"/>
          <lm>
             <l>sementis</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sementi semente sementi-->
-         <tok val="[sS]ement[ie]"/>
+      <ana>
+         <tok val="Sementi"/>
+         <tok val="semente"/>
+         <tok val="sementi"/>
          <lm>
             <l>sementis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sementi sementi-->
-         <tok val="[sS]ementi"/>
+      <ana>
+         <tok val="Sementi"/>
+         <tok val="sementi"/>
          <lm>
             <l>sementis</l>
             <m cert="0.5">v - 2 s p m a</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Sementibus sementibus-->
-         <tok val="[sS]ementibus"/>
+      <ana>
+         <tok val="Sementibus"/>
+         <tok val="sementibus"/>
          <lm>
             <l>sementis</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Sementis sementis-->
-         <tok val="[sS]ementis"/>
+      <ana>
+         <tok val="Sementis"/>
+         <tok val="sementis"/>
          <lm>
             <l>sementis</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -291,15 +363,19 @@
             <m cert="0.333333333333333333">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sementis sementes sementis-->
-         <tok val="[sS]ement[ie]s"/>
+      <ana>
+         <tok val="Sementis"/>
+         <tok val="sementes"/>
+         <tok val="sementis"/>
          <lm>
             <l>sementis</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sementiva sementiua sementiva-->
-         <tok val="[sS]ementi[vu]a"/>
+      <ana>
+         <tok val="Sementiva"/>
+         <tok val="sementiua"/>
+         <tok val="sementiva"/>
          <lm>
             <l>sementivus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -310,8 +386,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sementivae sementivae-->
-         <tok val="[sS]ementivae"/>
+      <ana>
+         <tok val="Sementivae"/>
+         <tok val="sementivae"/>
          <lm>
             <l>sementivus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -322,6 +399,7 @@
       </ana>
       <ana>
          <tok val="Sementivis"/>
+         <tok val="sementivis"/>
          <lm>
             <l>sementivus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -332,15 +410,17 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Semento semento-->
-         <tok val="[sS]emento"/>
+      <ana>
+         <tok val="Semento"/>
+         <tok val="semento"/>
          <lm>
             <l>semento</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Semestre semestre-->
-         <tok val="[sS]emestre"/>
+      <ana>
+         <tok val="Semestre"/>
+         <tok val="semestre"/>
          <lm>
             <l>semestris</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -348,16 +428,18 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Semestrem semestrem-->
-         <tok val="[sS]emestrem"/>
+      <ana>
+         <tok val="Semestrem"/>
+         <tok val="semestrem"/>
          <lm>
             <l>semestris</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semestri semestri-->
-         <tok val="[sS]emestri"/>
+      <ana>
+         <tok val="Semestri"/>
+         <tok val="semestri"/>
          <lm cert="0.5">
             <l>semestris</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -372,8 +454,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semestris semestris-->
-         <tok val="[sS]emestris"/>
+      <ana>
+         <tok val="Semestris"/>
+         <tok val="semestris"/>
          <lm>
             <l>semestris</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -385,23 +468,28 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semestris semestres semestris-->
-         <tok val="[sS]emestr[ie]s"/>
+      <ana>
+         <tok val="Semestris"/>
+         <tok val="semestres"/>
+         <tok val="semestris"/>
          <lm>
             <l>semestris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semesus semesus semiesus-->
-         <tok val="[sS]em[i]?esus"/>
+      <ana>
+         <tok val="Semesus"/>
+         <tok val="semesus"/>
+         <tok val="semiesus"/>
          <lm>
             <l>semesus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semet semet-->
-         <tok val="[sS]emet"/>
+      <ana>
+         <tok val="Semet"/>
+         <tok val="semet"/>
          <lm>
             <l>sui</l>
             <m cert="0.25">p k - s - - - - b</m>
@@ -410,8 +498,9 @@
             <m cert="0.25">p k - s - - - - a</m>
          </lm>
       </ana>
-      <ana><!--Semiambusta semiambusta-->
-         <tok val="[sS]emiambusta"/>
+      <ana>
+         <tok val="Semiambusta"/>
+         <tok val="semiambusta"/>
          <lm>
             <l>semiambustus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -424,6 +513,7 @@
       </ana>
       <ana>
          <tok val="Semianima"/>
+         <tok val="semianima"/>
          <lm>
             <l>semianimus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -434,52 +524,88 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Semianimem semianimem semianimemque semanimem-->
-         <tok val="[sS]em[i]?animem(que)?"/>
+      <ana>
+         <tok val="Semianimem"/>
+         <tok val="semanimem"/>
+         <tok val="semianimem"/>
+         <tok val="semianimemque"/>
          <lm>
             <l>semianimis</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semianimem semianimem semianimemque semianimum semianimumque semanimem-->
-         <tok val="[sS]em[i]?anim(umqu)?[e]?(m|mque|um)?"/>
+      <ana>
+         <tok val="Semianimem"/>
+         <tok val="semanimem"/>
+         <tok val="semianimem"/>
+         <tok val="semianimemque"/>
+         <tok val="semianimum"/>
+         <tok val="semianimumque"/>
          <lm>
             <l>semianimis</l>
             <m>a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semianimes Semianimesque Semianimis Semianimisque semanimis semianimes semianimesque semianimis semianimisque semianimos-->
-         <tok val="[sS]em[i]?anim[ieo]s(que)?"/>
+      <ana>
+         <tok val="Semianimes"/>
+         <tok val="Semianimesque"/>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semanimis"/>
+         <tok val="semianimes"/>
+         <tok val="semianimesque"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
+         <tok val="semianimos"/>
          <lm>
             <l>semianimis</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semianimes Semianimesque semianimes semianimesque-->
-         <tok val="[sS]emianimes(que)?"/>
+      <ana>
+         <tok val="Semianimes"/>
+         <tok val="Semianimesque"/>
+         <tok val="semianimes"/>
+         <tok val="semianimesque"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.5">a - - p - - - f v</m>
             <m cert="0.5">a - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Semianimes Semianimesque Semianimis Semianimisque semanimis semianimas semianimes semianimesque semianimis semianimisque-->
-         <tok val="[sS]em[i]?anim[iea]s(que)?"/>
+      <ana>
+         <tok val="Semianimes"/>
+         <tok val="Semianimesque"/>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semanimis"/>
+         <tok val="semianimas"/>
+         <tok val="semianimes"/>
+         <tok val="semianimesque"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
          <lm>
             <l>semianimis</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semianimes Semianimesque semianimes semianimesque semianimi-->
-         <tok val="[sS]emianim(es)?(que|i)?"/>
+      <ana>
+         <tok val="Semianimes"/>
+         <tok val="Semianimesque"/>
+         <tok val="semianimes"/>
+         <tok val="semianimesque"/>
+         <tok val="semianimi"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semianimis Semianimisque-->
-         <tok val="Semianimis(que)?"/>
+      <ana>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
          <lm>
             <l>semianimus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -490,38 +616,62 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Semianimis Semianimisque semanimis semianimis semianimisque-->
-         <tok val="[sS]em[i]?animis(que)?"/>
+      <ana>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semanimis"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
          <lm>
             <l>semianimis</l>
             <m>a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Semianimis Semianimisque semanimis semianimi semianimis semianimisque-->
-         <tok val="[sS]em[i]?animi(s|sque)?"/>
+      <ana>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semanimis"/>
+         <tok val="semianimi"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semianimis Semianimisque semanimis semianima semianimis semianimisque-->
-         <tok val="[sS]em[i]?anim(is)?(que|a)?"/>
+      <ana>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semanimis"/>
+         <tok val="semianima"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.5">a - - s - - - f n</m>
             <m cert="0.5">a - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Semianimis Semianimisque semanimis semianimis semianimisque semianimus-->
-         <tok val="[sS]em[i]?anim[iu]s(que)?"/>
+      <ana>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semanimis"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
+         <tok val="semianimus"/>
          <lm>
             <l>semianimis</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semianimis Semianimisque semanimis semianime semianimis semianimisque-->
-         <tok val="[sS]em[i]?anim(is)?(que|e)?"/>
+      <ana>
+         <tok val="Semianimis"/>
+         <tok val="Semianimisque"/>
+         <tok val="semanimis"/>
+         <tok val="semianime"/>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
          <lm>
             <l>semianimis</l>
             <m>a - - s - - - m v</m>
@@ -529,6 +679,7 @@
       </ana>
       <ana>
          <tok val="Semianimum"/>
+         <tok val="semianimum"/>
          <lm>
             <l>semianimus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -541,6 +692,7 @@
       </ana>
       <ana>
          <tok val="Semianimus"/>
+         <tok val="semianimus"/>
          <lm>
             <l>semianimus</l>
             <m>a - - s - - - m n</m>
@@ -548,6 +700,7 @@
       </ana>
       <ana>
          <tok val="Semiaperta"/>
+         <tok val="semiaperta"/>
          <lm>
             <l>semiapertus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -560,6 +713,7 @@
       </ana>
       <ana>
          <tok val="Semiapertus"/>
+         <tok val="semiapertus"/>
          <lm>
             <l>semiapertus</l>
             <m>a - - s - - - m n</m>
@@ -567,22 +721,28 @@
       </ana>
       <ana>
          <tok val="Semicanem"/>
+         <tok val="semicanem"/>
          <lm>
             <l>semicanis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semicanesque semicanes semicanis-->
-         <tok val="[sS]emican[ie]s(que)?"/>
+      <ana>
+         <tok val="Semicanesque"/>
+         <tok val="semicanes"/>
+         <tok val="semicanesque"/>
+         <tok val="semicanis"/>
          <lm>
             <l>semicanis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semicanesque semicanes-->
-         <tok val="[sS]emicanes(que)?"/>
+      <ana>
+         <tok val="Semicanesque"/>
+         <tok val="semicanes"/>
+         <tok val="semicanesque"/>
          <lm>
             <l>semicanis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -591,16 +751,19 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semicaper semicaper semicaperque-->
-         <tok val="[sS]emicaper(que)?"/>
+      <ana>
+         <tok val="Semicaper"/>
+         <tok val="semicaper"/>
+         <tok val="semicaperque"/>
          <lm>
             <l>semicaper</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Semicinctium semicinctium-->
-         <tok val="[sS]emicinctium"/>
+      <ana>
+         <tok val="Semicinctium"/>
+         <tok val="semicinctium"/>
          <lm>
             <l>semicinctium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -609,8 +772,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semicirculum semicirculum-->
-         <tok val="[sS]emicirculum"/>
+      <ana>
+         <tok val="Semicirculum"/>
+         <tok val="semicirculum"/>
          <lm>
             <l>semicirculus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -620,8 +784,10 @@
             <m cert="0.2">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semicirculum semicirculorum semicirculum-->
-         <tok val="[sS]emicircul(or)?um"/>
+      <ana>
+         <tok val="Semicirculum"/>
+         <tok val="semicirculorum"/>
+         <tok val="semicirculum"/>
          <lm>
             <l>semicirculus</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -629,8 +795,9 @@
             <m cert="0.333333333333333333">n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Semicirculus semicirculus-->
-         <tok val="[sS]emicirculus"/>
+      <ana>
+         <tok val="Semicirculus"/>
+         <tok val="semicirculus"/>
          <lm>
             <l>semicirculus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -639,6 +806,7 @@
       </ana>
       <ana>
          <tok val="Semicoctus"/>
+         <tok val="semicoctus"/>
          <lm>
             <l>semicoctus</l>
             <m>a - - s - - - m n</m>
@@ -646,27 +814,31 @@
       </ana>
       <ana>
          <tok val="Semicrematus"/>
+         <tok val="semicrematus"/>
          <lm>
             <l>semicrematus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semicremus semicremus-->
-         <tok val="[sS]emicremus"/>
+      <ana>
+         <tok val="Semicremus"/>
+         <tok val="semicremus"/>
          <lm>
             <l>semicremus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semicrudus semicrudus-->
-         <tok val="[sS]emicrudus"/>
+      <ana>
+         <tok val="Semicrudus"/>
+         <tok val="semicrudus"/>
          <lm>
             <l>semicrudus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semicubitalis semicubitalis-->
-         <tok val="[sS]emicubitalis"/>
+      <ana>
+         <tok val="Semicubitalis"/>
+         <tok val="semicubitalis"/>
          <lm>
             <l>semicubitalis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -680,8 +852,10 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semidei semidei semideique-->
-         <tok val="[sS]emidei(que)?"/>
+      <ana>
+         <tok val="Semidei"/>
+         <tok val="semidei"/>
+         <tok val="semideique"/>
          <lm>
             <l>semideus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -693,8 +867,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semideumque semideum semideumque-->
-         <tok val="[sS]emideum(que|)"/>
+      <ana>
+         <tok val="Semideumque"/>
+         <tok val="semideum"/>
+         <tok val="semideumque"/>
          <lm>
             <l>semideus</l>
             <m cert="0.125">a - - s - - - n n</m>
@@ -707,16 +883,18 @@
             <m cert="0.125">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semideus semideus-->
-         <tok val="[sS]emideus"/>
+      <ana>
+         <tok val="Semideus"/>
+         <tok val="semideus"/>
          <lm>
             <l>semideus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semidoctus semidoctus-->
-         <tok val="[sS]emidoctus"/>
+      <ana>
+         <tok val="Semidoctus"/>
+         <tok val="semidoctus"/>
          <lm>
             <l>semidoctus</l>
             <m>a - - s - - - m n</m>
@@ -724,21 +902,24 @@
       </ana>
       <ana>
          <tok val="Semifactus"/>
+         <tok val="semifactus"/>
          <lm>
             <l>semifactus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semifer semifer-->
-         <tok val="[sS]emifer"/>
+      <ana>
+         <tok val="Semifer"/>
+         <tok val="semifer"/>
          <lm>
             <l>semifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Semiferae semiferae-->
-         <tok val="[sS]emiferae"/>
+      <ana>
+         <tok val="Semiferae"/>
+         <tok val="semiferae"/>
          <lm>
             <l>semifer</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -747,8 +928,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Semiferi semiferi-->
-         <tok val="[sS]emiferi"/>
+      <ana>
+         <tok val="Semiferi"/>
+         <tok val="semiferi"/>
          <lm>
             <l>semifer</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -757,8 +939,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semifero semifero-->
-         <tok val="[sS]emifero"/>
+      <ana>
+         <tok val="Semifero"/>
+         <tok val="semifero"/>
          <lm>
             <l>semifer</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -767,15 +950,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Semiferos semiferos-->
-         <tok val="[sS]emiferos"/>
+      <ana>
+         <tok val="Semiferos"/>
+         <tok val="semiferos"/>
          <lm>
             <l>semifer</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semiferum semiferum-->
-         <tok val="[sS]emiferum"/>
+      <ana>
+         <tok val="Semiferum"/>
+         <tok val="semiferum"/>
          <lm>
             <l>semifer</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -786,8 +971,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semiformis semiformis-->
-         <tok val="[sS]emiformis"/>
+      <ana>
+         <tok val="Semiformis"/>
+         <tok val="semiformis"/>
          <lm>
             <l>semiformis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -799,16 +985,19 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semiformis semiformes semiformis-->
-         <tok val="[sS]emiform[ie]s"/>
+      <ana>
+         <tok val="Semiformis"/>
+         <tok val="semiformes"/>
+         <tok val="semiformis"/>
          <lm>
             <l>semiformis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semifultus semifultus-->
-         <tok val="[sS]emifultus"/>
+      <ana>
+         <tok val="Semifultus"/>
+         <tok val="semifultus"/>
          <lm>
             <l>semifultus</l>
             <m>a - - s - - - m n</m>
@@ -816,6 +1005,7 @@
       </ana>
       <ana>
          <tok val="Semigaetulum"/>
+         <tok val="semigaetulum"/>
          <lm>
             <l>Semigaetulus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -824,6 +1014,7 @@
       </ana>
       <ana>
          <tok val="Semigermanus"/>
+         <tok val="semigermanus"/>
          <lm>
             <l>semigermanus</l>
             <m>a - - s - - - m n</m>
@@ -831,6 +1022,7 @@
       </ana>
       <ana>
          <tok val="Semigraece"/>
+         <tok val="semigraece"/>
          <lm>
             <l>Semigraecus</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -840,6 +1032,7 @@
       </ana>
       <ana>
          <tok val="Semigraeculus"/>
+         <tok val="semigraeculus"/>
          <lm>
             <l>Semigraeculus</l>
             <m>n e - s - - - m n</m>
@@ -847,6 +1040,7 @@
       </ana>
       <ana>
          <tok val="Semigraecus"/>
+         <tok val="semigraecus"/>
          <lm>
             <l>Semigraecus</l>
             <m>a e - s - - - m n</m>
@@ -854,6 +1048,7 @@
       </ana>
       <ana>
          <tok val="Semigrauis"/>
+         <tok val="semigrauis"/>
          <lm>
             <l>semigravis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -865,8 +1060,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semigrauis semigraues-->
-         <tok val="[sS]emigrau[ei]s"/>
+      <ana>
+         <tok val="Semigrauis"/>
+         <tok val="semigraues"/>
+         <tok val="semigrauis"/>
          <lm>
             <l>semigravis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -875,20 +1072,23 @@
       </ana>
       <ana>
          <tok val="Semigro"/>
+         <tok val="semigro"/>
          <lm>
             <l>semigro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Semihominis semihominis-->
-         <tok val="[sS]emihominis"/>
+      <ana>
+         <tok val="Semihominis"/>
+         <tok val="semihominis"/>
          <lm>
             <l>semihomo</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Semihora semihora-->
-         <tok val="[sS]emihora"/>
+      <ana>
+         <tok val="Semihora"/>
+         <tok val="semihora"/>
          <lm>
             <l>semihora</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -896,8 +1096,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Semiiugerum semiiugerum-->
-         <tok val="[sS]emiiugerum"/>
+      <ana>
+         <tok val="Semiiugerum"/>
+         <tok val="semiiugerum"/>
          <lm>
             <l>semiiugerum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -906,16 +1107,19 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semilacer semilacerque-->
-         <tok val="[sS]emilacer(que)?"/>
+      <ana>
+         <tok val="Semilacer"/>
+         <tok val="semilacer"/>
+         <tok val="semilacerque"/>
          <lm>
             <l>semilacer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Semiliber semiliber-->
-         <tok val="[sS]emiliber"/>
+      <ana>
+         <tok val="Semiliber"/>
+         <tok val="semiliber"/>
          <lm>
             <l>semiliber</l>
             <m cert="0.5">a - - s - - - m n</m>
@@ -924,6 +1128,7 @@
       </ana>
       <ana>
          <tok val="Semiliberum"/>
+         <tok val="semiliberum"/>
          <lm>
             <l>semiliber</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -934,8 +1139,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semilixa semilixa-->
-         <tok val="[sS]emilixa"/>
+      <ana>
+         <tok val="Semilixa"/>
+         <tok val="semilixa"/>
          <lm>
             <l>semilixa</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -943,8 +1149,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Semimadidus semimadidus-->
-         <tok val="[sS]emimadidus"/>
+      <ana>
+         <tok val="Semimadidus"/>
+         <tok val="semimadidus"/>
          <lm>
             <l>semimadidus</l>
             <m>a - - s - - - m n</m>
@@ -952,6 +1159,7 @@
       </ana>
       <ana>
          <tok val="Semimarinum"/>
+         <tok val="semimarinum"/>
          <lm>
             <l>semimarinus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -964,6 +1172,7 @@
       </ana>
       <ana>
          <tok val="Semimarinus"/>
+         <tok val="semimarinus"/>
          <lm>
             <l>semimarinus</l>
             <m>a - - s - - - m n</m>
@@ -971,20 +1180,23 @@
       </ana>
       <ana>
          <tok val="Semimedus"/>
+         <tok val="semimedus"/>
          <lm>
             <l>Semimedus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semimortuus semimortuus-->
-         <tok val="[sS]emimortuus"/>
+      <ana>
+         <tok val="Semimortuus"/>
+         <tok val="semimortuus"/>
          <lm>
             <l>semimortuus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Seminalis seminalis-->
-         <tok val="[sS]eminalis"/>
+      <ana>
+         <tok val="Seminalis"/>
+         <tok val="seminalis"/>
          <lm>
             <l>seminalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -996,16 +1208,19 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Seminalis seminales seminalis-->
-         <tok val="[sS]eminal[ie]s"/>
+      <ana>
+         <tok val="Seminalis"/>
+         <tok val="seminales"/>
+         <tok val="seminalis"/>
          <lm>
             <l>seminalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Seminane seminane-->
-         <tok val="[sS]eminane"/>
+      <ana>
+         <tok val="Seminane"/>
+         <tok val="seminane"/>
          <lm>
             <l>semiinanis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1013,8 +1228,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Seminanis seminanis-->
-         <tok val="[sS]eminanis"/>
+      <ana>
+         <tok val="Seminanis"/>
+         <tok val="seminanis"/>
          <lm>
             <l>semiinanis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1028,8 +1244,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Seminare seminare-->
-         <tok val="[sS]eminare"/>
+      <ana>
+         <tok val="Seminare"/>
+         <tok val="seminare"/>
          <lm>
             <l>semino</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1037,8 +1254,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Seminaria seminaria-->
-         <tok val="[sS]eminaria"/>
+      <ana>
+         <tok val="Seminaria"/>
+         <tok val="seminaria"/>
          <lm cert="0.5">
             <l>seminarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1055,8 +1273,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Seminarii seminari seminarii-->
-         <tok val="[sS]eminari[i]?"/>
+      <ana>
+         <tok val="Seminarii"/>
+         <tok val="seminari"/>
+         <tok val="seminarii"/>
          <lm cert="0.5">
             <l>seminarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -1067,16 +1287,18 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Seminarii seminarii-->
-         <tok val="[sS]eminarii"/>
+      <ana>
+         <tok val="Seminarii"/>
+         <tok val="seminarii"/>
          <lm>
             <l>seminarius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Seminarium seminarium-->
-         <tok val="[sS]eminarium"/>
+      <ana>
+         <tok val="Seminarium"/>
+         <tok val="seminarium"/>
          <lm cert="0.5">
             <l>seminarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1094,61 +1316,77 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Seminat seminat-->
-         <tok val="[sS]eminat"/>
+      <ana>
+         <tok val="Seminat"/>
+         <tok val="seminat"/>
          <lm>
             <l>semino</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Seminatio seminatio-->
-         <tok val="[sS]eminatio"/>
+      <ana>
+         <tok val="Seminatio"/>
+         <tok val="seminatio"/>
          <lm>
             <l>seminatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Seminator seminator-->
-         <tok val="[sS]eminator"/>
+      <ana>
+         <tok val="Seminator"/>
+         <tok val="seminator"/>
          <lm>
             <l>seminator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Seminatus seminatus seminatust-->
-         <tok val="[sS]eminatus[t]?"/>
+      <ana>
+         <tok val="Seminatus"/>
+         <tok val="seminatus"/>
+         <tok val="seminatust"/>
          <lm>
             <l>semino</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Semine semine sémine-->
-         <tok val="[sS]?(e|sé)mine"/>
+      <ana>
+         <tok val="Semine"/>
+         <tok val="semine"/>
+         <tok val="sémine"/>
          <lm>
             <l>semen</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Seminecem seminecem-->
-         <tok val="[sS]eminecem"/>
+      <ana>
+         <tok val="Seminecem"/>
+         <tok val="seminecem"/>
          <lm>
             <l>seminecis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semineces Seminecis semineces seminecesque seminecis seminecisque seminecisue-->
-         <tok val="[sS]eminec[ie]?[s]?[q]?(ue|is|es)"/>
+      <ana>
+         <tok val="Semineces"/>
+         <tok val="Seminecis"/>
+         <tok val="semineces"/>
+         <tok val="seminecesque"/>
+         <tok val="seminecis"/>
+         <tok val="seminecisque"/>
+         <tok val="seminecisue"/>
          <lm>
             <l>seminecis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semineces semineces seminecesque-->
-         <tok val="[sS]emineces(que)?"/>
+      <ana>
+         <tok val="Semineces"/>
+         <tok val="semineces"/>
+         <tok val="seminecesque"/>
          <lm>
             <l>seminecis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1157,8 +1395,11 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Seminecis seminecis seminecisque seminecisue-->
-         <tok val="[sS]eminecis[q]?(ue)?"/>
+      <ana>
+         <tok val="Seminecis"/>
+         <tok val="seminecis"/>
+         <tok val="seminecisque"/>
+         <tok val="seminecisue"/>
          <lm>
             <l>seminecis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1170,23 +1411,28 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Seminibus seminibus seminibusque-->
-         <tok val="[sS]eminibus(que)?"/>
+      <ana>
+         <tok val="Seminibus"/>
+         <tok val="seminibus"/>
+         <tok val="seminibusque"/>
          <lm>
             <l>semen</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Seminis seminis seminisque-->
-         <tok val="[sS]eminis(que)?"/>
+      <ana>
+         <tok val="Seminis"/>
+         <tok val="seminis"/>
+         <tok val="seminisque"/>
          <lm>
             <l>semen</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Seminium seminium-->
-         <tok val="[sS]eminium"/>
+      <ana>
+         <tok val="Seminium"/>
+         <tok val="seminium"/>
          <lm>
             <l>seminium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1194,29 +1440,35 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Seminium seminiorum seminium-->
-         <tok val="[sS]emini(or)?um"/>
+      <ana>
+         <tok val="Seminium"/>
+         <tok val="seminiorum"/>
+         <tok val="seminium"/>
          <lm>
             <l>seminium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semino semino-->
-         <tok val="[sS]emino"/>
+      <ana>
+         <tok val="Semino"/>
+         <tok val="semino"/>
          <lm>
             <l>semino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Seminudus seminudus-->
-         <tok val="[sS]eminudus"/>
+      <ana>
+         <tok val="Seminudus"/>
+         <tok val="seminudus"/>
          <lm>
             <l>seminudus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Seminum seminum seminumque-->
-         <tok val="[sS]eminum(que)?"/>
+      <ana>
+         <tok val="Seminum"/>
+         <tok val="seminum"/>
+         <tok val="seminumque"/>
          <lm>
             <l>semen</l>
             <m>n - - p - - - n g</m>
@@ -1224,6 +1476,7 @@
       </ana>
       <ana>
          <tok val="Seminumidam"/>
+         <tok val="seminumidam"/>
          <lm>
             <l>Seminumida</l>
             <m>n e - s - - - m a</m>
@@ -1231,6 +1484,7 @@
       </ana>
       <ana>
          <tok val="Semioboli"/>
+         <tok val="semioboli"/>
          <lm>
             <l>semiobolus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1238,15 +1492,17 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Semipaganus semipaganus-->
-         <tok val="[sS]emipaganus"/>
+      <ana>
+         <tok val="Semipaganus"/>
+         <tok val="semipaganus"/>
          <lm>
             <l>semipaganus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semipedalis semipedalis-->
-         <tok val="[sS]emipedalis"/>
+      <ana>
+         <tok val="Semipedalis"/>
+         <tok val="semipedalis"/>
          <lm>
             <l>semipedalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1258,8 +1514,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semipedalis semipedales semipedalis-->
-         <tok val="[sS]emipedal[ie]s"/>
+      <ana>
+         <tok val="Semipedalis"/>
+         <tok val="semipedales"/>
+         <tok val="semipedalis"/>
          <lm>
             <l>semipedalis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -1268,6 +1526,7 @@
       </ana>
       <ana>
          <tok val="Semipersa"/>
+         <tok val="semipersa"/>
          <lm>
             <l>Semipersa</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -1275,8 +1534,9 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semipes semipes-->
-         <tok val="[sS]emipes"/>
+      <ana>
+         <tok val="Semipes"/>
+         <tok val="semipes"/>
          <lm>
             <l>semipes</l>
             <m>n - - s - - - m n</m>
@@ -1284,13 +1544,15 @@
       </ana>
       <ana>
          <tok val="Semiplacentinus"/>
+         <tok val="semiplacentinus"/>
          <lm>
             <l>Semiplacentinus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semiplenae semiplenae-->
-         <tok val="[sS]emiplenae"/>
+      <ana>
+         <tok val="Semiplenae"/>
+         <tok val="semiplenae"/>
          <lm>
             <l>semiplenus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1301,13 +1563,15 @@
       </ana>
       <ana>
          <tok val="Semiplenus"/>
+         <tok val="semiplenus"/>
          <lm>
             <l>semiplenus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semiputata semiputata-->
-         <tok val="[sS]emiputata"/>
+      <ana>
+         <tok val="Semiputata"/>
+         <tok val="semiputata"/>
          <lm>
             <l>semiputatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1320,13 +1584,15 @@
       </ana>
       <ana>
          <tok val="Semiputatus"/>
+         <tok val="semiputatus"/>
          <lm>
             <l>semiputatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semira semira-->
-         <tok val="[sS]emira"/>
+      <ana>
+         <tok val="Semira"/>
+         <tok val="semira"/>
          <lm>
             <l>semiro</l>
             <m>v - 2 s p m a</m>
@@ -1334,6 +1600,7 @@
       </ana>
       <ana>
          <tok val="Semiramia"/>
+         <tok val="semiramia"/>
          <lm>
             <l>Semiramius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1346,6 +1613,7 @@
       </ana>
       <ana>
          <tok val="Semiramide"/>
+         <tok val="semiramide"/>
          <lm>
             <l>Semiramis</l>
             <m>n e - s - - - f b</m>
@@ -1353,6 +1621,7 @@
       </ana>
       <ana>
          <tok val="Semiramidis"/>
+         <tok val="semiramidis"/>
          <lm>
             <l>Semiramis</l>
             <m>n e - s - - - f g</m>
@@ -1360,14 +1629,18 @@
       </ana>
       <ana>
          <tok val="Semiramin"/>
+         <tok val="semiramin"/>
          <lm>
             <l>Semiramius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Semiramin Semiramis-->
-         <tok val="Semirami[sn]"/>
+      <ana>
+         <tok val="Semiramin"/>
+         <tok val="Semiramis"/>
+         <tok val="semiramin"/>
+         <tok val="semiramis"/>
          <lm>
             <l>Semiramis</l>
             <m>n e - s - - - f n</m>
@@ -1375,6 +1648,7 @@
       </ana>
       <ana>
          <tok val="Semiramio"/>
+         <tok val="semiramio"/>
          <lm>
             <l>Semiramius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1385,6 +1659,7 @@
       </ana>
       <ana>
          <tok val="Semiramius"/>
+         <tok val="semiramius"/>
          <lm>
             <l>Semiramius</l>
             <m>a e - s - - - m n</m>
@@ -1392,6 +1667,7 @@
       </ana>
       <ana>
          <tok val="Semirasus"/>
+         <tok val="semirasus"/>
          <lm>
             <l>semirasus</l>
             <m>a - - s - - - m n</m>
@@ -1399,6 +1675,7 @@
       </ana>
       <ana>
          <tok val="Semireductus"/>
+         <tok val="semireductus"/>
          <lm>
             <l>semireductus</l>
             <m>a - - s - - - m n</m>
@@ -1406,13 +1683,15 @@
       </ana>
       <ana>
          <tok val="Semirefectus"/>
+         <tok val="semirefectus"/>
          <lm>
             <l>semirefectus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semiruta semiruta-->
-         <tok val="[sS]emiruta"/>
+      <ana>
+         <tok val="Semiruta"/>
+         <tok val="semiruta"/>
          <lm cert="0.5">
             <l>semiruta</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1431,13 +1710,15 @@
       </ana>
       <ana>
          <tok val="Semirutus"/>
+         <tok val="semirutus"/>
          <lm>
             <l>semirutus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semisepulta semisepulta-->
-         <tok val="[sS]emisepulta"/>
+      <ana>
+         <tok val="Semisepulta"/>
+         <tok val="semisepulta"/>
          <lm>
             <l>semisepultus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1450,13 +1731,15 @@
       </ana>
       <ana>
          <tok val="Semisepultus"/>
+         <tok val="semisepultus"/>
          <lm>
             <l>semisepultus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semisomnis semisomnis-->
-         <tok val="[sS]emisomnis"/>
+      <ana>
+         <tok val="Semisomnis"/>
+         <tok val="semisomnis"/>
          <lm cert="0.5">
             <l>semisomnus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -1477,38 +1760,46 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semisomnis semisomnes semisomnis-->
-         <tok val="[sS]emisomn[ie]s"/>
+      <ana>
+         <tok val="Semisomnis"/>
+         <tok val="semisomnes"/>
+         <tok val="semisomnis"/>
          <lm>
             <l>semisomnis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semisomnus semisomnus-->
-         <tok val="[sS]emisomnus"/>
+      <ana>
+         <tok val="Semisomnus"/>
+         <tok val="semisomnus"/>
          <lm>
             <l>semisomnus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semisopitus semisopitus-->
-         <tok val="[sS]emisopitus"/>
+      <ana>
+         <tok val="Semisopitus"/>
+         <tok val="semisopitus"/>
          <lm>
             <l>semisopitus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semissales Semissalis semissales semissalis-->
-         <tok val="[Ss]emissal[ie]s"/>
+      <ana>
+         <tok val="Semissales"/>
+         <tok val="Semissalis"/>
+         <tok val="semissales"/>
+         <tok val="semissalis"/>
          <lm>
             <l>semissalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semissales semissales-->
-         <tok val="[sS]emissales"/>
+      <ana>
+         <tok val="Semissales"/>
+         <tok val="semissales"/>
          <lm>
             <l>semissalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1517,8 +1808,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semissalis semissalis-->
-         <tok val="[sS]emissalis"/>
+      <ana>
+         <tok val="Semissalis"/>
+         <tok val="semissalis"/>
          <lm>
             <l>semissalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1530,8 +1822,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semisses semisses-->
-         <tok val="[sS]emisses"/>
+      <ana>
+         <tok val="Semisses"/>
+         <tok val="semisses"/>
          <lm cert="0.5">
             <l>semis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1544,15 +1837,17 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Semisupinus semisupinus-->
-         <tok val="[sS]emisupinus"/>
+      <ana>
+         <tok val="Semisupinus"/>
+         <tok val="semisupinus"/>
          <lm>
             <l>semisupinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semita semita-->
-         <tok val="[sS]emita"/>
+      <ana>
+         <tok val="Semita"/>
+         <tok val="semita"/>
          <lm>
             <l>semita</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1560,8 +1855,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Semitae semitae-->
-         <tok val="[sS]emitae"/>
+      <ana>
+         <tok val="Semitae"/>
+         <tok val="semitae"/>
          <lm>
             <l>semita</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1570,22 +1866,28 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Semitam semitam semitamque semitám sémitam-->
-         <tok val="[sS]?(e|sé|se)mit[aá]m(que)?"/>
+      <ana>
+         <tok val="Semitam"/>
+         <tok val="semitam"/>
+         <tok val="semitamque"/>
+         <tok val="semitám"/>
+         <tok val="sémitam"/>
          <lm>
             <l>semita</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semitarius semitarius-->
-         <tok val="[sS]emitarius"/>
+      <ana>
+         <tok val="Semitarius"/>
+         <tok val="semitarius"/>
          <lm>
             <l>semitarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semitonia semitonia-->
-         <tok val="[sS]emitonia"/>
+      <ana>
+         <tok val="Semitonia"/>
+         <tok val="semitonia"/>
          <lm>
             <l>semitonium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1593,8 +1895,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Semitonium semitonium-->
-         <tok val="[sS]emitonium"/>
+      <ana>
+         <tok val="Semitonium"/>
+         <tok val="semitonium"/>
          <lm>
             <l>semitonium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1602,8 +1905,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Semitonium semitoniorum semitonium-->
-         <tok val="[sS]emitoni(or)?um"/>
+      <ana>
+         <tok val="Semitonium"/>
+         <tok val="semitoniorum"/>
+         <tok val="semitonium"/>
          <lm>
             <l>semitonium</l>
             <m>n - - p - - - n g</m>
@@ -1611,6 +1916,7 @@
       </ana>
       <ana>
          <tok val="Semitritus"/>
+         <tok val="semitritus"/>
          <lm>
             <l>semitritus</l>
             <m>a - - s - - - m n</m>
@@ -1618,21 +1924,29 @@
       </ana>
       <ana>
          <tok val="Semiuietus"/>
+         <tok val="semiuietus"/>
          <lm>
             <l>semivietus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semiuir Semivir semiuir semivir-->
-         <tok val="[Ss]emi[vu]ir"/>
+      <ana>
+         <tok val="Semiuir"/>
+         <tok val="Semivir"/>
+         <tok val="semiuir"/>
+         <tok val="semivir"/>
          <lm>
             <l>semivir</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Semiuiri Semiviri semiuiri semiuirique semiviri-->
-         <tok val="[Ss]emi[vu]iri(que)?"/>
+      <ana>
+         <tok val="Semiuiri"/>
+         <tok val="Semiviri"/>
+         <tok val="semiuiri"/>
+         <tok val="semiuirique"/>
+         <tok val="semiviri"/>
          <lm>
             <l>semivir</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1642,6 +1956,7 @@
       </ana>
       <ana>
          <tok val="Semiuiua"/>
+         <tok val="semiuiua"/>
          <lm>
             <l>semivivus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1652,15 +1967,21 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Semiuiuus semiuiuus semivivus semivivusque-->
-         <tok val="[sS]emi[uv]i[uv]us(que)?"/>
+      <ana>
+         <tok val="Semiuiuus"/>
+         <tok val="semiuiuus"/>
+         <tok val="semivivus"/>
+         <tok val="semivivusque"/>
          <lm>
             <l>semivivus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semiuocalis Semivocalis semivocalis-->
-         <tok val="[Ss]emi[vu]ocalis"/>
+      <ana>
+         <tok val="Semiuocalis"/>
+         <tok val="Semivocalis"/>
+         <tok val="semiuocalis"/>
+         <tok val="semivocalis"/>
          <lm>
             <l>semivocalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1672,24 +1993,32 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Semiuocalis Semivocales Semivocalis semivocales semivocalis-->
-         <tok val="[Ss]emi[vu]ocal[ie]s"/>
+      <ana>
+         <tok val="Semiuocalis"/>
+         <tok val="Semivocales"/>
+         <tok val="Semivocalis"/>
+         <tok val="semiuocalis"/>
+         <tok val="semivocales"/>
+         <tok val="semivocalis"/>
          <lm>
             <l>semivocalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Semiviro semiuiro semiviro-->
-         <tok val="[sS]emi[vu]iro"/>
+      <ana>
+         <tok val="Semiviro"/>
+         <tok val="semiuiro"/>
+         <tok val="semiviro"/>
          <lm>
             <l>semivir</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Semivocales semivocales-->
-         <tok val="[sS]emivocales"/>
+      <ana>
+         <tok val="Semivocales"/>
+         <tok val="semivocales"/>
          <lm>
             <l>semivocalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1700,6 +2029,7 @@
       </ana>
       <ana>
          <tok val="Semnones"/>
+         <tok val="semnones"/>
          <lm>
             <l>Semnones</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -1709,21 +2039,28 @@
       </ana>
       <ana>
          <tok val="Semnonum"/>
+         <tok val="semnonum"/>
          <lm>
             <l>Semnones</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Semo Semon-->
-         <tok val="Semo[n]?"/>
+      <ana>
+         <tok val="Semo"/>
+         <tok val="Semon"/>
+         <tok val="semo"/>
+         <tok val="semon"/>
          <lm>
             <l>Semo</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semodius Semodiusque semodius-->
-         <tok val="[sS]emodius(que)?"/>
+      <ana>
+         <tok val="Semodius"/>
+         <tok val="Semodiusque"/>
+         <tok val="semodius"/>
+         <tok val="semodiusque"/>
          <lm>
             <l>semodius</l>
             <m>n - - s - - - m n</m>
@@ -1731,6 +2068,7 @@
       </ana>
       <ana>
          <tok val="Semoni"/>
+         <tok val="semoni"/>
          <lm>
             <l>Semo</l>
             <m>n e - s - - - m d</m>
@@ -1738,6 +2076,7 @@
       </ana>
       <ana>
          <tok val="Semonia"/>
+         <tok val="semonia"/>
          <lm>
             <l>Semonia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1747,6 +2086,7 @@
       </ana>
       <ana>
          <tok val="Semoniae"/>
+         <tok val="semoniae"/>
          <lm>
             <l>Semonia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1757,14 +2097,16 @@
       </ana>
       <ana>
          <tok val="Semonibus"/>
+         <tok val="semonibus"/>
          <lm>
             <l>Semo</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Semota semota-->
-         <tok val="[sS]emota"/>
+      <ana>
+         <tok val="Semota"/>
+         <tok val="semota"/>
          <lm>
             <l>semoveo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1775,8 +2117,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Semotae semotae-->
-         <tok val="[sS]emotae"/>
+      <ana>
+         <tok val="Semotae"/>
+         <tok val="semotae"/>
          <lm>
             <l>semoveo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1785,8 +2128,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Semotis semotis semotisque-->
-         <tok val="[sS]emotis(que)?"/>
+      <ana>
+         <tok val="Semotis"/>
+         <tok val="semotis"/>
+         <tok val="semotisque"/>
          <lm>
             <l>semoveo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1797,8 +2142,9 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Semoto semoto-->
-         <tok val="[sS]emoto"/>
+      <ana>
+         <tok val="Semoto"/>
+         <tok val="semoto"/>
          <lm>
             <l>semoveo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1807,40 +2153,41 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Semotum semotum-->
-         <tok val="[sS]emotum"/>
+      <ana>
+         <tok val="Semotum"/>
+         <tok val="semotum"/>
          <lm>
             <l>semoveo</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - s r p p n a</m>
-            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Semotum semote semotum-->
-         <tok val="[sS]emot(um|e)"/>
+      <ana>
+         <tok val="Semotum"/>
+         <tok val="semote"/>
+         <tok val="semotum"/>
          <lm>
             <l>semoveo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Semotum"/>
-         <lm>
-            <l>semoveo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Semotus semotus-->
-         <tok val="[sS]emotus"/>
+         <tok val="Semotus"/>
+         <tok val="semotus"/>
          <lm>
             <l>semoveo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Semouenda Semovenda semouenda-->
-         <tok val="[Ss]emo[vu]enda"/>
+      <ana>
+         <tok val="Semouenda"/>
+         <tok val="Semovenda"/>
+         <tok val="semouenda"/>
+         <tok val="semovenda"/>
          <lm>
             <l>semoveo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1851,8 +2198,10 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Semoueo semoueo semoveo-->
-         <tok val="[sS]emo[uv]eo"/>
+      <ana>
+         <tok val="Semoueo"/>
+         <tok val="semoueo"/>
+         <tok val="semoveo"/>
          <lm>
             <l>semoveo</l>
             <m>v - 1 s p i a</m>
@@ -1860,6 +2209,7 @@
       </ana>
       <ana>
          <tok val="Sempervivi"/>
+         <tok val="sempervivi"/>
          <lm cert="0.5">
             <l>sempervivus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1872,8 +2222,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sempervivum sempervivum-->
-         <tok val="[sS]empervivum"/>
+      <ana>
+         <tok val="Sempervivum"/>
+         <tok val="sempervivum"/>
          <lm cert="0.5">
             <l>sempervivus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1891,15 +2242,18 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sempiterna sempiterna sempitérna-->
-         <tok val="[sS]empit[eé]rna"/>
+      <ana>
+         <tok val="Sempiterna"/>
+         <tok val="sempiterna"/>
+         <tok val="sempitérna"/>
          <lm>
             <l>sempiternus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Sempiterna sempiterna-->
-         <tok val="[sS]empiterna"/>
+      <ana>
+         <tok val="Sempiterna"/>
+         <tok val="sempiterna"/>
          <lm>
             <l>sempiternus</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -1909,15 +2263,18 @@
             <m cert="0.2">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sempiternam sempiternam sémpiternam-->
-         <tok val="[sS]?(e|sé)mpiternam"/>
+      <ana>
+         <tok val="Sempiternam"/>
+         <tok val="sempiternam"/>
+         <tok val="sémpiternam"/>
          <lm>
             <l>sempiternus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sempiterni sempiterni-->
-         <tok val="[sS]empiterni"/>
+      <ana>
+         <tok val="Sempiterni"/>
+         <tok val="sempiterni"/>
          <lm>
             <l>sempiternus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1926,8 +2283,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sempiternis sempiternis-->
-         <tok val="[sS]empiternis"/>
+      <ana>
+         <tok val="Sempiternis"/>
+         <tok val="sempiternis"/>
          <lm>
             <l>sempiternus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1938,22 +2296,31 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Sempiternus sempiternus-->
-         <tok val="[sS]empiternus"/>
+      <ana>
+         <tok val="Sempiternus"/>
+         <tok val="sempiternus"/>
          <lm>
             <l>sempiternus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Semproni Sempronique-->
-         <tok val="Semproni(que)?"/>
+      <ana>
+         <tok val="Semproni"/>
+         <tok val="Sempronique"/>
+         <tok val="semproni"/>
+         <tok val="sempronique"/>
          <lm>
             <l>Sempronius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Semproni Sempronii Sempronique-->
-         <tok val="Semproni(i|que)?"/>
+      <ana>
+         <tok val="Semproni"/>
+         <tok val="Sempronii"/>
+         <tok val="Sempronique"/>
+         <tok val="semproni"/>
+         <tok val="sempronii"/>
+         <tok val="sempronique"/>
          <lm>
             <l>Sempronius</l>
             <m cert="0.333333333333333333">a e - s - - - n g</m>
@@ -1963,6 +2330,7 @@
       </ana>
       <ana>
          <tok val="Sempronia"/>
+         <tok val="sempronia"/>
          <lm cert="0.5">
             <l>Sempronius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1981,6 +2349,7 @@
       </ana>
       <ana>
          <tok val="Semproniae"/>
+         <tok val="semproniae"/>
          <lm cert="0.5">
             <l>Sempronia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1998,6 +2367,7 @@
       </ana>
       <ana>
          <tok val="Semproniam"/>
+         <tok val="semproniam"/>
          <lm cert="0.5">
             <l>Sempronia</l>
             <m>n e - s - - - f a</m>
@@ -2009,6 +2379,7 @@
       </ana>
       <ana>
          <tok val="Sempronianae"/>
+         <tok val="sempronianae"/>
          <lm>
             <l>Sempronianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -2019,6 +2390,7 @@
       </ana>
       <ana>
          <tok val="Sempronianam"/>
+         <tok val="sempronianam"/>
          <lm>
             <l>Sempronianus</l>
             <m>a e - s - - - f a</m>
@@ -2026,6 +2398,7 @@
       </ana>
       <ana>
          <tok val="Sempronianis"/>
+         <tok val="sempronianis"/>
          <lm>
             <l>Sempronianus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2038,6 +2411,7 @@
       </ana>
       <ana>
          <tok val="Semproniano"/>
+         <tok val="semproniano"/>
          <lm>
             <l>Sempronianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -2048,6 +2422,7 @@
       </ana>
       <ana>
          <tok val="Sempronianum"/>
+         <tok val="sempronianum"/>
          <lm>
             <l>Sempronianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -2060,6 +2435,7 @@
       </ana>
       <ana>
          <tok val="Sempronianus"/>
+         <tok val="sempronianus"/>
          <lm>
             <l>Sempronianus</l>
             <m>a e - s - - - m n</m>
@@ -2067,6 +2443,7 @@
       </ana>
       <ana>
          <tok val="Sempronias"/>
+         <tok val="sempronias"/>
          <lm cert="0.5">
             <l>Sempronius</l>
             <m>a e - p - - - f a</m>
@@ -2078,6 +2455,7 @@
       </ana>
       <ana>
          <tok val="Sempronii"/>
+         <tok val="sempronii"/>
          <lm>
             <l>Sempronius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2088,6 +2466,7 @@
       </ana>
       <ana>
          <tok val="Semproniis"/>
+         <tok val="semproniis"/>
          <lm cert="0.5">
             <l>Sempronia</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -2107,14 +2486,18 @@
       </ana>
       <ana>
          <tok val="Sempronios"/>
+         <tok val="sempronios"/>
          <lm>
             <l>Sempronius</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sempronium Semproniumque-->
-         <tok val="Sempronium(que)?"/>
+      <ana>
+         <tok val="Sempronium"/>
+         <tok val="Semproniumque"/>
+         <tok val="sempronium"/>
+         <tok val="semproniumque"/>
          <lm>
             <l>Sempronius</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -2127,8 +2510,11 @@
             <m cert="0.125">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sempronius Semproniusque-->
-         <tok val="Sempronius(que)?"/>
+      <ana>
+         <tok val="Sempronius"/>
+         <tok val="Semproniusque"/>
+         <tok val="sempronius"/>
+         <tok val="semproniusque"/>
          <lm>
             <l>Sempronius</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -2137,13 +2523,16 @@
       </ana>
       <ana>
          <tok val="Semulco"/>
+         <tok val="semulco"/>
          <lm>
             <l>semulco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Semuncia semuncia semunciaque-->
-         <tok val="[sS]emuncia(que)?"/>
+      <ana>
+         <tok val="Semuncia"/>
+         <tok val="semuncia"/>
+         <tok val="semunciaque"/>
          <lm>
             <l>semuncia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2151,8 +2540,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Semuncialis semuncialis-->
-         <tok val="[sS]emuncialis"/>
+      <ana>
+         <tok val="Semuncialis"/>
+         <tok val="semuncialis"/>
          <lm>
             <l>semuncialis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -2168,6 +2558,7 @@
       </ana>
       <ana>
          <tok val="Semunciarium"/>
+         <tok val="semunciarium"/>
          <lm>
             <l>semunciarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -2178,8 +2569,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semunciarius semunciarius-->
-         <tok val="[sS]emunciarius"/>
+      <ana>
+         <tok val="Semunciarius"/>
+         <tok val="semunciarius"/>
          <lm>
             <l>semunciarius</l>
             <m>a - - s - - - m n</m>
@@ -2187,6 +2579,7 @@
       </ana>
       <ana>
          <tok val="Semurium"/>
+         <tok val="semurium"/>
          <lm>
             <l>Semurium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -2195,8 +2588,9 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Semustum semustum-->
-         <tok val="[sS]emustum"/>
+      <ana>
+         <tok val="Semustum"/>
+         <tok val="semustum"/>
          <lm>
             <l>semustus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -2207,15 +2601,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Semustus semustus-->
-         <tok val="[sS]emustus"/>
+      <ana>
+         <tok val="Semustus"/>
+         <tok val="semustus"/>
          <lm>
             <l>semustus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--semanimi semianimi-->
-         <tok val="sem[i]?animi"/>
+      <ana>
+         <tok val="semanimi"/>
+         <tok val="semianimi"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.2">a - - s - - - n b</m>
@@ -2225,8 +2621,10 @@
             <m cert="0.2">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--semanimi semianima semianimi-->
-         <tok val="sem[i]?anim[ia]"/>
+      <ana>
+         <tok val="semanimi"/>
+         <tok val="semianima"/>
+         <tok val="semianimi"/>
          <lm>
             <l>semianimis</l>
             <m>a - - s - - - f b</m>
@@ -2342,8 +2740,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--semesa semesaque-->
-         <tok val="semesa(que)?"/>
+      <ana>
+         <tok val="semesa"/>
+         <tok val="semesaque"/>
          <lm>
             <l>semesus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2531,8 +2930,10 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--semianime semianimum semianimumque-->
-         <tok val="semianim(um)?(que|e)?"/>
+      <ana>
+         <tok val="semianime"/>
+         <tok val="semianimum"/>
+         <tok val="semianimumque"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2547,8 +2948,9 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--semianimis semianimisque-->
-         <tok val="semianimis(que)?"/>
+      <ana>
+         <tok val="semianimis"/>
+         <tok val="semianimisque"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -2559,8 +2961,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--semianimum semianimumque-->
-         <tok val="semianimum(que)?"/>
+      <ana>
+         <tok val="semianimum"/>
+         <tok val="semianimumque"/>
          <lm>
             <l>semianimis</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2909,8 +3312,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--semideos semideosque-->
-         <tok val="semideos(que)?"/>
+      <ana>
+         <tok val="semideos"/>
+         <tok val="semideosque"/>
          <lm>
             <l>semideus</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -3597,8 +4001,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--seminate seminatum-->
-         <tok val="seminat(um|e)"/>
+      <ana>
+         <tok val="seminate"/>
+         <tok val="seminatum"/>
          <lm>
             <l>semino</l>
             <m>v - - s r p p n v</m>
@@ -3677,15 +4082,17 @@
             <m cert="0.5">v - 2 p t i a</m>
          </lm>
       </ana>
-      <ana><!--seminaui seminavi-->
-         <tok val="semina[vu]i"/>
+      <ana>
+         <tok val="seminaui"/>
+         <tok val="seminavi"/>
          <lm>
             <l>semino</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--seminauit seminavit-->
-         <tok val="semina[vu]it"/>
+      <ana>
+         <tok val="seminauit"/>
+         <tok val="seminavit"/>
          <lm>
             <l>semino</l>
             <m>v - 3 s r i a</m>
@@ -3774,15 +4181,18 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--seminio seminioque seminió-->
-         <tok val="semini(ó|o|oque)"/>
+      <ana>
+         <tok val="seminio"/>
+         <tok val="seminioque"/>
+         <tok val="seminió"/>
          <lm>
             <l>seminium</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--seminio seminioque-->
-         <tok val="seminio(que)?"/>
+      <ana>
+         <tok val="seminio"/>
+         <tok val="seminioque"/>
          <lm>
             <l>seminium</l>
             <m>n - - s - - - n b</m>
@@ -4231,8 +4641,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--semisomnae semisómnae-->
-         <tok val="semis[óo]mnae"/>
+      <ana>
+         <tok val="semisomnae"/>
+         <tok val="semisómnae"/>
          <lm>
             <l>semisomnus</l>
             <m>a - - p - - - f v</m>
@@ -4445,8 +4856,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--semitari semitarii-->
-         <tok val="semitari[i]?"/>
+      <ana>
+         <tok val="semitari"/>
+         <tok val="semitarii"/>
          <lm>
             <l>semitarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -4501,8 +4913,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--semitis semitisque-->
-         <tok val="semitis(que)?"/>
+      <ana>
+         <tok val="semitis"/>
+         <tok val="semitisque"/>
          <lm>
             <l>semita</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -4568,31 +4981,37 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--semiuiris semiviris-->
-         <tok val="semi[vu]iris"/>
+      <ana>
+         <tok val="semiuiris"/>
+         <tok val="semiviris"/>
          <lm>
             <l>semivir</l>
             <m cert="0.5">n - - p - - - m d</m>
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--semiuiros semiviros-->
-         <tok val="semi[vu]iros"/>
+      <ana>
+         <tok val="semiuiros"/>
+         <tok val="semiviros"/>
          <lm>
             <l>semivir</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--semiuiuorum semiuiuum semivivum semivivorum-->
-         <tok val="semi(vivor|viv)?u(iu)?(or)?(um|m)"/>
+      <ana>
+         <tok val="semiuiuorum"/>
+         <tok val="semiuiuum"/>
+         <tok val="semivivorum"/>
+         <tok val="semivivum"/>
          <lm>
             <l>semivivus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--semiuiuum semivivum-->
-         <tok val="semi[vu]i[vu]um"/>
+      <ana>
+         <tok val="semiuiuum"/>
+         <tok val="semivivum"/>
          <lm>
             <l>semivivus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -4601,8 +5020,9 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--semiuocalium semivocalium-->
-         <tok val="semi[vu]ocalium"/>
+      <ana>
+         <tok val="semiuocalium"/>
+         <tok val="semivocalium"/>
          <lm>
             <l>semivocalis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -4610,22 +5030,28 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--semivirum semivirumque semiuirumque semivirorum-->
-         <tok val="semi[uv]i(ro)?rum(que)?"/>
+      <ana>
+         <tok val="semiuirumque"/>
+         <tok val="semivirorum"/>
+         <tok val="semivirum"/>
+         <tok val="semivirumque"/>
          <lm>
             <l>semivir</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--semivirum semivirumque semiuirumque-->
-         <tok val="semi[uv]irum(que|)"/>
+      <ana>
+         <tok val="semiuirumque"/>
+         <tok val="semivirum"/>
+         <tok val="semivirumque"/>
          <lm>
             <l>semivir</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--semivivam semiuiuam-->
-         <tok val="semi[uv]i[uv]am"/>
+      <ana>
+         <tok val="semiuiuam"/>
+         <tok val="semivivam"/>
          <lm>
             <l>semivivus</l>
             <m>a - - s - - - f a</m>
@@ -4704,16 +5130,18 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--semnio semnion-->
-         <tok val="semnio[n]?"/>
+      <ana>
+         <tok val="semnio"/>
+         <tok val="semnion"/>
          <lm>
             <l>semnion</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--semodi semodii-->
-         <tok val="semodi[i]?"/>
+      <ana>
+         <tok val="semodi"/>
+         <tok val="semodii"/>
          <lm>
             <l>semodius</l>
             <m>n - - s - - - m g</m>
@@ -4772,8 +5200,9 @@
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--semotam semotamque-->
-         <tok val="semotam(que)?"/>
+      <ana>
+         <tok val="semotam"/>
+         <tok val="semotamque"/>
          <lm>
             <l>semoveo</l>
             <m>v - - s r p p f a</m>
@@ -4800,8 +5229,9 @@
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--semoti semotique-->
-         <tok val="semoti(que)?"/>
+      <ana>
+         <tok val="semoti"/>
+         <tok val="semotique"/>
          <lm>
             <l>semoveo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -4878,15 +5308,17 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--semouendus semovendus-->
-         <tok val="semo[vu]endus"/>
+      <ana>
+         <tok val="semouendus"/>
+         <tok val="semovendus"/>
          <lm>
             <l>semoveo</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--semouens semovens-->
-         <tok val="semo[vu]ens"/>
+      <ana>
+         <tok val="semouens"/>
+         <tok val="semovens"/>
          <lm>
             <l>semoveo</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -4922,8 +5354,9 @@
             <m cert="0.333333333333333333">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--semouere semoveris-->
-         <tok val="semo[vu]er(is|e)"/>
+      <ana>
+         <tok val="semouere"/>
+         <tok val="semoveris"/>
          <lm>
             <l>semoveo</l>
             <m>v - 2 s p i p</m>
@@ -5017,8 +5450,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--sempiternae sempiternaeque-->
-         <tok val="sempiternae(que)?"/>
+      <ana>
+         <tok val="sempiternae"/>
+         <tok val="sempiternaeque"/>
          <lm>
             <l>sempiternus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -5041,15 +5475,18 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--sempiterne sempiterno-->
-         <tok val="sempitern[oe]"/>
+      <ana>
+         <tok val="sempiterne"/>
+         <tok val="sempiterno"/>
          <lm>
             <l>sempiternus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--sempiterne sempiternum sempiternumque-->
-         <tok val="sempitern(um)?(que|e)?"/>
+      <ana>
+         <tok val="sempiterne"/>
+         <tok val="sempiternum"/>
+         <tok val="sempiternumque"/>
          <lm>
             <l>sempiternus</l>
             <m>a - - s - - - n v</m>
@@ -5086,8 +5523,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--sempiternorum sempiternum sempiternumque-->
-         <tok val="sempitern(or)?um(que)?"/>
+      <ana>
+         <tok val="sempiternorum"/>
+         <tok val="sempiternum"/>
+         <tok val="sempiternumque"/>
          <lm>
             <l>sempiternus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -5101,23 +5540,27 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--sempiternum sempiternumque sempitérnum-->
-         <tok val="sempit[ée]rnum(que)?"/>
+      <ana>
+         <tok val="sempiternum"/>
+         <tok val="sempiternumque"/>
+         <tok val="sempitérnum"/>
          <lm>
             <l>sempiternus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--sempiternum sempiternumque-->
-         <tok val="sempiternum(que)?"/>
+      <ana>
+         <tok val="sempiternum"/>
+         <tok val="sempiternumque"/>
          <lm>
             <l>sempiternus</l>
             <m cert="0.5">a - - s - - - n a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--semunciae semunciaeque-->
-         <tok val="semunciae(que)?"/>
+      <ana>
+         <tok val="semunciae"/>
+         <tok val="semunciaeque"/>
          <lm>
             <l>semuncia</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -5174,8 +5617,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--semusta semustaque-->
-         <tok val="semusta(que)?"/>
+      <ana>
+         <tok val="semusta"/>
+         <tok val="semustaque"/>
          <lm>
             <l>semustus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -5196,8 +5640,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--semustamque semustam-->
-         <tok val="semustam(que)?"/>
+      <ana>
+         <tok val="semustam"/>
+         <tok val="semustamque"/>
          <lm>
             <l>semustus</l>
             <m>a - - s - - - f a</m>
@@ -5410,6 +5855,7 @@
       </ana>
       <ana>
          <tok val="Semicupae"/>
+         <tok val="semicupae"/>
          <lm>
             <l>semicupae</l>
             <m cert="0.5">n - - p - - - m n</m>

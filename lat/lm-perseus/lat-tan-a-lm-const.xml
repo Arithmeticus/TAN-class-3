@@ -1,58 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusconst">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:const">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to const</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-const.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CONST</tok-starts-with>
       <tok-starts-with>COnst</tok-starts-with>
       <tok-starts-with>Const</tok-starts-with>
       <tok-starts-with>const</tok-starts-with>
       <tok-starts-with>cónst</tok-starts-with>
-      <ana><!--CONSTA Consta Constan consta constan-->
-         <tok val="[Cc]?(onsta)?(n|CONSTA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:17:19.692-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:17:19.692-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-const.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CONSTA"/>
+         <tok val="Consta"/>
+         <tok val="Constan"/>
+         <tok val="consta"/>
+         <tok val="constan"/>
          <lm>
             <l>consto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--CONSTANT Constant constant-->
-         <tok val="[cC]?(onstant|CONSTANT)"/>
+      <ana>
+         <tok val="CONSTANT"/>
+         <tok val="Constant"/>
+         <tok val="constant"/>
          <lm>
             <l>consto</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--CONSTANTIAE Constantiae constantiae constantiaeque-->
-         <tok val="[cC]?(onstantiae)?(que|CONSTANTIAE)?"/>
+      <ana>
+         <tok val="CONSTANTIAE"/>
+         <tok val="Constantiae"/>
+         <tok val="constantiae"/>
+         <tok val="constantiaeque"/>
          <lm>
             <l>constantia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -61,69 +78,105 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--CONSTANTINO Constantino-->
-         <tok val="C(onstantino|ONSTANTINO)"/>
+      <ana>
+         <tok val="CONSTANTINO"/>
+         <tok val="Constantino"/>
+         <tok val="constantino"/>
          <lm>
             <l>Constantinus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CONSTANTINOPOLI Constantinopoli-->
-         <tok val="C(onstantinopoli|ONSTANTINOPOLI)"/>
+      <ana>
+         <tok val="CONSTANTINOPOLI"/>
+         <tok val="Constantinopoli"/>
+         <tok val="constantinopoli"/>
          <lm>
             <l>Constantinopolis</l>
             <m cert="0.5">n e - s - - - f b</m>
             <m cert="0.5">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--CONSTERNO Consterno consterno-->
-         <tok val="[cC]?(onsterno|CONSTERNO)"/>
+      <ana>
+         <tok val="CONSTERNO"/>
+         <tok val="Consterno"/>
+         <tok val="consterno"/>
          <lm>
             <l>consterno</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVERE Constituere Constituerunt constituere constituereque constituerunt constitueruntque-->
-         <tok val="[cC]?(onstituer)?(unt|e|untque|eque|CONSTITVERE)"/>
+      <ana>
+         <tok val="CONSTITVERE"/>
+         <tok val="Constituere"/>
+         <tok val="Constituerunt"/>
+         <tok val="constituere"/>
+         <tok val="constituereque"/>
+         <tok val="constituerunt"/>
+         <tok val="constitueruntque"/>
+         <tok val="constitvere"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVERE Constituere constituere constituereque-->
-         <tok val="[cC]?(onstituere)?(que|CONSTITVERE)?"/>
+      <ana>
+         <tok val="CONSTITVERE"/>
+         <tok val="Constituere"/>
+         <tok val="constituere"/>
+         <tok val="constituereque"/>
+         <tok val="constitvere"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVERE Constituere constituere constituereque constitueris-->
-         <tok val="[cC]?(onstituer)?[e]?(que|is|CONSTITVERE)?"/>
+      <ana>
+         <tok val="CONSTITVERE"/>
+         <tok val="Constituere"/>
+         <tok val="constituere"/>
+         <tok val="constituereque"/>
+         <tok val="constitueris"/>
+         <tok val="constitvere"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVIT Constituit Constituitque constituit constituitque-->
-         <tok val="[cC]?(onstituit)?(que|CONSTITVIT)?"/>
+      <ana>
+         <tok val="CONSTITVIT"/>
+         <tok val="Constituit"/>
+         <tok val="Constituitque"/>
+         <tok val="constituit"/>
+         <tok val="constituitque"/>
+         <tok val="constitvit"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVO Constituo constituo-->
-         <tok val="[cC]?(onstituo|CONSTITVO)"/>
+      <ana>
+         <tok val="CONSTITVO"/>
+         <tok val="Constituo"/>
+         <tok val="constituo"/>
+         <tok val="constitvo"/>
          <lm>
             <l>constituo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVTA COnstituta Constituta constituta constitutaque constitutast-->
-         <tok val="[cC]?(o|CO|co)?(nstituta)?(st|que|CONSTITVTA)?"/>
+      <ana>
+         <tok val="CONSTITVTA"/>
+         <tok val="COnstituta"/>
+         <tok val="Constituta"/>
+         <tok val="constituta"/>
+         <tok val="constitutaque"/>
+         <tok val="constitutast"/>
+         <tok val="constitvta"/>
          <lm cert="0.5">
             <l>constituo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -140,8 +193,10 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVTORES constitutores-->
-         <tok val="(constitutores|CONSTITVTORES)"/>
+      <ana>
+         <tok val="CONSTITVTORES"/>
+         <tok val="constitutores"/>
+         <tok val="constitvtores"/>
          <lm>
             <l>constitutor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -151,13 +206,20 @@
       </ana>
       <ana>
          <tok val="CONSTITVTVM"/>
+         <tok val="constitvtvm"/>
          <lm>
             <l>constituo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVTVM Constitutum constitutorum constitutum constitutumque constitutumst-->
-         <tok val="[cC]?(onstitut)?(or)?(um)?(st|que|CONSTITVTVM)?"/>
+      <ana>
+         <tok val="CONSTITVTVM"/>
+         <tok val="Constitutum"/>
+         <tok val="constitutorum"/>
+         <tok val="constitutum"/>
+         <tok val="constitutumque"/>
+         <tok val="constitutumst"/>
+         <tok val="constitvtvm"/>
          <lm cert="0.5">
             <l>constituo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -168,8 +230,14 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVTVM Constitutum constitutum constitutumque constitutumst constitute-->
-         <tok val="[cC]?(onstitut)?(um)?(st|que|e|CONSTITVTVM)?"/>
+      <ana>
+         <tok val="CONSTITVTVM"/>
+         <tok val="Constitutum"/>
+         <tok val="constitute"/>
+         <tok val="constitutum"/>
+         <tok val="constitutumque"/>
+         <tok val="constitutumst"/>
+         <tok val="constitvtvm"/>
          <lm cert="0.5">
             <l>constitutum</l>
             <m>n - - s - - - n v</m>
@@ -179,8 +247,13 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--CONSTITVTVM Constitutum constitutum constitutumque constitutumst-->
-         <tok val="[cC]?(onstitutum)?(st|que|CONSTITVTVM)?"/>
+      <ana>
+         <tok val="CONSTITVTVM"/>
+         <tok val="Constitutum"/>
+         <tok val="constitutum"/>
+         <tok val="constitutumque"/>
+         <tok val="constitutumst"/>
+         <tok val="constitvtvm"/>
          <lm cert="0.5">
             <l>constituo</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -193,22 +266,31 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--CONSTO Consto consto-->
-         <tok val="[cC]?(onsto|CONSTO)"/>
+      <ana>
+         <tok val="CONSTO"/>
+         <tok val="Consto"/>
+         <tok val="consto"/>
          <lm>
             <l>consto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CONSTRINGO Constringo constringo-->
-         <tok val="[cC]?(onstringo|CONSTRINGO)"/>
+      <ana>
+         <tok val="CONSTRINGO"/>
+         <tok val="Constringo"/>
+         <tok val="constringo"/>
          <lm>
             <l>constringo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CONSTRUCTA CONSTRVCTA Constructa constructa constructaque-->
-         <tok val="(CONSTR)?[VU]?(CTA|constructa|Constructa|constructaque)"/>
+      <ana>
+         <tok val="CONSTRUCTA"/>
+         <tok val="CONSTRVCTA"/>
+         <tok val="Constructa"/>
+         <tok val="constructa"/>
+         <tok val="constructaque"/>
+         <tok val="constrvcta"/>
          <lm>
             <l>construo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -219,30 +301,46 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--CONSTRVO Construo construo-->
-         <tok val="[cC]?(onstruo|CONSTRVO)"/>
+      <ana>
+         <tok val="CONSTRVO"/>
+         <tok val="Construo"/>
+         <tok val="construo"/>
+         <tok val="constrvo"/>
          <lm>
             <l>construo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--COnstat Constat Constatque constat constatne constatque constát-->
-         <tok val="[cC]?(o|CO|co)nst[aá]t(qu|n)?[e]?"/>
+      <ana>
+         <tok val="COnstat"/>
+         <tok val="Constat"/>
+         <tok val="Constatque"/>
+         <tok val="constat"/>
+         <tok val="constatne"/>
+         <tok val="constatque"/>
+         <tok val="constát"/>
          <lm>
             <l>consto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--COnstructio Constructio Construction constructio construction constructioque-->
-         <tok val="[Cc]?(o|CO|co)nstructio(n|que)?"/>
+      <ana>
+         <tok val="COnstructio"/>
+         <tok val="Constructio"/>
+         <tok val="Construction"/>
+         <tok val="constructio"/>
+         <tok val="construction"/>
+         <tok val="constructioque"/>
          <lm>
             <l>constructio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Constabat constabat constabatque-->
-         <tok val="[cC]onstabat(que)?"/>
+      <ana>
+         <tok val="Constabat"/>
+         <tok val="constabat"/>
+         <tok val="constabatque"/>
          <lm>
             <l>consto</l>
             <m>v - 3 s i i a</m>
@@ -250,6 +348,7 @@
       </ana>
       <ana>
          <tok val="Constabilio"/>
+         <tok val="constabilio"/>
          <lm>
             <l>constabilio</l>
             <m>v - 1 s p i a</m>
@@ -257,6 +356,7 @@
       </ana>
       <ana>
          <tok val="Constabilitae"/>
+         <tok val="constabilitae"/>
          <lm>
             <l>constabilio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -265,8 +365,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Constabit constabit-->
-         <tok val="[cC]onstabit"/>
+      <ana>
+         <tok val="Constabit"/>
+         <tok val="constabit"/>
          <lm>
             <l>consto</l>
             <m>v - 3 s f i a</m>
@@ -274,21 +375,26 @@
       </ana>
       <ana>
          <tok val="Constabularis"/>
+         <tok val="constabularis"/>
          <lm>
             <l>constabulor</l>
             <m cert="0.5">v - 2 s r s a</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Constan constan constas-->
-         <tok val="[cC]onsta[ns]"/>
+      <ana>
+         <tok val="Constan"/>
+         <tok val="constan"/>
+         <tok val="constas"/>
          <lm>
             <l>consto</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Constans constans constansque-->
-         <tok val="[cC]onstans(que)?"/>
+      <ana>
+         <tok val="Constans"/>
+         <tok val="constans"/>
+         <tok val="constansque"/>
          <lm>
             <l>consto</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -300,8 +406,14 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Constante Constanti Constantin constante constanti constantique-->
-         <tok val="[Cc]onstant[i]?(n|e|i|ique)?"/>
+      <ana>
+         <tok val="Constante"/>
+         <tok val="Constanti"/>
+         <tok val="Constantin"/>
+         <tok val="constante"/>
+         <tok val="constanti"/>
+         <tok val="constantin"/>
+         <tok val="constantique"/>
          <lm>
             <l>consto</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -309,23 +421,39 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Constantemque constantem constantemve Constantem-->
-         <tok val="[cC]onstantem(ve|que)?"/>
+      <ana>
+         <tok val="Constantem"/>
+         <tok val="Constantemque"/>
+         <tok val="constantem"/>
+         <tok val="constantemque"/>
+         <tok val="constantemve"/>
          <lm>
             <l>consto</l>
-            <m cert="0.5">v - - s p p a f a</m>
-            <m cert="0.5">v - - s p p a m a</m>
+            <m>v - - s p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Constanter constanter constanterque-->
-         <tok val="[cC]onstanter(que)?"/>
+      <ana>
+         <tok val="Constantemque"/>
+         <tok val="constantem"/>
+         <tok val="constantemque"/>
+         <tok val="constantemve"/>
+         <lm>
+            <l>consto</l>
+            <m>v - - s p p a m a</m>
+         </lm>
+      </ana>
+      <ana>
+         <tok val="Constanter"/>
+         <tok val="constanter"/>
+         <tok val="constanterque"/>
          <lm>
             <l>constanter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Constantes constantes-->
-         <tok val="[cC]onstantes"/>
+      <ana>
+         <tok val="Constantes"/>
+         <tok val="constantes"/>
          <lm>
             <l>consto</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -334,16 +462,25 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Constantes Constantin constantes constantis Constantis-->
-         <tok val="[cC]onstant[ei]?(s|in)"/>
+      <ana>
+         <tok val="Constantes"/>
+         <tok val="Constantin"/>
+         <tok val="Constantis"/>
+         <tok val="constantes"/>
+         <tok val="constantin"/>
+         <tok val="constantis"/>
          <lm>
             <l>consto</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Constanti Constantin constanti constantique-->
-         <tok val="[Cc]onstanti(n|que)?"/>
+      <ana>
+         <tok val="Constanti"/>
+         <tok val="Constantin"/>
+         <tok val="constanti"/>
+         <tok val="constantin"/>
+         <tok val="constantique"/>
          <lm>
             <l>consto</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -351,22 +488,32 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Constanti Constantii Constantin-->
-         <tok val="Constanti[in]?"/>
+      <ana>
+         <tok val="Constanti"/>
+         <tok val="Constantii"/>
+         <tok val="Constantin"/>
+         <tok val="constanti"/>
+         <tok val="constantii"/>
+         <tok val="constantin"/>
          <lm>
             <l>constantius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Constanti Constantin-->
-         <tok val="Constanti[n]?"/>
+      <ana>
+         <tok val="Constanti"/>
+         <tok val="Constantin"/>
+         <tok val="constanti"/>
+         <tok val="constantin"/>
          <lm>
             <l>constantius</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Constantia constantia constantiaque-->
-         <tok val="[cC]onstantia(que)?"/>
+      <ana>
+         <tok val="Constantia"/>
+         <tok val="constantia"/>
+         <tok val="constantiaque"/>
          <lm cert="0.5">
             <l>constantia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -382,13 +529,16 @@
       </ana>
       <ana>
          <tok val="Constantiacus"/>
+         <tok val="constantiacus"/>
          <lm>
             <l>Constantiacus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Constantiam constantiam constantiamque-->
-         <tok val="[cC]onstantiam(que)?"/>
+      <ana>
+         <tok val="Constantiam"/>
+         <tok val="constantiam"/>
+         <tok val="constantiamque"/>
          <lm>
             <l>constantia</l>
             <m>n - - s - - - f a</m>
@@ -396,6 +546,7 @@
       </ana>
       <ana>
          <tok val="Constantianae"/>
+         <tok val="constantianae"/>
          <lm>
             <l>Constantianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -406,6 +557,7 @@
       </ana>
       <ana>
          <tok val="Constantianus"/>
+         <tok val="constantianus"/>
          <lm>
             <l>Constantianus</l>
             <m>a e - s - - - m n</m>
@@ -413,6 +565,7 @@
       </ana>
       <ana>
          <tok val="Constantiensem"/>
+         <tok val="constantiensem"/>
          <lm>
             <l>Constantiensis</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -421,6 +574,7 @@
       </ana>
       <ana>
          <tok val="Constantiensi"/>
+         <tok val="constantiensi"/>
          <lm>
             <l>Constantiensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -433,6 +587,7 @@
       </ana>
       <ana>
          <tok val="Constantiensis"/>
+         <tok val="constantiensis"/>
          <lm>
             <l>Constantiensis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -448,14 +603,18 @@
       </ana>
       <ana>
          <tok val="Constantii"/>
+         <tok val="constantii"/>
          <lm>
             <l>constantius</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Constantin constantis Constantis-->
-         <tok val="[Cc]onstanti[sn]"/>
+      <ana>
+         <tok val="Constantin"/>
+         <tok val="Constantis"/>
+         <tok val="constantin"/>
+         <tok val="constantis"/>
          <lm>
             <l>consto</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -465,6 +624,7 @@
       </ana>
       <ana>
          <tok val="Constantina"/>
+         <tok val="constantina"/>
          <lm>
             <l>Constantina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -474,6 +634,7 @@
       </ana>
       <ana>
          <tok val="Constantine"/>
+         <tok val="constantine"/>
          <lm>
             <l>Constantinus</l>
             <m>n e - s - - - m v</m>
@@ -481,6 +642,7 @@
       </ana>
       <ana>
          <tok val="Constantini"/>
+         <tok val="constantini"/>
          <lm>
             <l>Constantinus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -490,6 +652,7 @@
       </ana>
       <ana>
          <tok val="Constantiniana"/>
+         <tok val="constantiniana"/>
          <lm>
             <l>Constantinianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -502,6 +665,7 @@
       </ana>
       <ana>
          <tok val="Constantinianam"/>
+         <tok val="constantinianam"/>
          <lm>
             <l>Constantinianus</l>
             <m>a e - s - - - f a</m>
@@ -509,6 +673,7 @@
       </ana>
       <ana>
          <tok val="Constantiniano"/>
+         <tok val="constantiniano"/>
          <lm>
             <l>Constantinianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -519,6 +684,7 @@
       </ana>
       <ana>
          <tok val="Constantinianum"/>
+         <tok val="constantinianum"/>
          <lm>
             <l>Constantinianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -531,6 +697,7 @@
       </ana>
       <ana>
          <tok val="Constantinianus"/>
+         <tok val="constantinianus"/>
          <lm>
             <l>Constantinianus</l>
             <m>a e - s - - - m n</m>
@@ -538,6 +705,7 @@
       </ana>
       <ana>
          <tok val="Constantiniensis"/>
+         <tok val="constantiniensis"/>
          <lm>
             <l>Constantiniensis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -553,6 +721,7 @@
       </ana>
       <ana>
          <tok val="Constantinopolim"/>
+         <tok val="constantinopolim"/>
          <lm>
             <l>Constantinopolis</l>
             <m>n e - s - - - f a</m>
@@ -560,6 +729,7 @@
       </ana>
       <ana>
          <tok val="Constantinopolis"/>
+         <tok val="constantinopolis"/>
          <lm>
             <l>Constantinopolis</l>
             <m cert="0.333333333333333333">n e - s - - - f g</m>
@@ -569,6 +739,7 @@
       </ana>
       <ana>
          <tok val="Constantinopolitana"/>
+         <tok val="constantinopolitana"/>
          <lm>
             <l>Constantinopolitanus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -581,6 +752,7 @@
       </ana>
       <ana>
          <tok val="Constantinopolitanae"/>
+         <tok val="constantinopolitanae"/>
          <lm>
             <l>Constantinopolitanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -591,6 +763,7 @@
       </ana>
       <ana>
          <tok val="Constantinopolitanam"/>
+         <tok val="constantinopolitanam"/>
          <lm>
             <l>Constantinopolitanus</l>
             <m>a e - s - - - f a</m>
@@ -598,6 +771,7 @@
       </ana>
       <ana>
          <tok val="Constantinopolitani"/>
+         <tok val="constantinopolitani"/>
          <lm>
             <l>Constantinopolitanus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -608,6 +782,7 @@
       </ana>
       <ana>
          <tok val="Constantinopolitanum"/>
+         <tok val="constantinopolitanum"/>
          <lm>
             <l>Constantinopolitanus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -620,6 +795,7 @@
       </ana>
       <ana>
          <tok val="Constantinum"/>
+         <tok val="constantinum"/>
          <lm>
             <l>Constantinus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -628,6 +804,7 @@
       </ana>
       <ana>
          <tok val="Constantinus"/>
+         <tok val="constantinus"/>
          <lm>
             <l>Constantinus</l>
             <m>n e - s - - - m n</m>
@@ -635,14 +812,17 @@
       </ana>
       <ana>
          <tok val="Constantio"/>
+         <tok val="constantio"/>
          <lm>
             <l>constantius</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Constantior constantior constantiorne-->
-         <tok val="[cC]onstantior(ne)?"/>
+      <ana>
+         <tok val="Constantior"/>
+         <tok val="constantior"/>
+         <tok val="constantiorne"/>
          <lm>
             <l>consto</l>
             <m cert="0.25">v - - s p p a m v c</m>
@@ -653,27 +833,33 @@
       </ana>
       <ana>
          <tok val="Constantios"/>
+         <tok val="constantios"/>
          <lm>
             <l>constantius</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Constantissime constantissime-->
-         <tok val="[cC]onstantissime"/>
+      <ana>
+         <tok val="Constantissime"/>
+         <tok val="constantissime"/>
          <lm>
             <l>consto</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Constantissime constantissime constantissimum-->
-         <tok val="[cC]onstantissim(e|um)"/>
+      <ana>
+         <tok val="Constantissime"/>
+         <tok val="constantissime"/>
+         <tok val="constantissimum"/>
          <lm>
             <l>consto</l>
             <m>v - - s p p a n v s</m>
          </lm>
       </ana>
-      <ana><!--Constantissime constantissime constantissimus-->
-         <tok val="[cC]onstantissim(e|us)"/>
+      <ana>
+         <tok val="Constantissime"/>
+         <tok val="constantissime"/>
+         <tok val="constantissimus"/>
          <lm>
             <l>consto</l>
             <m>v - - s p p a m v s</m>
@@ -681,23 +867,23 @@
       </ana>
       <ana>
          <tok val="Constantium"/>
-         <lm>
+         <tok val="constantium"/>
+         <lm cert="0.5">
             <l>constantius</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Constantium constantium-->
-         <tok val="[cC]onstantium"/>
-         <lm>
+         <lm cert="0.5">
             <l>consto</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
             <m cert="0.333333333333333333">v - - p p p a f g</m>
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--Constantius constantius constantiusque-->
-         <tok val="[cC]onstantius(que)?"/>
+      <ana>
+         <tok val="Constantius"/>
+         <tok val="constantius"/>
+         <tok val="constantiusque"/>
          <lm>
             <l>consto</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -708,13 +894,16 @@
       </ana>
       <ana>
          <tok val="Constantius"/>
+         <tok val="constantius"/>
          <lm>
             <l>constantius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Constare constare constareque-->
-         <tok val="[cC]onstare(que)?"/>
+      <ana>
+         <tok val="Constare"/>
+         <tok val="constare"/>
+         <tok val="constareque"/>
          <lm>
             <l>consto</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -722,8 +911,11 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Constatura Constitura constatura constitura-->
-         <tok val="[Cc]onst[ia]tura"/>
+      <ana>
+         <tok val="Constatura"/>
+         <tok val="Constitura"/>
+         <tok val="constatura"/>
+         <tok val="constitura"/>
          <lm>
             <l>consto</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -734,23 +926,28 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--Constaturus constaturus constiturus-->
-         <tok val="[cC]onst[ai]turus"/>
+      <ana>
+         <tok val="Constaturus"/>
+         <tok val="constaturus"/>
+         <tok val="constiturus"/>
          <lm>
             <l>consto</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Constellation constellatio constellation-->
-         <tok val="[cC]onstellatio[n]?"/>
+      <ana>
+         <tok val="Constellation"/>
+         <tok val="constellatio"/>
+         <tok val="constellation"/>
          <lm>
             <l>constellatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Constellationes constellationes-->
-         <tok val="[cC]onstellationes"/>
+      <ana>
+         <tok val="Constellationes"/>
+         <tok val="constellationes"/>
          <lm>
             <l>constellatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -758,59 +955,76 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Constemus constemus-->
-         <tok val="[cC]onstemus"/>
+      <ana>
+         <tok val="Constemus"/>
+         <tok val="constemus"/>
          <lm>
             <l>consto</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Constent constent-->
-         <tok val="[cC]onstent"/>
+      <ana>
+         <tok val="Constent"/>
+         <tok val="constent"/>
          <lm>
             <l>consto</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Consternantur consternantur consternuntur-->
-         <tok val="[cC]onstern[au]ntur"/>
+      <ana>
+         <tok val="Consternantur"/>
+         <tok val="consternantur"/>
+         <tok val="consternuntur"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Consternantur consternantur consternentur-->
-         <tok val="[cC]onstern[ae]ntur"/>
+      <ana>
+         <tok val="Consternantur"/>
+         <tok val="consternantur"/>
+         <tok val="consternentur"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Consternare Consternere consternare consternere-->
-         <tok val="[Cc]onstern[ea]re"/>
+      <ana>
+         <tok val="Consternare"/>
+         <tok val="Consternere"/>
+         <tok val="consternare"/>
+         <tok val="consternere"/>
          <lm>
             <l>consterno</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Consternare Consternere consternare consternaris consternere-->
-         <tok val="[Cc]onstern[ea]r(e|is)"/>
+      <ana>
+         <tok val="Consternare"/>
+         <tok val="Consternere"/>
+         <tok val="consternare"/>
+         <tok val="consternaris"/>
+         <tok val="consternere"/>
          <lm>
             <l>consterno</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Consternari consternari consterni-->
-         <tok val="[cC]onstern(ar|)i"/>
+      <ana>
+         <tok val="Consternari"/>
+         <tok val="consternari"/>
+         <tok val="consterni"/>
          <lm>
             <l>consterno</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Consternata consternata constrata-->
-         <tok val="[cC]onst(e|)r(n|)ata"/>
+      <ana>
+         <tok val="Consternata"/>
+         <tok val="consternata"/>
+         <tok val="constrata"/>
          <lm>
             <l>consterno</l>
             <m cert="0.2">v - - p r p p n a</m>
@@ -822,6 +1036,7 @@
       </ana>
       <ana>
          <tok val="Consternata"/>
+         <tok val="consternata"/>
          <lm>
             <l>consterno2</l>
             <m>v - - s r p p f n</m>
@@ -829,29 +1044,36 @@
       </ana>
       <ana>
          <tok val="Consternati"/>
+         <tok val="consternati"/>
          <lm>
             <l>consterno2</l>
             <m>v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Consternatio consternatio-->
-         <tok val="[cC]onsternatio"/>
+      <ana>
+         <tok val="Consternatio"/>
+         <tok val="consternatio"/>
          <lm>
             <l>consternatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Consternatum consternatorumque consternatum constratum-->
-         <tok val="[cC]onst[e]?r[n]?at(or)?um(que)?"/>
+      <ana>
+         <tok val="Consternatum"/>
+         <tok val="consternatorumque"/>
+         <tok val="consternatum"/>
+         <tok val="constratum"/>
          <lm>
             <l>consterno</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Consternatum consternatum constratum-->
-         <tok val="[cC]onst(e|)r(n|)atum"/>
+      <ana>
+         <tok val="Consternatum"/>
+         <tok val="consternatum"/>
+         <tok val="constratum"/>
          <lm>
             <l>consterno</l>
             <m cert="0.2">v - - s r p p n n</m>
@@ -863,41 +1085,51 @@
       </ana>
       <ana>
          <tok val="Consternatus"/>
+         <tok val="consternatus"/>
          <lm>
             <l>consterno2</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Consternere consternere-->
-         <tok val="[cC]onsternere"/>
+      <ana>
+         <tok val="Consternere"/>
+         <tok val="consternere"/>
          <lm>
             <l>consterno</l>
             <m>v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Consternit consternat consternit-->
-         <tok val="[cC]onstern[ia]t"/>
+      <ana>
+         <tok val="Consternit"/>
+         <tok val="consternat"/>
+         <tok val="consternit"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Consternunt consternant consternunt-->
-         <tok val="[cC]onstern[ua]nt"/>
+      <ana>
+         <tok val="Consternunt"/>
+         <tok val="consternant"/>
+         <tok val="consternunt"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Constet constet constetne constetque-->
-         <tok val="[cC]onstet(ne|que)?"/>
+      <ana>
+         <tok val="Constet"/>
+         <tok val="constet"/>
+         <tok val="constetne"/>
+         <tok val="constetque"/>
          <lm>
             <l>consto</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Constipatio constipatio-->
-         <tok val="[cC]onstipatio"/>
+      <ana>
+         <tok val="Constipatio"/>
+         <tok val="constipatio"/>
          <lm>
             <l>constipatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -906,91 +1138,111 @@
       </ana>
       <ana>
          <tok val="Constipo"/>
+         <tok val="constipo"/>
          <lm>
             <l>constipo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Constiteram constiteram-->
-         <tok val="[cC]onstiteram"/>
+      <ana>
+         <tok val="Constiteram"/>
+         <tok val="constiteram"/>
          <lm>
             <l>consto</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Constiterant constiterant-->
-         <tok val="[cC]onstiterant"/>
+      <ana>
+         <tok val="Constiterant"/>
+         <tok val="constiterant"/>
          <lm>
             <l>consto</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--Constiterat constiterat-->
-         <tok val="[cC]onstiterat"/>
+      <ana>
+         <tok val="Constiterat"/>
+         <tok val="constiterat"/>
          <lm>
             <l>consto</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Constitere Constiterunt constitere constiterunt-->
-         <tok val="[cC]onstiter(unt|e)"/>
+      <ana>
+         <tok val="Constitere"/>
+         <tok val="Constiterunt"/>
+         <tok val="constitere"/>
+         <tok val="constiterunt"/>
          <lm>
             <l>consto</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Constitit constitit constititque cónstitit-->
-         <tok val="[cC]?(o|có|co)nstitit(que)?"/>
+      <ana>
+         <tok val="Constitit"/>
+         <tok val="constitit"/>
+         <tok val="constititque"/>
+         <tok val="cónstitit"/>
          <lm>
             <l>consto</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Constitu constitu-->
-         <tok val="[cC]onstitu"/>
+      <ana>
+         <tok val="Constitu"/>
+         <tok val="constitu"/>
          <lm>
             <l>consto</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Constituam constituam-->
-         <tok val="[cC]onstituam"/>
+      <ana>
+         <tok val="Constituam"/>
+         <tok val="constituam"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Constituamus constituamus-->
-         <tok val="[cC]onstituamus"/>
+      <ana>
+         <tok val="Constituamus"/>
+         <tok val="constituamus"/>
          <lm>
             <l>constituo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Constituantur constituantur-->
-         <tok val="[cC]onstituantur"/>
+      <ana>
+         <tok val="Constituantur"/>
+         <tok val="constituantur"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Constituatur constituatur constituaturque cónstituatur-->
-         <tok val="[cC]?(o|có|co)nstituatur(que)?"/>
+      <ana>
+         <tok val="Constituatur"/>
+         <tok val="constituatur"/>
+         <tok val="constituaturque"/>
+         <tok val="cónstituatur"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Constitue constitue constituen-->
-         <tok val="[cC]onstitue[n]?"/>
+      <ana>
+         <tok val="Constitue"/>
+         <tok val="constitue"/>
+         <tok val="constituen"/>
          <lm>
             <l>constituo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Constituendae constituendae-->
-         <tok val="[cC]onstituendae"/>
+      <ana>
+         <tok val="Constituendae"/>
+         <tok val="constituendae"/>
          <lm>
             <l>constituo</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -999,8 +1251,9 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Constituendi constituendi-->
-         <tok val="[cC]onstituendi"/>
+      <ana>
+         <tok val="Constituendi"/>
+         <tok val="constituendi"/>
          <lm>
             <l>constituo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1010,87 +1263,103 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Constituent constituent-->
-         <tok val="[cC]onstituent"/>
+      <ana>
+         <tok val="Constituent"/>
+         <tok val="constituent"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Constitueram constitueram-->
-         <tok val="[cC]onstitueram"/>
+      <ana>
+         <tok val="Constitueram"/>
+         <tok val="constitueram"/>
          <lm>
             <l>constituo</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Constitueramus constitueramus-->
-         <tok val="[cC]onstitueramus"/>
+      <ana>
+         <tok val="Constitueramus"/>
+         <tok val="constitueramus"/>
          <lm>
             <l>constituo</l>
             <m>v - 1 p l i a</m>
          </lm>
       </ana>
-      <ana><!--Constituet constituet-->
-         <tok val="[cC]onstituet"/>
+      <ana>
+         <tok val="Constituet"/>
+         <tok val="constituet"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Constitui constitui constituique-->
-         <tok val="[cC]onstitui(que)?"/>
+      <ana>
+         <tok val="Constitui"/>
+         <tok val="constitui"/>
+         <tok val="constituique"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - - - p n p</m>
             <m cert="0.5">v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Constituimus constituimus-->
-         <tok val="[cC]onstituimus"/>
+      <ana>
+         <tok val="Constituimus"/>
+         <tok val="constituimus"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - 1 p r i a</m>
             <m cert="0.5">v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Constituis Constituisque constituis constituisque-->
-         <tok val="[cC]onstituis(que)?"/>
+      <ana>
+         <tok val="Constituis"/>
+         <tok val="Constituisque"/>
+         <tok val="constituis"/>
+         <tok val="constituisque"/>
          <lm>
             <l>constituo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Constituisse constituisse-->
-         <tok val="[cC]onstituisse"/>
+      <ana>
+         <tok val="Constituisse"/>
+         <tok val="constituisse"/>
          <lm>
             <l>constituo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Constituitote constituitote-->
-         <tok val="[cC]onstituitote"/>
+      <ana>
+         <tok val="Constituitote"/>
+         <tok val="constituitote"/>
          <lm>
             <l>constituo</l>
             <m>v - 2 p f m a</m>
          </lm>
       </ana>
-      <ana><!--Constituitur constituitur-->
-         <tok val="[cC]onstituitur"/>
+      <ana>
+         <tok val="Constituitur"/>
+         <tok val="constituitur"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Constituram constaturam constituram-->
-         <tok val="[cC]onst[ia]turam"/>
+      <ana>
+         <tok val="Constituram"/>
+         <tok val="constaturam"/>
+         <tok val="constituram"/>
          <lm>
             <l>consto</l>
             <m>v - - s f p a f a</m>
          </lm>
       </ana>
-      <ana><!--Constiturum constiturum-->
-         <tok val="[cC]onstiturum"/>
+      <ana>
+         <tok val="Constiturum"/>
+         <tok val="constiturum"/>
          <lm>
             <l>consto</l>
             <m cert="0.166666666666666667">v - - p f p a n g</m>
@@ -1101,8 +1370,10 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Constitutae constitutae constitutaeque-->
-         <tok val="[cC]onstitutae(que)?"/>
+      <ana>
+         <tok val="Constitutae"/>
+         <tok val="constitutae"/>
+         <tok val="constitutaeque"/>
          <lm>
             <l>constituo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1111,8 +1382,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Constituti constituti-->
-         <tok val="[cC]onstituti"/>
+      <ana>
+         <tok val="Constituti"/>
+         <tok val="constituti"/>
          <lm cert="0.5">
             <l>constituo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1125,23 +1397,28 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Constitutio constitutio constitution-->
-         <tok val="[cC]onstitutio[n]?"/>
+      <ana>
+         <tok val="Constitutio"/>
+         <tok val="constitutio"/>
+         <tok val="constitution"/>
          <lm>
             <l>constitutio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Constitutione constitutione-->
-         <tok val="[cC]onstitutione"/>
+      <ana>
+         <tok val="Constitutione"/>
+         <tok val="constitutione"/>
          <lm>
             <l>constitutio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Constitutiones constitutiones constitutionesque-->
-         <tok val="[cC]onstitutiones(que)?"/>
+      <ana>
+         <tok val="Constitutiones"/>
+         <tok val="constitutiones"/>
+         <tok val="constitutionesque"/>
          <lm>
             <l>constitutio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1149,16 +1426,19 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Constitutionibus constitutionibus-->
-         <tok val="[cC]onstitutionibus"/>
+      <ana>
+         <tok val="Constitutionibus"/>
+         <tok val="constitutionibus"/>
          <lm>
             <l>constitutio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Constitutis constitutis constitutisque-->
-         <tok val="[cC]onstitutis(que)?"/>
+      <ana>
+         <tok val="Constitutis"/>
+         <tok val="constitutis"/>
+         <tok val="constitutisque"/>
          <lm cert="0.5">
             <l>constituo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1174,8 +1454,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Constituto constituto constitutoque-->
-         <tok val="[cC]onstituto(que)?"/>
+      <ana>
+         <tok val="Constituto"/>
+         <tok val="constituto"/>
+         <tok val="constitutoque"/>
          <lm cert="0.5">
             <l>constituo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1189,44 +1471,55 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Constitutor constitutor constitutorque-->
-         <tok val="[cC]onstitutor(que)?"/>
+      <ana>
+         <tok val="Constitutor"/>
+         <tok val="constitutor"/>
+         <tok val="constitutorque"/>
          <lm>
             <l>constitutor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Constitutorius constitutorius-->
-         <tok val="[cC]onstitutorius"/>
+      <ana>
+         <tok val="Constitutorius"/>
+         <tok val="constitutorius"/>
          <lm>
             <l>constitutorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Constitutum constitutum constitutumque constitutumst-->
-         <tok val="[cC]onstitutum(st|que)?"/>
+      <ana>
+         <tok val="Constitutum"/>
+         <tok val="constitutum"/>
+         <tok val="constitutumque"/>
+         <tok val="constitutumst"/>
          <lm>
             <l>constituo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Constitutus constitutus-->
-         <tok val="[cC]onstitutus"/>
+      <ana>
+         <tok val="Constitutus"/>
+         <tok val="constitutus"/>
          <lm>
             <l>constituo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Constituunt constituunt constituuntque-->
-         <tok val="[cC]onstituunt(que)?"/>
+      <ana>
+         <tok val="Constituunt"/>
+         <tok val="constituunt"/>
+         <tok val="constituuntque"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Constratae consternatae constratae-->
-         <tok val="[cC]onst[e]?r[n]?atae"/>
+      <ana>
+         <tok val="Constratae"/>
+         <tok val="consternatae"/>
+         <tok val="constratae"/>
          <lm>
             <l>consterno</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1235,15 +1528,19 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Constratam consternatam constratam-->
-         <tok val="[cC]onst[e]?r[n]?atam"/>
+      <ana>
+         <tok val="Constratam"/>
+         <tok val="consternatam"/>
+         <tok val="constratam"/>
          <lm>
             <l>consterno</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Constratus consternatus constratus-->
-         <tok val="[cC]onst[e]?r[n]?atus"/>
+      <ana>
+         <tok val="Constratus"/>
+         <tok val="consternatus"/>
+         <tok val="constratus"/>
          <lm>
             <l>consterno</l>
             <m>v - - s r p p m n</m>
@@ -1251,13 +1548,15 @@
       </ana>
       <ana>
          <tok val="Constrepo"/>
+         <tok val="constrepo"/>
          <lm>
             <l>constrepo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Constricta constricta-->
-         <tok val="[cC]onstricta"/>
+      <ana>
+         <tok val="Constricta"/>
+         <tok val="constricta"/>
          <lm cert="0.333333333333333333">
             <l>constringo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -1281,8 +1580,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Constrictae constrictae-->
-         <tok val="[cC]onstrictae"/>
+      <ana>
+         <tok val="Constrictae"/>
+         <tok val="constrictae"/>
          <lm cert="0.5">
             <l>constrictus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1298,8 +1598,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Constrictas constrictas-->
-         <tok val="[cC]onstrictas"/>
+      <ana>
+         <tok val="Constrictas"/>
+         <tok val="constrictas"/>
          <lm cert="0.333333333333333333">
             <l>constringo</l>
             <m>v - - p r p p f a</m>
@@ -1313,8 +1614,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Constrictum constrictum-->
-         <tok val="[cC]onstrictum"/>
+      <ana>
+         <tok val="Constrictum"/>
+         <tok val="constrictum"/>
          <lm cert="0.5">
             <l>constrictus</l>
             <m cert="0.25">a - - p - - - n g</m>
@@ -1332,8 +1634,10 @@
             <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Constrictum constricte constrictum-->
-         <tok val="[cC]onstrict(um|e)"/>
+      <ana>
+         <tok val="Constrictum"/>
+         <tok val="constricte"/>
+         <tok val="constrictum"/>
          <lm cert="0.5">
             <l>constrictus</l>
             <m>a - - s - - - n v</m>
@@ -1343,8 +1647,9 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Constrictus constrictus-->
-         <tok val="[cC]onstrictus"/>
+      <ana>
+         <tok val="Constrictus"/>
+         <tok val="constrictus"/>
          <lm cert="0.5">
             <l>constrictus</l>
             <m>a - - s - - - m n</m>
@@ -1354,22 +1659,26 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Constringatque constringat-->
-         <tok val="[cC]onstringat(que)?"/>
+      <ana>
+         <tok val="Constringatque"/>
+         <tok val="constringat"/>
+         <tok val="constringatque"/>
          <lm>
             <l>constringo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Constringe constringe-->
-         <tok val="[cC]onstringe"/>
+      <ana>
+         <tok val="Constringe"/>
+         <tok val="constringe"/>
          <lm>
             <l>constringo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Constringendum constringendum-->
-         <tok val="[cC]onstringendum"/>
+      <ana>
+         <tok val="Constringendum"/>
+         <tok val="constringendum"/>
          <lm>
             <l>constringo</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -1381,8 +1690,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Constringere constringere-->
-         <tok val="[cC]onstringere"/>
+      <ana>
+         <tok val="Constringere"/>
+         <tok val="constringere"/>
          <lm>
             <l>constringo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1391,29 +1701,34 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Constringi constringi constringique-->
-         <tok val="[cC]onstringi(que)?"/>
+      <ana>
+         <tok val="Constringi"/>
+         <tok val="constringi"/>
+         <tok val="constringique"/>
          <lm>
             <l>constringo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Constrinxit constrinxit-->
-         <tok val="[cC]onstrinxit"/>
+      <ana>
+         <tok val="Constrinxit"/>
+         <tok val="constrinxit"/>
          <lm>
             <l>constringo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Construatur construatur-->
-         <tok val="[cC]onstruatur"/>
+      <ana>
+         <tok val="Construatur"/>
+         <tok val="construatur"/>
          <lm>
             <l>construo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Constructae constructae-->
-         <tok val="[cC]onstructae"/>
+      <ana>
+         <tok val="Constructae"/>
+         <tok val="constructae"/>
          <lm>
             <l>construo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1422,22 +1737,25 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Constructam constructam-->
-         <tok val="[cC]onstructam"/>
+      <ana>
+         <tok val="Constructam"/>
+         <tok val="constructam"/>
          <lm>
             <l>construo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Constructionem constructionem-->
-         <tok val="[cC]onstructionem"/>
+      <ana>
+         <tok val="Constructionem"/>
+         <tok val="constructionem"/>
          <lm>
             <l>constructio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Constructionis constructionis-->
-         <tok val="[cC]onstructionis"/>
+      <ana>
+         <tok val="Constructionis"/>
+         <tok val="constructionis"/>
          <lm>
             <l>constructio</l>
             <m>n - - s - - - f g</m>
@@ -1445,6 +1763,7 @@
       </ana>
       <ana>
          <tok val="Constructior"/>
+         <tok val="constructior"/>
          <lm>
             <l>construo</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1453,29 +1772,34 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Constructus constructus-->
-         <tok val="[cC]onstructus"/>
+      <ana>
+         <tok val="Constructus"/>
+         <tok val="constructus"/>
          <lm>
             <l>construo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Construe construe construen-->
-         <tok val="[cC]onstrue[n]?"/>
+      <ana>
+         <tok val="Construe"/>
+         <tok val="construe"/>
+         <tok val="construen"/>
          <lm>
             <l>construo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Construebantur construebantur-->
-         <tok val="[cC]onstruebantur"/>
+      <ana>
+         <tok val="Construebantur"/>
+         <tok val="construebantur"/>
          <lm>
             <l>construo</l>
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--Construere construere-->
-         <tok val="[cC]onstruere"/>
+      <ana>
+         <tok val="Construere"/>
+         <tok val="construere"/>
          <lm>
             <l>construo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1484,43 +1808,51 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Construi construi construique-->
-         <tok val="[cC]onstrui(que)?"/>
+      <ana>
+         <tok val="Construi"/>
+         <tok val="construi"/>
+         <tok val="construique"/>
          <lm>
             <l>construo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Construitur construitur-->
-         <tok val="[cC]onstruitur"/>
+      <ana>
+         <tok val="Construitur"/>
+         <tok val="construitur"/>
          <lm>
             <l>construo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Construunt construunt-->
-         <tok val="[cC]onstruunt"/>
+      <ana>
+         <tok val="Construunt"/>
+         <tok val="construunt"/>
          <lm>
             <l>construo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Construxisse construxisse-->
-         <tok val="[cC]onstruxisse"/>
+      <ana>
+         <tok val="Construxisse"/>
+         <tok val="construxisse"/>
          <lm>
             <l>construo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Construxit construxit construxitque-->
-         <tok val="[cC]onstruxit(que)?"/>
+      <ana>
+         <tok val="Construxit"/>
+         <tok val="construxit"/>
+         <tok val="construxitque"/>
          <lm>
             <l>construo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Constuprare constuprare-->
-         <tok val="[cC]onstuprare"/>
+      <ana>
+         <tok val="Constuprare"/>
+         <tok val="constuprare"/>
          <lm>
             <l>constupro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1528,16 +1860,19 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Constuprator constuprator-->
-         <tok val="[cC]onstuprator"/>
+      <ana>
+         <tok val="Constuprator"/>
+         <tok val="constuprator"/>
          <lm>
             <l>constuprator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Constupratum constupratum constupratumque-->
-         <tok val="[cC]onstupratum(que)?"/>
+      <ana>
+         <tok val="Constupratum"/>
+         <tok val="constupratum"/>
+         <tok val="constupratumque"/>
          <lm>
             <l>constupro</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -1549,8 +1884,9 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Constupro constupro-->
-         <tok val="[cC]onstupro"/>
+      <ana>
+         <tok val="Constupro"/>
+         <tok val="constupro"/>
          <lm>
             <l>constupro</l>
             <m>v - 1 s p i a</m>
@@ -1661,8 +1997,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--constabiliui constabilivi-->
-         <tok val="constabili[vu]i"/>
+      <ana>
+         <tok val="constabiliui"/>
+         <tok val="constabilivi"/>
          <lm>
             <l>constabilio</l>
             <m>v - 1 s r i a</m>
@@ -1709,8 +2046,9 @@
             <m cert="0.5">v - - s p p a m a c</m>
          </lm>
       </ana>
-      <ana><!--constantiores constantioresque-->
-         <tok val="constantiores(que)?"/>
+      <ana>
+         <tok val="constantiores"/>
+         <tok val="constantioresque"/>
          <lm>
             <l>consto</l>
             <m cert="0.166666666666666667">v - - p p p a m n c</m>
@@ -1736,8 +2074,9 @@
             <m>a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--constantissima constantissimaque-->
-         <tok val="constantissima(que)?"/>
+      <ana>
+         <tok val="constantissima"/>
+         <tok val="constantissimaque"/>
          <lm>
             <l>consto</l>
             <m cert="0.166666666666666667">v - - s p p a f n s</m>
@@ -1758,8 +2097,9 @@
             <m cert="0.25">v - - s p p a f g s</m>
          </lm>
       </ana>
-      <ana><!--constantissimam constantissimamque-->
-         <tok val="constantissimam(que)?"/>
+      <ana>
+         <tok val="constantissimam"/>
+         <tok val="constantissimamque"/>
          <lm>
             <l>consto</l>
             <m>v - - s p p a f a s</m>
@@ -1850,22 +2190,27 @@
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--constate constatum constite constitum-->
-         <tok val="const[ia]t(um|e)"/>
+      <ana>
+         <tok val="constate"/>
+         <tok val="constatum"/>
+         <tok val="constite"/>
+         <tok val="constitum"/>
          <lm>
             <l>consto</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--constate constite-->
-         <tok val="const[ia]te"/>
+      <ana>
+         <tok val="constate"/>
+         <tok val="constite"/>
          <lm>
             <l>consto</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--constatum constitum-->
-         <tok val="const[ia]tum"/>
+      <ana>
+         <tok val="constatum"/>
+         <tok val="constitum"/>
          <lm>
             <l>consto</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -1897,8 +2242,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--conster constern-->
-         <tok val="conster[n]?"/>
+      <ana>
+         <tok val="conster"/>
+         <tok val="constern"/>
          <lm>
             <l>consto</l>
             <m>v - 1 s p s p</m>
@@ -1911,8 +2257,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--consternabantur consternebantur-->
-         <tok val="constern[ea]bantur"/>
+      <ana>
+         <tok val="consternabantur"/>
+         <tok val="consternebantur"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 p i i p</m>
@@ -1925,8 +2272,9 @@
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--consternabuntur consternentur-->
-         <tok val="constern(e|abu)ntur"/>
+      <ana>
+         <tok val="consternabuntur"/>
+         <tok val="consternentur"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 p f i p</m>
@@ -1955,15 +2303,19 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--consternarunt constrarunt constrauerunt constraverunt-->
-         <tok val="const[e]?r[n]?a[vu]?[e]?runt"/>
+      <ana>
+         <tok val="consternarunt"/>
+         <tok val="constrarunt"/>
+         <tok val="constrauerunt"/>
+         <tok val="constraverunt"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--consternas consternis-->
-         <tok val="constern[ia]s"/>
+      <ana>
+         <tok val="consternas"/>
+         <tok val="consternis"/>
          <lm>
             <l>consterno</l>
             <m>v - 2 s p i a</m>
@@ -1983,15 +2335,17 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--consternata constrata-->
-         <tok val="const[e]?r[n]?ata"/>
+      <ana>
+         <tok val="consternata"/>
+         <tok val="constrata"/>
          <lm>
             <l>consterno</l>
             <m>v - - s r p p f n</m>
          </lm>
       </ana>
-      <ana><!--consternati consternatique-->
-         <tok val="consternati(que)?"/>
+      <ana>
+         <tok val="consternati"/>
+         <tok val="consternatique"/>
          <lm>
             <l>consterno</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2014,8 +2368,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--consternationis consternationisque-->
-         <tok val="consternationis(que)?"/>
+      <ana>
+         <tok val="consternationis"/>
+         <tok val="consternationisque"/>
          <lm>
             <l>consternatio</l>
             <m>n - - s - - - f g</m>
@@ -2029,8 +2384,10 @@
             <m cert="0.5">v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--consternatis constratis constratisque-->
-         <tok val="const[e]?r[n]?atis(que)?"/>
+      <ana>
+         <tok val="consternatis"/>
+         <tok val="constratis"/>
+         <tok val="constratisque"/>
          <lm>
             <l>consterno</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -2041,8 +2398,10 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--consternato consternatoque constrato-->
-         <tok val="const[e]?r[n]?ato(que)?"/>
+      <ana>
+         <tok val="consternato"/>
+         <tok val="consternatoque"/>
+         <tok val="constrato"/>
          <lm>
             <l>consterno</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -2051,16 +2410,19 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--consternato consternatoque consternito-->
-         <tok val="constern[ia]to(que)?"/>
+      <ana>
+         <tok val="consternato"/>
+         <tok val="consternatoque"/>
+         <tok val="consternito"/>
          <lm>
             <l>consterno</l>
             <m cert="0.5">v - 2 s f m a</m>
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--consternatos constratos-->
-         <tok val="const[e]?r[n]?atos"/>
+      <ana>
+         <tok val="consternatos"/>
+         <tok val="constratos"/>
          <lm>
             <l>consterno</l>
             <m>v - - p r p p m a</m>
@@ -2073,15 +2435,20 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--consternatur consternitur-->
-         <tok val="constern[ia]tur"/>
+      <ana>
+         <tok val="consternatur"/>
+         <tok val="consternitur"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--consternauit consternavit constrauit constravit constravitque-->
-         <tok val="const[e]?r[n]?a[vu]it(que)?"/>
+      <ana>
+         <tok val="consternauit"/>
+         <tok val="consternavit"/>
+         <tok val="constrauit"/>
+         <tok val="constravit"/>
+         <tok val="constravitque"/>
          <lm>
             <l>consterno</l>
             <m>v - 3 s r i a</m>
@@ -2172,8 +2539,9 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--constipari constiparique-->
-         <tok val="constipari(que)?"/>
+      <ana>
+         <tok val="constipari"/>
+         <tok val="constiparique"/>
          <lm>
             <l>constipo</l>
             <m>v - - - p n p</m>
@@ -2291,8 +2659,9 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--constipatur constipaturque-->
-         <tok val="constipatur(que)?"/>
+      <ana>
+         <tok val="constipatur"/>
+         <tok val="constipaturque"/>
          <lm>
             <l>constipo</l>
             <m>v - 3 s p i p</m>
@@ -2365,8 +2734,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--constitimus Constitimus-->
-         <tok val="[Cc]onstitimus"/>
+      <ana>
+         <tok val="Constitimus"/>
+         <tok val="constitimus"/>
          <lm>
             <l>consto</l>
             <m>v - 1 p r i a</m>
@@ -2434,8 +2804,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--constituan constituas-->
-         <tok val="constitua[sn]"/>
+      <ana>
+         <tok val="constituan"/>
+         <tok val="constituas"/>
          <lm>
             <l>constituo</l>
             <m>v - 2 s p s a</m>
@@ -2484,8 +2855,9 @@
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--constituebant constituebantque-->
-         <tok val="constituebant(que)?"/>
+      <ana>
+         <tok val="constituebant"/>
+         <tok val="constituebantque"/>
          <lm>
             <l>constituo</l>
             <m>v - 3 p i i a</m>
@@ -2526,15 +2898,18 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--constituen constitues constituesque-->
-         <tok val="constitue(s|n|sque)"/>
+      <ana>
+         <tok val="constituen"/>
+         <tok val="constitues"/>
+         <tok val="constituesque"/>
          <lm>
             <l>constituo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--constituenda constituendaque-->
-         <tok val="constituenda(que)?"/>
+      <ana>
+         <tok val="constituenda"/>
+         <tok val="constituendaque"/>
          <lm>
             <l>constituo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -2578,8 +2953,9 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--constituendo Constituendo-->
-         <tok val="[Cc]onstituendo"/>
+      <ana>
+         <tok val="Constituendo"/>
+         <tok val="constituendo"/>
          <lm>
             <l>constituo</l>
             <m cert="0.2">v - - s p g p m d</m>
@@ -2596,8 +2972,10 @@
             <m>v - - s p d a n d</m>
          </lm>
       </ana>
-      <ana><!--constituendorum constituendum constituendumque-->
-         <tok val="constituend(or)?um(que)?"/>
+      <ana>
+         <tok val="constituendorum"/>
+         <tok val="constituendum"/>
+         <tok val="constituendumque"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - - p p g p n g</m>
@@ -2611,8 +2989,9 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--constituendum constituendumque-->
-         <tok val="constituendum(que)?"/>
+      <ana>
+         <tok val="constituendum"/>
+         <tok val="constituendumque"/>
          <lm>
             <l>constituo</l>
             <m cert="0.25">v - - s p g p n a</m>
@@ -2628,8 +3007,9 @@
             <m>v - - s p d a n a</m>
          </lm>
       </ana>
-      <ana><!--constituendus constituendusque-->
-         <tok val="constituendus(que)?"/>
+      <ana>
+         <tok val="constituendus"/>
+         <tok val="constituendusque"/>
          <lm>
             <l>constituo</l>
             <m>v - - s p g p m n</m>
@@ -2675,8 +3055,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--constituentes constituentis-->
-         <tok val="constituent[ie]s"/>
+      <ana>
+         <tok val="constituentes"/>
+         <tok val="constituentis"/>
          <lm>
             <l>constituo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2969,8 +3350,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--constitutionem constitutionemque-->
-         <tok val="constitutionem(que)?"/>
+      <ana>
+         <tok val="constitutionem"/>
+         <tok val="constitutionemque"/>
          <lm>
             <l>constitutio</l>
             <m>n - - s - - - f a</m>
@@ -3030,8 +3412,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--constitutos constitutosque-->
-         <tok val="constitutos(que)?"/>
+      <ana>
+         <tok val="constitutos"/>
+         <tok val="constitutosque"/>
          <lm>
             <l>constituo</l>
             <m>v - - p r p p m a</m>
@@ -3093,8 +3476,10 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--constratis constratisque Constratis-->
-         <tok val="[Cc]onstratis(que)?"/>
+      <ana>
+         <tok val="Constratis"/>
+         <tok val="constratis"/>
+         <tok val="constratisque"/>
          <lm>
             <l>constratum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -3127,8 +3512,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--constrauerit constraverit-->
-         <tok val="constra[vu]erit"/>
+      <ana>
+         <tok val="constrauerit"/>
+         <tok val="constraverit"/>
          <lm>
             <l>consterno</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -3163,8 +3549,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--constrepe constrepen-->
-         <tok val="constrepe[n]?"/>
+      <ana>
+         <tok val="constrepe"/>
+         <tok val="constrepen"/>
          <lm>
             <l>constrepo</l>
             <m>v - 2 s p m a</m>
@@ -3268,8 +3655,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--constrictione constrictioneque-->
-         <tok val="constrictione(que)?"/>
+      <ana>
+         <tok val="constrictione"/>
+         <tok val="constrictioneque"/>
          <lm>
             <l>constrictio</l>
             <m>n - - s - - - f b</m>
@@ -3454,8 +3842,9 @@
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--constringan constringas-->
-         <tok val="constringa[sn]"/>
+      <ana>
+         <tok val="constringan"/>
+         <tok val="constringas"/>
          <lm>
             <l>constringo</l>
             <m>v - 2 s p s a</m>
@@ -3540,8 +3929,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--constringens constringensque-->
-         <tok val="constringens(que)?"/>
+      <ana>
+         <tok val="constringens"/>
+         <tok val="constringensque"/>
          <lm>
             <l>constringo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -3629,8 +4019,9 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--constringetur constringeturque-->
-         <tok val="constringetur(que)?"/>
+      <ana>
+         <tok val="constringetur"/>
+         <tok val="constringeturque"/>
          <lm>
             <l>constringo</l>
             <m>v - 3 s f i p</m>
@@ -3665,8 +4056,9 @@
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--constringitur constringiturque-->
-         <tok val="constringitur(que)?"/>
+      <ana>
+         <tok val="constringitur"/>
+         <tok val="constringiturque"/>
          <lm>
             <l>constringo</l>
             <m>v - 3 s p i p</m>
@@ -3679,8 +4071,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--constringuntur constringunturque-->
-         <tok val="constringuntur(que)?"/>
+      <ana>
+         <tok val="constringuntur"/>
+         <tok val="constringunturque"/>
          <lm>
             <l>constringo</l>
             <m>v - 3 p p i p</m>
@@ -3693,8 +4086,9 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--constrinxere constrinxerunt-->
-         <tok val="constrinxer(unt|e)"/>
+      <ana>
+         <tok val="constrinxere"/>
+         <tok val="constrinxerunt"/>
          <lm>
             <l>constringo</l>
             <m>v - 3 p r i a</m>
@@ -3765,8 +4159,9 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--constructas Constructas-->
-         <tok val="[Cc]onstructas"/>
+      <ana>
+         <tok val="Constructas"/>
+         <tok val="constructas"/>
          <lm>
             <l>construo</l>
             <m>v - - p r p p f a</m>
@@ -3825,8 +4220,9 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--constructo constructoque-->
-         <tok val="constructo(que)?"/>
+      <ana>
+         <tok val="constructo"/>
+         <tok val="constructoque"/>
          <lm>
             <l>construo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -3835,8 +4231,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--constructorum constructum-->
-         <tok val="construct(or)?um"/>
+      <ana>
+         <tok val="constructorum"/>
+         <tok val="constructum"/>
          <lm>
             <l>construo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -3889,8 +4286,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--construen construes-->
-         <tok val="construe[sn]"/>
+      <ana>
+         <tok val="construen"/>
+         <tok val="construes"/>
          <lm>
             <l>construo</l>
             <m>v - 2 s f i a</m>
@@ -3918,8 +4316,9 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--construendarum construendarumve-->
-         <tok val="construendarum(ve)?"/>
+      <ana>
+         <tok val="construendarum"/>
+         <tok val="construendarumve"/>
          <lm>
             <l>construo</l>
             <m>v - - p p g p f g</m>
@@ -4098,8 +4497,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--construxere construxerunt-->
-         <tok val="construxer(unt|e)"/>
+      <ana>
+         <tok val="construxere"/>
+         <tok val="construxerunt"/>
          <lm>
             <l>construo</l>
             <m>v - 3 p r i a</m>
@@ -4120,8 +4520,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--construximus Construximus-->
-         <tok val="[Cc]onstruximus"/>
+      <ana>
+         <tok val="Construximus"/>
+         <tok val="construximus"/>
          <lm>
             <l>construo</l>
             <m>v - 1 p r i a</m>

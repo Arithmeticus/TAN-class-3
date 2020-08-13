@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusgram">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:gram">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to gram</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-gram.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>GRAM</tok-starts-with>
       <tok-starts-with>Gram</tok-starts-with>
       <tok-starts-with>gram</tok-starts-with>
-      <ana><!--GRAMMATICES Grammaticae grammatices-->
-         <tok val="[gG]?(rammatic)?[a]?[e]?(s|GRAMMATICES)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:25:59.193-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:25:59.193-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-gram.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="GRAMMATICES"/>
+         <tok val="Grammaticae"/>
+         <tok val="grammaticae"/>
+         <tok val="grammatices"/>
          <lm>
             <l>grammatice</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--GRAMMATICI Grammatici grammatici-->
-         <tok val="[gG]?(rammatici|GRAMMATICI)"/>
+      <ana>
+         <tok val="GRAMMATICI"/>
+         <tok val="Grammatici"/>
+         <tok val="grammatici"/>
          <lm>
             <l>grammaticus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -55,16 +68,21 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--GRAMMATICVS Grammaticus grammaticus grammaticusve-->
-         <tok val="[gG]?(rammaticus)?(ve|GRAMMATICVS)?"/>
+      <ana>
+         <tok val="GRAMMATICVS"/>
+         <tok val="Grammaticus"/>
+         <tok val="grammaticus"/>
+         <tok val="grammaticusve"/>
+         <tok val="grammaticvs"/>
          <lm>
             <l>grammaticus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gramen gramen-->
-         <tok val="[gG]ramen"/>
+      <ana>
+         <tok val="Gramen"/>
+         <tok val="gramen"/>
          <lm>
             <l>gramen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -72,16 +90,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Gramiae gramiae-->
-         <tok val="[gG]ramiae"/>
+      <ana>
+         <tok val="Gramiae"/>
+         <tok val="gramiae"/>
          <lm>
             <l>gramiae</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Gramina gramina-->
-         <tok val="[gG]ramina"/>
+      <ana>
+         <tok val="Gramina"/>
+         <tok val="gramina"/>
          <lm>
             <l>gramen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -89,15 +109,17 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Gramine gramine-->
-         <tok val="[gG]ramine"/>
+      <ana>
+         <tok val="Gramine"/>
+         <tok val="gramine"/>
          <lm>
             <l>gramen</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Graminea graminea-->
-         <tok val="[gG]raminea"/>
+      <ana>
+         <tok val="Graminea"/>
+         <tok val="graminea"/>
          <lm>
             <l>gramineus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -108,8 +130,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Gramineae gramineae-->
-         <tok val="[gG]ramineae"/>
+      <ana>
+         <tok val="Gramineae"/>
+         <tok val="gramineae"/>
          <lm>
             <l>gramineus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -118,15 +141,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Gramineas gramineas-->
-         <tok val="[gG]ramineas"/>
+      <ana>
+         <tok val="Gramineas"/>
+         <tok val="gramineas"/>
          <lm>
             <l>gramineus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Gramineis gramineis-->
-         <tok val="[gG]ramineis"/>
+      <ana>
+         <tok val="Gramineis"/>
+         <tok val="gramineis"/>
          <lm>
             <l>gramineus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -137,30 +162,35 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Gramineus gramineus-->
-         <tok val="[gG]ramineus"/>
+      <ana>
+         <tok val="Gramineus"/>
+         <tok val="gramineus"/>
          <lm>
             <l>gramineus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Graminibus graminibus graminibusque-->
-         <tok val="[gG]raminibus(que)?"/>
+      <ana>
+         <tok val="Graminibus"/>
+         <tok val="graminibus"/>
+         <tok val="graminibusque"/>
          <lm>
             <l>gramen</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Graminis graminis-->
-         <tok val="[gG]raminis"/>
+      <ana>
+         <tok val="Graminis"/>
+         <tok val="graminis"/>
          <lm>
             <l>gramen</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Graminosus graminosus-->
-         <tok val="[gG]raminosus"/>
+      <ana>
+         <tok val="Graminosus"/>
+         <tok val="graminosus"/>
          <lm>
             <l>graminosus</l>
             <m>a - - s - - - m n</m>
@@ -168,6 +198,7 @@
       </ana>
       <ana>
          <tok val="Gramiosis"/>
+         <tok val="gramiosis"/>
          <lm>
             <l>gramiosus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -178,15 +209,18 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Gramiosus gramiosus-->
-         <tok val="[gG]ramiosus"/>
+      <ana>
+         <tok val="Gramiosus"/>
+         <tok val="gramiosus"/>
          <lm>
             <l>gramiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gramma gramma grammaque-->
-         <tok val="[gG]ramma(que)?"/>
+      <ana>
+         <tok val="Gramma"/>
+         <tok val="gramma"/>
+         <tok val="grammaque"/>
          <lm>
             <l>gramma</l>
             <m cert="0.25">n - - s - - - f b</m>
@@ -195,15 +229,19 @@
             <m cert="0.25">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Grammateus grammateus-->
-         <tok val="[gG]rammateus"/>
+      <ana>
+         <tok val="Grammateus"/>
+         <tok val="grammateus"/>
          <lm>
             <l>grammateus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Grammatica Grammatice grammatice-->
-         <tok val="[Gg]rammatic[ea]"/>
+      <ana>
+         <tok val="Grammatica"/>
+         <tok val="Grammatice"/>
+         <tok val="grammatica"/>
+         <tok val="grammatice"/>
          <lm>
             <l>grammatice</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -211,8 +249,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Grammatica grammatica-->
-         <tok val="[gG]rammatica"/>
+      <ana>
+         <tok val="Grammatica"/>
+         <tok val="grammatica"/>
          <lm cert="0.5">
             <l>grammatica</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -229,27 +268,26 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Grammaticae grammaticae-->
-         <tok val="[gG]rammaticae"/>
-         <lm>
+      <ana>
+         <tok val="Grammaticae"/>
+         <tok val="grammaticae"/>
+         <lm cert="0.5">
             <l>grammaticus</l>
             <m cert="0.25">a - - p - - - f n</m>
             <m cert="0.25">a - - s - - - f d</m>
             <m cert="0.25">a - - s - - - f g</m>
             <m cert="0.25">a - - p - - - f v</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Grammaticae"/>
-         <lm>
+         <lm cert="0.5">
             <l>grammatice</l>
             <m cert="0.333333333333333333">n - - s - - - f d</m>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Grammaticalis grammaticalis-->
-         <tok val="[gG]rammaticalis"/>
+      <ana>
+         <tok val="Grammaticalis"/>
+         <tok val="grammaticalis"/>
          <lm>
             <l>grammaticalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -261,23 +299,29 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Grammaticalis grammaticalis grammaticales-->
-         <tok val="[gG]rammatical[ie]s"/>
+      <ana>
+         <tok val="Grammaticalis"/>
+         <tok val="grammaticales"/>
+         <tok val="grammaticalis"/>
          <lm>
             <l>grammaticalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Grammaticam grammaticam-->
-         <tok val="[gG]rammaticam"/>
+      <ana>
+         <tok val="Grammaticam"/>
+         <tok val="grammaticam"/>
          <lm>
             <l>grammaticus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Grammaticam Grammaticen grammaticen-->
-         <tok val="[gG]rammatic(en|am)"/>
+      <ana>
+         <tok val="Grammaticam"/>
+         <tok val="Grammaticen"/>
+         <tok val="grammaticam"/>
+         <tok val="grammaticen"/>
          <lm>
             <l>grammatice</l>
             <m>n - - s - - - f a</m>
@@ -285,6 +329,7 @@
       </ana>
       <ana>
          <tok val="Grammaticarum"/>
+         <tok val="grammaticarum"/>
          <lm cert="0.5">
             <l>grammatice</l>
             <m>n - - p - - - f g</m>
@@ -294,22 +339,21 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Grammaticas grammaticas-->
-         <tok val="[gG]rammaticas"/>
-         <lm>
+      <ana>
+         <tok val="Grammaticas"/>
+         <tok val="grammaticas"/>
+         <lm cert="0.5">
             <l>grammaticus</l>
             <m>a - - p - - - f a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Grammaticas"/>
-         <lm>
+         <lm cert="0.5">
             <l>grammatice</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Grammatice grammatice-->
-         <tok val="[gG]rammatice"/>
+      <ana>
+         <tok val="Grammatice"/>
+         <tok val="grammatice"/>
          <lm>
             <l>grammaticus</l>
             <m cert="0.333333333333333333">d</m>
@@ -317,16 +361,20 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Grammatice Grammaticum grammatice grammaticum-->
-         <tok val="[gG]rammatic(um|e)"/>
+      <ana>
+         <tok val="Grammatice"/>
+         <tok val="Grammaticum"/>
+         <tok val="grammatice"/>
+         <tok val="grammaticum"/>
          <lm>
             <l>grammaticus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Grammaticis grammaticis-->
-         <tok val="[gG]rammaticis"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Grammaticis"/>
+         <tok val="grammaticis"/>
+         <lm cert="0.333333333333333333">
             <l>grammaticus</l>
             <m cert="0.125">n - - p - - - m d</m>
             <m cert="0.125">a - - p - - - f b</m>
@@ -337,22 +385,20 @@
             <m cert="0.125">n - - p - - - m b</m>
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>grammatica</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Grammaticis"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>grammatice</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Grammatico grammatico-->
-         <tok val="[gG]rammatico"/>
+      <ana>
+         <tok val="Grammatico"/>
+         <tok val="grammatico"/>
          <lm>
             <l>grammaticus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -363,8 +409,11 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Grammaticorum Grammaticum grammaticorum grammaticum-->
-         <tok val="[gG]rammatic(or)?um"/>
+      <ana>
+         <tok val="Grammaticorum"/>
+         <tok val="Grammaticum"/>
+         <tok val="grammaticorum"/>
+         <tok val="grammaticum"/>
          <lm cert="0.5">
             <l>grammaticus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -376,16 +425,19 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Grammaticos grammaticos grammaticosque-->
-         <tok val="[gG]rammaticos(que)?"/>
+      <ana>
+         <tok val="Grammaticos"/>
+         <tok val="grammaticos"/>
+         <tok val="grammaticosque"/>
          <lm>
             <l>grammaticus</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Grammaticum grammaticum-->
-         <tok val="[gG]rammaticum"/>
+      <ana>
+         <tok val="Grammaticum"/>
+         <tok val="grammaticum"/>
          <lm>
             <l>grammaticus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -394,8 +446,9 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Grammatista grammatista-->
-         <tok val="[gG]rammatista"/>
+      <ana>
+         <tok val="Grammatista"/>
+         <tok val="grammatista"/>
          <lm>
             <l>grammatista</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -403,8 +456,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Grammatophylacium grammatophylacium-->
-         <tok val="[gG]rammatophylacium"/>
+      <ana>
+         <tok val="Grammatophylacium"/>
+         <tok val="grammatophylacium"/>
          <lm>
             <l>grammatophylacium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -437,8 +491,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--gramineo gramineoque-->
-         <tok val="gramineo(que)?"/>
+      <ana>
+         <tok val="gramineo"/>
+         <tok val="gramineoque"/>
          <lm>
             <l>gramineus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -473,8 +528,9 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--graminoso graminosoque-->
-         <tok val="graminoso(que)?"/>
+      <ana>
+         <tok val="graminoso"/>
+         <tok val="graminosoque"/>
          <lm>
             <l>graminosus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -544,8 +600,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--grammati grammaticumque-->
-         <tok val="grammati(cumque)?"/>
+      <ana>
+         <tok val="grammati"/>
+         <tok val="grammaticumque"/>
          <lm>
             <l>gramma</l>
             <m>n - - s - - - n d</m>

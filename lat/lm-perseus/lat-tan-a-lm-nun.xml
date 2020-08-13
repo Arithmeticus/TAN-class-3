@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusnun">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:nun">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to nun</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-nun.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>NUN</tok-starts-with>
       <tok-starts-with>NUn</tok-starts-with>
@@ -38,51 +15,100 @@
       <tok-starts-with>nun</tok-starts-with>
       <tok-starts-with>nún</tok-starts-with>
       <tok-starts-with>Nún</tok-starts-with>
-      <ana><!--NUNC Nunc nunc nune núnc Núnc-->
-         <tok val="[nN]?(u|Nú)?[n]?(c|e|únc|NUNC)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:35:48.945-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:35:48.945-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-nun.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="NUNC"/>
+         <tok val="Nunc"/>
+         <tok val="Núnc"/>
+         <tok val="nunc"/>
+         <tok val="nune"/>
+         <tok val="núnc"/>
          <lm>
             <l>nunc</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--NUnquam Nunquam Nunquamne nunquam nunquamne nunquamque-->
-         <tok val="[nN]?(u|NU|nu)nquam(ne|que)?"/>
+      <ana>
+         <tok val="NUnquam"/>
+         <tok val="Nunquam"/>
+         <tok val="Nunquamne"/>
+         <tok val="nunquam"/>
+         <tok val="nunquamne"/>
+         <tok val="nunquamque"/>
          <lm>
             <l>numquam</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Nun nun NUN-->
-         <tok val="[nN]?(un|NUN)"/>
+      <ana>
+         <tok val="NUN"/>
+         <tok val="Nun"/>
+         <tok val="nun"/>
          <lm>
             <l>nus</l>
             <m>n - - - - - - m</m>
          </lm>
       </ana>
-      <ana><!--Nuncubi nuncubi-->
-         <tok val="[nN]uncubi"/>
+      <ana>
+         <tok val="Nuncubi"/>
+         <tok val="nuncubi"/>
          <lm>
             <l>nuncubi</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Nuncupare nuncupare-->
-         <tok val="[nN]uncupare"/>
+      <ana>
+         <tok val="Nuncupare"/>
+         <tok val="nuncupare"/>
          <lm>
             <l>nuncupo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Nuncupare nuncupare nuncuparis-->
-         <tok val="[nN]uncupar(e|is)"/>
+      <ana>
+         <tok val="Nuncupare"/>
+         <tok val="nuncupare"/>
+         <tok val="nuncuparis"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Nuncupata nuncupata nuncupataque-->
-         <tok val="[nN]uncupata(que)?"/>
+      <ana>
+         <tok val="Nuncupata"/>
+         <tok val="nuncupata"/>
+         <tok val="nuncupataque"/>
          <lm>
             <l>nuncupo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -93,56 +119,57 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Nuncupatio nuncupatio-->
-         <tok val="[nN]uncupatio"/>
+      <ana>
+         <tok val="Nuncupatio"/>
+         <tok val="nuncupatio"/>
          <lm>
             <l>nuncupatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Nuncupatum nuncupatum-->
-         <tok val="[nN]uncupatum"/>
+      <ana>
+         <tok val="Nuncupatum"/>
+         <tok val="nuncupatum"/>
          <lm>
             <l>nuncupo</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Nuncupatum"/>
-         <lm>
-            <l>nuncupo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Nuncupatur nuncupatur-->
-         <tok val="[nN]uncupatur"/>
+         <tok val="Nuncupatur"/>
+         <tok val="nuncupatur"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Nuncupauit nuncupauit nuncupavit-->
-         <tok val="[nN]uncupa[uv]it"/>
+      <ana>
+         <tok val="Nuncupauit"/>
+         <tok val="nuncupauit"/>
+         <tok val="nuncupavit"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Nuncupo nuncupo-->
-         <tok val="[nN]uncupo"/>
+      <ana>
+         <tok val="Nuncupo"/>
+         <tok val="nuncupo"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Nundina nundina-->
-         <tok val="[nN]undina"/>
+      <ana>
+         <tok val="Nundina"/>
+         <tok val="nundina"/>
          <lm cert="0.333333333333333333">
             <l>nundina</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -165,31 +192,30 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Nundinae nundinae-->
-         <tok val="[nN]undinae"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Nundinae"/>
+         <tok val="nundinae"/>
+         <lm cert="0.333333333333333333">
             <l>nundinus</l>
             <m cert="0.25">a - - p - - - f n</m>
             <m cert="0.25">a - - s - - - f d</m>
             <m cert="0.25">a - - s - - - f g</m>
             <m cert="0.25">a - - p - - - f v</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>nundina</l>
             <m cert="0.5">n - - s - - - f d</m>
             <m cert="0.5">n - - s - - - f g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Nundinae"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>nundinae</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Nundinalis nundinalis-->
-         <tok val="[nN]undinalis"/>
+      <ana>
+         <tok val="Nundinalis"/>
+         <tok val="nundinalis"/>
          <lm>
             <l>nundinalis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -203,51 +229,53 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Nundinarius nundinarius-->
-         <tok val="[nN]undinarius"/>
+      <ana>
+         <tok val="Nundinarius"/>
+         <tok val="nundinarius"/>
          <lm>
             <l>nundinarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nundinas nundinas-->
-         <tok val="[nN]undinas"/>
-         <lm>
+      <ana>
+         <tok val="Nundinas"/>
+         <tok val="nundinas"/>
+         <lm cert="0.5">
             <l>nundinus</l>
             <m>a - - p - - - f a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Nundinas"/>
-         <lm>
+         <lm cert="0.5">
             <l>nundinae</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Nundinatio nundinatio-->
-         <tok val="[nN]undinatio"/>
+      <ana>
+         <tok val="Nundinatio"/>
+         <tok val="nundinatio"/>
          <lm>
             <l>nundinatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Nundinator nundinator-->
-         <tok val="[nN]undinator"/>
+      <ana>
+         <tok val="Nundinator"/>
+         <tok val="nundinator"/>
          <lm>
             <l>nundinator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Nundinis nundinis-->
-         <tok val="[nN]undinis"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Nundinis"/>
+         <tok val="nundinis"/>
+         <lm cert="0.333333333333333333">
             <l>nundinum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>nundinus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
             <m cert="0.166666666666666667">a - - p - - - f d</m>
@@ -256,17 +284,15 @@
             <m cert="0.166666666666666667">a - - p - - - n d</m>
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Nundinis"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>nundinae</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Nundino nundino-->
-         <tok val="[nN]undino"/>
+      <ana>
+         <tok val="Nundino"/>
+         <tok val="nundino"/>
          <lm cert="0.5">
             <l>nundinus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -280,8 +306,11 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Nuntia nuntia nuntian nuntiave-->
-         <tok val="[nN]untia(n|ve)?"/>
+      <ana>
+         <tok val="Nuntia"/>
+         <tok val="nuntia"/>
+         <tok val="nuntian"/>
+         <tok val="nuntiave"/>
          <lm cert="0.25">
             <l>nuntia</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -308,72 +337,88 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Nuntiabant nuntiabant nuntiabantque-->
-         <tok val="[nN]untiabant(que)?"/>
+      <ana>
+         <tok val="Nuntiabant"/>
+         <tok val="nuntiabant"/>
+         <tok val="nuntiabantque"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiabantur nuntiabantur-->
-         <tok val="[nN]untiabantur"/>
+      <ana>
+         <tok val="Nuntiabantur"/>
+         <tok val="nuntiabantur"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--Nuntiabatur nuntiabatur-->
-         <tok val="[nN]untiabatur"/>
+      <ana>
+         <tok val="Nuntiabatur"/>
+         <tok val="nuntiabatur"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Nuntiabo nuntiabo núntiabo Núntiabo-->
-         <tok val="[nN]?(u|nú|Nú)ntiabo"/>
+      <ana>
+         <tok val="Nuntiabo"/>
+         <tok val="Núntiabo"/>
+         <tok val="nuntiabo"/>
+         <tok val="núntiabo"/>
          <lm>
             <l>nuntio</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiamus nuntiamus-->
-         <tok val="[nN]untiamus"/>
+      <ana>
+         <tok val="Nuntiamus"/>
+         <tok val="nuntiamus"/>
          <lm>
             <l>nuntio</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiant nuntiant-->
-         <tok val="[nN]untiant"/>
+      <ana>
+         <tok val="Nuntiant"/>
+         <tok val="nuntiant"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiare nuntiare-->
-         <tok val="[nN]untiare"/>
+      <ana>
+         <tok val="Nuntiare"/>
+         <tok val="nuntiare"/>
          <lm>
             <l>nuntio</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiare nuntiare nuntiaris-->
-         <tok val="[nN]untiar(e|is)"/>
+      <ana>
+         <tok val="Nuntiare"/>
+         <tok val="nuntiare"/>
+         <tok val="nuntiaris"/>
          <lm>
             <l>nuntio</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Nuntiari nuntiari nuntiarique-->
-         <tok val="[nN]untiari(que)?"/>
+      <ana>
+         <tok val="Nuntiari"/>
+         <tok val="nuntiari"/>
+         <tok val="nuntiarique"/>
          <lm>
             <l>nuntio</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Nuntias nuntian nuntias-->
-         <tok val="[nN]untia[sn]"/>
+      <ana>
+         <tok val="Nuntias"/>
+         <tok val="nuntian"/>
+         <tok val="nuntias"/>
          <lm cert="0.333333333333333333">
             <l>nuntio</l>
             <m>v - 2 s p i a</m>
@@ -387,15 +432,19 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiat nuntiat nuntiatque-->
-         <tok val="[nN]untiat(que)?"/>
+      <ana>
+         <tok val="Nuntiat"/>
+         <tok val="nuntiat"/>
+         <tok val="nuntiatque"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiata nuntiata nuntiataque-->
-         <tok val="[nN]untiata(que)?"/>
+      <ana>
+         <tok val="Nuntiata"/>
+         <tok val="nuntiata"/>
+         <tok val="nuntiataque"/>
          <lm>
             <l>nuntio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -406,44 +455,58 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Nuntiate nuntiate núntiate-->
-         <tok val="[nN]?(u|nú)ntiate"/>
+      <ana>
+         <tok val="Nuntiate"/>
+         <tok val="nuntiate"/>
+         <tok val="núntiate"/>
          <lm>
             <l>nuntio</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiate Nuntiatum nuntiate nuntiatum nuntiatumque nuntiatumst nuntiatumue NUNTIATUM nuntiatumve-->
-         <tok val="[nN]?(untiat)?(um)?[q]?[uv]?(e|st|NUNTIATUM)?"/>
+      <ana>
+         <tok val="NUNTIATUM"/>
+         <tok val="Nuntiate"/>
+         <tok val="Nuntiatum"/>
+         <tok val="nuntiate"/>
+         <tok val="nuntiatum"/>
+         <tok val="nuntiatumque"/>
+         <tok val="nuntiatumst"/>
+         <tok val="nuntiatumue"/>
+         <tok val="nuntiatumve"/>
          <lm>
             <l>nuntio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Nuntiate nuntiate-->
-         <tok val="[nN]untiate"/>
+      <ana>
+         <tok val="Nuntiate"/>
+         <tok val="nuntiate"/>
          <lm>
             <l>nuntio</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Nuntiatio nuntiatio-->
-         <tok val="[nN]untiatio"/>
+      <ana>
+         <tok val="Nuntiatio"/>
+         <tok val="nuntiatio"/>
          <lm>
             <l>nuntiatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Nuntiationem nuntiationem-->
-         <tok val="[nN]untiationem"/>
+      <ana>
+         <tok val="Nuntiationem"/>
+         <tok val="nuntiationem"/>
          <lm>
             <l>nuntiatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiato nuntiato-->
-         <tok val="[nN]untiato"/>
+      <ana>
+         <tok val="Nuntiato"/>
+         <tok val="nuntiato"/>
          <lm>
             <l>nuntio</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -454,16 +517,18 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiator nuntiator-->
-         <tok val="[nN]untiator"/>
+      <ana>
+         <tok val="Nuntiator"/>
+         <tok val="nuntiator"/>
          <lm>
             <l>nuntiator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Nuntiatores nuntiatores-->
-         <tok val="[nN]untiatores"/>
+      <ana>
+         <tok val="Nuntiatores"/>
+         <tok val="nuntiatores"/>
          <lm>
             <l>nuntiator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -471,16 +536,29 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiatum nuntiatorum nuntiatum nuntiatumque nuntiatumst nuntiatumue NUNTIATUM nuntiatumve-->
-         <tok val="[nN]?(untiat)?(or)?(um)?[q]?[uv]?(e|st|NUNTIATUM)?"/>
+      <ana>
+         <tok val="NUNTIATUM"/>
+         <tok val="Nuntiatum"/>
+         <tok val="nuntiatorum"/>
+         <tok val="nuntiatum"/>
+         <tok val="nuntiatumque"/>
+         <tok val="nuntiatumst"/>
+         <tok val="nuntiatumue"/>
+         <tok val="nuntiatumve"/>
          <lm>
             <l>nuntio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Nuntiatum nuntiatum nuntiatumque nuntiatumst nuntiatumue NUNTIATUM nuntiatumve-->
-         <tok val="[nN]?(untiatum)?[q]?[uv]?(e|st|NUNTIATUM)?"/>
+      <ana>
+         <tok val="NUNTIATUM"/>
+         <tok val="Nuntiatum"/>
+         <tok val="nuntiatum"/>
+         <tok val="nuntiatumque"/>
+         <tok val="nuntiatumst"/>
+         <tok val="nuntiatumue"/>
+         <tok val="nuntiatumve"/>
          <lm>
             <l>nuntio</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -490,34 +568,41 @@
       </ana>
       <ana>
          <tok val="Nuntiatum"/>
+         <tok val="nuntiatum"/>
          <lm>
             <l>nuntio</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Nuntiatur nuntiatur-->
-         <tok val="[nN]untiatur"/>
+      <ana>
+         <tok val="Nuntiatur"/>
+         <tok val="nuntiatur"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Nuntiatus nuntiatus-->
-         <tok val="[nN]untiatus"/>
+      <ana>
+         <tok val="Nuntiatus"/>
+         <tok val="nuntiatus"/>
          <lm>
             <l>nuntio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Nuntiet nuntiet nuntietque-->
-         <tok val="[nN]untiet(que)?"/>
+      <ana>
+         <tok val="Nuntiet"/>
+         <tok val="nuntiet"/>
+         <tok val="nuntietque"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Nuntii nuntii nuntiique-->
-         <tok val="[nN]untii(que)?"/>
+      <ana>
+         <tok val="Nuntii"/>
+         <tok val="nuntii"/>
+         <tok val="nuntiique"/>
          <lm cert="0.5">
             <l>nuntius</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -530,8 +615,11 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Nuntii nunti nuntii nuntiique-->
-         <tok val="[nN]unti(i|ique)?"/>
+      <ana>
+         <tok val="Nuntii"/>
+         <tok val="nunti"/>
+         <tok val="nuntii"/>
+         <tok val="nuntiique"/>
          <lm>
             <l>nuntius</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -539,8 +627,9 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Nuntio nuntio-->
-         <tok val="[nN]untio"/>
+      <ana>
+         <tok val="Nuntio"/>
+         <tok val="nuntio"/>
          <lm cert="0.333333333333333333">
             <l>nuntius</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -560,23 +649,31 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Nuntios nuntios nuntiosque-->
-         <tok val="[nN]untios(que)?"/>
+      <ana>
+         <tok val="Nuntios"/>
+         <tok val="nuntios"/>
+         <tok val="nuntiosque"/>
          <lm>
             <l>nuntius</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nuntium nuntium nuntiumque núntium-->
-         <tok val="[nN]?(u|nú|nu)ntium(que)?"/>
+      <ana>
+         <tok val="Nuntium"/>
+         <tok val="nuntium"/>
+         <tok val="nuntiumque"/>
+         <tok val="núntium"/>
          <lm>
             <l>nuntius</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Nuntium nuntiorum nuntium nuntiumque-->
-         <tok val="[nN]unti(or)?um(que)?"/>
+      <ana>
+         <tok val="Nuntium"/>
+         <tok val="nuntiorum"/>
+         <tok val="nuntium"/>
+         <tok val="nuntiumque"/>
          <lm cert="0.5">
             <l>nuntius</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -588,8 +685,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Nuntium nuntium nuntiumque-->
-         <tok val="[nN]untium(que)?"/>
+      <ana>
+         <tok val="Nuntium"/>
+         <tok val="nuntium"/>
+         <tok val="nuntiumque"/>
          <lm cert="0.5">
             <l>nuntius</l>
             <m cert="0.25">a - - s - - - n a</m>
@@ -604,15 +703,20 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Nuntius nuntiun nuntius núntius-->
-         <tok val="[nN]?(u|nú)ntiu[sn]"/>
+      <ana>
+         <tok val="Nuntius"/>
+         <tok val="nuntiun"/>
+         <tok val="nuntius"/>
+         <tok val="núntius"/>
          <lm>
             <l>nuntius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Nuntius nuntiun nuntius-->
-         <tok val="[nN]untiu[sn]"/>
+      <ana>
+         <tok val="Nuntius"/>
+         <tok val="nuntiun"/>
+         <tok val="nuntius"/>
          <lm>
             <l>nuntius</l>
             <m>a - - s - - - m n</m>
@@ -627,8 +731,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--nunciam núnciam-->
-         <tok val="n[úu]nciam"/>
+      <ana>
+         <tok val="nunciam"/>
+         <tok val="núnciam"/>
          <lm>
             <l>nuncia</l>
             <m>n - - s - - - f a</m>
@@ -843,8 +948,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--nuncupantes nuncupantis-->
-         <tok val="nuncupant[ie]s"/>
+      <ana>
+         <tok val="nuncupantes"/>
+         <tok val="nuncupantis"/>
          <lm>
             <l>nuncupo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -914,22 +1020,28 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--nuncuparis nuncupaueris-->
-         <tok val="nuncupa(ue)?ris"/>
+      <ana>
+         <tok val="nuncuparis"/>
+         <tok val="nuncupaueris"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--nuncuparit nuncupauerit nuncupaverit-->
-         <tok val="nuncupa[vu]?(e|)rit"/>
+      <ana>
+         <tok val="nuncuparit"/>
+         <tok val="nuncupauerit"/>
+         <tok val="nuncupaverit"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--nuncuparunt nuncupauere nuncupavere nuncupaverunt-->
-         <tok val="nuncupa(ve|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="nuncuparunt"/>
+         <tok val="nuncupauere"/>
+         <tok val="nuncupavere"/>
+         <tok val="nuncupaverunt"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 3 p r i a</m>
@@ -1141,22 +1253,25 @@
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--nuncupauerit nuncupaverit-->
-         <tok val="nuncupa[vu]erit"/>
+      <ana>
+         <tok val="nuncupauerit"/>
+         <tok val="nuncupaverit"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--nuncupaui nuncupavi-->
-         <tok val="nuncupa[vu]i"/>
+      <ana>
+         <tok val="nuncupaui"/>
+         <tok val="nuncupavi"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--nuncupauimus nuncupavimus-->
-         <tok val="nuncupa[vu]imus"/>
+      <ana>
+         <tok val="nuncupauimus"/>
+         <tok val="nuncupavimus"/>
          <lm>
             <l>nuncupo</l>
             <m>v - 1 p r i a</m>
@@ -1247,8 +1362,9 @@
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--nundinale nundinalest-->
-         <tok val="nundinale(st)?"/>
+      <ana>
+         <tok val="nundinale"/>
+         <tok val="nundinalest"/>
          <lm>
             <l>nundinalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1386,8 +1502,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--nundinationem nundinationemque-->
-         <tok val="nundinationem(que)?"/>
+      <ana>
+         <tok val="nundinationem"/>
+         <tok val="nundinationemque"/>
          <lm>
             <l>nundinatio</l>
             <m>n - - s - - - f a</m>
@@ -1464,8 +1581,9 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--nuntiaban nuntiabas-->
-         <tok val="nuntiaba[sn]"/>
+      <ana>
+         <tok val="nuntiaban"/>
+         <tok val="nuntiabas"/>
          <lm>
             <l>nuntio</l>
             <m>v - 2 s i i a</m>
@@ -1607,8 +1725,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--nuntiante nuntianti-->
-         <tok val="nuntiant[ie]"/>
+      <ana>
+         <tok val="nuntiante"/>
+         <tok val="nuntianti"/>
          <lm>
             <l>nuntio</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1634,8 +1753,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--nuntiantes nuntiantis-->
-         <tok val="nuntiant[ie]s"/>
+      <ana>
+         <tok val="nuntiantes"/>
+         <tok val="nuntiantis"/>
          <lm>
             <l>nuntio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1688,15 +1808,19 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--nuntiarant nuntiauerant nuntiaverant-->
-         <tok val="nuntia[vu]?(e|)rant"/>
+      <ana>
+         <tok val="nuntiarant"/>
+         <tok val="nuntiauerant"/>
+         <tok val="nuntiaverant"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--nuntiarat nuntiauerat nuntiaverat-->
-         <tok val="nuntia[vu]?(e|)rat"/>
+      <ana>
+         <tok val="nuntiarat"/>
+         <tok val="nuntiauerat"/>
+         <tok val="nuntiaverat"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s l i a</m>
@@ -1716,8 +1840,9 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--nuntiarent nuntiarentque-->
-         <tok val="nuntiarent(que)?"/>
+      <ana>
+         <tok val="nuntiarent"/>
+         <tok val="nuntiarentque"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p i s a</m>
@@ -1744,8 +1869,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--nuntiaret nuntiaretque-->
-         <tok val="nuntiaret(que)?"/>
+      <ana>
+         <tok val="nuntiaret"/>
+         <tok val="nuntiaretque"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s i s a</m>
@@ -1758,8 +1884,10 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--nuntiarint nuntiauerint nuntiaverint-->
-         <tok val="nuntia[vu]?(e|)rint"/>
+      <ana>
+         <tok val="nuntiarint"/>
+         <tok val="nuntiauerint"/>
+         <tok val="nuntiaverint"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p r s a</m>
@@ -1772,22 +1900,30 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--nuntiarit nuntiauerit-->
-         <tok val="nuntia(ue)?rit"/>
+      <ana>
+         <tok val="nuntiarit"/>
+         <tok val="nuntiauerit"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--nuntiarunt nuntiaruntque nuntiauere nuntiauerunt nuntiavere nuntiaverunt nuntiaveruntque-->
-         <tok val="nuntia(ve|ue)?r(unt)?(que|e)?"/>
+      <ana>
+         <tok val="nuntiarunt"/>
+         <tok val="nuntiaruntque"/>
+         <tok val="nuntiauere"/>
+         <tok val="nuntiauerunt"/>
+         <tok val="nuntiavere"/>
+         <tok val="nuntiaverunt"/>
+         <tok val="nuntiaveruntque"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--nuntiasse nuntiavisse-->
-         <tok val="nuntia(vi)?sse"/>
+      <ana>
+         <tok val="nuntiasse"/>
+         <tok val="nuntiavisse"/>
          <lm>
             <l>nuntio</l>
             <m>v - - - r n a</m>
@@ -1800,22 +1936,26 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--nuntiasset nuntiavisset-->
-         <tok val="nuntia(vi)?sset"/>
+      <ana>
+         <tok val="nuntiasset"/>
+         <tok val="nuntiavisset"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--nuntiasti nuntiastin nuntiastine-->
-         <tok val="nuntiasti[n]?(e|)?"/>
+      <ana>
+         <tok val="nuntiasti"/>
+         <tok val="nuntiastin"/>
+         <tok val="nuntiastine"/>
          <lm>
             <l>nuntio</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--nuntiastin nuntiastis-->
-         <tok val="nuntiasti[sn]"/>
+      <ana>
+         <tok val="nuntiastin"/>
+         <tok val="nuntiastis"/>
          <lm>
             <l>nuntio</l>
             <m>v - 2 p r i a</m>
@@ -1910,8 +2050,11 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--nuntiatum nuntiatumque nuntiatumst nuntiatumue-->
-         <tok val="nuntiatum[q]?(ue|st)?"/>
+      <ana>
+         <tok val="nuntiatum"/>
+         <tok val="nuntiatumque"/>
+         <tok val="nuntiatumst"/>
+         <tok val="nuntiatumue"/>
          <lm>
             <l>nuntio</l>
             <m>a - - s - - - n n</m>
@@ -1949,8 +2092,9 @@
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--nuntiauerint nuntiaverint-->
-         <tok val="nuntia[vu]erint"/>
+      <ana>
+         <tok val="nuntiauerint"/>
+         <tok val="nuntiaverint"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 p t i a</m>
@@ -1963,22 +2107,26 @@
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--nuntiauero nuntiavero-->
-         <tok val="nuntia[vu]ero"/>
+      <ana>
+         <tok val="nuntiauero"/>
+         <tok val="nuntiavero"/>
          <lm>
             <l>nuntio</l>
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--nuntiauit nuntiavit nuntiavitque-->
-         <tok val="nuntia[vu]it(que)?"/>
+      <ana>
+         <tok val="nuntiauit"/>
+         <tok val="nuntiavit"/>
+         <tok val="nuntiavitque"/>
          <lm>
             <l>nuntio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--nuntiavi nuntiavique-->
-         <tok val="nuntiavi(que)?"/>
+      <ana>
+         <tok val="nuntiavi"/>
+         <tok val="nuntiavique"/>
          <lm>
             <l>nuntio</l>
             <m>v - 1 s r i a</m>
@@ -2040,8 +2188,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--nuntiis nuntiisque-->
-         <tok val="nuntiis(que)?"/>
+      <ana>
+         <tok val="nuntiis"/>
+         <tok val="nuntiisque"/>
          <lm cert="0.333333333333333333">
             <l>nuntius</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -2088,8 +2237,10 @@
             <m cert="0.142857142857142857">v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--NUNTIATUM nuntiatumve-->
-         <tok val="(nuntiatumve|NUNTIATUM)"/>
+      <ana>
+         <tok val="NUNTIATUM"/>
+         <tok val="nuntiatum"/>
+         <tok val="nuntiatumve"/>
          <lm>
             <l>nuntio</l>
             <m>n - - s - - - n n</m>

@@ -1,57 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscorr">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:corr">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to corr</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-corr.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CORR</tok-starts-with>
       <tok-starts-with>Corr</tok-starts-with>
       <tok-starts-with>corr</tok-starts-with>
       <tok-starts-with>córr</tok-starts-with>
-      <ana><!--CORREPO Correpo correpo-->
-         <tok val="[cC]?(orrepo|CORREPO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:17:59.46-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:17:59.46-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-corr.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CORREPO"/>
+         <tok val="Correpo"/>
+         <tok val="correpo"/>
          <lm>
             <l>correpo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CORRIGE corrige corrigen-->
-         <tok val="(corrige)?(n|CORRIGE)?"/>
+      <ana>
+         <tok val="CORRIGE"/>
+         <tok val="corrige"/>
+         <tok val="corrigen"/>
          <lm>
             <l>corrigo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--CORRIGIA Corrigia corrigia-->
-         <tok val="[cC]?(orrigia|CORRIGIA)"/>
+      <ana>
+         <tok val="CORRIGIA"/>
+         <tok val="Corrigia"/>
+         <tok val="corrigia"/>
          <lm>
             <l>corrigia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -59,37 +73,48 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--CORRIGITO corrigito corrigitoque-->
-         <tok val="(corrigito)?(que|CORRIGITO)?"/>
+      <ana>
+         <tok val="CORRIGITO"/>
+         <tok val="corrigito"/>
+         <tok val="corrigitoque"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.5">v - 2 s f m a</m>
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--CORRIGO Corrigo corrigo-->
-         <tok val="[cC]?(orrigo|CORRIGO)"/>
+      <ana>
+         <tok val="CORRIGO"/>
+         <tok val="Corrigo"/>
+         <tok val="corrigo"/>
          <lm>
             <l>corrigo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CORRIPIO Corripio corripio-->
-         <tok val="[cC]?(orripio|CORRIPIO)"/>
+      <ana>
+         <tok val="CORRIPIO"/>
+         <tok val="Corripio"/>
+         <tok val="corripio"/>
          <lm>
             <l>corripio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CORRODO Corrodo corrodo-->
-         <tok val="[cC]?(orrodo|CORRODO)"/>
+      <ana>
+         <tok val="CORRODO"/>
+         <tok val="Corrodo"/>
+         <tok val="corrodo"/>
          <lm>
             <l>corrodo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CORRVGO Corrugo corrugo-->
-         <tok val="[cC]?(orrugo|CORRVGO)"/>
+      <ana>
+         <tok val="CORRVGO"/>
+         <tok val="Corrugo"/>
+         <tok val="corrugo"/>
+         <tok val="corrvgo"/>
          <lm cert="0.5">
             <l>corrugo</l>
             <m>v - 1 s p i a</m>
@@ -100,36 +125,55 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--CORRVMPO Corrumpo corrumpo-->
-         <tok val="[cC]?(orrumpo|CORRVMPO)"/>
+      <ana>
+         <tok val="CORRVMPO"/>
+         <tok val="Corrumpo"/>
+         <tok val="corrumpo"/>
+         <tok val="corrvmpo"/>
          <lm>
             <l>corrumpo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CORRVO Corruo corruo-->
-         <tok val="[cC]?(orruo|CORRVO)"/>
+      <ana>
+         <tok val="CORRVO"/>
+         <tok val="Corruo"/>
+         <tok val="corruo"/>
+         <tok val="corrvo"/>
          <lm>
             <l>corruo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CORRVPISSE Corrupisse corrupisse-->
-         <tok val="[cC]?(orrupisse|CORRVPISSE)"/>
+      <ana>
+         <tok val="CORRVPISSE"/>
+         <tok val="Corrupisse"/>
+         <tok val="corrupisse"/>
+         <tok val="corrvpisse"/>
          <lm>
             <l>conrumpo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--CORRVPTVM Corruptum-->
-         <tok val="C(orruptum|ORRVPTVM)"/>
+      <ana>
+         <tok val="CORRVPTVM"/>
+         <tok val="Corruptum"/>
+         <tok val="corruptum"/>
+         <tok val="corrvptvm"/>
          <lm>
             <l>corruptus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--CORRVPTVM Corruptum corruptorum corruptum corruptumque corruptumst corruptumue-->
-         <tok val="[cC]?(orrupt)?(or)?(um)?[q]?(ue|st|CORRVPTVM)?"/>
+      <ana>
+         <tok val="CORRVPTVM"/>
+         <tok val="Corruptum"/>
+         <tok val="corruptorum"/>
+         <tok val="corruptum"/>
+         <tok val="corruptumque"/>
+         <tok val="corruptumst"/>
+         <tok val="corruptumue"/>
+         <tok val="corrvptvm"/>
          <lm cert="0.5">
             <l>corruptus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -141,8 +185,14 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--CORRVPTVM Corruptum corruptum corruptumque corruptumst corruptumue-->
-         <tok val="[cC]?(orruptum)?[q]?(ue|st|CORRVPTVM)?"/>
+      <ana>
+         <tok val="CORRVPTVM"/>
+         <tok val="Corruptum"/>
+         <tok val="corruptum"/>
+         <tok val="corruptumque"/>
+         <tok val="corruptumst"/>
+         <tok val="corruptumue"/>
+         <tok val="corrvptvm"/>
          <lm cert="0.5">
             <l>corruptus</l>
             <m cert="0.5">a - - s - - - n a</m>
@@ -155,8 +205,16 @@
             <m cert="0.333333333333333333">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--CORRVPTVM Corrupte Corruptum corrupte corruptum corruptumque corruptumst corruptumue-->
-         <tok val="[cC]?(orrupt)?(um)?[q]?(ue|st|e|CORRVPTVM)?"/>
+      <ana>
+         <tok val="CORRVPTVM"/>
+         <tok val="Corrupte"/>
+         <tok val="Corruptum"/>
+         <tok val="corrupte"/>
+         <tok val="corruptum"/>
+         <tok val="corruptumque"/>
+         <tok val="corruptumst"/>
+         <tok val="corruptumue"/>
+         <tok val="corrvptvm"/>
          <lm cert="0.5">
             <l>corruptus</l>
             <m>a - - s - - - n v</m>
@@ -166,8 +224,9 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Corradere corradere-->
-         <tok val="[cC]orradere"/>
+      <ana>
+         <tok val="Corradere"/>
+         <tok val="corradere"/>
          <lm>
             <l>corrado</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -176,15 +235,17 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Corrado corrado-->
-         <tok val="[cC]orrado"/>
+      <ana>
+         <tok val="Corrado"/>
+         <tok val="corrado"/>
          <lm>
             <l>corrado</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Correcta correcta-->
-         <tok val="[cC]orrecta"/>
+      <ana>
+         <tok val="Correcta"/>
+         <tok val="correcta"/>
          <lm cert="0.5">
             <l>corrigo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -204,31 +265,35 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Correctio correctio-->
-         <tok val="[cC]orrectio"/>
+      <ana>
+         <tok val="Correctio"/>
+         <tok val="correctio"/>
          <lm>
             <l>correctio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Correctionem correctionem-->
-         <tok val="[cC]orrectionem"/>
+      <ana>
+         <tok val="Correctionem"/>
+         <tok val="correctionem"/>
          <lm>
             <l>correctio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Corrector corrector-->
-         <tok val="[cC]orrector"/>
+      <ana>
+         <tok val="Corrector"/>
+         <tok val="corrector"/>
          <lm>
             <l>corrector</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Correctus correctus-->
-         <tok val="[cC]orrectus"/>
+      <ana>
+         <tok val="Correctus"/>
+         <tok val="correctus"/>
          <lm cert="0.5">
             <l>correctus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -241,14 +306,16 @@
       </ana>
       <ana>
          <tok val="Correo"/>
+         <tok val="correo"/>
          <lm>
             <l>correus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Correpere correpere-->
-         <tok val="[cC]orrepere"/>
+      <ana>
+         <tok val="Correpere"/>
+         <tok val="correpere"/>
          <lm>
             <l>correpo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -257,8 +324,10 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Correpta correpta correptaque-->
-         <tok val="[cC]orrepta(que)?"/>
+      <ana>
+         <tok val="Correpta"/>
+         <tok val="correpta"/>
+         <tok val="correptaque"/>
          <lm cert="0.5">
             <l>corripio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -273,8 +342,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Correpti correpti-->
-         <tok val="[cC]orrepti"/>
+      <ana>
+         <tok val="Correpti"/>
+         <tok val="correpti"/>
          <lm>
             <l>corripio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -283,23 +353,27 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Correptio correptio-->
-         <tok val="[cC]orreptio"/>
+      <ana>
+         <tok val="Correptio"/>
+         <tok val="correptio"/>
          <lm>
             <l>correptio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Correptor correptor-->
-         <tok val="[cC]orreptor"/>
+      <ana>
+         <tok val="Correptor"/>
+         <tok val="correptor"/>
          <lm>
             <l>correpto</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Correptum correptum correptumque-->
-         <tok val="[cC]orreptum(que)?"/>
+      <ana>
+         <tok val="Correptum"/>
+         <tok val="correptum"/>
+         <tok val="correptumque"/>
          <lm>
             <l>corripio</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -310,22 +384,27 @@
             <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Correptum correpte correptum correptumque-->
-         <tok val="[cC]orrept(um)?(que|e)?"/>
+      <ana>
+         <tok val="Correptum"/>
+         <tok val="correpte"/>
+         <tok val="correptum"/>
+         <tok val="correptumque"/>
          <lm>
             <l>corripio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Correptus correptus-->
-         <tok val="[cC]orreptus"/>
+      <ana>
+         <tok val="Correptus"/>
+         <tok val="correptus"/>
          <lm>
             <l>corripio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Correpunt correpunt-->
-         <tok val="[cC]orrepunt"/>
+      <ana>
+         <tok val="Correpunt"/>
+         <tok val="correpunt"/>
          <lm>
             <l>correpo</l>
             <m>v - 3 p p i a</m>
@@ -333,6 +412,7 @@
       </ana>
       <ana>
          <tok val="Correum"/>
+         <tok val="correum"/>
          <lm>
             <l>correus</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -341,27 +421,33 @@
       </ana>
       <ana>
          <tok val="Correus"/>
+         <tok val="correus"/>
          <lm>
             <l>correus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Correxi correxi-->
-         <tok val="[cC]orrexi"/>
+      <ana>
+         <tok val="Correxi"/>
+         <tok val="correxi"/>
          <lm>
             <l>corrigo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Correxit correxit-->
-         <tok val="[cC]orrexit"/>
+      <ana>
+         <tok val="Correxit"/>
+         <tok val="correxit"/>
          <lm>
             <l>corrigo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Corrhago Corrhagon-->
-         <tok val="Corrhago[n]?"/>
+      <ana>
+         <tok val="Corrhago"/>
+         <tok val="Corrhagon"/>
+         <tok val="corrhago"/>
+         <tok val="corrhagon"/>
          <lm>
             <l>Corrhagon</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -370,20 +456,24 @@
       </ana>
       <ana>
          <tok val="Corrideo"/>
+         <tok val="corrideo"/>
          <lm>
             <l>corrideo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corrigatur corrigatur-->
-         <tok val="[cC]orrigatur"/>
+      <ana>
+         <tok val="Corrigatur"/>
+         <tok val="corrigatur"/>
          <lm>
             <l>corrigo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Corrigendum corrigendum corrigendumque-->
-         <tok val="[cC]orrigendum(que)?"/>
+      <ana>
+         <tok val="Corrigendum"/>
+         <tok val="corrigendum"/>
+         <tok val="corrigendumque"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.25">v - - s p g p n a</m>
@@ -392,30 +482,36 @@
             <m cert="0.25">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Corrigendum corrigendorum corrigendum corrigendumque-->
-         <tok val="[cC]orrigend(or)?um(que)?"/>
+      <ana>
+         <tok val="Corrigendum"/>
+         <tok val="corrigendorum"/>
+         <tok val="corrigendum"/>
+         <tok val="corrigendumque"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Corrigendum corrigendum-->
-         <tok val="[cC]orrigendum"/>
+      <ana>
+         <tok val="Corrigendum"/>
+         <tok val="corrigendum"/>
          <lm>
             <l>corrigo</l>
             <m>v - - s p d a n a</m>
          </lm>
       </ana>
-      <ana><!--Corrigendus corrigendus-->
-         <tok val="[cC]orrigendus"/>
+      <ana>
+         <tok val="Corrigendus"/>
+         <tok val="corrigendus"/>
          <lm>
             <l>corrigo</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Corrigere corrigere-->
-         <tok val="[cC]orrigere"/>
+      <ana>
+         <tok val="Corrigere"/>
+         <tok val="corrigere"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -424,29 +520,34 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Corrigeres corrigeres-->
-         <tok val="[cC]orrigeres"/>
+      <ana>
+         <tok val="Corrigeres"/>
+         <tok val="corrigeres"/>
          <lm>
             <l>corrigo</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Corrigetur corrigetur-->
-         <tok val="[cC]orrigetur"/>
+      <ana>
+         <tok val="Corrigetur"/>
+         <tok val="corrigetur"/>
          <lm>
             <l>corrigo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Corrigi corrigi-->
-         <tok val="[cC]orrigi"/>
+      <ana>
+         <tok val="Corrigi"/>
+         <tok val="corrigi"/>
          <lm>
             <l>corrigo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Corrigit corrigit corrigitque-->
-         <tok val="[cC]orrigit(que)?"/>
+      <ana>
+         <tok val="Corrigit"/>
+         <tok val="corrigit"/>
+         <tok val="corrigitque"/>
          <lm>
             <l>corrigo</l>
             <m>v - 3 s p i a</m>
@@ -454,63 +555,74 @@
       </ana>
       <ana>
          <tok val="Corrigor"/>
+         <tok val="corrigor"/>
          <lm>
             <l>corrigo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Corriguntur corriguntur-->
-         <tok val="[cC]orriguntur"/>
+      <ana>
+         <tok val="Corriguntur"/>
+         <tok val="corriguntur"/>
          <lm>
             <l>corrigo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Corripe corripe-->
-         <tok val="[cC]orripe"/>
+      <ana>
+         <tok val="Corripe"/>
+         <tok val="corripe"/>
          <lm>
             <l>corripio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Corripere corripere-->
-         <tok val="[cC]orripere"/>
+      <ana>
+         <tok val="Corripere"/>
+         <tok val="corripere"/>
          <lm>
             <l>corripio</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Corripere corripere corriperis-->
-         <tok val="[cC]orriper(e|is)"/>
+      <ana>
+         <tok val="Corripere"/>
+         <tok val="corripere"/>
+         <tok val="corriperis"/>
          <lm>
             <l>corripio</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Corriperet corriperet-->
-         <tok val="[cC]orriperet"/>
+      <ana>
+         <tok val="Corriperet"/>
+         <tok val="corriperet"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Corripi corripi corripin-->
-         <tok val="[cC]orripi[n]?"/>
+      <ana>
+         <tok val="Corripi"/>
+         <tok val="corripi"/>
+         <tok val="corripin"/>
          <lm>
             <l>corripio</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Corripiebatur corripiebatur-->
-         <tok val="[cC]orripiebatur"/>
+      <ana>
+         <tok val="Corripiebatur"/>
+         <tok val="corripiebatur"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Corripiens corripiens-->
-         <tok val="[cC]orripiens"/>
+      <ana>
+         <tok val="Corripiens"/>
+         <tok val="corripiens"/>
          <lm>
             <l>corripio</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -522,72 +634,87 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Corripis corripin corripis-->
-         <tok val="[cC]orripi[sn]"/>
+      <ana>
+         <tok val="Corripis"/>
+         <tok val="corripin"/>
+         <tok val="corripis"/>
          <lm>
             <l>corripio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corripit corripit-->
-         <tok val="[cC]orripit"/>
+      <ana>
+         <tok val="Corripit"/>
+         <tok val="corripit"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corripitur corripitur-->
-         <tok val="[cC]orripitur"/>
+      <ana>
+         <tok val="Corripitur"/>
+         <tok val="corripitur"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Corripiunt corripiunt-->
-         <tok val="[cC]orripiunt"/>
+      <ana>
+         <tok val="Corripiunt"/>
+         <tok val="corripiunt"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Corripiuntur corripiuntur-->
-         <tok val="[cC]orripiuntur"/>
+      <ana>
+         <tok val="Corripiuntur"/>
+         <tok val="corripiuntur"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Corripuere corripuere corripuerunt-->
-         <tok val="[cC]orripuer(e|unt)"/>
+      <ana>
+         <tok val="Corripuere"/>
+         <tok val="corripuere"/>
+         <tok val="corripuerunt"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Corripuisse corripuisse-->
-         <tok val="[cC]orripuisse"/>
+      <ana>
+         <tok val="Corripuisse"/>
+         <tok val="corripuisse"/>
          <lm>
             <l>corripio</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Corripuit corripuit corripuitque-->
-         <tok val="[cC]orripuit(que)?"/>
+      <ana>
+         <tok val="Corripuit"/>
+         <tok val="corripuit"/>
+         <tok val="corripuitque"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Corriuatio corrivatio-->
-         <tok val="[cC]orri[vu]atio"/>
+      <ana>
+         <tok val="Corriuatio"/>
+         <tok val="corriuatio"/>
+         <tok val="corrivatio"/>
          <lm>
             <l>corrivatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Corriuatus corrivatus-->
-         <tok val="[cC]orri[vu]atus"/>
+      <ana>
+         <tok val="Corriuatus"/>
+         <tok val="corriuatus"/>
+         <tok val="corrivatus"/>
          <lm>
             <l>corrivo</l>
             <m>v - - s r p p m n</m>
@@ -595,6 +722,7 @@
       </ana>
       <ana>
          <tok val="Corriuor"/>
+         <tok val="corriuor"/>
          <lm>
             <l>corrivo</l>
             <m>v - 1 s p i p</m>
@@ -602,6 +730,7 @@
       </ana>
       <ana>
          <tok val="Corrixandi"/>
+         <tok val="corrixandi"/>
          <lm>
             <l>conrixor</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -611,22 +740,25 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Corroborabitur corroborabitur-->
-         <tok val="[cC]orroborabitur"/>
+      <ana>
+         <tok val="Corroborabitur"/>
+         <tok val="corroborabitur"/>
          <lm>
             <l>corroboro</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Corroborant corroborant-->
-         <tok val="[cC]orroborant"/>
+      <ana>
+         <tok val="Corroborant"/>
+         <tok val="corroborant"/>
          <lm>
             <l>corroboro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Corroborare corroborare-->
-         <tok val="[cC]orroborare"/>
+      <ana>
+         <tok val="Corroborare"/>
+         <tok val="corroborare"/>
          <lm>
             <l>corroboro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -634,15 +766,18 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Corroborarunt corroborauerunt-->
-         <tok val="[cC]orrobora(ue)?runt"/>
+      <ana>
+         <tok val="Corroborarunt"/>
+         <tok val="corroborarunt"/>
+         <tok val="corroborauerunt"/>
          <lm>
             <l>corroboro</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Corroborata corroborata-->
-         <tok val="[cC]orroborata"/>
+      <ana>
+         <tok val="Corroborata"/>
+         <tok val="corroborata"/>
          <lm>
             <l>corroboro</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -653,8 +788,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Corroboratis corroboratis-->
-         <tok val="[cC]orroboratis"/>
+      <ana>
+         <tok val="Corroboratis"/>
+         <tok val="corroboratis"/>
          <lm>
             <l>corroboro</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -666,29 +802,34 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Corroboratus corroboratus corroboratusque-->
-         <tok val="[cC]orroboratus(que)?"/>
+      <ana>
+         <tok val="Corroboratus"/>
+         <tok val="corroboratus"/>
+         <tok val="corroboratusque"/>
          <lm>
             <l>corroboro</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Corroboro corroboro-->
-         <tok val="[cC]orroboro"/>
+      <ana>
+         <tok val="Corroboro"/>
+         <tok val="corroboro"/>
          <lm>
             <l>corroboro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corrodit corrodit-->
-         <tok val="[cC]orrodit"/>
+      <ana>
+         <tok val="Corrodit"/>
+         <tok val="corrodit"/>
          <lm>
             <l>corrodo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corrogare corrogare-->
-         <tok val="[cC]orrogare"/>
+      <ana>
+         <tok val="Corrogare"/>
+         <tok val="corrogare"/>
          <lm>
             <l>corrogo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -696,8 +837,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Corrogata corrogata-->
-         <tok val="[cC]orrogata"/>
+      <ana>
+         <tok val="Corrogata"/>
+         <tok val="corrogata"/>
          <lm>
             <l>corrogo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -708,8 +850,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Corrogati corrogati-->
-         <tok val="[cC]orrogati"/>
+      <ana>
+         <tok val="Corrogati"/>
+         <tok val="corrogati"/>
          <lm>
             <l>corrogo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -718,8 +861,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Corrogo corrogo-->
-         <tok val="[cC]orrogo"/>
+      <ana>
+         <tok val="Corrogo"/>
+         <tok val="corrogo"/>
          <lm>
             <l>corrogo</l>
             <m>v - 1 s p i a</m>
@@ -727,6 +871,7 @@
       </ana>
       <ana>
          <tok val="Corrosae"/>
+         <tok val="corrosae"/>
          <lm>
             <l>corrodo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -735,8 +880,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Corrosus corrosus-->
-         <tok val="[cC]orrosus"/>
+      <ana>
+         <tok val="Corrosus"/>
+         <tok val="corrosus"/>
          <lm>
             <l>corrodo</l>
             <m>v - - s r p p m n</m>
@@ -744,13 +890,15 @@
       </ana>
       <ana>
          <tok val="Corrotundo"/>
+         <tok val="corrotundo"/>
          <lm>
             <l>corrotundo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corruda corruda-->
-         <tok val="[cC]orruda"/>
+      <ana>
+         <tok val="Corruda"/>
+         <tok val="corruda"/>
          <lm>
             <l>corruda</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -758,8 +906,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Corruente corruente-->
-         <tok val="[cC]orruente"/>
+      <ana>
+         <tok val="Corruente"/>
+         <tok val="corruente"/>
          <lm>
             <l>corruo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -767,15 +916,17 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Corruet corruet-->
-         <tok val="[cC]orruet"/>
+      <ana>
+         <tok val="Corruet"/>
+         <tok val="corruet"/>
          <lm>
             <l>corruo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Corrugare corrugare-->
-         <tok val="[cC]orrugare"/>
+      <ana>
+         <tok val="Corrugare"/>
+         <tok val="corrugare"/>
          <lm>
             <l>corrugo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -785,6 +936,7 @@
       </ana>
       <ana>
          <tok val="Corrugata"/>
+         <tok val="corrugata"/>
          <lm>
             <l>corrugo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -795,120 +947,140 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Corrugatum corrugatum-->
-         <tok val="[cC]orrugatum"/>
+      <ana>
+         <tok val="Corrugatum"/>
+         <tok val="corrugatum"/>
          <lm>
             <l>corrugo</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Corrugatum"/>
-         <lm>
-            <l>corrugo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Corruget Corrvget corruget-->
-         <tok val="[Cc]orr[vu]get"/>
+         <tok val="Corruget"/>
+         <tok val="Corrvget"/>
+         <tok val="corruget"/>
+         <tok val="corrvget"/>
          <lm>
             <l>corrugo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Corruisse corruisse-->
-         <tok val="[cC]orruisse"/>
+      <ana>
+         <tok val="Corruisse"/>
+         <tok val="corruisse"/>
          <lm>
             <l>corruo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Corruit corruit corruitque-->
-         <tok val="[cC]orruit(que)?"/>
+      <ana>
+         <tok val="Corruit"/>
+         <tok val="corruit"/>
+         <tok val="corruitque"/>
          <lm>
             <l>corruo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corrumpe corrumpe-->
-         <tok val="[cC]orrumpe"/>
+      <ana>
+         <tok val="Corrumpe"/>
+         <tok val="corrumpe"/>
          <lm>
             <l>corrumpo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Corrumpere corrumpere corrumperen-->
-         <tok val="[cC]orrumpere[n]?"/>
+      <ana>
+         <tok val="Corrumpere"/>
+         <tok val="corrumpere"/>
+         <tok val="corrumperen"/>
          <lm>
             <l>corrumpo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Corrumpere corrumpere corrumperen corrumperis-->
-         <tok val="[cC]orrumper[e]?(n|is)?"/>
+      <ana>
+         <tok val="Corrumpere"/>
+         <tok val="corrumpere"/>
+         <tok val="corrumperen"/>
+         <tok val="corrumperis"/>
          <lm>
             <l>corrumpo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Corrumpi corrumpi corrumpier-->
-         <tok val="[cC]orrumpi(er)?"/>
+      <ana>
+         <tok val="Corrumpi"/>
+         <tok val="corrumpi"/>
+         <tok val="corrumpier"/>
          <lm>
             <l>corrumpo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Corrumpit corrumpit-->
-         <tok val="[cC]orrumpit"/>
+      <ana>
+         <tok val="Corrumpit"/>
+         <tok val="corrumpit"/>
          <lm>
             <l>corrumpo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Corrumpitur corrumpitur-->
-         <tok val="[cC]orrumpitur"/>
+      <ana>
+         <tok val="Corrumpitur"/>
+         <tok val="corrumpitur"/>
          <lm>
             <l>corrumpo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Corrumpunt corrumpunt-->
-         <tok val="[cC]orrumpunt"/>
+      <ana>
+         <tok val="Corrumpunt"/>
+         <tok val="corrumpunt"/>
          <lm>
             <l>corrumpo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Corrupere corrupere corruperunt-->
-         <tok val="[cC]orruper(e|unt)"/>
+      <ana>
+         <tok val="Corrupere"/>
+         <tok val="corrupere"/>
+         <tok val="corruperunt"/>
          <lm>
             <l>conrumpo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Corrupisti corrupisti-->
-         <tok val="[cC]orrupisti"/>
+      <ana>
+         <tok val="Corrupisti"/>
+         <tok val="corrupisti"/>
          <lm>
             <l>conrumpo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Corrupit corrupit corrupitque corrupít-->
-         <tok val="[cC]orrup[ií]t(que)?"/>
+      <ana>
+         <tok val="Corrupit"/>
+         <tok val="corrupit"/>
+         <tok val="corrupitque"/>
+         <tok val="corrupít"/>
          <lm>
             <l>conrumpo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Corrupta corrupta corruptaque-->
-         <tok val="[cC]orrupta(que)?"/>
+      <ana>
+         <tok val="Corrupta"/>
+         <tok val="corrupta"/>
+         <tok val="corruptaque"/>
          <lm cert="0.5">
             <l>corrumpo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -928,8 +1100,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Corruptae corruptae corruptaeque-->
-         <tok val="[cC]orruptae(que)?"/>
+      <ana>
+         <tok val="Corruptae"/>
+         <tok val="corruptae"/>
+         <tok val="corruptaeque"/>
          <lm cert="0.5">
             <l>corruptus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -947,24 +1121,23 @@
       </ana>
       <ana>
          <tok val="Corrupte"/>
-         <lm>
-            <l>corruptus</l>
-            <m>d</m>
-         </lm>
-      </ana>
-      <ana><!--Corrupte corrupte-->
-         <tok val="[cC]orrupte"/>
+         <tok val="corrupte"/>
          <lm cert="0.5">
             <l>corruptus</l>
-            <m>a - - s - - - m v</m>
+            <m cert="0.5">d</m>
+            <m cert="0.5">a - - s - - - m v</m>
          </lm>
          <lm cert="0.5">
             <l>corrumpo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Corruptela corrumptela corrumptelast corruptela corruptelaque-->
-         <tok val="[cC]orru[m]?ptela(st|que)?"/>
+      <ana>
+         <tok val="Corruptela"/>
+         <tok val="corrumptela"/>
+         <tok val="corrumptelast"/>
+         <tok val="corruptela"/>
+         <tok val="corruptelaque"/>
          <lm>
             <l>corruptela</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -972,8 +1145,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Corruptelae corruptelae-->
-         <tok val="[cC]orruptelae"/>
+      <ana>
+         <tok val="Corruptelae"/>
+         <tok val="corruptelae"/>
          <lm>
             <l>corruptela</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -982,15 +1156,18 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Corruptelam corruptelam-->
-         <tok val="[cC]orruptelam"/>
+      <ana>
+         <tok val="Corruptelam"/>
+         <tok val="corruptelam"/>
          <lm>
             <l>corruptela</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Corrupti corrupti corruptique-->
-         <tok val="[cC]orrupti(que)?"/>
+      <ana>
+         <tok val="Corrupti"/>
+         <tok val="corrupti"/>
+         <tok val="corruptique"/>
          <lm cert="0.5">
             <l>corrumpo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1006,8 +1183,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Corruptibile corruptibile-->
-         <tok val="[cC]orruptibile"/>
+      <ana>
+         <tok val="Corruptibile"/>
+         <tok val="corruptibile"/>
          <lm>
             <l>corruptibilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1017,6 +1195,7 @@
       </ana>
       <ana>
          <tok val="Corruptior"/>
+         <tok val="corruptior"/>
          <lm>
             <l>corruptus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1027,6 +1206,7 @@
       </ana>
       <ana>
          <tok val="Corruptiores"/>
+         <tok val="corruptiores"/>
          <lm>
             <l>corruptus</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -1039,6 +1219,7 @@
       </ana>
       <ana>
          <tok val="Corruptissima"/>
+         <tok val="corruptissima"/>
          <lm>
             <l>corruptus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -1051,6 +1232,7 @@
       </ana>
       <ana>
          <tok val="Corruptissimam"/>
+         <tok val="corruptissimam"/>
          <lm>
             <l>corruptus</l>
             <m>a - - s - - - f a s</m>
@@ -1058,6 +1240,7 @@
       </ana>
       <ana>
          <tok val="Corruptissimi"/>
+         <tok val="corruptissimi"/>
          <lm>
             <l>corruptus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -1068,6 +1251,7 @@
       </ana>
       <ana>
          <tok val="Corruptius"/>
+         <tok val="corruptius"/>
          <lm>
             <l>corruptus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -1076,8 +1260,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Corrupto corrupto-->
-         <tok val="[cC]orrupto"/>
+      <ana>
+         <tok val="Corrupto"/>
+         <tok val="corrupto"/>
          <lm cert="0.5">
             <l>corruptus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -1093,29 +1278,36 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Corruptor corruptor corruptorque córruptor-->
-         <tok val="[cC]?(o|có|co)rruptor(que)?"/>
+      <ana>
+         <tok val="Corruptor"/>
+         <tok val="corruptor"/>
+         <tok val="corruptorque"/>
+         <tok val="córruptor"/>
          <lm>
             <l>corruptor</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Corruptor corruptor corruptorque-->
-         <tok val="[cC]orruptor(que)?"/>
+      <ana>
+         <tok val="Corruptor"/>
+         <tok val="corruptor"/>
+         <tok val="corruptorque"/>
          <lm>
             <l>corruptor</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Corruptorem corruptorem-->
-         <tok val="[cC]orruptorem"/>
+      <ana>
+         <tok val="Corruptorem"/>
+         <tok val="corruptorem"/>
          <lm>
             <l>corruptor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Corruptos corruptos-->
-         <tok val="[cC]orruptos"/>
+      <ana>
+         <tok val="Corruptos"/>
+         <tok val="corruptos"/>
          <lm cert="0.5">
             <l>corruptus</l>
             <m>a - - p - - - m a</m>
@@ -1125,16 +1317,20 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Corruptrix corruptrix-->
-         <tok val="[cC]orruptrix"/>
+      <ana>
+         <tok val="Corruptrix"/>
+         <tok val="corruptrix"/>
          <lm>
             <l>corruptrix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Corruptus Corrvptvs corruptus-->
-         <tok val="[cC]orr[uv]pt[uv]s"/>
+      <ana>
+         <tok val="Corruptus"/>
+         <tok val="Corrvptvs"/>
+         <tok val="corruptus"/>
+         <tok val="corrvptvs"/>
          <lm cert="0.5">
             <l>corrumpo</l>
             <m>v - - s r p p m n</m>
@@ -1144,8 +1340,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Corruunt corruunt-->
-         <tok val="[cC]orruunt"/>
+      <ana>
+         <tok val="Corruunt"/>
+         <tok val="corruunt"/>
          <lm>
             <l>corruo</l>
             <m>v - 3 p p i a</m>
@@ -1297,8 +1494,10 @@
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--correcte correctum correctumque-->
-         <tok val="correct(um)?(que|e)?"/>
+      <ana>
+         <tok val="correcte"/>
+         <tok val="correctum"/>
+         <tok val="correctumque"/>
          <lm cert="0.5">
             <l>correctus</l>
             <m>a - - s - - - n v</m>
@@ -1442,8 +1641,10 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--correctorum correctum correctumque-->
-         <tok val="correct(or)?um(que)?"/>
+      <ana>
+         <tok val="correctorum"/>
+         <tok val="correctum"/>
+         <tok val="correctumque"/>
          <lm cert="0.5">
             <l>correctus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -1468,8 +1669,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--correctum correctumque-->
-         <tok val="correctum(que)?"/>
+      <ana>
+         <tok val="correctum"/>
+         <tok val="correctumque"/>
          <lm cert="0.5">
             <l>correctus</l>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
@@ -1526,8 +1728,9 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--correcturum correcturumque-->
-         <tok val="correcturum(que)?"/>
+      <ana>
+         <tok val="correcturum"/>
+         <tok val="correcturumque"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.166666666666666667">v - - p f p a n g</m>
@@ -1612,8 +1815,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--correptam correptamque-->
-         <tok val="correptam(que)?"/>
+      <ana>
+         <tok val="correptam"/>
+         <tok val="correptamque"/>
          <lm>
             <l>corripio</l>
             <m>v - - s r p p f a</m>
@@ -1678,8 +1882,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--correptis correptisque-->
-         <tok val="correptis(que)?"/>
+      <ana>
+         <tok val="correptis"/>
+         <tok val="correptisque"/>
          <lm>
             <l>corripio</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1700,8 +1905,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--correpto correptoque-->
-         <tok val="correpto(que)?"/>
+      <ana>
+         <tok val="correpto"/>
+         <tok val="correptoque"/>
          <lm cert="0.5">
             <l>correpto</l>
             <m>v - 1 s p i a</m>
@@ -1714,8 +1920,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--correptos correptosque-->
-         <tok val="correptos(que)?"/>
+      <ana>
+         <tok val="correptos"/>
+         <tok val="correptosque"/>
          <lm>
             <l>corripio</l>
             <m>v - - p r p p m a</m>
@@ -1770,8 +1977,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--correspondente correspondenti-->
-         <tok val="correspondent[ie]"/>
+      <ana>
+         <tok val="correspondente"/>
+         <tok val="correspondenti"/>
          <lm>
             <l>conrespondeo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1797,8 +2005,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--correspondentes correspondentis-->
-         <tok val="correspondent[ie]s"/>
+      <ana>
+         <tok val="correspondentes"/>
+         <tok val="correspondentis"/>
          <lm>
             <l>conrespondeo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1884,8 +2093,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--correxere correxerunt-->
-         <tok val="correxer(unt|e)"/>
+      <ana>
+         <tok val="correxere"/>
+         <tok val="correxerunt"/>
          <lm>
             <l>corrigo</l>
             <m>v - 3 p r i a</m>
@@ -1928,8 +2138,9 @@
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--correxisset Correxisset-->
-         <tok val="[Cc]orrexisset"/>
+      <ana>
+         <tok val="Correxisset"/>
+         <tok val="correxisset"/>
          <lm>
             <l>corrigo</l>
             <m>v - 3 s l s a</m>
@@ -2057,15 +2268,17 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--corrigen corriges-->
-         <tok val="corrige[sn]"/>
+      <ana>
+         <tok val="corrigen"/>
+         <tok val="corriges"/>
          <lm>
             <l>corrigo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--corrigenda CORRIGENDA-->
-         <tok val="(CORRIGENDA|corrigenda)"/>
+      <ana>
+         <tok val="CORRIGENDA"/>
+         <tok val="corrigenda"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -2100,8 +2313,9 @@
             <m>v - - p p g p f g</m>
          </lm>
       </ana>
-      <ana><!--corrigendi corrigendiue-->
-         <tok val="corrigendi(ue)?"/>
+      <ana>
+         <tok val="corrigendi"/>
+         <tok val="corrigendiue"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -2182,8 +2396,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--corrigentes corrigentis-->
-         <tok val="corrigent[ie]s"/>
+      <ana>
+         <tok val="corrigentes"/>
+         <tok val="corrigentis"/>
          <lm>
             <l>corrigo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2365,8 +2580,10 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--corripiat corripiatque Corripiat-->
-         <tok val="[Cc]orripiat(que)?"/>
+      <ana>
+         <tok val="Corripiat"/>
+         <tok val="corripiat"/>
+         <tok val="corripiatque"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 s p s a</m>
@@ -2386,8 +2603,9 @@
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--corripiebantur corripiebanturque-->
-         <tok val="corripiebantur(que)?"/>
+      <ana>
+         <tok val="corripiebantur"/>
+         <tok val="corripiebanturque"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 p i i p</m>
@@ -2486,8 +2704,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--corripientes corripientis-->
-         <tok val="corripient[ie]s"/>
+      <ana>
+         <tok val="corripientes"/>
+         <tok val="corripientis"/>
          <lm>
             <l>corripio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2592,8 +2811,9 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--corripuerat corripueratque-->
-         <tok val="corripuerat(que)?"/>
+      <ana>
+         <tok val="corripuerat"/>
+         <tok val="corripueratque"/>
          <lm>
             <l>corripio</l>
             <m>v - 3 s l i a</m>
@@ -2750,8 +2970,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--corrobora corroboran-->
-         <tok val="corrobora[n]?"/>
+      <ana>
+         <tok val="corrobora"/>
+         <tok val="corroboran"/>
          <lm>
             <l>corroboro</l>
             <m>v - 2 s p m a</m>
@@ -2804,8 +3025,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--corroboran corroboras-->
-         <tok val="corrobora[sn]"/>
+      <ana>
+         <tok val="corroboran"/>
+         <tok val="corroboras"/>
          <lm>
             <l>corroboro</l>
             <m>v - 2 s p i a</m>
@@ -2878,8 +3100,9 @@
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--corroborasset corroboravisset-->
-         <tok val="corrobora(vi)?sset"/>
+      <ana>
+         <tok val="corroborasset"/>
+         <tok val="corroboravisset"/>
          <lm>
             <l>corroboro</l>
             <m>v - 3 s l s a</m>
@@ -2961,15 +3184,17 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--corroborauit corroboravit-->
-         <tok val="corrobora[vu]it"/>
+      <ana>
+         <tok val="corroborauit"/>
+         <tok val="corroboravit"/>
          <lm>
             <l>corroboro</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--corroboraverat corroborauerat-->
-         <tok val="corrobora[uv]erat"/>
+      <ana>
+         <tok val="corroborauerat"/>
+         <tok val="corroboraverat"/>
          <lm>
             <l>corroboro</l>
             <m>v - 3 s l i a</m>
@@ -3121,8 +3346,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--corrogat corrogatque-->
-         <tok val="corrogat(que)?"/>
+      <ana>
+         <tok val="corrogat"/>
+         <tok val="corrogatque"/>
          <lm>
             <l>corrogo</l>
             <m>v - 3 s p i a</m>
@@ -3346,8 +3572,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--corrue corruen-->
-         <tok val="corrue[n]?"/>
+      <ana>
+         <tok val="corrue"/>
+         <tok val="corruen"/>
          <lm>
             <l>corruo</l>
             <m>v - 2 s p m a</m>
@@ -3360,8 +3587,9 @@
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--corruen corrues-->
-         <tok val="corrue[sn]"/>
+      <ana>
+         <tok val="corruen"/>
+         <tok val="corrues"/>
          <lm>
             <l>corruo</l>
             <m>v - 2 s f i a</m>
@@ -3418,8 +3646,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--corruentes corruentisque-->
-         <tok val="corruent(isqu)?e[s]?"/>
+      <ana>
+         <tok val="corruentes"/>
+         <tok val="corruentisque"/>
          <lm>
             <l>corruo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3644,8 +3873,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--corrumpatur corrúmpatur-->
-         <tok val="corr[úu]mpatur"/>
+      <ana>
+         <tok val="corrumpatur"/>
+         <tok val="corrúmpatur"/>
          <lm>
             <l>corrumpo</l>
             <m>v - 3 s p s p</m>
@@ -3757,8 +3987,11 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--corrumpendorum corrumpendum corrumpendumue corrumpendumve-->
-         <tok val="corrumpend(or)?um[vu]?[e]?"/>
+      <ana>
+         <tok val="corrumpendorum"/>
+         <tok val="corrumpendum"/>
+         <tok val="corrumpendumue"/>
+         <tok val="corrumpendumve"/>
          <lm>
             <l>corrumpo</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -3772,8 +4005,10 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--corrumpendum corrumpendumue corrumpendumve-->
-         <tok val="corrumpendum[vu]?(e|)"/>
+      <ana>
+         <tok val="corrumpendum"/>
+         <tok val="corrumpendumue"/>
+         <tok val="corrumpendumve"/>
          <lm>
             <l>corrumpo</l>
             <m cert="0.25">v - - s p g p n a</m>
@@ -3782,8 +4017,9 @@
             <m cert="0.25">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--corrumpendum corrumpendumue-->
-         <tok val="corrumpendum(ue)?"/>
+      <ana>
+         <tok val="corrumpendum"/>
+         <tok val="corrumpendumue"/>
          <lm>
             <l>corrumpo</l>
             <m>v - - s p d a n a</m>
@@ -3802,8 +4038,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--corrumpente corrumpenti-->
-         <tok val="corrumpent[ie]"/>
+      <ana>
+         <tok val="corrumpente"/>
+         <tok val="corrumpenti"/>
          <lm>
             <l>corrumpo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3821,8 +4058,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--corrumpentes corrumpentis-->
-         <tok val="corrumpent[ie]s"/>
+      <ana>
+         <tok val="corrumpentes"/>
+         <tok val="corrumpentis"/>
          <lm>
             <l>corrumpo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3891,8 +4129,9 @@
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--corrumperen corrumperes-->
-         <tok val="corrumpere[sn]"/>
+      <ana>
+         <tok val="corrumperen"/>
+         <tok val="corrumperes"/>
          <lm>
             <l>corrumpo</l>
             <m>v - 2 s i s a</m>
@@ -4063,8 +4302,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--corruptas corruptasque-->
-         <tok val="corruptas(que)?"/>
+      <ana>
+         <tok val="corruptas"/>
+         <tok val="corruptasque"/>
          <lm cert="0.5">
             <l>corrumpo</l>
             <m>v - - p r p p f a</m>
@@ -4121,8 +4361,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--corruptibiles corruptibilis-->
-         <tok val="corruptibil[ie]s"/>
+      <ana>
+         <tok val="corruptibiles"/>
+         <tok val="corruptibilis"/>
          <lm>
             <l>corruptibilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -4200,8 +4441,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--corruptis corruptisque-->
-         <tok val="corruptis(que)?"/>
+      <ana>
+         <tok val="corruptis"/>
+         <tok val="corruptisque"/>
          <lm cert="0.5">
             <l>corrumpo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -4251,8 +4493,9 @@
             <m cert="0.5">a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--corruptissime corruptissimum-->
-         <tok val="corruptissim(um|e)"/>
+      <ana>
+         <tok val="corruptissime"/>
+         <tok val="corruptissimum"/>
          <lm>
             <l>corrumpo</l>
             <m>a - - s - - - n v s</m>
@@ -4325,8 +4568,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--corruptores corruptoresque-->
-         <tok val="corruptores(que)?"/>
+      <ana>
+         <tok val="corruptores"/>
+         <tok val="corruptoresque"/>
          <lm>
             <l>corruptor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -4372,8 +4616,11 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--corruptum corruptumque corruptumst corruptumue-->
-         <tok val="corruptum[q]?(ue|st)?"/>
+      <ana>
+         <tok val="corruptum"/>
+         <tok val="corruptumque"/>
+         <tok val="corruptumst"/>
+         <tok val="corruptumue"/>
          <lm>
             <l>corrumpo</l>
             <m>a - - s - - - n n</m>

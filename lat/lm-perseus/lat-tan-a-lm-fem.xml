@@ -1,50 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfem">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fem">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fem</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fem.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FEM</tok-starts-with>
       <tok-starts-with>Fem</tok-starts-with>
       <tok-starts-with>fem</tok-starts-with>
       <tok-starts-with>fém</tok-starts-with>
-      <ana><!--FEMINA Femina femina feminaque feminast feminaue fémina-->
-         <tok val="[fF]?(e|fé)?(mina)?[q]?(ue|st|FEMINA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:23:59.884-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:23:59.884-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fem.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FEMINA"/>
+         <tok val="Femina"/>
+         <tok val="femina"/>
+         <tok val="feminaque"/>
+         <tok val="feminast"/>
+         <tok val="feminaue"/>
+         <tok val="fémina"/>
          <lm>
             <l>femina</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--FEMINA Femina femina feminaque feminast feminaue-->
-         <tok val="[fF]?(emina)?[q]?(ue|st|FEMINA)?"/>
+      <ana>
+         <tok val="FEMINA"/>
+         <tok val="Femina"/>
+         <tok val="femina"/>
+         <tok val="feminaque"/>
+         <tok val="feminast"/>
+         <tok val="feminaue"/>
          <lm cert="0.5">
             <l>femina</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -55,8 +74,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Feminae feminae feminaeque-->
-         <tok val="[fF]eminae(que)?"/>
+      <ana>
+         <tok val="Feminae"/>
+         <tok val="feminae"/>
+         <tok val="feminaeque"/>
          <lm>
             <l>femina</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -65,22 +86,31 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Feminam feminam feminamque-->
-         <tok val="[fF]eminam(que)?"/>
+      <ana>
+         <tok val="Feminam"/>
+         <tok val="feminam"/>
+         <tok val="feminamque"/>
          <lm>
             <l>femina</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Feminarum feminarum feminarumque feminarumve feminárum-->
-         <tok val="[fF]emin[aá]rum(ve|que)?"/>
+      <ana>
+         <tok val="Feminarum"/>
+         <tok val="feminarum"/>
+         <tok val="feminarumque"/>
+         <tok val="feminarumve"/>
+         <tok val="feminárum"/>
          <lm>
             <l>femina</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Feminas feminas feminasque feminasve-->
-         <tok val="[fF]eminas(ve|que)?"/>
+      <ana>
+         <tok val="Feminas"/>
+         <tok val="feminas"/>
+         <tok val="feminasque"/>
+         <tok val="feminasve"/>
          <lm cert="0.5">
             <l>femino</l>
             <m>v - 2 s p i a</m>
@@ -90,8 +120,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Feminea feminea-->
-         <tok val="[fF]eminea"/>
+      <ana>
+         <tok val="Feminea"/>
+         <tok val="feminea"/>
          <lm>
             <l>femineus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -102,8 +133,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Femineae femineae-->
-         <tok val="[fF]emineae"/>
+      <ana>
+         <tok val="Femineae"/>
+         <tok val="femineae"/>
          <lm>
             <l>femineus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -112,22 +144,25 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Femineam femineam-->
-         <tok val="[fF]emineam"/>
+      <ana>
+         <tok val="Femineam"/>
+         <tok val="femineam"/>
          <lm>
             <l>femineus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Femineas femineas-->
-         <tok val="[fF]emineas"/>
+      <ana>
+         <tok val="Femineas"/>
+         <tok val="femineas"/>
          <lm>
             <l>femineus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Feminei feminei-->
-         <tok val="[fF]eminei"/>
+      <ana>
+         <tok val="Feminei"/>
+         <tok val="feminei"/>
          <lm>
             <l>femineus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -136,8 +171,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Femineis femineis-->
-         <tok val="[fF]emineis"/>
+      <ana>
+         <tok val="Femineis"/>
+         <tok val="femineis"/>
          <lm>
             <l>femineus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -148,8 +184,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Femineo femineo-->
-         <tok val="[fF]emineo"/>
+      <ana>
+         <tok val="Femineo"/>
+         <tok val="femineo"/>
          <lm>
             <l>femineus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -158,8 +195,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Femineum femineum femineumque-->
-         <tok val="[fF]emineum(que)?"/>
+      <ana>
+         <tok val="Femineum"/>
+         <tok val="femineum"/>
+         <tok val="femineumque"/>
          <lm>
             <l>femineus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -170,15 +209,18 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Femineus femineus femineusque-->
-         <tok val="[fF]emineus(que)?"/>
+      <ana>
+         <tok val="Femineus"/>
+         <tok val="femineus"/>
+         <tok val="femineusque"/>
          <lm>
             <l>femineus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Feminino feminino-->
-         <tok val="[fF]eminino"/>
+      <ana>
+         <tok val="Feminino"/>
+         <tok val="feminino"/>
          <lm>
             <l>femininus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -187,16 +229,20 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Feminis feminis feminisque-->
-         <tok val="[fF]eminis(que)?"/>
+      <ana>
+         <tok val="Feminis"/>
+         <tok val="feminis"/>
+         <tok val="feminisque"/>
          <lm>
             <l>femina</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Femur femur femurque-->
-         <tok val="[fF]emur(que)?"/>
+      <ana>
+         <tok val="Femur"/>
+         <tok val="femur"/>
+         <tok val="femurque"/>
          <lm>
             <l>for</l>
             <m>v - 1 p p s p</m>
@@ -301,8 +347,11 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--feminine femininum femininumque femininumve-->
-         <tok val="feminin(um)?(ve|que|e)?"/>
+      <ana>
+         <tok val="feminine"/>
+         <tok val="femininum"/>
+         <tok val="femininumque"/>
+         <tok val="femininumve"/>
          <lm>
             <l>femininus</l>
             <m>a - - s - - - n v</m>
@@ -330,8 +379,10 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--femininum femininumque femininumve-->
-         <tok val="femininum(ve|que)?"/>
+      <ana>
+         <tok val="femininum"/>
+         <tok val="femininumque"/>
+         <tok val="femininumve"/>
          <lm>
             <l>femininus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -388,8 +439,9 @@
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--femus femusque-->
-         <tok val="femus(que)?"/>
+      <ana>
+         <tok val="femus"/>
+         <tok val="femusque"/>
          <lm>
             <l>for</l>
             <m>v - 1 p p s a</m>
@@ -402,8 +454,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--feminibus feminibusque-->
-         <tok val="feminibus(que)?"/>
+      <ana>
+         <tok val="feminibus"/>
+         <tok val="feminibusque"/>
          <lm>
             <l>femur</l>
             <m cert="0.5">n - - p - - - m b</m>

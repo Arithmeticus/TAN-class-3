@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusnec">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:nec">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to nec</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-nec.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>NEC</tok-starts-with>
       <tok-starts-with>NEc</tok-starts-with>
       <tok-starts-with>Nec</tok-starts-with>
       <tok-starts-with>nec</tok-starts-with>
       <tok-starts-with>néc</tok-starts-with>
-      <ana><!--NEC NEc Nec nec necque necue néc-->
-         <tok val="(ne|NE)?[c]?[q]?(ue|NEC|Nec|néc)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:35:00.309-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:35:00.309-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-nec.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="NEC"/>
+         <tok val="NEc"/>
+         <tok val="Nec"/>
+         <tok val="nec"/>
+         <tok val="necque"/>
+         <tok val="necue"/>
+         <tok val="néc"/>
          <lm>
             <l>neque</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--NECESSARIAM Necessariam necessariam-->
-         <tok val="[nN]?(ecessariam|NECESSARIAM)"/>
+      <ana>
+         <tok val="NECESSARIAM"/>
+         <tok val="Necessariam"/>
+         <tok val="necessariam"/>
          <lm>
             <l>necessarius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--NECESSARIO Necessario necessario necessarioque-->
-         <tok val="[nN]?(ecessario)?(que|NECESSARIO)?"/>
+      <ana>
+         <tok val="NECESSARIO"/>
+         <tok val="Necessario"/>
+         <tok val="necessario"/>
+         <tok val="necessarioque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -63,22 +82,40 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--NECESSE NEcesse Necesse Necessest necesse necesseque necessest nécesse necessést necessum-->
-         <tok val="[nN]?(e|NE|né|ne)?(cess)?[eé]?(st|e|eque|um|NECESSE)"/>
+      <ana>
+         <tok val="NECESSE"/>
+         <tok val="NEcesse"/>
+         <tok val="Necesse"/>
+         <tok val="Necessest"/>
+         <tok val="necesse"/>
+         <tok val="necesseque"/>
+         <tok val="necessest"/>
+         <tok val="necessum"/>
+         <tok val="necessést"/>
+         <tok val="nécesse"/>
          <lm>
             <l>necesse</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--NECESSE NEcesse Necesse Necessest necesse necesseque necessest necessum-->
-         <tok val="[nN]?(e|NE|ne)?(cess)?[e]?(st|que|um|NECESSE)?"/>
+      <ana>
+         <tok val="NECESSE"/>
+         <tok val="NEcesse"/>
+         <tok val="Necesse"/>
+         <tok val="Necessest"/>
+         <tok val="necesse"/>
+         <tok val="necesseque"/>
+         <tok val="necessest"/>
+         <tok val="necessum"/>
          <lm>
             <l>necesse</l>
             <m>a - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--NECROMANTIA Necromantia necromantia-->
-         <tok val="[nN]?(ecromantia|NECROMANTIA)"/>
+      <ana>
+         <tok val="NECROMANTIA"/>
+         <tok val="Necromantia"/>
+         <tok val="necromantia"/>
          <lm>
             <l>necromantia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -86,8 +123,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--NECTO Necto necto-->
-         <tok val="[nN]?(ecto|NECTO)"/>
+      <ana>
+         <tok val="NECTO"/>
+         <tok val="Necto"/>
+         <tok val="necto"/>
          <lm cert="0.5">
             <l>nectus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -100,15 +139,23 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--NEcessarium Necessarium necessarium necessariumque necessárium-->
-         <tok val="[N]?(e|E|ne)cess[aá]rium(que)?"/>
+      <ana>
+         <tok val="NEcessarium"/>
+         <tok val="Necessarium"/>
+         <tok val="necessarium"/>
+         <tok val="necessariumque"/>
+         <tok val="necessárium"/>
          <lm>
             <l>necessarius</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--NEcessarium Necessarium necessariorum necessarium necessariumque-->
-         <tok val="[nN]?(e|NE|ne)cessari(or)?um(que)?"/>
+      <ana>
+         <tok val="NEcessarium"/>
+         <tok val="Necessarium"/>
+         <tok val="necessariorum"/>
+         <tok val="necessarium"/>
+         <tok val="necessariumque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -116,8 +163,11 @@
             <m cert="0.333333333333333333">n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--NEcessarium Necessarium necessarium necessariumque-->
-         <tok val="[N]?(e|E|ne)cessarium(que)?"/>
+      <ana>
+         <tok val="NEcessarium"/>
+         <tok val="Necessarium"/>
+         <tok val="necessarium"/>
+         <tok val="necessariumque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
@@ -125,36 +175,46 @@
             <m cert="0.333333333333333333">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--NEcessarium Necessarie Necessarium necessarie necessarium necessariumque-->
-         <tok val="[N]?(e|E|ne|Ne)cessari(um|e|umque)"/>
+      <ana>
+         <tok val="NEcessarium"/>
+         <tok val="Necessarie"/>
+         <tok val="Necessarium"/>
+         <tok val="necessarie"/>
+         <tok val="necessarium"/>
+         <tok val="necessariumque"/>
          <lm>
             <l>necessarius</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Necabitur necabitur-->
-         <tok val="[nN]ecabitur"/>
+      <ana>
+         <tok val="Necabitur"/>
+         <tok val="necabitur"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Necant necant necantque-->
-         <tok val="[nN]ecant(que)?"/>
+      <ana>
+         <tok val="Necant"/>
+         <tok val="necant"/>
+         <tok val="necantque"/>
          <lm>
             <l>neco</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Necantur necantur-->
-         <tok val="[nN]ecantur"/>
+      <ana>
+         <tok val="Necantur"/>
+         <tok val="necantur"/>
          <lm>
             <l>neco</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Necare necare-->
-         <tok val="[nN]ecare"/>
+      <ana>
+         <tok val="Necare"/>
+         <tok val="necare"/>
          <lm>
             <l>neco</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -162,43 +222,55 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Necari necari necarique-->
-         <tok val="[nN]ecari(que)?"/>
+      <ana>
+         <tok val="Necari"/>
+         <tok val="necari"/>
+         <tok val="necarique"/>
          <lm>
             <l>neco</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Necatus necatus necatusque-->
-         <tok val="[nN]ecatus(que)?"/>
+      <ana>
+         <tok val="Necatus"/>
+         <tok val="necatus"/>
+         <tok val="necatusque"/>
          <lm>
             <l>neco</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Necavit necauit necavit necuit-->
-         <tok val="[nN]ec[a]?(u|av)it"/>
+      <ana>
+         <tok val="Necavit"/>
+         <tok val="necauit"/>
+         <tok val="necavit"/>
+         <tok val="necuit"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Necdum necdum necdumque-->
-         <tok val="[nN]ecdum(que)?"/>
+      <ana>
+         <tok val="Necdum"/>
+         <tok val="necdum"/>
+         <tok val="necdumque"/>
          <lm>
             <l>necdum</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--Nece nece-->
-         <tok val="[nN]ece"/>
+      <ana>
+         <tok val="Nece"/>
+         <tok val="nece"/>
          <lm>
             <l>nex</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Necem necem necemque-->
-         <tok val="[nN]ecem(que)?"/>
+      <ana>
+         <tok val="Necem"/>
+         <tok val="necem"/>
+         <tok val="necemque"/>
          <lm cert="0.5">
             <l>neco</l>
             <m>v - 1 s p s a</m>
@@ -210,14 +282,17 @@
       </ana>
       <ana>
          <tok val="Necepso"/>
+         <tok val="necepso"/>
          <lm>
             <l>Necepso</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Neces neces necesque-->
-         <tok val="[nN]eces(que)?"/>
+      <ana>
+         <tok val="Neces"/>
+         <tok val="neces"/>
+         <tok val="necesque"/>
          <lm cert="0.5">
             <l>nex</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -229,8 +304,12 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Necessari Necessarii necessari necessarii necessariique-->
-         <tok val="[Nn]ecessari(i|ique)?"/>
+      <ana>
+         <tok val="Necessari"/>
+         <tok val="Necessarii"/>
+         <tok val="necessari"/>
+         <tok val="necessarii"/>
+         <tok val="necessariique"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -238,22 +317,29 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Necessari necessari-->
-         <tok val="[nN]ecessari"/>
+      <ana>
+         <tok val="Necessari"/>
+         <tok val="necessari"/>
          <lm>
             <l>necesso</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Necessari Necessarie necessari necessarie-->
-         <tok val="[Nn]ecessari[e]?"/>
+      <ana>
+         <tok val="Necessari"/>
+         <tok val="Necessarie"/>
+         <tok val="necessari"/>
+         <tok val="necessarie"/>
          <lm>
             <l>necessarius</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Necessaria necessaria necessarian necessariaque-->
-         <tok val="[nN]ecessaria(n|que)?"/>
+      <ana>
+         <tok val="Necessaria"/>
+         <tok val="necessaria"/>
+         <tok val="necessarian"/>
+         <tok val="necessariaque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
@@ -264,8 +350,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Necessariae necessariae necessariaeque-->
-         <tok val="[nN]ecessariae(que)?"/>
+      <ana>
+         <tok val="Necessariae"/>
+         <tok val="necessariae"/>
+         <tok val="necessariaeque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -274,15 +362,18 @@
             <m cert="0.25">a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Necessarie necessarie-->
-         <tok val="[nN]ecessarie"/>
+      <ana>
+         <tok val="Necessarie"/>
+         <tok val="necessarie"/>
          <lm>
             <l>necessarius</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Necessarii necessarii necessariique-->
-         <tok val="[nN]ecessarii(que)?"/>
+      <ana>
+         <tok val="Necessarii"/>
+         <tok val="necessarii"/>
+         <tok val="necessariique"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -291,8 +382,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Necessariis necessariis necessariisque-->
-         <tok val="[nN]ecessariis(que)?"/>
+      <ana>
+         <tok val="Necessariis"/>
+         <tok val="necessariis"/>
+         <tok val="necessariisque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -305,45 +398,58 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Necessarios necessarios necessariosque-->
-         <tok val="[nN]ecessarios(que)?"/>
+      <ana>
+         <tok val="Necessarios"/>
+         <tok val="necessarios"/>
+         <tok val="necessariosque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Necessarius necessarius necessariusque-->
-         <tok val="[nN]ecessarius(que)?"/>
+      <ana>
+         <tok val="Necessarius"/>
+         <tok val="necessarius"/>
+         <tok val="necessariusque"/>
          <lm>
             <l>necessarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Necessitas necessitas necessitasque-->
-         <tok val="[nN]ecessitas(que)?"/>
+      <ana>
+         <tok val="Necessitas"/>
+         <tok val="necessitas"/>
+         <tok val="necessitasque"/>
          <lm>
             <l>necessitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Necessitate necessitate necessitateque-->
-         <tok val="[nN]ecessitate(que)?"/>
+      <ana>
+         <tok val="Necessitate"/>
+         <tok val="necessitate"/>
+         <tok val="necessitateque"/>
          <lm>
             <l>necessitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Necessitatem necessitatem necessitatemque necessitatemue necessitatemve-->
-         <tok val="[nN]ecessitatem[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Necessitatem"/>
+         <tok val="necessitatem"/>
+         <tok val="necessitatemque"/>
+         <tok val="necessitatemue"/>
+         <tok val="necessitatemve"/>
          <lm>
             <l>necessitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Necessitates necessitates-->
-         <tok val="[nN]ecessitates"/>
+      <ana>
+         <tok val="Necessitates"/>
+         <tok val="necessitates"/>
          <lm>
             <l>necessitas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -351,44 +457,52 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Necessitati necessitati-->
-         <tok val="[nN]ecessitati"/>
+      <ana>
+         <tok val="Necessitati"/>
+         <tok val="necessitati"/>
          <lm>
             <l>necessitas</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Necessitatibus necessitatibus-->
-         <tok val="[nN]ecessitatibus"/>
+      <ana>
+         <tok val="Necessitatibus"/>
+         <tok val="necessitatibus"/>
          <lm>
             <l>necessitas</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Necessitatis necessitatis necessitatisque-->
-         <tok val="[nN]ecessitatis(que)?"/>
+      <ana>
+         <tok val="Necessitatis"/>
+         <tok val="necessitatis"/>
+         <tok val="necessitatisque"/>
          <lm>
             <l>necessitas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Necessitudine necessitudine-->
-         <tok val="[nN]ecessitudine"/>
+      <ana>
+         <tok val="Necessitudine"/>
+         <tok val="necessitudine"/>
          <lm>
             <l>necessitudo</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Necessitudinem necessitudinem necessitudinemque-->
-         <tok val="[nN]ecessitudinem(que)?"/>
+      <ana>
+         <tok val="Necessitudinem"/>
+         <tok val="necessitudinem"/>
+         <tok val="necessitudinemque"/>
          <lm>
             <l>necessitudo</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Necessitudines necessitudines-->
-         <tok val="[nN]ecessitudines"/>
+      <ana>
+         <tok val="Necessitudines"/>
+         <tok val="necessitudines"/>
          <lm>
             <l>necessitudo</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -396,23 +510,28 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Necessitudinibus necessitudinibus necessitudinibusque-->
-         <tok val="[nN]ecessitudinibus(que)?"/>
+      <ana>
+         <tok val="Necessitudinibus"/>
+         <tok val="necessitudinibus"/>
+         <tok val="necessitudinibusque"/>
          <lm>
             <l>necessitudo</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Necessitudinum necessitudinum-->
-         <tok val="[nN]ecessitudinum"/>
+      <ana>
+         <tok val="Necessitudinum"/>
+         <tok val="necessitudinum"/>
          <lm>
             <l>necessitudo</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Necessitudo necessitudo necessitudoque-->
-         <tok val="[nN]ecessitudo(que)?"/>
+      <ana>
+         <tok val="Necessitudo"/>
+         <tok val="necessitudo"/>
+         <tok val="necessitudoque"/>
          <lm>
             <l>necessitudo</l>
             <m>n - - s - - - f n</m>
@@ -420,36 +539,45 @@
       </ana>
       <ana>
          <tok val="Nechis"/>
+         <tok val="nechis"/>
          <lm>
             <l>nechon</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Necho nechon-->
-         <tok val="[nN]echo[n]?"/>
+      <ana>
+         <tok val="Necho"/>
+         <tok val="necho"/>
+         <tok val="nechon"/>
          <lm>
             <l>nechon</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Neci neci necin-->
-         <tok val="[nN]eci[n]?"/>
+      <ana>
+         <tok val="Neci"/>
+         <tok val="neci"/>
+         <tok val="necin"/>
          <lm>
             <l>nex</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Necis necin necis necisque-->
-         <tok val="[nN]eci(s|n|sque)"/>
+      <ana>
+         <tok val="Necis"/>
+         <tok val="necin"/>
+         <tok val="necis"/>
+         <tok val="necisque"/>
          <lm>
             <l>nex</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Neclegens neclegens-->
-         <tok val="[nN]eclegens"/>
+      <ana>
+         <tok val="Neclegens"/>
+         <tok val="neclegens"/>
          <lm>
             <l>neglego</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -461,29 +589,34 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Neclegis neclegis-->
-         <tok val="[nN]eclegis"/>
+      <ana>
+         <tok val="Neclegis"/>
+         <tok val="neclegis"/>
          <lm>
             <l>neglego</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Necne necne nécne-->
-         <tok val="[nN]?(e|né)cne"/>
+      <ana>
+         <tok val="Necne"/>
+         <tok val="necne"/>
+         <tok val="nécne"/>
          <lm>
             <l>necne</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Neco neco-->
-         <tok val="[nN]eco"/>
+      <ana>
+         <tok val="Neco"/>
+         <tok val="neco"/>
          <lm>
             <l>neco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Necopinato necopinato-->
-         <tok val="[nN]ecopinato"/>
+      <ana>
+         <tok val="Necopinato"/>
+         <tok val="necopinato"/>
          <lm>
             <l>necopinatus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -492,15 +625,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Necopinatus necopinatus-->
-         <tok val="[nN]ecopinatus"/>
+      <ana>
+         <tok val="Necopinatus"/>
+         <tok val="necopinatus"/>
          <lm>
             <l>necopinatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Necta necta-->
-         <tok val="[nN]ecta"/>
+      <ana>
+         <tok val="Necta"/>
+         <tok val="necta"/>
          <lm>
             <l>nectus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -511,15 +646,18 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Nectantur nectantur-->
-         <tok val="[nN]ectantur"/>
+      <ana>
+         <tok val="Nectantur"/>
+         <tok val="nectantur"/>
          <lm>
             <l>necto</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Nectar nectar nectarque-->
-         <tok val="[nN]ectar(que)?"/>
+      <ana>
+         <tok val="Nectar"/>
+         <tok val="nectar"/>
+         <tok val="nectarque"/>
          <lm cert="0.5">
             <l>necto</l>
             <m cert="0.5">v - 1 s f i p</m>
@@ -530,22 +668,26 @@
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Nectare nectare-->
-         <tok val="[nN]ectare"/>
+      <ana>
+         <tok val="Nectare"/>
+         <tok val="nectare"/>
          <lm>
             <l>nectar</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Nectare nectare nectaris-->
-         <tok val="[nN]ectar(e|is)"/>
+      <ana>
+         <tok val="Nectare"/>
+         <tok val="nectare"/>
+         <tok val="nectaris"/>
          <lm>
             <l>necto</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Nectarea nectarea-->
-         <tok val="[nN]ectarea"/>
+      <ana>
+         <tok val="Nectarea"/>
+         <tok val="nectarea"/>
          <lm cert="0.5">
             <l>nectarea</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -562,8 +704,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Nectareum nectareum-->
-         <tok val="[nN]ectareum"/>
+      <ana>
+         <tok val="Nectareum"/>
+         <tok val="nectareum"/>
          <lm>
             <l>nectareus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -574,15 +717,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Nectareus nectareus-->
-         <tok val="[nN]ectareus"/>
+      <ana>
+         <tok val="Nectareus"/>
+         <tok val="nectareus"/>
          <lm>
             <l>nectareus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Necte necte-->
-         <tok val="[nN]ecte"/>
+      <ana>
+         <tok val="Necte"/>
+         <tok val="necte"/>
          <lm cert="0.5">
             <l>nectus</l>
             <m cert="0.5">d</m>
@@ -593,8 +738,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Necte necte nectum-->
-         <tok val="[nN]ect(e|um)"/>
+      <ana>
+         <tok val="Necte"/>
+         <tok val="necte"/>
+         <tok val="nectum"/>
          <lm>
             <l>nectus</l>
             <m>a - - s - - - n v</m>
@@ -602,6 +749,7 @@
       </ana>
       <ana>
          <tok val="Nectendae"/>
+         <tok val="nectendae"/>
          <lm>
             <l>necto</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -610,8 +758,9 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Nectere nectere-->
-         <tok val="[nN]ectere"/>
+      <ana>
+         <tok val="Nectere"/>
+         <tok val="nectere"/>
          <lm>
             <l>necto</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -620,8 +769,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Necti necti-->
-         <tok val="[nN]ecti"/>
+      <ana>
+         <tok val="Necti"/>
+         <tok val="necti"/>
          <lm>
             <l>nectus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -630,22 +780,27 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Necti necti nectier nectierque-->
-         <tok val="[nN]ecti(er|erque)?"/>
+      <ana>
+         <tok val="Necti"/>
+         <tok val="necti"/>
+         <tok val="nectier"/>
+         <tok val="nectierque"/>
          <lm>
             <l>necto</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Nectimus nectimus-->
-         <tok val="[nN]ectimus"/>
+      <ana>
+         <tok val="Nectimus"/>
+         <tok val="nectimus"/>
          <lm>
             <l>necto</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Nectis nectis-->
-         <tok val="[nN]ectis"/>
+      <ana>
+         <tok val="Nectis"/>
+         <tok val="nectis"/>
          <lm cert="0.5">
             <l>nectus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -660,36 +815,42 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Nectite nectite-->
-         <tok val="[nN]ectite"/>
+      <ana>
+         <tok val="Nectite"/>
+         <tok val="nectite"/>
          <lm>
             <l>necto</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Nectus nectus-->
-         <tok val="[nN]ectus"/>
+      <ana>
+         <tok val="Nectus"/>
+         <tok val="nectus"/>
          <lm>
             <l>nectus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Necubi necubi-->
-         <tok val="[nN]ecubi"/>
+      <ana>
+         <tok val="Necubi"/>
+         <tok val="necubi"/>
          <lm>
             <l>necubi</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Necydalus necydalus-->
-         <tok val="[nN]ecydalus"/>
+      <ana>
+         <tok val="Necydalus"/>
+         <tok val="necydalus"/>
          <lm>
             <l>necydalus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--neca necan necaue-->
-         <tok val="neca(n|ue)?"/>
+      <ana>
+         <tok val="neca"/>
+         <tok val="necan"/>
+         <tok val="necaue"/>
          <lm>
             <l>neco</l>
             <m>v - 2 s p m a</m>
@@ -737,8 +898,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--necabit necabitque-->
-         <tok val="necabit(que)?"/>
+      <ana>
+         <tok val="necabit"/>
+         <tok val="necabitque"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s f i a</m>
@@ -751,8 +913,9 @@
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--necan necas-->
-         <tok val="neca[sn]"/>
+      <ana>
+         <tok val="necan"/>
+         <tok val="necas"/>
          <lm>
             <l>neco</l>
             <m>v - 2 s p i a</m>
@@ -780,8 +943,9 @@
             <m cert="0.25">v - - p p g p f v</m>
          </lm>
       </ana>
-      <ana><!--necandam necandamque-->
-         <tok val="necandam(que)?"/>
+      <ana>
+         <tok val="necandam"/>
+         <tok val="necandamque"/>
          <lm>
             <l>neco</l>
             <m>v - - s p g p f a</m>
@@ -836,8 +1000,9 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--necandum necandumque-->
-         <tok val="necandum(que)?"/>
+      <ana>
+         <tok val="necandum"/>
+         <tok val="necandumque"/>
          <lm>
             <l>neco</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -849,8 +1014,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--necandus necandusque-->
-         <tok val="necandus(que)?"/>
+      <ana>
+         <tok val="necandus"/>
+         <tok val="necandusque"/>
          <lm>
             <l>neco</l>
             <m>v - - s p g p m n</m>
@@ -912,8 +1078,9 @@
             <m>v - 2 p i s p</m>
          </lm>
       </ana>
-      <ana><!--necarent necarentque-->
-         <tok val="necarent(que)?"/>
+      <ana>
+         <tok val="necarent"/>
+         <tok val="necarentque"/>
          <lm>
             <l>neco</l>
             <m>v - 3 p i s a</m>
@@ -933,8 +1100,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--necaret necaretque-->
-         <tok val="necaret(que)?"/>
+      <ana>
+         <tok val="necaret"/>
+         <tok val="necaretque"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s i s a</m>
@@ -954,22 +1122,28 @@
             <m>v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--necarit necauerit necaverit-->
-         <tok val="neca[vu]?(e|)rit"/>
+      <ana>
+         <tok val="necarit"/>
+         <tok val="necauerit"/>
+         <tok val="necaverit"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--necarunt necauere necauerunt necaverunt-->
-         <tok val="neca[vu]?(e|ue)?r(unt|e)"/>
+      <ana>
+         <tok val="necarunt"/>
+         <tok val="necauere"/>
+         <tok val="necauerunt"/>
+         <tok val="necaverunt"/>
          <lm>
             <l>neco</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--necasse necuisse-->
-         <tok val="nec(ui|a)sse"/>
+      <ana>
+         <tok val="necasse"/>
+         <tok val="necuisse"/>
          <lm>
             <l>neco</l>
             <m>v - - - r n a</m>
@@ -996,8 +1170,11 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--necasset necassetue necauisset necavisset-->
-         <tok val="neca[vu]?[i]?sset(ue)?"/>
+      <ana>
+         <tok val="necasset"/>
+         <tok val="necassetue"/>
+         <tok val="necauisset"/>
+         <tok val="necavisset"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s l s a</m>
@@ -1017,8 +1194,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--necata necataque-->
-         <tok val="necata(que)?"/>
+      <ana>
+         <tok val="necata"/>
+         <tok val="necataque"/>
          <lm>
             <l>neco</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1061,15 +1239,18 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--necate necatum necatumque-->
-         <tok val="necat(um)?(que|e)?"/>
+      <ana>
+         <tok val="necate"/>
+         <tok val="necatum"/>
+         <tok val="necatumque"/>
          <lm>
             <l>neco</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--necati necatique-->
-         <tok val="necati(que)?"/>
+      <ana>
+         <tok val="necati"/>
+         <tok val="necatique"/>
          <lm>
             <l>neco</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1078,8 +1259,9 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--necatis necatisque-->
-         <tok val="necatis(que)?"/>
+      <ana>
+         <tok val="necatis"/>
+         <tok val="necatisque"/>
          <lm>
             <l>neco</l>
             <m cert="0.142857142857142857">v - - p r p p f d</m>
@@ -1127,8 +1309,10 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--necatorum necatum necatumque-->
-         <tok val="necat(or)?um(que)?"/>
+      <ana>
+         <tok val="necatorum"/>
+         <tok val="necatum"/>
+         <tok val="necatumque"/>
          <lm>
             <l>neco</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -1150,8 +1334,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--necatum necatumque-->
-         <tok val="necatum(que)?"/>
+      <ana>
+         <tok val="necatum"/>
+         <tok val="necatumque"/>
          <lm>
             <l>neco</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1193,29 +1378,33 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--necauerant necaverant-->
-         <tok val="neca[vu]erant"/>
+      <ana>
+         <tok val="necauerant"/>
+         <tok val="necaverant"/>
          <lm>
             <l>neco</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--necauerat necaverat-->
-         <tok val="neca[vu]erat"/>
+      <ana>
+         <tok val="necauerat"/>
+         <tok val="necaverat"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--necauerit necaverit-->
-         <tok val="neca[vu]erit"/>
+      <ana>
+         <tok val="necauerit"/>
+         <tok val="necaverit"/>
          <lm>
             <l>neco</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--necaui necui-->
-         <tok val="nec[a]?ui"/>
+      <ana>
+         <tok val="necaui"/>
+         <tok val="necui"/>
          <lm>
             <l>neco</l>
             <m>v - 1 s r i a</m>
@@ -1228,8 +1417,9 @@
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--necaverint necarint-->
-         <tok val="neca(ve)?rint"/>
+      <ana>
+         <tok val="necarint"/>
+         <tok val="necaverint"/>
          <lm>
             <l>neco</l>
             <m>v - 3 p r s a</m>
@@ -1263,8 +1453,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--necessarian necessarias-->
-         <tok val="necessaria[sn]"/>
+      <ana>
+         <tok val="necessarian"/>
+         <tok val="necessarias"/>
          <lm>
             <l>necessarius</l>
             <m>a - - p - - - f a</m>
@@ -1299,8 +1490,10 @@
             <m>a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--necessitatium necessitatiumque necessitatum-->
-         <tok val="necessitat[i]?um(que)?"/>
+      <ana>
+         <tok val="necessitatium"/>
+         <tok val="necessitatiumque"/>
+         <tok val="necessitatum"/>
          <lm>
             <l>necessitas</l>
             <m>n - - p - - - f g</m>
@@ -1313,8 +1506,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--necessitudinis necessitudinisque-->
-         <tok val="necessitudinis(que)?"/>
+      <ana>
+         <tok val="necessitudinis"/>
+         <tok val="necessitudinisque"/>
          <lm>
             <l>necessitudo</l>
             <m>n - - s - - - f g</m>
@@ -1382,8 +1576,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--neclegentes neclegentesque-->
-         <tok val="neclegentes(que)?"/>
+      <ana>
+         <tok val="neclegentes"/>
+         <tok val="neclegentesque"/>
          <lm>
             <l>neglego</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -1420,8 +1615,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--necopina necopinaque-->
-         <tok val="necopina(que)?"/>
+      <ana>
+         <tok val="necopina"/>
+         <tok val="necopinaque"/>
          <lm>
             <l>necopinus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1474,8 +1670,9 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--necopinatorum necopinatum-->
-         <tok val="necopinat(or)?um"/>
+      <ana>
+         <tok val="necopinatorum"/>
+         <tok val="necopinatum"/>
          <lm cert="0.5">
             <l>necopinatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1602,8 +1799,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--nectaream nectareamque-->
-         <tok val="nectaream(que)?"/>
+      <ana>
+         <tok val="nectaream"/>
+         <tok val="nectareamque"/>
          <lm cert="0.5">
             <l>nectareus</l>
             <m>a - - s - - - f a</m>
@@ -1707,8 +1905,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--nectatur nectaturque-->
-         <tok val="nectatur(que)?"/>
+      <ana>
+         <tok val="nectatur"/>
+         <tok val="nectaturque"/>
          <lm>
             <l>necto</l>
             <m>v - 3 s p s p</m>
@@ -1901,8 +2100,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--nectit nectitve-->
-         <tok val="nectit(ve)?"/>
+      <ana>
+         <tok val="nectit"/>
+         <tok val="nectitve"/>
          <lm>
             <l>necto</l>
             <m>v - 3 s p i a</m>
@@ -1941,8 +2141,9 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--nectunt nectuntque-->
-         <tok val="nectunt(que)?"/>
+      <ana>
+         <tok val="nectunt"/>
+         <tok val="nectuntque"/>
          <lm>
             <l>necto</l>
             <m>v - 3 p p i a</m>
@@ -2057,8 +2258,9 @@
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--necopinantes necopinantis-->
-         <tok val="necopinant[ie]s"/>
+      <ana>
+         <tok val="necopinantes"/>
+         <tok val="necopinantis"/>
          <lm>
             <l>necopinans</l>
             <m cert="0.5">a - - p - - - f a</m>

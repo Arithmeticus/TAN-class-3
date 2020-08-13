@@ -1,49 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscod">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:cod">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to cod</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-cod.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>COD</tok-starts-with>
       <tok-starts-with>Cod</tok-starts-with>
       <tok-starts-with>cod</tok-starts-with>
-      <ana><!--CODICIS Codicis codicis-->
-         <tok val="[cC]?(odicis|CODICIS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:15:31.312-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:15:31.312-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-cod.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CODICIS"/>
+         <tok val="Codicis"/>
+         <tok val="codicis"/>
          <lm>
             <l>codico</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Codam codam-->
-         <tok val="[cC]odam"/>
+      <ana>
+         <tok val="Codam"/>
+         <tok val="codam"/>
          <lm>
             <l>cauda</l>
             <m>n - - s - - - f a</m>
@@ -51,6 +62,7 @@
       </ana>
       <ana>
          <tok val="Codatus"/>
+         <tok val="codatus"/>
          <lm>
             <l>coda</l>
             <m>v - - s r p p m n</m>
@@ -58,6 +70,7 @@
       </ana>
       <ana>
          <tok val="Codeta"/>
+         <tok val="codeta"/>
          <lm>
             <l>Codeta</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -67,35 +80,41 @@
       </ana>
       <ana>
          <tok val="Codetanus"/>
+         <tok val="codetanus"/>
          <lm>
             <l>Codetanus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Codice codic codice-->
-         <tok val="[cC]odic[e]?"/>
+      <ana>
+         <tok val="Codice"/>
+         <tok val="codic"/>
+         <tok val="codice"/>
          <lm>
             <l>codico</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Codicem codicem-->
-         <tok val="[cC]odicem"/>
+      <ana>
+         <tok val="Codicem"/>
+         <tok val="codicem"/>
          <lm>
             <l>codico</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Codices codices-->
-         <tok val="[cC]odices"/>
+      <ana>
+         <tok val="Codices"/>
+         <tok val="codices"/>
          <lm>
             <l>codico</l>
             <m cert="0.5">v - 2 s f i a</m>
             <m cert="0.5">v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Codicillaris codicillaris-->
-         <tok val="[cC]odicillaris"/>
+      <ana>
+         <tok val="Codicillaris"/>
+         <tok val="codicillaris"/>
          <lm>
             <l>codicillaris</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -107,39 +126,48 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Codicillaris codicillares codicillaris-->
-         <tok val="[cC]odicillar[ie]s"/>
+      <ana>
+         <tok val="Codicillaris"/>
+         <tok val="codicillares"/>
+         <tok val="codicillaris"/>
          <lm>
             <l>codicillaris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Codicilli codicilli-->
-         <tok val="[cC]odicilli"/>
+      <ana>
+         <tok val="Codicilli"/>
+         <tok val="codicilli"/>
          <lm>
             <l>codicilli</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Codicillis codicillis codicillisue-->
-         <tok val="[cC]odicillis(ue)?"/>
+      <ana>
+         <tok val="Codicillis"/>
+         <tok val="codicillis"/>
+         <tok val="codicillisue"/>
          <lm>
             <l>codicilli</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Codicillorum codicillorum codicillum-->
-         <tok val="[cC]odicill(or|)um"/>
+      <ana>
+         <tok val="Codicillorum"/>
+         <tok val="codicillorum"/>
+         <tok val="codicillum"/>
          <lm>
             <l>codicilli</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Codicillos codicillos codicillosque-->
-         <tok val="[cC]odicillos(que)?"/>
+      <ana>
+         <tok val="Codicillos"/>
+         <tok val="codicillos"/>
+         <tok val="codicillosque"/>
          <lm>
             <l>codicilli</l>
             <m>n - - p - - - m a</m>
@@ -147,6 +175,7 @@
       </ana>
       <ana>
          <tok val="Codita"/>
+         <tok val="codita"/>
          <lm>
             <l>coda</l>
             <m cert="0.166666666666666667">v - - s r p p f v</m>
@@ -159,6 +188,7 @@
       </ana>
       <ana>
          <tok val="Coditor"/>
+         <tok val="coditor"/>
          <lm>
             <l>codito</l>
             <m>v - 1 s p i p</m>
@@ -166,6 +196,7 @@
       </ana>
       <ana>
          <tok val="Codomannus"/>
+         <tok val="codomannus"/>
          <lm>
             <l>Codomannus</l>
             <m>n e - s - - - m n</m>
@@ -173,6 +204,7 @@
       </ana>
       <ana>
          <tok val="Codones"/>
+         <tok val="codones"/>
          <lm>
             <l>codono</l>
             <m>v - 2 s p s a</m>
@@ -180,6 +212,7 @@
       </ana>
       <ana>
          <tok val="Codri"/>
+         <tok val="codri"/>
          <lm>
             <l>Codrus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -187,8 +220,11 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Codrio Codrion-->
-         <tok val="Codrio[n]?"/>
+      <ana>
+         <tok val="Codrio"/>
+         <tok val="Codrion"/>
+         <tok val="codrio"/>
+         <tok val="codrion"/>
          <lm>
             <l>Codrio</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -197,6 +233,7 @@
       </ana>
       <ana>
          <tok val="Codrionem"/>
+         <tok val="codrionem"/>
          <lm>
             <l>Codrio</l>
             <m>n e - s - - - m a</m>
@@ -204,6 +241,7 @@
       </ana>
       <ana>
          <tok val="Codro"/>
+         <tok val="codro"/>
          <lm>
             <l>Codrus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -212,14 +250,18 @@
       </ana>
       <ana>
          <tok val="Codrum"/>
+         <tok val="codrum"/>
          <lm>
             <l>Codrus</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Codrus Codrvs-->
-         <tok val="Codr[vu]s"/>
+      <ana>
+         <tok val="Codrus"/>
+         <tok val="Codrvs"/>
+         <tok val="codrus"/>
+         <tok val="codrvs"/>
          <lm>
             <l>Codrus</l>
             <m>n e - s - - - m n</m>
@@ -261,8 +303,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--codem codemque-->
-         <tok val="codem(que)?"/>
+      <ana>
+         <tok val="codem"/>
+         <tok val="codemque"/>
          <lm>
             <l>coda</l>
             <m>v - 1 s p s a</m>

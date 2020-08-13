@@ -1,51 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusrest">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:rest">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to rest</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-rest.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>REST</tok-starts-with>
       <tok-starts-with>REst</tok-starts-with>
       <tok-starts-with>Rest</tok-starts-with>
       <tok-starts-with>rest</tok-starts-with>
       <tok-starts-with>rést</tok-starts-with>
-      <ana><!--RESTAURARI restaurari-->
-         <tok val="(restaurari|RESTAURARI)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:43:50.979-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:43:50.979-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-rest.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="RESTAURARI"/>
+         <tok val="restaurari"/>
          <lm>
             <l>restauro</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--RESTAVRATVM restauratum-->
-         <tok val="(restauratum|RESTAVRATVM)"/>
+      <ana>
+         <tok val="RESTAVRATVM"/>
+         <tok val="restauratum"/>
+         <tok val="restavratvm"/>
          <lm>
             <l>restauro</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -57,15 +68,23 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--RESTI Reste Resti reste resti restin-->
-         <tok val="[rR]?(est)?[i]?(n|e|RESTI)?"/>
+      <ana>
+         <tok val="RESTI"/>
+         <tok val="Reste"/>
+         <tok val="Resti"/>
+         <tok val="reste"/>
+         <tok val="resti"/>
+         <tok val="restin"/>
          <lm>
             <l>restis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--RESTI Resti resti restin-->
-         <tok val="[rR]?(esti)?(n|RESTI)?"/>
+      <ana>
+         <tok val="RESTI"/>
+         <tok val="Resti"/>
+         <tok val="resti"/>
+         <tok val="restin"/>
          <lm cert="0.5">
             <l>repleo</l>
             <m>v - 2 s r i a</m>
@@ -75,22 +94,29 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--RESTINGVITVR restinguitur-->
-         <tok val="(restinguitur|RESTINGVITVR)"/>
+      <ana>
+         <tok val="RESTINGVITVR"/>
+         <tok val="restinguitur"/>
+         <tok val="restingvitvr"/>
          <lm>
             <l>restinguo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--RESTIONEM Restionem restionem-->
-         <tok val="[rR]?(estionem|RESTIONEM)"/>
+      <ana>
+         <tok val="RESTIONEM"/>
+         <tok val="Restionem"/>
+         <tok val="restionem"/>
          <lm>
             <l>restio</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--RESTIS Restis restin restis-->
-         <tok val="[rR]?(esti)?(s|n|RESTIS)"/>
+      <ana>
+         <tok val="RESTIS"/>
+         <tok val="Restis"/>
+         <tok val="restin"/>
+         <tok val="restis"/>
          <lm cert="0.5">
             <l>restis</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -101,15 +127,23 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--RESTIS Restes Restis restes restin restis-->
-         <tok val="[Rr]?(est)?[ie]?(s|in|RESTIS)"/>
+      <ana>
+         <tok val="RESTIS"/>
+         <tok val="Restes"/>
+         <tok val="Restis"/>
+         <tok val="restes"/>
+         <tok val="restin"/>
+         <tok val="restis"/>
          <lm>
             <l>restis</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--RESTITUTA Restituta restituta restitutaque-->
-         <tok val="[rR]?(estituta)?(que|RESTITUTA)?"/>
+      <ana>
+         <tok val="RESTITUTA"/>
+         <tok val="Restituta"/>
+         <tok val="restituta"/>
+         <tok val="restitutaque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -120,8 +154,13 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--RESTITUTO RESTITVTO Restituto restituto restitutoque-->
-         <tok val="(RESTIT)?[VU]?(TO|restituto|Restituto|restitutoque)"/>
+      <ana>
+         <tok val="RESTITUTO"/>
+         <tok val="RESTITVTO"/>
+         <tok val="Restituto"/>
+         <tok val="restituto"/>
+         <tok val="restitutoque"/>
+         <tok val="restitvto"/>
          <lm>
             <l>restituo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -130,52 +169,70 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--RESTITVERENTVR restituerentur-->
-         <tok val="(restituerentur|RESTITVERENTVR)"/>
+      <ana>
+         <tok val="RESTITVERENTVR"/>
+         <tok val="restituerentur"/>
+         <tok val="restitverentvr"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--RESTITVETVR restituetur-->
-         <tok val="(restituetur|RESTITVETVR)"/>
+      <ana>
+         <tok val="RESTITVETVR"/>
+         <tok val="restituetur"/>
+         <tok val="restitvetvr"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--RESTITVI Restitui restitui restituique-->
-         <tok val="[rR]?(estitui)?(que|RESTITVI)?"/>
+      <ana>
+         <tok val="RESTITVI"/>
+         <tok val="Restitui"/>
+         <tok val="restitui"/>
+         <tok val="restituique"/>
+         <tok val="restitvi"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - - - p n p</m>
             <m cert="0.5">v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--RESTITVIT Restituit restituit restituitque-->
-         <tok val="[rR]?(estituit)?(que|RESTITVIT)?"/>
+      <ana>
+         <tok val="RESTITVIT"/>
+         <tok val="Restituit"/>
+         <tok val="restituit"/>
+         <tok val="restituitque"/>
+         <tok val="restitvit"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--RESTO Resto resto-->
-         <tok val="[rR]?(esto|RESTO)"/>
+      <ana>
+         <tok val="RESTO"/>
+         <tok val="Resto"/>
+         <tok val="resto"/>
          <lm>
             <l>resto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--REstat Restat restat restatque-->
-         <tok val="[R]?(e|E|re)stat(que)?"/>
+      <ana>
+         <tok val="REstat"/>
+         <tok val="Restat"/>
+         <tok val="restat"/>
+         <tok val="restatque"/>
          <lm>
             <l>resto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Rest rest-->
-         <tok val="[rR]est"/>
+      <ana>
+         <tok val="Rest"/>
+         <tok val="rest"/>
          <lm cert="0.333333333333333333">
             <l>res</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -191,36 +248,43 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Resta resta-->
-         <tok val="[rR]esta"/>
+      <ana>
+         <tok val="Resta"/>
+         <tok val="resta"/>
          <lm>
             <l>resto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Restabam restabam-->
-         <tok val="[rR]estabam"/>
+      <ana>
+         <tok val="Restabam"/>
+         <tok val="restabam"/>
          <lm>
             <l>resto</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Restabant restabant restabantque-->
-         <tok val="[rR]estabant(que)?"/>
+      <ana>
+         <tok val="Restabant"/>
+         <tok val="restabant"/>
+         <tok val="restabantque"/>
          <lm>
             <l>resto</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Restabat restabat restabatque-->
-         <tok val="[rR]estabat(que)?"/>
+      <ana>
+         <tok val="Restabat"/>
+         <tok val="restabat"/>
+         <tok val="restabatque"/>
          <lm>
             <l>resto</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Restagnantis restagnantis-->
-         <tok val="[rR]estagnantis"/>
+      <ana>
+         <tok val="Restagnantis"/>
+         <tok val="restagnantis"/>
          <lm>
             <l>restagno</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -228,16 +292,19 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Restagnantis restagnantes restagnantis-->
-         <tok val="[rR]estagnant[ie]s"/>
+      <ana>
+         <tok val="Restagnantis"/>
+         <tok val="restagnantes"/>
+         <tok val="restagnantis"/>
          <lm>
             <l>restagno</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Restagnatio restagnatio-->
-         <tok val="[rR]estagnatio"/>
+      <ana>
+         <tok val="Restagnatio"/>
+         <tok val="restagnatio"/>
          <lm>
             <l>restagnatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -246,13 +313,15 @@
       </ana>
       <ana>
          <tok val="Restagno"/>
+         <tok val="restagno"/>
          <lm>
             <l>restagno</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Restans restans-->
-         <tok val="[rR]estans"/>
+      <ana>
+         <tok val="Restans"/>
+         <tok val="restans"/>
          <lm>
             <l>resto</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -264,15 +333,18 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Restant restant-->
-         <tok val="[rR]estant"/>
+      <ana>
+         <tok val="Restant"/>
+         <tok val="restant"/>
          <lm>
             <l>resto</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Restare restare restareque-->
-         <tok val="[rR]estare(que)?"/>
+      <ana>
+         <tok val="Restare"/>
+         <tok val="restare"/>
+         <tok val="restareque"/>
          <lm>
             <l>resto</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -280,29 +352,33 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Restarem restarem-->
-         <tok val="[rR]estarem"/>
+      <ana>
+         <tok val="Restarem"/>
+         <tok val="restarem"/>
          <lm>
             <l>resto</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Restaret restaret-->
-         <tok val="[rR]estaret"/>
+      <ana>
+         <tok val="Restaret"/>
+         <tok val="restaret"/>
          <lm>
             <l>resto</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Restatis restatis-->
-         <tok val="[rR]estatis"/>
+      <ana>
+         <tok val="Restatis"/>
+         <tok val="restatis"/>
          <lm>
             <l>resto</l>
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Restaurantur restaurantur-->
-         <tok val="[rR]estaurantur"/>
+      <ana>
+         <tok val="Restaurantur"/>
+         <tok val="restaurantur"/>
          <lm>
             <l>restauro</l>
             <m>v - 3 p p i p</m>
@@ -310,6 +386,7 @@
       </ana>
       <ana>
          <tok val="Restauratori"/>
+         <tok val="restauratori"/>
          <lm>
             <l>restaurator</l>
             <m>n - - s - - - m d</m>
@@ -317,20 +394,23 @@
       </ana>
       <ana>
          <tok val="Restauratus"/>
+         <tok val="restauratus"/>
          <lm>
             <l>restauro</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Restauro restauro-->
-         <tok val="[rR]estauro"/>
+      <ana>
+         <tok val="Restauro"/>
+         <tok val="restauro"/>
          <lm>
             <l>restauro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Restes restes-->
-         <tok val="[rR]estes"/>
+      <ana>
+         <tok val="Restes"/>
+         <tok val="restes"/>
          <lm cert="0.5">
             <l>restis</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -341,8 +421,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Restet restet-->
-         <tok val="[rR]estet"/>
+      <ana>
+         <tok val="Restet"/>
+         <tok val="restet"/>
          <lm>
             <l>resto</l>
             <m>v - 3 s p s a</m>
@@ -350,6 +431,7 @@
       </ana>
       <ana>
          <tok val="Restiario"/>
+         <tok val="restiario"/>
          <lm>
             <l>restiarius</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -358,14 +440,16 @@
       </ana>
       <ana>
          <tok val="Restiarium"/>
+         <tok val="restiarium"/>
          <lm>
             <l>restiarius</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Restibilis restibilis-->
-         <tok val="[rR]estibilis"/>
+      <ana>
+         <tok val="Restibilis"/>
+         <tok val="restibilis"/>
          <lm cert="0.333333333333333333">
             <l>restibilio</l>
             <m>v - 2 s p i a</m>
@@ -385,24 +469,28 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Restibilis restibiles restibilis-->
-         <tok val="[rR]estibil[ie]s"/>
+      <ana>
+         <tok val="Restibilis"/>
+         <tok val="restibiles"/>
+         <tok val="restibilis"/>
          <lm>
             <l>restibilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Restibus restibus-->
-         <tok val="[rR]estibus"/>
+      <ana>
+         <tok val="Restibus"/>
+         <tok val="restibus"/>
          <lm>
             <l>restis</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Resticula resticula-->
-         <tok val="[rR]esticula"/>
+      <ana>
+         <tok val="Resticula"/>
+         <tok val="resticula"/>
          <lm>
             <l>resticula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -410,15 +498,21 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Restim restem restemque restim Restím-->
-         <tok val="[rR]est[ieí]m(que)?"/>
+      <ana>
+         <tok val="Restim"/>
+         <tok val="Restím"/>
+         <tok val="restem"/>
+         <tok val="restemque"/>
+         <tok val="restim"/>
+         <tok val="restím"/>
          <lm>
             <l>restis</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Restincta restincta-->
-         <tok val="[rR]estincta"/>
+      <ana>
+         <tok val="Restincta"/>
+         <tok val="restincta"/>
          <lm>
             <l>restinguo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -429,16 +523,18 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Restinctio restinctio-->
-         <tok val="[rR]estinctio"/>
+      <ana>
+         <tok val="Restinctio"/>
+         <tok val="restinctio"/>
          <lm>
             <l>restinctio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Restincto restincto-->
-         <tok val="[rR]estincto"/>
+      <ana>
+         <tok val="Restincto"/>
+         <tok val="restincto"/>
          <lm>
             <l>restinguo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -447,15 +543,17 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Restinctus restinctus-->
-         <tok val="[rR]estinctus"/>
+      <ana>
+         <tok val="Restinctus"/>
+         <tok val="restinctus"/>
          <lm>
             <l>restinguo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Restinguere restinguere-->
-         <tok val="[rR]estinguere"/>
+      <ana>
+         <tok val="Restinguere"/>
+         <tok val="restinguere"/>
          <lm>
             <l>restinguo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -464,8 +562,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Restinguet restinguet-->
-         <tok val="[rR]estinguet"/>
+      <ana>
+         <tok val="Restinguet"/>
+         <tok val="restinguet"/>
          <lm>
             <l>restinguo</l>
             <m>v - 3 s f i a</m>
@@ -473,13 +572,15 @@
       </ana>
       <ana>
          <tok val="Restinguo"/>
+         <tok val="restinguo"/>
          <lm>
             <l>restinguo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Restio restio-->
-         <tok val="[rR]estio"/>
+      <ana>
+         <tok val="Restio"/>
+         <tok val="restio"/>
          <lm>
             <l>restio</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -488,171 +589,205 @@
       </ana>
       <ana>
          <tok val="Restione"/>
+         <tok val="restione"/>
          <lm>
             <l>restio</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Restipula restipula-->
-         <tok val="[rR]estipula"/>
+      <ana>
+         <tok val="Restipula"/>
+         <tok val="restipula"/>
          <lm>
             <l>restipulo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Restipulatio restipulatio-->
-         <tok val="[rR]estipulatio"/>
+      <ana>
+         <tok val="Restipulatio"/>
+         <tok val="restipulatio"/>
          <lm>
             <l>restipulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Restipulationis restipulationis-->
-         <tok val="[rR]estipulationis"/>
+      <ana>
+         <tok val="Restipulationis"/>
+         <tok val="restipulationis"/>
          <lm>
             <l>restipulatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Restipulor restipulor-->
-         <tok val="[rR]estipulor"/>
+      <ana>
+         <tok val="Restipulor"/>
+         <tok val="restipulor"/>
          <lm>
             <l>restipulor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Restitant restitant-->
-         <tok val="[rR]estitant"/>
+      <ana>
+         <tok val="Restitant"/>
+         <tok val="restitant"/>
          <lm>
             <l>restito</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Restiterim restiterim-->
-         <tok val="[rR]estiterim"/>
+      <ana>
+         <tok val="Restiterim"/>
+         <tok val="restiterim"/>
          <lm>
             <l>resto</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Restiti restiti-->
-         <tok val="[rR]estiti"/>
+      <ana>
+         <tok val="Restiti"/>
+         <tok val="restiti"/>
          <lm>
             <l>resto</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Restitimus restitimus-->
-         <tok val="[rR]estitimus"/>
+      <ana>
+         <tok val="Restitimus"/>
+         <tok val="restitimus"/>
          <lm>
             <l>resto</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Restitit restitit-->
-         <tok val="[rR]estitit"/>
+      <ana>
+         <tok val="Restitit"/>
+         <tok val="restitit"/>
          <lm>
             <l>resto</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Restito restito-->
-         <tok val="[rR]estito"/>
+      <ana>
+         <tok val="Restito"/>
+         <tok val="restito"/>
          <lm>
             <l>restito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Restituam restituam restituamque-->
-         <tok val="[rR]estituam(que)?"/>
+      <ana>
+         <tok val="Restituam"/>
+         <tok val="restituam"/>
+         <tok val="restituamque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Restituant restituant-->
-         <tok val="[rR]estituant"/>
+      <ana>
+         <tok val="Restituant"/>
+         <tok val="restituant"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Restituas restituas-->
-         <tok val="[rR]estituas"/>
+      <ana>
+         <tok val="Restituas"/>
+         <tok val="restituas"/>
          <lm>
             <l>restituo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Restituatur restituatur-->
-         <tok val="[rR]estituatur"/>
+      <ana>
+         <tok val="Restituatur"/>
+         <tok val="restituatur"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Restitue restitue restituen-->
-         <tok val="[rR]estitue[n]?"/>
+      <ana>
+         <tok val="Restitue"/>
+         <tok val="restitue"/>
+         <tok val="restituen"/>
          <lm>
             <l>restituo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Restituebat restituebat-->
-         <tok val="[rR]estituebat"/>
+      <ana>
+         <tok val="Restituebat"/>
+         <tok val="restituebat"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Restituendus restituendus-->
-         <tok val="[rR]estituendus"/>
+      <ana>
+         <tok val="Restituendus"/>
+         <tok val="restituendus"/>
          <lm>
             <l>restituo</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Restituere Restituerunt restituere restitueren restituerunt-->
-         <tok val="[rR]estituer[e]?(n|unt|e)?"/>
+      <ana>
+         <tok val="Restituere"/>
+         <tok val="Restituerunt"/>
+         <tok val="restituere"/>
+         <tok val="restitueren"/>
+         <tok val="restituerunt"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Restituere restituere restitueren-->
-         <tok val="[rR]estituere[n]?"/>
+      <ana>
+         <tok val="Restituere"/>
+         <tok val="restituere"/>
+         <tok val="restitueren"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Restituere restituere restitueren restitueris restituerisque-->
-         <tok val="[rR]estituer(isqu)?[e]?(n|is)?"/>
+      <ana>
+         <tok val="Restituere"/>
+         <tok val="restituere"/>
+         <tok val="restitueren"/>
+         <tok val="restitueris"/>
+         <tok val="restituerisque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Restituet restituet restituetque-->
-         <tok val="[rR]estituet(que)?"/>
+      <ana>
+         <tok val="Restituet"/>
+         <tok val="restituet"/>
+         <tok val="restituetque"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Restituisse restituisse-->
-         <tok val="[rR]estituisse"/>
+      <ana>
+         <tok val="Restituisse"/>
+         <tok val="restituisse"/>
          <lm>
             <l>restituo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Restituo restituo-->
-         <tok val="[rR]estituo"/>
+      <ana>
+         <tok val="Restituo"/>
+         <tok val="restituo"/>
          <lm>
             <l>restituo</l>
             <m>v - 1 s p i a</m>
@@ -660,46 +795,48 @@
       </ana>
       <ana>
          <tok val="Restitute"/>
-         <lm>
+         <tok val="restitute"/>
+         <lm cert="0.5">
             <l>Restitutus</l>
             <m>n e - s - - - m v</m>
          </lm>
+         <lm cert="0.5">
+            <l>restituo</l>
+            <m>v - - s r p p m v</m>
+         </lm>
       </ana>
-      <ana><!--Restitute restitutum restitutumque restitute Restitutum-->
-         <tok val="[Rr]estitut(um|e|umque)"/>
+      <ana>
+         <tok val="Restitute"/>
+         <tok val="Restitutum"/>
+         <tok val="restitute"/>
+         <tok val="restitutum"/>
+         <tok val="restitutumque"/>
          <lm>
             <l>restituo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Restitute restitute-->
-         <tok val="[rR]estitute"/>
-         <lm>
-            <l>restituo</l>
-            <m>v - - s r p p m v</m>
-         </lm>
-      </ana>
-      <ana><!--Restituti restituti-->
-         <tok val="[rR]estituti"/>
-         <lm>
+      <ana>
+         <tok val="Restituti"/>
+         <tok val="restituti"/>
+         <lm cert="0.5">
             <l>restituo</l>
             <m cert="0.25">v - - s r p p n g</m>
             <m cert="0.25">v - - p r p p m v</m>
             <m cert="0.25">v - - p r p p m n</m>
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Restituti"/>
-         <lm>
+         <lm cert="0.5">
             <l>Restitutus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
             <m cert="0.333333333333333333">n e - s - - - m g</m>
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Restitutio restitutio restitutioque-->
-         <tok val="[rR]estitutio(que)?"/>
+      <ana>
+         <tok val="Restitutio"/>
+         <tok val="restitutio"/>
+         <tok val="restitutioque"/>
          <lm>
             <l>restitutio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -708,22 +845,25 @@
       </ana>
       <ana>
          <tok val="Restituto"/>
+         <tok val="restituto"/>
          <lm>
             <l>Restitutus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Restitutor restitutor-->
-         <tok val="[rR]estitutor"/>
+      <ana>
+         <tok val="Restitutor"/>
+         <tok val="restitutor"/>
          <lm>
             <l>restitutor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Restitutorius restitutorius-->
-         <tok val="[rR]estitutorius"/>
+      <ana>
+         <tok val="Restitutorius"/>
+         <tok val="restitutorius"/>
          <lm>
             <l>restitutorius</l>
             <m>a - - s - - - m n</m>
@@ -731,48 +871,56 @@
       </ana>
       <ana>
          <tok val="Restitutus"/>
-         <lm>
+         <tok val="restitutus"/>
+         <lm cert="0.5">
             <l>Restitutus</l>
             <m>n e - s - - - m n</m>
          </lm>
-      </ana>
-      <ana><!--Restitutus restitutus-->
-         <tok val="[rR]estitutus"/>
-         <lm>
+         <lm cert="0.5">
             <l>restituo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Restituunt restituunt restituuntque-->
-         <tok val="[rR]estituunt(que)?"/>
+      <ana>
+         <tok val="Restituunt"/>
+         <tok val="restituunt"/>
+         <tok val="restituuntque"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Restium restium-->
-         <tok val="[rR]estium"/>
+      <ana>
+         <tok val="Restium"/>
+         <tok val="restium"/>
          <lm>
             <l>restis</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Restricte Restrictum restricte restrictum restrictumque-->
-         <tok val="[rR]estrict(um|e|umque)"/>
+      <ana>
+         <tok val="Restricte"/>
+         <tok val="Restrictum"/>
+         <tok val="restricte"/>
+         <tok val="restrictum"/>
+         <tok val="restrictumque"/>
          <lm>
             <l>restringo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Restricte restricte-->
-         <tok val="[rR]estricte"/>
+      <ana>
+         <tok val="Restricte"/>
+         <tok val="restricte"/>
          <lm>
             <l>restringo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Restrictis restrictis restrictisque-->
-         <tok val="[rR]estrictis(que)?"/>
+      <ana>
+         <tok val="Restrictis"/>
+         <tok val="restrictis"/>
+         <tok val="restrictisque"/>
          <lm>
             <l>restringo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -783,8 +931,10 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Restrictum restrictum restrictumque-->
-         <tok val="[rR]estrictum(que)?"/>
+      <ana>
+         <tok val="Restrictum"/>
+         <tok val="restrictum"/>
+         <tok val="restrictumque"/>
          <lm>
             <l>restringo</l>
             <m cert="0.2">v - - p r p p m g</m>
@@ -796,20 +946,24 @@
       </ana>
       <ana>
          <tok val="Restrictum"/>
+         <tok val="restrictum"/>
          <lm>
             <l>restringo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Restrictus restrictus restrictusque-->
-         <tok val="[rR]estrictus(que)?"/>
+      <ana>
+         <tok val="Restrictus"/>
+         <tok val="restrictus"/>
+         <tok val="restrictusque"/>
          <lm>
             <l>restringo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Restringere restringere-->
-         <tok val="[rR]estringere"/>
+      <ana>
+         <tok val="Restringere"/>
+         <tok val="restringere"/>
          <lm>
             <l>restringo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -818,22 +972,25 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Restringit restringit-->
-         <tok val="[rR]estringit"/>
+      <ana>
+         <tok val="Restringit"/>
+         <tok val="restringit"/>
          <lm>
             <l>restringo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Restringo restringo-->
-         <tok val="[rR]estringo"/>
+      <ana>
+         <tok val="Restringo"/>
+         <tok val="restringo"/>
          <lm>
             <l>restringo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Restrinxit restrinxit-->
-         <tok val="[rR]estrinxit"/>
+      <ana>
+         <tok val="Restrinxit"/>
+         <tok val="restrinxit"/>
          <lm>
             <l>restringo</l>
             <m>v - 3 s r i a</m>
@@ -881,15 +1038,17 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--restagna restagnan-->
-         <tok val="restagna[n]?"/>
+      <ana>
+         <tok val="restagna"/>
+         <tok val="restagnan"/>
          <lm>
             <l>restagno</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--restagnan restagnas-->
-         <tok val="restagna[sn]"/>
+      <ana>
+         <tok val="restagnan"/>
+         <tok val="restagnas"/>
          <lm>
             <l>restagno</l>
             <m>v - 2 s p i a</m>
@@ -1031,8 +1190,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--restantes restantis-->
-         <tok val="restant[ie]s"/>
+      <ana>
+         <tok val="restantes"/>
+         <tok val="restantis"/>
          <lm>
             <l>resto</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1111,8 +1271,9 @@
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--restatum restitum-->
-         <tok val="rest[ia]tum"/>
+      <ana>
+         <tok val="restatum"/>
+         <tok val="restitum"/>
          <lm>
             <l>resto</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1123,8 +1284,10 @@
             <m cert="0.166666666666666667">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--restatum restite restitum-->
-         <tok val="rest[ia]t(um|e)"/>
+      <ana>
+         <tok val="restatum"/>
+         <tok val="restite"/>
+         <tok val="restitum"/>
          <lm>
             <l>resto</l>
             <m>v - - s r p p n v</m>
@@ -1323,8 +1486,9 @@
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--restaurauit restauravit-->
-         <tok val="restaura[vu]it"/>
+      <ana>
+         <tok val="restaurauit"/>
+         <tok val="restauravit"/>
          <lm>
             <l>restauro</l>
             <m>v - 3 s r i a</m>
@@ -1351,8 +1515,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--restem restemque-->
-         <tok val="restem(que)?"/>
+      <ana>
+         <tok val="restem"/>
+         <tok val="restemque"/>
          <lm>
             <l>resto</l>
             <m>v - 1 s p s a</m>
@@ -1394,8 +1559,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--restibile restibili-->
-         <tok val="restibil[ie]"/>
+      <ana>
+         <tok val="restibile"/>
+         <tok val="restibili"/>
          <lm>
             <l>restibile</l>
             <m>n - - s - - - n b</m>
@@ -1685,8 +1851,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--restinguentem restinguentemve-->
-         <tok val="restinguentem(ve)?"/>
+      <ana>
+         <tok val="restinguentem"/>
+         <tok val="restinguentemve"/>
          <lm>
             <l>restinguo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1754,8 +1921,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--restinguit restinguitque-->
-         <tok val="restinguit(que)?"/>
+      <ana>
+         <tok val="restinguit"/>
+         <tok val="restinguitque"/>
          <lm>
             <l>restinguo</l>
             <m>v - 3 s p i a</m>
@@ -1834,8 +2002,9 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--restinxi restinxique-->
-         <tok val="restinxi(que)?"/>
+      <ana>
+         <tok val="restinxi"/>
+         <tok val="restinxique"/>
          <lm>
             <l>restinguo</l>
             <m>v - 1 s r i a</m>
@@ -1952,15 +2121,18 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--restitans restitansque restitáns-->
-         <tok val="restit[áa]ns(que)?"/>
+      <ana>
+         <tok val="restitans"/>
+         <tok val="restitansque"/>
+         <tok val="restitáns"/>
          <lm>
             <l>restito</l>
             <m>v - - s p p a f v</m>
          </lm>
       </ana>
-      <ana><!--restitans restitansque-->
-         <tok val="restitans(que)?"/>
+      <ana>
+         <tok val="restitans"/>
+         <tok val="restitansque"/>
          <lm>
             <l>restito</l>
             <m cert="0.166666666666666667">v - - s p p a m n</m>
@@ -2035,8 +2207,9 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--restiteras réstiteras-->
-         <tok val="r[ée]stiteras"/>
+      <ana>
+         <tok val="restiteras"/>
+         <tok val="réstiteras"/>
          <lm>
             <l>resto</l>
             <m>v - 2 s l i a</m>
@@ -2049,15 +2222,17 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--restitere restiterunt-->
-         <tok val="restiter(unt|e)"/>
+      <ana>
+         <tok val="restitere"/>
+         <tok val="restiterunt"/>
          <lm>
             <l>resto</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--restitere restiteris-->
-         <tok val="restiter(is|e)"/>
+      <ana>
+         <tok val="restitere"/>
+         <tok val="restiteris"/>
          <lm>
             <l>restito</l>
             <m>v - 2 s p s p</m>
@@ -2194,8 +2369,9 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--restituare restituaris-->
-         <tok val="restituar(is|e)"/>
+      <ana>
+         <tok val="restituare"/>
+         <tok val="restituaris"/>
          <lm>
             <l>restituo</l>
             <m>v - 2 s p s p</m>
@@ -2243,8 +2419,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--restituen restitues-->
-         <tok val="restitue[sn]"/>
+      <ana>
+         <tok val="restituen"/>
+         <tok val="restitues"/>
          <lm>
             <l>restituo</l>
             <m>v - 2 s f i a</m>
@@ -2304,8 +2481,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--restituendis restituendisque-->
-         <tok val="restituendis(que)?"/>
+      <ana>
+         <tok val="restituendis"/>
+         <tok val="restituendisque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -2328,16 +2506,18 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--restituendorum restituendum-->
-         <tok val="restituend(or)?um"/>
+      <ana>
+         <tok val="restituendorum"/>
+         <tok val="restituendum"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - - p p g p m g</m>
             <m cert="0.5">v - - p p g p n g</m>
          </lm>
       </ana>
-      <ana><!--restituendos restituendosque-->
-         <tok val="restituendos(que)?"/>
+      <ana>
+         <tok val="restituendos"/>
+         <tok val="restituendosque"/>
          <lm>
             <l>restituo</l>
             <m>v - - p p g p m a</m>
@@ -2374,8 +2554,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--restituente restituenti-->
-         <tok val="restituent[ie]"/>
+      <ana>
+         <tok val="restituente"/>
+         <tok val="restituenti"/>
          <lm>
             <l>restituo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2401,8 +2582,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--restituentes restituentis-->
-         <tok val="restituent[ie]s"/>
+      <ana>
+         <tok val="restituentes"/>
+         <tok val="restituentis"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2483,8 +2665,10 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--restitueren restitueres restitueresque-->
-         <tok val="restituere(s|n|sque)"/>
+      <ana>
+         <tok val="restitueren"/>
+         <tok val="restitueres"/>
+         <tok val="restitueresque"/>
          <lm>
             <l>restituo</l>
             <m>v - 2 s i s a</m>
@@ -2511,8 +2695,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--restitueretur restituereturque-->
-         <tok val="restitueretur(que)?"/>
+      <ana>
+         <tok val="restitueretur"/>
+         <tok val="restituereturque"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 s i s p</m>
@@ -2526,16 +2711,18 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--restitueris restituerisque-->
-         <tok val="restitueris(que)?"/>
+      <ana>
+         <tok val="restitueris"/>
+         <tok val="restituerisque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--restituerit restitueritve-->
-         <tok val="restituerit(ve)?"/>
+      <ana>
+         <tok val="restituerit"/>
+         <tok val="restitueritve"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -2585,8 +2772,9 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--restituisset restituissetque-->
-         <tok val="restituisset(que)?"/>
+      <ana>
+         <tok val="restituisset"/>
+         <tok val="restituissetque"/>
          <lm>
             <l>restituo</l>
             <m>v - 3 s l s a</m>
@@ -2642,8 +2830,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--restitutae restitutaeque-->
-         <tok val="restitutae(que)?"/>
+      <ana>
+         <tok val="restitutae"/>
+         <tok val="restitutaeque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -2652,8 +2841,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--restitutam restitutamque-->
-         <tok val="restitutam(que)?"/>
+      <ana>
+         <tok val="restitutam"/>
+         <tok val="restitutamque"/>
          <lm>
             <l>restituo</l>
             <m>v - - s r p p f a</m>
@@ -2673,8 +2863,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--restitutionem restitutionemque-->
-         <tok val="restitutionem(que)?"/>
+      <ana>
+         <tok val="restitutionem"/>
+         <tok val="restitutionemque"/>
          <lm>
             <l>restitutio</l>
             <m>n - - s - - - f a</m>
@@ -2804,16 +2995,20 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--restitutorum restitutum restitutumque Restitutum-->
-         <tok val="[rR]estitut(or)?um(que)?"/>
+      <ana>
+         <tok val="Restitutum"/>
+         <tok val="restitutorum"/>
+         <tok val="restitutum"/>
+         <tok val="restitutumque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--restitutos restitutosque-->
-         <tok val="restitutos(que)?"/>
+      <ana>
+         <tok val="restitutos"/>
+         <tok val="restitutosque"/>
          <lm>
             <l>restituo</l>
             <m>v - - p r p p m a</m>
@@ -2834,15 +3029,18 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--restitutum restitutumque-->
-         <tok val="restitutum(que)?"/>
+      <ana>
+         <tok val="restitutum"/>
+         <tok val="restitutumque"/>
          <lm>
             <l>restituo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--restitutum restitutumque Restitutum-->
-         <tok val="[Rr]estitutum(que)?"/>
+      <ana>
+         <tok val="Restitutum"/>
+         <tok val="restitutum"/>
+         <tok val="restitutumque"/>
          <lm>
             <l>restituo</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -2936,8 +3134,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--restricta restrictaque-->
-         <tok val="restricta(que)?"/>
+      <ana>
+         <tok val="restricta"/>
+         <tok val="restrictaque"/>
          <lm>
             <l>restringo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -3055,8 +3254,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--restrictum restrictumque-->
-         <tok val="restrictum(que)?"/>
+      <ana>
+         <tok val="restrictum"/>
+         <tok val="restrictumque"/>
          <lm>
             <l>restringo</l>
             <m>a - - s - - - n n</m>
@@ -3229,6 +3429,7 @@
       </ana>
       <ana>
          <tok val="Restitutum"/>
+         <tok val="restitutum"/>
          <lm>
             <l>restituo</l>
             <m>v - - - - u - - a</m>

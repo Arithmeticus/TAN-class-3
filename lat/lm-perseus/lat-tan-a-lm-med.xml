@@ -1,58 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusmed">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:med">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to med</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-med.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>MED</tok-starts-with>
       <tok-starts-with>Med</tok-starts-with>
       <tok-starts-with>med</tok-starts-with>
       <tok-starts-with>méd</tok-starts-with>
       <tok-starts-with>Méd</tok-starts-with>
-      <ana><!--MED Med med mednque méd Méd-->
-         <tok val="[mM]?(e|mé|Mé|me)?[d]?(nque|MED)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:33:08.71-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:33:08.71-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-med.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="MED"/>
+         <tok val="Med"/>
+         <tok val="Méd"/>
+         <tok val="med"/>
+         <tok val="mednque"/>
+         <tok val="méd"/>
          <lm>
             <l>ego</l>
             <m>p p - s - - - - b</m>
          </lm>
       </ana>
-      <ana><!--MED Med med mednque-->
-         <tok val="[mM]?(ed)?(nque|MED)?"/>
+      <ana>
+         <tok val="MED"/>
+         <tok val="Med"/>
+         <tok val="med"/>
+         <tok val="mednque"/>
          <lm>
             <l>ego</l>
             <m>p p - s - - - - a</m>
          </lm>
       </ana>
-      <ana><!--MEDEA Medea-->
-         <tok val="M(edea|EDEA)"/>
+      <ana>
+         <tok val="MEDEA"/>
+         <tok val="Medea"/>
+         <tok val="medea"/>
          <lm>
             <l>Medea</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -60,15 +78,19 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--MEDEOR Medeor medeor-->
-         <tok val="[mM]?(edeor|MEDEOR)"/>
+      <ana>
+         <tok val="MEDEOR"/>
+         <tok val="Medeor"/>
+         <tok val="medeor"/>
          <lm>
             <l>medeor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--MEDIA Media-->
-         <tok val="M(edia|EDIA)"/>
+      <ana>
+         <tok val="MEDIA"/>
+         <tok val="Media"/>
+         <tok val="media"/>
          <lm>
             <l>medium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -76,8 +98,11 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--MEDIA Media media mediaque-->
-         <tok val="[mM]?(edia)?(que|MEDIA)?"/>
+      <ana>
+         <tok val="MEDIA"/>
+         <tok val="Media"/>
+         <tok val="media"/>
+         <tok val="mediaque"/>
          <lm cert="0.5">
             <l>medio</l>
             <m>v - 2 s p m a</m>
@@ -91,15 +116,21 @@
             <m cert="0.2">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MEDIA Media media mediaque medioque-->
-         <tok val="[mM]?(edi)?[oa]?(que|a|MEDIA)"/>
+      <ana>
+         <tok val="MEDIA"/>
+         <tok val="Media"/>
+         <tok val="media"/>
+         <tok val="mediaque"/>
+         <tok val="medioque"/>
          <lm>
             <l>medius</l>
             <m>a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--MEDIANA mediana Mediana-->
-         <tok val="[Mm]?(ediana|MEDIANA)"/>
+      <ana>
+         <tok val="MEDIANA"/>
+         <tok val="Mediana"/>
+         <tok val="mediana"/>
          <lm cert="0.5">
             <l>medianum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -116,8 +147,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MEDICA Medica medica-->
-         <tok val="[mM]?(edica|MEDICA)"/>
+      <ana>
+         <tok val="MEDICA"/>
+         <tok val="Medica"/>
+         <tok val="medica"/>
          <lm cert="0.333333333333333333">
             <l>medica</l>
             <m cert="0.166666666666666667">n - - s - - - f n</m>
@@ -141,15 +174,21 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MEDICEM Medicem-->
-         <tok val="M(edicem|EDICEM)"/>
+      <ana>
+         <tok val="MEDICEM"/>
+         <tok val="Medicem"/>
+         <tok val="medicem"/>
          <lm>
             <l>medico</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--MEDICI Medici medici medicin medicique-->
-         <tok val="[mM]?(edici)?(n|que|MEDICI)?"/>
+      <ana>
+         <tok val="MEDICI"/>
+         <tok val="Medici"/>
+         <tok val="medici"/>
+         <tok val="medicin"/>
+         <tok val="medicique"/>
          <lm>
             <l>medicus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -161,8 +200,12 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--MEDICINA Medicina medicina medicinaque medicinast-->
-         <tok val="[mM]?(edicina)?(st|que|MEDICINA)?"/>
+      <ana>
+         <tok val="MEDICINA"/>
+         <tok val="Medicina"/>
+         <tok val="medicina"/>
+         <tok val="medicinaque"/>
+         <tok val="medicinast"/>
          <lm cert="0.5">
             <l>medicina</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -179,8 +222,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--MEDICINAE Medicinae medicinae-->
-         <tok val="[mM]?(edicinae|MEDICINAE)"/>
+      <ana>
+         <tok val="MEDICINAE"/>
+         <tok val="Medicinae"/>
+         <tok val="medicinae"/>
          <lm cert="0.5">
             <l>medicinus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -196,8 +241,13 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--MEDICIS Medicin Medicis medicin medicis medicisque-->
-         <tok val="[Mm]?(edici)?(s|n|sque|MEDICIS)"/>
+      <ana>
+         <tok val="MEDICIS"/>
+         <tok val="Medicin"/>
+         <tok val="Medicis"/>
+         <tok val="medicin"/>
+         <tok val="medicis"/>
+         <tok val="medicisque"/>
          <lm cert="0.5">
             <l>medicus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -217,8 +267,11 @@
             <m cert="0.25">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--MEDICO Medico medico medicoque-->
-         <tok val="[mM]?(edico)?(que|MEDICO)?"/>
+      <ana>
+         <tok val="MEDICO"/>
+         <tok val="Medico"/>
+         <tok val="medico"/>
+         <tok val="medicoque"/>
          <lm cert="0.5">
             <l>medicus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -233,15 +286,24 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--MEDICOR Medicor medicor-->
-         <tok val="[mM]?(edicor|MEDICOR)"/>
+      <ana>
+         <tok val="MEDICOR"/>
+         <tok val="Medicor"/>
+         <tok val="medicor"/>
          <lm>
             <l>medico</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--MEDICORUM MEDICORVM Medicorum Medicum medicorum medicorumque medicum-->
-         <tok val="(MEDICOR)?[VU]?(M|medicorum|Medicorum|Medicum|medicum|medicorumque)"/>
+      <ana>
+         <tok val="MEDICORUM"/>
+         <tok val="MEDICORVM"/>
+         <tok val="Medicorum"/>
+         <tok val="Medicum"/>
+         <tok val="medicorum"/>
+         <tok val="medicorumque"/>
+         <tok val="medicorvm"/>
+         <tok val="medicum"/>
          <lm cert="0.5">
             <l>medicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -253,16 +315,26 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--MEDICVS Medicus medicus medicusve-->
-         <tok val="[mM]?(edicus)?(ve|MEDICVS)?"/>
+      <ana>
+         <tok val="MEDICVS"/>
+         <tok val="Medicus"/>
+         <tok val="medicus"/>
+         <tok val="medicusve"/>
+         <tok val="medicvs"/>
          <lm>
             <l>medicus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--MEDIO Medio Medioque medio medioque mediost mediove-->
-         <tok val="[mM]?(edio)?(que|st|ve|MEDIO)?"/>
+      <ana>
+         <tok val="MEDIO"/>
+         <tok val="Medio"/>
+         <tok val="Medioque"/>
+         <tok val="medio"/>
+         <tok val="medioque"/>
+         <tok val="mediost"/>
+         <tok val="mediove"/>
          <lm cert="0.5">
             <l>medius</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -277,22 +349,23 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--MEDIO Medio Medioque-->
-         <tok val="M(edio)?(que|EDIO)?"/>
+      <ana>
+         <tok val="MEDIO"/>
+         <tok val="Medio"/>
+         <tok val="Medioque"/>
+         <tok val="medio"/>
+         <tok val="medioque"/>
          <lm>
             <l>medium</l>
-            <m>n - - s - - - n d</m>
+            <m cert="0.5">n - - s - - - n d</m>
+            <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--MEDIO Medio Medioque medio-->
-         <tok val="[mM]?(edio)?(que|MEDIO)?"/>
-         <lm>
-            <l>medium</l>
-            <m>n - - s - - - n b</m>
-         </lm>
-      </ana>
-      <ana><!--MEDIOCRIS Mediocris mediocris mediocrisne-->
-         <tok val="[mM]?(ediocris)?(ne|MEDIOCRIS)?"/>
+      <ana>
+         <tok val="MEDIOCRIS"/>
+         <tok val="Mediocris"/>
+         <tok val="mediocris"/>
+         <tok val="mediocrisne"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -304,16 +377,23 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--MEDIOCRIS Mediocres Mediocris mediocres mediocris mediocrisne-->
-         <tok val="[mM]?(ediocr)?[ie]?[s]?(ne|MEDIOCRIS)?"/>
+      <ana>
+         <tok val="MEDIOCRIS"/>
+         <tok val="Mediocres"/>
+         <tok val="Mediocris"/>
+         <tok val="mediocres"/>
+         <tok val="mediocris"/>
+         <tok val="mediocrisne"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--MEDIOLANENSI Mediolanensi-->
-         <tok val="M(ediolanensi|EDIOLANENSI)"/>
+      <ana>
+         <tok val="MEDIOLANENSI"/>
+         <tok val="Mediolanensi"/>
+         <tok val="mediolanensi"/>
          <lm>
             <l>Mediolanensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -324,8 +404,10 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--MEDIOLANENSIS Mediolanensis-->
-         <tok val="M(ediolanensis|EDIOLANENSIS)"/>
+      <ana>
+         <tok val="MEDIOLANENSIS"/>
+         <tok val="Mediolanensis"/>
+         <tok val="mediolanensis"/>
          <lm>
             <l>Mediolanensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -337,8 +419,12 @@
             <m cert="0.142857142857142857">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--MEDIOLANENSIS Mediolanenses Mediolanensis-->
-         <tok val="M(ediolanens)?[ie]?(s|EDIOLANENSIS)"/>
+      <ana>
+         <tok val="MEDIOLANENSIS"/>
+         <tok val="Mediolanenses"/>
+         <tok val="Mediolanensis"/>
+         <tok val="mediolanenses"/>
+         <tok val="mediolanensis"/>
          <lm cert="0.5">
             <l>Mediolanensis</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -349,15 +435,24 @@
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--MEDITOR Meditor meditor-->
-         <tok val="[mM]?(editor|MEDITOR)"/>
+      <ana>
+         <tok val="MEDITOR"/>
+         <tok val="Meditor"/>
+         <tok val="meditor"/>
          <lm>
             <l>meditor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--MEDIVS Medius mediun medius mediusque mediusue mediusve-->
-         <tok val="[mM]?(ediu)?[s]?[q]?[uv]?(e|n|MEDIVS)?"/>
+      <ana>
+         <tok val="MEDIVS"/>
+         <tok val="Medius"/>
+         <tok val="mediun"/>
+         <tok val="medius"/>
+         <tok val="mediusque"/>
+         <tok val="mediusue"/>
+         <tok val="mediusve"/>
+         <tok val="medivs"/>
          <lm>
             <l>medius</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -366,6 +461,7 @@
       </ana>
       <ana>
          <tok val="Meda"/>
+         <tok val="meda"/>
          <lm>
             <l>Medus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -376,8 +472,11 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Meda Mede-->
-         <tok val="Med[ea]"/>
+      <ana>
+         <tok val="Meda"/>
+         <tok val="Mede"/>
+         <tok val="meda"/>
+         <tok val="mede"/>
          <lm>
             <l>Mede</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -387,6 +486,7 @@
       </ana>
       <ana>
          <tok val="Medae"/>
+         <tok val="medae"/>
          <lm cert="0.5">
             <l>Mede</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -404,6 +504,7 @@
       </ana>
       <ana>
          <tok val="Medam"/>
+         <tok val="medam"/>
          <lm cert="0.5">
             <l>Mede</l>
             <m>n e - s - - - f a</m>
@@ -413,8 +514,13 @@
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mede Medum Medumque-->
-         <tok val="Med(um)?(que|e)?"/>
+      <ana>
+         <tok val="Mede"/>
+         <tok val="Medum"/>
+         <tok val="Medumque"/>
+         <tok val="mede"/>
+         <tok val="medum"/>
+         <tok val="medumque"/>
          <lm>
             <l>Medus</l>
             <m>a e - s - - - n v</m>
@@ -422,21 +528,27 @@
       </ana>
       <ana>
          <tok val="Mede"/>
+         <tok val="mede"/>
          <lm>
             <l>Medus</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Mede mede meden-->
-         <tok val="[mM]ede[n]?"/>
+      <ana>
+         <tok val="Mede"/>
+         <tok val="mede"/>
+         <tok val="meden"/>
          <lm>
             <l>medeor</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Mede Medius-->
-         <tok val="Med(ius|e)"/>
+      <ana>
+         <tok val="Mede"/>
+         <tok val="Medius"/>
+         <tok val="mede"/>
+         <tok val="medius"/>
          <lm>
             <l>Medus</l>
             <m>d e</m>
@@ -444,6 +556,7 @@
       </ana>
       <ana>
          <tok val="Medeae"/>
+         <tok val="medeae"/>
          <lm>
             <l>Medea</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -451,8 +564,11 @@
             <m cert="0.333333333333333333">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Medeae Medeai-->
-         <tok val="Medea[ie]"/>
+      <ana>
+         <tok val="Medeae"/>
+         <tok val="Medeai"/>
+         <tok val="medeae"/>
+         <tok val="medeai"/>
          <lm>
             <l>Medea</l>
             <m>n e - s - - - f g</m>
@@ -460,6 +576,7 @@
       </ana>
       <ana>
          <tok val="Medeam"/>
+         <tok val="medeam"/>
          <lm cert="0.5">
             <l>Medea</l>
             <m>n e - s - - - f a</m>
@@ -471,6 +588,7 @@
       </ana>
       <ana>
          <tok val="Medebar"/>
+         <tok val="medebar"/>
          <lm>
             <l>medeor</l>
             <m>v - 1 s i i p</m>
@@ -478,6 +596,7 @@
       </ana>
       <ana>
          <tok val="Medeides"/>
+         <tok val="medeides"/>
          <lm>
             <l>Medeis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -487,6 +606,7 @@
       </ana>
       <ana>
          <tok val="Medeis"/>
+         <tok val="medeis"/>
          <lm cert="0.5">
             <l>Medea</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -497,8 +617,12 @@
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Medela medela medelaque medella medellaque-->
-         <tok val="[mM]edel[l]?a(que)?"/>
+      <ana>
+         <tok val="Medela"/>
+         <tok val="medela"/>
+         <tok val="medelaque"/>
+         <tok val="medella"/>
+         <tok val="medellaque"/>
          <lm>
             <l>medela</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -506,16 +630,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Medemini medemini-->
-         <tok val="[mM]edemini"/>
+      <ana>
+         <tok val="Medemini"/>
+         <tok val="medemini"/>
          <lm>
             <l>medeor</l>
             <m cert="0.5">v - 2 p p i p</m>
             <m cert="0.5">v - 2 p p m p</m>
          </lm>
       </ana>
-      <ana><!--Medendae medendae-->
-         <tok val="[mM]edendae"/>
+      <ana>
+         <tok val="Medendae"/>
+         <tok val="medendae"/>
          <lm>
             <l>medeor</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -524,8 +650,9 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Medendi medendi-->
-         <tok val="[mM]edendi"/>
+      <ana>
+         <tok val="Medendi"/>
+         <tok val="medendi"/>
          <lm>
             <l>medeor</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -535,8 +662,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Medendo medendo-->
-         <tok val="[mM]edendo"/>
+      <ana>
+         <tok val="Medendo"/>
+         <tok val="medendo"/>
          <lm>
             <l>medeor</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -547,8 +675,10 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Medendum medendum medendumque-->
-         <tok val="[mM]edendum(que)?"/>
+      <ana>
+         <tok val="Medendum"/>
+         <tok val="medendum"/>
+         <tok val="medendumque"/>
          <lm>
             <l>medeor</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -560,8 +690,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Medens medens-->
-         <tok val="[mM]edens"/>
+      <ana>
+         <tok val="Medens"/>
+         <tok val="medens"/>
          <lm>
             <l>medeor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -575,13 +706,15 @@
       </ana>
       <ana>
          <tok val="Medent"/>
+         <tok val="medent"/>
          <lm>
             <l>medeor</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Medentia medentia-->
-         <tok val="[mM]edentia"/>
+      <ana>
+         <tok val="Medentia"/>
+         <tok val="medentia"/>
          <lm>
             <l>medeor</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -589,36 +722,48 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Medentur Medenturn medentur-->
-         <tok val="[Mm]edentur[n]?"/>
+      <ana>
+         <tok val="Medentur"/>
+         <tok val="Medenturn"/>
+         <tok val="medentur"/>
+         <tok val="medenturn"/>
          <lm>
             <l>medeor</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Medeon Medeonque-->
-         <tok val="Medeon(que)?"/>
+      <ana>
+         <tok val="Medeon"/>
+         <tok val="Medeonque"/>
+         <tok val="medeon"/>
+         <tok val="medeonque"/>
          <lm>
             <l>Medeon</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mederi mederi mederique-->
-         <tok val="[mM]ederi(que)?"/>
+      <ana>
+         <tok val="Mederi"/>
+         <tok val="mederi"/>
+         <tok val="mederique"/>
          <lm>
             <l>medeor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Medetur medetur-->
-         <tok val="[mM]edetur"/>
+      <ana>
+         <tok val="Medetur"/>
+         <tok val="medetur"/>
          <lm>
             <l>medeor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Medi Medique-->
-         <tok val="Medi(que)?"/>
+      <ana>
+         <tok val="Medi"/>
+         <tok val="Medique"/>
+         <tok val="medi"/>
+         <tok val="medique"/>
          <lm>
             <l>Medus</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -627,8 +772,18 @@
             <m cert="0.25">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medi Medii Mediive Medique medi medicumque medii mediique mediiue-->
-         <tok val="[mM]edi[i]?[q]?(ue|i|ive|que|cumque)?"/>
+      <ana>
+         <tok val="Medi"/>
+         <tok val="Medii"/>
+         <tok val="Mediive"/>
+         <tok val="Medique"/>
+         <tok val="medi"/>
+         <tok val="medicumque"/>
+         <tok val="medii"/>
+         <tok val="mediique"/>
+         <tok val="mediiue"/>
+         <tok val="mediive"/>
+         <tok val="medique"/>
          <lm>
             <l>medius</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -636,15 +791,27 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medi Medique medi medicumque medie-->
-         <tok val="[mM]edi(e|que|cumque)?"/>
+      <ana>
+         <tok val="Medi"/>
+         <tok val="Medique"/>
+         <tok val="medi"/>
+         <tok val="medicumque"/>
+         <tok val="medie"/>
+         <tok val="medique"/>
          <lm>
             <l>medius</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Medi Medii Mediive Medique-->
-         <tok val="Medi(i|ive|que)?"/>
+      <ana>
+         <tok val="Medi"/>
+         <tok val="Medii"/>
+         <tok val="Mediive"/>
+         <tok val="Medique"/>
+         <tok val="medi"/>
+         <tok val="medii"/>
+         <tok val="mediive"/>
+         <tok val="medique"/>
          <lm>
             <l>medium</l>
             <m>n - - s - - - n g</m>
@@ -652,6 +819,7 @@
       </ana>
       <ana>
          <tok val="Media"/>
+         <tok val="media"/>
          <lm>
             <l>Media</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -659,8 +827,11 @@
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Mediae Mediaeque-->
-         <tok val="Mediae(que)?"/>
+      <ana>
+         <tok val="Mediae"/>
+         <tok val="Mediaeque"/>
+         <tok val="mediae"/>
+         <tok val="mediaeque"/>
          <lm>
             <l>Media</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -669,8 +840,12 @@
             <m cert="0.25">n e - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Mediae Mediaeque mediae mediaeque mediaest-->
-         <tok val="[mM]ediae(que|st)?"/>
+      <ana>
+         <tok val="Mediae"/>
+         <tok val="Mediaeque"/>
+         <tok val="mediae"/>
+         <tok val="mediaeque"/>
+         <tok val="mediaest"/>
          <lm>
             <l>medius</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -681,13 +856,16 @@
       </ana>
       <ana>
          <tok val="Mediam"/>
+         <tok val="mediam"/>
          <lm>
             <l>Media</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mediam mediam mediamque-->
-         <tok val="[mM]ediam(que)?"/>
+      <ana>
+         <tok val="Mediam"/>
+         <tok val="mediam"/>
+         <tok val="mediamque"/>
          <lm>
             <l>medius</l>
             <m>a - - s - - - f a</m>
@@ -695,6 +873,7 @@
       </ana>
       <ana>
          <tok val="Mediamna"/>
+         <tok val="mediamna"/>
          <lm>
             <l>Mediamna</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -702,8 +881,9 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Medianae medianae-->
-         <tok val="[mM]edianae"/>
+      <ana>
+         <tok val="Medianae"/>
+         <tok val="medianae"/>
          <lm>
             <l>medianus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -712,8 +892,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Medianum medianum-->
-         <tok val="[mM]edianum"/>
+      <ana>
+         <tok val="Medianum"/>
+         <tok val="medianum"/>
          <lm cert="0.5">
             <l>medianus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -731,15 +912,20 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medianus medianus-->
-         <tok val="[mM]edianus"/>
+      <ana>
+         <tok val="Medianus"/>
+         <tok val="medianus"/>
          <lm>
             <l>medianus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medias medias mediasque mediasue mediasve-->
-         <tok val="[mM]edias[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Medias"/>
+         <tok val="medias"/>
+         <tok val="mediasque"/>
+         <tok val="mediasue"/>
+         <tok val="mediasve"/>
          <lm cert="0.5">
             <l>medio</l>
             <m>v - 2 s p i a</m>
@@ -751,13 +937,15 @@
       </ana>
       <ana>
          <tok val="Medias"/>
+         <tok val="medias"/>
          <lm>
             <l>Media</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mediastini mediastini-->
-         <tok val="[mM]ediastini"/>
+      <ana>
+         <tok val="Mediastini"/>
+         <tok val="mediastini"/>
          <lm>
             <l>mediastinus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -765,15 +953,19 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Mediastinus Mediastinvs mediastinus-->
-         <tok val="[Mm]ediastin[vu]s"/>
+      <ana>
+         <tok val="Mediastinus"/>
+         <tok val="Mediastinvs"/>
+         <tok val="mediastinus"/>
+         <tok val="mediastinvs"/>
          <lm>
             <l>mediastinus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medicabile medicabile-->
-         <tok val="[mM]edicabile"/>
+      <ana>
+         <tok val="Medicabile"/>
+         <tok val="medicabile"/>
          <lm>
             <l>medicabilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -781,8 +973,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Medicabilis medicabilis-->
-         <tok val="[mM]edicabilis"/>
+      <ana>
+         <tok val="Medicabilis"/>
+         <tok val="medicabilis"/>
          <lm>
             <l>medicabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -796,8 +989,10 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medicae medicae medicaeque-->
-         <tok val="[mM]edicae(que)?"/>
+      <ana>
+         <tok val="Medicae"/>
+         <tok val="medicae"/>
+         <tok val="medicaeque"/>
          <lm cert="0.5">
             <l>medicus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -813,8 +1008,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Medicam medicam-->
-         <tok val="[mM]edicam"/>
+      <ana>
+         <tok val="Medicam"/>
+         <tok val="medicam"/>
          <lm cert="0.5">
             <l>medicus</l>
             <m>a - - s - - - f a</m>
@@ -824,8 +1020,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Medicamen medicamen-->
-         <tok val="[mM]edicamen"/>
+      <ana>
+         <tok val="Medicamen"/>
+         <tok val="medicamen"/>
          <lm>
             <l>medicamen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -833,8 +1030,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Medicamenta medicamenta medicamentaque-->
-         <tok val="[mM]edicamenta(que)?"/>
+      <ana>
+         <tok val="Medicamenta"/>
+         <tok val="medicamenta"/>
+         <tok val="medicamentaque"/>
          <lm>
             <l>medicamentum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -842,46 +1041,57 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Medicamentarius medicamentarius-->
-         <tok val="[mM]edicamentarius"/>
+      <ana>
+         <tok val="Medicamentarius"/>
+         <tok val="medicamentarius"/>
          <lm>
             <l>medicamentarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medicamentis medicamentis medicamentisque MEDICAMENTIS-->
-         <tok val="[mM]?(edicamentis)?(que|MEDICAMENTIS)?"/>
+      <ana>
+         <tok val="MEDICAMENTIS"/>
+         <tok val="Medicamentis"/>
+         <tok val="medicamentis"/>
+         <tok val="medicamentisque"/>
          <lm>
             <l>medicamentum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Medicamento medicamento medicamentoque-->
-         <tok val="[mM]edicamento(que)?"/>
+      <ana>
+         <tok val="Medicamento"/>
+         <tok val="medicamento"/>
+         <tok val="medicamentoque"/>
          <lm>
             <l>medicamentum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Medicamentorum Medicamentum medicamentorum medicamentum-->
-         <tok val="[mM]edicament(or)?um"/>
+      <ana>
+         <tok val="Medicamentorum"/>
+         <tok val="Medicamentum"/>
+         <tok val="medicamentorum"/>
+         <tok val="medicamentum"/>
          <lm>
             <l>medicamentum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medicamentosus medicamentosus-->
-         <tok val="[mM]edicamentosus"/>
+      <ana>
+         <tok val="Medicamentosus"/>
+         <tok val="medicamentosus"/>
          <lm>
             <l>medicamentosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medicamentum medicamentum-->
-         <tok val="[mM]edicamentum"/>
+      <ana>
+         <tok val="Medicamentum"/>
+         <tok val="medicamentum"/>
          <lm>
             <l>medicamentum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -889,8 +1099,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Medicamina medicamina-->
-         <tok val="[mM]edicamina"/>
+      <ana>
+         <tok val="Medicamina"/>
+         <tok val="medicamina"/>
          <lm>
             <l>medicamen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -898,23 +1109,27 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Medicaminibus medicaminibus-->
-         <tok val="[mM]edicaminibus"/>
+      <ana>
+         <tok val="Medicaminibus"/>
+         <tok val="medicaminibus"/>
          <lm>
             <l>medicamen</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Medicaminum medicaminum-->
-         <tok val="[mM]edicaminum"/>
+      <ana>
+         <tok val="Medicaminum"/>
+         <tok val="medicaminum"/>
          <lm>
             <l>medicamen</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medicandvm medicandum-->
-         <tok val="[mM]edicand[uv]m"/>
+      <ana>
+         <tok val="Medicandvm"/>
+         <tok val="medicandum"/>
+         <tok val="medicandvm"/>
          <lm>
             <l>medico</l>
             <m cert="0.166666666666666667">v - - s p g p n a</m>
@@ -925,22 +1140,28 @@
             <m cert="0.166666666666666667">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Medicandvm medicandum medicande-->
-         <tok val="[mM]edicand(e|um|vm)"/>
+      <ana>
+         <tok val="Medicandvm"/>
+         <tok val="medicande"/>
+         <tok val="medicandum"/>
+         <tok val="medicandvm"/>
          <lm>
             <l>medico</l>
             <m>v - - s p g p n v</m>
          </lm>
       </ana>
-      <ana><!--Medicari medicari-->
-         <tok val="[mM]edicari"/>
+      <ana>
+         <tok val="Medicari"/>
+         <tok val="medicari"/>
          <lm>
             <l>medicor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Medicas medicas medicasque-->
-         <tok val="[mM]edicas(que)?"/>
+      <ana>
+         <tok val="Medicas"/>
+         <tok val="medicas"/>
+         <tok val="medicasque"/>
          <lm cert="0.333333333333333333">
             <l>medico</l>
             <m>v - 2 s p i a</m>
@@ -954,8 +1175,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Medicata medicata-->
-         <tok val="[mM]edicata"/>
+      <ana>
+         <tok val="Medicata"/>
+         <tok val="medicata"/>
          <lm>
             <l>medico</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -966,8 +1188,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Medicatae medicatae-->
-         <tok val="[mM]edicatae"/>
+      <ana>
+         <tok val="Medicatae"/>
+         <tok val="medicatae"/>
          <lm>
             <l>medico</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -976,8 +1199,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Medicati medicati-->
-         <tok val="[mM]edicati"/>
+      <ana>
+         <tok val="Medicati"/>
+         <tok val="medicati"/>
          <lm>
             <l>medico</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -986,16 +1210,18 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Medicatio medicatio-->
-         <tok val="[mM]edicatio"/>
+      <ana>
+         <tok val="Medicatio"/>
+         <tok val="medicatio"/>
          <lm>
             <l>medicatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Medicatissima medicatissima-->
-         <tok val="[mM]edicatissima"/>
+      <ana>
+         <tok val="Medicatissima"/>
+         <tok val="medicatissima"/>
          <lm>
             <l>medico</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -1008,22 +1234,18 @@
       </ana>
       <ana>
          <tok val="Medicatius"/>
+         <tok val="medicatius"/>
          <lm>
             <l>medico</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Medicatius medicatius-->
-         <tok val="[mM]edicatius"/>
-         <lm>
-            <l>medico</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Medicatus medicatus-->
-         <tok val="[mM]edicatus"/>
+      <ana>
+         <tok val="Medicatus"/>
+         <tok val="medicatus"/>
          <lm cert="0.5">
             <l>medicatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1036,8 +1258,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Medice medice-->
-         <tok val="[mM]edice"/>
+      <ana>
+         <tok val="Medice"/>
+         <tok val="medice"/>
          <lm>
             <l>medicus</l>
             <m cert="0.333333333333333333">d</m>
@@ -1045,8 +1268,11 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Medice Medicum medice medicum-->
-         <tok val="[mM]edic(um|e)"/>
+      <ana>
+         <tok val="Medice"/>
+         <tok val="Medicum"/>
+         <tok val="medice"/>
+         <tok val="medicum"/>
          <lm>
             <l>medicus</l>
             <m>a - - s - - - n v</m>
@@ -1054,13 +1280,15 @@
       </ana>
       <ana>
          <tok val="Medices"/>
+         <tok val="medices"/>
          <lm>
             <l>medico</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Medicinalia medicinalia-->
-         <tok val="[mM]edicinalia"/>
+      <ana>
+         <tok val="Medicinalia"/>
+         <tok val="medicinalia"/>
          <lm>
             <l>medicinalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -1068,8 +1296,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Medicinalis medicinalis-->
-         <tok val="[mM]edicinalis"/>
+      <ana>
+         <tok val="Medicinalis"/>
+         <tok val="medicinalis"/>
          <lm>
             <l>medicinalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1081,16 +1310,19 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medicinalis medicinales medicinalis-->
-         <tok val="[mM]edicinal[ie]s"/>
+      <ana>
+         <tok val="Medicinalis"/>
+         <tok val="medicinales"/>
+         <tok val="medicinalis"/>
          <lm>
             <l>medicinalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Medicinam medicinam-->
-         <tok val="[mM]edicinam"/>
+      <ana>
+         <tok val="Medicinam"/>
+         <tok val="medicinam"/>
          <lm cert="0.5">
             <l>medicinus</l>
             <m>a - - s - - - f a</m>
@@ -1100,8 +1332,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Medicinas medicinas-->
-         <tok val="[mM]edicinas"/>
+      <ana>
+         <tok val="Medicinas"/>
+         <tok val="medicinas"/>
          <lm cert="0.5">
             <l>medicinus</l>
             <m>a - - p - - - f a</m>
@@ -1111,16 +1344,19 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Medicos medicos medicosque-->
-         <tok val="[mM]edicos(que)?"/>
+      <ana>
+         <tok val="Medicos"/>
+         <tok val="medicos"/>
+         <tok val="medicosque"/>
          <lm>
             <l>medicus</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Medicum medicum-->
-         <tok val="[mM]edicum"/>
+      <ana>
+         <tok val="Medicum"/>
+         <tok val="medicum"/>
          <lm>
             <l>medicus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1129,22 +1365,29 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Medient medient-->
-         <tok val="[mM]edient"/>
+      <ana>
+         <tok val="Medient"/>
+         <tok val="medient"/>
          <lm>
             <l>medio</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Medietas medietas-->
-         <tok val="[mM]edietas"/>
+      <ana>
+         <tok val="Medietas"/>
+         <tok val="medietas"/>
          <lm>
             <l>medietas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Medii Mediive medii mediique mediiue-->
-         <tok val="[mM]edii[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Medii"/>
+         <tok val="Mediive"/>
+         <tok val="medii"/>
+         <tok val="mediique"/>
+         <tok val="mediiue"/>
+         <tok val="mediive"/>
          <lm>
             <l>medius</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1155,6 +1398,7 @@
       </ana>
       <ana>
          <tok val="Mediis"/>
+         <tok val="mediis"/>
          <lm cert="0.5">
             <l>Media</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -1166,8 +1410,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Mediis mediis mediisque-->
-         <tok val="[mM]ediis(que)?"/>
+      <ana>
+         <tok val="Mediis"/>
+         <tok val="mediis"/>
+         <tok val="mediisque"/>
          <lm>
             <l>medius</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -1180,8 +1426,9 @@
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Medimni medimni-->
-         <tok val="[mM]edimni"/>
+      <ana>
+         <tok val="Medimni"/>
+         <tok val="medimni"/>
          <lm cert="0.5">
             <l>medimnus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1193,15 +1440,18 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medimnus medimnus-->
-         <tok val="[mM]edimnus"/>
+      <ana>
+         <tok val="Medimnus"/>
+         <tok val="medimnus"/>
          <lm>
             <l>medimnus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mediocre mediocre mediocreque-->
-         <tok val="[mM]ediocre(que)?"/>
+      <ana>
+         <tok val="Mediocre"/>
+         <tok val="mediocre"/>
+         <tok val="mediocreque"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1209,8 +1459,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Mediocres mediocres-->
-         <tok val="[mM]ediocres"/>
+      <ana>
+         <tok val="Mediocres"/>
+         <tok val="mediocres"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1219,15 +1470,20 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mediocri mediocri mediocrine medíocri-->
-         <tok val="[mM]ed[ií]ocri(ne)?"/>
+      <ana>
+         <tok val="Mediocri"/>
+         <tok val="mediocri"/>
+         <tok val="mediocrine"/>
+         <tok val="medíocri"/>
          <lm>
             <l>mediocris</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Mediocri mediocri mediocrine-->
-         <tok val="[mM]ediocri(ne)?"/>
+      <ana>
+         <tok val="Mediocri"/>
+         <tok val="mediocri"/>
+         <tok val="mediocrine"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.2">a - - s - - - m d</m>
@@ -1237,8 +1493,9 @@
             <m cert="0.2">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Mediocria mediocria-->
-         <tok val="[mM]ediocria"/>
+      <ana>
+         <tok val="Mediocria"/>
+         <tok val="mediocria"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -1246,8 +1503,10 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Mediocribus mediocribus mediocribusque-->
-         <tok val="[mM]ediocribus(que)?"/>
+      <ana>
+         <tok val="Mediocribus"/>
+         <tok val="mediocribus"/>
+         <tok val="mediocribusque"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1260,6 +1519,7 @@
       </ana>
       <ana>
          <tok val="Mediocriculo"/>
+         <tok val="mediocriculo"/>
          <lm>
             <l>mediocriculus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1268,22 +1528,26 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Mediocritas mediocritas-->
-         <tok val="[mM]ediocritas"/>
+      <ana>
+         <tok val="Mediocritas"/>
+         <tok val="mediocritas"/>
          <lm>
             <l>mediocritas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Mediocritatem mediocritatem mediocritatemque-->
-         <tok val="[mM]ediocritatem(que)?"/>
+      <ana>
+         <tok val="Mediocritatem"/>
+         <tok val="mediocritatem"/>
+         <tok val="mediocritatemque"/>
          <lm>
             <l>mediocritas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mediocritates mediocritates-->
-         <tok val="[mM]ediocritates"/>
+      <ana>
+         <tok val="Mediocritates"/>
+         <tok val="mediocritates"/>
          <lm>
             <l>mediocritas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1291,8 +1555,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Mediocritati mediocritati-->
-         <tok val="[mM]ediocritati"/>
+      <ana>
+         <tok val="Mediocritati"/>
+         <tok val="mediocritati"/>
          <lm>
             <l>mediocritas</l>
             <m>n - - s - - - f d</m>
@@ -1300,13 +1565,15 @@
       </ana>
       <ana>
          <tok val="Mediocriter"/>
+         <tok val="mediocriter"/>
          <lm>
             <l>mediocriter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Mediocrium mediocrium-->
-         <tok val="[mM]ediocrium"/>
+      <ana>
+         <tok val="Mediocrium"/>
+         <tok val="mediocrium"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -1314,8 +1581,13 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Mediolanen Mediolanium Mediolanum-->
-         <tok val="Mediolan[i]?(um|en)"/>
+      <ana>
+         <tok val="Mediolanen"/>
+         <tok val="Mediolanium"/>
+         <tok val="Mediolanum"/>
+         <tok val="mediolanen"/>
+         <tok val="mediolanium"/>
+         <tok val="mediolanum"/>
          <lm>
             <l>Mediolanum</l>
             <m>n e - s - - - n v</m>
@@ -1323,6 +1595,7 @@
       </ana>
       <ana>
          <tok val="Mediolanensem"/>
+         <tok val="mediolanensem"/>
          <lm>
             <l>Mediolanensis</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -1331,6 +1604,7 @@
       </ana>
       <ana>
          <tok val="Mediolanenses"/>
+         <tok val="mediolanenses"/>
          <lm cert="0.5">
             <l>Mediolanensis</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -1346,6 +1620,7 @@
       </ana>
       <ana>
          <tok val="Mediolanensibus"/>
+         <tok val="mediolanensibus"/>
          <lm cert="0.5">
             <l>Mediolanenses</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1363,6 +1638,7 @@
       </ana>
       <ana>
          <tok val="Mediolanensium"/>
+         <tok val="mediolanensium"/>
          <lm cert="0.5">
             <l>Mediolanensis</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -1376,13 +1652,17 @@
       </ana>
       <ana>
          <tok val="Mediolani"/>
+         <tok val="mediolani"/>
          <lm>
             <l>Mediolanum</l>
             <m>n e - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Mediolanium Mediolanum-->
-         <tok val="Mediolan[i]?um"/>
+      <ana>
+         <tok val="Mediolanium"/>
+         <tok val="Mediolanum"/>
+         <tok val="mediolanium"/>
+         <tok val="mediolanum"/>
          <lm>
             <l>Mediolanum</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -1392,6 +1672,7 @@
       </ana>
       <ana>
          <tok val="Mediolano"/>
+         <tok val="mediolano"/>
          <lm>
             <l>Mediolanum</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -1400,6 +1681,7 @@
       </ana>
       <ana>
          <tok val="Mediomatrici"/>
+         <tok val="mediomatrici"/>
          <lm cert="0.5">
             <l>Mediomatricus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1415,6 +1697,7 @@
       </ana>
       <ana>
          <tok val="Mediomatricis"/>
+         <tok val="mediomatricis"/>
          <lm cert="0.5">
             <l>Mediomatrici</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1432,6 +1715,7 @@
       </ana>
       <ana>
          <tok val="Mediomatricorum"/>
+         <tok val="mediomatricorum"/>
          <lm cert="0.5">
             <l>Mediomatricus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -1444,6 +1728,7 @@
       </ana>
       <ana>
          <tok val="Mediomatricos"/>
+         <tok val="mediomatricos"/>
          <lm cert="0.5">
             <l>Mediomatrici</l>
             <m>n e - p - - - m a</m>
@@ -1455,28 +1740,51 @@
       </ana>
       <ana>
          <tok val="Medion"/>
+         <tok val="medion"/>
          <lm>
             <l>Medion</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Medion medie medion medium mediumque mediumue mediumve-->
-         <tok val="[mM]edi(um)?[q]?[uv]?(e|on)?"/>
+      <ana>
+         <tok val="Medion"/>
+         <tok val="medie"/>
+         <tok val="medion"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
+         <tok val="mediumue"/>
+         <tok val="mediumve"/>
          <lm>
             <l>medion</l>
-            <m cert="0.5">n - - s - - - n v</m>
-            <m cert="0.5">n - - s - - - n n</m>
+            <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Medion medion mediumque mediumue mediumve-->
-         <tok val="[mM]edi(um)?[q]?[uv]?(e|on)"/>
+      <ana>
+         <tok val="Medion"/>
+         <tok val="medion"/>
+         <tok val="mediumque"/>
+         <tok val="mediumue"/>
+         <tok val="mediumve"/>
          <lm>
             <l>medion</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
       <ana>
+         <tok val="Medion"/>
+         <tok val="medion"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
+         <tok val="mediumue"/>
+         <tok val="mediumve"/>
+         <lm>
+            <l>medion</l>
+            <m>n - - s - - - n n</m>
+         </lm>
+      </ana>
+      <ana>
          <tok val="Medione"/>
+         <tok val="medione"/>
          <lm>
             <l>Medion</l>
             <m>n e - s - - - f b</m>
@@ -1484,6 +1792,7 @@
       </ana>
       <ana>
          <tok val="Medionem"/>
+         <tok val="medionem"/>
          <lm>
             <l>Medion</l>
             <m>n e - s - - - f a</m>
@@ -1491,6 +1800,7 @@
       </ana>
       <ana>
          <tok val="Medionios"/>
+         <tok val="medionios"/>
          <lm cert="0.5">
             <l>Medionii</l>
             <m>n e - p - - - m a</m>
@@ -1502,13 +1812,21 @@
       </ana>
       <ana>
          <tok val="Medionius"/>
+         <tok val="medionius"/>
          <lm>
             <l>Medionius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mediorum Medium Mediumque mediorum medium mediumque mediumue mediumve-->
-         <tok val="[mM]edi(or)?um[q]?(ue|ve)?"/>
+      <ana>
+         <tok val="Mediorum"/>
+         <tok val="Medium"/>
+         <tok val="Mediumque"/>
+         <tok val="mediorum"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
+         <tok val="mediumue"/>
+         <tok val="mediumve"/>
          <lm>
             <l>medius</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -1518,20 +1836,30 @@
       </ana>
       <ana>
          <tok val="Mediorum"/>
+         <tok val="mediorum"/>
          <lm>
             <l>Medus</l>
             <m>a e - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Mediorum Medium Mediumque-->
-         <tok val="Medi(or)?um(que)?"/>
+      <ana>
+         <tok val="Mediorum"/>
+         <tok val="Medium"/>
+         <tok val="Mediumque"/>
+         <tok val="mediorum"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
          <lm>
             <l>medium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medios Mediosque medios mediosque mediost-->
-         <tok val="[mM]edios(t|que)?"/>
+      <ana>
+         <tok val="Medios"/>
+         <tok val="Mediosque"/>
+         <tok val="medios"/>
+         <tok val="mediosque"/>
+         <tok val="mediost"/>
          <lm>
             <l>medius</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -1540,6 +1868,7 @@
       </ana>
       <ana>
          <tok val="Medioximi"/>
+         <tok val="medioximi"/>
          <lm>
             <l>medioximus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1548,22 +1877,27 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medioximus medioximus-->
-         <tok val="[mM]edioximus"/>
+      <ana>
+         <tok val="Medioximus"/>
+         <tok val="medioximus"/>
          <lm>
             <l>medioximus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medipontus medipontus-->
-         <tok val="[mM]edipontus"/>
+      <ana>
+         <tok val="Medipontus"/>
+         <tok val="medipontus"/>
          <lm>
             <l>medipontus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medis Medisque-->
-         <tok val="Medis(que)?"/>
+      <ana>
+         <tok val="Medis"/>
+         <tok val="Medisque"/>
+         <tok val="medis"/>
+         <tok val="medisque"/>
          <lm cert="0.5">
             <l>Mede</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -1581,22 +1915,25 @@
             <m cert="0.125">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Meditabar meditabar-->
-         <tok val="[mM]editabar"/>
+      <ana>
+         <tok val="Meditabar"/>
+         <tok val="meditabar"/>
          <lm>
             <l>meditor</l>
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Meditabundus meditabundus-->
-         <tok val="[mM]editabundus"/>
+      <ana>
+         <tok val="Meditabundus"/>
+         <tok val="meditabundus"/>
          <lm>
             <l>meditabundus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Meditamentum meditamentum-->
-         <tok val="[mM]editamentum"/>
+      <ana>
+         <tok val="Meditamentum"/>
+         <tok val="meditamentum"/>
          <lm>
             <l>meditamentum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1605,8 +1942,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Meditans meditans-->
-         <tok val="[mM]editans"/>
+      <ana>
+         <tok val="Meditans"/>
+         <tok val="meditans"/>
          <lm>
             <l>meditor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1618,8 +1956,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Meditantis meditantis-->
-         <tok val="[mM]editantis"/>
+      <ana>
+         <tok val="Meditantis"/>
+         <tok val="meditantis"/>
          <lm>
             <l>meditor</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -1627,44 +1966,54 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Meditantis meditantes meditantesque meditantis-->
-         <tok val="[mM]editant[ie]s(que)?"/>
+      <ana>
+         <tok val="Meditantis"/>
+         <tok val="meditantes"/>
+         <tok val="meditantesque"/>
+         <tok val="meditantis"/>
          <lm>
             <l>meditor</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Meditantur meditantur-->
-         <tok val="[mM]editantur"/>
+      <ana>
+         <tok val="Meditantur"/>
+         <tok val="meditantur"/>
          <lm>
             <l>meditor</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Meditare meditare-->
-         <tok val="[mM]editare"/>
+      <ana>
+         <tok val="Meditare"/>
+         <tok val="meditare"/>
          <lm>
             <l>meditor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Meditare meditare meditaris-->
-         <tok val="[mM]editar(e|is)"/>
+      <ana>
+         <tok val="Meditare"/>
+         <tok val="meditare"/>
+         <tok val="meditaris"/>
          <lm>
             <l>meditor</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Meditari meditari-->
-         <tok val="[mM]editari"/>
+      <ana>
+         <tok val="Meditari"/>
+         <tok val="meditari"/>
          <lm>
             <l>meditor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Meditata meditata meditataque-->
-         <tok val="[mM]editata(que)?"/>
+      <ana>
+         <tok val="Meditata"/>
+         <tok val="meditata"/>
+         <tok val="meditataque"/>
          <lm cert="0.333333333333333333">
             <l>meditor</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -1690,8 +2039,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Meditate meditate-->
-         <tok val="[mM]editate"/>
+      <ana>
+         <tok val="Meditate"/>
+         <tok val="meditate"/>
          <lm cert="0.5">
             <l>meditatus</l>
             <m cert="0.5">d</m>
@@ -1702,8 +2052,12 @@
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Meditate Meditatum meditate meditatum meditatumque-->
-         <tok val="[mM]editat(um|e|umque)"/>
+      <ana>
+         <tok val="Meditate"/>
+         <tok val="Meditatum"/>
+         <tok val="meditate"/>
+         <tok val="meditatum"/>
+         <tok val="meditatumque"/>
          <lm cert="0.5">
             <l>meditatus</l>
             <m>a - - s - - - n v</m>
@@ -1713,16 +2067,18 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Meditatio meditatio-->
-         <tok val="[mM]editatio"/>
+      <ana>
+         <tok val="Meditatio"/>
+         <tok val="meditatio"/>
          <lm>
             <l>meditatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Meditationes meditationes-->
-         <tok val="[mM]editationes"/>
+      <ana>
+         <tok val="Meditationes"/>
+         <tok val="meditationes"/>
          <lm>
             <l>meditatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1732,6 +2088,7 @@
       </ana>
       <ana>
          <tok val="Meditatiuum"/>
+         <tok val="meditatiuum"/>
          <lm>
             <l>meditativus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1742,8 +2099,10 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Meditatum meditatum meditatumque-->
-         <tok val="[mM]editatum(que)?"/>
+      <ana>
+         <tok val="Meditatum"/>
+         <tok val="meditatum"/>
+         <tok val="meditatumque"/>
          <lm cert="0.333333333333333333">
             <l>meditatus</l>
             <m cert="0.2">a - - p - - - n g</m>
@@ -1767,13 +2126,16 @@
       </ana>
       <ana>
          <tok val="Meditatum"/>
+         <tok val="meditatum"/>
          <lm>
             <l>meditor</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Meditatus meditatus meditatusque-->
-         <tok val="[mM]editatus(que)?"/>
+      <ana>
+         <tok val="Meditatus"/>
+         <tok val="meditatus"/>
+         <tok val="meditatusque"/>
          <lm cert="0.5">
             <l>meditatus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -1787,8 +2149,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Mediter mediter-->
-         <tok val="[mM]editer"/>
+      <ana>
+         <tok val="Mediter"/>
+         <tok val="mediter"/>
          <lm>
             <l>meditor</l>
             <m>v - 1 s p s p</m>
@@ -1796,6 +2159,7 @@
       </ana>
       <ana>
          <tok val="Mediterranea"/>
+         <tok val="mediterranea"/>
          <lm>
             <l>mediterraneum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1803,8 +2167,10 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Mediterranea mediterranea mediterraneaque-->
-         <tok val="[mM]editerranea(que)?"/>
+      <ana>
+         <tok val="Mediterranea"/>
+         <tok val="mediterranea"/>
+         <tok val="mediterraneaque"/>
          <lm>
             <l>mediterraneus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
@@ -1815,8 +2181,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Mediterranei mediterranei-->
-         <tok val="[mM]editerranei"/>
+      <ana>
+         <tok val="Mediterranei"/>
+         <tok val="mediterranei"/>
          <lm cert="0.5">
             <l>mediterraneus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1829,8 +2196,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Mediterraneo mediterraneo-->
-         <tok val="[mM]editerraneo"/>
+      <ana>
+         <tok val="Mediterraneo"/>
+         <tok val="mediterraneo"/>
          <lm cert="0.5">
             <l>mediterraneus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1844,30 +2212,32 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Mediterraneorum Mediterraneum mediterraneum-->
-         <tok val="[Mm]editerrane(or)?um"/>
-         <lm>
+      <ana>
+         <tok val="Mediterraneorum"/>
+         <tok val="Mediterraneum"/>
+         <tok val="mediterraneorum"/>
+         <tok val="mediterraneum"/>
+         <lm cert="0.5">
             <l>mediterraneus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Mediterraneorum Mediterraneum-->
-         <tok val="Mediterrane(or)?um"/>
-         <lm>
+         <lm cert="0.5">
             <l>mediterraneum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Mediterraneos mediterraneos-->
-         <tok val="[mM]editerraneos"/>
+      <ana>
+         <tok val="Mediterraneos"/>
+         <tok val="mediterraneos"/>
          <lm>
             <l>mediterraneus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Mediterraneum mediterraneum-->
-         <tok val="[mM]editerraneum"/>
+      <ana>
+         <tok val="Mediterraneum"/>
+         <tok val="mediterraneum"/>
          <lm cert="0.5">
             <l>mediterraneus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1882,8 +2252,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Mediterraneus mediterraneus-->
-         <tok val="[mM]editerraneus"/>
+      <ana>
+         <tok val="Mediterraneus"/>
+         <tok val="mediterraneus"/>
          <lm>
             <l>mediterraneus</l>
             <m>a - - s - - - m n</m>
@@ -1891,6 +2262,7 @@
       </ana>
       <ana>
          <tok val="Meditrina"/>
+         <tok val="meditrina"/>
          <lm>
             <l>Meditrina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1900,6 +2272,7 @@
       </ana>
       <ana>
          <tok val="Meditrinalia"/>
+         <tok val="meditrinalia"/>
          <lm>
             <l>Meditrinalia</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1907,8 +2280,9 @@
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Meditullium meditullium-->
-         <tok val="[mM]editullium"/>
+      <ana>
+         <tok val="Meditullium"/>
+         <tok val="meditullium"/>
          <lm>
             <l>meditullium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1917,8 +2291,13 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Medium Mediumque medium mediumque mediumue mediumve-->
-         <tok val="[mM]edium[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Medium"/>
+         <tok val="Mediumque"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
+         <tok val="mediumue"/>
+         <tok val="mediumve"/>
          <lm>
             <l>medius</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1927,30 +2306,34 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Medium Mediumque-->
-         <tok val="Medium(que)?"/>
+      <ana>
+         <tok val="Medium"/>
+         <tok val="Mediumque"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
          <lm>
             <l>medium</l>
-            <m cert="0.5">n - - s - - - n v</m>
-            <m cert="0.5">n - - s - - - n n</m>
+            <m cert="0.333333333333333333">n - - s - - - n v</m>
+            <m cert="0.333333333333333333">n - - s - - - n a</m>
+            <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Medium Mediumque medie medium mediumque mediumue mediumve-->
-         <tok val="[mM]edi(um)?[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Medium"/>
+         <tok val="Mediumque"/>
+         <tok val="medie"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
+         <tok val="mediumue"/>
+         <tok val="mediumve"/>
          <lm>
             <l>medius</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Medium Mediumque medium-->
-         <tok val="[mM]edium(que)?"/>
-         <lm>
-            <l>medium</l>
-            <m>n - - s - - - n a</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Medius"/>
+         <tok val="medius"/>
          <lm>
             <l>Medus</l>
             <m cert="0.333333333333333333">a e - s - - - n a c</m>
@@ -1958,8 +2341,11 @@
             <m cert="0.333333333333333333">a e - s - - - n v c</m>
          </lm>
       </ana>
-      <ana><!--Medo Medone-->
-         <tok val="Medo(ne)?"/>
+      <ana>
+         <tok val="Medo"/>
+         <tok val="Medone"/>
+         <tok val="medo"/>
+         <tok val="medone"/>
          <lm>
             <l>Medus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -1972,6 +2358,7 @@
       </ana>
       <ana>
          <tok val="Medobrega"/>
+         <tok val="medobrega"/>
          <lm>
             <l>Medobrega</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1981,14 +2368,18 @@
       </ana>
       <ana>
          <tok val="Medon"/>
+         <tok val="medon"/>
          <lm>
             <l>Medon</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medontem Medontaque-->
-         <tok val="Medont(aqu)?e[m]?"/>
+      <ana>
+         <tok val="Medontaque"/>
+         <tok val="Medontem"/>
+         <tok val="medontaque"/>
+         <tok val="medontem"/>
          <lm>
             <l>Medon</l>
             <m>n e - s - - - m a</m>
@@ -1996,14 +2387,22 @@
       </ana>
       <ana>
          <tok val="Medontidae"/>
+         <tok val="medontidae"/>
          <lm>
             <l>Medontidae</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Medorum Medorumque Medum Medumque-->
-         <tok val="Med(or)?um(que)?"/>
+      <ana>
+         <tok val="Medorum"/>
+         <tok val="Medorumque"/>
+         <tok val="Medum"/>
+         <tok val="Medumque"/>
+         <tok val="medorum"/>
+         <tok val="medorumque"/>
+         <tok val="medum"/>
+         <tok val="medumque"/>
          <lm>
             <l>Medus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -2011,8 +2410,11 @@
             <m cert="0.333333333333333333">n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Medos Medosque-->
-         <tok val="Medos(que)?"/>
+      <ana>
+         <tok val="Medos"/>
+         <tok val="Medosque"/>
+         <tok val="medos"/>
+         <tok val="medosque"/>
          <lm>
             <l>Medus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -2021,6 +2423,7 @@
       </ana>
       <ana>
          <tok val="Medubrigenses"/>
+         <tok val="medubrigenses"/>
          <lm>
             <l>Medubrigenses</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -2030,6 +2433,7 @@
       </ana>
       <ana>
          <tok val="Meduli"/>
+         <tok val="meduli"/>
          <lm cert="0.5">
             <l>Medulus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2045,13 +2449,16 @@
       </ana>
       <ana>
          <tok val="Medulicus"/>
+         <tok val="medulicus"/>
          <lm>
             <l>Medulicus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medulla medulla medullaque-->
-         <tok val="[mM]edulla(que)?"/>
+      <ana>
+         <tok val="Medulla"/>
+         <tok val="medulla"/>
+         <tok val="medullaque"/>
          <lm cert="0.5">
             <l>medulla</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2065,6 +2472,7 @@
       </ana>
       <ana>
          <tok val="Medulla"/>
+         <tok val="medulla"/>
          <lm>
             <l>Medullum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -2072,8 +2480,9 @@
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Medullae medullae-->
-         <tok val="[mM]edullae"/>
+      <ana>
+         <tok val="Medullae"/>
+         <tok val="medullae"/>
          <lm>
             <l>medulla</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -2082,15 +2491,17 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Medullam medullam-->
-         <tok val="[mM]edullam"/>
+      <ana>
+         <tok val="Medullam"/>
+         <tok val="medullam"/>
          <lm>
             <l>medulla</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Medullas medullas-->
-         <tok val="[mM]edullas"/>
+      <ana>
+         <tok val="Medullas"/>
+         <tok val="medullas"/>
          <lm cert="0.5">
             <l>medullo</l>
             <m>v - 2 s p i a</m>
@@ -2102,6 +2513,7 @@
       </ana>
       <ana>
          <tok val="Medulli"/>
+         <tok val="medulli"/>
          <lm cert="0.5">
             <l>Medullum</l>
             <m>n e - s - - - n g</m>
@@ -2115,6 +2527,7 @@
       </ana>
       <ana>
          <tok val="Medullia"/>
+         <tok val="medullia"/>
          <lm>
             <l>Medullia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2124,6 +2537,7 @@
       </ana>
       <ana>
          <tok val="Medulliam"/>
+         <tok val="medulliam"/>
          <lm>
             <l>Medullia</l>
             <m>n e - s - - - f a</m>
@@ -2131,6 +2545,7 @@
       </ana>
       <ana>
          <tok val="Medullina"/>
+         <tok val="medullina"/>
          <lm cert="0.5">
             <l>Medullinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -2149,6 +2564,7 @@
       </ana>
       <ana>
          <tok val="Medullinae"/>
+         <tok val="medullinae"/>
          <lm cert="0.5">
             <l>Medullina</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -2166,6 +2582,7 @@
       </ana>
       <ana>
          <tok val="Medullinam"/>
+         <tok val="medullinam"/>
          <lm cert="0.5">
             <l>Medullina</l>
             <m>n e - s - - - f a</m>
@@ -2177,6 +2594,7 @@
       </ana>
       <ana>
          <tok val="Medullini"/>
+         <tok val="medullini"/>
          <lm>
             <l>Medullinus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -2190,6 +2608,7 @@
       </ana>
       <ana>
          <tok val="Medullinum"/>
+         <tok val="medullinum"/>
          <lm>
             <l>Medullinus</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -2204,6 +2623,7 @@
       </ana>
       <ana>
          <tok val="Medullinus"/>
+         <tok val="medullinus"/>
          <lm>
             <l>Medullinus</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -2212,6 +2632,7 @@
       </ana>
       <ana>
          <tok val="Medullis"/>
+         <tok val="medullis"/>
          <lm cert="0.5">
             <l>Medullum</l>
             <m cert="0.5">n e - p - - - n d</m>
@@ -2223,16 +2644,19 @@
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Medullis medullis medullisque-->
-         <tok val="[mM]edullis(que)?"/>
+      <ana>
+         <tok val="Medullis"/>
+         <tok val="medullis"/>
+         <tok val="medullisque"/>
          <lm>
             <l>medulla</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Medullitus medullitus-->
-         <tok val="[mM]edullitus"/>
+      <ana>
+         <tok val="Medullitus"/>
+         <tok val="medullitus"/>
          <lm>
             <l>medullitus</l>
             <m>d</m>
@@ -2240,26 +2664,27 @@
       </ana>
       <ana>
          <tok val="Medullo"/>
-         <lm cert="0.5">
+         <tok val="medullo"/>
+         <lm cert="0.333333333333333333">
             <l>Medullus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
+            <l>medullo</l>
+            <m>v - 1 s p i a</m>
+         </lm>
+         <lm cert="0.333333333333333333">
             <l>Medullum</l>
             <m cert="0.5">n e - s - - - n b</m>
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Medullo medullo-->
-         <tok val="[mM]edullo"/>
-         <lm>
-            <l>medullo</l>
-            <m>v - 1 s p i a</m>
-         </lm>
-      </ana>
-      <ana><!--Medullorum Medullum-->
-         <tok val="Medull(or)?um"/>
+      <ana>
+         <tok val="Medullorum"/>
+         <tok val="Medullum"/>
+         <tok val="medullorum"/>
+         <tok val="medullum"/>
          <lm cert="0.5">
             <l>Medullum</l>
             <m>n e - p - - - n g</m>
@@ -2269,8 +2694,9 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Medullula medullula-->
-         <tok val="[mM]edullula"/>
+      <ana>
+         <tok val="Medullula"/>
+         <tok val="medullula"/>
          <lm>
             <l>medullula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2280,6 +2706,7 @@
       </ana>
       <ana>
          <tok val="Medullum"/>
+         <tok val="medullum"/>
          <lm cert="0.5">
             <l>Medullum</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -2293,6 +2720,7 @@
       </ana>
       <ana>
          <tok val="Medullus"/>
+         <tok val="medullus"/>
          <lm>
             <l>Medullus</l>
             <m>n e - s - - - m n</m>
@@ -2300,6 +2728,7 @@
       </ana>
       <ana>
          <tok val="Medulorum"/>
+         <tok val="medulorum"/>
          <lm cert="0.5">
             <l>Medulus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -2312,13 +2741,17 @@
       </ana>
       <ana>
          <tok val="Medulus"/>
+         <tok val="medulus"/>
          <lm>
             <l>Medulus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medum Medumque-->
-         <tok val="Medum(que)?"/>
+      <ana>
+         <tok val="Medum"/>
+         <tok val="Medumque"/>
+         <tok val="medum"/>
+         <tok val="medumque"/>
          <lm>
             <l>Medus</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -2327,16 +2760,24 @@
             <m cert="0.25">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Medus Medusque Medvs-->
-         <tok val="Med[vu]s(que)?"/>
+      <ana>
+         <tok val="Medus"/>
+         <tok val="Medusque"/>
+         <tok val="Medvs"/>
+         <tok val="medus"/>
+         <tok val="medusque"/>
+         <tok val="medvs"/>
          <lm>
             <l>Medus</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Medusa Medusaque-->
-         <tok val="Medusa(que)?"/>
+      <ana>
+         <tok val="Medusa"/>
+         <tok val="Medusaque"/>
+         <tok val="medusa"/>
+         <tok val="medusaque"/>
          <lm>
             <l>Medusa</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2346,6 +2787,7 @@
       </ana>
       <ana>
          <tok val="Medusae"/>
+         <tok val="medusae"/>
          <lm>
             <l>Medusa</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -2356,6 +2798,7 @@
       </ana>
       <ana>
          <tok val="Medusaeae"/>
+         <tok val="medusaeae"/>
          <lm>
             <l>Medusaeus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -2366,6 +2809,7 @@
       </ana>
       <ana>
          <tok val="Medusaei"/>
+         <tok val="medusaei"/>
          <lm>
             <l>Medusaeus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2376,6 +2820,7 @@
       </ana>
       <ana>
          <tok val="Medusaeis"/>
+         <tok val="medusaeis"/>
          <lm>
             <l>Medusaeus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2388,6 +2833,7 @@
       </ana>
       <ana>
          <tok val="Medusaeo"/>
+         <tok val="medusaeo"/>
          <lm>
             <l>Medusaeus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -2398,6 +2844,7 @@
       </ana>
       <ana>
          <tok val="Medusaeus"/>
+         <tok val="medusaeus"/>
          <lm>
             <l>Medusaeus</l>
             <m>a e - s - - - m n</m>
@@ -2405,6 +2852,7 @@
       </ana>
       <ana>
          <tok val="Medusam"/>
+         <tok val="medusam"/>
          <lm>
             <l>Medusa</l>
             <m>n e - s - - - f a</m>
@@ -2424,22 +2872,25 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--medeare medearis-->
-         <tok val="medear(is|e)"/>
+      <ana>
+         <tok val="medeare"/>
+         <tok val="medearis"/>
          <lm>
             <l>medeor</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--medeatur medeaturque-->
-         <tok val="medeatur(que)?"/>
+      <ana>
+         <tok val="medeatur"/>
+         <tok val="medeaturque"/>
          <lm>
             <l>medeor</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--medebatur Medebatur-->
-         <tok val="[Mm]edebatur"/>
+      <ana>
+         <tok val="Medebatur"/>
+         <tok val="medebatur"/>
          <lm>
             <l>medeor</l>
             <m>v - 3 s i i p</m>
@@ -2487,8 +2938,9 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--medelae medellae-->
-         <tok val="medel[l]?ae"/>
+      <ana>
+         <tok val="medelae"/>
+         <tok val="medellae"/>
          <lm>
             <l>medela</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -2497,29 +2949,33 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--medelam medellam-->
-         <tok val="medel[l]?am"/>
+      <ana>
+         <tok val="medelam"/>
+         <tok val="medellam"/>
          <lm>
             <l>medela</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--medelarum medellarum-->
-         <tok val="medel[l]?arum"/>
+      <ana>
+         <tok val="medelarum"/>
+         <tok val="medellarum"/>
          <lm>
             <l>medela</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--medelas medellas-->
-         <tok val="medel[l]?as"/>
+      <ana>
+         <tok val="medelas"/>
+         <tok val="medellas"/>
          <lm>
             <l>medela</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--medelis medellis-->
-         <tok val="medel[l]?is"/>
+      <ana>
+         <tok val="medelis"/>
+         <tok val="medellis"/>
          <lm>
             <l>medela</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -2533,8 +2989,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--meden medes-->
-         <tok val="mede[sn]"/>
+      <ana>
+         <tok val="meden"/>
+         <tok val="medes"/>
          <lm>
             <l>medeor</l>
             <m>v - 2 s p i a</m>
@@ -2559,8 +3016,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--medendis medendisque-->
-         <tok val="medendis(que)?"/>
+      <ana>
+         <tok val="medendis"/>
+         <tok val="medendisque"/>
          <lm>
             <l>medeor</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -2571,8 +3029,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--medente medenti-->
-         <tok val="medent[ie]"/>
+      <ana>
+         <tok val="medente"/>
+         <tok val="medenti"/>
          <lm>
             <l>medeor</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2598,8 +3057,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--medentes medentis-->
-         <tok val="medent[ie]s"/>
+      <ana>
+         <tok val="medentes"/>
+         <tok val="medentis"/>
          <lm>
             <l>medeor</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2645,22 +3105,26 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--medeo medeon-->
-         <tok val="medeo[n]?"/>
+      <ana>
+         <tok val="medeo"/>
+         <tok val="medeon"/>
          <lm>
             <l>medeor</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--medere mederen-->
-         <tok val="medere[n]?"/>
+      <ana>
+         <tok val="medere"/>
+         <tok val="mederen"/>
          <lm>
             <l>medeor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--medere mederen mederis-->
-         <tok val="meder[e]?(n|is)?"/>
+      <ana>
+         <tok val="medere"/>
+         <tok val="mederen"/>
+         <tok val="mederis"/>
          <lm>
             <l>medeor</l>
             <m>v - 2 s p i p</m>
@@ -2694,22 +3158,29 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--medi medicumque medii mediique mediiue-->
-         <tok val="medi[i]?[q]?(ue|cumque)?"/>
+      <ana>
+         <tok val="medi"/>
+         <tok val="medicumque"/>
+         <tok val="medii"/>
+         <tok val="mediique"/>
+         <tok val="mediiue"/>
          <lm>
             <l>medion</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--media mediaque média-->
-         <tok val="m[ée]dia(que)?"/>
+      <ana>
+         <tok val="media"/>
+         <tok val="mediaque"/>
+         <tok val="média"/>
          <lm>
             <l>medion</l>
             <m>n - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--media mediaque-->
-         <tok val="media(que)?"/>
+      <ana>
+         <tok val="media"/>
+         <tok val="mediaque"/>
          <lm>
             <l>medion</l>
             <m cert="0.5">n - - p - - - n n</m>
@@ -3248,8 +3719,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--medicare medicaris-->
-         <tok val="medicar(is|e)"/>
+      <ana>
+         <tok val="medicare"/>
+         <tok val="medicaris"/>
          <lm>
             <l>medico</l>
             <m>v - 2 s p i p</m>
@@ -3384,8 +3856,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--medicatorum medicatum-->
-         <tok val="medicat(or)?um"/>
+      <ana>
+         <tok val="medicatorum"/>
+         <tok val="medicatum"/>
          <lm>
             <l>medico</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -3428,8 +3901,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--medicentur medicenturque-->
-         <tok val="medicentur(que)?"/>
+      <ana>
+         <tok val="medicentur"/>
+         <tok val="medicenturque"/>
          <lm>
             <l>medico</l>
             <m>v - 3 p p s p</m>
@@ -3495,8 +3969,9 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--medicinarum medicinarumque-->
-         <tok val="medicinarum(que)?"/>
+      <ana>
+         <tok val="medicinarum"/>
+         <tok val="medicinarumque"/>
          <lm cert="0.5">
             <l>medicina</l>
             <m>n - - p - - - f g</m>
@@ -3612,8 +4087,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--mediis mediisque-->
-         <tok val="mediis(que)?"/>
+      <ana>
+         <tok val="mediis"/>
+         <tok val="mediisque"/>
          <lm>
             <l>medion</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -3696,15 +4172,19 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--medio medioque mediost mediove-->
-         <tok val="medio(st|ve|que)?"/>
+      <ana>
+         <tok val="medio"/>
+         <tok val="medioque"/>
+         <tok val="mediost"/>
+         <tok val="mediove"/>
          <lm>
             <l>medion</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--mediocrem mediocremque-->
-         <tok val="mediocrem(que)?"/>
+      <ana>
+         <tok val="mediocrem"/>
+         <tok val="mediocremque"/>
          <lm>
             <l>mediocris</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -3752,8 +4232,10 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--mediocriter mediocriterne mediocrius-->
-         <tok val="mediocri(ter)?(ne|us)?"/>
+      <ana>
+         <tok val="mediocriter"/>
+         <tok val="mediocriterne"/>
+         <tok val="mediocrius"/>
          <lm>
             <l>mediocris</l>
             <m>d</m>
@@ -3768,8 +4250,10 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--medioque mediost mediove-->
-         <tok val="medio(v|qu)?(e|st)"/>
+      <ana>
+         <tok val="medioque"/>
+         <tok val="mediost"/>
+         <tok val="mediove"/>
          <lm>
             <l>medion</l>
             <m>n - - s - - - n b</m>
@@ -3782,8 +4266,12 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--mediorum medium mediumque mediumue mediumve-->
-         <tok val="medi(or)?um[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="mediorum"/>
+         <tok val="medium"/>
+         <tok val="mediumque"/>
+         <tok val="mediumue"/>
+         <tok val="mediumve"/>
          <lm>
             <l>medion</l>
             <m>n - - p - - - n g</m>
@@ -3800,15 +4288,17 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--medioxime medioximum-->
-         <tok val="medioxim(um|e)"/>
+      <ana>
+         <tok val="medioxime"/>
+         <tok val="medioximum"/>
          <lm>
             <l>medioximus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--medioximorum medioximum-->
-         <tok val="medioxim(or)?um"/>
+      <ana>
+         <tok val="medioximorum"/>
+         <tok val="medioximum"/>
          <lm>
             <l>medioximus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -3983,8 +4473,10 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--meditante meditanti meditanteque-->
-         <tok val="meditant(i|e|eque)"/>
+      <ana>
+         <tok val="meditante"/>
+         <tok val="meditanteque"/>
+         <tok val="meditanti"/>
          <lm>
             <l>meditor</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -4000,8 +4492,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--meditantes meditantesque-->
-         <tok val="meditantes(que)?"/>
+      <ana>
+         <tok val="meditantes"/>
+         <tok val="meditantesque"/>
          <lm>
             <l>meditor</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -4019,8 +4512,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--meditantibus meditantibusque-->
-         <tok val="meditantibus(que)?"/>
+      <ana>
+         <tok val="meditantibus"/>
+         <tok val="meditantibusque"/>
          <lm>
             <l>meditor</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -4069,8 +4563,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--meditatam meditatamque-->
-         <tok val="meditatam(que)?"/>
+      <ana>
+         <tok val="meditatam"/>
+         <tok val="meditatamque"/>
          <lm cert="0.5">
             <l>meditor</l>
             <m>v - - s r p p f a</m>
@@ -4091,15 +4586,18 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--meditati meditatique meditáti-->
-         <tok val="medit[áa]ti(que)?"/>
+      <ana>
+         <tok val="meditati"/>
+         <tok val="meditatique"/>
+         <tok val="meditáti"/>
          <lm>
             <l>meditor</l>
             <m>v - - s r p p n g</m>
          </lm>
       </ana>
-      <ana><!--meditati meditatique-->
-         <tok val="meditati(que)?"/>
+      <ana>
+         <tok val="meditati"/>
+         <tok val="meditatique"/>
          <lm cert="0.5">
             <l>meditor</l>
             <m cert="0.333333333333333333">v - - p r p p m v</m>
@@ -4250,8 +4748,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--meditatum meditatumque-->
-         <tok val="meditatum(que)?"/>
+      <ana>
+         <tok val="meditatum"/>
+         <tok val="meditatumque"/>
          <lm>
             <l>meditatus</l>
             <m>a - - s - - - n n</m>
@@ -4278,15 +4777,17 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--meditere mediteris-->
-         <tok val="mediter(is|e)"/>
+      <ana>
+         <tok val="meditere"/>
+         <tok val="mediteris"/>
          <lm>
             <l>meditor</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--mediterranea mediterraneaque-->
-         <tok val="mediterranea(que)?"/>
+      <ana>
+         <tok val="mediterranea"/>
+         <tok val="mediterraneaque"/>
          <lm>
             <l>mediterranea</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -4419,8 +4920,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--medullarum medullarumque-->
-         <tok val="medullarum(que)?"/>
+      <ana>
+         <tok val="medullarum"/>
+         <tok val="medullarumque"/>
          <lm>
             <l>medulla</l>
             <m>n - - p - - - f g</m>

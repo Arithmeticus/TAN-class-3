@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussal">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sal">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sal</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sal.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SAL</tok-starts-with>
       <tok-starts-with>SAl</tok-starts-with>
@@ -38,8 +15,41 @@
       <tok-starts-with>sal</tok-starts-with>
       <tok-starts-with>sál</tok-starts-with>
       <tok-starts-with>Sál</tok-starts-with>
-      <ana><!--SALAMINIS Salaminis-->
-         <tok val="S(alaminis|ALAMINIS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:44:38.905-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:44:38.905-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sal.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SALAMINIS"/>
+         <tok val="Salaminis"/>
+         <tok val="salaminis"/>
          <lm cert="0.5">
             <l>Salamina</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -51,8 +61,12 @@
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--SALARIORVM Salarium salariorum salarium-->
-         <tok val="[sS]?(alari)?(or)?(um|SALARIORVM)"/>
+      <ana>
+         <tok val="SALARIORVM"/>
+         <tok val="Salarium"/>
+         <tok val="salariorum"/>
+         <tok val="salariorvm"/>
+         <tok val="salarium"/>
          <lm cert="0.5">
             <l>salarius</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -64,15 +78,36 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SALE SAlum Sale Salen Salest Salom Salum sale saleque salum sále salumque-->
-         <tok val="[S]?[aA]?[l]?[e]?(n|st|um|om|salum|salumque|saleque|sale|sále|SALE)?"/>
+      <ana>
+         <tok val="SALE"/>
+         <tok val="SAlum"/>
+         <tok val="Sale"/>
+         <tok val="Salen"/>
+         <tok val="Salest"/>
+         <tok val="Salom"/>
+         <tok val="Salum"/>
+         <tok val="sale"/>
+         <tok val="salen"/>
+         <tok val="saleque"/>
+         <tok val="salest"/>
+         <tok val="salom"/>
+         <tok val="salum"/>
+         <tok val="salumque"/>
+         <tok val="sále"/>
          <lm>
             <l>salum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--SALE Sale Salen Salest sale saleque-->
-         <tok val="[Ss]?(ale)?(n|st|que|SALE)?"/>
+      <ana>
+         <tok val="SALE"/>
+         <tok val="Sale"/>
+         <tok val="Salen"/>
+         <tok val="Salest"/>
+         <tok val="sale"/>
+         <tok val="salen"/>
+         <tok val="saleque"/>
+         <tok val="salest"/>
          <lm>
             <l>salo</l>
             <m>v - 2 s p m a</m>
@@ -80,6 +115,7 @@
       </ana>
       <ana>
          <tok val="SALERNITANAE"/>
+         <tok val="salernitanae"/>
          <lm>
             <l>Salernitanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -88,8 +124,13 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--SALES Salen Sales sales salesque-->
-         <tok val="[Ss]?(ale)?(s|n|sque|SALES)"/>
+      <ana>
+         <tok val="SALES"/>
+         <tok val="Salen"/>
+         <tok val="Sales"/>
+         <tok val="salen"/>
+         <tok val="sales"/>
+         <tok val="salesque"/>
          <lm>
             <l>salo</l>
             <m>v - 2 s f i a</m>
@@ -97,20 +138,35 @@
       </ana>
       <ana>
          <tok val="SALIET"/>
+         <tok val="saliet"/>
          <lm>
             <l>salio</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--SALIO Salio sallo-->
-         <tok val="[sS]?(al)?[li]?(o|SALIO)"/>
+      <ana>
+         <tok val="SALIO"/>
+         <tok val="Salio"/>
+         <tok val="salio"/>
+         <tok val="sallo"/>
          <lm>
             <l>salio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--SALIORVM Saliorum Saliorumque Salium Saliumque Salivm-->
-         <tok val="S(ali)?(or)?[uv]?[m]?(que|ALIORVM)?"/>
+      <ana>
+         <tok val="SALIORVM"/>
+         <tok val="Saliorum"/>
+         <tok val="Saliorumque"/>
+         <tok val="Salium"/>
+         <tok val="Saliumque"/>
+         <tok val="Salivm"/>
+         <tok val="saliorum"/>
+         <tok val="saliorumque"/>
+         <tok val="saliorvm"/>
+         <tok val="salium"/>
+         <tok val="saliumque"/>
+         <tok val="salivm"/>
          <lm cert="0.5">
             <l>Salius</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -121,45 +177,60 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--SALIVS Salius-->
-         <tok val="S(alius|ALIVS)"/>
+      <ana>
+         <tok val="SALIVS"/>
+         <tok val="Salius"/>
+         <tok val="salius"/>
+         <tok val="salivs"/>
          <lm>
             <l>Salius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SALIX Salix salix-->
-         <tok val="[sS]?(alix|SALIX)"/>
+      <ana>
+         <tok val="SALIX"/>
+         <tok val="Salix"/>
+         <tok val="salix"/>
          <lm>
             <l>salix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--SALOMON Salomon-->
-         <tok val="S(alomon|ALOMON)"/>
+      <ana>
+         <tok val="SALOMON"/>
+         <tok val="Salomon"/>
+         <tok val="salomon"/>
          <lm>
             <l>Salomon</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SALSAM Salsam salsam-->
-         <tok val="[sS]?(alsam|SALSAM)"/>
+      <ana>
+         <tok val="SALSAM"/>
+         <tok val="Salsam"/>
+         <tok val="salsam"/>
          <lm>
             <l>salio</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--SALSAMENTARIVS Salsamentarius salsamentarius-->
-         <tok val="[sS]?(alsamentarius|SALSAMENTARIVS)"/>
+      <ana>
+         <tok val="SALSAMENTARIVS"/>
+         <tok val="Salsamentarius"/>
+         <tok val="salsamentarius"/>
+         <tok val="salsamentarivs"/>
          <lm>
             <l>salsamentarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SALSO Salso salito salso-->
-         <tok val="[sS]?(al)?(s|it)?(o|SALSO)"/>
+      <ana>
+         <tok val="SALSO"/>
+         <tok val="Salso"/>
+         <tok val="salito"/>
+         <tok val="salso"/>
          <lm>
             <l>salio</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -168,66 +239,114 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--SALUTEM SALVTEM Salutem salutem salutemque-->
-         <tok val="(SAL)?[VU]?(TEM|salutem|Salutem|salutemque)"/>
+      <ana>
+         <tok val="SALUTEM"/>
+         <tok val="SALVTEM"/>
+         <tok val="Salutem"/>
+         <tok val="salutem"/>
+         <tok val="salutemque"/>
+         <tok val="salvtem"/>
          <lm>
             <l>saluto</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--SALUTEM SALVTEM Salutem salutem salutemque SAL sal salvtem-->
-         <tok val="(SAL)?[VU]?(TEM|salutem|Salutem|salvtem|salutemque|SAL|sal)"/>
+      <ana>
+         <tok val="SAL"/>
+         <tok val="SALUTEM"/>
+         <tok val="SALVTEM"/>
+         <tok val="Salutem"/>
+         <tok val="sal"/>
+         <tok val="salutem"/>
+         <tok val="salutemque"/>
+         <tok val="salvtem"/>
          <lm>
             <l>salus</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--SALVS Salus Salust salus salusque salús-->
-         <tok val="[Ss]?(al)?[uú]?[s]?(t|que|SALVS)?"/>
+      <ana>
+         <tok val="SALVS"/>
+         <tok val="Salus"/>
+         <tok val="Salust"/>
+         <tok val="salus"/>
+         <tok val="salusque"/>
+         <tok val="salust"/>
+         <tok val="salvs"/>
+         <tok val="salús"/>
          <lm>
             <l>salus</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--SALVSTIO Sallustio Salustio-->
-         <tok val="(Sa)?[l]?(lustio|SALVSTIO)"/>
+      <ana>
+         <tok val="SALVSTIO"/>
+         <tok val="Sallustio"/>
+         <tok val="Salustio"/>
+         <tok val="sallustio"/>
+         <tok val="salustio"/>
+         <tok val="salvstio"/>
          <lm>
             <l>Sallustius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--SALVTIS Salutis Salvtis salutis salutisque salutís salútis-->
-         <tok val="[Ss]?(al)?[vuú]?[t]?[ií]?[s]?(que|SALVTIS)?"/>
+      <ana>
+         <tok val="SALVTIS"/>
+         <tok val="Salutis"/>
+         <tok val="Salvtis"/>
+         <tok val="salutis"/>
+         <tok val="salutisque"/>
+         <tok val="salutís"/>
+         <tok val="salvtis"/>
+         <tok val="salútis"/>
          <lm>
             <l>salus</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--SALVTIS Salutis Salvtis salutes salutis salutisque-->
-         <tok val="[Ss]?(al)?[vu]?[t]?[ie]?[s]?(que|SALVTIS)?"/>
+      <ana>
+         <tok val="SALVTIS"/>
+         <tok val="Salutis"/>
+         <tok val="Salvtis"/>
+         <tok val="salutes"/>
+         <tok val="salutis"/>
+         <tok val="salutisque"/>
+         <tok val="salvtis"/>
          <lm>
             <l>salus</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--SAlum Salom Salum salum salumque-->
-         <tok val="[S]?[aA]?[l]?[uo]?(m|salum|salumque)"/>
+      <ana>
+         <tok val="SAlum"/>
+         <tok val="Salom"/>
+         <tok val="Salum"/>
+         <tok val="salom"/>
+         <tok val="salum"/>
+         <tok val="salumque"/>
          <lm>
             <l>salum</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SAlum Salum salum salumque-->
-         <tok val="[S]?(a|A|sa)lum(que)?"/>
+      <ana>
+         <tok val="SAlum"/>
+         <tok val="Salum"/>
+         <tok val="salum"/>
+         <tok val="salumque"/>
          <lm>
             <l>salum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sala Salast sala-->
-         <tok val="[Ss]ala(st)?"/>
+      <ana>
+         <tok val="Sala"/>
+         <tok val="Salast"/>
+         <tok val="sala"/>
+         <tok val="salast"/>
          <lm>
             <l>salum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -235,16 +354,19 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salaces salaces salacis-->
-         <tok val="[sS]alac[ei]s"/>
+      <ana>
+         <tok val="Salaces"/>
+         <tok val="salaces"/>
+         <tok val="salacis"/>
          <lm>
             <l>salax</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salaces salaces-->
-         <tok val="[sS]alaces"/>
+      <ana>
+         <tok val="Salaces"/>
+         <tok val="salaces"/>
          <lm>
             <l>salax</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -255,6 +377,7 @@
       </ana>
       <ana>
          <tok val="Salacia"/>
+         <tok val="salacia"/>
          <lm>
             <l>Salacia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -264,6 +387,7 @@
       </ana>
       <ana>
          <tok val="Salaciae"/>
+         <tok val="salaciae"/>
          <lm>
             <l>Salacia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -272,30 +396,36 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Salaciam Salaciamque-->
-         <tok val="Salaciam(que)?"/>
+      <ana>
+         <tok val="Salaciam"/>
+         <tok val="Salaciamque"/>
+         <tok val="salaciam"/>
+         <tok val="salaciamque"/>
          <lm>
             <l>Salacia</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salacitas salacitas-->
-         <tok val="[sS]alacitas"/>
+      <ana>
+         <tok val="Salacitas"/>
+         <tok val="salacitas"/>
          <lm>
             <l>salacitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Salam salam-->
-         <tok val="[sS]alam"/>
+      <ana>
+         <tok val="Salam"/>
+         <tok val="salam"/>
          <lm>
             <l>salo</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Salamandra salamandra-->
-         <tok val="[sS]alamandra"/>
+      <ana>
+         <tok val="Salamandra"/>
+         <tok val="salamandra"/>
          <lm>
             <l>salamandra</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -303,8 +433,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Salamandrae salamandrae-->
-         <tok val="[sS]alamandrae"/>
+      <ana>
+         <tok val="Salamandrae"/>
+         <tok val="salamandrae"/>
          <lm>
             <l>salamandra</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -313,8 +444,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Salamandris salamandris-->
-         <tok val="[sS]alamandris"/>
+      <ana>
+         <tok val="Salamandris"/>
+         <tok val="salamandris"/>
          <lm>
             <l>salamandra</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -323,6 +455,7 @@
       </ana>
       <ana>
          <tok val="Salambo"/>
+         <tok val="salambo"/>
          <lm>
             <l>Salambo</l>
             <m cert="0.5">n e - s - - - f n</m>
@@ -331,6 +464,7 @@
       </ana>
       <ana>
          <tok val="Salambonem"/>
+         <tok val="salambonem"/>
          <lm>
             <l>Salambo</l>
             <m>n e - s - - - f a</m>
@@ -338,6 +472,7 @@
       </ana>
       <ana>
          <tok val="Salamina"/>
+         <tok val="salamina"/>
          <lm>
             <l>Salamina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -347,6 +482,7 @@
       </ana>
       <ana>
          <tok val="Salaminae"/>
+         <tok val="salaminae"/>
          <lm>
             <l>Salamina</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -357,6 +493,7 @@
       </ana>
       <ana>
          <tok val="Salaminam"/>
+         <tok val="salaminam"/>
          <lm>
             <l>Salamina</l>
             <m>n e - s - - - f a</m>
@@ -364,13 +501,17 @@
       </ana>
       <ana>
          <tok val="Salamine"/>
+         <tok val="salamine"/>
          <lm>
             <l>Salaminus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Salamini Salaminii-->
-         <tok val="Salamini[i]?"/>
+      <ana>
+         <tok val="Salamini"/>
+         <tok val="Salaminii"/>
+         <tok val="salamini"/>
+         <tok val="salaminii"/>
          <lm>
             <l>Salaminius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -379,6 +520,7 @@
       </ana>
       <ana>
          <tok val="Salamini"/>
+         <tok val="salamini"/>
          <lm cert="0.5">
             <l>salo</l>
             <m>v - 2 p p s p</m>
@@ -392,6 +534,7 @@
       </ana>
       <ana>
          <tok val="Salaminia"/>
+         <tok val="salaminia"/>
          <lm>
             <l>Salaminius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -404,6 +547,7 @@
       </ana>
       <ana>
          <tok val="Salaminiacis"/>
+         <tok val="salaminiacis"/>
          <lm>
             <l>Salaminiacus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -416,6 +560,7 @@
       </ana>
       <ana>
          <tok val="Salaminiacum"/>
+         <tok val="salaminiacum"/>
          <lm>
             <l>Salaminiacus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -428,6 +573,7 @@
       </ana>
       <ana>
          <tok val="Salaminiacus"/>
+         <tok val="salaminiacus"/>
          <lm>
             <l>Salaminiacus</l>
             <m>a e - s - - - m n</m>
@@ -435,6 +581,7 @@
       </ana>
       <ana>
          <tok val="Salaminiae"/>
+         <tok val="salaminiae"/>
          <lm>
             <l>Salaminius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -445,6 +592,7 @@
       </ana>
       <ana>
          <tok val="Salaminii"/>
+         <tok val="salaminii"/>
          <lm cert="0.5">
             <l>Salaminius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -458,6 +606,7 @@
       </ana>
       <ana>
          <tok val="Salaminiis"/>
+         <tok val="salaminiis"/>
          <lm cert="0.5">
             <l>Salaminii</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -475,6 +624,7 @@
       </ana>
       <ana>
          <tok val="Salaminio"/>
+         <tok val="salaminio"/>
          <lm>
             <l>Salaminius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -483,8 +633,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Salaminiorum Salaminium-->
-         <tok val="Salamini(or)?um"/>
+      <ana>
+         <tok val="Salaminiorum"/>
+         <tok val="Salaminium"/>
+         <tok val="salaminiorum"/>
+         <tok val="salaminium"/>
          <lm cert="0.5">
             <l>Salaminius</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -497,6 +650,7 @@
       </ana>
       <ana>
          <tok val="Salaminios"/>
+         <tok val="salaminios"/>
          <lm cert="0.5">
             <l>Salaminii</l>
             <m>n e - p - - - m a</m>
@@ -508,6 +662,7 @@
       </ana>
       <ana>
          <tok val="Salaminium"/>
+         <tok val="salaminium"/>
          <lm>
             <l>Salaminius</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -518,13 +673,17 @@
       </ana>
       <ana>
          <tok val="Salaminius"/>
+         <tok val="salaminius"/>
          <lm>
             <l>Salaminius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salaminorum Salaminum-->
-         <tok val="Salamin(or)?um"/>
+      <ana>
+         <tok val="Salaminorum"/>
+         <tok val="Salaminum"/>
+         <tok val="salaminorum"/>
+         <tok val="salaminum"/>
          <lm>
             <l>Salaminus</l>
             <m>n e - p - - - m g</m>
@@ -532,6 +691,7 @@
       </ana>
       <ana>
          <tok val="Salaminos"/>
+         <tok val="salaminos"/>
          <lm>
             <l>Salaminus</l>
             <m>n e - p - - - m a</m>
@@ -539,6 +699,7 @@
       </ana>
       <ana>
          <tok val="Salaminum"/>
+         <tok val="salaminum"/>
          <lm>
             <l>Salaminus</l>
             <m>n e - s - - - m a</m>
@@ -546,13 +707,17 @@
       </ana>
       <ana>
          <tok val="Salaminus"/>
+         <tok val="salaminus"/>
          <lm>
             <l>Salaminus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salapia Salapiaque-->
-         <tok val="Salapia(que)?"/>
+      <ana>
+         <tok val="Salapia"/>
+         <tok val="Salapiaque"/>
+         <tok val="salapia"/>
+         <tok val="salapiaque"/>
          <lm>
             <l>Salapia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -562,6 +727,7 @@
       </ana>
       <ana>
          <tok val="Salapiae"/>
+         <tok val="salapiae"/>
          <lm>
             <l>Salapia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -572,6 +738,7 @@
       </ana>
       <ana>
          <tok val="Salapiam"/>
+         <tok val="salapiam"/>
          <lm>
             <l>Salapia</l>
             <m>n e - s - - - f a</m>
@@ -579,6 +746,7 @@
       </ana>
       <ana>
          <tok val="Salapina"/>
+         <tok val="salapina"/>
          <lm>
             <l>Salapinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -591,6 +759,7 @@
       </ana>
       <ana>
          <tok val="Salapini"/>
+         <tok val="salapini"/>
          <lm cert="0.5">
             <l>Salapinus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -606,6 +775,7 @@
       </ana>
       <ana>
          <tok val="Salapinus"/>
+         <tok val="salapinus"/>
          <lm>
             <l>Salapinus</l>
             <m>a e - s - - - m n</m>
@@ -613,14 +783,16 @@
       </ana>
       <ana>
          <tok val="Salapitani"/>
+         <tok val="salapitani"/>
          <lm>
             <l>Salapitani</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Salaputium salaputium-->
-         <tok val="[sS]alaputium"/>
+      <ana>
+         <tok val="Salaputium"/>
+         <tok val="salaputium"/>
          <lm>
             <l>salaputium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -629,8 +801,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salar salar-->
-         <tok val="[sS]alar"/>
+      <ana>
+         <tok val="Salar"/>
+         <tok val="salar"/>
          <lm cert="0.5">
             <l>salo</l>
             <m cert="0.5">v - 1 s f i p</m>
@@ -641,8 +814,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salaria salaria-->
-         <tok val="[sS]alaria"/>
+      <ana>
+         <tok val="Salaria"/>
+         <tok val="salaria"/>
          <lm cert="0.5">
             <l>salarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -659,8 +833,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salariae Salariaeque salariae-->
-         <tok val="[sS]alariae(que)?"/>
+      <ana>
+         <tok val="Salariae"/>
+         <tok val="Salariaeque"/>
+         <tok val="salariae"/>
+         <tok val="salariaeque"/>
          <lm>
             <l>salarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -671,6 +848,7 @@
       </ana>
       <ana>
          <tok val="Salariam"/>
+         <tok val="salariam"/>
          <lm>
             <l>salarius</l>
             <m>a - - s - - - f a</m>
@@ -678,6 +856,7 @@
       </ana>
       <ana>
          <tok val="Salariana"/>
+         <tok val="salariana"/>
          <lm>
             <l>Salarianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -690,13 +869,15 @@
       </ana>
       <ana>
          <tok val="Salarianus"/>
+         <tok val="salarianus"/>
          <lm>
             <l>Salarianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salarium salarium-->
-         <tok val="[sS]alarium"/>
+      <ana>
+         <tok val="Salarium"/>
+         <tok val="salarium"/>
          <lm cert="0.5">
             <l>salarius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -712,8 +893,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Salarius salarius-->
-         <tok val="[sS]alarius"/>
+      <ana>
+         <tok val="Salarius"/>
+         <tok val="salarius"/>
          <lm>
             <l>salarius</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -722,6 +904,7 @@
       </ana>
       <ana>
          <tok val="Salas"/>
+         <tok val="salas"/>
          <lm>
             <l>salo</l>
             <m>v - 2 s p s a</m>
@@ -729,6 +912,7 @@
       </ana>
       <ana>
          <tok val="Salassi"/>
+         <tok val="salassi"/>
          <lm>
             <l>Salassi</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -737,6 +921,7 @@
       </ana>
       <ana>
          <tok val="Salassorum"/>
+         <tok val="salassorum"/>
          <lm>
             <l>Salassi</l>
             <m>n e - p - - - m g</m>
@@ -744,20 +929,24 @@
       </ana>
       <ana>
          <tok val="Salassos"/>
+         <tok val="salassos"/>
          <lm>
             <l>Salassi</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Salat salat-->
-         <tok val="[sS]alat"/>
+      <ana>
+         <tok val="Salat"/>
+         <tok val="salat"/>
          <lm>
             <l>salo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Salax salax salaxque-->
-         <tok val="[sS]alax(que)?"/>
+      <ana>
+         <tok val="Salax"/>
+         <tok val="salax"/>
+         <tok val="salaxque"/>
          <lm>
             <l>salax</l>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -769,23 +958,36 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Sale Salen Salest-->
-         <tok val="Sale(n|st)?"/>
+      <ana>
+         <tok val="Sale"/>
+         <tok val="Salen"/>
+         <tok val="Salest"/>
+         <tok val="sale"/>
+         <tok val="salen"/>
+         <tok val="salest"/>
          <lm>
             <l>Sale</l>
             <m cert="0.5">n e - s - - - n a</m>
             <m cert="0.5">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Sale Salen Salest Sali-->
-         <tok val="Sal[e]?(n|st|i)?"/>
+      <ana>
+         <tok val="Sale"/>
+         <tok val="Salen"/>
+         <tok val="Salest"/>
+         <tok val="Sali"/>
+         <tok val="sale"/>
+         <tok val="salen"/>
+         <tok val="salest"/>
+         <tok val="sali"/>
          <lm>
             <l>Sale</l>
             <m>n e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Salebra salebra-->
-         <tok val="[sS]alebra"/>
+      <ana>
+         <tok val="Salebra"/>
+         <tok val="salebra"/>
          <lm>
             <l>salebra</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -793,8 +995,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Salebrae salebrae-->
-         <tok val="[sS]alebrae"/>
+      <ana>
+         <tok val="Salebrae"/>
+         <tok val="salebrae"/>
          <lm>
             <l>salebra</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -803,23 +1006,27 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Salebras salebras salebrasque-->
-         <tok val="[sS]alebras(que)?"/>
+      <ana>
+         <tok val="Salebras"/>
+         <tok val="salebras"/>
+         <tok val="salebrasque"/>
          <lm>
             <l>salebra</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salebris salebris-->
-         <tok val="[sS]alebris"/>
+      <ana>
+         <tok val="Salebris"/>
+         <tok val="salebris"/>
          <lm>
             <l>salebra</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Salebrosum salebrosum-->
-         <tok val="[sS]alebrosum"/>
+      <ana>
+         <tok val="Salebrosum"/>
+         <tok val="salebrosum"/>
          <lm>
             <l>salebrosus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -830,8 +1037,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Salebrosus salebrosus-->
-         <tok val="[sS]alebrosus"/>
+      <ana>
+         <tok val="Salebrosus"/>
+         <tok val="salebrosus"/>
          <lm>
             <l>salebrosus</l>
             <m>a - - s - - - m n</m>
@@ -839,6 +1047,7 @@
       </ana>
       <ana>
          <tok val="Salei"/>
+         <tok val="salei"/>
          <lm>
             <l>Saleius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -847,6 +1056,7 @@
       </ana>
       <ana>
          <tok val="Saleio"/>
+         <tok val="saleio"/>
          <lm>
             <l>Saleius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -855,6 +1065,7 @@
       </ana>
       <ana>
          <tok val="Saleium"/>
+         <tok val="saleium"/>
          <lm>
             <l>Saleius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -863,6 +1074,7 @@
       </ana>
       <ana>
          <tok val="Saleius"/>
+         <tok val="saleius"/>
          <lm>
             <l>Saleius</l>
             <m>n e - s - - - m n</m>
@@ -870,6 +1082,7 @@
       </ana>
       <ana>
          <tok val="Salentia"/>
+         <tok val="salentia"/>
          <lm>
             <l>salo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -879,6 +1092,7 @@
       </ana>
       <ana>
          <tok val="Salentina"/>
+         <tok val="salentina"/>
          <lm>
             <l>Salentinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -891,6 +1105,7 @@
       </ana>
       <ana>
          <tok val="Salentinae"/>
+         <tok val="salentinae"/>
          <lm>
             <l>Salentinus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -901,6 +1116,7 @@
       </ana>
       <ana>
          <tok val="Salentini"/>
+         <tok val="salentini"/>
          <lm>
             <l>Salentinus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -909,16 +1125,22 @@
             <m cert="0.25">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Salentini Sallentini-->
-         <tok val="Sa[l]?lentini"/>
+      <ana>
+         <tok val="Salentini"/>
+         <tok val="Sallentini"/>
+         <tok val="salentini"/>
+         <tok val="sallentini"/>
          <lm>
             <l>Salentini</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Salentinis Sallentinis-->
-         <tok val="Sa[l]?lentinis"/>
+      <ana>
+         <tok val="Salentinis"/>
+         <tok val="Sallentinis"/>
+         <tok val="salentinis"/>
+         <tok val="sallentinis"/>
          <lm>
             <l>Salentini</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -927,6 +1149,7 @@
       </ana>
       <ana>
          <tok val="Salentinis"/>
+         <tok val="salentinis"/>
          <lm>
             <l>Salentinus</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
@@ -937,8 +1160,11 @@
             <m cert="0.166666666666666667">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Salentinos Sallentinos-->
-         <tok val="Sa[l]?lentinos"/>
+      <ana>
+         <tok val="Salentinos"/>
+         <tok val="Sallentinos"/>
+         <tok val="salentinos"/>
+         <tok val="sallentinos"/>
          <lm>
             <l>Salentini</l>
             <m>n e - p - - - m a</m>
@@ -946,6 +1172,7 @@
       </ana>
       <ana>
          <tok val="Salentinos"/>
+         <tok val="salentinos"/>
          <lm>
             <l>Salentinus</l>
             <m>a e - p - - - m a</m>
@@ -953,6 +1180,7 @@
       </ana>
       <ana>
          <tok val="Salentinum"/>
+         <tok val="salentinum"/>
          <lm>
             <l>Salentinus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -963,8 +1191,13 @@
             <m cert="0.166666666666666667">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Salentinum Sallentinum Sallentinumque-->
-         <tok val="Sa[l]?lentinum(que)?"/>
+      <ana>
+         <tok val="Salentinum"/>
+         <tok val="Sallentinum"/>
+         <tok val="Sallentinumque"/>
+         <tok val="salentinum"/>
+         <tok val="sallentinum"/>
+         <tok val="sallentinumque"/>
          <lm>
             <l>Salentini</l>
             <m>n e - p - - - m g</m>
@@ -972,6 +1205,7 @@
       </ana>
       <ana>
          <tok val="Salentinus"/>
+         <tok val="salentinus"/>
          <lm>
             <l>Salentinus</l>
             <m>a e - s - - - m n</m>
@@ -979,6 +1213,7 @@
       </ana>
       <ana>
          <tok val="Salerni"/>
+         <tok val="salerni"/>
          <lm cert="0.5">
             <l>Salernum</l>
             <m>n e - s - - - n g</m>
@@ -992,6 +1227,7 @@
       </ana>
       <ana>
          <tok val="Salernitana"/>
+         <tok val="salernitana"/>
          <lm>
             <l>Salernitanus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1004,13 +1240,17 @@
       </ana>
       <ana>
          <tok val="Salernitanus"/>
+         <tok val="salernitanus"/>
          <lm>
             <l>Salernitanus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salernum Salernumque-->
-         <tok val="Salernum(que)?"/>
+      <ana>
+         <tok val="Salernum"/>
+         <tok val="Salernumque"/>
+         <tok val="salernum"/>
+         <tok val="salernumque"/>
          <lm cert="0.5">
             <l>Salernum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1026,6 +1266,7 @@
       </ana>
       <ana>
          <tok val="Salgama"/>
+         <tok val="salgama"/>
          <lm>
             <l>salgamum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1033,8 +1274,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salgamarius salgamarius-->
-         <tok val="[sS]algamarius"/>
+      <ana>
+         <tok val="Salgamarius"/>
+         <tok val="salgamarius"/>
          <lm>
             <l>salgamarius</l>
             <m>n - - s - - - m n</m>
@@ -1042,6 +1284,7 @@
       </ana>
       <ana>
          <tok val="Salganea"/>
+         <tok val="salganea"/>
          <lm>
             <l>Salganea</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1049,16 +1292,21 @@
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Sali Salii-->
-         <tok val="Sali[i]?"/>
+      <ana>
+         <tok val="Sali"/>
+         <tok val="Salii"/>
+         <tok val="sali"/>
+         <tok val="salii"/>
          <lm>
             <l>Salius</l>
             <m cert="0.5">a e - s - - - n g</m>
             <m cert="0.5">a e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sali sali saliue-->
-         <tok val="[sS]ali(ue)?"/>
+      <ana>
+         <tok val="Sali"/>
+         <tok val="sali"/>
+         <tok val="saliue"/>
          <lm>
             <l>salo</l>
             <m>v - - - p n p</m>
@@ -1066,27 +1314,31 @@
       </ana>
       <ana>
          <tok val="Sali"/>
-         <lm>
+         <tok val="sali"/>
+         <lm cert="0.5">
             <l>Sale</l>
             <m>n e - s - - - n d</m>
          </lm>
+         <lm cert="0.5">
+            <l>salio</l>
+            <m>v - 2 s p m a</m>
+         </lm>
       </ana>
-      <ana><!--Sali sali saliue salique-->
-         <tok val="[sS]ali[q]?(ue)?"/>
+      <ana>
+         <tok val="Sali"/>
+         <tok val="sali"/>
+         <tok val="salique"/>
+         <tok val="saliue"/>
          <lm>
             <l>salum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sali sali-->
-         <tok val="[sS]ali"/>
-         <lm>
-            <l>salio</l>
-            <m>v - 2 s p m a</m>
-         </lm>
-      </ana>
-      <ana><!--Salia Salian-->
-         <tok val="Salia[n]?"/>
+      <ana>
+         <tok val="Salia"/>
+         <tok val="Salian"/>
+         <tok val="salia"/>
+         <tok val="salian"/>
          <lm cert="0.5">
             <l>Sale</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1105,6 +1357,7 @@
       </ana>
       <ana>
          <tok val="Saliae"/>
+         <tok val="saliae"/>
          <lm>
             <l>Salius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1115,35 +1368,34 @@
       </ana>
       <ana>
          <tok val="Saliam"/>
-         <lm>
+         <tok val="saliam"/>
+         <lm cert="0.5">
             <l>Salius</l>
             <m>a e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Saliam saliam-->
-         <tok val="[sS]aliam"/>
-         <lm>
+         <lm cert="0.5">
             <l>salio</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Salian Salias salias-->
-         <tok val="[Ss]alia[sn]"/>
-         <lm>
+      <ana>
+         <tok val="Salian"/>
+         <tok val="Salias"/>
+         <tok val="salian"/>
+         <tok val="salias"/>
+         <lm cert="0.5">
             <l>salio</l>
             <m>v - 2 s p s a</m>
          </lm>
-      </ana>
-      <ana><!--Salian Salias-->
-         <tok val="Salia[sn]"/>
-         <lm>
+         <lm cert="0.5">
             <l>Salius</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Saliare"/>
+         <tok val="saliare"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -1151,8 +1403,11 @@
             <m cert="0.333333333333333333">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Saliare Saliaris saliare saliaris-->
-         <tok val="[sS]aliar(is|e)"/>
+      <ana>
+         <tok val="Saliare"/>
+         <tok val="Saliaris"/>
+         <tok val="saliare"/>
+         <tok val="saliaris"/>
          <lm>
             <l>salio</l>
             <m>v - 2 s p s p</m>
@@ -1160,6 +1415,7 @@
       </ana>
       <ana>
          <tok val="Saliarem"/>
+         <tok val="saliarem"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -1168,6 +1424,7 @@
       </ana>
       <ana>
          <tok val="Saliares"/>
+         <tok val="saliares"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1176,8 +1433,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Saliares Saliaris-->
-         <tok val="Saliar[ie]s"/>
+      <ana>
+         <tok val="Saliares"/>
+         <tok val="Saliaris"/>
+         <tok val="saliares"/>
+         <tok val="saliaris"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -1186,6 +1446,7 @@
       </ana>
       <ana>
          <tok val="Saliari"/>
+         <tok val="saliari"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -1196,8 +1457,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Saliaribus Saliaribvs-->
-         <tok val="Saliarib[vu]s"/>
+      <ana>
+         <tok val="Saliaribus"/>
+         <tok val="Saliaribvs"/>
+         <tok val="saliaribus"/>
+         <tok val="saliaribvs"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1210,6 +1474,7 @@
       </ana>
       <ana>
          <tok val="Saliaris"/>
+         <tok val="saliaris"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -1223,6 +1488,7 @@
       </ana>
       <ana>
          <tok val="Saliarium"/>
+         <tok val="saliarium"/>
          <lm>
             <l>Saliaris</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -1232,6 +1498,7 @@
       </ana>
       <ana>
          <tok val="Saliatus"/>
+         <tok val="saliatus"/>
          <lm>
             <l>saliatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1242,14 +1509,16 @@
       </ana>
       <ana>
          <tok val="Salibus"/>
+         <tok val="salibus"/>
          <lm>
             <l>Sale</l>
             <m cert="0.5">n e - p - - - n d</m>
             <m cert="0.5">n e - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Salicastrum salicastrum-->
-         <tok val="[sS]alicastrum"/>
+      <ana>
+         <tok val="Salicastrum"/>
+         <tok val="salicastrum"/>
          <lm>
             <l>salicastrum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1258,15 +1527,17 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salicem salicem-->
-         <tok val="[sS]alicem"/>
+      <ana>
+         <tok val="Salicem"/>
+         <tok val="salicem"/>
          <lm>
             <l>salix</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salices salices-->
-         <tok val="[sS]alices"/>
+      <ana>
+         <tok val="Salices"/>
+         <tok val="salices"/>
          <lm>
             <l>salix</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1274,15 +1545,18 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Salicis salicis-->
-         <tok val="[sS]alicis"/>
+      <ana>
+         <tok val="Salicis"/>
+         <tok val="salicis"/>
          <lm>
             <l>salix</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salicta salicta salictaque-->
-         <tok val="[sS]alicta(que)?"/>
+      <ana>
+         <tok val="Salicta"/>
+         <tok val="salicta"/>
+         <tok val="salictaque"/>
          <lm>
             <l>salictum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1290,16 +1564,18 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salicto salicto-->
-         <tok val="[sS]alicto"/>
+      <ana>
+         <tok val="Salicto"/>
+         <tok val="salicto"/>
          <lm>
             <l>salictum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Salictum salictum-->
-         <tok val="[sS]alictum"/>
+      <ana>
+         <tok val="Salictum"/>
+         <tok val="salictum"/>
          <lm>
             <l>salictum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1307,8 +1583,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Salictum salictorum salictum-->
-         <tok val="[sS]alict(or)?um"/>
+      <ana>
+         <tok val="Salictum"/>
+         <tok val="salictorum"/>
+         <tok val="salictum"/>
          <lm>
             <l>salictum</l>
             <m>n - - p - - - n g</m>
@@ -1316,6 +1594,7 @@
       </ana>
       <ana>
          <tok val="Saliendo"/>
+         <tok val="saliendo"/>
          <lm>
             <l>salio</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1326,8 +1605,15 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Saliene Salium Saliumque Salivm-->
-         <tok val="Sali[vu]?[m]?(que|ene)?"/>
+      <ana>
+         <tok val="Saliene"/>
+         <tok val="Salium"/>
+         <tok val="Saliumque"/>
+         <tok val="Salivm"/>
+         <tok val="saliene"/>
+         <tok val="salium"/>
+         <tok val="saliumque"/>
+         <tok val="salivm"/>
          <lm>
             <l>Salius</l>
             <m>a e - s - - - n v</m>
@@ -1335,32 +1621,29 @@
       </ana>
       <ana>
          <tok val="Saliene"/>
+         <tok val="saliene"/>
          <lm>
             <l>Salius</l>
             <m>a e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Saliens saliens-->
-         <tok val="[sS]aliens"/>
-         <lm>
-            <l>salio</l>
-            <m cert="0.333333333333333333">v - - s p p a m n</m>
-            <m cert="0.333333333333333333">v - - s p p a f n</m>
-            <m cert="0.333333333333333333">v - - s p p a n n</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Saliens"/>
+         <tok val="saliens"/>
          <lm>
             <l>salio</l>
-            <m cert="0.25">v - - s p p a f v</m>
-            <m cert="0.25">v - - s p p a m v</m>
-            <m cert="0.25">v - - s p p a n a</m>
-            <m cert="0.25">v - - s p p a n v</m>
+            <m cert="0.142857142857142857">v - - s p p a m n</m>
+            <m cert="0.142857142857142857">v - - s p p a f v</m>
+            <m cert="0.142857142857142857">v - - s p p a m v</m>
+            <m cert="0.142857142857142857">v - - s p p a n a</m>
+            <m cert="0.142857142857142857">v - - s p p a f n</m>
+            <m cert="0.142857142857142857">v - - s p p a n n</m>
+            <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
       <ana>
          <tok val="Salientem"/>
+         <tok val="salientem"/>
          <lm>
             <l>salio</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1369,7 +1652,8 @@
       </ana>
       <ana>
          <tok val="Salientes"/>
-         <lm>
+         <tok val="salientes"/>
+         <lm cert="0.5">
             <l>salio</l>
             <m cert="0.166666666666666667">v - - p p p a m a</m>
             <m cert="0.166666666666666667">v - - p p p a m v</m>
@@ -1378,24 +1662,24 @@
             <m cert="0.166666666666666667">v - - p p p a f n</m>
             <m cert="0.166666666666666667">v - - p p p a f a</m>
          </lm>
-      </ana>
-      <ana><!--Salientes salientes salientis-->
-         <tok val="[sS]alient[ei]s"/>
-         <lm>
-            <l>salientes</l>
-            <m>n - - p - - - f a</m>
-         </lm>
-      </ana>
-      <ana><!--Salientes salientes-->
-         <tok val="[sS]alientes"/>
-         <lm>
+         <lm cert="0.5">
             <l>salientes</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
       <ana>
+         <tok val="Salientes"/>
+         <tok val="salientes"/>
+         <tok val="salientis"/>
+         <lm>
+            <l>salientes</l>
+            <m>n - - p - - - f a</m>
+         </lm>
+      </ana>
+      <ana>
          <tok val="Salientia"/>
+         <tok val="salientia"/>
          <lm>
             <l>salio</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -1405,22 +1689,22 @@
       </ana>
       <ana>
          <tok val="Salientium"/>
-         <lm>
+         <tok val="salientium"/>
+         <lm cert="0.5">
             <l>salio</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
             <m cert="0.333333333333333333">v - - p p p a f g</m>
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
-      </ana>
-      <ana><!--Salientium salientium-->
-         <tok val="[sS]alientium"/>
-         <lm>
+         <lm cert="0.5">
             <l>salientes</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salignea saligna salignea-->
-         <tok val="[sS]align[e]?a"/>
+      <ana>
+         <tok val="Salignea"/>
+         <tok val="saligna"/>
+         <tok val="salignea"/>
          <lm>
             <l>salignus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1431,15 +1715,20 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Saligneus Salignus saligneus salignus-->
-         <tok val="[Ss]align[e]?us"/>
+      <ana>
+         <tok val="Saligneus"/>
+         <tok val="Salignus"/>
+         <tok val="saligneus"/>
+         <tok val="salignus"/>
          <lm>
             <l>salignus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Saligni salignei-->
-         <tok val="[sS]align[e]?i"/>
+      <ana>
+         <tok val="Saligni"/>
+         <tok val="salignei"/>
+         <tok val="saligni"/>
          <lm>
             <l>salignus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1448,8 +1737,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salignis saligneis salignis-->
-         <tok val="[sS]align[e]?is"/>
+      <ana>
+         <tok val="Salignis"/>
+         <tok val="saligneis"/>
+         <tok val="salignis"/>
          <lm>
             <l>salignus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1462,6 +1753,7 @@
       </ana>
       <ana>
          <tok val="Salii"/>
+         <tok val="salii"/>
          <lm cert="0.333333333333333333">
             <l>Salius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -1479,6 +1771,7 @@
       </ana>
       <ana>
          <tok val="Saliis"/>
+         <tok val="saliis"/>
          <lm cert="0.5">
             <l>Salii</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1494,8 +1787,9 @@
             <m cert="0.166666666666666667">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Salillum salillum-->
-         <tok val="[sS]alillum"/>
+      <ana>
+         <tok val="Salillum"/>
+         <tok val="salillum"/>
          <lm>
             <l>salillum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1504,8 +1798,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salina salina-->
-         <tok val="[sS]alina"/>
+      <ana>
+         <tok val="Salina"/>
+         <tok val="salina"/>
          <lm>
             <l>salinum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1513,8 +1808,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salinae salinae-->
-         <tok val="[sS]alinae"/>
+      <ana>
+         <tok val="Salinae"/>
+         <tok val="salinae"/>
          <lm>
             <l>salinae</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -1523,6 +1819,7 @@
       </ana>
       <ana>
          <tok val="Salinariae"/>
+         <tok val="salinariae"/>
          <lm>
             <l>salinarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1531,22 +1828,25 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salinarum salinarum-->
-         <tok val="[sS]alinarum"/>
+      <ana>
+         <tok val="Salinarum"/>
+         <tok val="salinarum"/>
          <lm>
             <l>salinae</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salinas salinas-->
-         <tok val="[sS]alinas"/>
+      <ana>
+         <tok val="Salinas"/>
+         <tok val="salinas"/>
          <lm>
             <l>salinae</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salinator salinator-->
-         <tok val="[sS]alinator"/>
+      <ana>
+         <tok val="Salinator"/>
+         <tok val="salinator"/>
          <lm>
             <l>salinator</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1555,6 +1855,7 @@
       </ana>
       <ana>
          <tok val="Salinatore"/>
+         <tok val="salinatore"/>
          <lm>
             <l>salinator</l>
             <m>n - - s - - - m b</m>
@@ -1562,6 +1863,7 @@
       </ana>
       <ana>
          <tok val="Salinatorem"/>
+         <tok val="salinatorem"/>
          <lm>
             <l>salinator</l>
             <m>n - - s - - - m a</m>
@@ -1569,6 +1871,7 @@
       </ana>
       <ana>
          <tok val="Salinatori"/>
+         <tok val="salinatori"/>
          <lm>
             <l>salinator</l>
             <m>n - - s - - - m d</m>
@@ -1576,13 +1879,15 @@
       </ana>
       <ana>
          <tok val="Salinatoris"/>
+         <tok val="salinatoris"/>
          <lm>
             <l>salinator</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Salinum salinum-->
-         <tok val="[sS]alinum"/>
+      <ana>
+         <tok val="Salinum"/>
+         <tok val="salinum"/>
          <lm>
             <l>salinum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1593,6 +1898,7 @@
       </ana>
       <ana>
          <tok val="Salio"/>
+         <tok val="salio"/>
          <lm>
             <l>Salius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1603,6 +1909,7 @@
       </ana>
       <ana>
          <tok val="Salios"/>
+         <tok val="salios"/>
          <lm cert="0.5">
             <l>Salii</l>
             <m>n e - p - - - m a</m>
@@ -1612,8 +1919,10 @@
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Salire sallere-->
-         <tok val="[sS]al(le|i)re"/>
+      <ana>
+         <tok val="Salire"/>
+         <tok val="salire"/>
+         <tok val="sallere"/>
          <lm>
             <l>salio</l>
             <m>v - - - p n a</m>
@@ -1621,6 +1930,7 @@
       </ana>
       <ana>
          <tok val="Salis"/>
+         <tok val="salis"/>
          <lm cert="0.5">
             <l>Sale</l>
             <m>n e - s - - - n g</m>
@@ -1630,16 +1940,21 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Salis salis salisque-->
-         <tok val="[sS]alis(que)?"/>
+      <ana>
+         <tok val="Salis"/>
+         <tok val="salis"/>
+         <tok val="salisque"/>
          <lm>
             <l>salum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Salisubsuli Salisubsili-->
-         <tok val="Salisubs[iu]li"/>
+      <ana>
+         <tok val="Salisubsili"/>
+         <tok val="Salisubsuli"/>
+         <tok val="salisubsili"/>
+         <tok val="salisubsuli"/>
          <lm>
             <l>Salisubsuli</l>
             <m>n e - p - - - m n</m>
@@ -1647,6 +1962,7 @@
       </ana>
       <ana>
          <tok val="Salisubsuli"/>
+         <tok val="salisubsuli"/>
          <lm>
             <l>Salisubsuli</l>
             <m>n e - p - - - m v</m>
@@ -1654,13 +1970,17 @@
       </ana>
       <ana>
          <tok val="Salit"/>
+         <tok val="salit"/>
          <lm>
             <l>salo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Salitura Salsura salitura salsura-->
-         <tok val="[sS]al(it|s)ura"/>
+      <ana>
+         <tok val="Salitura"/>
+         <tok val="Salsura"/>
+         <tok val="salitura"/>
+         <tok val="salsura"/>
          <lm>
             <l>salio</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -1671,8 +1991,9 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--Salitura salitura-->
-         <tok val="[sS]alitura"/>
+      <ana>
+         <tok val="Salitura"/>
+         <tok val="salitura"/>
          <lm>
             <l>salitura</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1680,8 +2001,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Saliua saliua saliva-->
-         <tok val="[sS]ali[uv]a"/>
+      <ana>
+         <tok val="Saliua"/>
+         <tok val="saliua"/>
+         <tok val="saliva"/>
          <lm cert="0.5">
             <l>saliva</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1693,16 +2016,20 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Saliuare saliuare-->
-         <tok val="[sS]aliuare"/>
+      <ana>
+         <tok val="Saliuare"/>
+         <tok val="saliuare"/>
          <lm>
             <l>salivo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Saliuare Saliuaris saliuare-->
-         <tok val="[sS]aliuar(e|is)"/>
+      <ana>
+         <tok val="Saliuare"/>
+         <tok val="Saliuaris"/>
+         <tok val="saliuare"/>
+         <tok val="saliuaris"/>
          <lm>
             <l>salivo</l>
             <m>v - 2 s p i p</m>
@@ -1710,20 +2037,28 @@
       </ana>
       <ana>
          <tok val="Saliuaris"/>
+         <tok val="saliuaris"/>
          <lm>
             <l>salivo</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Saliuarius salivarius-->
-         <tok val="[sS]ali[vu]arius"/>
+      <ana>
+         <tok val="Saliuarius"/>
+         <tok val="saliuarius"/>
+         <tok val="salivarius"/>
          <lm>
             <l>salivarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salium Saliumque Salivm-->
-         <tok val="Sali[vu]m(que)?"/>
+      <ana>
+         <tok val="Salium"/>
+         <tok val="Saliumque"/>
+         <tok val="Salivm"/>
+         <tok val="salium"/>
+         <tok val="saliumque"/>
+         <tok val="salivm"/>
          <lm cert="0.5">
             <l>Sale</l>
             <m>n e - p - - - n g</m>
@@ -1735,8 +2070,9 @@
             <m cert="0.333333333333333333">a e - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Saliunca saliunca-->
-         <tok val="[sS]aliunca"/>
+      <ana>
+         <tok val="Saliunca"/>
+         <tok val="saliunca"/>
          <lm>
             <l>saliunca</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1746,20 +2082,25 @@
       </ana>
       <ana>
          <tok val="Saliunt"/>
+         <tok val="saliunt"/>
          <lm>
             <l>salio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Saliuo salivo-->
-         <tok val="[sS]ali[vu]o"/>
+      <ana>
+         <tok val="Saliuo"/>
+         <tok val="saliuo"/>
+         <tok val="salivo"/>
          <lm>
             <l>salivo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Saliuosus saliuosus salivosus-->
-         <tok val="[sS]ali[uv]osus"/>
+      <ana>
+         <tok val="Saliuosus"/>
+         <tok val="saliuosus"/>
+         <tok val="salivosus"/>
          <lm>
             <l>salivosus</l>
             <m>a - - s - - - m n</m>
@@ -1767,6 +2108,7 @@
       </ana>
       <ana>
          <tok val="Sallen"/>
+         <tok val="sallen"/>
          <lm>
             <l>sallo</l>
             <m cert="0.5">v - 2 s f i a</m>
@@ -1775,6 +2117,7 @@
       </ana>
       <ana>
          <tok val="Sallenti"/>
+         <tok val="sallenti"/>
          <lm>
             <l>sallo</l>
             <m cert="0.166666666666666667">v - - s p p a f d</m>
@@ -1787,6 +2130,7 @@
       </ana>
       <ana>
          <tok val="Sallo"/>
+         <tok val="sallo"/>
          <lm>
             <l>sallo</l>
             <m>v - 1 s p i a</m>
@@ -1794,13 +2138,19 @@
       </ana>
       <ana>
          <tok val="Sallusti"/>
+         <tok val="sallusti"/>
          <lm>
             <l>Sallustius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Sallusti Sallustii Salustii-->
-         <tok val="Sa(l|)lusti[i]?"/>
+      <ana>
+         <tok val="Sallusti"/>
+         <tok val="Sallustii"/>
+         <tok val="Salustii"/>
+         <tok val="sallusti"/>
+         <tok val="sallustii"/>
+         <tok val="salustii"/>
          <lm>
             <l>Sallustius</l>
             <m>n e - s - - - m g</m>
@@ -1808,6 +2158,7 @@
       </ana>
       <ana>
          <tok val="Sallustiana"/>
+         <tok val="sallustiana"/>
          <lm>
             <l>Sallustianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1820,6 +2171,7 @@
       </ana>
       <ana>
          <tok val="Sallustianae"/>
+         <tok val="sallustianae"/>
          <lm>
             <l>Sallustianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1830,13 +2182,17 @@
       </ana>
       <ana>
          <tok val="Sallustianam"/>
+         <tok val="sallustianam"/>
          <lm>
             <l>Sallustianus</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sallustianorum Sallustianum-->
-         <tok val="Sallustian(or)?um"/>
+      <ana>
+         <tok val="Sallustianorum"/>
+         <tok val="Sallustianum"/>
+         <tok val="sallustianorum"/>
+         <tok val="sallustianum"/>
          <lm>
             <l>Sallustianus</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -1846,6 +2202,7 @@
       </ana>
       <ana>
          <tok val="Sallustianos"/>
+         <tok val="sallustianos"/>
          <lm>
             <l>Sallustianus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -1854,6 +2211,7 @@
       </ana>
       <ana>
          <tok val="Sallustianum"/>
+         <tok val="sallustianum"/>
          <lm>
             <l>Sallustianus</l>
             <m cert="0.2">a e - s - - - n v</m>
@@ -1865,20 +2223,27 @@
       </ana>
       <ana>
          <tok val="Sallustianus"/>
+         <tok val="sallustianus"/>
          <lm>
             <l>Sallustianus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sallustianus Salustianus-->
-         <tok val="Sa[l]?lustianus"/>
+      <ana>
+         <tok val="Sallustianus"/>
+         <tok val="Salustianus"/>
+         <tok val="sallustianus"/>
+         <tok val="salustianus"/>
          <lm>
             <l>Sallustianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sallustii Salustii-->
-         <tok val="Sa[l]?lustii"/>
+      <ana>
+         <tok val="Sallustii"/>
+         <tok val="Salustii"/>
+         <tok val="sallustii"/>
+         <tok val="salustii"/>
          <lm>
             <l>Sallustius</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1887,28 +2252,44 @@
       </ana>
       <ana>
          <tok val="Sallustios"/>
+         <tok val="sallustios"/>
          <lm>
             <l>Sallustius</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sallustium Salustium-->
-         <tok val="Sa[l]?lustium"/>
+      <ana>
+         <tok val="Sallustium"/>
+         <tok val="Salustium"/>
+         <tok val="sallustium"/>
+         <tok val="salustium"/>
          <lm>
             <l>Sallustius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sallustius Sallvstivs Salustius Salustiusque-->
-         <tok val="Sa[l]?l(u|lv)sti[uv]s(que)?"/>
+      <ana>
+         <tok val="Sallustius"/>
+         <tok val="Sallvstivs"/>
+         <tok val="Salustius"/>
+         <tok val="Salustiusque"/>
+         <tok val="sallustius"/>
+         <tok val="sallvstivs"/>
+         <tok val="salustius"/>
+         <tok val="salustiusque"/>
          <lm>
             <l>Sallustius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salluuiique Salluvii Saluvii-->
-         <tok val="Sa[l]?lu[vu]ii(que)?"/>
+      <ana>
+         <tok val="Salluuiique"/>
+         <tok val="Salluvii"/>
+         <tok val="Saluvii"/>
+         <tok val="salluuiique"/>
+         <tok val="salluvii"/>
+         <tok val="saluvii"/>
          <lm>
             <l>Salluvii</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1917,6 +2298,7 @@
       </ana>
       <ana>
          <tok val="Salluviorum"/>
+         <tok val="salluviorum"/>
          <lm>
             <l>Salluvii</l>
             <m>n e - p - - - m g</m>
@@ -1924,6 +2306,7 @@
       </ana>
       <ana>
          <tok val="Salluvios"/>
+         <tok val="salluvios"/>
          <lm>
             <l>Salluvii</l>
             <m>n e - p - - - m a</m>
@@ -1931,6 +2314,7 @@
       </ana>
       <ana>
          <tok val="Salmacida"/>
+         <tok val="salmacida"/>
          <lm>
             <l>salmacidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1941,8 +2325,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Salmacidae salmacidae-->
-         <tok val="[sS]almacidae"/>
+      <ana>
+         <tok val="Salmacidae"/>
+         <tok val="salmacidae"/>
          <lm>
             <l>salmacidus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1951,9 +2336,10 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salmacidis salmacidis-->
-         <tok val="[sS]almacidis"/>
-         <lm>
+      <ana>
+         <tok val="Salmacidis"/>
+         <tok val="salmacidis"/>
+         <lm cert="0.5">
             <l>salmacidus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -1962,16 +2348,14 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Salmacidis"/>
-         <lm>
+         <lm cert="0.5">
             <l>Salmacis</l>
             <m>n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salmacidus salmacidus-->
-         <tok val="[sS]almacidus"/>
+      <ana>
+         <tok val="Salmacidus"/>
+         <tok val="salmacidus"/>
          <lm>
             <l>salmacidus</l>
             <m>a - - s - - - m n</m>
@@ -1979,13 +2363,17 @@
       </ana>
       <ana>
          <tok val="Salmacis"/>
+         <tok val="salmacis"/>
          <lm>
             <l>Salmacis</l>
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Salmo Salmon salmo-->
-         <tok val="[Ss]almo[n]?"/>
+      <ana>
+         <tok val="Salmo"/>
+         <tok val="Salmon"/>
+         <tok val="salmo"/>
+         <tok val="salmon"/>
          <lm>
             <l>salmo</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1994,6 +2382,7 @@
       </ana>
       <ana>
          <tok val="Salmonea"/>
+         <tok val="salmonea"/>
          <lm>
             <l>Salmoneus</l>
             <m>n e - s - - - m a</m>
@@ -2001,6 +2390,7 @@
       </ana>
       <ana>
          <tok val="Salmonei"/>
+         <tok val="salmonei"/>
          <lm>
             <l>Salmoneus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -2008,8 +2398,11 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Salmonem salmonem Salmona-->
-         <tok val="[sS]almon(em|a)"/>
+      <ana>
+         <tok val="Salmona"/>
+         <tok val="Salmonem"/>
+         <tok val="salmona"/>
+         <tok val="salmonem"/>
          <lm>
             <l>salmo</l>
             <m>n - - s - - - m a</m>
@@ -2017,6 +2410,7 @@
       </ana>
       <ana>
          <tok val="Salmoneo"/>
+         <tok val="salmoneo"/>
          <lm>
             <l>Salmoneus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -2025,6 +2419,7 @@
       </ana>
       <ana>
          <tok val="Salmoneus"/>
+         <tok val="salmoneus"/>
          <lm>
             <l>Salmoneus</l>
             <m>n e - s - - - m n</m>
@@ -2032,6 +2427,7 @@
       </ana>
       <ana>
          <tok val="Salmonida"/>
+         <tok val="salmonida"/>
          <lm>
             <l>Salmonis</l>
             <m>n e - s - - - f a</m>
@@ -2039,6 +2435,7 @@
       </ana>
       <ana>
          <tok val="Salmonide"/>
+         <tok val="salmonide"/>
          <lm>
             <l>Salmonis</l>
             <m>n e - s - - - f b</m>
@@ -2046,28 +2443,37 @@
       </ana>
       <ana>
          <tok val="Salmonis"/>
-         <lm>
+         <tok val="salmonis"/>
+         <lm cert="0.5">
             <l>Salmonis</l>
             <m>n e - s - - - f n</m>
          </lm>
-      </ana>
-      <ana><!--Salmonis salmonis-->
-         <tok val="[sS]almonis"/>
-         <lm>
+         <lm cert="0.5">
             <l>salmo</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Salo Salon Salost-->
-         <tok val="Salo(n|st)?"/>
+      <ana>
+         <tok val="Salo"/>
+         <tok val="Salon"/>
+         <tok val="Salost"/>
+         <tok val="salo"/>
+         <tok val="salon"/>
+         <tok val="salost"/>
          <lm>
             <l>Salo</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salo Salon Salost salo saloque salost-->
-         <tok val="[Ss]alo(n|st|que)?"/>
+      <ana>
+         <tok val="Salo"/>
+         <tok val="Salon"/>
+         <tok val="Salost"/>
+         <tok val="salo"/>
+         <tok val="salon"/>
+         <tok val="saloque"/>
+         <tok val="salost"/>
          <lm cert="0.5">
             <l>salo</l>
             <m>v - 1 s p i a</m>
@@ -2080,6 +2486,7 @@
       </ana>
       <ana>
          <tok val="Salomone"/>
+         <tok val="salomone"/>
          <lm>
             <l>Salomon</l>
             <m>n e - s - - - m b</m>
@@ -2087,6 +2494,7 @@
       </ana>
       <ana>
          <tok val="Salomonem"/>
+         <tok val="salomonem"/>
          <lm>
             <l>Salomon</l>
             <m>n e - s - - - m a</m>
@@ -2094,6 +2502,7 @@
       </ana>
       <ana>
          <tok val="Salomoni"/>
+         <tok val="salomoni"/>
          <lm cert="0.5">
             <l>Salomonius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -2106,6 +2515,7 @@
       </ana>
       <ana>
          <tok val="Salomonis"/>
+         <tok val="salomonis"/>
          <lm>
             <l>Salomon</l>
             <m>n e - s - - - m g</m>
@@ -2113,6 +2523,7 @@
       </ana>
       <ana>
          <tok val="Salomonius"/>
+         <tok val="salomonius"/>
          <lm>
             <l>Salomonius</l>
             <m>a e - s - - - m n</m>
@@ -2120,6 +2531,7 @@
       </ana>
       <ana>
          <tok val="Salona"/>
+         <tok val="salona"/>
          <lm>
             <l>Salona</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2129,6 +2541,7 @@
       </ana>
       <ana>
          <tok val="Salonae"/>
+         <tok val="salonae"/>
          <lm cert="0.5">
             <l>Salonae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -2142,6 +2555,7 @@
       </ana>
       <ana>
          <tok val="Salonam"/>
+         <tok val="salonam"/>
          <lm>
             <l>Salona</l>
             <m>n e - s - - - f a</m>
@@ -2149,6 +2563,7 @@
       </ana>
       <ana>
          <tok val="Salonas"/>
+         <tok val="salonas"/>
          <lm>
             <l>Salonae</l>
             <m>n e - p - - - f a</m>
@@ -2156,6 +2571,7 @@
       </ana>
       <ana>
          <tok val="Salone"/>
+         <tok val="salone"/>
          <lm>
             <l>Salo</l>
             <m>n e - s - - - m b</m>
@@ -2163,13 +2579,17 @@
       </ana>
       <ana>
          <tok val="Salonem"/>
+         <tok val="salonem"/>
          <lm>
             <l>Salo</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saloni Salonine-->
-         <tok val="Saloni(ne)?"/>
+      <ana>
+         <tok val="Saloni"/>
+         <tok val="Salonine"/>
+         <tok val="saloni"/>
+         <tok val="salonine"/>
          <lm>
             <l>Salo</l>
             <m>n e - s - - - m d</m>
@@ -2177,6 +2597,7 @@
       </ana>
       <ana>
          <tok val="Salonis"/>
+         <tok val="salonis"/>
          <lm cert="0.5">
             <l>Salonae</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -2187,8 +2608,9 @@
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Salpa salpa-->
-         <tok val="[sS]alpa"/>
+      <ana>
+         <tok val="Salpa"/>
+         <tok val="salpa"/>
          <lm>
             <l>salpa</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2198,6 +2620,7 @@
       </ana>
       <ana>
          <tok val="Salpia"/>
+         <tok val="salpia"/>
          <lm>
             <l>Salpia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2207,6 +2630,7 @@
       </ana>
       <ana>
          <tok val="Salpiae"/>
+         <tok val="salpiae"/>
          <lm>
             <l>Salpia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -2217,6 +2641,7 @@
       </ana>
       <ana>
          <tok val="Salpinates"/>
+         <tok val="salpinates"/>
          <lm>
             <l>Salpinates</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -2226,6 +2651,7 @@
       </ana>
       <ana>
          <tok val="Salpini"/>
+         <tok val="salpini"/>
          <lm>
             <l>Salpinus</l>
             <m cert="0.333333333333333333">a e - p - - - m v</m>
@@ -2235,6 +2661,7 @@
       </ana>
       <ana>
          <tok val="Salpinorum"/>
+         <tok val="salpinorum"/>
          <lm>
             <l>Salpinus</l>
             <m>a e - p - - - m g</m>
@@ -2242,13 +2669,18 @@
       </ana>
       <ana>
          <tok val="Salpinus"/>
+         <tok val="salpinus"/>
          <lm>
             <l>Salpinus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salsa salita salsa salsaque salsave-->
-         <tok val="[sS]?(al|)sa(ve|que|lita)?"/>
+      <ana>
+         <tok val="Salsa"/>
+         <tok val="salita"/>
+         <tok val="salsa"/>
+         <tok val="salsaque"/>
+         <tok val="salsave"/>
          <lm>
             <l>salio</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -2259,8 +2691,11 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Salsa salsa salsaque salsave-->
-         <tok val="[sS]alsa(ve|que)?"/>
+      <ana>
+         <tok val="Salsa"/>
+         <tok val="salsa"/>
+         <tok val="salsaque"/>
+         <tok val="salsave"/>
          <lm>
             <l>salsa</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2268,8 +2703,11 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Salsae salitaeque salsae salsaeque-->
-         <tok val="(Sal)?sa[l]?(s|it)?(a|)e(que)?"/>
+      <ana>
+         <tok val="Salsae"/>
+         <tok val="salitaeque"/>
+         <tok val="salsae"/>
+         <tok val="salsaeque"/>
          <lm>
             <l>salio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -2278,8 +2716,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Salsamenta salsamenta-->
-         <tok val="[sS]alsamenta"/>
+      <ana>
+         <tok val="Salsamenta"/>
+         <tok val="salsamenta"/>
          <lm>
             <l>salsamentum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2287,8 +2726,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salsamentum salsamentum-->
-         <tok val="[sS]alsamentum"/>
+      <ana>
+         <tok val="Salsamentum"/>
+         <tok val="salsamentum"/>
          <lm>
             <l>salsamentum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -2296,30 +2736,39 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Salsamentum salsamentorum salsamentorumque salsamentum-->
-         <tok val="[sS]alsament(or)?um(que)?"/>
+      <ana>
+         <tok val="Salsamentum"/>
+         <tok val="salsamentorum"/>
+         <tok val="salsamentorumque"/>
+         <tok val="salsamentum"/>
          <lm>
             <l>salsamentum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salse salse salseque-->
-         <tok val="[sS]alse(que)?"/>
+      <ana>
+         <tok val="Salse"/>
+         <tok val="salse"/>
+         <tok val="salseque"/>
          <lm>
             <l>salsus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Salsedine salsedine-->
-         <tok val="[sS]alsedine"/>
+      <ana>
+         <tok val="Salsedine"/>
+         <tok val="salsedine"/>
          <lm>
             <l>salsedo</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Salsi saliti salsi salsive-->
-         <tok val="[sS]al(s|)i(ve|ti)?"/>
+      <ana>
+         <tok val="Salsi"/>
+         <tok val="saliti"/>
+         <tok val="salsi"/>
+         <tok val="salsive"/>
          <lm>
             <l>salio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2328,15 +2777,20 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Salsilago Salsugo salsilago salsugo-->
-         <tok val="[sS]als(ila|u)go"/>
+      <ana>
+         <tok val="Salsilago"/>
+         <tok val="Salsugo"/>
+         <tok val="salsilago"/>
+         <tok val="salsugo"/>
          <lm>
             <l>salsugo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Salsis salitis salsis-->
-         <tok val="[sS]al(s|it)is"/>
+      <ana>
+         <tok val="Salsis"/>
+         <tok val="salitis"/>
+         <tok val="salsis"/>
          <lm>
             <l>salio</l>
             <m cert="0.2">v - - p r p p n d</m>
@@ -2346,23 +2800,28 @@
             <m cert="0.2">v - - p r p p n b</m>
          </lm>
       </ana>
-      <ana><!--Salsis salsis-->
-         <tok val="[sS]alsis"/>
+      <ana>
+         <tok val="Salsis"/>
+         <tok val="salsis"/>
          <lm>
             <l>salsa</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Salsis salitis salsis sálsis-->
-         <tok val="[sS]?(a|sá|sa)l(s|it)is"/>
+      <ana>
+         <tok val="Salsis"/>
+         <tok val="salitis"/>
+         <tok val="salsis"/>
+         <tok val="sálsis"/>
          <lm>
             <l>salio</l>
             <m>v - - p r p p f d</m>
          </lm>
       </ana>
-      <ana><!--Salsissimi salsissimi-->
-         <tok val="[sS]alsissimi"/>
+      <ana>
+         <tok val="Salsissimi"/>
+         <tok val="salsissimi"/>
          <lm>
             <l>salsus</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -2371,8 +2830,9 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Salsissimo salsissimo-->
-         <tok val="[sS]alsissimo"/>
+      <ana>
+         <tok val="Salsissimo"/>
+         <tok val="salsissimo"/>
          <lm>
             <l>salsus</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -2381,8 +2841,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--Salsissimum salsissimum-->
-         <tok val="[sS]alsissimum"/>
+      <ana>
+         <tok val="Salsissimum"/>
+         <tok val="salsissimum"/>
          <lm>
             <l>salsus</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -2392,15 +2853,18 @@
             <m cert="0.2">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Salsissimum salsissime salsissimum-->
-         <tok val="[sS]alsissim(um|e)"/>
+      <ana>
+         <tok val="Salsissimum"/>
+         <tok val="salsissime"/>
+         <tok val="salsissimum"/>
          <lm>
             <l>salsus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Salsitudo salsitudo-->
-         <tok val="[sS]alsitudo"/>
+      <ana>
+         <tok val="Salsitudo"/>
+         <tok val="salsitudo"/>
          <lm>
             <l>salsitudo</l>
             <m>n - - s - - - f n</m>
@@ -2408,6 +2872,7 @@
       </ana>
       <ana>
          <tok val="Salsu"/>
+         <tok val="salsu"/>
          <lm>
             <l>salio</l>
             <m>a - - s - - - n d</m>
@@ -2415,6 +2880,7 @@
       </ana>
       <ana>
          <tok val="Salsula"/>
+         <tok val="salsula"/>
          <lm>
             <l>Salsula</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2424,6 +2890,7 @@
       </ana>
       <ana>
          <tok val="Salsulae"/>
+         <tok val="salsulae"/>
          <lm cert="0.5">
             <l>Salsulae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -2435,23 +2902,35 @@
             <m cert="0.5">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Salsum salsumque salsumst sálsum-->
-         <tok val="[sS]?(a|sá|sa)lsum(st|que)?"/>
+      <ana>
+         <tok val="Salsum"/>
+         <tok val="salsum"/>
+         <tok val="salsumque"/>
+         <tok val="salsumst"/>
+         <tok val="sálsum"/>
          <lm>
             <l>salio</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Salsum salitorum salsum salsumque salsumst-->
-         <tok val="[sS]al(s|itor)um(st|que)?"/>
+      <ana>
+         <tok val="Salsum"/>
+         <tok val="salitorum"/>
+         <tok val="salsum"/>
+         <tok val="salsumque"/>
+         <tok val="salsumst"/>
          <lm>
             <l>salio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Salsum salsom salsum salsumque salsumst-->
-         <tok val="[sS]als[uo]m(st|que)?"/>
+      <ana>
+         <tok val="Salsum"/>
+         <tok val="salsom"/>
+         <tok val="salsum"/>
+         <tok val="salsumque"/>
+         <tok val="salsumst"/>
          <lm>
             <l>salio</l>
             <m cert="0.25">v - - s r p p m a</m>
@@ -2460,15 +2939,19 @@
             <m cert="0.25">v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Salsum salsum salsumque salsumst-->
-         <tok val="[sS]alsum(st|que)?"/>
+      <ana>
+         <tok val="Salsum"/>
+         <tok val="salsum"/>
+         <tok val="salsumque"/>
+         <tok val="salsumst"/>
          <lm>
             <l>salsa</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salsura salsura-->
-         <tok val="[sS]alsura"/>
+      <ana>
+         <tok val="Salsura"/>
+         <tok val="salsura"/>
          <lm>
             <l>salsura</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -2476,8 +2959,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Salsus salitus salsus salsusque-->
-         <tok val="[sS]al(s|it)us(que)?"/>
+      <ana>
+         <tok val="Salsus"/>
+         <tok val="salitus"/>
+         <tok val="salsus"/>
+         <tok val="salsusque"/>
          <lm>
             <l>salio</l>
             <m>v - - s r p p m n</m>
@@ -2485,6 +2971,7 @@
       </ana>
       <ana>
          <tok val="Saltabundi"/>
+         <tok val="saltabundi"/>
          <lm>
             <l>saltabundus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -2493,52 +2980,59 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Saltatio saltatio-->
-         <tok val="[sS]altatio"/>
+      <ana>
+         <tok val="Saltatio"/>
+         <tok val="saltatio"/>
          <lm>
             <l>saltatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Saltatione saltatione-->
-         <tok val="[sS]altatione"/>
+      <ana>
+         <tok val="Saltatione"/>
+         <tok val="saltatione"/>
          <lm>
             <l>saltatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Saltationem saltationem-->
-         <tok val="[sS]altationem"/>
+      <ana>
+         <tok val="Saltationem"/>
+         <tok val="saltationem"/>
          <lm>
             <l>saltatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Saltator saltator-->
-         <tok val="[sS]altator"/>
+      <ana>
+         <tok val="Saltator"/>
+         <tok val="saltator"/>
          <lm>
             <l>saltator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Saltatorem saltatorem-->
-         <tok val="[sS]altatorem"/>
+      <ana>
+         <tok val="Saltatorem"/>
+         <tok val="saltatorem"/>
          <lm>
             <l>saltator</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saltatorius saltatorius-->
-         <tok val="[sS]altatorius"/>
+      <ana>
+         <tok val="Saltatorius"/>
+         <tok val="saltatorius"/>
          <lm>
             <l>saltatorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Saltatricula saltatricula-->
-         <tok val="[sS]altatricula"/>
+      <ana>
+         <tok val="Saltatricula"/>
+         <tok val="saltatricula"/>
          <lm>
             <l>saltatricula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2546,23 +3040,26 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Saltatrix saltatrix-->
-         <tok val="[sS]altatrix"/>
+      <ana>
+         <tok val="Saltatrix"/>
+         <tok val="saltatrix"/>
          <lm>
             <l>saltatrix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Saltatu saltatu-->
-         <tok val="[sS]altatu"/>
+      <ana>
+         <tok val="Saltatu"/>
+         <tok val="saltatu"/>
          <lm>
             <l>saltatus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Saltatus saltatus-->
-         <tok val="[sS]altatus"/>
+      <ana>
+         <tok val="Saltatus"/>
+         <tok val="saltatus"/>
          <lm>
             <l>saltatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2571,79 +3068,105 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saltem saltem saltemve saltim saltém sáltem SALTEM-->
-         <tok val="[sS]?(a|sá)?(lt)?[eié]?[m]?(ve|SALTEM)?"/>
+      <ana>
+         <tok val="SALTEM"/>
+         <tok val="Saltem"/>
+         <tok val="saltem"/>
+         <tok val="saltemve"/>
+         <tok val="saltim"/>
+         <tok val="saltém"/>
+         <tok val="sáltem"/>
          <lm>
             <l>saltem</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Saltibus Saltibvs saltibus-->
-         <tok val="[Ss]altib[vu]s"/>
+      <ana>
+         <tok val="Saltibus"/>
+         <tok val="Saltibvs"/>
+         <tok val="saltibus"/>
+         <tok val="saltibvs"/>
          <lm>
             <l>saltus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Saltito saltito-->
-         <tok val="[sS]altito"/>
+      <ana>
+         <tok val="Saltito"/>
+         <tok val="saltito"/>
          <lm>
             <l>saltito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Saltu saltu saltuque-->
-         <tok val="[sS]altu(que)?"/>
+      <ana>
+         <tok val="Saltu"/>
+         <tok val="saltu"/>
+         <tok val="saltuque"/>
          <lm>
             <l>saltus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Saltuarium saltuariorum saltuarium-->
-         <tok val="[sS]altuari(or)?um"/>
+      <ana>
+         <tok val="Saltuarium"/>
+         <tok val="saltuariorum"/>
+         <tok val="saltuarium"/>
          <lm>
             <l>saltuarius</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Saltuarium saltuarium-->
-         <tok val="[sS]altuarium"/>
+      <ana>
+         <tok val="Saltuarium"/>
+         <tok val="saltuarium"/>
          <lm>
             <l>saltuarius</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saltuarius saltuarius-->
-         <tok val="[sS]altuarius"/>
+      <ana>
+         <tok val="Saltuarius"/>
+         <tok val="saltuarius"/>
          <lm>
             <l>saltuarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Saltuatim saltuatim saltuatimque-->
-         <tok val="[sS]altuatim(que)?"/>
+      <ana>
+         <tok val="Saltuatim"/>
+         <tok val="saltuatim"/>
+         <tok val="saltuatimque"/>
          <lm>
             <l>saltuatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Saltum saltum saltumque-->
-         <tok val="[sS]altum(que)?"/>
+      <ana>
+         <tok val="Saltum"/>
+         <tok val="saltum"/>
+         <tok val="saltumque"/>
          <lm>
             <l>saltus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saltuosus saltuosus-->
-         <tok val="[sS]altuosus"/>
+      <ana>
+         <tok val="Saltuosus"/>
+         <tok val="saltuosus"/>
          <lm>
             <l>saltuosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Saltus Saltusque Saltvs saltus saltusque-->
-         <tok val="[sS]alt[uv]s(que)?"/>
+      <ana>
+         <tok val="Saltus"/>
+         <tok val="Saltusque"/>
+         <tok val="Saltvs"/>
+         <tok val="saltus"/>
+         <tok val="saltusque"/>
+         <tok val="saltvs"/>
          <lm>
             <l>saltus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2652,22 +3175,45 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saltuum Saltuumque saltuum saltuumque-->
-         <tok val="[sS]altuum(que)?"/>
+      <ana>
+         <tok val="Saltuum"/>
+         <tok val="Saltuumque"/>
+         <tok val="saltuum"/>
+         <tok val="saltuumque"/>
          <lm>
             <l>saltus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Salua Salva Salvast salua saluaque saluaue salva salvan salvaque salvast sálva Sálva-->
-         <tok val="(s|S|sálv|Sálv)a[l]?[uv]?[a]?[q]?(ue|n|que|st)?"/>
+      <ana>
+         <tok val="Salua"/>
+         <tok val="Salva"/>
+         <tok val="Salvast"/>
+         <tok val="Sálva"/>
+         <tok val="salua"/>
+         <tok val="saluaque"/>
+         <tok val="saluaue"/>
+         <tok val="salva"/>
+         <tok val="salvan"/>
+         <tok val="salvaque"/>
+         <tok val="salvast"/>
+         <tok val="sálva"/>
          <lm>
             <l>salvus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Salua Salva Salvast salua saluaque saluaue salva salvan salvaque salvast-->
-         <tok val="[sS]al[uv]a[q]?(ue|n|que|st)?"/>
+      <ana>
+         <tok val="Salua"/>
+         <tok val="Salva"/>
+         <tok val="Salvast"/>
+         <tok val="salua"/>
+         <tok val="saluaque"/>
+         <tok val="saluaue"/>
+         <tok val="salva"/>
+         <tok val="salvan"/>
+         <tok val="salvaque"/>
+         <tok val="salvast"/>
          <lm cert="0.5">
             <l>salvus</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -2681,15 +3227,20 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Saluabitur saluabitur salvabitur-->
-         <tok val="[sS]al[uv]abitur"/>
+      <ana>
+         <tok val="Saluabitur"/>
+         <tok val="saluabitur"/>
+         <tok val="salvabitur"/>
          <lm>
             <l>salvo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Saluae Salvae saluae salvae-->
-         <tok val="[Ss]al[vu]ae"/>
+      <ana>
+         <tok val="Saluae"/>
+         <tok val="Salvae"/>
+         <tok val="saluae"/>
+         <tok val="salvae"/>
          <lm>
             <l>salvus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2698,15 +3249,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Saluber saluber-->
-         <tok val="[sS]aluber"/>
+      <ana>
+         <tok val="Saluber"/>
+         <tok val="saluber"/>
          <lm>
             <l>saluber</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Salubre salubre-->
-         <tok val="[sS]alubre"/>
+      <ana>
+         <tok val="Salubre"/>
+         <tok val="salubre"/>
          <lm>
             <l>salubris</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2714,16 +3267,24 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salubres Salubris salubres salubresque salubris salubrisne salubrisque-->
-         <tok val="[sS]alubr[ie]s(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Salubres"/>
+         <tok val="Salubris"/>
+         <tok val="salubres"/>
+         <tok val="salubresque"/>
+         <tok val="salubris"/>
+         <tok val="salubrisne"/>
+         <tok val="salubrisque"/>
          <lm>
             <l>salubris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salubres salubres salubresque-->
-         <tok val="[sS]alubres(que)?"/>
+      <ana>
+         <tok val="Salubres"/>
+         <tok val="salubres"/>
+         <tok val="salubresque"/>
          <lm>
             <l>salubris</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2732,8 +3293,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salubri salubri salubrique-->
-         <tok val="[sS]alubri(que)?"/>
+      <ana>
+         <tok val="Salubri"/>
+         <tok val="salubri"/>
+         <tok val="salubrique"/>
          <lm>
             <l>salubris</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -2744,8 +3307,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Salubria salubria-->
-         <tok val="[sS]alubria"/>
+      <ana>
+         <tok val="Salubria"/>
+         <tok val="salubria"/>
          <lm>
             <l>salubris</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -2753,8 +3317,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Salubrior salubrior-->
-         <tok val="[sS]alubrior"/>
+      <ana>
+         <tok val="Salubrior"/>
+         <tok val="salubrior"/>
          <lm>
             <l>salubris</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -2763,8 +3328,11 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Salubris salubris salubrisne salubrisque-->
-         <tok val="[sS]alubris(ne|que)?"/>
+      <ana>
+         <tok val="Salubris"/>
+         <tok val="salubris"/>
+         <tok val="salubrisne"/>
+         <tok val="salubrisque"/>
          <lm>
             <l>salubris</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -2776,22 +3344,27 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salubritas salubritas-->
-         <tok val="[sS]alubritas"/>
+      <ana>
+         <tok val="Salubritas"/>
+         <tok val="salubritas"/>
          <lm>
             <l>salubritas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Salubritatem salubritatem salubritatemque-->
-         <tok val="[sS]alubritatem(que)?"/>
+      <ana>
+         <tok val="Salubritatem"/>
+         <tok val="salubritatem"/>
+         <tok val="salubritatemque"/>
          <lm>
             <l>salubritas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salubriter salubriterque-->
-         <tok val="[sS]alubriter(que)?"/>
+      <ana>
+         <tok val="Salubriter"/>
+         <tok val="salubriter"/>
+         <tok val="salubriterque"/>
          <lm>
             <l>salubriter</l>
             <m>d</m>
@@ -2799,36 +3372,65 @@
       </ana>
       <ana>
          <tok val="Salubrius"/>
+         <tok val="salubrius"/>
          <lm>
             <l>salubris</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Salubrius salubrius-->
-         <tok val="[sS]alubrius"/>
-         <lm>
-            <l>salubris</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Salue Salve Salven Salvene salvius-->
-         <tok val="[Ss]al[vu]?[e]?[n]?(e|vius)?"/>
+      <ana>
+         <tok val="Salue"/>
+         <tok val="Salve"/>
+         <tok val="Salven"/>
+         <tok val="Salvene"/>
+         <tok val="salue"/>
+         <tok val="salve"/>
+         <tok val="salven"/>
+         <tok val="salvene"/>
+         <tok val="salvius"/>
          <lm>
             <l>salvus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Salue Saluum Salve Salven Salvene Salvom Salvum salue saluom saluum saluumque salve salven salvom salvomque salvomst salvum salvumque salvumst-->
-         <tok val="[Ss]al[v]?(umqu)?[e]?[n]?(e|n|uumque|vomque|vumst|vomst|vom|vum|uum|uom|ue)?"/>
+      <ana>
+         <tok val="Salue"/>
+         <tok val="Saluum"/>
+         <tok val="Salve"/>
+         <tok val="Salven"/>
+         <tok val="Salvene"/>
+         <tok val="Salvom"/>
+         <tok val="Salvum"/>
+         <tok val="salue"/>
+         <tok val="saluom"/>
+         <tok val="saluum"/>
+         <tok val="saluumque"/>
+         <tok val="salve"/>
+         <tok val="salven"/>
+         <tok val="salvene"/>
+         <tok val="salvom"/>
+         <tok val="salvomque"/>
+         <tok val="salvomst"/>
+         <tok val="salvum"/>
+         <tok val="salvumque"/>
+         <tok val="salvumst"/>
          <lm>
             <l>salvus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Salue Salve Salven Salvene salue salve salven-->
-         <tok val="[Ss]al[vu]e[n]?[en]?"/>
+      <ana>
+         <tok val="Salue"/>
+         <tok val="Salve"/>
+         <tok val="Salven"/>
+         <tok val="Salvene"/>
+         <tok val="salue"/>
+         <tok val="salve"/>
+         <tok val="salven"/>
+         <tok val="salvene"/>
          <lm cert="0.5">
             <l>salveo</l>
             <m>v - 2 s p m a</m>
@@ -2838,22 +3440,29 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Saluebis salvebis-->
-         <tok val="[sS]al[vu]ebis"/>
+      <ana>
+         <tok val="Saluebis"/>
+         <tok val="saluebis"/>
+         <tok val="salvebis"/>
          <lm>
             <l>salveo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Salueo salveo-->
-         <tok val="[sS]al[vu]eo"/>
+      <ana>
+         <tok val="Salueo"/>
+         <tok val="salueo"/>
+         <tok val="salveo"/>
          <lm>
             <l>salveo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Saluere Salvere saluere salvere-->
-         <tok val="[Ss]al[vu]ere"/>
+      <ana>
+         <tok val="Saluere"/>
+         <tok val="Salvere"/>
+         <tok val="saluere"/>
+         <tok val="salvere"/>
          <lm cert="0.5">
             <l>salveo</l>
             <m cert="0.5">v - 2 s p m p</m>
@@ -2864,40 +3473,51 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Saluere Salvere saluere salvere sálvere-->
-         <tok val="[Ss]?(a|sá)l[vu]ere"/>
+      <ana>
+         <tok val="Saluere"/>
+         <tok val="Salvere"/>
+         <tok val="saluere"/>
+         <tok val="salvere"/>
+         <tok val="sálvere"/>
          <lm>
             <l>salveo</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Saluete Salvete saluete salvete Salvéte-->
-         <tok val="[Ss]al[vu]?(e|vé)te"/>
+      <ana>
+         <tok val="Saluete"/>
+         <tok val="Salvete"/>
+         <tok val="Salvéte"/>
+         <tok val="saluete"/>
+         <tok val="salvete"/>
+         <tok val="salvéte"/>
          <lm>
             <l>salveo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Salui Salvi salui salvi-->
-         <tok val="[Ss]al[vu]i"/>
-         <lm>
+      <ana>
+         <tok val="Salui"/>
+         <tok val="Salvi"/>
+         <tok val="salui"/>
+         <tok val="salvi"/>
+         <lm cert="0.5">
             <l>salvus</l>
             <m cert="0.25">a - - s - - - m g</m>
             <m cert="0.25">a - - p - - - m v</m>
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana><!--Salui Salvi-->
-         <tok val="Sal[vu]i"/>
-         <lm>
+         <lm cert="0.5">
             <l>Salvius</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Saluia saluia salvia-->
-         <tok val="[sS]al[uv]ia"/>
+      <ana>
+         <tok val="Saluia"/>
+         <tok val="saluia"/>
+         <tok val="salvia"/>
          <lm>
             <l>salvia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2905,8 +3525,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Saluiae saluiae Salviae-->
-         <tok val="[sS]al[uv]iae"/>
+      <ana>
+         <tok val="Saluiae"/>
+         <tok val="Salviae"/>
+         <tok val="saluiae"/>
+         <tok val="salviae"/>
          <lm>
             <l>salvia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -2915,23 +3538,31 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Saluiam salviam-->
-         <tok val="[sS]al[vu]iam"/>
+      <ana>
+         <tok val="Saluiam"/>
+         <tok val="saluiam"/>
+         <tok val="salviam"/>
          <lm>
             <l>salvia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Saluio Salvio-->
-         <tok val="Sal[vu]io"/>
+      <ana>
+         <tok val="Saluio"/>
+         <tok val="Salvio"/>
+         <tok val="saluio"/>
+         <tok val="salvio"/>
          <lm>
             <l>Salvius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Saluis Salvis saluis salvis-->
-         <tok val="[Ss]al[vu]is"/>
+      <ana>
+         <tok val="Saluis"/>
+         <tok val="Salvis"/>
+         <tok val="saluis"/>
+         <tok val="salvis"/>
          <lm>
             <l>salvus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2942,36 +3573,40 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Saluium Salvium-->
-         <tok val="Sal[vu]ium"/>
+      <ana>
+         <tok val="Saluium"/>
+         <tok val="Salvium"/>
+         <tok val="saluium"/>
+         <tok val="salvium"/>
          <lm>
             <l>Salvius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saluius Salvius-->
-         <tok val="Sal[vu]ius"/>
+      <ana>
+         <tok val="Saluius"/>
+         <tok val="Salvius"/>
+         <tok val="saluius"/>
+         <tok val="salvius"/>
          <lm cert="0.5">
             <l>Salvius</l>
             <m>n e - s - - - m n</m>
          </lm>
          <lm cert="0.5">
             <l>salvus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Saluius Salvius salvius-->
-         <tok val="[Ss]al[vu]ius"/>
-         <lm>
-            <l>salvus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Saluo Salvo saluo saluoque salvo-->
-         <tok val="[Ss]al[vu]o(que)?"/>
+      <ana>
+         <tok val="Saluo"/>
+         <tok val="Salvo"/>
+         <tok val="saluo"/>
+         <tok val="saluoque"/>
+         <tok val="salvo"/>
          <lm cert="0.5">
             <l>salvus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2984,36 +3619,48 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Saluos Salvos saluos salvos salvosque salvós Sálvos-->
-         <tok val="[Ss]?(a|Sá|sa)l[vu]?(o|vó|vo)s(que)?"/>
+      <ana>
+         <tok val="Saluos"/>
+         <tok val="Salvos"/>
+         <tok val="Sálvos"/>
+         <tok val="saluos"/>
+         <tok val="salvos"/>
+         <tok val="salvosque"/>
+         <tok val="salvós"/>
+         <tok val="sálvos"/>
          <lm>
             <l>salvus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saluta saluta salutan-->
-         <tok val="[sS]aluta[n]?"/>
+      <ana>
+         <tok val="Saluta"/>
+         <tok val="saluta"/>
+         <tok val="salutan"/>
          <lm>
             <l>saluto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Salutabatur salutabatur-->
-         <tok val="[sS]alutabatur"/>
+      <ana>
+         <tok val="Salutabatur"/>
+         <tok val="salutabatur"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Salutant salutant-->
-         <tok val="[sS]alutant"/>
+      <ana>
+         <tok val="Salutant"/>
+         <tok val="salutant"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Salutantes salutantes-->
-         <tok val="[sS]alutantes"/>
+      <ana>
+         <tok val="Salutantes"/>
+         <tok val="salutantes"/>
          <lm>
             <l>saluto</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -3024,8 +3671,9 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Salutanti salutanti-->
-         <tok val="[sS]alutanti"/>
+      <ana>
+         <tok val="Salutanti"/>
+         <tok val="salutanti"/>
          <lm>
             <l>saluto</l>
             <m cert="0.166666666666666667">v - - s p p a f d</m>
@@ -3036,15 +3684,20 @@
             <m cert="0.166666666666666667">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Salutare salutare salutareque salútare-->
-         <tok val="[sS]al[uú]tare(que)?"/>
+      <ana>
+         <tok val="Salutare"/>
+         <tok val="salutare"/>
+         <tok val="salutareque"/>
+         <tok val="salútare"/>
          <lm>
             <l>salutaris</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Salutare salutare salutareque-->
-         <tok val="[sS]alutare(que)?"/>
+      <ana>
+         <tok val="Salutare"/>
+         <tok val="salutare"/>
+         <tok val="salutareque"/>
          <lm cert="0.333333333333333333">
             <l>salutaris</l>
             <m cert="0.5">a - - s - - - n a</m>
@@ -3062,22 +3715,32 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Salutare Salutari salutare salutareque salutari-->
-         <tok val="[Ss]alutar(i|e|eque)"/>
+      <ana>
+         <tok val="Salutare"/>
+         <tok val="Salutari"/>
+         <tok val="salutare"/>
+         <tok val="salutareque"/>
+         <tok val="salutari"/>
          <lm>
             <l>salutare</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Salutare Salutaris salutare salutareque salutaris-->
-         <tok val="[sS]alutar(is|e|eque)"/>
+      <ana>
+         <tok val="Salutare"/>
+         <tok val="Salutaris"/>
+         <tok val="salutare"/>
+         <tok val="salutareque"/>
+         <tok val="salutaris"/>
          <lm>
             <l>saluto</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Salutarem salutarem salutaremque-->
-         <tok val="[sS]alutarem(que)?"/>
+      <ana>
+         <tok val="Salutarem"/>
+         <tok val="salutarem"/>
+         <tok val="salutaremque"/>
          <lm cert="0.5">
             <l>salutaris</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -3088,16 +3751,20 @@
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Salutares Salutaris salutares salutaris-->
-         <tok val="[Ss]alutar[ie]s"/>
+      <ana>
+         <tok val="Salutares"/>
+         <tok val="Salutaris"/>
+         <tok val="salutares"/>
+         <tok val="salutaris"/>
          <lm>
             <l>salutaris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salutares salutares-->
-         <tok val="[sS]alutares"/>
+      <ana>
+         <tok val="Salutares"/>
+         <tok val="salutares"/>
          <lm cert="0.5">
             <l>salutaris</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -3110,8 +3777,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Salutari salutari-->
-         <tok val="[sS]alutari"/>
+      <ana>
+         <tok val="Salutari"/>
+         <tok val="salutari"/>
          <lm cert="0.333333333333333333">
             <l>salutaris</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -3130,8 +3798,9 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Salutaris salutaris-->
-         <tok val="[sS]alutaris"/>
+      <ana>
+         <tok val="Salutaris"/>
+         <tok val="salutaris"/>
          <lm cert="0.333333333333333333">
             <l>saluto</l>
             <m>v - 2 s r s a</m>
@@ -3153,65 +3822,75 @@
       </ana>
       <ana>
          <tok val="Salutariter"/>
+         <tok val="salutariter"/>
          <lm>
             <l>salutariter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Salutat salutat-->
-         <tok val="[sS]alutat"/>
+      <ana>
+         <tok val="Salutat"/>
+         <tok val="salutat"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Salutate salutate-->
-         <tok val="[sS]alutate"/>
+      <ana>
+         <tok val="Salutate"/>
+         <tok val="salutate"/>
          <lm>
             <l>saluto</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Salutate salutate salutatum-->
-         <tok val="[sS]alutat(e|um)"/>
+      <ana>
+         <tok val="Salutate"/>
+         <tok val="salutate"/>
+         <tok val="salutatum"/>
          <lm>
             <l>saluto</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Salutatio salutatio-->
-         <tok val="[sS]alutatio"/>
+      <ana>
+         <tok val="Salutatio"/>
+         <tok val="salutatio"/>
          <lm>
             <l>salutatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Salutationem salutationem-->
-         <tok val="[sS]alutationem"/>
+      <ana>
+         <tok val="Salutationem"/>
+         <tok val="salutationem"/>
          <lm>
             <l>salutatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salutationum salutationum-->
-         <tok val="[sS]alutationum"/>
+      <ana>
+         <tok val="Salutationum"/>
+         <tok val="salutationum"/>
          <lm>
             <l>salutatio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salutator salutator-->
-         <tok val="[sS]alutator"/>
+      <ana>
+         <tok val="Salutator"/>
+         <tok val="salutator"/>
          <lm>
             <l>salutator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Salutatorium salutatorium-->
-         <tok val="[sS]alutatorium"/>
+      <ana>
+         <tok val="Salutatorium"/>
+         <tok val="salutatorium"/>
          <lm cert="0.5">
             <l>salutatorius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -3229,29 +3908,35 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Salutatorius salutatorius-->
-         <tok val="[sS]alutatorius"/>
+      <ana>
+         <tok val="Salutatorius"/>
+         <tok val="salutatorius"/>
          <lm>
             <l>salutatorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salute salute salúte-->
-         <tok val="[sS]al[uú]te"/>
+      <ana>
+         <tok val="Salute"/>
+         <tok val="salute"/>
+         <tok val="salúte"/>
          <lm>
             <l>salus</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Saluti saluti salutique-->
-         <tok val="[sS]aluti(que)?"/>
+      <ana>
+         <tok val="Saluti"/>
+         <tok val="saluti"/>
+         <tok val="salutique"/>
          <lm>
             <l>salus</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Salutifera salutifera-->
-         <tok val="[sS]alutifera"/>
+      <ana>
+         <tok val="Salutifera"/>
+         <tok val="salutifera"/>
          <lm>
             <l>salutifer</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -3262,8 +3947,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Salutiferae salutiferae-->
-         <tok val="[sS]alutiferae"/>
+      <ana>
+         <tok val="Salutiferae"/>
+         <tok val="salutiferae"/>
          <lm>
             <l>salutifer</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -3272,74 +3958,121 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Salutiferam salutiferam salutiferamque-->
-         <tok val="[sS]alutiferam(que)?"/>
+      <ana>
+         <tok val="Salutiferam"/>
+         <tok val="salutiferam"/>
+         <tok val="salutiferamque"/>
          <lm>
             <l>salutifer</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salutigerulus salutigerulus-->
-         <tok val="[sS]alutigerulus"/>
+      <ana>
+         <tok val="Salutigerulus"/>
+         <tok val="salutigerulus"/>
          <lm>
             <l>salutigerulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salutio Salvitto-->
-         <tok val="Sal(vi|u)t[ti]o"/>
+      <ana>
+         <tok val="Salutio"/>
+         <tok val="Salvitto"/>
+         <tok val="salutio"/>
+         <tok val="salvitto"/>
          <lm>
             <l>Salutio</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Saluto saluto salutó-->
-         <tok val="[sS]alut[oó]"/>
+      <ana>
+         <tok val="Saluto"/>
+         <tok val="saluto"/>
+         <tok val="salutó"/>
          <lm>
             <l>saluto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Saluum Salvom Salvum saluom saluum saluumque salvom salvomque salvomst salvum salvumque salvumst Sálvom-->
-         <tok val="[sS]?(a|Sá)l[vu]?(u|vo|vu|uu|uo)m(que|st)?"/>
+      <ana>
+         <tok val="Saluum"/>
+         <tok val="Salvom"/>
+         <tok val="Salvum"/>
+         <tok val="Sálvom"/>
+         <tok val="saluom"/>
+         <tok val="saluum"/>
+         <tok val="saluumque"/>
+         <tok val="salvom"/>
+         <tok val="salvomque"/>
+         <tok val="salvomst"/>
+         <tok val="salvum"/>
+         <tok val="salvumque"/>
+         <tok val="salvumst"/>
+         <tok val="sálvom"/>
          <lm>
             <l>salvus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Saluum Salvum saluum saluumque salvum salvumque salvumst-->
-         <tok val="[sS]al[vu]um(que|st)?"/>
+      <ana>
+         <tok val="Saluum"/>
+         <tok val="Salvum"/>
+         <tok val="saluum"/>
+         <tok val="saluumque"/>
+         <tok val="salvum"/>
+         <tok val="salvumque"/>
+         <tok val="salvumst"/>
          <lm>
             <l>salvus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Saluum Salvom Salvum saluom saluum saluumque salvom salvomque salvomst salvum salvumque salvumst-->
-         <tok val="[sS]al[vu]?(u|vo|vu|uu|uo)m(que|st)?"/>
+      <ana>
+         <tok val="Saluum"/>
+         <tok val="Salvom"/>
+         <tok val="Salvum"/>
+         <tok val="saluom"/>
+         <tok val="saluum"/>
+         <tok val="saluumque"/>
+         <tok val="salvom"/>
+         <tok val="salvomque"/>
+         <tok val="salvomst"/>
+         <tok val="salvum"/>
+         <tok val="salvumque"/>
+         <tok val="salvumst"/>
          <lm>
             <l>salvus</l>
             <m cert="0.5">a - - s - - - n a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Saluus Salvus saluus saluusne salvus salvusne-->
-         <tok val="[sS]al[vu]us(ne)?"/>
+      <ana>
+         <tok val="Saluus"/>
+         <tok val="Salvus"/>
+         <tok val="saluus"/>
+         <tok val="saluusne"/>
+         <tok val="salvus"/>
+         <tok val="salvusne"/>
          <lm>
             <l>salvus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salvam saluam salvam salvamque-->
-         <tok val="[sS]al[vu]am(que)?"/>
+      <ana>
+         <tok val="Salvam"/>
+         <tok val="saluam"/>
+         <tok val="salvam"/>
+         <tok val="salvamque"/>
          <lm>
             <l>salvus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salvanda salvanda-->
-         <tok val="[sS]alvanda"/>
+      <ana>
+         <tok val="Salvanda"/>
+         <tok val="salvanda"/>
          <lm>
             <l>salvo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -3350,8 +4083,11 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Salvas saluas salvan salvas-->
-         <tok val="[sS]al[vu]a[sn]"/>
+      <ana>
+         <tok val="Salvas"/>
+         <tok val="saluas"/>
+         <tok val="salvan"/>
+         <tok val="salvas"/>
          <lm cert="0.5">
             <l>salvo</l>
             <m>v - 2 s p i a</m>
@@ -3361,30 +4097,36 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Salvator salvator-->
-         <tok val="[sS]alvator"/>
+      <ana>
+         <tok val="Salvator"/>
+         <tok val="salvator"/>
          <lm>
             <l>salvator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Salvatorem salvatorem-->
-         <tok val="[sS]alvatorem"/>
+      <ana>
+         <tok val="Salvatorem"/>
+         <tok val="salvatorem"/>
          <lm>
             <l>salvator</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Salvatoris salvatoris SALVATORIS-->
-         <tok val="[sS]?(alvatoris|SALVATORIS)"/>
+      <ana>
+         <tok val="SALVATORIS"/>
+         <tok val="Salvatoris"/>
+         <tok val="salvatoris"/>
          <lm>
             <l>salvator</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Salven salven salves-->
-         <tok val="[sS]alve[ns]"/>
+      <ana>
+         <tok val="Salven"/>
+         <tok val="salven"/>
+         <tok val="salves"/>
          <lm cert="0.5">
             <l>salveo</l>
             <m>v - 2 s p i a</m>
@@ -3396,6 +4138,7 @@
       </ana>
       <ana>
          <tok val="Salviano"/>
+         <tok val="salviano"/>
          <lm>
             <l>Salvianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -3406,6 +4149,7 @@
       </ana>
       <ana>
          <tok val="Salvianum"/>
+         <tok val="salvianum"/>
          <lm>
             <l>Salvianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -3418,13 +4162,15 @@
       </ana>
       <ana>
          <tok val="Salvianus"/>
+         <tok val="salvianus"/>
          <lm>
             <l>Salvianus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Salvifica salvifica-->
-         <tok val="[sS]alvifica"/>
+      <ana>
+         <tok val="Salvifica"/>
+         <tok val="salvifica"/>
          <lm cert="0.5">
             <l>salvificus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -3441,6 +4187,7 @@
       </ana>
       <ana>
          <tok val="Salvittones"/>
+         <tok val="salvittones"/>
          <lm>
             <l>Salutio</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -3498,7 +4245,7 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--salacis-->
+      <ana>
          <tok val="salacis"/>
          <lm>
             <l>salax</l>
@@ -3597,8 +4344,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--salari salarii-->
-         <tok val="salari[i]?"/>
+      <ana>
+         <tok val="salari"/>
+         <tok val="salarii"/>
          <lm cert="0.5">
             <l>salarius</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -3743,8 +4491,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--salebrosos salebrososque-->
-         <tok val="salebrosos(que)?"/>
+      <ana>
+         <tok val="salebrosos"/>
+         <tok val="salebrososque"/>
          <lm>
             <l>salebrosus</l>
             <m>a - - p - - - m a</m>
@@ -3759,8 +4508,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--salgamari salgamarii-->
-         <tok val="salgamari[i]?"/>
+      <ana>
+         <tok val="salgamari"/>
+         <tok val="salgamarii"/>
          <lm>
             <l>salgamarius</l>
             <m>n - - s - - - m g</m>
@@ -3789,8 +4539,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--salgamorum salgamum-->
-         <tok val="salgam(or)?um"/>
+      <ana>
+         <tok val="salgamorum"/>
+         <tok val="salgamum"/>
          <lm>
             <l>salgama</l>
             <m>n - - p - - - n g</m>
@@ -3805,8 +4556,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--saliant sallant-->
-         <tok val="sal[li]ant"/>
+      <ana>
+         <tok val="saliant"/>
+         <tok val="sallant"/>
          <lm>
             <l>salio</l>
             <m>v - 3 p p s a</m>
@@ -3906,8 +4658,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--salicum salicumque-->
-         <tok val="salicum(que)?"/>
+      <ana>
+         <tok val="salicum"/>
+         <tok val="salicumque"/>
          <lm>
             <l>salix</l>
             <m>n - - p - - - f g</m>
@@ -3971,8 +4724,9 @@
             <m cert="0.25">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--saliente salienti-->
-         <tok val="salient[ie]"/>
+      <ana>
+         <tok val="saliente"/>
+         <tok val="salienti"/>
          <lm>
             <l>salio2</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3988,8 +4742,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--salientes salientis-->
-         <tok val="salient[ie]s"/>
+      <ana>
+         <tok val="salientes"/>
+         <tok val="salientis"/>
          <lm>
             <l>salio2</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -4059,8 +4814,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--saliere salierunt-->
-         <tok val="salier(unt|e)"/>
+      <ana>
+         <tok val="saliere"/>
+         <tok val="salierunt"/>
          <lm>
             <l>salio2</l>
             <m>v - 3 p r i a</m>
@@ -4120,15 +4876,17 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--salignas saligneas-->
-         <tok val="salign[e]?as"/>
+      <ana>
+         <tok val="salignas"/>
+         <tok val="saligneas"/>
          <lm>
             <l>salignus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--saligneo saligno-->
-         <tok val="salign[e]?o"/>
+      <ana>
+         <tok val="saligneo"/>
+         <tok val="saligno"/>
          <lm>
             <l>salignus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -4137,8 +4895,11 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--salii saliin saliui salivi-->
-         <tok val="sali[uv]?i[n]?"/>
+      <ana>
+         <tok val="salii"/>
+         <tok val="saliin"/>
+         <tok val="saliui"/>
+         <tok val="salivi"/>
          <lm>
             <l>salio2</l>
             <m>v - 1 s r i a</m>
@@ -4151,8 +4912,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--salillo salillost-->
-         <tok val="salillo(st)?"/>
+      <ana>
+         <tok val="salillo"/>
+         <tok val="salillost"/>
          <lm>
             <l>salillum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -4231,15 +4993,17 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--saliri salli-->
-         <tok val="sal[l]?i(ri)?"/>
+      <ana>
+         <tok val="saliri"/>
+         <tok val="salli"/>
          <lm>
             <l>salio</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--salis salisque-->
-         <tok val="salis(que)?"/>
+      <ana>
+         <tok val="salis"/>
+         <tok val="salisque"/>
          <lm>
             <l>salio2</l>
             <m>v - 2 s p i a</m>
@@ -4260,8 +5024,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--salitarum salsarum-->
-         <tok val="sal(s|it)arum"/>
+      <ana>
+         <tok val="salitarum"/>
+         <tok val="salsarum"/>
          <lm>
             <l>salio</l>
             <m>v - - p r p p f g</m>
@@ -4282,16 +5047,18 @@
             <m>v - 2 p p i a</m>
          </lm>
       </ana>
-      <ana><!--salito sallito-->
-         <tok val="sa[l]?lito"/>
+      <ana>
+         <tok val="salito"/>
+         <tok val="sallito"/>
          <lm>
             <l>salio</l>
             <m cert="0.5">v - 2 s f m a</m>
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--salitos salsos-->
-         <tok val="sal(s|it)os"/>
+      <ana>
+         <tok val="salitos"/>
+         <tok val="salsos"/>
          <lm>
             <l>salio</l>
             <m>v - - p r p p m a</m>
@@ -4304,8 +5071,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--saliturae salsurae-->
-         <tok val="sal(s|it)urae"/>
+      <ana>
+         <tok val="saliturae"/>
+         <tok val="salsurae"/>
          <lm>
             <l>salio</l>
             <m cert="0.25">v - - p f p a f v</m>
@@ -4324,8 +5092,10 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--saliuae saliuaeque salivae-->
-         <tok val="sali[vu]ae(que)?"/>
+      <ana>
+         <tok val="saliuae"/>
+         <tok val="saliuaeque"/>
+         <tok val="salivae"/>
          <lm>
             <l>saliva</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -4334,8 +5104,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--saliuam salivam-->
-         <tok val="sali[vu]am"/>
+      <ana>
+         <tok val="saliuam"/>
+         <tok val="salivam"/>
          <lm>
             <l>saliva</l>
             <m>n - - s - - - f a</m>
@@ -4361,8 +5132,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--saliuario salivario-->
-         <tok val="sali[vu]ario"/>
+      <ana>
+         <tok val="saliuario"/>
+         <tok val="salivario"/>
          <lm>
             <l>salivarius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -4371,8 +5143,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--saliuas salivas-->
-         <tok val="sali[vu]as"/>
+      <ana>
+         <tok val="saliuas"/>
+         <tok val="salivas"/>
          <lm cert="0.5">
             <l>salivo</l>
             <m>v - 2 s p i a</m>
@@ -4382,8 +5155,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--saliuati salivati-->
-         <tok val="sali[vu]ati"/>
+      <ana>
+         <tok val="saliuati"/>
+         <tok val="salivati"/>
          <lm cert="0.5">
             <l>salivo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -4396,8 +5170,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--saliuato salivato-->
-         <tok val="sali[vu]ato"/>
+      <ana>
+         <tok val="saliuato"/>
+         <tok val="salivato"/>
          <lm cert="0.5">
             <l>salivo</l>
             <m cert="0.166666666666666667">v - - s r p p m b</m>
@@ -4413,8 +5188,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--saliuatum salivatum-->
-         <tok val="sali[vu]atum"/>
+      <ana>
+         <tok val="saliuatum"/>
+         <tok val="salivatum"/>
          <lm cert="0.5">
             <l>salivo</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -4447,8 +5223,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--saliuis salivis-->
-         <tok val="sali[vu]is"/>
+      <ana>
+         <tok val="saliuis"/>
+         <tok val="salivis"/>
          <lm>
             <l>saliva</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -4495,8 +5272,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--saliuosa salivosa-->
-         <tok val="sali[vu]osa"/>
+      <ana>
+         <tok val="saliuosa"/>
+         <tok val="salivosa"/>
          <lm>
             <l>salivosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -4614,8 +5392,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--salpicta salpista-->
-         <tok val="salpi[sc]ta"/>
+      <ana>
+         <tok val="salpicta"/>
+         <tok val="salpista"/>
          <lm>
             <l>salpicta</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -4639,8 +5418,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--salsamentari salsamentarii-->
-         <tok val="salsamentari[i]?"/>
+      <ana>
+         <tok val="salsamentari"/>
+         <tok val="salsamentarii"/>
          <lm>
             <l>salsamentarius</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -4736,8 +5516,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--salsas salsasque-->
-         <tok val="salsas(que)?"/>
+      <ana>
+         <tok val="salsas"/>
+         <tok val="salsasque"/>
          <lm cert="0.5">
             <l>salio</l>
             <m>v - - p r p p f a</m>
@@ -4768,36 +5549,41 @@
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--salsilagine salsugine-->
-         <tok val="sals(u|ila)gine"/>
+      <ana>
+         <tok val="salsilagine"/>
+         <tok val="salsugine"/>
          <lm>
             <l>salsugo</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--salsilaginem salsuginem-->
-         <tok val="sals(u|ila)ginem"/>
+      <ana>
+         <tok val="salsilaginem"/>
+         <tok val="salsuginem"/>
          <lm>
             <l>salsugo</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--salsilagini salsugini-->
-         <tok val="sals(u|ila)gini"/>
+      <ana>
+         <tok val="salsilagini"/>
+         <tok val="salsugini"/>
          <lm>
             <l>salsugo</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--salsilaginis salsuginis-->
-         <tok val="sals(u|ila)ginis"/>
+      <ana>
+         <tok val="salsilaginis"/>
+         <tok val="salsuginis"/>
          <lm>
             <l>salsugo</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--salsior salsiorque-->
-         <tok val="salsior(que)?"/>
+      <ana>
+         <tok val="salsior"/>
+         <tok val="salsiorque"/>
          <lm>
             <l>salsus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -4857,8 +5643,9 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--salsissime salsissimus-->
-         <tok val="salsissim(us|e)"/>
+      <ana>
+         <tok val="salsissime"/>
+         <tok val="salsissimus"/>
          <lm>
             <l>salsus</l>
             <m>a - - s - - - m v s</m>
@@ -5060,8 +5847,9 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--saltatorie saltatorium-->
-         <tok val="saltatori(um|e)"/>
+      <ana>
+         <tok val="saltatorie"/>
+         <tok val="saltatorium"/>
          <lm>
             <l>saltatorius</l>
             <m>a - - s - - - n v</m>
@@ -5116,8 +5904,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--saltatum saltátum-->
-         <tok val="salt[áa]tum"/>
+      <ana>
+         <tok val="saltatum"/>
+         <tok val="saltátum"/>
          <lm>
             <l>saltatus</l>
             <m>n - - s - - - m a</m>
@@ -5280,8 +6069,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--saluabit salvabit-->
-         <tok val="sal[vu]abit"/>
+      <ana>
+         <tok val="saluabit"/>
+         <tok val="salvabit"/>
          <lm>
             <l>salvo</l>
             <m>v - 3 s f i a</m>
@@ -5308,8 +6098,9 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--saluans salvans-->
-         <tok val="sal[vu]ans"/>
+      <ana>
+         <tok val="saluans"/>
+         <tok val="salvans"/>
          <lm>
             <l>salvo</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -5321,23 +6112,27 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--saluantur salvantur-->
-         <tok val="sal[vu]antur"/>
+      <ana>
+         <tok val="saluantur"/>
+         <tok val="salvantur"/>
          <lm>
             <l>salvo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--saluare salvare-->
-         <tok val="sal[vu]are"/>
+      <ana>
+         <tok val="saluare"/>
+         <tok val="salvare"/>
          <lm>
             <l>salvo</l>
             <m cert="0.5">v - - - p n a</m>
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--saluare salvare salvaris-->
-         <tok val="sal[vu]ar(e|is)"/>
+      <ana>
+         <tok val="saluare"/>
+         <tok val="salvare"/>
+         <tok val="salvaris"/>
          <lm>
             <l>salvo</l>
             <m>v - 2 s p i p</m>
@@ -5350,22 +6145,25 @@
             <m>v - 1 s i s p</m>
          </lm>
       </ana>
-      <ana><!--saluaretur salvaretur-->
-         <tok val="sal[vu]aretur"/>
+      <ana>
+         <tok val="saluaretur"/>
+         <tok val="salvaretur"/>
          <lm>
             <l>salvo</l>
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--saluari salvari-->
-         <tok val="sal[vu]ari"/>
+      <ana>
+         <tok val="saluari"/>
+         <tok val="salvari"/>
          <lm>
             <l>salvo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--saluat salvat-->
-         <tok val="sal[vu]at"/>
+      <ana>
+         <tok val="saluat"/>
+         <tok val="salvat"/>
          <lm>
             <l>salvo</l>
             <m>v - 3 s p i a</m>
@@ -5383,30 +6181,35 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--saluatur salvatur-->
-         <tok val="sal[vu]atur"/>
+      <ana>
+         <tok val="saluatur"/>
+         <tok val="salvatur"/>
          <lm>
             <l>salvo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--saluauit salvavit salvavitque-->
-         <tok val="sal[vu]a[vu]it(que)?"/>
+      <ana>
+         <tok val="saluauit"/>
+         <tok val="salvavit"/>
+         <tok val="salvavitque"/>
          <lm>
             <l>salvo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--salubrem salubremque-->
-         <tok val="salubrem(que)?"/>
+      <ana>
+         <tok val="salubrem"/>
+         <tok val="salubremque"/>
          <lm>
             <l>salubris</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--salubribus salubribusque-->
-         <tok val="salubribus(que)?"/>
+      <ana>
+         <tok val="salubribus"/>
+         <tok val="salubribusque"/>
          <lm>
             <l>salubris</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -5461,8 +6264,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--salubritates salubritatesque-->
-         <tok val="salubritates(que)?"/>
+      <ana>
+         <tok val="salubritates"/>
+         <tok val="salubritatesque"/>
          <lm>
             <l>salubritas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -5485,15 +6289,18 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--salubritatis salubritatisque-->
-         <tok val="salubritatis(que)?"/>
+      <ana>
+         <tok val="salubritatis"/>
+         <tok val="salubritatisque"/>
          <lm>
             <l>salubritas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--salubriter salubrius salubriterque-->
-         <tok val="salubri(ter)?(que|us)?"/>
+      <ana>
+         <tok val="salubriter"/>
+         <tok val="salubriterque"/>
+         <tok val="salubrius"/>
          <lm>
             <l>salubris</l>
             <m>d</m>
@@ -5508,15 +6315,23 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--salue salve salven Salvé sálve Sálve-->
-         <tok val="[s]?[aá]?[l]?[vu]?[e]?(n|Sálve|Salvé)?"/>
+      <ana>
+         <tok val="Salve"/>
+         <tok val="Salvé"/>
+         <tok val="Sálve"/>
+         <tok val="salue"/>
+         <tok val="salve"/>
+         <tok val="salven"/>
+         <tok val="salvé"/>
+         <tok val="sálve"/>
          <lm>
             <l>salve</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--saluent salvent-->
-         <tok val="sal[vu]ent"/>
+      <ana>
+         <tok val="saluent"/>
+         <tok val="salvent"/>
          <lm cert="0.5">
             <l>salvo</l>
             <m>v - 3 p p s a</m>
@@ -5526,8 +6341,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--saluentur salventur-->
-         <tok val="sal[vu]entur"/>
+      <ana>
+         <tok val="saluentur"/>
+         <tok val="salventur"/>
          <lm cert="0.5">
             <l>salveo</l>
             <m>v - 3 p p i p</m>
@@ -5537,8 +6353,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--saluet salvet-->
-         <tok val="sal[vu]et"/>
+      <ana>
+         <tok val="saluet"/>
+         <tok val="salvet"/>
          <lm cert="0.5">
             <l>salvo</l>
             <m>v - 3 s p s a</m>
@@ -5548,22 +6365,26 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--salueto salveto salvéto-->
-         <tok val="sal[vu]?(e|vé)to"/>
+      <ana>
+         <tok val="salueto"/>
+         <tok val="salveto"/>
+         <tok val="salvéto"/>
          <lm>
             <l>salveo</l>
             <m>v - 2 s f m a</m>
          </lm>
       </ana>
-      <ana><!--salueto salveto-->
-         <tok val="sal[vu]eto"/>
+      <ana>
+         <tok val="salueto"/>
+         <tok val="salveto"/>
          <lm>
             <l>salveo</l>
             <m>v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--saluetur salvetur-->
-         <tok val="sal[vu]etur"/>
+      <ana>
+         <tok val="saluetur"/>
+         <tok val="salvetur"/>
          <lm cert="0.5">
             <l>salvo</l>
             <m>v - 3 s p s p</m>
@@ -5650,8 +6471,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--salutan salutas-->
-         <tok val="saluta[sn]"/>
+      <ana>
+         <tok val="salutan"/>
+         <tok val="salutas"/>
          <lm>
             <l>saluto</l>
             <m>v - 2 s p i a</m>
@@ -5676,8 +6498,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--salutandi salutandique-->
-         <tok val="salutandi(que)?"/>
+      <ana>
+         <tok val="salutandi"/>
+         <tok val="salutandique"/>
          <lm>
             <l>saluto</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -5752,8 +6575,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--salutantium salutantum-->
-         <tok val="salutant[i]?um"/>
+      <ana>
+         <tok val="salutantium"/>
+         <tok val="salutantum"/>
          <lm>
             <l>saluto</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -5814,15 +6638,18 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--salutarit salutauerit salutaverit-->
-         <tok val="saluta[vu]?(e|)rit"/>
+      <ana>
+         <tok val="salutarit"/>
+         <tok val="salutauerit"/>
+         <tok val="salutaverit"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--salutariter salutarius-->
-         <tok val="salutari(us|ter)"/>
+      <ana>
+         <tok val="salutariter"/>
+         <tok val="salutarius"/>
          <lm>
             <l>salutaris</l>
             <m>d</m>
@@ -5850,8 +6677,12 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--salutarunt salutauerunt salutavere salutaverunt salutaveruntque-->
-         <tok val="saluta[vu]?(e|ve)?r(unt)?(que|e)?"/>
+      <ana>
+         <tok val="salutarunt"/>
+         <tok val="salutauerunt"/>
+         <tok val="salutavere"/>
+         <tok val="salutaverunt"/>
+         <tok val="salutaveruntque"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 p r i a</m>
@@ -5871,15 +6702,17 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--salutasset salutavisset-->
-         <tok val="saluta(vi)?sset"/>
+      <ana>
+         <tok val="salutasset"/>
+         <tok val="salutavisset"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--salutasti salutavisti-->
-         <tok val="saluta(vi)?sti"/>
+      <ana>
+         <tok val="salutasti"/>
+         <tok val="salutavisti"/>
          <lm>
             <l>saluto</l>
             <m>v - 2 s r i a</m>
@@ -5993,8 +6826,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--salutatori salutatorii-->
-         <tok val="salutatori[i]?"/>
+      <ana>
+         <tok val="salutatori"/>
+         <tok val="salutatorii"/>
          <lm>
             <l>salutatorius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -6059,8 +6893,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--salutatorum salutatum-->
-         <tok val="salutat(or)?um"/>
+      <ana>
+         <tok val="salutatorum"/>
+         <tok val="salutatum"/>
          <lm>
             <l>saluto</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -6123,8 +6958,9 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--salutauerat salutaverat-->
-         <tok val="saluta[vu]erat"/>
+      <ana>
+         <tok val="salutauerat"/>
+         <tok val="salutaverat"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 s l i a</m>
@@ -6138,22 +6974,25 @@
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--salutauerit salutaverit-->
-         <tok val="saluta[vu]erit"/>
+      <ana>
+         <tok val="salutauerit"/>
+         <tok val="salutaverit"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--salutaui salutavi-->
-         <tok val="saluta[vu]i"/>
+      <ana>
+         <tok val="salutaui"/>
+         <tok val="salutavi"/>
          <lm>
             <l>saluto</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--salutauit salutavit-->
-         <tok val="saluta[vu]it"/>
+      <ana>
+         <tok val="salutauit"/>
+         <tok val="salutavit"/>
          <lm>
             <l>saluto</l>
             <m>v - 3 s r i a</m>
@@ -6321,8 +7160,10 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--salutum Salutium-->
-         <tok val="[Ss]alut[i]?um"/>
+      <ana>
+         <tok val="Salutium"/>
+         <tok val="salutium"/>
+         <tok val="salutum"/>
          <lm>
             <l>salus</l>
             <m>n - - p - - - f g</m>
@@ -6444,8 +7285,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--salvaris salvaveris-->
-         <tok val="salva(ve)?ris"/>
+      <ana>
+         <tok val="salvaris"/>
+         <tok val="salvaveris"/>
          <lm>
             <l>salvo</l>
             <m>v - 2 s r s a</m>
@@ -6476,8 +7318,9 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--salvate salvatum-->
-         <tok val="salvat(um|e)"/>
+      <ana>
+         <tok val="salvate"/>
+         <tok val="salvatum"/>
          <lm>
             <l>salvo</l>
             <m>v - - s r p p n v</m>
@@ -6657,6 +7500,7 @@
          </lm>
       </ana>
       <ana>
+         <tok val="saliat"/>
          <tok val="sáliat"/>
          <lm>
             <l>salio</l>
@@ -6694,8 +7538,9 @@
             <m cert="0.333333333333333333">n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--salsa Salsa-->
-         <tok val="[Ss]alsa"/>
+      <ana>
+         <tok val="Salsa"/>
+         <tok val="salsa"/>
          <lm>
             <l>salsus</l>
             <m cert="0.25">a - - s - - - f n</m>
@@ -6824,8 +7669,9 @@
             <m cert="0.5">a - - s - - - n a s</m>
          </lm>
       </ana>
-      <ana><!--saluberrima saluberrime-->
-         <tok val="saluberrim[ea]"/>
+      <ana>
+         <tok val="saluberrima"/>
+         <tok val="saluberrime"/>
          <lm>
             <l>saluber</l>
             <m cert="0.5">a - - s - - - f v s</m>
@@ -6841,15 +7687,17 @@
             <m cert="0.333333333333333333">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--saluberrima saluberrimus-->
-         <tok val="saluberrim(us|a)"/>
+      <ana>
+         <tok val="saluberrima"/>
+         <tok val="saluberrimus"/>
          <lm>
             <l>saluber</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--saluberrima saluberrimum-->
-         <tok val="saluberrim(um|a)"/>
+      <ana>
+         <tok val="saluberrima"/>
+         <tok val="saluberrimum"/>
          <lm>
             <l>saluber</l>
             <m>a - - s - - - n v s</m>

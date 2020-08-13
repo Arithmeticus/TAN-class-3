@@ -1,58 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusced">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ced">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ced</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ced.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CED</tok-starts-with>
       <tok-starts-with>CEd</tok-starts-with>
       <tok-starts-with>Ced</tok-starts-with>
       <tok-starts-with>ced</tok-starts-with>
       <tok-starts-with>Céd</tok-starts-with>
-      <ana><!--CEDE CEDO Cede Cedo cede ceden cedo-->
-         <tok val="(cede)?(n|CEDO|CEDE|Cedo|Cede|cedo)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:14:03.021-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:14:03.021-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ced.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CEDE"/>
+         <tok val="CEDO"/>
+         <tok val="Cede"/>
+         <tok val="Cedo"/>
+         <tok val="cede"/>
+         <tok val="ceden"/>
+         <tok val="cedo"/>
          <lm>
             <l>cedo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--CEDO Cedo cedo Cédo-->
-         <tok val="[cC]?(e|Cé)?(do|CEDO)"/>
+      <ana>
+         <tok val="CEDO"/>
+         <tok val="Cedo"/>
+         <tok val="Cédo"/>
+         <tok val="cedo"/>
+         <tok val="cédo"/>
          <lm>
             <l>cedo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--CEDRI Cedri cedri cedrique-->
-         <tok val="[cC]?(edri)?(que|CEDRI)?"/>
+      <ana>
+         <tok val="CEDRI"/>
+         <tok val="Cedri"/>
+         <tok val="cedri"/>
+         <tok val="cedrique"/>
          <lm cert="0.5">
             <l>cedrium</l>
             <m>n - - s - - - n g</m>
@@ -64,37 +85,46 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--CEDRVS Cedrus cedrus-->
-         <tok val="[cC]?(edrus|CEDRVS)"/>
+      <ana>
+         <tok val="CEDRVS"/>
+         <tok val="Cedrus"/>
+         <tok val="cedrus"/>
+         <tok val="cedrvs"/>
          <lm>
             <l>cedrus</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--CEdat Cedat cedat-->
-         <tok val="[C]?(e|E|ce)dat"/>
+      <ana>
+         <tok val="CEdat"/>
+         <tok val="Cedat"/>
+         <tok val="cedat"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Cedam cedam-->
-         <tok val="[cC]edam"/>
+      <ana>
+         <tok val="Cedam"/>
+         <tok val="cedam"/>
          <lm>
             <l>cedo</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Cedamus cedamus-->
-         <tok val="[cC]edamus"/>
+      <ana>
+         <tok val="Cedamus"/>
+         <tok val="cedamus"/>
          <lm>
             <l>cedo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Cedant cedant cedantque-->
-         <tok val="[cC]edant(que)?"/>
+      <ana>
+         <tok val="Cedant"/>
+         <tok val="cedant"/>
+         <tok val="cedantque"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 p p s a</m>
@@ -102,35 +132,42 @@
       </ana>
       <ana>
          <tok val="Cedar"/>
+         <tok val="cedar"/>
          <lm>
             <l>cedo</l>
             <m cert="0.5">v - 1 s f i p</m>
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Cedas cedas-->
-         <tok val="[cC]edas"/>
+      <ana>
+         <tok val="Cedas"/>
+         <tok val="cedas"/>
          <lm>
             <l>cedo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Cedebant cedebant-->
-         <tok val="[cC]edebant"/>
+      <ana>
+         <tok val="Cedebant"/>
+         <tok val="cedebant"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Cedebat cedebat cedebatque-->
-         <tok val="[cC]edebat(que)?"/>
+      <ana>
+         <tok val="Cedebat"/>
+         <tok val="cedebat"/>
+         <tok val="cedebatque"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Cedendo cedendo cedendoque-->
-         <tok val="[cC]edendo(que)?"/>
+      <ana>
+         <tok val="Cedendo"/>
+         <tok val="cedendo"/>
+         <tok val="cedendoque"/>
          <lm>
             <l>cedo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -141,8 +178,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Cedendum cedendum-->
-         <tok val="[cC]edendum"/>
+      <ana>
+         <tok val="Cedendum"/>
+         <tok val="cedendum"/>
          <lm>
             <l>cedo</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -154,8 +192,10 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Cedens cedens cedensque-->
-         <tok val="[cC]edens(que)?"/>
+      <ana>
+         <tok val="Cedens"/>
+         <tok val="cedens"/>
+         <tok val="cedensque"/>
          <lm>
             <l>cedo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -167,15 +207,20 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Cedent cedent cedentque-->
-         <tok val="[cC]edent(que)?"/>
+      <ana>
+         <tok val="Cedent"/>
+         <tok val="cedent"/>
+         <tok val="cedentque"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Cedente cedente cedenti cedentique-->
-         <tok val="[cC]edent(e|i|ique)"/>
+      <ana>
+         <tok val="Cedente"/>
+         <tok val="cedente"/>
+         <tok val="cedenti"/>
+         <tok val="cedentique"/>
          <lm>
             <l>cedo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -183,16 +228,20 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Cedentem cedentem cedentemque-->
-         <tok val="[cC]edentem(que)?"/>
+      <ana>
+         <tok val="Cedentem"/>
+         <tok val="cedentem"/>
+         <tok val="cedentemque"/>
          <lm>
             <l>cedo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Cedentes cedentes cedentesque-->
-         <tok val="[cC]edentes(que)?"/>
+      <ana>
+         <tok val="Cedentes"/>
+         <tok val="cedentes"/>
+         <tok val="cedentesque"/>
          <lm>
             <l>cedo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -201,16 +250,20 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Cedentes cedentes cedentesque cedentis-->
-         <tok val="[cC]edent[ei]s(que)?"/>
+      <ana>
+         <tok val="Cedentes"/>
+         <tok val="cedentes"/>
+         <tok val="cedentesque"/>
+         <tok val="cedentis"/>
          <lm>
             <l>cedo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Cedere cedere-->
-         <tok val="[cC]edere"/>
+      <ana>
+         <tok val="Cedere"/>
+         <tok val="cedere"/>
          <lm>
             <l>cedo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -219,78 +272,94 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Cederet cederet-->
-         <tok val="[cC]ederet"/>
+      <ana>
+         <tok val="Cederet"/>
+         <tok val="cederet"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Cedes ceden cedes-->
-         <tok val="[cC]ede[sn]"/>
+      <ana>
+         <tok val="Cedes"/>
+         <tok val="ceden"/>
+         <tok val="cedes"/>
          <lm>
             <l>cedo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cedet cedet-->
-         <tok val="[cC]edet"/>
+      <ana>
+         <tok val="Cedet"/>
+         <tok val="cedet"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cedetur cedetur-->
-         <tok val="[cC]edetur"/>
+      <ana>
+         <tok val="Cedetur"/>
+         <tok val="cedetur"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Cedimus cedimus-->
-         <tok val="[cC]edimus"/>
+      <ana>
+         <tok val="Cedimus"/>
+         <tok val="cedimus"/>
          <lm>
             <l>cedo</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Cedis cedis cedisque-->
-         <tok val="[cC]edis(que)?"/>
+      <ana>
+         <tok val="Cedis"/>
+         <tok val="cedis"/>
+         <tok val="cedisque"/>
          <lm>
             <l>cedo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cedit cedit ceditque-->
-         <tok val="[cC]edit(que)?"/>
+      <ana>
+         <tok val="Cedit"/>
+         <tok val="cedit"/>
+         <tok val="ceditque"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cedite cedite-->
-         <tok val="[cC]edite"/>
+      <ana>
+         <tok val="Cedite"/>
+         <tok val="cedite"/>
          <lm>
             <l>cedo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Ceditur ceditur-->
-         <tok val="[cC]editur"/>
+      <ana>
+         <tok val="Ceditur"/>
+         <tok val="ceditur"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cedre Cedren-->
-         <tok val="Cedre[n]?"/>
+      <ana>
+         <tok val="Cedre"/>
+         <tok val="Cedren"/>
+         <tok val="cedre"/>
+         <tok val="cedren"/>
          <lm>
             <l>cedrus</l>
             <m>n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cedrei cedrei-->
-         <tok val="[cC]edrei"/>
+      <ana>
+         <tok val="Cedrei"/>
+         <tok val="cedrei"/>
          <lm>
             <l>cedreus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -299,8 +368,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cedrelate cedrelate-->
-         <tok val="[cC]edrelate"/>
+      <ana>
+         <tok val="Cedrelate"/>
+         <tok val="cedrelate"/>
          <lm>
             <l>cedrelate</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -308,8 +378,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cedria cedria-->
-         <tok val="[cC]edria"/>
+      <ana>
+         <tok val="Cedria"/>
+         <tok val="cedria"/>
          <lm cert="0.5">
             <l>cedria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -323,8 +394,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cedrides cedrides-->
-         <tok val="[cC]edrides"/>
+      <ana>
+         <tok val="Cedrides"/>
+         <tok val="cedrides"/>
          <lm>
             <l>cedris</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -332,15 +404,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Cedrinus cedrinus-->
-         <tok val="[cC]edrinus"/>
+      <ana>
+         <tok val="Cedrinus"/>
+         <tok val="cedrinus"/>
          <lm>
             <l>cedrinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cedris cedris-->
-         <tok val="[cC]edris"/>
+      <ana>
+         <tok val="Cedris"/>
+         <tok val="cedris"/>
          <lm cert="0.5">
             <l>cedris</l>
             <m>n - - s - - - f n</m>
@@ -351,8 +425,9 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cedrium cedrium-->
-         <tok val="[cC]edrium"/>
+      <ana>
+         <tok val="Cedrium"/>
+         <tok val="cedrium"/>
          <lm>
             <l>cedrium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -361,16 +436,22 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cedro Cedron cedro-->
-         <tok val="[Cc]edro[n]?"/>
+      <ana>
+         <tok val="Cedro"/>
+         <tok val="Cedron"/>
+         <tok val="cedro"/>
+         <tok val="cedron"/>
          <lm>
             <l>cedrus</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cedron Cedros cedros-->
-         <tok val="[Cc]edro[sn]"/>
+      <ana>
+         <tok val="Cedron"/>
+         <tok val="Cedros"/>
+         <tok val="cedron"/>
+         <tok val="cedros"/>
          <lm>
             <l>cedrus</l>
             <m>n - - p - - - f a</m>
@@ -378,6 +459,7 @@
       </ana>
       <ana>
          <tok val="Cedrosi"/>
+         <tok val="cedrosi"/>
          <lm>
             <l>Gedrosi</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -386,28 +468,36 @@
       </ana>
       <ana>
          <tok val="Cedrosis"/>
+         <tok val="cedrosis"/>
          <lm>
             <l>Gedrosi</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Cedrum cedrorum cedrum cedrumque-->
-         <tok val="[cC]ed(ro)?rum(que)?"/>
+      <ana>
+         <tok val="Cedrum"/>
+         <tok val="cedrorum"/>
+         <tok val="cedrum"/>
+         <tok val="cedrumque"/>
          <lm>
             <l>cedrus</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Cedrum cedrum cedrumque-->
-         <tok val="[cC]edrum(que)?"/>
+      <ana>
+         <tok val="Cedrum"/>
+         <tok val="cedrum"/>
+         <tok val="cedrumque"/>
          <lm>
             <l>cedrus</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cedunt cedunt ceduntque-->
-         <tok val="[cC]edunt(que)?"/>
+      <ana>
+         <tok val="Cedunt"/>
+         <tok val="cedunt"/>
+         <tok val="ceduntque"/>
          <lm>
             <l>cedo</l>
             <m>v - 3 p p i a</m>
@@ -500,8 +590,9 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--cedenti cedentique-->
-         <tok val="cedenti(que)?"/>
+      <ana>
+         <tok val="cedenti"/>
+         <tok val="cedentique"/>
          <lm>
             <l>cedo</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -509,8 +600,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--cedentia cedentiaque-->
-         <tok val="cedentia(que)?"/>
+      <ana>
+         <tok val="cedentia"/>
+         <tok val="cedentiaque"/>
          <lm>
             <l>cedo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -518,8 +610,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--cedentibus cedentibusque-->
-         <tok val="cedentibus(que)?"/>
+      <ana>
+         <tok val="cedentibus"/>
+         <tok val="cedentibusque"/>
          <lm>
             <l>cedo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -539,8 +632,9 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--cedentium cedentiumque-->
-         <tok val="cedentium(que)?"/>
+      <ana>
+         <tok val="cedentium"/>
+         <tok val="cedentiumque"/>
          <lm>
             <l>cedo</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -590,8 +684,9 @@
             <m>v - 2 p f i a</m>
          </lm>
       </ana>
-      <ana><!--cedi cedine-->
-         <tok val="cedi(ne)?"/>
+      <ana>
+         <tok val="cedi"/>
+         <tok val="cedine"/>
          <lm>
             <l>cedo</l>
             <m>v - - - p n p</m>

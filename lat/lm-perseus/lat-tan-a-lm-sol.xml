@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussol">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sol">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sol</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sol.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SOL</tok-starts-with>
       <tok-starts-with>SOl</tok-starts-with>
@@ -38,23 +15,66 @@
       <tok-starts-with>sol</tok-starts-with>
       <tok-starts-with>sól</tok-starts-with>
       <tok-starts-with>Sól</tok-starts-with>
-      <ana><!--SOL sol solque solue-->
-         <tok val="(sol)?[q]?(ue|SOL)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:46:22.785-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:46:22.785-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sol.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SOL"/>
+         <tok val="sol"/>
+         <tok val="solque"/>
+         <tok val="solue"/>
          <lm>
             <l>sol</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SOLATIIS solaciis solatiis solacis-->
-         <tok val="(sola)?[c]?(i|ti)?(is|SOLATIIS)"/>
+      <ana>
+         <tok val="SOLATIIS"/>
+         <tok val="solaciis"/>
+         <tok val="solacis"/>
+         <tok val="solatiis"/>
          <lm>
             <l>solacium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SOLATIVM Solacium Solatium solacium solatium solaciumque-->
-         <tok val="[Ss]?(ola)?[tc]?(ium)?(que|SOLATIVM)?"/>
+      <ana>
+         <tok val="SOLATIVM"/>
+         <tok val="Solacium"/>
+         <tok val="Solatium"/>
+         <tok val="solacium"/>
+         <tok val="solaciumque"/>
+         <tok val="solatium"/>
+         <tok val="solativm"/>
          <lm>
             <l>solacium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -62,29 +82,66 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SOLATIVM Solacium Solatium solaciorum solacium solatium solaciumque-->
-         <tok val="[sS]?(ola)?[ct]?[i]?(or)?(um)?(que|SOLATIVM)?"/>
+      <ana>
+         <tok val="SOLATIVM"/>
+         <tok val="Solacium"/>
+         <tok val="Solatium"/>
+         <tok val="solaciorum"/>
+         <tok val="solacium"/>
+         <tok val="solaciumque"/>
+         <tok val="solatium"/>
+         <tok val="solativm"/>
          <lm>
             <l>solacium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SOLE SOLVM Sole Solenne Soleque Solom Solum Solumque sole solen solenne solest solum solumne solumque-->
-         <tok val="[sS]?(ol)?(umqu|umn)?[e]?(n|nne|um|om|eque|est|SOLVM|SOLE)?"/>
+      <ana>
+         <tok val="SOLE"/>
+         <tok val="SOLVM"/>
+         <tok val="Sole"/>
+         <tok val="Solenne"/>
+         <tok val="Soleque"/>
+         <tok val="Solom"/>
+         <tok val="Solum"/>
+         <tok val="Solumque"/>
+         <tok val="sole"/>
+         <tok val="solen"/>
+         <tok val="solenne"/>
+         <tok val="soleque"/>
+         <tok val="solest"/>
+         <tok val="solom"/>
+         <tok val="solum"/>
+         <tok val="solumne"/>
+         <tok val="solumque"/>
+         <tok val="solvm"/>
          <lm>
             <l>solum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--SOLE Solenne sole solen solenne solest-->
-         <tok val="[sS]?(ole)?(n|nne|st|SOLE)?"/>
+      <ana>
+         <tok val="SOLE"/>
+         <tok val="Solenne"/>
+         <tok val="sole"/>
+         <tok val="solen"/>
+         <tok val="solenne"/>
+         <tok val="solest"/>
          <lm>
             <l>sol</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--SOLE Sole Solenne Soleque sole solen solenne solest-->
-         <tok val="[sS]?(ole)?(n|nne|st|que|SOLE)?"/>
+      <ana>
+         <tok val="SOLE"/>
+         <tok val="Sole"/>
+         <tok val="Solenne"/>
+         <tok val="Soleque"/>
+         <tok val="sole"/>
+         <tok val="solen"/>
+         <tok val="solenne"/>
+         <tok val="soleque"/>
+         <tok val="solest"/>
          <lm cert="0.5">
             <l>soleo</l>
             <m>v - 2 s p m a</m>
@@ -94,50 +151,76 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--SOLEARVM solearum-->
-         <tok val="(solearum|SOLEARVM)"/>
+      <ana>
+         <tok val="SOLEARVM"/>
+         <tok val="solearum"/>
+         <tok val="solearvm"/>
          <lm>
             <l>solea</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--SOLEBAT Solebat solebat solebatque-->
-         <tok val="[sS]?(olebat)?(que|SOLEBAT)?"/>
+      <ana>
+         <tok val="SOLEBAT"/>
+         <tok val="Solebat"/>
+         <tok val="solebat"/>
+         <tok val="solebatque"/>
          <lm>
             <l>soleo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--SOLENT Solent solent solentne sólent-->
-         <tok val="[sS]?(o|só)?(lent)?(ne|SOLENT)?"/>
+      <ana>
+         <tok val="SOLENT"/>
+         <tok val="Solent"/>
+         <tok val="solent"/>
+         <tok val="solentne"/>
+         <tok val="sólent"/>
          <lm>
             <l>solo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--SOLENT Solent solent solentne-->
-         <tok val="[sS]?(olent)?(ne|SOLENT)?"/>
+      <ana>
+         <tok val="SOLENT"/>
+         <tok val="Solent"/>
+         <tok val="solent"/>
+         <tok val="solentne"/>
          <lm>
             <l>soleo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--SOLEO Soleo soleo-->
-         <tok val="[sS]?(oleo|SOLEO)"/>
+      <ana>
+         <tok val="SOLEO"/>
+         <tok val="Soleo"/>
+         <tok val="soleo"/>
          <lm>
             <l>soleo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--SOLIDARENTVR solidarentur-->
-         <tok val="(solidarentur|SOLIDARENTVR)"/>
+      <ana>
+         <tok val="SOLIDARENTVR"/>
+         <tok val="solidarentur"/>
+         <tok val="solidarentvr"/>
          <lm>
             <l>solido</l>
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--SOLIDORVM SOLIDVM Solidorum Solidum solidorum solidum solidumne solidumque solidumve-->
-         <tok val="[sS]?(olid)?(or)?(um)?(ve|ne|SOLIDVM|SOLIDORVM|Solidum|solidum|solidumque)?"/>
+      <ana>
+         <tok val="SOLIDORVM"/>
+         <tok val="SOLIDVM"/>
+         <tok val="Solidorum"/>
+         <tok val="Solidum"/>
+         <tok val="solidorum"/>
+         <tok val="solidorvm"/>
+         <tok val="solidum"/>
+         <tok val="solidumne"/>
+         <tok val="solidumque"/>
+         <tok val="solidumve"/>
+         <tok val="solidvm"/>
          <lm cert="0.333333333333333333">
             <l>solidus2</l>
             <m>n - - p - - - m g</m>
@@ -152,35 +235,72 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SOLIDVM Solidum solidom solidum solidumne solidumque solidumve Solide solide-->
-         <tok val="[sS]?(olid)?[uo]?[m]?[vn]?(e|que|SOLIDVM)?"/>
+      <ana>
+         <tok val="SOLIDVM"/>
+         <tok val="Solidum"/>
+         <tok val="solidom"/>
+         <tok val="solidum"/>
+         <tok val="solidumne"/>
+         <tok val="solidumque"/>
+         <tok val="solidumve"/>
+         <tok val="solidvm"/>
          <lm cert="0.333333333333333333">
             <l>solidus</l>
-            <m cert="0.25">a - - s - - - n n</m>
-            <m cert="0.25">a - - s - - - n a</m>
-            <m cert="0.25">a - - s - - - n v</m>
-            <m cert="0.25">a - - s - - - m a</m>
+            <m cert="0.333333333333333333">a - - s - - - n n</m>
+            <m cert="0.333333333333333333">a - - s - - - n a</m>
+            <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
          <lm cert="0.333333333333333333">
             <l>solidum</l>
-            <m cert="0.333333333333333333">n - - s - - - n v</m>
-            <m cert="0.333333333333333333">n - - s - - - n a</m>
-            <m cert="0.333333333333333333">n - - s - - - n n</m>
+            <m cert="0.5">n - - s - - - n a</m>
+            <m cert="0.5">n - - s - - - n n</m>
          </lm>
          <lm cert="0.333333333333333333">
             <l>solidus2</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SOLINVS Solinus-->
-         <tok val="S(olinus|OLINVS)"/>
+      <ana>
+         <tok val="SOLIDVM"/>
+         <tok val="Solide"/>
+         <tok val="Solidum"/>
+         <tok val="solide"/>
+         <tok val="solidom"/>
+         <tok val="solidum"/>
+         <tok val="solidumne"/>
+         <tok val="solidumque"/>
+         <tok val="solidumve"/>
+         <tok val="solidvm"/>
+         <lm cert="0.5">
+            <l>solidum</l>
+            <m>n - - s - - - n v</m>
+         </lm>
+         <lm cert="0.5">
+            <l>solidus</l>
+            <m>a - - s - - - n v</m>
+         </lm>
+      </ana>
+      <ana>
+         <tok val="SOLINVS"/>
+         <tok val="Solinus"/>
+         <tok val="solinus"/>
+         <tok val="solinvs"/>
          <lm>
             <l>Solinus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SOLIS Solin Solis Solisque solis solisne solisque solist solisve-->
-         <tok val="[sS]?(oli)?[s]?(t|que|ve|ne|n|SOLIS)?"/>
+      <ana>
+         <tok val="SOLIS"/>
+         <tok val="Solin"/>
+         <tok val="Solis"/>
+         <tok val="Solisque"/>
+         <tok val="solin"/>
+         <tok val="solis"/>
+         <tok val="solisne"/>
+         <tok val="solisque"/>
+         <tok val="solist"/>
+         <tok val="solisve"/>
          <lm cert="0.5">
             <l>solum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -195,22 +315,44 @@
             <m cert="0.2">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SOLIS solis solisne solisque solist solisve-->
-         <tok val="(solis)?(t|ve|ne|que|SOLIS)?"/>
+      <ana>
+         <tok val="SOLIS"/>
+         <tok val="solis"/>
+         <tok val="solisne"/>
+         <tok val="solisque"/>
+         <tok val="solist"/>
+         <tok val="solisve"/>
          <lm>
             <l>sol</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--SOLIS Solin Solis Solisque solis solisne solisque solist solisve sólis-->
-         <tok val="[sS]?(o|só)?(li)?[s]?(t|que|ve|ne|n|s|SOLIS)?"/>
+      <ana>
+         <tok val="SOLIS"/>
+         <tok val="Solin"/>
+         <tok val="Solis"/>
+         <tok val="Solisque"/>
+         <tok val="solin"/>
+         <tok val="solis"/>
+         <tok val="solisne"/>
+         <tok val="solisque"/>
+         <tok val="solist"/>
+         <tok val="solisve"/>
+         <tok val="sólis"/>
          <lm>
             <l>solus</l>
             <m>a - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--SOLO Solo solo solone soloque solost soloue solove-->
-         <tok val="[sS]?(olo)?[q]?[unv]?(e|st|SOLO)?"/>
+      <ana>
+         <tok val="SOLO"/>
+         <tok val="Solo"/>
+         <tok val="solo"/>
+         <tok val="solone"/>
+         <tok val="soloque"/>
+         <tok val="solost"/>
+         <tok val="soloue"/>
+         <tok val="solove"/>
          <lm cert="0.333333333333333333">
             <l>solus</l>
             <m cert="0.5">a - - s - - - n b</m>
@@ -226,36 +368,81 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SOLO Soli Solin Solique Solo soli solique solist solo solone soloque solost soloue solove sóli-->
-         <tok val="[sS]?(o|só)?[l]?[o]?[q]?(ue|in|i|ique|ost|ist|one|ove|o|SOLO)"/>
+      <ana>
+         <tok val="SOLO"/>
+         <tok val="Soli"/>
+         <tok val="Solin"/>
+         <tok val="Solique"/>
+         <tok val="Solo"/>
+         <tok val="soli"/>
+         <tok val="solin"/>
+         <tok val="solique"/>
+         <tok val="solist"/>
+         <tok val="solo"/>
+         <tok val="solone"/>
+         <tok val="soloque"/>
+         <tok val="solost"/>
+         <tok val="soloue"/>
+         <tok val="solove"/>
+         <tok val="sóli"/>
          <lm>
             <l>solus</l>
             <m>a - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--SOLO Soli Solin Solique Solo soli solique solist solo solone soloque solost soloue solove-->
-         <tok val="[sS]?(ol)?[o]?[q]?(ue|in|i|ique|ost|ist|one|ove|o|SOLO)"/>
+      <ana>
+         <tok val="SOLO"/>
+         <tok val="Soli"/>
+         <tok val="Solin"/>
+         <tok val="Solique"/>
+         <tok val="Solo"/>
+         <tok val="soli"/>
+         <tok val="solin"/>
+         <tok val="solique"/>
+         <tok val="solist"/>
+         <tok val="solo"/>
+         <tok val="solone"/>
+         <tok val="soloque"/>
+         <tok val="solost"/>
+         <tok val="soloue"/>
+         <tok val="solove"/>
          <lm>
             <l>solus</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--SOLOR Solor-->
-         <tok val="S(olor|OLOR)"/>
+      <ana>
+         <tok val="SOLOR"/>
+         <tok val="Solor"/>
+         <tok val="solor"/>
          <lm>
             <l>solor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--SOLUTUM SOLVTVM solutum solutumque solutumst-->
-         <tok val="(solutum)?(st|que|SOLVTVM|SOLUTUM)?"/>
+      <ana>
+         <tok val="SOLUTUM"/>
+         <tok val="SOLVTVM"/>
+         <tok val="solutum"/>
+         <tok val="solutumque"/>
+         <tok val="solutumst"/>
+         <tok val="solvtvm"/>
          <lm>
             <l>solvo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SOLUTUM SOLVTVM Solute Solutum solute soluteque solutum solutumque solutumst-->
-         <tok val="[sS]?(olut)?(eq)?[u]?[m]?(st|que|e|SOLVTVM|SOLUTUM)?"/>
+      <ana>
+         <tok val="SOLUTUM"/>
+         <tok val="SOLVTVM"/>
+         <tok val="Solute"/>
+         <tok val="Solutum"/>
+         <tok val="solute"/>
+         <tok val="soluteque"/>
+         <tok val="solutum"/>
+         <tok val="solutumque"/>
+         <tok val="solutumst"/>
+         <tok val="solvtvm"/>
          <lm cert="0.5">
             <l>solutum</l>
             <m>n - - s - - - n v</m>
@@ -265,8 +452,15 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--SOLUTUM SOLVTVM Solutum solutorum solutum solutumque solutumst-->
-         <tok val="[sS]?(olut)?(or)?(um)?(st|que|SOLVTVM|SOLUTUM)?"/>
+      <ana>
+         <tok val="SOLUTUM"/>
+         <tok val="SOLVTVM"/>
+         <tok val="Solutum"/>
+         <tok val="solutorum"/>
+         <tok val="solutum"/>
+         <tok val="solutumque"/>
+         <tok val="solutumst"/>
+         <tok val="solvtvm"/>
          <lm cert="0.5">
             <l>solvo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -277,8 +471,14 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SOLUTUM SOLVTVM Solutum solutum solutumque solutumst-->
-         <tok val="[sS]?(olutum)?(st|que|SOLVTVM|SOLUTUM)?"/>
+      <ana>
+         <tok val="SOLUTUM"/>
+         <tok val="SOLVTVM"/>
+         <tok val="Solutum"/>
+         <tok val="solutum"/>
+         <tok val="solutumque"/>
+         <tok val="solutumst"/>
+         <tok val="solvtvm"/>
          <lm cert="0.5">
             <l>solvo</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -291,22 +491,40 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SOLVI Solui solui soluique-->
-         <tok val="[sS]?(olui)?(que|SOLVI)?"/>
+      <ana>
+         <tok val="SOLVI"/>
+         <tok val="Solui"/>
+         <tok val="solui"/>
+         <tok val="soluique"/>
+         <tok val="solvi"/>
          <lm>
             <l>solus2</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--SOLVM Solum Solumque solum solumne solumque sólum-->
-         <tok val="[sS]?(o|só)?(lum)?(qu|n)?(e|SOLVM)?"/>
+      <ana>
+         <tok val="SOLVM"/>
+         <tok val="Solum"/>
+         <tok val="Solumque"/>
+         <tok val="solum"/>
+         <tok val="solumne"/>
+         <tok val="solumque"/>
+         <tok val="solvm"/>
+         <tok val="sólum"/>
          <lm>
             <l>solus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SOLVM Solum Solumque solorum solum solumne solumque-->
-         <tok val="[sS]?(ol)?(or)?(um)?(que|ne|SOLVM)?"/>
+      <ana>
+         <tok val="SOLVM"/>
+         <tok val="Solum"/>
+         <tok val="Solumque"/>
+         <tok val="solorum"/>
+         <tok val="solum"/>
+         <tok val="solumne"/>
+         <tok val="solumque"/>
+         <tok val="solvm"/>
          <lm cert="0.5">
             <l>solus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -317,8 +535,14 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SOLVM Solum Solumque solum solumne solumque-->
-         <tok val="[sS]?(olum)?(qu|n)?(e|SOLVM)?"/>
+      <ana>
+         <tok val="SOLVM"/>
+         <tok val="Solum"/>
+         <tok val="Solumque"/>
+         <tok val="solum"/>
+         <tok val="solumne"/>
+         <tok val="solumque"/>
+         <tok val="solvm"/>
          <lm cert="0.333333333333333333">
             <l>solus</l>
             <m cert="0.5">a - - s - - - n a</m>
@@ -333,8 +557,16 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SOLVM Solom Solum Solumque solum solumne solumque-->
-         <tok val="[sS]?(ol)?[uo]?[m]?(qu|n)?(e|SOLVM)?"/>
+      <ana>
+         <tok val="SOLVM"/>
+         <tok val="Solom"/>
+         <tok val="Solum"/>
+         <tok val="Solumque"/>
+         <tok val="solom"/>
+         <tok val="solum"/>
+         <tok val="solumne"/>
+         <tok val="solumque"/>
+         <tok val="solvm"/>
          <lm cert="0.5">
             <l>solus</l>
             <m>a - - s - - - m a</m>
@@ -345,8 +577,16 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SOLVS Solus Solusne Solusque solun solus-->
-         <tok val="[Ss]?(olu)?[s]?(ne|que|n|SOLVS)?"/>
+      <ana>
+         <tok val="SOLVS"/>
+         <tok val="Solus"/>
+         <tok val="Solusne"/>
+         <tok val="Solusque"/>
+         <tok val="solun"/>
+         <tok val="solus"/>
+         <tok val="solusne"/>
+         <tok val="solusque"/>
+         <tok val="solvs"/>
          <lm>
             <l>solus2</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -355,22 +595,43 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SOLVS Solus Solusne Solusque solun solus solusne solusque solusue solús sólus Sólus solusve-->
-         <tok val="[sS]?(o|só|Só)?[l]?[u]?[s]?(n|u|qu|v)?(e|n|s|ús|us|SOLVS)?"/>
+      <ana>
+         <tok val="SOLVS"/>
+         <tok val="Solus"/>
+         <tok val="Solusne"/>
+         <tok val="Solusque"/>
+         <tok val="Sólus"/>
+         <tok val="solun"/>
+         <tok val="solus"/>
+         <tok val="solusne"/>
+         <tok val="solusque"/>
+         <tok val="solusue"/>
+         <tok val="solusve"/>
+         <tok val="solvs"/>
+         <tok val="solús"/>
+         <tok val="sólus"/>
          <lm>
             <l>solus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SOLVTVS Solutus solutus solutusque solutust-->
-         <tok val="[sS]?(olutus)?(t|que|SOLVTVS)?"/>
+      <ana>
+         <tok val="SOLVTVS"/>
+         <tok val="Solutus"/>
+         <tok val="solutus"/>
+         <tok val="solutusque"/>
+         <tok val="solutust"/>
+         <tok val="solvtvs"/>
          <lm>
             <l>solvo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--SOlidae Solidae solidae solidaeque-->
-         <tok val="[S]?(o|O|so)lidae(que)?"/>
+      <ana>
+         <tok val="SOlidae"/>
+         <tok val="Solidae"/>
+         <tok val="solidae"/>
+         <tok val="solidaeque"/>
          <lm>
             <l>solidus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -379,22 +640,38 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sol Solque-->
-         <tok val="Sol(que)?"/>
+      <ana>
+         <tok val="Sol"/>
+         <tok val="Solque"/>
+         <tok val="sol"/>
+         <tok val="solque"/>
          <lm>
             <l>sol</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sola Solaque sola solaque solast solaue solave sóla-->
-         <tok val="[sS]?(o|só)la[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Sola"/>
+         <tok val="Solaque"/>
+         <tok val="sola"/>
+         <tok val="solaque"/>
+         <tok val="solast"/>
+         <tok val="solaue"/>
+         <tok val="solave"/>
+         <tok val="sóla"/>
          <lm>
             <l>solum</l>
             <m>n - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Sola Solaque sola solaque solast solaue solave-->
-         <tok val="[sS]ola[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Sola"/>
+         <tok val="Solaque"/>
+         <tok val="sola"/>
+         <tok val="solaque"/>
+         <tok val="solast"/>
+         <tok val="solaue"/>
+         <tok val="solave"/>
          <lm cert="0.333333333333333333">
             <l>solo</l>
             <m>v - 2 s p m a</m>
@@ -415,13 +692,17 @@
       </ana>
       <ana>
          <tok val="Solabar"/>
+         <tok val="solabar"/>
          <lm>
             <l>solor</l>
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Solacia Solatia solacia solatia-->
-         <tok val="[Ss]ola[tc]ia"/>
+      <ana>
+         <tok val="Solacia"/>
+         <tok val="Solatia"/>
+         <tok val="solacia"/>
+         <tok val="solatia"/>
          <lm>
             <l>solacium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -429,36 +710,56 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Solae solae solaeque solaé-->
-         <tok val="[sS]ola(e|é|eque)"/>
+      <ana>
+         <tok val="Solae"/>
+         <tok val="solae"/>
+         <tok val="solaeque"/>
+         <tok val="solaé"/>
          <lm>
             <l>solus</l>
             <m>a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Solae solae solaeque-->
-         <tok val="[sS]olae(que)?"/>
+      <ana>
+         <tok val="Solae"/>
+         <tok val="solae"/>
+         <tok val="solaeque"/>
          <lm>
             <l>solus</l>
             <m>a - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Solae Soli Solin Solique solae solaeque soli solique solist-->
-         <tok val="[Ss]ol[i]?(n|que|ae|aeque|ist|i)?"/>
+      <ana>
+         <tok val="Solae"/>
+         <tok val="Soli"/>
+         <tok val="Solin"/>
+         <tok val="Solique"/>
+         <tok val="solae"/>
+         <tok val="solaeque"/>
+         <tok val="soli"/>
+         <tok val="solin"/>
+         <tok val="solique"/>
+         <tok val="solist"/>
          <lm>
             <l>solus</l>
             <m>a - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Solam solam solamne solamque-->
-         <tok val="[sS]olam(ne|que)?"/>
+      <ana>
+         <tok val="Solam"/>
+         <tok val="solam"/>
+         <tok val="solamne"/>
+         <tok val="solamque"/>
          <lm>
             <l>solus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solamen Solamenque solamen solamenque-->
-         <tok val="[sS]olamen(que)?"/>
+      <ana>
+         <tok val="Solamen"/>
+         <tok val="Solamenque"/>
+         <tok val="solamen"/>
+         <tok val="solamenque"/>
          <lm>
             <l>solamen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -468,6 +769,7 @@
       </ana>
       <ana>
          <tok val="Solando"/>
+         <tok val="solando"/>
          <lm>
             <l>solor</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -480,6 +782,7 @@
       </ana>
       <ana>
          <tok val="Solandus"/>
+         <tok val="solandus"/>
          <lm>
             <l>solor</l>
             <m>v - - s p g p m n</m>
@@ -487,13 +790,17 @@
       </ana>
       <ana>
          <tok val="Solane"/>
+         <tok val="solane"/>
          <lm>
             <l>Solanus</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Solane Solanum solane solanum-->
-         <tok val="[sS]olan(um|e)"/>
+      <ana>
+         <tok val="Solane"/>
+         <tok val="Solanum"/>
+         <tok val="solane"/>
+         <tok val="solanum"/>
          <lm>
             <l>solanum</l>
             <m>n - - s - - - n v</m>
@@ -501,22 +808,21 @@
       </ana>
       <ana>
          <tok val="Solani"/>
-         <lm>
+         <tok val="solani"/>
+         <lm cert="0.5">
             <l>Solanus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
             <m cert="0.333333333333333333">n e - s - - - m g</m>
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
-      </ana>
-      <ana><!--Solani solani-->
-         <tok val="[sS]olani"/>
-         <lm>
+         <lm cert="0.5">
             <l>solanum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Solantia"/>
+         <tok val="solantia"/>
          <lm>
             <l>solor</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -526,6 +832,7 @@
       </ana>
       <ana>
          <tok val="Solantis"/>
+         <tok val="solantis"/>
          <lm>
             <l>solor</l>
             <m cert="0.2">v - - s p p a n g</m>
@@ -535,18 +842,16 @@
             <m cert="0.2">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Solanum solanum-->
-         <tok val="[sS]olanum"/>
-         <lm>
+      <ana>
+         <tok val="Solanum"/>
+         <tok val="solanum"/>
+         <lm cert="0.5">
             <l>solanum</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
             <m cert="0.333333333333333333">n - - s - - - n n</m>
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Solanum"/>
-         <lm>
+         <lm cert="0.5">
             <l>Solanus</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
@@ -554,40 +859,43 @@
       </ana>
       <ana>
          <tok val="Solanus"/>
+         <tok val="solanus"/>
          <lm>
             <l>Solanus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solare solare-->
-         <tok val="[sS]olare"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Solare"/>
+         <tok val="solare"/>
+         <lm cert="0.333333333333333333">
             <l>solaris</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>solo</l>
             <m>v - - - p n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Solare"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>solor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Solare Solaris-->
-         <tok val="Solar(is|e)"/>
+      <ana>
+         <tok val="Solare"/>
+         <tok val="Solaris"/>
+         <tok val="solare"/>
+         <tok val="solaris"/>
          <lm>
             <l>solor</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Solarem solarem-->
-         <tok val="[sS]olarem"/>
+      <ana>
+         <tok val="Solarem"/>
+         <tok val="solarem"/>
          <lm cert="0.5">
             <l>solaris</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -598,16 +906,20 @@
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Solares Solaris solares solaris-->
-         <tok val="[Ss]olar[ie]s"/>
+      <ana>
+         <tok val="Solares"/>
+         <tok val="Solaris"/>
+         <tok val="solares"/>
+         <tok val="solaris"/>
          <lm>
             <l>solaris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solares solares-->
-         <tok val="[sS]olares"/>
+      <ana>
+         <tok val="Solares"/>
+         <tok val="solares"/>
          <lm cert="0.5">
             <l>solaris</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -620,9 +932,10 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Solari solari-->
-         <tok val="[sS]olari"/>
-         <lm>
+      <ana>
+         <tok val="Solari"/>
+         <tok val="solari"/>
+         <lm cert="0.5">
             <l>solaris</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
             <m cert="0.166666666666666667">a - - s - - - f d</m>
@@ -631,16 +944,16 @@
             <m cert="0.166666666666666667">a - - s - - - n b</m>
             <m cert="0.166666666666666667">a - - s - - - n d</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Solari"/>
-         <lm>
+         <lm cert="0.5">
             <l>solor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Solari Solarii solari solarii-->
-         <tok val="[Ss]olari[i]?"/>
+      <ana>
+         <tok val="Solari"/>
+         <tok val="Solarii"/>
+         <tok val="solari"/>
+         <tok val="solarii"/>
          <lm cert="0.5">
             <l>solarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -651,8 +964,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solaria solaria-->
-         <tok val="[sS]olaria"/>
+      <ana>
+         <tok val="Solaria"/>
+         <tok val="solaria"/>
          <lm cert="0.5">
             <l>solarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -661,22 +975,17 @@
          </lm>
          <lm cert="0.5">
             <l>solarius</l>
-            <m cert="0.333333333333333333">a - - s - - - f b</m>
-            <m cert="0.333333333333333333">a - - s - - - f n</m>
-            <m cert="0.333333333333333333">a - - s - - - f v</m>
+            <m cert="0.166666666666666667">a - - s - - - f b</m>
+            <m cert="0.166666666666666667">a - - s - - - f n</m>
+            <m cert="0.166666666666666667">a - - p - - - n n</m>
+            <m cert="0.166666666666666667">a - - s - - - f v</m>
+            <m cert="0.166666666666666667">a - - p - - - n a</m>
+            <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Solaria"/>
-         <lm>
-            <l>solarius</l>
-            <m cert="0.333333333333333333">a - - p - - - n n</m>
-            <m cert="0.333333333333333333">a - - p - - - n a</m>
-            <m cert="0.333333333333333333">a - - p - - - n v</m>
-         </lm>
-      </ana>
-      <ana><!--Solaribus solaribus-->
-         <tok val="[sS]olaribus"/>
+         <tok val="Solaribus"/>
+         <tok val="solaribus"/>
          <lm>
             <l>solaris</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -687,16 +996,18 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solarii solarii-->
-         <tok val="[sS]olarii"/>
+      <ana>
+         <tok val="Solarii"/>
+         <tok val="solarii"/>
          <lm>
             <l>solarius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solariis solariis-->
-         <tok val="[sS]olariis"/>
+      <ana>
+         <tok val="Solariis"/>
+         <tok val="solariis"/>
          <lm cert="0.5">
             <l>solarius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -712,8 +1023,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solario solario-->
-         <tok val="[sS]olario"/>
+      <ana>
+         <tok val="Solario"/>
+         <tok val="solario"/>
          <lm cert="0.5">
             <l>solarius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -729,14 +1041,12 @@
       </ana>
       <ana>
          <tok val="Solaris"/>
-         <lm>
+         <tok val="solaris"/>
+         <lm cert="0.5">
             <l>solor</l>
             <m>v - 2 s r s a</m>
          </lm>
-      </ana>
-      <ana><!--Solaris solaris-->
-         <tok val="[sS]olaris"/>
-         <lm>
+         <lm cert="0.5">
             <l>solaris</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -747,8 +1057,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solarium solarium solariumst-->
-         <tok val="[sS]olarium(st)?"/>
+      <ana>
+         <tok val="Solarium"/>
+         <tok val="solarium"/>
+         <tok val="solariumst"/>
          <lm cert="0.333333333333333333">
             <l>solarius</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -770,14 +1082,17 @@
       </ana>
       <ana>
          <tok val="Solarium"/>
+         <tok val="solarium"/>
          <lm>
             <l>solarius</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Solas solas solasque-->
-         <tok val="[sS]olas(que)?"/>
+      <ana>
+         <tok val="Solas"/>
+         <tok val="solas"/>
+         <tok val="solasque"/>
          <lm cert="0.5">
             <l>solo</l>
             <m>v - 2 s p i a</m>
@@ -787,27 +1102,44 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solatio solacio solatio solatione sólacio-->
-         <tok val="[sS]?(o|só)la[tc]io(ne)?"/>
+      <ana>
+         <tok val="Solatio"/>
+         <tok val="solacio"/>
+         <tok val="solatio"/>
+         <tok val="solatione"/>
+         <tok val="sólacio"/>
          <lm>
             <l>solacium</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Solatio solacio solatio solatione-->
-         <tok val="[sS]ola[tc]io(ne)?"/>
+      <ana>
+         <tok val="Solatio"/>
+         <tok val="solacio"/>
+         <tok val="solatio"/>
+         <tok val="solatione"/>
          <lm>
             <l>solacium</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solatis solatis-->
-         <tok val="[sS]olatis"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Solatis"/>
+         <tok val="solatis"/>
+         <lm cert="0.333333333333333333">
             <l>solo</l>
             <m>v - 2 p p i a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
+            <l>solor</l>
+            <m cert="0.166666666666666667">v - - p r p p n d</m>
+            <m cert="0.166666666666666667">v - - p r p p f b</m>
+            <m cert="0.166666666666666667">v - - p r p p m b</m>
+            <m cert="0.166666666666666667">v - - p r p p f d</m>
+            <m cert="0.166666666666666667">v - - p r p p m d</m>
+            <m cert="0.166666666666666667">v - - p r p p n b</m>
+         </lm>
+         <lm cert="0.333333333333333333">
             <l>solatus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
             <m cert="0.166666666666666667">a - - p - - - f d</m>
@@ -818,19 +1150,8 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Solatis"/>
-         <lm>
-            <l>solor</l>
-            <m cert="0.166666666666666667">v - - p r p p n d</m>
-            <m cert="0.166666666666666667">v - - p r p p f b</m>
-            <m cert="0.166666666666666667">v - - p r p p m b</m>
-            <m cert="0.166666666666666667">v - - p r p p f d</m>
-            <m cert="0.166666666666666667">v - - p r p p m d</m>
-            <m cert="0.166666666666666667">v - - p r p p n b</m>
-         </lm>
-      </ana>
-      <ana><!--Solator solator-->
-         <tok val="[sS]olator"/>
+         <tok val="Solator"/>
+         <tok val="solator"/>
          <lm>
             <l>solator</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -839,6 +1160,7 @@
       </ana>
       <ana>
          <tok val="Solatum"/>
+         <tok val="solatum"/>
          <lm cert="0.5">
             <l>solatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -855,8 +1177,10 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Solatum solatom-->
-         <tok val="[sS]olat[ou]m"/>
+      <ana>
+         <tok val="Solatum"/>
+         <tok val="solatom"/>
+         <tok val="solatum"/>
          <lm>
             <l>solatus</l>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
@@ -866,6 +1190,7 @@
       </ana>
       <ana>
          <tok val="Solatur"/>
+         <tok val="solatur"/>
          <lm>
             <l>solor</l>
             <m>v - 3 s p i p</m>
@@ -873,6 +1198,7 @@
       </ana>
       <ana>
          <tok val="Solatura"/>
+         <tok val="solatura"/>
          <lm>
             <l>solor</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -883,22 +1209,21 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--Solatus solatus-->
-         <tok val="[sS]olatus"/>
-         <lm>
+      <ana>
+         <tok val="Solatus"/>
+         <tok val="solatus"/>
+         <lm cert="0.5">
             <l>solatus</l>
             <m>a - - s - - - m n</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Solatus"/>
-         <lm>
+         <lm cert="0.5">
             <l>solor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Soldum soldum-->
-         <tok val="[sS]oldum"/>
+      <ana>
+         <tok val="Soldum"/>
+         <tok val="soldum"/>
          <lm>
             <l>soldus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -909,46 +1234,50 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Soldurii soldurii-->
-         <tok val="[sS]oldurii"/>
+      <ana>
+         <tok val="Soldurii"/>
+         <tok val="soldurii"/>
          <lm>
             <l>soldurii</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Soldurios soldurios-->
-         <tok val="[sS]oldurios"/>
+      <ana>
+         <tok val="Soldurios"/>
+         <tok val="soldurios"/>
          <lm>
             <l>soldurii</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sole Soleque-->
-         <tok val="Sole(que)?"/>
+      <ana>
+         <tok val="Sole"/>
+         <tok val="Soleque"/>
+         <tok val="sole"/>
+         <tok val="soleque"/>
          <lm>
             <l>sol</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Solea solea-->
-         <tok val="[sS]olea"/>
-         <lm>
+      <ana>
+         <tok val="Solea"/>
+         <tok val="solea"/>
+         <lm cert="0.5">
             <l>solea</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Solea"/>
-         <lm>
+         <lm cert="0.5">
             <l>Soleus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Soleae soleae-->
-         <tok val="[sS]oleae"/>
+      <ana>
+         <tok val="Soleae"/>
+         <tok val="soleae"/>
          <lm>
             <l>solea</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -959,61 +1288,66 @@
       </ana>
       <ana>
          <tok val="Solearius"/>
-         <lm>
-            <l>solearis</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Solearius solearius-->
-         <tok val="[sS]olearius"/>
+         <tok val="solearius"/>
          <lm cert="0.5">
             <l>solearis</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>solearius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Soleas soleas soleasque-->
-         <tok val="[sS]oleas(que)?"/>
+      <ana>
+         <tok val="Soleas"/>
+         <tok val="soleas"/>
+         <tok val="soleasque"/>
          <lm>
             <l>solea</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Soleas soleas soleasque soleás sóleas-->
-         <tok val="[sS]?(o|só|so)le[aá]s(que)?"/>
+      <ana>
+         <tok val="Soleas"/>
+         <tok val="soleas"/>
+         <tok val="soleasque"/>
+         <tok val="soleás"/>
+         <tok val="sóleas"/>
          <lm>
             <l>soleo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Soleatus soleatus-->
-         <tok val="[sS]oleatus"/>
+      <ana>
+         <tok val="Soleatus"/>
+         <tok val="soleatus"/>
          <lm>
             <l>soleatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solebam solebam-->
-         <tok val="[sS]olebam"/>
+      <ana>
+         <tok val="Solebam"/>
+         <tok val="solebam"/>
          <lm>
             <l>soleo</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Solebant solebant-->
-         <tok val="[sS]olebant"/>
+      <ana>
+         <tok val="Solebant"/>
+         <tok val="solebant"/>
          <lm>
             <l>soleo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Solebas solebas-->
-         <tok val="[sS]olebas"/>
+      <ana>
+         <tok val="Solebas"/>
+         <tok val="solebas"/>
          <lm>
             <l>soleo</l>
             <m>v - 2 s i i a</m>
@@ -1021,36 +1355,48 @@
       </ana>
       <ana>
          <tok val="Soleis"/>
+         <tok val="soleis"/>
          <lm>
             <l>Soleus</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Soleis soleis soleisque-->
-         <tok val="[sS]oleis(que)?"/>
+      <ana>
+         <tok val="Soleis"/>
+         <tok val="soleis"/>
+         <tok val="soleisque"/>
          <lm>
             <l>solea</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Solem Solemque solem solemn solemne solemque-->
-         <tok val="[sS]olem[n]?(e|que)?"/>
+      <ana>
+         <tok val="Solem"/>
+         <tok val="Solemque"/>
+         <tok val="solem"/>
+         <tok val="solemn"/>
+         <tok val="solemne"/>
+         <tok val="solemque"/>
          <lm>
             <l>solo</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Solem Solemque-->
-         <tok val="Solem(que)?"/>
+      <ana>
+         <tok val="Solem"/>
+         <tok val="Solemque"/>
+         <tok val="solem"/>
+         <tok val="solemque"/>
          <lm>
             <l>sol</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Solemus solemus-->
-         <tok val="[sS]olemus"/>
+      <ana>
+         <tok val="Solemus"/>
+         <tok val="solemus"/>
          <lm cert="0.5">
             <l>solo</l>
             <m>v - 1 p p s a</m>
@@ -1060,15 +1406,28 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Solenne Soles solen solenne soles solesque solesve solés-->
-         <tok val="[sS]ol[e]?[n]?(ne|sve|s|sque|és)?"/>
+      <ana>
+         <tok val="Solenne"/>
+         <tok val="Soles"/>
+         <tok val="solen"/>
+         <tok val="solenne"/>
+         <tok val="soles"/>
+         <tok val="solesque"/>
+         <tok val="solesve"/>
+         <tok val="solés"/>
          <lm>
             <l>sol</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solenne Soles solen solenne soles solesque solesve-->
-         <tok val="[sS]ole[n]?(ne|sve|s|sque)?"/>
+      <ana>
+         <tok val="Solenne"/>
+         <tok val="Soles"/>
+         <tok val="solen"/>
+         <tok val="solenne"/>
+         <tok val="soles"/>
+         <tok val="solesque"/>
+         <tok val="solesve"/>
          <lm cert="0.333333333333333333">
             <l>sol</l>
             <m cert="0.5">n - - p - - - m v</m>
@@ -1083,8 +1442,10 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Solens solenn solens-->
-         <tok val="[sS]olen[sn]"/>
+      <ana>
+         <tok val="Solens"/>
+         <tok val="solenn"/>
+         <tok val="solens"/>
          <lm>
             <l>soleo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1096,8 +1457,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Solentia solentia-->
-         <tok val="[sS]olentia"/>
+      <ana>
+         <tok val="Solentia"/>
+         <tok val="solentia"/>
          <lm>
             <l>soleo</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -1107,43 +1469,48 @@
       </ana>
       <ana>
          <tok val="Soleo"/>
+         <tok val="soleo"/>
          <lm>
             <l>Soleus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Solere solere-->
-         <tok val="[sS]olere"/>
-         <lm>
+      <ana>
+         <tok val="Solere"/>
+         <tok val="solere"/>
+         <lm cert="0.5">
             <l>soleo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
+         <lm cert="0.5">
+            <l>solor</l>
+            <m>v - 2 s p s p</m>
+         </lm>
       </ana>
-      <ana><!--Solere solere solére-->
-         <tok val="[sS]ol[eé]re"/>
+      <ana>
+         <tok val="Solere"/>
+         <tok val="solere"/>
+         <tok val="solére"/>
          <lm>
             <l>soleo</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Solere"/>
-         <lm>
-            <l>solor</l>
-            <m>v - 2 s p s p</m>
-         </lm>
-      </ana>
-      <ana>
          <tok val="Solern"/>
+         <tok val="solern"/>
          <lm>
             <l>solor</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Solertia solertia sollertia sollertiaque-->
-         <tok val="[sS]o[l]?lertia(que)?"/>
+      <ana>
+         <tok val="Solertia"/>
+         <tok val="solertia"/>
+         <tok val="sollertia"/>
+         <tok val="sollertiaque"/>
          <lm>
             <l>sollertia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1151,22 +1518,35 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Solertiam solertiam solertiamque sollertiam sollertiamque-->
-         <tok val="[sS]o[l]?lertiam(que)?"/>
+      <ana>
+         <tok val="Solertiam"/>
+         <tok val="solertiam"/>
+         <tok val="solertiamque"/>
+         <tok val="sollertiam"/>
+         <tok val="sollertiamque"/>
          <lm>
             <l>sollertia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solet Soletque solet soletne soletque solét-->
-         <tok val="[sS]ol[eé]t(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Solet"/>
+         <tok val="Soletque"/>
+         <tok val="solet"/>
+         <tok val="soletne"/>
+         <tok val="soletque"/>
+         <tok val="solét"/>
          <lm>
             <l>solo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Solet Soletque solet soletne soletque-->
-         <tok val="[sS]olet(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Solet"/>
+         <tok val="Soletque"/>
+         <tok val="solet"/>
+         <tok val="soletne"/>
+         <tok val="soletque"/>
          <lm>
             <l>soleo</l>
             <m>v - 3 s p i a</m>
@@ -1174,25 +1554,24 @@
       </ana>
       <ana>
          <tok val="Soletis"/>
-         <lm>
+         <tok val="soletis"/>
+         <lm cert="0.333333333333333333">
             <l>Soletum</l>
             <m cert="0.5">n e - p - - - n d</m>
             <m cert="0.5">n e - p - - - n b</m>
          </lm>
-      </ana>
-      <ana><!--Soletis soletis-->
-         <tok val="[sS]oletis"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>soleo</l>
             <m>v - 2 p p i a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>solo</l>
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Soletum"/>
+         <tok val="soletum"/>
          <lm>
             <l>Soletum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1203,13 +1582,19 @@
       </ana>
       <ana>
          <tok val="Soleus"/>
+         <tok val="soleus"/>
          <lm>
             <l>Soleus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Soli Solin Solique-->
-         <tok val="Soli(n|que)?"/>
+      <ana>
+         <tok val="Soli"/>
+         <tok val="Solin"/>
+         <tok val="Solique"/>
+         <tok val="soli"/>
+         <tok val="solin"/>
+         <tok val="solique"/>
          <lm cert="0.333333333333333333">
             <l>Soli</l>
             <m cert="0.5">n e - p - - - m v</m>
@@ -1224,23 +1609,38 @@
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Soli Solin Solique Solius soli solique solist solius-->
-         <tok val="[Ss]oli(n|que|us|st)?"/>
+      <ana>
+         <tok val="Soli"/>
+         <tok val="Solin"/>
+         <tok val="Solique"/>
+         <tok val="Solius"/>
+         <tok val="soli"/>
+         <tok val="solin"/>
+         <tok val="solique"/>
+         <tok val="solist"/>
+         <tok val="solius"/>
          <lm>
             <l>solus</l>
             <m>a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Soli Solin Solique soli solique solist-->
-         <tok val="[Ss]oli(n|que|st)?"/>
+      <ana>
+         <tok val="Soli"/>
+         <tok val="Solin"/>
+         <tok val="Solique"/>
+         <tok val="soli"/>
+         <tok val="solin"/>
+         <tok val="solique"/>
+         <tok val="solist"/>
          <lm>
             <l>solus</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solia solia-->
-         <tok val="[sS]olia"/>
+      <ana>
+         <tok val="Solia"/>
+         <tok val="solia"/>
          <lm>
             <l>solium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1248,8 +1648,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Solibus solibus-->
-         <tok val="[sS]olibus"/>
+      <ana>
+         <tok val="Solibus"/>
+         <tok val="solibus"/>
          <lm>
             <l>sol</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1258,44 +1659,61 @@
       </ana>
       <ana>
          <tok val="Solibvs"/>
+         <tok val="solibvs"/>
          <lm>
             <l>solus2</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Solicitatio solicitatio sollicitatio-->
-         <tok val="[sS]o[l]?licitatio"/>
+      <ana>
+         <tok val="Solicitatio"/>
+         <tok val="solicitatio"/>
+         <tok val="sollicitatio"/>
          <lm>
             <l>sollicitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Solicitator sollicitator-->
-         <tok val="(sol|So)licitator"/>
+      <ana>
+         <tok val="Solicitator"/>
+         <tok val="solicitator"/>
+         <tok val="sollicitator"/>
          <lm>
             <l>sollicitator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Solicitudine Sollicitudine solicitudine sollicitudine-->
-         <tok val="[Ss]o[l]?licitudine"/>
+      <ana>
+         <tok val="Solicitudine"/>
+         <tok val="Sollicitudine"/>
+         <tok val="solicitudine"/>
+         <tok val="sollicitudine"/>
          <lm>
             <l>sollicitudo</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Solicitudinem Sollicitudinem solicitudinem solicitudinemque sollicitudinem sollicitudinemque-->
-         <tok val="[sS]o[l]?licitudinem(que)?"/>
+      <ana>
+         <tok val="Solicitudinem"/>
+         <tok val="Sollicitudinem"/>
+         <tok val="solicitudinem"/>
+         <tok val="solicitudinemque"/>
+         <tok val="sollicitudinem"/>
+         <tok val="sollicitudinemque"/>
          <lm>
             <l>sollicitudo</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solicitudines Sollicitudines solicitudines sollicitudines sollicitudinesque-->
-         <tok val="[Ss]o[l]?licitudines(que)?"/>
+      <ana>
+         <tok val="Solicitudines"/>
+         <tok val="Sollicitudines"/>
+         <tok val="solicitudines"/>
+         <tok val="sollicitudines"/>
+         <tok val="sollicitudinesque"/>
          <lm>
             <l>sollicitudo</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1303,36 +1721,50 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Solicitudini solicitudini sollicitudini sollicitudinist-->
-         <tok val="[sS]o[l]?licitudini(st)?"/>
+      <ana>
+         <tok val="Solicitudini"/>
+         <tok val="solicitudini"/>
+         <tok val="sollicitudini"/>
+         <tok val="sollicitudinist"/>
          <lm>
             <l>sollicitudo</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Solicitudinis solicitudinis sollicitudinis sollicitudinist-->
-         <tok val="[sS]o[l]?licitudinis[t]?"/>
+      <ana>
+         <tok val="Solicitudinis"/>
+         <tok val="solicitudinis"/>
+         <tok val="sollicitudinis"/>
+         <tok val="sollicitudinist"/>
          <lm>
             <l>sollicitudo</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solicitudinum solicitudinum sollicitudinum-->
-         <tok val="[sS]o[l]?licitudinum"/>
+      <ana>
+         <tok val="Solicitudinum"/>
+         <tok val="solicitudinum"/>
+         <tok val="sollicitudinum"/>
          <lm>
             <l>sollicitudo</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solicitudo Sollicitudo solicitudo solicitudoque sollicitudo-->
-         <tok val="[Ss]o[l]?licitudo(que)?"/>
+      <ana>
+         <tok val="Solicitudo"/>
+         <tok val="Sollicitudo"/>
+         <tok val="solicitudo"/>
+         <tok val="solicitudoque"/>
+         <tok val="sollicitudo"/>
          <lm>
             <l>sollicitudo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Solida solida solidaque-->
-         <tok val="[sS]olida(que)?"/>
+      <ana>
+         <tok val="Solida"/>
+         <tok val="solida"/>
+         <tok val="solidaque"/>
          <lm cert="0.333333333333333333">
             <l>solidum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1353,36 +1785,44 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Solidam solidam solidamque-->
-         <tok val="[sS]olidam(que)?"/>
+      <ana>
+         <tok val="Solidam"/>
+         <tok val="solidam"/>
+         <tok val="solidamque"/>
          <lm>
             <l>solidus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solidantur solidantur-->
-         <tok val="[sS]olidantur"/>
+      <ana>
+         <tok val="Solidantur"/>
+         <tok val="solidantur"/>
          <lm>
             <l>solido</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Solidarum solidarum-->
-         <tok val="[sS]olidarum"/>
+      <ana>
+         <tok val="Solidarum"/>
+         <tok val="solidarum"/>
          <lm>
             <l>solidus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solide solide solidius solidiusque-->
-         <tok val="[sS]olid(ius)?(que|e)?"/>
+      <ana>
+         <tok val="Solide"/>
+         <tok val="solide"/>
+         <tok val="solidius"/>
+         <tok val="solidiusque"/>
          <lm>
             <l>solidus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Solide solide-->
-         <tok val="[sS]olide"/>
+      <ana>
+         <tok val="Solide"/>
+         <tok val="solide"/>
          <lm cert="0.5">
             <l>solidus</l>
             <m>a - - s - - - m v</m>
@@ -1392,15 +1832,19 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Solidesco solidesco-->
-         <tok val="[sS]olidesco"/>
+      <ana>
+         <tok val="Solidesco"/>
+         <tok val="solidesco"/>
          <lm>
             <l>solidesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Solidi solidi solidique solidiue-->
-         <tok val="[sS]olidi[q]?(ue)?"/>
+      <ana>
+         <tok val="Solidi"/>
+         <tok val="solidi"/>
+         <tok val="solidique"/>
+         <tok val="solidiue"/>
          <lm cert="0.333333333333333333">
             <l>solidus2</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1421,14 +1865,18 @@
       </ana>
       <ana>
          <tok val="Solidipes"/>
+         <tok val="solidipes"/>
          <lm>
             <l>solidipes</l>
             <m cert="0.5">a - - s - - - f n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solidis solidis solidisque solidisve-->
-         <tok val="[sS]olidis(ve|que)?"/>
+      <ana>
+         <tok val="Solidis"/>
+         <tok val="solidis"/>
+         <tok val="solidisque"/>
+         <tok val="solidisve"/>
          <lm cert="0.333333333333333333">
             <l>solidus2</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -1449,8 +1897,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solidissima solidissima-->
-         <tok val="[sS]olidissima"/>
+      <ana>
+         <tok val="Solidissima"/>
+         <tok val="solidissima"/>
          <lm>
             <l>solidus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -1461,22 +1910,26 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Soliditas soliditas-->
-         <tok val="[sS]oliditas"/>
+      <ana>
+         <tok val="Soliditas"/>
+         <tok val="soliditas"/>
          <lm>
             <l>soliditas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Soliditatis soliditatis-->
-         <tok val="[sS]oliditatis"/>
+      <ana>
+         <tok val="Soliditatis"/>
+         <tok val="soliditatis"/>
          <lm>
             <l>soliditas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solido solido solidoque-->
-         <tok val="[sS]olido(que)?"/>
+      <ana>
+         <tok val="Solido"/>
+         <tok val="solido"/>
+         <tok val="solidoque"/>
          <lm cert="0.25">
             <l>solidus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -1501,13 +1954,15 @@
       </ana>
       <ana>
          <tok val="Solidor"/>
+         <tok val="solidor"/>
          <lm>
             <l>solido</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Solidos solidos-->
-         <tok val="[sS]olidos"/>
+      <ana>
+         <tok val="Solidos"/>
+         <tok val="solidos"/>
          <lm cert="0.5">
             <l>solidus</l>
             <m>a - - p - - - m a</m>
@@ -1517,8 +1972,10 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Solidus solidus solidusque-->
-         <tok val="[sS]olidus(que)?"/>
+      <ana>
+         <tok val="Solidus"/>
+         <tok val="solidus"/>
+         <tok val="solidusque"/>
          <lm cert="0.5">
             <l>solidus2</l>
             <m>n - - s - - - m n</m>
@@ -1528,16 +1985,18 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solifer solifer-->
-         <tok val="[sS]olifer"/>
+      <ana>
+         <tok val="Solifer"/>
+         <tok val="solifer"/>
          <lm>
             <l>solifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Solifera solifera-->
-         <tok val="[sS]olifera"/>
+      <ana>
+         <tok val="Solifera"/>
+         <tok val="solifera"/>
          <lm>
             <l>solifer</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1548,8 +2007,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Soliferreum soliferreum solliferreum-->
-         <tok val="[sS]o[l]?liferreum"/>
+      <ana>
+         <tok val="Soliferreum"/>
+         <tok val="soliferreum"/>
+         <tok val="solliferreum"/>
          <lm>
             <l>solliferreum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1558,8 +2019,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Soligena soligena-->
-         <tok val="[sS]oligena"/>
+      <ana>
+         <tok val="Soligena"/>
+         <tok val="soligena"/>
          <lm>
             <l>soligena</l>
             <m cert="0.166666666666666667">n - - s - - - f b</m>
@@ -1572,6 +2034,7 @@
       </ana>
       <ana>
          <tok val="Soligenae"/>
+         <tok val="soligenae"/>
          <lm>
             <l>soligena</l>
             <m cert="0.125">n - - p - - - m n</m>
@@ -1586,14 +2049,16 @@
       </ana>
       <ana>
          <tok val="Soligenam"/>
+         <tok val="soligenam"/>
          <lm>
             <l>soligena</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Soliloquium soliloquium-->
-         <tok val="[sS]oliloquium"/>
+      <ana>
+         <tok val="Soliloquium"/>
+         <tok val="soliloquium"/>
          <lm>
             <l>soliloquium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1602,8 +2067,11 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solimi Solymi-->
-         <tok val="Sol[yi]mi"/>
+      <ana>
+         <tok val="Solimi"/>
+         <tok val="Solymi"/>
+         <tok val="solimi"/>
+         <tok val="solymi"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1611,30 +2079,46 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Solimo Solimon Solymo-->
-         <tok val="Sol[iy]mo[n]?"/>
+      <ana>
+         <tok val="Solimo"/>
+         <tok val="Solimon"/>
+         <tok val="Solymo"/>
+         <tok val="solimo"/>
+         <tok val="solimon"/>
+         <tok val="solymo"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Solimon Solymos-->
-         <tok val="Sol[yi]mo[sn]"/>
+      <ana>
+         <tok val="Solimon"/>
+         <tok val="Solymos"/>
+         <tok val="solimon"/>
+         <tok val="solymos"/>
          <lm>
             <l>Solymus</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Solimus Solymus-->
-         <tok val="Sol[yi]mus"/>
+      <ana>
+         <tok val="Solimus"/>
+         <tok val="Solymus"/>
+         <tok val="solimus"/>
+         <tok val="solymus"/>
          <lm>
             <l>Solymus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solin Solis Solisque-->
-         <tok val="Soli(s|n|sque)"/>
+      <ana>
+         <tok val="Solin"/>
+         <tok val="Solis"/>
+         <tok val="Solisque"/>
+         <tok val="solin"/>
+         <tok val="solis"/>
+         <tok val="solisque"/>
          <lm cert="0.5">
             <l>Soli</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1647,6 +2131,7 @@
       </ana>
       <ana>
          <tok val="Solini"/>
+         <tok val="solini"/>
          <lm>
             <l>Solinus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1656,6 +2141,7 @@
       </ana>
       <ana>
          <tok val="Solino"/>
+         <tok val="solino"/>
          <lm>
             <l>Solinus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1664,22 +2150,28 @@
       </ana>
       <ana>
          <tok val="Solinum"/>
+         <tok val="solinum"/>
          <lm>
             <l>Solinus</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Solio solio solioque-->
-         <tok val="[sS]olio(que)?"/>
+      <ana>
+         <tok val="Solio"/>
+         <tok val="solio"/>
+         <tok val="solioque"/>
          <lm>
             <l>solium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solistimum Sollistimum solistimum sollistimum-->
-         <tok val="[Ss]o[l]?listimum"/>
+      <ana>
+         <tok val="Solistimum"/>
+         <tok val="Sollistimum"/>
+         <tok val="solistimum"/>
+         <tok val="sollistimum"/>
          <lm>
             <l>sollistimus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1690,8 +2182,11 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Solita solita solitaque solitast-->
-         <tok val="[sS]olita(st|que)?"/>
+      <ana>
+         <tok val="Solita"/>
+         <tok val="solita"/>
+         <tok val="solitaque"/>
+         <tok val="solitast"/>
          <lm cert="0.333333333333333333">
             <l>soleo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -1712,8 +2207,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Solitae solitae solitaeque-->
-         <tok val="[sS]olitae(que)?"/>
+      <ana>
+         <tok val="Solitae"/>
+         <tok val="solitae"/>
+         <tok val="solitaeque"/>
          <lm>
             <l>soleo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1722,15 +2219,17 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Solitam solitam-->
-         <tok val="[sS]olitam"/>
+      <ana>
+         <tok val="Solitam"/>
+         <tok val="solitam"/>
          <lm>
             <l>soleo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Solitanae solitanae-->
-         <tok val="[sS]olitanae"/>
+      <ana>
+         <tok val="Solitanae"/>
+         <tok val="solitanae"/>
          <lm>
             <l>solitanus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1739,8 +2238,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solitaria solitaria-->
-         <tok val="[sS]olitaria"/>
+      <ana>
+         <tok val="Solitaria"/>
+         <tok val="solitaria"/>
          <lm>
             <l>solitarius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1751,8 +2251,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Solitarium solitarium-->
-         <tok val="[sS]olitarium"/>
+      <ana>
+         <tok val="Solitarium"/>
+         <tok val="solitarium"/>
          <lm>
             <l>solitarius</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1762,22 +2263,26 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Solitarium solitarie solitarium-->
-         <tok val="[sS]olitari(um|e)"/>
+      <ana>
+         <tok val="Solitarium"/>
+         <tok val="solitarie"/>
+         <tok val="solitarium"/>
          <lm>
             <l>solitarius</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Solitarius solitarius-->
-         <tok val="[sS]olitarius"/>
+      <ana>
+         <tok val="Solitarius"/>
+         <tok val="solitarius"/>
          <lm>
             <l>solitarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solitaurilia solitaurilia-->
-         <tok val="[sS]olitaurilia"/>
+      <ana>
+         <tok val="Solitaurilia"/>
+         <tok val="solitaurilia"/>
          <lm>
             <l>suovetaurilia</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1785,8 +2290,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Soliti soliti-->
-         <tok val="[sS]oliti"/>
+      <ana>
+         <tok val="Soliti"/>
+         <tok val="soliti"/>
          <lm cert="0.5">
             <l>soleo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1799,8 +2305,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solitis solitis-->
-         <tok val="[sS]olitis"/>
+      <ana>
+         <tok val="Solitis"/>
+         <tok val="solitis"/>
          <lm cert="0.5">
             <l>soleo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1816,8 +2323,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solito solito solitoque-->
-         <tok val="[sS]olito(que)?"/>
+      <ana>
+         <tok val="Solito"/>
+         <tok val="solito"/>
+         <tok val="solitoque"/>
          <lm cert="0.333333333333333333">
             <l>soleo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1835,22 +2344,27 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solitos solitos solitosque-->
-         <tok val="[sS]olitos(que)?"/>
+      <ana>
+         <tok val="Solitos"/>
+         <tok val="solitos"/>
+         <tok val="solitosque"/>
          <lm>
             <l>soleo</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Solitudinem solitudinem solitudinemque-->
-         <tok val="[sS]olitudinem(que)?"/>
+      <ana>
+         <tok val="Solitudinem"/>
+         <tok val="solitudinem"/>
+         <tok val="solitudinemque"/>
          <lm>
             <l>solitudo</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solitudines solitudines-->
-         <tok val="[sS]olitudines"/>
+      <ana>
+         <tok val="Solitudines"/>
+         <tok val="solitudines"/>
          <lm>
             <l>solitudo</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1858,22 +2372,30 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Solitudinis solitudinis-->
-         <tok val="[sS]olitudinis"/>
+      <ana>
+         <tok val="Solitudinis"/>
+         <tok val="solitudinis"/>
          <lm>
             <l>solitudo</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solitudo Solitudoque solitudo solitudoque-->
-         <tok val="[sS]olitudo(que)?"/>
+      <ana>
+         <tok val="Solitudo"/>
+         <tok val="Solitudoque"/>
+         <tok val="solitudo"/>
+         <tok val="solitudoque"/>
          <lm>
             <l>solitudo</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Solitum solitorum solitum solitumque solitumst-->
-         <tok val="[sS]olit(or)?um(st|que)?"/>
+      <ana>
+         <tok val="Solitum"/>
+         <tok val="solitorum"/>
+         <tok val="solitum"/>
+         <tok val="solitumque"/>
+         <tok val="solitumst"/>
          <lm cert="0.5">
             <l>soleo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -1884,8 +2406,12 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solitum solite solitum solitumque solitumst-->
-         <tok val="[sS]olit(um)?(st|que|e)?"/>
+      <ana>
+         <tok val="Solitum"/>
+         <tok val="solite"/>
+         <tok val="solitum"/>
+         <tok val="solitumque"/>
+         <tok val="solitumst"/>
          <lm cert="0.5">
             <l>solitum</l>
             <m>n - - s - - - n v</m>
@@ -1895,8 +2421,11 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Solitum solitum solitumque solitumst-->
-         <tok val="[sS]olitum(st|que)?"/>
+      <ana>
+         <tok val="Solitum"/>
+         <tok val="solitum"/>
+         <tok val="solitumque"/>
+         <tok val="solitumst"/>
          <lm cert="0.5">
             <l>soleo</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -1911,20 +2440,26 @@
       </ana>
       <ana>
          <tok val="Solitum"/>
+         <tok val="solitum"/>
          <lm>
             <l>soleo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Solitus solitus solitusque solitust-->
-         <tok val="[sS]olitus(t|que)?"/>
+      <ana>
+         <tok val="Solitus"/>
+         <tok val="solitus"/>
+         <tok val="solitusque"/>
+         <tok val="solitust"/>
          <lm>
             <l>soleo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Soliuaga solivaga-->
-         <tok val="[sS]oli[vu]aga"/>
+      <ana>
+         <tok val="Soliuaga"/>
+         <tok val="soliuaga"/>
+         <tok val="solivaga"/>
          <lm>
             <l>solivagus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1935,8 +2470,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Soliuagum solivagum-->
-         <tok val="[sS]oli[vu]agum"/>
+      <ana>
+         <tok val="Soliuagum"/>
+         <tok val="soliuagum"/>
+         <tok val="solivagum"/>
          <lm>
             <l>solivagus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1947,15 +2484,19 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Soliuagus solivagus-->
-         <tok val="[sS]oli[vu]agus"/>
+      <ana>
+         <tok val="Soliuagus"/>
+         <tok val="soliuagus"/>
+         <tok val="solivagus"/>
          <lm>
             <l>solivagus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solium solium soliumque-->
-         <tok val="[sS]olium(que)?"/>
+      <ana>
+         <tok val="Solium"/>
+         <tok val="solium"/>
+         <tok val="soliumque"/>
          <lm>
             <l>solium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1963,38 +2504,50 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Solium soliorum solium soliumque-->
-         <tok val="[sS]oli(or)?um(que)?"/>
+      <ana>
+         <tok val="Solium"/>
+         <tok val="soliorum"/>
+         <tok val="solium"/>
+         <tok val="soliumque"/>
          <lm>
             <l>solium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solius solius-->
-         <tok val="[sS]olius"/>
+      <ana>
+         <tok val="Solius"/>
+         <tok val="solius"/>
          <lm>
             <l>solus</l>
             <m cert="0.5">a - - s - - - f g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solle solle sollenn sollenne-->
-         <tok val="[sS]olle(nn)?[e]?"/>
+      <ana>
+         <tok val="Solle"/>
+         <tok val="solle"/>
+         <tok val="sollenn"/>
+         <tok val="sollenne"/>
          <lm>
             <l>sollus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Solle solle sollenn sollenne sollum-->
-         <tok val="[sS]oll[e]?(nn)?(e|um)?"/>
+      <ana>
+         <tok val="Solle"/>
+         <tok val="solle"/>
+         <tok val="sollenn"/>
+         <tok val="sollenne"/>
+         <tok val="sollum"/>
          <lm>
             <l>sollus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sollemne sollemne-->
-         <tok val="[sS]ollemne"/>
+      <ana>
+         <tok val="Sollemne"/>
+         <tok val="sollemne"/>
          <lm>
             <l>sollemnis</l>
             <m cert="0.333333333333333333">a - - s - - - n v</m>
@@ -2002,22 +2555,30 @@
             <m cert="0.333333333333333333">a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Sollemne Sollemni sollemne sollemni sollemnique-->
-         <tok val="[Ss]ollemn(i|e|ique)"/>
+      <ana>
+         <tok val="Sollemne"/>
+         <tok val="Sollemni"/>
+         <tok val="sollemne"/>
+         <tok val="sollemni"/>
+         <tok val="sollemnique"/>
          <lm>
             <l>sollemnis</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sollemni sollemni sollemnique-->
-         <tok val="[sS]ollemni(que)?"/>
+      <ana>
+         <tok val="Sollemni"/>
+         <tok val="sollemni"/>
+         <tok val="sollemnique"/>
          <lm>
             <l>sollemnis</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Sollemnia sollemnia sollemniaque-->
-         <tok val="[sS]ollemnia(que)?"/>
+      <ana>
+         <tok val="Sollemnia"/>
+         <tok val="sollemnia"/>
+         <tok val="sollemniaque"/>
          <lm>
             <l>sollemnis</l>
             <m cert="0.333333333333333333">a - - p - - - n a</m>
@@ -2025,22 +2586,31 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sollemnis sollemnis sollemnisque-->
-         <tok val="[sS]ollemnis(que)?"/>
+      <ana>
+         <tok val="Sollemnis"/>
+         <tok val="sollemnis"/>
+         <tok val="sollemnisque"/>
          <lm>
             <l>sollemnis</l>
             <m>a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sollers sollers sollersque sollertissime sollertius-->
-         <tok val="[sS]oller(tiu|ti)?s(que|sime)?"/>
+      <ana>
+         <tok val="Sollers"/>
+         <tok val="sollers"/>
+         <tok val="sollersque"/>
+         <tok val="sollertissime"/>
+         <tok val="sollertius"/>
          <lm>
             <l>sollers</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Sollicita sollicita sollicitaque sollicitast-->
-         <tok val="[sS]ollicita(st|que)?"/>
+      <ana>
+         <tok val="Sollicita"/>
+         <tok val="sollicita"/>
+         <tok val="sollicitaque"/>
+         <tok val="sollicitast"/>
          <lm cert="0.5">
             <l>sollicitus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2055,22 +2625,28 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitabar sollicitabar-->
-         <tok val="[sS]ollicitabar"/>
+      <ana>
+         <tok val="Sollicitabar"/>
+         <tok val="sollicitabar"/>
          <lm>
             <l>sollicito</l>
             <m>v - 1 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Sollicitae sollicitae sollicitaeque sollícitae-->
-         <tok val="[sS]oll[ií]citae(que)?"/>
+      <ana>
+         <tok val="Sollicitae"/>
+         <tok val="sollicitae"/>
+         <tok val="sollicitaeque"/>
+         <tok val="sollícitae"/>
          <lm>
             <l>sollicitus</l>
             <m>a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Sollicitae sollicitae sollicitaeque-->
-         <tok val="[sS]ollicitae(que)?"/>
+      <ana>
+         <tok val="Sollicitae"/>
+         <tok val="sollicitae"/>
+         <tok val="sollicitaeque"/>
          <lm>
             <l>sollicitus</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
@@ -2078,15 +2654,18 @@
             <m cert="0.333333333333333333">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Sollicitam sollicitam sollicitamque-->
-         <tok val="[sS]ollicitam(que)?"/>
+      <ana>
+         <tok val="Sollicitam"/>
+         <tok val="sollicitam"/>
+         <tok val="sollicitamque"/>
          <lm>
             <l>sollicitus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitanda sollicitanda-->
-         <tok val="[sS]ollicitanda"/>
+      <ana>
+         <tok val="Sollicitanda"/>
+         <tok val="sollicitanda"/>
          <lm>
             <l>sollicito</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -2097,8 +2676,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Sollicitando sollicitando-->
-         <tok val="[sS]ollicitando"/>
+      <ana>
+         <tok val="Sollicitando"/>
+         <tok val="sollicitando"/>
          <lm>
             <l>sollicito</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -2109,15 +2689,18 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Sollicitant sollicitant sollicitantque-->
-         <tok val="[sS]ollicitant(que)?"/>
+      <ana>
+         <tok val="Sollicitant"/>
+         <tok val="sollicitant"/>
+         <tok val="sollicitantque"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitare sollicitare-->
-         <tok val="[sS]ollicitare"/>
+      <ana>
+         <tok val="Sollicitare"/>
+         <tok val="sollicitare"/>
          <lm>
             <l>sollicito</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -2125,15 +2708,18 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Sollicitari sollicitari sollicitarier-->
-         <tok val="[sS]ollicitari(er)?"/>
+      <ana>
+         <tok val="Sollicitari"/>
+         <tok val="sollicitari"/>
+         <tok val="sollicitarier"/>
          <lm>
             <l>sollicito</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Sollicitas sollicitas-->
-         <tok val="[sS]ollicitas"/>
+      <ana>
+         <tok val="Sollicitas"/>
+         <tok val="sollicitas"/>
          <lm cert="0.5">
             <l>sollicito</l>
             <m>v - 2 s p i a</m>
@@ -2143,15 +2729,20 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitat Sollicitatque sollicitat sollicitatque sóllicitat-->
-         <tok val="[sS]?(o|só)llicitat(que)?"/>
+      <ana>
+         <tok val="Sollicitat"/>
+         <tok val="Sollicitatque"/>
+         <tok val="sollicitat"/>
+         <tok val="sollicitatque"/>
+         <tok val="sóllicitat"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitati sollicitati-->
-         <tok val="[sS]ollicitati"/>
+      <ana>
+         <tok val="Sollicitati"/>
+         <tok val="sollicitati"/>
          <lm>
             <l>sollicito</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2162,6 +2753,7 @@
       </ana>
       <ana>
          <tok val="Sollicitatores"/>
+         <tok val="sollicitatores"/>
          <lm>
             <l>sollicitator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2169,44 +2761,60 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitatur sollicitatur-->
-         <tok val="[sS]ollicitatur"/>
+      <ana>
+         <tok val="Sollicitatur"/>
+         <tok val="sollicitatur"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Sollicite sollicite solliciteque-->
-         <tok val="[sS]ollicite(que)?"/>
+      <ana>
+         <tok val="Sollicite"/>
+         <tok val="sollicite"/>
+         <tok val="solliciteque"/>
          <lm>
             <l>sollicitus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Sollicite Sollicitum Sollicitumque sollicite sollicitum sollicitumque solliciteque-->
-         <tok val="[sS]ollicit(um)?(que|e|eque)?"/>
+      <ana>
+         <tok val="Sollicite"/>
+         <tok val="Sollicitum"/>
+         <tok val="Sollicitumque"/>
+         <tok val="sollicite"/>
+         <tok val="solliciteque"/>
+         <tok val="sollicitum"/>
+         <tok val="sollicitumque"/>
          <lm>
             <l>sollicitus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sollicites sollicites-->
-         <tok val="[sS]ollicites"/>
+      <ana>
+         <tok val="Sollicites"/>
+         <tok val="sollicites"/>
          <lm>
             <l>sollicito</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitet sollicitet sollicitetve-->
-         <tok val="[sS]ollicitet(ve)?"/>
+      <ana>
+         <tok val="Sollicitet"/>
+         <tok val="sollicitet"/>
+         <tok val="sollicitetve"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Solliciti Sollicitique solliciti sollicitique sollicitive-->
-         <tok val="[sS]olliciti(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Solliciti"/>
+         <tok val="Sollicitique"/>
+         <tok val="solliciti"/>
+         <tok val="sollicitique"/>
+         <tok val="sollicitive"/>
          <lm>
             <l>sollicitus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -2215,8 +2823,11 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Sollicitis Sollicitisque sollicitis sollicitisque-->
-         <tok val="[sS]ollicitis(que)?"/>
+      <ana>
+         <tok val="Sollicitis"/>
+         <tok val="Sollicitisque"/>
+         <tok val="sollicitis"/>
+         <tok val="sollicitisque"/>
          <lm>
             <l>sollicitus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2227,8 +2838,11 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Sollicito Sollicitoque sollicito sollicitoque-->
-         <tok val="[sS]ollicito(que)?"/>
+      <ana>
+         <tok val="Sollicito"/>
+         <tok val="Sollicitoque"/>
+         <tok val="sollicito"/>
+         <tok val="sollicitoque"/>
          <lm cert="0.5">
             <l>sollicitus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2241,45 +2855,61 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitor sollicitor-->
-         <tok val="[sS]ollicitor"/>
+      <ana>
+         <tok val="Sollicitor"/>
+         <tok val="sollicitor"/>
          <lm>
             <l>sollicito</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Sollicitos sollicitos sollícitos-->
-         <tok val="[sS]oll[ií]citos"/>
+      <ana>
+         <tok val="Sollicitos"/>
+         <tok val="sollicitos"/>
+         <tok val="sollícitos"/>
          <lm>
             <l>sollicitus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitum Sollicitumque sollicitum sollicitumque sóllicitum-->
-         <tok val="[sS]?(o|só)llicitum(que)?"/>
+      <ana>
+         <tok val="Sollicitum"/>
+         <tok val="Sollicitumque"/>
+         <tok val="sollicitum"/>
+         <tok val="sollicitumque"/>
+         <tok val="sóllicitum"/>
          <lm>
             <l>sollicitus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Sollicitum Sollicitumque sollicitorum sollicitum sollicitumque-->
-         <tok val="[sS]ollicit(or)?um(que)?"/>
+      <ana>
+         <tok val="Sollicitum"/>
+         <tok val="Sollicitumque"/>
+         <tok val="sollicitorum"/>
+         <tok val="sollicitum"/>
+         <tok val="sollicitumque"/>
          <lm>
             <l>sollicitus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Sollicitum Sollicitumque sollicitum sollicitumque-->
-         <tok val="[sS]ollicitum(que)?"/>
+      <ana>
+         <tok val="Sollicitum"/>
+         <tok val="Sollicitumque"/>
+         <tok val="sollicitum"/>
+         <tok val="sollicitumque"/>
          <lm>
             <l>sollicitus</l>
             <m cert="0.5">a - - s - - - n a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sollicitus sollicitus sollicitusque-->
-         <tok val="[sS]ollicitus(que)?"/>
+      <ana>
+         <tok val="Sollicitus"/>
+         <tok val="sollicitus"/>
+         <tok val="sollicitusque"/>
          <lm>
             <l>sollicitus</l>
             <m>a - - s - - - m n</m>
@@ -2287,6 +2917,7 @@
       </ana>
       <ana>
          <tok val="Sollius"/>
+         <tok val="sollius"/>
          <lm>
             <l>sollus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -2295,8 +2926,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Sollo sollo-->
-         <tok val="[sS]ollo"/>
+      <ana>
+         <tok val="Sollo"/>
+         <tok val="sollo"/>
          <lm>
             <l>sollus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2305,8 +2937,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Soloecismi soloecismi-->
-         <tok val="[sS]oloecismi"/>
+      <ana>
+         <tok val="Soloecismi"/>
+         <tok val="soloecismi"/>
          <lm>
             <l>soloecismus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2314,22 +2947,28 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Soloecismorum soloecismorum soloecismum-->
-         <tok val="[sS]oloecism(or|)um"/>
+      <ana>
+         <tok val="Soloecismorum"/>
+         <tok val="soloecismorum"/>
+         <tok val="soloecismum"/>
          <lm>
             <l>soloecismus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Soloecismus solicismus soloecismus SOLOECISMUS-->
-         <tok val="[sS]?(ol)?(oe|i)?(cismus|SOLOECISMUS)"/>
+      <ana>
+         <tok val="SOLOECISMUS"/>
+         <tok val="Soloecismus"/>
+         <tok val="solicismus"/>
+         <tok val="soloecismus"/>
          <lm>
             <l>soloecismus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Soloecista soloecista-->
-         <tok val="[sS]oloecista"/>
+      <ana>
+         <tok val="Soloecista"/>
+         <tok val="soloecista"/>
          <lm>
             <l>soloecista</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -2337,8 +2976,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Soloecon soloecon-->
-         <tok val="[sS]oloecon"/>
+      <ana>
+         <tok val="Soloecon"/>
+         <tok val="soloecon"/>
          <lm>
             <l>soloecum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -2347,6 +2987,7 @@
       </ana>
       <ana>
          <tok val="Solon"/>
+         <tok val="solon"/>
          <lm>
             <l>Solon</l>
             <m>n e - s - - - m n</m>
@@ -2354,6 +2995,7 @@
       </ana>
       <ana>
          <tok val="Solonates"/>
+         <tok val="solonates"/>
          <lm>
             <l>Solonates</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -2363,13 +3005,17 @@
       </ana>
       <ana>
          <tok val="Solone"/>
+         <tok val="solone"/>
          <lm>
             <l>Solon</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Solonem Solonemque-->
-         <tok val="Solonem(que)?"/>
+      <ana>
+         <tok val="Solonem"/>
+         <tok val="Solonemque"/>
+         <tok val="solonem"/>
+         <tok val="solonemque"/>
          <lm>
             <l>Solon</l>
             <m>n e - s - - - m a</m>
@@ -2377,6 +3023,7 @@
       </ana>
       <ana>
          <tok val="Solones"/>
+         <tok val="solones"/>
          <lm>
             <l>Solon</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -2386,6 +3033,7 @@
       </ana>
       <ana>
          <tok val="Soloni"/>
+         <tok val="soloni"/>
          <lm cert="0.5">
             <l>Solonium</l>
             <m>n e - s - - - n g</m>
@@ -2397,6 +3045,7 @@
       </ana>
       <ana>
          <tok val="Solonio"/>
+         <tok val="solonio"/>
          <lm>
             <l>Solonium</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -2405,6 +3054,7 @@
       </ana>
       <ana>
          <tok val="Solonis"/>
+         <tok val="solonis"/>
          <lm>
             <l>Solon</l>
             <m>n e - s - - - m g</m>
@@ -2412,6 +3062,7 @@
       </ana>
       <ana>
          <tok val="Solonium"/>
+         <tok val="solonium"/>
          <lm>
             <l>Solonium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -2422,6 +3073,7 @@
       </ana>
       <ana>
          <tok val="Solorio"/>
+         <tok val="solorio"/>
          <lm>
             <l>Solorius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -2430,13 +3082,17 @@
       </ana>
       <ana>
          <tok val="Solorius"/>
+         <tok val="solorius"/>
          <lm>
             <l>Solorius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Solos solos solosque solost-->
-         <tok val="[sS]olos(t|que)?"/>
+      <ana>
+         <tok val="Solos"/>
+         <tok val="solos"/>
+         <tok val="solosque"/>
+         <tok val="solost"/>
          <lm>
             <l>solus</l>
             <m>a - - p - - - m a</m>
@@ -2444,13 +3100,15 @@
       </ana>
       <ana>
          <tok val="Solos"/>
+         <tok val="solos"/>
          <lm>
             <l>Soli</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Solox solox-->
-         <tok val="[sS]olox"/>
+      <ana>
+         <tok val="Solox"/>
+         <tok val="solox"/>
          <lm>
             <l>solox</l>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -2462,8 +3120,9 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Solsequium solsequium-->
-         <tok val="[sS]olsequium"/>
+      <ana>
+         <tok val="Solsequium"/>
+         <tok val="solsequium"/>
          <lm>
             <l>solsequium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -2472,8 +3131,11 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solstitia Solstitiaque solstitia-->
-         <tok val="[sS]olstitia(que)?"/>
+      <ana>
+         <tok val="Solstitia"/>
+         <tok val="Solstitiaque"/>
+         <tok val="solstitia"/>
+         <tok val="solstitiaque"/>
          <lm>
             <l>solstitium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2481,8 +3143,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Solstitiale solstitiale-->
-         <tok val="[sS]olstitiale"/>
+      <ana>
+         <tok val="Solstitiale"/>
+         <tok val="solstitiale"/>
          <lm>
             <l>solstitialis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2490,8 +3153,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Solstitialibus solstitialibus-->
-         <tok val="[sS]olstitialibus"/>
+      <ana>
+         <tok val="Solstitialibus"/>
+         <tok val="solstitialibus"/>
          <lm>
             <l>solstitialis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2502,8 +3166,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solstitialis solstitialis-->
-         <tok val="[sS]olstitialis"/>
+      <ana>
+         <tok val="Solstitialis"/>
+         <tok val="solstitialis"/>
          <lm>
             <l>solstitialis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -2515,46 +3180,56 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solstitialis solstitiales solstitialis-->
-         <tok val="[sS]olstitial[ie]s"/>
+      <ana>
+         <tok val="Solstitialis"/>
+         <tok val="solstitiales"/>
+         <tok val="solstitialis"/>
          <lm>
             <l>solstitialis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solstitii solstiti solstitii-->
-         <tok val="[sS]olstiti[i]?"/>
+      <ana>
+         <tok val="Solstitii"/>
+         <tok val="solstiti"/>
+         <tok val="solstitii"/>
          <lm>
             <l>solstitium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solstitiis solstitiis-->
-         <tok val="[sS]olstitiis"/>
+      <ana>
+         <tok val="Solstitiis"/>
+         <tok val="solstitiis"/>
          <lm>
             <l>solstitium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solstitio solstitio-->
-         <tok val="[sS]olstitio"/>
+      <ana>
+         <tok val="Solstitio"/>
+         <tok val="solstitio"/>
          <lm>
             <l>solstitium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Solstitiorum Solstitium solstitiorum solstitium-->
-         <tok val="[sS]olstiti(or)?um"/>
+      <ana>
+         <tok val="Solstitiorum"/>
+         <tok val="Solstitium"/>
+         <tok val="solstitiorum"/>
+         <tok val="solstitium"/>
          <lm>
             <l>solstitium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solstitium solstitium-->
-         <tok val="[sS]olstitium"/>
+      <ana>
+         <tok val="Solstitium"/>
+         <tok val="solstitium"/>
          <lm>
             <l>solstitium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -2562,22 +3237,29 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Solu solu solun-->
-         <tok val="[sS]olu[n]?"/>
+      <ana>
+         <tok val="Solu"/>
+         <tok val="solu"/>
+         <tok val="solun"/>
          <lm>
             <l>solus2</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Soluebatur soluebatur solvebatur-->
-         <tok val="[sS]ol[uv]ebatur"/>
+      <ana>
+         <tok val="Soluebatur"/>
+         <tok val="soluebatur"/>
+         <tok val="solvebatur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Soluendae soluendae solvendae solvendaeque-->
-         <tok val="[sS]ol[uv]endae(que)?"/>
+      <ana>
+         <tok val="Soluendae"/>
+         <tok val="soluendae"/>
+         <tok val="solvendae"/>
+         <tok val="solvendaeque"/>
          <lm>
             <l>solvo</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -2586,8 +3268,10 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Soluendi soluendi solvendi-->
-         <tok val="[sS]ol[uv]endi"/>
+      <ana>
+         <tok val="Soluendi"/>
+         <tok val="soluendi"/>
+         <tok val="solvendi"/>
          <lm>
             <l>solvo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -2597,8 +3281,12 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Soluendo Solvendo soluendo soluendoque solvendo-->
-         <tok val="[Ss]ol[vu]endo(que)?"/>
+      <ana>
+         <tok val="Soluendo"/>
+         <tok val="Solvendo"/>
+         <tok val="soluendo"/>
+         <tok val="soluendoque"/>
+         <tok val="solvendo"/>
          <lm>
             <l>solvo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -2609,15 +3297,20 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--Soluent soluent solvent-->
-         <tok val="[sS]ol[uv]ent"/>
+      <ana>
+         <tok val="Soluent"/>
+         <tok val="soluent"/>
+         <tok val="solvent"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Soluente soluente solvente solventi-->
-         <tok val="[sS]ol[uv]ent[ei]"/>
+      <ana>
+         <tok val="Soluente"/>
+         <tok val="soluente"/>
+         <tok val="solvente"/>
+         <tok val="solventi"/>
          <lm>
             <l>solvo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -2625,88 +3318,141 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Soluentur Solventur Solventvr soluentur solventur-->
-         <tok val="[Ss]ol[vu]ent[uv]r"/>
+      <ana>
+         <tok val="Soluentur"/>
+         <tok val="Solventur"/>
+         <tok val="Solventvr"/>
+         <tok val="soluentur"/>
+         <tok val="solventur"/>
+         <tok val="solventvr"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Soluere Solvere soluere soluerunt solvere solverunt sólvere-->
-         <tok val="[sS]?(o|só)l[vu]er(unt|e)"/>
+      <ana>
+         <tok val="Soluere"/>
+         <tok val="Solvere"/>
+         <tok val="soluere"/>
+         <tok val="soluerunt"/>
+         <tok val="solvere"/>
+         <tok val="solverunt"/>
+         <tok val="sólvere"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Soluere Solvere soluere solvere-->
-         <tok val="[Ss]ol[vu]ere"/>
+      <ana>
+         <tok val="Soluere"/>
+         <tok val="Solvere"/>
+         <tok val="soluere"/>
+         <tok val="solvere"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Soluere Solvere soluere solueris solvere solveris-->
-         <tok val="[sS]ol[vu]er(is|e)"/>
+      <ana>
+         <tok val="Soluere"/>
+         <tok val="Solvere"/>
+         <tok val="soluere"/>
+         <tok val="solueris"/>
+         <tok val="solvere"/>
+         <tok val="solveris"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Soluet soluet solvet solvetque Solvet-->
-         <tok val="[sS]ol[uv]et(que)?"/>
+      <ana>
+         <tok val="Soluet"/>
+         <tok val="Solvet"/>
+         <tok val="soluet"/>
+         <tok val="solvet"/>
+         <tok val="solvetque"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Soluimus soluimus solvimus Solvimus-->
-         <tok val="[sS]ol[uv]imus"/>
+      <ana>
+         <tok val="Soluimus"/>
+         <tok val="Solvimus"/>
+         <tok val="soluimus"/>
+         <tok val="solvimus"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 1 p r i a</m>
             <m cert="0.5">v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Soluisse soluisse solvisse Solvisse-->
-         <tok val="[sS]ol[uv]isse"/>
+      <ana>
+         <tok val="Soluisse"/>
+         <tok val="Solvisse"/>
+         <tok val="soluisse"/>
+         <tok val="solvisse"/>
          <lm>
             <l>solvo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Soluit Soluitque Solvit soluit soluitque solvit solvitque SOLVIT-->
-         <tok val="[sS]?(ol)?[uv]?(it)?(que|SOLVIT)?"/>
+      <ana>
+         <tok val="SOLVIT"/>
+         <tok val="Soluit"/>
+         <tok val="Soluitque"/>
+         <tok val="Solvit"/>
+         <tok val="soluit"/>
+         <tok val="soluitque"/>
+         <tok val="solvit"/>
+         <tok val="solvitque"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Soluit Soluitque Solvit soluit soluitque solvit solvitque-->
-         <tok val="[sS]ol[uv]it(que)?"/>
+      <ana>
+         <tok val="Soluit"/>
+         <tok val="Soluitque"/>
+         <tok val="Solvit"/>
+         <tok val="soluit"/>
+         <tok val="soluitque"/>
+         <tok val="solvit"/>
+         <tok val="solvitque"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Soluite Solvite soluite solvite-->
-         <tok val="[Ss]ol[vu]ite"/>
+      <ana>
+         <tok val="Soluite"/>
+         <tok val="Solvite"/>
+         <tok val="soluite"/>
+         <tok val="solvite"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Soluitur Solvitur Solvitvr soluitur solvitur solviturque-->
-         <tok val="[Ss]ol[vu]it[uv]r(que)?"/>
+      <ana>
+         <tok val="Soluitur"/>
+         <tok val="Solvitur"/>
+         <tok val="Solvitvr"/>
+         <tok val="soluitur"/>
+         <tok val="solvitur"/>
+         <tok val="solviturque"/>
+         <tok val="solvitvr"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Solummodo solummodo solummodoque-->
-         <tok val="[sS]olummodo(que)?"/>
+      <ana>
+         <tok val="Solummodo"/>
+         <tok val="solummodo"/>
+         <tok val="solummodoque"/>
          <lm>
             <l>solummodo</l>
             <m>d</m>
@@ -2714,6 +3460,7 @@
       </ana>
       <ana>
          <tok val="Solunte"/>
+         <tok val="solunte"/>
          <lm>
             <l>Solus</l>
             <m>n e - s - - - f b</m>
@@ -2721,20 +3468,28 @@
       </ana>
       <ana>
          <tok val="Soluntinorum"/>
+         <tok val="soluntinorum"/>
          <lm>
             <l>Soluntini</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Soluo soluo solvo-->
-         <tok val="[sS]ol[uv]o"/>
+      <ana>
+         <tok val="Soluo"/>
+         <tok val="soluo"/>
+         <tok val="solvo"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Soluta soluta solutaque solutast solutaue solutave-->
-         <tok val="[sS]oluta[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Soluta"/>
+         <tok val="soluta"/>
+         <tok val="solutaque"/>
+         <tok val="solutast"/>
+         <tok val="solutaue"/>
+         <tok val="solutave"/>
          <lm cert="0.5">
             <l>solvo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -2751,8 +3506,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Solutae solutae-->
-         <tok val="[sS]olutae"/>
+      <ana>
+         <tok val="Solutae"/>
+         <tok val="solutae"/>
          <lm>
             <l>solvo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -2761,22 +3517,29 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Solutam solutam solutamque-->
-         <tok val="[sS]olutam(que)?"/>
+      <ana>
+         <tok val="Solutam"/>
+         <tok val="solutam"/>
+         <tok val="solutamque"/>
          <lm>
             <l>solvo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Solute solute soluteque-->
-         <tok val="[sS]olute(que)?"/>
+      <ana>
+         <tok val="Solute"/>
+         <tok val="solute"/>
+         <tok val="soluteque"/>
          <lm>
             <l>solvo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Soluti Solutique soluti solutique-->
-         <tok val="[sS]oluti(que)?"/>
+      <ana>
+         <tok val="Soluti"/>
+         <tok val="Solutique"/>
+         <tok val="soluti"/>
+         <tok val="solutique"/>
          <lm cert="0.5">
             <l>solvo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2789,8 +3552,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solutilis solutilis-->
-         <tok val="[sS]olutilis"/>
+      <ana>
+         <tok val="Solutilis"/>
+         <tok val="solutilis"/>
          <lm>
             <l>solutilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -2804,30 +3568,35 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Solutio solutio-->
-         <tok val="[sS]olutio"/>
+      <ana>
+         <tok val="Solutio"/>
+         <tok val="solutio"/>
          <lm>
             <l>solutio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Solutione solutione-->
-         <tok val="[sS]olutione"/>
+      <ana>
+         <tok val="Solutione"/>
+         <tok val="solutione"/>
          <lm>
             <l>solutio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Solutionem solutionem solutionemque-->
-         <tok val="[sS]olutionem(que)?"/>
+      <ana>
+         <tok val="Solutionem"/>
+         <tok val="solutionem"/>
+         <tok val="solutionemque"/>
          <lm>
             <l>solutio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solutiones solutiones-->
-         <tok val="[sS]olutiones"/>
+      <ana>
+         <tok val="Solutiones"/>
+         <tok val="solutiones"/>
          <lm>
             <l>solutio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -2835,29 +3604,33 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Solutioni solutioni-->
-         <tok val="[sS]olutioni"/>
+      <ana>
+         <tok val="Solutioni"/>
+         <tok val="solutioni"/>
          <lm>
             <l>solutio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Solutionis solutionis-->
-         <tok val="[sS]olutionis"/>
+      <ana>
+         <tok val="Solutionis"/>
+         <tok val="solutionis"/>
          <lm>
             <l>solutio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solutionum solutionum-->
-         <tok val="[sS]olutionum"/>
+      <ana>
+         <tok val="Solutionum"/>
+         <tok val="solutionum"/>
          <lm>
             <l>solutio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Solutior solutior-->
-         <tok val="[sS]olutior"/>
+      <ana>
+         <tok val="Solutior"/>
+         <tok val="solutior"/>
          <lm>
             <l>solvo</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -2866,15 +3639,18 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Solutioris solutioris-->
-         <tok val="[sS]olutioris"/>
+      <ana>
+         <tok val="Solutioris"/>
+         <tok val="solutioris"/>
          <lm>
             <l>solvo</l>
             <m>a - - s - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Solutis solutis solutisque-->
-         <tok val="[sS]olutis(que)?"/>
+      <ana>
+         <tok val="Solutis"/>
+         <tok val="solutis"/>
+         <tok val="solutisque"/>
          <lm cert="0.5">
             <l>solvo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -2890,8 +3666,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Soluto soluto solutoque-->
-         <tok val="[sS]oluto(que)?"/>
+      <ana>
+         <tok val="Soluto"/>
+         <tok val="soluto"/>
+         <tok val="solutoque"/>
          <lm cert="0.5">
             <l>solvo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -2907,13 +3685,17 @@
       </ana>
       <ana>
          <tok val="Solutum"/>
+         <tok val="solutum"/>
          <lm>
             <l>solvo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Soluuntur Solvuntur soluuntur solvuntur-->
-         <tok val="[Ss]ol[vu]untur"/>
+      <ana>
+         <tok val="Soluuntur"/>
+         <tok val="Solvuntur"/>
+         <tok val="soluuntur"/>
+         <tok val="solvuntur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p p i p</m>
@@ -2921,6 +3703,7 @@
       </ana>
       <ana>
          <tok val="Solva"/>
+         <tok val="solva"/>
          <lm>
             <l>Solva</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2930,27 +3713,38 @@
       </ana>
       <ana>
          <tok val="Solvas"/>
+         <tok val="solvas"/>
          <lm>
             <l>Solva</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Solvas soluan soluas solvan solvas-->
-         <tok val="[sS]ol[uv]a[sn]"/>
+      <ana>
+         <tok val="Solvas"/>
+         <tok val="soluan"/>
+         <tok val="soluas"/>
+         <tok val="solvan"/>
+         <tok val="solvas"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Solvat soluat solvat solvatne-->
-         <tok val="[sS]ol[vu]at(ne)?"/>
+      <ana>
+         <tok val="Solvat"/>
+         <tok val="soluat"/>
+         <tok val="solvat"/>
+         <tok val="solvatne"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Solve soluen solve solven-->
-         <tok val="[sS]ol[vu]e[n]?"/>
+      <ana>
+         <tok val="Solve"/>
+         <tok val="soluen"/>
+         <tok val="solve"/>
+         <tok val="solven"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s p m a</m>
@@ -2958,6 +3752,7 @@
       </ana>
       <ana>
          <tok val="Solvense"/>
+         <tok val="solvense"/>
          <lm>
             <l>Solvensis</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -2967,6 +3762,7 @@
       </ana>
       <ana>
          <tok val="Solvensis"/>
+         <tok val="solvensis"/>
          <lm>
             <l>Solvensis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -2980,72 +3776,102 @@
             <m cert="0.111111111111111111">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Solverat soluerat solverat-->
-         <tok val="[sS]ol[vu]erat"/>
+      <ana>
+         <tok val="Solverat"/>
+         <tok val="soluerat"/>
+         <tok val="solverat"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Solveret solueret solveret-->
-         <tok val="[sS]ol[vu]eret"/>
+      <ana>
+         <tok val="Solveret"/>
+         <tok val="solueret"/>
+         <tok val="solveret"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Solverit soluerit solverit-->
-         <tok val="[sS]ol[vu]erit"/>
+      <ana>
+         <tok val="Solverit"/>
+         <tok val="soluerit"/>
+         <tok val="solverit"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Solves soluen solues solven solves-->
-         <tok val="[sS]ol[uv]e[sn]"/>
+      <ana>
+         <tok val="Solves"/>
+         <tok val="soluen"/>
+         <tok val="solues"/>
+         <tok val="solven"/>
+         <tok val="solves"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Solvetur soluetur solvetur-->
-         <tok val="[sS]ol[vu]etur"/>
+      <ana>
+         <tok val="Solvetur"/>
+         <tok val="soluetur"/>
+         <tok val="solvetur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Solvi solui soluier soluique solvi solvier solvique-->
-         <tok val="[sS]ol[vu]i(qu)?[e]?[r]?"/>
+      <ana>
+         <tok val="Solvi"/>
+         <tok val="solui"/>
+         <tok val="soluier"/>
+         <tok val="soluique"/>
+         <tok val="solvi"/>
+         <tok val="solvier"/>
+         <tok val="solvique"/>
          <lm>
             <l>solvo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Solvi solui soluique solvi solvique-->
-         <tok val="[sS]ol[vu]i(que)?"/>
+      <ana>
+         <tok val="Solvi"/>
+         <tok val="solui"/>
+         <tok val="soluique"/>
+         <tok val="solvi"/>
+         <tok val="solvique"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Solvisset soluisset solvisset-->
-         <tok val="[sS]ol[vu]isset"/>
+      <ana>
+         <tok val="Solvisset"/>
+         <tok val="soluisset"/>
+         <tok val="solvisset"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Solvor solvor soluor-->
-         <tok val="[sS]ol[vu]or"/>
+      <ana>
+         <tok val="Solvor"/>
+         <tok val="soluor"/>
+         <tok val="solvor"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Solvtos solutos solutosque solutós-->
-         <tok val="[sS]ol[uv]t[óo]s(que)?"/>
+      <ana>
+         <tok val="Solvtos"/>
+         <tok val="solutos"/>
+         <tok val="solutosque"/>
+         <tok val="solutós"/>
+         <tok val="solvtos"/>
          <lm>
             <l>solvo</l>
             <m>v - - p r p p m a</m>
@@ -3053,6 +3879,7 @@
       </ana>
       <ana>
          <tok val="Solyma"/>
+         <tok val="solyma"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -3065,6 +3892,7 @@
       </ana>
       <ana>
          <tok val="Solymae"/>
+         <tok val="solymae"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -3075,6 +3903,7 @@
       </ana>
       <ana>
          <tok val="Solymarum"/>
+         <tok val="solymarum"/>
          <lm>
             <l>Solymus</l>
             <m>a e - p - - - f g</m>
@@ -3082,6 +3911,7 @@
       </ana>
       <ana>
          <tok val="Solymas"/>
+         <tok val="solymas"/>
          <lm>
             <l>Solymus</l>
             <m>a e - p - - - f a</m>
@@ -3089,6 +3919,7 @@
       </ana>
       <ana>
          <tok val="Solymi"/>
+         <tok val="solymi"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -3099,6 +3930,7 @@
       </ana>
       <ana>
          <tok val="Solymis"/>
+         <tok val="solymis"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -3113,6 +3945,7 @@
       </ana>
       <ana>
          <tok val="Solymo"/>
+         <tok val="solymo"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -3123,6 +3956,7 @@
       </ana>
       <ana>
          <tok val="Solymos"/>
+         <tok val="solymos"/>
          <lm>
             <l>Solymus</l>
             <m>a e - p - - - m a</m>
@@ -3130,6 +3964,7 @@
       </ana>
       <ana>
          <tok val="Solymum"/>
+         <tok val="solymum"/>
          <lm>
             <l>Solymus</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -3144,6 +3979,7 @@
       </ana>
       <ana>
          <tok val="Solymus"/>
+         <tok val="solymus"/>
          <lm>
             <l>Solymus</l>
             <m>a e - s - - - m n</m>
@@ -3184,8 +4020,11 @@
             <m>v - 1 s f i p</m>
          </lm>
       </ana>
-      <ana><!--solaci solacii solati solatii-->
-         <tok val="sola[ct]i[i]?"/>
+      <ana>
+         <tok val="solaci"/>
+         <tok val="solacii"/>
+         <tok val="solati"/>
+         <tok val="solatii"/>
          <lm>
             <l>solacium</l>
             <m>n - - s - - - n g</m>
@@ -3255,8 +4094,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--solandi solandique-->
-         <tok val="solandi(que)?"/>
+      <ana>
+         <tok val="solandi"/>
+         <tok val="solandique"/>
          <lm>
             <l>solo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -3333,8 +4173,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--solantes solantis-->
-         <tok val="solant[ie]s"/>
+      <ana>
+         <tok val="solantes"/>
+         <tok val="solantis"/>
          <lm>
             <l>solo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3371,8 +4212,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--solantur solanturque-->
-         <tok val="solantur(que)?"/>
+      <ana>
+         <tok val="solantur"/>
+         <tok val="solanturque"/>
          <lm>
             <l>solo</l>
             <m>v - 3 p p i p</m>
@@ -3385,8 +4227,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--solare solaris-->
-         <tok val="solar(is|e)"/>
+      <ana>
+         <tok val="solare"/>
+         <tok val="solaris"/>
          <lm>
             <l>solo</l>
             <m>v - 2 s p i p</m>
@@ -3443,8 +4286,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--solarium solariumst-->
-         <tok val="solarium(st)?"/>
+      <ana>
+         <tok val="solarium"/>
+         <tok val="solariumst"/>
          <lm>
             <l>solaris</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -3479,8 +4323,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--solata solataque-->
-         <tok val="solata(que)?"/>
+      <ana>
+         <tok val="solata"/>
+         <tok val="solataque"/>
          <lm cert="0.5">
             <l>solo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -3590,8 +4435,9 @@
             <m cert="0.25">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--solatur solaturque-->
-         <tok val="solatur(que)?"/>
+      <ana>
+         <tok val="solatur"/>
+         <tok val="solaturque"/>
          <lm>
             <l>solo</l>
             <m>v - 3 s p i p</m>
@@ -3636,8 +4482,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--soleam soleamne-->
-         <tok val="soleam(ne)?"/>
+      <ana>
+         <tok val="soleam"/>
+         <tok val="soleamne"/>
          <lm cert="0.5">
             <l>soleo</l>
             <m>v - 1 s p s a</m>
@@ -3760,36 +4607,43 @@
             <m>v - 2 p i i a</m>
          </lm>
       </ana>
-      <ana><!--solem solemn solemne solemque-->
-         <tok val="solem[n]?(e|que)?"/>
+      <ana>
+         <tok val="solem"/>
+         <tok val="solemn"/>
+         <tok val="solemne"/>
+         <tok val="solemque"/>
          <lm>
             <l>sol</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--solemnitas sollemnitas-->
-         <tok val="so[l]?lemnitas"/>
+      <ana>
+         <tok val="solemnitas"/>
+         <tok val="sollemnitas"/>
          <lm>
             <l>sollemnitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--solemnitate sollemnitate-->
-         <tok val="so[l]?lemnitate"/>
+      <ana>
+         <tok val="solemnitate"/>
+         <tok val="sollemnitate"/>
          <lm>
             <l>sollemnitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--solemnitatem sollemnitatem-->
-         <tok val="so[l]?lemnitatem"/>
+      <ana>
+         <tok val="solemnitatem"/>
+         <tok val="sollemnitatem"/>
          <lm>
             <l>sollemnitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--solemnitates sollemnitates-->
-         <tok val="so[l]?lemnitates"/>
+      <ana>
+         <tok val="solemnitates"/>
+         <tok val="sollemnitates"/>
          <lm>
             <l>sollemnitas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -3797,8 +4651,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--solemnitatis sollemnitatis-->
-         <tok val="so[l]?lemnitatis"/>
+      <ana>
+         <tok val="solemnitatis"/>
+         <tok val="sollemnitatis"/>
          <lm>
             <l>sollemnitas</l>
             <m>n - - s - - - f g</m>
@@ -3816,8 +4671,9 @@
             <m cert="0.166666666666666667">v - - p p p a n d s</m>
          </lm>
       </ana>
-      <ana><!--soler solerque-->
-         <tok val="soler(que)?"/>
+      <ana>
+         <tok val="soler"/>
+         <tok val="solerque"/>
          <lm>
             <l>solo</l>
             <m>v - 1 s p s p</m>
@@ -3844,8 +4700,9 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--solerent solerentne-->
-         <tok val="solerent(ne)?"/>
+      <ana>
+         <tok val="solerent"/>
+         <tok val="solerentne"/>
          <lm>
             <l>soleo</l>
             <m>v - 3 p i s a</m>
@@ -3865,8 +4722,10 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--solertiae sollertiae Sollertiae-->
-         <tok val="[sS]o[l]?lertiae"/>
+      <ana>
+         <tok val="Sollertiae"/>
+         <tok val="solertiae"/>
+         <tok val="sollertiae"/>
          <lm>
             <l>sollertia</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -3901,15 +4760,21 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--soli solii solique solist Solii-->
-         <tok val="[sS]oli(i|st|que)?"/>
+      <ana>
+         <tok val="Solii"/>
+         <tok val="soli"/>
+         <tok val="solii"/>
+         <tok val="solique"/>
+         <tok val="solist"/>
          <lm>
             <l>solium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--soli solique solist-->
-         <tok val="soli(st|que)?"/>
+      <ana>
+         <tok val="soli"/>
+         <tok val="solique"/>
+         <tok val="solist"/>
          <lm>
             <l>sol</l>
             <m>n - - s - - - m d</m>
@@ -3944,8 +4809,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--solicitudinibus sollicitudinibus-->
-         <tok val="so[l]?licitudinibus"/>
+      <ana>
+         <tok val="solicitudinibus"/>
+         <tok val="sollicitudinibus"/>
          <lm>
             <l>sollicitudo</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -4019,15 +4885,17 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--solidari solidarique-->
-         <tok val="solidari(que)?"/>
+      <ana>
+         <tok val="solidari"/>
+         <tok val="solidarique"/>
          <lm>
             <l>solido</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--solidas solidasque-->
-         <tok val="solidas(que)?"/>
+      <ana>
+         <tok val="solidas"/>
+         <tok val="solidasque"/>
          <lm cert="0.5">
             <l>solido</l>
             <m>v - 2 s p i a</m>
@@ -4199,8 +5067,10 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--solidior solidiorque Solidior-->
-         <tok val="[Ss]olidior(que)?"/>
+      <ana>
+         <tok val="Solidior"/>
+         <tok val="solidior"/>
+         <tok val="solidiorque"/>
          <lm>
             <l>solidus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -4218,8 +5088,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--solidiore solidioreque-->
-         <tok val="solidiore(que)?"/>
+      <ana>
+         <tok val="solidiore"/>
+         <tok val="solidioreque"/>
          <lm>
             <l>solidus</l>
             <m>a - - s - - - - b c</m>
@@ -4350,8 +5221,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--soliditatem soliditatemque-->
-         <tok val="soliditatem(que)?"/>
+      <ana>
+         <tok val="soliditatem"/>
+         <tok val="soliditatemque"/>
          <lm>
             <l>soliditas</l>
             <m>n - - s - - - f a</m>
@@ -4373,8 +5245,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--solidius solidiusque-->
-         <tok val="solidius(que)?"/>
+      <ana>
+         <tok val="solidius"/>
+         <tok val="solidiusque"/>
          <lm>
             <l>solidus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -4496,8 +5369,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--solistimus sollistimus-->
-         <tok val="so[l]?listimus"/>
+      <ana>
+         <tok val="solistimus"/>
+         <tok val="sollistimus"/>
          <lm>
             <l>sollistimus</l>
             <m>a - - s - - - m n</m>
@@ -4526,8 +5400,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--solitari solitarii-->
-         <tok val="solitari[i]?"/>
+      <ana>
+         <tok val="solitari"/>
+         <tok val="solitarii"/>
          <lm>
             <l>solitarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -4616,8 +5491,9 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--solitas solitasque-->
-         <tok val="solitas(que)?"/>
+      <ana>
+         <tok val="solitas"/>
+         <tok val="solitasque"/>
          <lm cert="0.333333333333333333">
             <l>soleo</l>
             <m>v - - p r p p f a</m>
@@ -4645,8 +5521,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--solitauisse solitavisse-->
-         <tok val="solita[vu]isse"/>
+      <ana>
+         <tok val="solitauisse"/>
+         <tok val="solitavisse"/>
          <lm>
             <l>solito</l>
             <m>v - - - r n a</m>
@@ -4688,8 +5565,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--solitudini solitudinique-->
-         <tok val="solitudini(que)?"/>
+      <ana>
+         <tok val="solitudini"/>
+         <tok val="solitudinique"/>
          <lm>
             <l>solitudo</l>
             <m>n - - s - - - f d</m>
@@ -4710,8 +5588,10 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--solitum solitumque solitumst-->
-         <tok val="solitum(st|que)?"/>
+      <ana>
+         <tok val="solitum"/>
+         <tok val="solitumque"/>
+         <tok val="solitumst"/>
          <lm>
             <l>soleo</l>
             <m>a - - s - - - n n</m>
@@ -4744,16 +5624,18 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--sollemnibus sollemnibusque-->
-         <tok val="sollemnibus(que)?"/>
+      <ana>
+         <tok val="sollemnibus"/>
+         <tok val="sollemnibusque"/>
          <lm>
             <l>sollemnis</l>
             <m cert="0.5">a - - p - - - n d</m>
             <m cert="0.5">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--sollemnitatibus solemnitatibus-->
-         <tok val="so[l]?lemnitatibus"/>
+      <ana>
+         <tok val="solemnitatibus"/>
+         <tok val="sollemnitatibus"/>
          <lm>
             <l>sollemnitas</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -4796,8 +5678,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--solli sollist-->
-         <tok val="solli(st)?"/>
+      <ana>
+         <tok val="solli"/>
+         <tok val="sollist"/>
          <lm>
             <l>sollus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -4806,8 +5689,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--sollicitabant sollicitabantque-->
-         <tok val="sollicitabant(que)?"/>
+      <ana>
+         <tok val="sollicitabant"/>
+         <tok val="sollicitabantque"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 p i i a</m>
@@ -4934,8 +5818,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--sollicitantem sollicitantemque-->
-         <tok val="sollicitantem(que)?"/>
+      <ana>
+         <tok val="sollicitantem"/>
+         <tok val="sollicitantemque"/>
          <lm>
             <l>sollicito</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -5113,8 +5998,9 @@
             <m cert="0.142857142857142857">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--sollicitato sollicitatoque-->
-         <tok val="sollicitato(que)?"/>
+      <ana>
+         <tok val="sollicitato"/>
+         <tok val="sollicitatoque"/>
          <lm>
             <l>sollicito</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -5153,8 +6039,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--sollicitatum sollicitatumque-->
-         <tok val="sollicitatum(que)?"/>
+      <ana>
+         <tok val="sollicitatum"/>
+         <tok val="sollicitatumque"/>
          <lm>
             <l>sollicito</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -5173,8 +6060,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--sollicitauerat sollicitaverat-->
-         <tok val="sollicita[vu]erat"/>
+      <ana>
+         <tok val="sollicitauerat"/>
+         <tok val="sollicitaverat"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 s l i a</m>
@@ -5188,15 +6076,18 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--sollicitaui sollicitavi-->
-         <tok val="sollicita[vu]i"/>
+      <ana>
+         <tok val="sollicitaui"/>
+         <tok val="sollicitavi"/>
          <lm>
             <l>sollicito</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--sollicitauit sollicitavit Sollicitavit-->
-         <tok val="[sS]ollicita[vu]it"/>
+      <ana>
+         <tok val="Sollicitavit"/>
+         <tok val="sollicitauit"/>
+         <tok val="sollicitavit"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 s r i a</m>
@@ -5223,8 +6114,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--sollicitent sollicitentque-->
-         <tok val="sollicitent(que)?"/>
+      <ana>
+         <tok val="sollicitent"/>
+         <tok val="sollicitentque"/>
          <lm>
             <l>sollicito</l>
             <m>v - 3 p p s a</m>
@@ -5276,8 +6168,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--sollicitiores sollicitioresque-->
-         <tok val="sollicitiores(que)?"/>
+      <ana>
+         <tok val="sollicitiores"/>
+         <tok val="sollicitioresque"/>
          <lm>
             <l>sollicitus</l>
             <m cert="0.166666666666666667">a - - p - - - m v c</m>
@@ -5308,8 +6201,9 @@
             <m cert="0.5">a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--sollicitissime sollicitissimum-->
-         <tok val="sollicitissim(um|e)"/>
+      <ana>
+         <tok val="sollicitissime"/>
+         <tok val="sollicitissimum"/>
          <lm>
             <l>sollicitus</l>
             <m>a - - s - - - n v s</m>
@@ -5336,8 +6230,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--sollis sollist-->
-         <tok val="sollis[t]?"/>
+      <ana>
+         <tok val="sollis"/>
+         <tok val="sollist"/>
          <lm>
             <l>sollus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -5402,8 +6297,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--soloece soloecum-->
-         <tok val="soloec(um|e)"/>
+      <ana>
+         <tok val="soloece"/>
+         <tok val="soloecum"/>
          <lm>
             <l>soloecum</l>
             <m>n - - s - - - n v</m>
@@ -5493,44 +6389,50 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--soluam solvam-->
-         <tok val="sol[vu]am"/>
+      <ana>
+         <tok val="soluam"/>
+         <tok val="solvam"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 1 s p s a</m>
             <m cert="0.5">v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--soluamus solvamus-->
-         <tok val="sol[vu]amus"/>
+      <ana>
+         <tok val="soluamus"/>
+         <tok val="solvamus"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--soluant solvant-->
-         <tok val="sol[vu]ant"/>
+      <ana>
+         <tok val="soluant"/>
+         <tok val="solvant"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--soluantur solvantur-->
-         <tok val="sol[vu]antur"/>
+      <ana>
+         <tok val="soluantur"/>
+         <tok val="solvantur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--soluaris solvaris-->
-         <tok val="sol[vu]aris"/>
+      <ana>
+         <tok val="soluaris"/>
+         <tok val="solvaris"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--soluatur solvatur-->
-         <tok val="sol[vu]atur"/>
+      <ana>
+         <tok val="soluatur"/>
+         <tok val="solvatur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s p s p</m>
@@ -5546,8 +6448,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--solubiles solubilis-->
-         <tok val="solubil[ie]s"/>
+      <ana>
+         <tok val="solubiles"/>
+         <tok val="solubilis"/>
          <lm>
             <l>solubilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -5586,36 +6489,41 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--soluebant solvebant-->
-         <tok val="sol[vu]ebant"/>
+      <ana>
+         <tok val="soluebant"/>
+         <tok val="solvebant"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--soluebantur solvebantur-->
-         <tok val="sol[vu]ebantur"/>
+      <ana>
+         <tok val="soluebantur"/>
+         <tok val="solvebantur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--soluebat solvebat-->
-         <tok val="sol[vu]ebat"/>
+      <ana>
+         <tok val="soluebat"/>
+         <tok val="solvebat"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--soluemus solvemus-->
-         <tok val="sol[vu]emus"/>
+      <ana>
+         <tok val="soluemus"/>
+         <tok val="solvemus"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--soluenda solvenda-->
-         <tok val="sol[vu]enda"/>
+      <ana>
+         <tok val="soluenda"/>
+         <tok val="solvenda"/>
          <lm>
             <l>solvo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -5626,22 +6534,26 @@
             <m cert="0.166666666666666667">v - - p p g p n n</m>
          </lm>
       </ana>
-      <ana><!--soluendam solvendam solvendamque-->
-         <tok val="sol[vu]endam(que)?"/>
+      <ana>
+         <tok val="soluendam"/>
+         <tok val="solvendam"/>
+         <tok val="solvendamque"/>
          <lm>
             <l>solvo</l>
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--soluendas solvendas-->
-         <tok val="sol[vu]endas"/>
+      <ana>
+         <tok val="soluendas"/>
+         <tok val="solvendas"/>
          <lm>
             <l>solvo</l>
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--soluendis solvendis-->
-         <tok val="sol[vu]endis"/>
+      <ana>
+         <tok val="soluendis"/>
+         <tok val="solvendis"/>
          <lm>
             <l>solvo</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -5652,15 +6564,17 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--soluendos solvendos-->
-         <tok val="sol[vu]endos"/>
+      <ana>
+         <tok val="soluendos"/>
+         <tok val="solvendos"/>
          <lm>
             <l>solvo</l>
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--soluendum solvendum-->
-         <tok val="sol[vu]endum"/>
+      <ana>
+         <tok val="soluendum"/>
+         <tok val="solvendum"/>
          <lm>
             <l>solvo</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -5670,23 +6584,30 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--soluendum solvendorum solvendum-->
-         <tok val="sol[vu]end(or)?um"/>
+      <ana>
+         <tok val="soluendum"/>
+         <tok val="solvendorum"/>
+         <tok val="solvendum"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - - p p g p m g</m>
             <m cert="0.5">v - - p p g p n g</m>
          </lm>
       </ana>
-      <ana><!--soluendus solvendus solvendusque-->
-         <tok val="sol[vu]endus(que)?"/>
+      <ana>
+         <tok val="soluendus"/>
+         <tok val="solvendus"/>
+         <tok val="solvendusque"/>
          <lm>
             <l>solvo</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--soluens soluensque solvens solvensque-->
-         <tok val="sol[vu]ens(que)?"/>
+      <ana>
+         <tok val="soluens"/>
+         <tok val="soluensque"/>
+         <tok val="solvens"/>
+         <tok val="solvensque"/>
          <lm>
             <l>solvo</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -5698,16 +6619,19 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--soluentem solventem solventemque-->
-         <tok val="sol[vu]entem(que)?"/>
+      <ana>
+         <tok val="soluentem"/>
+         <tok val="solventem"/>
+         <tok val="solventemque"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--soluentes solventes-->
-         <tok val="sol[vu]entes"/>
+      <ana>
+         <tok val="soluentes"/>
+         <tok val="solventes"/>
          <lm>
             <l>solvo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -5716,16 +6640,19 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--soluentes soluentis solventes-->
-         <tok val="sol[uv]ent[ie]s"/>
+      <ana>
+         <tok val="soluentes"/>
+         <tok val="soluentis"/>
+         <tok val="solventes"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--soluentibus solventibus-->
-         <tok val="sol[vu]entibus"/>
+      <ana>
+         <tok val="soluentibus"/>
+         <tok val="solventibus"/>
          <lm>
             <l>solvo</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -5745,8 +6672,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--soluentium solventium-->
-         <tok val="sol[vu]entium"/>
+      <ana>
+         <tok val="soluentium"/>
+         <tok val="solventium"/>
          <lm>
             <l>solvo</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -5754,36 +6682,41 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--solueram solveram-->
-         <tok val="sol[vu]eram"/>
+      <ana>
+         <tok val="solueram"/>
+         <tok val="solveram"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--soluerant solverant-->
-         <tok val="sol[vu]erant"/>
+      <ana>
+         <tok val="soluerant"/>
+         <tok val="solverant"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--solueremus solveremus-->
-         <tok val="sol[vu]eremus"/>
+      <ana>
+         <tok val="solueremus"/>
+         <tok val="solveremus"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--soluerent solverent-->
-         <tok val="sol[vu]erent"/>
+      <ana>
+         <tok val="soluerent"/>
+         <tok val="solverent"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--soluerentur solverentur-->
-         <tok val="sol[vu]erentur"/>
+      <ana>
+         <tok val="soluerentur"/>
+         <tok val="solverentur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p i s p</m>
@@ -5796,15 +6729,17 @@
             <m>v - 1 s i s p</m>
          </lm>
       </ana>
-      <ana><!--solueres solveres-->
-         <tok val="sol[vu]eres"/>
+      <ana>
+         <tok val="solueres"/>
+         <tok val="solveres"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--solueretur solveretur-->
-         <tok val="sol[vu]eretur"/>
+      <ana>
+         <tok val="solueretur"/>
+         <tok val="solveretur"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 s i s p</m>
@@ -5817,81 +6752,92 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--soluerimus solverimus-->
-         <tok val="sol[vu]erimus"/>
+      <ana>
+         <tok val="soluerimus"/>
+         <tok val="solverimus"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 1 p t i a</m>
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--soluerint solverint-->
-         <tok val="sol[vu]erint"/>
+      <ana>
+         <tok val="soluerint"/>
+         <tok val="solverint"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--solueris solveris-->
-         <tok val="sol[vu]eris"/>
+      <ana>
+         <tok val="solueris"/>
+         <tok val="solveris"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--soluero solvero-->
-         <tok val="sol[vu]ero"/>
+      <ana>
+         <tok val="soluero"/>
+         <tok val="solvero"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--soluimur solvimur-->
-         <tok val="sol[vu]imur"/>
+      <ana>
+         <tok val="soluimur"/>
+         <tok val="solvimur"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--soluis solvis-->
-         <tok val="sol[vu]is"/>
+      <ana>
+         <tok val="soluis"/>
+         <tok val="solvis"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--soluissem solvissem-->
-         <tok val="sol[vu]issem"/>
+      <ana>
+         <tok val="soluissem"/>
+         <tok val="solvissem"/>
          <lm>
             <l>solvo</l>
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--soluissent solvissent-->
-         <tok val="sol[vu]issent"/>
+      <ana>
+         <tok val="soluissent"/>
+         <tok val="solvissent"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--soluisses solvisses-->
-         <tok val="sol[vu]isses"/>
+      <ana>
+         <tok val="soluisses"/>
+         <tok val="solvisses"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--soluisti solvisti-->
-         <tok val="sol[vu]isti"/>
+      <ana>
+         <tok val="soluisti"/>
+         <tok val="solvisti"/>
          <lm>
             <l>solvo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--soluito solvito-->
-         <tok val="sol[vu]ito"/>
+      <ana>
+         <tok val="soluito"/>
+         <tok val="solvito"/>
          <lm>
             <l>solvo</l>
             <m cert="0.5">v - 2 s f m a</m>
@@ -6022,8 +6968,9 @@
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--solutius solutiusque-->
-         <tok val="solutius(que)?"/>
+      <ana>
+         <tok val="solutius"/>
+         <tok val="solutiusque"/>
          <lm>
             <l>solvo</l>
             <m cert="0.25">d</m>
@@ -6096,15 +7043,20 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--soluturus soluturusne-->
-         <tok val="soluturus(ne)?"/>
+      <ana>
+         <tok val="soluturus"/>
+         <tok val="soluturusne"/>
          <lm>
             <l>solvo</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--soluunt soluuntque solvont solvunt solvuntque-->
-         <tok val="sol[vu]?(u|vo)nt(que)?"/>
+      <ana>
+         <tok val="soluunt"/>
+         <tok val="soluuntque"/>
+         <tok val="solvont"/>
+         <tok val="solvunt"/>
+         <tok val="solvuntque"/>
          <lm>
             <l>solvo</l>
             <m>v - 3 p p i a</m>
@@ -6233,16 +7185,19 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--sollemnemque sollemnem-->
-         <tok val="sollemnem(que)?"/>
+      <ana>
+         <tok val="sollemnem"/>
+         <tok val="sollemnemque"/>
          <lm>
             <l>sollemnis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sollemnesque sollemnes-->
-         <tok val="[sS]ollemnes(que)?"/>
+      <ana>
+         <tok val="Sollemnesque"/>
+         <tok val="sollemnes"/>
+         <tok val="sollemnesque"/>
          <lm>
             <l>sollemnis</l>
             <m cert="0.166666666666666667">a - - p - - - f a</m>
@@ -6260,24 +7215,29 @@
             <m>a - - p - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--sollertem Sollertem-->
-         <tok val="[Ss]ollertem"/>
+      <ana>
+         <tok val="Sollertem"/>
+         <tok val="sollertem"/>
          <lm>
             <l>sollers</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--sollertesque sollertes sollertisque sollertis-->
-         <tok val="sollert[ie]s(que)?"/>
+      <ana>
+         <tok val="sollertes"/>
+         <tok val="sollertesque"/>
+         <tok val="sollertis"/>
+         <tok val="sollertisque"/>
          <lm>
             <l>sollers</l>
             <m cert="0.5">a - - p - - - f a</m>
             <m cert="0.5">a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--sollertesque sollertes-->
-         <tok val="sollertes(que)?"/>
+      <ana>
+         <tok val="sollertes"/>
+         <tok val="sollertesque"/>
          <lm>
             <l>sollers</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -6317,8 +7277,9 @@
             <m cert="0.333333333333333333">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--sollertisque sollertis-->
-         <tok val="sollertis(que)?"/>
+      <ana>
+         <tok val="sollertis"/>
+         <tok val="sollertisque"/>
          <lm>
             <l>sollers</l>
             <m cert="0.333333333333333333">a - - s - - - f g</m>
@@ -6333,8 +7294,9 @@
             <m>a - - p - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--sollertissime sollertissimus-->
-         <tok val="sollertissim(us|e)"/>
+      <ana>
+         <tok val="sollertissime"/>
+         <tok val="sollertissimus"/>
          <lm>
             <l>sollers</l>
             <m>a - - s - - - m v s</m>

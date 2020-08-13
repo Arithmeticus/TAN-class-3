@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuseg">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:eg">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to eg</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-eg.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>EG</tok-starts-with>
       <tok-starts-with>Eg</tok-starts-with>
       <tok-starts-with>eg</tok-starts-with>
       <tok-starts-with>ég</tok-starts-with>
       <tok-starts-with>Ég</tok-starts-with>
-      <ana><!--EGEO Egeo egeo-->
-         <tok val="[eE]?(geo|EGEO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:41.986-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:41.986-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-eg.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="EGEO"/>
+         <tok val="Egeo"/>
+         <tok val="egeo"/>
          <lm>
             <l>egeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--EGERE EGERUNT Egere egere egeren egerunt egeruntque-->
-         <tok val="[eE]?(ger)?(untqu)?[e]?(n|unt|EGERUNT|EGERE)?"/>
+      <ana>
+         <tok val="EGERE"/>
+         <tok val="EGERUNT"/>
+         <tok val="Egere"/>
+         <tok val="egere"/>
+         <tok val="egeren"/>
+         <tok val="egerunt"/>
+         <tok val="egeruntque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--EGERE Egere egere egeren-->
-         <tok val="[eE]?(gere)?(n|EGERE)?"/>
+      <ana>
+         <tok val="EGERE"/>
+         <tok val="Egere"/>
+         <tok val="egere"/>
+         <tok val="egeren"/>
          <lm cert="0.5">
             <l>egeo</l>
             <m cert="0.5">v - 2 s p m p</m>
@@ -63,71 +82,110 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--EGERE Egere egere egeren egeris-->
-         <tok val="[eE]?(ger)?[e]?(n|is|EGERE)?"/>
+      <ana>
+         <tok val="EGERE"/>
+         <tok val="Egere"/>
+         <tok val="egere"/>
+         <tok val="egeren"/>
+         <tok val="egeris"/>
          <lm>
             <l>egeo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--EGERUNT egerunt egeruntque-->
-         <tok val="(egerunt)?(que|EGERUNT)?"/>
+      <ana>
+         <tok val="EGERUNT"/>
+         <tok val="egerunt"/>
+         <tok val="egeruntque"/>
          <lm>
             <l>egero</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--EGI Egi egi egique-->
-         <tok val="[eE]?(gi)?(que|EGI)?"/>
+      <ana>
+         <tok val="EGI"/>
+         <tok val="Egi"/>
+         <tok val="egi"/>
+         <tok val="egique"/>
          <lm>
             <l>ago</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--EGIT Egit egit egitque-->
-         <tok val="[eE]?(git)?(que|EGIT)?"/>
+      <ana>
+         <tok val="EGIT"/>
+         <tok val="Egit"/>
+         <tok val="egit"/>
+         <tok val="egitque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--EGO EGo Ego Egomet Egon Egone ego egomet egon egone egoque egove egó égo egomét égomet égon Égone Egó Égo-->
-         <tok val="[EeéÉ]?(g|EG)?[o]?[n]?(e|n|met|mét|ve|ne|que|EGO|egó|Egó)?"/>
+      <ana>
+         <tok val="EGO"/>
+         <tok val="EGo"/>
+         <tok val="Ego"/>
+         <tok val="Egomet"/>
+         <tok val="Egon"/>
+         <tok val="Egone"/>
+         <tok val="Egó"/>
+         <tok val="ego"/>
+         <tok val="egomet"/>
+         <tok val="egomét"/>
+         <tok val="egon"/>
+         <tok val="egone"/>
+         <tok val="egoque"/>
+         <tok val="egove"/>
+         <tok val="egó"/>
+         <tok val="Égo"/>
+         <tok val="Égone"/>
+         <tok val="égo"/>
+         <tok val="égomet"/>
+         <tok val="égon"/>
+         <tok val="égone"/>
          <lm>
             <l>ego</l>
             <m>p p - s - - - - n</m>
          </lm>
       </ana>
-      <ana><!--EGREDIOR Egredior egredior-->
-         <tok val="[eE]?(gredior|EGREDIOR)"/>
+      <ana>
+         <tok val="EGREDIOR"/>
+         <tok val="Egredior"/>
+         <tok val="egredior"/>
          <lm>
             <l>egredior</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Ege ege egen-->
-         <tok val="[eE]ge[n]?"/>
+      <ana>
+         <tok val="Ege"/>
+         <tok val="ege"/>
+         <tok val="egen"/>
          <lm>
             <l>egeo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Egebat egebat-->
-         <tok val="[eE]gebat"/>
+      <ana>
+         <tok val="Egebat"/>
+         <tok val="egebat"/>
          <lm>
             <l>egeo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Egebit egebit-->
-         <tok val="[eE]gebit"/>
+      <ana>
+         <tok val="Egebit"/>
+         <tok val="egebit"/>
          <lm>
             <l>egeo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Egelida egelida-->
-         <tok val="[eE]gelida"/>
+      <ana>
+         <tok val="Egelida"/>
+         <tok val="egelida"/>
          <lm cert="0.5">
             <l>egelidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -144,6 +202,7 @@
       </ana>
       <ana>
          <tok val="Egelidi"/>
+         <tok val="egelidi"/>
          <lm>
             <l>egelidus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -154,6 +213,7 @@
       </ana>
       <ana>
          <tok val="Egelidor"/>
+         <tok val="egelidor"/>
          <lm>
             <l>egelido</l>
             <m>v - 1 s p i p</m>
@@ -161,13 +221,15 @@
       </ana>
       <ana>
          <tok val="Egelidus"/>
+         <tok val="egelidus"/>
          <lm>
             <l>egelidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Egens egens-->
-         <tok val="[eE]gens"/>
+      <ana>
+         <tok val="Egens"/>
+         <tok val="egens"/>
          <lm>
             <l>egeo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -179,31 +241,39 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Egentem egentem egentemque-->
-         <tok val="[eE]gentem(que)?"/>
+      <ana>
+         <tok val="Egentem"/>
+         <tok val="egentem"/>
+         <tok val="egentemque"/>
          <lm>
             <l>egeo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Egentes egentes egentés-->
-         <tok val="[eE]gent[eé]s"/>
+      <ana>
+         <tok val="Egentes"/>
+         <tok val="egentes"/>
+         <tok val="egentés"/>
          <lm>
             <l>egeo</l>
             <m>v - - p p p a m n</m>
          </lm>
       </ana>
-      <ana><!--Egentes Egentis egentes egentis-->
-         <tok val="[Ee]gent[ie]s"/>
+      <ana>
+         <tok val="Egentes"/>
+         <tok val="Egentis"/>
+         <tok val="egentes"/>
+         <tok val="egentis"/>
          <lm>
             <l>egeo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Egentes egentes-->
-         <tok val="[eE]gentes"/>
+      <ana>
+         <tok val="Egentes"/>
+         <tok val="egentes"/>
          <lm>
             <l>egeo</l>
             <m cert="0.333333333333333333">v - - p p p a f n</m>
@@ -211,8 +281,9 @@
             <m cert="0.333333333333333333">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Egentis egentis-->
-         <tok val="[eE]gentis"/>
+      <ana>
+         <tok val="Egentis"/>
+         <tok val="egentis"/>
          <lm>
             <l>egeo</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -220,22 +291,26 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Egentissimus egentissimus egentissumus-->
-         <tok val="[eE]gentiss[iu]mus"/>
+      <ana>
+         <tok val="Egentissimus"/>
+         <tok val="egentissimus"/>
+         <tok val="egentissumus"/>
          <lm>
             <l>egeo</l>
             <m>v - - s p p a m n s</m>
          </lm>
       </ana>
-      <ana><!--Egentissimus egentissimus-->
-         <tok val="[eE]gentissimus"/>
+      <ana>
+         <tok val="Egentissimus"/>
+         <tok val="egentissimus"/>
          <lm>
             <l>egeo</l>
             <m>v - - s p p a m v s</m>
          </lm>
       </ana>
-      <ana><!--Egenum egenum-->
-         <tok val="[eE]genum"/>
+      <ana>
+         <tok val="Egenum"/>
+         <tok val="egenum"/>
          <lm>
             <l>egenus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -244,23 +319,27 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Egenum egenorum egenum-->
-         <tok val="[eE]gen(or)?um"/>
+      <ana>
+         <tok val="Egenum"/>
+         <tok val="egenorum"/>
+         <tok val="egenum"/>
          <lm>
             <l>egenus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Egenus egenus-->
-         <tok val="[eE]genus"/>
+      <ana>
+         <tok val="Egenus"/>
+         <tok val="egenus"/>
          <lm>
             <l>egenus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Egeram egeram-->
-         <tok val="[eE]geram"/>
+      <ana>
+         <tok val="Egeram"/>
+         <tok val="egeram"/>
          <lm cert="0.5">
             <l>ago</l>
             <m>v - 1 s l i a</m>
@@ -271,8 +350,9 @@
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Egerat egerat-->
-         <tok val="[eE]gerat"/>
+      <ana>
+         <tok val="Egerat"/>
+         <tok val="egerat"/>
          <lm cert="0.5">
             <l>ago</l>
             <m>v - 3 s l i a</m>
@@ -282,8 +362,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Egerere egerere-->
-         <tok val="[eE]gerere"/>
+      <ana>
+         <tok val="Egerere"/>
+         <tok val="egerere"/>
          <lm cert="0.5">
             <l>egero</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -296,8 +377,9 @@
             <m>v - 2 s i s p</m>
          </lm>
       </ana>
-      <ana><!--Egeret egeret-->
-         <tok val="[eE]geret"/>
+      <ana>
+         <tok val="Egeret"/>
+         <tok val="egeret"/>
          <lm cert="0.5">
             <l>egero</l>
             <m>v - 3 s f i a</m>
@@ -309,6 +391,7 @@
       </ana>
       <ana>
          <tok val="Egeri"/>
+         <tok val="egeri"/>
          <lm>
             <l>egero</l>
             <m>v - - - p n p</m>
@@ -316,6 +399,7 @@
       </ana>
       <ana>
          <tok val="Egeria"/>
+         <tok val="egeria"/>
          <lm>
             <l>Egeria</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -325,6 +409,7 @@
       </ana>
       <ana>
          <tok val="Egeriae"/>
+         <tok val="egeriae"/>
          <lm>
             <l>Egeria</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -332,8 +417,11 @@
             <m cert="0.333333333333333333">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Egeriae Egeriai-->
-         <tok val="Egeria[ie]"/>
+      <ana>
+         <tok val="Egeriae"/>
+         <tok val="Egeriai"/>
+         <tok val="egeriae"/>
+         <tok val="egeriai"/>
          <lm>
             <l>Egeria</l>
             <m>n e - s - - - f g</m>
@@ -341,13 +429,16 @@
       </ana>
       <ana>
          <tok val="Egeriam"/>
+         <tok val="egeriam"/>
          <lm>
             <l>Egeria</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Egerit egerit egeritque-->
-         <tok val="[eE]gerit(que)?"/>
+      <ana>
+         <tok val="Egerit"/>
+         <tok val="egerit"/>
+         <tok val="egeritque"/>
          <lm cert="0.5">
             <l>egero</l>
             <m>v - 3 s p i a</m>
@@ -358,8 +449,10 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Egeritur egeritur egeriturque-->
-         <tok val="[eE]geritur(que)?"/>
+      <ana>
+         <tok val="Egeritur"/>
+         <tok val="egeritur"/>
+         <tok val="egeriturque"/>
          <lm>
             <l>egero</l>
             <m>v - 3 s p i p</m>
@@ -367,13 +460,15 @@
       </ana>
       <ana>
          <tok val="Egermino"/>
+         <tok val="egermino"/>
          <lm>
             <l>egermino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Egero egero-->
-         <tok val="[eE]gero"/>
+      <ana>
+         <tok val="Egero"/>
+         <tok val="egero"/>
          <lm cert="0.5">
             <l>egero</l>
             <m>v - 1 s p i a</m>
@@ -385,6 +480,7 @@
       </ana>
       <ana>
          <tok val="Egesta"/>
+         <tok val="egesta"/>
          <lm>
             <l>Egesta</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -392,8 +488,10 @@
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Egesta egesta egestaque-->
-         <tok val="[eE]gesta(que)?"/>
+      <ana>
+         <tok val="Egesta"/>
+         <tok val="egesta"/>
+         <tok val="egestaque"/>
          <lm>
             <l>egero</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -406,17 +504,15 @@
       </ana>
       <ana>
          <tok val="Egestae"/>
-         <lm>
+         <tok val="egestae"/>
+         <lm cert="0.5">
             <l>Egesta</l>
             <m cert="0.25">n e - p - - - f n</m>
             <m cert="0.25">n e - p - - - f v</m>
             <m cert="0.25">n e - s - - - f g</m>
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
-      </ana>
-      <ana><!--Egestae egestae-->
-         <tok val="[eE]gestae"/>
-         <lm>
+         <lm cert="0.5">
             <l>egero</l>
             <m cert="0.25">v - - s r p p f d</m>
             <m cert="0.25">v - - s r p p f g</m>
@@ -424,47 +520,46 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Egestam egestam-->
-         <tok val="[eE]gestam"/>
-         <lm>
+      <ana>
+         <tok val="Egestam"/>
+         <tok val="egestam"/>
+         <lm cert="0.5">
             <l>egero</l>
             <m>v - - s r p p f a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Egestam"/>
-         <lm>
+         <lm cert="0.5">
             <l>Egesta</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Egestas egestas-->
-         <tok val="[eE]gestas"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Egestas"/>
+         <tok val="egestas"/>
+         <lm cert="0.333333333333333333">
             <l>egero</l>
             <m>v - - p r p p f a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>egestas</l>
             <m>n - - s - - - f n</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Egestas"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>Egesta</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Egestatem egestatem égestatem-->
-         <tok val="[eEé]gestatem"/>
+      <ana>
+         <tok val="Egestatem"/>
+         <tok val="egestatem"/>
+         <tok val="égestatem"/>
          <lm>
             <l>egestas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Egestates egestates-->
-         <tok val="[eE]gestates"/>
+      <ana>
+         <tok val="Egestates"/>
+         <tok val="egestates"/>
          <lm>
             <l>egestas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -472,15 +567,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Egestatis egestatis-->
-         <tok val="[eE]gestatis"/>
+      <ana>
+         <tok val="Egestatis"/>
+         <tok val="egestatis"/>
          <lm>
             <l>egestas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Egestio egestio-->
-         <tok val="[eE]gestio"/>
+      <ana>
+         <tok val="Egestio"/>
+         <tok val="egestio"/>
          <lm>
             <l>egestio</l>
             <m cert="0.333333333333333333">v - 1 s p i a</m>
@@ -488,8 +585,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Egesto egesto egestoque-->
-         <tok val="[eE]gesto(que)?"/>
+      <ana>
+         <tok val="Egesto"/>
+         <tok val="egesto"/>
+         <tok val="egestoque"/>
          <lm>
             <l>egero</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -498,8 +597,10 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Egestum egestum egestumque-->
-         <tok val="[eE]gestum(que)?"/>
+      <ana>
+         <tok val="Egestum"/>
+         <tok val="egestum"/>
+         <tok val="egestumque"/>
          <lm cert="0.5">
             <l>egero</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -513,16 +614,20 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Egestum egestorum egestum egestumque-->
-         <tok val="[eE]gest(or)?um(que)?"/>
+      <ana>
+         <tok val="Egestum"/>
+         <tok val="egestorum"/>
+         <tok val="egestum"/>
+         <tok val="egestumque"/>
          <lm>
             <l>egero</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Egestus egestus-->
-         <tok val="[eE]gestus"/>
+      <ana>
+         <tok val="Egestus"/>
+         <tok val="egestus"/>
          <lm cert="0.5">
             <l>egestus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -535,29 +640,36 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Eget eget egetne egetque-->
-         <tok val="[eE]get(ne|que)?"/>
+      <ana>
+         <tok val="Eget"/>
+         <tok val="eget"/>
+         <tok val="egetne"/>
+         <tok val="egetque"/>
          <lm>
             <l>egeo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Egetur egetur-->
-         <tok val="[eE]getur"/>
+      <ana>
+         <tok val="Egetur"/>
+         <tok val="egetur"/>
          <lm>
             <l>egeo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Egimus egimus-->
-         <tok val="[eE]gimus"/>
+      <ana>
+         <tok val="Egimus"/>
+         <tok val="egimus"/>
          <lm>
             <l>ago</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Egisti egisti egísti-->
-         <tok val="[eE]g[ií]sti"/>
+      <ana>
+         <tok val="Egisti"/>
+         <tok val="egisti"/>
+         <tok val="egísti"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s r i a</m>
@@ -565,13 +677,17 @@
       </ana>
       <ana>
          <tok val="Egnati"/>
+         <tok val="egnati"/>
          <lm>
             <l>Egnatius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Egnati Egnatii-->
-         <tok val="Egnati[i]?"/>
+      <ana>
+         <tok val="Egnati"/>
+         <tok val="Egnatii"/>
+         <tok val="egnati"/>
+         <tok val="egnatii"/>
          <lm>
             <l>Egnatius</l>
             <m>n e - s - - - m g</m>
@@ -579,6 +695,7 @@
       </ana>
       <ana>
          <tok val="Egnatia"/>
+         <tok val="egnatia"/>
          <lm>
             <l>Egnatia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -588,6 +705,7 @@
       </ana>
       <ana>
          <tok val="Egnatianum"/>
+         <tok val="egnatianum"/>
          <lm>
             <l>Egnatianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -600,6 +718,7 @@
       </ana>
       <ana>
          <tok val="Egnatianus"/>
+         <tok val="egnatianus"/>
          <lm>
             <l>Egnatianus</l>
             <m>a e - s - - - m n</m>
@@ -607,6 +726,7 @@
       </ana>
       <ana>
          <tok val="Egnatii"/>
+         <tok val="egnatii"/>
          <lm>
             <l>Egnatius</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -615,6 +735,7 @@
       </ana>
       <ana>
          <tok val="Egnatio"/>
+         <tok val="egnatio"/>
          <lm>
             <l>Egnatius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -623,6 +744,7 @@
       </ana>
       <ana>
          <tok val="Egnatios"/>
+         <tok val="egnatios"/>
          <lm>
             <l>Egnatius</l>
             <m>n e - p - - - m a</m>
@@ -630,6 +752,7 @@
       </ana>
       <ana>
          <tok val="Egnatium"/>
+         <tok val="egnatium"/>
          <lm>
             <l>Egnatius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -638,6 +761,7 @@
       </ana>
       <ana>
          <tok val="Egnatius"/>
+         <tok val="egnatius"/>
          <lm>
             <l>Egnatius</l>
             <m>n e - s - - - m n</m>
@@ -645,6 +769,7 @@
       </ana>
       <ana>
          <tok val="Egnatuleio"/>
+         <tok val="egnatuleio"/>
          <lm>
             <l>Egnatuleius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -653,6 +778,7 @@
       </ana>
       <ana>
          <tok val="Egnatuleium"/>
+         <tok val="egnatuleium"/>
          <lm>
             <l>Egnatuleius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -661,41 +787,51 @@
       </ana>
       <ana>
          <tok val="Egnatuleius"/>
+         <tok val="egnatuleius"/>
          <lm>
             <l>Egnatuleius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Egredere egredere-->
-         <tok val="[eE]gredere"/>
+      <ana>
+         <tok val="Egredere"/>
+         <tok val="egredere"/>
          <lm>
             <l>egredior</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Egredere egredere egrederis-->
-         <tok val="[eE]greder(e|is)"/>
+      <ana>
+         <tok val="Egredere"/>
+         <tok val="egredere"/>
+         <tok val="egrederis"/>
          <lm>
             <l>egredior</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Egredi egredi egredique egredive-->
-         <tok val="[eE]gredi(ve|que)?"/>
+      <ana>
+         <tok val="Egredi"/>
+         <tok val="egredi"/>
+         <tok val="egredique"/>
+         <tok val="egredive"/>
          <lm>
             <l>egredior</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Egrediebatur egrediebatur egrediebaturque-->
-         <tok val="[eE]grediebatur(que)?"/>
+      <ana>
+         <tok val="Egrediebatur"/>
+         <tok val="egrediebatur"/>
+         <tok val="egrediebaturque"/>
          <lm>
             <l>egredior</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Egrediens egrediens-->
-         <tok val="[eE]grediens"/>
+      <ana>
+         <tok val="Egrediens"/>
+         <tok val="egrediens"/>
          <lm>
             <l>egredior</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -707,30 +843,38 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Egredientem egredientem-->
-         <tok val="[eE]gredientem"/>
+      <ana>
+         <tok val="Egredientem"/>
+         <tok val="egredientem"/>
          <lm>
             <l>egredior</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Egredientur egredientur-->
-         <tok val="[eE]gredientur"/>
+      <ana>
+         <tok val="Egredientur"/>
+         <tok val="egredientur"/>
          <lm>
             <l>egredior</l>
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Egreditur egreditur egrediturque egreditúr égreditur-->
-         <tok val="[eEé]gredit[uú]r(que)?"/>
+      <ana>
+         <tok val="Egreditur"/>
+         <tok val="egreditur"/>
+         <tok val="egrediturque"/>
+         <tok val="egreditúr"/>
+         <tok val="égreditur"/>
          <lm>
             <l>egredior</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Egregia egregia egregiaque-->
-         <tok val="[eE]gregia(que)?"/>
+      <ana>
+         <tok val="Egregia"/>
+         <tok val="egregia"/>
+         <tok val="egregiaque"/>
          <lm cert="0.5">
             <l>egregium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -747,8 +891,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Egregiae egregiae-->
-         <tok val="[eE]gregiae"/>
+      <ana>
+         <tok val="Egregiae"/>
+         <tok val="egregiae"/>
          <lm>
             <l>egregius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -757,22 +902,31 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Egregiam egregiam egregiamque-->
-         <tok val="[eE]gregiam(que)?"/>
+      <ana>
+         <tok val="Egregiam"/>
+         <tok val="egregiam"/>
+         <tok val="egregiamque"/>
          <lm>
             <l>egregius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Egregias egregias egregiasque-->
-         <tok val="[eE]gregias(que)?"/>
+      <ana>
+         <tok val="Egregias"/>
+         <tok val="egregias"/>
+         <tok val="egregiasque"/>
          <lm>
             <l>egregius</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Egregie Egregium egregie egregieque egregium egregiumque-->
-         <tok val="[eE]gregi(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Egregie"/>
+         <tok val="Egregium"/>
+         <tok val="egregie"/>
+         <tok val="egregieque"/>
+         <tok val="egregium"/>
+         <tok val="egregiumque"/>
          <lm cert="0.5">
             <l>egregium</l>
             <m>n - - s - - - n v</m>
@@ -784,13 +938,16 @@
       </ana>
       <ana>
          <tok val="Egregie"/>
+         <tok val="egregie"/>
          <lm>
             <l>egregius</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Egregie egregie egregieque-->
-         <tok val="[eE]gregie(que)?"/>
+      <ana>
+         <tok val="Egregie"/>
+         <tok val="egregie"/>
+         <tok val="egregieque"/>
          <lm>
             <l>egregius</l>
             <m>a - - s - - - m v</m>
@@ -798,15 +955,20 @@
       </ana>
       <ana>
          <tok val="Egregii"/>
+         <tok val="egregii"/>
          <lm>
             <l>egregius</l>
-            <m cert="0.333333333333333333">n - - p - - - m n</m>
-            <m cert="0.333333333333333333">n - - p - - - m v</m>
-            <m cert="0.333333333333333333">n - - s - - - m g</m>
+            <m cert="0.2">n - - p - - - m n</m>
+            <m cert="0.2">n - - p - - - m v</m>
+            <m cert="0.2">n - - s - - - m g</m>
+            <m cert="0.2">a - - p - - - m v</m>
+            <m cert="0.2">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Egregii egregi egregii-->
-         <tok val="[eE]gregi[i]?"/>
+      <ana>
+         <tok val="Egregii"/>
+         <tok val="egregi"/>
+         <tok val="egregii"/>
          <lm cert="0.5">
             <l>egregius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -817,47 +979,37 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Egregii egregii-->
-         <tok val="[eE]gregii"/>
-         <lm>
-            <l>egregius</l>
-            <m cert="0.5">a - - p - - - m v</m>
-            <m cert="0.5">a - - p - - - m n</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Egregiis"/>
-         <lm>
+         <tok val="egregiis"/>
+         <lm cert="0.5">
             <l>egregius</l>
-            <m cert="0.5">n - - p - - - m d</m>
-            <m cert="0.5">n - - p - - - m b</m>
+            <m cert="0.125">n - - p - - - m d</m>
+            <m cert="0.125">a - - p - - - f b</m>
+            <m cert="0.125">a - - p - - - f d</m>
+            <m cert="0.125">a - - p - - - m d</m>
+            <m cert="0.125">a - - p - - - m b</m>
+            <m cert="0.125">a - - p - - - n d</m>
+            <m cert="0.125">n - - p - - - m b</m>
+            <m cert="0.125">a - - p - - - n b</m>
          </lm>
-      </ana>
-      <ana><!--Egregiis egregiis-->
-         <tok val="[eE]gregiis"/>
          <lm cert="0.5">
             <l>egregium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
-         <lm cert="0.5">
-            <l>egregius</l>
-            <m cert="0.166666666666666667">a - - p - - - f b</m>
-            <m cert="0.166666666666666667">a - - p - - - f d</m>
-            <m cert="0.166666666666666667">a - - p - - - m d</m>
-            <m cert="0.166666666666666667">a - - p - - - m b</m>
-            <m cert="0.166666666666666667">a - - p - - - n d</m>
-            <m cert="0.166666666666666667">a - - p - - - n b</m>
-         </lm>
       </ana>
-      <ana><!--Egregio egregio-->
-         <tok val="[eE]gregio"/>
+      <ana>
+         <tok val="Egregio"/>
+         <tok val="egregio"/>
          <lm cert="0.5">
             <l>egregius</l>
-            <m cert="0.25">a - - s - - - m d</m>
-            <m cert="0.25">a - - s - - - m b</m>
-            <m cert="0.25">a - - s - - - n b</m>
-            <m cert="0.25">a - - s - - - n d</m>
+            <m cert="0.166666666666666667">a - - s - - - m d</m>
+            <m cert="0.166666666666666667">n - - s - - - m b</m>
+            <m cert="0.166666666666666667">a - - s - - - m b</m>
+            <m cert="0.166666666666666667">a - - s - - - n b</m>
+            <m cert="0.166666666666666667">a - - s - - - n d</m>
+            <m cert="0.166666666666666667">n - - s - - - m d</m>
          </lm>
          <lm cert="0.5">
             <l>egregium</l>
@@ -866,15 +1018,9 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Egregio"/>
-         <lm>
-            <l>egregius</l>
-            <m cert="0.5">n - - s - - - m b</m>
-            <m cert="0.5">n - - s - - - m d</m>
-         </lm>
-      </ana>
-      <ana><!--Egregios egregios egregiosque-->
-         <tok val="[eE]gregios(que)?"/>
+         <tok val="Egregios"/>
+         <tok val="egregios"/>
+         <tok val="egregiosque"/>
          <lm>
             <l>egregius</l>
             <m>a - - p - - - m a</m>
@@ -882,13 +1028,16 @@
       </ana>
       <ana>
          <tok val="Egregios"/>
+         <tok val="egregios"/>
          <lm>
             <l>egregius</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Egregium egregium egregiumque-->
-         <tok val="[eE]gregium(que)?"/>
+      <ana>
+         <tok val="Egregium"/>
+         <tok val="egregium"/>
+         <tok val="egregiumque"/>
          <lm cert="0.5">
             <l>egregius</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -901,8 +1050,11 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Egregium egregiorum egregium egregiumque-->
-         <tok val="[eE]gregi(or)?um(que)?"/>
+      <ana>
+         <tok val="Egregium"/>
+         <tok val="egregiorum"/>
+         <tok val="egregium"/>
+         <tok val="egregiumque"/>
          <lm cert="0.5">
             <l>egregius</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -915,28 +1067,40 @@
       </ana>
       <ana>
          <tok val="Egregium"/>
+         <tok val="egregium"/>
          <lm>
             <l>egregius</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Egregius Egregiusque-->
-         <tok val="Egregius(que)?"/>
+      <ana>
+         <tok val="Egregius"/>
+         <tok val="Egregiusque"/>
+         <tok val="egregius"/>
+         <tok val="egregiusque"/>
          <lm>
             <l>egregius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Egregius Egregiusque Egregivs egregius egregiusque-->
-         <tok val="[eE]gregi[uv]s(que)?"/>
+      <ana>
+         <tok val="Egregius"/>
+         <tok val="Egregiusque"/>
+         <tok val="Egregivs"/>
+         <tok val="egregius"/>
+         <tok val="egregiusque"/>
+         <tok val="egregivs"/>
          <lm>
             <l>egregius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Egressa egressa egressaque egressast-->
-         <tok val="[eE]gressa(st|que)?"/>
+      <ana>
+         <tok val="Egressa"/>
+         <tok val="egressa"/>
+         <tok val="egressaque"/>
+         <tok val="egressast"/>
          <lm>
             <l>egredior</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -947,8 +1111,11 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Egressi egressi egressique Egressique-->
-         <tok val="[Ee]gressi(que)?"/>
+      <ana>
+         <tok val="Egressi"/>
+         <tok val="Egressique"/>
+         <tok val="egressi"/>
+         <tok val="egressique"/>
          <lm>
             <l>egredior</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -957,16 +1124,18 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Egressio egressio-->
-         <tok val="[eE]gressio"/>
+      <ana>
+         <tok val="Egressio"/>
+         <tok val="egressio"/>
          <lm>
             <l>egressio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Egressiones egressiones-->
-         <tok val="[eE]gressiones"/>
+      <ana>
+         <tok val="Egressiones"/>
+         <tok val="egressiones"/>
          <lm>
             <l>egressio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -974,8 +1143,10 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Egressis egressis egressisque-->
-         <tok val="[eE]gressis(que)?"/>
+      <ana>
+         <tok val="Egressis"/>
+         <tok val="egressis"/>
+         <tok val="egressisque"/>
          <lm>
             <l>egredior</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -986,8 +1157,12 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Egressum Egressvm egressum egressumque-->
-         <tok val="[Ee]gress[vu]m(que)?"/>
+      <ana>
+         <tok val="Egressum"/>
+         <tok val="Egressvm"/>
+         <tok val="egressum"/>
+         <tok val="egressumque"/>
+         <tok val="egressvm"/>
          <lm cert="0.5">
             <l>egredior</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -1003,8 +1178,10 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Egressus egressus egressusque-->
-         <tok val="[eE]gressus(que)?"/>
+      <ana>
+         <tok val="Egressus"/>
+         <tok val="egressus"/>
+         <tok val="egressusque"/>
          <lm cert="0.5">
             <l>egressus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1017,8 +1194,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Egula egula-->
-         <tok val="[eE]gula"/>
+      <ana>
+         <tok val="Egula"/>
+         <tok val="egula"/>
          <lm>
             <l>egula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1181,8 +1359,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--egelidum egelidumque-->
-         <tok val="egelidum(que)?"/>
+      <ana>
+         <tok val="egelidum"/>
+         <tok val="egelidumque"/>
          <lm>
             <l>egelidus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1207,8 +1386,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--egen eges-->
-         <tok val="ege[sn]"/>
+      <ana>
+         <tok val="egen"/>
+         <tok val="eges"/>
          <lm>
             <l>egeo</l>
             <m>v - 2 s p i a</m>
@@ -1319,8 +1499,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--egente egenti-->
-         <tok val="egent[ie]"/>
+      <ana>
+         <tok val="egente"/>
+         <tok val="egenti"/>
          <lm>
             <l>egeo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1405,8 +1586,9 @@
             <m cert="0.25">v - - s p p a n b s</m>
          </lm>
       </ana>
-      <ana><!--egentissimorum egentissimum-->
-         <tok val="egentissim(or)?um"/>
+      <ana>
+         <tok val="egentissimorum"/>
+         <tok val="egentissimum"/>
          <lm>
             <l>egeo</l>
             <m cert="0.5">v - - p p p a n g s</m>
@@ -1510,8 +1692,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--egeren egeres-->
-         <tok val="egere[sn]"/>
+      <ana>
+         <tok val="egeren"/>
+         <tok val="egeres"/>
          <lm cert="0.5">
             <l>egero</l>
             <m>v - 2 s f i a</m>
@@ -1629,8 +1812,9 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--egerimus Egerimus-->
-         <tok val="[Ee]gerimus"/>
+      <ana>
+         <tok val="Egerimus"/>
+         <tok val="egerimus"/>
          <lm cert="0.5">
             <l>ago</l>
             <m cert="0.5">v - 1 p t i a</m>
@@ -1812,8 +1996,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--egessit egessitque-->
-         <tok val="egessit(que)?"/>
+      <ana>
+         <tok val="egessit"/>
+         <tok val="egessitque"/>
          <lm>
             <l>egero</l>
             <m>v - 3 s r i a</m>
@@ -1944,8 +2129,9 @@
             <m>v - 1 p l s a</m>
          </lm>
       </ana>
-      <ana><!--egissent egissentque-->
-         <tok val="egissent(que)?"/>
+      <ana>
+         <tok val="egissent"/>
+         <tok val="egissentque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p l s a</m>
@@ -1958,8 +2144,9 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--egisset egissetque-->
-         <tok val="egisset(que)?"/>
+      <ana>
+         <tok val="egisset"/>
+         <tok val="egissetque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s l s a</m>
@@ -2052,15 +2239,17 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--egrediare egrediaris-->
-         <tok val="egrediar(is|e)"/>
+      <ana>
+         <tok val="egrediare"/>
+         <tok val="egrediaris"/>
          <lm>
             <l>egredior</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--egrediatur egrediaturque-->
-         <tok val="egrediatur(que)?"/>
+      <ana>
+         <tok val="egrediatur"/>
+         <tok val="egrediaturque"/>
          <lm>
             <l>egredior</l>
             <m>v - 3 s p s p</m>
@@ -2122,8 +2311,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--egrediendi egrediundi-->
-         <tok val="egredi[ue]ndi"/>
+      <ana>
+         <tok val="egrediendi"/>
+         <tok val="egrediundi"/>
          <lm>
             <l>egredior</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -2146,8 +2336,10 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--egrediente egredienti egredientique-->
-         <tok val="egredient(i|e|ique)"/>
+      <ana>
+         <tok val="egrediente"/>
+         <tok val="egredienti"/>
+         <tok val="egredientique"/>
          <lm>
             <l>egredior</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2155,8 +2347,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--egredientes egredientesque-->
-         <tok val="egredientes(que)?"/>
+      <ana>
+         <tok val="egredientes"/>
+         <tok val="egredientesque"/>
          <lm>
             <l>egredior</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -2165,23 +2358,28 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--egredientes egredientesque egredientis-->
-         <tok val="egredient[ie]s(que)?"/>
+      <ana>
+         <tok val="egredientes"/>
+         <tok val="egredientesque"/>
+         <tok val="egredientis"/>
          <lm>
             <l>egredior</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--egredienti egredientique égredienti-->
-         <tok val="[ée]gredienti(que)?"/>
+      <ana>
+         <tok val="egredienti"/>
+         <tok val="egredientique"/>
+         <tok val="égredienti"/>
          <lm>
             <l>egredior</l>
             <m>v - - s p p a n d</m>
          </lm>
       </ana>
-      <ana><!--egredienti egredientique-->
-         <tok val="egredienti(que)?"/>
+      <ana>
+         <tok val="egredienti"/>
+         <tok val="egredientique"/>
          <lm>
             <l>egredior</l>
             <m cert="0.5">v - - s p p a f d</m>
@@ -2247,8 +2445,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--egrediuntur egrediunturque-->
-         <tok val="egrediuntur(que)?"/>
+      <ana>
+         <tok val="egrediuntur"/>
+         <tok val="egrediunturque"/>
          <lm>
             <l>egredior</l>
             <m>v - 3 p p i p</m>
@@ -2280,8 +2479,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--egressae egressaeque-->
-         <tok val="egressae(que)?"/>
+      <ana>
+         <tok val="egressae"/>
+         <tok val="egressaeque"/>
          <lm>
             <l>egredior</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -2297,8 +2497,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--egressas egressasque-->
-         <tok val="egressas(que)?"/>
+      <ana>
+         <tok val="egressas"/>
+         <tok val="egressasque"/>
          <lm>
             <l>egredior</l>
             <m>v - - p r p p f a</m>
@@ -2351,8 +2552,9 @@
             <m cert="0.25">v - - s r p p n b</m>
          </lm>
       </ana>
-      <ana><!--egressos egressosque-->
-         <tok val="egressos(que)?"/>
+      <ana>
+         <tok val="egressos"/>
+         <tok val="egressosque"/>
          <lm>
             <l>egredior</l>
             <m>v - - p r p p m a</m>
@@ -2391,8 +2593,9 @@
             <m cert="0.25">v - - p f p a m n</m>
          </lm>
       </ana>
-      <ana><!--egressurus Egressurus-->
-         <tok val="[Ee]gressurus"/>
+      <ana>
+         <tok val="Egressurus"/>
+         <tok val="egressurus"/>
          <lm>
             <l>egredior</l>
             <m>v - - s f p a m n</m>
@@ -2405,8 +2608,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--eguere eguerunt-->
-         <tok val="eguer(unt|e)"/>
+      <ana>
+         <tok val="eguere"/>
+         <tok val="eguerunt"/>
          <lm>
             <l>egeo</l>
             <m>v - 3 p r i a</m>
@@ -2527,6 +2731,7 @@
       </ana>
       <ana>
          <tok val="Egressurum"/>
+         <tok val="egressurum"/>
          <lm>
             <l>egredior</l>
             <m cert="0.166666666666666667">v - - p f p a m g</m>

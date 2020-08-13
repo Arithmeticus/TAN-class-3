@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusverb">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:verb">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to verb</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-verb.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Verb</tok-starts-with>
       <tok-starts-with>verb</tok-starts-with>
       <tok-starts-with>VERB</tok-starts-with>
       <tok-starts-with>vérb</tok-starts-with>
-      <ana><!--Verba Verbaque verba verbane verbaque VERBA vérba-->
-         <tok val="[vV]?(e|vé)?(rba)?(qu|n)?(e|VERBA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T05:05:56.539-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T05:05:56.539-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-verb.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="VERBA"/>
+         <tok val="Verba"/>
+         <tok val="Verbaque"/>
+         <tok val="verba"/>
+         <tok val="verbane"/>
+         <tok val="verbaque"/>
+         <tok val="vérba"/>
          <lm>
             <l>verbum</l>
             <m>n - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Verba Verbaque verba verbane verbaque-->
-         <tok val="[vV]erba(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Verba"/>
+         <tok val="Verbaque"/>
+         <tok val="verba"/>
+         <tok val="verbane"/>
+         <tok val="verbaque"/>
          <lm>
             <l>verbum</l>
             <m cert="0.5">n - - p - - - n n</m>
             <m cert="0.5">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Verbale verbale-->
-         <tok val="[vV]erbale"/>
+      <ana>
+         <tok val="Verbale"/>
+         <tok val="verbale"/>
          <lm>
             <l>verbalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -60,8 +79,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Verbalia verbalia-->
-         <tok val="[vV]erbalia"/>
+      <ana>
+         <tok val="Verbalia"/>
+         <tok val="verbalia"/>
          <lm>
             <l>verbalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -69,8 +89,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Verbalis verbalis-->
-         <tok val="[vV]erbalis"/>
+      <ana>
+         <tok val="Verbalis"/>
+         <tok val="verbalis"/>
          <lm>
             <l>verbalis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -86,6 +107,7 @@
       </ana>
       <ana>
          <tok val="Verbanno"/>
+         <tok val="verbanno"/>
          <lm>
             <l>Verbannus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -94,13 +116,15 @@
       </ana>
       <ana>
          <tok val="Verbannus"/>
+         <tok val="verbannus"/>
          <lm>
             <l>Verbannus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Verbascum verbascum-->
-         <tok val="[vV]erbascum"/>
+      <ana>
+         <tok val="Verbascum"/>
+         <tok val="verbascum"/>
          <lm>
             <l>verbascum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -111,6 +135,7 @@
       </ana>
       <ana>
          <tok val="Verbeia"/>
+         <tok val="verbeia"/>
          <lm>
             <l>Verbeia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -118,8 +143,9 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Verbena verbena-->
-         <tok val="[vV]erbena"/>
+      <ana>
+         <tok val="Verbena"/>
+         <tok val="verbena"/>
          <lm>
             <l>verbena</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -127,8 +153,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Verbenaca verbenaca verbenacaque-->
-         <tok val="[vV]erbenaca(que)?"/>
+      <ana>
+         <tok val="Verbenaca"/>
+         <tok val="verbenaca"/>
+         <tok val="verbenacaque"/>
          <lm>
             <l>verbenaca</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -136,8 +164,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Verbenae verbenae verbenaeque-->
-         <tok val="[vV]erbenae(que)?"/>
+      <ana>
+         <tok val="Verbenae"/>
+         <tok val="verbenae"/>
+         <tok val="verbenaeque"/>
          <lm>
             <l>verbena</l>
             <m cert="0.5">n - - s - - - f g</m>
@@ -146,21 +176,26 @@
       </ana>
       <ana>
          <tok val="Verbenae"/>
+         <tok val="verbenae"/>
          <lm>
             <l>verbenae</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Verbenarius verbenarius-->
-         <tok val="[vV]erbenarius"/>
+      <ana>
+         <tok val="Verbenarius"/>
+         <tok val="verbenarius"/>
          <lm>
             <l>verbenarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Verbenas Verbenasque-->
-         <tok val="Verbenas(que)?"/>
+      <ana>
+         <tok val="Verbenas"/>
+         <tok val="Verbenasque"/>
+         <tok val="verbenas"/>
+         <tok val="verbenasque"/>
          <lm>
             <l>verbenae</l>
             <m>n - - p - - - f a</m>
@@ -168,28 +203,37 @@
       </ana>
       <ana>
          <tok val="Verbenis"/>
+         <tok val="verbenis"/>
          <lm>
             <l>verbenae</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Verber verber-->
-         <tok val="[vV]erber"/>
+      <ana>
+         <tok val="Verber"/>
+         <tok val="verber"/>
          <lm>
             <l>verber</l>
             <m>n - - s - - - n</m>
          </lm>
       </ana>
-      <ana><!--Verbera Verberaque verbera verberaque verbéra-->
-         <tok val="[vV]erb[eé]ra(que)?"/>
+      <ana>
+         <tok val="Verbera"/>
+         <tok val="Verberaque"/>
+         <tok val="verbera"/>
+         <tok val="verberaque"/>
+         <tok val="verbéra"/>
          <lm>
             <l>verber</l>
             <m>n - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Verbera Verberaque verbera verberaque-->
-         <tok val="[vV]erbera(que)?"/>
+      <ana>
+         <tok val="Verbera"/>
+         <tok val="Verberaque"/>
+         <tok val="verbera"/>
+         <tok val="verberaque"/>
          <lm cert="0.5">
             <l>verber</l>
             <m cert="0.5">n - - p - - - n n</m>
@@ -200,8 +244,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Verberabilis verberabilis-->
-         <tok val="[vV]erberabilis"/>
+      <ana>
+         <tok val="Verberabilis"/>
+         <tok val="verberabilis"/>
          <lm>
             <l>verberabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -215,52 +260,65 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Verberabilissime verberabilissime-->
-         <tok val="[vV]erberabilissime"/>
+      <ana>
+         <tok val="Verberabilissime"/>
+         <tok val="verberabilissime"/>
          <lm>
             <l>verberabilis</l>
             <m cert="0.5">d - - - - - - - - s</m>
             <m cert="0.5">a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Verberabilissime verberabilissime verberabilissimus-->
-         <tok val="[vV]erberabilissim(e|us)"/>
+      <ana>
+         <tok val="Verberabilissime"/>
+         <tok val="verberabilissime"/>
+         <tok val="verberabilissimus"/>
          <lm>
             <l>verberabilis</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Verberare verberare verberareque-->
-         <tok val="[vV]erberare(que)?"/>
+      <ana>
+         <tok val="Verberare"/>
+         <tok val="verberare"/>
+         <tok val="verberareque"/>
          <lm>
             <l>verbero</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Verberare verberare verberareque verberaris-->
-         <tok val="[vV]erberar[e]?(que|is)?"/>
+      <ana>
+         <tok val="Verberare"/>
+         <tok val="verberare"/>
+         <tok val="verberareque"/>
+         <tok val="verberaris"/>
          <lm>
             <l>verbero</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Verberari verberari verberarier vérberari-->
-         <tok val="[vV]?(e|vé)rberari(er)?"/>
+      <ana>
+         <tok val="Verberari"/>
+         <tok val="verberari"/>
+         <tok val="verberarier"/>
+         <tok val="vérberari"/>
          <lm>
             <l>verbero</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Verberat verberat-->
-         <tok val="[vV]erberat"/>
+      <ana>
+         <tok val="Verberat"/>
+         <tok val="verberat"/>
          <lm>
             <l>verbero</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Verberata verberata-->
-         <tok val="[vV]erberata"/>
+      <ana>
+         <tok val="Verberata"/>
+         <tok val="verberata"/>
          <lm>
             <l>verbero</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -271,8 +329,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Verberatae verberatae-->
-         <tok val="[vV]erberatae"/>
+      <ana>
+         <tok val="Verberatae"/>
+         <tok val="verberatae"/>
          <lm>
             <l>verbero</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -281,16 +340,19 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Verberatio verberatio-->
-         <tok val="[vV]erberatio"/>
+      <ana>
+         <tok val="Verberatio"/>
+         <tok val="verberatio"/>
          <lm>
             <l>verberatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Verberatus verberatus verberatusque-->
-         <tok val="[vV]erberatus(que)?"/>
+      <ana>
+         <tok val="Verberatus"/>
+         <tok val="verberatus"/>
+         <tok val="verberatusque"/>
          <lm cert="0.5">
             <l>verberatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -303,72 +365,92 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Verberavi verberaui verberavi-->
-         <tok val="[vV]erbera[vu]i"/>
+      <ana>
+         <tok val="Verberavi"/>
+         <tok val="verberaui"/>
+         <tok val="verberavi"/>
          <lm>
             <l>verbero</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Verberavisti verberasti-->
-         <tok val="[vV]erbera(vi)?sti"/>
+      <ana>
+         <tok val="Verberavisti"/>
+         <tok val="verberasti"/>
+         <tok val="verberavisti"/>
          <lm>
             <l>verbero</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Verbere verbere-->
-         <tok val="[vV]erbere"/>
+      <ana>
+         <tok val="Verbere"/>
+         <tok val="verbere"/>
          <lm>
             <l>verber</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Verberet verberet-->
-         <tok val="[vV]erberet"/>
+      <ana>
+         <tok val="Verberet"/>
+         <tok val="verberet"/>
          <lm>
             <l>verbero</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Verberetur verberetur vérberetur-->
-         <tok val="[vV]?(e|vé)rberetur"/>
+      <ana>
+         <tok val="Verberetur"/>
+         <tok val="verberetur"/>
+         <tok val="vérberetur"/>
          <lm>
             <l>verbero</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Verbereus verbereus-->
-         <tok val="[vV]erbereus"/>
+      <ana>
+         <tok val="Verbereus"/>
+         <tok val="verbereus"/>
          <lm>
             <l>verbereus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Verberibus Verberibusque verberibus verberibusque-->
-         <tok val="[vV]erberibus(que)?"/>
+      <ana>
+         <tok val="Verberibus"/>
+         <tok val="Verberibusque"/>
+         <tok val="verberibus"/>
+         <tok val="verberibusque"/>
          <lm>
             <l>verber</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Verberis verberis-->
-         <tok val="[vV]erberis"/>
+      <ana>
+         <tok val="Verberis"/>
+         <tok val="verberis"/>
          <lm>
             <l>verber</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Verbero Verberon verbero vérbero-->
-         <tok val="[Vv]?(e|vé)rbero[n]?"/>
+      <ana>
+         <tok val="Verbero"/>
+         <tok val="Verberon"/>
+         <tok val="verbero"/>
+         <tok val="verberon"/>
+         <tok val="vérbero"/>
          <lm>
             <l>verbero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Verbero Verberon verbero-->
-         <tok val="[Vv]erbero[n]?"/>
+      <ana>
+         <tok val="Verbero"/>
+         <tok val="Verberon"/>
+         <tok val="verbero"/>
+         <tok val="verberon"/>
          <lm>
             <l>verbero</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -377,62 +459,98 @@
       </ana>
       <ana>
          <tok val="Verberor"/>
+         <tok val="verberor"/>
          <lm>
             <l>verbero</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Verbi verbi verbique verbist verbive-->
-         <tok val="[vV]erbi(st|ve|que)?"/>
+      <ana>
+         <tok val="Verbi"/>
+         <tok val="verbi"/>
+         <tok val="verbique"/>
+         <tok val="verbist"/>
+         <tok val="verbive"/>
          <lm>
             <l>verbum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Verbigero verbigero-->
-         <tok val="[vV]erbigero"/>
+      <ana>
+         <tok val="Verbigero"/>
+         <tok val="verbigero"/>
          <lm>
             <l>verbigero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Verbis verbis verbisne verbisque verbist vérbis VERBIS-->
-         <tok val="[vV]?(e|vé|ve)?(rbis)?(t|ne|que|VERBIS)?"/>
+      <ana>
+         <tok val="VERBIS"/>
+         <tok val="Verbis"/>
+         <tok val="verbis"/>
+         <tok val="verbisne"/>
+         <tok val="verbisque"/>
+         <tok val="verbist"/>
+         <tok val="vérbis"/>
          <lm>
             <l>verbum</l>
             <m>n - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Verbis verbis verbisne verbisque verbist VERBIS-->
-         <tok val="[vV]?(erbis)?(t|ne|que|VERBIS)?"/>
+      <ana>
+         <tok val="VERBIS"/>
+         <tok val="Verbis"/>
+         <tok val="verbis"/>
+         <tok val="verbisne"/>
+         <tok val="verbisque"/>
+         <tok val="verbist"/>
          <lm>
             <l>verbum</l>
             <m>n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Verbo verbo verbone verboque verboue vérbo-->
-         <tok val="[vV]?(e|vé)rbo[q]?[un]?[e]?"/>
+      <ana>
+         <tok val="Verbo"/>
+         <tok val="verbo"/>
+         <tok val="verbone"/>
+         <tok val="verboque"/>
+         <tok val="verboue"/>
+         <tok val="vérbo"/>
          <lm>
             <l>verbum</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Verbo verbo verbone verboque verboue-->
-         <tok val="[vV]erbo[q]?[un]?[e]?"/>
+      <ana>
+         <tok val="Verbo"/>
+         <tok val="verbo"/>
+         <tok val="verbone"/>
+         <tok val="verboque"/>
+         <tok val="verboue"/>
          <lm>
             <l>verbum</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Verborum Verborumque Verbum verborum verborumne verborumque verborumst verbum verbumst VERBUM-->
-         <tok val="[vV]?(erb)?(or)?(um)?(qu|n)?(e|st|VERBUM)?"/>
+      <ana>
+         <tok val="VERBUM"/>
+         <tok val="Verborum"/>
+         <tok val="Verborumque"/>
+         <tok val="Verbum"/>
+         <tok val="verborum"/>
+         <tok val="verborumne"/>
+         <tok val="verborumque"/>
+         <tok val="verborumst"/>
+         <tok val="verbum"/>
+         <tok val="verbumst"/>
          <lm>
             <l>verbum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Verbosa verbosa-->
-         <tok val="[vV]erbosa"/>
+      <ana>
+         <tok val="Verbosa"/>
+         <tok val="verbosa"/>
          <lm>
             <l>verbosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -443,8 +561,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Verbosi verbosi-->
-         <tok val="[vV]erbosi"/>
+      <ana>
+         <tok val="Verbosi"/>
+         <tok val="verbosi"/>
          <lm>
             <l>verbosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -453,8 +572,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Verbosis verbosis-->
-         <tok val="[vV]erbosis"/>
+      <ana>
+         <tok val="Verbosis"/>
+         <tok val="verbosis"/>
          <lm>
             <l>verbosus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -465,8 +585,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Verbositas verbositas-->
-         <tok val="[vV]erbositas"/>
+      <ana>
+         <tok val="Verbositas"/>
+         <tok val="verbositas"/>
          <lm>
             <l>verbositas</l>
             <m>n - - s - - - f n</m>
@@ -474,43 +595,53 @@
       </ana>
       <ana>
          <tok val="Verbosius"/>
+         <tok val="verbosius"/>
          <lm>
             <l>verbosus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Verbosius verbosius-->
-         <tok val="[vV]erbosius"/>
-         <lm>
-            <l>verbosus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Verbosus verbosus-->
-         <tok val="[vV]erbosus"/>
+      <ana>
+         <tok val="Verbosus"/>
+         <tok val="verbosus"/>
          <lm>
             <l>verbosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Verbum verbe verbom verbum verbumst VERBUM-->
-         <tok val="[vV]?(erb)?[uo]?[m]?(st|e|VERBUM)?"/>
+      <ana>
+         <tok val="VERBUM"/>
+         <tok val="Verbum"/>
+         <tok val="verbe"/>
+         <tok val="verbom"/>
+         <tok val="verbum"/>
+         <tok val="verbumst"/>
          <lm>
             <l>verbum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Verbum verbom verbum verbumst verbúm VERBUM-->
-         <tok val="[vV]?(erb)?[uoú]?[m]?(st|VERBUM)?"/>
+      <ana>
+         <tok val="VERBUM"/>
+         <tok val="Verbum"/>
+         <tok val="verbom"/>
+         <tok val="verbum"/>
+         <tok val="verbumst"/>
+         <tok val="verbúm"/>
          <lm>
             <l>verbum</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Verbum verbom verbum verbumst VERBUM-->
-         <tok val="[vV]?(erb)?[uo]?[m]?(st|VERBUM)?"/>
+      <ana>
+         <tok val="VERBUM"/>
+         <tok val="Verbum"/>
+         <tok val="verbom"/>
+         <tok val="verbum"/>
+         <tok val="verbumst"/>
          <lm>
             <l>verbum</l>
             <m>n - - s - - - n n</m>
@@ -560,8 +691,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--verbenae verbenaeque-->
-         <tok val="verbenae(que)?"/>
+      <ana>
+         <tok val="verbenae"/>
+         <tok val="verbenaeque"/>
          <lm>
             <l>verbena</l>
             <m cert="0.5">n - - p - - - f v</m>
@@ -582,8 +714,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--verbenas verbenasque-->
-         <tok val="verbenas(que)?"/>
+      <ana>
+         <tok val="verbenas"/>
+         <tok val="verbenasque"/>
          <lm>
             <l>verbena</l>
             <m>n - - p - - - f a</m>
@@ -741,8 +874,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--verberandos verberandosque-->
-         <tok val="verberandos(que)?"/>
+      <ana>
+         <tok val="verberandos"/>
+         <tok val="verberandosque"/>
          <lm>
             <l>verbero</l>
             <m>v - - p p g p m a</m>
@@ -791,8 +925,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--verberantes verberantis-->
-         <tok val="verberant[ie]s"/>
+      <ana>
+         <tok val="verberantes"/>
+         <tok val="verberantis"/>
          <lm>
             <l>verbero</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -877,8 +1012,10 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--verberate verberatum verberatumque-->
-         <tok val="verberat(um)?(que|e)?"/>
+      <ana>
+         <tok val="verberate"/>
+         <tok val="verberatum"/>
+         <tok val="verberatumque"/>
          <lm>
             <l>verbero</l>
             <m>v - - s r p p n v</m>
@@ -966,8 +1103,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--verberatum verberatumque-->
-         <tok val="verberatum(que)?"/>
+      <ana>
+         <tok val="verberatum"/>
+         <tok val="verberatumque"/>
          <lm cert="0.5">
             <l>verbero</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -999,8 +1137,9 @@
             <m cert="0.25">v - - p f p a m n</m>
          </lm>
       </ana>
-      <ana><!--verberauit verberavit-->
-         <tok val="verbera[vu]it"/>
+      <ana>
+         <tok val="verberauit"/>
+         <tok val="verberavit"/>
          <lm>
             <l>verbero</l>
             <m>v - 3 s r i a</m>
@@ -1013,8 +1152,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--verberavere verberaverunt-->
-         <tok val="verberaver(unt|e)"/>
+      <ana>
+         <tok val="verberavere"/>
+         <tok val="verberaverunt"/>
          <lm>
             <l>verbero</l>
             <m>v - 3 p r i a</m>
@@ -1032,8 +1172,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--verbeream verberéam-->
-         <tok val="verber[ée]am"/>
+      <ana>
+         <tok val="verbeream"/>
+         <tok val="verberéam"/>
          <lm>
             <l>verbereus</l>
             <m>a - - s - - - f a</m>
@@ -1153,8 +1294,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--verbigena Verbigena-->
-         <tok val="[Vv]erbigena"/>
+      <ana>
+         <tok val="Verbigena"/>
+         <tok val="verbigena"/>
          <lm>
             <l>verbigena</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -1201,15 +1343,17 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--verbose verbosius-->
-         <tok val="verbos(ius|e)"/>
+      <ana>
+         <tok val="verbose"/>
+         <tok val="verbosius"/>
          <lm>
             <l>verbosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--verbose verbosum-->
-         <tok val="verbos(um|e)"/>
+      <ana>
+         <tok val="verbose"/>
+         <tok val="verbosum"/>
          <lm>
             <l>verbosus</l>
             <m>a - - s - - - n v</m>
@@ -1222,8 +1366,9 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--verbosior verbosiorve-->
-         <tok val="verbosior(ve)?"/>
+      <ana>
+         <tok val="verbosior"/>
+         <tok val="verbosiorve"/>
          <lm>
             <l>verbosus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1287,6 +1432,7 @@
       </ana>
       <ana>
          <tok val="Verbigenus"/>
+         <tok val="verbigenus"/>
          <lm>
             <l>Verbigenus</l>
             <m>a e - s - - - m n</m>

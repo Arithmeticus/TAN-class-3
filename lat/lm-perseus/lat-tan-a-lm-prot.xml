@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusprot">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:prot">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to prot</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-prot.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PROT</tok-starts-with>
       <tok-starts-with>Prot</tok-starts-with>
       <tok-starts-with>prot</tok-starts-with>
       <tok-starts-with>prót</tok-starts-with>
-      <ana><!--PROTAGORAS Protagoras-->
-         <tok val="P(rotagoras|ROTAGORAS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:41:37.98-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:41:37.98-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-prot.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PROTAGORAS"/>
+         <tok val="Protagoras"/>
+         <tok val="protagoras"/>
          <lm>
             <l>Protagoras</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--PROTAGORAS Protagora Protagoras-->
-         <tok val="P(rotagora)?(s|ROTAGORAS)?"/>
+      <ana>
+         <tok val="PROTAGORAS"/>
+         <tok val="Protagora"/>
+         <tok val="Protagoras"/>
+         <tok val="protagora"/>
+         <tok val="protagoras"/>
          <lm>
             <l>Protagoras</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--PROTASIS Protasis protasis-->
-         <tok val="[pP]?(rotasis|PROTASIS)"/>
+      <ana>
+         <tok val="PROTASIS"/>
+         <tok val="Protasis"/>
+         <tok val="protasis"/>
          <lm>
             <l>protasis</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -59,23 +75,31 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--PROTERO Protero protero proteron-->
-         <tok val="[pP]?(rotero)?(n|PROTERO)?"/>
+      <ana>
+         <tok val="PROTERO"/>
+         <tok val="Protero"/>
+         <tok val="protero"/>
+         <tok val="proteron"/>
          <lm>
             <l>protero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PROTESILAO Protesilao-->
-         <tok val="P(rotesilao|ROTESILAO)"/>
+      <ana>
+         <tok val="PROTESILAO"/>
+         <tok val="Protesilao"/>
+         <tok val="protesilao"/>
          <lm>
             <l>Protesilaus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Prota Prote-->
-         <tok val="Prot[ea]"/>
+      <ana>
+         <tok val="Prota"/>
+         <tok val="Prote"/>
+         <tok val="prota"/>
+         <tok val="prote"/>
          <lm>
             <l>Prote</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -85,6 +109,7 @@
       </ana>
       <ana>
          <tok val="Protae"/>
+         <tok val="protae"/>
          <lm>
             <l>Prote</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -95,6 +120,7 @@
       </ana>
       <ana>
          <tok val="Protagora"/>
+         <tok val="protagora"/>
          <lm>
             <l>Protagoras</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -103,6 +129,7 @@
       </ana>
       <ana>
          <tok val="Protagorae"/>
+         <tok val="protagorae"/>
          <lm>
             <l>Protagoras</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -111,8 +138,11 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Protagoram Protagoran-->
-         <tok val="Protagora[nm]"/>
+      <ana>
+         <tok val="Protagoram"/>
+         <tok val="Protagoran"/>
+         <tok val="protagoram"/>
+         <tok val="protagoran"/>
          <lm>
             <l>Protagoras</l>
             <m>n e - s - - - m a</m>
@@ -120,6 +150,7 @@
       </ana>
       <ana>
          <tok val="Protagorion"/>
+         <tok val="protagorion"/>
          <lm>
             <l>Protagorion</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -127,8 +158,9 @@
             <m cert="0.333333333333333333">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Protecta protecta-->
-         <tok val="[pP]rotecta"/>
+      <ana>
+         <tok val="Protecta"/>
+         <tok val="protecta"/>
          <lm cert="0.5">
             <l>protego</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -145,8 +177,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Protecti protecti-->
-         <tok val="[pP]rotecti"/>
+      <ana>
+         <tok val="Protecti"/>
+         <tok val="protecti"/>
          <lm cert="0.5">
             <l>protego</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -159,22 +192,26 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Protectore protectore-->
-         <tok val="[pP]rotectore"/>
+      <ana>
+         <tok val="Protectore"/>
+         <tok val="protectore"/>
          <lm>
             <l>protector</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Protectorum protectorum-->
-         <tok val="[pP]rotectorum"/>
+      <ana>
+         <tok val="Protectorum"/>
+         <tok val="protectorum"/>
          <lm>
             <l>protector</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Protectorum protectorum protectum-->
-         <tok val="[pP]rotect(or|)um"/>
+      <ana>
+         <tok val="Protectorum"/>
+         <tok val="protectorum"/>
+         <tok val="protectum"/>
          <lm cert="0.5">
             <l>protego</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -185,8 +222,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Protectus protectus-->
-         <tok val="[pP]rotectus"/>
+      <ana>
+         <tok val="Protectus"/>
+         <tok val="protectus"/>
          <lm cert="0.5">
             <l>protectus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -199,8 +237,11 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Protegendi protegendi protegendiue protegendive-->
-         <tok val="[pP]rotegendi[vu]?[e]?"/>
+      <ana>
+         <tok val="Protegendi"/>
+         <tok val="protegendi"/>
+         <tok val="protegendiue"/>
+         <tok val="protegendive"/>
          <lm>
             <l>protego</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -210,8 +251,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Protegere protegere-->
-         <tok val="[pP]rotegere"/>
+      <ana>
+         <tok val="Protegere"/>
+         <tok val="protegere"/>
          <lm>
             <l>protego</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -220,29 +262,33 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Protegit protegit-->
-         <tok val="[pP]rotegit"/>
+      <ana>
+         <tok val="Protegit"/>
+         <tok val="protegit"/>
          <lm>
             <l>protego</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Protegitur protegitur-->
-         <tok val="[pP]rotegitur"/>
+      <ana>
+         <tok val="Protegitur"/>
+         <tok val="protegitur"/>
          <lm>
             <l>protego</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Protego protego-->
-         <tok val="[pP]rotego"/>
+      <ana>
+         <tok val="Protego"/>
+         <tok val="protego"/>
          <lm>
             <l>protego</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Protelare protelare-->
-         <tok val="[pP]rotelare"/>
+      <ana>
+         <tok val="Protelare"/>
+         <tok val="protelare"/>
          <lm>
             <l>protelo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -250,8 +296,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Protelo protelo-->
-         <tok val="[pP]rotelo"/>
+      <ana>
+         <tok val="Protelo"/>
+         <tok val="protelo"/>
          <lm cert="0.5">
             <l>protelo</l>
             <m>v - 1 s p i a</m>
@@ -262,8 +309,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Protelum protelum-->
-         <tok val="[pP]rotelum"/>
+      <ana>
+         <tok val="Protelum"/>
+         <tok val="protelum"/>
          <lm>
             <l>protelum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -272,8 +320,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Protendens protendens-->
-         <tok val="[pP]rotendens"/>
+      <ana>
+         <tok val="Protendens"/>
+         <tok val="protendens"/>
          <lm>
             <l>protendo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -285,8 +334,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Protendere protendere-->
-         <tok val="[pP]rotendere"/>
+      <ana>
+         <tok val="Protendere"/>
+         <tok val="protendere"/>
          <lm>
             <l>protendo</l>
             <m cert="0.2">v - 3 p r i a</m>
@@ -296,15 +346,17 @@
             <m cert="0.2">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Protendo protendo-->
-         <tok val="[pP]rotendo"/>
+      <ana>
+         <tok val="Protendo"/>
+         <tok val="protendo"/>
          <lm>
             <l>protendo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Protentae protentae-->
-         <tok val="[pP]rotentae"/>
+      <ana>
+         <tok val="Protentae"/>
+         <tok val="protentae"/>
          <lm>
             <l>protentus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -313,22 +365,32 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Protentus protentus-->
-         <tok val="[pP]rotentus"/>
+      <ana>
+         <tok val="Protentus"/>
+         <tok val="protentus"/>
          <lm>
             <l>protentus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Protenus Protinus Protinusque Protinvs protenus protinus protinusque prótinus-->
-         <tok val="[pP]r[oó]t[ie]n[uv]s(que)?"/>
+      <ana>
+         <tok val="Protenus"/>
+         <tok val="Protinus"/>
+         <tok val="Protinusque"/>
+         <tok val="Protinvs"/>
+         <tok val="protenus"/>
+         <tok val="protinus"/>
+         <tok val="protinusque"/>
+         <tok val="protinvs"/>
+         <tok val="prótinus"/>
          <lm>
             <l>protinus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Proterere proterere-->
-         <tok val="[pP]roterere"/>
+      <ana>
+         <tok val="Proterere"/>
+         <tok val="proterere"/>
          <lm>
             <l>protero</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -337,22 +399,25 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Proteret proteret-->
-         <tok val="[pP]roteret"/>
+      <ana>
+         <tok val="Proteret"/>
+         <tok val="proteret"/>
          <lm>
             <l>protero</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Proterit proterit-->
-         <tok val="[pP]roterit"/>
+      <ana>
+         <tok val="Proterit"/>
+         <tok val="proterit"/>
          <lm>
             <l>protero</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Proterminare proterminare-->
-         <tok val="[pP]roterminare"/>
+      <ana>
+         <tok val="Proterminare"/>
+         <tok val="proterminare"/>
          <lm>
             <l>protermino</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -362,6 +427,7 @@
       </ana>
       <ana>
          <tok val="Protermino"/>
+         <tok val="protermino"/>
          <lm>
             <l>protermino</l>
             <m>v - 1 s p i a</m>
@@ -369,20 +435,24 @@
       </ana>
       <ana>
          <tok val="Proterreo"/>
+         <tok val="proterreo"/>
          <lm>
             <l>proterreo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Proterruisti proterruisti-->
-         <tok val="[pP]roterruisti"/>
+      <ana>
+         <tok val="Proterruisti"/>
+         <tok val="proterruisti"/>
          <lm>
             <l>proterreo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Proterua proterua proterva-->
-         <tok val="[pP]roter[uv]a"/>
+      <ana>
+         <tok val="Proterua"/>
+         <tok val="proterua"/>
+         <tok val="proterva"/>
          <lm>
             <l>protervus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -393,29 +463,42 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Proterue proterue proteruius proterve protervius-->
-         <tok val="[pP]roter[vu]?[i]?[u]?(s|e|ve)"/>
+      <ana>
+         <tok val="Proterue"/>
+         <tok val="proterue"/>
+         <tok val="proteruius"/>
+         <tok val="proterve"/>
+         <tok val="protervius"/>
          <lm>
             <l>protervus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Proterue Proteruum proterue proteruum proterve protervum-->
-         <tok val="[pP]roter[uv]?[u]?(m|e|ve)"/>
+      <ana>
+         <tok val="Proterue"/>
+         <tok val="Proteruum"/>
+         <tok val="proterue"/>
+         <tok val="proteruum"/>
+         <tok val="proterve"/>
+         <tok val="protervum"/>
          <lm>
             <l>protervus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Proterue proterue proterve-->
-         <tok val="[pP]roter[uv]e"/>
+      <ana>
+         <tok val="Proterue"/>
+         <tok val="proterue"/>
+         <tok val="proterve"/>
          <lm>
             <l>protervus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Proterui proterui protervi-->
-         <tok val="[pP]roter[uv]i"/>
+      <ana>
+         <tok val="Proterui"/>
+         <tok val="proterui"/>
+         <tok val="protervi"/>
          <lm cert="0.5">
             <l>protervus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -428,8 +511,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Proteruia proteruia protervia-->
-         <tok val="[pP]roter[uv]ia"/>
+      <ana>
+         <tok val="Proteruia"/>
+         <tok val="proteruia"/>
+         <tok val="protervia"/>
          <lm>
             <l>protervia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -439,6 +524,7 @@
       </ana>
       <ana>
          <tok val="Proteruiam"/>
+         <tok val="proteruiam"/>
          <lm cert="0.5">
             <l>protervio</l>
             <m cert="0.5">v - 1 s f i a</m>
@@ -449,22 +535,28 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Proteruio protervio-->
-         <tok val="[pP]roter[vu]io"/>
+      <ana>
+         <tok val="Proteruio"/>
+         <tok val="proteruio"/>
+         <tok val="protervio"/>
          <lm>
             <l>protervio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Proteruos proteruos protervos-->
-         <tok val="[pP]roter[uv]os"/>
+      <ana>
+         <tok val="Proteruos"/>
+         <tok val="proteruos"/>
+         <tok val="protervos"/>
          <lm>
             <l>protervus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Proteruum proteruum protervum-->
-         <tok val="[pP]roter[uv]um"/>
+      <ana>
+         <tok val="Proteruum"/>
+         <tok val="proteruum"/>
+         <tok val="protervum"/>
          <lm>
             <l>protervus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -472,16 +564,21 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Proteruum proteruum protervorum protervum-->
-         <tok val="[pP]roter[v]?(or|u)?um"/>
+      <ana>
+         <tok val="Proteruum"/>
+         <tok val="proteruum"/>
+         <tok val="protervorum"/>
+         <tok val="protervum"/>
          <lm>
             <l>protervus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Proteruus proteruus protervus-->
-         <tok val="[pP]roter[uv]us"/>
+      <ana>
+         <tok val="Proteruus"/>
+         <tok val="proteruus"/>
+         <tok val="protervus"/>
          <lm>
             <l>protervus</l>
             <m>a - - s - - - m n</m>
@@ -489,6 +586,7 @@
       </ana>
       <ana>
          <tok val="Protesilae"/>
+         <tok val="protesilae"/>
          <lm>
             <l>Protesilaus</l>
             <m>n e - s - - - m v</m>
@@ -496,6 +594,7 @@
       </ana>
       <ana>
          <tok val="Protesilaeam"/>
+         <tok val="protesilaeam"/>
          <lm>
             <l>Protesilaeus</l>
             <m>a e - s - - - f a</m>
@@ -503,6 +602,7 @@
       </ana>
       <ana>
          <tok val="Protesilaeus"/>
+         <tok val="protesilaeus"/>
          <lm>
             <l>Protesilaeus</l>
             <m>a e - s - - - m n</m>
@@ -510,6 +610,7 @@
       </ana>
       <ana>
          <tok val="Protesilai"/>
+         <tok val="protesilai"/>
          <lm>
             <l>Protesilaus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -519,6 +620,7 @@
       </ana>
       <ana>
          <tok val="Protesilaum"/>
+         <tok val="protesilaum"/>
          <lm>
             <l>Protesilaus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -527,13 +629,15 @@
       </ana>
       <ana>
          <tok val="Protesilaus"/>
+         <tok val="protesilaus"/>
          <lm>
             <l>Protesilaus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Protestatio protestatio-->
-         <tok val="[pP]rotestatio"/>
+      <ana>
+         <tok val="Protestatio"/>
+         <tok val="protestatio"/>
          <lm>
             <l>protestatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -542,13 +646,15 @@
       </ana>
       <ana>
          <tok val="Protestor"/>
+         <tok val="protestor"/>
          <lm>
             <l>protestor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Protexi protexi-->
-         <tok val="[pP]rotexi"/>
+      <ana>
+         <tok val="Protexi"/>
+         <tok val="protexi"/>
          <lm>
             <l>protego</l>
             <m>v - 1 s r i a</m>
@@ -556,14 +662,16 @@
       </ana>
       <ana>
          <tok val="Prothoenor"/>
+         <tok val="prothoenor"/>
          <lm>
             <l>Prothoenor</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Prothymia prothymia-->
-         <tok val="[pP]rothymia"/>
+      <ana>
+         <tok val="Prothymia"/>
+         <tok val="prothymia"/>
          <lm>
             <l>prothymia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -571,8 +679,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Prothyris prothyris-->
-         <tok val="[pP]rothyris"/>
+      <ana>
+         <tok val="Prothyris"/>
+         <tok val="prothyris"/>
          <lm cert="0.5">
             <l>prothyra</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -583,8 +692,9 @@
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Prothyrum prothyrum-->
-         <tok val="[pP]rothyrum"/>
+      <ana>
+         <tok val="Prothyrum"/>
+         <tok val="prothyrum"/>
          <lm>
             <l>prothyra</l>
             <m>n - - p - - - n g</m>
@@ -592,21 +702,26 @@
       </ana>
       <ana>
          <tok val="Protin"/>
+         <tok val="protin"/>
          <lm>
             <l>Prote</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Protinam protinam-->
-         <tok val="[pP]rotinam"/>
+      <ana>
+         <tok val="Protinam"/>
+         <tok val="protinam"/>
          <lm>
             <l>protinam</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Protogene Protogenen-->
-         <tok val="Protogene[n]?"/>
+      <ana>
+         <tok val="Protogene"/>
+         <tok val="Protogenen"/>
+         <tok val="protogene"/>
+         <tok val="protogenen"/>
          <lm>
             <l>Protogenes</l>
             <m>n e - s - - - m b</m>
@@ -614,13 +729,17 @@
       </ana>
       <ana>
          <tok val="Protogenem"/>
+         <tok val="protogenem"/>
          <lm>
             <l>Protogenes</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Protogenen Protogenes-->
-         <tok val="Protogene[sn]"/>
+      <ana>
+         <tok val="Protogenen"/>
+         <tok val="Protogenes"/>
+         <tok val="protogenen"/>
+         <tok val="protogenes"/>
          <lm>
             <l>Protogenes</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -631,6 +750,7 @@
       </ana>
       <ana>
          <tok val="Protogeni"/>
+         <tok val="protogeni"/>
          <lm>
             <l>Protogenes</l>
             <m>n e - s - - - m d</m>
@@ -638,13 +758,15 @@
       </ana>
       <ana>
          <tok val="Protogenis"/>
+         <tok val="protogenis"/>
          <lm>
             <l>Protogenes</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Protollere protollere-->
-         <tok val="[pP]rotollere"/>
+      <ana>
+         <tok val="Protollere"/>
+         <tok val="protollere"/>
          <lm>
             <l>protollo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -653,15 +775,17 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Protollo protollo-->
-         <tok val="[pP]rotollo"/>
+      <ana>
+         <tok val="Protollo"/>
+         <tok val="protollo"/>
          <lm>
             <l>protollo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Protomysta protomysta-->
-         <tok val="[pP]rotomysta"/>
+      <ana>
+         <tok val="Protomysta"/>
+         <tok val="protomysta"/>
          <lm>
             <l>protomysta</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -671,6 +795,7 @@
       </ana>
       <ana>
          <tok val="Protono"/>
+         <tok val="protono"/>
          <lm>
             <l>protono</l>
             <m>v - 1 s p i a</m>
@@ -678,13 +803,16 @@
       </ana>
       <ana>
          <tok val="Protoplastus"/>
+         <tok val="protoplastus"/>
          <lm>
             <l>protoplastus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Prototomi prototomi prototomique-->
-         <tok val="[pP]rototomi(que)?"/>
+      <ana>
+         <tok val="Prototomi"/>
+         <tok val="prototomi"/>
+         <tok val="prototomique"/>
          <lm cert="0.5">
             <l>prototomi</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -700,6 +828,7 @@
       </ana>
       <ana>
          <tok val="Prototomis"/>
+         <tok val="prototomis"/>
          <lm cert="0.5">
             <l>prototomi</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -715,36 +844,41 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Prototomus prototomus-->
-         <tok val="[pP]rototomus"/>
+      <ana>
+         <tok val="Prototomus"/>
+         <tok val="prototomus"/>
          <lm>
             <l>prototomus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Prototypus prototypus-->
-         <tok val="[pP]rototypus"/>
+      <ana>
+         <tok val="Prototypus"/>
+         <tok val="prototypus"/>
          <lm>
             <l>prototypus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Protractus protractus-->
-         <tok val="[pP]rotractus"/>
+      <ana>
+         <tok val="Protractus"/>
+         <tok val="protractus"/>
          <lm>
             <l>protraho</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Protrahatur protrahatur-->
-         <tok val="[pP]rotrahatur"/>
+      <ana>
+         <tok val="Protrahatur"/>
+         <tok val="protrahatur"/>
          <lm>
             <l>protraho</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Protrahere protrahere-->
-         <tok val="[pP]rotrahere"/>
+      <ana>
+         <tok val="Protrahere"/>
+         <tok val="protrahere"/>
          <lm>
             <l>protraho</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -753,36 +887,43 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Protraheret protraheret-->
-         <tok val="[pP]rotraheret"/>
+      <ana>
+         <tok val="Protraheret"/>
+         <tok val="protraheret"/>
          <lm>
             <l>protraho</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Protrahitur protrahitur-->
-         <tok val="[pP]rotrahitur"/>
+      <ana>
+         <tok val="Protrahitur"/>
+         <tok val="protrahitur"/>
          <lm>
             <l>protraho</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Protraho protraho-->
-         <tok val="[pP]rotraho"/>
+      <ana>
+         <tok val="Protraho"/>
+         <tok val="protraho"/>
          <lm>
             <l>protraho</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Protreptice protrepticum-->
-         <tok val="[pP]rotreptic(um|e)"/>
+      <ana>
+         <tok val="Protreptice"/>
+         <tok val="protreptice"/>
+         <tok val="protrepticum"/>
          <lm>
             <l>protrepticon</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Protrita protrita protritaque-->
-         <tok val="[pP]rotrita(que)?"/>
+      <ana>
+         <tok val="Protrita"/>
+         <tok val="protrita"/>
+         <tok val="protritaque"/>
          <lm cert="0.5">
             <l>protero</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -804,20 +945,15 @@
       </ana>
       <ana>
          <tok val="Protritum"/>
-         <lm>
-            <l>protritus</l>
-            <m>a - - s - - - n n</m>
-         </lm>
-      </ana>
-      <ana><!--Protritum protritum-->
-         <tok val="[pP]rotritum"/>
+         <tok val="protritum"/>
          <lm cert="0.5">
             <l>protritus</l>
-            <m cert="0.2">a - - p - - - n g</m>
-            <m cert="0.2">a - - s - - - n a</m>
-            <m cert="0.2">a - - s - - - n v</m>
-            <m cert="0.2">a - - p - - - m g</m>
-            <m cert="0.2">a - - s - - - m a</m>
+            <m cert="0.166666666666666667">a - - s - - - n n</m>
+            <m cert="0.166666666666666667">a - - p - - - n g</m>
+            <m cert="0.166666666666666667">a - - s - - - n a</m>
+            <m cert="0.166666666666666667">a - - s - - - n v</m>
+            <m cert="0.166666666666666667">a - - p - - - m g</m>
+            <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
          <lm cert="0.5">
             <l>protero</l>
@@ -829,8 +965,9 @@
             <m cert="0.166666666666666667">v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Protritus protritus-->
-         <tok val="[pP]rotritus"/>
+      <ana>
+         <tok val="Protritus"/>
+         <tok val="protritus"/>
          <lm cert="0.5">
             <l>protero</l>
             <m>v - - s r p p m n</m>
@@ -840,15 +977,17 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Protropi protropi-->
-         <tok val="[pP]rotropi"/>
+      <ana>
+         <tok val="Protropi"/>
+         <tok val="protropi"/>
          <lm>
             <l>protropum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Protropum protropum-->
-         <tok val="[pP]rotropum"/>
+      <ana>
+         <tok val="Protropum"/>
+         <tok val="protropum"/>
          <lm>
             <l>protropum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -857,8 +996,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Protrudo protrudo-->
-         <tok val="[pP]rotrudo"/>
+      <ana>
+         <tok val="Protrudo"/>
+         <tok val="protrudo"/>
          <lm>
             <l>protrudo</l>
             <m>v - 1 s p i a</m>
@@ -866,48 +1006,58 @@
       </ana>
       <ana>
          <tok val="Protuebat"/>
+         <tok val="protuebat"/>
          <lm>
             <l>protueor</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Protulerant protulerant-->
-         <tok val="[pP]rotulerant"/>
+      <ana>
+         <tok val="Protulerant"/>
+         <tok val="protulerant"/>
          <lm>
             <l>profero</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--Protulerat protulerat protuleratque-->
-         <tok val="[pP]rotulerat(que)?"/>
+      <ana>
+         <tok val="Protulerat"/>
+         <tok val="protulerat"/>
+         <tok val="protuleratque"/>
          <lm>
             <l>profero</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Protulit protulit protulitque-->
-         <tok val="[pP]rotulit(que)?"/>
+      <ana>
+         <tok val="Protulit"/>
+         <tok val="protulit"/>
+         <tok val="protulitque"/>
          <lm>
             <l>profero</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Proturbant proturbant proturbantque-->
-         <tok val="[pP]roturbant(que)?"/>
+      <ana>
+         <tok val="Proturbant"/>
+         <tok val="proturbant"/>
+         <tok val="proturbantque"/>
          <lm>
             <l>proturbo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Proturbo proturbo-->
-         <tok val="[pP]roturbo"/>
+      <ana>
+         <tok val="Proturbo"/>
+         <tok val="proturbo"/>
          <lm>
             <l>proturbo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Protutelae protutelae-->
-         <tok val="[pP]rotutelae"/>
+      <ana>
+         <tok val="Protutelae"/>
+         <tok val="protutelae"/>
          <lm>
             <l>protutela</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -960,8 +1110,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--protectio protection-->
-         <tok val="protectio[n]?"/>
+      <ana>
+         <tok val="protectio"/>
+         <tok val="protection"/>
          <lm>
             <l>protectio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1009,8 +1160,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--protecto protectoue-->
-         <tok val="protecto(ue)?"/>
+      <ana>
+         <tok val="protecto"/>
+         <tok val="protectoue"/>
          <lm cert="0.5">
             <l>protego</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1039,8 +1191,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--protectores Protectores-->
-         <tok val="[Pp]rotectores"/>
+      <ana>
+         <tok val="Protectores"/>
+         <tok val="protectores"/>
          <lm>
             <l>protector</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1129,16 +1282,18 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--protegam protegamque-->
-         <tok val="protegam(que)?"/>
+      <ana>
+         <tok val="protegam"/>
+         <tok val="protegamque"/>
          <lm>
             <l>protego</l>
             <m cert="0.5">v - 1 s p s a</m>
             <m cert="0.5">v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--protegan protegas-->
-         <tok val="protega[sn]"/>
+      <ana>
+         <tok val="protegan"/>
+         <tok val="protegas"/>
          <lm>
             <l>protego</l>
             <m>v - 2 s p s a</m>
@@ -1166,8 +1321,9 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--protegat Protegat-->
-         <tok val="[Pp]rotegat"/>
+      <ana>
+         <tok val="Protegat"/>
+         <tok val="protegat"/>
          <lm>
             <l>protego</l>
             <m>v - 3 s p s a</m>
@@ -1180,8 +1336,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--protege protegen-->
-         <tok val="protege[n]?"/>
+      <ana>
+         <tok val="protege"/>
+         <tok val="protegen"/>
          <lm>
             <l>protego</l>
             <m>v - 2 s p m a</m>
@@ -1201,8 +1358,9 @@
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--protegen proteges-->
-         <tok val="protege[sn]"/>
+      <ana>
+         <tok val="protegen"/>
+         <tok val="proteges"/>
          <lm>
             <l>protego</l>
             <m>v - 2 s f i a</m>
@@ -1237,8 +1395,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--protegendis protegendisque-->
-         <tok val="protegendis(que)?"/>
+      <ana>
+         <tok val="protegendis"/>
+         <tok val="protegendisque"/>
          <lm>
             <l>protego</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -1294,8 +1453,10 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--protegente protegenti Protegente-->
-         <tok val="[pP]rotegent[ie]"/>
+      <ana>
+         <tok val="Protegente"/>
+         <tok val="protegente"/>
+         <tok val="protegenti"/>
          <lm>
             <l>protego</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1313,8 +1474,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--protegentes protegentis-->
-         <tok val="protegent[ie]s"/>
+      <ana>
+         <tok val="protegentes"/>
+         <tok val="protegentis"/>
          <lm>
             <l>protego</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1661,8 +1823,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--protendentes protendentesque-->
-         <tok val="protendentes(que)?"/>
+      <ana>
+         <tok val="protendentes"/>
+         <tok val="protendentesque"/>
          <lm>
             <l>protendo</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -1746,8 +1909,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--protenduntur protendunturque-->
-         <tok val="protenduntur(que)?"/>
+      <ana>
+         <tok val="protenduntur"/>
+         <tok val="protendunturque"/>
          <lm>
             <l>protendo</l>
             <m>v - 3 p p i p</m>
@@ -1856,8 +2020,9 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--protenta protentaque-->
-         <tok val="protenta(que)?"/>
+      <ana>
+         <tok val="protenta"/>
+         <tok val="protentaque"/>
          <lm>
             <l>protentus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2168,8 +2333,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--proteruae protervae-->
-         <tok val="proter[vu]ae"/>
+      <ana>
+         <tok val="proteruae"/>
+         <tok val="protervae"/>
          <lm>
             <l>protervus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2178,15 +2344,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--proteruam protervam-->
-         <tok val="proter[vu]am"/>
+      <ana>
+         <tok val="proteruam"/>
+         <tok val="protervam"/>
          <lm>
             <l>protervus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--proteruiae proterviae-->
-         <tok val="proter[vu]iae"/>
+      <ana>
+         <tok val="proteruiae"/>
+         <tok val="proterviae"/>
          <lm>
             <l>protervia</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -2231,8 +2399,9 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--proteruis protervis-->
-         <tok val="proter[vu]is"/>
+      <ana>
+         <tok val="proteruis"/>
+         <tok val="protervis"/>
          <lm cert="0.5">
             <l>protervus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2247,8 +2416,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--proteruius protervius-->
-         <tok val="proter[vu]ius"/>
+      <ana>
+         <tok val="proteruius"/>
+         <tok val="protervius"/>
          <lm>
             <l>protervus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -2256,8 +2426,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--proterunt próterunt-->
-         <tok val="pr[óo]terunt"/>
+      <ana>
+         <tok val="proterunt"/>
+         <tok val="próterunt"/>
          <lm>
             <l>protero</l>
             <m>v - 3 p p i a</m>
@@ -2270,8 +2441,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--proteruo protervo-->
-         <tok val="proter[vu]o"/>
+      <ana>
+         <tok val="proteruo"/>
+         <tok val="protervo"/>
          <lm>
             <l>protervus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2624,8 +2796,9 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--protolli protólli-->
-         <tok val="prot[óo]lli"/>
+      <ana>
+         <tok val="protolli"/>
+         <tok val="protólli"/>
          <lm>
             <l>protollo</l>
             <m>v - - - p n p</m>
@@ -2677,8 +2850,9 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--protopraxia protopraxian-->
-         <tok val="protopraxia[n]?"/>
+      <ana>
+         <tok val="protopraxia"/>
+         <tok val="protopraxian"/>
          <lm>
             <l>protopraxia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2763,8 +2937,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--protractae protractaeque-->
-         <tok val="protractae(que)?"/>
+      <ana>
+         <tok val="protractae"/>
+         <tok val="protractaeque"/>
          <lm>
             <l>protraho</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -2791,8 +2966,9 @@
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--protracte protractum-->
-         <tok val="protract(um|e)"/>
+      <ana>
+         <tok val="protracte"/>
+         <tok val="protractum"/>
          <lm>
             <l>protraho</l>
             <m>v - - s r p p n v</m>
@@ -2953,8 +3129,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--protrahendus protrahendusque-->
-         <tok val="protrahendus(que)?"/>
+      <ana>
+         <tok val="protrahendus"/>
+         <tok val="protrahendusque"/>
          <lm>
             <l>protraho</l>
             <m>v - - s p g p m n</m>
@@ -3076,8 +3253,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--protraxere protraxerunt-->
-         <tok val="protraxer(unt|e)"/>
+      <ana>
+         <tok val="protraxere"/>
+         <tok val="protraxerunt"/>
          <lm>
             <l>protraho</l>
             <m>v - 3 p r i a</m>
@@ -3112,8 +3290,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--protraxit protraxitque-->
-         <tok val="protraxit(que)?"/>
+      <ana>
+         <tok val="protraxit"/>
+         <tok val="protraxitque"/>
          <lm>
             <l>protraho</l>
             <m>v - 3 s r i a</m>
@@ -3126,8 +3305,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--protreptico protrepticon-->
-         <tok val="protreptico[n]?"/>
+      <ana>
+         <tok val="protreptico"/>
+         <tok val="protrepticon"/>
          <lm>
             <l>protrepticon</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -3461,8 +3641,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--protuberante protuberanti-->
-         <tok val="protuberant[ie]"/>
+      <ana>
+         <tok val="protuberante"/>
+         <tok val="protuberanti"/>
          <lm>
             <l>protubero</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3522,8 +3703,10 @@
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--protulere protulerunt protulérunt-->
-         <tok val="protul[ée]r(unt|e)"/>
+      <ana>
+         <tok val="protulere"/>
+         <tok val="protulerunt"/>
+         <tok val="protulérunt"/>
          <lm>
             <l>profero</l>
             <m>v - 3 p r i a</m>
@@ -3567,8 +3750,9 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--protuli protulique-->
-         <tok val="protuli(que)?"/>
+      <ana>
+         <tok val="protuli"/>
+         <tok val="protulique"/>
          <lm>
             <l>profero</l>
             <m>v - 1 s r i a</m>
@@ -3734,8 +3918,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--proturbauit proturbavit-->
-         <tok val="proturba[vu]it"/>
+      <ana>
+         <tok val="proturbauit"/>
+         <tok val="proturbavit"/>
          <lm>
             <l>proturbo</l>
             <m>v - 3 s r i a</m>
@@ -3748,8 +3933,9 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--proturbet proturbetque-->
-         <tok val="proturbet(que)?"/>
+      <ana>
+         <tok val="proturbet"/>
+         <tok val="proturbetque"/>
          <lm>
             <l>proturbo</l>
             <m>v - 3 s p s a</m>
@@ -3794,6 +3980,7 @@
       </ana>
       <ana>
          <tok val="Proteus"/>
+         <tok val="proteus"/>
          <lm>
             <l>Proteus</l>
             <m>n e - s - - - m n</m>
@@ -3801,6 +3988,7 @@
       </ana>
       <ana>
          <tok val="Proteu"/>
+         <tok val="proteu"/>
          <lm>
             <l>Proteus</l>
             <m>n e - s - - - m v</m>

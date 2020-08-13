@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusmn">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:mn">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to mn</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-mn.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>MN</tok-starts-with>
       <tok-starts-with>Mn</tok-starts-with>
       <tok-starts-with>mn</tok-starts-with>
-      <ana><!--MNA Mna mna-->
-         <tok val="[mM]?(na|MNA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:33:55.232-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:33:55.232-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-mn.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="MNA"/>
+         <tok val="Mna"/>
+         <tok val="mna"/>
          <lm>
             <l>mina</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -44,16 +54,19 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--MNIS mnis-->
-         <tok val="(mnis|MNIS)"/>
+      <ana>
+         <tok val="MNIS"/>
+         <tok val="mnis"/>
          <lm>
             <l>mina</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Mnas mnas mnasque-->
-         <tok val="[mM]nas(que)?"/>
+      <ana>
+         <tok val="Mnas"/>
+         <tok val="mnas"/>
+         <tok val="mnasque"/>
          <lm>
             <l>mina</l>
             <m>n - - p - - - f a</m>
@@ -61,14 +74,18 @@
       </ana>
       <ana>
          <tok val="Mnasea"/>
+         <tok val="mnasea"/>
          <lm>
             <l>Mnaseas</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Mnasea Mnaseas-->
-         <tok val="Mnasea[s]?"/>
+      <ana>
+         <tok val="Mnasea"/>
+         <tok val="Mnaseas"/>
+         <tok val="mnasea"/>
+         <tok val="mnaseas"/>
          <lm>
             <l>Mnaseas</l>
             <m>n e - s - - - m n</m>
@@ -76,6 +93,7 @@
       </ana>
       <ana>
          <tok val="Mnaseae"/>
+         <tok val="mnaseae"/>
          <lm>
             <l>Mnaseas</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -86,6 +104,7 @@
       </ana>
       <ana>
          <tok val="Mnaseam"/>
+         <tok val="mnaseam"/>
          <lm>
             <l>Mnaseas</l>
             <m>n e - s - - - m a</m>
@@ -93,6 +112,7 @@
       </ana>
       <ana>
          <tok val="Mnaseas"/>
+         <tok val="mnaseas"/>
          <lm>
             <l>Mnaseas</l>
             <m>n e - p - - - m a</m>
@@ -100,6 +120,7 @@
       </ana>
       <ana>
          <tok val="Mnemon"/>
+         <tok val="mnemon"/>
          <lm>
             <l>Mnemon</l>
             <m>n e - s - - - m n</m>
@@ -107,6 +128,7 @@
       </ana>
       <ana>
          <tok val="Mnemonides"/>
+         <tok val="mnemonides"/>
          <lm>
             <l>Mnemonides</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -116,6 +138,7 @@
       </ana>
       <ana>
          <tok val="Mnemosyne"/>
+         <tok val="mnemosyne"/>
          <lm>
             <l>Mnemosyne</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -123,8 +146,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Mnemosyne mnemosynen mnemosynum-->
-         <tok val="[mM]nemosyn[e]?(n|um)?"/>
+      <ana>
+         <tok val="Mnemosyne"/>
+         <tok val="mnemosyne"/>
+         <tok val="mnemosynen"/>
+         <tok val="mnemosynum"/>
          <lm>
             <l>mnemosynon</l>
             <m>n - - s - - - n v</m>
@@ -132,6 +158,7 @@
       </ana>
       <ana>
          <tok val="Mnemosynen"/>
+         <tok val="mnemosynen"/>
          <lm>
             <l>Mnemosyne</l>
             <m>n e - s - - - f a</m>
@@ -139,13 +166,15 @@
       </ana>
       <ana>
          <tok val="Mnemosynes"/>
+         <tok val="mnemosynes"/>
          <lm>
             <l>Mnemosyne</l>
             <m>n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Mnemosynon mnemosynon-->
-         <tok val="[mM]nemosynon"/>
+      <ana>
+         <tok val="Mnemosynon"/>
+         <tok val="mnemosynon"/>
          <lm>
             <l>mnemosynon</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -154,6 +183,7 @@
       </ana>
       <ana>
          <tok val="Mnesarchi"/>
+         <tok val="mnesarchi"/>
          <lm>
             <l>Mnesarchus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -163,6 +193,7 @@
       </ana>
       <ana>
          <tok val="Mnesarcho"/>
+         <tok val="mnesarcho"/>
          <lm>
             <l>Mnesarchus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -171,6 +202,7 @@
       </ana>
       <ana>
          <tok val="Mnesarchum"/>
+         <tok val="mnesarchum"/>
          <lm>
             <l>Mnesarchus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -179,6 +211,7 @@
       </ana>
       <ana>
          <tok val="Mnesarchus"/>
+         <tok val="mnesarchus"/>
          <lm>
             <l>Mnesarchus</l>
             <m>n e - s - - - m n</m>
@@ -186,13 +219,17 @@
       </ana>
       <ana>
          <tok val="Mnesthea"/>
+         <tok val="mnesthea"/>
          <lm>
             <l>Mnestheus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Mnesthei Mnestheique-->
-         <tok val="Mnesthei(que)?"/>
+      <ana>
+         <tok val="Mnesthei"/>
+         <tok val="Mnestheique"/>
+         <tok val="mnesthei"/>
+         <tok val="mnestheique"/>
          <lm>
             <l>Mnestheus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -202,14 +239,18 @@
       </ana>
       <ana>
          <tok val="Mnestheo"/>
+         <tok val="mnestheo"/>
          <lm>
             <l>Mnestheus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Mnestheus Mnestheusque-->
-         <tok val="Mnestheus(que)?"/>
+      <ana>
+         <tok val="Mnestheus"/>
+         <tok val="Mnestheusque"/>
+         <tok val="mnestheus"/>
+         <tok val="mnestheusque"/>
          <lm>
             <l>Mnestheus</l>
             <m>n e - s - - - m n</m>
@@ -217,6 +258,7 @@
       </ana>
       <ana>
          <tok val="Mnevidis"/>
+         <tok val="mnevidis"/>
          <lm>
             <l>Mnevis</l>
             <m>n e - s - - - m g</m>
@@ -224,6 +266,7 @@
       </ana>
       <ana>
          <tok val="Mnevis"/>
+         <tok val="mnevis"/>
          <lm>
             <l>Mnevis</l>
             <m>n e - s - - - m n</m>

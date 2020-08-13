@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusges">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ges">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ges</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ges.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>GES</tok-starts-with>
       <tok-starts-with>Ges</tok-starts-with>
       <tok-starts-with>ges</tok-starts-with>
-      <ana><!--GESA Gesa gesa-->
-         <tok val="[gG]?(esa|GESA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:25:40.387-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:25:40.387-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ges.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="GESA"/>
+         <tok val="Gesa"/>
+         <tok val="gesa"/>
          <lm>
             <l>gaesum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -44,8 +54,12 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--GESTVM Gestum gestum gestumque-->
-         <tok val="[gG]?(estum)?(que|GESTVM)?"/>
+      <ana>
+         <tok val="GESTVM"/>
+         <tok val="Gestum"/>
+         <tok val="gestum"/>
+         <tok val="gestumque"/>
+         <tok val="gestvm"/>
          <lm cert="0.5">
             <l>gero</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -58,71 +72,100 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--GESTVM Gestum gestorum gestum gestumque Gestorum gestorumque-->
-         <tok val="[gG]?(est)?(or)?(um)?(que|GESTVM)?"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="GESTVM"/>
+         <tok val="Gestum"/>
+         <tok val="gestorum"/>
+         <tok val="gestum"/>
+         <tok val="gestumque"/>
+         <tok val="gestvm"/>
+         <lm>
             <l>gero</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
-         <lm cert="0.5">
-            <l>gesta</l>
-            <m>n - - p - - - n g</m>
-         </lm>
       </ana>
-      <ana><!--GESTVM Gestum geste gesten gestum gestumque-->
-         <tok val="[gG]?(est)?[e]?(n|um|umque|GESTVM)?"/>
+      <ana>
+         <tok val="GESTVM"/>
+         <tok val="Gestum"/>
+         <tok val="geste"/>
+         <tok val="gesten"/>
+         <tok val="gestum"/>
+         <tok val="gestumque"/>
+         <tok val="gestvm"/>
          <lm>
             <l>gero</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
       <ana>
+         <tok val="GESTVM"/>
+         <tok val="Gestorum"/>
+         <tok val="Gestum"/>
+         <tok val="gestorum"/>
+         <tok val="gestorumque"/>
+         <tok val="gestum"/>
+         <tok val="gestumque"/>
+         <tok val="gestvm"/>
+         <lm>
+            <l>gesta</l>
+            <m>n - - p - - - n g</m>
+         </lm>
+      </ana>
+      <ana>
          <tok val="Geso"/>
+         <tok val="geso"/>
          <lm>
             <l>gaesum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Gesseris gesseris-->
-         <tok val="[gG]esseris"/>
+      <ana>
+         <tok val="Gesseris"/>
+         <tok val="gesseris"/>
          <lm>
             <l>gero</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Gesserunt gessere gesserunt-->
-         <tok val="[gG]esser(unt|e)"/>
+      <ana>
+         <tok val="Gesserunt"/>
+         <tok val="gessere"/>
+         <tok val="gesserunt"/>
          <lm>
             <l>gero</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Gessimus gessimus-->
-         <tok val="[gG]essimus"/>
+      <ana>
+         <tok val="Gessimus"/>
+         <tok val="gessimus"/>
          <lm>
             <l>gero</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Gessisse gessisse-->
-         <tok val="[gG]essisse"/>
+      <ana>
+         <tok val="Gessisse"/>
+         <tok val="gessisse"/>
          <lm>
             <l>gero</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Gessisti gessisti-->
-         <tok val="[gG]essisti"/>
+      <ana>
+         <tok val="Gessisti"/>
+         <tok val="gessisti"/>
          <lm>
             <l>gero</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Gessit gessit-->
-         <tok val="[gG]essit"/>
+      <ana>
+         <tok val="Gessit"/>
+         <tok val="gessit"/>
          <lm>
             <l>gero</l>
             <m>v - 3 s r i a</m>
@@ -130,6 +173,7 @@
       </ana>
       <ana>
          <tok val="Gessium"/>
+         <tok val="gessium"/>
          <lm>
             <l>Gessius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -138,20 +182,30 @@
       </ana>
       <ana>
          <tok val="Gessius"/>
+         <tok val="gessius"/>
          <lm>
             <l>Gessius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gesta gesta gestan gestaque gestast gestá-->
-         <tok val="[gG]est[a]?(n|st|á|aque)?"/>
+      <ana>
+         <tok val="Gesta"/>
+         <tok val="gesta"/>
+         <tok val="gestan"/>
+         <tok val="gestaque"/>
+         <tok val="gestast"/>
+         <tok val="gestá"/>
          <lm>
             <l>gero</l>
             <m>v - - s r p p f b</m>
          </lm>
       </ana>
-      <ana><!--Gesta gesta gestan gestaque gestast-->
-         <tok val="[gG]esta(n|st|que)?"/>
+      <ana>
+         <tok val="Gesta"/>
+         <tok val="gesta"/>
+         <tok val="gestan"/>
+         <tok val="gestaque"/>
+         <tok val="gestast"/>
          <lm cert="0.333333333333333333">
             <l>gesta</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -171,8 +225,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Gestae gestae-->
-         <tok val="[gG]estae"/>
+      <ana>
+         <tok val="Gestae"/>
+         <tok val="gestae"/>
          <lm>
             <l>gero</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -181,15 +236,17 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Gestamus gestamus-->
-         <tok val="[gG]estamus"/>
+      <ana>
+         <tok val="Gestamus"/>
+         <tok val="gestamus"/>
          <lm>
             <l>gesto</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Gestans gestans-->
-         <tok val="[gG]estans"/>
+      <ana>
+         <tok val="Gestans"/>
+         <tok val="gestans"/>
          <lm>
             <l>gesto</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -201,58 +258,71 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Gestare gestare-->
-         <tok val="[gG]estare"/>
+      <ana>
+         <tok val="Gestare"/>
+         <tok val="gestare"/>
          <lm>
             <l>gesto</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Gestare Gestaris gestare-->
-         <tok val="[gG]estar(e|is)"/>
+      <ana>
+         <tok val="Gestare"/>
+         <tok val="Gestaris"/>
+         <tok val="gestare"/>
+         <tok val="gestaris"/>
          <lm>
             <l>gesto</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Gestari gestari gestarique-->
-         <tok val="[gG]estari(que)?"/>
+      <ana>
+         <tok val="Gestari"/>
+         <tok val="gestari"/>
+         <tok val="gestarique"/>
          <lm>
             <l>gesto</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Gestaris gestaveris-->
-         <tok val="[gG]esta(ve)?ris"/>
+      <ana>
+         <tok val="Gestaris"/>
+         <tok val="gestaris"/>
+         <tok val="gestaveris"/>
          <lm>
             <l>gesto</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Gestarum gestarum gestarumque-->
-         <tok val="[gG]estarum(que)?"/>
+      <ana>
+         <tok val="Gestarum"/>
+         <tok val="gestarum"/>
+         <tok val="gestarumque"/>
          <lm>
             <l>gero</l>
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--Gestasset gestasset-->
-         <tok val="[gG]estasset"/>
+      <ana>
+         <tok val="Gestasset"/>
+         <tok val="gestasset"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Gestat gestat-->
-         <tok val="[gG]estat"/>
+      <ana>
+         <tok val="Gestat"/>
+         <tok val="gestat"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gestata gestata-->
-         <tok val="[gG]estata"/>
+      <ana>
+         <tok val="Gestata"/>
+         <tok val="gestata"/>
          <lm>
             <l>gesto</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -263,8 +333,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Gestati gestati-->
-         <tok val="[gG]estati"/>
+      <ana>
+         <tok val="Gestati"/>
+         <tok val="gestati"/>
          <lm>
             <l>gesto</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -273,16 +344,18 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Gestatio gestatio-->
-         <tok val="[gG]estatio"/>
+      <ana>
+         <tok val="Gestatio"/>
+         <tok val="gestatio"/>
          <lm>
             <l>gestatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Gestatis gestatis-->
-         <tok val="[gG]estatis"/>
+      <ana>
+         <tok val="Gestatis"/>
+         <tok val="gestatis"/>
          <lm>
             <l>gesto</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -294,8 +367,9 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Gestator gestator-->
-         <tok val="[gG]estator"/>
+      <ana>
+         <tok val="Gestator"/>
+         <tok val="gestator"/>
          <lm>
             <l>gestator</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -304,6 +378,7 @@
       </ana>
       <ana>
          <tok val="Gestatorium"/>
+         <tok val="gestatorium"/>
          <lm>
             <l>gestatorius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -314,37 +389,43 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Gestatorius gestatorius-->
-         <tok val="[gG]estatorius"/>
+      <ana>
+         <tok val="Gestatorius"/>
+         <tok val="gestatorius"/>
          <lm>
             <l>gestatorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gestatrix gestatrix-->
-         <tok val="[gG]estatrix"/>
+      <ana>
+         <tok val="Gestatrix"/>
+         <tok val="gestatrix"/>
          <lm>
             <l>gestatrix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Gestatum gestatorum gestatum-->
-         <tok val="[gG]estat(or)?um"/>
+      <ana>
+         <tok val="Gestatum"/>
+         <tok val="gestatorum"/>
+         <tok val="gestatum"/>
          <lm>
             <l>gesto</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Gestatum gestatum-->
-         <tok val="[gG]estatum"/>
+      <ana>
+         <tok val="Gestatum"/>
+         <tok val="gestatum"/>
          <lm cert="0.5">
             <l>gesto</l>
-            <m cert="0.25">v - - s r p p m a</m>
-            <m cert="0.25">v - - s r p p n n</m>
-            <m cert="0.25">v - - s r p p n a</m>
-            <m cert="0.25">v - - s r p p n v</m>
+            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.2">v - - s r p p n n</m>
+            <m cert="0.2">v - - s r p p n a</m>
+            <m cert="0.2">v - - s r p p n v</m>
+            <m cert="0.2">v - - - - u - - a</m>
          </lm>
          <lm cert="0.5">
             <l>gestatus</l>
@@ -352,21 +433,16 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Gestatum"/>
-         <lm>
-            <l>gesto</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Gestatur gestatur-->
-         <tok val="[gG]estatur"/>
+         <tok val="Gestatur"/>
+         <tok val="gestatur"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Gestatus gestatus-->
-         <tok val="[gG]estatus"/>
+      <ana>
+         <tok val="Gestatus"/>
+         <tok val="gestatus"/>
          <lm cert="0.5">
             <l>gestatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -379,22 +455,28 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Gestavit gestauit gestavit-->
-         <tok val="[gG]esta[vu]it"/>
+      <ana>
+         <tok val="Gestavit"/>
+         <tok val="gestauit"/>
+         <tok val="gestavit"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Gestetur gestetur-->
-         <tok val="[gG]estetur"/>
+      <ana>
+         <tok val="Gestetur"/>
+         <tok val="gestetur"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Gesti gesti gestin gestique-->
-         <tok val="[gG]esti(n|que)?"/>
+      <ana>
+         <tok val="Gesti"/>
+         <tok val="gesti"/>
+         <tok val="gestin"/>
+         <tok val="gestique"/>
          <lm cert="0.5">
             <l>gero</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -409,6 +491,7 @@
       </ana>
       <ana>
          <tok val="Gesticularia"/>
+         <tok val="gesticularia"/>
          <lm>
             <l>gesticularia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -416,30 +499,35 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Gesticularius gesticularius-->
-         <tok val="[gG]esticularius"/>
+      <ana>
+         <tok val="Gesticularius"/>
+         <tok val="gesticularius"/>
          <lm>
             <l>gesticularius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gesticulator gesticulator-->
-         <tok val="[gG]esticulator"/>
+      <ana>
+         <tok val="Gesticulator"/>
+         <tok val="gesticulator"/>
          <lm>
             <l>gesticulator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Gesticulor gesticulor-->
-         <tok val="[gG]esticulor"/>
+      <ana>
+         <tok val="Gesticulor"/>
+         <tok val="gesticulor"/>
          <lm>
             <l>gesticulor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Gestiens gestiens gestiensque-->
-         <tok val="[gG]estiens(que)?"/>
+      <ana>
+         <tok val="Gestiens"/>
+         <tok val="gestiens"/>
+         <tok val="gestiensque"/>
          <lm>
             <l>gestio</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -451,8 +539,10 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Gestio gestio gestion-->
-         <tok val="[gG]estio[n]?"/>
+      <ana>
+         <tok val="Gestio"/>
+         <tok val="gestio"/>
+         <tok val="gestion"/>
          <lm>
             <l>gestio</l>
             <m cert="0.333333333333333333">v - 1 s p i a</m>
@@ -460,15 +550,19 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Gestire gestire-->
-         <tok val="[gG]estire"/>
+      <ana>
+         <tok val="Gestire"/>
+         <tok val="gestire"/>
          <lm>
             <l>gestio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Gestis gestin gestis gestisque-->
-         <tok val="[gG]esti(s|n|sque)"/>
+      <ana>
+         <tok val="Gestis"/>
+         <tok val="gestin"/>
+         <tok val="gestis"/>
+         <tok val="gestisque"/>
          <lm cert="0.5">
             <l>gero</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -483,23 +577,30 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gestis gestin gestis gestisque Gestisque-->
-         <tok val="[Gg]esti[s]?(que|n)?"/>
+      <ana>
+         <tok val="Gestis"/>
+         <tok val="Gestisque"/>
+         <tok val="gestin"/>
+         <tok val="gestis"/>
+         <tok val="gestisque"/>
          <lm>
             <l>gesta</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Gestit gestit gestitque-->
-         <tok val="[gG]estit(que)?"/>
+      <ana>
+         <tok val="Gestit"/>
+         <tok val="gestit"/>
+         <tok val="gestitque"/>
          <lm>
             <l>gestio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gestito gestito-->
-         <tok val="[gG]estito"/>
+      <ana>
+         <tok val="Gestito"/>
+         <tok val="gestito"/>
          <lm cert="0.5">
             <l>gestio</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -514,15 +615,17 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gestiunt gestiunt-->
-         <tok val="[gG]estiunt"/>
+      <ana>
+         <tok val="Gestiunt"/>
+         <tok val="gestiunt"/>
          <lm>
             <l>gestio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Gesto gesto-->
-         <tok val="[gG]esto"/>
+      <ana>
+         <tok val="Gesto"/>
+         <tok val="gesto"/>
          <lm cert="0.5">
             <l>gero</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -535,8 +638,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Gestor gestor-->
-         <tok val="[gG]estor"/>
+      <ana>
+         <tok val="Gestor"/>
+         <tok val="gestor"/>
          <lm cert="0.5">
             <l>gestor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -547,8 +651,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Gestores gestores-->
-         <tok val="[gG]estores"/>
+      <ana>
+         <tok val="Gestores"/>
+         <tok val="gestores"/>
          <lm>
             <l>gestor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -556,8 +661,11 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Gestu gestu gestuque gestuue-->
-         <tok val="[gG]estu[q]?(ue)?"/>
+      <ana>
+         <tok val="Gestu"/>
+         <tok val="gestu"/>
+         <tok val="gestuque"/>
+         <tok val="gestuue"/>
          <lm cert="0.5">
             <l>gero</l>
             <m>a - - s - - - n d</m>
@@ -567,15 +675,17 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Gestuosus gestuosus-->
-         <tok val="[gG]estuosus"/>
+      <ana>
+         <tok val="Gestuosus"/>
+         <tok val="gestuosus"/>
          <lm>
             <l>gestuosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Gesturi gesturi-->
-         <tok val="[gG]esturi"/>
+      <ana>
+         <tok val="Gesturi"/>
+         <tok val="gesturi"/>
          <lm>
             <l>gero</l>
             <m cert="0.25">v - - s f p a n g</m>
@@ -584,15 +694,19 @@
             <m cert="0.25">v - - s f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Gesturus gesturus gesturusque-->
-         <tok val="[gG]esturus(que)?"/>
+      <ana>
+         <tok val="Gesturus"/>
+         <tok val="gesturus"/>
+         <tok val="gesturusque"/>
          <lm>
             <l>gero</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Gestus gestus gestusque-->
-         <tok val="[gG]estus(que)?"/>
+      <ana>
+         <tok val="Gestus"/>
+         <tok val="gestus"/>
+         <tok val="gestusque"/>
          <lm cert="0.5">
             <l>gestus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -605,15 +719,18 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Gesum gese gesum-->
-         <tok val="[gG]es(um|e)"/>
+      <ana>
+         <tok val="Gesum"/>
+         <tok val="gese"/>
+         <tok val="gesum"/>
          <lm>
             <l>gaesum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Gesum gesum-->
-         <tok val="[gG]esum"/>
+      <ana>
+         <tok val="Gesum"/>
+         <tok val="gesum"/>
          <lm>
             <l>gaesum</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -629,8 +746,9 @@
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--gesi gesin-->
-         <tok val="gesi[n]?"/>
+      <ana>
+         <tok val="gesi"/>
+         <tok val="gesin"/>
          <lm>
             <l>gaesum</l>
             <m>n - - s - - - n g</m>
@@ -788,8 +906,9 @@
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--gestabat gestabatque-->
-         <tok val="gestabat(que)?"/>
+      <ana>
+         <tok val="gestabat"/>
+         <tok val="gestabatque"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s i i a</m>
@@ -868,8 +987,9 @@
             <m cert="0.5">v - 2 p p m p</m>
          </lm>
       </ana>
-      <ana><!--gestan gestas-->
-         <tok val="gesta[sn]"/>
+      <ana>
+         <tok val="gestan"/>
+         <tok val="gestas"/>
          <lm cert="0.5">
             <l>gesto</l>
             <m>v - 2 s p i a</m>
@@ -949,8 +1069,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--gestandus gestandust-->
-         <tok val="gestandus[t]?"/>
+      <ana>
+         <tok val="gestandus"/>
+         <tok val="gestandust"/>
          <lm>
             <l>gesto</l>
             <m>v - - s p g p m n</m>
@@ -963,8 +1084,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--gestante gestanti-->
-         <tok val="gestant[ie]"/>
+      <ana>
+         <tok val="gestante"/>
+         <tok val="gestanti"/>
          <lm>
             <l>gesto</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -980,8 +1102,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--gestantes gestantesque-->
-         <tok val="gestantes(que)?"/>
+      <ana>
+         <tok val="gestantes"/>
+         <tok val="gestantesque"/>
          <lm>
             <l>gesto</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -990,8 +1113,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--gestantes gestantesque gestantis-->
-         <tok val="gestant[ie]s(que)?"/>
+      <ana>
+         <tok val="gestantes"/>
+         <tok val="gestantesque"/>
+         <tok val="gestantis"/>
          <lm>
             <l>gesto</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1044,8 +1169,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--gestarant gestauerant-->
-         <tok val="gesta(ue)?rant"/>
+      <ana>
+         <tok val="gestarant"/>
+         <tok val="gestauerant"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 p l i a</m>
@@ -1086,8 +1212,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--gestarit gestauerit-->
-         <tok val="gesta(ue)?rit"/>
+      <ana>
+         <tok val="gestarit"/>
+         <tok val="gestauerit"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s r s a</m>
@@ -1152,8 +1279,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--gestationes gestationesque-->
-         <tok val="gestationes(que)?"/>
+      <ana>
+         <tok val="gestationes"/>
+         <tok val="gestationesque"/>
          <lm>
             <l>gestatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1280,15 +1408,17 @@
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--gestauerat gestaverat-->
-         <tok val="gesta[vu]erat"/>
+      <ana>
+         <tok val="gestauerat"/>
+         <tok val="gestaverat"/>
          <lm>
             <l>gesto</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--gestauerint gestaverint-->
-         <tok val="gesta[vu]erint"/>
+      <ana>
+         <tok val="gestauerint"/>
+         <tok val="gestaverint"/>
          <lm>
             <l>gesto</l>
             <m cert="0.5">v - 3 p t i a</m>
@@ -1302,8 +1432,9 @@
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--gestaui gestavi-->
-         <tok val="gesta[vu]i"/>
+      <ana>
+         <tok val="gestaui"/>
+         <tok val="gestavi"/>
          <lm>
             <l>gesto</l>
             <m>v - 1 s r i a</m>
@@ -1316,8 +1447,9 @@
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--geste gesten-->
-         <tok val="geste[n]?"/>
+      <ana>
+         <tok val="geste"/>
+         <tok val="gesten"/>
          <lm>
             <l>gero</l>
             <m>v - - s r p p m v</m>
@@ -1337,8 +1469,9 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--gesten gestes-->
-         <tok val="geste[sn]"/>
+      <ana>
+         <tok val="gesten"/>
+         <tok val="gestes"/>
          <lm>
             <l>gesto</l>
             <m>v - 2 s p s a</m>
@@ -1394,15 +1527,17 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--gestibant gestiebant-->
-         <tok val="gesti[e]?bant"/>
+      <ana>
+         <tok val="gestibant"/>
+         <tok val="gestiebant"/>
          <lm>
             <l>gestio</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--gestibat gestiebat-->
-         <tok val="gesti[e]?bat"/>
+      <ana>
+         <tok val="gestibat"/>
+         <tok val="gestiebat"/>
          <lm>
             <l>gestio</l>
             <m>v - 3 s i i a</m>
@@ -1602,8 +1737,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--gestientes gestientis-->
-         <tok val="gestient[ie]s"/>
+      <ana>
+         <tok val="gestientes"/>
+         <tok val="gestientis"/>
          <lm>
             <l>gestio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1652,8 +1788,9 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--gestii gestiui-->
-         <tok val="gesti[u]?i"/>
+      <ana>
+         <tok val="gestii"/>
+         <tok val="gestiui"/>
          <lm>
             <l>gestio</l>
             <m>v - 1 s r i a</m>
@@ -1777,8 +1914,10 @@
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--gestorum Gestorum gestorumque-->
-         <tok val="[Gg]estorum(que)?"/>
+      <ana>
+         <tok val="Gestorum"/>
+         <tok val="gestorum"/>
+         <tok val="gestorumque"/>
          <lm>
             <l>gestor</l>
             <m>n - - p - - - m g</m>
@@ -1811,8 +1950,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--gesture gesturum gesturumque-->
-         <tok val="gestur(um)?(que|e)?"/>
+      <ana>
+         <tok val="gesture"/>
+         <tok val="gesturum"/>
+         <tok val="gesturumque"/>
          <lm>
             <l>gero</l>
             <m>v - - s f p a n v</m>
@@ -1842,8 +1983,9 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--gesturum gesturumque-->
-         <tok val="gesturum(que)?"/>
+      <ana>
+         <tok val="gesturum"/>
+         <tok val="gesturumque"/>
          <lm>
             <l>gero</l>
             <m cert="0.2">v - - p f p a n g</m>

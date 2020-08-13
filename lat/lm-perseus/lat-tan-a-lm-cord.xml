@@ -1,50 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscord">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:cord">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to cord</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-cord.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>CORD</tok-starts-with>
       <tok-starts-with>Cord</tok-starts-with>
       <tok-starts-with>cord</tok-starts-with>
       <tok-starts-with>córd</tok-starts-with>
-      <ana><!--CORDVS Cordus cordus-->
-         <tok val="[cC]?(ordus|CORDVS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:17:50.099-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:17:50.099-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-cord.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="CORDVS"/>
+         <tok val="Cordus"/>
+         <tok val="cordus"/>
+         <tok val="cordvs"/>
          <lm>
             <l>chordus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--CORDYLA Cordyla cordyla-->
-         <tok val="[cC]?(ordyla|CORDYLA)"/>
+      <ana>
+         <tok val="CORDYLA"/>
+         <tok val="Cordyla"/>
+         <tok val="cordyla"/>
          <lm>
             <l>cordyla</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -52,8 +65,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Corda corda cordaque-->
-         <tok val="[cC]orda(que)?"/>
+      <ana>
+         <tok val="Corda"/>
+         <tok val="corda"/>
+         <tok val="cordaque"/>
          <lm cert="0.5">
             <l>cor</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -70,44 +85,54 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cordate cordate cordáte-->
-         <tok val="[cC]ord[aá]te"/>
+      <ana>
+         <tok val="Cordate"/>
+         <tok val="cordate"/>
+         <tok val="cordáte"/>
          <lm>
             <l>cordatus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Cordate cordate-->
-         <tok val="[cC]ordate"/>
+      <ana>
+         <tok val="Cordate"/>
+         <tok val="cordate"/>
          <lm>
             <l>cordatus</l>
             <m cert="0.5">a - - s - - - n v</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Cordatus cordatus-->
-         <tok val="[cC]ordatus"/>
+      <ana>
+         <tok val="Cordatus"/>
+         <tok val="cordatus"/>
          <lm>
             <l>cordatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Corde corde córde-->
-         <tok val="[cC]?(o|có)rde"/>
+      <ana>
+         <tok val="Corde"/>
+         <tok val="corde"/>
+         <tok val="córde"/>
          <lm>
             <l>chordus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Corde Cordum corde cordum-->
-         <tok val="[cC]ord(um|e)"/>
+      <ana>
+         <tok val="Corde"/>
+         <tok val="Cordum"/>
+         <tok val="corde"/>
+         <tok val="cordum"/>
          <lm>
             <l>chordus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Corde corde-->
-         <tok val="[cC]orde"/>
+      <ana>
+         <tok val="Corde"/>
+         <tok val="corde"/>
          <lm cert="0.5">
             <l>cor</l>
             <m>n - - s - - - n b</m>
@@ -117,8 +142,11 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Cordi cordi cordique cordist-->
-         <tok val="[cC]ordi(st|que)?"/>
+      <ana>
+         <tok val="Cordi"/>
+         <tok val="cordi"/>
+         <tok val="cordique"/>
+         <tok val="cordist"/>
          <lm>
             <l>chordus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -127,23 +155,31 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cordi cordi cordique cordist CORDI-->
-         <tok val="[cC]?(ordi)?(st|que|CORDI)?"/>
+      <ana>
+         <tok val="CORDI"/>
+         <tok val="Cordi"/>
+         <tok val="cordi"/>
+         <tok val="cordique"/>
+         <tok val="cordist"/>
          <lm>
             <l>cor</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Cordibus cordibus-->
-         <tok val="[cC]ordibus"/>
+      <ana>
+         <tok val="Cordibus"/>
+         <tok val="cordibus"/>
          <lm>
             <l>cor</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Cordis cordis cordisque cordist-->
-         <tok val="[cC]ordis(t|que)?"/>
+      <ana>
+         <tok val="Cordis"/>
+         <tok val="cordis"/>
+         <tok val="cordisque"/>
+         <tok val="cordist"/>
          <lm cert="0.5">
             <l>chordus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -158,8 +194,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cordo cordo-->
-         <tok val="[cC]ordo"/>
+      <ana>
+         <tok val="Cordo"/>
+         <tok val="cordo"/>
          <lm>
             <l>chordus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -168,8 +205,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Cordolium cordolium-->
-         <tok val="[cC]ordolium"/>
+      <ana>
+         <tok val="Cordolium"/>
+         <tok val="cordolium"/>
          <lm>
             <l>cordolium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -180,6 +218,7 @@
       </ana>
       <ana>
          <tok val="Corduba"/>
+         <tok val="corduba"/>
          <lm>
             <l>Corduba</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -189,6 +228,7 @@
       </ana>
       <ana>
          <tok val="Cordubae"/>
+         <tok val="cordubae"/>
          <lm>
             <l>Corduba</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -199,6 +239,7 @@
       </ana>
       <ana>
          <tok val="Cordubam"/>
+         <tok val="cordubam"/>
          <lm>
             <l>Corduba</l>
             <m>n e - s - - - f a</m>
@@ -206,6 +247,7 @@
       </ana>
       <ana>
          <tok val="Cordubense"/>
+         <tok val="cordubense"/>
          <lm>
             <l>Cordubensis</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -215,6 +257,7 @@
       </ana>
       <ana>
          <tok val="Cordubenses"/>
+         <tok val="cordubenses"/>
          <lm cert="0.5">
             <l>Cordubensis</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -228,8 +271,11 @@
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cordubenses Cordubensis-->
-         <tok val="Cordubens[ie]s"/>
+      <ana>
+         <tok val="Cordubenses"/>
+         <tok val="Cordubensis"/>
+         <tok val="cordubenses"/>
+         <tok val="cordubensis"/>
          <lm cert="0.5">
             <l>Cordubensis</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -242,6 +288,7 @@
       </ana>
       <ana>
          <tok val="Cordubensi"/>
+         <tok val="cordubensi"/>
          <lm>
             <l>Cordubensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -254,6 +301,7 @@
       </ana>
       <ana>
          <tok val="Cordubensibus"/>
+         <tok val="cordubensibus"/>
          <lm cert="0.5">
             <l>Cordubenses</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -271,6 +319,7 @@
       </ana>
       <ana>
          <tok val="Cordubensis"/>
+         <tok val="cordubensis"/>
          <lm>
             <l>Cordubensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -284,6 +333,7 @@
       </ana>
       <ana>
          <tok val="Cordubensium"/>
+         <tok val="cordubensium"/>
          <lm cert="0.5">
             <l>Cordubensis</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -297,6 +347,7 @@
       </ana>
       <ana>
          <tok val="Corduena"/>
+         <tok val="corduena"/>
          <lm>
             <l>Corduena</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -306,6 +357,7 @@
       </ana>
       <ana>
          <tok val="Cordueni"/>
+         <tok val="cordueni"/>
          <lm>
             <l>Cordueni</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -314,13 +366,15 @@
       </ana>
       <ana>
          <tok val="Corduenos"/>
+         <tok val="corduenos"/>
          <lm>
             <l>Cordueni</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cordum cordum-->
-         <tok val="[cC]ordum"/>
+      <ana>
+         <tok val="Cordum"/>
+         <tok val="cordum"/>
          <lm cert="0.5">
             <l>chordus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -336,6 +390,7 @@
       </ana>
       <ana>
          <tok val="Cordylas"/>
+         <tok val="cordylas"/>
          <lm>
             <l>cordyla</l>
             <m>n - - p - - - f a</m>
@@ -377,8 +432,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--cordae cordain-->
-         <tok val="corda(in|e)"/>
+      <ana>
+         <tok val="cordae"/>
+         <tok val="cordain"/>
          <lm>
             <l>chordus</l>
             <m>a - - s - - - f g</m>

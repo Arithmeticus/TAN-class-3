@@ -1,43 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdur">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dur">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dur</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dur.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DUR</tok-starts-with>
       <tok-starts-with>Dur</tok-starts-with>
       <tok-starts-with>dur</tok-starts-with>
       <tok-starts-with>dúr</tok-starts-with>
-      <ana><!--DURIE Durium Duriumque-->
-         <tok val="D(urium)?(que|URIE)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:23.832-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:23.832-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dur.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DURIE"/>
+         <tok val="Durium"/>
+         <tok val="Duriumque"/>
+         <tok val="durie"/>
+         <tok val="durium"/>
+         <tok val="duriumque"/>
          <lm>
             <l>durius</l>
             <m>a - - s - - - n v</m>
@@ -45,13 +58,20 @@
       </ana>
       <ana>
          <tok val="DURIE"/>
+         <tok val="durie"/>
          <lm>
             <l>durius</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Dura Duraque dura duran duraque durast duraue-->
-         <tok val="[dD]ura[q]?(ue|n|que|st)?"/>
+      <ana>
+         <tok val="Dura"/>
+         <tok val="Duraque"/>
+         <tok val="dura"/>
+         <tok val="duran"/>
+         <tok val="duraque"/>
+         <tok val="durast"/>
+         <tok val="duraue"/>
          <lm cert="0.5">
             <l>duro</l>
             <m>v - 2 s p m a</m>
@@ -65,22 +85,31 @@
             <m cert="0.2">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Dura Duraque dura duran duraque durast duraue dúra-->
-         <tok val="[dD]?(u|dú)ra[q]?(ue|n|que|st)?"/>
+      <ana>
+         <tok val="Dura"/>
+         <tok val="Duraque"/>
+         <tok val="dura"/>
+         <tok val="duran"/>
+         <tok val="duraque"/>
+         <tok val="durast"/>
+         <tok val="duraue"/>
+         <tok val="dúra"/>
          <lm>
             <l>durus</l>
             <m>a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Durabat durabat-->
-         <tok val="[dD]urabat"/>
+      <ana>
+         <tok val="Durabat"/>
+         <tok val="durabat"/>
          <lm>
             <l>duro</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Durabile durabile-->
-         <tok val="[dD]urabile"/>
+      <ana>
+         <tok val="Durabile"/>
+         <tok val="durabile"/>
          <lm>
             <l>durabilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -88,8 +117,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Durabilis durabilis-->
-         <tok val="[dD]urabilis"/>
+      <ana>
+         <tok val="Durabilis"/>
+         <tok val="durabilis"/>
          <lm>
             <l>durabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -101,23 +131,28 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Durabilis durabiles durabilis-->
-         <tok val="[dD]urabil[ie]s"/>
+      <ana>
+         <tok val="Durabilis"/>
+         <tok val="durabiles"/>
+         <tok val="durabilis"/>
          <lm>
             <l>durabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Durabit durabit durabitque-->
-         <tok val="[dD]urabit(que)?"/>
+      <ana>
+         <tok val="Durabit"/>
+         <tok val="durabit"/>
+         <tok val="durabitque"/>
          <lm>
             <l>duro</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Duracina duracina-->
-         <tok val="[dD]uracina"/>
+      <ana>
+         <tok val="Duracina"/>
+         <tok val="duracina"/>
          <lm>
             <l>duracinus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -128,8 +163,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Duracinae duracinae-->
-         <tok val="[dD]uracinae"/>
+      <ana>
+         <tok val="Duracinae"/>
+         <tok val="duracinae"/>
          <lm>
             <l>duracinus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -140,6 +176,7 @@
       </ana>
       <ana>
          <tok val="Duracini"/>
+         <tok val="duracini"/>
          <lm>
             <l>duracinus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -148,8 +185,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Durae durae duraeque-->
-         <tok val="[dD]urae(que)?"/>
+      <ana>
+         <tok val="Durae"/>
+         <tok val="durae"/>
+         <tok val="duraeque"/>
          <lm>
             <l>durus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -158,15 +197,18 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Duram duram duramque-->
-         <tok val="[dD]uram(que)?"/>
+      <ana>
+         <tok val="Duram"/>
+         <tok val="duram"/>
+         <tok val="duramque"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Duramen duramen-->
-         <tok val="[dD]uramen"/>
+      <ana>
+         <tok val="Duramen"/>
+         <tok val="duramen"/>
          <lm>
             <l>duramen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -174,8 +216,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Duramentum duramentum-->
-         <tok val="[dD]uramentum"/>
+      <ana>
+         <tok val="Duramentum"/>
+         <tok val="duramentum"/>
          <lm>
             <l>duramentum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -186,6 +229,7 @@
       </ana>
       <ana>
          <tok val="Durani"/>
+         <tok val="durani"/>
          <lm>
             <l>Duranius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -194,13 +238,15 @@
       </ana>
       <ana>
          <tok val="Duranius"/>
+         <tok val="duranius"/>
          <lm>
             <l>Duranius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Durans durans-->
-         <tok val="[dD]urans"/>
+      <ana>
+         <tok val="Durans"/>
+         <tok val="durans"/>
          <lm>
             <l>duro</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -212,15 +258,19 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Durant durant durantque-->
-         <tok val="[dD]urant(que)?"/>
+      <ana>
+         <tok val="Durant"/>
+         <tok val="durant"/>
+         <tok val="durantque"/>
          <lm>
             <l>duro</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Durante durante duranti-->
-         <tok val="[dD]urant[ei]"/>
+      <ana>
+         <tok val="Durante"/>
+         <tok val="durante"/>
+         <tok val="duranti"/>
          <lm>
             <l>duro</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -228,30 +278,40 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Durare durare durareque-->
-         <tok val="[dD]urare(que)?"/>
+      <ana>
+         <tok val="Durare"/>
+         <tok val="durare"/>
+         <tok val="durareque"/>
          <lm>
             <l>duro</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Durare durare durareque duraris-->
-         <tok val="[dD]urar[e]?(que|is)?"/>
+      <ana>
+         <tok val="Durare"/>
+         <tok val="durare"/>
+         <tok val="durareque"/>
+         <tok val="duraris"/>
          <lm>
             <l>duro</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Durari durari durarique-->
-         <tok val="[dD]urari(que)?"/>
+      <ana>
+         <tok val="Durari"/>
+         <tok val="durari"/>
+         <tok val="durarique"/>
          <lm>
             <l>duro</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Duras duran duras durasque-->
-         <tok val="[dD]ura(s|n|sque)"/>
+      <ana>
+         <tok val="Duras"/>
+         <tok val="duran"/>
+         <tok val="duras"/>
+         <tok val="durasque"/>
          <lm cert="0.5">
             <l>duro</l>
             <m>v - 2 s p i a</m>
@@ -261,22 +321,28 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Durasse durasse duravisse-->
-         <tok val="[dD]ura(vi)?sse"/>
+      <ana>
+         <tok val="Durasse"/>
+         <tok val="durasse"/>
+         <tok val="duravisse"/>
          <lm>
             <l>duro</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Durat durat duratque-->
-         <tok val="[dD]urat(que)?"/>
+      <ana>
+         <tok val="Durat"/>
+         <tok val="durat"/>
+         <tok val="duratque"/>
          <lm>
             <l>duro</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Durata durata durataque-->
-         <tok val="[dD]urata(que)?"/>
+      <ana>
+         <tok val="Durata"/>
+         <tok val="durata"/>
+         <tok val="durataque"/>
          <lm>
             <l>duro</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -287,8 +353,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Duratae duratae durataeque-->
-         <tok val="[dD]uratae(que)?"/>
+      <ana>
+         <tok val="Duratae"/>
+         <tok val="duratae"/>
+         <tok val="durataeque"/>
          <lm>
             <l>duro</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -297,37 +365,43 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Duratam duratam-->
-         <tok val="[dD]uratam"/>
+      <ana>
+         <tok val="Duratam"/>
+         <tok val="duratam"/>
          <lm>
             <l>duro</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Durate durate-->
-         <tok val="[dD]urate"/>
+      <ana>
+         <tok val="Durate"/>
+         <tok val="durate"/>
          <lm>
             <l>duro</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Durate durate duratum-->
-         <tok val="[dD]urat(e|um)"/>
+      <ana>
+         <tok val="Durate"/>
+         <tok val="durate"/>
+         <tok val="duratum"/>
          <lm>
             <l>duro</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Durateus durateus-->
-         <tok val="[dD]urateus"/>
+      <ana>
+         <tok val="Durateus"/>
+         <tok val="durateus"/>
          <lm>
             <l>durateus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Durati durati-->
-         <tok val="[dD]urati"/>
+      <ana>
+         <tok val="Durati"/>
+         <tok val="durati"/>
          <lm>
             <l>duro</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -336,8 +410,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Duratrix duratrix-->
-         <tok val="[dD]uratrix"/>
+      <ana>
+         <tok val="Duratrix"/>
+         <tok val="duratrix"/>
          <lm>
             <l>duratrix</l>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -349,50 +424,76 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Duratur duratur-->
-         <tok val="[dD]uratur"/>
+      <ana>
+         <tok val="Duratur"/>
+         <tok val="duratur"/>
          <lm>
             <l>duro</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Duratus duratus duratusque-->
-         <tok val="[dD]uratus(que)?"/>
+      <ana>
+         <tok val="Duratus"/>
+         <tok val="duratus"/>
+         <tok val="duratusque"/>
          <lm>
             <l>duro</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Durauit Duravit Duravitque durauit durauitque duravit duravitque-->
-         <tok val="[dD]ura[vu]it(que)?"/>
+      <ana>
+         <tok val="Durauit"/>
+         <tok val="Duravit"/>
+         <tok val="Duravitque"/>
+         <tok val="durauit"/>
+         <tok val="durauitque"/>
+         <tok val="duravit"/>
+         <tok val="duravitque"/>
          <lm>
             <l>duro</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Dure Duri Durine-->
-         <tok val="Dur(in)?[ei]"/>
+      <ana>
+         <tok val="Dure"/>
+         <tok val="Duri"/>
+         <tok val="Durine"/>
+         <tok val="dure"/>
+         <tok val="duri"/>
+         <tok val="durine"/>
          <lm>
             <l>Duris</l>
             <m>n e - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Dure dure dureque durius duriusque duriusve-->
-         <tok val="[dD]ur(ius)?(ve|que|e|eque)?"/>
+      <ana>
+         <tok val="Dure"/>
+         <tok val="dure"/>
+         <tok val="dureque"/>
+         <tok val="durius"/>
+         <tok val="duriusque"/>
+         <tok val="duriusve"/>
          <lm>
             <l>durus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Dure Durum dure dureque durum durumque-->
-         <tok val="[dD]ur(eq)?[u]?[m]?(que|e)?"/>
+      <ana>
+         <tok val="Dure"/>
+         <tok val="Durum"/>
+         <tok val="dure"/>
+         <tok val="dureque"/>
+         <tok val="durum"/>
+         <tok val="durumque"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Dure dure dureque-->
-         <tok val="[dD]ure(que)?"/>
+      <ana>
+         <tok val="Dure"/>
+         <tok val="dure"/>
+         <tok val="dureque"/>
          <lm cert="0.5">
             <l>dureo</l>
             <m>v - 2 s p m a</m>
@@ -402,15 +503,17 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Dureo dureo-->
-         <tok val="[dD]ureo"/>
+      <ana>
+         <tok val="Dureo"/>
+         <tok val="dureo"/>
          <lm>
             <l>dureo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Durescere durescere-->
-         <tok val="[dD]urescere"/>
+      <ana>
+         <tok val="Durescere"/>
+         <tok val="durescere"/>
          <lm>
             <l>duresco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -419,29 +522,35 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Durescit durescit durescitque-->
-         <tok val="[dD]urescit(que)?"/>
+      <ana>
+         <tok val="Durescit"/>
+         <tok val="durescit"/>
+         <tok val="durescitque"/>
          <lm>
             <l>duresco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Duresco duresco-->
-         <tok val="[dD]uresco"/>
+      <ana>
+         <tok val="Duresco"/>
+         <tok val="duresco"/>
          <lm>
             <l>duresco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Durescunt durescunt-->
-         <tok val="[dD]urescunt"/>
+      <ana>
+         <tok val="Durescunt"/>
+         <tok val="durescunt"/>
          <lm>
             <l>duresco</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Duret duret duretque-->
-         <tok val="[dD]uret(que)?"/>
+      <ana>
+         <tok val="Duret"/>
+         <tok val="duret"/>
+         <tok val="duretque"/>
          <lm cert="0.5">
             <l>duro</l>
             <m>v - 3 s p s a</m>
@@ -451,8 +560,11 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Duri Durine-->
-         <tok val="Duri(ne)?"/>
+      <ana>
+         <tok val="Duri"/>
+         <tok val="Durine"/>
+         <tok val="duri"/>
+         <tok val="durine"/>
          <lm cert="0.333333333333333333">
             <l>durus</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -467,16 +579,25 @@
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Duri Durine duri durine durique-->
-         <tok val="[dD]uri(ne|que)?"/>
+      <ana>
+         <tok val="Duri"/>
+         <tok val="Durine"/>
+         <tok val="duri"/>
+         <tok val="durine"/>
+         <tok val="durique"/>
          <lm>
             <l>durus</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Duri Durii Durine-->
-         <tok val="Duri(i|ne)?"/>
+      <ana>
+         <tok val="Duri"/>
+         <tok val="Durii"/>
+         <tok val="Durine"/>
+         <tok val="duri"/>
+         <tok val="durii"/>
+         <tok val="durine"/>
          <lm>
             <l>Durius</l>
             <m>n e - s - - - m g</m>
@@ -484,16 +605,14 @@
       </ana>
       <ana>
          <tok val="Duria"/>
-         <lm>
+         <tok val="duria"/>
+         <lm cert="0.5">
             <l>Duria</l>
             <m cert="0.333333333333333333">n e - s - - - m n</m>
             <m cert="0.333333333333333333">n e - s - - - m v</m>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
          </lm>
-      </ana>
-      <ana><!--Duria duria-->
-         <tok val="[dD]uria"/>
-         <lm>
+         <lm cert="0.5">
             <l>durius</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -505,6 +624,7 @@
       </ana>
       <ana>
          <tok val="Duriae"/>
+         <tok val="duriae"/>
          <lm cert="0.5">
             <l>durius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -522,20 +642,19 @@
       </ana>
       <ana>
          <tok val="Durias"/>
-         <lm>
+         <tok val="durias"/>
+         <lm cert="0.5">
             <l>Duria</l>
             <m>n e - p - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Durias durias-->
-         <tok val="[dD]urias"/>
-         <lm>
+         <lm cert="0.5">
             <l>durius</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Duricoriae"/>
+         <tok val="duricoriae"/>
          <lm>
             <l>duricorius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -544,15 +663,20 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Duricorius duricorius-->
-         <tok val="[dD]uricorius"/>
+      <ana>
+         <tok val="Duricorius"/>
+         <tok val="duricorius"/>
          <lm>
             <l>duricorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Durii duri durine durique-->
-         <tok val="[dD]uri(ne|que|i)?"/>
+      <ana>
+         <tok val="Durii"/>
+         <tok val="duri"/>
+         <tok val="durii"/>
+         <tok val="durine"/>
+         <tok val="durique"/>
          <lm>
             <l>durius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -561,6 +685,7 @@
       </ana>
       <ana>
          <tok val="Durii"/>
+         <tok val="durii"/>
          <lm cert="0.5">
             <l>durius</l>
             <m cert="0.5">a - - p - - - m v</m>
@@ -572,26 +697,26 @@
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Durio durio-->
-         <tok val="[dD]urio"/>
-         <lm>
+      <ana>
+         <tok val="Durio"/>
+         <tok val="durio"/>
+         <lm cert="0.5">
             <l>durius</l>
             <m cert="0.25">a - - s - - - n b</m>
             <m cert="0.25">a - - s - - - m d</m>
             <m cert="0.25">a - - s - - - n d</m>
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Durio"/>
-         <lm>
+         <lm cert="0.5">
             <l>Durius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Durior durior duriorque-->
-         <tok val="[dD]urior(que)?"/>
+      <ana>
+         <tok val="Durior"/>
+         <tok val="durior"/>
+         <tok val="duriorque"/>
          <lm>
             <l>durus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -600,8 +725,10 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Duriora duriora durioraque-->
-         <tok val="[dD]uriora(que)?"/>
+      <ana>
+         <tok val="Duriora"/>
+         <tok val="duriora"/>
+         <tok val="durioraque"/>
          <lm>
             <l>durus</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -609,15 +736,18 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--Duriore duriore-->
-         <tok val="[dD]uriore"/>
+      <ana>
+         <tok val="Duriore"/>
+         <tok val="duriore"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--Duriores duriores durioresque-->
-         <tok val="[dD]uriores(que)?"/>
+      <ana>
+         <tok val="Duriores"/>
+         <tok val="duriores"/>
+         <tok val="durioresque"/>
          <lm>
             <l>durus</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -630,6 +760,7 @@
       </ana>
       <ana>
          <tok val="Duris"/>
+         <tok val="duris"/>
          <lm>
             <l>Duris</l>
             <m cert="0.333333333333333333">n e - s - - - m n</m>
@@ -637,8 +768,11 @@
             <m cert="0.333333333333333333">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Duris duris durisque durís-->
-         <tok val="[dD]ur[ií]s(que)?"/>
+      <ana>
+         <tok val="Duris"/>
+         <tok val="duris"/>
+         <tok val="durisque"/>
+         <tok val="durís"/>
          <lm>
             <l>durus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -649,8 +783,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Durissima durissima-->
-         <tok val="[dD]urissima"/>
+      <ana>
+         <tok val="Durissima"/>
+         <tok val="durissima"/>
          <lm>
             <l>durus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -661,8 +796,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Durissimae durissimae-->
-         <tok val="[dD]urissimae"/>
+      <ana>
+         <tok val="Durissimae"/>
+         <tok val="durissimae"/>
          <lm>
             <l>durus</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -671,15 +807,18 @@
             <m cert="0.25">a - - s - - - f g s</m>
          </lm>
       </ana>
-      <ana><!--Durissimam durissimam durissimamque-->
-         <tok val="[dD]urissimam(que)?"/>
+      <ana>
+         <tok val="Durissimam"/>
+         <tok val="durissimam"/>
+         <tok val="durissimamque"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--Durissimo durissimo-->
-         <tok val="[dD]urissimo"/>
+      <ana>
+         <tok val="Durissimo"/>
+         <tok val="durissimo"/>
          <lm>
             <l>durus</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -688,23 +827,32 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--Durissimum durissimorum durissimorumque durissimum durissimumque-->
-         <tok val="[dD]urissim(or)?um(que)?"/>
+      <ana>
+         <tok val="Durissimum"/>
+         <tok val="durissimorum"/>
+         <tok val="durissimorumque"/>
+         <tok val="durissimum"/>
+         <tok val="durissimumque"/>
          <lm>
             <l>durus</l>
             <m cert="0.5">a - - p - - - n g s</m>
             <m cert="0.5">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--Durissimum durissime durissimum durissimumque-->
-         <tok val="[dD]urissim(um)?(que|e)?"/>
+      <ana>
+         <tok val="Durissimum"/>
+         <tok val="durissime"/>
+         <tok val="durissimum"/>
+         <tok val="durissimumque"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Durissimum durissimum durissimumque-->
-         <tok val="[dD]urissimum(que)?"/>
+      <ana>
+         <tok val="Durissimum"/>
+         <tok val="durissimum"/>
+         <tok val="durissimumque"/>
          <lm>
             <l>durus</l>
             <m cert="0.333333333333333333">a - - s - - - n a s</m>
@@ -712,86 +860,121 @@
             <m cert="0.333333333333333333">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Durissimus durissime durissimus-->
-         <tok val="[dD]urissim(us|e)"/>
+      <ana>
+         <tok val="Durissimus"/>
+         <tok val="durissime"/>
+         <tok val="durissimus"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Durissimus durissimus-->
-         <tok val="[dD]urissimus"/>
+      <ana>
+         <tok val="Durissimus"/>
+         <tok val="durissimus"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Duritas duritas-->
-         <tok val="[dD]uritas"/>
+      <ana>
+         <tok val="Duritas"/>
+         <tok val="duritas"/>
          <lm>
             <l>duritas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Duritia duritia duritiaque duritie duritieque duritieve-->
-         <tok val="[dD]uriti[ea]?(qu)?[e]?(ve|a)?"/>
+      <ana>
+         <tok val="Duritia"/>
+         <tok val="duritia"/>
+         <tok val="duritiaque"/>
+         <tok val="duritie"/>
+         <tok val="duritieque"/>
+         <tok val="duritieve"/>
          <lm>
             <l>duritia</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Duritia Durities duritia duritiaque durities-->
-         <tok val="[dD]uriti(es|a|aque)"/>
+      <ana>
+         <tok val="Duritia"/>
+         <tok val="Durities"/>
+         <tok val="duritia"/>
+         <tok val="duritiaque"/>
+         <tok val="durities"/>
          <lm>
             <l>duritia</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Duritia duritia duritiaque-->
-         <tok val="[dD]uritia(que)?"/>
+      <ana>
+         <tok val="Duritia"/>
+         <tok val="duritia"/>
+         <tok val="duritiaque"/>
          <lm>
             <l>duritia</l>
             <m>n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Duritiae duritiae duritiaeque-->
-         <tok val="[dD]uritiae(que)?"/>
+      <ana>
+         <tok val="Duritiae"/>
+         <tok val="duritiae"/>
+         <tok val="duritiaeque"/>
          <lm>
             <l>duritia</l>
             <m>n - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Duritiae duritiae duritiaeque duritiei-->
-         <tok val="[dD]uriti[a]?e(i|que)?"/>
+      <ana>
+         <tok val="Duritiae"/>
+         <tok val="duritiae"/>
+         <tok val="duritiaeque"/>
+         <tok val="duritiei"/>
          <lm>
             <l>duritia</l>
             <m cert="0.5">n - - s - - - f g</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Duritiae Durities duritiae duritiaeque durities-->
-         <tok val="[Dd]uriti[a]?e(s|que)?"/>
+      <ana>
+         <tok val="Duritiae"/>
+         <tok val="Durities"/>
+         <tok val="duritiae"/>
+         <tok val="duritiaeque"/>
+         <tok val="durities"/>
          <lm>
             <l>duritia</l>
             <m>n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Duritiam Duritiem duritiam duritiem duritiamque-->
-         <tok val="[Dd]uriti[ea]m(que)?"/>
+      <ana>
+         <tok val="Duritiam"/>
+         <tok val="Duritiem"/>
+         <tok val="duritiam"/>
+         <tok val="duritiamque"/>
+         <tok val="duritiem"/>
          <lm>
             <l>duritia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Duritias Durities duritias duritiasque durities-->
-         <tok val="[Dd]uriti[ea]s(que)?"/>
+      <ana>
+         <tok val="Duritias"/>
+         <tok val="Durities"/>
+         <tok val="duritias"/>
+         <tok val="duritiasque"/>
+         <tok val="durities"/>
          <lm>
             <l>duritia</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Durium Duriumque-->
-         <tok val="Durium(que)?"/>
+      <ana>
+         <tok val="Durium"/>
+         <tok val="Duriumque"/>
+         <tok val="durium"/>
+         <tok val="duriumque"/>
          <lm cert="0.5">
             <l>durius</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -804,16 +987,23 @@
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Durium Duriumque duriorum-->
-         <tok val="[Dd]uri(or)?um(que)?"/>
+      <ana>
+         <tok val="Durium"/>
+         <tok val="Duriumque"/>
+         <tok val="duriorum"/>
+         <tok val="durium"/>
+         <tok val="duriumque"/>
          <lm>
             <l>durius</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Durius Duriusque-->
-         <tok val="Durius(que)?"/>
+      <ana>
+         <tok val="Durius"/>
+         <tok val="Duriusque"/>
+         <tok val="durius"/>
+         <tok val="duriusque"/>
          <lm cert="0.5">
             <l>Durius</l>
             <m>n e - s - - - m n</m>
@@ -823,8 +1013,12 @@
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Durius Duriusque durius duriusque duriusve-->
-         <tok val="[dD]urius(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Durius"/>
+         <tok val="Duriusque"/>
+         <tok val="durius"/>
+         <tok val="duriusque"/>
+         <tok val="duriusve"/>
          <lm cert="0.5">
             <l>durus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -836,8 +1030,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Duriusculum duriusculum-->
-         <tok val="[dD]uriusculum"/>
+      <ana>
+         <tok val="Duriusculum"/>
+         <tok val="duriusculum"/>
          <lm>
             <l>duriusculus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -848,8 +1043,11 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Duro Duroque duro duroque-->
-         <tok val="[dD]uro(que)?"/>
+      <ana>
+         <tok val="Duro"/>
+         <tok val="Duroque"/>
+         <tok val="duro"/>
+         <tok val="duroque"/>
          <lm cert="0.5">
             <l>durus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -864,6 +1062,7 @@
       </ana>
       <ana>
          <tok val="Durocortorum"/>
+         <tok val="durocortorum"/>
          <lm>
             <l>Durocortorum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -874,6 +1073,7 @@
       </ana>
       <ana>
          <tok val="Duroni"/>
+         <tok val="duroni"/>
          <lm>
             <l>Duronius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -882,6 +1082,7 @@
       </ana>
       <ana>
          <tok val="Duronio"/>
+         <tok val="duronio"/>
          <lm>
             <l>Duronius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -890,20 +1091,25 @@
       </ana>
       <ana>
          <tok val="Duronius"/>
+         <tok val="duronius"/>
          <lm>
             <l>Duronius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Duros duros durosque-->
-         <tok val="[dD]uros(que)?"/>
+      <ana>
+         <tok val="Duros"/>
+         <tok val="duros"/>
+         <tok val="durosque"/>
          <lm>
             <l>durus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Durum durum durumque-->
-         <tok val="[dD]urum(que)?"/>
+      <ana>
+         <tok val="Durum"/>
+         <tok val="durum"/>
+         <tok val="durumque"/>
          <lm>
             <l>durus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -911,16 +1117,22 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Durum durorum durum durumque-->
-         <tok val="[dD]u(ro)?rum(que)?"/>
+      <ana>
+         <tok val="Durum"/>
+         <tok val="durorum"/>
+         <tok val="durum"/>
+         <tok val="durumque"/>
          <lm>
             <l>durus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Durus durus durusque durust-->
-         <tok val="[dD]urus(t|que)?"/>
+      <ana>
+         <tok val="Durus"/>
+         <tok val="durus"/>
+         <tok val="durusque"/>
+         <tok val="durust"/>
          <lm>
             <l>durus</l>
             <m>a - - s - - - m n</m>
@@ -1019,8 +1231,10 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--durabis durabisne Durabisne-->
-         <tok val="[Dd]urabis(ne|)"/>
+      <ana>
+         <tok val="Durabisne"/>
+         <tok val="durabis"/>
+         <tok val="durabisne"/>
          <lm>
             <l>duro</l>
             <m>v - 2 s f i a</m>
@@ -1241,8 +1455,10 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--durarat durauerat duraverat-->
-         <tok val="dura[vu]?(e|)rat"/>
+      <ana>
+         <tok val="durarat"/>
+         <tok val="durauerat"/>
+         <tok val="duraverat"/>
          <lm>
             <l>duro</l>
             <m>v - 3 s l i a</m>
@@ -1262,22 +1478,27 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--duraris duraveris-->
-         <tok val="dura(ve)?ris"/>
+      <ana>
+         <tok val="duraris"/>
+         <tok val="duraveris"/>
          <lm>
             <l>duro</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--durarunt duravere duraverunt duraveruntque-->
-         <tok val="dura(ve)?r(unt)?(que|e)?"/>
+      <ana>
+         <tok val="durarunt"/>
+         <tok val="duravere"/>
+         <tok val="duraverunt"/>
+         <tok val="duraveruntque"/>
          <lm>
             <l>duro</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--durassent duravissent-->
-         <tok val="dura(vi)?ssent"/>
+      <ana>
+         <tok val="durassent"/>
+         <tok val="duravissent"/>
          <lm>
             <l>duro</l>
             <m>v - 3 p l s a</m>
@@ -1431,8 +1652,9 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--duraturum duraturumque-->
-         <tok val="duraturum(que)?"/>
+      <ana>
+         <tok val="duraturum"/>
+         <tok val="duraturumque"/>
          <lm>
             <l>duro</l>
             <m cert="0.166666666666666667">v - - s f p a n v</m>
@@ -1450,23 +1672,27 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--durauerant duraverant-->
-         <tok val="dura[vu]erant"/>
+      <ana>
+         <tok val="durauerant"/>
+         <tok val="duraverant"/>
          <lm>
             <l>duro</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--durauerit duraverit-->
-         <tok val="dura[vu]erit"/>
+      <ana>
+         <tok val="durauerit"/>
+         <tok val="duraverit"/>
          <lm>
             <l>duro</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--duraui duravi dúravi-->
-         <tok val="d[uú]ra[vu]i"/>
+      <ana>
+         <tok val="duraui"/>
+         <tok val="duravi"/>
+         <tok val="dúravi"/>
          <lm>
             <l>duro</l>
             <m>v - 1 s r i a</m>
@@ -1512,8 +1738,9 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--duremus Duremus-->
-         <tok val="[Dd]uremus"/>
+      <ana>
+         <tok val="Duremus"/>
+         <tok val="duremus"/>
          <lm cert="0.5">
             <l>duro</l>
             <m>v - 1 p p s a</m>
@@ -1614,8 +1841,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--durescentes durescentis-->
-         <tok val="durescent[ie]s"/>
+      <ana>
+         <tok val="durescentes"/>
+         <tok val="durescentis"/>
          <lm>
             <l>duresco</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1701,8 +1929,9 @@
             <m>a - - s - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--durioribus durioribusque-->
-         <tok val="durioribus(que)?"/>
+      <ana>
+         <tok val="durioribus"/>
+         <tok val="durioribusque"/>
          <lm>
             <l>durus</l>
             <m cert="0.5">a - - p - - - - b c</m>
@@ -1754,8 +1983,9 @@
             <m cert="0.25">a - - p - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--durissimis durissimisque-->
-         <tok val="durissimis(que)?"/>
+      <ana>
+         <tok val="durissimis"/>
+         <tok val="durissimisque"/>
          <lm>
             <l>durus</l>
             <m cert="0.166666666666666667">a - - p - - - n d s</m>

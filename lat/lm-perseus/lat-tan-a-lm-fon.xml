@@ -1,50 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfon">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fon">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fon</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fon.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FON</tok-starts-with>
       <tok-starts-with>FOn</tok-starts-with>
       <tok-starts-with>Fon</tok-starts-with>
       <tok-starts-with>fon</tok-starts-with>
-      <ana><!--FONS FOns Fons fons-->
-         <tok val="[F]?(o|O|fo)?(ns|FONS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:24:43.187-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:24:43.187-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fon.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FONS"/>
+         <tok val="FOns"/>
+         <tok val="Fons"/>
+         <tok val="fons"/>
          <lm>
             <l>fons</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--FONTANA Fontana fontana fontanaque-->
-         <tok val="[fF]?(ontana)?(que|FONTANA)?"/>
+      <ana>
+         <tok val="FONTANA"/>
+         <tok val="Fontana"/>
+         <tok val="fontana"/>
+         <tok val="fontanaque"/>
          <lm cert="0.5">
             <l>fontana</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -61,15 +75,20 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--FONTE Fonte fonte fonten-->
-         <tok val="[fF]?(onte)?(n|FONTE)?"/>
+      <ana>
+         <tok val="FONTE"/>
+         <tok val="Fonte"/>
+         <tok val="fonte"/>
+         <tok val="fonten"/>
          <lm>
             <l>fons</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--FONTEIO Fonteio-->
-         <tok val="F(onteio|ONTEIO)"/>
+      <ana>
+         <tok val="FONTEIO"/>
+         <tok val="Fonteio"/>
+         <tok val="fonteio"/>
          <lm>
             <l>Fonteius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -78,36 +97,53 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--FONTEM Fontem fontem fontemque-->
-         <tok val="[fF]?(ontem)?(que|FONTEM)?"/>
+      <ana>
+         <tok val="FONTEM"/>
+         <tok val="Fontem"/>
+         <tok val="fontem"/>
+         <tok val="fontemque"/>
          <lm>
             <l>fons</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--FONTIS Fontis fontis fontisque-->
-         <tok val="[fF]?(ontis)?(que|FONTIS)?"/>
+      <ana>
+         <tok val="FONTIS"/>
+         <tok val="Fontis"/>
+         <tok val="fontis"/>
+         <tok val="fontisque"/>
          <lm>
             <l>fons</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--FONTIS Fontes Fontesque Fontis fonten fontes fontesque fontis fontisque-->
-         <tok val="[fF]?(ont)?[ei]?[s]?(que|en|is|FONTIS)?"/>
+      <ana>
+         <tok val="FONTIS"/>
+         <tok val="Fontes"/>
+         <tok val="Fontesque"/>
+         <tok val="Fontis"/>
+         <tok val="fonten"/>
+         <tok val="fontes"/>
+         <tok val="fontesque"/>
+         <tok val="fontis"/>
+         <tok val="fontisque"/>
          <lm>
             <l>fons</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fon fon fone-->
-         <tok val="[fF]on[e]?"/>
+      <ana>
+         <tok val="Fon"/>
+         <tok val="fon"/>
+         <tok val="fone"/>
          <lm>
             <l>for</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fontanae fontanae-->
-         <tok val="[fF]ontanae"/>
+      <ana>
+         <tok val="Fontanae"/>
+         <tok val="fontanae"/>
          <lm cert="0.5">
             <l>fontanus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -125,6 +161,7 @@
       </ana>
       <ana>
          <tok val="Fontani"/>
+         <tok val="fontani"/>
          <lm>
             <l>fontanus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -135,6 +172,7 @@
       </ana>
       <ana>
          <tok val="Fontanum"/>
+         <tok val="fontanum"/>
          <lm>
             <l>fontanus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -145,15 +183,19 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Fontanus fontanus-->
-         <tok val="[fF]ontanus"/>
+      <ana>
+         <tok val="Fontanus"/>
+         <tok val="fontanus"/>
          <lm>
             <l>fontanus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fontei Fonteii-->
-         <tok val="Fontei[i]?"/>
+      <ana>
+         <tok val="Fontei"/>
+         <tok val="Fonteii"/>
+         <tok val="fontei"/>
+         <tok val="fonteii"/>
          <lm>
             <l>Fonteius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -162,6 +204,7 @@
       </ana>
       <ana>
          <tok val="Fonteia"/>
+         <tok val="fonteia"/>
          <lm>
             <l>Fonteius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -174,6 +217,7 @@
       </ana>
       <ana>
          <tok val="Fonteiae"/>
+         <tok val="fonteiae"/>
          <lm>
             <l>Fonteius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -184,6 +228,7 @@
       </ana>
       <ana>
          <tok val="Fonteiano"/>
+         <tok val="fonteiano"/>
          <lm>
             <l>Fonteianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -194,6 +239,7 @@
       </ana>
       <ana>
          <tok val="Fonteianus"/>
+         <tok val="fonteianus"/>
          <lm>
             <l>Fonteianus</l>
             <m>a e - s - - - m n</m>
@@ -201,14 +247,20 @@
       </ana>
       <ana>
          <tok val="Fonteii"/>
+         <tok val="fonteii"/>
          <lm>
             <l>Fonteius</l>
             <m cert="0.5">a e - p - - - m v</m>
             <m cert="0.5">a e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fonteium Fonteiumque Fonteivm-->
-         <tok val="Fontei[vu]m(que)?"/>
+      <ana>
+         <tok val="Fonteium"/>
+         <tok val="Fonteiumque"/>
+         <tok val="Fonteivm"/>
+         <tok val="fonteium"/>
+         <tok val="fonteiumque"/>
+         <tok val="fonteivm"/>
          <lm>
             <l>Fonteius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -221,44 +273,58 @@
       </ana>
       <ana>
          <tok val="Fonteius"/>
+         <tok val="fonteius"/>
          <lm>
             <l>Fonteius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fontes Fontesque fonten fontes fontesque-->
-         <tok val="[fF]onte[s]?(que|n)?"/>
+      <ana>
+         <tok val="Fontes"/>
+         <tok val="Fontesque"/>
+         <tok val="fonten"/>
+         <tok val="fontes"/>
+         <tok val="fontesque"/>
          <lm>
             <l>fons</l>
             <m cert="0.5">n - - p - - - m v</m>
             <m cert="0.5">n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Fonti Fontine-->
-         <tok val="Fonti(ne)?"/>
+      <ana>
+         <tok val="Fonti"/>
+         <tok val="Fontine"/>
+         <tok val="fonti"/>
+         <tok val="fontine"/>
          <lm>
             <l>Fontius</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Fonti Fontine fonti fontine fontique-->
-         <tok val="[fF]onti(ne|que)?"/>
+      <ana>
+         <tok val="Fonti"/>
+         <tok val="Fontine"/>
+         <tok val="fonti"/>
+         <tok val="fontine"/>
+         <tok val="fontique"/>
          <lm>
             <l>fons</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Fontibus fontibus-->
-         <tok val="[fF]ontibus"/>
+      <ana>
+         <tok val="Fontibus"/>
+         <tok val="fontibus"/>
          <lm>
             <l>fons</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Fonticuli fonticuli-->
-         <tok val="[fF]onticuli"/>
+      <ana>
+         <tok val="Fonticuli"/>
+         <tok val="fonticuli"/>
          <lm>
             <l>fonticulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -266,8 +332,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Fonticulus fonticulus-->
-         <tok val="[fF]onticulus"/>
+      <ana>
+         <tok val="Fonticulus"/>
+         <tok val="fonticulus"/>
          <lm>
             <l>fonticulus</l>
             <m>n - - s - - - m n</m>
@@ -275,6 +342,7 @@
       </ana>
       <ana>
          <tok val="Fontinalem"/>
+         <tok val="fontinalem"/>
          <lm>
             <l>fontinalis</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -283,6 +351,7 @@
       </ana>
       <ana>
          <tok val="Fontinali"/>
+         <tok val="fontinali"/>
          <lm>
             <l>fontinalis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -295,6 +364,7 @@
       </ana>
       <ana>
          <tok val="Fontinalia"/>
+         <tok val="fontinalia"/>
          <lm cert="0.5">
             <l>fontinalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -308,8 +378,9 @@
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Fontinalis fontinalis-->
-         <tok val="[fF]ontinalis"/>
+      <ana>
+         <tok val="Fontinalis"/>
+         <tok val="fontinalis"/>
          <lm>
             <l>fontinalis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -323,8 +394,10 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Fontium fontium fontiumque-->
-         <tok val="[fF]ontium(que)?"/>
+      <ana>
+         <tok val="Fontium"/>
+         <tok val="fontium"/>
+         <tok val="fontiumque"/>
          <lm>
             <l>fons</l>
             <m>n - - p - - - m g</m>
@@ -332,6 +405,7 @@
       </ana>
       <ana>
          <tok val="Fontium"/>
+         <tok val="fontium"/>
          <lm>
             <l>Fontius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -340,6 +414,7 @@
       </ana>
       <ana>
          <tok val="Fontius"/>
+         <tok val="fontius"/>
          <lm>
             <l>Fontius</l>
             <m>n e - s - - - m n</m>
@@ -434,8 +509,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--fonticulorumque fonticulum-->
-         <tok val="fonticul(or)?um(que)?"/>
+      <ana>
+         <tok val="fonticulorumque"/>
+         <tok val="fonticulum"/>
          <lm>
             <l>fonticulus</l>
             <m>n - - p - - - m g</m>

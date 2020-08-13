@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusder">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:der">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to der</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-der.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DER</tok-starts-with>
       <tok-starts-with>Der</tok-starts-with>
       <tok-starts-with>der</tok-starts-with>
       <tok-starts-with>dér</tok-starts-with>
-      <ana><!--DER Der der-->
-         <tok val="[dD]?(er|DER)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:19:35.845-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:19:35.845-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-der.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DER"/>
+         <tok val="Der"/>
+         <tok val="der"/>
          <lm>
             <l>do</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--DERELICTO derelicto derelictoque-->
-         <tok val="(derelicto)?(que|DERELICTO)?"/>
+      <ana>
+         <tok val="DERELICTO"/>
+         <tok val="derelicto"/>
+         <tok val="derelictoque"/>
          <lm>
             <l>derelinquo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -53,15 +65,19 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--DERODO Derodo-->
-         <tok val="D(erodo|ERODO)"/>
+      <ana>
+         <tok val="DERODO"/>
+         <tok val="Derodo"/>
+         <tok val="derodo"/>
          <lm>
             <l>de_rodo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--DEROGARE Derogare derogare-->
-         <tok val="[dD]?(erogare|DEROGARE)"/>
+      <ana>
+         <tok val="DEROGARE"/>
+         <tok val="Derogare"/>
+         <tok val="derogare"/>
          <lm>
             <l>derogo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -71,20 +87,27 @@
       </ana>
       <ana>
          <tok val="DEROGAVIT"/>
+         <tok val="derogavit"/>
          <lm>
             <l>de_erogo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--DERVMPO Derumpo-->
-         <tok val="D(erumpo|ERVMPO)"/>
+      <ana>
+         <tok val="DERVMPO"/>
+         <tok val="Derumpo"/>
+         <tok val="derumpo"/>
+         <tok val="dervmpo"/>
          <lm>
             <l>dirumpo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--DERVNCINO Deruncino-->
-         <tok val="D(eruncino|ERVNCINO)"/>
+      <ana>
+         <tok val="DERVNCINO"/>
+         <tok val="Deruncino"/>
+         <tok val="deruncino"/>
+         <tok val="dervncino"/>
          <lm>
             <l>deruncino</l>
             <m>v - 1 s p i a</m>
@@ -92,6 +115,7 @@
       </ana>
       <ana>
          <tok val="DeraDe"/>
+         <tok val="derade"/>
          <lm>
             <l>derado</l>
             <m>v - 2 s p m a</m>
@@ -99,6 +123,7 @@
       </ana>
       <ana>
          <tok val="Derado"/>
+         <tok val="derado"/>
          <lm>
             <l>derado</l>
             <m>v - 1 s p i a</m>
@@ -106,6 +131,7 @@
       </ana>
       <ana>
          <tok val="Deraemestae"/>
+         <tok val="deraemestae"/>
          <lm>
             <l>Deraemestae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -114,6 +140,7 @@
       </ana>
       <ana>
          <tok val="Derangae"/>
+         <tok val="derangae"/>
          <lm>
             <l>Derangae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -122,6 +149,7 @@
       </ana>
       <ana>
          <tok val="Derbe"/>
+         <tok val="derbe"/>
          <lm>
             <l>Derbe</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -131,6 +159,7 @@
       </ana>
       <ana>
          <tok val="Derben"/>
+         <tok val="derben"/>
          <lm>
             <l>Derbe</l>
             <m>n e - s - - - f a</m>
@@ -138,6 +167,7 @@
       </ana>
       <ana>
          <tok val="Derbete"/>
+         <tok val="derbete"/>
          <lm>
             <l>Derbetes</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -146,6 +176,7 @@
       </ana>
       <ana>
          <tok val="Derbetes"/>
+         <tok val="derbetes"/>
          <lm cert="0.5">
             <l>Derbes</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -159,6 +190,7 @@
       </ana>
       <ana>
          <tok val="Derbices"/>
+         <tok val="derbices"/>
          <lm>
             <l>Derbices</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -168,6 +200,7 @@
       </ana>
       <ana>
          <tok val="Derceti"/>
+         <tok val="derceti"/>
          <lm>
             <l>Dercetis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -180,6 +213,7 @@
       </ana>
       <ana>
          <tok val="Dercetis"/>
+         <tok val="dercetis"/>
          <lm>
             <l>Dercetis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -195,6 +229,7 @@
       </ana>
       <ana>
          <tok val="Derceto"/>
+         <tok val="derceto"/>
          <lm>
             <l>Derceto</l>
             <m cert="0.25">n e - s - - - f a</m>
@@ -205,6 +240,7 @@
       </ana>
       <ana>
          <tok val="Dercylide"/>
+         <tok val="dercylide"/>
          <lm>
             <l>Dercylides</l>
             <m>n e - s - - - m b</m>
@@ -212,6 +248,7 @@
       </ana>
       <ana>
          <tok val="Dercylides"/>
+         <tok val="dercylides"/>
          <lm>
             <l>Dercylides</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -222,20 +259,27 @@
       </ana>
       <ana>
          <tok val="Dercylidis"/>
+         <tok val="dercylidis"/>
          <lm>
             <l>Dercylides</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Dere dere deren dereque deris derisne-->
-         <tok val="[dD]er(isn)?[e]?(n|is|eque)?"/>
+      <ana>
+         <tok val="Dere"/>
+         <tok val="dere"/>
+         <tok val="deren"/>
+         <tok val="dereque"/>
+         <tok val="deris"/>
+         <tok val="derisne"/>
          <lm>
             <l>do</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Derecta derecta-->
-         <tok val="[dD]erecta"/>
+      <ana>
+         <tok val="Derecta"/>
+         <tok val="derecta"/>
          <lm>
             <l>dirigo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -248,37 +292,39 @@
       </ana>
       <ana>
          <tok val="Derectum"/>
+         <tok val="derectum"/>
          <lm>
             <l>dirigo</l>
-            <m>v - - - - u - - a</m>
+            <m cert="0.25">v - - - - u - - a</m>
+            <m cert="0.25">v - - s r p p n n</m>
+            <m cert="0.25">v - - s r p p n a</m>
+            <m cert="0.25">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Derectum derectorum derectum-->
-         <tok val="[dD]erect(or)?um"/>
+      <ana>
+         <tok val="Derectum"/>
+         <tok val="derectorum"/>
+         <tok val="derectum"/>
          <lm>
             <l>dirigo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Derectum derectum-->
-         <tok val="[dD]erectum"/>
-         <lm>
-            <l>dirigo</l>
-            <m cert="0.333333333333333333">v - - s r p p n n</m>
-            <m cert="0.333333333333333333">v - - s r p p n a</m>
-            <m cert="0.333333333333333333">v - - s r p p m a</m>
-         </lm>
-      </ana>
-      <ana><!--Derectum derecte derectum-->
-         <tok val="[dD]erect(um|e)"/>
+      <ana>
+         <tok val="Derectum"/>
+         <tok val="derecte"/>
+         <tok val="derectum"/>
          <lm>
             <l>dirigo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Deregere Derigere derigere-->
-         <tok val="[Dd]er[ie]gere"/>
+      <ana>
+         <tok val="Deregere"/>
+         <tok val="Derigere"/>
+         <tok val="deregere"/>
+         <tok val="derigere"/>
          <lm>
             <l>dirigo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -288,6 +334,7 @@
       </ana>
       <ana>
          <tok val="Deregere"/>
+         <tok val="deregere"/>
          <lm cert="0.5">
             <l>de_regero</l>
             <m>v - 2 s p m a</m>
@@ -297,15 +344,20 @@
             <m>v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Deregunt derigunt deriguntur-->
-         <tok val="[dD]er[ie]gunt(ur)?"/>
+      <ana>
+         <tok val="Deregunt"/>
+         <tok val="deregunt"/>
+         <tok val="derigunt"/>
+         <tok val="deriguntur"/>
          <lm>
             <l>dirigo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Derelicta derelicta derelictaque-->
-         <tok val="[dD]erelicta(que)?"/>
+      <ana>
+         <tok val="Derelicta"/>
+         <tok val="derelicta"/>
+         <tok val="derelictaque"/>
          <lm>
             <l>derelinquo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -316,23 +368,26 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Derelictam derelictam-->
-         <tok val="[dD]erelictam"/>
+      <ana>
+         <tok val="Derelictam"/>
+         <tok val="derelictam"/>
          <lm>
             <l>derelinquo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Derelictio derelictio-->
-         <tok val="[dD]erelictio"/>
+      <ana>
+         <tok val="Derelictio"/>
+         <tok val="derelictio"/>
          <lm>
             <l>derelictio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Derelictus derelictus-->
-         <tok val="[dD]erelictus"/>
+      <ana>
+         <tok val="Derelictus"/>
+         <tok val="derelictus"/>
          <lm>
             <l>derelinquo</l>
             <m>v - - s r p p m n</m>
@@ -340,20 +395,23 @@
       </ana>
       <ana>
          <tok val="Derelinquemus"/>
+         <tok val="derelinquemus"/>
          <lm>
             <l>derelinquo</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Derelinquo derelinquo-->
-         <tok val="[dD]erelinquo"/>
+      <ana>
+         <tok val="Derelinquo"/>
+         <tok val="derelinquo"/>
          <lm>
             <l>derelinquo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Derepente derepente-->
-         <tok val="[dD]erepente"/>
+      <ana>
+         <tok val="Derepente"/>
+         <tok val="derepente"/>
          <lm cert="0.5">
             <l>derepente</l>
             <m>d</m>
@@ -365,8 +423,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Derepit derepit-->
-         <tok val="[dD]erepit"/>
+      <ana>
+         <tok val="Derepit"/>
+         <tok val="derepit"/>
          <lm>
             <l>derepo</l>
             <m>v - 3 s p i a</m>
@@ -374,13 +433,15 @@
       </ana>
       <ana>
          <tok val="Derepo"/>
+         <tok val="derepo"/>
          <lm>
             <l>derepo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Derepta derepta-->
-         <tok val="[dD]erepta"/>
+      <ana>
+         <tok val="Derepta"/>
+         <tok val="derepta"/>
          <lm>
             <l>deripio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -391,8 +452,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Dereptae dereptae dereptaeque-->
-         <tok val="[dD]ereptae(que)?"/>
+      <ana>
+         <tok val="Dereptae"/>
+         <tok val="dereptae"/>
+         <tok val="dereptaeque"/>
          <lm>
             <l>deripio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -401,8 +464,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Dereptum dereptum dereptumque-->
-         <tok val="[dD]ereptum(que)?"/>
+      <ana>
+         <tok val="Dereptum"/>
+         <tok val="dereptum"/>
+         <tok val="dereptumque"/>
          <lm>
             <l>deripio</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -415,91 +480,108 @@
       </ana>
       <ana>
          <tok val="Dereptum"/>
+         <tok val="dereptum"/>
          <lm>
             <l>deripio</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Derexere derexere-->
-         <tok val="[dD]erexere"/>
+      <ana>
+         <tok val="Derexere"/>
+         <tok val="derexere"/>
          <lm>
             <l>dirigo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Derideantur derideantur-->
-         <tok val="[dD]erideantur"/>
+      <ana>
+         <tok val="Derideantur"/>
+         <tok val="derideantur"/>
          <lm>
             <l>derideo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Derideas derideas-->
-         <tok val="[dD]erideas"/>
+      <ana>
+         <tok val="Derideas"/>
+         <tok val="derideas"/>
          <lm>
             <l>derideo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Deridebit deridebit-->
-         <tok val="[dD]eridebit"/>
+      <ana>
+         <tok val="Deridebit"/>
+         <tok val="deridebit"/>
          <lm>
             <l>derideo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Deridebor deridebor-->
-         <tok val="[dD]eridebor"/>
+      <ana>
+         <tok val="Deridebor"/>
+         <tok val="deridebor"/>
          <lm>
             <l>derideo</l>
             <m>v - 1 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Derideo derideo-->
-         <tok val="[dD]erideo"/>
+      <ana>
+         <tok val="Derideo"/>
+         <tok val="derideo"/>
          <lm>
             <l>derideo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deridere deridere-->
-         <tok val="[dD]eridere"/>
+      <ana>
+         <tok val="Deridere"/>
+         <tok val="deridere"/>
          <lm>
             <l>derideo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Deridere deridere derídere-->
-         <tok val="[dD]er[ií]dere"/>
+      <ana>
+         <tok val="Deridere"/>
+         <tok val="deridere"/>
+         <tok val="derídere"/>
          <lm>
             <l>derideo</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Derideri derideri-->
-         <tok val="[dD]erideri"/>
+      <ana>
+         <tok val="Derideri"/>
+         <tok val="derideri"/>
          <lm>
             <l>derideo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Derides Deridesne deriden derides deridesne-->
-         <tok val="[dD]eride[s]?(ne|n|s)?"/>
+      <ana>
+         <tok val="Derides"/>
+         <tok val="Deridesne"/>
+         <tok val="deriden"/>
+         <tok val="derides"/>
+         <tok val="deridesne"/>
          <lm>
             <l>derideo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deridet deridet-->
-         <tok val="[dD]eridet"/>
+      <ana>
+         <tok val="Deridet"/>
+         <tok val="deridet"/>
          <lm>
             <l>derideo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deridicula deridicula-->
-         <tok val="[dD]eridicula"/>
+      <ana>
+         <tok val="Deridicula"/>
+         <tok val="deridicula"/>
          <lm cert="0.5">
             <l>deridiculum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -516,8 +598,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Deridiculo deridiculo deridiculost-->
-         <tok val="[dD]eridiculo(st)?"/>
+      <ana>
+         <tok val="Deridiculo"/>
+         <tok val="deridiculo"/>
+         <tok val="deridiculost"/>
          <lm cert="0.5">
             <l>deridiculus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -531,8 +615,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Deridiculum deridiculum-->
-         <tok val="[dD]eridiculum"/>
+      <ana>
+         <tok val="Deridiculum"/>
+         <tok val="deridiculum"/>
          <lm cert="0.5">
             <l>deridiculus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -550,36 +635,43 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Deridiculus deridiculus-->
-         <tok val="[dD]eridiculus"/>
+      <ana>
+         <tok val="Deridiculus"/>
+         <tok val="deridiculus"/>
          <lm>
             <l>deridiculus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Derige derige-->
-         <tok val="[dD]erige"/>
+      <ana>
+         <tok val="Derige"/>
+         <tok val="derige"/>
          <lm>
             <l>dirigo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Deriguere deriguere-->
-         <tok val="[dD]eriguere"/>
+      <ana>
+         <tok val="Deriguere"/>
+         <tok val="deriguere"/>
          <lm>
             <l>derigesco</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Deriguit Deriguitque deriguit deriguitque-->
-         <tok val="[dD]eriguit(que)?"/>
+      <ana>
+         <tok val="Deriguit"/>
+         <tok val="Deriguitque"/>
+         <tok val="deriguit"/>
+         <tok val="deriguitque"/>
          <lm>
             <l>derigesco</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Deripere deripere-->
-         <tok val="[dD]eripere"/>
+      <ana>
+         <tok val="Deripere"/>
+         <tok val="deripere"/>
          <lm>
             <l>deripio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -587,36 +679,41 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Deripio deripio-->
-         <tok val="[dD]eripio"/>
+      <ana>
+         <tok val="Deripio"/>
+         <tok val="deripio"/>
          <lm>
             <l>deripio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deripit deripit-->
-         <tok val="[dD]eripit"/>
+      <ana>
+         <tok val="Deripit"/>
+         <tok val="deripit"/>
          <lm>
             <l>deripio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deripiunt deripiunt-->
-         <tok val="[dD]eripiunt"/>
+      <ana>
+         <tok val="Deripiunt"/>
+         <tok val="deripiunt"/>
          <lm>
             <l>deripio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Deripui deripui-->
-         <tok val="[dD]eripui"/>
+      <ana>
+         <tok val="Deripui"/>
+         <tok val="deripui"/>
          <lm>
             <l>deripio</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Derisor derisor-->
-         <tok val="[dD]erisor"/>
+      <ana>
+         <tok val="Derisor"/>
+         <tok val="derisor"/>
          <lm>
             <l>derisor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -625,13 +722,25 @@
       </ana>
       <ana>
          <tok val="Derisum"/>
-         <lm>
+         <tok val="derisum"/>
+         <lm cert="0.5">
             <l>derisus</l>
-            <m>a - - s - - - n n</m>
+            <m cert="0.25">a - - s - - - n n</m>
+            <m cert="0.25">a - - s - - - n a</m>
+            <m cert="0.25">a - - s - - - m a</m>
+            <m cert="0.25">n - - s - - - m a</m>
+         </lm>
+         <lm cert="0.5">
+            <l>derideo</l>
+            <m cert="0.333333333333333333">v - - s r p p m a</m>
+            <m cert="0.333333333333333333">v - - s r p p n n</m>
+            <m cert="0.333333333333333333">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Derisum derisorum derisum-->
-         <tok val="[dD]eris(or)?um"/>
+      <ana>
+         <tok val="Derisum"/>
+         <tok val="derisorum"/>
+         <tok val="derisum"/>
          <lm cert="0.5">
             <l>derisus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -643,23 +752,10 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Derisum derisum-->
-         <tok val="[dD]erisum"/>
-         <lm cert="0.5">
-            <l>derisus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a</m>
-            <m cert="0.333333333333333333">a - - s - - - m a</m>
-            <m cert="0.333333333333333333">n - - s - - - m a</m>
-         </lm>
-         <lm cert="0.5">
-            <l>derideo</l>
-            <m cert="0.333333333333333333">v - - s r p p m a</m>
-            <m cert="0.333333333333333333">v - - s r p p n n</m>
-            <m cert="0.333333333333333333">v - - s r p p n a</m>
-         </lm>
-      </ana>
-      <ana><!--Derisum derise derisum-->
-         <tok val="[dD]eris(um|e)"/>
+      <ana>
+         <tok val="Derisum"/>
+         <tok val="derise"/>
+         <tok val="derisum"/>
          <lm cert="0.5">
             <l>derisus</l>
             <m>a - - s - - - n v</m>
@@ -669,8 +765,9 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Derisus derisus-->
-         <tok val="[dD]erisus"/>
+      <ana>
+         <tok val="Derisus"/>
+         <tok val="derisus"/>
          <lm cert="0.5">
             <l>derisus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -684,30 +781,39 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Deriuabitur deriuabitur derivabitur-->
-         <tok val="[dD]eri[uv]abitur"/>
+      <ana>
+         <tok val="Deriuabitur"/>
+         <tok val="deriuabitur"/>
+         <tok val="derivabitur"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Deriuare deriuare derivare-->
-         <tok val="[dD]eri[uv]are"/>
+      <ana>
+         <tok val="Deriuare"/>
+         <tok val="deriuare"/>
+         <tok val="derivare"/>
          <lm>
             <l>derivo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Deriuare deriuare deriuaris derivare-->
-         <tok val="[dD]eri[uv]ar(e|is)"/>
+      <ana>
+         <tok val="Deriuare"/>
+         <tok val="deriuare"/>
+         <tok val="deriuaris"/>
+         <tok val="derivare"/>
          <lm>
             <l>derivo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Deriuata deriuata derivata-->
-         <tok val="[dD]eri[uv]ata"/>
+      <ana>
+         <tok val="Deriuata"/>
+         <tok val="deriuata"/>
+         <tok val="derivata"/>
          <lm>
             <l>derivo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -718,16 +824,22 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Deriuatio deriuatio deriuatione derivatio derivation-->
-         <tok val="[dD]eri[vu]atio(n|ne)?"/>
+      <ana>
+         <tok val="Deriuatio"/>
+         <tok val="deriuatio"/>
+         <tok val="deriuatione"/>
+         <tok val="derivatio"/>
+         <tok val="derivation"/>
          <lm>
             <l>derivatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Deriuatum deriuatum derivatum-->
-         <tok val="[dD]eri[uv]atum"/>
+      <ana>
+         <tok val="Deriuatum"/>
+         <tok val="deriuatum"/>
+         <tok val="derivatum"/>
          <lm>
             <l>derivo</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -740,42 +852,49 @@
       </ana>
       <ana>
          <tok val="Deriuatum"/>
+         <tok val="deriuatum"/>
          <lm>
             <l>derivo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Deriuo deriuo derivo-->
-         <tok val="[dD]eri[uv]o"/>
+      <ana>
+         <tok val="Deriuo"/>
+         <tok val="deriuo"/>
+         <tok val="derivo"/>
          <lm>
             <l>derivo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Derivat derivat-->
-         <tok val="[dD]erivat"/>
+      <ana>
+         <tok val="Derivat"/>
+         <tok val="derivat"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Derogatio derogatio-->
-         <tok val="[dD]erogatio"/>
+      <ana>
+         <tok val="Derogatio"/>
+         <tok val="derogatio"/>
          <lm>
             <l>derogatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Derogatur derogatur-->
-         <tok val="[dD]erogatur"/>
+      <ana>
+         <tok val="Derogatur"/>
+         <tok val="derogatur"/>
          <lm>
             <l>derogo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Derogitare derogitare-->
-         <tok val="[dD]erogitare"/>
+      <ana>
+         <tok val="Derogitare"/>
+         <tok val="derogitare"/>
          <lm>
             <l>derogito</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -785,20 +904,23 @@
       </ana>
       <ana>
          <tok val="Derogito"/>
+         <tok val="derogito"/>
          <lm>
             <l>derogito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Derogo derogo-->
-         <tok val="[dD]erogo"/>
+      <ana>
+         <tok val="Derogo"/>
+         <tok val="derogo"/>
          <lm>
             <l>derogo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deroso deroso-->
-         <tok val="[dD]eroso"/>
+      <ana>
+         <tok val="Deroso"/>
+         <tok val="deroso"/>
          <lm>
             <l>derosus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -807,8 +929,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Derosus derosus-->
-         <tok val="[dD]erosus"/>
+      <ana>
+         <tok val="Derosus"/>
+         <tok val="derosus"/>
          <lm>
             <l>derosus</l>
             <m>a - - s - - - m n</m>
@@ -816,6 +939,7 @@
       </ana>
       <ana>
          <tok val="Dertona"/>
+         <tok val="dertona"/>
          <lm>
             <l>Dertona</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -825,6 +949,7 @@
       </ana>
       <ana>
          <tok val="Dertonae"/>
+         <tok val="dertonae"/>
          <lm>
             <l>Dertona</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -833,8 +958,9 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Deruere deruere-->
-         <tok val="[dD]eruere"/>
+      <ana>
+         <tok val="Deruere"/>
+         <tok val="deruere"/>
          <lm>
             <l>deruo</l>
             <m cert="0.2">v - 3 p r i a</m>
@@ -846,13 +972,15 @@
       </ana>
       <ana>
          <tok val="Deruo"/>
+         <tok val="deruo"/>
          <lm>
             <l>deruo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Deruptum deruptum-->
-         <tok val="[dD]eruptum"/>
+      <ana>
+         <tok val="Deruptum"/>
+         <tok val="deruptum"/>
          <lm cert="0.5">
             <l>deruptus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -867,8 +995,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Deruptus deruptus-->
-         <tok val="[dD]eruptus"/>
+      <ana>
+         <tok val="Deruptus"/>
+         <tok val="deruptus"/>
          <lm>
             <l>deruptus</l>
             <m>a - - s - - - m n</m>
@@ -990,8 +1119,9 @@
             <m>v - 1 p l i a</m>
          </lm>
       </ana>
-      <ana><!--derant derantque-->
-         <tok val="derant(que)?"/>
+      <ana>
+         <tok val="derant"/>
+         <tok val="derantque"/>
          <lm>
             <l>defleo</l>
             <m>v - 3 p l i a</m>
@@ -1085,8 +1215,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--deraso derasoque-->
-         <tok val="deraso(que)?"/>
+      <ana>
+         <tok val="deraso"/>
+         <tok val="derasoque"/>
          <lm>
             <l>derado</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1115,8 +1246,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--derat deratne-->
-         <tok val="derat(ne)?"/>
+      <ana>
+         <tok val="derat"/>
+         <tok val="deratne"/>
          <lm>
             <l>defleo</l>
             <m>v - 3 s l i a</m>
@@ -1162,8 +1294,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--derectae derectaeque-->
-         <tok val="derectae(que)?"/>
+      <ana>
+         <tok val="derectae"/>
+         <tok val="derectaeque"/>
          <lm>
             <l>dirigo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -1225,8 +1358,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--derecto Derecto-->
-         <tok val="[Dd]erecto"/>
+      <ana>
+         <tok val="Derecto"/>
+         <tok val="derecto"/>
          <lm>
             <l>dirigo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1235,8 +1369,9 @@
             <m cert="0.25">v - - s r p p n b</m>
          </lm>
       </ana>
-      <ana><!--derectos derectosque-->
-         <tok val="derectos(que)?"/>
+      <ana>
+         <tok val="derectos"/>
+         <tok val="derectosque"/>
          <lm>
             <l>dirigo</l>
             <m>v - - p r p p m a</m>
@@ -1261,22 +1396,25 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--derectus derectusque-->
-         <tok val="derectus(que)?"/>
+      <ana>
+         <tok val="derectus"/>
+         <tok val="derectusque"/>
          <lm>
             <l>dirigo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--deregatur derigatur-->
-         <tok val="der[ie]gatur"/>
+      <ana>
+         <tok val="deregatur"/>
+         <tok val="derigatur"/>
          <lm>
             <l>dirigo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--derego derigo-->
-         <tok val="der[ie]go"/>
+      <ana>
+         <tok val="derego"/>
+         <tok val="derigo"/>
          <lm>
             <l>dirigo</l>
             <m>v - 1 s p i a</m>
@@ -1323,8 +1461,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--derelictis derelictisque-->
-         <tok val="derelictis(que)?"/>
+      <ana>
+         <tok val="derelictis"/>
+         <tok val="derelictisque"/>
          <lm>
             <l>derelinquo</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -1350,8 +1489,10 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--derelictorum derelictum derelictumque-->
-         <tok val="derelict(or)?um(que)?"/>
+      <ana>
+         <tok val="derelictorum"/>
+         <tok val="derelictum"/>
+         <tok val="derelictumque"/>
          <lm>
             <l>derelinquo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -1365,8 +1506,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--derelictum derelictumque-->
-         <tok val="derelictum(que)?"/>
+      <ana>
+         <tok val="derelictum"/>
+         <tok val="derelictumque"/>
          <lm>
             <l>derelinquo</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1495,8 +1637,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--derelinquentes derelinquentis-->
-         <tok val="derelinquent[ie]s"/>
+      <ana>
+         <tok val="derelinquentes"/>
+         <tok val="derelinquentis"/>
          <lm>
             <l>derelinquo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1539,8 +1682,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--derelinquere derelinqueris-->
-         <tok val="derelinquer(is|e)"/>
+      <ana>
+         <tok val="derelinquere"/>
+         <tok val="derelinqueris"/>
          <lm>
             <l>derelinquo</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -1726,8 +1870,9 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--dereliquerunt dereliqueruntque-->
-         <tok val="dereliquerunt(que)?"/>
+      <ana>
+         <tok val="dereliquerunt"/>
+         <tok val="dereliqueruntque"/>
          <lm>
             <l>derelinquo</l>
             <m>v - 3 p r i a</m>
@@ -1842,8 +1987,9 @@
             <m cert="0.25">v - - s r p p n b</m>
          </lm>
       </ana>
-      <ana><!--dereptum dereptumque-->
-         <tok val="dereptum(que)?"/>
+      <ana>
+         <tok val="dereptum"/>
+         <tok val="dereptumque"/>
          <lm>
             <l>deripio</l>
             <m>a - - s - - - n n</m>
@@ -1938,8 +2084,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--deride deriden-->
-         <tok val="deride[n]?"/>
+      <ana>
+         <tok val="deride"/>
+         <tok val="deriden"/>
          <lm>
             <l>derideo</l>
             <m>v - 2 s p m a</m>
@@ -2151,8 +2298,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--derideret dérideret-->
-         <tok val="d[ée]rideret"/>
+      <ana>
+         <tok val="derideret"/>
+         <tok val="dérideret"/>
          <lm>
             <l>derideo</l>
             <m>v - 3 s i s a</m>
@@ -2204,8 +2352,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--deridiculos deridiculost-->
-         <tok val="deridiculos[t]?"/>
+      <ana>
+         <tok val="deridiculos"/>
+         <tok val="deridiculost"/>
          <lm>
             <l>deridiculus</l>
             <m>a - - p - - - m a</m>
@@ -2306,8 +2455,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--derigente derigenti-->
-         <tok val="derigent[ie]"/>
+      <ana>
+         <tok val="derigente"/>
+         <tok val="derigenti"/>
          <lm>
             <l>dirigo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2336,8 +2486,9 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--derigentibus derigentibusque-->
-         <tok val="derigentibus(que)?"/>
+      <ana>
+         <tok val="derigentibus"/>
+         <tok val="derigentibusque"/>
          <lm>
             <l>dirigo</l>
             <m cert="0.166666666666666667">v - - p p p a n d</m>
@@ -2564,15 +2715,17 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--deripuit deripuít-->
-         <tok val="deripu[íi]t"/>
+      <ana>
+         <tok val="deripuit"/>
+         <tok val="deripuít"/>
          <lm>
             <l>deripio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--deris derisne-->
-         <tok val="deris(ne)?"/>
+      <ana>
+         <tok val="deris"/>
+         <tok val="derisne"/>
          <lm>
             <l>defleo</l>
             <m>v - 2 s r s a</m>
@@ -2668,8 +2821,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--derisio derision-->
-         <tok val="derisio[n]?"/>
+      <ana>
+         <tok val="derisio"/>
+         <tok val="derision"/>
          <lm>
             <l>derisio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -2712,8 +2866,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--derisorem derisoremque-->
-         <tok val="derisorem(que)?"/>
+      <ana>
+         <tok val="derisorem"/>
+         <tok val="derisoremque"/>
          <lm>
             <l>derisor</l>
             <m>n - - s - - - m a</m>
@@ -2814,8 +2969,9 @@
             <m cert="0.25">v - - p f p a m n</m>
          </lm>
       </ana>
-      <ana><!--derit deritne-->
-         <tok val="derit(ne)?"/>
+      <ana>
+         <tok val="derit"/>
+         <tok val="deritne"/>
          <lm>
             <l>defleo</l>
             <m>v - 3 s r s a</m>
@@ -2828,8 +2984,9 @@
             <m>v - 2 p r s a</m>
          </lm>
       </ana>
-      <ana><!--deriua deriva-->
-         <tok val="deri[vu]a"/>
+      <ana>
+         <tok val="deriua"/>
+         <tok val="deriva"/>
          <lm>
             <l>derivo</l>
             <m>v - 2 s p m a</m>
@@ -2854,8 +3011,9 @@
             <m cert="0.166666666666666667">v - - p p g p n n</m>
          </lm>
       </ana>
-      <ana><!--deriuandae derivandae-->
-         <tok val="deri[vu]andae"/>
+      <ana>
+         <tok val="deriuandae"/>
+         <tok val="derivandae"/>
          <lm>
             <l>derivo</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -2864,8 +3022,9 @@
             <m cert="0.25">v - - p p g p f v</m>
          </lm>
       </ana>
-      <ana><!--deriuando derivando-->
-         <tok val="deri[vu]ando"/>
+      <ana>
+         <tok val="deriuando"/>
+         <tok val="derivando"/>
          <lm>
             <l>derivo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -2892,8 +3051,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--deriuantur derivantur-->
-         <tok val="deri[vu]antur"/>
+      <ana>
+         <tok val="deriuantur"/>
+         <tok val="derivantur"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 p p i p</m>
@@ -2906,8 +3066,9 @@
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--deriuaret derivaret-->
-         <tok val="deri[vu]aret"/>
+      <ana>
+         <tok val="deriuaret"/>
+         <tok val="derivaret"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 s i s a</m>
@@ -2920,8 +3081,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--deriuari derivari-->
-         <tok val="deri[vu]ari"/>
+      <ana>
+         <tok val="deriuari"/>
+         <tok val="derivari"/>
          <lm>
             <l>derivo</l>
             <m>v - - - p n p</m>
@@ -2948,15 +3110,17 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--deriuationem derivationem-->
-         <tok val="deri[vu]ationem"/>
+      <ana>
+         <tok val="deriuationem"/>
+         <tok val="derivationem"/>
          <lm>
             <l>derivatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--deriuationes derivationes-->
-         <tok val="deri[vu]ationes"/>
+      <ana>
+         <tok val="deriuationes"/>
+         <tok val="derivationes"/>
          <lm>
             <l>derivatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -2964,16 +3128,18 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--deriuationibus derivationibus-->
-         <tok val="deri[vu]ationibus"/>
+      <ana>
+         <tok val="deriuationibus"/>
+         <tok val="derivationibus"/>
          <lm>
             <l>derivatio</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--deriuatis derivatis-->
-         <tok val="deri[vu]atis"/>
+      <ana>
+         <tok val="deriuatis"/>
+         <tok val="derivatis"/>
          <lm>
             <l>derivo</l>
             <m cert="0.142857142857142857">v - - p r p p f d</m>
@@ -2985,8 +3151,9 @@
             <m cert="0.142857142857142857">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--deriuato derivato-->
-         <tok val="deri[vu]ato"/>
+      <ana>
+         <tok val="deriuato"/>
+         <tok val="derivato"/>
          <lm>
             <l>derivo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -2997,8 +3164,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--deriuatos derivatos-->
-         <tok val="deri[vu]atos"/>
+      <ana>
+         <tok val="deriuatos"/>
+         <tok val="derivatos"/>
          <lm>
             <l>derivo</l>
             <m>v - - p r p p m a</m>
@@ -3011,22 +3179,25 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--deriuatum derivatum-->
-         <tok val="deri[vu]atum"/>
+      <ana>
+         <tok val="deriuatum"/>
+         <tok val="derivatum"/>
          <lm>
             <l>derivo</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--deriuatur derivatur-->
-         <tok val="deri[vu]atur"/>
+      <ana>
+         <tok val="deriuatur"/>
+         <tok val="derivatur"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--deriuatus derivatus-->
-         <tok val="deri[vu]atus"/>
+      <ana>
+         <tok val="deriuatus"/>
+         <tok val="derivatus"/>
          <lm>
             <l>derivo</l>
             <m>v - - s r p p m n</m>
@@ -3040,29 +3211,33 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--deriuauit derivavit-->
-         <tok val="deri[vu]a[vu]it"/>
+      <ana>
+         <tok val="deriuauit"/>
+         <tok val="derivavit"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--deriuentur deriventur-->
-         <tok val="deri[vu]entur"/>
+      <ana>
+         <tok val="deriuentur"/>
+         <tok val="deriventur"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--deriuet derivet-->
-         <tok val="deri[vu]et"/>
+      <ana>
+         <tok val="deriuet"/>
+         <tok val="derivet"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--deriuetur derivetur-->
-         <tok val="deri[vu]etur"/>
+      <ana>
+         <tok val="deriuetur"/>
+         <tok val="derivetur"/>
          <lm>
             <l>derivo</l>
             <m>v - 3 s p s p</m>
@@ -3402,16 +3577,18 @@
             <m cert="0.2">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--derogatum derogatorum-->
-         <tok val="derogat(or)?um"/>
+      <ana>
+         <tok val="derogatorum"/>
+         <tok val="derogatum"/>
          <lm>
             <l>derogo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--derogauit derogavit-->
-         <tok val="deroga[vu]it"/>
+      <ana>
+         <tok val="derogauit"/>
+         <tok val="derogavit"/>
          <lm>
             <l>derogo</l>
             <m>v - 3 s r i a</m>
@@ -3672,8 +3849,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--derupta deruptaque-->
-         <tok val="derupta(que)?"/>
+      <ana>
+         <tok val="derupta"/>
+         <tok val="deruptaque"/>
          <lm cert="0.5">
             <l>derupta</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -3690,8 +3868,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--deruptae deruptaeque-->
-         <tok val="deruptae(que)?"/>
+      <ana>
+         <tok val="deruptae"/>
+         <tok val="deruptaeque"/>
          <lm>
             <l>deruptus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -3707,8 +3886,9 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--deruptiorem deruptioremque-->
-         <tok val="deruptiorem(que)?"/>
+      <ana>
+         <tok val="deruptiorem"/>
+         <tok val="deruptioremque"/>
          <lm>
             <l>deruptus</l>
             <m cert="0.5">a - - s - - - f a c</m>

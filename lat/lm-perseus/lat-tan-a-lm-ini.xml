@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusini">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ini">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ini</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ini.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>INI</tok-starts-with>
       <tok-starts-with>InI</tok-starts-with>
@@ -38,37 +15,91 @@
       <tok-starts-with>ini</tok-starts-with>
       <tok-starts-with>iní</tok-starts-with>
       <tok-starts-with>íni</tok-starts-with>
-      <ana><!--INIMICVS Inimicus inimicus inimicusque inimicust-->
-         <tok val="[iI]?(nimicus)?(t|que|INIMICVS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:28:48.579-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:28:48.579-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ini.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="INIMICVS"/>
+         <tok val="Inimicus"/>
+         <tok val="inimicus"/>
+         <tok val="inimicusque"/>
+         <tok val="inimicust"/>
+         <tok val="inimicvs"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--INIQVVS Inique Iniquus inique iniquius iniquus iníque-->
-         <tok val="[iI]?[n]?[ií]?(qu)?[i]?(us|e|INIQVVS)"/>
+      <ana>
+         <tok val="INIQVVS"/>
+         <tok val="Inique"/>
+         <tok val="Iniquus"/>
+         <tok val="inique"/>
+         <tok val="iniquius"/>
+         <tok val="iniquus"/>
+         <tok val="iniqvvs"/>
+         <tok val="iníque"/>
          <lm>
             <l>iniquus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--INIQVVS Iniquus iniquus-->
-         <tok val="[iI]?(niquus|INIQVVS)"/>
+      <ana>
+         <tok val="INIQVVS"/>
+         <tok val="Iniquus"/>
+         <tok val="iniquus"/>
+         <tok val="iniqvvs"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--InIn Ini ini inii inin iniue iniui-->
-         <tok val="[iI]n[i]?[u]?(i|n|ue|In)?"/>
+      <ana>
+         <tok val="InIn"/>
+         <tok val="Ini"/>
+         <tok val="ini"/>
+         <tok val="inii"/>
+         <tok val="inin"/>
+         <tok val="iniue"/>
+         <tok val="iniui"/>
          <lm>
             <l>ineo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--InIn inin inis-->
-         <tok val="[iI]n[i]?(s|n|In)"/>
+      <ana>
+         <tok val="InIn"/>
+         <tok val="inin"/>
+         <tok val="inis"/>
          <lm cert="0.5">
             <l>ineo</l>
             <m>v - 2 s p i a</m>
@@ -79,43 +110,59 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--InIn Ini Inite ini inin inite initen iniue-->
-         <tok val="[iI]n[i]?(te)?(n|te|ue|In)?"/>
+      <ana>
+         <tok val="InIn"/>
+         <tok val="Ini"/>
+         <tok val="Inite"/>
+         <tok val="ini"/>
+         <tok val="inin"/>
+         <tok val="inite"/>
+         <tok val="initen"/>
+         <tok val="iniue"/>
          <lm>
             <l>ineo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Inibat inibat inibatur-->
-         <tok val="[iI]nibat(ur)?"/>
+      <ana>
+         <tok val="Inibat"/>
+         <tok val="inibat"/>
+         <tok val="inibatur"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Inibi inibi inibique-->
-         <tok val="[iI]nibi(que)?"/>
+      <ana>
+         <tok val="Inibi"/>
+         <tok val="inibi"/>
+         <tok val="inibique"/>
          <lm>
             <l>inibi</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Inibis inibis-->
-         <tok val="[iI]nibis"/>
+      <ana>
+         <tok val="Inibis"/>
+         <tok val="inibis"/>
          <lm>
             <l>ineo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Inice inice iniice-->
-         <tok val="[iI]n[i]?ice"/>
+      <ana>
+         <tok val="Inice"/>
+         <tok val="inice"/>
+         <tok val="iniice"/>
          <lm>
             <l>inicio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Inicere inicere iniicere-->
-         <tok val="[iI]n[i]?icere"/>
+      <ana>
+         <tok val="Inicere"/>
+         <tok val="inicere"/>
+         <tok val="iniicere"/>
          <lm>
             <l>inicio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -123,29 +170,36 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Iniciam iniciam iniciamque-->
-         <tok val="[iI]niciam(que)?"/>
+      <ana>
+         <tok val="Iniciam"/>
+         <tok val="iniciam"/>
+         <tok val="iniciamque"/>
          <lm>
             <l>inicio</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Iniciam iniciam iniciamque iníciam-->
-         <tok val="[iI]n[ií]ciam(que)?"/>
+      <ana>
+         <tok val="Iniciam"/>
+         <tok val="iniciam"/>
+         <tok val="iniciamque"/>
+         <tok val="iníciam"/>
          <lm>
             <l>inicio</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Inicias inicias-->
-         <tok val="[iI]nicias"/>
+      <ana>
+         <tok val="Inicias"/>
+         <tok val="inicias"/>
          <lm>
             <l>inicio</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Iniciendi iniciendi-->
-         <tok val="[iI]niciendi"/>
+      <ana>
+         <tok val="Iniciendi"/>
+         <tok val="iniciendi"/>
          <lm>
             <l>inicio</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -155,8 +209,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Iniciendum iniciendum-->
-         <tok val="[iI]niciendum"/>
+      <ana>
+         <tok val="Iniciendum"/>
+         <tok val="iniciendum"/>
          <lm>
             <l>inicio</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -168,15 +223,18 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Iniciet iniciet inicietque-->
-         <tok val="[iI]niciet(que)?"/>
+      <ana>
+         <tok val="Iniciet"/>
+         <tok val="iniciet"/>
+         <tok val="inicietque"/>
          <lm>
             <l>inicio</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Inicit inicit-->
-         <tok val="[iI]nicit"/>
+      <ana>
+         <tok val="Inicit"/>
+         <tok val="inicit"/>
          <lm>
             <l>inicio</l>
             <m>v - 3 s p i a</m>
@@ -184,13 +242,15 @@
       </ana>
       <ana>
          <tok val="Inicite"/>
+         <tok val="inicite"/>
          <lm>
             <l>inicio</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Iniens iniens-->
-         <tok val="[iI]niens"/>
+      <ana>
+         <tok val="Iniens"/>
+         <tok val="iniens"/>
          <lm>
             <l>ineo</l>
             <m cert="0.142857142857142857">v - - - p p a n a</m>
@@ -202,29 +262,39 @@
             <m cert="0.142857142857142857">v - - - p p a f n</m>
          </lm>
       </ana>
-      <ana><!--Inigi inigi-->
-         <tok val="[iI]nigi"/>
+      <ana>
+         <tok val="Inigi"/>
+         <tok val="inigi"/>
          <lm>
             <l>inigo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Inigo inigo-->
-         <tok val="[iI]nigo"/>
+      <ana>
+         <tok val="Inigo"/>
+         <tok val="inigo"/>
          <lm>
             <l>inigo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Iniit Init iniit init inivitque-->
-         <tok val="[Ii]ni(i|vi)?t(que)?"/>
+      <ana>
+         <tok val="Iniit"/>
+         <tok val="Init"/>
+         <tok val="iniit"/>
+         <tok val="init"/>
+         <tok val="inivitque"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Inimica inimica inimicaque inimicaue inimicave-->
-         <tok val="[iI]nimica[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Inimica"/>
+         <tok val="inimica"/>
+         <tok val="inimicaque"/>
+         <tok val="inimicaue"/>
+         <tok val="inimicave"/>
          <lm cert="0.333333333333333333">
             <l>inimica</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -245,8 +315,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Inimicae inimicae-->
-         <tok val="[iI]nimicae"/>
+      <ana>
+         <tok val="Inimicae"/>
+         <tok val="inimicae"/>
          <lm cert="0.5">
             <l>inimicus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -262,30 +333,37 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Inimice inimicius-->
-         <tok val="[iI]nimic(ius|e)"/>
+      <ana>
+         <tok val="Inimice"/>
+         <tok val="inimice"/>
+         <tok val="inimicius"/>
          <lm>
             <l>inimicus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Inimice Inimicum inimice inimicum-->
-         <tok val="[iI]nimic(um|e)"/>
+      <ana>
+         <tok val="Inimice"/>
+         <tok val="Inimicum"/>
+         <tok val="inimice"/>
+         <tok val="inimicum"/>
          <lm>
             <l>inimicus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Inimice inimice-->
-         <tok val="[iI]nimice"/>
+      <ana>
+         <tok val="Inimice"/>
+         <tok val="inimice"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.5">a - - s - - - m v</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Inimici inimici-->
-         <tok val="[iI]nimici"/>
+      <ana>
+         <tok val="Inimici"/>
+         <tok val="inimici"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -297,8 +375,9 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Inimicior inimicior-->
-         <tok val="[iI]nimicior"/>
+      <ana>
+         <tok val="Inimicior"/>
+         <tok val="inimicior"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -307,16 +386,18 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Inimiciorem inimiciorem-->
-         <tok val="[iI]nimiciorem"/>
+      <ana>
+         <tok val="Inimiciorem"/>
+         <tok val="inimiciorem"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--Inimicis inimicis-->
-         <tok val="[iI]nimicis"/>
+      <ana>
+         <tok val="Inimicis"/>
+         <tok val="inimicis"/>
          <lm cert="0.5">
             <l>inimicus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -334,8 +415,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Inimicissima inimicissima-->
-         <tok val="[iI]nimicissima"/>
+      <ana>
+         <tok val="Inimicissima"/>
+         <tok val="inimicissima"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -346,36 +428,45 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Inimicissime inimicissime-->
-         <tok val="[iI]nimicissime"/>
+      <ana>
+         <tok val="Inimicissime"/>
+         <tok val="inimicissime"/>
          <lm>
             <l>inimicus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Inimicissime Inimicissimus inimicissime inimicissimus-->
-         <tok val="[iI]nimicissim(us|e)"/>
+      <ana>
+         <tok val="Inimicissime"/>
+         <tok val="Inimicissimus"/>
+         <tok val="inimicissime"/>
+         <tok val="inimicissimus"/>
          <lm>
             <l>inimicus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Inimicissime inimicissime inimicissimum inimicissimumque-->
-         <tok val="[iI]nimicissim(umqu)?(e|um)"/>
+      <ana>
+         <tok val="Inimicissime"/>
+         <tok val="inimicissime"/>
+         <tok val="inimicissimum"/>
+         <tok val="inimicissimumque"/>
          <lm>
             <l>inimicus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Inimicissimus inimicissimus-->
-         <tok val="[iI]nimicissimus"/>
+      <ana>
+         <tok val="Inimicissimus"/>
+         <tok val="inimicissimus"/>
          <lm>
             <l>inimicus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Inimicitia inimicitia-->
-         <tok val="[iI]nimicitia"/>
+      <ana>
+         <tok val="Inimicitia"/>
+         <tok val="inimicitia"/>
          <lm>
             <l>inimicitia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -383,8 +474,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Inimicitiae inimicitiae-->
-         <tok val="[iI]nimicitiae"/>
+      <ana>
+         <tok val="Inimicitiae"/>
+         <tok val="inimicitiae"/>
          <lm>
             <l>inimicitia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -393,44 +485,55 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Inimicitiam inimicitiam-->
-         <tok val="[iI]nimicitiam"/>
+      <ana>
+         <tok val="Inimicitiam"/>
+         <tok val="inimicitiam"/>
          <lm>
             <l>inimicitia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Inimicitiarum inimicitiarum inimicitiarumque-->
-         <tok val="[iI]nimicitiarum(que)?"/>
+      <ana>
+         <tok val="Inimicitiarum"/>
+         <tok val="inimicitiarum"/>
+         <tok val="inimicitiarumque"/>
          <lm>
             <l>inimicitia</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Inimicitias inimicitias inimicitiasque ínimicitias-->
-         <tok val="[iIí]nimicitias(que)?"/>
+      <ana>
+         <tok val="Inimicitias"/>
+         <tok val="inimicitias"/>
+         <tok val="inimicitiasque"/>
+         <tok val="ínimicitias"/>
          <lm>
             <l>inimicitia</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Inimicitiis inimicitiis inimicitiisque-->
-         <tok val="[iI]nimicitiis(que)?"/>
+      <ana>
+         <tok val="Inimicitiis"/>
+         <tok val="inimicitiis"/>
+         <tok val="inimicitiisque"/>
          <lm>
             <l>inimicitia</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Inimico inimico ínimico-->
-         <tok val="[iIí]nimico"/>
+      <ana>
+         <tok val="Inimico"/>
+         <tok val="inimico"/>
+         <tok val="ínimico"/>
          <lm>
             <l>inimicus</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Inimico inimico-->
-         <tok val="[iI]nimico"/>
+      <ana>
+         <tok val="Inimico"/>
+         <tok val="inimico"/>
          <lm cert="0.5">
             <l>inimico</l>
             <m>v - 1 s p i a</m>
@@ -446,13 +549,18 @@
       </ana>
       <ana>
          <tok val="Inimicor"/>
+         <tok val="inimicor"/>
          <lm>
             <l>inimico</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Inimicorum Inimicum inimicorum inimicorumque inimicum-->
-         <tok val="[iI]nimic(or)?um(que)?"/>
+      <ana>
+         <tok val="Inimicorum"/>
+         <tok val="Inimicum"/>
+         <tok val="inimicorum"/>
+         <tok val="inimicorumque"/>
+         <tok val="inimicum"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -460,29 +568,37 @@
             <m cert="0.333333333333333333">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Inimicos inimicos inimicosque inimícos-->
-         <tok val="[iI]nim[ií]cos(que)?"/>
+      <ana>
+         <tok val="Inimicos"/>
+         <tok val="inimicos"/>
+         <tok val="inimicosque"/>
+         <tok val="inimícos"/>
          <lm>
             <l>inimicus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Inimicos inimicos inimicosque-->
-         <tok val="[iI]nimicos(que)?"/>
+      <ana>
+         <tok val="Inimicos"/>
+         <tok val="inimicos"/>
+         <tok val="inimicosque"/>
          <lm>
             <l>inimicus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Inimicum inimicum ínimicum-->
-         <tok val="[iIí]nimicum"/>
+      <ana>
+         <tok val="Inimicum"/>
+         <tok val="inimicum"/>
+         <tok val="ínimicum"/>
          <lm>
             <l>inimicus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Inimicum inimicum-->
-         <tok val="[iI]nimicum"/>
+      <ana>
+         <tok val="Inimicum"/>
+         <tok val="inimicum"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
@@ -490,8 +606,9 @@
             <m cert="0.333333333333333333">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Inimitabilia inimitabilia-->
-         <tok val="[iI]nimitabilia"/>
+      <ana>
+         <tok val="Inimitabilia"/>
+         <tok val="inimitabilia"/>
          <lm>
             <l>inimitabilis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -499,8 +616,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Inimitabilis inimitabilis-->
-         <tok val="[iI]nimitabilis"/>
+      <ana>
+         <tok val="Inimitabilis"/>
+         <tok val="inimitabilis"/>
          <lm>
             <l>inimitabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -512,23 +630,30 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Inimitabilis inimitabiles inimitabilis-->
-         <tok val="[iI]nimitabil[ie]s"/>
+      <ana>
+         <tok val="Inimitabilis"/>
+         <tok val="inimitabiles"/>
+         <tok val="inimitabilis"/>
          <lm>
             <l>inimitabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Iniqua iniqua iniquast iníqua-->
-         <tok val="[iI]n[ií]qua(st)?"/>
+      <ana>
+         <tok val="Iniqua"/>
+         <tok val="iniqua"/>
+         <tok val="iniquast"/>
+         <tok val="iníqua"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Iniqua iniqua iniquast-->
-         <tok val="[iI]niqua(st)?"/>
+      <ana>
+         <tok val="Iniqua"/>
+         <tok val="iniqua"/>
+         <tok val="iniquast"/>
          <lm cert="0.5">
             <l>iniquus</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -542,8 +667,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Iniquae iniquae-->
-         <tok val="[iI]niquae"/>
+      <ana>
+         <tok val="Iniquae"/>
+         <tok val="iniquae"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -552,15 +678,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Iniquam iniquam-->
-         <tok val="[iI]niquam"/>
+      <ana>
+         <tok val="Iniquam"/>
+         <tok val="iniquam"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Iniquas iniquas-->
-         <tok val="[iI]niquas"/>
+      <ana>
+         <tok val="Iniquas"/>
+         <tok val="iniquas"/>
          <lm cert="0.5">
             <l>iniquo</l>
             <m>v - 2 s p i a</m>
@@ -570,22 +698,34 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Inique Iniquom Iniquum inique iniquom iniquomst iniquum iniquumque iniquumue iniquumve-->
-         <tok val="[iI]niqu[uo]?[m]?[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Inique"/>
+         <tok val="Iniquom"/>
+         <tok val="Iniquum"/>
+         <tok val="inique"/>
+         <tok val="iniquom"/>
+         <tok val="iniquomst"/>
+         <tok val="iniquum"/>
+         <tok val="iniquumque"/>
+         <tok val="iniquumue"/>
+         <tok val="iniquumve"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Inique inique-->
-         <tok val="[iI]nique"/>
+      <ana>
+         <tok val="Inique"/>
+         <tok val="inique"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Iniqui iniqui iniquique-->
-         <tok val="[iI]niqui(que)?"/>
+      <ana>
+         <tok val="Iniqui"/>
+         <tok val="iniqui"/>
+         <tok val="iniquique"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -594,8 +734,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Iniquior iniquior iniquiorque-->
-         <tok val="[iI]niquior(que)?"/>
+      <ana>
+         <tok val="Iniquior"/>
+         <tok val="iniquior"/>
+         <tok val="iniquiorque"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -604,8 +746,10 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Iniquis iniquis iniquisque-->
-         <tok val="[iI]niquis(que)?"/>
+      <ana>
+         <tok val="Iniquis"/>
+         <tok val="iniquis"/>
+         <tok val="iniquisque"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -616,29 +760,36 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Iniquissime iniquissime-->
-         <tok val="[iI]niquissime"/>
+      <ana>
+         <tok val="Iniquissime"/>
+         <tok val="iniquissime"/>
          <lm>
             <l>iniquus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Iniquissime iniquissime iniquissimus-->
-         <tok val="[iI]niquissim(e|us)"/>
+      <ana>
+         <tok val="Iniquissime"/>
+         <tok val="iniquissime"/>
+         <tok val="iniquissimus"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Iniquissime Iniquissimum iniquissime iniquissimum-->
-         <tok val="[iI]niquissim(um|e)"/>
+      <ana>
+         <tok val="Iniquissime"/>
+         <tok val="Iniquissimum"/>
+         <tok val="iniquissime"/>
+         <tok val="iniquissimum"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Iniquissimis iniquissimis-->
-         <tok val="[iI]niquissimis"/>
+      <ana>
+         <tok val="Iniquissimis"/>
+         <tok val="iniquissimis"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.166666666666666667">a - - p - - - f d s</m>
@@ -649,8 +800,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--Iniquissimum iniquissimum-->
-         <tok val="[iI]niquissimum"/>
+      <ana>
+         <tok val="Iniquissimum"/>
+         <tok val="iniquissimum"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -660,22 +812,27 @@
             <m cert="0.2">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Iniquitas iniquitas iniquitasque-->
-         <tok val="[iI]niquitas(que)?"/>
+      <ana>
+         <tok val="Iniquitas"/>
+         <tok val="iniquitas"/>
+         <tok val="iniquitasque"/>
          <lm>
             <l>iniquitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Iniquitatem iniquitatem iniquitatemque-->
-         <tok val="[iI]niquitatem(que)?"/>
+      <ana>
+         <tok val="Iniquitatem"/>
+         <tok val="iniquitatem"/>
+         <tok val="iniquitatemque"/>
          <lm>
             <l>iniquitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Iniquo iniquo-->
-         <tok val="[iI]niquo"/>
+      <ana>
+         <tok val="Iniquo"/>
+         <tok val="iniquo"/>
          <lm cert="0.5">
             <l>iniquus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -688,59 +845,88 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Iniquom Iniquum iniquom iniquomst iniquum iniquumque iniquumue iníquom iniquumve inicum-->
-         <tok val="[iI]n[ií]?(q|ic)u[uo]?m[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Iniquom"/>
+         <tok val="Iniquum"/>
+         <tok val="inicum"/>
+         <tok val="iniquom"/>
+         <tok val="iniquomst"/>
+         <tok val="iniquum"/>
+         <tok val="iniquumque"/>
+         <tok val="iniquumue"/>
+         <tok val="iniquumve"/>
+         <tok val="iníquom"/>
          <lm>
             <l>iniquus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Iniquom Iniquum iniquom iniquomst iniquum iniquumque iniquumue iniquumve inicum-->
-         <tok val="[iI]ni[qc]u[uo]?m[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Iniquom"/>
+         <tok val="Iniquum"/>
+         <tok val="inicum"/>
+         <tok val="iniquom"/>
+         <tok val="iniquomst"/>
+         <tok val="iniquum"/>
+         <tok val="iniquumque"/>
+         <tok val="iniquumue"/>
+         <tok val="iniquumve"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.5">a - - s - - - n a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Iniquos iniquos-->
-         <tok val="[iI]niquos"/>
+      <ana>
+         <tok val="Iniquos"/>
+         <tok val="iniquos"/>
          <lm>
             <l>iniquus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Iniquum iniquorum iniquum iniquumque iniquumue iniquumve-->
-         <tok val="[iI]niqu(or)?um[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Iniquum"/>
+         <tok val="iniquorum"/>
+         <tok val="iniquum"/>
+         <tok val="iniquumque"/>
+         <tok val="iniquumue"/>
+         <tok val="iniquumve"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Inire inire-->
-         <tok val="[iI]nire"/>
+      <ana>
+         <tok val="Inire"/>
+         <tok val="inire"/>
          <lm>
             <l>ineo</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Iniri iniri-->
-         <tok val="[iI]niri"/>
+      <ana>
+         <tok val="Iniri"/>
+         <tok val="iniri"/>
          <lm>
             <l>ineo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Init init initur-->
-         <tok val="[iI]nit(ur)?"/>
+      <ana>
+         <tok val="Init"/>
+         <tok val="init"/>
+         <tok val="initur"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Inita inita initaque-->
-         <tok val="[iI]nita(que)?"/>
+      <ana>
+         <tok val="Inita"/>
+         <tok val="inita"/>
+         <tok val="initaque"/>
          <lm cert="0.5">
             <l>ineo</l>
             <m cert="0.166666666666666667">v - - s r p p f v</m>
@@ -757,27 +943,36 @@
       </ana>
       <ana>
          <tok val="Initarum"/>
+         <tok val="initarum"/>
          <lm>
             <l>ineo</l>
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--Inite inite initen-->
-         <tok val="[iI]nite[n]?"/>
+      <ana>
+         <tok val="Inite"/>
+         <tok val="inite"/>
+         <tok val="initen"/>
          <lm>
             <l>ineo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Inite Initum inite initen initum-->
-         <tok val="[iI]nit[e]?(n|um|e)?"/>
+      <ana>
+         <tok val="Inite"/>
+         <tok val="Initum"/>
+         <tok val="inite"/>
+         <tok val="initen"/>
+         <tok val="initum"/>
          <lm>
             <l>ineo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Initia initia initiaque-->
-         <tok val="[iI]nitia(que)?"/>
+      <ana>
+         <tok val="Initia"/>
+         <tok val="initia"/>
+         <tok val="initiaque"/>
          <lm cert="0.5">
             <l>initium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -789,8 +984,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Initiamenta initiamenta-->
-         <tok val="[iI]nitiamenta"/>
+      <ana>
+         <tok val="Initiamenta"/>
+         <tok val="initiamenta"/>
          <lm>
             <l>initiamenta</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -798,8 +994,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Initiare initiare-->
-         <tok val="[iI]nitiare"/>
+      <ana>
+         <tok val="Initiare"/>
+         <tok val="initiare"/>
          <lm>
             <l>initio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -807,37 +1004,45 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Initiari initiari-->
-         <tok val="[iI]nitiari"/>
+      <ana>
+         <tok val="Initiari"/>
+         <tok val="initiari"/>
          <lm>
             <l>initio</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Initiatos initiatos-->
-         <tok val="[iI]nitiatos"/>
+      <ana>
+         <tok val="Initiatos"/>
+         <tok val="initiatos"/>
          <lm>
             <l>initio</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Initiatus initiatus initiatusque-->
-         <tok val="[iI]nitiatus(que)?"/>
+      <ana>
+         <tok val="Initiatus"/>
+         <tok val="initiatus"/>
+         <tok val="initiatusque"/>
          <lm>
             <l>initio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Initiis initiis initiisque-->
-         <tok val="[iI]nitiis(que)?"/>
+      <ana>
+         <tok val="Initiis"/>
+         <tok val="initiis"/>
+         <tok val="initiisque"/>
          <lm>
             <l>initium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Initio initio initioque-->
-         <tok val="[iI]nitio(que)?"/>
+      <ana>
+         <tok val="Initio"/>
+         <tok val="initio"/>
+         <tok val="initioque"/>
          <lm cert="0.5">
             <l>initio</l>
             <m>v - 1 s p i a</m>
@@ -848,22 +1053,29 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Initiorum initiorum-->
-         <tok val="[iI]nitiorum"/>
+      <ana>
+         <tok val="Initiorum"/>
+         <tok val="initiorum"/>
          <lm>
             <l>ineo</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Initiorum Initium initiorum initium initiumque-->
-         <tok val="[iI]niti(or)?um(que)?"/>
+      <ana>
+         <tok val="Initiorum"/>
+         <tok val="Initium"/>
+         <tok val="initiorum"/>
+         <tok val="initium"/>
+         <tok val="initiumque"/>
          <lm>
             <l>initium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Initium initium initiumque-->
-         <tok val="[iI]nitium(que)?"/>
+      <ana>
+         <tok val="Initium"/>
+         <tok val="initium"/>
+         <tok val="initiumque"/>
          <lm>
             <l>initium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -871,8 +1083,10 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Inito inito initoque-->
-         <tok val="[iI]nito(que)?"/>
+      <ana>
+         <tok val="Inito"/>
+         <tok val="inito"/>
+         <tok val="initoque"/>
          <lm cert="0.5">
             <l>ineo</l>
             <m cert="0.166666666666666667">v - - s r p p m d</m>
@@ -889,13 +1103,15 @@
       </ana>
       <ana>
          <tok val="Initor"/>
+         <tok val="initor"/>
          <lm>
             <l>inito</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Initum initum-->
-         <tok val="[iI]nitum"/>
+      <ana>
+         <tok val="Initum"/>
+         <tok val="initum"/>
          <lm cert="0.5">
             <l>ineo</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -910,8 +1126,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Initus initus-->
-         <tok val="[iI]nitus"/>
+      <ana>
+         <tok val="Initus"/>
+         <tok val="initus"/>
          <lm cert="0.5">
             <l>initus2</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -931,8 +1148,10 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--inibant inibantur inibanturque-->
-         <tok val="inibant(ur|urque)?"/>
+      <ana>
+         <tok val="inibant"/>
+         <tok val="inibantur"/>
+         <tok val="inibanturque"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 p i i a</m>
@@ -945,8 +1164,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--inibit inibitur-->
-         <tok val="inibit(ur)?"/>
+      <ana>
+         <tok val="inibit"/>
+         <tok val="inibitur"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 s f i a</m>
@@ -973,8 +1193,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--inicerem iniceremque-->
-         <tok val="inicerem(que)?"/>
+      <ana>
+         <tok val="inicerem"/>
+         <tok val="iniceremque"/>
          <lm>
             <l>inicio</l>
             <m>v - 1 s i s a</m>
@@ -1015,8 +1236,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--inici inicique-->
-         <tok val="inici(que)?"/>
+      <ana>
+         <tok val="inici"/>
+         <tok val="inicique"/>
          <lm>
             <l>inicio</l>
             <m>v - - - p n p</m>
@@ -1071,8 +1293,9 @@
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--iniciebat iniciebatque-->
-         <tok val="iniciebat(que)?"/>
+      <ana>
+         <tok val="iniciebat"/>
+         <tok val="iniciebatque"/>
          <lm>
             <l>inicio</l>
             <m>v - 3 s i i a</m>
@@ -1092,8 +1315,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--inicien inicies-->
-         <tok val="inicie[sn]"/>
+      <ana>
+         <tok val="inicien"/>
+         <tok val="inicies"/>
          <lm>
             <l>inicio</l>
             <m>v - 2 s f i a</m>
@@ -1221,8 +1445,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--inicio Inicio-->
-         <tok val="[Ii]nicio"/>
+      <ana>
+         <tok val="Inicio"/>
+         <tok val="inicio"/>
          <lm>
             <l>inicio</l>
             <m>v - 1 s p i a</m>
@@ -1250,8 +1475,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--iniciunt iniciuntque-->
-         <tok val="iniciunt(que)?"/>
+      <ana>
+         <tok val="iniciunt"/>
+         <tok val="iniciuntque"/>
          <lm>
             <l>inicio</l>
             <m>v - 3 p p i a</m>
@@ -1278,8 +1504,10 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--iniecere iniecerunt inieceruntque-->
-         <tok val="iniecer(unt)?(que|e)?"/>
+      <ana>
+         <tok val="iniecere"/>
+         <tok val="iniecerunt"/>
+         <tok val="inieceruntque"/>
          <lm>
             <l>inicio</l>
             <m>v - 3 p r i a</m>
@@ -1309,15 +1537,18 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--inieci iniecique Inieci-->
-         <tok val="[Ii]nieci(que)?"/>
+      <ana>
+         <tok val="Inieci"/>
+         <tok val="inieci"/>
+         <tok val="iniecique"/>
          <lm>
             <l>inicio</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--iniecisse Iniecisse-->
-         <tok val="[Ii]niecisse"/>
+      <ana>
+         <tok val="Iniecisse"/>
+         <tok val="iniecisse"/>
          <lm>
             <l>inicio</l>
             <m>v - - - r n a</m>
@@ -1358,22 +1589,28 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--iniecit iniecitque-->
-         <tok val="iniecit(que)?"/>
+      <ana>
+         <tok val="iniecit"/>
+         <tok val="iniecitque"/>
          <lm>
             <l>inicio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--iniecta iniectaque iniectast Iniecta-->
-         <tok val="[iI]niecta(st|que)?"/>
+      <ana>
+         <tok val="Iniecta"/>
+         <tok val="iniecta"/>
+         <tok val="iniectaque"/>
+         <tok val="iniectast"/>
          <lm>
             <l>iniecto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--iniectae iniectaeque Iniectae-->
-         <tok val="[Ii]niectae(que)?"/>
+      <ana>
+         <tok val="Iniectae"/>
+         <tok val="iniectae"/>
+         <tok val="iniectaeque"/>
          <lm>
             <l>inicio</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -1389,8 +1626,9 @@
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--iniectare Iniectare-->
-         <tok val="[Ii]niectare"/>
+      <ana>
+         <tok val="Iniectare"/>
+         <tok val="iniectare"/>
          <lm>
             <l>iniecto</l>
             <m>v - - - p n a</m>
@@ -1460,8 +1698,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--iniectis iniectisque-->
-         <tok val="iniectis(que)?"/>
+      <ana>
+         <tok val="iniectis"/>
+         <tok val="iniectisque"/>
          <lm>
             <l>inicio</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -1472,8 +1711,9 @@
             <m cert="0.166666666666666667">v - - p r p p m d</m>
          </lm>
       </ana>
-      <ana><!--iniecto iniectoque-->
-         <tok val="iniecto(que)?"/>
+      <ana>
+         <tok val="iniecto"/>
+         <tok val="iniectoque"/>
          <lm>
             <l>iniecto</l>
             <m>v - 1 s p i a</m>
@@ -1493,8 +1733,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--iniectum iniectumque-->
-         <tok val="iniectum(que)?"/>
+      <ana>
+         <tok val="iniectum"/>
+         <tok val="iniectumque"/>
          <lm>
             <l>iniectus</l>
             <m>n - - s - - - m a</m>
@@ -1578,8 +1819,10 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--iniere inierunt Iniere-->
-         <tok val="[Ii]nier(e|unt)"/>
+      <ana>
+         <tok val="Iniere"/>
+         <tok val="iniere"/>
+         <tok val="inierunt"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 p r i a</m>
@@ -1647,29 +1890,35 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--iniimus inimus iniuimus inivimus-->
-         <tok val="in[i]?(u|v|)?imus"/>
+      <ana>
+         <tok val="iniimus"/>
+         <tok val="inimus"/>
+         <tok val="iniuimus"/>
+         <tok val="inivimus"/>
          <lm>
             <l>ineo</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--iniissent inissent-->
-         <tok val="in[i]?issent"/>
+      <ana>
+         <tok val="iniissent"/>
+         <tok val="inissent"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--iniisset inisset-->
-         <tok val="in[i]?isset"/>
+      <ana>
+         <tok val="iniisset"/>
+         <tok val="inisset"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--iniistis inistis-->
-         <tok val="in[i]?istis"/>
+      <ana>
+         <tok val="iniistis"/>
+         <tok val="inistis"/>
          <lm>
             <l>ineo</l>
             <m>v - 2 p r i a</m>
@@ -1682,8 +1931,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--inimi inimicumque-->
-         <tok val="inimi(cumque)?"/>
+      <ana>
+         <tok val="inimi"/>
+         <tok val="inimicumque"/>
          <lm>
             <l>inemo</l>
             <m>v - - - p n a</m>
@@ -1704,8 +1954,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--inimicam inimicamque-->
-         <tok val="inimicam(que)?"/>
+      <ana>
+         <tok val="inimicam"/>
+         <tok val="inimicamque"/>
          <lm cert="0.5">
             <l>inimicus</l>
             <m>a - - s - - - f a</m>
@@ -1742,8 +1993,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--inimicare inimicaris-->
-         <tok val="inimicar(is|e)"/>
+      <ana>
+         <tok val="inimicare"/>
+         <tok val="inimicaris"/>
          <lm>
             <l>inimico</l>
             <m>v - 2 s p i p</m>
@@ -1864,8 +2116,10 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--inimicissimorum inimicissimum inimicissimumque-->
-         <tok val="inimicissim(or)?um(que)?"/>
+      <ana>
+         <tok val="inimicissimorum"/>
+         <tok val="inimicissimum"/>
+         <tok val="inimicissimumque"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.5">a - - p - - - n g s</m>
@@ -1879,8 +2133,9 @@
             <m>a - - p - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--inimicissimum inimicissimumque-->
-         <tok val="inimicissimum(que)?"/>
+      <ana>
+         <tok val="inimicissimum"/>
+         <tok val="inimicissimumque"/>
          <lm>
             <l>inimicus</l>
             <m cert="0.333333333333333333">a - - s - - - n a s</m>
@@ -2084,8 +2339,9 @@
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--iniquissima Iniquissima-->
-         <tok val="[Ii]niquissima"/>
+      <ana>
+         <tok val="Iniquissima"/>
+         <tok val="iniquissima"/>
          <lm>
             <l>iniquus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -2147,8 +2403,9 @@
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--iniquitate Iniquitate-->
-         <tok val="[Ii]niquitate"/>
+      <ana>
+         <tok val="Iniquitate"/>
+         <tok val="iniquitate"/>
          <lm>
             <l>iniquitas</l>
             <m>n - - s - - - f b</m>
@@ -2185,8 +2442,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--iniquitatium iniquitatum-->
-         <tok val="iniquitat[i]?um"/>
+      <ana>
+         <tok val="iniquitatium"/>
+         <tok val="iniquitatum"/>
          <lm>
             <l>iniquitas</l>
             <m>n - - p - - - f g</m>
@@ -2222,8 +2480,10 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--inirent inirentque inirentur-->
-         <tok val="inirent(ur|que)?"/>
+      <ana>
+         <tok val="inirent"/>
+         <tok val="inirentque"/>
+         <tok val="inirentur"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 p i s a</m>
@@ -2236,15 +2496,18 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--iniret iniretur inireturque-->
-         <tok val="iniret(ur|urque)?"/>
+      <ana>
+         <tok val="iniret"/>
+         <tok val="iniretur"/>
+         <tok val="inireturque"/>
          <lm>
             <l>ineo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--inisse iniisse-->
-         <tok val="in[i]?isse"/>
+      <ana>
+         <tok val="iniisse"/>
+         <tok val="inisse"/>
          <lm>
             <l>ineo</l>
             <m>v - - - r n a</m>
@@ -2350,8 +2613,9 @@
             <m cert="0.25">v - - s r p p n g</m>
          </lm>
       </ana>
-      <ana><!--initi initii-->
-         <tok val="initi[i]?"/>
+      <ana>
+         <tok val="initi"/>
+         <tok val="initii"/>
          <lm>
             <l>initium</l>
             <m>n - - s - - - n g</m>
@@ -2394,8 +2658,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--initiales initialis-->
-         <tok val="initial[ie]s"/>
+      <ana>
+         <tok val="initiales"/>
+         <tok val="initialis"/>
          <lm cert="0.5">
             <l>initiales</l>
             <m>n - - p - - - m a</m>
@@ -2648,8 +2913,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--initientur initienturque-->
-         <tok val="initientur(que)?"/>
+      <ana>
+         <tok val="initientur"/>
+         <tok val="initienturque"/>
          <lm>
             <l>initio</l>
             <m>v - 3 p p s p</m>
@@ -2751,8 +3017,9 @@
             <m cert="0.166666666666666667">v - - p f p a m d</m>
          </lm>
       </ana>
-      <ana><!--inituro inituroque-->
-         <tok val="inituro(que)?"/>
+      <ana>
+         <tok val="inituro"/>
+         <tok val="inituroque"/>
          <lm>
             <l>ineo</l>
             <m cert="0.25">v - - s f p a m d</m>
@@ -2780,8 +3047,9 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--initurus initurusque-->
-         <tok val="initurus(que)?"/>
+      <ana>
+         <tok val="initurus"/>
+         <tok val="initurusque"/>
          <lm>
             <l>ineo</l>
             <m>v - - s f p a m n</m>
@@ -2813,15 +3081,17 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--iniucunde iniucundius-->
-         <tok val="iniucund(ius|e)"/>
+      <ana>
+         <tok val="iniucunde"/>
+         <tok val="iniucundius"/>
          <lm>
             <l>iniucundus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--iniucunde iniucundum-->
-         <tok val="iniucund(um|e)"/>
+      <ana>
+         <tok val="iniucunde"/>
+         <tok val="iniucundum"/>
          <lm>
             <l>iniucundus</l>
             <m>a - - s - - - n v</m>
@@ -3030,8 +3300,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--iniuncto iniunctoque-->
-         <tok val="iniuncto(que)?"/>
+      <ana>
+         <tok val="iniuncto"/>
+         <tok val="iniunctoque"/>
          <lm cert="0.5">
             <l>iniunctus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -3320,8 +3591,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--iniungo Iniungo-->
-         <tok val="[Ii]niungo"/>
+      <ana>
+         <tok val="Iniungo"/>
+         <tok val="iniungo"/>
          <lm>
             <l>iniungo</l>
             <m>v - 1 s p i a</m>
@@ -3465,8 +3737,9 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--iniurati iniuratique-->
-         <tok val="iniurati(que)?"/>
+      <ana>
+         <tok val="iniurati"/>
+         <tok val="iniuratique"/>
          <lm cert="0.5">
             <l>iniuro</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -3501,8 +3774,9 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--iniuratorum iniuratum-->
-         <tok val="iniurat(or)?um"/>
+      <ana>
+         <tok val="iniuratorum"/>
+         <tok val="iniuratum"/>
          <lm cert="0.5">
             <l>iniuratus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -3542,8 +3816,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--iniure iniurius-->
-         <tok val="iniur(ius|e)"/>
+      <ana>
+         <tok val="iniure"/>
+         <tok val="iniurius"/>
          <lm>
             <l>iniurus</l>
             <m>d</m>
@@ -3570,15 +3845,22 @@
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--iniuria iniuriaque iniuriast iniúria Iniuria-->
-         <tok val="[iI]ni[uú]ria(st|que)?"/>
+      <ana>
+         <tok val="Iniuria"/>
+         <tok val="iniuria"/>
+         <tok val="iniuriaque"/>
+         <tok val="iniuriast"/>
+         <tok val="iniúria"/>
          <lm>
             <l>iniuria</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--iniuria iniuriaque iniuriast Iniuria-->
-         <tok val="[iI]niuria(st|que)?"/>
+      <ana>
+         <tok val="Iniuria"/>
+         <tok val="iniuria"/>
+         <tok val="iniuriaque"/>
+         <tok val="iniuriast"/>
          <lm cert="0.5">
             <l>iniurius</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
@@ -3594,15 +3876,18 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--iniuriae iniuriaeque Iniuriae-->
-         <tok val="[Ii]niuriae(que)?"/>
+      <ana>
+         <tok val="Iniuriae"/>
+         <tok val="iniuriae"/>
+         <tok val="iniuriaeque"/>
          <lm>
             <l>iniurius</l>
             <m>a - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--iniuriae iniuriaeque-->
-         <tok val="iniuriae(que)?"/>
+      <ana>
+         <tok val="iniuriae"/>
+         <tok val="iniuriaeque"/>
          <lm cert="0.5">
             <l>iniurius</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
@@ -3617,15 +3902,22 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--iniuriam iniuriamne iniuriamque iniúriam Iniuriam-->
-         <tok val="[iI]ni[uú]riam(ne|que)?"/>
+      <ana>
+         <tok val="Iniuriam"/>
+         <tok val="iniuriam"/>
+         <tok val="iniuriamne"/>
+         <tok val="iniuriamque"/>
+         <tok val="iniúriam"/>
          <lm>
             <l>iniurius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--iniuriam iniuriamne iniuriamque Iniuriam-->
-         <tok val="[iI]niuriam(ne|que)?"/>
+      <ana>
+         <tok val="Iniuriam"/>
+         <tok val="iniuriam"/>
+         <tok val="iniuriamne"/>
+         <tok val="iniuriamque"/>
          <lm>
             <l>iniuria</l>
             <m>n - - s - - - f a</m>
@@ -3646,8 +3938,10 @@
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--iniuriarum iniuriarumque Iniuriarum-->
-         <tok val="[Ii]niuriarum(que)?"/>
+      <ana>
+         <tok val="Iniuriarum"/>
+         <tok val="iniuriarum"/>
+         <tok val="iniuriarumque"/>
          <lm cert="0.5">
             <l>iniuria</l>
             <m>n - - p - - - f g</m>
@@ -3657,15 +3951,20 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--iniurias iniuriasque íniurias Iniurias-->
-         <tok val="[íiI]niurias(que)?"/>
+      <ana>
+         <tok val="Iniurias"/>
+         <tok val="iniurias"/>
+         <tok val="iniuriasque"/>
+         <tok val="íniurias"/>
          <lm>
             <l>iniurius</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--iniurias iniuriasque Iniurias-->
-         <tok val="[Ii]niurias(que)?"/>
+      <ana>
+         <tok val="Iniurias"/>
+         <tok val="iniurias"/>
+         <tok val="iniuriasque"/>
          <lm>
             <l>iniuria</l>
             <m>n - - p - - - f a</m>
@@ -3678,8 +3977,10 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--iniurie iniurium iniuriumst-->
-         <tok val="iniuri(um)?(st|e)?"/>
+      <ana>
+         <tok val="iniurie"/>
+         <tok val="iniurium"/>
+         <tok val="iniuriumst"/>
          <lm>
             <l>iniurius</l>
             <m>a - - s - - - n v</m>
@@ -3692,8 +3993,9 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--iniuriis iniuriisque-->
-         <tok val="iniuriis(que)?"/>
+      <ana>
+         <tok val="iniuriis"/>
+         <tok val="iniuriisque"/>
          <lm>
             <l>iniurius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -3704,16 +4006,19 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--iniuriis iniuriisque Iniuriis-->
-         <tok val="[Ii]niuriis(que)?"/>
+      <ana>
+         <tok val="Iniuriis"/>
+         <tok val="iniuriis"/>
+         <tok val="iniuriisque"/>
          <lm>
             <l>iniuria</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--iniuriosa iniuriosaque-->
-         <tok val="iniuriosa(que)?"/>
+      <ana>
+         <tok val="iniuriosa"/>
+         <tok val="iniuriosaque"/>
          <lm>
             <l>iniuriosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -3731,29 +4036,36 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--iniuriose iniurioseue iniuriosius-->
-         <tok val="iniurios[e]?(ue|ius)?"/>
+      <ana>
+         <tok val="iniuriose"/>
+         <tok val="iniurioseue"/>
+         <tok val="iniuriosius"/>
          <lm>
             <l>iniuriosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--iniuriose iniurioseue iniuriosum Iniuriosum-->
-         <tok val="[iI]niurios[e]?(ue|um)?"/>
+      <ana>
+         <tok val="Iniuriosum"/>
+         <tok val="iniuriose"/>
+         <tok val="iniurioseue"/>
+         <tok val="iniuriosum"/>
          <lm>
             <l>iniuriosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--iniuriose iniurioseue-->
-         <tok val="iniuriose(ue)?"/>
+      <ana>
+         <tok val="iniuriose"/>
+         <tok val="iniurioseue"/>
          <lm>
             <l>iniuriosus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--iniuriosi Iniuriosi-->
-         <tok val="[Ii]niuriosi"/>
+      <ana>
+         <tok val="Iniuriosi"/>
+         <tok val="iniuriosi"/>
          <lm>
             <l>iniuriosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -3822,8 +4134,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--iniuriosum Iniuriosum-->
-         <tok val="[Ii]niuriosum"/>
+      <ana>
+         <tok val="Iniuriosum"/>
+         <tok val="iniuriosum"/>
          <lm>
             <l>iniuriosus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -3852,15 +4165,18 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--iniurium iniuriumst Iniurium-->
-         <tok val="[iI]niurium(st)?"/>
+      <ana>
+         <tok val="Iniurium"/>
+         <tok val="iniurium"/>
+         <tok val="iniuriumst"/>
          <lm>
             <l>iniurius</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--iniurium iniuriumst-->
-         <tok val="iniurium(st)?"/>
+      <ana>
+         <tok val="iniurium"/>
+         <tok val="iniuriumst"/>
          <lm>
             <l>iniurius</l>
             <m cert="0.25">a - - s - - - n a</m>
@@ -3889,8 +4205,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--iniussa iniussaque-->
-         <tok val="iniussa(que)?"/>
+      <ana>
+         <tok val="iniussa"/>
+         <tok val="iniussaque"/>
          <lm>
             <l>iniussus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -3931,8 +4248,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--iniussu iniussuque-->
-         <tok val="iniussu(que)?"/>
+      <ana>
+         <tok val="iniussu"/>
+         <tok val="iniussuque"/>
          <lm>
             <l>iniussus2</l>
             <m>n - - s - - - m b</m>
@@ -3954,15 +4272,18 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--iniussus iniussusque Iniussusque-->
-         <tok val="[Ii]niussus(que|)"/>
+      <ana>
+         <tok val="Iniussusque"/>
+         <tok val="iniussus"/>
+         <tok val="iniussusque"/>
          <lm>
             <l>iniussus2</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--iniussus iniussusque-->
-         <tok val="iniussus(que)?"/>
+      <ana>
+         <tok val="iniussus"/>
+         <tok val="iniussusque"/>
          <lm cert="0.5">
             <l>iniussus2</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -3974,8 +4295,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--iniusta iniustaque-->
-         <tok val="iniusta(que)?"/>
+      <ana>
+         <tok val="iniusta"/>
+         <tok val="iniustaque"/>
          <lm cert="0.5">
             <l>iniustum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -3992,8 +4314,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--iniustae iniustaeque-->
-         <tok val="iniustae(que)?"/>
+      <ana>
+         <tok val="iniustae"/>
+         <tok val="iniustaeque"/>
          <lm>
             <l>iniustus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -4016,15 +4339,20 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--iniuste iniusteque iniustius iniustiust-->
-         <tok val="iniust(i|eq)?[u]?[s]?[te]?"/>
+      <ana>
+         <tok val="iniuste"/>
+         <tok val="iniusteque"/>
+         <tok val="iniustius"/>
+         <tok val="iniustiust"/>
          <lm>
             <l>iniustus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--iniuste iniusteque iniustum-->
-         <tok val="iniust[e]?(que|um)?"/>
+      <ana>
+         <tok val="iniuste"/>
+         <tok val="iniusteque"/>
+         <tok val="iniustum"/>
          <lm cert="0.5">
             <l>iniustus</l>
             <m>a - - s - - - n v</m>
@@ -4034,15 +4362,17 @@
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--iniuste iniusteque-->
-         <tok val="iniuste(que)?"/>
+      <ana>
+         <tok val="iniuste"/>
+         <tok val="iniusteque"/>
          <lm>
             <l>iniustus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--iniusti iniustique-->
-         <tok val="iniusti(que)?"/>
+      <ana>
+         <tok val="iniusti"/>
+         <tok val="iniustique"/>
          <lm cert="0.5">
             <l>iniustus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -4126,15 +4456,18 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--iniustissime iniustissume-->
-         <tok val="iniustiss[ui]me"/>
+      <ana>
+         <tok val="iniustissime"/>
+         <tok val="iniustissume"/>
          <lm>
             <l>iniustus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--iniustissime iniustissimum iniustissume-->
-         <tok val="iniustiss[ui]m(e|um)"/>
+      <ana>
+         <tok val="iniustissime"/>
+         <tok val="iniustissimum"/>
+         <tok val="iniustissume"/>
          <lm>
             <l>iniustus</l>
             <m>a - - s - - - n v s</m>
@@ -4204,8 +4537,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--iniustius iniustiust-->
-         <tok val="iniustius[t]?"/>
+      <ana>
+         <tok val="iniustius"/>
+         <tok val="iniustiust"/>
          <lm>
             <l>iniustus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -4228,8 +4562,10 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--iniustorum iniustorumque iniustum-->
-         <tok val="iniust(or)?um(que)?"/>
+      <ana>
+         <tok val="iniustorum"/>
+         <tok val="iniustorumque"/>
+         <tok val="iniustum"/>
          <lm cert="0.5">
             <l>iniustus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -4261,8 +4597,9 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--iniustus iniustusque-->
-         <tok val="iniustus(que)?"/>
+      <ana>
+         <tok val="iniustus"/>
+         <tok val="iniustusque"/>
          <lm>
             <l>iniustus</l>
             <m>a - - s - - - m n</m>
@@ -4351,7 +4688,7 @@
             <m cert="0.166666666666666667">a - - p - - - n d</m>
          </lm>
       </ana>
-      <ana><!--inimicasset-->
+      <ana>
          <tok val="inimicasset"/>
          <lm>
             <l>inimico</l>
@@ -4397,6 +4734,7 @@
       </ana>
       <ana>
          <tok val="Initu"/>
+         <tok val="initu"/>
          <lm>
             <l>ineo</l>
             <m>v - - - - u - - b</m>

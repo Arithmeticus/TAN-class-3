@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusmus">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:mus">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to mus</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-mus.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>MUS</tok-starts-with>
       <tok-starts-with>Mus</tok-starts-with>
       <tok-starts-with>mus</tok-starts-with>
       <tok-starts-with>mús</tok-starts-with>
-      <ana><!--MUSAE Musae-->
-         <tok val="M(usae|USAE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:34:29.744-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:34:29.744-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-mus.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="MUSAE"/>
+         <tok val="Musae"/>
+         <tok val="musae"/>
          <lm>
             <l>Musa</l>
             <m cert="0.125">n e - p - - - f n</m>
@@ -50,16 +60,22 @@
             <m cert="0.125">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--MUSTIO Mustio-->
-         <tok val="M(ustio|USTIO)"/>
+      <ana>
+         <tok val="MUSTIO"/>
+         <tok val="Mustio"/>
+         <tok val="mustio"/>
          <lm>
             <l>Mustius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Mus mus musne musque must-->
-         <tok val="[mM]us(t|ne|que)?"/>
+      <ana>
+         <tok val="Mus"/>
+         <tok val="mus"/>
+         <tok val="musne"/>
+         <tok val="musque"/>
+         <tok val="must"/>
          <lm>
             <l>mus</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -68,8 +84,15 @@
             <m cert="0.25">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Musa Musane Musaque Musave-->
-         <tok val="Musa[vn]?(e|que)?"/>
+      <ana>
+         <tok val="Musa"/>
+         <tok val="Musane"/>
+         <tok val="Musaque"/>
+         <tok val="Musave"/>
+         <tok val="musa"/>
+         <tok val="musane"/>
+         <tok val="musaque"/>
+         <tok val="musave"/>
          <lm>
             <l>Musa</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -82,6 +105,7 @@
       </ana>
       <ana>
          <tok val="Musaea"/>
+         <tok val="musaea"/>
          <lm>
             <l>Museus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -92,8 +116,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Musaei Musei-->
-         <tok val="Mus[a]?ei"/>
+      <ana>
+         <tok val="Musaei"/>
+         <tok val="Musei"/>
+         <tok val="musaei"/>
+         <tok val="musei"/>
          <lm>
             <l>Museus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -104,6 +131,7 @@
       </ana>
       <ana>
          <tok val="Musaei"/>
+         <tok val="musaei"/>
          <lm>
             <l>Musaeus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -113,14 +141,18 @@
       </ana>
       <ana>
          <tok val="Musaeo"/>
+         <tok val="musaeo"/>
          <lm>
             <l>Musaeus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Musaeo Museo-->
-         <tok val="Mus[a]?eo"/>
+      <ana>
+         <tok val="Musaeo"/>
+         <tok val="Museo"/>
+         <tok val="musaeo"/>
+         <tok val="museo"/>
          <lm>
             <l>Museus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -131,6 +163,7 @@
       </ana>
       <ana>
          <tok val="Musaeos"/>
+         <tok val="musaeos"/>
          <lm cert="0.5">
             <l>Musaeus</l>
             <m>n e - p - - - m a</m>
@@ -140,15 +173,23 @@
             <m>a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Musaeum Museen Museum-->
-         <tok val="Mus[a]?e(um|en)"/>
+      <ana>
+         <tok val="Musaeum"/>
+         <tok val="Museen"/>
+         <tok val="Museum"/>
+         <tok val="musaeum"/>
+         <tok val="museen"/>
+         <tok val="museum"/>
          <lm>
             <l>Museus</l>
             <m>a e - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Musaeum Museum-->
-         <tok val="Mus[a]?eum"/>
+      <ana>
+         <tok val="Musaeum"/>
+         <tok val="Museum"/>
+         <tok val="musaeum"/>
+         <tok val="museum"/>
          <lm>
             <l>Museus</l>
             <m cert="0.2">a e - p - - - m g</m>
@@ -160,6 +201,7 @@
       </ana>
       <ana>
          <tok val="Musaeum"/>
+         <tok val="musaeum"/>
          <lm>
             <l>Musaeus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -168,13 +210,17 @@
       </ana>
       <ana>
          <tok val="Musaeus"/>
+         <tok val="musaeus"/>
          <lm>
             <l>Musaeus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Musaeus Museus-->
-         <tok val="Mus[a]?eus"/>
+      <ana>
+         <tok val="Musaeus"/>
+         <tok val="Museus"/>
+         <tok val="musaeus"/>
+         <tok val="museus"/>
          <lm>
             <l>Museus</l>
             <m>a e - s - - - m n</m>
@@ -182,37 +228,50 @@
       </ana>
       <ana>
          <tok val="Musagetes"/>
+         <tok val="musagetes"/>
          <lm>
             <l>Musagetes</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Musam Musamque-->
-         <tok val="Musam(que)?"/>
+      <ana>
+         <tok val="Musam"/>
+         <tok val="Musamque"/>
+         <tok val="musam"/>
+         <tok val="musamque"/>
          <lm>
             <l>Musa</l>
             <m cert="0.5">n e - s - - - f a</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Musarum Musarumque-->
-         <tok val="Musarum(que)?"/>
+      <ana>
+         <tok val="Musarum"/>
+         <tok val="Musarumque"/>
+         <tok val="musarum"/>
+         <tok val="musarumque"/>
          <lm>
             <l>Musa</l>
             <m cert="0.5">n e - p - - - f g</m>
             <m cert="0.5">n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Musas Musasque-->
-         <tok val="Musas(que)?"/>
+      <ana>
+         <tok val="Musas"/>
+         <tok val="Musasque"/>
+         <tok val="musas"/>
+         <tok val="musasque"/>
          <lm>
             <l>Musa</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Musca musca muscan muscast-->
-         <tok val="[mM]usca(n|st)?"/>
+      <ana>
+         <tok val="Musca"/>
+         <tok val="musca"/>
+         <tok val="muscan"/>
+         <tok val="muscast"/>
          <lm>
             <l>musca</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -222,6 +281,7 @@
       </ana>
       <ana>
          <tok val="Musca"/>
+         <tok val="musca"/>
          <lm>
             <l>Musca</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -231,17 +291,15 @@
       </ana>
       <ana>
          <tok val="Muscae"/>
-         <lm>
+         <tok val="muscae"/>
+         <lm cert="0.5">
             <l>Musca</l>
             <m cert="0.25">n e - p - - - m v</m>
             <m cert="0.25">n e - s - - - m d</m>
             <m cert="0.25">n e - p - - - m n</m>
             <m cert="0.25">n e - s - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Muscae muscae-->
-         <tok val="[mM]uscae"/>
-         <lm>
+         <lm cert="0.5">
             <l>musca</l>
             <m cert="0.25">n - - s - - - f d</m>
             <m cert="0.25">n - - s - - - f g</m>
@@ -251,20 +309,19 @@
       </ana>
       <ana>
          <tok val="Muscam"/>
-         <lm>
+         <tok val="muscam"/>
+         <lm cert="0.5">
             <l>Musca</l>
             <m>n e - s - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Muscam muscam-->
-         <tok val="[mM]uscam"/>
-         <lm>
+         <lm cert="0.5">
             <l>musca</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Muscarium muscarium-->
-         <tok val="[mM]uscarium"/>
+      <ana>
+         <tok val="Muscarium"/>
+         <tok val="muscarium"/>
          <lm cert="0.5">
             <l>muscarius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -282,8 +339,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Muscarius muscarius-->
-         <tok val="[mM]uscarius"/>
+      <ana>
+         <tok val="Muscarius"/>
+         <tok val="muscarius"/>
          <lm>
             <l>muscarius</l>
             <m>a - - s - - - m n</m>
@@ -291,20 +349,24 @@
       </ana>
       <ana>
          <tok val="Muscas"/>
+         <tok val="muscas"/>
          <lm>
             <l>Musca</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Muscas muscan muscas-->
-         <tok val="[mM]usca[sn]"/>
+      <ana>
+         <tok val="Muscas"/>
+         <tok val="muscan"/>
+         <tok val="muscas"/>
          <lm>
             <l>musca</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Muscerda muscerda-->
-         <tok val="[mM]uscerda"/>
+      <ana>
+         <tok val="Muscerda"/>
+         <tok val="muscerda"/>
          <lm>
             <l>muscerda</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -312,15 +374,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Muscerdas muscerdas-->
-         <tok val="[mM]uscerdas"/>
+      <ana>
+         <tok val="Muscerdas"/>
+         <tok val="muscerdas"/>
          <lm>
             <l>muscerda</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Musci musci-->
-         <tok val="[mM]usci"/>
+      <ana>
+         <tok val="Musci"/>
+         <tok val="musci"/>
          <lm>
             <l>muscus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -328,8 +392,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Muscipula muscipula-->
-         <tok val="[mM]uscipula"/>
+      <ana>
+         <tok val="Muscipula"/>
+         <tok val="muscipula"/>
          <lm cert="0.5">
             <l>muscipula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -343,8 +408,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Muscosi muscosi-->
-         <tok val="[mM]uscosi"/>
+      <ana>
+         <tok val="Muscosi"/>
+         <tok val="muscosi"/>
          <lm>
             <l>muscosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -353,15 +419,17 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Muscosus muscosus-->
-         <tok val="[mM]uscosus"/>
+      <ana>
+         <tok val="Muscosus"/>
+         <tok val="muscosus"/>
          <lm>
             <l>muscosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Muscula muscula-->
-         <tok val="[mM]uscula"/>
+      <ana>
+         <tok val="Muscula"/>
+         <tok val="muscula"/>
          <lm>
             <l>muscula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -369,8 +437,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Musculi musculi musculique musculiue-->
-         <tok val="[mM]usculi[q]?(ue)?"/>
+      <ana>
+         <tok val="Musculi"/>
+         <tok val="musculi"/>
+         <tok val="musculique"/>
+         <tok val="musculiue"/>
          <lm>
             <l>musculus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -378,29 +449,36 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Musculorum musculorum musculorumque musculorumue musculum-->
-         <tok val="[mM]uscul(or|)um[q]?(ue)?"/>
+      <ana>
+         <tok val="Musculorum"/>
+         <tok val="musculorum"/>
+         <tok val="musculorumque"/>
+         <tok val="musculorumue"/>
+         <tok val="musculum"/>
          <lm>
             <l>musculus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Musculosus musculosus-->
-         <tok val="[mM]usculosus"/>
+      <ana>
+         <tok val="Musculosus"/>
+         <tok val="musculosus"/>
          <lm>
             <l>musculosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Musculus musculus-->
-         <tok val="[mM]usculus"/>
+      <ana>
+         <tok val="Musculus"/>
+         <tok val="musculus"/>
          <lm>
             <l>musculus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Muscus muscus-->
-         <tok val="[mM]uscus"/>
+      <ana>
+         <tok val="Muscus"/>
+         <tok val="muscus"/>
          <lm>
             <l>muscus</l>
             <m>n - - s - - - m n</m>
@@ -408,14 +486,18 @@
       </ana>
       <ana>
          <tok val="Museen"/>
+         <tok val="museen"/>
          <lm>
             <l>Museus</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">d e</m>
          </lm>
       </ana>
-      <ana><!--Museen Museum-->
-         <tok val="Muse(um|en)"/>
+      <ana>
+         <tok val="Museen"/>
+         <tok val="Museum"/>
+         <tok val="museen"/>
+         <tok val="museum"/>
          <lm>
             <l>Museum</l>
             <m>n e - s - - - n v</m>
@@ -423,6 +505,7 @@
       </ana>
       <ana>
          <tok val="Musei"/>
+         <tok val="musei"/>
          <lm>
             <l>Museum</l>
             <m>n e - s - - - n g</m>
@@ -430,6 +513,7 @@
       </ana>
       <ana>
          <tok val="Museo"/>
+         <tok val="museo"/>
          <lm>
             <l>Museum</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -438,6 +522,7 @@
       </ana>
       <ana>
          <tok val="Museum"/>
+         <tok val="museum"/>
          <lm>
             <l>Museum</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -447,6 +532,7 @@
       </ana>
       <ana>
          <tok val="Musi"/>
+         <tok val="musi"/>
          <lm>
             <l>Musium</l>
             <m>n e - s - - - n g</m>
@@ -454,6 +540,7 @@
       </ana>
       <ana>
          <tok val="Musia"/>
+         <tok val="musia"/>
          <lm cert="0.5">
             <l>Musium</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -467,16 +554,20 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Musica Musice musice-->
-         <tok val="[Mm]usic[ea]"/>
+      <ana>
+         <tok val="Musica"/>
+         <tok val="Musice"/>
+         <tok val="musica"/>
+         <tok val="musice"/>
          <lm>
             <l>musice</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Musica musica-->
-         <tok val="[mM]usica"/>
+      <ana>
+         <tok val="Musica"/>
+         <tok val="musica"/>
          <lm cert="0.5">
             <l>musica</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -493,15 +584,21 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Musica Musice musice músice-->
-         <tok val="[Mm]?(u|mú)sic[ea]"/>
+      <ana>
+         <tok val="Musica"/>
+         <tok val="Musice"/>
+         <tok val="musica"/>
+         <tok val="musice"/>
+         <tok val="músice"/>
          <lm>
             <l>musice</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Musicae musicae musicaeque-->
-         <tok val="[mM]usicae(que)?"/>
+      <ana>
+         <tok val="Musicae"/>
+         <tok val="musicae"/>
+         <tok val="musicaeque"/>
          <lm>
             <l>musicus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -512,6 +609,7 @@
       </ana>
       <ana>
          <tok val="Musicae"/>
+         <tok val="musicae"/>
          <lm>
             <l>musice</l>
             <m cert="0.333333333333333333">n - - s - - - f d</m>
@@ -519,22 +617,28 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Musicae musices-->
-         <tok val="[mM]usic[a]?e[s]?"/>
+      <ana>
+         <tok val="Musicae"/>
+         <tok val="musicae"/>
+         <tok val="musices"/>
          <lm>
             <l>musice</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Musicam musicam-->
-         <tok val="[mM]usicam"/>
+      <ana>
+         <tok val="Musicam"/>
+         <tok val="musicam"/>
          <lm>
             <l>musicus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Musicam Musicen musicen-->
-         <tok val="[mM]usic(en|am)"/>
+      <ana>
+         <tok val="Musicam"/>
+         <tok val="Musicen"/>
+         <tok val="musicam"/>
+         <tok val="musicen"/>
          <lm>
             <l>musice</l>
             <m>n - - s - - - f a</m>
@@ -542,6 +646,7 @@
       </ana>
       <ana>
          <tok val="Musicani"/>
+         <tok val="musicani"/>
          <lm>
             <l>Musicani</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -550,14 +655,16 @@
       </ana>
       <ana>
          <tok val="Musicanis"/>
+         <tok val="musicanis"/>
          <lm>
             <l>Musicani</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Musice musice-->
-         <tok val="[mM]usice"/>
+      <ana>
+         <tok val="Musice"/>
+         <tok val="musice"/>
          <lm>
             <l>musicus</l>
             <m cert="0.333333333333333333">d</m>
@@ -565,15 +672,19 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Musice Musicum musice musicum-->
-         <tok val="[mM]usic(um|e)"/>
+      <ana>
+         <tok val="Musice"/>
+         <tok val="Musicum"/>
+         <tok val="musice"/>
+         <tok val="musicum"/>
          <lm>
             <l>musicus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Musici musici-->
-         <tok val="[mM]usici"/>
+      <ana>
+         <tok val="Musici"/>
+         <tok val="musici"/>
          <lm>
             <l>musicus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -585,9 +696,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Musicis musicis-->
-         <tok val="[mM]usicis"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Musicis"/>
+         <tok val="musicis"/>
+         <lm cert="0.333333333333333333">
             <l>musicus</l>
             <m cert="0.125">n - - p - - - m d</m>
             <m cert="0.125">a - - p - - - f b</m>
@@ -598,22 +710,20 @@
             <m cert="0.125">n - - p - - - m b</m>
             <m cert="0.125">a - - p - - - n b</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>musica</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Musicis"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>musice</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Musico musico-->
-         <tok val="[mM]usico"/>
+      <ana>
+         <tok val="Musico"/>
+         <tok val="musico"/>
          <lm>
             <l>musicus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -624,8 +734,12 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Musicorum Musicum musicorum musicorumque musicum-->
-         <tok val="[mM]usic(or)?um(que)?"/>
+      <ana>
+         <tok val="Musicorum"/>
+         <tok val="Musicum"/>
+         <tok val="musicorum"/>
+         <tok val="musicorumque"/>
+         <tok val="musicum"/>
          <lm cert="0.5">
             <l>musicus</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -637,16 +751,18 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Musicos musicos-->
-         <tok val="[mM]usicos"/>
+      <ana>
+         <tok val="Musicos"/>
+         <tok val="musicos"/>
          <lm>
             <l>musicus</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Musicum musicum-->
-         <tok val="[mM]usicum"/>
+      <ana>
+         <tok val="Musicum"/>
+         <tok val="musicum"/>
          <lm>
             <l>musicus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -655,8 +771,10 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Musicus musicus musicusque-->
-         <tok val="[mM]usicus(que)?"/>
+      <ana>
+         <tok val="Musicus"/>
+         <tok val="musicus"/>
+         <tok val="musicusque"/>
          <lm>
             <l>musicus</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -665,14 +783,18 @@
       </ana>
       <ana>
          <tok val="Musio"/>
+         <tok val="musio"/>
          <lm>
             <l>Musium</l>
             <m cert="0.5">n e - s - - - n b</m>
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Musis Musisque-->
-         <tok val="Musis(que)?"/>
+      <ana>
+         <tok val="Musis"/>
+         <tok val="Musisque"/>
+         <tok val="musis"/>
+         <tok val="musisque"/>
          <lm>
             <l>Musa</l>
             <m cert="0.25">n e - p - - - f d</m>
@@ -683,6 +805,7 @@
       </ana>
       <ana>
          <tok val="Musium"/>
+         <tok val="musium"/>
          <lm>
             <l>Musium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -691,8 +814,11 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Musiuum Musivum musiuum musivum-->
-         <tok val="[Mm]usi[vu]um"/>
+      <ana>
+         <tok val="Musiuum"/>
+         <tok val="Musivum"/>
+         <tok val="musiuum"/>
+         <tok val="musivum"/>
          <lm cert="0.5">
             <l>musivus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -712,13 +838,17 @@
       </ana>
       <ana>
          <tok val="Musoni"/>
+         <tok val="musoni"/>
          <lm>
             <l>Musonius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Musoni Musonii-->
-         <tok val="Musoni[i]?"/>
+      <ana>
+         <tok val="Musoni"/>
+         <tok val="Musonii"/>
+         <tok val="musoni"/>
+         <tok val="musonii"/>
          <lm>
             <l>Musonius</l>
             <m>n e - s - - - m g</m>
@@ -726,6 +856,7 @@
       </ana>
       <ana>
          <tok val="Musonianus"/>
+         <tok val="musonianus"/>
          <lm>
             <l>Musonianus</l>
             <m>a e - s - - - m n</m>
@@ -733,6 +864,7 @@
       </ana>
       <ana>
          <tok val="Musonii"/>
+         <tok val="musonii"/>
          <lm>
             <l>Musonius</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -741,6 +873,7 @@
       </ana>
       <ana>
          <tok val="Musonio"/>
+         <tok val="musonio"/>
          <lm>
             <l>Musonius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -749,6 +882,7 @@
       </ana>
       <ana>
          <tok val="Musonium"/>
+         <tok val="musonium"/>
          <lm>
             <l>Musonius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -757,70 +891,79 @@
       </ana>
       <ana>
          <tok val="Musonius"/>
+         <tok val="musonius"/>
          <lm>
             <l>Musonius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mussa mussa mussan-->
-         <tok val="[mM]ussa[n]?"/>
+      <ana>
+         <tok val="Mussa"/>
+         <tok val="mussa"/>
+         <tok val="mussan"/>
          <lm>
             <l>musso</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Mussabat mussabat-->
-         <tok val="[mM]ussabat"/>
+      <ana>
+         <tok val="Mussabat"/>
+         <tok val="mussabat"/>
          <lm>
             <l>musso</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Mussant mussant mussantque-->
-         <tok val="[mM]ussant(que)?"/>
+      <ana>
+         <tok val="Mussant"/>
+         <tok val="mussant"/>
+         <tok val="mussantque"/>
          <lm>
             <l>musso</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Mussare mussare-->
-         <tok val="[mM]ussare"/>
-         <lm>
+      <ana>
+         <tok val="Mussare"/>
+         <tok val="mussare"/>
+         <lm cert="0.5">
             <l>musso</l>
             <m>v - - - p n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Mussare"/>
-         <lm>
+         <lm cert="0.5">
             <l>mussor</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Mussat mussat-->
-         <tok val="[mM]ussat"/>
+      <ana>
+         <tok val="Mussat"/>
+         <tok val="mussat"/>
          <lm>
             <l>musso</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Mussitabis mussitabis-->
-         <tok val="[mM]ussitabis"/>
+      <ana>
+         <tok val="Mussitabis"/>
+         <tok val="mussitabis"/>
          <lm>
             <l>mussito</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Mussito mussito mússito-->
-         <tok val="[mM]?(u|mú)ssito"/>
+      <ana>
+         <tok val="Mussito"/>
+         <tok val="mussito"/>
+         <tok val="mússito"/>
          <lm>
             <l>mussito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Musso musso-->
-         <tok val="[mM]usso"/>
+      <ana>
+         <tok val="Musso"/>
+         <tok val="musso"/>
          <lm>
             <l>musso</l>
             <m>v - 1 s p i a</m>
@@ -828,16 +971,14 @@
       </ana>
       <ana>
          <tok val="Musta"/>
-         <lm>
+         <tok val="musta"/>
+         <lm cert="0.5">
             <l>mustum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
             <m cert="0.333333333333333333">n - - p - - - n v</m>
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
-      </ana>
-      <ana><!--Musta musta-->
-         <tok val="[mM]usta"/>
-         <lm>
+         <lm cert="0.5">
             <l>mustus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -847,8 +988,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Mustace mustace-->
-         <tok val="[mM]ustace"/>
+      <ana>
+         <tok val="Mustace"/>
+         <tok val="mustace"/>
          <lm>
             <l>mustace</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -856,15 +998,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Mustaceos mustaceos-->
-         <tok val="[mM]ustaceos"/>
+      <ana>
+         <tok val="Mustaceos"/>
+         <tok val="mustaceos"/>
          <lm>
             <l>mustaceus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Mustaceum mustaceum-->
-         <tok val="[mM]ustaceum"/>
+      <ana>
+         <tok val="Mustaceum"/>
+         <tok val="mustaceum"/>
          <lm cert="0.5">
             <l>mustaceus</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -878,22 +1022,25 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Mustaceus mustaceus-->
-         <tok val="[mM]ustaceus"/>
+      <ana>
+         <tok val="Mustaceus"/>
+         <tok val="mustaceus"/>
          <lm>
             <l>mustaceus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mustarius mustarius-->
-         <tok val="[mM]ustarius"/>
+      <ana>
+         <tok val="Mustarius"/>
+         <tok val="mustarius"/>
          <lm>
             <l>mustarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mustea mustea-->
-         <tok val="[mM]ustea"/>
+      <ana>
+         <tok val="Mustea"/>
+         <tok val="mustea"/>
          <lm>
             <l>musteus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -904,8 +1051,11 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Mustela Mustella mustela mustella-->
-         <tok val="[Mm]uste[l]?la"/>
+      <ana>
+         <tok val="Mustela"/>
+         <tok val="Mustella"/>
+         <tok val="mustela"/>
+         <tok val="mustella"/>
          <lm>
             <l>mustela</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -913,8 +1063,12 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Mustelae Mustellae mustelae mustelaeque-->
-         <tok val="[Mm]ustel[l]?ae(que)?"/>
+      <ana>
+         <tok val="Mustelae"/>
+         <tok val="Mustellae"/>
+         <tok val="mustelae"/>
+         <tok val="mustelaeque"/>
+         <tok val="mustellae"/>
          <lm>
             <l>mustela</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -923,44 +1077,56 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Mustelam mustelam-->
-         <tok val="[mM]ustelam"/>
+      <ana>
+         <tok val="Mustelam"/>
+         <tok val="mustelam"/>
          <lm>
             <l>mustela</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mustelarum Mustellarum mustelarum mustellarum-->
-         <tok val="[Mm]uste[l]?larum"/>
+      <ana>
+         <tok val="Mustelarum"/>
+         <tok val="Mustellarum"/>
+         <tok val="mustelarum"/>
+         <tok val="mustellarum"/>
          <lm>
             <l>mustela</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Mustelas mustelas mustellas-->
-         <tok val="[mM]ustel[l]?as"/>
+      <ana>
+         <tok val="Mustelas"/>
+         <tok val="mustelas"/>
+         <tok val="mustellas"/>
          <lm>
             <l>mustela</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Mustelinus mustelinus mustellinus-->
-         <tok val="[mM]uste[l]?linus"/>
+      <ana>
+         <tok val="Mustelinus"/>
+         <tok val="mustelinus"/>
+         <tok val="mustellinus"/>
          <lm>
             <l>mustelinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mustellin mustelis mustellis-->
-         <tok val="[mM]ustel[l]?i[sn]"/>
+      <ana>
+         <tok val="Mustellin"/>
+         <tok val="mustelis"/>
+         <tok val="mustellin"/>
+         <tok val="mustellis"/>
          <lm>
             <l>mustela</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Mustellinum mustellinum-->
-         <tok val="[mM]ustellinum"/>
+      <ana>
+         <tok val="Mustellinum"/>
+         <tok val="mustellinum"/>
          <lm>
             <l>mustelinus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -971,15 +1137,18 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Musteus musteus-->
-         <tok val="[mM]usteus"/>
+      <ana>
+         <tok val="Musteus"/>
+         <tok val="musteus"/>
          <lm>
             <l>musteus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Musti musti mustine-->
-         <tok val="[mM]usti(ne)?"/>
+      <ana>
+         <tok val="Musti"/>
+         <tok val="musti"/>
+         <tok val="mustine"/>
          <lm cert="0.5">
             <l>mustus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -994,6 +1163,7 @@
       </ana>
       <ana>
          <tok val="Musti"/>
+         <tok val="musti"/>
          <lm>
             <l>Mustius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -1002,6 +1172,7 @@
       </ana>
       <ana>
          <tok val="Mustium"/>
+         <tok val="mustium"/>
          <lm>
             <l>Mustius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1010,6 +1181,7 @@
       </ana>
       <ana>
          <tok val="Mustius"/>
+         <tok val="mustius"/>
          <lm cert="0.5">
             <l>Mustius</l>
             <m>n e - s - - - m n</m>
@@ -1022,8 +1194,10 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Musto musto mustoque-->
-         <tok val="[mM]usto(que)?"/>
+      <ana>
+         <tok val="Musto"/>
+         <tok val="musto"/>
+         <tok val="mustoque"/>
          <lm cert="0.5">
             <l>mustus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1037,8 +1211,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Mustricola mustricola-->
-         <tok val="[mM]ustricola"/>
+      <ana>
+         <tok val="Mustricola"/>
+         <tok val="mustricola"/>
          <lm>
             <l>mustricola</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1046,15 +1221,19 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Mustulentus mustulentus-->
-         <tok val="[mM]ustulentus"/>
+      <ana>
+         <tok val="Mustulentus"/>
+         <tok val="mustulentus"/>
          <lm>
             <l>mustulentus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Mustum mustum mustumue mustumve-->
-         <tok val="[mM]ustum[vu]?[e]?"/>
+      <ana>
+         <tok val="Mustum"/>
+         <tok val="mustum"/>
+         <tok val="mustumue"/>
+         <tok val="mustumve"/>
          <lm cert="0.5">
             <l>mustus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1069,8 +1248,12 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Mustum muste mustum mustumue mustumve-->
-         <tok val="[mM]ust(um)?[vu]?[e]?"/>
+      <ana>
+         <tok val="Mustum"/>
+         <tok val="muste"/>
+         <tok val="mustum"/>
+         <tok val="mustumue"/>
+         <tok val="mustumve"/>
          <lm cert="0.5">
             <l>mustum</l>
             <m>n - - s - - - n v</m>
@@ -1082,13 +1265,15 @@
       </ana>
       <ana>
          <tok val="Mustum"/>
+         <tok val="mustum"/>
          <lm>
             <l>mustum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Mustus mustus-->
-         <tok val="[mM]ustus"/>
+      <ana>
+         <tok val="Mustus"/>
+         <tok val="mustus"/>
          <lm>
             <l>mustus</l>
             <m>a - - s - - - m n</m>
@@ -1096,6 +1281,7 @@
       </ana>
       <ana>
          <tok val="Musulamii"/>
+         <tok val="musulamii"/>
          <lm>
             <l>Musulamii</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1104,6 +1290,7 @@
       </ana>
       <ana>
          <tok val="Musulamiorum"/>
+         <tok val="musulamiorum"/>
          <lm>
             <l>Musulamii</l>
             <m>n e - p - - - m g</m>
@@ -1116,15 +1303,17 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--musaearius museiarius-->
-         <tok val="mus[a]?e[i]?arius"/>
+      <ana>
+         <tok val="musaearius"/>
+         <tok val="museiarius"/>
          <lm>
             <l>museiarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--muscari muscarii-->
-         <tok val="muscari[i]?"/>
+      <ana>
+         <tok val="muscari"/>
+         <tok val="muscarii"/>
          <lm cert="0.5">
             <l>muscarius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -1293,8 +1482,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--musco muscoque-->
-         <tok val="musco(que)?"/>
+      <ana>
+         <tok val="musco"/>
+         <tok val="muscoque"/>
          <lm>
             <l>muscus</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -1313,15 +1503,17 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--muscose muscosius-->
-         <tok val="muscos(ius|e)"/>
+      <ana>
+         <tok val="muscose"/>
+         <tok val="muscosius"/>
          <lm>
             <l>muscosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--muscose muscosum-->
-         <tok val="muscos(um|e)"/>
+      <ana>
+         <tok val="muscose"/>
+         <tok val="muscosum"/>
          <lm>
             <l>muscosus</l>
             <m>a - - s - - - n v</m>
@@ -1421,8 +1613,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--musculos musculosque-->
-         <tok val="musculos(que)?"/>
+      <ana>
+         <tok val="musculos"/>
+         <tok val="musculosque"/>
          <lm>
             <l>musculus</l>
             <m>n - - p - - - m a</m>
@@ -1488,8 +1681,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--musicae musicaeque-->
-         <tok val="musicae(que)?"/>
+      <ana>
+         <tok val="musicae"/>
+         <tok val="musicaeque"/>
          <lm>
             <l>musica</l>
             <m cert="0.25">n - - s - - - f d</m>
@@ -1538,15 +1732,17 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--musiuarius musivarius-->
-         <tok val="musi[vu]arius"/>
+      <ana>
+         <tok val="musiuarius"/>
+         <tok val="musivarius"/>
          <lm>
             <l>musivarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--musiuo musivo-->
-         <tok val="musi[vu]o"/>
+      <ana>
+         <tok val="musiuo"/>
+         <tok val="musivo"/>
          <lm cert="0.5">
             <l>musivus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1567,8 +1763,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--mussan mussas-->
-         <tok val="mussa[sn]"/>
+      <ana>
+         <tok val="mussan"/>
+         <tok val="mussas"/>
          <lm>
             <l>musso</l>
             <m>v - 2 s p i a</m>
@@ -1587,8 +1784,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--mussantes mussantesque-->
-         <tok val="mussantes(que)?"/>
+      <ana>
+         <tok val="mussantes"/>
+         <tok val="mussantesque"/>
          <lm>
             <l>musso</l>
             <m cert="0.166666666666666667">v - - p p p a m n</m>
@@ -1633,8 +1831,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--mussari mussári-->
-         <tok val="muss[áa]ri"/>
+      <ana>
+         <tok val="mussari"/>
+         <tok val="mussári"/>
          <lm>
             <l>musso</l>
             <m>v - - - p n p</m>
@@ -1724,8 +1923,9 @@
             <m cert="0.166666666666666667">v - - p p g p n n</m>
          </lm>
       </ana>
-      <ana><!--mussitant mussitánt-->
-         <tok val="mussit[áa]nt"/>
+      <ana>
+         <tok val="mussitant"/>
+         <tok val="mussitánt"/>
          <lm>
             <l>mussito</l>
             <m>v - 3 p p i a</m>
@@ -1947,8 +2147,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--mustelino mustellino-->
-         <tok val="muste[l]?lino"/>
+      <ana>
+         <tok val="mustelino"/>
+         <tok val="mustellino"/>
          <lm>
             <l>mustelinus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1974,8 +2175,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--musteorum musteum-->
-         <tok val="muste(or)?um"/>
+      <ana>
+         <tok val="musteorum"/>
+         <tok val="musteum"/>
          <lm>
             <l>musteus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2023,8 +2225,10 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--mustum mustumue mustumve-->
-         <tok val="mustum[vu]?(e|)"/>
+      <ana>
+         <tok val="mustum"/>
+         <tok val="mustumue"/>
+         <tok val="mustumve"/>
          <lm>
             <l>musta</l>
             <m>n - - p - - - n g</m>
@@ -2046,6 +2250,7 @@
       </ana>
       <ana>
          <tok val="Musicarum"/>
+         <tok val="musicarum"/>
          <lm cert="0.333333333333333333">
             <l>musica</l>
             <m>n - - p - - - f g</m>
@@ -2061,6 +2266,7 @@
       </ana>
       <ana>
          <tok val="Musque"/>
+         <tok val="musque"/>
          <lm>
             <l>mus</l>
             <m cert="0.5">n - - s - - - c n</m>
@@ -2110,6 +2316,7 @@
       </ana>
       <ana>
          <tok val="Mussitans"/>
+         <tok val="mussitans"/>
          <lm>
             <l>mussito</l>
             <m cert="0.142857142857142857">v - - s p p a f n</m>

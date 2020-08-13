@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspec">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:pec">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to pec</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-pec.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PEC</tok-starts-with>
       <tok-starts-with>Pec</tok-starts-with>
       <tok-starts-with>pec</tok-starts-with>
       <tok-starts-with>péc</tok-starts-with>
       <tok-starts-with>Péc</tok-starts-with>
-      <ana><!--PECCATORUM Peccatorum peccatorum peccatorumque-->
-         <tok val="[pP]?(eccatorum)?(que|PECCATORUM)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:38:22.017-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:38:22.017-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-pec.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PECCATORUM"/>
+         <tok val="Peccatorum"/>
+         <tok val="peccatorum"/>
+         <tok val="peccatorumque"/>
          <lm>
             <l>peccator</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--PECCATORUM Peccatorum Peccatum peccatorum peccatorumque peccatum peccatumque peccatumst-->
-         <tok val="[pP]?(eccat)?(or)?(um)?(que|st|PECCATORUM)?"/>
+      <ana>
+         <tok val="PECCATORUM"/>
+         <tok val="Peccatorum"/>
+         <tok val="Peccatum"/>
+         <tok val="peccatorum"/>
+         <tok val="peccatorumque"/>
+         <tok val="peccatum"/>
+         <tok val="peccatumque"/>
+         <tok val="peccatumst"/>
          <lm cert="0.5">
             <l>pecco</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -56,8 +74,12 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--PECORA Pecora pecora pecoraque pecua-->
-         <tok val="[pP]?(ec)?(or|u)?[a]?(que|PECORA)?"/>
+      <ana>
+         <tok val="PECORA"/>
+         <tok val="Pecora"/>
+         <tok val="pecora"/>
+         <tok val="pecoraque"/>
+         <tok val="pecua"/>
          <lm>
             <l>pecus</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -65,66 +87,111 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--PECORIS Pecoris pecoris pecorisque pecorisve-->
-         <tok val="[pP]?(ecoris)?(ve|que|PECORIS)?"/>
+      <ana>
+         <tok val="PECORIS"/>
+         <tok val="Pecoris"/>
+         <tok val="pecoris"/>
+         <tok val="pecorisque"/>
+         <tok val="pecorisve"/>
          <lm>
             <l>pecus</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--PECTO Pecto pecto-->
-         <tok val="[pP]?(ecto|PECTO)"/>
+      <ana>
+         <tok val="PECTO"/>
+         <tok val="Pecto"/>
+         <tok val="pecto"/>
          <lm>
             <l>pecto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PECTVS Pectus Pectusque pectus pectusque pectusve-->
-         <tok val="[pP]?(ectus)?(qu|v)?(e|PECTVS)?"/>
+      <ana>
+         <tok val="PECTVS"/>
+         <tok val="Pectus"/>
+         <tok val="Pectusque"/>
+         <tok val="pectus"/>
+         <tok val="pectusque"/>
+         <tok val="pectusve"/>
+         <tok val="pectvs"/>
          <lm>
             <l>pectus</l>
             <m cert="0.5">n - - s - - - n v</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--PECTVS Pectus Pectusque pectus pectusque pectusve pectús péctus Péctus-->
-         <tok val="[pP]?(e|pé|Pé)?(ct)?[uú]?[s]?(qu|v)?(e|PECTVS)?"/>
+      <ana>
+         <tok val="PECTVS"/>
+         <tok val="Pectus"/>
+         <tok val="Pectusque"/>
+         <tok val="Péctus"/>
+         <tok val="pectus"/>
+         <tok val="pectusque"/>
+         <tok val="pectusve"/>
+         <tok val="pectvs"/>
+         <tok val="pectús"/>
+         <tok val="péctus"/>
          <lm>
             <l>pectus</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--PECUNIAS Pecunias pecunias pecuniasque-->
-         <tok val="[pP]?(ecunias)?(que|PECUNIAS)?"/>
+      <ana>
+         <tok val="PECUNIAS"/>
+         <tok val="Pecunias"/>
+         <tok val="pecunias"/>
+         <tok val="pecuniasque"/>
          <lm>
             <l>pecunia</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--PECVLIVM Peculium peculium peculiumque-->
-         <tok val="[pP]?(eculium)?(que|PECVLIVM)?"/>
+      <ana>
+         <tok val="PECVLIVM"/>
+         <tok val="Peculium"/>
+         <tok val="peculium"/>
+         <tok val="peculiumque"/>
+         <tok val="pecvlivm"/>
          <lm>
             <l>peculium</l>
             <m cert="0.5">n - - s - - - n v</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--PECVLIVM Peculium peculium peculiumque peculiúm-->
-         <tok val="[pP]?(eculi)?[uú]?[m]?(que|PECVLIVM)?"/>
+      <ana>
+         <tok val="PECVLIVM"/>
+         <tok val="Peculium"/>
+         <tok val="peculium"/>
+         <tok val="peculiumque"/>
+         <tok val="peculiúm"/>
+         <tok val="pecvlivm"/>
          <lm>
             <l>peculium</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--PECVLIVM Peculium peculiorum peculium peculiumque-->
-         <tok val="[pP]?(eculi)?(or)?(um)?(que|PECVLIVM)?"/>
+      <ana>
+         <tok val="PECVLIVM"/>
+         <tok val="Peculium"/>
+         <tok val="peculiorum"/>
+         <tok val="peculium"/>
+         <tok val="peculiumque"/>
+         <tok val="pecvlivm"/>
          <lm>
             <l>peculium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--PECVNIA Pecunia Pecvnia pecunia pecuniaque pecuniast pecuniave-->
-         <tok val="[pP]?(ec)?[uv]?(nia)?(st|ve|que|PECVNIA)?"/>
+      <ana>
+         <tok val="PECVNIA"/>
+         <tok val="Pecunia"/>
+         <tok val="Pecvnia"/>
+         <tok val="pecunia"/>
+         <tok val="pecuniaque"/>
+         <tok val="pecuniast"/>
+         <tok val="pecuniave"/>
+         <tok val="pecvnia"/>
          <lm>
             <l>pecunia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -132,8 +199,12 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--PECVNIAE Pecuniae pecuniae pecuniaeque-->
-         <tok val="[pP]?(ecuniae)?(que|PECVNIAE)?"/>
+      <ana>
+         <tok val="PECVNIAE"/>
+         <tok val="Pecuniae"/>
+         <tok val="pecuniae"/>
+         <tok val="pecuniaeque"/>
+         <tok val="pecvniae"/>
          <lm>
             <l>pecunia</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -141,22 +212,41 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--PECVNIAE Pecuniae pecuniae pecuniaeque pecuniai-->
-         <tok val="[pP]?(ecunia)?(e|i|eque|PECVNIAE)"/>
+      <ana>
+         <tok val="PECVNIAE"/>
+         <tok val="Pecuniae"/>
+         <tok val="pecuniae"/>
+         <tok val="pecuniaeque"/>
+         <tok val="pecuniai"/>
+         <tok val="pecvniae"/>
          <lm>
             <l>pecunia</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--PECVNIAM Pecuniam pecuniam pecuniamne pecuniamque pecuniamue-->
-         <tok val="[pP]?(ecuniam)?[q]?[un]?(e|PECVNIAM)?"/>
+      <ana>
+         <tok val="PECVNIAM"/>
+         <tok val="Pecuniam"/>
+         <tok val="pecuniam"/>
+         <tok val="pecuniamne"/>
+         <tok val="pecuniamque"/>
+         <tok val="pecuniamue"/>
+         <tok val="pecvniam"/>
          <lm>
             <l>pecunia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--PECVS Pecus Pecvsve pecun pecus pecusque pecusve-->
-         <tok val="[pP]?(ec)?[u]?[s]?(ve|n|sque|vsve|PECVS)?"/>
+      <ana>
+         <tok val="PECVS"/>
+         <tok val="Pecus"/>
+         <tok val="Pecvsve"/>
+         <tok val="pecun"/>
+         <tok val="pecus"/>
+         <tok val="pecusque"/>
+         <tok val="pecusve"/>
+         <tok val="pecvs"/>
+         <tok val="pecvsve"/>
          <lm>
             <l>pecus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -166,15 +256,18 @@
             <m cert="0.2">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Peccabitur peccabitur-->
-         <tok val="[pP]eccabitur"/>
+      <ana>
+         <tok val="Peccabitur"/>
+         <tok val="peccabitur"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Peccandi peccandi peccandique-->
-         <tok val="[pP]eccandi(que)?"/>
+      <ana>
+         <tok val="Peccandi"/>
+         <tok val="peccandi"/>
+         <tok val="peccandique"/>
          <lm>
             <l>pecco</l>
             <m cert="0.25">v - - p p g p m v</m>
@@ -183,15 +276,17 @@
             <m cert="0.25">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Peccandi peccandi-->
-         <tok val="[pP]eccandi"/>
+      <ana>
+         <tok val="Peccandi"/>
+         <tok val="peccandi"/>
          <lm>
             <l>pecco</l>
             <m>v - - s p d a n g</m>
          </lm>
       </ana>
-      <ana><!--Peccantis peccantis-->
-         <tok val="[pP]eccantis"/>
+      <ana>
+         <tok val="Peccantis"/>
+         <tok val="peccantis"/>
          <lm>
             <l>pecco</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -199,45 +294,60 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Peccantis peccantes peccantis-->
-         <tok val="[pP]eccant[ie]s"/>
+      <ana>
+         <tok val="Peccantis"/>
+         <tok val="peccantes"/>
+         <tok val="peccantis"/>
          <lm>
             <l>pecco</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Peccare peccare peccarest-->
-         <tok val="[pP]eccare(st)?"/>
+      <ana>
+         <tok val="Peccare"/>
+         <tok val="peccare"/>
+         <tok val="peccarest"/>
          <lm>
             <l>pecco</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Peccare peccare peccarest peccaris-->
-         <tok val="[pP]eccar[e]?(st|is)?"/>
+      <ana>
+         <tok val="Peccare"/>
+         <tok val="peccare"/>
+         <tok val="peccarest"/>
+         <tok val="peccaris"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Peccasse peccasse peccauisse peccavisse-->
-         <tok val="[pP]ecca[vu]?[i]?sse"/>
+      <ana>
+         <tok val="Peccasse"/>
+         <tok val="peccasse"/>
+         <tok val="peccauisse"/>
+         <tok val="peccavisse"/>
          <lm>
             <l>pecco</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Peccat Peccatne peccat peccatve-->
-         <tok val="[Pp]eccat(ne|ve)?"/>
+      <ana>
+         <tok val="Peccat"/>
+         <tok val="Peccatne"/>
+         <tok val="peccat"/>
+         <tok val="peccatne"/>
+         <tok val="peccatve"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Peccata peccata-->
-         <tok val="[pP]eccata"/>
+      <ana>
+         <tok val="Peccata"/>
+         <tok val="peccata"/>
          <lm cert="0.5">
             <l>pecco</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -254,16 +364,22 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Peccate peccate-->
-         <tok val="[pP]eccate"/>
+      <ana>
+         <tok val="Peccate"/>
+         <tok val="peccate"/>
          <lm>
             <l>pecco</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Peccate Peccatum peccate peccatum peccatumque peccatumst-->
-         <tok val="[pP]eccat(um)?(st|e|umque)?"/>
+      <ana>
+         <tok val="Peccate"/>
+         <tok val="Peccatum"/>
+         <tok val="peccate"/>
+         <tok val="peccatum"/>
+         <tok val="peccatumque"/>
+         <tok val="peccatumst"/>
          <lm cert="0.5">
             <l>peccatum</l>
             <m>n - - s - - - n v</m>
@@ -273,8 +389,12 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Peccati Peccatine peccati peccatine peccatique-->
-         <tok val="[pP]eccati(ne|que)?"/>
+      <ana>
+         <tok val="Peccati"/>
+         <tok val="Peccatine"/>
+         <tok val="peccati"/>
+         <tok val="peccatine"/>
+         <tok val="peccatique"/>
          <lm cert="0.5">
             <l>pecco</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -287,8 +407,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Peccatis peccatis-->
-         <tok val="[pP]eccatis"/>
+      <ana>
+         <tok val="Peccatis"/>
+         <tok val="peccatis"/>
          <lm cert="0.5">
             <l>pecco</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -305,8 +426,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Peccato peccato peccatoque-->
-         <tok val="[pP]eccato(que)?"/>
+      <ana>
+         <tok val="Peccato"/>
+         <tok val="peccato"/>
+         <tok val="peccatoque"/>
          <lm cert="0.5">
             <l>pecco</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -322,16 +445,20 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Peccator peccator-->
-         <tok val="[pP]eccator"/>
+      <ana>
+         <tok val="Peccator"/>
+         <tok val="peccator"/>
          <lm>
             <l>peccator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Peccatum peccatum peccatumque peccatumst-->
-         <tok val="[pP]eccatum(st|que)?"/>
+      <ana>
+         <tok val="Peccatum"/>
+         <tok val="peccatum"/>
+         <tok val="peccatumque"/>
+         <tok val="peccatumst"/>
          <lm cert="0.333333333333333333">
             <l>pecco</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -350,155 +477,198 @@
       </ana>
       <ana>
          <tok val="Peccatum"/>
+         <tok val="peccatum"/>
          <lm>
             <l>pecco</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Peccatur peccatur-->
-         <tok val="[pP]eccatur"/>
+      <ana>
+         <tok val="Peccatur"/>
+         <tok val="peccatur"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Peccaui Peccavi peccaui peccavi-->
-         <tok val="[Pp]ecca[vu]i"/>
+      <ana>
+         <tok val="Peccaui"/>
+         <tok val="Peccavi"/>
+         <tok val="peccaui"/>
+         <tok val="peccavi"/>
          <lm>
             <l>pecco</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Peccauit Peccavit peccauit peccavit peccavitque-->
-         <tok val="[Pp]ecca[vu]it(que)?"/>
+      <ana>
+         <tok val="Peccauit"/>
+         <tok val="Peccavit"/>
+         <tok val="peccauit"/>
+         <tok val="peccavit"/>
+         <tok val="peccavitque"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Peccaveram peccaram-->
-         <tok val="[pP]ecca(ve)?ram"/>
+      <ana>
+         <tok val="Peccaveram"/>
+         <tok val="peccaram"/>
+         <tok val="peccaveram"/>
          <lm>
             <l>pecco</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Peccaverunt peccauerunt peccavere peccaverunt Peccauerunt-->
-         <tok val="[pP]ecca[vu]er(unt|e)"/>
+      <ana>
+         <tok val="Peccauerunt"/>
+         <tok val="Peccaverunt"/>
+         <tok val="peccauerunt"/>
+         <tok val="peccavere"/>
+         <tok val="peccaverunt"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Peccavimus peccauimus peccavimus-->
-         <tok val="[pP]ecca[vu]imus"/>
+      <ana>
+         <tok val="Peccavimus"/>
+         <tok val="peccauimus"/>
+         <tok val="peccavimus"/>
          <lm>
             <l>pecco</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Peccent peccent-->
-         <tok val="[pP]eccent"/>
+      <ana>
+         <tok val="Peccent"/>
+         <tok val="peccent"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Peccet peccet-->
-         <tok val="[pP]eccet"/>
+      <ana>
+         <tok val="Peccet"/>
+         <tok val="peccet"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Pecco pecco-->
-         <tok val="[pP]ecco"/>
+      <ana>
+         <tok val="Pecco"/>
+         <tok val="pecco"/>
          <lm>
             <l>pecco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pecorarius pecorarius-->
-         <tok val="[pP]ecorarius"/>
+      <ana>
+         <tok val="Pecorarius"/>
+         <tok val="pecorarius"/>
          <lm>
             <l>pecorarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pecore pecore-->
-         <tok val="[pP]ecore"/>
+      <ana>
+         <tok val="Pecore"/>
+         <tok val="pecore"/>
          <lm>
             <l>pecus</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Pecori pecori pecorique-->
-         <tok val="[pP]ecori(que)?"/>
+      <ana>
+         <tok val="Pecori"/>
+         <tok val="pecori"/>
+         <tok val="pecorique"/>
          <lm>
             <l>pecus</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Pecorosus pecorosus-->
-         <tok val="[pP]ecorosus"/>
+      <ana>
+         <tok val="Pecorosus"/>
+         <tok val="pecorosus"/>
          <lm>
             <l>pecorosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pecorum pecorum pecorumque-->
-         <tok val="[pP]ecorum(que)?"/>
+      <ana>
+         <tok val="Pecorum"/>
+         <tok val="pecorum"/>
+         <tok val="pecorumque"/>
          <lm>
             <l>pecus</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pectat pectat-->
-         <tok val="[pP]ectat"/>
+      <ana>
+         <tok val="Pectat"/>
+         <tok val="pectat"/>
          <lm>
             <l>pecto</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Pectebat pectebat pectebatque-->
-         <tok val="[pP]ectebat(que)?"/>
+      <ana>
+         <tok val="Pectebat"/>
+         <tok val="pectebat"/>
+         <tok val="pectebatque"/>
          <lm>
             <l>pecto</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Pecten pecten pectes-->
-         <tok val="[pP]ecte[ns]"/>
+      <ana>
+         <tok val="Pecten"/>
+         <tok val="pecten"/>
+         <tok val="pectes"/>
          <lm>
             <l>pecto</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Pecten pecte pecten-->
-         <tok val="[pP]ecte[n]?"/>
+      <ana>
+         <tok val="Pecten"/>
+         <tok val="pecte"/>
+         <tok val="pecten"/>
          <lm>
             <l>pecto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Pectere pectere-->
-         <tok val="[pP]ectere"/>
+      <ana>
+         <tok val="Pectere"/>
+         <tok val="pectere"/>
          <lm>
             <l>pecto</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Pectere Pecteris pectere pecteris-->
-         <tok val="[pP]ecter(is|e)"/>
+      <ana>
+         <tok val="Pectere"/>
+         <tok val="Pecteris"/>
+         <tok val="pectere"/>
+         <tok val="pecteris"/>
          <lm>
             <l>pecto</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Pecti Pectine pecti pectin pectine pectique-->
-         <tok val="[pP]ecti[n]?(e|ne|que)?"/>
+      <ana>
+         <tok val="Pecti"/>
+         <tok val="Pectine"/>
+         <tok val="pecti"/>
+         <tok val="pectin"/>
+         <tok val="pectine"/>
+         <tok val="pectique"/>
          <lm>
             <l>pecto</l>
             <m>v - - - p n p</m>
@@ -506,6 +676,7 @@
       </ana>
       <ana>
          <tok val="Pectinare"/>
+         <tok val="pectinare"/>
          <lm>
             <l>pectino</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -513,48 +684,48 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Pectinatim pectinatim-->
-         <tok val="[pP]ectinatim"/>
+      <ana>
+         <tok val="Pectinatim"/>
+         <tok val="pectinatim"/>
          <lm>
             <l>pectinatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Pectinatum pectinatum-->
-         <tok val="[pP]ectinatum"/>
+      <ana>
+         <tok val="Pectinatum"/>
+         <tok val="pectinatum"/>
          <lm>
             <l>pectino</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Pectinatum"/>
-         <lm>
-            <l>pectino</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Pectines pectines pectinesque-->
-         <tok val="[pP]ectines(que)?"/>
+         <tok val="Pectines"/>
+         <tok val="pectines"/>
+         <tok val="pectinesque"/>
          <lm>
             <l>pectino</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Pectino pectino-->
-         <tok val="[pP]ectino"/>
+      <ana>
+         <tok val="Pectino"/>
+         <tok val="pectino"/>
          <lm>
             <l>pectino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pectita pectita-->
-         <tok val="[pP]ectita"/>
+      <ana>
+         <tok val="Pectita"/>
+         <tok val="pectita"/>
          <lm>
             <l>pecto</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -565,15 +736,19 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Pectitus pectitus-->
-         <tok val="[pP]ectitus"/>
+      <ana>
+         <tok val="Pectitus"/>
+         <tok val="pectitus"/>
          <lm>
             <l>pecto</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Pectora Pectoraque pectora pectoraque-->
-         <tok val="[pP]ectora(que)?"/>
+      <ana>
+         <tok val="Pectora"/>
+         <tok val="Pectoraque"/>
+         <tok val="pectora"/>
+         <tok val="pectoraque"/>
          <lm>
             <l>pectus</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -581,8 +756,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Pectorale pectorale-->
-         <tok val="[pP]ectorale"/>
+      <ana>
+         <tok val="Pectorale"/>
+         <tok val="pectorale"/>
          <lm cert="0.5">
             <l>pectoralis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -596,15 +772,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Pectorale pectorale pectorali-->
-         <tok val="[pP]ectoral[ei]"/>
+      <ana>
+         <tok val="Pectorale"/>
+         <tok val="pectorale"/>
+         <tok val="pectorali"/>
          <lm>
             <l>pectorale</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Pectoralis pectoralis-->
-         <tok val="[pP]ectoralis"/>
+      <ana>
+         <tok val="Pectoralis"/>
+         <tok val="pectoralis"/>
          <lm cert="0.5">
             <l>pectoralis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -622,37 +801,51 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pectore pectore pectoreque pectorest pectóre péctore péctorest-->
-         <tok val="[p]?(é|e|Pe|pe)ct[oó]re(st|que)?"/>
+      <ana>
+         <tok val="Pectore"/>
+         <tok val="pectore"/>
+         <tok val="pectoreque"/>
+         <tok val="pectorest"/>
+         <tok val="pectóre"/>
+         <tok val="péctore"/>
+         <tok val="péctorest"/>
          <lm>
             <l>pectus</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Pectoribus pectoribus pectoribusque-->
-         <tok val="[pP]ectoribus(que)?"/>
+      <ana>
+         <tok val="Pectoribus"/>
+         <tok val="pectoribus"/>
+         <tok val="pectoribusque"/>
          <lm>
             <l>pectus</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Pectoris pectoris pectorisue pectorisve pectorisque-->
-         <tok val="[pP]ectoris[q]?[uv]?[e]?"/>
+      <ana>
+         <tok val="Pectoris"/>
+         <tok val="pectoris"/>
+         <tok val="pectorisque"/>
+         <tok val="pectorisue"/>
+         <tok val="pectorisve"/>
          <lm>
             <l>pectus</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pectorosus pectorosus-->
-         <tok val="[pP]ectorosus"/>
+      <ana>
+         <tok val="Pectorosus"/>
+         <tok val="pectorosus"/>
          <lm>
             <l>pectorosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pectunculi pectunculi-->
-         <tok val="[pP]ectunculi"/>
+      <ana>
+         <tok val="Pectunculi"/>
+         <tok val="pectunculi"/>
          <lm>
             <l>pectunculus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -660,15 +853,17 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pectunculus pectunculus-->
-         <tok val="[pP]ectunculus"/>
+      <ana>
+         <tok val="Pectunculus"/>
+         <tok val="pectunculus"/>
          <lm>
             <l>pectunculus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pectusculum pectusculum-->
-         <tok val="[pP]ectusculum"/>
+      <ana>
+         <tok val="Pectusculum"/>
+         <tok val="pectusculum"/>
          <lm>
             <l>pectusculum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -677,15 +872,19 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pecu pecu pecun pecú-->
-         <tok val="[pP]ec[u]?[nú]?"/>
+      <ana>
+         <tok val="Pecu"/>
+         <tok val="pecu"/>
+         <tok val="pecun"/>
+         <tok val="pecú"/>
          <lm>
             <l>pecus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Pecuaria pecuaria-->
-         <tok val="[pP]ecuaria"/>
+      <ana>
+         <tok val="Pecuaria"/>
+         <tok val="pecuaria"/>
          <lm cert="0.5">
             <l>pecuaria</l>
             <m cert="0.166666666666666667">n - - s - - - f n</m>
@@ -705,8 +904,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Pecuariam pecuariam-->
-         <tok val="[pP]ecuariam"/>
+      <ana>
+         <tok val="Pecuariam"/>
+         <tok val="pecuariam"/>
          <lm cert="0.5">
             <l>pecuarius</l>
             <m>a - - s - - - f a</m>
@@ -716,8 +916,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pecuarii pecuarii-->
-         <tok val="[pP]ecuarii"/>
+      <ana>
+         <tok val="Pecuarii"/>
+         <tok val="pecuarii"/>
          <lm>
             <l>pecuarius</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -726,8 +927,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pecuarii pecuari pecuarii-->
-         <tok val="[pP]ecuari[i]?"/>
+      <ana>
+         <tok val="Pecuarii"/>
+         <tok val="pecuari"/>
+         <tok val="pecuarii"/>
          <lm>
             <l>pecuarius</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -735,16 +938,19 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pecuarius pecuarius-->
-         <tok val="[pP]ecuarius"/>
+      <ana>
+         <tok val="Pecuarius"/>
+         <tok val="pecuarius"/>
          <lm>
             <l>pecuarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pecudes pecudes pecudesque-->
-         <tok val="[pP]ecudes(que)?"/>
+      <ana>
+         <tok val="Pecudes"/>
+         <tok val="pecudes"/>
+         <tok val="pecudesque"/>
          <lm>
             <l>pecus2</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -755,8 +961,10 @@
             <m cert="0.166666666666666667">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Pecudibus pecudibus pecudibusque-->
-         <tok val="[pP]ecudibus(que)?"/>
+      <ana>
+         <tok val="Pecudibus"/>
+         <tok val="pecudibus"/>
+         <tok val="pecudibusque"/>
          <lm>
             <l>pecus2</l>
             <m cert="0.25">n - - p - - - m b</m>
@@ -767,46 +975,55 @@
       </ana>
       <ana>
          <tok val="Pecudifer"/>
+         <tok val="pecudifer"/>
          <lm>
             <l>Pecudifer</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pecudis pecudis-->
-         <tok val="[pP]ecudis"/>
+      <ana>
+         <tok val="Pecudis"/>
+         <tok val="pecudis"/>
          <lm>
             <l>pecus2</l>
             <m cert="0.5">n - - s - - - m g</m>
             <m cert="0.5">n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Pecudum Pecudumque pecudum pecudumque pecudumve-->
-         <tok val="[pP]ecudum(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Pecudum"/>
+         <tok val="Pecudumque"/>
+         <tok val="pecudum"/>
+         <tok val="pecudumque"/>
+         <tok val="pecudumve"/>
          <lm>
             <l>pecus2</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Peculator peculator-->
-         <tok val="[pP]eculator"/>
+      <ana>
+         <tok val="Peculator"/>
+         <tok val="peculator"/>
          <lm>
             <l>peculator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Peculatum peculatum-->
-         <tok val="[pP]eculatum"/>
+      <ana>
+         <tok val="Peculatum"/>
+         <tok val="peculatum"/>
          <lm cert="0.5">
             <l>peculor</l>
-            <m cert="0.166666666666666667">v - - p r p p m g</m>
-            <m cert="0.166666666666666667">v - - s r p p m a</m>
-            <m cert="0.166666666666666667">v - - s r p p n n</m>
-            <m cert="0.166666666666666667">v - - p r p p n g</m>
-            <m cert="0.166666666666666667">v - - s r p p n a</m>
-            <m cert="0.166666666666666667">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - p r p p m g</m>
+            <m cert="0.142857142857142857">v - - s r p p m a</m>
+            <m cert="0.142857142857142857">v - - s r p p n n</m>
+            <m cert="0.142857142857142857">v - - p r p p n g</m>
+            <m cert="0.142857142857142857">v - - s r p p n a</m>
+            <m cert="0.142857142857142857">v - - s r p p n v</m>
+            <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
          <lm cert="0.5">
             <l>peculatus</l>
@@ -814,21 +1031,17 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Peculatum"/>
-         <lm>
-            <l>peculor</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Peculatus peculatus pecúlatus-->
-         <tok val="[pP]ec[uú]latus"/>
+         <tok val="Peculatus"/>
+         <tok val="peculatus"/>
+         <tok val="pecúlatus"/>
          <lm>
             <l>peculatus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Peculatus peculatus-->
-         <tok val="[pP]eculatus"/>
+      <ana>
+         <tok val="Peculatus"/>
+         <tok val="peculatus"/>
          <lm cert="0.5">
             <l>peculatus</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -840,8 +1053,11 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Peculiare peculiare peculiareque peculiarest-->
-         <tok val="[pP]eculiare(st|que)?"/>
+      <ana>
+         <tok val="Peculiare"/>
+         <tok val="peculiare"/>
+         <tok val="peculiareque"/>
+         <tok val="peculiarest"/>
          <lm cert="0.5">
             <l>peculiaris</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -854,15 +1070,24 @@
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Peculiare Peculiaris peculiare peculiareque peculiarest peculiaris peculiarisque-->
-         <tok val="[pP]eculiar[e]?(st|is|e|isque|eque)?"/>
+      <ana>
+         <tok val="Peculiare"/>
+         <tok val="Peculiaris"/>
+         <tok val="peculiare"/>
+         <tok val="peculiareque"/>
+         <tok val="peculiarest"/>
+         <tok val="peculiaris"/>
+         <tok val="peculiarisque"/>
          <lm>
             <l>peculio</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Peculiarem peculiarem peculiaremque peculiaremve-->
-         <tok val="[pP]eculiarem(ve|que)?"/>
+      <ana>
+         <tok val="Peculiarem"/>
+         <tok val="peculiarem"/>
+         <tok val="peculiaremque"/>
+         <tok val="peculiaremve"/>
          <lm cert="0.5">
             <l>peculiaris</l>
             <m cert="0.5">a - - s - - - f a</m>
@@ -873,16 +1098,23 @@
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Peculiares Peculiaris peculiares peculiaresque peculiaris peculiarisque-->
-         <tok val="[pP]eculiar[ie]s(que)?"/>
+      <ana>
+         <tok val="Peculiares"/>
+         <tok val="Peculiaris"/>
+         <tok val="peculiares"/>
+         <tok val="peculiaresque"/>
+         <tok val="peculiaris"/>
+         <tok val="peculiarisque"/>
          <lm>
             <l>peculiaris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Peculiares peculiares peculiaresque-->
-         <tok val="[pP]eculiares(que)?"/>
+      <ana>
+         <tok val="Peculiares"/>
+         <tok val="peculiares"/>
+         <tok val="peculiaresque"/>
          <lm cert="0.5">
             <l>peculiaris</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -895,8 +1127,9 @@
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Peculiari peculiari-->
-         <tok val="[pP]eculiari"/>
+      <ana>
+         <tok val="Peculiari"/>
+         <tok val="peculiari"/>
          <lm cert="0.333333333333333333">
             <l>peculiaris</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -916,8 +1149,10 @@
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Peculiaris peculiaris peculiarisque-->
-         <tok val="[pP]eculiaris(que)?"/>
+      <ana>
+         <tok val="Peculiaris"/>
+         <tok val="peculiaris"/>
+         <tok val="peculiarisque"/>
          <lm cert="0.5">
             <l>peculio</l>
             <m>v - 2 s r s a</m>
@@ -935,6 +1170,7 @@
       </ana>
       <ana>
          <tok val="Peculiarissimam"/>
+         <tok val="peculiarissimam"/>
          <lm>
             <l>peculiaris</l>
             <m>a - - s - - - f a s</m>
@@ -942,27 +1178,34 @@
       </ana>
       <ana>
          <tok val="Peculiariter"/>
+         <tok val="peculiariter"/>
          <lm>
             <l>peculiariter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Peculiatus peculiatus-->
-         <tok val="[pP]eculiatus"/>
+      <ana>
+         <tok val="Peculiatus"/>
+         <tok val="peculiatus"/>
          <lm>
             <l>peculio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Peculii peculi peculii peculí pecúli-->
-         <tok val="[pP]ec[uú]l[i]?[ií]?"/>
+      <ana>
+         <tok val="Peculii"/>
+         <tok val="peculi"/>
+         <tok val="peculii"/>
+         <tok val="peculí"/>
+         <tok val="pecúli"/>
          <lm>
             <l>peculium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Peculio peculio-->
-         <tok val="[pP]eculio"/>
+      <ana>
+         <tok val="Peculio"/>
+         <tok val="peculio"/>
          <lm cert="0.5">
             <l>peculio</l>
             <m>v - 1 s p i a</m>
@@ -973,8 +1216,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Peculiolum peculiolum-->
-         <tok val="[pP]eculiolum"/>
+      <ana>
+         <tok val="Peculiolum"/>
+         <tok val="peculiolum"/>
          <lm>
             <l>peculiolum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -985,6 +1229,7 @@
       </ana>
       <ana>
          <tok val="Peculiosum"/>
+         <tok val="peculiosum"/>
          <lm>
             <l>peculiosus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -995,15 +1240,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Peculiosus peculiosus-->
-         <tok val="[pP]eculiosus"/>
+      <ana>
+         <tok val="Peculiosus"/>
+         <tok val="peculiosus"/>
          <lm>
             <l>peculiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Peculor peculor-->
-         <tok val="[pP]eculor"/>
+      <ana>
+         <tok val="Peculor"/>
+         <tok val="peculor"/>
          <lm>
             <l>peculor</l>
             <m>v - 1 s p i p</m>
@@ -1011,38 +1258,37 @@
       </ana>
       <ana>
          <tok val="Pecum"/>
+         <tok val="pecum"/>
          <lm>
             <l>pecus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pecuniaria pecuniaria-->
-         <tok val="[pP]ecuniaria"/>
+      <ana>
+         <tok val="Pecuniaria"/>
+         <tok val="pecuniaria"/>
          <lm>
             <l>pecuniarius</l>
-            <m cert="0.333333333333333333">a - - s - - - f n</m>
-            <m cert="0.333333333333333333">a - - s - - - f v</m>
-            <m cert="0.333333333333333333">a - - s - - - f b</m>
+            <m cert="0.166666666666666667">a - - s - - - f n</m>
+            <m cert="0.166666666666666667">a - - p - - - n n</m>
+            <m cert="0.166666666666666667">a - - s - - - f v</m>
+            <m cert="0.166666666666666667">a - - p - - - n v</m>
+            <m cert="0.166666666666666667">a - - p - - - n a</m>
+            <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Pecuniaria"/>
-         <lm>
-            <l>pecuniarius</l>
-            <m cert="0.333333333333333333">a - - p - - - n n</m>
-            <m cert="0.333333333333333333">a - - p - - - n v</m>
-            <m cert="0.333333333333333333">a - - p - - - n a</m>
-         </lm>
-      </ana>
-      <ana><!--Pecuniarie pecuniarie pecuniarium-->
-         <tok val="[pP]ecuniari(e|um)"/>
+         <tok val="Pecuniarie"/>
+         <tok val="pecuniarie"/>
+         <tok val="pecuniarium"/>
          <lm>
             <l>pecuniarius</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Pecuniarie pecuniarie-->
-         <tok val="[pP]ecuniarie"/>
+      <ana>
+         <tok val="Pecuniarie"/>
+         <tok val="pecuniarie"/>
          <lm>
             <l>pecuniarius</l>
             <m>a - - s - - - m v</m>
@@ -1050,26 +1296,22 @@
       </ana>
       <ana>
          <tok val="Pecuniarius"/>
-         <lm>
-            <l>pecuniaris</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Pecuniarius pecuniarius-->
-         <tok val="[pP]ecuniarius"/>
+         <tok val="pecuniarius"/>
          <lm cert="0.5">
             <l>pecuniaris</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>pecuniarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pecuniarum pecuniarum-->
-         <tok val="[pP]ecuniarum"/>
+      <ana>
+         <tok val="Pecuniarum"/>
+         <tok val="pecuniarum"/>
          <lm>
             <l>pecunia</l>
             <m>n - - p - - - f g</m>
@@ -1077,6 +1319,7 @@
       </ana>
       <ana>
          <tok val="Pecuniola"/>
+         <tok val="pecuniola"/>
          <lm>
             <l>Pecuniola</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -1086,13 +1329,15 @@
       </ana>
       <ana>
          <tok val="Pecuniolam"/>
+         <tok val="pecuniolam"/>
          <lm>
             <l>Pecuniola</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pecuniosa pecuniosa-->
-         <tok val="[pP]ecuniosa"/>
+      <ana>
+         <tok val="Pecuniosa"/>
+         <tok val="pecuniosa"/>
          <lm>
             <l>pecuniosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1103,22 +1348,25 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Pecuniosus pecuniosus-->
-         <tok val="[pP]ecuniosus"/>
+      <ana>
+         <tok val="Pecuniosus"/>
+         <tok val="pecuniosus"/>
          <lm>
             <l>pecuniosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pecuum pecuum-->
-         <tok val="[pP]ecuum"/>
+      <ana>
+         <tok val="Pecuum"/>
+         <tok val="pecuum"/>
          <lm>
             <l>pecus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--pecca peccan-->
-         <tok val="pecca[n]?"/>
+      <ana>
+         <tok val="pecca"/>
+         <tok val="peccan"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s p m a</m>
@@ -1189,8 +1437,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--peccan peccas-->
-         <tok val="pecca[sn]"/>
+      <ana>
+         <tok val="peccan"/>
+         <tok val="peccas"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s p i a</m>
@@ -1241,8 +1490,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--peccante peccanti-->
-         <tok val="peccant[ie]"/>
+      <ana>
+         <tok val="peccante"/>
+         <tok val="peccanti"/>
          <lm>
             <l>pecco</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1393,29 +1643,37 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--peccarim peccaverim peccauerim-->
-         <tok val="pecca[uv]?(e|)rim"/>
+      <ana>
+         <tok val="peccarim"/>
+         <tok val="peccauerim"/>
+         <tok val="peccaverim"/>
          <lm>
             <l>pecco</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--peccarint peccauerint peccaverint-->
-         <tok val="pecca[vu]?(e|)rint"/>
+      <ana>
+         <tok val="peccarint"/>
+         <tok val="peccauerint"/>
+         <tok val="peccaverint"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--peccaris peccaveris peccaueris-->
-         <tok val="pecca[uv]?(e|)ris"/>
+      <ana>
+         <tok val="peccaris"/>
+         <tok val="peccaueris"/>
+         <tok val="peccaveris"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--peccarit peccauerit peccaverit-->
-         <tok val="pecca[vu]?(e|)rit"/>
+      <ana>
+         <tok val="peccarit"/>
+         <tok val="peccauerit"/>
+         <tok val="peccaverit"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s r s a</m>
@@ -1435,22 +1693,25 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--peccasses peccavisses-->
-         <tok val="pecca(vi)?sses"/>
+      <ana>
+         <tok val="peccasses"/>
+         <tok val="peccavisses"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--peccasset peccavisset-->
-         <tok val="pecca(vi)?sset"/>
+      <ana>
+         <tok val="peccasset"/>
+         <tok val="peccavisset"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--peccasti peccavisti-->
-         <tok val="pecca(vi)?sti"/>
+      <ana>
+         <tok val="peccasti"/>
+         <tok val="peccavisti"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s r i a</m>
@@ -1594,8 +1855,10 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--peccatum peccatumque peccatumst-->
-         <tok val="peccatum(st|que)?"/>
+      <ana>
+         <tok val="peccatum"/>
+         <tok val="peccatumque"/>
+         <tok val="peccatumst"/>
          <lm>
             <l>pecco</l>
             <m>a - - s - - - n n</m>
@@ -1685,30 +1948,35 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--peccauerat peccaverat-->
-         <tok val="pecca[vu]erat"/>
+      <ana>
+         <tok val="peccauerat"/>
+         <tok val="peccaverat"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--peccauerimusne peccaverimus-->
-         <tok val="pecca[vu]erimus(ne)?"/>
+      <ana>
+         <tok val="peccauerimusne"/>
+         <tok val="peccaverimus"/>
          <lm>
             <l>pecco</l>
             <m cert="0.5">v - 1 p t i a</m>
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--peccauerint peccaverint-->
-         <tok val="pecca[vu]erint"/>
+      <ana>
+         <tok val="peccauerint"/>
+         <tok val="peccaverint"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--peccauerit peccaverit peccassit-->
-         <tok val="pecca[vu]?(er|ss)it"/>
+      <ana>
+         <tok val="peccassit"/>
+         <tok val="peccauerit"/>
+         <tok val="peccaverit"/>
          <lm>
             <l>pecco</l>
             <m>v - 3 s t i a</m>
@@ -1728,8 +1996,10 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--peccaveris peccassis peccaueris-->
-         <tok val="pecca[uv]?(er|ss)is"/>
+      <ana>
+         <tok val="peccassis"/>
+         <tok val="peccaueris"/>
+         <tok val="peccaveris"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s t i a</m>
@@ -1743,8 +2013,9 @@
             <m cert="0.5">v - 2 p t i a</m>
          </lm>
       </ana>
-      <ana><!--peccavero peccasso-->
-         <tok val="pecca(ss|ver)o"/>
+      <ana>
+         <tok val="peccasso"/>
+         <tok val="peccavero"/>
          <lm>
             <l>pecco</l>
             <m>v - 1 s t i a</m>
@@ -1771,8 +2042,10 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--pecces peccesne peccesve-->
-         <tok val="pecces[vn]?(e|)"/>
+      <ana>
+         <tok val="pecces"/>
+         <tok val="peccesne"/>
+         <tok val="peccesve"/>
          <lm>
             <l>pecco</l>
             <m>v - 2 s p s a</m>
@@ -1825,16 +2098,19 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--pecoribus pecoribusque pecoribusue-->
-         <tok val="pecoribus[q]?(ue|)"/>
+      <ana>
+         <tok val="pecoribus"/>
+         <tok val="pecoribusque"/>
+         <tok val="pecoribusue"/>
          <lm>
             <l>pecus</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--pecorosa pecorosaque-->
-         <tok val="pecorosa(que)?"/>
+      <ana>
+         <tok val="pecorosa"/>
+         <tok val="pecorosaque"/>
          <lm>
             <l>pecorosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1969,8 +2245,9 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--pectin pectis-->
-         <tok val="pecti[sn]"/>
+      <ana>
+         <tok val="pectin"/>
+         <tok val="pectis"/>
          <lm cert="0.5">
             <l>pectis</l>
             <m>n - - s - - - f n</m>
@@ -2058,8 +2335,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--pectit pectitque-->
-         <tok val="pectit(que)?"/>
+      <ana>
+         <tok val="pectit"/>
+         <tok val="pectitque"/>
          <lm>
             <l>pecto</l>
             <m>v - 3 s p i a</m>
@@ -2196,8 +2474,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--pectorum pectorumque-->
-         <tok val="pectorum(que)?"/>
+      <ana>
+         <tok val="pectorum"/>
+         <tok val="pectorumque"/>
          <lm>
             <l>pectus</l>
             <m>n - - p - - - n g</m>
@@ -2317,8 +2596,9 @@
             <m cert="0.25">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--pecuariorum pecuarium-->
-         <tok val="pecuari(or)?um"/>
+      <ana>
+         <tok val="pecuariorum"/>
+         <tok val="pecuarium"/>
          <lm cert="0.5">
             <l>pecuarius</l>
             <m cert="0.333333333333333333">n - - p - - - m g</m>
@@ -2384,8 +2664,9 @@
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--pecudi pecudique-->
-         <tok val="pecudi(que)?"/>
+      <ana>
+         <tok val="pecudi"/>
+         <tok val="pecudique"/>
          <lm>
             <l>pecus2</l>
             <m cert="0.5">n - - s - - - m d</m>
@@ -2576,8 +2857,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--peculiariter peculiarius-->
-         <tok val="peculiari(us|ter)"/>
+      <ana>
+         <tok val="peculiariter"/>
+         <tok val="peculiarius"/>
          <lm>
             <l>peculiaris</l>
             <m>d</m>
@@ -2757,8 +3039,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--pecuniariter pecuniarius-->
-         <tok val="pecuniari(us|ter)"/>
+      <ana>
+         <tok val="pecuniariter"/>
+         <tok val="pecuniarius"/>
          <lm>
             <l>pecuniaris</l>
             <m>d</m>
@@ -2865,8 +3148,9 @@
             <m cert="0.166666666666666667">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--pecuniosissimus pecuniosissimusque-->
-         <tok val="pecuniosissimus(que)?"/>
+      <ana>
+         <tok val="pecuniosissimus"/>
+         <tok val="pecuniosissimusque"/>
          <lm>
             <l>pecuniosus</l>
             <m cert="0.5">a - - s - - - m v s</m>
@@ -2883,8 +3167,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--pecuniosorum pecuniosum-->
-         <tok val="pecunios(or)?um"/>
+      <ana>
+         <tok val="pecuniosorum"/>
+         <tok val="pecuniosum"/>
          <lm>
             <l>pecuniosus</l>
             <m cert="0.5">a - - p - - - n g</m>

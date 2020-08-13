@@ -1,51 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusag">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ag">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ag</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ag.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>AG</tok-starts-with>
       <tok-starts-with>Ag</tok-starts-with>
       <tok-starts-with>ag</tok-starts-with>
       <tok-starts-with>ág</tok-starts-with>
       <tok-starts-with>Ág</tok-starts-with>
-      <ana><!--AGE Age Agen age agen agene áge Áge-->
-         <tok val="[aAáÁ]?(ge)?[n]?(e|AGE)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:09:26.084-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:09:26.084-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ag.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="AGE"/>
+         <tok val="Age"/>
+         <tok val="Agen"/>
+         <tok val="age"/>
+         <tok val="agen"/>
+         <tok val="agene"/>
+         <tok val="Áge"/>
+         <tok val="áge"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--AGEA Agea agea-->
-         <tok val="[aA]?(gea|AGEA)"/>
+      <ana>
+         <tok val="AGEA"/>
+         <tok val="Agea"/>
+         <tok val="agea"/>
          <lm>
             <l>agea</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -55,6 +72,7 @@
       </ana>
       <ana>
          <tok val="AGELLVLI"/>
+         <tok val="agellvli"/>
          <lm>
             <l>agellulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -62,79 +80,124 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--AGER Ager ager agerque-->
-         <tok val="[aA]?(ger)?(que|AGER)?"/>
+      <ana>
+         <tok val="AGER"/>
+         <tok val="Ager"/>
+         <tok val="ager"/>
+         <tok val="agerque"/>
          <lm>
             <l>ager</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AGER Ager Agre ager agerque agre agrest-->
-         <tok val="[aA]?[g]?[e]?[r]?[e]?(st|que|AGER)?"/>
+      <ana>
+         <tok val="AGER"/>
+         <tok val="Ager"/>
+         <tok val="Agre"/>
+         <tok val="ager"/>
+         <tok val="agerque"/>
+         <tok val="agre"/>
+         <tok val="agrest"/>
          <lm>
             <l>ager</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--AGERE Agere agere ageren agereque agerest ágere-->
-         <tok val="[aAá]?(gere)?(n|st|que|AGERE)?"/>
+      <ana>
+         <tok val="AGERE"/>
+         <tok val="Agere"/>
+         <tok val="agere"/>
+         <tok val="ageren"/>
+         <tok val="agereque"/>
+         <tok val="agerest"/>
+         <tok val="ágere"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--AGERE Agere agere ageren agereque agerest-->
-         <tok val="[aA]?(gere)?(n|st|que|AGERE)?"/>
+      <ana>
+         <tok val="AGERE"/>
+         <tok val="Agere"/>
+         <tok val="agere"/>
+         <tok val="ageren"/>
+         <tok val="agereque"/>
+         <tok val="agerest"/>
          <lm>
             <l>ago</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--AGERE Agere agere ageren agereque agerest ageris-->
-         <tok val="[aA]?(ger)?[e]?(n|st|que|is|AGERE)?"/>
+      <ana>
+         <tok val="AGERE"/>
+         <tok val="Agere"/>
+         <tok val="agere"/>
+         <tok val="ageren"/>
+         <tok val="agereque"/>
+         <tok val="agerest"/>
+         <tok val="ageris"/>
          <lm>
             <l>ago</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--AGGEMO Aggemo aggemo-->
-         <tok val="[aA]?(ggemo|AGGEMO)"/>
+      <ana>
+         <tok val="AGGEMO"/>
+         <tok val="Aggemo"/>
+         <tok val="aggemo"/>
          <lm>
             <l>aggemo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AGGER Agger agger-->
-         <tok val="[aA]?(gger|AGGER)"/>
+      <ana>
+         <tok val="AGGER"/>
+         <tok val="Agger"/>
+         <tok val="agger"/>
          <lm>
             <l>agger</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AGGREDIOR Aggredior aggredior-->
-         <tok val="[aA]?(ggredior|AGGREDIOR)"/>
+      <ana>
+         <tok val="AGGREDIOR"/>
+         <tok val="Aggredior"/>
+         <tok val="aggredior"/>
          <lm>
             <l>aggredior</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AGGREGO Aggrego aggrego-->
-         <tok val="[aA]?(ggrego|AGGREGO)"/>
+      <ana>
+         <tok val="AGGREGO"/>
+         <tok val="Aggrego"/>
+         <tok val="aggrego"/>
          <lm>
             <l>aggrego</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AGI AGIER Agi Agin agi agier agique agist-->
-         <tok val="[A]?(gi)?(n|GIER|GI|agier|agi|agist|agique)?"/>
+      <ana>
+         <tok val="AGI"/>
+         <tok val="AGIER"/>
+         <tok val="Agi"/>
+         <tok val="Agin"/>
+         <tok val="agi"/>
+         <tok val="agier"/>
+         <tok val="agin"/>
+         <tok val="agique"/>
+         <tok val="agist"/>
          <lm>
             <l>ago</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--AGILIS Agilis agilis agilisque-->
-         <tok val="[aA]?(gilis)?(que|AGILIS)?"/>
+      <ana>
+         <tok val="AGILIS"/>
+         <tok val="Agilis"/>
+         <tok val="agilis"/>
+         <tok val="agilisque"/>
          <lm>
             <l>agilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -146,38 +209,55 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AGILIS Agiles Agilis agiles agilis agilisque-->
-         <tok val="[Aa]?(gil)?[ie]?[s]?(que|AGILIS)?"/>
+      <ana>
+         <tok val="AGILIS"/>
+         <tok val="Agiles"/>
+         <tok val="Agilis"/>
+         <tok val="agiles"/>
+         <tok val="agilis"/>
+         <tok val="agilisque"/>
          <lm>
             <l>agilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AGITO Agito agito ágito-->
-         <tok val="[aAá]?(gito|AGITO)"/>
+      <ana>
+         <tok val="AGITO"/>
+         <tok val="Agito"/>
+         <tok val="agito"/>
+         <tok val="ágito"/>
          <lm>
             <l>agito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AGITO Agito agito-->
-         <tok val="[aA]?(gito|AGITO)"/>
+      <ana>
+         <tok val="AGITO"/>
+         <tok val="Agito"/>
+         <tok val="agito"/>
          <lm>
             <l>ago</l>
             <m cert="0.5">v - 2 s f m a</m>
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--AGITVR Agitur agitur agiturque-->
-         <tok val="[aA]?(gitur)?(que|AGITVR)?"/>
+      <ana>
+         <tok val="AGITVR"/>
+         <tok val="Agitur"/>
+         <tok val="agitur"/>
+         <tok val="agiturque"/>
+         <tok val="agitvr"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AGMEN Agmen agmen agmenque-->
-         <tok val="[aA]?(gmen)?(que|AGMEN)?"/>
+      <ana>
+         <tok val="AGMEN"/>
+         <tok val="Agmen"/>
+         <tok val="agmen"/>
+         <tok val="agmenque"/>
          <lm>
             <l>agmen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -185,37 +265,53 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AGNASCOR Agnascor agnascor-->
-         <tok val="[aA]?(gnascor|AGNASCOR)"/>
+      <ana>
+         <tok val="AGNASCOR"/>
+         <tok val="Agnascor"/>
+         <tok val="agnascor"/>
          <lm>
             <l>agnascor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AGNATORVM Agnatum agnatorum agnatum-->
-         <tok val="[aA]?(gnat)?(or)?(um|AGNATORVM)"/>
+      <ana>
+         <tok val="AGNATORVM"/>
+         <tok val="Agnatum"/>
+         <tok val="agnatorum"/>
+         <tok val="agnatorvm"/>
+         <tok val="agnatum"/>
          <lm>
             <l>agnascor</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--AGNATVS agnatus-->
-         <tok val="(agnatus|AGNATVS)"/>
+      <ana>
+         <tok val="AGNATVS"/>
+         <tok val="agnatus"/>
+         <tok val="agnatvs"/>
          <lm>
             <l>agnascor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--AGNOSCO Agnosco agnosco agnoscoque-->
-         <tok val="[aA]?(gnosco)?(que|AGNOSCO)?"/>
+      <ana>
+         <tok val="AGNOSCO"/>
+         <tok val="Agnosco"/>
+         <tok val="agnosco"/>
+         <tok val="agnoscoque"/>
          <lm>
             <l>agnosco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AGNVM Agnorum Agnum agnorum agnum-->
-         <tok val="[aA]?(gn)?(or)?(um|AGNVM)"/>
+      <ana>
+         <tok val="AGNVM"/>
+         <tok val="Agnorum"/>
+         <tok val="Agnum"/>
+         <tok val="agnorum"/>
+         <tok val="agnum"/>
+         <tok val="agnvm"/>
          <lm cert="0.5">
             <l>agnus</l>
             <m>n - - p - - - m g</m>
@@ -225,8 +321,11 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AGNVM Agnum agnum-->
-         <tok val="[aA]?(gnum|AGNVM)"/>
+      <ana>
+         <tok val="AGNVM"/>
+         <tok val="Agnum"/>
+         <tok val="agnum"/>
+         <tok val="agnvm"/>
          <lm cert="0.5">
             <l>agnos</l>
             <m>n - - s - - - f a</m>
@@ -236,29 +335,41 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--AGNVS Agnus agnus agnusue-->
-         <tok val="[aA]?(gnus)?(ue|AGNVS)?"/>
+      <ana>
+         <tok val="AGNVS"/>
+         <tok val="Agnus"/>
+         <tok val="agnus"/>
+         <tok val="agnusue"/>
+         <tok val="agnvs"/>
          <lm>
             <l>agnus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AGO Ago ago agó ágo-->
-         <tok val="[aAá]?[g]?(o|ó|AGO)"/>
+      <ana>
+         <tok val="AGO"/>
+         <tok val="Ago"/>
+         <tok val="ago"/>
+         <tok val="agó"/>
+         <tok val="ágo"/>
          <lm>
             <l>ago</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AGON Agon agon-->
-         <tok val="[aA]?(gon|AGON)"/>
+      <ana>
+         <tok val="AGON"/>
+         <tok val="Agon"/>
+         <tok val="agon"/>
          <lm>
             <l>agon</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AGRARIA Agraria agraria-->
-         <tok val="[aA]?(graria|AGRARIA)"/>
+      <ana>
+         <tok val="AGRARIA"/>
+         <tok val="Agraria"/>
+         <tok val="agraria"/>
          <lm>
             <l>agrarius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -269,8 +380,12 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AGRI Agri agri agrique agriue-->
-         <tok val="[aA]?(gri)?[q]?(ue|AGRI)?"/>
+      <ana>
+         <tok val="AGRI"/>
+         <tok val="Agri"/>
+         <tok val="agri"/>
+         <tok val="agrique"/>
+         <tok val="agriue"/>
          <lm>
             <l>ager</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -278,16 +393,24 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--AGRI Agri Agrii agri agrique agriue-->
-         <tok val="[aA]?(gri)?[q]?(ue|i|AGRI)?"/>
+      <ana>
+         <tok val="AGRI"/>
+         <tok val="Agri"/>
+         <tok val="Agrii"/>
+         <tok val="agri"/>
+         <tok val="agrii"/>
+         <tok val="agrique"/>
+         <tok val="agriue"/>
          <lm>
             <l>agrius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AGRICOLA Agricola agricola-->
-         <tok val="[aA]?(gricola|AGRICOLA)"/>
+      <ana>
+         <tok val="AGRICOLA"/>
+         <tok val="Agricola"/>
+         <tok val="agricola"/>
          <lm>
             <l>agricola</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -295,8 +418,12 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--AGRICOLAE Agricolae Agricolaeque agricolae-->
-         <tok val="[aA]?(gricolae)?(que|AGRICOLAE)?"/>
+      <ana>
+         <tok val="AGRICOLAE"/>
+         <tok val="Agricolae"/>
+         <tok val="Agricolaeque"/>
+         <tok val="agricolae"/>
+         <tok val="agricolaeque"/>
          <lm>
             <l>agricola</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -305,15 +432,20 @@
             <m cert="0.25">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--AGRIGENTINVS Agrigentinus-->
-         <tok val="A(grigentinus|GRIGENTINVS)"/>
+      <ana>
+         <tok val="AGRIGENTINVS"/>
+         <tok val="Agrigentinus"/>
+         <tok val="agrigentinus"/>
+         <tok val="agrigentinvs"/>
          <lm>
             <l>Agrigentinus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AGRIPPA Agrippa-->
-         <tok val="A(grippa|GRIPPA)"/>
+      <ana>
+         <tok val="AGRIPPA"/>
+         <tok val="Agrippa"/>
+         <tok val="agrippa"/>
          <lm>
             <l>Agrippa</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -321,38 +453,67 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AGRIS Agris agris agrisque agrisue-->
-         <tok val="[aA]?(gris)?[q]?(ue|AGRIS)?"/>
+      <ana>
+         <tok val="AGRIS"/>
+         <tok val="Agris"/>
+         <tok val="agris"/>
+         <tok val="agrisque"/>
+         <tok val="agrisue"/>
          <lm>
             <l>ager</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--AGRO Agro Agron Agrone Agroque agro agron agrone agroque agroue-->
-         <tok val="[aA]?(gro)?[q]?[un]?(e|n|ne|que|AGRO)?"/>
+      <ana>
+         <tok val="AGRO"/>
+         <tok val="Agro"/>
+         <tok val="Agron"/>
+         <tok val="Agrone"/>
+         <tok val="Agroque"/>
+         <tok val="agro"/>
+         <tok val="agron"/>
+         <tok val="agrone"/>
+         <tok val="agroque"/>
+         <tok val="agroue"/>
          <lm>
             <l>ager</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--AGROS Agron Agros agron agros agrosque-->
-         <tok val="[Aa]?(gro)?(s|n|sque|AGROS)"/>
+      <ana>
+         <tok val="AGROS"/>
+         <tok val="Agron"/>
+         <tok val="Agros"/>
+         <tok val="agron"/>
+         <tok val="agros"/>
+         <tok val="agrosque"/>
          <lm>
             <l>ager</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--AGRVM Agrorum Agrum agrorum agrorumque agrum agrumque-->
-         <tok val="[aA]?[g]?(ro)?(rum)?(que|AGRVM)?"/>
+      <ana>
+         <tok val="AGRVM"/>
+         <tok val="Agrorum"/>
+         <tok val="Agrum"/>
+         <tok val="agrorum"/>
+         <tok val="agrorumque"/>
+         <tok val="agrum"/>
+         <tok val="agrumque"/>
+         <tok val="agrvm"/>
          <lm>
             <l>ager</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--AGRVM Agrum agrum agrumque-->
-         <tok val="[aA]?(grum)?(que|AGRVM)?"/>
+      <ana>
+         <tok val="AGRVM"/>
+         <tok val="Agrum"/>
+         <tok val="agrum"/>
+         <tok val="agrumque"/>
+         <tok val="agrvm"/>
          <lm>
             <l>ager</l>
             <m>n - - s - - - m a</m>
@@ -360,20 +521,26 @@
       </ana>
       <ana>
          <tok val="Agaga"/>
+         <tok val="agaga"/>
          <lm>
             <l>agaga</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agam agam agamque agám-->
-         <tok val="[aA]g[aá]m(que)?"/>
+      <ana>
+         <tok val="Agam"/>
+         <tok val="agam"/>
+         <tok val="agamque"/>
+         <tok val="agám"/>
          <lm>
             <l>ago</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Agam agam agamque-->
-         <tok val="[aA]gam(que)?"/>
+      <ana>
+         <tok val="Agam"/>
+         <tok val="agam"/>
+         <tok val="agamque"/>
          <lm>
             <l>ago</l>
             <m>v - 1 s p s a</m>
@@ -381,6 +548,7 @@
       </ana>
       <ana>
          <tok val="Agame"/>
+         <tok val="agame"/>
          <lm>
             <l>agamus</l>
             <m cert="0.333333333333333333">d</m>
@@ -390,6 +558,7 @@
       </ana>
       <ana>
          <tok val="Agamede"/>
+         <tok val="agamede"/>
          <lm>
             <l>Agamedes</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -398,13 +567,17 @@
       </ana>
       <ana>
          <tok val="Agamedes"/>
+         <tok val="agamedes"/>
          <lm>
             <l>Agamedes</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agamemno Agamemnon-->
-         <tok val="Agamemno[n]?"/>
+      <ana>
+         <tok val="Agamemno"/>
+         <tok val="Agamemnon"/>
+         <tok val="agamemno"/>
+         <tok val="agamemnon"/>
          <lm>
             <l>Agamemnon</l>
             <m>n e - s - - - m v</m>
@@ -412,6 +585,7 @@
       </ana>
       <ana>
          <tok val="Agamemnon"/>
+         <tok val="agamemnon"/>
          <lm>
             <l>Agamemnon</l>
             <m>n e - s - - - m n</m>
@@ -419,6 +593,7 @@
       </ana>
       <ana>
          <tok val="Agamemnone"/>
+         <tok val="agamemnone"/>
          <lm>
             <l>Agamemnon</l>
             <m>n e - s - - - m b</m>
@@ -426,6 +601,7 @@
       </ana>
       <ana>
          <tok val="Agamemnonem"/>
+         <tok val="agamemnonem"/>
          <lm>
             <l>Agamemnon</l>
             <m>n e - s - - - m a</m>
@@ -433,6 +609,7 @@
       </ana>
       <ana>
          <tok val="Agamemnoni"/>
+         <tok val="agamemnoni"/>
          <lm cert="0.5">
             <l>Agamemnonius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -443,8 +620,11 @@
             <m>n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Agamemnoniae Agamemnoniaeque-->
-         <tok val="Agamemnoniae(que)?"/>
+      <ana>
+         <tok val="Agamemnoniae"/>
+         <tok val="Agamemnoniaeque"/>
+         <tok val="agamemnoniae"/>
+         <tok val="agamemnoniaeque"/>
          <lm>
             <l>Agamemnonius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -455,13 +635,17 @@
       </ana>
       <ana>
          <tok val="Agamemnoniam"/>
+         <tok val="agamemnoniam"/>
          <lm>
             <l>Agamemnonius</l>
             <m>a e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agamemnonias Agamemnoniasque-->
-         <tok val="Agamemnonias(que)?"/>
+      <ana>
+         <tok val="Agamemnonias"/>
+         <tok val="Agamemnoniasque"/>
+         <tok val="agamemnonias"/>
+         <tok val="agamemnoniasque"/>
          <lm>
             <l>Agamemnonius</l>
             <m>a e - p - - - f a</m>
@@ -469,6 +653,7 @@
       </ana>
       <ana>
          <tok val="Agamemnonidae"/>
+         <tok val="agamemnonidae"/>
          <lm>
             <l>Agamemnonides</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -479,6 +664,7 @@
       </ana>
       <ana>
          <tok val="Agamemnonides"/>
+         <tok val="agamemnonides"/>
          <lm>
             <l>Agamemnonides</l>
             <m>n e - s - - - m n</m>
@@ -486,6 +672,7 @@
       </ana>
       <ana>
          <tok val="Agamemnoniis"/>
+         <tok val="agamemnoniis"/>
          <lm>
             <l>Agamemnonius</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -498,6 +685,7 @@
       </ana>
       <ana>
          <tok val="Agamemnonio"/>
+         <tok val="agamemnonio"/>
          <lm>
             <l>Agamemnonius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -508,6 +696,7 @@
       </ana>
       <ana>
          <tok val="Agamemnonios"/>
+         <tok val="agamemnonios"/>
          <lm>
             <l>Agamemnonius</l>
             <m>a e - p - - - m a</m>
@@ -515,6 +704,7 @@
       </ana>
       <ana>
          <tok val="Agamemnonis"/>
+         <tok val="agamemnonis"/>
          <lm>
             <l>Agamemnon</l>
             <m>n e - s - - - m g</m>
@@ -522,13 +712,15 @@
       </ana>
       <ana>
          <tok val="Agamemnonius"/>
+         <tok val="agamemnonius"/>
          <lm>
             <l>Agamemnonius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agamus agamus-->
-         <tok val="[aA]gamus"/>
+      <ana>
+         <tok val="Agamus"/>
+         <tok val="agamus"/>
          <lm cert="0.5">
             <l>ago</l>
             <m>v - 1 p p s a</m>
@@ -538,8 +730,13 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agan Agas agan agas agasque agás-->
-         <tok val="[Aa]g[a]?(s|n|ás|asque)"/>
+      <ana>
+         <tok val="Agan"/>
+         <tok val="Agas"/>
+         <tok val="agan"/>
+         <tok val="agas"/>
+         <tok val="agasque"/>
+         <tok val="agás"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s p s a</m>
@@ -547,6 +744,7 @@
       </ana>
       <ana>
          <tok val="Aganippe"/>
+         <tok val="aganippe"/>
          <lm>
             <l>Aganippe</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -556,6 +754,7 @@
       </ana>
       <ana>
          <tok val="Aganippes"/>
+         <tok val="aganippes"/>
          <lm>
             <l>Aganippe</l>
             <m>n e - s - - - f g</m>
@@ -563,6 +762,7 @@
       </ana>
       <ana>
          <tok val="Aganippides"/>
+         <tok val="aganippides"/>
          <lm>
             <l>Aganippis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -572,6 +772,7 @@
       </ana>
       <ana>
          <tok val="Aganippis"/>
+         <tok val="aganippis"/>
          <lm cert="0.5">
             <l>Aganippe</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -582,8 +783,9 @@
             <m>n e - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Agantur agantur-->
-         <tok val="[aA]gantur"/>
+      <ana>
+         <tok val="Agantur"/>
+         <tok val="agantur"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p p s p</m>
@@ -591,6 +793,7 @@
       </ana>
       <ana>
          <tok val="Agapae"/>
+         <tok val="agapae"/>
          <lm>
             <l>agape</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -598,15 +801,18 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Agapae agapes-->
-         <tok val="[aA]gap[a]?e[s]?"/>
+      <ana>
+         <tok val="Agapae"/>
+         <tok val="agapae"/>
+         <tok val="agapes"/>
          <lm>
             <l>agape</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Agape agape-->
-         <tok val="[aA]gape"/>
+      <ana>
+         <tok val="Agape"/>
+         <tok val="agape"/>
          <lm>
             <l>agape</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -616,22 +822,27 @@
       </ana>
       <ana>
          <tok val="Agapis"/>
+         <tok val="agapis"/>
          <lm>
             <l>agape</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Agar agar-->
-         <tok val="[aA]gar"/>
+      <ana>
+         <tok val="Agar"/>
+         <tok val="agar"/>
          <lm>
             <l>ago</l>
             <m cert="0.5">v - 1 s f i p</m>
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Agaricom Agaricum agaricum-->
-         <tok val="[Aa]garic[uo]m"/>
+      <ana>
+         <tok val="Agaricom"/>
+         <tok val="Agaricum"/>
+         <tok val="agaricom"/>
+         <tok val="agaricum"/>
          <lm>
             <l>agaricum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -639,30 +850,38 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Agaricum agaricum-->
-         <tok val="[aA]garicum"/>
+      <ana>
+         <tok val="Agaricum"/>
+         <tok val="agaricum"/>
          <lm>
             <l>agaricum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Agaso agaso-->
-         <tok val="[aA]gaso"/>
+      <ana>
+         <tok val="Agaso"/>
+         <tok val="agaso"/>
          <lm>
             <l>agaso</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agasone agasone-->
-         <tok val="[aA]gasone"/>
+      <ana>
+         <tok val="Agasone"/>
+         <tok val="agasone"/>
          <lm>
             <l>agaso</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Agat Agatque agat agatne agatque agát-->
-         <tok val="[aA]g[aá]t(qu|n)?[e]?"/>
+      <ana>
+         <tok val="Agat"/>
+         <tok val="Agatque"/>
+         <tok val="agat"/>
+         <tok val="agatne"/>
+         <tok val="agatque"/>
+         <tok val="agát"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s p s a</m>
@@ -670,6 +889,7 @@
       </ana>
       <ana>
          <tok val="Agathine"/>
+         <tok val="agathine"/>
          <lm>
             <l>Agathinus</l>
             <m>n e - s - - - m v</m>
@@ -677,6 +897,7 @@
       </ana>
       <ana>
          <tok val="Agathini"/>
+         <tok val="agathini"/>
          <lm>
             <l>Agathinus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -686,6 +907,7 @@
       </ana>
       <ana>
          <tok val="Agathino"/>
+         <tok val="agathino"/>
          <lm>
             <l>Agathinus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -694,6 +916,7 @@
       </ana>
       <ana>
          <tok val="Agathinum"/>
+         <tok val="agathinum"/>
          <lm>
             <l>Agathinus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -702,6 +925,7 @@
       </ana>
       <ana>
          <tok val="Agathinus"/>
+         <tok val="agathinus"/>
          <lm>
             <l>Agathinus</l>
             <m>n e - s - - - m n</m>
@@ -709,13 +933,17 @@
       </ana>
       <ana>
          <tok val="Agatho"/>
+         <tok val="agatho"/>
          <lm>
             <l>Agatho</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agathocle Agathoclen-->
-         <tok val="Agathocle[n]?"/>
+      <ana>
+         <tok val="Agathocle"/>
+         <tok val="Agathoclen"/>
+         <tok val="agathocle"/>
+         <tok val="agathoclen"/>
          <lm>
             <l>Agathocles</l>
             <m>n e - s - - - m b</m>
@@ -723,6 +951,7 @@
       </ana>
       <ana>
          <tok val="Agathocleae"/>
+         <tok val="agathocleae"/>
          <lm>
             <l>Agathocleus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -733,6 +962,7 @@
       </ana>
       <ana>
          <tok val="Agathocleam"/>
+         <tok val="agathocleam"/>
          <lm>
             <l>Agathocleus</l>
             <m>a e - s - - - f a</m>
@@ -740,6 +970,7 @@
       </ana>
       <ana>
          <tok val="Agathocleis"/>
+         <tok val="agathocleis"/>
          <lm>
             <l>Agathocleus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -752,13 +983,17 @@
       </ana>
       <ana>
          <tok val="Agathoclem"/>
+         <tok val="agathoclem"/>
          <lm>
             <l>Agathocles</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agathoclen Agathocles-->
-         <tok val="Agathocle[sn]"/>
+      <ana>
+         <tok val="Agathoclen"/>
+         <tok val="Agathocles"/>
+         <tok val="agathoclen"/>
+         <tok val="agathocles"/>
          <lm>
             <l>Agathocles</l>
             <m cert="0.25">n e - p - - - m a</m>
@@ -767,8 +1002,11 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agathocli Ágathocli-->
-         <tok val="[ÁA]gathocli"/>
+      <ana>
+         <tok val="Agathocli"/>
+         <tok val="agathocli"/>
+         <tok val="Ágathocli"/>
+         <tok val="ágathocli"/>
          <lm>
             <l>Agathocles</l>
             <m>n e - s - - - m d</m>
@@ -776,13 +1014,15 @@
       </ana>
       <ana>
          <tok val="Agathoclis"/>
+         <tok val="agathoclis"/>
          <lm>
             <l>Agathocles</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agathodaemon agathodaemon-->
-         <tok val="[aA]gathodaemon"/>
+      <ana>
+         <tok val="Agathodaemon"/>
+         <tok val="agathodaemon"/>
          <lm>
             <l>agathodaemon</l>
             <m>n - - s - - - m n</m>
@@ -790,6 +1030,7 @@
       </ana>
       <ana>
          <tok val="Agathyrna"/>
+         <tok val="agathyrna"/>
          <lm>
             <l>Agathyrna</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -799,6 +1040,7 @@
       </ana>
       <ana>
          <tok val="Agathyrnam"/>
+         <tok val="agathyrnam"/>
          <lm>
             <l>Agathyrna</l>
             <m>n e - s - - - f a</m>
@@ -806,6 +1048,7 @@
       </ana>
       <ana>
          <tok val="Agathyrsi"/>
+         <tok val="agathyrsi"/>
          <lm>
             <l>Agathyrsi</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -814,6 +1057,7 @@
       </ana>
       <ana>
          <tok val="Agathyrsis"/>
+         <tok val="agathyrsis"/>
          <lm>
             <l>Agathyrsi</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -822,20 +1066,29 @@
       </ana>
       <ana>
          <tok val="Agathyrsum"/>
+         <tok val="agathyrsum"/>
          <lm>
             <l>Agathyrsi</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agatur agatur agaturque agátur-->
-         <tok val="[aA]g[aá]tur(que)?"/>
+      <ana>
+         <tok val="Agatur"/>
+         <tok val="agatur"/>
+         <tok val="agaturque"/>
+         <tok val="agátur"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Agaue Agauen Agave-->
-         <tok val="Aga[uv]e[n]?"/>
+      <ana>
+         <tok val="Agaue"/>
+         <tok val="Agauen"/>
+         <tok val="Agave"/>
+         <tok val="agaue"/>
+         <tok val="agauen"/>
+         <tok val="agave"/>
          <lm>
             <l>Agave</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -843,15 +1096,23 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agauen Agaven-->
-         <tok val="Aga[vu]en"/>
+      <ana>
+         <tok val="Agauen"/>
+         <tok val="Agaven"/>
+         <tok val="agauen"/>
+         <tok val="agaven"/>
          <lm>
             <l>Agave</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agauen Agaues Agaves-->
-         <tok val="Aga[uv]e[sn]"/>
+      <ana>
+         <tok val="Agauen"/>
+         <tok val="Agaues"/>
+         <tok val="Agaves"/>
+         <tok val="agauen"/>
+         <tok val="agaues"/>
+         <tok val="agaves"/>
          <lm>
             <l>Agave</l>
             <m>n e - s - - - f g</m>
@@ -859,34 +1120,42 @@
       </ana>
       <ana>
          <tok val="Agchises"/>
+         <tok val="agchises"/>
          <lm>
             <l>Anchises</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agebantur agebantur-->
-         <tok val="[aA]gebantur"/>
+      <ana>
+         <tok val="Agebantur"/>
+         <tok val="agebantur"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--Agebat agebat agebatque-->
-         <tok val="[aA]gebat(que)?"/>
+      <ana>
+         <tok val="Agebat"/>
+         <tok val="agebat"/>
+         <tok val="agebatque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Agebatur agebatur-->
-         <tok val="[aA]gebatur"/>
+      <ana>
+         <tok val="Agebatur"/>
+         <tok val="agebatur"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Agedum agedum Age age-->
-         <tok val="[aA]ge(dum)?"/>
+      <ana>
+         <tok val="Age"/>
+         <tok val="Agedum"/>
+         <tok val="age"/>
+         <tok val="agedum"/>
          <lm>
             <l>age</l>
             <m>i</m>
@@ -894,6 +1163,7 @@
       </ana>
       <ana>
          <tok val="Agelastum"/>
+         <tok val="agelastum"/>
          <lm>
             <l>Agelastus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -902,13 +1172,16 @@
       </ana>
       <ana>
          <tok val="Agelastus"/>
+         <tok val="agelastus"/>
          <lm>
             <l>Agelastus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agelli agelli agellist-->
-         <tok val="[aA]gelli(st)?"/>
+      <ana>
+         <tok val="Agelli"/>
+         <tok val="agelli"/>
+         <tok val="agellist"/>
          <lm>
             <l>agellus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -916,51 +1189,63 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agello agello-->
-         <tok val="[aA]gello"/>
+      <ana>
+         <tok val="Agello"/>
+         <tok val="agello"/>
          <lm>
             <l>agellus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Agellos agellos-->
-         <tok val="[aA]gellos"/>
+      <ana>
+         <tok val="Agellos"/>
+         <tok val="agellos"/>
          <lm>
             <l>agellus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agellus agellus-->
-         <tok val="[aA]gellus"/>
+      <ana>
+         <tok val="Agellus"/>
+         <tok val="agellus"/>
          <lm>
             <l>agellus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agema agema-->
-         <tok val="[aA]gema"/>
+      <ana>
+         <tok val="Agema"/>
+         <tok val="agema"/>
          <lm>
             <l>agema</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Agen Ages agen ages-->
-         <tok val="[Aa]ge[sn]"/>
+      <ana>
+         <tok val="Agen"/>
+         <tok val="Ages"/>
+         <tok val="agen"/>
+         <tok val="ages"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Agendae agendae agundae agúndae-->
-         <tok val="[aA]g[euú]ndae"/>
+      <ana>
+         <tok val="Agendae"/>
+         <tok val="agendae"/>
+         <tok val="agundae"/>
+         <tok val="agúndae"/>
          <lm>
             <l>ago</l>
             <m>v - - p p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Agendae agendae agundae-->
-         <tok val="[aA]g[eu]ndae"/>
+      <ana>
+         <tok val="Agendae"/>
+         <tok val="agendae"/>
+         <tok val="agundae"/>
          <lm>
             <l>ago</l>
             <m cert="0.333333333333333333">v - - p p g p f v</m>
@@ -968,8 +1253,11 @@
             <m cert="0.333333333333333333">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Agendi agendi agendique agundi-->
-         <tok val="[aA]g[eu]ndi(que)?"/>
+      <ana>
+         <tok val="Agendi"/>
+         <tok val="agendi"/>
+         <tok val="agendique"/>
+         <tok val="agundi"/>
          <lm>
             <l>ago</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -981,6 +1269,7 @@
       </ana>
       <ana>
          <tok val="Agendicum"/>
+         <tok val="agendicum"/>
          <lm>
             <l>Agendicum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -989,23 +1278,37 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Agendum Agundum agendum agendumst agundum agéndum-->
-         <tok val="[aA]g[eué]ndum(st)?"/>
+      <ana>
+         <tok val="Agendum"/>
+         <tok val="Agundum"/>
+         <tok val="agendum"/>
+         <tok val="agendumst"/>
+         <tok val="agundum"/>
+         <tok val="agéndum"/>
          <lm>
             <l>ago</l>
             <m>v - - s p g p n a</m>
          </lm>
       </ana>
-      <ana><!--Agendum Agundum agendorum agendum agendumst agundum-->
-         <tok val="[aA]g[eu]nd(or)?um(st)?"/>
+      <ana>
+         <tok val="Agendum"/>
+         <tok val="Agundum"/>
+         <tok val="agendorum"/>
+         <tok val="agendum"/>
+         <tok val="agendumst"/>
+         <tok val="agundum"/>
          <lm>
             <l>ago</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Agendum Agundum agendum agendumst agundum-->
-         <tok val="[aA]g[eu]ndum(st)?"/>
+      <ana>
+         <tok val="Agendum"/>
+         <tok val="Agundum"/>
+         <tok val="agendum"/>
+         <tok val="agendumst"/>
+         <tok val="agundum"/>
          <lm>
             <l>ago</l>
             <m cert="0.25">v - - s p d a n a</m>
@@ -1016,6 +1319,7 @@
       </ana>
       <ana>
          <tok val="Agenor"/>
+         <tok val="agenor"/>
          <lm>
             <l>Agenor</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -1024,6 +1328,7 @@
       </ana>
       <ana>
          <tok val="Agenore"/>
+         <tok val="agenore"/>
          <lm>
             <l>Agenor</l>
             <m>n e - s - - - m b</m>
@@ -1031,6 +1336,7 @@
       </ana>
       <ana>
          <tok val="Agenoreae"/>
+         <tok val="agenoreae"/>
          <lm>
             <l>Agenoreus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1041,6 +1347,7 @@
       </ana>
       <ana>
          <tok val="Agenoream"/>
+         <tok val="agenoream"/>
          <lm>
             <l>Agenoreus</l>
             <m>a e - s - - - f a</m>
@@ -1048,6 +1355,7 @@
       </ana>
       <ana>
          <tok val="Agenoreas"/>
+         <tok val="agenoreas"/>
          <lm>
             <l>Agenoreus</l>
             <m>a e - p - - - f a</m>
@@ -1055,6 +1363,7 @@
       </ana>
       <ana>
          <tok val="Agenorei"/>
+         <tok val="agenorei"/>
          <lm>
             <l>Agenoreus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1065,6 +1374,7 @@
       </ana>
       <ana>
          <tok val="Agenoreis"/>
+         <tok val="agenoreis"/>
          <lm>
             <l>Agenoreus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1077,6 +1387,7 @@
       </ana>
       <ana>
          <tok val="Agenorem"/>
+         <tok val="agenorem"/>
          <lm>
             <l>Agenor</l>
             <m>n e - s - - - m a</m>
@@ -1084,6 +1395,7 @@
       </ana>
       <ana>
          <tok val="Agenoreo"/>
+         <tok val="agenoreo"/>
          <lm>
             <l>Agenoreus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1094,6 +1406,7 @@
       </ana>
       <ana>
          <tok val="Agenoreos"/>
+         <tok val="agenoreos"/>
          <lm>
             <l>Agenoreus</l>
             <m>a e - p - - - m a</m>
@@ -1101,6 +1414,7 @@
       </ana>
       <ana>
          <tok val="Agenoreum"/>
+         <tok val="agenoreum"/>
          <lm>
             <l>Agenoreus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1113,6 +1427,7 @@
       </ana>
       <ana>
          <tok val="Agenoreus"/>
+         <tok val="agenoreus"/>
          <lm>
             <l>Agenoreus</l>
             <m>a e - s - - - m n</m>
@@ -1120,6 +1435,7 @@
       </ana>
       <ana>
          <tok val="Agenoridae"/>
+         <tok val="agenoridae"/>
          <lm>
             <l>Agenorides</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -1130,6 +1446,7 @@
       </ana>
       <ana>
          <tok val="Agenoridas"/>
+         <tok val="agenoridas"/>
          <lm>
             <l>Agenorides</l>
             <m>n e - p - - - m a</m>
@@ -1137,6 +1454,7 @@
       </ana>
       <ana>
          <tok val="Agenoride"/>
+         <tok val="agenoride"/>
          <lm>
             <l>Agenorides</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1145,6 +1463,7 @@
       </ana>
       <ana>
          <tok val="Agenorides"/>
+         <tok val="agenorides"/>
          <lm>
             <l>Agenorides</l>
             <m>n e - s - - - m n</m>
@@ -1152,6 +1471,7 @@
       </ana>
       <ana>
          <tok val="Agenoridis"/>
+         <tok val="agenoridis"/>
          <lm>
             <l>Agenorides</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -1160,13 +1480,16 @@
       </ana>
       <ana>
          <tok val="Agenoris"/>
+         <tok val="agenoris"/>
          <lm>
             <l>Agenor</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agens agens agensque-->
-         <tok val="[aA]gens(que)?"/>
+      <ana>
+         <tok val="Agens"/>
+         <tok val="agens"/>
+         <tok val="agensque"/>
          <lm>
             <l>ago</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1178,8 +1501,10 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Agentes agentes agentesque-->
-         <tok val="[aA]gentes(que)?"/>
+      <ana>
+         <tok val="Agentes"/>
+         <tok val="agentes"/>
+         <tok val="agentesque"/>
          <lm>
             <l>ago</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1188,16 +1513,22 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Agentes Agentis agentes agentesque agentis-->
-         <tok val="[Aa]gent[ie]s(que)?"/>
+      <ana>
+         <tok val="Agentes"/>
+         <tok val="Agentis"/>
+         <tok val="agentes"/>
+         <tok val="agentesque"/>
+         <tok val="agentis"/>
          <lm>
             <l>ago</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Agenti agenti agentique-->
-         <tok val="[aA]genti(que)?"/>
+      <ana>
+         <tok val="Agenti"/>
+         <tok val="agenti"/>
+         <tok val="agentique"/>
          <lm>
             <l>ago</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -1205,8 +1536,11 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Agenti agente agenti agentique-->
-         <tok val="[aA]gent(i|e|ique)"/>
+      <ana>
+         <tok val="Agenti"/>
+         <tok val="agente"/>
+         <tok val="agenti"/>
+         <tok val="agentique"/>
          <lm>
             <l>ago</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1214,8 +1548,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Agentia agentia-->
-         <tok val="[aA]gentia"/>
+      <ana>
+         <tok val="Agentia"/>
+         <tok val="agentia"/>
          <lm>
             <l>ago</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -1223,8 +1558,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Agentis agentis-->
-         <tok val="[aA]gentis"/>
+      <ana>
+         <tok val="Agentis"/>
+         <tok val="agentis"/>
          <lm>
             <l>ago</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -1232,8 +1568,9 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Agentium agentium-->
-         <tok val="[aA]gentium"/>
+      <ana>
+         <tok val="Agentium"/>
+         <tok val="agentium"/>
          <lm>
             <l>ago</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -1241,8 +1578,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--Agentur agentur-->
-         <tok val="[aA]gentur"/>
+      <ana>
+         <tok val="Agentur"/>
+         <tok val="agentur"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p f i p</m>
@@ -1250,21 +1588,26 @@
       </ana>
       <ana>
          <tok val="Ageratos"/>
+         <tok val="ageratos"/>
          <lm>
             <l>Ageratos</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agerent agerent agerentque-->
-         <tok val="[aA]gerent(que)?"/>
+      <ana>
+         <tok val="Agerent"/>
+         <tok val="agerent"/>
+         <tok val="agerentque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Ageret ageret ageretque-->
-         <tok val="[aA]geret(que)?"/>
+      <ana>
+         <tok val="Ageret"/>
+         <tok val="ageret"/>
+         <tok val="ageretque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s i s a</m>
@@ -1272,6 +1615,7 @@
       </ana>
       <ana>
          <tok val="Agesilae"/>
+         <tok val="agesilae"/>
          <lm>
             <l>Agesilaus</l>
             <m>n e - s - - - m v</m>
@@ -1279,6 +1623,7 @@
       </ana>
       <ana>
          <tok val="Agesilai"/>
+         <tok val="agesilai"/>
          <lm>
             <l>Agesilaus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1288,6 +1633,7 @@
       </ana>
       <ana>
          <tok val="Agesilao"/>
+         <tok val="agesilao"/>
          <lm>
             <l>Agesilaus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1296,13 +1642,17 @@
       </ana>
       <ana>
          <tok val="Agesilaos"/>
+         <tok val="agesilaos"/>
          <lm>
             <l>Agesilaus</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agesilaum Agesilaumque-->
-         <tok val="Agesilaum(que)?"/>
+      <ana>
+         <tok val="Agesilaum"/>
+         <tok val="Agesilaumque"/>
+         <tok val="agesilaum"/>
+         <tok val="agesilaumque"/>
          <lm>
             <l>Agesilaus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1311,6 +1661,7 @@
       </ana>
       <ana>
          <tok val="Agesilaus"/>
+         <tok val="agesilaus"/>
          <lm>
             <l>Agesilaus</l>
             <m>n e - s - - - m n</m>
@@ -1318,27 +1669,35 @@
       </ana>
       <ana>
          <tok val="Agestes"/>
+         <tok val="agestes"/>
          <lm>
             <l>agesto</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Aget aget-->
-         <tok val="[aA]get"/>
+      <ana>
+         <tok val="Aget"/>
+         <tok val="aget"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Aggerabatur Aggerebatur aggerebatur-->
-         <tok val="[Aa]gger[ea]batur"/>
+      <ana>
+         <tok val="Aggerabatur"/>
+         <tok val="Aggerebatur"/>
+         <tok val="aggerabatur"/>
+         <tok val="aggerebatur"/>
          <lm>
             <l>aggero</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Aggerare Aggerere aggerare aggerere-->
-         <tok val="[Aa]gger[ea]re"/>
+      <ana>
+         <tok val="Aggerare"/>
+         <tok val="Aggerere"/>
+         <tok val="aggerare"/>
+         <tok val="aggerere"/>
          <lm>
             <l>aggero</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1347,36 +1706,44 @@
             <m cert="0.25">v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Aggerat aggerat aggeret-->
-         <tok val="[aA]gger[ae]t"/>
+      <ana>
+         <tok val="Aggerat"/>
+         <tok val="aggerat"/>
+         <tok val="aggeret"/>
          <lm>
             <l>aggero</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Aggerat aggerat-->
-         <tok val="[aA]ggerat"/>
+      <ana>
+         <tok val="Aggerat"/>
+         <tok val="aggerat"/>
          <lm>
             <l>aggero</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aggere aggere-->
-         <tok val="[aA]ggere"/>
+      <ana>
+         <tok val="Aggere"/>
+         <tok val="aggere"/>
          <lm>
             <l>agger</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Aggere aggera aggere-->
-         <tok val="[aA]gger[ea]"/>
+      <ana>
+         <tok val="Aggere"/>
+         <tok val="aggera"/>
+         <tok val="aggere"/>
          <lm>
             <l>aggero</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Aggerem aggerem aggeremque-->
-         <tok val="[aA]ggerem(que)?"/>
+      <ana>
+         <tok val="Aggerem"/>
+         <tok val="aggerem"/>
+         <tok val="aggeremque"/>
          <lm cert="0.5">
             <l>aggero</l>
             <m>v - 1 s p s a</m>
@@ -1386,15 +1753,17 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aggerere aggerere-->
-         <tok val="[aA]ggerere"/>
+      <ana>
+         <tok val="Aggerere"/>
+         <tok val="aggerere"/>
          <lm>
             <l>aggero</l>
             <m>v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Aggeres aggeres-->
-         <tok val="[aA]ggeres"/>
+      <ana>
+         <tok val="Aggeres"/>
+         <tok val="aggeres"/>
          <lm cert="0.5">
             <l>agger</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1406,51 +1775,64 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Aggeres aggeras aggeres-->
-         <tok val="[aA]gger[ea]s"/>
+      <ana>
+         <tok val="Aggeres"/>
+         <tok val="aggeras"/>
+         <tok val="aggeres"/>
          <lm>
             <l>aggero</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Aggeribus aggeribus aggeribusque-->
-         <tok val="[aA]ggeribus(que)?"/>
+      <ana>
+         <tok val="Aggeribus"/>
+         <tok val="aggeribus"/>
+         <tok val="aggeribusque"/>
          <lm>
             <l>agger</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Aggeris aggeras aggeris aggerisque-->
-         <tok val="[aA]gger[ia]s(que)?"/>
+      <ana>
+         <tok val="Aggeris"/>
+         <tok val="aggeras"/>
+         <tok val="aggeris"/>
+         <tok val="aggerisque"/>
          <lm>
             <l>aggero</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aggeris aggeris aggerisque-->
-         <tok val="[aA]ggeris(que)?"/>
+      <ana>
+         <tok val="Aggeris"/>
+         <tok val="aggeris"/>
+         <tok val="aggerisque"/>
          <lm>
             <l>agger</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Aggeritur aggeritur-->
-         <tok val="[aA]ggeritur"/>
+      <ana>
+         <tok val="Aggeritur"/>
+         <tok val="aggeritur"/>
          <lm>
             <l>aggero</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aggero aggero-->
-         <tok val="[aA]ggero"/>
+      <ana>
+         <tok val="Aggero"/>
+         <tok val="aggero"/>
          <lm>
             <l>aggero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aggestis aggeratis aggestis-->
-         <tok val="[aA]gge(s|ra)tis"/>
+      <ana>
+         <tok val="Aggestis"/>
+         <tok val="aggeratis"/>
+         <tok val="aggestis"/>
          <lm>
             <l>aggero</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -1461,8 +1843,9 @@
             <m cert="0.166666666666666667">v - - p r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Aggestis aggestis-->
-         <tok val="[aA]ggestis"/>
+      <ana>
+         <tok val="Aggestis"/>
+         <tok val="aggestis"/>
          <lm cert="0.5">
             <l>aggestus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -1474,44 +1857,53 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Aggestus aggesti aggestus-->
-         <tok val="[aA]ggest(us|i)"/>
+      <ana>
+         <tok val="Aggestus"/>
+         <tok val="aggesti"/>
+         <tok val="aggestus"/>
          <lm>
             <l>aggestus</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Aggestus aggestus-->
-         <tok val="[aA]ggestus"/>
+      <ana>
+         <tok val="Aggestus"/>
+         <tok val="aggestus"/>
          <lm>
             <l>aggestus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aggestus aggeratus aggestus-->
-         <tok val="[aA]gge(s|ra)tus"/>
+      <ana>
+         <tok val="Aggestus"/>
+         <tok val="aggeratus"/>
+         <tok val="aggestus"/>
          <lm>
             <l>aggero</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Aggestus aggestos aggestus-->
-         <tok val="[aA]ggest[uo]s"/>
+      <ana>
+         <tok val="Aggestus"/>
+         <tok val="aggestos"/>
+         <tok val="aggestus"/>
          <lm>
             <l>aggestus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agglomero agglomero-->
-         <tok val="[aA]gglomero"/>
+      <ana>
+         <tok val="Agglomero"/>
+         <tok val="agglomero"/>
          <lm>
             <l>agglomero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Agglutinare agglutinare-->
-         <tok val="[aA]gglutinare"/>
+      <ana>
+         <tok val="Agglutinare"/>
+         <tok val="agglutinare"/>
          <lm>
             <l>agglutino</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1519,15 +1911,17 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Agglutino agglutino-->
-         <tok val="[aA]gglutino"/>
+      <ana>
+         <tok val="Agglutino"/>
+         <tok val="agglutino"/>
          <lm>
             <l>agglutino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aggrauans aggrauans-->
-         <tok val="[aA]ggrauans"/>
+      <ana>
+         <tok val="Aggrauans"/>
+         <tok val="aggrauans"/>
          <lm>
             <l>aggravo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1539,15 +1933,18 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Aggrauantur aggrauantur-->
-         <tok val="[aA]ggrauantur"/>
+      <ana>
+         <tok val="Aggrauantur"/>
+         <tok val="aggrauantur"/>
          <lm>
             <l>aggravo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Aggrauare aggrauare aggravare-->
-         <tok val="[aA]ggra[uv]are"/>
+      <ana>
+         <tok val="Aggrauare"/>
+         <tok val="aggrauare"/>
+         <tok val="aggravare"/>
          <lm>
             <l>aggravo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1555,8 +1952,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aggrauatur aggravatur-->
-         <tok val="[aA]ggra[vu]atur"/>
+      <ana>
+         <tok val="Aggrauatur"/>
+         <tok val="aggrauatur"/>
+         <tok val="aggravatur"/>
          <lm>
             <l>aggravo</l>
             <m>v - 3 s p i p</m>
@@ -1564,6 +1963,7 @@
       </ana>
       <ana>
          <tok val="Aggrauescens"/>
+         <tok val="aggrauescens"/>
          <lm>
             <l>aggravesco</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1575,79 +1975,97 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Aggrauesco aggravesco-->
-         <tok val="[aA]ggra[vu]esco"/>
+      <ana>
+         <tok val="Aggrauesco"/>
+         <tok val="aggrauesco"/>
+         <tok val="aggravesco"/>
          <lm>
             <l>aggravesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aggrauo aggravo-->
-         <tok val="[aA]ggra[vu]o"/>
+      <ana>
+         <tok val="Aggrauo"/>
+         <tok val="aggrauo"/>
+         <tok val="aggravo"/>
          <lm>
             <l>aggravo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aggredere aggredere-->
-         <tok val="[aA]ggredere"/>
+      <ana>
+         <tok val="Aggredere"/>
+         <tok val="aggredere"/>
          <lm>
             <l>aggredior</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Aggredere Aggrederis aggredere aggrederis-->
-         <tok val="[aA]ggreder(is|e)"/>
+      <ana>
+         <tok val="Aggredere"/>
+         <tok val="Aggrederis"/>
+         <tok val="aggredere"/>
+         <tok val="aggrederis"/>
          <lm>
             <l>aggredior</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aggredi aggredi-->
-         <tok val="[aA]ggredi"/>
+      <ana>
+         <tok val="Aggredi"/>
+         <tok val="aggredi"/>
          <lm>
             <l>aggredior</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Aggrediamur aggrediamur-->
-         <tok val="[aA]ggrediamur"/>
+      <ana>
+         <tok val="Aggrediamur"/>
+         <tok val="aggrediamur"/>
          <lm>
             <l>aggredior</l>
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Aggrediar aggrediar-->
-         <tok val="[aA]ggrediar"/>
+      <ana>
+         <tok val="Aggrediar"/>
+         <tok val="aggrediar"/>
          <lm>
             <l>aggredior</l>
             <m cert="0.5">v - 1 s f i p</m>
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Aggrediare aggrediare aggrediaris-->
-         <tok val="[aA]ggrediar(e|is)"/>
+      <ana>
+         <tok val="Aggrediare"/>
+         <tok val="aggrediare"/>
+         <tok val="aggrediaris"/>
          <lm>
             <l>aggredior</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Aggredimur aggredimur-->
-         <tok val="[aA]ggredimur"/>
+      <ana>
+         <tok val="Aggredimur"/>
+         <tok val="aggredimur"/>
          <lm>
             <l>aggredior</l>
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Aggreditur Aggrediturque aggreditur-->
-         <tok val="[aA]ggreditur(que)?"/>
+      <ana>
+         <tok val="Aggreditur"/>
+         <tok val="Aggrediturque"/>
+         <tok val="aggreditur"/>
+         <tok val="aggrediturque"/>
          <lm>
             <l>aggredior</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aggregare aggregare-->
-         <tok val="[aA]ggregare"/>
+      <ana>
+         <tok val="Aggregare"/>
+         <tok val="aggregare"/>
          <lm>
             <l>aggrego</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1655,16 +2073,19 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aggregatum aggregatorum aggregatum-->
-         <tok val="[aA]ggregat(or)?um"/>
+      <ana>
+         <tok val="Aggregatum"/>
+         <tok val="aggregatorum"/>
+         <tok val="aggregatum"/>
          <lm>
             <l>aggrego</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Aggregatum aggregatum-->
-         <tok val="[aA]ggregatum"/>
+      <ana>
+         <tok val="Aggregatum"/>
+         <tok val="aggregatum"/>
          <lm>
             <l>aggrego</l>
             <m cert="0.2">v - - s r p p n n</m>
@@ -1674,23 +2095,26 @@
             <m cert="0.2">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Aggressio aggressio-->
-         <tok val="[aA]ggressio"/>
+      <ana>
+         <tok val="Aggressio"/>
+         <tok val="aggressio"/>
          <lm>
             <l>aggressio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Aggressionum aggressionum-->
-         <tok val="[aA]ggressionum"/>
+      <ana>
+         <tok val="Aggressionum"/>
+         <tok val="aggressionum"/>
          <lm>
             <l>aggressio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Aggressor aggressor-->
-         <tok val="[aA]ggressor"/>
+      <ana>
+         <tok val="Aggressor"/>
+         <tok val="aggressor"/>
          <lm>
             <l>aggressor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -1699,6 +2123,7 @@
       </ana>
       <ana>
          <tok val="Agide"/>
+         <tok val="agide"/>
          <lm>
             <l>Agis</l>
             <m>n e - s - - - m b</m>
@@ -1706,13 +2131,15 @@
       </ana>
       <ana>
          <tok val="Agidis"/>
+         <tok val="agidis"/>
          <lm>
             <l>Agis</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agile agile-->
-         <tok val="[aA]gile"/>
+      <ana>
+         <tok val="Agile"/>
+         <tok val="agile"/>
          <lm>
             <l>agilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1720,16 +2147,19 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Agilem agilem agilemque-->
-         <tok val="[aA]gilem(que)?"/>
+      <ana>
+         <tok val="Agilem"/>
+         <tok val="agilem"/>
+         <tok val="agilemque"/>
          <lm>
             <l>agilis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agiles agiles-->
-         <tok val="[aA]giles"/>
+      <ana>
+         <tok val="Agiles"/>
+         <tok val="agiles"/>
          <lm>
             <l>agilis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1738,8 +2168,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agili agili agilique-->
-         <tok val="[aA]gili(que)?"/>
+      <ana>
+         <tok val="Agili"/>
+         <tok val="agili"/>
+         <tok val="agilique"/>
          <lm>
             <l>agilis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -1750,50 +2182,66 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Agilitas agilitas-->
-         <tok val="[aA]gilitas"/>
+      <ana>
+         <tok val="Agilitas"/>
+         <tok val="agilitas"/>
          <lm>
             <l>agilitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Agilitatem agilitatem-->
-         <tok val="[aA]gilitatem"/>
+      <ana>
+         <tok val="Agilitatem"/>
+         <tok val="agilitatem"/>
          <lm>
             <l>agilitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agiliter agiliter-->
-         <tok val="[aA]giliter"/>
+      <ana>
+         <tok val="Agiliter"/>
+         <tok val="agiliter"/>
          <lm>
             <l>agiliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Agimus agimus-->
-         <tok val="[aA]gimus"/>
+      <ana>
+         <tok val="Agimus"/>
+         <tok val="agimus"/>
          <lm>
             <l>ago</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Agin Agis-->
-         <tok val="Agi[sn]"/>
+      <ana>
+         <tok val="Agin"/>
+         <tok val="Agis"/>
+         <tok val="agin"/>
+         <tok val="agis"/>
          <lm>
             <l>Agis</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agin Agis agis agisque agist agís ágis agisne-->
-         <tok val="[aAá]g[i]?[s]?(t|ne|que|n|ís|is)?"/>
+      <ana>
+         <tok val="Agin"/>
+         <tok val="Agis"/>
+         <tok val="agin"/>
+         <tok val="agis"/>
+         <tok val="agisne"/>
+         <tok val="agisque"/>
+         <tok val="agist"/>
+         <tok val="agís"/>
+         <tok val="ágis"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Agina agina-->
-         <tok val="[aA]gina"/>
+      <ana>
+         <tok val="Agina"/>
+         <tok val="agina"/>
          <lm>
             <l>agina</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1801,8 +2249,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Aginae aginae-->
-         <tok val="[aA]ginae"/>
+      <ana>
+         <tok val="Aginae"/>
+         <tok val="aginae"/>
          <lm>
             <l>agina</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1811,29 +2260,39 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Agit Agitque agit agitque agitve ágit-->
-         <tok val="[aAá]git(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Agit"/>
+         <tok val="Agitque"/>
+         <tok val="agit"/>
+         <tok val="agitque"/>
+         <tok val="agitve"/>
+         <tok val="ágit"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Agita agita agitan agitaque-->
-         <tok val="[aA]gita(n|que)?"/>
+      <ana>
+         <tok val="Agita"/>
+         <tok val="agita"/>
+         <tok val="agitan"/>
+         <tok val="agitaque"/>
          <lm>
             <l>agito</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Agitabatur agitabatur-->
-         <tok val="[aA]gitabatur"/>
+      <ana>
+         <tok val="Agitabatur"/>
+         <tok val="agitabatur"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Agitabilis agitabilis-->
-         <tok val="[aA]gitabilis"/>
+      <ana>
+         <tok val="Agitabilis"/>
+         <tok val="agitabilis"/>
          <lm>
             <l>agitabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1847,8 +2306,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Agitanda agitanda-->
-         <tok val="[aA]gitanda"/>
+      <ana>
+         <tok val="Agitanda"/>
+         <tok val="agitanda"/>
          <lm>
             <l>agito</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1859,8 +2319,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Agitans agitans-->
-         <tok val="[aA]gitans"/>
+      <ana>
+         <tok val="Agitans"/>
+         <tok val="agitans"/>
          <lm>
             <l>agito</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1872,65 +2333,83 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Agitant agitant agitantque ágitant-->
-         <tok val="[aAá]gitant(que)?"/>
+      <ana>
+         <tok val="Agitant"/>
+         <tok val="agitant"/>
+         <tok val="agitantque"/>
+         <tok val="ágitant"/>
          <lm>
             <l>agito</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Agitantur agitantur agitanturque-->
-         <tok val="[aA]gitantur(que)?"/>
+      <ana>
+         <tok val="Agitantur"/>
+         <tok val="agitantur"/>
+         <tok val="agitanturque"/>
          <lm>
             <l>agito</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Agitare agitare-->
-         <tok val="[aA]gitare"/>
+      <ana>
+         <tok val="Agitare"/>
+         <tok val="agitare"/>
          <lm>
             <l>agito</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Agitare agitare agitaris-->
-         <tok val="[aA]gitar(e|is)"/>
+      <ana>
+         <tok val="Agitare"/>
+         <tok val="agitare"/>
+         <tok val="agitaris"/>
          <lm>
             <l>agito</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Agitarem agitarem-->
-         <tok val="[aA]gitarem"/>
+      <ana>
+         <tok val="Agitarem"/>
+         <tok val="agitarem"/>
          <lm>
             <l>agito</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Agitari agitari agitarique-->
-         <tok val="[aA]gitari(que)?"/>
+      <ana>
+         <tok val="Agitari"/>
+         <tok val="agitari"/>
+         <tok val="agitarique"/>
          <lm>
             <l>agito</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Agitasse agitasse agitauisse agitavisse-->
-         <tok val="[aA]gita[vu]?[i]?sse"/>
+      <ana>
+         <tok val="Agitasse"/>
+         <tok val="agitasse"/>
+         <tok val="agitauisse"/>
+         <tok val="agitavisse"/>
          <lm>
             <l>agito</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Agitat agitat agitatque-->
-         <tok val="[aA]gitat(que)?"/>
+      <ana>
+         <tok val="Agitat"/>
+         <tok val="agitat"/>
+         <tok val="agitatque"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Agitata agitata agitataque-->
-         <tok val="[aA]gitata(que)?"/>
+      <ana>
+         <tok val="Agitata"/>
+         <tok val="agitata"/>
+         <tok val="agitataque"/>
          <lm>
             <l>agito</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1941,38 +2420,50 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Agitate agitate-->
-         <tok val="[aA]gitate"/>
+      <ana>
+         <tok val="Agitate"/>
+         <tok val="agitate"/>
          <lm>
             <l>agito</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Agitate Agitatum agitate agitatum agitatumque-->
-         <tok val="[aA]gitat(um|e|umque)"/>
+      <ana>
+         <tok val="Agitate"/>
+         <tok val="Agitatum"/>
+         <tok val="agitate"/>
+         <tok val="agitatum"/>
+         <tok val="agitatumque"/>
          <lm>
             <l>agito</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Agitatio agitatio agitation agitatioque agitatioue-->
-         <tok val="[aA]gitatio[q]?(ue|n)?"/>
+      <ana>
+         <tok val="Agitatio"/>
+         <tok val="agitatio"/>
+         <tok val="agitation"/>
+         <tok val="agitatioque"/>
+         <tok val="agitatioue"/>
          <lm>
             <l>agitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agitatione agitatione agitationeque-->
-         <tok val="[aA]gitatione(que)?"/>
+      <ana>
+         <tok val="Agitatione"/>
+         <tok val="agitatione"/>
+         <tok val="agitationeque"/>
          <lm>
             <l>agitatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Agitatior agitatior-->
-         <tok val="[aA]gitatior"/>
+      <ana>
+         <tok val="Agitatior"/>
+         <tok val="agitatior"/>
          <lm>
             <l>agito</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1983,30 +2474,37 @@
       </ana>
       <ana>
          <tok val="Agitatiorem"/>
+         <tok val="agitatiorem"/>
          <lm>
             <l>agito</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--Agitator agitator-->
-         <tok val="[aA]gitator"/>
+      <ana>
+         <tok val="Agitator"/>
+         <tok val="agitator"/>
          <lm>
             <l>agitator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agitatum agitatorum agitatum agitatumque-->
-         <tok val="[aA]gitat(or)?um(que)?"/>
+      <ana>
+         <tok val="Agitatum"/>
+         <tok val="agitatorum"/>
+         <tok val="agitatum"/>
+         <tok val="agitatumque"/>
          <lm>
             <l>agito</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Agitatum agitatum agitatumque-->
-         <tok val="[aA]gitatum(que)?"/>
+      <ana>
+         <tok val="Agitatum"/>
+         <tok val="agitatum"/>
+         <tok val="agitatumque"/>
          <lm cert="0.5">
             <l>agito</l>
             <m cert="0.25">v - - s r p p m a</m>
@@ -2019,15 +2517,19 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agitatur agitatur agitaturque-->
-         <tok val="[aA]gitatur(que)?"/>
+      <ana>
+         <tok val="Agitatur"/>
+         <tok val="agitatur"/>
+         <tok val="agitaturque"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Agitatus agitatus agitatusque-->
-         <tok val="[aA]gitatus(que)?"/>
+      <ana>
+         <tok val="Agitatus"/>
+         <tok val="agitatus"/>
+         <tok val="agitatusque"/>
          <lm cert="0.5">
             <l>agitatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2040,15 +2542,19 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Agite agite ágite Ágite-->
-         <tok val="[aAáÁ]gite"/>
+      <ana>
+         <tok val="Agite"/>
+         <tok val="agite"/>
+         <tok val="Ágite"/>
+         <tok val="ágite"/>
          <lm>
             <l>ago</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Agitet agitet-->
-         <tok val="[aA]gitet"/>
+      <ana>
+         <tok val="Agitet"/>
+         <tok val="agitet"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s p s a</m>
@@ -2056,6 +2562,7 @@
       </ana>
       <ana>
          <tok val="Aglaia"/>
+         <tok val="aglaia"/>
          <lm>
             <l>Aglaia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2065,21 +2572,24 @@
       </ana>
       <ana>
          <tok val="Aglaophon"/>
+         <tok val="aglaophon"/>
          <lm>
             <l>Aglaophon</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aglaophotis aglaophotis-->
-         <tok val="[aA]glaophotis"/>
+      <ana>
+         <tok val="Aglaophotis"/>
+         <tok val="aglaophotis"/>
          <lm>
             <l>aglaophotis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Aglaspis aglaspis-->
-         <tok val="[aA]glaspis"/>
+      <ana>
+         <tok val="Aglaspis"/>
+         <tok val="aglaspis"/>
          <lm>
             <l>aglaspis</l>
             <m>n - - s - - - m n</m>
@@ -2087,6 +2597,7 @@
       </ana>
       <ana>
          <tok val="Aglauro"/>
+         <tok val="aglauro"/>
          <lm>
             <l>Aglauros</l>
             <m cert="0.5">n e - s - - - f b</m>
@@ -2095,6 +2606,7 @@
       </ana>
       <ana>
          <tok val="Aglauros"/>
+         <tok val="aglauros"/>
          <lm>
             <l>Aglauros</l>
             <m cert="0.5">n e - s - - - f n</m>
@@ -2103,13 +2615,17 @@
       </ana>
       <ana>
          <tok val="Agloria"/>
+         <tok val="agloria"/>
          <lm>
             <l>aglorior</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Agmina Agminaque agmina agminaque-->
-         <tok val="[aA]gmina(que)?"/>
+      <ana>
+         <tok val="Agmina"/>
+         <tok val="Agminaque"/>
+         <tok val="agmina"/>
+         <tok val="agminaque"/>
          <lm>
             <l>agmen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2117,30 +2633,36 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Agmine agmine-->
-         <tok val="[aA]gmine"/>
+      <ana>
+         <tok val="Agmine"/>
+         <tok val="agmine"/>
          <lm>
             <l>agmen</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Agminibus agminibus agminibusque-->
-         <tok val="[aA]gminibus(que)?"/>
+      <ana>
+         <tok val="Agminibus"/>
+         <tok val="agminibus"/>
+         <tok val="agminibusque"/>
          <lm>
             <l>agmen</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Agminis agminis-->
-         <tok val="[aA]gminis"/>
+      <ana>
+         <tok val="Agminis"/>
+         <tok val="agminis"/>
          <lm>
             <l>agmen</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Agna agna agnaque-->
-         <tok val="[aA]gna(que)?"/>
+      <ana>
+         <tok val="Agna"/>
+         <tok val="agna"/>
+         <tok val="agnaque"/>
          <lm>
             <l>agna</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2148,8 +2670,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agnae agnae-->
-         <tok val="[aA]gnae"/>
+      <ana>
+         <tok val="Agnae"/>
+         <tok val="agnae"/>
          <lm>
             <l>agna</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -2158,8 +2681,11 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Agnalia Agonalia-->
-         <tok val="Ag[o]?nalia"/>
+      <ana>
+         <tok val="Agnalia"/>
+         <tok val="Agonalia"/>
+         <tok val="agnalia"/>
+         <tok val="agonalia"/>
          <lm>
             <l>Agnalia</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -2167,8 +2693,9 @@
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Agnati agnati-->
-         <tok val="[aA]gnati"/>
+      <ana>
+         <tok val="Agnati"/>
+         <tok val="agnati"/>
          <lm>
             <l>agnascor</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2177,23 +2704,26 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Agnatio agnatio-->
-         <tok val="[aA]gnatio"/>
+      <ana>
+         <tok val="Agnatio"/>
+         <tok val="agnatio"/>
          <lm>
             <l>agnatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agnatione agnatione-->
-         <tok val="[aA]gnatione"/>
+      <ana>
+         <tok val="Agnatione"/>
+         <tok val="agnatione"/>
          <lm>
             <l>agnatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Agnatis agnatis-->
-         <tok val="[aA]gnatis"/>
+      <ana>
+         <tok val="Agnatis"/>
+         <tok val="agnatis"/>
          <lm>
             <l>agnascor</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -2204,8 +2734,9 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Agnatum agnatum-->
-         <tok val="[aA]gnatum"/>
+      <ana>
+         <tok val="Agnatum"/>
+         <tok val="agnatum"/>
          <lm>
             <l>agnascor</l>
             <m cert="0.2">v - - s r p p n n</m>
@@ -2217,21 +2748,25 @@
       </ana>
       <ana>
          <tok val="Agnello"/>
+         <tok val="agnello"/>
          <lm>
             <l>agnellus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Agnellus agnellus-->
-         <tok val="[aA]gnellus"/>
+      <ana>
+         <tok val="Agnellus"/>
+         <tok val="agnellus"/>
          <lm>
             <l>agnellus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agni agni agnique-->
-         <tok val="[aA]gni(que)?"/>
+      <ana>
+         <tok val="Agni"/>
+         <tok val="agni"/>
+         <tok val="agnique"/>
          <lm cert="0.5">
             <l>agnus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2245,15 +2780,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Agninus agninus-->
-         <tok val="[aA]gninus"/>
+      <ana>
+         <tok val="Agninus"/>
+         <tok val="agninus"/>
          <lm>
             <l>agninus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agnis agnis-->
-         <tok val="[aA]gnis"/>
+      <ana>
+         <tok val="Agnis"/>
+         <tok val="agnis"/>
          <lm cert="0.5">
             <l>agnus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -2265,16 +2802,22 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Agnitio agnitio-->
-         <tok val="[aA]gnitio"/>
+      <ana>
+         <tok val="Agnitio"/>
+         <tok val="agnitio"/>
          <lm>
             <l>agnitio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agno Agnon Agnone agno agnon-->
-         <tok val="[Aa]gno[n]?[en]?"/>
+      <ana>
+         <tok val="Agno"/>
+         <tok val="Agnon"/>
+         <tok val="Agnone"/>
+         <tok val="agno"/>
+         <tok val="agnon"/>
+         <tok val="agnone"/>
          <lm cert="0.5">
             <l>agnos</l>
             <m cert="0.5">n - - s - - - f b</m>
@@ -2286,8 +2829,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Agnomen agnomen-->
-         <tok val="[aA]gnomen"/>
+      <ana>
+         <tok val="Agnomen"/>
+         <tok val="agnomen"/>
          <lm>
             <l>agnomen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -2295,15 +2839,22 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Agnon Agnos agnon agnos ágnos-->
-         <tok val="[Aaá]gno[sn]"/>
+      <ana>
+         <tok val="Agnon"/>
+         <tok val="Agnos"/>
+         <tok val="agnon"/>
+         <tok val="agnos"/>
+         <tok val="ágnos"/>
          <lm>
             <l>agnos</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Agnon Agnos agnon agnos-->
-         <tok val="[Aa]gno[sn]"/>
+      <ana>
+         <tok val="Agnon"/>
+         <tok val="Agnos"/>
+         <tok val="agnon"/>
+         <tok val="agnos"/>
          <lm cert="0.5">
             <l>agnos</l>
             <m>n - - p - - - f a</m>
@@ -2313,30 +2864,35 @@
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscam agnoscam-->
-         <tok val="[aA]gnoscam"/>
+      <ana>
+         <tok val="Agnoscam"/>
+         <tok val="agnoscam"/>
          <lm>
             <l>agnosco</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscant agnoscant-->
-         <tok val="[aA]gnoscant"/>
+      <ana>
+         <tok val="Agnoscant"/>
+         <tok val="agnoscant"/>
          <lm>
             <l>agnosco</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscat agnoscat-->
-         <tok val="[aA]gnoscat"/>
+      <ana>
+         <tok val="Agnoscat"/>
+         <tok val="agnoscat"/>
          <lm>
             <l>agnosco</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Agnosce agnosce agnoscen-->
-         <tok val="[aA]gnosce[n]?"/>
+      <ana>
+         <tok val="Agnosce"/>
+         <tok val="agnosce"/>
+         <tok val="agnoscen"/>
          <lm>
             <l>agnosco</l>
             <m>v - 2 s p m a</m>
@@ -2344,78 +2900,107 @@
       </ana>
       <ana>
          <tok val="Agnoscebamus"/>
+         <tok val="agnoscebamus"/>
          <lm>
             <l>agnosco</l>
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscendus agnoscendus-->
-         <tok val="[aA]gnoscendus"/>
+      <ana>
+         <tok val="Agnoscendus"/>
+         <tok val="agnoscendus"/>
          <lm>
             <l>agnosco</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Agnoscere agnoscere agnoscereque-->
-         <tok val="[aA]gnoscere(que)?"/>
+      <ana>
+         <tok val="Agnoscere"/>
+         <tok val="agnoscere"/>
+         <tok val="agnoscereque"/>
          <lm>
             <l>agnosco</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscere agnoscere agnoscereque agnosceris-->
-         <tok val="[aA]gnoscer[e]?(que|is)?"/>
+      <ana>
+         <tok val="Agnoscere"/>
+         <tok val="agnoscere"/>
+         <tok val="agnoscereque"/>
+         <tok val="agnosceris"/>
          <lm>
             <l>agnosco</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Agnosces agnoscen agnosces agnoscesque-->
-         <tok val="[aA]gnosce(s|n|sque)"/>
+      <ana>
+         <tok val="Agnosces"/>
+         <tok val="agnoscen"/>
+         <tok val="agnosces"/>
+         <tok val="agnoscesque"/>
          <lm>
             <l>agnosco</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscis agnoscis agnoscisne-->
-         <tok val="[aA]gnoscis(ne)?"/>
+      <ana>
+         <tok val="Agnoscis"/>
+         <tok val="agnoscis"/>
+         <tok val="agnoscisne"/>
          <lm>
             <l>agnosco</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscit agnoscit agnoscitque-->
-         <tok val="[aA]gnoscit(que)?"/>
+      <ana>
+         <tok val="Agnoscit"/>
+         <tok val="agnoscit"/>
+         <tok val="agnoscitque"/>
          <lm>
             <l>agnosco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Agnoscunt agnoscunt-->
-         <tok val="[aA]gnoscunt"/>
+      <ana>
+         <tok val="Agnoscunt"/>
+         <tok val="agnoscunt"/>
          <lm>
             <l>agnosco</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Agnouere Agnovere agnouere agnouerunt agnovere agnoverunt-->
-         <tok val="[aA]gno[vu]er(unt|e)"/>
+      <ana>
+         <tok val="Agnouere"/>
+         <tok val="Agnovere"/>
+         <tok val="agnouere"/>
+         <tok val="agnouerunt"/>
+         <tok val="agnovere"/>
+         <tok val="agnoverunt"/>
          <lm>
             <l>anosco</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Agnoui Agnovi agnoui agnovi agnovique-->
-         <tok val="[Aa]gno[vu]i(que)?"/>
+      <ana>
+         <tok val="Agnoui"/>
+         <tok val="Agnovi"/>
+         <tok val="agnoui"/>
+         <tok val="agnovi"/>
+         <tok val="agnovique"/>
          <lm>
             <l>anosco</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Agnouit Agnovit agnouit agnouitque agnovit agnovitque-->
-         <tok val="[aA]gno[vu]it(que)?"/>
+      <ana>
+         <tok val="Agnouit"/>
+         <tok val="Agnovit"/>
+         <tok val="agnouit"/>
+         <tok val="agnouitque"/>
+         <tok val="agnovit"/>
+         <tok val="agnovitque"/>
          <lm>
             <l>anosco</l>
             <m>v - 3 s r i a</m>
@@ -2423,6 +3008,7 @@
       </ana>
       <ana>
          <tok val="Agoce"/>
+         <tok val="agoce"/>
          <lm>
             <l>Agoce</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2432,13 +3018,15 @@
       </ana>
       <ana>
          <tok val="Agocen"/>
+         <tok val="agocen"/>
          <lm>
             <l>Agoce</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agolum agolum-->
-         <tok val="[aA]golum"/>
+      <ana>
+         <tok val="Agolum"/>
+         <tok val="agolum"/>
          <lm>
             <l>agolum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -2449,6 +3037,7 @@
       </ana>
       <ana>
          <tok val="Agonalem"/>
+         <tok val="agonalem"/>
          <lm>
             <l>Agonalis</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -2457,6 +3046,7 @@
       </ana>
       <ana>
          <tok val="Agonales"/>
+         <tok val="agonales"/>
          <lm>
             <l>Agonalis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2465,8 +3055,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Agonales Agonalis-->
-         <tok val="Agonal[ie]s"/>
+      <ana>
+         <tok val="Agonales"/>
+         <tok val="Agonalis"/>
+         <tok val="agonales"/>
+         <tok val="agonalis"/>
          <lm>
             <l>Agonalis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -2475,6 +3068,7 @@
       </ana>
       <ana>
          <tok val="Agonali"/>
+         <tok val="agonali"/>
          <lm>
             <l>Agonalis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -2487,6 +3081,7 @@
       </ana>
       <ana>
          <tok val="Agonalia"/>
+         <tok val="agonalia"/>
          <lm>
             <l>Agonalis</l>
             <m cert="0.333333333333333333">a e - p - - - n n</m>
@@ -2496,6 +3091,7 @@
       </ana>
       <ana>
          <tok val="Agonalis"/>
+         <tok val="agonalis"/>
          <lm>
             <l>Agonalis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -2507,30 +3103,42 @@
             <m cert="0.142857142857142857">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agone Agonen agone-->
-         <tok val="[Aa]gone[n]?"/>
+      <ana>
+         <tok val="Agone"/>
+         <tok val="Agonen"/>
+         <tok val="agone"/>
+         <tok val="agonen"/>
          <lm>
             <l>agon</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Agonem agonem agona-->
-         <tok val="[aA]gon(em|a)"/>
+      <ana>
+         <tok val="Agonem"/>
+         <tok val="agona"/>
+         <tok val="agonem"/>
          <lm>
             <l>agon</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agonen Agones agones-->
-         <tok val="[Aa]gone[sn]"/>
+      <ana>
+         <tok val="Agonen"/>
+         <tok val="Agones"/>
+         <tok val="agonen"/>
+         <tok val="agones"/>
          <lm>
             <l>agon</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agonen Agones agones agonas-->
-         <tok val="[Aa]gon[e]?(s|n|as)"/>
+      <ana>
+         <tok val="Agonen"/>
+         <tok val="Agones"/>
+         <tok val="agonas"/>
+         <tok val="agonen"/>
+         <tok val="agones"/>
          <lm>
             <l>agon</l>
             <m>n - - p - - - m a</m>
@@ -2538,6 +3146,7 @@
       </ana>
       <ana>
          <tok val="Agonensis"/>
+         <tok val="agonensis"/>
          <lm>
             <l>Agonensis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -2553,6 +3162,7 @@
       </ana>
       <ana>
          <tok val="Agonensium"/>
+         <tok val="agonensium"/>
          <lm>
             <l>Agonensis</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -2560,8 +3170,9 @@
             <m cert="0.333333333333333333">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Agonia agonia-->
-         <tok val="[aA]gonia"/>
+      <ana>
+         <tok val="Agonia"/>
+         <tok val="agonia"/>
          <lm cert="0.5">
             <l>agonia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2577,6 +3188,7 @@
       </ana>
       <ana>
          <tok val="Agonidem"/>
+         <tok val="agonidem"/>
          <lm>
             <l>Agonis</l>
             <m>n e - s - - - f a</m>
@@ -2584,6 +3196,7 @@
       </ana>
       <ana>
          <tok val="Agonidis"/>
+         <tok val="agonidis"/>
          <lm>
             <l>Agonis</l>
             <m>n e - s - - - f g</m>
@@ -2591,6 +3204,7 @@
       </ana>
       <ana>
          <tok val="Agonis"/>
+         <tok val="agonis"/>
          <lm cert="0.5">
             <l>Agonis</l>
             <m>n e - s - - - f n</m>
@@ -2600,8 +3214,9 @@
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agonista agonista-->
-         <tok val="[aA]gonista"/>
+      <ana>
+         <tok val="Agonista"/>
+         <tok val="agonista"/>
          <lm>
             <l>agonista</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -2609,8 +3224,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agonium agonium-->
-         <tok val="[aA]gonium"/>
+      <ana>
+         <tok val="Agonium"/>
+         <tok val="agonium"/>
          <lm>
             <l>agonium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -2619,8 +3235,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Agonotheta agonotheta-->
-         <tok val="[aA]gonotheta"/>
+      <ana>
+         <tok val="Agonotheta"/>
+         <tok val="agonotheta"/>
          <lm>
             <l>agonotheta</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -2628,8 +3245,9 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agonothetae agonothetae-->
-         <tok val="[aA]gonothetae"/>
+      <ana>
+         <tok val="Agonothetae"/>
+         <tok val="agonothetae"/>
          <lm>
             <l>agonotheta</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2638,8 +3256,9 @@
             <m cert="0.25">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Agoranomus agoranomus-->
-         <tok val="[aA]goranomus"/>
+      <ana>
+         <tok val="Agoranomus"/>
+         <tok val="agoranomus"/>
          <lm>
             <l>agoranomus</l>
             <m>n - - s - - - m n</m>
@@ -2647,6 +3266,7 @@
       </ana>
       <ana>
          <tok val="Agraganti"/>
+         <tok val="agraganti"/>
          <lm>
             <l>Agragas</l>
             <m>n e - s - - - m d</m>
@@ -2654,6 +3274,7 @@
       </ana>
       <ana>
          <tok val="Agragantinas"/>
+         <tok val="agragantinas"/>
          <lm>
             <l>Agragantinus</l>
             <m>a e - p - - - f a</m>
@@ -2661,6 +3282,7 @@
       </ana>
       <ana>
          <tok val="Agragantinis"/>
+         <tok val="agragantinis"/>
          <lm>
             <l>Agragantinus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -2673,6 +3295,7 @@
       </ana>
       <ana>
          <tok val="Agragantino"/>
+         <tok val="agragantino"/>
          <lm>
             <l>Agragantinus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -2683,6 +3306,7 @@
       </ana>
       <ana>
          <tok val="Agragantinus"/>
+         <tok val="agragantinus"/>
          <lm>
             <l>Agragantinus</l>
             <m>a e - s - - - m n</m>
@@ -2690,6 +3314,7 @@
       </ana>
       <ana>
          <tok val="Agragantum"/>
+         <tok val="agragantum"/>
          <lm>
             <l>Agragas</l>
             <m>n e - p - - - m g</m>
@@ -2697,14 +3322,16 @@
       </ana>
       <ana>
          <tok val="Agragas"/>
+         <tok val="agragas"/>
          <lm>
             <l>Agragas</l>
             <m cert="0.5">n e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agrariae agrariae-->
-         <tok val="[aA]grariae"/>
+      <ana>
+         <tok val="Agrariae"/>
+         <tok val="agrariae"/>
          <lm>
             <l>agrarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2713,15 +3340,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Agrariam agrariam-->
-         <tok val="[aA]grariam"/>
+      <ana>
+         <tok val="Agrariam"/>
+         <tok val="agrariam"/>
          <lm>
             <l>agrarius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agrarii agrarii-->
-         <tok val="[aA]grarii"/>
+      <ana>
+         <tok val="Agrarii"/>
+         <tok val="agrarii"/>
          <lm cert="0.5">
             <l>agrarii</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -2733,23 +3362,27 @@
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agrarii agrari agrarii-->
-         <tok val="[aA]grari[i]?"/>
+      <ana>
+         <tok val="Agrarii"/>
+         <tok val="agrari"/>
+         <tok val="agrarii"/>
          <lm>
             <l>agrarius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Agrarius agrarius-->
-         <tok val="[aA]grarius"/>
+      <ana>
+         <tok val="Agrarius"/>
+         <tok val="agrarius"/>
          <lm>
             <l>agrarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agreste agreste-->
-         <tok val="[aA]greste"/>
+      <ana>
+         <tok val="Agreste"/>
+         <tok val="agreste"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2757,24 +3390,33 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Agrestem agrestem agrestemque-->
-         <tok val="[aA]grestem(que)?"/>
+      <ana>
+         <tok val="Agrestem"/>
+         <tok val="agrestem"/>
+         <tok val="agrestemque"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agrestes Agrestis agrestes agrestesque agrestis agrestisque-->
-         <tok val="[aA]grest[ie]s(que)?"/>
+      <ana>
+         <tok val="Agrestes"/>
+         <tok val="Agrestis"/>
+         <tok val="agrestes"/>
+         <tok val="agrestesque"/>
+         <tok val="agrestis"/>
+         <tok val="agrestisque"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agrestes agrestes agrestesque-->
-         <tok val="[aA]grestes(que)?"/>
+      <ana>
+         <tok val="Agrestes"/>
+         <tok val="agrestes"/>
+         <tok val="agrestesque"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2783,8 +3425,10 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agresti agresti agrestique-->
-         <tok val="[aA]gresti(que)?"/>
+      <ana>
+         <tok val="Agresti"/>
+         <tok val="agresti"/>
+         <tok val="agrestique"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -2795,8 +3439,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Agrestia agrestia-->
-         <tok val="[aA]grestia"/>
+      <ana>
+         <tok val="Agrestia"/>
+         <tok val="agrestia"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -2804,8 +3449,10 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Agrestis agrestis agrestisque-->
-         <tok val="[aA]grestis(que)?"/>
+      <ana>
+         <tok val="Agrestis"/>
+         <tok val="agrestis"/>
+         <tok val="agrestisque"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -2817,8 +3464,13 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Agrestium Agrestivm agrestium agrestiumque agrestum-->
-         <tok val="[aA]grest[i]?(u|iv|iu)m(que)?"/>
+      <ana>
+         <tok val="Agrestium"/>
+         <tok val="Agrestivm"/>
+         <tok val="agrestium"/>
+         <tok val="agrestiumque"/>
+         <tok val="agrestivm"/>
+         <tok val="agrestum"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -2828,13 +3480,16 @@
       </ana>
       <ana>
          <tok val="Agri"/>
+         <tok val="agri"/>
          <lm>
             <l>Agrius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agria agria agrian-->
-         <tok val="[aA]gria[n]?"/>
+      <ana>
+         <tok val="Agria"/>
+         <tok val="agria"/>
+         <tok val="agrian"/>
          <lm>
             <l>agrius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2847,6 +3502,7 @@
       </ana>
       <ana>
          <tok val="Agrianes"/>
+         <tok val="agrianes"/>
          <lm>
             <l>Agrianes</l>
             <m cert="0.166666666666666667">n e - p - - - f n</m>
@@ -2859,51 +3515,58 @@
       </ana>
       <ana>
          <tok val="Agrianum"/>
+         <tok val="agrianum"/>
          <lm>
             <l>Agrianes</l>
             <m cert="0.5">n e - p - - - f g</m>
             <m cert="0.5">n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agricolam agricolam-->
-         <tok val="[aA]gricolam"/>
+      <ana>
+         <tok val="Agricolam"/>
+         <tok val="agricolam"/>
          <lm>
             <l>agricola</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agricolarum agricolarum-->
-         <tok val="[aA]gricolarum"/>
+      <ana>
+         <tok val="Agricolarum"/>
+         <tok val="agricolarum"/>
          <lm>
             <l>agricola</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Agricolas agricolas-->
-         <tok val="[aA]gricolas"/>
+      <ana>
+         <tok val="Agricolas"/>
+         <tok val="agricolas"/>
          <lm>
             <l>agricola</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Agricolatio agricolatio-->
-         <tok val="[aA]gricolatio"/>
+      <ana>
+         <tok val="Agricolatio"/>
+         <tok val="agricolatio"/>
          <lm>
             <l>agricolatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agricultor agricultor-->
-         <tok val="[aA]gricultor"/>
+      <ana>
+         <tok val="Agricultor"/>
+         <tok val="agricultor"/>
          <lm>
             <l>agricultor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agricultura agricultura-->
-         <tok val="[aA]gricultura"/>
+      <ana>
+         <tok val="Agricultura"/>
+         <tok val="agricultura"/>
          <lm>
             <l>agricultura</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2911,8 +3574,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agriculturae agriculturae-->
-         <tok val="[aA]griculturae"/>
+      <ana>
+         <tok val="Agriculturae"/>
+         <tok val="agriculturae"/>
          <lm>
             <l>agricultura</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -2921,8 +3585,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Agriculturam agriculturam-->
-         <tok val="[aA]griculturam"/>
+      <ana>
+         <tok val="Agriculturam"/>
+         <tok val="agriculturam"/>
          <lm>
             <l>agricultura</l>
             <m>n - - s - - - f a</m>
@@ -2930,6 +3595,7 @@
       </ana>
       <ana>
          <tok val="Agrigenti"/>
+         <tok val="agrigenti"/>
          <lm>
             <l>Agrigentum</l>
             <m>n e - s - - - n g</m>
@@ -2937,6 +3603,7 @@
       </ana>
       <ana>
          <tok val="Agrigentinam"/>
+         <tok val="agrigentinam"/>
          <lm>
             <l>Agrigentinus</l>
             <m>a e - s - - - f a</m>
@@ -2944,6 +3611,7 @@
       </ana>
       <ana>
          <tok val="Agrigentini"/>
+         <tok val="agrigentini"/>
          <lm cert="0.5">
             <l>Agrigentinus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2959,6 +3627,7 @@
       </ana>
       <ana>
          <tok val="Agrigentinis"/>
+         <tok val="agrigentinis"/>
          <lm cert="0.5">
             <l>Agrigentini</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -2976,6 +3645,7 @@
       </ana>
       <ana>
          <tok val="Agrigentino"/>
+         <tok val="agrigentino"/>
          <lm>
             <l>Agrigentinus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -2984,8 +3654,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Agrigentinorum Agrigentinum-->
-         <tok val="Agrigentin(or)?um"/>
+      <ana>
+         <tok val="Agrigentinorum"/>
+         <tok val="Agrigentinum"/>
+         <tok val="agrigentinorum"/>
+         <tok val="agrigentinum"/>
          <lm cert="0.5">
             <l>Agrigentinus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -2998,6 +3671,7 @@
       </ana>
       <ana>
          <tok val="Agrigentinos"/>
+         <tok val="agrigentinos"/>
          <lm cert="0.5">
             <l>Agrigentini</l>
             <m>n e - p - - - m a</m>
@@ -3009,6 +3683,7 @@
       </ana>
       <ana>
          <tok val="Agrigentinum"/>
+         <tok val="agrigentinum"/>
          <lm>
             <l>Agrigentinus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -3019,6 +3694,7 @@
       </ana>
       <ana>
          <tok val="Agrigento"/>
+         <tok val="agrigento"/>
          <lm>
             <l>Agrigentum</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -3027,6 +3703,7 @@
       </ana>
       <ana>
          <tok val="Agrigentum"/>
+         <tok val="agrigentum"/>
          <lm>
             <l>Agrigentum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -3037,6 +3714,7 @@
       </ana>
       <ana>
          <tok val="Agrii"/>
+         <tok val="agrii"/>
          <lm cert="0.5">
             <l>agrius</l>
             <m cert="0.5">a - - p - - - m v</m>
@@ -3049,8 +3727,9 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Agrimonia agrimonia-->
-         <tok val="[aA]grimonia"/>
+      <ana>
+         <tok val="Agrimonia"/>
+         <tok val="agrimonia"/>
          <lm>
             <l>agrimonia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -3058,40 +3737,39 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agrion Agrios agrion agrios-->
-         <tok val="[Aa]grio[sn]"/>
-         <lm>
+      <ana>
+         <tok val="Agrion"/>
+         <tok val="Agrios"/>
+         <tok val="agrion"/>
+         <tok val="agrios"/>
+         <lm cert="0.5">
             <l>agrius</l>
             <m>a - - p - - - m a</m>
          </lm>
+         <lm cert="0.5">
+            <l>Agrius</l>
+            <m>n e - p - - - m a</m>
+         </lm>
       </ana>
-      <ana><!--Agrion agrion-->
-         <tok val="[aA]grion"/>
-         <lm>
+      <ana>
+         <tok val="Agrion"/>
+         <tok val="agrion"/>
+         <lm cert="0.5">
             <l>agrius</l>
             <m cert="0.25">a - - s - - - n b</m>
             <m cert="0.25">a - - s - - - m d</m>
             <m cert="0.25">a - - s - - - n d</m>
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Agrion"/>
-         <lm>
+         <lm cert="0.5">
             <l>Agrius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Agrion Agrios-->
-         <tok val="Agrio[sn]"/>
-         <lm>
-            <l>Agrius</l>
-            <m>n e - p - - - m a</m>
-         </lm>
-      </ana>
-      <ana><!--Agripeta agripeta-->
-         <tok val="[aA]gripeta"/>
+      <ana>
+         <tok val="Agripeta"/>
+         <tok val="agripeta"/>
          <lm>
             <l>agripeta</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -3101,6 +3779,7 @@
       </ana>
       <ana>
          <tok val="Agrippae"/>
+         <tok val="agrippae"/>
          <lm>
             <l>Agrippa</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -3111,6 +3790,7 @@
       </ana>
       <ana>
          <tok val="Agrippam"/>
+         <tok val="agrippam"/>
          <lm>
             <l>Agrippa</l>
             <m>n e - s - - - m a</m>
@@ -3118,6 +3798,7 @@
       </ana>
       <ana>
          <tok val="Agrippas"/>
+         <tok val="agrippas"/>
          <lm>
             <l>Agrippa</l>
             <m>n e - p - - - m a</m>
@@ -3125,6 +3806,7 @@
       </ana>
       <ana>
          <tok val="Agrippina"/>
+         <tok val="agrippina"/>
          <lm>
             <l>Agrippina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -3132,8 +3814,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Agrippinae Agrippinaeque-->
-         <tok val="Agrippinae(que)?"/>
+      <ana>
+         <tok val="Agrippinae"/>
+         <tok val="Agrippinaeque"/>
+         <tok val="agrippinae"/>
+         <tok val="agrippinaeque"/>
          <lm>
             <l>Agrippina</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -3144,6 +3829,7 @@
       </ana>
       <ana>
          <tok val="Agrippinam"/>
+         <tok val="agrippinam"/>
          <lm>
             <l>Agrippina</l>
             <m>n e - s - - - f a</m>
@@ -3151,14 +3837,16 @@
       </ana>
       <ana>
          <tok val="Agrippinas"/>
+         <tok val="agrippinas"/>
          <lm>
             <l>Agrippina</l>
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agrium agrium-->
-         <tok val="[aA]grium"/>
-         <lm>
+      <ana>
+         <tok val="Agrium"/>
+         <tok val="agrium"/>
+         <lm cert="0.5">
             <l>agrius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
             <m cert="0.166666666666666667">a - - p - - - n g</m>
@@ -3167,10 +3855,7 @@
             <m cert="0.166666666666666667">a - - p - - - m g</m>
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Agrium"/>
-         <lm>
+         <lm cert="0.5">
             <l>Agrius</l>
             <m cert="0.5">n e - p - - - m g</m>
             <m cert="0.5">n e - s - - - m a</m>
@@ -3178,20 +3863,19 @@
       </ana>
       <ana>
          <tok val="Agrius"/>
-         <lm>
+         <tok val="agrius"/>
+         <lm cert="0.5">
             <l>Agrius</l>
             <m>n e - s - - - m n</m>
          </lm>
-      </ana>
-      <ana><!--Agrius agrius-->
-         <tok val="[aA]grius"/>
-         <lm>
+         <lm cert="0.5">
             <l>agrius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Agrostis agrostis-->
-         <tok val="[aA]grostis"/>
+      <ana>
+         <tok val="Agrostis"/>
+         <tok val="agrostis"/>
          <lm>
             <l>agrostis</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -3199,15 +3883,18 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agunt agunt aguntque-->
-         <tok val="[aA]gunt(que)?"/>
+      <ana>
+         <tok val="Agunt"/>
+         <tok val="agunt"/>
+         <tok val="aguntque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Aguntur aguntur-->
-         <tok val="[aA]guntur"/>
+      <ana>
+         <tok val="Aguntur"/>
+         <tok val="aguntur"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p p i p</m>
@@ -3215,6 +3902,7 @@
       </ana>
       <ana>
          <tok val="Agusium"/>
+         <tok val="agusium"/>
          <lm>
             <l>Agusius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -3223,6 +3911,7 @@
       </ana>
       <ana>
          <tok val="Agusius"/>
+         <tok val="agusius"/>
          <lm>
             <l>Agusius</l>
             <m>n e - s - - - m n</m>
@@ -3230,6 +3919,7 @@
       </ana>
       <ana>
          <tok val="Agylla"/>
+         <tok val="agylla"/>
          <lm>
             <l>Agylla</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -3239,13 +3929,17 @@
       </ana>
       <ana>
          <tok val="Agyllam"/>
+         <tok val="agyllam"/>
          <lm>
             <l>Agylla</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Agyri Agyrinen-->
-         <tok val="Agyri(nen)?"/>
+      <ana>
+         <tok val="Agyri"/>
+         <tok val="Agyrinen"/>
+         <tok val="agyri"/>
+         <tok val="agyrinen"/>
          <lm>
             <l>Agyrium</l>
             <m>n e - s - - - n g</m>
@@ -3253,6 +3947,7 @@
       </ana>
       <ana>
          <tok val="Agyrinense"/>
+         <tok val="agyrinense"/>
          <lm>
             <l>Agyrinensis</l>
             <m cert="0.333333333333333333">a e - s - - - n v</m>
@@ -3262,6 +3957,7 @@
       </ana>
       <ana>
          <tok val="Agyrinenses"/>
+         <tok val="agyrinenses"/>
          <lm>
             <l>Agyrinensis</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -3270,8 +3966,11 @@
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Agyrinenses Agyrinensis-->
-         <tok val="Agyrinens[ie]s"/>
+      <ana>
+         <tok val="Agyrinenses"/>
+         <tok val="Agyrinensis"/>
+         <tok val="agyrinenses"/>
+         <tok val="agyrinensis"/>
          <lm>
             <l>Agyrinensis</l>
             <m cert="0.5">a e - p - - - f a</m>
@@ -3280,6 +3979,7 @@
       </ana>
       <ana>
          <tok val="Agyrinensi"/>
+         <tok val="agyrinensi"/>
          <lm>
             <l>Agyrinensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -3292,6 +3992,7 @@
       </ana>
       <ana>
          <tok val="Agyrinensibus"/>
+         <tok val="agyrinensibus"/>
          <lm>
             <l>Agyrinensis</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -3304,6 +4005,7 @@
       </ana>
       <ana>
          <tok val="Agyrinensis"/>
+         <tok val="agyrinensis"/>
          <lm>
             <l>Agyrinensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -3317,6 +4019,7 @@
       </ana>
       <ana>
          <tok val="Agyrinensium"/>
+         <tok val="agyrinensium"/>
          <lm>
             <l>Agyrinensis</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -3326,6 +4029,7 @@
       </ana>
       <ana>
          <tok val="Agyrio"/>
+         <tok val="agyrio"/>
          <lm>
             <l>Agyrium</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -3334,6 +4038,7 @@
       </ana>
       <ana>
          <tok val="Agyrium"/>
+         <tok val="agyrium"/>
          <lm>
             <l>Agyrium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -3394,8 +4099,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--agasonibus agasonibusque-->
-         <tok val="agasonibus(que)?"/>
+      <ana>
+         <tok val="agasonibus"/>
+         <tok val="agasonibusque"/>
          <lm>
             <l>agaso</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -3430,15 +4136,17 @@
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--ageban agebas-->
-         <tok val="ageba[sn]"/>
+      <ana>
+         <tok val="ageban"/>
+         <tok val="agebas"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--agebant agebantque-->
-         <tok val="agebant(que)?"/>
+      <ana>
+         <tok val="agebant"/>
+         <tok val="agebantque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p i i a</m>
@@ -3465,16 +4173,18 @@
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--agellis agellist-->
-         <tok val="agellis[t]?"/>
+      <ana>
+         <tok val="agellis"/>
+         <tok val="agellist"/>
          <lm>
             <l>agellus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--agellorum agellum-->
-         <tok val="agell(or)?um"/>
+      <ana>
+         <tok val="agellorum"/>
+         <tok val="agellum"/>
          <lm>
             <l>agellus</l>
             <m>n - - p - - - m g</m>
@@ -3502,22 +4212,29 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--agemus agemusque Agemus-->
-         <tok val="[Aa]gemus(que)?"/>
+      <ana>
+         <tok val="Agemus"/>
+         <tok val="agemus"/>
+         <tok val="agemusque"/>
          <lm>
             <l>ago</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--agenda agendaque agunda agúnda-->
-         <tok val="ag[ueú]nda(que)?"/>
+      <ana>
+         <tok val="agenda"/>
+         <tok val="agendaque"/>
+         <tok val="agunda"/>
+         <tok val="agúnda"/>
          <lm>
             <l>ago</l>
             <m>v - - s p g p f b</m>
          </lm>
       </ana>
-      <ana><!--agenda agendaque agunda-->
-         <tok val="ag[ue]nda(que)?"/>
+      <ana>
+         <tok val="agenda"/>
+         <tok val="agendaque"/>
+         <tok val="agunda"/>
          <lm>
             <l>ago</l>
             <m cert="0.2">v - - p p g p n a</m>
@@ -3527,15 +4244,17 @@
             <m cert="0.2">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--agendam agundam-->
-         <tok val="ag[ue]ndam"/>
+      <ana>
+         <tok val="agendam"/>
+         <tok val="agundam"/>
          <lm>
             <l>ago</l>
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--agendarum agundarum-->
-         <tok val="ag[ue]ndarum"/>
+      <ana>
+         <tok val="agendarum"/>
+         <tok val="agundarum"/>
          <lm>
             <l>ago</l>
             <m>v - - p p g p f g</m>
@@ -3548,8 +4267,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--agendis agundis-->
-         <tok val="ag[ue]ndis"/>
+      <ana>
+         <tok val="agendis"/>
+         <tok val="agundis"/>
          <lm>
             <l>ago</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -3560,8 +4280,10 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--agendo agendoque agundo-->
-         <tok val="ag[ue]ndo(que)?"/>
+      <ana>
+         <tok val="agendo"/>
+         <tok val="agendoque"/>
+         <tok val="agundo"/>
          <lm>
             <l>ago</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -3579,8 +4301,9 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--agendus agendusque-->
-         <tok val="agendus(que)?"/>
+      <ana>
+         <tok val="agendus"/>
+         <tok val="agendusque"/>
          <lm>
             <l>ago</l>
             <m>v - - s p g p m n</m>
@@ -3644,15 +4367,18 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--ageren ageres-->
-         <tok val="agere[sn]"/>
+      <ana>
+         <tok val="ageren"/>
+         <tok val="ageres"/>
          <lm>
             <l>ago</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--agerentur agerenturque Agerentur-->
-         <tok val="[Aa]gerentur(que)?"/>
+      <ana>
+         <tok val="Agerentur"/>
+         <tok val="agerentur"/>
+         <tok val="agerenturque"/>
          <lm>
             <l>ago</l>
             <m>v - 3 p i s p</m>
@@ -3672,8 +4398,10 @@
             <m>v - 2 p i s a</m>
          </lm>
       </ana>
-      <ana><!--ageretur agereturque agereturve-->
-         <tok val="ageretur(ve|que)?"/>
+      <ana>
+         <tok val="ageretur"/>
+         <tok val="agereturque"/>
+         <tok val="agereturve"/>
          <lm>
             <l>ago</l>
             <m>v - 3 s i s p</m>
@@ -3731,22 +4459,28 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--aggerabant aggerebant-->
-         <tok val="agger[ea]bant"/>
+      <ana>
+         <tok val="aggerabant"/>
+         <tok val="aggerebant"/>
          <lm>
             <l>aggero</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--aggeranda aggerunda aggerundaque aggerúndaque-->
-         <tok val="agger[úua]nda(que)?"/>
+      <ana>
+         <tok val="aggeranda"/>
+         <tok val="aggerunda"/>
+         <tok val="aggerundaque"/>
+         <tok val="aggerúndaque"/>
          <lm>
             <l>aggero</l>
             <m>v - - s p g p f b</m>
          </lm>
       </ana>
-      <ana><!--aggeranda aggerunda aggerundaque-->
-         <tok val="agger[ua]nda(que)?"/>
+      <ana>
+         <tok val="aggeranda"/>
+         <tok val="aggerunda"/>
+         <tok val="aggerundaque"/>
          <lm>
             <l>aggero</l>
             <m cert="0.2">v - - p p g p n a</m>
@@ -3782,15 +4516,18 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--aggerant aggerunt aggerúnt-->
-         <tok val="agger[uaú]nt"/>
+      <ana>
+         <tok val="aggerant"/>
+         <tok val="aggerunt"/>
+         <tok val="aggerúnt"/>
          <lm>
             <l>aggero</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--aggerantur aggeruntur-->
-         <tok val="agger[ua]ntur"/>
+      <ana>
+         <tok val="aggerantur"/>
+         <tok val="aggeruntur"/>
          <lm>
             <l>aggero</l>
             <m>v - 3 p p i p</m>
@@ -3803,15 +4540,17 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--aggerari aggeri-->
-         <tok val="agger(ar)?i"/>
+      <ana>
+         <tok val="aggerari"/>
+         <tok val="aggeri"/>
          <lm>
             <l>aggero</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--aggerata aggesta-->
-         <tok val="agge(s|ra)ta"/>
+      <ana>
+         <tok val="aggerata"/>
+         <tok val="aggesta"/>
          <lm>
             <l>aggero</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -3832,8 +4571,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--aggerati aggesti-->
-         <tok val="agge(s|ra)ti"/>
+      <ana>
+         <tok val="aggerati"/>
+         <tok val="aggesti"/>
          <lm>
             <l>aggero</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -3941,15 +4681,17 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--aggerimus ággerimus-->
-         <tok val="[áa]ggerimus"/>
+      <ana>
+         <tok val="aggerimus"/>
+         <tok val="ággerimus"/>
          <lm>
             <l>aggero</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--aggerum aggerumque-->
-         <tok val="aggerum(que)?"/>
+      <ana>
+         <tok val="aggerum"/>
+         <tok val="aggerumque"/>
          <lm>
             <l>agger</l>
             <m>n - - p - - - m g</m>
@@ -3969,8 +4711,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--aggesta aggestaque-->
-         <tok val="aggesta(que)?"/>
+      <ana>
+         <tok val="aggesta"/>
+         <tok val="aggestaque"/>
          <lm>
             <l>aggestum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -4239,8 +4982,9 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--aggrauant aggravant-->
-         <tok val="aggra[vu]ant"/>
+      <ana>
+         <tok val="aggrauant"/>
+         <tok val="aggravant"/>
          <lm>
             <l>aggravo</l>
             <m>v - 3 p p i a</m>
@@ -4253,8 +4997,9 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--aggrauas aggravas-->
-         <tok val="aggra[vu]as"/>
+      <ana>
+         <tok val="aggrauas"/>
+         <tok val="aggravas"/>
          <lm>
             <l>aggravo</l>
             <m>v - 2 s p i a</m>
@@ -4267,8 +5012,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--aggrauata aggravata-->
-         <tok val="aggra[vu]ata"/>
+      <ana>
+         <tok val="aggrauata"/>
+         <tok val="aggravata"/>
          <lm>
             <l>aggravo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -4279,8 +5025,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--aggrauescat aggravescat-->
-         <tok val="aggra[vu]escat"/>
+      <ana>
+         <tok val="aggrauescat"/>
+         <tok val="aggravescat"/>
          <lm>
             <l>aggravesco</l>
             <m>v - 3 s p s a</m>
@@ -4303,8 +5050,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--aggrauet aggravet-->
-         <tok val="aggra[vu]et"/>
+      <ana>
+         <tok val="aggrauet"/>
+         <tok val="aggravet"/>
          <lm>
             <l>aggravo</l>
             <m>v - 3 s p s a</m>
@@ -4859,8 +5607,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--agilior agiliorque-->
-         <tok val="agilior(que)?"/>
+      <ana>
+         <tok val="agilior"/>
+         <tok val="agiliorque"/>
          <lm>
             <l>agilis</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -4913,8 +5662,9 @@
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--agilitate agilitatenque-->
-         <tok val="agilitate(nque)?"/>
+      <ana>
+         <tok val="agilitate"/>
+         <tok val="agilitatenque"/>
          <lm>
             <l>agilitas</l>
             <m>n - - s - - - f b</m>
@@ -4986,15 +5736,17 @@
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--agitabant agitabantque-->
-         <tok val="agitabant(que)?"/>
+      <ana>
+         <tok val="agitabant"/>
+         <tok val="agitabantque"/>
          <lm>
             <l>agito</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--agitabantur agitabanturque-->
-         <tok val="agitabantur(que)?"/>
+      <ana>
+         <tok val="agitabantur"/>
+         <tok val="agitabanturque"/>
          <lm>
             <l>agito</l>
             <m>v - 3 p i i p</m>
@@ -5007,15 +5759,17 @@
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--agitabat Agitabat-->
-         <tok val="[Aa]gitabat"/>
+      <ana>
+         <tok val="Agitabat"/>
+         <tok val="agitabat"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--agitabere agitaberis-->
-         <tok val="agitaber(is|e)"/>
+      <ana>
+         <tok val="agitabere"/>
+         <tok val="agitaberis"/>
          <lm>
             <l>agito</l>
             <m>v - 2 s f i p</m>
@@ -5077,8 +5831,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--agitan agitas-->
-         <tok val="agita[sn]"/>
+      <ana>
+         <tok val="agitan"/>
+         <tok val="agitas"/>
          <lm>
             <l>agito</l>
             <m>v - 2 s p i a</m>
@@ -5131,8 +5886,9 @@
             <m cert="0.166666666666666667">v - - p p g p n b</m>
          </lm>
       </ana>
-      <ana><!--agitando agitandoque-->
-         <tok val="agitando(que)?"/>
+      <ana>
+         <tok val="agitando"/>
+         <tok val="agitandoque"/>
          <lm>
             <l>agito</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -5143,8 +5899,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--agitandum agitandumst-->
-         <tok val="agitandum(st)?"/>
+      <ana>
+         <tok val="agitandum"/>
+         <tok val="agitandumst"/>
          <lm>
             <l>agito</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -5163,8 +5920,10 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--agitante agitanti agitanteque-->
-         <tok val="agitant(i|e|eque)"/>
+      <ana>
+         <tok val="agitante"/>
+         <tok val="agitanteque"/>
+         <tok val="agitanti"/>
          <lm>
             <l>agito</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -5190,8 +5949,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--agitantes agitantis-->
-         <tok val="agitant[ie]s"/>
+      <ana>
+         <tok val="agitantes"/>
+         <tok val="agitantis"/>
          <lm>
             <l>agito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -5216,8 +5976,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--agitantibus Agitantibus-->
-         <tok val="[Aa]gitantibus"/>
+      <ana>
+         <tok val="Agitantibus"/>
+         <tok val="agitantibus"/>
          <lm>
             <l>agito</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -5288,15 +6049,18 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--agitaris agitaveris-->
-         <tok val="agita(ve)?ris"/>
+      <ana>
+         <tok val="agitaris"/>
+         <tok val="agitaveris"/>
          <lm>
             <l>agito</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--agitarit agitauerit agitaverit-->
-         <tok val="agita[vu]?(e|)rit"/>
+      <ana>
+         <tok val="agitarit"/>
+         <tok val="agitauerit"/>
+         <tok val="agitaverit"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s r s a</m>
@@ -5337,8 +6101,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--agitatae agitataeque-->
-         <tok val="agitatae(que)?"/>
+      <ana>
+         <tok val="agitatae"/>
+         <tok val="agitataeque"/>
          <lm>
             <l>agito</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -5371,8 +6136,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--agitationem agitationemve-->
-         <tok val="agitationem(ve)?"/>
+      <ana>
+         <tok val="agitationem"/>
+         <tok val="agitationemve"/>
          <lm>
             <l>agitatio</l>
             <m>n - - s - - - f a</m>
@@ -5418,8 +6184,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--agitatis Agitatis-->
-         <tok val="[Aa]gitatis"/>
+      <ana>
+         <tok val="Agitatis"/>
+         <tok val="agitatis"/>
          <lm>
             <l>agito</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -5431,8 +6198,9 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--agitato agitatoque-->
-         <tok val="agitato(que)?"/>
+      <ana>
+         <tok val="agitato"/>
+         <tok val="agitatoque"/>
          <lm>
             <l>agito</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -5527,22 +6295,26 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--agitauerant agitaverant-->
-         <tok val="agita[vu]erant"/>
+      <ana>
+         <tok val="agitauerant"/>
+         <tok val="agitaverant"/>
          <lm>
             <l>agito</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--agitauerat agitaverat-->
-         <tok val="agita[vu]erat"/>
+      <ana>
+         <tok val="agitauerat"/>
+         <tok val="agitaverat"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--agitauere agitauerunt agitavere-->
-         <tok val="agita[vu]er(e|unt)"/>
+      <ana>
+         <tok val="agitauere"/>
+         <tok val="agitauerunt"/>
+         <tok val="agitavere"/>
          <lm>
             <l>agito</l>
             <m>v - 3 p r i a</m>
@@ -5556,29 +6328,33 @@
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--agitauerit agitaverit-->
-         <tok val="agita[vu]erit"/>
+      <ana>
+         <tok val="agitauerit"/>
+         <tok val="agitaverit"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--agitaui agitavi-->
-         <tok val="agita[vu]i"/>
+      <ana>
+         <tok val="agitaui"/>
+         <tok val="agitavi"/>
          <lm>
             <l>agito</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--agitauimus agitavimus-->
-         <tok val="agita[vu]imus"/>
+      <ana>
+         <tok val="agitauimus"/>
+         <tok val="agitavimus"/>
          <lm>
             <l>agito</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--agitauit agitavit-->
-         <tok val="agita[vu]it"/>
+      <ana>
+         <tok val="agitauit"/>
+         <tok val="agitavit"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s r i a</m>
@@ -5613,15 +6389,17 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--agitemus agitemús-->
-         <tok val="agitem[úu]s"/>
+      <ana>
+         <tok val="agitemus"/>
+         <tok val="agitemús"/>
          <lm>
             <l>agito</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--agitent agitentque-->
-         <tok val="agitent(que)?"/>
+      <ana>
+         <tok val="agitent"/>
+         <tok val="agitentque"/>
          <lm>
             <l>agito</l>
             <m>v - 3 p p s a</m>
@@ -5648,15 +6426,18 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--agitetur agiteturque-->
-         <tok val="agitetur(que)?"/>
+      <ana>
+         <tok val="agitetur"/>
+         <tok val="agiteturque"/>
          <lm>
             <l>agito</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--agitin agitis ágitis-->
-         <tok val="[aá]giti[sn]"/>
+      <ana>
+         <tok val="agitin"/>
+         <tok val="agitis"/>
+         <tok val="ágitis"/>
          <lm>
             <l>ago</l>
             <m>v - 2 p p i a</m>
@@ -5676,8 +6457,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--agminales agminalis-->
-         <tok val="agminal[ie]s"/>
+      <ana>
+         <tok val="agminales"/>
+         <tok val="agminalis"/>
          <lm>
             <l>agminalis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -5721,15 +6503,17 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--agminum agminumque-->
-         <tok val="agminum(que)?"/>
+      <ana>
+         <tok val="agminum"/>
+         <tok val="agminumque"/>
          <lm>
             <l>agmen</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--agnam agnamve-->
-         <tok val="agnam(ve)?"/>
+      <ana>
+         <tok val="agnam"/>
+         <tok val="agnamve"/>
          <lm>
             <l>agna</l>
             <m>n - - s - - - f a</m>
@@ -5872,8 +6656,9 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--agnatos agnatosque-->
-         <tok val="agnatos(que)?"/>
+      <ana>
+         <tok val="agnatos"/>
+         <tok val="agnatosque"/>
          <lm>
             <l>agnascor</l>
             <m>v - - p r p p m a</m>
@@ -5887,8 +6672,9 @@
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--agnicellulus agnicellus-->
-         <tok val="agnicell(ul)?us"/>
+      <ana>
+         <tok val="agnicellulus"/>
+         <tok val="agnicellus"/>
          <lm>
             <l>agnicellus</l>
             <m>n - - s - - - m n</m>
@@ -5974,8 +6760,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--agnino agninove-->
-         <tok val="agnino(ve)?"/>
+      <ana>
+         <tok val="agnino"/>
+         <tok val="agninove"/>
          <lm>
             <l>agninus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -5984,8 +6771,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--agninorum agninum-->
-         <tok val="agnin(or)?um"/>
+      <ana>
+         <tok val="agninorum"/>
+         <tok val="agninum"/>
          <lm>
             <l>agninus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -6110,8 +6898,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--agnoscan agnoscas-->
-         <tok val="agnosca[sn]"/>
+      <ana>
+         <tok val="agnoscan"/>
+         <tok val="agnoscas"/>
          <lm>
             <l>agnosco</l>
             <m>v - 2 s p s a</m>
@@ -6217,8 +7006,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--agnoscende agnoscendum-->
-         <tok val="agnoscend(um|e)"/>
+      <ana>
+         <tok val="agnoscende"/>
+         <tok val="agnoscendum"/>
          <lm>
             <l>agnosco</l>
             <m>v - - s p g p n v</m>
@@ -6278,8 +7068,9 @@
             <m cert="0.166666666666666667">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--agnoscens agnoscensque-->
-         <tok val="agnoscens(que)?"/>
+      <ana>
+         <tok val="agnoscens"/>
+         <tok val="agnoscensque"/>
          <lm>
             <l>agnosco</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -6298,8 +7089,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--agnoscente agnoscenti-->
-         <tok val="agnoscent[ie]"/>
+      <ana>
+         <tok val="agnoscente"/>
+         <tok val="agnoscenti"/>
          <lm>
             <l>agnosco</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -6325,8 +7117,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--agnoscentes agnoscentis-->
-         <tok val="agnoscent[ie]s"/>
+      <ana>
+         <tok val="agnoscentes"/>
+         <tok val="agnoscentis"/>
          <lm>
             <l>agnosco</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -6536,46 +7329,52 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--agnouerat agnoverat-->
-         <tok val="agno[vu]erat"/>
+      <ana>
+         <tok val="agnouerat"/>
+         <tok val="agnoverat"/>
          <lm>
             <l>anosco</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--agnouerint agnoverint-->
-         <tok val="agno[vu]erint"/>
+      <ana>
+         <tok val="agnouerint"/>
+         <tok val="agnoverint"/>
          <lm>
             <l>anosco</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--agnoueris agnoveris-->
-         <tok val="agno[vu]eris"/>
+      <ana>
+         <tok val="agnoueris"/>
+         <tok val="agnoveris"/>
          <lm>
             <l>anosco</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--agnouerit agnoverit-->
-         <tok val="agno[vu]erit"/>
+      <ana>
+         <tok val="agnouerit"/>
+         <tok val="agnoverit"/>
          <lm>
             <l>anosco</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--agnouimus agnovimus-->
-         <tok val="agno[vu]imus"/>
+      <ana>
+         <tok val="agnouimus"/>
+         <tok val="agnovimus"/>
          <lm>
             <l>anosco</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--agnouisse agnovisse-->
-         <tok val="agno[vu]isse"/>
+      <ana>
+         <tok val="agnouisse"/>
+         <tok val="agnovisse"/>
          <lm>
             <l>anosco</l>
             <m>v - - - r n a</m>
@@ -6588,15 +7387,17 @@
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--agnouissent agnovissent-->
-         <tok val="agno[vu]issent"/>
+      <ana>
+         <tok val="agnouissent"/>
+         <tok val="agnovissent"/>
          <lm>
             <l>anosco</l>
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--agnouisti agnovisti-->
-         <tok val="agno[vu]isti"/>
+      <ana>
+         <tok val="agnouisti"/>
+         <tok val="agnovisti"/>
          <lm>
             <l>anosco</l>
             <m>v - 2 s r i a</m>
@@ -6764,8 +7565,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--agrariorum agrarium-->
-         <tok val="agrari(or)?um"/>
+      <ana>
+         <tok val="agrariorum"/>
+         <tok val="agrarium"/>
          <lm cert="0.5">
             <l>agrarii</l>
             <m>n - - p - - - m g</m>
@@ -6844,8 +7646,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--agrestibus agrestibusque-->
-         <tok val="agrestibus(que)?"/>
+      <ana>
+         <tok val="agrestibus"/>
+         <tok val="agrestibusque"/>
          <lm>
             <l>agrestis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -6896,8 +7699,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--agrian agrias-->
-         <tok val="agria[sn]"/>
+      <ana>
+         <tok val="agrian"/>
+         <tok val="agrias"/>
          <lm>
             <l>agrius</l>
             <m>a - - p - - - f a</m>
@@ -6951,8 +7755,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--agricolis agricolisve-->
-         <tok val="agricolis(ve)?"/>
+      <ana>
+         <tok val="agricolis"/>
+         <tok val="agricolisve"/>
          <lm>
             <l>agricola</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -7060,8 +7865,11 @@
             <m>v - 3 p f m a</m>
          </lm>
       </ana>
-      <ana><!--ágedum Ágedum-->
-         <tok val="[Áá]gedum"/>
+      <ana>
+         <tok val="Agedum"/>
+         <tok val="agedum"/>
+         <tok val="Ágedum"/>
+         <tok val="ágedum"/>
          <lm>
             <l>agedum</l>
             <m>i</m>
@@ -7202,6 +8010,7 @@
       </ana>
       <ana>
          <tok val="Agyllina"/>
+         <tok val="agyllina"/>
          <lm>
             <l>Agyllinus</l>
             <m>a e - s - - - f b</m>
@@ -7209,13 +8018,17 @@
       </ana>
       <ana>
          <tok val="Agyllinae"/>
+         <tok val="agyllinae"/>
          <lm>
             <l>Agyllinus</l>
             <m>a e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Agyllinique Agyllini-->
-         <tok val="Agyllini(que)?"/>
+      <ana>
+         <tok val="Agyllini"/>
+         <tok val="Agyllinique"/>
+         <tok val="agyllini"/>
+         <tok val="agyllinique"/>
          <lm>
             <l>Agyllinus</l>
             <m>a e - p - - - m n</m>
@@ -7223,6 +8036,7 @@
       </ana>
       <ana>
          <tok val="Agyllinos"/>
+         <tok val="agyllinos"/>
          <lm>
             <l>Agyllinus</l>
             <m>a e - p - - - m a</m>

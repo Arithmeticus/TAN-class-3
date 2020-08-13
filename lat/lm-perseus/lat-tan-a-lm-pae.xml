@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspae">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:pae">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to pae</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-pae.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PAE</tok-starts-with>
       <tok-starts-with>Pae</tok-starts-with>
       <tok-starts-with>pae</tok-starts-with>
       <tok-starts-with>paé</tok-starts-with>
-      <ana><!--PAENVLARIVS paenularius-->
-         <tok val="(paenularius|PAENVLARIVS)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:37:43.74-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:37:43.74-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-pae.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PAENVLARIVS"/>
+         <tok val="paenularius"/>
+         <tok val="paenvlarivs"/>
          <lm>
             <l>paenularius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--PAETO Paeto paeto-->
-         <tok val="[pP]?(aeto|PAETO)"/>
+      <ana>
+         <tok val="PAETO"/>
+         <tok val="Paeto"/>
+         <tok val="paeto"/>
          <lm>
             <l>paetus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -55,42 +67,34 @@
       </ana>
       <ana>
          <tok val="Paean"/>
+         <tok val="paean"/>
          <lm>
             <l>Paean</l>
-            <m>n e - s - - - m v</m>
+            <m cert="0.5">n e - s - - - m v</m>
+            <m cert="0.5">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Paean paean-->
-         <tok val="[pP]aean"/>
-         <lm>
-            <l>Paean</l>
-            <m>n e - s - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--Paeanem paeanem-->
-         <tok val="[pP]aeanem"/>
+      <ana>
+         <tok val="Paeanem"/>
+         <tok val="paeanem"/>
          <lm>
             <l>Paean</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Paeanes paeanes-->
-         <tok val="[pP]aeanes"/>
-         <lm>
-            <l>Paean</l>
-            <m cert="0.5">n e - p - - - m a</m>
-            <m cert="0.5">n e - p - - - m n</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Paeanes"/>
+         <tok val="paeanes"/>
          <lm>
             <l>Paean</l>
-            <m>n e - p - - - m v</m>
+            <m cert="0.333333333333333333">n e - p - - - m a</m>
+            <m cert="0.333333333333333333">n e - p - - - m n</m>
+            <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
       <ana>
          <tok val="Paeanis"/>
+         <tok val="paeanis"/>
          <lm>
             <l>Paean</l>
             <m>n e - s - - - m g</m>
@@ -98,6 +102,7 @@
       </ana>
       <ana>
          <tok val="Paeanitides"/>
+         <tok val="paeanitides"/>
          <lm>
             <l>Paeanitis</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -107,6 +112,7 @@
       </ana>
       <ana>
          <tok val="Paeanitis"/>
+         <tok val="paeanitis"/>
          <lm>
             <l>Paeanitis</l>
             <m>n e - s - - - f n</m>
@@ -114,6 +120,7 @@
       </ana>
       <ana>
          <tok val="Paeantiades"/>
+         <tok val="paeantiades"/>
          <lm>
             <l>Poeantiades</l>
             <m>n e - s - - - m n</m>
@@ -121,6 +128,7 @@
       </ana>
       <ana>
          <tok val="Paeantius"/>
+         <tok val="paeantius"/>
          <lm>
             <l>Poeantius</l>
             <m>a e - s - - - m n</m>
@@ -128,13 +136,16 @@
       </ana>
       <ana>
          <tok val="Paeanum"/>
+         <tok val="paeanum"/>
          <lm>
             <l>Paean</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Paedagogi paedagogi paedagogiue-->
-         <tok val="[pP]aedagogi(ue)?"/>
+      <ana>
+         <tok val="Paedagogi"/>
+         <tok val="paedagogi"/>
+         <tok val="paedagogiue"/>
          <lm>
             <l>paedagogus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -142,15 +153,19 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Paedagogi paedagogi paedagogii paedagogiue-->
-         <tok val="[pP]aedagogi(i|ue)?"/>
+      <ana>
+         <tok val="Paedagogi"/>
+         <tok val="paedagogi"/>
+         <tok val="paedagogii"/>
+         <tok val="paedagogiue"/>
          <lm>
             <l>paedagogium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Paedagogium paedagogium-->
-         <tok val="[pP]aedagogium"/>
+      <ana>
+         <tok val="Paedagogium"/>
+         <tok val="paedagogium"/>
          <lm>
             <l>paedagogium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -159,37 +174,44 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Paedagogo paedagogo paédagogo-->
-         <tok val="[pP]a[eé]dagogo"/>
+      <ana>
+         <tok val="Paedagogo"/>
+         <tok val="paedagogo"/>
+         <tok val="paédagogo"/>
          <lm>
             <l>paedagogo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Paedagogo paedagogo-->
-         <tok val="[pP]aedagogo"/>
+      <ana>
+         <tok val="Paedagogo"/>
+         <tok val="paedagogo"/>
          <lm>
             <l>paedagogus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Paedagogorum paedagogorum paedagogum-->
-         <tok val="[pP]aedagog(or|)um"/>
+      <ana>
+         <tok val="Paedagogorum"/>
+         <tok val="paedagogorum"/>
+         <tok val="paedagogum"/>
          <lm>
             <l>paedagogus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Paedagogus paedagogus-->
-         <tok val="[pP]aedagogus"/>
+      <ana>
+         <tok val="Paedagogus"/>
+         <tok val="paedagogus"/>
          <lm>
             <l>paedagogus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Paederos paederos-->
-         <tok val="[pP]aederos"/>
+      <ana>
+         <tok val="Paederos"/>
+         <tok val="paederos"/>
          <lm>
             <l>paederos</l>
             <m>n - - s - - - m n</m>
@@ -197,6 +219,7 @@
       </ana>
       <ana>
          <tok val="Paedia"/>
+         <tok val="paedia"/>
          <lm>
             <l>Paedia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -204,8 +227,9 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Paedico paedico-->
-         <tok val="[pP]aedico"/>
+      <ana>
+         <tok val="Paedico"/>
+         <tok val="paedico"/>
          <lm>
             <l>paedico</l>
             <m cert="0.333333333333333333">v - 1 s p i a</m>
@@ -213,23 +237,26 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Paedor paedor-->
-         <tok val="[pP]aedor"/>
+      <ana>
+         <tok val="Paedor"/>
+         <tok val="paedor"/>
          <lm>
             <l>paedor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Paedore paedore-->
-         <tok val="[pP]aedore"/>
+      <ana>
+         <tok val="Paedore"/>
+         <tok val="paedore"/>
          <lm>
             <l>paedor</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Paedorem paedorem-->
-         <tok val="[pP]aedorem"/>
+      <ana>
+         <tok val="Paedorem"/>
+         <tok val="paedorem"/>
          <lm>
             <l>paedor</l>
             <m>n - - s - - - m a</m>
@@ -237,6 +264,7 @@
       </ana>
       <ana>
          <tok val="Paegnium"/>
+         <tok val="paegnium"/>
          <lm>
             <l>Paegnium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -245,87 +273,115 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Paelice paelice-->
-         <tok val="[pP]aelice"/>
+      <ana>
+         <tok val="Paelice"/>
+         <tok val="paelice"/>
          <lm>
             <l>paelex</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Paeligni Paelignique-->
-         <tok val="Paeligni(que)?"/>
+      <ana>
+         <tok val="Paeligni"/>
+         <tok val="Paelignique"/>
+         <tok val="paeligni"/>
+         <tok val="paelignique"/>
          <lm>
             <l>Peligni</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Paelignis Paelignisque-->
-         <tok val="Paelignis(que)?"/>
+      <ana>
+         <tok val="Paelignis"/>
+         <tok val="Paelignisque"/>
+         <tok val="paelignis"/>
+         <tok val="paelignisque"/>
          <lm>
             <l>Peligni</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Paelignorum Paelignum-->
-         <tok val="Paelign(or)?um"/>
+      <ana>
+         <tok val="Paelignorum"/>
+         <tok val="Paelignum"/>
+         <tok val="paelignorum"/>
+         <tok val="paelignum"/>
          <lm>
             <l>Peligni</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Paelignos Paelignosque-->
-         <tok val="Paelignos(que)?"/>
+      <ana>
+         <tok val="Paelignos"/>
+         <tok val="Paelignosque"/>
+         <tok val="paelignos"/>
+         <tok val="paelignosque"/>
          <lm>
             <l>Peligni</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Paeminosus paeminosus-->
-         <tok val="[pP]aeminosus"/>
+      <ana>
+         <tok val="Paeminosus"/>
+         <tok val="paeminosus"/>
          <lm>
             <l>paeminosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Paene paene paéne-->
-         <tok val="[pP]a[eé]ne"/>
+      <ana>
+         <tok val="Paene"/>
+         <tok val="paene"/>
+         <tok val="paéne"/>
          <lm>
             <l>paene</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Paeniteat paeniteat paeniteatne-->
-         <tok val="[pP]aeniteat(ne)?"/>
+      <ana>
+         <tok val="Paeniteat"/>
+         <tok val="paeniteat"/>
+         <tok val="paeniteatne"/>
          <lm>
             <l>paeniteo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Paenitentiam paenitentiam paenitentiamque-->
-         <tok val="[pP]aenitentiam(que)?"/>
+      <ana>
+         <tok val="Paenitentiam"/>
+         <tok val="paenitentiam"/>
+         <tok val="paenitentiamque"/>
          <lm>
             <l>paenitentia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Paenitet Paenitetne paenitet paenitetne-->
-         <tok val="[pP]aenitet(ne)?"/>
+      <ana>
+         <tok val="Paenitet"/>
+         <tok val="Paenitetne"/>
+         <tok val="paenitet"/>
+         <tok val="paenitetne"/>
          <lm>
             <l>paeniteo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Paenituit paenituit-->
-         <tok val="[pP]aenituit"/>
+      <ana>
+         <tok val="Paenituit"/>
+         <tok val="paenituit"/>
          <lm>
             <l>paeniteo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Paenula Paenvla paenula paenulast-->
-         <tok val="[pP]aen[uv]la(st)?"/>
+      <ana>
+         <tok val="Paenula"/>
+         <tok val="Paenvla"/>
+         <tok val="paenula"/>
+         <tok val="paenulast"/>
+         <tok val="paenvla"/>
          <lm>
             <l>paenula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -335,6 +391,7 @@
       </ana>
       <ana>
          <tok val="Paenula"/>
+         <tok val="paenula"/>
          <lm>
             <l>Paenula</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -344,6 +401,7 @@
       </ana>
       <ana>
          <tok val="Paenuleum"/>
+         <tok val="paenuleum"/>
          <lm>
             <l>paenuleus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -354,15 +412,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Paeon paeon-->
-         <tok val="[pP]aeon"/>
+      <ana>
+         <tok val="Paeon"/>
+         <tok val="paeon"/>
          <lm>
             <l>paeon</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Paeone paeone-->
-         <tok val="[pP]aeone"/>
+      <ana>
+         <tok val="Paeone"/>
+         <tok val="paeone"/>
          <lm>
             <l>paeon</l>
             <m>n - - s - - - m b</m>
@@ -370,6 +430,7 @@
       </ana>
       <ana>
          <tok val="Paeones"/>
+         <tok val="paeones"/>
          <lm>
             <l>Paeones</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -377,8 +438,11 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Paeoni Paeonii-->
-         <tok val="Paeoni[i]?"/>
+      <ana>
+         <tok val="Paeoni"/>
+         <tok val="Paeonii"/>
+         <tok val="paeoni"/>
+         <tok val="paeonii"/>
          <lm>
             <l>Paeonius</l>
             <m cert="0.5">a e - s - - - n g</m>
@@ -387,23 +451,22 @@
       </ana>
       <ana>
          <tok val="Paeoni"/>
+         <tok val="paeoni"/>
          <lm>
             <l>paeon</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Paeonia paeonia-->
-         <tok val="[pP]aeonia"/>
-         <lm>
+      <ana>
+         <tok val="Paeonia"/>
+         <tok val="paeonia"/>
+         <lm cert="0.5">
             <l>paeonia</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Paeonia"/>
-         <lm>
+         <lm cert="0.5">
             <l>Paeonius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
             <m cert="0.166666666666666667">a e - p - - - n v</m>
@@ -415,17 +478,15 @@
       </ana>
       <ana>
          <tok val="Paeoniae"/>
-         <lm>
+         <tok val="paeoniae"/>
+         <lm cert="0.5">
             <l>Paeonius</l>
             <m cert="0.25">a e - s - - - f g</m>
             <m cert="0.25">a e - p - - - f v</m>
             <m cert="0.25">a e - s - - - f d</m>
             <m cert="0.25">a e - p - - - f n</m>
          </lm>
-      </ana>
-      <ana><!--Paeoniae paeoniae-->
-         <tok val="[pP]aeoniae"/>
-         <lm>
+         <lm cert="0.5">
             <l>paeonia</l>
             <m cert="0.25">n - - s - - - f d</m>
             <m cert="0.25">n - - s - - - f g</m>
@@ -435,20 +496,19 @@
       </ana>
       <ana>
          <tok val="Paeoniam"/>
-         <lm>
+         <tok val="paeoniam"/>
+         <lm cert="0.5">
             <l>Paeonius</l>
             <m>a e - s - - - f a</m>
          </lm>
-      </ana>
-      <ana><!--Paeoniam paeoniam-->
-         <tok val="[pP]aeoniam"/>
-         <lm>
+         <lm cert="0.5">
             <l>paeonia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Paeonibus"/>
+         <tok val="paeonibus"/>
          <lm>
             <l>Paeones</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -457,6 +517,7 @@
       </ana>
       <ana>
          <tok val="Paeonii"/>
+         <tok val="paeonii"/>
          <lm>
             <l>Paeonius</l>
             <m cert="0.5">a e - p - - - m v</m>
@@ -465,7 +526,8 @@
       </ana>
       <ana>
          <tok val="Paeoniis"/>
-         <lm>
+         <tok val="paeoniis"/>
+         <lm cert="0.5">
             <l>Paeonius</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
             <m cert="0.166666666666666667">a e - p - - - n d</m>
@@ -474,10 +536,7 @@
             <m cert="0.166666666666666667">a e - p - - - m b</m>
             <m cert="0.166666666666666667">a e - p - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Paeoniis paeoniis-->
-         <tok val="[pP]aeoniis"/>
-         <lm>
+         <lm cert="0.5">
             <l>paeonia</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
@@ -485,6 +544,7 @@
       </ana>
       <ana>
          <tok val="Paeonio"/>
+         <tok val="paeonio"/>
          <lm>
             <l>Paeonius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -495,6 +555,7 @@
       </ana>
       <ana>
          <tok val="Paeonios"/>
+         <tok val="paeonios"/>
          <lm>
             <l>Paeonius</l>
             <m>a e - p - - - m a</m>
@@ -502,20 +563,19 @@
       </ana>
       <ana>
          <tok val="Paeonis"/>
-         <lm>
+         <tok val="paeonis"/>
+         <lm cert="0.5">
             <l>Paeonis</l>
             <m>n e - s - - - f n</m>
          </lm>
-      </ana>
-      <ana><!--Paeonis paeonis-->
-         <tok val="[pP]aeonis"/>
-         <lm>
+         <lm cert="0.5">
             <l>paeon</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Paeonium"/>
+         <tok val="paeonium"/>
          <lm>
             <l>Paeonius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -528,6 +588,7 @@
       </ana>
       <ana>
          <tok val="Paeonius"/>
+         <tok val="paeonius"/>
          <lm>
             <l>Paeonius</l>
             <m>a e - s - - - m n</m>
@@ -535,6 +596,7 @@
       </ana>
       <ana>
          <tok val="Paeonum"/>
+         <tok val="paeonum"/>
          <lm>
             <l>Paeones</l>
             <m>n e - p - - - m g</m>
@@ -542,6 +604,7 @@
       </ana>
       <ana>
          <tok val="Paestanae"/>
+         <tok val="paestanae"/>
          <lm>
             <l>Paestanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -552,6 +615,7 @@
       </ana>
       <ana>
          <tok val="Paestanas"/>
+         <tok val="paestanas"/>
          <lm>
             <l>Paestanus</l>
             <m>a e - p - - - f a</m>
@@ -559,6 +623,7 @@
       </ana>
       <ana>
          <tok val="Paestani"/>
+         <tok val="paestani"/>
          <lm cert="0.5">
             <l>Paestanus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -574,6 +639,7 @@
       </ana>
       <ana>
          <tok val="Paestanis"/>
+         <tok val="paestanis"/>
          <lm cert="0.5">
             <l>Paestani</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -591,6 +657,7 @@
       </ana>
       <ana>
          <tok val="Paestano"/>
+         <tok val="paestano"/>
          <lm>
             <l>Paestanus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -601,6 +668,7 @@
       </ana>
       <ana>
          <tok val="Paestanum"/>
+         <tok val="paestanum"/>
          <lm cert="0.5">
             <l>Paestanus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -617,13 +685,17 @@
       </ana>
       <ana>
          <tok val="Paestanus"/>
+         <tok val="paestanus"/>
          <lm>
             <l>Paestanus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Paesti Paestique-->
-         <tok val="Paesti(que)?"/>
+      <ana>
+         <tok val="Paesti"/>
+         <tok val="Paestique"/>
+         <tok val="paesti"/>
+         <tok val="paestique"/>
          <lm>
             <l>Paestum</l>
             <m>n e - s - - - n g</m>
@@ -631,14 +703,18 @@
       </ana>
       <ana>
          <tok val="Paesto"/>
+         <tok val="paesto"/>
          <lm>
             <l>Paestum</l>
             <m cert="0.5">n e - s - - - n b</m>
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Paestum Paestumque-->
-         <tok val="Paestum(que)?"/>
+      <ana>
+         <tok val="Paestum"/>
+         <tok val="Paestumque"/>
+         <tok val="paestum"/>
+         <tok val="paestumque"/>
          <lm>
             <l>Paestum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -649,6 +725,7 @@
       </ana>
       <ana>
          <tok val="Paete"/>
+         <tok val="paete"/>
          <lm cert="0.5">
             <l>Paetus</l>
             <m>n e - s - - - m v</m>
@@ -659,26 +736,27 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Paete Paetum paetum-->
-         <tok val="[pP]aet(um|e)"/>
+      <ana>
+         <tok val="Paete"/>
+         <tok val="Paetum"/>
+         <tok val="paete"/>
+         <tok val="paetum"/>
          <lm>
             <l>paetus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Paeti paeti-->
-         <tok val="[pP]aeti"/>
-         <lm>
+      <ana>
+         <tok val="Paeti"/>
+         <tok val="paeti"/>
+         <lm cert="0.5">
             <l>paetus</l>
             <m cert="0.25">a - - s - - - m g</m>
             <m cert="0.25">a - - p - - - m v</m>
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Paeti"/>
-         <lm>
+         <lm cert="0.5">
             <l>Paetus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
             <m cert="0.333333333333333333">n e - s - - - m g</m>
@@ -687,6 +765,7 @@
       </ana>
       <ana>
          <tok val="Paetis"/>
+         <tok val="paetis"/>
          <lm cert="0.5">
             <l>Paetus</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -704,53 +783,50 @@
       </ana>
       <ana>
          <tok val="Paeto"/>
+         <tok val="paeto"/>
          <lm>
             <l>Paetus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Paetorum Paetum paetorum paetum-->
-         <tok val="[pP]aet(or)?um"/>
-         <lm>
+      <ana>
+         <tok val="Paetorum"/>
+         <tok val="Paetum"/>
+         <tok val="paetorum"/>
+         <tok val="paetum"/>
+         <lm cert="0.5">
             <l>paetus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Paetorum Paetum-->
-         <tok val="Paet(or)?um"/>
-         <lm>
+         <lm cert="0.5">
             <l>Paetus</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Paetum paetum-->
-         <tok val="[pP]aetum"/>
-         <lm>
+      <ana>
+         <tok val="Paetum"/>
+         <tok val="paetum"/>
+         <lm cert="0.5">
             <l>paetus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Paetum"/>
-         <lm>
+         <lm cert="0.5">
             <l>Paetus</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Paetus"/>
-         <lm>
+         <tok val="paetus"/>
+         <lm cert="0.5">
             <l>Paetus</l>
             <m>n e - s - - - m n</m>
          </lm>
-      </ana>
-      <ana><!--Paetus paetus-->
-         <tok val="[pP]aetus"/>
-         <lm>
+         <lm cert="0.5">
             <l>paetus</l>
             <m>a - - s - - - m n</m>
          </lm>
@@ -888,8 +964,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--paedagogos paedagogosque-->
-         <tok val="paedagogos(que)?"/>
+      <ana>
+         <tok val="paedagogos"/>
+         <tok val="paedagogosque"/>
          <lm>
             <l>paedagogus</l>
             <m>n - - p - - - m a</m>
@@ -971,8 +1048,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--paelicis Paelicis-->
-         <tok val="[Pp]aelicis"/>
+      <ana>
+         <tok val="Paelicis"/>
+         <tok val="paelicis"/>
          <lm>
             <l>paelex</l>
             <m>n - - s - - - f g</m>
@@ -1011,8 +1089,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--paenite paeniten-->
-         <tok val="paenite[n]?"/>
+      <ana>
+         <tok val="paenite"/>
+         <tok val="paeniten"/>
          <lm>
             <l>paeniteo</l>
             <m>v - 2 s p m a</m>
@@ -1025,8 +1104,9 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--paenitebat paenitebatque-->
-         <tok val="paenitebat(que)?"/>
+      <ana>
+         <tok val="paenitebat"/>
+         <tok val="paenitebatque"/>
          <lm>
             <l>paeniteo</l>
             <m>v - 3 s i i a</m>
@@ -1068,8 +1148,9 @@
             <m cert="0.5">v - 2 p p m p</m>
          </lm>
       </ana>
-      <ana><!--paeniten paenites-->
-         <tok val="paenite[sn]"/>
+      <ana>
+         <tok val="paeniten"/>
+         <tok val="paenites"/>
          <lm>
             <l>paeniteo</l>
             <m>v - 2 s p i a</m>
@@ -1167,8 +1248,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--paenitentem paenitentemve-->
-         <tok val="paenitentem(ve)?"/>
+      <ana>
+         <tok val="paenitentem"/>
+         <tok val="paenitentemve"/>
          <lm>
             <l>paeniteo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1202,8 +1284,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--paenitentiae paenitentiaeque-->
-         <tok val="paenitentiae(que)?"/>
+      <ana>
+         <tok val="paenitentiae"/>
+         <tok val="paenitentiaeque"/>
          <lm>
             <l>paenitentia</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -1526,8 +1609,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--paenuria paenuriast-->
-         <tok val="paenuria(st)?"/>
+      <ana>
+         <tok val="paenuria"/>
+         <tok val="paenuriast"/>
          <lm>
             <l>penuria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1550,8 +1634,10 @@
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--paeones Paeonas-->
-         <tok val="[Pp]aeon[ae]s"/>
+      <ana>
+         <tok val="Paeonas"/>
+         <tok val="paeonas"/>
+         <tok val="paeones"/>
          <lm>
             <l>paeon</l>
             <m>n - - p - - - m a</m>
@@ -1591,8 +1677,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--paeonicorum paeonicum-->
-         <tok val="paeonic(or)?um"/>
+      <ana>
+         <tok val="paeonicorum"/>
+         <tok val="paeonicum"/>
          <lm>
             <l>paeonicus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -1644,6 +1731,7 @@
       </ana>
       <ana>
          <tok val="Paemanos"/>
+         <tok val="paemanos"/>
          <lm>
             <l>Paemani</l>
             <m>n e - p - - - m a</m>
@@ -1656,8 +1744,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--paelicibus Paelicibus-->
-         <tok val="[Pp]aelicibus"/>
+      <ana>
+         <tok val="Paelicibus"/>
+         <tok val="paelicibus"/>
          <lm>
             <l>paelex</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -1671,22 +1760,25 @@
             <m>n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--paelices paelicés-->
-         <tok val="paelic[ée]s"/>
+      <ana>
+         <tok val="paelices"/>
+         <tok val="paelicés"/>
          <lm>
             <l>paelex</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--paelicem Paelicem-->
-         <tok val="[Pp]aelicem"/>
+      <ana>
+         <tok val="Paelicem"/>
+         <tok val="paelicem"/>
          <lm>
             <l>paelex</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--paelex Paelex-->
-         <tok val="[Pp]aelex"/>
+      <ana>
+         <tok val="Paelex"/>
+         <tok val="paelex"/>
          <lm>
             <l>paelex</l>
             <m>n - - s - - - f n</m>

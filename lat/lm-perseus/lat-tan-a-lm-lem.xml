@@ -1,49 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuslem">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:lem">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to lem</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-lem.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>LEM</tok-starts-with>
       <tok-starts-with>Lem</tok-starts-with>
       <tok-starts-with>lem</tok-starts-with>
-      <ana><!--LEMMA Lemma lemma-->
-         <tok val="[lL]?(emma|LEMMA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:31:30.618-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:31:30.618-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-lem.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="LEMMA"/>
+         <tok val="Lemma"/>
+         <tok val="lemma"/>
          <lm>
             <l>lemma</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--LEMNISCI Lemnisci lemnisci-->
-         <tok val="[lL]?(emnisci|LEMNISCI)"/>
+      <ana>
+         <tok val="LEMNISCI"/>
+         <tok val="Lemnisci"/>
+         <tok val="lemnisci"/>
          <lm>
             <l>lemniscus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -51,8 +63,11 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lema Leman lema-->
-         <tok val="[Ll]ema[n]?"/>
+      <ana>
+         <tok val="Lema"/>
+         <tok val="Leman"/>
+         <tok val="lema"/>
+         <tok val="leman"/>
          <lm>
             <l>lema</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -62,6 +77,7 @@
       </ana>
       <ana>
          <tok val="Leman"/>
+         <tok val="leman"/>
          <lm>
             <l>lema</l>
             <m>n - - p - - - f a</m>
@@ -69,6 +85,7 @@
       </ana>
       <ana>
          <tok val="Lemanno"/>
+         <tok val="lemanno"/>
          <lm>
             <l>Lemannus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -77,6 +94,7 @@
       </ana>
       <ana>
          <tok val="Lemannum"/>
+         <tok val="lemannum"/>
          <lm>
             <l>Lemannus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -85,13 +103,15 @@
       </ana>
       <ana>
          <tok val="Lemannus"/>
+         <tok val="lemannus"/>
          <lm>
             <l>Lemannus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lembi lembi-->
-         <tok val="[lL]embi"/>
+      <ana>
+         <tok val="Lembi"/>
+         <tok val="lembi"/>
          <lm>
             <l>lembus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -99,30 +119,34 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Lembo lembo-->
-         <tok val="[lL]embo"/>
+      <ana>
+         <tok val="Lembo"/>
+         <tok val="lembo"/>
          <lm>
             <l>lembus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Lembos lembos-->
-         <tok val="[lL]embos"/>
+      <ana>
+         <tok val="Lembos"/>
+         <tok val="lembos"/>
          <lm>
             <l>lembus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Lembus lembus-->
-         <tok val="[lL]embus"/>
+      <ana>
+         <tok val="Lembus"/>
+         <tok val="lembus"/>
          <lm>
             <l>lembus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lemmata lemmata-->
-         <tok val="[lL]emmata"/>
+      <ana>
+         <tok val="Lemmata"/>
+         <tok val="lemmata"/>
          <lm>
             <l>lemma</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -130,30 +154,34 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Lemmate lemmate-->
-         <tok val="[lL]emmate"/>
+      <ana>
+         <tok val="Lemmate"/>
+         <tok val="lemmate"/>
          <lm>
             <l>lemma</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lemmatibus lemmatibus-->
-         <tok val="[lL]emmatibus"/>
+      <ana>
+         <tok val="Lemmatibus"/>
+         <tok val="lemmatibus"/>
          <lm>
             <l>lemma</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lemmatis lemmatis-->
-         <tok val="[lL]emmatis"/>
+      <ana>
+         <tok val="Lemmatis"/>
+         <tok val="lemmatis"/>
          <lm>
             <l>lemma</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lemmatum lemmatum-->
-         <tok val="[lL]emmatum"/>
+      <ana>
+         <tok val="Lemmatum"/>
+         <tok val="lemmatum"/>
          <lm>
             <l>lemma</l>
             <m>n - - p - - - n g</m>
@@ -161,13 +189,17 @@
       </ana>
       <ana>
          <tok val="Lemne"/>
+         <tok val="lemne"/>
          <lm>
             <l>Lemnos</l>
             <m>n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Lemni Lemnique-->
-         <tok val="Lemni(que)?"/>
+      <ana>
+         <tok val="Lemni"/>
+         <tok val="Lemnique"/>
+         <tok val="lemni"/>
+         <tok val="lemnique"/>
          <lm>
             <l>Lemnos</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -175,15 +207,25 @@
             <m cert="0.333333333333333333">n e - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Lemni Lemnien Lemnique-->
-         <tok val="Lemni(en|que)?"/>
+      <ana>
+         <tok val="Lemni"/>
+         <tok val="Lemnien"/>
+         <tok val="Lemnique"/>
+         <tok val="lemni"/>
+         <tok val="lemnien"/>
+         <tok val="lemnique"/>
          <lm>
             <l>Lemnius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lemni Lemnii Lemnique-->
-         <tok val="Lemni(i|que)?"/>
+      <ana>
+         <tok val="Lemni"/>
+         <tok val="Lemnii"/>
+         <tok val="Lemnique"/>
+         <tok val="lemni"/>
+         <tok val="lemnii"/>
+         <tok val="lemnique"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.333333333333333333">a e - s - - - n g</m>
@@ -193,6 +235,7 @@
       </ana>
       <ana>
          <tok val="Lemnia"/>
+         <tok val="lemnia"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -205,6 +248,7 @@
       </ana>
       <ana>
          <tok val="Lemniacae"/>
+         <tok val="lemniacae"/>
          <lm>
             <l>Lemniacus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -215,6 +259,7 @@
       </ana>
       <ana>
          <tok val="Lemniacis"/>
+         <tok val="lemniacis"/>
          <lm>
             <l>Lemniacus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -227,13 +272,17 @@
       </ana>
       <ana>
          <tok val="Lemniacus"/>
+         <tok val="lemniacus"/>
          <lm>
             <l>Lemniacus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lemniades Lemniadesque-->
-         <tok val="Lemniades(que)?"/>
+      <ana>
+         <tok val="Lemniades"/>
+         <tok val="Lemniadesque"/>
+         <tok val="lemniades"/>
+         <tok val="lemniadesque"/>
          <lm>
             <l>Lemnias</l>
             <m cert="0.333333333333333333">n e - p - - - f n</m>
@@ -243,6 +292,7 @@
       </ana>
       <ana>
          <tok val="Lemniadum"/>
+         <tok val="lemniadum"/>
          <lm>
             <l>Lemnias</l>
             <m>n e - p - - - f g</m>
@@ -250,6 +300,7 @@
       </ana>
       <ana>
          <tok val="Lemniae"/>
+         <tok val="lemniae"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -260,6 +311,7 @@
       </ana>
       <ana>
          <tok val="Lemniam"/>
+         <tok val="lemniam"/>
          <lm>
             <l>Lemnius</l>
             <m>a e - s - - - f a</m>
@@ -267,6 +319,7 @@
       </ana>
       <ana>
          <tok val="Lemnias"/>
+         <tok val="lemnias"/>
          <lm cert="0.5">
             <l>Lemnias</l>
             <m>n e - s - - - f n</m>
@@ -278,6 +331,7 @@
       </ana>
       <ana>
          <tok val="Lemnicola"/>
+         <tok val="lemnicola"/>
          <lm>
             <l>Lemnicola</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -287,6 +341,7 @@
       </ana>
       <ana>
          <tok val="Lemnicolae"/>
+         <tok val="lemnicolae"/>
          <lm>
             <l>Lemnicola</l>
             <m cert="0.25">n e - s - - - m d</m>
@@ -295,8 +350,11 @@
             <m cert="0.25">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Lemnien Lemnium-->
-         <tok val="Lemni(um|en)"/>
+      <ana>
+         <tok val="Lemnien"/>
+         <tok val="Lemnium"/>
+         <tok val="lemnien"/>
+         <tok val="lemnium"/>
          <lm>
             <l>Lemnius</l>
             <m>a e - s - - - n v</m>
@@ -304,6 +362,7 @@
       </ana>
       <ana>
          <tok val="Lemnien"/>
+         <tok val="lemnien"/>
          <lm>
             <l>Lemnius</l>
             <m>a e - s - - - m v</m>
@@ -311,6 +370,7 @@
       </ana>
       <ana>
          <tok val="Lemniensis"/>
+         <tok val="lemniensis"/>
          <lm>
             <l>Lemniensis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -326,6 +386,7 @@
       </ana>
       <ana>
          <tok val="Lemnii"/>
+         <tok val="lemnii"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -336,6 +397,7 @@
       </ana>
       <ana>
          <tok val="Lemnio"/>
+         <tok val="lemnio"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -346,8 +408,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Lemniorum Lemnium-->
-         <tok val="Lemni(or)?um"/>
+      <ana>
+         <tok val="Lemniorum"/>
+         <tok val="Lemnium"/>
+         <tok val="lemniorum"/>
+         <tok val="lemnium"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -355,8 +420,9 @@
             <m cert="0.333333333333333333">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lemniscata lemniscata-->
-         <tok val="[lL]emniscata"/>
+      <ana>
+         <tok val="Lemniscata"/>
+         <tok val="lemniscata"/>
          <lm>
             <l>lemniscatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -367,15 +433,17 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Lemniscatus lemniscatus-->
-         <tok val="[lL]emniscatus"/>
+      <ana>
+         <tok val="Lemniscatus"/>
+         <tok val="lemniscatus"/>
          <lm>
             <l>lemniscatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lemnisco lemnisco-->
-         <tok val="[lL]emnisco"/>
+      <ana>
+         <tok val="Lemnisco"/>
+         <tok val="lemnisco"/>
          <lm>
             <l>lemniscus</l>
             <m cert="0.5">n - - s - - - m b</m>
@@ -384,6 +452,7 @@
       </ana>
       <ana>
          <tok val="Lemnium"/>
+         <tok val="lemnium"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -394,22 +463,31 @@
       </ana>
       <ana>
          <tok val="Lemnius"/>
+         <tok val="lemnius"/>
          <lm>
             <l>Lemnius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Lemno Lemnon Lemnoque-->
-         <tok val="Lemno(n|que)?"/>
+      <ana>
+         <tok val="Lemno"/>
+         <tok val="Lemnon"/>
+         <tok val="Lemnoque"/>
+         <tok val="lemno"/>
+         <tok val="lemnon"/>
+         <tok val="lemnoque"/>
          <lm>
             <l>Lemnos</l>
             <m cert="0.5">n e - s - - - f b</m>
             <m cert="0.5">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Lemnon Lemnos-->
-         <tok val="Lemno[sn]"/>
+      <ana>
+         <tok val="Lemnon"/>
+         <tok val="Lemnos"/>
+         <tok val="lemnon"/>
+         <tok val="lemnos"/>
          <lm>
             <l>Lemnos</l>
             <m cert="0.5">n e - s - - - f n</m>
@@ -418,6 +496,7 @@
       </ana>
       <ana>
          <tok val="Lemnum"/>
+         <tok val="lemnum"/>
          <lm>
             <l>Lemnos</l>
             <m cert="0.5">n e - s - - - f a</m>
@@ -426,13 +505,15 @@
       </ana>
       <ana>
          <tok val="Lemoni"/>
+         <tok val="lemoni"/>
          <lm>
             <l>lemonium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Lemonia lemonia-->
-         <tok val="[lL]emonia"/>
+      <ana>
+         <tok val="Lemonia"/>
+         <tok val="lemonia"/>
          <lm>
             <l>lemonium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -440,8 +521,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Lemouices Lemovices-->
-         <tok val="Lemo[vu]ices"/>
+      <ana>
+         <tok val="Lemouices"/>
+         <tok val="Lemovices"/>
+         <tok val="lemouices"/>
+         <tok val="lemovices"/>
          <lm>
             <l>Lemovices</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -451,6 +535,7 @@
       </ana>
       <ana>
          <tok val="Lemovicibus"/>
+         <tok val="lemovicibus"/>
          <lm>
             <l>Lemovices</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -459,6 +544,7 @@
       </ana>
       <ana>
          <tok val="Lemovicum"/>
+         <tok val="lemovicum"/>
          <lm>
             <l>Lemovices</l>
             <m>n e - p - - - m g</m>
@@ -466,6 +552,7 @@
       </ana>
       <ana>
          <tok val="Lemovii"/>
+         <tok val="lemovii"/>
          <lm>
             <l>Lemovii</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -474,6 +561,7 @@
       </ana>
       <ana>
          <tok val="Lemures"/>
+         <tok val="lemures"/>
          <lm>
             <l>lemures</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -483,6 +571,7 @@
       </ana>
       <ana>
          <tok val="Lemuria"/>
+         <tok val="lemuria"/>
          <lm>
             <l>Lemuria</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -492,6 +581,7 @@
       </ana>
       <ana>
          <tok val="Lemuribus"/>
+         <tok val="lemuribus"/>
          <lm>
             <l>lemures</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -516,8 +606,9 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--lemborum lembum-->
-         <tok val="lemb(or)?um"/>
+      <ana>
+         <tok val="lemborum"/>
+         <tok val="lembum"/>
          <lm>
             <l>lembus</l>
             <m>n - - p - - - m g</m>
@@ -576,15 +667,18 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--lemniscorum lemniscum-->
-         <tok val="lemnisc(or)?um"/>
+      <ana>
+         <tok val="lemniscorum"/>
+         <tok val="lemniscum"/>
          <lm>
             <l>lemniscus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--lemniscos lemniscosque lemníscos-->
-         <tok val="lemn[íi]scos(que)?"/>
+      <ana>
+         <tok val="lemniscos"/>
+         <tok val="lemniscosque"/>
+         <tok val="lemníscos"/>
          <lm>
             <l>lemniscus</l>
             <m>n - - p - - - m a</m>

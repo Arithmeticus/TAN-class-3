@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusaer">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:aer">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to aer</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-aer.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>AER</tok-starts-with>
       <tok-starts-with>AEr</tok-starts-with>
@@ -39,15 +16,56 @@
       <tok-starts-with>aër</tok-starts-with>
       <tok-starts-with>Aër</tok-starts-with>
       <tok-starts-with>aér</tok-starts-with>
-      <ana><!--AER Aer aer aerque aër-->
-         <tok val="[aA]?(e|aë)?[r]?(que|AER)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:09:15.716-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:09:15.716-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-aer.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="AER"/>
+         <tok val="Aer"/>
+         <tok val="aer"/>
+         <tok val="aerque"/>
+         <tok val="aër"/>
          <lm>
             <l>aer</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AERA AEra Aera Aeraque aera aerane aeraque-->
-         <tok val="[aA]?(e|AE)?(ra)?(qu|n)?(e|AERA)?"/>
+      <ana>
+         <tok val="AERA"/>
+         <tok val="AEra"/>
+         <tok val="Aera"/>
+         <tok val="Aeraque"/>
+         <tok val="aera"/>
+         <tok val="aerane"/>
+         <tok val="aeraque"/>
          <lm>
             <l>aera</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -55,8 +73,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--AERARII AErarii Aerarii aerarii-->
-         <tok val="[A]?(e|E|ae)?(rarii|AERARII)"/>
+      <ana>
+         <tok val="AERARII"/>
+         <tok val="AErarii"/>
+         <tok val="Aerarii"/>
+         <tok val="aerarii"/>
          <lm cert="0.5">
             <l>aerarius</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -69,8 +90,12 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AERARII AErarii Aerarii aerari aerarii-->
-         <tok val="[aA]?(e|AE)?(rari)?(i|AERARII)?"/>
+      <ana>
+         <tok val="AERARII"/>
+         <tok val="AErarii"/>
+         <tok val="Aerarii"/>
+         <tok val="aerari"/>
+         <tok val="aerarii"/>
          <lm>
             <l>aerarius</l>
             <m cert="0.333333333333333333">n - - s - - - m g</m>
@@ -78,38 +103,59 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AERARIVS AErarius Aerarius aerarius-->
-         <tok val="[A]?(e|E|ae)?(rarius|AERARIVS)"/>
+      <ana>
+         <tok val="AERARIVS"/>
+         <tok val="AErarius"/>
+         <tok val="Aerarius"/>
+         <tok val="aerarius"/>
+         <tok val="aerarivs"/>
          <lm>
             <l>aerarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AERE AEre Aere aere aereque aereve aëre-->
-         <tok val="[aA]?(e|AE|aë)?(re)?(ve|que|AERE)?"/>
+      <ana>
+         <tok val="AERE"/>
+         <tok val="AEre"/>
+         <tok val="Aere"/>
+         <tok val="aere"/>
+         <tok val="aereque"/>
+         <tok val="aereve"/>
+         <tok val="aëre"/>
          <lm>
             <l>aer</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--AERVMNA AErumna Aerumna aerumna aerúmna-->
-         <tok val="[A]?(e|E|ae)?[r]?[uú]?(mna|AERVMNA)"/>
+      <ana>
+         <tok val="AERVMNA"/>
+         <tok val="AErumna"/>
+         <tok val="Aerumna"/>
+         <tok val="aerumna"/>
+         <tok val="aervmna"/>
+         <tok val="aerúmna"/>
          <lm>
             <l>aerumna</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AERVMNA AErumna Aerumna aerumna-->
-         <tok val="[A]?(e|E|ae)?(rumna|AERVMNA)"/>
+      <ana>
+         <tok val="AERVMNA"/>
+         <tok val="AErumna"/>
+         <tok val="Aerumna"/>
+         <tok val="aerumna"/>
+         <tok val="aervmna"/>
          <lm>
             <l>aerumna</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--AEraria Aeraria aeraria-->
-         <tok val="[A]?(e|E|ae)raria"/>
+      <ana>
+         <tok val="AEraria"/>
+         <tok val="Aeraria"/>
+         <tok val="aeraria"/>
          <lm cert="0.333333333333333333">
             <l>aeraria</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -132,8 +178,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AErarium Aerarium aerarium aerariumque-->
-         <tok val="[A]?(e|E|ae)rarium(que)?"/>
+      <ana>
+         <tok val="AErarium"/>
+         <tok val="Aerarium"/>
+         <tok val="aerarium"/>
+         <tok val="aerariumque"/>
          <lm cert="0.5">
             <l>aerarius</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -147,8 +196,13 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AErarium Aerariorum Aerarium aerariorum aerarium aerariumque-->
-         <tok val="[aA]?(e|AE|ae)rari(or)?um(que)?"/>
+      <ana>
+         <tok val="AErarium"/>
+         <tok val="Aerariorum"/>
+         <tok val="Aerarium"/>
+         <tok val="aerariorum"/>
+         <tok val="aerarium"/>
+         <tok val="aerariumque"/>
          <lm cert="0.5">
             <l>aerarius</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -160,8 +214,12 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AErarium Aerarium aerarie aerarium aerariumque-->
-         <tok val="[A]?(e|E|ae)rari(um)?(que|e)?"/>
+      <ana>
+         <tok val="AErarium"/>
+         <tok val="Aerarium"/>
+         <tok val="aerarie"/>
+         <tok val="aerarium"/>
+         <tok val="aerariumque"/>
          <lm cert="0.5">
             <l>aerarium</l>
             <m>n - - s - - - n v</m>
@@ -171,15 +229,20 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEras Aeras aeras aerasque-->
-         <tok val="[A]?(e|E|ae)ras(que)?"/>
+      <ana>
+         <tok val="AEras"/>
+         <tok val="Aeras"/>
+         <tok val="aeras"/>
+         <tok val="aerasque"/>
          <lm>
             <l>aera</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AErata Aerata aerata-->
-         <tok val="[A]?(e|E|ae)rata"/>
+      <ana>
+         <tok val="AErata"/>
+         <tok val="Aerata"/>
+         <tok val="aerata"/>
          <lm>
             <l>aeratus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -190,8 +253,11 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AEratae Aeratae aeratae aerataeque-->
-         <tok val="[A]?(e|E|ae)ratae(que)?"/>
+      <ana>
+         <tok val="AEratae"/>
+         <tok val="Aeratae"/>
+         <tok val="aeratae"/>
+         <tok val="aerataeque"/>
          <lm>
             <l>aeratus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -200,8 +266,10 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEratis Aeratis aeratis-->
-         <tok val="[A]?(e|E|ae)ratis"/>
+      <ana>
+         <tok val="AEratis"/>
+         <tok val="Aeratis"/>
+         <tok val="aeratis"/>
          <lm>
             <l>aeratus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -212,15 +280,22 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--AEratus Aeratus aeratus-->
-         <tok val="[A]?(e|E|ae)ratus"/>
+      <ana>
+         <tok val="AEratus"/>
+         <tok val="Aeratus"/>
+         <tok val="aeratus"/>
          <lm>
             <l>aeratus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AErea Aerea Aereaque aerea aerean aereaque-->
-         <tok val="[aA]?(e|AE)rea(n|que)?"/>
+      <ana>
+         <tok val="AErea"/>
+         <tok val="Aerea"/>
+         <tok val="Aereaque"/>
+         <tok val="aerea"/>
+         <tok val="aerean"/>
+         <tok val="aereaque"/>
          <lm cert="0.5">
             <l>aereum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -237,8 +312,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEreae Aereae aereae-->
-         <tok val="[A]?(e|E|ae)reae"/>
+      <ana>
+         <tok val="AEreae"/>
+         <tok val="Aereae"/>
+         <tok val="aereae"/>
          <lm>
             <l>aereus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -247,15 +324,20 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEream aeream-->
-         <tok val="(ae|AE)ream"/>
+      <ana>
+         <tok val="AEream"/>
+         <tok val="aeream"/>
          <lm>
             <l>aereus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AErei Aerei Aereique aerei-->
-         <tok val="[A]?(e|E|ae|Ae)rei(que)?"/>
+      <ana>
+         <tok val="AErei"/>
+         <tok val="Aerei"/>
+         <tok val="Aereique"/>
+         <tok val="aerei"/>
+         <tok val="aereique"/>
          <lm cert="0.5">
             <l>aereus</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -271,8 +353,10 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEreum Aereum aereum-->
-         <tok val="[A]?(e|E|ae)reum"/>
+      <ana>
+         <tok val="AEreum"/>
+         <tok val="Aereum"/>
+         <tok val="aereum"/>
          <lm cert="0.5">
             <l>aereus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -288,8 +372,11 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AEreum Aereum aereorum aereum-->
-         <tok val="[aA]?(e|AE)re(or)?um"/>
+      <ana>
+         <tok val="AEreum"/>
+         <tok val="Aereum"/>
+         <tok val="aereorum"/>
+         <tok val="aereum"/>
          <lm cert="0.5">
             <l>aereus</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -301,16 +388,21 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEreus Aereus aereus-->
-         <tok val="[A]?(e|E|ae)reus"/>
+      <ana>
+         <tok val="AEreus"/>
+         <tok val="Aereus"/>
+         <tok val="aereus"/>
          <lm>
             <l>aereus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEria Aeria aeria aëria-->
-         <tok val="[A]?(e|E|ae|aë)ria"/>
+      <ana>
+         <tok val="AEria"/>
+         <tok val="Aeria"/>
+         <tok val="aeria"/>
+         <tok val="aëria"/>
          <lm>
             <l>aerius</l>
             <m cert="0.25">a - - s - - - f n</m>
@@ -319,23 +411,32 @@
             <m cert="0.25">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AEria Aeria aeria-->
-         <tok val="[A]?(e|E|ae)ria"/>
+      <ana>
+         <tok val="AEria"/>
+         <tok val="Aeria"/>
+         <tok val="aeria"/>
          <lm>
             <l>aerius</l>
             <m cert="0.5">a - - s - - - f v</m>
             <m cert="0.5">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEriae Aeriae aeriae aeriaeque-->
-         <tok val="[A]?(e|E|ae)riae(que)?"/>
+      <ana>
+         <tok val="AEriae"/>
+         <tok val="Aeriae"/>
+         <tok val="aeriae"/>
+         <tok val="aeriaeque"/>
          <lm>
             <l>aerius</l>
             <m>a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--AEriae Aeriae aeriae aeriaeque aëriae-->
-         <tok val="[A]?(e|E|ae|aë)riae(que)?"/>
+      <ana>
+         <tok val="AEriae"/>
+         <tok val="Aeriae"/>
+         <tok val="aeriae"/>
+         <tok val="aeriaeque"/>
+         <tok val="aëriae"/>
          <lm>
             <l>aerius</l>
             <m cert="0.333333333333333333">a - - p - - - f n</m>
@@ -343,15 +444,21 @@
             <m cert="0.333333333333333333">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEriam Aeriam aeriam aeriamque aëriam-->
-         <tok val="[A]?(e|E|ae|aë)riam(que)?"/>
+      <ana>
+         <tok val="AEriam"/>
+         <tok val="Aeriam"/>
+         <tok val="aeriam"/>
+         <tok val="aeriamque"/>
+         <tok val="aëriam"/>
          <lm>
             <l>aerius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEripes Aeripes aeripes-->
-         <tok val="[A]?(e|E|ae)ripes"/>
+      <ana>
+         <tok val="AEripes"/>
+         <tok val="Aeripes"/>
+         <tok val="aeripes"/>
          <lm>
             <l>aeripes</l>
             <m cert="0.333333333333333333">a - - s - - - f n</m>
@@ -359,23 +466,34 @@
             <m cert="0.333333333333333333">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEris Aeris aerisque aerisue aeris aëris Aëris-->
-         <tok val="[aA]?(e|AE|aë|Aë)ris[q]?(ue)?"/>
+      <ana>
+         <tok val="AEris"/>
+         <tok val="Aeris"/>
+         <tok val="Aëris"/>
+         <tok val="aeris"/>
+         <tok val="aerisque"/>
+         <tok val="aerisue"/>
+         <tok val="aëris"/>
          <lm>
             <l>aer</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--AEris Aeris aeris aerisque aerisue-->
-         <tok val="[aA]?(e|AE)ris[q]?(ue)?"/>
+      <ana>
+         <tok val="AEris"/>
+         <tok val="Aeris"/>
+         <tok val="aeris"/>
+         <tok val="aerisque"/>
+         <tok val="aerisue"/>
          <lm>
             <l>aera</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--AErosi aerosi-->
-         <tok val="(ae|AE)rosi"/>
+      <ana>
+         <tok val="AErosi"/>
+         <tok val="aerosi"/>
          <lm>
             <l>aerosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -384,44 +502,55 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEruginem aeruginem-->
-         <tok val="(ae|AE)ruginem"/>
+      <ana>
+         <tok val="AEruginem"/>
+         <tok val="aeruginem"/>
          <lm>
             <l>aerugo</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AErugo Aerugo aerugo-->
-         <tok val="[A]?(e|E|ae)rugo"/>
+      <ana>
+         <tok val="AErugo"/>
+         <tok val="Aerugo"/>
+         <tok val="aerugo"/>
          <lm>
             <l>aerugo</l>
             <m cert="0.5">v - 1 s p i a</m>
             <m cert="0.5">n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--AErumnam Aerumnam aerumnam-->
-         <tok val="[A]?(e|E|ae)rumnam"/>
+      <ana>
+         <tok val="AErumnam"/>
+         <tok val="Aerumnam"/>
+         <tok val="aerumnam"/>
          <lm>
             <l>aerumna</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AErumnis Aerumnis aerumnis aérumnis-->
-         <tok val="[A]?(e|E|ae|aé)rumnis"/>
+      <ana>
+         <tok val="AErumnis"/>
+         <tok val="Aerumnis"/>
+         <tok val="aerumnis"/>
+         <tok val="aérumnis"/>
          <lm>
             <l>aerumna</l>
             <m>n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AErumnis Aerumnis aerumnis-->
-         <tok val="[A]?(e|E|ae)rumnis"/>
+      <ana>
+         <tok val="AErumnis"/>
+         <tok val="Aerumnis"/>
+         <tok val="aerumnis"/>
          <lm>
             <l>aerumna</l>
             <m>n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Aeramentum aeramentum-->
-         <tok val="[aA]eramentum"/>
+      <ana>
+         <tok val="Aeramentum"/>
+         <tok val="aeramentum"/>
          <lm>
             <l>aeramentum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -429,37 +558,44 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Aeramentum aeramentorum aeramentum-->
-         <tok val="[aA]erament(or)?um"/>
+      <ana>
+         <tok val="Aeramentum"/>
+         <tok val="aeramentorum"/>
+         <tok val="aeramentum"/>
          <lm>
             <l>aeramentum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Aerarios aerarios-->
-         <tok val="[aA]erarios"/>
+      <ana>
+         <tok val="Aerarios"/>
+         <tok val="aerarios"/>
          <lm>
             <l>aerarius</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aeratam aeratam-->
-         <tok val="[aA]eratam"/>
+      <ana>
+         <tok val="Aeratam"/>
+         <tok val="aeratam"/>
          <lm>
             <l>aeratus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aeratasque aeratas aeratasque-->
-         <tok val="[aA]eratas(que|)"/>
+      <ana>
+         <tok val="Aeratasque"/>
+         <tok val="aeratas"/>
+         <tok val="aeratasque"/>
          <lm>
             <l>aeratus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aerati aerati-->
-         <tok val="[aA]erati"/>
+      <ana>
+         <tok val="Aerati"/>
+         <tok val="aerati"/>
          <lm>
             <l>aeratus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -470,6 +606,7 @@
       </ana>
       <ana>
          <tok val="Aeratius"/>
+         <tok val="aeratius"/>
          <lm>
             <l>aeratus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -478,8 +615,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Aerato aerato-->
-         <tok val="[aA]erato"/>
+      <ana>
+         <tok val="Aerato"/>
+         <tok val="aerato"/>
          <lm>
             <l>aeratus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -488,15 +626,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Aeratos aeratos-->
-         <tok val="[aA]eratos"/>
+      <ana>
+         <tok val="Aeratos"/>
+         <tok val="aeratos"/>
          <lm>
             <l>aeratus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aereis aereis-->
-         <tok val="[aA]ereis"/>
+      <ana>
+         <tok val="Aereis"/>
+         <tok val="aereis"/>
          <lm cert="0.5">
             <l>aereus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -514,15 +654,23 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Aerem aera aerem aeremque aeremve aëra Aëra-->
-         <tok val="[aA]?(e|aë|ae|Aë)r(em)?(ve|que|a)?"/>
+      <ana>
+         <tok val="Aera"/>
+         <tok val="Aerem"/>
+         <tok val="Aëra"/>
+         <tok val="aera"/>
+         <tok val="aerem"/>
+         <tok val="aeremque"/>
+         <tok val="aeremve"/>
+         <tok val="aëra"/>
          <lm>
             <l>aer</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aeres aeres-->
-         <tok val="[aA]eres"/>
+      <ana>
+         <tok val="Aeres"/>
+         <tok val="aeres"/>
          <lm>
             <l>aer</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -530,38 +678,55 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aeri Aerii Aerique aeri aerii aerique aerive-->
-         <tok val="[Aa]eri(i|que|ve)?"/>
+      <ana>
+         <tok val="Aeri"/>
+         <tok val="Aerii"/>
+         <tok val="Aerique"/>
+         <tok val="aeri"/>
+         <tok val="aerii"/>
+         <tok val="aerique"/>
+         <tok val="aerive"/>
          <lm>
             <l>aerius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Aeri Aerique aeri aerique aerive-->
-         <tok val="[aA]eri(qu|v)?[e]?"/>
+      <ana>
+         <tok val="Aeri"/>
+         <tok val="Aerique"/>
+         <tok val="aeri"/>
+         <tok val="aerique"/>
+         <tok val="aerive"/>
          <lm>
             <l>aer</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Aerias aerias aeriasque aërias aëriasque Aërias-->
-         <tok val="[a]?(ë|e|Ae|aë|Aë)rias(que)?"/>
+      <ana>
+         <tok val="Aerias"/>
+         <tok val="Aërias"/>
+         <tok val="aerias"/>
+         <tok val="aeriasque"/>
+         <tok val="aërias"/>
+         <tok val="aëriasque"/>
          <lm>
             <l>aerius</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aerifer aerifer-->
-         <tok val="[aA]erifer"/>
+      <ana>
+         <tok val="Aerifer"/>
+         <tok val="aerifer"/>
          <lm>
             <l>aerifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Aeriferae aeriferae-->
-         <tok val="[aA]eriferae"/>
+      <ana>
+         <tok val="Aeriferae"/>
+         <tok val="aeriferae"/>
          <lm>
             <l>aerifer</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -570,16 +735,18 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Aerii aerii-->
-         <tok val="[aA]erii"/>
+      <ana>
+         <tok val="Aerii"/>
+         <tok val="aerii"/>
          <lm>
             <l>aerius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aerina aerina-->
-         <tok val="[aA]erina"/>
+      <ana>
+         <tok val="Aerina"/>
+         <tok val="aerina"/>
          <lm>
             <l>aerinus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -590,15 +757,18 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aerinus aerinus-->
-         <tok val="[aA]erinus"/>
+      <ana>
+         <tok val="Aerinus"/>
+         <tok val="aerinus"/>
          <lm>
             <l>aerinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aerios aerion aerios-->
-         <tok val="[aA]erio[sn]"/>
+      <ana>
+         <tok val="Aerios"/>
+         <tok val="aerion"/>
+         <tok val="aerios"/>
          <lm>
             <l>aerius</l>
             <m>a - - p - - - m a</m>
@@ -606,13 +776,15 @@
       </ana>
       <ana>
          <tok val="Aerisonus"/>
+         <tok val="aerisonus"/>
          <lm>
             <l>aerisonus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aerium aerium-->
-         <tok val="[aA]erium"/>
+      <ana>
+         <tok val="Aerium"/>
+         <tok val="aerium"/>
          <lm>
             <l>aerius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -623,15 +795,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aerius aerius-->
-         <tok val="[aA]erius"/>
+      <ana>
+         <tok val="Aerius"/>
+         <tok val="aerius"/>
          <lm>
             <l>aerius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aerizusa aerizusa-->
-         <tok val="[aA]erizusa"/>
+      <ana>
+         <tok val="Aerizusa"/>
+         <tok val="aerizusa"/>
          <lm>
             <l>aerizusa</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -639,16 +813,19 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Aero aero aeron-->
-         <tok val="[aA]ero[n]?"/>
+      <ana>
+         <tok val="Aero"/>
+         <tok val="aero"/>
+         <tok val="aeron"/>
          <lm>
             <l>aero</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Aeromantia aeromantia-->
-         <tok val="[aA]eromantia"/>
+      <ana>
+         <tok val="Aeromantia"/>
+         <tok val="aeromantia"/>
          <lm>
             <l>aeromantia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -658,6 +835,7 @@
       </ana>
       <ana>
          <tok val="Aeropa"/>
+         <tok val="aeropa"/>
          <lm>
             <l>Aeropa</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -667,6 +845,7 @@
       </ana>
       <ana>
          <tok val="Aeropam"/>
+         <tok val="aeropam"/>
          <lm>
             <l>Aeropa</l>
             <m>n e - s - - - f a</m>
@@ -674,14 +853,16 @@
       </ana>
       <ana>
          <tok val="Aeropis"/>
+         <tok val="aeropis"/>
          <lm>
             <l>Aeropa</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aerosum aerosum-->
-         <tok val="[aA]erosum"/>
+      <ana>
+         <tok val="Aerosum"/>
+         <tok val="aerosum"/>
          <lm>
             <l>aerosus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -690,23 +871,27 @@
             <m cert="0.25">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aerosum aerosorum aerosum-->
-         <tok val="[aA]eros(or)?um"/>
+      <ana>
+         <tok val="Aerosum"/>
+         <tok val="aerosorum"/>
+         <tok val="aerosum"/>
          <lm>
             <l>aerosus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Aerosus aerosus-->
-         <tok val="[aA]erosus"/>
+      <ana>
+         <tok val="Aerosus"/>
+         <tok val="aerosus"/>
          <lm>
             <l>aerosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aeruginis aeruginis-->
-         <tok val="[aA]eruginis"/>
+      <ana>
+         <tok val="Aeruginis"/>
+         <tok val="aeruginis"/>
          <lm>
             <l>aerugo</l>
             <m>n - - s - - - f g</m>
@@ -714,6 +899,7 @@
       </ana>
       <ana>
          <tok val="Aeruginosae"/>
+         <tok val="aeruginosae"/>
          <lm>
             <l>aeruginosus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -722,22 +908,25 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Aeruginosus aeruginosus-->
-         <tok val="[aA]eruginosus"/>
+      <ana>
+         <tok val="Aeruginosus"/>
+         <tok val="aeruginosus"/>
          <lm>
             <l>aeruginosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aerum aerum-->
-         <tok val="[aA]erum"/>
+      <ana>
+         <tok val="Aerum"/>
+         <tok val="aerum"/>
          <lm>
             <l>aer</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Aerumnabilis aerumnabilis-->
-         <tok val="[aA]erumnabilis"/>
+      <ana>
+         <tok val="Aerumnabilis"/>
+         <tok val="aerumnabilis"/>
          <lm>
             <l>aerumnabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -751,15 +940,18 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Aerumnae aerumnae aerúmnae-->
-         <tok val="[aA]er[uú]mnae"/>
+      <ana>
+         <tok val="Aerumnae"/>
+         <tok val="aerumnae"/>
+         <tok val="aerúmnae"/>
          <lm>
             <l>aerumna</l>
             <m>n - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Aerumnae aerumnae-->
-         <tok val="[aA]erumnae"/>
+      <ana>
+         <tok val="Aerumnae"/>
+         <tok val="aerumnae"/>
          <lm>
             <l>aerumna</l>
             <m cert="0.333333333333333333">n - - s - - - f g</m>
@@ -767,22 +959,25 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Aerumnarum aerumnarum-->
-         <tok val="[aA]erumnarum"/>
+      <ana>
+         <tok val="Aerumnarum"/>
+         <tok val="aerumnarum"/>
          <lm>
             <l>aerumna</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Aerumnas aerumnas-->
-         <tok val="[aA]erumnas"/>
+      <ana>
+         <tok val="Aerumnas"/>
+         <tok val="aerumnas"/>
          <lm>
             <l>aerumna</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aerumnosa aerumnosa-->
-         <tok val="[aA]erumnosa"/>
+      <ana>
+         <tok val="Aerumnosa"/>
+         <tok val="aerumnosa"/>
          <lm>
             <l>aerumnosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -795,21 +990,24 @@
       </ana>
       <ana>
          <tok val="Aerumnosissimus"/>
+         <tok val="aerumnosissimus"/>
          <lm>
             <l>aerumnosus</l>
             <m cert="0.5">a - - s - - - m v s</m>
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Aerumnosus aerumnosus-->
-         <tok val="[aA]erumnosus"/>
+      <ana>
+         <tok val="Aerumnosus"/>
+         <tok val="aerumnosus"/>
          <lm>
             <l>aerumnosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aerumnula aerumnula-->
-         <tok val="[aA]erumnula"/>
+      <ana>
+         <tok val="Aerumnula"/>
+         <tok val="aerumnula"/>
          <lm>
             <l>aerumnula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -817,16 +1015,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Aeruscator aeruscator-->
-         <tok val="[aA]eruscator"/>
+      <ana>
+         <tok val="Aeruscator"/>
+         <tok val="aeruscator"/>
          <lm>
             <l>aeruscator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Aerusco aerusco-->
-         <tok val="[aA]erusco"/>
+      <ana>
+         <tok val="Aerusco"/>
+         <tok val="aerusco"/>
          <lm>
             <l>aerusco</l>
             <m>v - 1 s p i a</m>
@@ -888,8 +1088,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--aerari aerarie-->
-         <tok val="aerari[e]?"/>
+      <ana>
+         <tok val="aerari"/>
+         <tok val="aerarie"/>
          <lm>
             <l>aerarius</l>
             <m>n - - s - - - m v</m>
@@ -998,15 +1199,17 @@
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--aerean aereas-->
-         <tok val="aerea[sn]"/>
+      <ana>
+         <tok val="aerean"/>
+         <tok val="aereas"/>
          <lm>
             <l>aereus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aerearum aerearumque-->
-         <tok val="aerearum(que)?"/>
+      <ana>
+         <tok val="aerearum"/>
+         <tok val="aerearumque"/>
          <lm>
             <l>aereus</l>
             <m>a - - p - - - f g</m>
@@ -1044,8 +1247,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--aeribus aëribus-->
-         <tok val="a[ëe]ribus"/>
+      <ana>
+         <tok val="aeribus"/>
+         <tok val="aëribus"/>
          <lm>
             <l>aer</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1059,8 +1263,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--aeriis aëriis-->
-         <tok val="a[ëe]riis"/>
+      <ana>
+         <tok val="aeriis"/>
+         <tok val="aëriis"/>
          <lm>
             <l>aerius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1083,8 +1288,10 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--aerio aerion aërio-->
-         <tok val="a[eë]rio[n]?"/>
+      <ana>
+         <tok val="aerio"/>
+         <tok val="aerion"/>
+         <tok val="aërio"/>
          <lm>
             <l>aerius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1251,8 +1458,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aerugine aerugineque-->
-         <tok val="aerugine(que)?"/>
+      <ana>
+         <tok val="aerugine"/>
+         <tok val="aerugineque"/>
          <lm>
             <l>aerugo</l>
             <m>n - - s - - - f b</m>
@@ -1334,15 +1542,17 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aerumnosas aérumnosas-->
-         <tok val="a[ée]rumnosas"/>
+      <ana>
+         <tok val="aerumnosas"/>
+         <tok val="aérumnosas"/>
          <lm>
             <l>aerumnosus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aerumnosi aerumnosique-->
-         <tok val="aerumnosi(que)?"/>
+      <ana>
+         <tok val="aerumnosi"/>
+         <tok val="aerumnosique"/>
          <lm>
             <l>aerumnosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1493,8 +1703,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--aeripedem Aeripedem-->
-         <tok val="[Aa]eripedem"/>
+      <ana>
+         <tok val="Aeripedem"/>
+         <tok val="aeripedem"/>
          <lm>
             <l>aeripes</l>
             <m cert="0.5">a - - s - - - f a</m>

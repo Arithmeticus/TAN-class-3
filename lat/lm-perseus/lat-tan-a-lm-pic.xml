@@ -1,51 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspic">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:pic">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to pic</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-pic.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PIC</tok-starts-with>
       <tok-starts-with>Pic</tok-starts-with>
       <tok-starts-with>pic</tok-starts-with>
       <tok-starts-with>píc</tok-starts-with>
-      <ana><!--PICTOR Pictor pictor pictorque-->
-         <tok val="[pP]?(ictor)?(que|PICTOR)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:39:31.86-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:39:31.86-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-pic.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PICTOR"/>
+         <tok val="Pictor"/>
+         <tok val="pictor"/>
+         <tok val="pictorque"/>
          <lm>
             <l>pictor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Pica pica pican-->
-         <tok val="[pP]ica[n]?"/>
+      <ana>
+         <tok val="Pica"/>
+         <tok val="pica"/>
+         <tok val="pican"/>
          <lm cert="0.5">
             <l>pica</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -57,8 +70,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Picae picae-->
-         <tok val="[pP]icae"/>
+      <ana>
+         <tok val="Picae"/>
+         <tok val="picae"/>
          <lm>
             <l>pica</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -69,14 +83,18 @@
       </ana>
       <ana>
          <tok val="Picano"/>
+         <tok val="picano"/>
          <lm>
             <l>Picanus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Picasque pican picas-->
-         <tok val="[pP]ica(s|n|sque)"/>
+      <ana>
+         <tok val="Picasque"/>
+         <tok val="pican"/>
+         <tok val="picas"/>
+         <tok val="picasque"/>
          <lm cert="0.5">
             <l>pico</l>
             <m>v - 2 s p i a</m>
@@ -86,8 +104,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Picata picata-->
-         <tok val="[pP]icata"/>
+      <ana>
+         <tok val="Picata"/>
+         <tok val="picata"/>
          <lm>
             <l>pico</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -98,8 +117,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Picati picati-->
-         <tok val="[pP]icati"/>
+      <ana>
+         <tok val="Picati"/>
+         <tok val="picati"/>
          <lm>
             <l>pico</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -108,16 +128,21 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Picatum picatorum picatum picatumque-->
-         <tok val="[pP]icat(or)?um(que)?"/>
+      <ana>
+         <tok val="Picatum"/>
+         <tok val="picatorum"/>
+         <tok val="picatum"/>
+         <tok val="picatumque"/>
          <lm>
             <l>pico</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Picatum picatum picatumque-->
-         <tok val="[pP]icatum(que)?"/>
+      <ana>
+         <tok val="Picatum"/>
+         <tok val="picatum"/>
+         <tok val="picatumque"/>
          <lm>
             <l>pico</l>
             <m cert="0.25">v - - s r p p n n</m>
@@ -128,27 +153,33 @@
       </ana>
       <ana>
          <tok val="Picatum"/>
+         <tok val="picatum"/>
          <lm>
             <l>pico</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Picatus picatus picatusque-->
-         <tok val="[pP]icatus(que)?"/>
+      <ana>
+         <tok val="Picatus"/>
+         <tok val="picatus"/>
+         <tok val="picatusque"/>
          <lm>
             <l>pico</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Pice pice-->
-         <tok val="[pP]ice"/>
+      <ana>
+         <tok val="Pice"/>
+         <tok val="pice"/>
          <lm>
             <l>picus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Picea picea piceaque-->
-         <tok val="[pP]icea(que)?"/>
+      <ana>
+         <tok val="Picea"/>
+         <tok val="picea"/>
+         <tok val="piceaque"/>
          <lm cert="0.5">
             <l>picea</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -165,8 +196,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Piceae piceae piceaeque-->
-         <tok val="[pP]iceae(que)?"/>
+      <ana>
+         <tok val="Piceae"/>
+         <tok val="piceae"/>
+         <tok val="piceaeque"/>
          <lm cert="0.5">
             <l>piceus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -182,8 +215,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Piceata piceata-->
-         <tok val="[pP]iceata"/>
+      <ana>
+         <tok val="Piceata"/>
+         <tok val="piceata"/>
          <lm>
             <l>piceatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -194,15 +228,18 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Piceatus piceatus-->
-         <tok val="[pP]iceatus"/>
+      <ana>
+         <tok val="Piceatus"/>
+         <tok val="piceatus"/>
          <lm>
             <l>piceatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Picem picem picemque-->
-         <tok val="[pP]icem(que)?"/>
+      <ana>
+         <tok val="Picem"/>
+         <tok val="picem"/>
+         <tok val="picemque"/>
          <lm>
             <l>pico</l>
             <m>v - 1 s p s a</m>
@@ -210,6 +247,7 @@
       </ana>
       <ana>
          <tok val="Picena"/>
+         <tok val="picena"/>
          <lm cert="0.5">
             <l>Picenum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -228,6 +266,7 @@
       </ana>
       <ana>
          <tok val="Picenae"/>
+         <tok val="picenae"/>
          <lm>
             <l>Picenus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -238,13 +277,17 @@
       </ana>
       <ana>
          <tok val="Picenarum"/>
+         <tok val="picenarum"/>
          <lm>
             <l>Picenus</l>
             <m>a e - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Piceni Picenique-->
-         <tok val="Piceni(que)?"/>
+      <ana>
+         <tok val="Piceni"/>
+         <tok val="Picenique"/>
+         <tok val="piceni"/>
+         <tok val="picenique"/>
          <lm cert="0.5">
             <l>Picenus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -259,6 +302,7 @@
       </ana>
       <ana>
          <tok val="Picenis"/>
+         <tok val="picenis"/>
          <lm cert="0.5">
             <l>Picenus</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
@@ -276,6 +320,7 @@
       </ana>
       <ana>
          <tok val="Piceno"/>
+         <tok val="piceno"/>
          <lm cert="0.5">
             <l>Picenus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -289,8 +334,13 @@
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Picenorum Picenum Picenumque-->
-         <tok val="Picen(or)?um(que)?"/>
+      <ana>
+         <tok val="Picenorum"/>
+         <tok val="Picenum"/>
+         <tok val="Picenumque"/>
+         <tok val="picenorum"/>
+         <tok val="picenum"/>
+         <tok val="picenumque"/>
          <lm cert="0.5">
             <l>Picenum</l>
             <m>n e - p - - - n g</m>
@@ -303,6 +353,7 @@
       </ana>
       <ana>
          <tok val="Picens"/>
+         <tok val="picens"/>
          <lm>
             <l>Picens</l>
             <m cert="0.142857142857142857">a e - s - - - n v</m>
@@ -316,6 +367,7 @@
       </ana>
       <ana>
          <tok val="Picent"/>
+         <tok val="picent"/>
          <lm>
             <l>pico</l>
             <m>v - 3 p p s a</m>
@@ -323,6 +375,7 @@
       </ana>
       <ana>
          <tok val="Picentem"/>
+         <tok val="picentem"/>
          <lm>
             <l>Picens</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -331,6 +384,7 @@
       </ana>
       <ana>
          <tok val="Picentes"/>
+         <tok val="picentes"/>
          <lm cert="0.5">
             <l>Picens</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -344,8 +398,11 @@
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Picentes Picentis-->
-         <tok val="Picent[ie]s"/>
+      <ana>
+         <tok val="Picentes"/>
+         <tok val="Picentis"/>
+         <tok val="picentes"/>
+         <tok val="picentis"/>
          <lm cert="0.5">
             <l>Picens</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -358,6 +415,7 @@
       </ana>
       <ana>
          <tok val="Picenti"/>
+         <tok val="picenti"/>
          <lm>
             <l>Picens</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -370,6 +428,7 @@
       </ana>
       <ana>
          <tok val="Picentia"/>
+         <tok val="picentia"/>
          <lm cert="0.5">
             <l>Picens</l>
             <m cert="0.333333333333333333">a e - p - - - n n</m>
@@ -385,6 +444,7 @@
       </ana>
       <ana>
          <tok val="Picentibus"/>
+         <tok val="picentibus"/>
          <lm cert="0.5">
             <l>Picentes</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -402,6 +462,7 @@
       </ana>
       <ana>
          <tok val="Picentina"/>
+         <tok val="picentina"/>
          <lm>
             <l>Picentinus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -412,8 +473,11 @@
             <m cert="0.166666666666666667">a e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Picentine Picentinum-->
-         <tok val="Picentin(um|e)"/>
+      <ana>
+         <tok val="Picentine"/>
+         <tok val="Picentinum"/>
+         <tok val="picentine"/>
+         <tok val="picentinum"/>
          <lm>
             <l>Picentinus</l>
             <m>a e - s - - - n v</m>
@@ -421,6 +485,7 @@
       </ana>
       <ana>
          <tok val="Picentine"/>
+         <tok val="picentine"/>
          <lm>
             <l>Picentinus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -429,6 +494,7 @@
       </ana>
       <ana>
          <tok val="Picentini"/>
+         <tok val="picentini"/>
          <lm>
             <l>Picentinus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -439,6 +505,7 @@
       </ana>
       <ana>
          <tok val="Picentinis"/>
+         <tok val="picentinis"/>
          <lm>
             <l>Picentinus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -451,6 +518,7 @@
       </ana>
       <ana>
          <tok val="Picentinum"/>
+         <tok val="picentinum"/>
          <lm>
             <l>Picentinus</l>
             <m cert="0.2">a e - p - - - m g</m>
@@ -462,6 +530,7 @@
       </ana>
       <ana>
          <tok val="Picentinus"/>
+         <tok val="picentinus"/>
          <lm>
             <l>Picentinus</l>
             <m>a e - s - - - m n</m>
@@ -469,6 +538,7 @@
       </ana>
       <ana>
          <tok val="Picentis"/>
+         <tok val="picentis"/>
          <lm>
             <l>Picens</l>
             <m cert="0.333333333333333333">a e - s - - - f g</m>
@@ -478,6 +548,7 @@
       </ana>
       <ana>
          <tok val="Picentium"/>
+         <tok val="picentium"/>
          <lm cert="0.5">
             <l>Picens</l>
             <m cert="0.333333333333333333">a e - p - - - m g</m>
@@ -489,8 +560,11 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Picenum Picenumque-->
-         <tok val="Picenum(que)?"/>
+      <ana>
+         <tok val="Picenum"/>
+         <tok val="Picenumque"/>
+         <tok val="picenum"/>
+         <tok val="picenumque"/>
          <lm cert="0.5">
             <l>Picenum</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -507,13 +581,16 @@
       </ana>
       <ana>
          <tok val="Picenus"/>
+         <tok val="picenus"/>
          <lm>
             <l>Picenus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Piceo piceo piceoque-->
-         <tok val="[pP]iceo(que)?"/>
+      <ana>
+         <tok val="Piceo"/>
+         <tok val="piceo"/>
+         <tok val="piceoque"/>
          <lm>
             <l>piceus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -522,8 +599,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Piceum piceum piceumque-->
-         <tok val="[pP]iceum(que)?"/>
+      <ana>
+         <tok val="Piceum"/>
+         <tok val="piceum"/>
+         <tok val="piceumque"/>
          <lm>
             <l>piceus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -534,15 +613,17 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Piceus piceus-->
-         <tok val="[pP]iceus"/>
+      <ana>
+         <tok val="Piceus"/>
+         <tok val="piceus"/>
          <lm>
             <l>piceus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pici pici-->
-         <tok val="[pP]ici"/>
+      <ana>
+         <tok val="Pici"/>
+         <tok val="pici"/>
          <lm>
             <l>picus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -552,6 +633,7 @@
       </ana>
       <ana>
          <tok val="Picinum"/>
+         <tok val="picinum"/>
          <lm>
             <l>picinus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -562,8 +644,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Picis picis-->
-         <tok val="[pP]icis"/>
+      <ana>
+         <tok val="Picis"/>
+         <tok val="picis"/>
          <lm cert="0.5">
             <l>picus</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -575,8 +658,9 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Pico pico-->
-         <tok val="[pP]ico"/>
+      <ana>
+         <tok val="Pico"/>
+         <tok val="pico"/>
          <lm cert="0.5">
             <l>pico</l>
             <m>v - 1 s p i a</m>
@@ -587,8 +671,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Picos picos-->
-         <tok val="[pP]icos"/>
+      <ana>
+         <tok val="Picos"/>
+         <tok val="picos"/>
          <lm>
             <l>picus</l>
             <m>n - - p - - - m a</m>
@@ -596,6 +681,7 @@
       </ana>
       <ana>
          <tok val="Picrides"/>
+         <tok val="picrides"/>
          <lm>
             <l>picris</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -603,8 +689,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Picris picris-->
-         <tok val="[pP]icris"/>
+      <ana>
+         <tok val="Picris"/>
+         <tok val="picris"/>
          <lm cert="0.5">
             <l>picris</l>
             <m>n - - s - - - f n</m>
@@ -615,15 +702,26 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Picta Pictaque picta pictaque pícta pictaï-->
-         <tok val="[pP]?(i|pí)cta(ï|que)?"/>
+      <ana>
+         <tok val="Picta"/>
+         <tok val="Pictaque"/>
+         <tok val="picta"/>
+         <tok val="pictai"/>
+         <tok val="pictaque"/>
+         <tok val="pictaï"/>
+         <tok val="pícta"/>
          <lm>
             <l>pingo</l>
             <m>v - - p r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Picta Pictaque picta pictaque pictaï-->
-         <tok val="[pP]icta(ï|que)?"/>
+      <ana>
+         <tok val="Picta"/>
+         <tok val="Pictaque"/>
+         <tok val="picta"/>
+         <tok val="pictai"/>
+         <tok val="pictaque"/>
+         <tok val="pictaï"/>
          <lm>
             <l>pingo</l>
             <m cert="0.2">v - - s r p p f b</m>
@@ -633,8 +731,10 @@
             <m cert="0.2">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Pictae pictae pictaeque-->
-         <tok val="[pP]ictae(que)?"/>
+      <ana>
+         <tok val="Pictae"/>
+         <tok val="pictae"/>
+         <tok val="pictaeque"/>
          <lm>
             <l>pingo</l>
             <m cert="0.333333333333333333">v - - s r p p f d</m>
@@ -642,29 +742,39 @@
             <m cert="0.333333333333333333">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Pictae pictae pictaeque pictai-->
-         <tok val="[pP]icta(e|i|eque)"/>
+      <ana>
+         <tok val="Pictae"/>
+         <tok val="pictae"/>
+         <tok val="pictaeque"/>
+         <tok val="pictai"/>
          <lm>
             <l>pingo</l>
             <m>v - - s r p p f g</m>
          </lm>
       </ana>
-      <ana><!--Pictam Pictamque pictam-->
-         <tok val="[pP]ictam(que)?"/>
+      <ana>
+         <tok val="Pictam"/>
+         <tok val="Pictamque"/>
+         <tok val="pictam"/>
+         <tok val="pictamque"/>
          <lm>
             <l>pingo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Pictarum pictarum pictarumque-->
-         <tok val="[pP]ictarum(que)?"/>
+      <ana>
+         <tok val="Pictarum"/>
+         <tok val="pictarum"/>
+         <tok val="pictarumque"/>
          <lm>
             <l>pingo</l>
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--Pictas pictas pictasque-->
-         <tok val="[pP]ictas(que)?"/>
+      <ana>
+         <tok val="Pictas"/>
+         <tok val="pictas"/>
+         <tok val="pictasque"/>
          <lm>
             <l>pingo</l>
             <m>v - - p r p p f a</m>
@@ -672,6 +782,7 @@
       </ana>
       <ana>
          <tok val="Pictava"/>
+         <tok val="pictava"/>
          <lm>
             <l>Pictava</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -681,55 +792,60 @@
       </ana>
       <ana>
          <tok val="Pictavi"/>
+         <tok val="pictavi"/>
          <lm>
             <l>Pictavi</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Picte Pictum picte pictum-->
-         <tok val="[pP]ict(um|e)"/>
+      <ana>
+         <tok val="Picte"/>
+         <tok val="Pictum"/>
+         <tok val="picte"/>
+         <tok val="pictum"/>
          <lm>
             <l>pingo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Picte picte-->
-         <tok val="[pP]icte"/>
+      <ana>
+         <tok val="Picte"/>
+         <tok val="picte"/>
          <lm>
             <l>pingo</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Picti Pictique picti pictique-->
-         <tok val="[pP]icti(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Picti"/>
+         <tok val="Pictique"/>
+         <tok val="picti"/>
+         <tok val="pictique"/>
+         <lm cert="0.5">
             <l>pingo</l>
             <m cert="0.25">v - - s r p p n g</m>
             <m cert="0.25">v - - p r p p m v</m>
             <m cert="0.25">v - - p r p p m n</m>
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
-      </ana>
-      <ana><!--Picti Pictique-->
-         <tok val="Picti(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>Picti</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Pictis Pictisque-->
-         <tok val="Pictis(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Pictis"/>
+         <tok val="Pictisque"/>
+         <tok val="pictis"/>
+         <tok val="pictisque"/>
+         <lm cert="0.5">
             <l>Picti</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Pictis Pictisque pictis pictisque-->
-         <tok val="[pP]ictis(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>pingo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
             <m cert="0.166666666666666667">v - - p r p p f b</m>
@@ -739,8 +855,10 @@
             <m cert="0.166666666666666667">v - - p r p p n b</m>
          </lm>
       </ana>
-      <ana><!--Picto picto pictoque-->
-         <tok val="[pP]icto(que)?"/>
+      <ana>
+         <tok val="Picto"/>
+         <tok val="picto"/>
+         <tok val="pictoque"/>
          <lm>
             <l>pingo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -751,6 +869,7 @@
       </ana>
       <ana>
          <tok val="Pictones"/>
+         <tok val="pictones"/>
          <lm>
             <l>Pictones</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -760,6 +879,7 @@
       </ana>
       <ana>
          <tok val="Pictonibus"/>
+         <tok val="pictonibus"/>
          <lm>
             <l>Pictones</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -768,6 +888,7 @@
       </ana>
       <ana>
          <tok val="Pictonicum"/>
+         <tok val="pictonicum"/>
          <lm>
             <l>Pictonicus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -780,6 +901,7 @@
       </ana>
       <ana>
          <tok val="Pictonicus"/>
+         <tok val="pictonicus"/>
          <lm>
             <l>Pictonicus</l>
             <m>a e - s - - - m n</m>
@@ -787,27 +909,34 @@
       </ana>
       <ana>
          <tok val="Pictonum"/>
+         <tok val="pictonum"/>
          <lm>
             <l>Pictones</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pictore pictore-->
-         <tok val="[pP]ictore"/>
+      <ana>
+         <tok val="Pictore"/>
+         <tok val="pictore"/>
          <lm>
             <l>pictor</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Pictorem Pictoremque pictorem-->
-         <tok val="[pP]ictorem(que)?"/>
+      <ana>
+         <tok val="Pictorem"/>
+         <tok val="Pictoremque"/>
+         <tok val="pictorem"/>
+         <tok val="pictoremque"/>
          <lm>
             <l>pictor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pictores pictores pictoresque-->
-         <tok val="[pP]ictores(que)?"/>
+      <ana>
+         <tok val="Pictores"/>
+         <tok val="pictores"/>
+         <tok val="pictoresque"/>
          <lm>
             <l>pictor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -815,8 +944,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pictori pictori-->
-         <tok val="[pP]ictori"/>
+      <ana>
+         <tok val="Pictori"/>
+         <tok val="pictori"/>
          <lm cert="0.5">
             <l>pictorius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -827,8 +957,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Pictoriae pictoriae-->
-         <tok val="[pP]ictoriae"/>
+      <ana>
+         <tok val="Pictoriae"/>
+         <tok val="pictoriae"/>
          <lm>
             <l>pictorius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -839,35 +970,48 @@
       </ana>
       <ana>
          <tok val="Pictoriam"/>
+         <tok val="pictoriam"/>
          <lm>
             <l>pictorius</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pictoribus Pictoribvs pictoribus-->
-         <tok val="[Pp]ictorib[vu]s"/>
+      <ana>
+         <tok val="Pictoribus"/>
+         <tok val="Pictoribvs"/>
+         <tok val="pictoribus"/>
+         <tok val="pictoribvs"/>
          <lm>
             <l>pictor</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Pictoris pictoris-->
-         <tok val="[pP]ictoris"/>
+      <ana>
+         <tok val="Pictoris"/>
+         <tok val="pictoris"/>
          <lm>
             <l>pictor</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pictorum Pictorumque pictorum pictorumque-->
-         <tok val="[pP]ictorum(que)?"/>
+      <ana>
+         <tok val="Pictorum"/>
+         <tok val="Pictorumque"/>
+         <tok val="pictorum"/>
+         <tok val="pictorumque"/>
          <lm>
             <l>pictor</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pictorum Pictorumque Pictum pictorum pictorumque pictum-->
-         <tok val="[pP]ict(or)?um(que)?"/>
+      <ana>
+         <tok val="Pictorum"/>
+         <tok val="Pictorumque"/>
+         <tok val="Pictum"/>
+         <tok val="pictorum"/>
+         <tok val="pictorumque"/>
+         <tok val="pictum"/>
          <lm>
             <l>pingo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -876,13 +1020,16 @@
       </ana>
       <ana>
          <tok val="Pictos"/>
+         <tok val="pictos"/>
          <lm>
             <l>Picti</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pictos pictos pictosque-->
-         <tok val="[pP]ictos(que)?"/>
+      <ana>
+         <tok val="Pictos"/>
+         <tok val="pictos"/>
+         <tok val="pictosque"/>
          <lm>
             <l>pingo</l>
             <m>v - - p r p p m a</m>
@@ -890,26 +1037,24 @@
       </ana>
       <ana>
          <tok val="Pictum"/>
+         <tok val="pictum"/>
          <lm cert="0.5">
             <l>Picti</l>
             <m>n e - p - - - m g</m>
          </lm>
          <lm cert="0.5">
             <l>pingo</l>
-            <m>v - - - - u - - a</m>
+            <m cert="0.25">v - - s r p p m a</m>
+            <m cert="0.25">v - - s r p p n n</m>
+            <m cert="0.25">v - - s r p p n a</m>
+            <m cert="0.25">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Pictum pictum-->
-         <tok val="[pP]ictum"/>
-         <lm>
-            <l>pingo</l>
-            <m cert="0.333333333333333333">v - - s r p p m a</m>
-            <m cert="0.333333333333333333">v - - s r p p n n</m>
-            <m cert="0.333333333333333333">v - - s r p p n a</m>
-         </lm>
-      </ana>
-      <ana><!--Pictura pictura picturaque picturave-->
-         <tok val="[pP]ictura(ve|que)?"/>
+      <ana>
+         <tok val="Pictura"/>
+         <tok val="pictura"/>
+         <tok val="picturaque"/>
+         <tok val="picturave"/>
          <lm cert="0.5">
             <l>pingo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -926,8 +1071,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Picturae picturae picturaeque-->
-         <tok val="[pP]icturae(que)?"/>
+      <ana>
+         <tok val="Picturae"/>
+         <tok val="picturae"/>
+         <tok val="picturaeque"/>
          <lm cert="0.5">
             <l>pingo</l>
             <m cert="0.25">v - - p f p a f v</m>
@@ -943,8 +1090,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Picturarum picturarum-->
-         <tok val="[pP]icturarum"/>
+      <ana>
+         <tok val="Picturarum"/>
+         <tok val="picturarum"/>
          <lm cert="0.5">
             <l>pictura</l>
             <m>n - - p - - - f g</m>
@@ -954,8 +1102,9 @@
             <m>v - - p f p a f g</m>
          </lm>
       </ana>
-      <ana><!--Picturata picturata-->
-         <tok val="[pP]icturata"/>
+      <ana>
+         <tok val="Picturata"/>
+         <tok val="picturata"/>
          <lm>
             <l>picturatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -966,8 +1115,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Picturatae picturatae-->
-         <tok val="[pP]icturatae"/>
+      <ana>
+         <tok val="Picturatae"/>
+         <tok val="picturatae"/>
          <lm>
             <l>picturatus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -976,36 +1126,44 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Picturatas picturatas-->
-         <tok val="[pP]icturatas"/>
+      <ana>
+         <tok val="Picturatas"/>
+         <tok val="picturatas"/>
          <lm>
             <l>picturatus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Picturatus picturatus-->
-         <tok val="[pP]icturatus"/>
+      <ana>
+         <tok val="Picturatus"/>
+         <tok val="picturatus"/>
          <lm>
             <l>picturatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pictus pictus pictusue pictusve-->
-         <tok val="[pP]ictus[vu]?[e]?"/>
+      <ana>
+         <tok val="Pictus"/>
+         <tok val="pictus"/>
+         <tok val="pictusue"/>
+         <tok val="pictusve"/>
          <lm>
             <l>pingo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Picum picorum picum-->
-         <tok val="[pP]ic(or)?um"/>
+      <ana>
+         <tok val="Picum"/>
+         <tok val="picorum"/>
+         <tok val="picum"/>
          <lm>
             <l>picus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Picum picum-->
-         <tok val="[pP]icum"/>
+      <ana>
+         <tok val="Picum"/>
+         <tok val="picum"/>
          <lm>
             <l>picus</l>
             <m>n - - s - - - m a</m>
@@ -1013,6 +1171,7 @@
       </ana>
       <ana>
          <tok val="Picumno"/>
+         <tok val="picumno"/>
          <lm>
             <l>Picumnus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1021,13 +1180,17 @@
       </ana>
       <ana>
          <tok val="Picumnus"/>
+         <tok val="picumnus"/>
          <lm>
             <l>Picumnus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Picus Picusque picus-->
-         <tok val="[pP]icus(que)?"/>
+      <ana>
+         <tok val="Picus"/>
+         <tok val="Picusque"/>
+         <tok val="picus"/>
+         <tok val="picusque"/>
          <lm>
             <l>picus</l>
             <m>n - - s - - - m n</m>
@@ -1047,8 +1210,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--picam picamque-->
-         <tok val="picam(que)?"/>
+      <ana>
+         <tok val="picam"/>
+         <tok val="picamque"/>
          <lm>
             <l>pica</l>
             <m>n - - s - - - f a</m>
@@ -1214,8 +1378,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--picatum picatumque-->
-         <tok val="picatum(que)?"/>
+      <ana>
+         <tok val="picatum"/>
+         <tok val="picatumque"/>
          <lm>
             <l>pico</l>
             <m>a - - s - - - n n</m>
@@ -1236,8 +1401,9 @@
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--piceam piceamque-->
-         <tok val="piceam(que)?"/>
+      <ana>
+         <tok val="piceam"/>
+         <tok val="piceamque"/>
          <lm cert="0.5">
             <l>piceus</l>
             <m>a - - s - - - f a</m>
@@ -1258,8 +1424,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--piceas piceasque-->
-         <tok val="piceas(que)?"/>
+      <ana>
+         <tok val="piceas"/>
+         <tok val="piceasque"/>
          <lm cert="0.5">
             <l>piceus</l>
             <m>a - - p - - - f a</m>
@@ -1269,8 +1436,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--picei piceique-->
-         <tok val="picei(que)?"/>
+      <ana>
+         <tok val="picei"/>
+         <tok val="piceique"/>
          <lm>
             <l>piceus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1303,8 +1471,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--piceos piceosque-->
-         <tok val="piceos(que)?"/>
+      <ana>
+         <tok val="piceos"/>
+         <tok val="piceosque"/>
          <lm>
             <l>piceus</l>
             <m>a - - p - - - m a</m>
@@ -1502,8 +1671,9 @@
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--picturam picturamque-->
-         <tok val="picturam(que)?"/>
+      <ana>
+         <tok val="picturam"/>
+         <tok val="picturamque"/>
          <lm cert="0.5">
             <l>pingo</l>
             <m>v - - s f p a f a</m>
@@ -1513,8 +1683,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--picturas picturasque-->
-         <tok val="picturas(que)?"/>
+      <ana>
+         <tok val="picturas"/>
+         <tok val="picturasque"/>
          <lm cert="0.5">
             <l>pingo</l>
             <m>v - - p f p a f a</m>
@@ -1546,8 +1717,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--picture picturum-->
-         <tok val="pictur(um|e)"/>
+      <ana>
+         <tok val="picture"/>
+         <tok val="picturum"/>
          <lm>
             <l>pingo</l>
             <m>v - - s f p a n v</m>
@@ -1598,6 +1770,7 @@
          </lm>
       </ana>
       <ana>
+         <tok val="pictai"/>
          <tok val="pictaï"/>
          <lm>
             <l>pertaedet</l>

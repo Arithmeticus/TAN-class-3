@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusparc">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:parc">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to parc</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-parc.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PARC</tok-starts-with>
       <tok-starts-with>ParC</tok-starts-with>
       <tok-starts-with>Parc</tok-starts-with>
       <tok-starts-with>parc</tok-starts-with>
       <tok-starts-with>párc</tok-starts-with>
-      <ana><!--PARCO Parco parco-->
-         <tok val="[pP]?(arco|PARCO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:37:56.994-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:37:56.994-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-parc.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PARCO"/>
+         <tok val="Parco"/>
+         <tok val="parco"/>
          <lm cert="0.5">
             <l>parcus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -51,32 +61,39 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PARCVS Parcus Parcvs parcus parcusque párcus-->
-         <tok val="[Pp]?(a|pá|pa)?(rc)?[vu]?[s]?(que|PARCVS)?"/>
+      <ana>
+         <tok val="PARCVS"/>
+         <tok val="Parcus"/>
+         <tok val="Parcvs"/>
+         <tok val="parcus"/>
+         <tok val="parcusque"/>
+         <tok val="parcvs"/>
+         <tok val="párcus"/>
          <lm>
             <l>parcus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--ParCant parcant-->
-         <tok val="[pP]ar[cC]ant"/>
+      <ana>
+         <tok val="ParCant"/>
+         <tok val="parcant"/>
          <lm>
             <l>parco</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Parca Parcaque-->
-         <tok val="Parca(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Parca"/>
+         <tok val="Parcaque"/>
+         <tok val="parca"/>
+         <tok val="parcaque"/>
+         <lm cert="0.5">
             <l>Parca</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Parca Parcaque parca parcaque-->
-         <tok val="[pP]arca(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>parcus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -86,19 +103,19 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Parcae Parcaeque-->
-         <tok val="Parcae(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Parcae"/>
+         <tok val="Parcaeque"/>
+         <tok val="parcae"/>
+         <tok val="parcaeque"/>
+         <lm cert="0.5">
             <l>Parca</l>
             <m cert="0.25">n e - p - - - f n</m>
             <m cert="0.25">n e - s - - - f g</m>
             <m cert="0.25">n e - s - - - f d</m>
             <m cert="0.25">n e - p - - - f v</m>
          </lm>
-      </ana>
-      <ana><!--Parcae Parcaeque parcae-->
-         <tok val="[pP]arcae(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>parcus</l>
             <m cert="0.25">a - - p - - - f n</m>
             <m cert="0.25">a - - s - - - f d</m>
@@ -106,61 +123,76 @@
             <m cert="0.25">a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Parcarum Parcarumque-->
-         <tok val="Parcarum(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Parcarum"/>
+         <tok val="Parcarumque"/>
+         <tok val="parcarum"/>
+         <tok val="parcarumque"/>
+         <lm cert="0.5">
             <l>Parca</l>
             <m>n e - p - - - f g</m>
          </lm>
-      </ana>
-      <ana><!--Parcarum Parcarumque parcarum-->
-         <tok val="[pP]arcarum(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>parcus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Parcas Parcasque parcas-->
-         <tok val="[pP]arcas(que)?"/>
-         <lm cert="0.5">
+      <ana>
+         <tok val="Parcas"/>
+         <tok val="Parcasque"/>
+         <tok val="parcas"/>
+         <tok val="parcasque"/>
+         <lm cert="0.333333333333333333">
             <l>parcus</l>
             <m>a - - p - - - f a</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
+            <l>Parca</l>
+            <m>n e - p - - - f a</m>
+         </lm>
+         <lm cert="0.333333333333333333">
             <l>parco</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Parcas Parcasque-->
-         <tok val="Parcas(que)?"/>
-         <lm>
-            <l>Parca</l>
-            <m>n e - p - - - f a</m>
-         </lm>
-      </ana>
-      <ana><!--Parcat parcat-->
-         <tok val="[pP]arcat"/>
+      <ana>
+         <tok val="Parcat"/>
+         <tok val="parcat"/>
          <lm>
             <l>parco</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Parce parce parcen parceque parcius parciusue párce-->
-         <tok val="[pP]?(a|pá|pa)rc(iusu)?[e]?(n|ius|eque)?"/>
+      <ana>
+         <tok val="Parce"/>
+         <tok val="parce"/>
+         <tok val="parcen"/>
+         <tok val="parceque"/>
+         <tok val="parcius"/>
+         <tok val="parciusue"/>
+         <tok val="párce"/>
          <lm>
             <l>parcus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Parce Parcum parce parcen parceque parcum-->
-         <tok val="[pP]arc[e]?(n|um|e|eque)?"/>
+      <ana>
+         <tok val="Parce"/>
+         <tok val="Parcum"/>
+         <tok val="parce"/>
+         <tok val="parcen"/>
+         <tok val="parceque"/>
+         <tok val="parcum"/>
          <lm>
             <l>parcus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Parce parce parcen parceque-->
-         <tok val="[pP]arce(n|que)?"/>
+      <ana>
+         <tok val="Parce"/>
+         <tok val="parce"/>
+         <tok val="parcen"/>
+         <tok val="parceque"/>
          <lm cert="0.5">
             <l>parco</l>
             <m>v - 2 s p m a</m>
@@ -170,8 +202,9 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Parcendum parcendum-->
-         <tok val="[pP]arcendum"/>
+      <ana>
+         <tok val="Parcendum"/>
+         <tok val="parcendum"/>
          <lm>
             <l>parco</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -183,8 +216,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Parcens parcens-->
-         <tok val="[pP]arcens"/>
+      <ana>
+         <tok val="Parcens"/>
+         <tok val="parcens"/>
          <lm>
             <l>parco</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -196,8 +230,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Parcentes parcentes-->
-         <tok val="[pP]arcentes"/>
+      <ana>
+         <tok val="Parcentes"/>
+         <tok val="parcentes"/>
          <lm>
             <l>parco</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -206,16 +241,20 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Parcentes Parcentis parcentes parcentis-->
-         <tok val="[Pp]arcent[ie]s"/>
+      <ana>
+         <tok val="Parcentes"/>
+         <tok val="Parcentis"/>
+         <tok val="parcentes"/>
+         <tok val="parcentis"/>
          <lm>
             <l>parco</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Parcentis parcentis-->
-         <tok val="[pP]arcentis"/>
+      <ana>
+         <tok val="Parcentis"/>
+         <tok val="parcentis"/>
          <lm>
             <l>parco</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -223,8 +262,9 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Parcere parcere-->
-         <tok val="[pP]arcere"/>
+      <ana>
+         <tok val="Parcere"/>
+         <tok val="parcere"/>
          <lm>
             <l>parco</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -232,15 +272,19 @@
             <m cert="0.333333333333333333">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Parcere parcere parcére-->
-         <tok val="[pP]arc[eé]re"/>
+      <ana>
+         <tok val="Parcere"/>
+         <tok val="parcere"/>
+         <tok val="parcére"/>
          <lm>
             <l>parco</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Parcior parcior parciorque-->
-         <tok val="[pP]arcior(que)?"/>
+      <ana>
+         <tok val="Parcior"/>
+         <tok val="parcior"/>
+         <tok val="parciorque"/>
          <lm>
             <l>parcus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -249,8 +293,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Parciorem parciorem-->
-         <tok val="[pP]arciorem"/>
+      <ana>
+         <tok val="Parciorem"/>
+         <tok val="parciorem"/>
          <lm>
             <l>parcus</l>
             <m cert="0.5">a - - s - - - f a c</m>
@@ -259,14 +304,17 @@
       </ana>
       <ana>
          <tok val="Parcis"/>
+         <tok val="parcis"/>
          <lm>
             <l>Parca</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Parcis parcis parcisque-->
-         <tok val="[pP]arcis(que)?"/>
+      <ana>
+         <tok val="Parcis"/>
+         <tok val="parcis"/>
+         <tok val="parcisque"/>
          <lm cert="0.5">
             <l>parcus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -281,36 +329,44 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Parcissime parcissime-->
-         <tok val="[pP]arcissime"/>
+      <ana>
+         <tok val="Parcissime"/>
+         <tok val="parcissime"/>
          <lm>
             <l>parcus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Parcissime Parcissimus parcissime parcissimus-->
-         <tok val="[pP]arcissim(us|e)"/>
+      <ana>
+         <tok val="Parcissime"/>
+         <tok val="Parcissimus"/>
+         <tok val="parcissime"/>
+         <tok val="parcissimus"/>
          <lm>
             <l>parcus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Parcissime parcissime parcissimum-->
-         <tok val="[pP]arcissim(e|um)"/>
+      <ana>
+         <tok val="Parcissime"/>
+         <tok val="parcissime"/>
+         <tok val="parcissimum"/>
          <lm>
             <l>parcus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Parcissimus parcissimus-->
-         <tok val="[pP]arcissimus"/>
+      <ana>
+         <tok val="Parcissimus"/>
+         <tok val="parcissimus"/>
          <lm>
             <l>parcus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Parcitas parcitas-->
-         <tok val="[pP]arcitas"/>
+      <ana>
+         <tok val="Parcitas"/>
+         <tok val="parcitas"/>
          <lm cert="0.5">
             <l>parco</l>
             <m>v - - p r p p f a</m>
@@ -320,37 +376,48 @@
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Parcite parcite-->
-         <tok val="[pP]arcite"/>
+      <ana>
+         <tok val="Parcite"/>
+         <tok val="parcite"/>
          <lm>
             <l>parco</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Parcite parcite parcitum-->
-         <tok val="[pP]arcit(e|um)"/>
+      <ana>
+         <tok val="Parcite"/>
+         <tok val="parcite"/>
+         <tok val="parcitum"/>
          <lm>
             <l>parco</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Parcitur parcitur-->
-         <tok val="[pP]arcitur"/>
+      <ana>
+         <tok val="Parcitur"/>
+         <tok val="parcitur"/>
          <lm>
             <l>parco</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Parcius Parcivs-->
-         <tok val="Parci[vu]s"/>
+      <ana>
+         <tok val="Parcius"/>
+         <tok val="Parcivs"/>
+         <tok val="parcius"/>
+         <tok val="parcivs"/>
          <lm>
             <l>parcus</l>
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Parcius Parcivs parcius parciusue-->
-         <tok val="[pP]arci[uv]s(ue)?"/>
+      <ana>
+         <tok val="Parcius"/>
+         <tok val="Parcivs"/>
+         <tok val="parcius"/>
+         <tok val="parciusue"/>
+         <tok val="parcivs"/>
          <lm>
             <l>parcus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -358,8 +425,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Parcum parcum-->
-         <tok val="[pP]arcum"/>
+      <ana>
+         <tok val="Parcum"/>
+         <tok val="parcum"/>
          <lm>
             <l>parcus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -367,16 +435,19 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Parcum parcorum parcum-->
-         <tok val="[pP]arc(or)?um"/>
+      <ana>
+         <tok val="Parcum"/>
+         <tok val="parcorum"/>
+         <tok val="parcum"/>
          <lm>
             <l>parcus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--parcam parcamque-->
-         <tok val="parcam(que)?"/>
+      <ana>
+         <tok val="parcam"/>
+         <tok val="parcamque"/>
          <lm cert="0.5">
             <l>parcus</l>
             <m>a - - s - - - f a</m>
@@ -415,8 +486,9 @@
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--parcebant parcebantque-->
-         <tok val="parcebant(que)?"/>
+      <ana>
+         <tok val="parcebant"/>
+         <tok val="parcebantque"/>
          <lm>
             <l>parco</l>
             <m>v - 3 p i i a</m>
@@ -429,8 +501,9 @@
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--parcebat parcebatque-->
-         <tok val="parcebat(que)?"/>
+      <ana>
+         <tok val="parcebat"/>
+         <tok val="parcebatque"/>
          <lm>
             <l>parco</l>
             <m>v - 3 s i i a</m>
@@ -443,8 +516,10 @@
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--parcen parces parcesque-->
-         <tok val="parce(s|n|sque)"/>
+      <ana>
+         <tok val="parcen"/>
+         <tok val="parces"/>
+         <tok val="parcesque"/>
          <lm>
             <l>parco</l>
             <m>v - 2 s f i a</m>
@@ -480,8 +555,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--parcente parcenti-->
-         <tok val="parcent[ie]"/>
+      <ana>
+         <tok val="parcente"/>
+         <tok val="parcenti"/>
          <lm>
             <l>parco</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -489,8 +565,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--parcentemque parcentem-->
-         <tok val="parcentem(que)?"/>
+      <ana>
+         <tok val="parcentem"/>
+         <tok val="parcentemque"/>
          <lm>
             <l>parco</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -513,8 +590,9 @@
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--parcerent parcerentque-->
-         <tok val="parcerent(que)?"/>
+      <ana>
+         <tok val="parcerent"/>
+         <tok val="parcerentque"/>
          <lm>
             <l>parco</l>
             <m>v - 3 p i s a</m>
@@ -541,8 +619,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--parcet Parcet-->
-         <tok val="[Pp]arcet"/>
+      <ana>
+         <tok val="Parcet"/>
+         <tok val="parcet"/>
          <lm>
             <l>parco</l>
             <m>v - 3 s f i a</m>
@@ -562,8 +641,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--parci parcique-->
-         <tok val="parci(que)?"/>
+      <ana>
+         <tok val="parci"/>
+         <tok val="parcique"/>
          <lm cert="0.5">
             <l>parcus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -688,8 +768,9 @@
             <m cert="0.2">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--parcit Parcit-->
-         <tok val="[Pp]arcit"/>
+      <ana>
+         <tok val="Parcit"/>
+         <tok val="parcit"/>
          <lm>
             <l>parco</l>
             <m>v - 3 s p i a</m>
@@ -774,8 +855,10 @@
             <m cert="0.125">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--parcunt parcuntque parcúnt-->
-         <tok val="parc[úu]nt(que)?"/>
+      <ana>
+         <tok val="parcunt"/>
+         <tok val="parcuntque"/>
+         <tok val="parcúnt"/>
          <lm>
             <l>parco</l>
             <m>v - 3 p p i a</m>

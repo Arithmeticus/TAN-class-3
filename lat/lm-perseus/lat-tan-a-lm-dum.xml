@@ -1,51 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusdum">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:dum">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to dum</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-dum.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>DUM</tok-starts-with>
       <tok-starts-with>Dum</tok-starts-with>
       <tok-starts-with>dum</tok-starts-with>
       <tok-starts-with>dúm</tok-starts-with>
       <tok-starts-with>Dúm</tok-starts-with>
-      <ana><!--DUM Dum Dumque dum dumcumque dumne dumque dúm Dúm Dummodo-->
-         <tok val="(d|D|dumc)?(u|dú|Dú|Du)?[m]?(qu|n)?(e|modo|DUM)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:19.762-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:19.762-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-dum.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="DUM"/>
+         <tok val="Dum"/>
+         <tok val="Dummodo"/>
+         <tok val="Dumque"/>
+         <tok val="Dúm"/>
+         <tok val="dum"/>
+         <tok val="dumcumque"/>
+         <tok val="dummodo"/>
+         <tok val="dumne"/>
+         <tok val="dumque"/>
+         <tok val="dúm"/>
          <lm>
             <l>dum</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--Dumeta dumeta-->
-         <tok val="[dD]umeta"/>
+      <ana>
+         <tok val="Dumeta"/>
+         <tok val="dumeta"/>
          <lm>
             <l>dumetum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -53,8 +72,10 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Dumosa dumosa dumosaque-->
-         <tok val="[dD]umosa(que)?"/>
+      <ana>
+         <tok val="Dumosa"/>
+         <tok val="dumosa"/>
+         <tok val="dumosaque"/>
          <lm>
             <l>dumosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -65,8 +86,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Dumosi dumosi-->
-         <tok val="[dD]umosi"/>
+      <ana>
+         <tok val="Dumosi"/>
+         <tok val="dumosi"/>
          <lm>
             <l>dumosus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -75,15 +97,17 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Dumosus dumosus-->
-         <tok val="[dD]umosus"/>
+      <ana>
+         <tok val="Dumosus"/>
+         <tok val="dumosus"/>
          <lm>
             <l>dumosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Dumus dumus-->
-         <tok val="[dD]umus"/>
+      <ana>
+         <tok val="Dumus"/>
+         <tok val="dumus"/>
          <lm>
             <l>dumus</l>
             <m>n - - s - - - m n</m>
@@ -126,8 +150,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--dumetum dummetum-->
-         <tok val="du[m]?metum"/>
+      <ana>
+         <tok val="dumetum"/>
+         <tok val="dummetum"/>
          <lm>
             <l>dumetum</l>
             <m cert="0.25">n - - s - - - n a</m>
@@ -136,8 +161,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--dumi dumique-->
-         <tok val="dumi(que)?"/>
+      <ana>
+         <tok val="dumi"/>
+         <tok val="dumique"/>
          <lm>
             <l>dumus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -154,8 +180,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--dumis dumisque-->
-         <tok val="dumis(que)?"/>
+      <ana>
+         <tok val="dumis"/>
+         <tok val="dumisque"/>
          <lm>
             <l>dumus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -170,8 +197,9 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--dumos dumosque-->
-         <tok val="dumos(que)?"/>
+      <ana>
+         <tok val="dumos"/>
+         <tok val="dumosque"/>
          <lm>
             <l>dumus</l>
             <m>n - - p - - - m a</m>
@@ -196,8 +224,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--dumum dumorum-->
-         <tok val="dum(or)?um"/>
+      <ana>
+         <tok val="dumorum"/>
+         <tok val="dumum"/>
          <lm>
             <l>dumus</l>
             <m>n - - p - - - m g</m>
@@ -212,6 +241,7 @@
       </ana>
       <ana>
          <tok val="Dumnorix"/>
+         <tok val="dumnorix"/>
          <lm>
             <l>Dumnorix</l>
             <m>n e - s - - - m n</m>
@@ -219,6 +249,7 @@
       </ana>
       <ana>
          <tok val="Dumnorigi"/>
+         <tok val="dumnorigi"/>
          <lm>
             <l>Dumnorix</l>
             <m>n e - s - - - m d</m>
@@ -226,6 +257,7 @@
       </ana>
       <ana>
          <tok val="Dumnorigem"/>
+         <tok val="dumnorigem"/>
          <lm>
             <l>Dumnorix</l>
             <m>n e - s - - - m a</m>
@@ -233,6 +265,7 @@
       </ana>
       <ana>
          <tok val="Dumnorige"/>
+         <tok val="dumnorige"/>
          <lm>
             <l>Dumnorix</l>
             <m>n e - s - - - m b</m>

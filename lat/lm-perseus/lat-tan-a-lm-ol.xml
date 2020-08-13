@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusol">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ol">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ol</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ol.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>OL</tok-starts-with>
       <tok-starts-with>Ol</tok-starts-with>
       <tok-starts-with>ol</tok-starts-with>
       <tok-starts-with>ól</tok-starts-with>
       <tok-starts-with>Ól</tok-starts-with>
-      <ana><!--OLEA Olea olea oleaque-->
-         <tok val="[oO]?(lea)?(que|OLEA)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:36:54.825-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:36:54.825-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ol.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="OLEA"/>
+         <tok val="Olea"/>
+         <tok val="olea"/>
+         <tok val="oleaque"/>
          <lm cert="0.5">
             <l>olea</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -52,20 +63,17 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--OLEARIVS Olearius-->
-         <tok val="O(learius|LEARIVS)"/>
-         <lm>
-            <l>olearis</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--OLEARIVS Olearius olearius-->
-         <tok val="[oO]?(learius|OLEARIVS)"/>
+      <ana>
+         <tok val="OLEARIVS"/>
+         <tok val="Olearius"/>
+         <tok val="olearius"/>
+         <tok val="olearivs"/>
          <lm cert="0.5">
             <l>olearis</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>olearius</l>
@@ -73,51 +81,87 @@
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--OLEO Oleo Oleoque oleo oleon oleone oleoque oleove óleo-->
-         <tok val="[oOó]?(leo)?[n]?(e|que|ve|OLEO)?"/>
+      <ana>
+         <tok val="OLEO"/>
+         <tok val="Oleo"/>
+         <tok val="Oleoque"/>
+         <tok val="oleo"/>
+         <tok val="oleon"/>
+         <tok val="oleone"/>
+         <tok val="oleoque"/>
+         <tok val="oleove"/>
+         <tok val="óleo"/>
          <lm>
             <l>oleo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--OLEO Oleo Oleoque oleo oleon oleone oleoque oleove-->
-         <tok val="[oO]?(leo)?[n]?(e|que|ve|OLEO)?"/>
+      <ana>
+         <tok val="OLEO"/>
+         <tok val="Oleo"/>
+         <tok val="Oleoque"/>
+         <tok val="oleo"/>
+         <tok val="oleon"/>
+         <tok val="oleone"/>
+         <tok val="oleoque"/>
+         <tok val="oleove"/>
          <lm>
             <l>oleum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--OLEVM Oleum olee oleum oleumque-->
-         <tok val="[oO]?(le)?(um)?(que|e|OLEVM)?"/>
+      <ana>
+         <tok val="OLEVM"/>
+         <tok val="Oleum"/>
+         <tok val="olee"/>
+         <tok val="oleum"/>
+         <tok val="oleumque"/>
+         <tok val="olevm"/>
          <lm>
             <l>oleum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--OLEVM Oleum oleum oleumque óleum-->
-         <tok val="[oOó]?(leum)?(que|OLEVM)?"/>
+      <ana>
+         <tok val="OLEVM"/>
+         <tok val="Oleum"/>
+         <tok val="oleum"/>
+         <tok val="oleumque"/>
+         <tok val="olevm"/>
+         <tok val="óleum"/>
          <lm>
             <l>oleum</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--OLEVM Oleum oleum oleumque-->
-         <tok val="[oO]?(leum)?(que|OLEVM)?"/>
+      <ana>
+         <tok val="OLEVM"/>
+         <tok val="Oleum"/>
+         <tok val="oleum"/>
+         <tok val="oleumque"/>
+         <tok val="olevm"/>
          <lm>
             <l>oleum</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--OLEVM Oleum oleorum oleum oleumque-->
-         <tok val="[oO]?(le)?(or)?(um)?(que|OLEVM)?"/>
+      <ana>
+         <tok val="OLEVM"/>
+         <tok val="Oleum"/>
+         <tok val="oleorum"/>
+         <tok val="oleum"/>
+         <tok val="oleumque"/>
+         <tok val="olevm"/>
          <lm>
             <l>oleum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--OLLA Olla olla-->
-         <tok val="[oO]?(lla|OLLA)"/>
+      <ana>
+         <tok val="OLLA"/>
+         <tok val="Olla"/>
+         <tok val="olla"/>
          <lm cert="0.333333333333333333">
             <l>ille</l>
             <m cert="0.2">p d - s - - - f b</m>
@@ -142,8 +186,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--OLLARIVM ollarium-->
-         <tok val="(ollarium|OLLARIVM)"/>
+      <ana>
+         <tok val="OLLARIVM"/>
+         <tok val="ollarium"/>
+         <tok val="ollarivm"/>
          <lm cert="0.333333333333333333">
             <l>ollarius</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -165,14 +211,17 @@
       </ana>
       <ana>
          <tok val="OLLARIVM"/>
+         <tok val="ollarivm"/>
          <lm>
             <l>ollarius</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--OLOR Olor olor-->
-         <tok val="[oO]?(lor|OLOR)"/>
+      <ana>
+         <tok val="OLOR"/>
+         <tok val="Olor"/>
+         <tok val="olor"/>
          <lm>
             <l>olor</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -181,6 +230,7 @@
       </ana>
       <ana>
          <tok val="OLORINO"/>
+         <tok val="olorino"/>
          <lm>
             <l>olorinus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -189,8 +239,11 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Olbia Olbian-->
-         <tok val="Olbia[n]?"/>
+      <ana>
+         <tok val="Olbia"/>
+         <tok val="Olbian"/>
+         <tok val="olbia"/>
+         <tok val="olbian"/>
          <lm>
             <l>Olbia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -200,6 +253,7 @@
       </ana>
       <ana>
          <tok val="Olbiae"/>
+         <tok val="olbiae"/>
          <lm>
             <l>Olbia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -210,6 +264,7 @@
       </ana>
       <ana>
          <tok val="Olbiam"/>
+         <tok val="olbiam"/>
          <lm>
             <l>Olbia</l>
             <m>n e - s - - - f a</m>
@@ -217,6 +272,7 @@
       </ana>
       <ana>
          <tok val="Olbian"/>
+         <tok val="olbian"/>
          <lm>
             <l>Olbia</l>
             <m>n e - p - - - f a</m>
@@ -224,6 +280,7 @@
       </ana>
       <ana>
          <tok val="Olbianos"/>
+         <tok val="olbianos"/>
          <lm>
             <l>Olbianus</l>
             <m>a e - p - - - m a</m>
@@ -231,6 +288,7 @@
       </ana>
       <ana>
          <tok val="Olbianus"/>
+         <tok val="olbianus"/>
          <lm>
             <l>Olbianus</l>
             <m>a e - s - - - m n</m>
@@ -238,6 +296,7 @@
       </ana>
       <ana>
          <tok val="Olbiensem"/>
+         <tok val="olbiensem"/>
          <lm>
             <l>Olbiensis</l>
             <m cert="0.5">a e - s - - - m a</m>
@@ -246,6 +305,7 @@
       </ana>
       <ana>
          <tok val="Olbiensis"/>
+         <tok val="olbiensis"/>
          <lm>
             <l>Olbiensis</l>
             <m cert="0.111111111111111111">a e - s - - - f g</m>
@@ -261,6 +321,7 @@
       </ana>
       <ana>
          <tok val="Olbiopoli"/>
+         <tok val="olbiopoli"/>
          <lm>
             <l>Olbiopolis</l>
             <m cert="0.5">n e - s - - - f b</m>
@@ -269,6 +330,7 @@
       </ana>
       <ana>
          <tok val="Olbiopolis"/>
+         <tok val="olbiopolis"/>
          <lm>
             <l>Olbiopolis</l>
             <m cert="0.333333333333333333">n e - s - - - f g</m>
@@ -278,6 +340,7 @@
       </ana>
       <ana>
          <tok val="Olcades"/>
+         <tok val="olcades"/>
          <lm>
             <l>Olcades</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -287,6 +350,7 @@
       </ana>
       <ana>
          <tok val="Olcadum"/>
+         <tok val="olcadum"/>
          <lm>
             <l>Olcades</l>
             <m>n e - p - - - m g</m>
@@ -294,6 +358,7 @@
       </ana>
       <ana>
          <tok val="Olciniates"/>
+         <tok val="olciniates"/>
          <lm>
             <l>Olciniates</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -301,15 +366,18 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Ole ole olen-->
-         <tok val="[oO]le[n]?"/>
+      <ana>
+         <tok val="Ole"/>
+         <tok val="ole"/>
+         <tok val="olen"/>
          <lm>
             <l>oleo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Oleacea oleacea-->
-         <tok val="[oO]leacea"/>
+      <ana>
+         <tok val="Oleacea"/>
+         <tok val="oleacea"/>
          <lm>
             <l>oleaceus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -320,15 +388,18 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Oleaceus oleaceus-->
-         <tok val="[oO]leaceus"/>
+      <ana>
+         <tok val="Oleaceus"/>
+         <tok val="oleaceus"/>
          <lm>
             <l>oleaceus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oleae oleae oleaeque-->
-         <tok val="[oO]leae(que)?"/>
+      <ana>
+         <tok val="Oleae"/>
+         <tok val="oleae"/>
+         <tok val="oleaeque"/>
          <lm>
             <l>olea</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -337,8 +408,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Oleagina oleagina oleaginea-->
-         <tok val="[oO]leagin[e]?a"/>
+      <ana>
+         <tok val="Oleagina"/>
+         <tok val="oleagina"/>
+         <tok val="oleaginea"/>
          <lm>
             <l>oleagineus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -349,8 +422,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Oleagineis oleagineis oleaginis-->
-         <tok val="[oO]leagin[e]?is"/>
+      <ana>
+         <tok val="Oleagineis"/>
+         <tok val="oleagineis"/>
+         <tok val="oleaginis"/>
          <lm>
             <l>oleagineus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -361,8 +436,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Oleagineum oleagineum-->
-         <tok val="[oO]leagineum"/>
+      <ana>
+         <tok val="Oleagineum"/>
+         <tok val="oleagineum"/>
          <lm>
             <l>oleagineus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -372,22 +448,30 @@
             <m cert="0.2">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Oleagineum oleagine oleagineum-->
-         <tok val="[oO]leagine(um|)"/>
+      <ana>
+         <tok val="Oleagineum"/>
+         <tok val="oleagine"/>
+         <tok val="oleagineum"/>
          <lm>
             <l>oleagineus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Oleagineus Oleaginus oleagineus oleaginus-->
-         <tok val="[Oo]leagin[e]?us"/>
+      <ana>
+         <tok val="Oleagineus"/>
+         <tok val="Oleaginus"/>
+         <tok val="oleagineus"/>
+         <tok val="oleaginus"/>
          <lm>
             <l>oleagineus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oleam oleam oleamque oleamve-->
-         <tok val="[oO]leam(ve|que)?"/>
+      <ana>
+         <tok val="Oleam"/>
+         <tok val="oleam"/>
+         <tok val="oleamque"/>
+         <tok val="oleamve"/>
          <lm cert="0.5">
             <l>oleo</l>
             <m>v - 1 s p s a</m>
@@ -397,16 +481,20 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Oleares Olearis oleares olearis-->
-         <tok val="[Oo]lear[ie]s"/>
+      <ana>
+         <tok val="Oleares"/>
+         <tok val="Olearis"/>
+         <tok val="oleares"/>
+         <tok val="olearis"/>
          <lm>
             <l>olearis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Oleares oleares-->
-         <tok val="[oO]leares"/>
+      <ana>
+         <tok val="Oleares"/>
+         <tok val="oleares"/>
          <lm>
             <l>olearis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -415,42 +503,28 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olearia olearia-->
-         <tok val="[oO]learia"/>
-         <lm>
-            <l>olearius</l>
-            <m cert="0.333333333333333333">a - - s - - - f n</m>
-            <m cert="0.333333333333333333">a - - s - - - f v</m>
-            <m cert="0.333333333333333333">a - - s - - - f b</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Olearia"/>
+         <tok val="olearia"/>
          <lm>
             <l>olearius</l>
-            <m cert="0.333333333333333333">a - - p - - - n n</m>
-            <m cert="0.333333333333333333">a - - p - - - n v</m>
-            <m cert="0.333333333333333333">a - - p - - - n a</m>
+            <m cert="0.166666666666666667">a - - s - - - f n</m>
+            <m cert="0.166666666666666667">a - - p - - - n n</m>
+            <m cert="0.166666666666666667">a - - s - - - f v</m>
+            <m cert="0.166666666666666667">a - - p - - - n v</m>
+            <m cert="0.166666666666666667">a - - p - - - n a</m>
+            <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
       <ana>
          <tok val="Olearis"/>
-         <lm>
+         <tok val="olearis"/>
+         <lm cert="0.5">
             <l>Olearos</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Olearis oleare olearis-->
-         <tok val="[oO]lear(is|e)"/>
-         <lm>
-            <l>oleo</l>
-            <m>v - 2 s p s p</m>
-         </lm>
-      </ana>
-      <ana><!--Olearis olearis-->
-         <tok val="[oO]learis"/>
-         <lm>
+         <lm cert="0.5">
             <l>olearis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -461,8 +535,24 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Olearon Olearos Olearosque Oliaros-->
-         <tok val="Ol[ei]aro(s|n|sque)"/>
+      <ana>
+         <tok val="Olearis"/>
+         <tok val="oleare"/>
+         <tok val="olearis"/>
+         <lm>
+            <l>oleo</l>
+            <m>v - 2 s p s p</m>
+         </lm>
+      </ana>
+      <ana>
+         <tok val="Olearon"/>
+         <tok val="Olearos"/>
+         <tok val="Olearosque"/>
+         <tok val="Oliaros"/>
+         <tok val="olearon"/>
+         <tok val="olearos"/>
+         <tok val="olearosque"/>
+         <tok val="oliaros"/>
          <lm>
             <l>Olearos</l>
             <m cert="0.5">n e - s - - - f n</m>
@@ -471,6 +561,7 @@
       </ana>
       <ana>
          <tok val="Olearon"/>
+         <tok val="olearon"/>
          <lm>
             <l>Olearos</l>
             <m cert="0.5">n e - s - - - f b</m>
@@ -479,20 +570,25 @@
       </ana>
       <ana>
          <tok val="Olearum"/>
+         <tok val="olearum"/>
          <lm>
             <l>Olearos</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Olearum olearum olearumque-->
-         <tok val="[oO]learum(que)?"/>
+      <ana>
+         <tok val="Olearum"/>
+         <tok val="olearum"/>
+         <tok val="olearumque"/>
          <lm>
             <l>olea</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Oleas oleas oleasque-->
-         <tok val="[oO]leas(que)?"/>
+      <ana>
+         <tok val="Oleas"/>
+         <tok val="oleas"/>
+         <tok val="oleasque"/>
          <lm cert="0.5">
             <l>olea</l>
             <m>n - - p - - - f a</m>
@@ -502,30 +598,35 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Oleastellus oleastellus-->
-         <tok val="[oO]leastellus"/>
+      <ana>
+         <tok val="Oleastellus"/>
+         <tok val="oleastellus"/>
          <lm>
             <l>oleastellus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oleastri oleastri oleastrique-->
-         <tok val="[oO]leastri(que)?"/>
+      <ana>
+         <tok val="Oleastri"/>
+         <tok val="oleastri"/>
+         <tok val="oleastrique"/>
          <lm>
             <l>oleastrum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oleastro oleastro-->
-         <tok val="[oO]leastro"/>
+      <ana>
+         <tok val="Oleastro"/>
+         <tok val="oleastro"/>
          <lm>
             <l>oleastrum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Oleastrum oleastrum-->
-         <tok val="[oO]leastrum"/>
+      <ana>
+         <tok val="Oleastrum"/>
+         <tok val="oleastrum"/>
          <lm>
             <l>oleastrum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -536,6 +637,7 @@
       </ana>
       <ana>
          <tok val="Oleatius"/>
+         <tok val="oleatius"/>
          <lm>
             <l>oleatus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -544,15 +646,19 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Olei olei oleique oleiue-->
-         <tok val="[oO]lei[q]?(ue)?"/>
+      <ana>
+         <tok val="Olei"/>
+         <tok val="olei"/>
+         <tok val="oleique"/>
+         <tok val="oleiue"/>
          <lm>
             <l>oleum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oleitas oleitas-->
-         <tok val="[oO]leitas"/>
+      <ana>
+         <tok val="Oleitas"/>
+         <tok val="oleitas"/>
          <lm>
             <l>oleitas</l>
             <m>n - - s - - - f n</m>
@@ -560,6 +666,7 @@
       </ana>
       <ana>
          <tok val="Olenia"/>
+         <tok val="olenia"/>
          <lm>
             <l>Olenius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -570,8 +677,11 @@
             <m cert="0.166666666666666667">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Olenia Olenie-->
-         <tok val="Oleni[ea]"/>
+      <ana>
+         <tok val="Olenia"/>
+         <tok val="Olenie"/>
+         <tok val="olenia"/>
+         <tok val="olenie"/>
          <lm>
             <l>Olenie</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -581,6 +691,7 @@
       </ana>
       <ana>
          <tok val="Oleniae"/>
+         <tok val="oleniae"/>
          <lm cert="0.5">
             <l>Olenie</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -598,6 +709,7 @@
       </ana>
       <ana>
          <tok val="Oleniden"/>
+         <tok val="oleniden"/>
          <lm>
             <l>Olenides</l>
             <m>n e - s - - - m a</m>
@@ -605,13 +717,19 @@
       </ana>
       <ana>
          <tok val="Olenides"/>
+         <tok val="olenides"/>
          <lm>
             <l>Olenides</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olenie Olenium Oleniumque-->
-         <tok val="Oleni(um)?(que|e)?"/>
+      <ana>
+         <tok val="Olenie"/>
+         <tok val="Olenium"/>
+         <tok val="Oleniumque"/>
+         <tok val="olenie"/>
+         <tok val="olenium"/>
+         <tok val="oleniumque"/>
          <lm>
             <l>Olenius</l>
             <m>a e - s - - - n v</m>
@@ -619,14 +737,18 @@
       </ana>
       <ana>
          <tok val="Olenie"/>
+         <tok val="olenie"/>
          <lm>
             <l>Olenius</l>
             <m cert="0.5">a e - s - - - m v</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Olenii Oleniique-->
-         <tok val="Olenii(que)?"/>
+      <ana>
+         <tok val="Olenii"/>
+         <tok val="Oleniique"/>
+         <tok val="olenii"/>
+         <tok val="oleniique"/>
          <lm>
             <l>Olenius</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -640,6 +762,7 @@
       </ana>
       <ana>
          <tok val="Oleniis"/>
+         <tok val="oleniis"/>
          <lm cert="0.5">
             <l>Olenie</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -659,14 +782,18 @@
       </ana>
       <ana>
          <tok val="Olenios"/>
+         <tok val="olenios"/>
          <lm>
             <l>Olenius</l>
             <m cert="0.5">n e - p - - - m a</m>
             <m cert="0.5">a e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olenium Oleniumque-->
-         <tok val="Olenium(que)?"/>
+      <ana>
+         <tok val="Olenium"/>
+         <tok val="Oleniumque"/>
+         <tok val="olenium"/>
+         <tok val="oleniumque"/>
          <lm>
             <l>Olenius</l>
             <m cert="0.142857142857142857">a e - p - - - m g</m>
@@ -680,14 +807,18 @@
       </ana>
       <ana>
          <tok val="Olenius"/>
+         <tok val="olenius"/>
          <lm>
             <l>Olenius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olenon Olenos-->
-         <tok val="Oleno[sn]"/>
+      <ana>
+         <tok val="Olenon"/>
+         <tok val="Olenos"/>
+         <tok val="olenon"/>
+         <tok val="olenos"/>
          <lm>
             <l>Olenos</l>
             <m cert="0.25">n e - s - - - m n</m>
@@ -698,6 +829,7 @@
       </ana>
       <ana>
          <tok val="Olenon"/>
+         <tok val="olenon"/>
          <lm>
             <l>Olenos</l>
             <m cert="0.25">n e - s - - - f d</m>
@@ -706,8 +838,9 @@
             <m cert="0.25">n e - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Olens olens-->
-         <tok val="[oO]lens"/>
+      <ana>
+         <tok val="Olens"/>
+         <tok val="olens"/>
          <lm>
             <l>oleo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -719,23 +852,28 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Olent olent olunt olént-->
-         <tok val="[oO]l[eué]nt"/>
+      <ana>
+         <tok val="Olent"/>
+         <tok val="olent"/>
+         <tok val="olunt"/>
+         <tok val="olént"/>
          <lm>
             <l>oleo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Olentem olentem-->
-         <tok val="[oO]lentem"/>
+      <ana>
+         <tok val="Olentem"/>
+         <tok val="olentem"/>
          <lm>
             <l>oleo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Olentes olentes-->
-         <tok val="[oO]lentes"/>
+      <ana>
+         <tok val="Olentes"/>
+         <tok val="olentes"/>
          <lm>
             <l>oleo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -744,16 +882,20 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Olentes Olentis olentes olentis-->
-         <tok val="[Oo]lent[ie]s"/>
+      <ana>
+         <tok val="Olentes"/>
+         <tok val="Olentis"/>
+         <tok val="olentes"/>
+         <tok val="olentis"/>
          <lm>
             <l>oleo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Olenti olenti-->
-         <tok val="[oO]lenti"/>
+      <ana>
+         <tok val="Olenti"/>
+         <tok val="olenti"/>
          <lm>
             <l>oleo</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -761,8 +903,10 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Olenti olente olenti-->
-         <tok val="[oO]lent[ie]"/>
+      <ana>
+         <tok val="Olenti"/>
+         <tok val="olente"/>
+         <tok val="olenti"/>
          <lm>
             <l>oleo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -770,8 +914,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Olentia olentia-->
-         <tok val="[oO]lentia"/>
+      <ana>
+         <tok val="Olentia"/>
+         <tok val="olentia"/>
          <lm cert="0.5">
             <l>olentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -785,8 +930,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Olentica olentica-->
-         <tok val="[oO]lentica"/>
+      <ana>
+         <tok val="Olentica"/>
+         <tok val="olentica"/>
          <lm>
             <l>olentica</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -794,8 +940,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Olentis olentis-->
-         <tok val="[oO]lentis"/>
+      <ana>
+         <tok val="Olentis"/>
+         <tok val="olentis"/>
          <lm>
             <l>oleo</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -805,6 +952,7 @@
       </ana>
       <ana>
          <tok val="Olenum"/>
+         <tok val="olenum"/>
          <lm>
             <l>Olenos</l>
             <m cert="0.25">n e - s - - - f a</m>
@@ -813,8 +961,9 @@
             <m cert="0.25">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Oleosum oleosum-->
-         <tok val="[oO]leosum"/>
+      <ana>
+         <tok val="Oleosum"/>
+         <tok val="oleosum"/>
          <lm>
             <l>oleosus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -825,37 +974,43 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Oleosus oleosus-->
-         <tok val="[oO]leosus"/>
+      <ana>
+         <tok val="Oleosus"/>
+         <tok val="oleosus"/>
          <lm>
             <l>oleosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oleraceus oleraceus-->
-         <tok val="[oO]leraceus"/>
+      <ana>
+         <tok val="Oleraceus"/>
+         <tok val="oleraceus"/>
          <lm>
             <l>holeraceus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olere olere-->
-         <tok val="[oO]lere"/>
+      <ana>
+         <tok val="Olere"/>
+         <tok val="olere"/>
          <lm>
             <l>oleo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Olere olere oleris-->
-         <tok val="[oO]ler(e|is)"/>
+      <ana>
+         <tok val="Olere"/>
+         <tok val="olere"/>
+         <tok val="oleris"/>
          <lm>
             <l>oleo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Olet olet-->
-         <tok val="[oO]let"/>
+      <ana>
+         <tok val="Olet"/>
+         <tok val="olet"/>
          <lm>
             <l>oleo</l>
             <m>v - 3 s p i a</m>
@@ -863,6 +1018,7 @@
       </ana>
       <ana>
          <tok val="Oletare"/>
+         <tok val="oletare"/>
          <lm>
             <l>oleto</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -870,8 +1026,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Oletum oletum-->
-         <tok val="[oO]letum"/>
+      <ana>
+         <tok val="Oletum"/>
+         <tok val="oletum"/>
          <lm>
             <l>oletum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -880,30 +1037,35 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Olfacta olfactaque-->
-         <tok val="[oO]lfacta(que)?"/>
+      <ana>
+         <tok val="Olfacta"/>
+         <tok val="olfacta"/>
+         <tok val="olfactaque"/>
          <lm>
             <l>olfacto</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Olfactatrix olfactatrix-->
-         <tok val="[oO]lfactatrix"/>
+      <ana>
+         <tok val="Olfactatrix"/>
+         <tok val="olfactatrix"/>
          <lm>
             <l>olfactatrix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Olfacto olfacto-->
-         <tok val="[oO]lfacto"/>
+      <ana>
+         <tok val="Olfacto"/>
+         <tok val="olfacto"/>
          <lm>
             <l>olfacto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Olfactorium olfactorium-->
-         <tok val="[oO]lfactorium"/>
+      <ana>
+         <tok val="Olfactorium"/>
+         <tok val="olfactorium"/>
          <lm>
             <l>olfactorium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -912,15 +1074,17 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Olfactum olfactum-->
-         <tok val="[oO]lfactum"/>
+      <ana>
+         <tok val="Olfactum"/>
+         <tok val="olfactum"/>
          <lm>
             <l>olfactus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olfactus olfactus-->
-         <tok val="[oO]lfactus"/>
+      <ana>
+         <tok val="Olfactus"/>
+         <tok val="olfactus"/>
          <lm>
             <l>olfactus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -929,8 +1093,9 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olida olida-->
-         <tok val="[oO]lida"/>
+      <ana>
+         <tok val="Olida"/>
+         <tok val="olida"/>
          <lm>
             <l>olidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -941,8 +1106,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Olidaeque olidae-->
-         <tok val="[oO]lidae(que)?"/>
+      <ana>
+         <tok val="Olidaeque"/>
+         <tok val="olidae"/>
+         <tok val="olidaeque"/>
          <lm>
             <l>olidus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -951,8 +1118,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Olidum olidum-->
-         <tok val="[oO]lidum"/>
+      <ana>
+         <tok val="Olidum"/>
+         <tok val="olidum"/>
          <lm>
             <l>olidus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -963,30 +1131,44 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olidus olidus-->
-         <tok val="[oO]lidus"/>
+      <ana>
+         <tok val="Olidus"/>
+         <tok val="olidus"/>
          <lm>
             <l>olidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olim olim olimque olím Ólim-->
-         <tok val="[oOÓ]l[ií]m(que)?"/>
+      <ana>
+         <tok val="Olim"/>
+         <tok val="olim"/>
+         <tok val="olimque"/>
+         <tok val="olím"/>
+         <tok val="Ólim"/>
+         <tok val="ólim"/>
          <lm>
             <l>olim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Olimpo Olympo Olympon-->
-         <tok val="Ol[yi]mpo[n]?"/>
+      <ana>
+         <tok val="Olimpo"/>
+         <tok val="Olympo"/>
+         <tok val="Olympon"/>
+         <tok val="olimpo"/>
+         <tok val="olympo"/>
+         <tok val="olympon"/>
          <lm>
             <l>Olympus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Olimpus Olympus-->
-         <tok val="Ol[yi]mpus"/>
+      <ana>
+         <tok val="Olimpus"/>
+         <tok val="Olympus"/>
+         <tok val="olimpus"/>
+         <tok val="olympus"/>
          <lm>
             <l>Olympus</l>
             <m>n e - s - - - m n</m>
@@ -994,6 +1176,7 @@
       </ana>
       <ana>
          <tok val="Olipor"/>
+         <tok val="olipor"/>
          <lm>
             <l>Olipor</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -1002,6 +1185,7 @@
       </ana>
       <ana>
          <tok val="Olisipo"/>
+         <tok val="olisipo"/>
          <lm>
             <l>Olisipo</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -1010,6 +1194,7 @@
       </ana>
       <ana>
          <tok val="Olisiponem"/>
+         <tok val="olisiponem"/>
          <lm>
             <l>Olisipo</l>
             <m>n e - s - - - m a</m>
@@ -1017,6 +1202,7 @@
       </ana>
       <ana>
          <tok val="Olisiponenses"/>
+         <tok val="olisiponenses"/>
          <lm cert="0.5">
             <l>Olisiponensis</l>
             <m cert="0.25">a e - p - - - m n</m>
@@ -1030,8 +1216,11 @@
             <m cert="0.5">n e - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olisiponenses Olisiponensis-->
-         <tok val="Olisiponens[ie]s"/>
+      <ana>
+         <tok val="Olisiponenses"/>
+         <tok val="Olisiponensis"/>
+         <tok val="olisiponenses"/>
+         <tok val="olisiponensis"/>
          <lm cert="0.5">
             <l>Olisiponensis</l>
             <m cert="0.5">a e - p - - - m a</m>
@@ -1044,6 +1233,7 @@
       </ana>
       <ana>
          <tok val="Olisiponensi"/>
+         <tok val="olisiponensi"/>
          <lm>
             <l>Olisiponensis</l>
             <m cert="0.166666666666666667">a e - s - - - n d</m>
@@ -1056,6 +1246,7 @@
       </ana>
       <ana>
          <tok val="Olisiponensis"/>
+         <tok val="olisiponensis"/>
          <lm>
             <l>Olisiponensis</l>
             <m cert="0.142857142857142857">a e - s - - - f g</m>
@@ -1067,16 +1258,18 @@
             <m cert="0.142857142857142857">a e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Olitor olitor-->
-         <tok val="[oO]litor"/>
+      <ana>
+         <tok val="Olitor"/>
+         <tok val="olitor"/>
          <lm>
             <l>olitor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Olitoria olitoria-->
-         <tok val="[oO]litoria"/>
+      <ana>
+         <tok val="Olitoria"/>
+         <tok val="olitoria"/>
          <lm>
             <l>olitorius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1087,8 +1280,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Olitorium olitorium-->
-         <tok val="[oO]litorium"/>
+      <ana>
+         <tok val="Olitorium"/>
+         <tok val="olitorium"/>
          <lm>
             <l>olitorius</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -1099,15 +1293,19 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olitorius olitorius-->
-         <tok val="[oO]litorius"/>
+      <ana>
+         <tok val="Olitorius"/>
+         <tok val="olitorius"/>
          <lm>
             <l>olitorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oliua Oliva oliua oliva-->
-         <tok val="[Oo]li[vu]a"/>
+      <ana>
+         <tok val="Oliua"/>
+         <tok val="Oliva"/>
+         <tok val="oliua"/>
+         <tok val="oliva"/>
          <lm cert="0.5">
             <l>oliva</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1121,8 +1319,11 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Oliuae Olivae oliuae olivae-->
-         <tok val="[Oo]li[vu]ae"/>
+      <ana>
+         <tok val="Oliuae"/>
+         <tok val="Olivae"/>
+         <tok val="oliuae"/>
+         <tok val="olivae"/>
          <lm>
             <l>oliva</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -1131,8 +1332,10 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Oliuariae oliuariae olivariae-->
-         <tok val="[oO]li[uv]ariae"/>
+      <ana>
+         <tok val="Oliuariae"/>
+         <tok val="oliuariae"/>
+         <tok val="olivariae"/>
          <lm>
             <l>olivarius</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1141,22 +1344,33 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Oliuarius Olivarius olivarius-->
-         <tok val="[Oo]li[vu]arius"/>
+      <ana>
+         <tok val="Oliuarius"/>
+         <tok val="Olivarius"/>
+         <tok val="oliuarius"/>
+         <tok val="olivarius"/>
          <lm>
             <l>olivarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oliuarum Olivarum oliuarum olivarum olivarumve-->
-         <tok val="[oO]li[vu]arum(ve)?"/>
+      <ana>
+         <tok val="Oliuarum"/>
+         <tok val="Olivarum"/>
+         <tok val="oliuarum"/>
+         <tok val="olivarum"/>
+         <tok val="olivarumve"/>
          <lm>
             <l>oliva</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Oliuetum Olivetum oliuetum olivetum olivetumque-->
-         <tok val="[Oo]li[vu]etum(que)?"/>
+      <ana>
+         <tok val="Oliuetum"/>
+         <tok val="Olivetum"/>
+         <tok val="oliuetum"/>
+         <tok val="olivetum"/>
+         <tok val="olivetumque"/>
          <lm>
             <l>olivetum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1164,23 +1378,33 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Oliuetum Olivetum oliuetorum oliuetum olivetorumve olivetum olivetumque-->
-         <tok val="[oO]li[uv]et(or)?um(que|ve)?"/>
+      <ana>
+         <tok val="Oliuetum"/>
+         <tok val="Olivetum"/>
+         <tok val="oliuetorum"/>
+         <tok val="oliuetum"/>
+         <tok val="olivetorumve"/>
+         <tok val="olivetum"/>
+         <tok val="olivetumque"/>
          <lm>
             <l>olivetum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oliuifer olivifer-->
-         <tok val="[oO]li[vu]ifer"/>
+      <ana>
+         <tok val="Oliuifer"/>
+         <tok val="oliuifer"/>
+         <tok val="olivifer"/>
          <lm>
             <l>olivifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Oliuifera olivifera-->
-         <tok val="[oO]li[vu]ifera"/>
+      <ana>
+         <tok val="Oliuifera"/>
+         <tok val="oliuifera"/>
+         <tok val="olivifera"/>
          <lm>
             <l>olivifer</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1191,8 +1415,12 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Oliuitas Olivitas oliuitas olivitas olivitasque-->
-         <tok val="[Oo]li[vu]itas(que)?"/>
+      <ana>
+         <tok val="Oliuitas"/>
+         <tok val="Olivitas"/>
+         <tok val="oliuitas"/>
+         <tok val="olivitas"/>
+         <tok val="olivitasque"/>
          <lm cert="0.5">
             <l>olivitas</l>
             <m>n - - s - - - f n</m>
@@ -1204,6 +1432,7 @@
       </ana>
       <ana>
          <tok val="Oliuitates"/>
+         <tok val="oliuitates"/>
          <lm>
             <l>olivitas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1211,67 +1440,91 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Oliuo oliuo olivo-->
-         <tok val="[oO]li[uv]o"/>
+      <ana>
+         <tok val="Oliuo"/>
+         <tok val="oliuo"/>
+         <tok val="olivo"/>
          <lm>
             <l>olivum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Oliuum oliue oliuum olive olivom olivum-->
-         <tok val="[oO]li[uv]?(u|vo)?(m|ve|ue)"/>
+      <ana>
+         <tok val="Oliuum"/>
+         <tok val="oliue"/>
+         <tok val="oliuum"/>
+         <tok val="olive"/>
+         <tok val="olivom"/>
+         <tok val="olivum"/>
          <lm>
             <l>olivum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Oliuum oliuum olivom olivum-->
-         <tok val="[oO]li[uv]?(u|vo)m"/>
+      <ana>
+         <tok val="Oliuum"/>
+         <tok val="oliuum"/>
+         <tok val="olivom"/>
+         <tok val="olivum"/>
          <lm>
             <l>olivum</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Oliuum oliuum olivum-->
-         <tok val="[oO]li[uv]um"/>
+      <ana>
+         <tok val="Oliuum"/>
+         <tok val="oliuum"/>
+         <tok val="olivum"/>
          <lm>
             <l>olivum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Olivas oliuas olivas-->
-         <tok val="[oO]li[vu]as"/>
+      <ana>
+         <tok val="Olivas"/>
+         <tok val="oliuas"/>
+         <tok val="olivas"/>
          <lm>
             <l>oliva</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Olivetam olivitam-->
-         <tok val="[oO]liv[ie]tam"/>
+      <ana>
+         <tok val="Olivetam"/>
+         <tok val="olivetam"/>
+         <tok val="olivitam"/>
          <lm>
             <l>oliveta</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Oliveti Olivetique oliueti oliveti OLIVETI-->
-         <tok val="[oO]?(li)?[vu]?(eti)?(que|OLIVETI)?"/>
+      <ana>
+         <tok val="OLIVETI"/>
+         <tok val="Oliveti"/>
+         <tok val="Olivetique"/>
+         <tok val="oliueti"/>
+         <tok val="oliveti"/>
+         <tok val="olivetique"/>
          <lm>
             <l>olivetum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Oliveto oliueto oliveto-->
-         <tok val="[oO]li[vu]eto"/>
+      <ana>
+         <tok val="Oliveto"/>
+         <tok val="oliueto"/>
+         <tok val="oliveto"/>
          <lm>
             <l>olivetum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Ollae ollae-->
-         <tok val="[oO]llae"/>
+      <ana>
+         <tok val="Ollae"/>
+         <tok val="ollae"/>
          <lm cert="0.333333333333333333">
             <l>ollus</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -1292,15 +1545,20 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Ollae Olli ollae olli ollique-->
-         <tok val="[oO]ll(ae|i|ique)"/>
+      <ana>
+         <tok val="Ollae"/>
+         <tok val="Olli"/>
+         <tok val="ollae"/>
+         <tok val="olli"/>
+         <tok val="ollique"/>
          <lm>
             <l>ille</l>
             <m>p d - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Ollam ollam-->
-         <tok val="[oO]llam"/>
+      <ana>
+         <tok val="Ollam"/>
+         <tok val="ollam"/>
          <lm cert="0.333333333333333333">
             <l>ollus</l>
             <m>a - - s - - - f a</m>
@@ -1314,8 +1572,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Ollaria ollaria-->
-         <tok val="[oO]llaria"/>
+      <ana>
+         <tok val="Ollaria"/>
+         <tok val="ollaria"/>
          <lm cert="0.5">
             <l>ollarium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1324,22 +1583,17 @@
          </lm>
          <lm cert="0.5">
             <l>ollarius</l>
-            <m cert="0.333333333333333333">a - - s - - - f b</m>
-            <m cert="0.333333333333333333">a - - s - - - f n</m>
-            <m cert="0.333333333333333333">a - - s - - - f v</m>
+            <m cert="0.166666666666666667">a - - s - - - f b</m>
+            <m cert="0.166666666666666667">a - - s - - - f n</m>
+            <m cert="0.166666666666666667">a - - p - - - n n</m>
+            <m cert="0.166666666666666667">a - - s - - - f v</m>
+            <m cert="0.166666666666666667">a - - p - - - n a</m>
+            <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Ollaria"/>
-         <lm>
-            <l>ollarius</l>
-            <m cert="0.333333333333333333">a - - p - - - n n</m>
-            <m cert="0.333333333333333333">a - - p - - - n a</m>
-            <m cert="0.333333333333333333">a - - p - - - n v</m>
-         </lm>
-      </ana>
-      <ana><!--Ollaris ollaris-->
-         <tok val="[oO]llaris"/>
+         <tok val="Ollaris"/>
+         <tok val="ollaris"/>
          <lm>
             <l>ollaris</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1351,16 +1605,19 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Ollaris ollares ollaris-->
-         <tok val="[oO]llar[ie]s"/>
+      <ana>
+         <tok val="Ollaris"/>
+         <tok val="ollares"/>
+         <tok val="ollaris"/>
          <lm>
             <l>ollaris</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Ollarum ollarum-->
-         <tok val="[oO]llarum"/>
+      <ana>
+         <tok val="Ollarum"/>
+         <tok val="ollarum"/>
          <lm cert="0.333333333333333333">
             <l>ille</l>
             <m>p d - p - - - f g</m>
@@ -1374,8 +1631,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Olle olle-->
-         <tok val="[oO]lle"/>
+      <ana>
+         <tok val="Olle"/>
+         <tok val="olle"/>
          <lm cert="0.5">
             <l>ille</l>
             <m cert="0.5">p d - s - - - n n</m>
@@ -1386,30 +1644,39 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Olle olle ollius-->
-         <tok val="[oO]ll(e|ius)"/>
+      <ana>
+         <tok val="Olle"/>
+         <tok val="olle"/>
+         <tok val="ollius"/>
          <lm>
             <l>ollus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Olle olle ollum-->
-         <tok val="[oO]ll(e|um)"/>
+      <ana>
+         <tok val="Olle"/>
+         <tok val="olle"/>
+         <tok val="ollum"/>
          <lm>
             <l>ollus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Olli olli ollique ollo-->
-         <tok val="[oO]ll(i|o|ique)"/>
+      <ana>
+         <tok val="Olli"/>
+         <tok val="olli"/>
+         <tok val="ollique"/>
+         <tok val="ollo"/>
          <lm>
             <l>ille</l>
             <m cert="0.5">p d - s - - - m d</m>
             <m cert="0.5">p d - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Olli olli ollique-->
-         <tok val="[oO]lli(que)?"/>
+      <ana>
+         <tok val="Olli"/>
+         <tok val="olli"/>
+         <tok val="ollique"/>
          <lm cert="0.5">
             <l>ollus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1423,8 +1690,10 @@
             <m cert="0.5">p d - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ollis ollis ollisque-->
-         <tok val="[oO]llis(que)?"/>
+      <ana>
+         <tok val="Ollis"/>
+         <tok val="ollis"/>
+         <tok val="ollisque"/>
          <lm cert="0.333333333333333333">
             <l>ille</l>
             <m cert="0.166666666666666667">p d - p - - - f b</m>
@@ -1449,8 +1718,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Ollius ollius-->
-         <tok val="[oO]llius"/>
+      <ana>
+         <tok val="Ollius"/>
+         <tok val="ollius"/>
          <lm cert="0.5">
             <l>ille</l>
             <m cert="0.333333333333333333">p d - s - - - f g</m>
@@ -1459,20 +1729,15 @@
          </lm>
          <lm cert="0.5">
             <l>ollus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Ollius"/>
-         <lm>
-            <l>ollus</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Ollula ollula-->
-         <tok val="[oO]llula"/>
+         <tok val="Ollula"/>
+         <tok val="ollula"/>
          <lm>
             <l>ollula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1480,15 +1745,17 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Ollus ollus-->
-         <tok val="[oO]llus"/>
+      <ana>
+         <tok val="Ollus"/>
+         <tok val="ollus"/>
          <lm>
             <l>ollus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Ololygones ololygones-->
-         <tok val="[oO]lolygones"/>
+      <ana>
+         <tok val="Ololygones"/>
+         <tok val="ololygones"/>
          <lm>
             <l>ololygon</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1496,22 +1763,25 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olore olore-->
-         <tok val="[oO]lore"/>
+      <ana>
+         <tok val="Olore"/>
+         <tok val="olore"/>
          <lm>
             <l>olor</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Olorem olorem-->
-         <tok val="[oO]lorem"/>
+      <ana>
+         <tok val="Olorem"/>
+         <tok val="olorem"/>
          <lm>
             <l>olor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olores olores-->
-         <tok val="[oO]lores"/>
+      <ana>
+         <tok val="Olores"/>
+         <tok val="olores"/>
          <lm>
             <l>olor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1519,8 +1789,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olorinae olorinae-->
-         <tok val="[oO]lorinae"/>
+      <ana>
+         <tok val="Olorinae"/>
+         <tok val="olorinae"/>
          <lm>
             <l>olorinus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1529,22 +1800,25 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Olorinus olorinus-->
-         <tok val="[oO]lorinus"/>
+      <ana>
+         <tok val="Olorinus"/>
+         <tok val="olorinus"/>
          <lm>
             <l>olorinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Oloris oloris-->
-         <tok val="[oO]loris"/>
+      <ana>
+         <tok val="Oloris"/>
+         <tok val="oloris"/>
          <lm>
             <l>olor</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Olorum olorum-->
-         <tok val="[oO]lorum"/>
+      <ana>
+         <tok val="Olorum"/>
+         <tok val="olorum"/>
          <lm>
             <l>olor</l>
             <m>n - - p - - - m g</m>
@@ -1552,6 +1826,7 @@
       </ana>
       <ana>
          <tok val="Olostrae"/>
+         <tok val="olostrae"/>
          <lm>
             <l>Olostrae</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1560,6 +1835,7 @@
       </ana>
       <ana>
          <tok val="Olybriacus"/>
+         <tok val="olybriacus"/>
          <lm>
             <l>Olybriacus</l>
             <m>a e - s - - - m n</m>
@@ -1567,6 +1843,7 @@
       </ana>
       <ana>
          <tok val="Olybrius"/>
+         <tok val="olybrius"/>
          <lm>
             <l>Olybrius</l>
             <m>n e - s - - - m n</m>
@@ -1574,6 +1851,7 @@
       </ana>
       <ana>
          <tok val="Olympeni"/>
+         <tok val="olympeni"/>
          <lm>
             <l>Olympeni</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -1582,6 +1860,7 @@
       </ana>
       <ana>
          <tok val="Olympenorum"/>
+         <tok val="olympenorum"/>
          <lm>
             <l>Olympeni</l>
             <m>n e - p - - - m g</m>
@@ -1589,6 +1868,7 @@
       </ana>
       <ana>
          <tok val="Olympi"/>
+         <tok val="olympi"/>
          <lm cert="0.5">
             <l>Olympus</l>
             <m cert="0.166666666666666667">n e - p - - - f n</m>
@@ -1603,8 +1883,11 @@
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Olympi Olympii-->
-         <tok val="Olympi[i]?"/>
+      <ana>
+         <tok val="Olympi"/>
+         <tok val="Olympii"/>
+         <tok val="olympi"/>
+         <tok val="olympii"/>
          <lm cert="0.5">
             <l>Olympium</l>
             <m>n e - s - - - n g</m>
@@ -1617,6 +1900,7 @@
       </ana>
       <ana>
          <tok val="Olympia"/>
+         <tok val="olympia"/>
          <lm cert="0.333333333333333333">
             <l>Olympium</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -1641,6 +1925,7 @@
       </ana>
       <ana>
          <tok val="Olympiaca"/>
+         <tok val="olympiaca"/>
          <lm>
             <l>Olympiacus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1653,6 +1938,7 @@
       </ana>
       <ana>
          <tok val="Olympiacae"/>
+         <tok val="olympiacae"/>
          <lm>
             <l>Olympiacus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -1663,6 +1949,7 @@
       </ana>
       <ana>
          <tok val="Olympiacam"/>
+         <tok val="olympiacam"/>
          <lm>
             <l>Olympiacus</l>
             <m>a e - s - - - f a</m>
@@ -1670,6 +1957,7 @@
       </ana>
       <ana>
          <tok val="Olympiaci"/>
+         <tok val="olympiaci"/>
          <lm>
             <l>Olympiacus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1680,6 +1968,7 @@
       </ana>
       <ana>
          <tok val="Olympiacis"/>
+         <tok val="olympiacis"/>
          <lm>
             <l>Olympiacus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -1692,6 +1981,7 @@
       </ana>
       <ana>
          <tok val="Olympiaco"/>
+         <tok val="olympiaco"/>
          <lm>
             <l>Olympiacus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1702,6 +1992,7 @@
       </ana>
       <ana>
          <tok val="Olympiacum"/>
+         <tok val="olympiacum"/>
          <lm>
             <l>Olympiacus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1714,6 +2005,7 @@
       </ana>
       <ana>
          <tok val="Olympiacus"/>
+         <tok val="olympiacus"/>
          <lm>
             <l>Olympiacus</l>
             <m>a e - s - - - m n</m>
@@ -1721,6 +2013,7 @@
       </ana>
       <ana>
          <tok val="Olympiade"/>
+         <tok val="olympiade"/>
          <lm>
             <l>Olympias</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1729,6 +2022,7 @@
       </ana>
       <ana>
          <tok val="Olympiadem"/>
+         <tok val="olympiadem"/>
          <lm>
             <l>Olympias</l>
             <m cert="0.5">n e - s - - - f a</m>
@@ -1737,6 +2031,7 @@
       </ana>
       <ana>
          <tok val="Olympiades"/>
+         <tok val="olympiades"/>
          <lm>
             <l>Olympias</l>
             <m cert="0.166666666666666667">n e - p - - - f n</m>
@@ -1749,6 +2044,7 @@
       </ana>
       <ana>
          <tok val="Olympiadi"/>
+         <tok val="olympiadi"/>
          <lm>
             <l>Olympias</l>
             <m cert="0.5">n e - s - - - m d</m>
@@ -1757,6 +2053,7 @@
       </ana>
       <ana>
          <tok val="Olympiadis"/>
+         <tok val="olympiadis"/>
          <lm>
             <l>Olympias</l>
             <m cert="0.5">n e - s - - - f g</m>
@@ -1765,6 +2062,7 @@
       </ana>
       <ana>
          <tok val="Olympiae"/>
+         <tok val="olympiae"/>
          <lm cert="0.5">
             <l>Olympia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1782,6 +2080,7 @@
       </ana>
       <ana>
          <tok val="Olympiam"/>
+         <tok val="olympiam"/>
          <lm cert="0.5">
             <l>Olympia</l>
             <m>n e - s - - - f a</m>
@@ -1793,6 +2092,7 @@
       </ana>
       <ana>
          <tok val="Olympias"/>
+         <tok val="olympias"/>
          <lm cert="0.333333333333333333">
             <l>Olympias</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -1809,6 +2109,7 @@
       </ana>
       <ana>
          <tok val="Olympici"/>
+         <tok val="olympici"/>
          <lm>
             <l>Olympicus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -1819,6 +2120,7 @@
       </ana>
       <ana>
          <tok val="Olympico"/>
+         <tok val="olympico"/>
          <lm>
             <l>Olympicus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1827,8 +2129,11 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Olympicorum Olympicum-->
-         <tok val="Olympic(or)?um"/>
+      <ana>
+         <tok val="Olympicorum"/>
+         <tok val="Olympicum"/>
+         <tok val="olympicorum"/>
+         <tok val="olympicum"/>
          <lm>
             <l>Olympicus</l>
             <m cert="0.5">a e - p - - - m g</m>
@@ -1837,6 +2142,7 @@
       </ana>
       <ana>
          <tok val="Olympicos"/>
+         <tok val="olympicos"/>
          <lm>
             <l>Olympicus</l>
             <m>a e - p - - - m a</m>
@@ -1844,6 +2150,7 @@
       </ana>
       <ana>
          <tok val="Olympicum"/>
+         <tok val="olympicum"/>
          <lm>
             <l>Olympicus</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -1854,6 +2161,7 @@
       </ana>
       <ana>
          <tok val="Olympicus"/>
+         <tok val="olympicus"/>
          <lm>
             <l>Olympicus</l>
             <m>a e - s - - - m n</m>
@@ -1861,6 +2169,7 @@
       </ana>
       <ana>
          <tok val="Olympieum"/>
+         <tok val="olympieum"/>
          <lm>
             <l>Olympieum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1871,6 +2180,7 @@
       </ana>
       <ana>
          <tok val="Olympii"/>
+         <tok val="olympii"/>
          <lm>
             <l>Olympius</l>
             <m cert="0.2">a e - p - - - m n</m>
@@ -1882,6 +2192,7 @@
       </ana>
       <ana>
          <tok val="Olympiis"/>
+         <tok val="olympiis"/>
          <lm cert="0.333333333333333333">
             <l>Olympia</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -1906,6 +2217,7 @@
       </ana>
       <ana>
          <tok val="Olympio"/>
+         <tok val="olympio"/>
          <lm cert="0.333333333333333333">
             <l>Olympio</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -1928,6 +2240,7 @@
       </ana>
       <ana>
          <tok val="Olympiodori"/>
+         <tok val="olympiodori"/>
          <lm>
             <l>Olympiodorus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1937,6 +2250,7 @@
       </ana>
       <ana>
          <tok val="Olympiodoro"/>
+         <tok val="olympiodoro"/>
          <lm>
             <l>Olympiodorus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -1945,6 +2259,7 @@
       </ana>
       <ana>
          <tok val="Olympiodorum"/>
+         <tok val="olympiodorum"/>
          <lm>
             <l>Olympiodorus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -1953,6 +2268,7 @@
       </ana>
       <ana>
          <tok val="Olympiodorus"/>
+         <tok val="olympiodorus"/>
          <lm>
             <l>Olympiodorus</l>
             <m>n e - s - - - m n</m>
@@ -1960,6 +2276,7 @@
       </ana>
       <ana>
          <tok val="Olympionem"/>
+         <tok val="olympionem"/>
          <lm>
             <l>Olympio</l>
             <m>n e - s - - - m a</m>
@@ -1967,6 +2284,7 @@
       </ana>
       <ana>
          <tok val="Olympioni"/>
+         <tok val="olympioni"/>
          <lm>
             <l>Olympio</l>
             <m>n e - s - - - m d</m>
@@ -1974,14 +2292,18 @@
       </ana>
       <ana>
          <tok val="Olympionica"/>
+         <tok val="olympionica"/>
          <lm>
             <l>Olympionices</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Olympionica Olympionices-->
-         <tok val="Olympionic(es|a)"/>
+      <ana>
+         <tok val="Olympionica"/>
+         <tok val="Olympionices"/>
+         <tok val="olympionica"/>
+         <tok val="olympionices"/>
          <lm>
             <l>Olympionices</l>
             <m>n e - s - - - m n</m>
@@ -1989,6 +2311,7 @@
       </ana>
       <ana>
          <tok val="Olympionicarum"/>
+         <tok val="olympionicarum"/>
          <lm>
             <l>Olympionices</l>
             <m>n e - p - - - m g</m>
@@ -1996,13 +2319,17 @@
       </ana>
       <ana>
          <tok val="Olympionicas"/>
+         <tok val="olympionicas"/>
          <lm>
             <l>Olympionices</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Olympiorum Olympium-->
-         <tok val="Olympi(or)?um"/>
+      <ana>
+         <tok val="Olympiorum"/>
+         <tok val="Olympium"/>
+         <tok val="olympiorum"/>
+         <tok val="olympium"/>
          <lm cert="0.5">
             <l>Olympium</l>
             <m>n e - p - - - n g</m>
@@ -2016,6 +2343,7 @@
       </ana>
       <ana>
          <tok val="Olympios"/>
+         <tok val="olympios"/>
          <lm>
             <l>Olympius</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -2024,6 +2352,7 @@
       </ana>
       <ana>
          <tok val="Olympisce"/>
+         <tok val="olympisce"/>
          <lm>
             <l>Olympiscus</l>
             <m>n e - s - - - m v</m>
@@ -2031,6 +2360,7 @@
       </ana>
       <ana>
          <tok val="Olympiscus"/>
+         <tok val="olympiscus"/>
          <lm>
             <l>Olympiscus</l>
             <m>n e - s - - - m n</m>
@@ -2038,6 +2368,7 @@
       </ana>
       <ana>
          <tok val="Olympium"/>
+         <tok val="olympium"/>
          <lm cert="0.5">
             <l>Olympium</l>
             <m cert="0.333333333333333333">n e - s - - - n a</m>
@@ -2055,22 +2386,29 @@
       </ana>
       <ana>
          <tok val="Olympius"/>
+         <tok val="olympius"/>
          <lm>
             <l>Olympius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olympo Olympon-->
-         <tok val="Olympo[n]?"/>
+      <ana>
+         <tok val="Olympo"/>
+         <tok val="Olympon"/>
+         <tok val="olympo"/>
+         <tok val="olympon"/>
          <lm>
             <l>Olympus</l>
             <m cert="0.5">n e - s - - - f b</m>
             <m cert="0.5">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Olympon Olympos-->
-         <tok val="Olympo[sn]"/>
+      <ana>
+         <tok val="Olympon"/>
+         <tok val="Olympos"/>
+         <tok val="olympon"/>
+         <tok val="olympos"/>
          <lm>
             <l>Olympus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -2079,6 +2417,7 @@
       </ana>
       <ana>
          <tok val="Olympum"/>
+         <tok val="olympum"/>
          <lm>
             <l>Olympus</l>
             <m cert="0.25">n e - s - - - f a</m>
@@ -2089,6 +2428,7 @@
       </ana>
       <ana>
          <tok val="Olympus"/>
+         <tok val="olympus"/>
          <lm>
             <l>Olympus</l>
             <m>n e - s - - - f n</m>
@@ -2096,13 +2436,17 @@
       </ana>
       <ana>
          <tok val="Olynthi"/>
+         <tok val="olynthi"/>
          <lm>
             <l>Olynthius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Olynthi Olynthii-->
-         <tok val="Olynthi[i]?"/>
+      <ana>
+         <tok val="Olynthi"/>
+         <tok val="Olynthii"/>
+         <tok val="olynthi"/>
+         <tok val="olynthii"/>
          <lm>
             <l>Olynthius</l>
             <m cert="0.333333333333333333">a e - s - - - n g</m>
@@ -2112,6 +2456,7 @@
       </ana>
       <ana>
          <tok val="Olynthia"/>
+         <tok val="olynthia"/>
          <lm cert="0.5">
             <l>Olynthius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -2130,6 +2475,7 @@
       </ana>
       <ana>
          <tok val="Olynthii"/>
+         <tok val="olynthii"/>
          <lm>
             <l>Olynthius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2140,6 +2486,7 @@
       </ana>
       <ana>
          <tok val="Olynthiis"/>
+         <tok val="olynthiis"/>
          <lm cert="0.5">
             <l>Olynthia</l>
             <m cert="0.5">n e - p - - - f d</m>
@@ -2159,6 +2506,7 @@
       </ana>
       <ana>
          <tok val="Olynthio"/>
+         <tok val="olynthio"/>
          <lm>
             <l>Olynthius</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -2171,6 +2519,7 @@
       </ana>
       <ana>
          <tok val="Olynthios"/>
+         <tok val="olynthios"/>
          <lm>
             <l>Olynthius</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -2179,6 +2528,7 @@
       </ana>
       <ana>
          <tok val="Olynthium"/>
+         <tok val="olynthium"/>
          <lm>
             <l>Olynthius</l>
             <m cert="0.125">a e - s - - - n v</m>
@@ -2193,14 +2543,17 @@
       </ana>
       <ana>
          <tok val="Olynthius"/>
+         <tok val="olynthius"/>
          <lm>
             <l>Olynthius</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Olyra olyra olyran-->
-         <tok val="[oO]lyra[n]?"/>
+      <ana>
+         <tok val="Olyra"/>
+         <tok val="olyra"/>
+         <tok val="olyran"/>
          <lm>
             <l>olyra</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2208,15 +2561,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Olyram olyram-->
-         <tok val="[oO]lyram"/>
+      <ana>
+         <tok val="Olyram"/>
+         <tok val="olyram"/>
          <lm>
             <l>olyra</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Olyras olyran-->
-         <tok val="[oO]lyra[ns]"/>
+      <ana>
+         <tok val="Olyras"/>
+         <tok val="olyran"/>
+         <tok val="olyras"/>
          <lm>
             <l>olyra</l>
             <m>n - - p - - - f a</m>
@@ -2235,8 +2591,9 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--oleaginae oleagineae-->
-         <tok val="oleagin[e]?ae"/>
+      <ana>
+         <tok val="oleaginae"/>
+         <tok val="oleagineae"/>
          <lm>
             <l>oleagineus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2245,15 +2602,17 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--oleaginas oleagineas-->
-         <tok val="oleagin[e]?as"/>
+      <ana>
+         <tok val="oleaginas"/>
+         <tok val="oleagineas"/>
          <lm>
             <l>oleagineus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--oleagine oleaginius-->
-         <tok val="oleagin(ius|e)"/>
+      <ana>
+         <tok val="oleagine"/>
+         <tok val="oleaginius"/>
          <lm>
             <l>oleagineus</l>
             <m>d</m>
@@ -2542,8 +2901,9 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--oleis oleisque-->
-         <tok val="oleis(que)?"/>
+      <ana>
+         <tok val="oleis"/>
+         <tok val="oleisque"/>
          <lm cert="0.5">
             <l>oleum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -2576,8 +2936,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--olen oles-->
-         <tok val="ole[sn]"/>
+      <ana>
+         <tok val="olen"/>
+         <tok val="oles"/>
          <lm>
             <l>oleo</l>
             <m>v - 2 s p i a</m>
@@ -2818,8 +3179,9 @@
             <m cert="0.166666666666666667">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--olfactare ólfactare-->
-         <tok val="[óo]lfactare"/>
+      <ana>
+         <tok val="olfactare"/>
+         <tok val="ólfactare"/>
          <lm>
             <l>olfacto</l>
             <m>v - - - p n a</m>
@@ -2945,8 +3307,9 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--olfactu olfactuque-->
-         <tok val="olfactu(que)?"/>
+      <ana>
+         <tok val="olfactu"/>
+         <tok val="olfactuque"/>
          <lm>
             <l>olfactus</l>
             <m>n - - s - - - m b</m>
@@ -3110,8 +3473,9 @@
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--oliuam olivam-->
-         <tok val="oli[vu]am"/>
+      <ana>
+         <tok val="oliuam"/>
+         <tok val="olivam"/>
          <lm>
             <l>oliva</l>
             <m>n - - s - - - f a</m>
@@ -3125,8 +3489,10 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--oliueta oliveta olivita-->
-         <tok val="oli[vu]?(e|vi)ta"/>
+      <ana>
+         <tok val="oliueta"/>
+         <tok val="oliveta"/>
+         <tok val="olivita"/>
          <lm>
             <l>oliveta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -3134,8 +3500,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--oliueta oliveta-->
-         <tok val="oli[vu]eta"/>
+      <ana>
+         <tok val="oliueta"/>
+         <tok val="oliveta"/>
          <lm>
             <l>olivetum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -3143,8 +3510,10 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--oliuetis olivetis olivetisque-->
-         <tok val="oli[vu]etis(que)?"/>
+      <ana>
+         <tok val="oliuetis"/>
+         <tok val="olivetis"/>
+         <tok val="olivetisque"/>
          <lm cert="0.5">
             <l>olivetum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -3156,15 +3525,19 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--oliui olivi-->
-         <tok val="oli[vu]i"/>
+      <ana>
+         <tok val="oliui"/>
+         <tok val="olivi"/>
          <lm>
             <l>olivum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--oliuiferae oliuiferaeque oliviferaeque oliviferae-->
-         <tok val="oli[vu]iferae(que)?"/>
+      <ana>
+         <tok val="oliuiferae"/>
+         <tok val="oliuiferaeque"/>
+         <tok val="oliviferae"/>
+         <tok val="oliviferaeque"/>
          <lm>
             <l>olivifer</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -3173,8 +3546,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--oliuis olivis-->
-         <tok val="oli[vu]is"/>
+      <ana>
+         <tok val="oliuis"/>
+         <tok val="olivis"/>
          <lm cert="0.5">
             <l>olivum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -3186,22 +3560,25 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--oliuitate olivitate-->
-         <tok val="oli[vu]itate"/>
+      <ana>
+         <tok val="oliuitate"/>
+         <tok val="olivitate"/>
          <lm>
             <l>olivitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--oliuitatem olivitatem-->
-         <tok val="oli[vu]itatem"/>
+      <ana>
+         <tok val="oliuitatem"/>
+         <tok val="olivitatem"/>
          <lm>
             <l>olivitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--oliuitatibus olivitatibus-->
-         <tok val="oli[vu]itatibus"/>
+      <ana>
+         <tok val="oliuitatibus"/>
+         <tok val="olivitatibus"/>
          <lm>
             <l>olivitas</l>
             <m cert="0.5">n - - p - - - f d</m>
@@ -3352,8 +3729,9 @@
             <m cert="0.5">p d - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--ollos ollosque-->
-         <tok val="ollos(que)?"/>
+      <ana>
+         <tok val="ollos"/>
+         <tok val="ollosque"/>
          <lm cert="0.5">
             <l>ollus</l>
             <m>a - - p - - - m a</m>
@@ -3474,8 +3852,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--oluere oluerunt-->
-         <tok val="oluer(unt|e)"/>
+      <ana>
+         <tok val="oluere"/>
+         <tok val="oluerunt"/>
          <lm>
             <l>oleo</l>
             <m>v - 3 p r i a</m>

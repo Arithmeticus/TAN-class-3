@@ -1,56 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusret">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ret">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ret</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ret.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>RET</tok-starts-with>
       <tok-starts-with>Ret</tok-starts-with>
       <tok-starts-with>ret</tok-starts-with>
-      <ana><!--RET Ret ret retque-->
-         <tok val="[rR]?(et)?(que|RET)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:43:54.685-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:43:54.685-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ret.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="RET"/>
+         <tok val="Ret"/>
+         <tok val="ret"/>
+         <tok val="retque"/>
          <lm>
             <l>reor</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--RETE Rete rete reten reté-->
-         <tok val="[rR]?(et)?[e]?(n|é|RETE)?"/>
+      <ana>
+         <tok val="RETE"/>
+         <tok val="Rete"/>
+         <tok val="rete"/>
+         <tok val="reten"/>
+         <tok val="reté"/>
          <lm>
             <l>reor</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--RETE Rete rete reten-->
-         <tok val="[rR]?(ete)?(n|RETE)?"/>
+      <ana>
+         <tok val="RETE"/>
+         <tok val="Rete"/>
+         <tok val="rete"/>
+         <tok val="reten"/>
          <lm cert="0.5">
             <l>rete</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -62,22 +80,37 @@
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--RETE Rete Reti Retin rete reten reti retin retinue-->
-         <tok val="[Rr]?(et)?[i]?(n|en|e|in|i|inue|RETE)?"/>
+      <ana>
+         <tok val="RETE"/>
+         <tok val="Rete"/>
+         <tok val="Reti"/>
+         <tok val="Retin"/>
+         <tok val="rete"/>
+         <tok val="reten"/>
+         <tok val="reti"/>
+         <tok val="retin"/>
+         <tok val="retinue"/>
          <lm>
             <l>rete</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--RETE Rete Retum rete reten retum-->
-         <tok val="[rR]?(et)?[e]?(n|um|e|RETE)?"/>
+      <ana>
+         <tok val="RETE"/>
+         <tok val="Rete"/>
+         <tok val="Retum"/>
+         <tok val="rete"/>
+         <tok val="reten"/>
+         <tok val="retum"/>
          <lm>
             <l>repleo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--RETICVLATIS reticulatis-->
-         <tok val="(reticulatis|RETICVLATIS)"/>
+      <ana>
+         <tok val="RETICVLATIS"/>
+         <tok val="reticulatis"/>
+         <tok val="reticvlatis"/>
          <lm>
             <l>reticulatus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -88,43 +121,64 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--RETINEO Retineo retineo-->
-         <tok val="[rR]?(etineo|RETINEO)"/>
+      <ana>
+         <tok val="RETINEO"/>
+         <tok val="Retineo"/>
+         <tok val="retineo"/>
          <lm>
             <l>retineo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--RETRAHO Retraho retraho-->
-         <tok val="[rR]?(etraho|RETRAHO)"/>
+      <ana>
+         <tok val="RETRAHO"/>
+         <tok val="Retraho"/>
+         <tok val="retraho"/>
          <lm>
             <l>retraho</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--RETRO Retro retro retroque retroue-->
-         <tok val="[rR]?(etro)?[q]?(ue|RETRO)?"/>
+      <ana>
+         <tok val="RETRO"/>
+         <tok val="Retro"/>
+         <tok val="retro"/>
+         <tok val="retroque"/>
+         <tok val="retroue"/>
          <lm>
             <l>retro</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--RETVLIT Rettulit Rettvlit Retulit rettulit rettulitne rettulitque retulit-->
-         <tok val="[Rr]?[e]?[t]?[t]?(u|tv|tu)?(lit)?(ne|que|RETVLIT)?"/>
+      <ana>
+         <tok val="RETVLIT"/>
+         <tok val="Rettulit"/>
+         <tok val="Rettvlit"/>
+         <tok val="Retulit"/>
+         <tok val="rettulit"/>
+         <tok val="rettulitne"/>
+         <tok val="rettulitque"/>
+         <tok val="rettvlit"/>
+         <tok val="retulit"/>
+         <tok val="retvlit"/>
          <lm>
             <l>refero</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--RETVLIT Retulit retulit-->
-         <tok val="[rR]?(etulit|RETVLIT)"/>
+      <ana>
+         <tok val="RETVLIT"/>
+         <tok val="Retulit"/>
+         <tok val="retulit"/>
+         <tok val="retvlit"/>
          <lm>
             <l>retulo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retardare retardare-->
-         <tok val="[rR]etardare"/>
+      <ana>
+         <tok val="Retardare"/>
+         <tok val="retardare"/>
          <lm>
             <l>retardo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -132,30 +186,36 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Retardari retardari retardarique-->
-         <tok val="[rR]etardari(que)?"/>
+      <ana>
+         <tok val="Retardari"/>
+         <tok val="retardari"/>
+         <tok val="retardarique"/>
          <lm>
             <l>retardo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Retardatio retardatio-->
-         <tok val="[rR]etardatio"/>
+      <ana>
+         <tok val="Retardatio"/>
+         <tok val="retardatio"/>
          <lm>
             <l>retardatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Retardatus retardatus retardatusque-->
-         <tok val="[rR]etardatus(que)?"/>
+      <ana>
+         <tok val="Retardatus"/>
+         <tok val="retardatus"/>
+         <tok val="retardatusque"/>
          <lm>
             <l>retardo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Retardo retardo-->
-         <tok val="[rR]etardo"/>
+      <ana>
+         <tok val="Retardo"/>
+         <tok val="retardo"/>
          <lm>
             <l>retardo</l>
             <m>v - 1 s p i a</m>
@@ -163,13 +223,15 @@
       </ana>
       <ana>
          <tok val="Retaxo"/>
+         <tok val="retaxo"/>
          <lm>
             <l>retaxo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retecta retecta-->
-         <tok val="[rR]etecta"/>
+      <ana>
+         <tok val="Retecta"/>
+         <tok val="retecta"/>
          <lm>
             <l>retego</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -180,15 +242,17 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Retectus retectus-->
-         <tok val="[rR]etectus"/>
+      <ana>
+         <tok val="Retectus"/>
+         <tok val="retectus"/>
          <lm>
             <l>retego</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Retegens retegens-->
-         <tok val="[rR]etegens"/>
+      <ana>
+         <tok val="Retegens"/>
+         <tok val="retegens"/>
          <lm>
             <l>retego</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -200,8 +264,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Retegere retegere-->
-         <tok val="[rR]etegere"/>
+      <ana>
+         <tok val="Retegere"/>
+         <tok val="retegere"/>
          <lm>
             <l>retego</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -212,13 +277,15 @@
       </ana>
       <ana>
          <tok val="Retego"/>
+         <tok val="retego"/>
          <lm>
             <l>retego</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retendere retendere-->
-         <tok val="[rR]etendere"/>
+      <ana>
+         <tok val="Retendere"/>
+         <tok val="retendere"/>
          <lm>
             <l>retendo</l>
             <m cert="0.2">v - 3 p r i a</m>
@@ -230,6 +297,7 @@
       </ana>
       <ana>
          <tok val="Retendo"/>
+         <tok val="retendo"/>
          <lm>
             <l>retendo</l>
             <m>v - 1 s p i a</m>
@@ -237,38 +305,39 @@
       </ana>
       <ana>
          <tok val="Retendunt"/>
+         <tok val="retendunt"/>
          <lm>
             <l>retendo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Retenta retenta-->
-         <tok val="[rR]etenta"/>
+      <ana>
+         <tok val="Retenta"/>
+         <tok val="retenta"/>
          <lm>
             <l>retineo</l>
-            <m cert="0.25">v - - p r p p n a</m>
-            <m cert="0.25">v - - s r p p f b</m>
-            <m cert="0.25">v - - s r p p f n</m>
-            <m cert="0.25">v - - p r p p n n</m>
+            <m cert="0.166666666666666667">v - - p r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p f b</m>
+            <m cert="0.166666666666666667">v - - s r p p f n</m>
+            <m cert="0.166666666666666667">v - - p r p p n v</m>
+            <m cert="0.166666666666666667">v - - s r p p f v</m>
+            <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Retenta retempta retenta retentaque-->
-         <tok val="[rR]ete(n|mp)ta(que)?"/>
+      <ana>
+         <tok val="Retenta"/>
+         <tok val="retempta"/>
+         <tok val="retenta"/>
+         <tok val="retentaque"/>
          <lm>
             <l>retento</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Retenta"/>
-         <lm>
-            <l>retineo</l>
-            <m cert="0.5">v - - p r p p n v</m>
-            <m cert="0.5">v - - s r p p f v</m>
-         </lm>
-      </ana>
-      <ana><!--Retentare retemptare retentare-->
-         <tok val="[rR]ete(n|mp)tare"/>
+         <tok val="Retentare"/>
+         <tok val="retemptare"/>
+         <tok val="retentare"/>
          <lm>
             <l>retento</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -276,16 +345,20 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Retentio retentio-->
-         <tok val="[rR]etentio"/>
+      <ana>
+         <tok val="Retentio"/>
+         <tok val="retentio"/>
          <lm>
             <l>retentio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Retento retempto retento retentoque-->
-         <tok val="[rR]ete(n|mp)to(que)?"/>
+      <ana>
+         <tok val="Retento"/>
+         <tok val="retempto"/>
+         <tok val="retento"/>
+         <tok val="retentoque"/>
          <lm>
             <l>retento</l>
             <m>v - 1 s p i a</m>
@@ -293,6 +366,7 @@
       </ana>
       <ana>
          <tok val="Retento"/>
+         <tok val="retento"/>
          <lm>
             <l>retineo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -303,6 +377,7 @@
       </ana>
       <ana>
          <tok val="Retentura"/>
+         <tok val="retentura"/>
          <lm>
             <l>retineo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -313,8 +388,10 @@
             <m cert="0.166666666666666667">v - - p f p a n v</m>
          </lm>
       </ana>
-      <ana><!--Retentus retentus retentusque-->
-         <tok val="[rR]etentus(que)?"/>
+      <ana>
+         <tok val="Retentus"/>
+         <tok val="retentus"/>
+         <tok val="retentusque"/>
          <lm>
             <l>retentus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -325,6 +402,7 @@
       </ana>
       <ana>
          <tok val="Retentus"/>
+         <tok val="retentus"/>
          <lm>
             <l>retineo</l>
             <m>v - - s r p p m n</m>
@@ -332,27 +410,34 @@
       </ana>
       <ana>
          <tok val="Retero"/>
+         <tok val="retero"/>
          <lm>
             <l>retero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retexere retexere-->
-         <tok val="[rR]etexere"/>
+      <ana>
+         <tok val="Retexere"/>
+         <tok val="retexere"/>
          <lm>
             <l>retego</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Retexit retexit-->
-         <tok val="[rR]etexit"/>
+      <ana>
+         <tok val="Retexit"/>
+         <tok val="retexit"/>
          <lm>
             <l>retego</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Reti Retin reti retin retinue-->
-         <tok val="[Rr]eti(n|nue)?"/>
+      <ana>
+         <tok val="Reti"/>
+         <tok val="Retin"/>
+         <tok val="reti"/>
+         <tok val="retin"/>
+         <tok val="retinue"/>
          <lm cert="0.5">
             <l>repleo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -365,8 +450,10 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Retia retia retiaque-->
-         <tok val="[rR]etia(que)?"/>
+      <ana>
+         <tok val="Retia"/>
+         <tok val="retia"/>
+         <tok val="retiaque"/>
          <lm>
             <l>rete</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -374,8 +461,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Retiaculum retiaculum-->
-         <tok val="[rR]etiaculum"/>
+      <ana>
+         <tok val="Retiaculum"/>
+         <tok val="retiaculum"/>
          <lm>
             <l>retiaculum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -383,53 +471,63 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Retiaculum retiaculorum retiaculum-->
-         <tok val="[rR]etiacul(or)?um"/>
+      <ana>
+         <tok val="Retiaculum"/>
+         <tok val="retiaculorum"/>
+         <tok val="retiaculum"/>
          <lm>
             <l>retiaculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Retiarii retiarii-->
-         <tok val="[rR]etiarii"/>
+      <ana>
+         <tok val="Retiarii"/>
+         <tok val="retiarii"/>
          <lm>
             <l>retiarius</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Retiarii retiari retiarii-->
-         <tok val="[rR]etiari[i]?"/>
+      <ana>
+         <tok val="Retiarii"/>
+         <tok val="retiari"/>
+         <tok val="retiarii"/>
          <lm>
             <l>retiarius</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Retiario retiario-->
-         <tok val="[rR]etiario"/>
+      <ana>
+         <tok val="Retiario"/>
+         <tok val="retiario"/>
          <lm>
             <l>retiarius</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Retiarius retiarius-->
-         <tok val="[rR]etiarius"/>
+      <ana>
+         <tok val="Retiarius"/>
+         <tok val="retiarius"/>
          <lm>
             <l>retiarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Retibus retibus retibusque-->
-         <tok val="[rR]etibus(que)?"/>
+      <ana>
+         <tok val="Retibus"/>
+         <tok val="retibus"/>
+         <tok val="retibusque"/>
          <lm>
             <l>rete</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Reticentia reticentia-->
-         <tok val="[rR]eticentia"/>
+      <ana>
+         <tok val="Reticentia"/>
+         <tok val="reticentia"/>
          <lm cert="0.5">
             <l>reticentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -443,29 +541,33 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Reticeo reticeo-->
-         <tok val="[rR]eticeo"/>
+      <ana>
+         <tok val="Reticeo"/>
+         <tok val="reticeo"/>
          <lm>
             <l>reticeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retices retices-->
-         <tok val="[rR]etices"/>
+      <ana>
+         <tok val="Retices"/>
+         <tok val="retices"/>
          <lm>
             <l>reticeo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Reticulatus reticulatus-->
-         <tok val="[rR]eticulatus"/>
+      <ana>
+         <tok val="Reticulatus"/>
+         <tok val="reticulatus"/>
          <lm>
             <l>reticulatus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Reticuli reticuli-->
-         <tok val="[rR]eticuli"/>
+      <ana>
+         <tok val="Reticuli"/>
+         <tok val="reticuli"/>
          <lm cert="0.5">
             <l>reticulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -477,8 +579,11 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Reticulo Reticuloque reticulo-->
-         <tok val="[rR]eticulo(que)?"/>
+      <ana>
+         <tok val="Reticulo"/>
+         <tok val="Reticuloque"/>
+         <tok val="reticulo"/>
+         <tok val="reticuloque"/>
          <lm cert="0.5">
             <l>reticulum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -490,8 +595,10 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Reticulum reticulum reticulumque-->
-         <tok val="[rR]eticulum(que)?"/>
+      <ana>
+         <tok val="Reticulum"/>
+         <tok val="reticulum"/>
+         <tok val="reticulumque"/>
          <lm cert="0.5">
             <l>reticulus</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -505,15 +612,20 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Reticulus reticulus-->
-         <tok val="[rR]eticulus"/>
+      <ana>
+         <tok val="Reticulus"/>
+         <tok val="reticulus"/>
          <lm>
             <l>reticulus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Retin Retis retin retinue retis-->
-         <tok val="[rR]eti[n]?(ue|s|n)?"/>
+      <ana>
+         <tok val="Retin"/>
+         <tok val="Retis"/>
+         <tok val="retin"/>
+         <tok val="retinue"/>
+         <tok val="retis"/>
          <lm cert="0.25">
             <l>reor</l>
             <m>v - 2 p p i a</m>
@@ -537,8 +649,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Retinacula retinacula-->
-         <tok val="[rR]etinacula"/>
+      <ana>
+         <tok val="Retinacula"/>
+         <tok val="retinacula"/>
          <lm>
             <l>retinaculum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -546,15 +659,17 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Retinaculi retinaculi-->
-         <tok val="[rR]etinaculi"/>
+      <ana>
+         <tok val="Retinaculi"/>
+         <tok val="retinaculi"/>
          <lm>
             <l>retinaculum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Retinaculum retinaculum-->
-         <tok val="[rR]etinaculum"/>
+      <ana>
+         <tok val="Retinaculum"/>
+         <tok val="retinaculum"/>
          <lm>
             <l>retinaculum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -562,36 +677,47 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Retinaculum retinaculum retinaculorum-->
-         <tok val="[rR]etinacul(or)?um"/>
+      <ana>
+         <tok val="Retinaculum"/>
+         <tok val="retinaculorum"/>
+         <tok val="retinaculum"/>
          <lm>
             <l>retinaculum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Retine retina retine retinen-->
-         <tok val="[rR]etin[e]?[na]?"/>
+      <ana>
+         <tok val="Retine"/>
+         <tok val="retina"/>
+         <tok val="retine"/>
+         <tok val="retinen"/>
          <lm>
             <l>retineo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Retineatur retineat retineatur retineaturque-->
-         <tok val="[rR]etineat(ur|urque)?"/>
+      <ana>
+         <tok val="Retineatur"/>
+         <tok val="retineat"/>
+         <tok val="retineatur"/>
+         <tok val="retineaturque"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Retinebatur retinebat retinebatur-->
-         <tok val="[rR]etinebat(ur|)"/>
+      <ana>
+         <tok val="Retinebatur"/>
+         <tok val="retinebat"/>
+         <tok val="retinebatur"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Retinenda retinenda-->
-         <tok val="[rR]etinenda"/>
+      <ana>
+         <tok val="Retinenda"/>
+         <tok val="retinenda"/>
          <lm>
             <l>retineo</l>
             <m cert="0.166666666666666667">v - - p p g a n n</m>
@@ -602,8 +728,9 @@
             <m cert="0.166666666666666667">v - - s p g a f v</m>
          </lm>
       </ana>
-      <ana><!--Retinendae retinendae-->
-         <tok val="[rR]etinendae"/>
+      <ana>
+         <tok val="Retinendae"/>
+         <tok val="retinendae"/>
          <lm>
             <l>retineo</l>
             <m cert="0.25">v - - p p g a f n</m>
@@ -612,15 +739,18 @@
             <m cert="0.25">v - - s p g a f g</m>
          </lm>
       </ana>
-      <ana><!--Retinendus retinendus-->
-         <tok val="[rR]etinendus"/>
+      <ana>
+         <tok val="Retinendus"/>
+         <tok val="retinendus"/>
          <lm>
             <l>retineo</l>
             <m>v - - s p g a m n</m>
          </lm>
       </ana>
-      <ana><!--Retinens retinens retinensque-->
-         <tok val="[rR]etinens(que)?"/>
+      <ana>
+         <tok val="Retinens"/>
+         <tok val="retinens"/>
+         <tok val="retinensque"/>
          <lm>
             <l>retineo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -632,37 +762,50 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Retinent retinent retinentque retinentur-->
-         <tok val="[rR]etinent(ur|que)?"/>
+      <ana>
+         <tok val="Retinent"/>
+         <tok val="retinent"/>
+         <tok val="retinentque"/>
+         <tok val="retinentur"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Retinere retinere-->
-         <tok val="[rR]etinere"/>
+      <ana>
+         <tok val="Retinere"/>
+         <tok val="retinere"/>
          <lm>
             <l>retineo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Retinere Retineri retinere retineri-->
-         <tok val="[Rr]etiner[ie]"/>
+      <ana>
+         <tok val="Retinere"/>
+         <tok val="Retineri"/>
+         <tok val="retinere"/>
+         <tok val="retineri"/>
          <lm>
             <l>retineo</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Retinet Retinetur retinet retinetque retinetur retineturque-->
-         <tok val="[rR]etinet(ur)?[q]?[u]?[er]?"/>
+      <ana>
+         <tok val="Retinet"/>
+         <tok val="Retinetur"/>
+         <tok val="retinet"/>
+         <tok val="retinetque"/>
+         <tok val="retinetur"/>
+         <tok val="retineturque"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retinete retinete-->
-         <tok val="[rR]etinete"/>
+      <ana>
+         <tok val="Retinete"/>
+         <tok val="retinete"/>
          <lm>
             <l>retineo</l>
             <m>v - 2 p p m a</m>
@@ -670,13 +813,16 @@
       </ana>
       <ana>
          <tok val="Retingo"/>
+         <tok val="retingo"/>
          <lm>
             <l>retingo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retinuerunt retinuere retinuerunt-->
-         <tok val="[rR]etinuer(unt|e)"/>
+      <ana>
+         <tok val="Retinuerunt"/>
+         <tok val="retinuere"/>
+         <tok val="retinuerunt"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 p r i a</m>
@@ -684,6 +830,7 @@
       </ana>
       <ana>
          <tok val="Retondeo"/>
+         <tok val="retondeo"/>
          <lm>
             <l>retondeo</l>
             <m>v - 1 s p i a</m>
@@ -691,13 +838,15 @@
       </ana>
       <ana>
          <tok val="Retono"/>
+         <tok val="retono"/>
          <lm>
             <l>retono</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retorquens retorquens-->
-         <tok val="[rR]etorquens"/>
+      <ana>
+         <tok val="Retorquens"/>
+         <tok val="retorquens"/>
          <lm>
             <l>retorqueo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -709,15 +858,17 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Retorqueo retorqueo-->
-         <tok val="[rR]etorqueo"/>
+      <ana>
+         <tok val="Retorqueo"/>
+         <tok val="retorqueo"/>
          <lm>
             <l>retorqueo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retorquere retorquere-->
-         <tok val="[rR]etorquere"/>
+      <ana>
+         <tok val="Retorquere"/>
+         <tok val="retorquere"/>
          <lm>
             <l>retorqueo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -725,15 +876,17 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Retorqueri retorqueri-->
-         <tok val="[rR]etorqueri"/>
+      <ana>
+         <tok val="Retorqueri"/>
+         <tok val="retorqueri"/>
          <lm>
             <l>retorqueo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Retorquet retorquet-->
-         <tok val="[rR]etorquet"/>
+      <ana>
+         <tok val="Retorquet"/>
+         <tok val="retorquet"/>
          <lm>
             <l>retorqueo</l>
             <m>v - 3 s p i a</m>
@@ -741,13 +894,15 @@
       </ana>
       <ana>
          <tok val="Retorresco"/>
+         <tok val="retorresco"/>
          <lm>
             <l>retorresco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retorridae retorridae-->
-         <tok val="[rR]etorridae"/>
+      <ana>
+         <tok val="Retorridae"/>
+         <tok val="retorridae"/>
          <lm>
             <l>retorridus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -756,30 +911,35 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Retorride retorride-->
-         <tok val="[rR]etorride"/>
+      <ana>
+         <tok val="Retorride"/>
+         <tok val="retorride"/>
          <lm>
             <l>retorridus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Retorride retorride retorridum-->
-         <tok val="[rR]etorrid(e|um)"/>
+      <ana>
+         <tok val="Retorride"/>
+         <tok val="retorride"/>
+         <tok val="retorridum"/>
          <lm>
             <l>retorridus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Retorridus retorridus-->
-         <tok val="[rR]etorridus"/>
+      <ana>
+         <tok val="Retorridus"/>
+         <tok val="retorridus"/>
          <lm>
             <l>retorridus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Retorta retorta-->
-         <tok val="[rR]etorta"/>
+      <ana>
+         <tok val="Retorta"/>
+         <tok val="retorta"/>
          <lm>
             <l>retorqueo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -790,8 +950,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Retortae retortae-->
-         <tok val="[rR]etortae"/>
+      <ana>
+         <tok val="Retortae"/>
+         <tok val="retortae"/>
          <lm>
             <l>retorqueo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -800,8 +961,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Retorto retorto-->
-         <tok val="[rR]etorto"/>
+      <ana>
+         <tok val="Retorto"/>
+         <tok val="retorto"/>
          <lm>
             <l>retorqueo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -810,22 +972,25 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Retortus retortus-->
-         <tok val="[rR]etortus"/>
+      <ana>
+         <tok val="Retortus"/>
+         <tok val="retortus"/>
          <lm>
             <l>retorqueo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Retostus retostus-->
-         <tok val="[rR]etostus"/>
+      <ana>
+         <tok val="Retostus"/>
+         <tok val="retostus"/>
          <lm>
             <l>retostus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Retractans retractans-->
-         <tok val="[rR]etractans"/>
+      <ana>
+         <tok val="Retractans"/>
+         <tok val="retractans"/>
          <lm>
             <l>retracto</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -837,8 +1002,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Retractare retractare-->
-         <tok val="[rR]etractare"/>
+      <ana>
+         <tok val="Retractare"/>
+         <tok val="retractare"/>
          <lm>
             <l>retracto</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -846,8 +1012,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Retractat retractat-->
-         <tok val="[rR]etractat"/>
+      <ana>
+         <tok val="Retractat"/>
+         <tok val="retractat"/>
          <lm>
             <l>retracto</l>
             <m>v - 3 s p i a</m>
@@ -855,6 +1022,7 @@
       </ana>
       <ana>
          <tok val="Retractate"/>
+         <tok val="retractate"/>
          <lm cert="0.5">
             <l>retracto</l>
             <m cert="0.5">v - 2 p p m a</m>
@@ -865,15 +1033,19 @@
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Retractate retractatius-->
-         <tok val="[rR]etractat(ius|e)"/>
+      <ana>
+         <tok val="Retractate"/>
+         <tok val="retractate"/>
+         <tok val="retractatius"/>
          <lm>
             <l>retractatus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Retractate retractatum-->
-         <tok val="[rR]etractat(um|e)"/>
+      <ana>
+         <tok val="Retractate"/>
+         <tok val="retractate"/>
+         <tok val="retractatum"/>
          <lm cert="0.5">
             <l>retractatus</l>
             <m>a - - s - - - n v</m>
@@ -883,8 +1055,9 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Retractatio retractatio-->
-         <tok val="[rR]etractatio"/>
+      <ana>
+         <tok val="Retractatio"/>
+         <tok val="retractatio"/>
          <lm>
             <l>retractatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -893,6 +1066,7 @@
       </ana>
       <ana>
          <tok val="Retractatius"/>
+         <tok val="retractatius"/>
          <lm>
             <l>retracto</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -901,8 +1075,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Retractatus retractatus-->
-         <tok val="[rR]etractatus"/>
+      <ana>
+         <tok val="Retractatus"/>
+         <tok val="retractatus"/>
          <lm cert="0.5">
             <l>retractatus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -916,15 +1091,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Retractent retractent-->
-         <tok val="[rR]etractent"/>
+      <ana>
+         <tok val="Retractent"/>
+         <tok val="retractent"/>
          <lm>
             <l>retracto</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Retracti retracti-->
-         <tok val="[rR]etracti"/>
+      <ana>
+         <tok val="Retracti"/>
+         <tok val="retracti"/>
          <lm>
             <l>retraho</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -933,8 +1110,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Retractiones retractiones-->
-         <tok val="[rR]etractiones"/>
+      <ana>
+         <tok val="Retractiones"/>
+         <tok val="retractiones"/>
          <lm>
             <l>retractio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -942,8 +1120,9 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Retractior retractior-->
-         <tok val="[rR]etractior"/>
+      <ana>
+         <tok val="Retractior"/>
+         <tok val="retractior"/>
          <lm>
             <l>retraho</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -952,8 +1131,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Retractis retractis-->
-         <tok val="[rR]etractis"/>
+      <ana>
+         <tok val="Retractis"/>
+         <tok val="retractis"/>
          <lm>
             <l>retraho</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -964,8 +1144,9 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Retracto retracto-->
-         <tok val="[rR]etracto"/>
+      <ana>
+         <tok val="Retracto"/>
+         <tok val="retracto"/>
          <lm cert="0.5">
             <l>retracto</l>
             <m>v - 1 s p i a</m>
@@ -978,8 +1159,10 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Retractus retractus retractusque-->
-         <tok val="[rR]etractus(que)?"/>
+      <ana>
+         <tok val="Retractus"/>
+         <tok val="retractus"/>
+         <tok val="retractusque"/>
          <lm cert="0.5">
             <l>retractus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -994,28 +1177,32 @@
       </ana>
       <ana>
          <tok val="Retrado"/>
+         <tok val="retrado"/>
          <lm>
             <l>retrado</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retraham retraham-->
-         <tok val="[rR]etraham"/>
+      <ana>
+         <tok val="Retraham"/>
+         <tok val="retraham"/>
          <lm>
             <l>retraho</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Retrahe retrahe-->
-         <tok val="[rR]etrahe"/>
+      <ana>
+         <tok val="Retrahe"/>
+         <tok val="retrahe"/>
          <lm>
             <l>retraho</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Retrahere retrahere-->
-         <tok val="[rR]etrahere"/>
+      <ana>
+         <tok val="Retrahere"/>
+         <tok val="retrahere"/>
          <lm>
             <l>retraho</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1024,15 +1211,18 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Retrahit retrahit retrahitque-->
-         <tok val="[rR]etrahit(que)?"/>
+      <ana>
+         <tok val="Retrahit"/>
+         <tok val="retrahit"/>
+         <tok val="retrahitque"/>
          <lm>
             <l>retraho</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retribuere retribuere-->
-         <tok val="[rR]etribuere"/>
+      <ana>
+         <tok val="Retribuere"/>
+         <tok val="retribuere"/>
          <lm>
             <l>retribuo</l>
             <m cert="0.333333333333333333">v - 3 p r i a</m>
@@ -1040,8 +1230,10 @@
             <m cert="0.333333333333333333">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Retribuere retribuere retribueris-->
-         <tok val="[rR]etribuer(e|is)"/>
+      <ana>
+         <tok val="Retribuere"/>
+         <tok val="retribuere"/>
+         <tok val="retribueris"/>
          <lm>
             <l>retribuo</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -1050,13 +1242,15 @@
       </ana>
       <ana>
          <tok val="Retribuo"/>
+         <tok val="retribuo"/>
          <lm>
             <l>retribuo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retrimentum retrimentum-->
-         <tok val="[rR]etrimentum"/>
+      <ana>
+         <tok val="Retrimentum"/>
+         <tok val="retrimentum"/>
          <lm>
             <l>retrimentum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1065,8 +1259,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Retroagere retroagere-->
-         <tok val="[rR]etroagere"/>
+      <ana>
+         <tok val="Retroagere"/>
+         <tok val="retroagere"/>
          <lm>
             <l>retroago</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1077,13 +1272,15 @@
       </ana>
       <ana>
          <tok val="Retroago"/>
+         <tok val="retroago"/>
          <lm>
             <l>retroago</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retrocedere retrocedere-->
-         <tok val="[rR]etrocedere"/>
+      <ana>
+         <tok val="Retrocedere"/>
+         <tok val="retrocedere"/>
          <lm>
             <l>retrocedo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1094,13 +1291,15 @@
       </ana>
       <ana>
          <tok val="Retroeo"/>
+         <tok val="retroeo"/>
          <lm>
             <l>retroeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retrogradatio retrogradatio-->
-         <tok val="[rR]etrogradatio"/>
+      <ana>
+         <tok val="Retrogradatio"/>
+         <tok val="retrogradatio"/>
          <lm>
             <l>retrogradatio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -1109,6 +1308,7 @@
       </ana>
       <ana>
          <tok val="Retrogradior"/>
+         <tok val="retrogradior"/>
          <lm>
             <l>retrogradus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1117,29 +1317,36 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Retrogradus retrogradus retrogradusque-->
-         <tok val="[rR]etrogradus(que)?"/>
+      <ana>
+         <tok val="Retrogradus"/>
+         <tok val="retrogradus"/>
+         <tok val="retrogradusque"/>
          <lm>
             <l>retrogradus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Retrorsus retrorsus retroversus retrorsum-->
-         <tok val="[rR]etro(ve)?rsu[sm]"/>
+      <ana>
+         <tok val="Retrorsus"/>
+         <tok val="retrorsum"/>
+         <tok val="retrorsus"/>
+         <tok val="retroversus"/>
          <lm>
             <l>retroversus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Retrudo retrudo-->
-         <tok val="[rR]etrudo"/>
+      <ana>
+         <tok val="Retrudo"/>
+         <tok val="retrudo"/>
          <lm>
             <l>retrudo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retrusum retrusum-->
-         <tok val="[rR]etrusum"/>
+      <ana>
+         <tok val="Retrusum"/>
+         <tok val="retrusum"/>
          <lm>
             <l>retrudo</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -1151,69 +1358,77 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Rettulerat rettulerat retulerat-->
-         <tok val="[rR]e[t]?tulerat"/>
+      <ana>
+         <tok val="Rettulerat"/>
+         <tok val="rettulerat"/>
+         <tok val="retulerat"/>
          <lm>
             <l>refero</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Rettuleris rettuleris retuleris-->
-         <tok val="[rR]e[t]?tuleris"/>
+      <ana>
+         <tok val="Rettuleris"/>
+         <tok val="rettuleris"/>
+         <tok val="retuleris"/>
          <lm>
             <l>refero</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Rettuli Retuli rettuli retuli-->
-         <tok val="[Rr]e[t]?tuli"/>
+      <ana>
+         <tok val="Rettuli"/>
+         <tok val="Retuli"/>
+         <tok val="rettuli"/>
+         <tok val="retuli"/>
          <lm>
             <l>refero</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Rettulimus rettulimus retulimus-->
-         <tok val="[rR]e[t]?tulimus"/>
+      <ana>
+         <tok val="Rettulimus"/>
+         <tok val="rettulimus"/>
+         <tok val="retulimus"/>
          <lm>
             <l>refero</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Retuleram rettuleram-->
-         <tok val="(ret|Re)tuleram"/>
+      <ana>
+         <tok val="Retuleram"/>
+         <tok val="rettuleram"/>
+         <tok val="retuleram"/>
          <lm>
             <l>refero</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Retuli retuli-->
-         <tok val="[rR]etuli"/>
+      <ana>
+         <tok val="Retuli"/>
+         <tok val="retuli"/>
          <lm>
             <l>retulo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Retum retum-->
-         <tok val="[rR]etum"/>
+      <ana>
+         <tok val="Retum"/>
+         <tok val="retum"/>
          <lm>
             <l>repleo</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - s r p p n a</m>
-            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Retum"/>
-         <lm>
-            <l>repleo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Retundere retundere-->
-         <tok val="[rR]etundere"/>
+         <tok val="Retundere"/>
+         <tok val="retundere"/>
          <lm>
             <l>retundo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1222,22 +1437,26 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Retundit retundit-->
-         <tok val="[rR]etundit"/>
+      <ana>
+         <tok val="Retundit"/>
+         <tok val="retundit"/>
          <lm>
             <l>retundo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retundo retundo-->
-         <tok val="[rR]etundo"/>
+      <ana>
+         <tok val="Retundo"/>
+         <tok val="retundo"/>
          <lm>
             <l>retundo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Retuso retunso retuso-->
-         <tok val="[rR]etu[n]?so"/>
+      <ana>
+         <tok val="Retuso"/>
+         <tok val="retunso"/>
+         <tok val="retuso"/>
          <lm>
             <l>retundo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1246,8 +1465,11 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Retusum retunsum retunsumst retusum-->
-         <tok val="[rR]etu[n]?sum(st)?"/>
+      <ana>
+         <tok val="Retusum"/>
+         <tok val="retunsum"/>
+         <tok val="retunsumst"/>
+         <tok val="retusum"/>
          <lm>
             <l>retundo</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -1259,15 +1481,18 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Retusus retunsus retusus-->
-         <tok val="[rR]etu[n]?sus"/>
+      <ana>
+         <tok val="Retusus"/>
+         <tok val="retunsus"/>
+         <tok val="retusus"/>
          <lm>
             <l>retundo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--reta retaue-->
-         <tok val="reta(ue)?"/>
+      <ana>
+         <tok val="reta"/>
+         <tok val="retaue"/>
          <lm>
             <l>repleo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1464,8 +1689,9 @@
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--retardaretur retardareturve-->
-         <tok val="retardaretur(ve)?"/>
+      <ana>
+         <tok val="retardaretur"/>
+         <tok val="retardareturve"/>
          <lm>
             <l>retardo</l>
             <m>v - 3 s i s p</m>
@@ -1506,8 +1732,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--retardat retardatque-->
-         <tok val="retardat(que)?"/>
+      <ana>
+         <tok val="retardat"/>
+         <tok val="retardatque"/>
          <lm>
             <l>retardo</l>
             <m>v - 3 s p i a</m>
@@ -1559,8 +1786,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--retardationem retardationemve-->
-         <tok val="retardationem(ve)?"/>
+      <ana>
+         <tok val="retardationem"/>
+         <tok val="retardationemve"/>
          <lm>
             <l>retardatio</l>
             <m>n - - s - - - f a</m>
@@ -1635,15 +1863,17 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--retardatur retardaturque-->
-         <tok val="retardatur(que)?"/>
+      <ana>
+         <tok val="retardatur"/>
+         <tok val="retardaturque"/>
          <lm>
             <l>retardo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--retardauit retardavit-->
-         <tok val="retarda[vu]it"/>
+      <ana>
+         <tok val="retardauit"/>
+         <tok val="retardavit"/>
          <lm>
             <l>retardo</l>
             <m>v - 3 s r i a</m>
@@ -1724,8 +1954,10 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--retectis retectisque Retectis-->
-         <tok val="[Rr]etectis(que)?"/>
+      <ana>
+         <tok val="Retectis"/>
+         <tok val="retectis"/>
+         <tok val="retectisque"/>
          <lm>
             <l>retego</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -1852,16 +2084,18 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--retemptantem retentantem-->
-         <tok val="rete(n|mp)tantem"/>
+      <ana>
+         <tok val="retemptantem"/>
+         <tok val="retentantem"/>
          <lm>
             <l>retento</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--retemptat retentat-->
-         <tok val="rete(n|mp)tat"/>
+      <ana>
+         <tok val="retemptat"/>
+         <tok val="retentat"/>
          <lm>
             <l>retento</l>
             <m>v - 3 s p i a</m>
@@ -1894,8 +2128,9 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--retemptet retentet-->
-         <tok val="rete(n|mp)tet"/>
+      <ana>
+         <tok val="retemptet"/>
+         <tok val="retentet"/>
          <lm>
             <l>retento</l>
             <m>v - 3 s p s a</m>
@@ -1938,8 +2173,9 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--retensum retentum-->
-         <tok val="reten[ts]um"/>
+      <ana>
+         <tok val="retensum"/>
+         <tok val="retentum"/>
          <lm>
             <l>retendo</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1949,23 +2185,28 @@
             <m cert="0.2">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--retensum retentorum retentum-->
-         <tok val="reten[t]?(or|s)?um"/>
+      <ana>
+         <tok val="retensum"/>
+         <tok val="retentorum"/>
+         <tok val="retentum"/>
          <lm>
             <l>retendo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--retensus retentus retentusque-->
-         <tok val="reten[ts]us(que)?"/>
+      <ana>
+         <tok val="retensus"/>
+         <tok val="retentus"/>
+         <tok val="retentusque"/>
          <lm>
             <l>retendo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--retenta retentaque-->
-         <tok val="retenta(que)?"/>
+      <ana>
+         <tok val="retenta"/>
+         <tok val="retentaque"/>
          <lm>
             <l>retendo</l>
             <m cert="0.25">v - - p r p p n a</m>
@@ -2146,8 +2387,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--retentis retentisque-->
-         <tok val="retentis(que)?"/>
+      <ana>
+         <tok val="retentis"/>
+         <tok val="retentisque"/>
          <lm>
             <l>retendo</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -2158,8 +2400,9 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--retento retentoque-->
-         <tok val="retento(que)?"/>
+      <ana>
+         <tok val="retento"/>
+         <tok val="retentoque"/>
          <lm>
             <l>retendo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -2203,8 +2446,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--retentos retentosque-->
-         <tok val="retentos(que)?"/>
+      <ana>
+         <tok val="retentos"/>
+         <tok val="retentosque"/>
          <lm>
             <l>retendo</l>
             <m>v - - p r p p m a</m>
@@ -2409,8 +2653,9 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--retiariorum retiarium-->
-         <tok val="retiari(or)?um"/>
+      <ana>
+         <tok val="retiariorum"/>
+         <tok val="retiarium"/>
          <lm>
             <l>retiarius</l>
             <m>n - - p - - - m g</m>
@@ -2895,22 +3140,25 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--retineam retinear-->
-         <tok val="retinea[rm]"/>
+      <ana>
+         <tok val="retineam"/>
+         <tok val="retinear"/>
          <lm>
             <l>retineo</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--retineamur retineamus-->
-         <tok val="retineamu[sr]"/>
+      <ana>
+         <tok val="retineamur"/>
+         <tok val="retineamus"/>
          <lm>
             <l>retineo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--retineant retineantur-->
-         <tok val="retineant(ur)?"/>
+      <ana>
+         <tok val="retineant"/>
+         <tok val="retineantur"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 p p s a</m>
@@ -2930,15 +3178,17 @@
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--retinebam retinebar-->
-         <tok val="retineba[rm]"/>
+      <ana>
+         <tok val="retinebam"/>
+         <tok val="retinebar"/>
          <lm>
             <l>retineo</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--retinebant retinebantur-->
-         <tok val="retinebant(ur)?"/>
+      <ana>
+         <tok val="retinebant"/>
+         <tok val="retinebantur"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 p i i a</m>
@@ -2951,8 +3201,9 @@
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--retinebere retinebis-->
-         <tok val="retineb(is|ere)"/>
+      <ana>
+         <tok val="retinebere"/>
+         <tok val="retinebis"/>
          <lm>
             <l>retineo</l>
             <m>v - 2 s f i a</m>
@@ -2965,8 +3216,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--retinebit retinebitur-->
-         <tok val="retinebit(ur)?"/>
+      <ana>
+         <tok val="retinebit"/>
+         <tok val="retinebitur"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 s f i a</m>
@@ -2986,8 +3238,9 @@
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--retinebunt retinebuntque-->
-         <tok val="retinebunt(que)?"/>
+      <ana>
+         <tok val="retinebunt"/>
+         <tok val="retinebuntque"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 p f i a</m>
@@ -3000,8 +3253,11 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--retinen retines retinesque retinés-->
-         <tok val="retin[e]?(s|n|és|esque)"/>
+      <ana>
+         <tok val="retinen"/>
+         <tok val="retines"/>
+         <tok val="retinesque"/>
+         <tok val="retinés"/>
          <lm>
             <l>retineo</l>
             <m>v - 2 s p i a</m>
@@ -3028,8 +3284,9 @@
             <m>v - - p p g a f a</m>
          </lm>
       </ana>
-      <ana><!--retinendi retinendique-->
-         <tok val="retinendi(que)?"/>
+      <ana>
+         <tok val="retinendi"/>
+         <tok val="retinendique"/>
          <lm>
             <l>retineo</l>
             <m cert="0.2">v - - p p g a m n</m>
@@ -3051,8 +3308,9 @@
             <m cert="0.166666666666666667">v - - p p g a n b</m>
          </lm>
       </ana>
-      <ana><!--retinendo retinendoque-->
-         <tok val="retinendo(que)?"/>
+      <ana>
+         <tok val="retinendo"/>
+         <tok val="retinendoque"/>
          <lm>
             <l>retineo</l>
             <m cert="0.166666666666666667">v - - s p g a n b</m>
@@ -3091,8 +3349,9 @@
             <m cert="0.142857142857142857">v - - s p g a n v</m>
          </lm>
       </ana>
-      <ana><!--retinente retinenti-->
-         <tok val="retinent[ie]"/>
+      <ana>
+         <tok val="retinente"/>
+         <tok val="retinenti"/>
          <lm>
             <l>retineo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3118,8 +3377,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--retinentes retinentis-->
-         <tok val="retinent[ie]s"/>
+      <ana>
+         <tok val="retinentes"/>
+         <tok val="retinentis"/>
          <lm>
             <l>retineo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3179,29 +3439,33 @@
             <m cert="0.5">v - - s p p a m v s</m>
          </lm>
       </ana>
-      <ana><!--retiner retinerque-->
-         <tok val="retiner(que)?"/>
+      <ana>
+         <tok val="retiner"/>
+         <tok val="retinerque"/>
          <lm>
             <l>retineo</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--retinerem retinerer-->
-         <tok val="retinere[rm]"/>
+      <ana>
+         <tok val="retinerem"/>
+         <tok val="retinerer"/>
          <lm>
             <l>retineo</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--retinerent retinerentur-->
-         <tok val="retinerent(ur)?"/>
+      <ana>
+         <tok val="retinerent"/>
+         <tok val="retinerentur"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--retineret retineretur-->
-         <tok val="retineret(ur)?"/>
+      <ana>
+         <tok val="retineret"/>
+         <tok val="retineretur"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 s i s a</m>
@@ -3316,8 +3580,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--retinuit retinuitque-->
-         <tok val="retinuit(que)?"/>
+      <ana>
+         <tok val="retinuit"/>
+         <tok val="retinuitque"/>
          <lm>
             <l>retineo</l>
             <m>v - 3 s r i a</m>
@@ -3663,8 +3928,9 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--retracta retractan-->
-         <tok val="retracta[n]?"/>
+      <ana>
+         <tok val="retracta"/>
+         <tok val="retractan"/>
          <lm cert="0.5">
             <l>retraho</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -3700,15 +3966,17 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--retractam retractamque-->
-         <tok val="retractam(que)?"/>
+      <ana>
+         <tok val="retractam"/>
+         <tok val="retractamque"/>
          <lm>
             <l>retraho</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--retractan retractas-->
-         <tok val="retracta[sn]"/>
+      <ana>
+         <tok val="retractan"/>
+         <tok val="retractas"/>
          <lm cert="0.5">
             <l>retracto</l>
             <m>v - 2 s p i a</m>
@@ -3792,8 +4060,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--retractante retractanti-->
-         <tok val="retractant[ie]"/>
+      <ana>
+         <tok val="retractante"/>
+         <tok val="retractanti"/>
          <lm>
             <l>retracto</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3994,15 +4263,17 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--retractaui retractavi-->
-         <tok val="retracta[vu]i"/>
+      <ana>
+         <tok val="retractaui"/>
+         <tok val="retractavi"/>
          <lm>
             <l>retracto</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--retractauit retractavit-->
-         <tok val="retracta[vu]it"/>
+      <ana>
+         <tok val="retractauit"/>
+         <tok val="retractavit"/>
          <lm>
             <l>retracto</l>
             <m>v - 3 s r i a</m>
@@ -4073,8 +4344,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--retractionem retractionemque-->
-         <tok val="retractionem(que)?"/>
+      <ana>
+         <tok val="retractionem"/>
+         <tok val="retractionemque"/>
          <lm>
             <l>retractio</l>
             <m>n - - s - - - f a</m>
@@ -4260,8 +4532,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--retrahendumque retrahendum-->
-         <tok val="retrahendum(que)?"/>
+      <ana>
+         <tok val="retrahendum"/>
+         <tok val="retrahendumque"/>
          <lm>
             <l>retraho</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -4273,8 +4546,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--retrahens retrahensque-->
-         <tok val="retrahens(que)?"/>
+      <ana>
+         <tok val="retrahens"/>
+         <tok val="retrahensque"/>
          <lm>
             <l>retraho</l>
             <m cert="0.142857142857142857">v - - s p p a f v</m>
@@ -4324,8 +4598,9 @@
             <m cert="0.333333333333333333">v - - s p p a m g</m>
          </lm>
       </ana>
-      <ana><!--retrahentis retrahentes-->
-         <tok val="retrahent[ei]s"/>
+      <ana>
+         <tok val="retrahentes"/>
+         <tok val="retrahentis"/>
          <lm>
             <l>retraho</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -4397,8 +4672,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--retrahi retrahique-->
-         <tok val="retrahi(que)?"/>
+      <ana>
+         <tok val="retrahi"/>
+         <tok val="retrahique"/>
          <lm>
             <l>retraho</l>
             <m>v - - - p n p</m>
@@ -4425,8 +4701,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--retrahunt retrahuntque-->
-         <tok val="retrahunt(que)?"/>
+      <ana>
+         <tok val="retrahunt"/>
+         <tok val="retrahuntque"/>
          <lm>
             <l>retraho</l>
             <m>v - 3 p p i a</m>
@@ -4453,8 +4730,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--retraxere retraxerunt-->
-         <tok val="retraxer(unt|e)"/>
+      <ana>
+         <tok val="retraxere"/>
+         <tok val="retraxerunt"/>
          <lm>
             <l>retraho</l>
             <m>v - 3 p r i a</m>
@@ -4518,8 +4796,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--retribuat Retribuat-->
-         <tok val="[Rr]etribuat"/>
+      <ana>
+         <tok val="Retribuat"/>
+         <tok val="retribuat"/>
          <lm>
             <l>retribuo</l>
             <m>v - 3 s p s a</m>
@@ -4972,8 +5251,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--retrocedente retrocedenti-->
-         <tok val="retrocedent[ie]"/>
+      <ana>
+         <tok val="retrocedente"/>
+         <tok val="retrocedenti"/>
          <lm>
             <l>retrocedo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -5190,8 +5470,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--retrogradi retrogradique-->
-         <tok val="retrogradi(que)?"/>
+      <ana>
+         <tok val="retrogradi"/>
+         <tok val="retrogradique"/>
          <lm cert="0.5">
             <l>retrogradis</l>
             <m cert="0.166666666666666667">a - - s - - - m d</m>
@@ -5326,8 +5607,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--retrosum retrouersum-->
-         <tok val="retro(uer)?sum"/>
+      <ana>
+         <tok val="retrosum"/>
+         <tok val="retrouersum"/>
          <lm>
             <l>retroversus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -5355,8 +5637,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--retroversus retrosus-->
-         <tok val="retro(ver)?sus"/>
+      <ana>
+         <tok val="retrosus"/>
+         <tok val="retroversus"/>
          <lm>
             <l>retroversus</l>
             <m>a - - s - - - m n</m>
@@ -5448,8 +5731,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--rettuderam retuderam-->
-         <tok val="re[t]?tuderam"/>
+      <ana>
+         <tok val="rettuderam"/>
+         <tok val="retuderam"/>
          <lm>
             <l>retundo</l>
             <m>v - 1 s l i a</m>
@@ -5462,22 +5746,25 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--rettuderunt retuderunt-->
-         <tok val="re[t]?tuderunt"/>
+      <ana>
+         <tok val="rettuderunt"/>
+         <tok val="retuderunt"/>
          <lm>
             <l>retundo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--rettudi retudi-->
-         <tok val="re[t]?tudi"/>
+      <ana>
+         <tok val="rettudi"/>
+         <tok val="retudi"/>
          <lm>
             <l>retundo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--rettudimus retudimus-->
-         <tok val="re[t]?tudimus"/>
+      <ana>
+         <tok val="rettudimus"/>
+         <tok val="retudimus"/>
          <lm>
             <l>retundo</l>
             <m>v - 1 p r i a</m>
@@ -5490,15 +5777,17 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--rettudit retudit-->
-         <tok val="re[t]?tudit"/>
+      <ana>
+         <tok val="rettudit"/>
+         <tok val="retudit"/>
          <lm>
             <l>retundo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--rettulerant retulerant-->
-         <tok val="re[t]?tulerant"/>
+      <ana>
+         <tok val="rettulerant"/>
+         <tok val="retulerant"/>
          <lm>
             <l>refero</l>
             <m>v - 3 p l i a</m>
@@ -5511,101 +5800,120 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--rettulere rettulerunt rettuleruntque retulere retulerunt-->
-         <tok val="re[t]?tuler(unt|e|untque)"/>
+      <ana>
+         <tok val="rettulere"/>
+         <tok val="rettulerunt"/>
+         <tok val="rettuleruntque"/>
+         <tok val="retulere"/>
+         <tok val="retulerunt"/>
          <lm>
             <l>refero</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--rettulerim retulerim-->
-         <tok val="re[t]?tulerim"/>
+      <ana>
+         <tok val="rettulerim"/>
+         <tok val="retulerim"/>
          <lm>
             <l>refero</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--rettulerint retulerint-->
-         <tok val="re[t]?tulerint"/>
+      <ana>
+         <tok val="rettulerint"/>
+         <tok val="retulerint"/>
          <lm>
             <l>refero</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--rettulerit rettuleritne rettuleritque retulerit-->
-         <tok val="re[t]?tulerit(ne|que)?"/>
+      <ana>
+         <tok val="rettulerit"/>
+         <tok val="rettuleritne"/>
+         <tok val="rettuleritque"/>
+         <tok val="retulerit"/>
          <lm>
             <l>refero</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--rettulero retulero-->
-         <tok val="re[t]?tulero"/>
+      <ana>
+         <tok val="rettulero"/>
+         <tok val="retulero"/>
          <lm>
             <l>refero</l>
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--rettulisse retulisse-->
-         <tok val="re[t]?tulisse"/>
+      <ana>
+         <tok val="rettulisse"/>
+         <tok val="retulisse"/>
          <lm>
             <l>refero</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--rettulissem retulissem-->
-         <tok val="re[t]?tulissem"/>
+      <ana>
+         <tok val="rettulissem"/>
+         <tok val="retulissem"/>
          <lm>
             <l>refero</l>
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--rettulissent retulissent-->
-         <tok val="re[t]?tulissent"/>
+      <ana>
+         <tok val="rettulissent"/>
+         <tok val="retulissent"/>
          <lm>
             <l>refero</l>
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--rettulisses retulisses-->
-         <tok val="re[t]?tulisses"/>
+      <ana>
+         <tok val="rettulisses"/>
+         <tok val="retulisses"/>
          <lm>
             <l>refero</l>
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--rettulisset retulisset-->
-         <tok val="re[t]?tulisset"/>
+      <ana>
+         <tok val="rettulisset"/>
+         <tok val="retulisset"/>
          <lm>
             <l>refero</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--rettulissetis retulissetis-->
-         <tok val="re[t]?tulissetis"/>
+      <ana>
+         <tok val="rettulissetis"/>
+         <tok val="retulissetis"/>
          <lm>
             <l>refero</l>
             <m>v - 2 p l s a</m>
          </lm>
       </ana>
-      <ana><!--rettulisti retulisti-->
-         <tok val="re[t]?tulisti"/>
+      <ana>
+         <tok val="rettulisti"/>
+         <tok val="retulisti"/>
          <lm>
             <l>refero</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--rettulistis retulistis-->
-         <tok val="re[t]?tulistis"/>
+      <ana>
+         <tok val="rettulistis"/>
+         <tok val="retulistis"/>
          <lm>
             <l>refero</l>
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--retu retun-->
-         <tok val="retu[n]?"/>
+      <ana>
+         <tok val="retu"/>
+         <tok val="retun"/>
          <lm>
             <l>repleo</l>
             <m>a - - s - - - n d</m>
@@ -5642,8 +5950,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--retulere retuleris-->
-         <tok val="retuler(is|e)"/>
+      <ana>
+         <tok val="retulere"/>
+         <tok val="retuleris"/>
          <lm>
             <l>retulo</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -5671,8 +5980,9 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--retun retus-->
-         <tok val="retu[sn]"/>
+      <ana>
+         <tok val="retun"/>
+         <tok val="retus"/>
          <lm>
             <l>repleo</l>
             <m>v - - s r p p m n</m>
@@ -5788,8 +6098,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--retundi retundique-->
-         <tok val="retundi(que)?"/>
+      <ana>
+         <tok val="retundi"/>
+         <tok val="retundique"/>
          <lm>
             <l>retundo</l>
             <m>v - - - p n p</m>
@@ -5809,8 +6120,9 @@
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--retunditur retunditurque-->
-         <tok val="retunditur(que)?"/>
+      <ana>
+         <tok val="retunditur"/>
+         <tok val="retunditurque"/>
          <lm>
             <l>retundo</l>
             <m>v - 3 s p i p</m>
@@ -5830,8 +6142,11 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--retunsa retunsast retusa retussa-->
-         <tok val="retu[ns]?sa(st)?"/>
+      <ana>
+         <tok val="retunsa"/>
+         <tok val="retunsast"/>
+         <tok val="retusa"/>
+         <tok val="retussa"/>
          <lm>
             <l>retundo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -5842,8 +6157,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--retunsae retusae-->
-         <tok val="retu[n]?sae"/>
+      <ana>
+         <tok val="retunsae"/>
+         <tok val="retusae"/>
          <lm>
             <l>retundo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -5869,8 +6185,10 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--retur return returque-->
-         <tok val="retur(n|que)?"/>
+      <ana>
+         <tok val="retur"/>
+         <tok val="return"/>
+         <tok val="returque"/>
          <lm>
             <l>reor</l>
             <m>v - 3 s p i p</m>
@@ -5892,8 +6210,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--retusis retussis retunsis-->
-         <tok val="retu[n]?s[s]?is"/>
+      <ana>
+         <tok val="retunsis"/>
+         <tok val="retusis"/>
+         <tok val="retussis"/>
          <lm>
             <l>retundo</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>

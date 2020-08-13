@@ -1,50 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusperf">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:perf">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to perf</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-perf.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PERF</tok-starts-with>
       <tok-starts-with>Perf</tok-starts-with>
       <tok-starts-with>perf</tok-starts-with>
       <tok-starts-with>pérf</tok-starts-with>
-      <ana><!--PERFECIT Perfecit perfecit perfecitque-->
-         <tok val="[pP]?(erfecit)?(que|PERFECIT)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:38:44.82-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:38:44.82-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-perf.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PERFECIT"/>
+         <tok val="Perfecit"/>
+         <tok val="perfecit"/>
+         <tok val="perfecitque"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--PERFECTA Perfecta perfecta perfectaque-->
-         <tok val="[pP]?(erfecta)?(que|PERFECTA)?"/>
+      <ana>
+         <tok val="PERFECTA"/>
+         <tok val="Perfecta"/>
+         <tok val="perfecta"/>
+         <tok val="perfectaque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -55,8 +69,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--PERFERO Perfero perfero-->
-         <tok val="[pP]?(erfero|PERFERO)"/>
+      <ana>
+         <tok val="PERFERO"/>
+         <tok val="Perfero"/>
+         <tok val="perfero"/>
          <lm cert="0.5">
             <l>perferus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -69,23 +85,32 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PERFICIO Perficio perficio-->
-         <tok val="[pP]?(erficio|PERFICIO)"/>
+      <ana>
+         <tok val="PERFICIO"/>
+         <tok val="Perficio"/>
+         <tok val="perficio"/>
          <lm>
             <l>perficio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PERFIDVS Perfidus Perfidvs perfidus-->
-         <tok val="[Pp]?(erfid)?[vu]?(s|PERFIDVS)"/>
+      <ana>
+         <tok val="PERFIDVS"/>
+         <tok val="Perfidus"/>
+         <tok val="Perfidvs"/>
+         <tok val="perfidus"/>
+         <tok val="perfidvs"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--PERFLVO Perfluo perfluo-->
-         <tok val="[pP]?(erfluo|PERFLVO)"/>
+      <ana>
+         <tok val="PERFLVO"/>
+         <tok val="Perfluo"/>
+         <tok val="perfluo"/>
+         <tok val="perflvo"/>
          <lm cert="0.5">
             <l>perfluus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -98,15 +123,21 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PERFODIO Perfodio perfodio-->
-         <tok val="[pP]?(erfodio|PERFODIO)"/>
+      <ana>
+         <tok val="PERFODIO"/>
+         <tok val="Perfodio"/>
+         <tok val="perfodio"/>
          <lm>
             <l>perfodio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PERFVGIVM Perfugium perfugium perfugiumque-->
-         <tok val="[pP]?(erfugium)?(que|PERFVGIVM)?"/>
+      <ana>
+         <tok val="PERFVGIVM"/>
+         <tok val="Perfugium"/>
+         <tok val="perfugium"/>
+         <tok val="perfugiumque"/>
+         <tok val="perfvgivm"/>
          <lm>
             <l>perfugium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -115,22 +146,29 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--PERFVNDO Perfundo perfundo-->
-         <tok val="[pP]?(erfundo|PERFVNDO)"/>
+      <ana>
+         <tok val="PERFVNDO"/>
+         <tok val="Perfundo"/>
+         <tok val="perfundo"/>
+         <tok val="perfvndo"/>
          <lm>
             <l>perfundo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--PERFVNGOR Perfungor-->
-         <tok val="P(erfungor|ERFVNGOR)"/>
+      <ana>
+         <tok val="PERFVNGOR"/>
+         <tok val="Perfungor"/>
+         <tok val="perfungor"/>
+         <tok val="perfvngor"/>
          <lm>
             <l>perfungor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfa perfa-->
-         <tok val="[pP]erfa"/>
+      <ana>
+         <tok val="Perfa"/>
+         <tok val="perfa"/>
          <lm>
             <l>perfor</l>
             <m>v - 2 s p m a</m>
@@ -138,6 +176,7 @@
       </ana>
       <ana>
          <tok val="Perfabrico"/>
+         <tok val="perfabrico"/>
          <lm>
             <l>perfabrico</l>
             <m>v - 1 s p i a</m>
@@ -145,6 +184,7 @@
       </ana>
       <ana>
          <tok val="Perfacere"/>
+         <tok val="perfacere"/>
          <lm>
             <l>perfacio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -152,15 +192,18 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfacetus perfacetus-->
-         <tok val="[pP]erfacetus"/>
+      <ana>
+         <tok val="Perfacetus"/>
+         <tok val="perfacetus"/>
          <lm>
             <l>perfacetus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Perfacile perfacile perfacilest-->
-         <tok val="[pP]erfacile(st)?"/>
+      <ana>
+         <tok val="Perfacile"/>
+         <tok val="perfacile"/>
+         <tok val="perfacilest"/>
          <lm>
             <l>perfacilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -168,8 +211,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Perfacilis perfacilis-->
-         <tok val="[pP]erfacilis"/>
+      <ana>
+         <tok val="Perfacilis"/>
+         <tok val="perfacilis"/>
          <lm>
             <l>perfacilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -183,8 +227,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Perfamiliaris perfamiliaris-->
-         <tok val="[pP]erfamiliaris"/>
+      <ana>
+         <tok val="Perfamiliaris"/>
+         <tok val="perfamiliaris"/>
          <lm>
             <l>perfamiliaris</l>
             <m cert="0.083333333333333333">n - - s - - - m g</m>
@@ -203,6 +248,7 @@
       </ana>
       <ana>
          <tok val="Perfatuae"/>
+         <tok val="perfatuae"/>
          <lm>
             <l>perfatuus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -213,6 +259,7 @@
       </ana>
       <ana>
          <tok val="Perfatum"/>
+         <tok val="perfatum"/>
          <lm>
             <l>perfor</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -226,48 +273,62 @@
       </ana>
       <ana>
          <tok val="Perfatuus"/>
+         <tok val="perfatuus"/>
          <lm>
             <l>perfatuus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Perfecerat perfecerat perfeceratque-->
-         <tok val="[pP]erfecerat(que)?"/>
+      <ana>
+         <tok val="Perfecerat"/>
+         <tok val="perfecerat"/>
+         <tok val="perfeceratque"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Perfeci perfeci-->
-         <tok val="[pP]erfeci"/>
+      <ana>
+         <tok val="Perfeci"/>
+         <tok val="perfeci"/>
          <lm>
             <l>perficio</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Perfecisse perfecisse-->
-         <tok val="[pP]erfecisse"/>
+      <ana>
+         <tok val="Perfecisse"/>
+         <tok val="perfecisse"/>
          <lm>
             <l>perficio</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Perfecte Perfectum perfecte perfecteque perfectum perfectumque-->
-         <tok val="[pP]erfect(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Perfecte"/>
+         <tok val="Perfectum"/>
+         <tok val="perfecte"/>
+         <tok val="perfecteque"/>
+         <tok val="perfectum"/>
+         <tok val="perfectumque"/>
          <lm>
             <l>perficio</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Perfecte perfecte perfecteque-->
-         <tok val="[pP]erfecte(que)?"/>
+      <ana>
+         <tok val="Perfecte"/>
+         <tok val="perfecte"/>
+         <tok val="perfecteque"/>
          <lm>
             <l>perficio</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Perfecti perfecti perfectique-->
-         <tok val="[pP]erfecti(que)?"/>
+      <ana>
+         <tok val="Perfecti"/>
+         <tok val="perfecti"/>
+         <tok val="perfectique"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -276,23 +337,28 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Perfectio perfectio perfectioque-->
-         <tok val="[pP]erfectio(que)?"/>
+      <ana>
+         <tok val="Perfectio"/>
+         <tok val="perfectio"/>
+         <tok val="perfectioque"/>
          <lm>
             <l>perfectio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Perfectionis perfectionis perfectionisque-->
-         <tok val="[pP]erfectionis(que)?"/>
+      <ana>
+         <tok val="Perfectionis"/>
+         <tok val="perfectionis"/>
+         <tok val="perfectionisque"/>
          <lm>
             <l>perfectio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Perfectior perfectior-->
-         <tok val="[pP]erfectior"/>
+      <ana>
+         <tok val="Perfectior"/>
+         <tok val="perfectior"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -301,8 +367,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Perfectiora perfectiora-->
-         <tok val="[pP]erfectiora"/>
+      <ana>
+         <tok val="Perfectiora"/>
+         <tok val="perfectiora"/>
          <lm>
             <l>perficio</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -310,8 +377,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--Perfectiores perfectiores-->
-         <tok val="[pP]erfectiores"/>
+      <ana>
+         <tok val="Perfectiores"/>
+         <tok val="perfectiores"/>
          <lm>
             <l>perficio</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -322,8 +390,10 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Perfectis perfectis perfectisque-->
-         <tok val="[pP]erfectis(que)?"/>
+      <ana>
+         <tok val="Perfectis"/>
+         <tok val="perfectis"/>
+         <tok val="perfectisque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.2">v - - p r p p n d</m>
@@ -333,15 +403,20 @@
             <m cert="0.2">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Perfectis perfectis perfectisque pérfectis-->
-         <tok val="[pP]?(e|pé|pe)rfectis(que)?"/>
+      <ana>
+         <tok val="Perfectis"/>
+         <tok val="perfectis"/>
+         <tok val="perfectisque"/>
+         <tok val="pérfectis"/>
          <lm>
             <l>perficio</l>
             <m>v - - p r p p f d</m>
          </lm>
       </ana>
-      <ana><!--Perfectissima perfectissima perfectissimaque-->
-         <tok val="[pP]erfectissima(que)?"/>
+      <ana>
+         <tok val="Perfectissima"/>
+         <tok val="perfectissima"/>
+         <tok val="perfectissimaque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -352,8 +427,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Perfecto perfecto perfectoque-->
-         <tok val="[pP]erfecto(que)?"/>
+      <ana>
+         <tok val="Perfecto"/>
+         <tok val="perfecto"/>
+         <tok val="perfectoque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -362,38 +439,49 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Perfector perfector-->
-         <tok val="[pP]erfector"/>
+      <ana>
+         <tok val="Perfector"/>
+         <tok val="perfector"/>
          <lm>
             <l>perfector</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Perfectorum perfectorum perfectorumque-->
-         <tok val="[pP]erfectorum(que)?"/>
+      <ana>
+         <tok val="Perfectorum"/>
+         <tok val="perfectorum"/>
+         <tok val="perfectorumque"/>
          <lm>
             <l>perfector</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Perfectorum Perfectum perfectorum perfectorumque perfectum perfectumque-->
-         <tok val="[pP]erfect(or)?um(que)?"/>
+      <ana>
+         <tok val="Perfectorum"/>
+         <tok val="Perfectum"/>
+         <tok val="perfectorum"/>
+         <tok val="perfectorumque"/>
+         <tok val="perfectum"/>
+         <tok val="perfectumque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Perfectos perfectos-->
-         <tok val="[pP]erfectos"/>
+      <ana>
+         <tok val="Perfectos"/>
+         <tok val="perfectos"/>
          <lm>
             <l>perficio</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Perfectum perfectum perfectumque-->
-         <tok val="[pP]erfectum(que)?"/>
+      <ana>
+         <tok val="Perfectum"/>
+         <tok val="perfectum"/>
+         <tok val="perfectumque"/>
          <lm cert="0.5">
             <l>perficio</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -407,13 +495,15 @@
       </ana>
       <ana>
          <tok val="Perfectum"/>
+         <tok val="perfectum"/>
          <lm>
             <l>perficio</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Perfecturum perfecturum-->
-         <tok val="[pP]erfecturum"/>
+      <ana>
+         <tok val="Perfecturum"/>
+         <tok val="perfecturum"/>
          <lm>
             <l>perficio</l>
             <m cert="0.166666666666666667">v - - p f p a n g</m>
@@ -424,8 +514,10 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Perfectus perfectus perfectusque-->
-         <tok val="[pP]erfectus(que)?"/>
+      <ana>
+         <tok val="Perfectus"/>
+         <tok val="perfectus"/>
+         <tok val="perfectusque"/>
          <lm cert="0.5">
             <l>perfectus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -438,22 +530,26 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Perfer perfer-->
-         <tok val="[pP]erfer"/>
+      <ana>
+         <tok val="Perfer"/>
+         <tok val="perfer"/>
          <lm>
             <l>perfero</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Perferat perferat perferatque-->
-         <tok val="[pP]erferat(que)?"/>
+      <ana>
+         <tok val="Perferat"/>
+         <tok val="perferat"/>
+         <tok val="perferatque"/>
          <lm>
             <l>perfero</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Perferens perferens-->
-         <tok val="[pP]erferens"/>
+      <ana>
+         <tok val="Perferens"/>
+         <tok val="perferens"/>
          <lm>
             <l>perfero</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -465,58 +561,67 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Perferimus perferimus-->
-         <tok val="[pP]erferimus"/>
+      <ana>
+         <tok val="Perferimus"/>
+         <tok val="perferimus"/>
          <lm>
             <l>perfero</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Perferre perferre-->
-         <tok val="[pP]erferre"/>
+      <ana>
+         <tok val="Perferre"/>
+         <tok val="perferre"/>
          <lm>
             <l>perfero</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Perferret perferret perferretque-->
-         <tok val="[pP]erferret(que)?"/>
+      <ana>
+         <tok val="Perferret"/>
+         <tok val="perferret"/>
+         <tok val="perferretque"/>
          <lm>
             <l>perfero</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Perferri perferri-->
-         <tok val="[pP]erferri"/>
+      <ana>
+         <tok val="Perferri"/>
+         <tok val="perferri"/>
          <lm>
             <l>perfero</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Perfert perfert-->
-         <tok val="[pP]erfert"/>
+      <ana>
+         <tok val="Perfert"/>
+         <tok val="perfert"/>
          <lm>
             <l>perfero</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfertur perfertur-->
-         <tok val="[pP]erfertur"/>
+      <ana>
+         <tok val="Perfertur"/>
+         <tok val="perfertur"/>
          <lm>
             <l>perfero</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perferuntur perferuntur-->
-         <tok val="[pP]erferuntur"/>
+      <ana>
+         <tok val="Perferuntur"/>
+         <tok val="perferuntur"/>
          <lm>
             <l>perfero</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfi perfi-->
-         <tok val="[pP]erfi"/>
+      <ana>
+         <tok val="Perfi"/>
+         <tok val="perfi"/>
          <lm>
             <l>perfio</l>
             <m>v - 2 s p m a</m>
@@ -524,16 +629,14 @@
       </ana>
       <ana>
          <tok val="Perfica"/>
-         <lm>
+         <tok val="perfica"/>
+         <lm cert="0.5">
             <l>Perfica</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
             <m cert="0.333333333333333333">n e - s - - - f v</m>
             <m cert="0.333333333333333333">n e - s - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Perfica perfica-->
-         <tok val="[pP]erfica"/>
-         <lm>
+         <lm cert="0.5">
             <l>perficus</l>
             <m cert="0.166666666666666667">a - - s - - - f b</m>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -543,15 +646,18 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Perfice perfice perficiun-->
-         <tok val="[pP]erfic(e|iun)"/>
+      <ana>
+         <tok val="Perfice"/>
+         <tok val="perfice"/>
+         <tok val="perficiun"/>
          <lm>
             <l>perficus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Perfice perfice-->
-         <tok val="[pP]erfice"/>
+      <ana>
+         <tok val="Perfice"/>
+         <tok val="perfice"/>
          <lm cert="0.5">
             <l>perficus</l>
             <m cert="0.5">a - - s - - - n v</m>
@@ -562,8 +668,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Perficere perficere-->
-         <tok val="[pP]erficere"/>
+      <ana>
+         <tok val="Perficere"/>
+         <tok val="perficere"/>
          <lm>
             <l>perficio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -571,8 +678,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfici perfici perficique-->
-         <tok val="[pP]erfici(que)?"/>
+      <ana>
+         <tok val="Perfici"/>
+         <tok val="perfici"/>
+         <tok val="perficique"/>
          <lm cert="0.5">
             <l>perficus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -585,51 +694,59 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Perficiam perficiam-->
-         <tok val="[pP]erficiam"/>
+      <ana>
+         <tok val="Perficiam"/>
+         <tok val="perficiam"/>
          <lm>
             <l>perficio</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Perficiantur perficiantur-->
-         <tok val="[pP]erficiantur"/>
+      <ana>
+         <tok val="Perficiantur"/>
+         <tok val="perficiantur"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Perficiatur perficiatur-->
-         <tok val="[pP]erficiatur"/>
+      <ana>
+         <tok val="Perficiatur"/>
+         <tok val="perficiatur"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Perficiendus perficiendus-->
-         <tok val="[pP]erficiendus"/>
+      <ana>
+         <tok val="Perficiendus"/>
+         <tok val="perficiendus"/>
          <lm>
             <l>perficio</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Perficit perficit-->
-         <tok val="[pP]erficit"/>
+      <ana>
+         <tok val="Perficit"/>
+         <tok val="perficit"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perficite perficite-->
-         <tok val="[pP]erficite"/>
+      <ana>
+         <tok val="Perficite"/>
+         <tok val="perficite"/>
          <lm>
             <l>perficio</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Perficiundi perficiendi perficiundi-->
-         <tok val="[pP]erfici[ue]ndi"/>
+      <ana>
+         <tok val="Perficiundi"/>
+         <tok val="perficiendi"/>
+         <tok val="perficiundi"/>
          <lm>
             <l>perficio</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -639,8 +756,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Perfida perfida-->
-         <tok val="[pP]erfida"/>
+      <ana>
+         <tok val="Perfida"/>
+         <tok val="perfida"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -651,8 +769,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Perfidae perfidae-->
-         <tok val="[pP]erfidae"/>
+      <ana>
+         <tok val="Perfidae"/>
+         <tok val="perfidae"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -661,8 +780,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Perfide perfide-->
-         <tok val="[pP]erfide"/>
+      <ana>
+         <tok val="Perfide"/>
+         <tok val="perfide"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.333333333333333333">d</m>
@@ -670,15 +790,19 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Perfide Perfidum perfide perfidum-->
-         <tok val="[pP]erfid(um|e)"/>
+      <ana>
+         <tok val="Perfide"/>
+         <tok val="Perfidum"/>
+         <tok val="perfide"/>
+         <tok val="perfidum"/>
          <lm>
             <l>perfidus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Perfidelis perfidelis-->
-         <tok val="[pP]erfidelis"/>
+      <ana>
+         <tok val="Perfidelis"/>
+         <tok val="perfidelis"/>
          <lm>
             <l>perfidelis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -692,8 +816,9 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Perfidi perfidi-->
-         <tok val="[pP]erfidi"/>
+      <ana>
+         <tok val="Perfidi"/>
+         <tok val="perfidi"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -705,8 +830,12 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Perfidia perfidia perfidiaque perfidiast perfidiane-->
-         <tok val="[pP]erfidia(st|ne|que)?"/>
+      <ana>
+         <tok val="Perfidia"/>
+         <tok val="perfidia"/>
+         <tok val="perfidiane"/>
+         <tok val="perfidiaque"/>
+         <tok val="perfidiast"/>
          <lm>
             <l>perfidia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -714,8 +843,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Perfidiae perfidiae perfidiaeque-->
-         <tok val="[pP]erfidiae(que)?"/>
+      <ana>
+         <tok val="Perfidiae"/>
+         <tok val="perfidiae"/>
+         <tok val="perfidiaeque"/>
          <lm>
             <l>perfidia</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -723,22 +854,30 @@
             <m cert="0.333333333333333333">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Perfidiae perfidiae perfidiaeque Perfídiae-->
-         <tok val="[pP]erf[ií]diae(que)?"/>
+      <ana>
+         <tok val="Perfidiae"/>
+         <tok val="Perfídiae"/>
+         <tok val="perfidiae"/>
+         <tok val="perfidiaeque"/>
+         <tok val="perfídiae"/>
          <lm>
             <l>perfidia</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Perfidiam perfidiam perfidiamque pérfidiam-->
-         <tok val="[pP]?(e|pé|pe)rfidiam(que)?"/>
+      <ana>
+         <tok val="Perfidiam"/>
+         <tok val="perfidiam"/>
+         <tok val="perfidiamque"/>
+         <tok val="pérfidiam"/>
          <lm>
             <l>perfidia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Perfidiosae perfidiosae-->
-         <tok val="[pP]erfidiosae"/>
+      <ana>
+         <tok val="Perfidiosae"/>
+         <tok val="perfidiosae"/>
          <lm>
             <l>perfidiosus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -747,36 +886,43 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Perfidiose perfidiose perfidiosius-->
-         <tok val="[pP]erfidios(e|ius)"/>
+      <ana>
+         <tok val="Perfidiose"/>
+         <tok val="perfidiose"/>
+         <tok val="perfidiosius"/>
          <lm>
             <l>perfidiosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Perfidiose perfidiose perfidiosum-->
-         <tok val="[pP]erfidios(e|um)"/>
+      <ana>
+         <tok val="Perfidiose"/>
+         <tok val="perfidiose"/>
+         <tok val="perfidiosum"/>
          <lm>
             <l>perfidiosus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Perfidiose perfidiose-->
-         <tok val="[pP]erfidiose"/>
+      <ana>
+         <tok val="Perfidiose"/>
+         <tok val="perfidiose"/>
          <lm>
             <l>perfidiosus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Perfidiosus perfidiosus-->
-         <tok val="[pP]erfidiosus"/>
+      <ana>
+         <tok val="Perfidiosus"/>
+         <tok val="perfidiosus"/>
          <lm>
             <l>perfidiosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Perfidum perfidum-->
-         <tok val="[pP]erfidum"/>
+      <ana>
+         <tok val="Perfidum"/>
+         <tok val="perfidum"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -785,8 +931,10 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Perfidum perfidorum perfidum-->
-         <tok val="[pP]erfid(or)?um"/>
+      <ana>
+         <tok val="Perfidum"/>
+         <tok val="perfidorum"/>
+         <tok val="perfidum"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -794,8 +942,9 @@
             <m cert="0.333333333333333333">n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Perfixus perfixus-->
-         <tok val="[pP]erfixus"/>
+      <ana>
+         <tok val="Perfixus"/>
+         <tok val="perfixus"/>
          <lm cert="0.5">
             <l>perfigo</l>
             <m>v - - s r p p m n</m>
@@ -805,8 +954,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Perflabilis perflabilis-->
-         <tok val="[pP]erflabilis"/>
+      <ana>
+         <tok val="Perflabilis"/>
+         <tok val="perflabilis"/>
          <lm>
             <l>perflabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -818,23 +968,27 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Perflabilis perflabiles perflabilis-->
-         <tok val="[pP]erflabil[ie]s"/>
+      <ana>
+         <tok val="Perflabilis"/>
+         <tok val="perflabiles"/>
+         <tok val="perflabilis"/>
          <lm>
             <l>perflabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Perflant perflant-->
-         <tok val="[pP]erflant"/>
+      <ana>
+         <tok val="Perflant"/>
+         <tok val="perflant"/>
          <lm>
             <l>perflo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Perflantibus perflantibus-->
-         <tok val="[pP]erflantibus"/>
+      <ana>
+         <tok val="Perflantibus"/>
+         <tok val="perflantibus"/>
          <lm>
             <l>perflo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -845,8 +999,10 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Perflatus perflatus perflatusque-->
-         <tok val="[pP]erflatus(que)?"/>
+      <ana>
+         <tok val="Perflatus"/>
+         <tok val="perflatus"/>
+         <tok val="perflatusque"/>
          <lm cert="0.5">
             <l>perflatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -859,15 +1015,17 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Perflo perflo-->
-         <tok val="[pP]erflo"/>
+      <ana>
+         <tok val="Perflo"/>
+         <tok val="perflo"/>
          <lm>
             <l>perflo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfluat perfluat-->
-         <tok val="[pP]erfluat"/>
+      <ana>
+         <tok val="Perfluat"/>
+         <tok val="perfluat"/>
          <lm>
             <l>perfluo</l>
             <m>v - 3 s p s a</m>
@@ -875,6 +1033,7 @@
       </ana>
       <ana>
          <tok val="Perfluctuare"/>
+         <tok val="perfluctuare"/>
          <lm>
             <l>perfluctuo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -882,8 +1041,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfluere perfluere-->
-         <tok val="[pP]erfluere"/>
+      <ana>
+         <tok val="Perfluere"/>
+         <tok val="perfluere"/>
          <lm>
             <l>perfluo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -892,22 +1052,26 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Perfluunt perfluont-->
-         <tok val="[pP]erflu[ou]nt"/>
+      <ana>
+         <tok val="Perfluunt"/>
+         <tok val="perfluont"/>
+         <tok val="perfluunt"/>
          <lm>
             <l>perfluo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfode perfode-->
-         <tok val="[pP]erfode"/>
+      <ana>
+         <tok val="Perfode"/>
+         <tok val="perfode"/>
          <lm>
             <l>perfodio</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Perfodere perfodere-->
-         <tok val="[pP]erfodere"/>
+      <ana>
+         <tok val="Perfodere"/>
+         <tok val="perfodere"/>
          <lm>
             <l>perfodio</l>
             <m cert="0.333333333333333333">v - 3 p r i a</m>
@@ -915,31 +1079,36 @@
             <m cert="0.333333333333333333">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Perfodere perfodere perfoderis-->
-         <tok val="[pP]erfoder(e|is)"/>
+      <ana>
+         <tok val="Perfodere"/>
+         <tok val="perfodere"/>
+         <tok val="perfoderis"/>
          <lm>
             <l>perfodio</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfodi perfodi-->
-         <tok val="[pP]erfodi"/>
+      <ana>
+         <tok val="Perfodi"/>
+         <tok val="perfodi"/>
          <lm>
             <l>perfodio</l>
             <m cert="0.5">v - - - p n p</m>
             <m cert="0.5">v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Perfodit perfodit-->
-         <tok val="[pP]erfodit"/>
+      <ana>
+         <tok val="Perfodit"/>
+         <tok val="perfodit"/>
          <lm>
             <l>perfodio</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perforare perforare-->
-         <tok val="[pP]erforare"/>
+      <ana>
+         <tok val="Perforare"/>
+         <tok val="perforare"/>
          <lm>
             <l>perforo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -947,8 +1116,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perforatus perforatus-->
-         <tok val="[pP]erforatus"/>
+      <ana>
+         <tok val="Perforatus"/>
+         <tok val="perforatus"/>
          <lm>
             <l>perforo</l>
             <m>v - - s r p p m n</m>
@@ -956,13 +1126,15 @@
       </ana>
       <ana>
          <tok val="Perfore"/>
+         <tok val="perfore"/>
          <lm>
             <l>persum</l>
             <m>v - - - f n a</m>
          </lm>
       </ana>
-      <ana><!--Perforetur perforetur-->
-         <tok val="[pP]erforetur"/>
+      <ana>
+         <tok val="Perforetur"/>
+         <tok val="perforetur"/>
          <lm>
             <l>perforo</l>
             <m>v - 3 s p s p</m>
@@ -970,6 +1142,7 @@
       </ana>
       <ana>
          <tok val="Performata"/>
+         <tok val="performata"/>
          <lm>
             <l>performo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -982,6 +1155,7 @@
       </ana>
       <ana>
          <tok val="Performidatus"/>
+         <tok val="performidatus"/>
          <lm>
             <l>performido</l>
             <m>v - - s r p p m n</m>
@@ -989,6 +1163,7 @@
       </ana>
       <ana>
          <tok val="Performo"/>
+         <tok val="performo"/>
          <lm>
             <l>performo</l>
             <m>v - 1 s p i a</m>
@@ -996,20 +1171,24 @@
       </ana>
       <ana>
          <tok val="Perforo"/>
+         <tok val="perforo"/>
          <lm>
             <l>perforo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfortiter perfortiter-->
-         <tok val="[pP]erfortiter"/>
+      <ana>
+         <tok val="Perfortiter"/>
+         <tok val="perfortiter"/>
          <lm>
             <l>perfortiter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Perfossa perfossa perfossaque-->
-         <tok val="[pP]erfossa(que)?"/>
+      <ana>
+         <tok val="Perfossa"/>
+         <tok val="perfossa"/>
+         <tok val="perfossaque"/>
          <lm>
             <l>perfodio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1022,13 +1201,15 @@
       </ana>
       <ana>
          <tok val="Perfossa"/>
+         <tok val="perfossa"/>
          <lm>
             <l>perfossor</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Perfossae perfossae-->
-         <tok val="[pP]erfossae"/>
+      <ana>
+         <tok val="Perfossae"/>
+         <tok val="perfossae"/>
          <lm>
             <l>perfodio</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1037,8 +1218,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Perfossum perfossum perfossumque-->
-         <tok val="[pP]erfossum(que)?"/>
+      <ana>
+         <tok val="Perfossum"/>
+         <tok val="perfossum"/>
+         <tok val="perfossumque"/>
          <lm>
             <l>perfodio</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -1050,15 +1233,19 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Perfossus perfossus-->
-         <tok val="[pP]erfossus"/>
+      <ana>
+         <tok val="Perfossus"/>
+         <tok val="perfossus"/>
          <lm>
             <l>perfodio</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Perfracta Perfractaque perfracta perfractaque-->
-         <tok val="[pP]erfracta(que)?"/>
+      <ana>
+         <tok val="Perfracta"/>
+         <tok val="Perfractaque"/>
+         <tok val="perfracta"/>
+         <tok val="perfractaque"/>
          <lm>
             <l>perfringo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1069,47 +1256,48 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Perfractum perfractum-->
-         <tok val="[pP]erfractum"/>
+      <ana>
+         <tok val="Perfractum"/>
+         <tok val="perfractum"/>
          <lm>
             <l>perfringo</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - s r p p n a</m>
-            <m cert="0.2">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Perfractum perfracte perfractum-->
-         <tok val="[pP]erfract(um|e)"/>
+      <ana>
+         <tok val="Perfractum"/>
+         <tok val="perfracte"/>
+         <tok val="perfractum"/>
          <lm>
             <l>perfringo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Perfractum"/>
-         <lm>
-            <l>perfringo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Perfractus perfractus-->
-         <tok val="[pP]erfractus"/>
+         <tok val="Perfractus"/>
+         <tok val="perfractus"/>
          <lm>
             <l>perfringo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Perfregerant perfregerant-->
-         <tok val="[pP]erfregerant"/>
+      <ana>
+         <tok val="Perfregerant"/>
+         <tok val="perfregerant"/>
          <lm>
             <l>perfringo</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--Perfregit perfregit perfregitque-->
-         <tok val="[pP]erfregit(que)?"/>
+      <ana>
+         <tok val="Perfregit"/>
+         <tok val="perfregit"/>
+         <tok val="perfregitque"/>
          <lm>
             <l>perfringo</l>
             <m>v - 3 s r i a</m>
@@ -1117,20 +1305,23 @@
       </ana>
       <ana>
          <tok val="Perfremo"/>
+         <tok val="perfremo"/>
          <lm>
             <l>perfremo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfreto perfreto-->
-         <tok val="[pP]erfreto"/>
+      <ana>
+         <tok val="Perfreto"/>
+         <tok val="perfreto"/>
          <lm>
             <l>perfreto</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfricandae perfricandae-->
-         <tok val="[pP]erfricandae"/>
+      <ana>
+         <tok val="Perfricandae"/>
+         <tok val="perfricandae"/>
          <lm>
             <l>perfrico</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -1139,15 +1330,17 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--Perfricant perfricant-->
-         <tok val="[pP]erfricant"/>
+      <ana>
+         <tok val="Perfricant"/>
+         <tok val="perfricant"/>
          <lm>
             <l>perfrico</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfricare perfricare-->
-         <tok val="[pP]erfricare"/>
+      <ana>
+         <tok val="Perfricare"/>
+         <tok val="perfricare"/>
          <lm>
             <l>perfrico</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1157,6 +1350,7 @@
       </ana>
       <ana>
          <tok val="Perfrico"/>
+         <tok val="perfrico"/>
          <lm>
             <l>perfrico</l>
             <m>v - 1 s p i a</m>
@@ -1164,6 +1358,7 @@
       </ana>
       <ana>
          <tok val="Perfricta"/>
+         <tok val="perfricta"/>
          <lm>
             <l>perfrico</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1174,16 +1369,19 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Perfrictio perfrictio-->
-         <tok val="[pP]erfrictio"/>
+      <ana>
+         <tok val="Perfrictio"/>
+         <tok val="perfrictio"/>
          <lm>
             <l>perfrictio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Perfrictionibus perfrictionibus perfrictionibusque-->
-         <tok val="[pP]erfrictionibus(que)?"/>
+      <ana>
+         <tok val="Perfrictionibus"/>
+         <tok val="perfrictionibus"/>
+         <tok val="perfrictionibusque"/>
          <lm>
             <l>perfrictio</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -1192,6 +1390,7 @@
       </ana>
       <ana>
          <tok val="Perfrigeo"/>
+         <tok val="perfrigeo"/>
          <lm>
             <l>perfrigeo</l>
             <m>v - 1 s p i a</m>
@@ -1199,6 +1398,7 @@
       </ana>
       <ana>
          <tok val="Perfrigero"/>
+         <tok val="perfrigero"/>
          <lm>
             <l>perfrigero</l>
             <m>v - 1 s p i a</m>
@@ -1206,13 +1406,15 @@
       </ana>
       <ana>
          <tok val="Perfrigesco"/>
+         <tok val="perfrigesco"/>
          <lm>
             <l>perfrigesco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfrigida perfrigida-->
-         <tok val="[pP]erfrigida"/>
+      <ana>
+         <tok val="Perfrigida"/>
+         <tok val="perfrigida"/>
          <lm>
             <l>perfrigidus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1225,13 +1427,16 @@
       </ana>
       <ana>
          <tok val="Perfrigidus"/>
+         <tok val="perfrigidus"/>
          <lm>
             <l>perfrigidus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Perfringere perfringere perfringereque-->
-         <tok val="[pP]erfringere(que)?"/>
+      <ana>
+         <tok val="Perfringere"/>
+         <tok val="perfringere"/>
+         <tok val="perfringereque"/>
          <lm>
             <l>perfringo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1240,72 +1445,85 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Perfringo perfringo-->
-         <tok val="[pP]erfringo"/>
+      <ana>
+         <tok val="Perfringo"/>
+         <tok val="perfringo"/>
          <lm>
             <l>perfringo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfrixisse perfrixisse-->
-         <tok val="[pP]erfrixisse"/>
+      <ana>
+         <tok val="Perfrixisse"/>
+         <tok val="perfrixisse"/>
          <lm>
             <l>perfrigesco</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Perfrixit perfrixit-->
-         <tok val="[pP]erfrixit"/>
+      <ana>
+         <tok val="Perfrixit"/>
+         <tok val="perfrixit"/>
          <lm>
             <l>perfrigesco</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Perfruere perfruere-->
-         <tok val="[pP]erfruere"/>
+      <ana>
+         <tok val="Perfruere"/>
+         <tok val="perfruere"/>
          <lm>
             <l>perfruor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Perfruere perfruere perfrueris-->
-         <tok val="[pP]erfruer(e|is)"/>
+      <ana>
+         <tok val="Perfruere"/>
+         <tok val="perfruere"/>
+         <tok val="perfrueris"/>
          <lm>
             <l>perfruor</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Perfrui perfrui perfruique-->
-         <tok val="[pP]erfrui(que)?"/>
+      <ana>
+         <tok val="Perfrui"/>
+         <tok val="perfrui"/>
+         <tok val="perfruique"/>
          <lm>
             <l>perfruor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Perfruitur perfruitur perfruiturque-->
-         <tok val="[pP]erfruitur(que)?"/>
+      <ana>
+         <tok val="Perfruitur"/>
+         <tok val="perfruitur"/>
+         <tok val="perfruiturque"/>
          <lm>
             <l>perfruor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfruor perfruor-->
-         <tok val="[pP]erfruor"/>
+      <ana>
+         <tok val="Perfruor"/>
+         <tok val="perfruor"/>
          <lm>
             <l>perfruor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfudit perfudit-->
-         <tok val="[pP]erfudit"/>
+      <ana>
+         <tok val="Perfudit"/>
+         <tok val="perfudit"/>
          <lm>
             <l>perfundo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Perfuga perfuga-->
-         <tok val="[pP]erfuga"/>
+      <ana>
+         <tok val="Perfuga"/>
+         <tok val="perfuga"/>
          <lm>
             <l>perfuga</l>
             <m cert="0.25">n - - s - - - m n</m>
@@ -1314,8 +1532,10 @@
             <m cert="0.25">v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Perfugae perfugae perfugaeque-->
-         <tok val="[pP]erfugae(que)?"/>
+      <ana>
+         <tok val="Perfugae"/>
+         <tok val="perfugae"/>
+         <tok val="perfugaeque"/>
          <lm>
             <l>perfuga</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1324,15 +1544,18 @@
             <m cert="0.25">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Perfugere perfugere perfugerunt-->
-         <tok val="[pP]erfuger(e|unt)"/>
+      <ana>
+         <tok val="Perfugere"/>
+         <tok val="perfugere"/>
+         <tok val="perfugerunt"/>
          <lm>
             <l>perfugio</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Perfugere perfugere-->
-         <tok val="[pP]erfugere"/>
+      <ana>
+         <tok val="Perfugere"/>
+         <tok val="perfugere"/>
          <lm cert="0.5">
             <l>perfugio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1344,8 +1567,9 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Perfugio perfugio-->
-         <tok val="[pP]erfugio"/>
+      <ana>
+         <tok val="Perfugio"/>
+         <tok val="perfugio"/>
          <lm cert="0.5">
             <l>perfugio</l>
             <m>v - 1 s p i a</m>
@@ -1358,13 +1582,15 @@
       </ana>
       <ana>
          <tok val="Perfulcio"/>
+         <tok val="perfulcio"/>
          <lm>
             <l>perfulcio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfuncta perfuncta-->
-         <tok val="[pP]erfuncta"/>
+      <ana>
+         <tok val="Perfuncta"/>
+         <tok val="perfuncta"/>
          <lm>
             <l>perfungor</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1375,31 +1601,36 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Perfunctio perfunctio-->
-         <tok val="[pP]erfunctio"/>
+      <ana>
+         <tok val="Perfunctio"/>
+         <tok val="perfunctio"/>
          <lm>
             <l>perfunctio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Perfunctorie perfunctorie-->
-         <tok val="[pP]erfunctorie"/>
+      <ana>
+         <tok val="Perfunctorie"/>
+         <tok val="perfunctorie"/>
          <lm>
             <l>perfunctorius</l>
             <m cert="0.5">a - - s - - - n v</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Perfunctorius perfunctorius-->
-         <tok val="[pP]erfunctorius"/>
+      <ana>
+         <tok val="Perfunctorius"/>
+         <tok val="perfunctorius"/>
          <lm>
             <l>perfunctorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Perfunctum perfunctum perfunctumque-->
-         <tok val="[pP]erfunctum(que)?"/>
+      <ana>
+         <tok val="Perfunctum"/>
+         <tok val="perfunctum"/>
+         <tok val="perfunctumque"/>
          <lm>
             <l>perfungor</l>
             <m cert="0.166666666666666667">v - - p r p p m g</m>
@@ -1412,20 +1643,23 @@
       </ana>
       <ana>
          <tok val="Perfunctum"/>
+         <tok val="perfunctum"/>
          <lm>
             <l>perfungor</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Perfunctus perfunctus-->
-         <tok val="[pP]erfunctus"/>
+      <ana>
+         <tok val="Perfunctus"/>
+         <tok val="perfunctus"/>
          <lm>
             <l>perfungor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Perfundens perfundens-->
-         <tok val="[pP]erfundens"/>
+      <ana>
+         <tok val="Perfundens"/>
+         <tok val="perfundens"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -1437,31 +1671,37 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Perfundere perfundere-->
-         <tok val="[pP]erfundere"/>
+      <ana>
+         <tok val="Perfundere"/>
+         <tok val="perfundere"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Perfundere perfundere perfunderis-->
-         <tok val="[pP]erfunder(e|is)"/>
+      <ana>
+         <tok val="Perfundere"/>
+         <tok val="perfundere"/>
+         <tok val="perfunderis"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Perfundi perfundi perfundier-->
-         <tok val="[pP]erfundi(er)?"/>
+      <ana>
+         <tok val="Perfundi"/>
+         <tok val="perfundi"/>
+         <tok val="perfundier"/>
          <lm>
             <l>perfundo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Perfundit perfundit-->
-         <tok val="[pP]erfundit"/>
+      <ana>
+         <tok val="Perfundit"/>
+         <tok val="perfundit"/>
          <lm>
             <l>perfundo</l>
             <m>v - 3 s p i a</m>
@@ -1469,27 +1709,32 @@
       </ana>
       <ana>
          <tok val="Perfundor"/>
+         <tok val="perfundor"/>
          <lm>
             <l>perfundo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Perfundunt perfundunt perfunduntque-->
-         <tok val="[pP]erfundunt(que)?"/>
+      <ana>
+         <tok val="Perfundunt"/>
+         <tok val="perfundunt"/>
+         <tok val="perfunduntque"/>
          <lm>
             <l>perfundo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfungi perfungi-->
-         <tok val="[pP]erfungi"/>
+      <ana>
+         <tok val="Perfungi"/>
+         <tok val="perfungi"/>
          <lm>
             <l>perfungor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Perfurit perfurit-->
-         <tok val="[pP]erfurit"/>
+      <ana>
+         <tok val="Perfurit"/>
+         <tok val="perfurit"/>
          <lm>
             <l>perfuro</l>
             <m>v - 3 s p i a</m>
@@ -1497,13 +1742,16 @@
       </ana>
       <ana>
          <tok val="Perfuro"/>
+         <tok val="perfuro"/>
          <lm>
             <l>perfuro</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Perfusa perfusa perfusaque-->
-         <tok val="[pP]erfusa(que)?"/>
+      <ana>
+         <tok val="Perfusa"/>
+         <tok val="perfusa"/>
+         <tok val="perfusaque"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1514,8 +1762,11 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Perfusae Perfusaeque perfusae perfusaeque-->
-         <tok val="[pP]erfusae(que)?"/>
+      <ana>
+         <tok val="Perfusae"/>
+         <tok val="Perfusaeque"/>
+         <tok val="perfusae"/>
+         <tok val="perfusaeque"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1524,8 +1775,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Perfusi perfusi perfusique-->
-         <tok val="[pP]erfusi(que)?"/>
+      <ana>
+         <tok val="Perfusi"/>
+         <tok val="perfusi"/>
+         <tok val="perfusique"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1534,31 +1787,36 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Perfusio perfusio-->
-         <tok val="[pP]erfusio"/>
+      <ana>
+         <tok val="Perfusio"/>
+         <tok val="perfusio"/>
          <lm>
             <l>perfusio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Perfusorie perfusorie-->
-         <tok val="[pP]erfusorie"/>
+      <ana>
+         <tok val="Perfusorie"/>
+         <tok val="perfusorie"/>
          <lm>
             <l>perfusorius</l>
             <m cert="0.5">a - - s - - - n v</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Perfusos perfusos-->
-         <tok val="[pP]erfusos"/>
+      <ana>
+         <tok val="Perfusos"/>
+         <tok val="perfusos"/>
          <lm>
             <l>perfundo</l>
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Perfusum perfusum perfusumque-->
-         <tok val="[pP]erfusum(que)?"/>
+      <ana>
+         <tok val="Perfusum"/>
+         <tok val="perfusum"/>
+         <tok val="perfusumque"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -1567,23 +1825,31 @@
             <m cert="0.25">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--Perfusum perfusum perfusumque perfusorumque-->
-         <tok val="[pP]erfus(or)?um(que)?"/>
+      <ana>
+         <tok val="Perfusum"/>
+         <tok val="perfusorumque"/>
+         <tok val="perfusum"/>
+         <tok val="perfusumque"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Perfusum perfuse perfusum perfusumque-->
-         <tok val="[pP]erfus(um)?(que|e)?"/>
+      <ana>
+         <tok val="Perfusum"/>
+         <tok val="perfuse"/>
+         <tok val="perfusum"/>
+         <tok val="perfusumque"/>
          <lm>
             <l>perfundo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Perfusus perfusus perfususque-->
-         <tok val="[pP]erfusus(que)?"/>
+      <ana>
+         <tok val="Perfusus"/>
+         <tok val="perfusus"/>
+         <tok val="perfususque"/>
          <lm>
             <l>perfundo</l>
             <m>v - - s r p p m n</m>
@@ -1605,8 +1871,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--perfabricavit perfábricavit-->
-         <tok val="perf[áa]bricavit"/>
+      <ana>
+         <tok val="perfabricavit"/>
+         <tok val="perfábricavit"/>
          <lm>
             <l>perfabrico</l>
             <m>v - 3 s r i a</m>
@@ -1620,8 +1887,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--perfacete perfacetum-->
-         <tok val="perfacet(um|e)"/>
+      <ana>
+         <tok val="perfacete"/>
+         <tok val="perfacetum"/>
          <lm>
             <l>perfacetus</l>
             <m>a - - s - - - n v</m>
@@ -1687,8 +1955,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--perfamiliare perfamiliari-->
-         <tok val="perfamiliar[ie]"/>
+      <ana>
+         <tok val="perfamiliare"/>
+         <tok val="perfamiliari"/>
          <lm>
             <l>perfamiliaris</l>
             <m>n - - s - - - m b</m>
@@ -1723,8 +1992,10 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--perfecere perfecerunt perfeceruntque-->
-         <tok val="perfecer(unt)?(que|e)?"/>
+      <ana>
+         <tok val="perfecere"/>
+         <tok val="perfecerunt"/>
+         <tok val="perfeceruntque"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 p r i a</m>
@@ -1818,8 +2089,9 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--perfectae perfectaeque-->
-         <tok val="perfectae(que)?"/>
+      <ana>
+         <tok val="perfectae"/>
+         <tok val="perfectaeque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -1828,15 +2100,17 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--perfectam perfectamque-->
-         <tok val="perfectam(que)?"/>
+      <ana>
+         <tok val="perfectam"/>
+         <tok val="perfectamque"/>
          <lm>
             <l>perficio</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--perfectas perfectasque-->
-         <tok val="perfectas(que)?"/>
+      <ana>
+         <tok val="perfectas"/>
+         <tok val="perfectasque"/>
          <lm>
             <l>perficio</l>
             <m>v - - p r p p f a</m>
@@ -1849,8 +2123,9 @@
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--perfectionem perfectionemque-->
-         <tok val="perfectionem(que)?"/>
+      <ana>
+         <tok val="perfectionem"/>
+         <tok val="perfectionemque"/>
          <lm>
             <l>perfectio</l>
             <m>n - - s - - - f a</m>
@@ -1894,16 +2169,18 @@
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--perfectiorem perfectioremque-->
-         <tok val="perfectiorem(que)?"/>
+      <ana>
+         <tok val="perfectiorem"/>
+         <tok val="perfectioremque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--perfectiori perfectiorique-->
-         <tok val="perfectiori(que)?"/>
+      <ana>
+         <tok val="perfectiori"/>
+         <tok val="perfectiorique"/>
          <lm>
             <l>perficio</l>
             <m>a - - s - - - - d c</m>
@@ -1972,29 +2249,35 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--perfectissime perfectissimeque-->
-         <tok val="perfectissime(que)?"/>
+      <ana>
+         <tok val="perfectissime"/>
+         <tok val="perfectissimeque"/>
          <lm>
             <l>perficio</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--perfectissime perfectissimeque perfectissimus-->
-         <tok val="perfectissim[e]?(que|us)?"/>
+      <ana>
+         <tok val="perfectissime"/>
+         <tok val="perfectissimeque"/>
+         <tok val="perfectissimus"/>
          <lm>
             <l>perficio</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--perfectissime perfectissimeque perfectissimum-->
-         <tok val="perfectissim[e]?(que|um)?"/>
+      <ana>
+         <tok val="perfectissime"/>
+         <tok val="perfectissimeque"/>
+         <tok val="perfectissimum"/>
          <lm>
             <l>perficio</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--perfectissimi perfectissimique-->
-         <tok val="perfectissimi(que)?"/>
+      <ana>
+         <tok val="perfectissimi"/>
+         <tok val="perfectissimique"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -2015,8 +2298,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--perfectissimo perfectissumo-->
-         <tok val="perfectiss[ui]mo"/>
+      <ana>
+         <tok val="perfectissimo"/>
+         <tok val="perfectissumo"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">a - - s - - - n d s</m>
@@ -2050,8 +2334,9 @@
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--perfectius perfectiusque-->
-         <tok val="perfectius(que)?"/>
+      <ana>
+         <tok val="perfectius"/>
+         <tok val="perfectiusque"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">d</m>
@@ -2110,8 +2395,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--perfectum perfectumque-->
-         <tok val="perfectum(que)?"/>
+      <ana>
+         <tok val="perfectum"/>
+         <tok val="perfectumque"/>
          <lm>
             <l>perficio</l>
             <m>a - - s - - - n n</m>
@@ -2223,8 +2509,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--perfere perferen-->
-         <tok val="perfere[n]?"/>
+      <ana>
+         <tok val="perfere"/>
+         <tok val="perferen"/>
          <lm>
             <l>perferus</l>
             <m cert="0.333333333333333333">d</m>
@@ -2267,8 +2554,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--perferen perferes-->
-         <tok val="perfere[sn]"/>
+      <ana>
+         <tok val="perferen"/>
+         <tok val="perferes"/>
          <lm>
             <l>perfero</l>
             <m>v - 2 s f i a</m>
@@ -2317,8 +2605,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--perferendi perferundi-->
-         <tok val="perfer[ue]ndi"/>
+      <ana>
+         <tok val="perferendi"/>
+         <tok val="perferundi"/>
          <lm>
             <l>perfero</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -2359,8 +2648,10 @@
             <m>v - - p p g p m a</m>
          </lm>
       </ana>
-      <ana><!--perferendum perferendumue perferundum-->
-         <tok val="perfer[eu]ndum(ue)?"/>
+      <ana>
+         <tok val="perferendum"/>
+         <tok val="perferendumue"/>
+         <tok val="perferundum"/>
          <lm>
             <l>perfero</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -2398,8 +2689,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--perferentes perferentis-->
-         <tok val="perferent[ie]s"/>
+      <ana>
+         <tok val="perferentes"/>
+         <tok val="perferentis"/>
          <lm>
             <l>perfero</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2608,8 +2900,9 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--perficias perficiasque-->
-         <tok val="perficias(que)?"/>
+      <ana>
+         <tok val="perficias"/>
+         <tok val="perficiasque"/>
          <lm>
             <l>perficio</l>
             <m>v - 2 s p s a</m>
@@ -2657,8 +2950,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--perficienda perficiunda-->
-         <tok val="perfici[ue]nda"/>
+      <ana>
+         <tok val="perficienda"/>
+         <tok val="perficiunda"/>
          <lm>
             <l>perficio</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -2669,8 +2963,9 @@
             <m cert="0.166666666666666667">v - - p p g p n n</m>
          </lm>
       </ana>
-      <ana><!--perficiendae perficiundae-->
-         <tok val="perfici[ue]ndae"/>
+      <ana>
+         <tok val="perficiendae"/>
+         <tok val="perficiundae"/>
          <lm>
             <l>perficio</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -2693,8 +2988,9 @@
             <m>v - - p p g p f g</m>
          </lm>
       </ana>
-      <ana><!--perficiendis perficiundis-->
-         <tok val="perfici[ue]ndis"/>
+      <ana>
+         <tok val="perficiendis"/>
+         <tok val="perficiundis"/>
          <lm>
             <l>perficio</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -2705,8 +3001,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--perficiendo perficiundo-->
-         <tok val="perfici[ue]ndo"/>
+      <ana>
+         <tok val="perficiendo"/>
+         <tok val="perficiundo"/>
          <lm>
             <l>perficio</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -2717,8 +3014,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--perficiendorum perficiendum-->
-         <tok val="perficiend(or)?um"/>
+      <ana>
+         <tok val="perficiendorum"/>
+         <tok val="perficiendum"/>
          <lm>
             <l>perficio</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -2781,8 +3079,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--perficientes perficientis-->
-         <tok val="perficient[ie]s"/>
+      <ana>
+         <tok val="perficientes"/>
+         <tok val="perficientis"/>
          <lm>
             <l>perficio</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2929,15 +3228,17 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--perficiunt perficiuntque-->
-         <tok val="perficiunt(que)?"/>
+      <ana>
+         <tok val="perficiunt"/>
+         <tok val="perficiuntque"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--perficiuntur perficiunturque-->
-         <tok val="perficiuntur(que)?"/>
+      <ana>
+         <tok val="perficiuntur"/>
+         <tok val="perficiunturque"/>
          <lm>
             <l>perficio</l>
             <m>v - 3 p p i p</m>
@@ -2994,15 +3295,17 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--perfidias pérfidias-->
-         <tok val="p[ée]rfidias"/>
+      <ana>
+         <tok val="perfidias"/>
+         <tok val="pérfidias"/>
          <lm>
             <l>perfidia</l>
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--perfidiis pérfidiis-->
-         <tok val="p[ée]rfidiis"/>
+      <ana>
+         <tok val="perfidiis"/>
+         <tok val="pérfidiis"/>
          <lm>
             <l>perfidia</l>
             <m>n - - p - - - f d</m>
@@ -3099,8 +3402,9 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--perfidos perfidosque-->
-         <tok val="perfidos(que)?"/>
+      <ana>
+         <tok val="perfidos"/>
+         <tok val="perfidosque"/>
          <lm>
             <l>perfidus</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -3420,8 +3724,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--perflata perflataque-->
-         <tok val="perflata(que)?"/>
+      <ana>
+         <tok val="perflata"/>
+         <tok val="perflataque"/>
          <lm>
             <l>perflo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -3488,8 +3793,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--perflatum perflatumque-->
-         <tok val="perflatum(que)?"/>
+      <ana>
+         <tok val="perflatum"/>
+         <tok val="perflatumque"/>
          <lm cert="0.5">
             <l>perflo</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -3519,8 +3825,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--perflauit perflavit-->
-         <tok val="perfla[vu]it"/>
+      <ana>
+         <tok val="perflauit"/>
+         <tok val="perflavit"/>
          <lm>
             <l>perflo</l>
             <m>v - 3 s r i a</m>
@@ -3841,8 +4148,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--perfora perforan-->
-         <tok val="perfora[n]?"/>
+      <ana>
+         <tok val="perfora"/>
+         <tok val="perforan"/>
          <lm>
             <l>perforo</l>
             <m>v - 2 s p m a</m>
@@ -3862,8 +4170,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--perforabit perforabitque-->
-         <tok val="perforabit(que)?"/>
+      <ana>
+         <tok val="perforabit"/>
+         <tok val="perforabitque"/>
          <lm>
             <l>perforo</l>
             <m>v - 3 s f i a</m>
@@ -3893,8 +4202,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--perforan perforas-->
-         <tok val="perfora[sn]"/>
+      <ana>
+         <tok val="perforan"/>
+         <tok val="perforas"/>
          <lm>
             <l>perforo</l>
             <m>v - 2 s p i a</m>
@@ -4095,8 +4405,9 @@
             <m cert="0.142857142857142857">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--perforato perforatoque-->
-         <tok val="perforato(que)?"/>
+      <ana>
+         <tok val="perforato"/>
+         <tok val="perforatoque"/>
          <lm>
             <l>perforo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -4126,8 +4437,9 @@
             <m cert="0.166666666666666667">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--perforatum perforate-->
-         <tok val="perforat(e|um)"/>
+      <ana>
+         <tok val="perforate"/>
+         <tok val="perforatum"/>
          <lm>
             <l>perforo</l>
             <m>v - - s r p p n v</m>
@@ -4140,8 +4452,9 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--perforauerat perforarat-->
-         <tok val="perfora(ue)?rat"/>
+      <ana>
+         <tok val="perforarat"/>
+         <tok val="perforauerat"/>
          <lm>
             <l>perforo</l>
             <m>v - 3 s l i a</m>
@@ -4221,8 +4534,9 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--perfossa perfossaque-->
-         <tok val="perfossa(que)?"/>
+      <ana>
+         <tok val="perfossa"/>
+         <tok val="perfossaque"/>
          <lm>
             <l>perfosso</l>
             <m>v - 2 s p m a</m>
@@ -4368,8 +4682,9 @@
             <m cert="0.25">v - - p r p p m n</m>
          </lm>
       </ana>
-      <ana><!--perfractis perfractisque-->
-         <tok val="perfractis(que)?"/>
+      <ana>
+         <tok val="perfractis"/>
+         <tok val="perfractisque"/>
          <lm>
             <l>perfringo</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -4404,8 +4719,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--perfregere perfregerunt-->
-         <tok val="perfreger(unt|e)"/>
+      <ana>
+         <tok val="perfregere"/>
+         <tok val="perfregerunt"/>
          <lm>
             <l>perfringo</l>
             <m>v - 3 p r i a</m>
@@ -4509,8 +4825,9 @@
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--perfrica perfrican-->
-         <tok val="perfrica[n]?"/>
+      <ana>
+         <tok val="perfrica"/>
+         <tok val="perfrican"/>
          <lm>
             <l>perfrico</l>
             <m>v - 2 s p m a</m>
@@ -4523,15 +4840,18 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--perfrican perfricas-->
-         <tok val="perfrica[sn]"/>
+      <ana>
+         <tok val="perfrican"/>
+         <tok val="perfricas"/>
          <lm>
             <l>perfrico</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--perfricanda perfricandaque Perfricanda-->
-         <tok val="[Pp]erfricanda(que)?"/>
+      <ana>
+         <tok val="Perfricanda"/>
+         <tok val="perfricanda"/>
+         <tok val="perfricandaque"/>
          <lm>
             <l>perfrico</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -4678,8 +4998,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--perfrictionum perfrictionumque-->
-         <tok val="perfrictionum(que)?"/>
+      <ana>
+         <tok val="perfrictionum"/>
+         <tok val="perfrictionumque"/>
          <lm>
             <l>perfrictio</l>
             <m>n - - p - - - f g</m>
@@ -5063,8 +5384,9 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--perfruare perfruaris-->
-         <tok val="perfruar(is|e)"/>
+      <ana>
+         <tok val="perfruare"/>
+         <tok val="perfruaris"/>
          <lm>
             <l>perfruor</l>
             <m>v - 2 s p s p</m>
@@ -5084,8 +5406,9 @@
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--perfructio perfruitio-->
-         <tok val="perfru[ic]tio"/>
+      <ana>
+         <tok val="perfructio"/>
+         <tok val="perfruitio"/>
          <lm>
             <l>perfructio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -5232,15 +5555,17 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--perfugarum perfugarumque-->
-         <tok val="perfugarum(que)?"/>
+      <ana>
+         <tok val="perfugarum"/>
+         <tok val="perfugarumque"/>
          <lm>
             <l>perfuga</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--perfugas perfugasque-->
-         <tok val="perfugas(que)?"/>
+      <ana>
+         <tok val="perfugas"/>
+         <tok val="perfugasque"/>
          <lm>
             <l>perfuga</l>
             <m cert="0.5">v - 2 s p i a</m>
@@ -5306,8 +5631,9 @@
             <m cert="0.5">v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--perfugi perfugii-->
-         <tok val="perfugi[i]?"/>
+      <ana>
+         <tok val="perfugi"/>
+         <tok val="perfugii"/>
          <lm>
             <l>perfugium</l>
             <m>n - - s - - - n g</m>
@@ -5364,8 +5690,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--perfugis perfugisque-->
-         <tok val="perfugis(que)?"/>
+      <ana>
+         <tok val="perfugis"/>
+         <tok val="perfugisque"/>
          <lm cert="0.5">
             <l>perfuga</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -5532,8 +5859,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--perfunctum perfunctumque-->
-         <tok val="perfunctum(que)?"/>
+      <ana>
+         <tok val="perfunctum"/>
+         <tok val="perfunctumque"/>
          <lm>
             <l>perfungor</l>
             <m>a - - s - - - n n</m>
@@ -5621,8 +5949,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--perfundendum perfundendumque-->
-         <tok val="perfundendum(que)?"/>
+      <ana>
+         <tok val="perfundendum"/>
+         <tok val="perfundendumque"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -5634,8 +5963,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--perfundent perfundentque-->
-         <tok val="perfundent(que)?"/>
+      <ana>
+         <tok val="perfundent"/>
+         <tok val="perfundentque"/>
          <lm>
             <l>perfundo</l>
             <m>v - 3 p f i a</m>
@@ -5695,8 +6025,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--perfundet perfundetque-->
-         <tok val="perfundet(que)?"/>
+      <ana>
+         <tok val="perfundet"/>
+         <tok val="perfundetque"/>
          <lm>
             <l>perfundo</l>
             <m>v - 3 s f i a</m>
@@ -5829,8 +6160,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--perfusam perfusamque-->
-         <tok val="perfusam(que)?"/>
+      <ana>
+         <tok val="perfusam"/>
+         <tok val="perfusamque"/>
          <lm>
             <l>perfundo</l>
             <m>v - - s r p p f a</m>
@@ -5885,8 +6217,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--perfusis perfusisque-->
-         <tok val="perfusis(que)?"/>
+      <ana>
+         <tok val="perfusis"/>
+         <tok val="perfusisque"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -5897,8 +6230,9 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--perfuso perfusoque-->
-         <tok val="perfuso(que)?"/>
+      <ana>
+         <tok val="perfuso"/>
+         <tok val="perfusoque"/>
          <lm>
             <l>perfundo</l>
             <m cert="0.25">v - - s r p p n d</m>

@@ -1,59 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusben">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ben">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ben</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ben.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>BEN</tok-starts-with>
       <tok-starts-with>Ben</tok-starts-with>
       <tok-starts-with>ben</tok-starts-with>
       <tok-starts-with>bén</tok-starts-with>
       <tok-starts-with>Bén</tok-starts-with>
-      <ana><!--BENE Benene Benest Beneuen benene beneque benest béneque-->
-         <tok val="[b]?(é|e|Be|be)?(ne)?(qu|n)?(e|st|uen|BENE)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:12:48.751-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:12:48.751-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ben.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="BENE"/>
+         <tok val="Benene"/>
+         <tok val="Benest"/>
+         <tok val="Beneuen"/>
+         <tok val="bene"/>
+         <tok val="benene"/>
+         <tok val="beneque"/>
+         <tok val="benest"/>
+         <tok val="beneuen"/>
+         <tok val="béneque"/>
          <lm>
             <l>benus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--BENE Bene Benene Benest Beneuen bene benene beneque benest-->
-         <tok val="[bB]?(en|b|B)?(ene)?(st|uen|que|BENE)?"/>
+      <ana>
+         <tok val="BENE"/>
+         <tok val="Bene"/>
+         <tok val="Benene"/>
+         <tok val="Benest"/>
+         <tok val="Beneuen"/>
+         <tok val="bene"/>
+         <tok val="benene"/>
+         <tok val="beneque"/>
+         <tok val="benest"/>
+         <tok val="beneuen"/>
          <lm>
             <l>benus</l>
             <m cert="0.5">a - - s - - - n v</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--BENEDICTVS Benedictus benedictus-->
-         <tok val="[bB]?(enedictus|BENEDICTVS)"/>
+      <ana>
+         <tok val="BENEDICTVS"/>
+         <tok val="Benedictus"/>
+         <tok val="benedictus"/>
+         <tok val="benedictvs"/>
          <lm cert="0.5">
             <l>benedictus</l>
             <m>n - - s - - - m n</m>
@@ -63,8 +92,15 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--BENIGNVS Benignus benignus benignusne benignusque benignusue benignusve-->
-         <tok val="[bB]?(enignus)?[q]?[unv]?(e|BENIGNVS)?"/>
+      <ana>
+         <tok val="BENIGNVS"/>
+         <tok val="Benignus"/>
+         <tok val="benignus"/>
+         <tok val="benignusne"/>
+         <tok val="benignusque"/>
+         <tok val="benignusue"/>
+         <tok val="benignusve"/>
+         <tok val="benignvs"/>
          <lm>
             <l>benignus</l>
             <m>a - - s - - - m n</m>
@@ -72,6 +108,7 @@
       </ana>
       <ana>
          <tok val="Benace"/>
+         <tok val="benace"/>
          <lm>
             <l>Benacus</l>
             <m>n e - s - - - m v</m>
@@ -79,6 +116,7 @@
       </ana>
       <ana>
          <tok val="Benacenses"/>
+         <tok val="benacenses"/>
          <lm>
             <l>Benacenses</l>
             <m cert="0.333333333333333333">n e - p - - - m a</m>
@@ -88,6 +126,7 @@
       </ana>
       <ana>
          <tok val="Benaci"/>
+         <tok val="benaci"/>
          <lm>
             <l>Benacus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -97,6 +136,7 @@
       </ana>
       <ana>
          <tok val="Benaco"/>
+         <tok val="benaco"/>
          <lm>
             <l>Benacus</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -105,6 +145,7 @@
       </ana>
       <ana>
          <tok val="Benacum"/>
+         <tok val="benacum"/>
          <lm>
             <l>Benacus</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -113,6 +154,7 @@
       </ana>
       <ana>
          <tok val="Benacus"/>
+         <tok val="benacus"/>
          <lm>
             <l>Benacus</l>
             <m>n e - s - - - m n</m>
@@ -120,6 +162,7 @@
       </ana>
       <ana>
          <tok val="Bendidium"/>
+         <tok val="bendidium"/>
          <lm>
             <l>Bendidius</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -132,20 +175,26 @@
       </ana>
       <ana>
          <tok val="Bendidius"/>
+         <tok val="bendidius"/>
          <lm>
             <l>Bendidius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Bene bene bené béne Béne-->
-         <tok val="(b|B|bén|Bén)e[n]?[eé]?"/>
+      <ana>
+         <tok val="Bene"/>
+         <tok val="Béne"/>
+         <tok val="bene"/>
+         <tok val="bené"/>
+         <tok val="béne"/>
          <lm>
             <l>bene</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Benedice benedice-->
-         <tok val="[bB]enedice"/>
+      <ana>
+         <tok val="Benedice"/>
+         <tok val="benedice"/>
          <lm cert="0.5">
             <l>benedicus</l>
             <m cert="0.333333333333333333">d</m>
@@ -157,8 +206,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Benedicere benedicere-->
-         <tok val="[bB]enedicere"/>
+      <ana>
+         <tok val="Benedicere"/>
+         <tok val="benedicere"/>
          <lm>
             <l>benedico</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -167,22 +217,25 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Benedicit benedicit-->
-         <tok val="[bB]enedicit"/>
+      <ana>
+         <tok val="Benedicit"/>
+         <tok val="benedicit"/>
          <lm>
             <l>benedico</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Benedicite benedicite-->
-         <tok val="[bB]enedicite"/>
+      <ana>
+         <tok val="Benedicite"/>
+         <tok val="benedicite"/>
          <lm>
             <l>benedico</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Benedico benedico-->
-         <tok val="[bB]enedico"/>
+      <ana>
+         <tok val="Benedico"/>
+         <tok val="benedico"/>
          <lm cert="0.5">
             <l>benedicus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -195,8 +248,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Benedicta benedicta-->
-         <tok val="[bB]enedicta"/>
+      <ana>
+         <tok val="Benedicta"/>
+         <tok val="benedicta"/>
          <lm cert="0.5">
             <l>benedico</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -213,8 +267,10 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Benedicti benedicti benedictique-->
-         <tok val="[bB]enedicti(que)?"/>
+      <ana>
+         <tok val="Benedicti"/>
+         <tok val="benedicti"/>
+         <tok val="benedictique"/>
          <lm cert="0.333333333333333333">
             <l>benedico</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -233,23 +289,26 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Benedictio benedictio-->
-         <tok val="[bB]enedictio"/>
+      <ana>
+         <tok val="Benedictio"/>
+         <tok val="benedictio"/>
          <lm>
             <l>benedictio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Benedictionis benedictionis-->
-         <tok val="[bB]enedictionis"/>
+      <ana>
+         <tok val="Benedictionis"/>
+         <tok val="benedictionis"/>
          <lm>
             <l>benedictio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Benedictis benedictis-->
-         <tok val="[bB]enedictis"/>
+      <ana>
+         <tok val="Benedictis"/>
+         <tok val="benedictis"/>
          <lm cert="0.333333333333333333">
             <l>benedico</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -270,8 +329,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Benedicto benedicto-->
-         <tok val="[bB]enedicto"/>
+      <ana>
+         <tok val="Benedicto"/>
+         <tok val="benedicto"/>
          <lm cert="0.333333333333333333">
             <l>benedico</l>
             <m cert="0.25">v - - s r p p n b</m>
@@ -290,8 +350,10 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Benedictum benedictorum benedictum-->
-         <tok val="[bB]enedict(or)?um"/>
+      <ana>
+         <tok val="Benedictum"/>
+         <tok val="benedictorum"/>
+         <tok val="benedictum"/>
          <lm cert="0.333333333333333333">
             <l>benedico</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -306,8 +368,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Benedictum benedicte benedictum-->
-         <tok val="[bB]enedict(um|e)"/>
+      <ana>
+         <tok val="Benedictum"/>
+         <tok val="benedicte"/>
+         <tok val="benedictum"/>
          <lm cert="0.5">
             <l>benedictum</l>
             <m>n - - s - - - n v</m>
@@ -317,8 +381,9 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Benedictum benedictum-->
-         <tok val="[bB]enedictum"/>
+      <ana>
+         <tok val="Benedictum"/>
+         <tok val="benedictum"/>
          <lm cert="0.333333333333333333">
             <l>benedico</l>
             <m cert="0.25">v - - s r p p m a</m>
@@ -336,8 +401,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Benefacere benefacere-->
-         <tok val="[bB]enefacere"/>
+      <ana>
+         <tok val="Benefacere"/>
+         <tok val="benefacere"/>
          <lm>
             <l>benefacio</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -345,22 +411,25 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Benefacio benefacio-->
-         <tok val="[bB]enefacio"/>
+      <ana>
+         <tok val="Benefacio"/>
+         <tok val="benefacio"/>
          <lm>
             <l>benefacio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Benefacis benefacis-->
-         <tok val="[bB]enefacis"/>
+      <ana>
+         <tok val="Benefacis"/>
+         <tok val="benefacis"/>
          <lm>
             <l>benefacio</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Benefacta benefacta-->
-         <tok val="[bB]enefacta"/>
+      <ana>
+         <tok val="Benefacta"/>
+         <tok val="benefacta"/>
          <lm>
             <l>benefacio</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -371,16 +440,19 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Benefactum benefactorum benefactum-->
-         <tok val="[bB]enefact(or)?um"/>
+      <ana>
+         <tok val="Benefactum"/>
+         <tok val="benefactorum"/>
+         <tok val="benefactum"/>
          <lm>
             <l>benefacio</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Benefactum benefactum-->
-         <tok val="[bB]enefactum"/>
+      <ana>
+         <tok val="Benefactum"/>
+         <tok val="benefactum"/>
          <lm>
             <l>benefacio</l>
             <m cert="0.2">v - - s r p p n n</m>
@@ -390,15 +462,17 @@
             <m cert="0.2">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Benefecisti benefecisti-->
-         <tok val="[bB]enefecisti"/>
+      <ana>
+         <tok val="Benefecisti"/>
+         <tok val="benefecisti"/>
          <lm>
             <l>benefacio</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Beneficentia beneficentia-->
-         <tok val="[bB]eneficentia"/>
+      <ana>
+         <tok val="Beneficentia"/>
+         <tok val="beneficentia"/>
          <lm>
             <l>beneficentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -406,8 +480,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Benefici benefici benifici-->
-         <tok val="[bB]en[ei]fici"/>
+      <ana>
+         <tok val="Benefici"/>
+         <tok val="benefici"/>
+         <tok val="benifici"/>
          <lm>
             <l>beneficus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -416,15 +492,22 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Benefici Beneficii benefici beneficii benifici benificii-->
-         <tok val="[Bb]en[ei]fici[i]?"/>
+      <ana>
+         <tok val="Benefici"/>
+         <tok val="Beneficii"/>
+         <tok val="benefici"/>
+         <tok val="beneficii"/>
+         <tok val="benifici"/>
+         <tok val="benificii"/>
          <lm>
             <l>beneficium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Beneficia beneficia beneficiaque-->
-         <tok val="[bB]eneficia(que)?"/>
+      <ana>
+         <tok val="Beneficia"/>
+         <tok val="beneficia"/>
+         <tok val="beneficiaque"/>
          <lm>
             <l>beneficium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -432,8 +515,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Beneficiarii beneficiarii-->
-         <tok val="[bB]eneficiarii"/>
+      <ana>
+         <tok val="Beneficiarii"/>
+         <tok val="beneficiarii"/>
          <lm cert="0.5">
             <l>beneficiarii</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -447,66 +531,90 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Beneficiarius beneficiarius-->
-         <tok val="[bB]eneficiarius"/>
+      <ana>
+         <tok val="Beneficiarius"/>
+         <tok val="beneficiarius"/>
          <lm>
             <l>beneficiarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Beneficiis beneficiis beneficiisque benificiis-->
-         <tok val="[bB]en[ei]ficiis(que)?"/>
+      <ana>
+         <tok val="Beneficiis"/>
+         <tok val="beneficiis"/>
+         <tok val="beneficiisque"/>
+         <tok val="benificiis"/>
          <lm>
             <l>beneficium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Beneficio beneficio beneficioque beneficiost benefició-->
-         <tok val="[bB]enefici[o]?(st|ó|oque)?"/>
+      <ana>
+         <tok val="Beneficio"/>
+         <tok val="beneficio"/>
+         <tok val="beneficioque"/>
+         <tok val="beneficiost"/>
+         <tok val="benefició"/>
          <lm>
             <l>beneficium</l>
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Beneficio beneficio beneficioque beneficiost-->
-         <tok val="[bB]eneficio(st|que)?"/>
+      <ana>
+         <tok val="Beneficio"/>
+         <tok val="beneficio"/>
+         <tok val="beneficioque"/>
+         <tok val="beneficiost"/>
          <lm>
             <l>beneficium</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Beneficiorum beneficiorum beneficiorumque-->
-         <tok val="[bB]eneficiorum(que)?"/>
+      <ana>
+         <tok val="Beneficiorum"/>
+         <tok val="beneficiorum"/>
+         <tok val="beneficiorumque"/>
          <lm>
             <l>beneficus</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Beneficiorum Beneficium beneficiorum beneficiorumque beneficium beneficiumque-->
-         <tok val="[bB]enefici(or)?um(que)?"/>
+      <ana>
+         <tok val="Beneficiorum"/>
+         <tok val="Beneficium"/>
+         <tok val="beneficiorum"/>
+         <tok val="beneficiorumque"/>
+         <tok val="beneficium"/>
+         <tok val="beneficiumque"/>
          <lm>
             <l>beneficium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Beneficium beneficium beneficiumque béneficium-->
-         <tok val="[bB]?(e|bé|be)neficium(que)?"/>
+      <ana>
+         <tok val="Beneficium"/>
+         <tok val="beneficium"/>
+         <tok val="beneficiumque"/>
+         <tok val="béneficium"/>
          <lm>
             <l>beneficium</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Beneficium beneficium beneficiumque-->
-         <tok val="[bB]eneficium(que)?"/>
+      <ana>
+         <tok val="Beneficium"/>
+         <tok val="beneficium"/>
+         <tok val="beneficiumque"/>
          <lm>
             <l>beneficium</l>
             <m cert="0.5">n - - s - - - n a</m>
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Beneficum beneficum-->
-         <tok val="[bB]eneficum"/>
+      <ana>
+         <tok val="Beneficum"/>
+         <tok val="beneficum"/>
          <lm>
             <l>beneficus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -514,30 +622,41 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Beneficum beneficorum beneficum-->
-         <tok val="[bB]enefic(or)?um"/>
+      <ana>
+         <tok val="Beneficum"/>
+         <tok val="beneficorum"/>
+         <tok val="beneficum"/>
          <lm>
             <l>beneficus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Beneficum benefice beneficen beneficum benificen-->
-         <tok val="[bB]en[ei]fic[e]?(n|um|en)?"/>
+      <ana>
+         <tok val="Beneficum"/>
+         <tok val="benefice"/>
+         <tok val="beneficen"/>
+         <tok val="beneficum"/>
+         <tok val="benificen"/>
          <lm>
             <l>beneficus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Beneficus beneficus benificus-->
-         <tok val="[bB]en[ei]ficus"/>
+      <ana>
+         <tok val="Beneficus"/>
+         <tok val="beneficus"/>
+         <tok val="benificus"/>
          <lm>
             <l>beneficus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Beneuenta Beneventa-->
-         <tok val="Bene[vu]enta"/>
+      <ana>
+         <tok val="Beneuenta"/>
+         <tok val="Beneventa"/>
+         <tok val="beneuenta"/>
+         <tok val="beneventa"/>
          <lm>
             <l>Beneventum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -545,8 +664,11 @@
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Beneuentani Beneventani-->
-         <tok val="Bene[vu]entani"/>
+      <ana>
+         <tok val="Beneuentani"/>
+         <tok val="Beneventani"/>
+         <tok val="beneuentani"/>
+         <tok val="beneventani"/>
          <lm cert="0.5">
             <l>Beneventanus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -562,6 +684,7 @@
       </ana>
       <ana>
          <tok val="Beneuentanis"/>
+         <tok val="beneuentanis"/>
          <lm cert="0.5">
             <l>Beneventani</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -577,8 +700,11 @@
             <m cert="0.166666666666666667">a e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Beneuentano Beneventano-->
-         <tok val="Bene[vu]entano"/>
+      <ana>
+         <tok val="Beneuentano"/>
+         <tok val="Beneventano"/>
+         <tok val="beneuentano"/>
+         <tok val="beneventano"/>
          <lm>
             <l>Beneventanus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -589,6 +715,7 @@
       </ana>
       <ana>
          <tok val="Beneuentanum"/>
+         <tok val="beneuentanum"/>
          <lm cert="0.5">
             <l>Beneventanus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -603,8 +730,11 @@
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Beneuenti Beneventi-->
-         <tok val="Bene[vu]enti"/>
+      <ana>
+         <tok val="Beneuenti"/>
+         <tok val="Beneventi"/>
+         <tok val="beneuenti"/>
+         <tok val="beneventi"/>
          <lm>
             <l>Beneventum</l>
             <m>n e - s - - - n g</m>
@@ -612,14 +742,18 @@
       </ana>
       <ana>
          <tok val="Beneuento"/>
+         <tok val="beneuento"/>
          <lm>
             <l>Beneventum</l>
             <m cert="0.5">n e - s - - - n b</m>
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Beneuentum Beneventum-->
-         <tok val="Bene[vu]entum"/>
+      <ana>
+         <tok val="Beneuentum"/>
+         <tok val="Beneventum"/>
+         <tok val="beneuentum"/>
+         <tok val="beneventum"/>
          <lm>
             <l>Beneventum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -628,23 +762,54 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Beneuole Benevole beneuole beneuoleque benevole benevolen benevoleque beniuole beniuolen benivole benivolen-->
-         <tok val="[bB]en(ev|iu|iv|eu)ole(n|que)?"/>
+      <ana>
+         <tok val="Beneuole"/>
+         <tok val="Benevole"/>
+         <tok val="beneuole"/>
+         <tok val="beneuoleque"/>
+         <tok val="benevole"/>
+         <tok val="benevolen"/>
+         <tok val="benevoleque"/>
+         <tok val="beniuole"/>
+         <tok val="beniuolen"/>
+         <tok val="benivole"/>
+         <tok val="benivolen"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Beneuole Beneuolum Benevole beneuole beneuoleque beneuolum benevole benevolen benevoleque benevolum benevolumque beniuole beniuolen beniuolum benivole benivolen benivolum benivolumque-->
-         <tok val="[bB]en(ev|iu|iv|eu)ol(umqu)?[e]?(n|que|um)?"/>
+      <ana>
+         <tok val="Beneuole"/>
+         <tok val="Beneuolum"/>
+         <tok val="Benevole"/>
+         <tok val="beneuole"/>
+         <tok val="beneuoleque"/>
+         <tok val="beneuolum"/>
+         <tok val="benevole"/>
+         <tok val="benevolen"/>
+         <tok val="benevoleque"/>
+         <tok val="benevolum"/>
+         <tok val="benevolumque"/>
+         <tok val="beniuole"/>
+         <tok val="beniuolen"/>
+         <tok val="beniuolum"/>
+         <tok val="benivole"/>
+         <tok val="benivolen"/>
+         <tok val="benivolum"/>
+         <tok val="benivolumque"/>
          <lm>
             <l>benevolus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Beneuolens Benevolens beneuolens benevolens benivolens-->
-         <tok val="[Bb]en[e]?(v|u|iv)olens"/>
+      <ana>
+         <tok val="Beneuolens"/>
+         <tok val="Benevolens"/>
+         <tok val="beneuolens"/>
+         <tok val="benevolens"/>
+         <tok val="benivolens"/>
          <lm>
             <l>benevolens</l>
             <m cert="0.142857142857142857">a - - s - - - n n</m>
@@ -656,15 +821,24 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Beneuolentes benevolentes benevolentis benivolentes benivolentis benevoléntis-->
-         <tok val="[bB]en[ei]?(v|eu)ol[eé]nt[ie]s"/>
+      <ana>
+         <tok val="Beneuolentes"/>
+         <tok val="beneuolentes"/>
+         <tok val="benevolentes"/>
+         <tok val="benevolentis"/>
+         <tok val="benevoléntis"/>
+         <tok val="benivolentes"/>
+         <tok val="benivolentis"/>
          <lm>
             <l>benevolens</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Beneuolentes benevolentes benivolentes-->
-         <tok val="[bB]en[ie]?(v|eu)olentes"/>
+      <ana>
+         <tok val="Beneuolentes"/>
+         <tok val="beneuolentes"/>
+         <tok val="benevolentes"/>
+         <tok val="benivolentes"/>
          <lm>
             <l>benevolens</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -673,15 +847,28 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Beneuolentes benevolentes benevolentis benivolentes benivolentis-->
-         <tok val="[bB]en[ei]?(v|eu)olent[ie]s"/>
+      <ana>
+         <tok val="Beneuolentes"/>
+         <tok val="beneuolentes"/>
+         <tok val="benevolentes"/>
+         <tok val="benevolentis"/>
+         <tok val="benivolentes"/>
+         <tok val="benivolentis"/>
          <lm>
             <l>benevolens</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Beneuolentia Benevolentia Benivolentia beneuolentia benevolentia benevolentiaque beniuolentia benivolentia benivolentiaque-->
-         <tok val="[bB]en[ie]?(v|eu|iv|ev|iu)olentia(que)?"/>
+      <ana>
+         <tok val="Beneuolentia"/>
+         <tok val="Benevolentia"/>
+         <tok val="Benivolentia"/>
+         <tok val="beneuolentia"/>
+         <tok val="benevolentia"/>
+         <tok val="benevolentiaque"/>
+         <tok val="beniuolentia"/>
+         <tok val="benivolentia"/>
+         <tok val="benivolentiaque"/>
          <lm cert="0.5">
             <l>benevolentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -695,8 +882,14 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Beneuolentiae beneuolentiae beneuolentiaeque benevolentiae benevolentiaeque beniuolentiae benivolentiae-->
-         <tok val="[bB]en[e]?(v|u|iu|iv)olentiae(que)?"/>
+      <ana>
+         <tok val="Beneuolentiae"/>
+         <tok val="beneuolentiae"/>
+         <tok val="beneuolentiaeque"/>
+         <tok val="benevolentiae"/>
+         <tok val="benevolentiaeque"/>
+         <tok val="beniuolentiae"/>
+         <tok val="benivolentiae"/>
          <lm>
             <l>benevolentia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -705,15 +898,26 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Beneuolentiam Beniuolentiam beneuolentiam benevolentiam benevolentiamque beniuolentiam beniuolentiamque benivolentiam benivolentiamque-->
-         <tok val="[bB]en[ie]?(v|iu|eu|ev|iv)olentiam(que)?"/>
+      <ana>
+         <tok val="Beneuolentiam"/>
+         <tok val="Beniuolentiam"/>
+         <tok val="beneuolentiam"/>
+         <tok val="benevolentiam"/>
+         <tok val="benevolentiamque"/>
+         <tok val="beniuolentiam"/>
+         <tok val="beniuolentiamque"/>
+         <tok val="benivolentiam"/>
+         <tok val="benivolentiamque"/>
          <lm>
             <l>benevolentia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Beneuolentissimi benevolentissimi beniuolentissimi-->
-         <tok val="[bB]en[e]?(v|u|iu)olentissimi"/>
+      <ana>
+         <tok val="Beneuolentissimi"/>
+         <tok val="beneuolentissimi"/>
+         <tok val="benevolentissimi"/>
+         <tok val="beniuolentissimi"/>
          <lm>
             <l>benevolens</l>
             <m cert="0.25">a - - p - - - m n s</m>
@@ -722,8 +926,14 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--Beneuolum beneuolum benevolum benevolumque beniuolum benivolum benivolumque-->
-         <tok val="[bB]en[ie]?(v|eu|ev|iu|iv)olum(que)?"/>
+      <ana>
+         <tok val="Beneuolum"/>
+         <tok val="beneuolum"/>
+         <tok val="benevolum"/>
+         <tok val="benevolumque"/>
+         <tok val="beniuolum"/>
+         <tok val="benivolum"/>
+         <tok val="benivolumque"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -731,16 +941,31 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Beneuolum Benivolorum beneuolum benevolorum benevolum benevolumque beniuolum benivolum benivolumque-->
-         <tok val="[bB]en[ie]?(v|eu|iu|iv)ol(or)?um(que)?"/>
+      <ana>
+         <tok val="Beneuolum"/>
+         <tok val="Benivolorum"/>
+         <tok val="beneuolum"/>
+         <tok val="benevolorum"/>
+         <tok val="benevolum"/>
+         <tok val="benevolumque"/>
+         <tok val="beniuolum"/>
+         <tok val="benivolorum"/>
+         <tok val="benivolum"/>
+         <tok val="benivolumque"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Beneuolus beneuolus benevolus benevolusque beniuolus benivolus benivolusque-->
-         <tok val="[bB]en[ie]?(v|eu|ev|iu|iv)olus(que)?"/>
+      <ana>
+         <tok val="Beneuolus"/>
+         <tok val="beneuolus"/>
+         <tok val="benevolus"/>
+         <tok val="benevolusque"/>
+         <tok val="beniuolus"/>
+         <tok val="benivolus"/>
+         <tok val="benivolusque"/>
          <lm>
             <l>benevolus</l>
             <m>a - - s - - - m n</m>
@@ -748,13 +973,16 @@
       </ana>
       <ana>
          <tok val="Beneventanus"/>
+         <tok val="beneventanus"/>
          <lm>
             <l>Beneventanus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Benevola benevola benivola-->
-         <tok val="[bB]en[ei]vola"/>
+      <ana>
+         <tok val="Benevola"/>
+         <tok val="benevola"/>
+         <tok val="benivola"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -765,19 +993,19 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Beni Benin beni-->
-         <tok val="[Bb]eni[n]?"/>
-         <lm>
+      <ana>
+         <tok val="Beni"/>
+         <tok val="Benin"/>
+         <tok val="beni"/>
+         <tok val="benin"/>
+         <lm cert="0.5">
             <l>benus</l>
             <m cert="0.25">a - - s - - - m g</m>
             <m cert="0.25">a - - p - - - m v</m>
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-      </ana>
-      <ana><!--Beni Benin-->
-         <tok val="Beni[n]?"/>
-         <lm>
+         <lm cert="0.5">
             <l>Beni</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
@@ -785,13 +1013,16 @@
       </ana>
       <ana>
          <tok val="Beniamin"/>
+         <tok val="beniamin"/>
          <lm>
             <l>Beniamin</l>
             <m>n e - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Benigna benigna benignaque-->
-         <tok val="[bB]enigna(que)?"/>
+      <ana>
+         <tok val="Benigna"/>
+         <tok val="benigna"/>
+         <tok val="benignaque"/>
          <lm>
             <l>benignus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -802,8 +1033,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Benignae benignae-->
-         <tok val="[bB]enignae"/>
+      <ana>
+         <tok val="Benignae"/>
+         <tok val="benignae"/>
          <lm>
             <l>benignus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -812,36 +1044,53 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Benignam benignam benignamque benígnamque-->
-         <tok val="[bB]en[íi]gnam(que)?"/>
+      <ana>
+         <tok val="Benignam"/>
+         <tok val="benignam"/>
+         <tok val="benignamque"/>
+         <tok val="benígnamque"/>
          <lm>
             <l>benignus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Benigne benigne benigneque benignest benignequé benígneque-->
-         <tok val="[bB]en[ií]gne(qu)?(é|e|st)?"/>
+      <ana>
+         <tok val="Benigne"/>
+         <tok val="benigne"/>
+         <tok val="benigneque"/>
+         <tok val="benignequé"/>
+         <tok val="benignest"/>
+         <tok val="benígneque"/>
          <lm>
             <l>benignus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Benigne Benignum benigne benigneque benignest benignum-->
-         <tok val="[bB]enign[e]?(st|um|e|eque)?"/>
+      <ana>
+         <tok val="Benigne"/>
+         <tok val="Benignum"/>
+         <tok val="benigne"/>
+         <tok val="benigneque"/>
+         <tok val="benignest"/>
+         <tok val="benignum"/>
          <lm>
             <l>benignus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Benigne benigne benigneque benignest-->
-         <tok val="[bB]enigne(st|que)?"/>
+      <ana>
+         <tok val="Benigne"/>
+         <tok val="benigne"/>
+         <tok val="benigneque"/>
+         <tok val="benignest"/>
          <lm>
             <l>benignus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Benigni benigni-->
-         <tok val="[bB]enigni"/>
+      <ana>
+         <tok val="Benigni"/>
+         <tok val="benigni"/>
          <lm>
             <l>benignus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -850,16 +1099,18 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Benigniorem benigniorem-->
-         <tok val="[bB]enigniorem"/>
+      <ana>
+         <tok val="Benigniorem"/>
+         <tok val="benigniorem"/>
          <lm>
             <l>benignus</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--Benignis benignis-->
-         <tok val="[bB]enignis"/>
+      <ana>
+         <tok val="Benignis"/>
+         <tok val="benignis"/>
          <lm>
             <l>benignus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -870,50 +1121,65 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Benignissime benignissime benignissimeque-->
-         <tok val="[bB]enignissime(que)?"/>
+      <ana>
+         <tok val="Benignissime"/>
+         <tok val="benignissime"/>
+         <tok val="benignissimeque"/>
          <lm>
             <l>benignus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Benignissime benignissime benignissimeque benignissimus-->
-         <tok val="[bB]enignissim[e]?(que|us)?"/>
+      <ana>
+         <tok val="Benignissime"/>
+         <tok val="benignissime"/>
+         <tok val="benignissimeque"/>
+         <tok val="benignissimus"/>
          <lm>
             <l>benignus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Benignissime benignissime benignissimeque benignissimum-->
-         <tok val="[bB]enignissim[e]?(que|um)?"/>
+      <ana>
+         <tok val="Benignissime"/>
+         <tok val="benignissime"/>
+         <tok val="benignissimeque"/>
+         <tok val="benignissimum"/>
          <lm>
             <l>benignus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Benignitas benignitas benignitasque-->
-         <tok val="[bB]enignitas(que)?"/>
+      <ana>
+         <tok val="Benignitas"/>
+         <tok val="benignitas"/>
+         <tok val="benignitasque"/>
          <lm>
             <l>benignitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Benignitate benignitate-->
-         <tok val="[bB]enignitate"/>
+      <ana>
+         <tok val="Benignitate"/>
+         <tok val="benignitate"/>
          <lm>
             <l>benignitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Benignitatem benignitatem benignitatemque-->
-         <tok val="[bB]enignitatem(que)?"/>
+      <ana>
+         <tok val="Benignitatem"/>
+         <tok val="benignitatem"/>
+         <tok val="benignitatemque"/>
          <lm>
             <l>benignitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Benignius benignius benigniusque-->
-         <tok val="[bB]enignius(que)?"/>
+      <ana>
+         <tok val="Benignius"/>
+         <tok val="benignius"/>
+         <tok val="benigniusque"/>
          <lm>
             <l>benignus</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -922,8 +1188,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Benigno benigno-->
-         <tok val="[bB]enigno"/>
+      <ana>
+         <tok val="Benigno"/>
+         <tok val="benigno"/>
          <lm>
             <l>benignus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -932,8 +1199,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Benignum benignum-->
-         <tok val="[bB]enignum"/>
+      <ana>
+         <tok val="Benignum"/>
+         <tok val="benignum"/>
          <lm>
             <l>benignus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -941,25 +1209,27 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Benignum benignorum benignum-->
-         <tok val="[bB]enign(or)?um"/>
+      <ana>
+         <tok val="Benignum"/>
+         <tok val="benignorum"/>
+         <tok val="benignum"/>
          <lm>
             <l>benignus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Benin Benis-->
-         <tok val="Beni[sn]"/>
-         <lm>
+      <ana>
+         <tok val="Benin"/>
+         <tok val="Benis"/>
+         <tok val="benin"/>
+         <tok val="benis"/>
+         <lm cert="0.5">
             <l>Beni</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
-      </ana>
-      <ana><!--Benin Benis benis-->
-         <tok val="[Bb]eni[sn]"/>
-         <lm>
+         <lm cert="0.5">
             <l>benus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
             <m cert="0.166666666666666667">a - - p - - - f d</m>
@@ -969,8 +1239,11 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Beniuoli benevoli beniuoli benivoli-->
-         <tok val="[bB]en[i]?(u|v|ev)oli"/>
+      <ana>
+         <tok val="Beniuoli"/>
+         <tok val="benevoli"/>
+         <tok val="beniuoli"/>
+         <tok val="benivoli"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -979,8 +1252,12 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Benivolos beneuolos benevolos beniuolos benivolos-->
-         <tok val="[bB]en[e]?(v|u|iu|iv)olos"/>
+      <ana>
+         <tok val="Benivolos"/>
+         <tok val="beneuolos"/>
+         <tok val="benevolos"/>
+         <tok val="beniuolos"/>
+         <tok val="benivolos"/>
          <lm>
             <l>benevolus</l>
             <m>a - - p - - - m a</m>
@@ -988,14 +1265,16 @@
       </ana>
       <ana>
          <tok val="Benjamitae"/>
+         <tok val="benjamitae"/>
          <lm>
             <l>Beniamitae</l>
             <m cert="0.5">n e - p - - - m n</m>
             <m cert="0.5">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Benna benna-->
-         <tok val="[bB]enna"/>
+      <ana>
+         <tok val="Benna"/>
+         <tok val="benna"/>
          <lm>
             <l>benna</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1066,8 +1345,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--benedicat benedicatque-->
-         <tok val="benedicat(que)?"/>
+      <ana>
+         <tok val="benedicat"/>
+         <tok val="benedicatque"/>
          <lm>
             <l>benedico</l>
             <m>v - 3 s p s a</m>
@@ -1225,8 +1505,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--benedicet benedicetque-->
-         <tok val="benedicet(que)?"/>
+      <ana>
+         <tok val="benedicet"/>
+         <tok val="benedicetque"/>
          <lm>
             <l>benedico</l>
             <m>v - 3 s f i a</m>
@@ -1291,8 +1572,9 @@
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--benedicitur Benedicitur-->
-         <tok val="[Bb]enedicitur"/>
+      <ana>
+         <tok val="Benedicitur"/>
+         <tok val="benedicitur"/>
          <lm>
             <l>benedico</l>
             <m>v - 3 s p i p</m>
@@ -1434,8 +1716,9 @@
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--benedixi benedixique-->
-         <tok val="benedixi(que)?"/>
+      <ana>
+         <tok val="benedixi"/>
+         <tok val="benedixique"/>
          <lm>
             <l>benedico</l>
             <m>v - 1 s r i a</m>
@@ -1462,8 +1745,9 @@
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--benedixit benedixitque-->
-         <tok val="benedixit(que)?"/>
+      <ana>
+         <tok val="benedixit"/>
+         <tok val="benedixitque"/>
          <lm>
             <l>benedico</l>
             <m>v - 3 s r i a</m>
@@ -1718,8 +2002,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--benefica beneficaque-->
-         <tok val="benefica(que)?"/>
+      <ana>
+         <tok val="benefica"/>
+         <tok val="beneficaque"/>
          <lm>
             <l>beneficus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1747,8 +2032,10 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--benefice beneficen benificen-->
-         <tok val="ben[ei]fice[n]?"/>
+      <ana>
+         <tok val="benefice"/>
+         <tok val="beneficen"/>
+         <tok val="benificen"/>
          <lm>
             <l>beneficus</l>
             <m cert="0.5">d</m>
@@ -2034,8 +2321,9 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--beneuolae benevolae-->
-         <tok val="bene[vu]olae"/>
+      <ana>
+         <tok val="beneuolae"/>
+         <tok val="benevolae"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2044,15 +2332,19 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--beneuolam beniuolam benivolam-->
-         <tok val="ben[ie]?(u|iv)olam"/>
+      <ana>
+         <tok val="beneuolam"/>
+         <tok val="beniuolam"/>
+         <tok val="benivolam"/>
          <lm>
             <l>benevolus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--beneuolente benevolente benevolenti-->
-         <tok val="bene[vu]olent[ei]"/>
+      <ana>
+         <tok val="beneuolente"/>
+         <tok val="benevolente"/>
+         <tok val="benevolenti"/>
          <lm>
             <l>benevolens</l>
             <m cert="0.333333333333333333">a - - s - - - n b</m>
@@ -2060,22 +2352,30 @@
             <m cert="0.333333333333333333">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--beneuolentissimus benevolentissimus beniuolentissimus benivolentissime-->
-         <tok val="ben[e]?(v|u|iu|iv)olentissim(us|e)"/>
+      <ana>
+         <tok val="beneuolentissimus"/>
+         <tok val="benevolentissimus"/>
+         <tok val="beniuolentissimus"/>
+         <tok val="benivolentissime"/>
          <lm>
             <l>benevolens</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--beneuolentissimus benevolentissimus beniuolentissimus-->
-         <tok val="ben[e]?(v|u|iu)olentissimus"/>
+      <ana>
+         <tok val="beneuolentissimus"/>
+         <tok val="benevolentissimus"/>
+         <tok val="beniuolentissimus"/>
          <lm>
             <l>benevolens</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--beneuolis benevolis beniuolis benivolis-->
-         <tok val="ben[e]?(v|u|iu|iv)olis"/>
+      <ana>
+         <tok val="beneuolis"/>
+         <tok val="benevolis"/>
+         <tok val="beniuolis"/>
+         <tok val="benivolis"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -2086,8 +2386,11 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--beneuolo benevolo beniuolo benivolo-->
-         <tok val="ben[e]?(v|u|iu|iv)olo"/>
+      <ana>
+         <tok val="beneuolo"/>
+         <tok val="benevolo"/>
+         <tok val="beniuolo"/>
+         <tok val="benivolo"/>
          <lm>
             <l>benevolus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -2150,8 +2453,9 @@
             <m>a - - s - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--benevolentis benivolentis-->
-         <tok val="ben[ie]volentis"/>
+      <ana>
+         <tok val="benevolentis"/>
+         <tok val="benivolentis"/>
          <lm>
             <l>benevolens</l>
             <m cert="0.333333333333333333">a - - s - - - m g</m>
@@ -2296,8 +2600,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--benignitatis benignitatisque-->
-         <tok val="benignitatis(que)?"/>
+      <ana>
+         <tok val="benignitatis"/>
+         <tok val="benignitatisque"/>
          <lm>
             <l>benignitas</l>
             <m>n - - s - - - f g</m>
@@ -2317,8 +2622,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--benignos benignosque-->
-         <tok val="benignos(que)?"/>
+      <ana>
+         <tok val="benignos"/>
+         <tok val="benignosque"/>
          <lm>
             <l>benignus</l>
             <m>a - - p - - - m a</m>
@@ -2333,8 +2639,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--beniuolas benivolas-->
-         <tok val="beni[vu]olas"/>
+      <ana>
+         <tok val="beniuolas"/>
+         <tok val="benivolas"/>
          <lm>
             <l>benevolus</l>
             <m>a - - p - - - f a</m>

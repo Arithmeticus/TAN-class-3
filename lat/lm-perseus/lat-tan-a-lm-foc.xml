@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfoc">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:foc">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to foc</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-foc.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FOC</tok-starts-with>
       <tok-starts-with>Foc</tok-starts-with>
       <tok-starts-with>foc</tok-starts-with>
-      <ana><!--FOCIS Focis focis focisque-->
-         <tok val="[fF]?(ocis)?(que|FOCIS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:24:38.1-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:24:38.1-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-foc.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FOCIS"/>
+         <tok val="Focis"/>
+         <tok val="focis"/>
+         <tok val="focisque"/>
          <lm>
             <l>focus</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--FOCVS Focus focus focusque-->
-         <tok val="[fF]?(ocus)?(que|FOCVS)?"/>
+      <ana>
+         <tok val="FOCVS"/>
+         <tok val="Focus"/>
+         <tok val="focus"/>
+         <tok val="focusque"/>
+         <tok val="focvs"/>
          <lm>
             <l>focus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Focale focale-->
-         <tok val="[fF]ocale"/>
+      <ana>
+         <tok val="Focale"/>
+         <tok val="focale"/>
          <lm>
             <l>focale</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -59,15 +75,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Focale focale focalique-->
-         <tok val="[fF]ocal(iqu)?e"/>
+      <ana>
+         <tok val="Focale"/>
+         <tok val="focale"/>
+         <tok val="focalique"/>
          <lm>
             <l>focale</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Focaria focaria-->
-         <tok val="[fF]ocaria"/>
+      <ana>
+         <tok val="Focaria"/>
+         <tok val="focaria"/>
          <lm>
             <l>focaria</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -75,15 +94,18 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Focarius focarius-->
-         <tok val="[fF]ocarius"/>
+      <ana>
+         <tok val="Focarius"/>
+         <tok val="focarius"/>
          <lm>
             <l>focarius</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Foci foci focique-->
-         <tok val="[fF]oci(que)?"/>
+      <ana>
+         <tok val="Foci"/>
+         <tok val="foci"/>
+         <tok val="focique"/>
          <lm>
             <l>focus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -91,16 +113,14 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Focillare focillare-->
-         <tok val="[fF]ocillare"/>
-         <lm>
+      <ana>
+         <tok val="Focillare"/>
+         <tok val="focillare"/>
+         <lm cert="0.5">
             <l>focillo</l>
             <m>v - - - p n a</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Focillare"/>
-         <lm>
+         <lm cert="0.5">
             <l>focillor</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - 2 s p i p</m>
@@ -108,64 +128,79 @@
       </ana>
       <ana>
          <tok val="Focillatur"/>
+         <tok val="focillatur"/>
          <lm>
             <l>focillor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Focillo focillo-->
-         <tok val="[fF]ocillo"/>
+      <ana>
+         <tok val="Focillo"/>
+         <tok val="focillo"/>
          <lm>
             <l>focillo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Foco foco-->
-         <tok val="[fF]oco"/>
+      <ana>
+         <tok val="Foco"/>
+         <tok val="foco"/>
          <lm>
             <l>focus</l>
             <m cert="0.5">n - - s - - - m b</m>
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Focos focos focosque-->
-         <tok val="[fF]ocos(que)?"/>
+      <ana>
+         <tok val="Focos"/>
+         <tok val="focos"/>
+         <tok val="focosque"/>
          <lm>
             <l>focus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Focula focula-->
-         <tok val="[fF]ocula"/>
+      <ana>
+         <tok val="Focula"/>
+         <tok val="focula"/>
          <lm>
             <l>foculo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Foculum foculum-->
-         <tok val="[fF]oculum"/>
+      <ana>
+         <tok val="Foculum"/>
+         <tok val="foculum"/>
          <lm>
             <l>foculus</l>
             <m cert="0.5">n - - p - - - m g</m>
             <m cert="0.5">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Foculus foculus-->
-         <tok val="[fF]oculus"/>
+      <ana>
+         <tok val="Foculus"/>
+         <tok val="foculus"/>
          <lm>
             <l>foculus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Focum focorum focum focumue focumve-->
-         <tok val="[fF]oc(or)?um[vu]?[e]?"/>
+      <ana>
+         <tok val="Focum"/>
+         <tok val="focorum"/>
+         <tok val="focum"/>
+         <tok val="focumue"/>
+         <tok val="focumve"/>
          <lm>
             <l>focus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Focum focum focumue focumve-->
-         <tok val="[fF]ocum[vu]?[e]?"/>
+      <ana>
+         <tok val="Focum"/>
+         <tok val="focum"/>
+         <tok val="focumue"/>
+         <tok val="focumve"/>
          <lm>
             <l>focus</l>
             <m>n - - s - - - m a</m>

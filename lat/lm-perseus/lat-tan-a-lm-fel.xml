@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfel">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fel">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fel</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fel.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FEL</tok-starts-with>
       <tok-starts-with>Fel</tok-starts-with>
       <tok-starts-with>fel</tok-starts-with>
-      <ana><!--FELI Feli feli-->
-         <tok val="[fF]?(eli|FELI)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:23:58.723-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:23:58.723-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fel.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FELI"/>
+         <tok val="Feli"/>
+         <tok val="feli"/>
          <lm cert="0.5">
             <l>felio</l>
             <m>v - 2 s p m a</m>
@@ -46,15 +56,21 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--FELICITER Feliciter feliciter feliciterque-->
-         <tok val="[fF]?(eliciter)?(que|FELICITER)?"/>
+      <ana>
+         <tok val="FELICITER"/>
+         <tok val="Feliciter"/>
+         <tok val="feliciter"/>
+         <tok val="feliciterque"/>
          <lm>
             <l>felicito</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--FELIX Felix felix felixque-->
-         <tok val="[fF]?(elix)?(que|FELIX)?"/>
+      <ana>
+         <tok val="FELIX"/>
+         <tok val="Felix"/>
+         <tok val="felix"/>
+         <tok val="felixque"/>
          <lm cert="0.5">
             <l>felix</l>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -71,22 +87,26 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--FELLO fello-->
-         <tok val="(fello|FELLO)"/>
+      <ana>
+         <tok val="FELLO"/>
+         <tok val="fello"/>
          <lm>
             <l>fello</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Fele fele felevis-->
-         <tok val="[fF]ele(vis)?"/>
+      <ana>
+         <tok val="Fele"/>
+         <tok val="fele"/>
+         <tok val="felevis"/>
          <lm>
             <l>feles</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Feles feles-->
-         <tok val="[fF]eles"/>
+      <ana>
+         <tok val="Feles"/>
+         <tok val="feles"/>
          <lm>
             <l>feles</l>
             <m cert="0.25">n - - s - - - f n</m>
@@ -95,8 +115,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Felice felice-->
-         <tok val="[fF]elice"/>
+      <ana>
+         <tok val="Felice"/>
+         <tok val="felice"/>
          <lm cert="0.5">
             <l>filix</l>
             <m>n - - s - - - f b</m>
@@ -106,23 +127,30 @@
             <m>a - - s - - - - b</m>
          </lm>
       </ana>
-      <ana><!--Felicem felicem felicemque-->
-         <tok val="[fF]elicem(que)?"/>
+      <ana>
+         <tok val="Felicem"/>
+         <tok val="felicem"/>
+         <tok val="felicemque"/>
          <lm>
             <l>felix</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Felicem felicem felicemque Felicemque-->
-         <tok val="[Ff]elicem(que)?"/>
+      <ana>
+         <tok val="Felicem"/>
+         <tok val="Felicemque"/>
+         <tok val="felicem"/>
+         <tok val="felicemque"/>
          <lm>
             <l>filix</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Felices felices felicesque-->
-         <tok val="[fF]elices(que)?"/>
+      <ana>
+         <tok val="Felices"/>
+         <tok val="felices"/>
+         <tok val="felicesque"/>
          <lm cert="0.5">
             <l>felix</l>
             <m cert="0.25">a - - p - - - f n</m>
@@ -137,27 +165,40 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Felices felices felicesque Felicis Felicisque-->
-         <tok val="[fF]elic[ei]s(que)?"/>
+      <ana>
+         <tok val="Felices"/>
+         <tok val="Felicis"/>
+         <tok val="Felicisque"/>
+         <tok val="felices"/>
+         <tok val="felicesque"/>
+         <tok val="felicis"/>
+         <tok val="felicisque"/>
          <lm>
             <l>felix</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Felici felici-->
-         <tok val="[fF]elici"/>
+      <ana>
+         <tok val="Felici"/>
+         <tok val="felici"/>
          <lm cert="0.5">
             <l>felix</l>
-            <m>a - - s - - - m d</m>
+            <m cert="0.166666666666666667">a - - s - - - m d</m>
+            <m cert="0.166666666666666667">a - - s - - - m b</m>
+            <m cert="0.166666666666666667">a - - s - - - f d</m>
+            <m cert="0.166666666666666667">a - - s - - - n d</m>
+            <m cert="0.166666666666666667">a - - s - - - f b</m>
+            <m cert="0.166666666666666667">a - - s - - - n b</m>
          </lm>
          <lm cert="0.5">
             <l>filix</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Felicibus felicibus-->
-         <tok val="[fF]elicibus"/>
+      <ana>
+         <tok val="Felicibus"/>
+         <tok val="felicibus"/>
          <lm cert="0.5">
             <l>felix</l>
             <m cert="0.166666666666666667">a - - p - - - m d</m>
@@ -175,14 +216,17 @@
       </ana>
       <ana>
          <tok val="Felicionem"/>
+         <tok val="felicionem"/>
          <lm>
             <l>Felicio</l>
             <m cert="0.5">n e - s - - - f a</m>
             <m cert="0.5">n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Felicior felicior feliciorque-->
-         <tok val="[fF]elicior(que)?"/>
+      <ana>
+         <tok val="Felicior"/>
+         <tok val="felicior"/>
+         <tok val="feliciorque"/>
          <lm>
             <l>felix</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -191,8 +235,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Feliciora feliciora-->
-         <tok val="[fF]eliciora"/>
+      <ana>
+         <tok val="Feliciora"/>
+         <tok val="feliciora"/>
          <lm>
             <l>felix</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -200,16 +245,18 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--Feliciorem feliciorem-->
-         <tok val="[fF]eliciorem"/>
+      <ana>
+         <tok val="Feliciorem"/>
+         <tok val="feliciorem"/>
          <lm>
             <l>felix</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--Feliciores feliciores-->
-         <tok val="[fF]eliciores"/>
+      <ana>
+         <tok val="Feliciores"/>
+         <tok val="feliciores"/>
          <lm>
             <l>felix</l>
             <m cert="0.166666666666666667">a - - p - - - m a c</m>
@@ -220,23 +267,24 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Felicis Felicisque felicis felicisque-->
-         <tok val="[Ff]elicis(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Felicis"/>
+         <tok val="Felicisque"/>
+         <tok val="felicis"/>
+         <tok val="felicisque"/>
+         <lm cert="0.5">
             <l>felix</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - f g</m>
          </lm>
-      </ana>
-      <ana><!--Felicis Felicisque felicis felicisque-->
-         <tok val="[fF]elicis(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>filix</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Felicissimae felicissimae-->
-         <tok val="[fF]elicissimae"/>
+      <ana>
+         <tok val="Felicissimae"/>
+         <tok val="felicissimae"/>
          <lm>
             <l>felix</l>
             <m cert="0.25">a - - s - - - f d s</m>
@@ -245,29 +293,41 @@
             <m cert="0.25">a - - s - - - f g s</m>
          </lm>
       </ana>
-      <ana><!--Felicissime felicissime felicissimeque-->
-         <tok val="[fF]elicissime(que)?"/>
+      <ana>
+         <tok val="Felicissime"/>
+         <tok val="felicissime"/>
+         <tok val="felicissimeque"/>
          <lm>
             <l>felix</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Felicissime Felicissimus felicissime felicissimeque felicissimus felicissume-->
-         <tok val="[fF]eliciss[iu]m(us|e|eque)"/>
+      <ana>
+         <tok val="Felicissime"/>
+         <tok val="Felicissimus"/>
+         <tok val="felicissime"/>
+         <tok val="felicissimeque"/>
+         <tok val="felicissimus"/>
+         <tok val="felicissume"/>
          <lm>
             <l>felix</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Felicissime felicissime felicissimeque felicissimum felicissume-->
-         <tok val="[fF]eliciss[iu]m[e]?(que|um)?"/>
+      <ana>
+         <tok val="Felicissime"/>
+         <tok val="felicissime"/>
+         <tok val="felicissimeque"/>
+         <tok val="felicissimum"/>
+         <tok val="felicissume"/>
          <lm>
             <l>felix</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Felicissimis felicissimis-->
-         <tok val="[fF]elicissimis"/>
+      <ana>
+         <tok val="Felicissimis"/>
+         <tok val="felicissimis"/>
          <lm>
             <l>felix</l>
             <m cert="0.166666666666666667">a - - p - - - f d s</m>
@@ -278,8 +338,10 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--Felicissimo felicissimo felicissumo-->
-         <tok val="[fF]eliciss[iu]mo"/>
+      <ana>
+         <tok val="Felicissimo"/>
+         <tok val="felicissimo"/>
+         <tok val="felicissumo"/>
          <lm>
             <l>felix</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -288,22 +350,25 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--Felicissimus felicissimus-->
-         <tok val="[fF]elicissimus"/>
+      <ana>
+         <tok val="Felicissimus"/>
+         <tok val="felicissimus"/>
          <lm>
             <l>felix</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Felicita felicita-->
-         <tok val="[fF]elicita"/>
+      <ana>
+         <tok val="Felicita"/>
+         <tok val="felicita"/>
          <lm>
             <l>felicito</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Felicitas felicitas-->
-         <tok val="[fF]elicitas"/>
+      <ana>
+         <tok val="Felicitas"/>
+         <tok val="felicitas"/>
          <lm cert="0.5">
             <l>felicitas</l>
             <m>n - - s - - - f n</m>
@@ -313,37 +378,48 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Felicitate felicitate-->
-         <tok val="[fF]elicitate"/>
+      <ana>
+         <tok val="Felicitate"/>
+         <tok val="felicitate"/>
          <lm>
             <l>felicitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Felicitate felicitate felicitateque-->
-         <tok val="[fF]elicitate(que)?"/>
+      <ana>
+         <tok val="Felicitate"/>
+         <tok val="felicitate"/>
+         <tok val="felicitateque"/>
          <lm>
             <l>felicito</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Felicitate felicitate felicitatum felicitateque-->
-         <tok val="[fF]elicitat[e]?(que|um)?"/>
+      <ana>
+         <tok val="Felicitate"/>
+         <tok val="felicitate"/>
+         <tok val="felicitateque"/>
+         <tok val="felicitatum"/>
          <lm>
             <l>felicito</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Felicitatem Felicitatemne felicitatem felicitatemque-->
-         <tok val="[Ff]elicitatem(ne|que)?"/>
+      <ana>
+         <tok val="Felicitatem"/>
+         <tok val="Felicitatemne"/>
+         <tok val="felicitatem"/>
+         <tok val="felicitatemne"/>
+         <tok val="felicitatemque"/>
          <lm>
             <l>felicitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Felicitates felicitates-->
-         <tok val="[fF]elicitates"/>
+      <ana>
+         <tok val="Felicitates"/>
+         <tok val="felicitates"/>
          <lm>
             <l>felicitas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -351,8 +427,10 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Felicitati felicitati felicitatique-->
-         <tok val="[fF]elicitati(que)?"/>
+      <ana>
+         <tok val="Felicitati"/>
+         <tok val="felicitati"/>
+         <tok val="felicitatique"/>
          <lm cert="0.5">
             <l>felicito</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -365,8 +443,10 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Felicitatis felicitatis felicitatisque-->
-         <tok val="[fF]elicitatis(que)?"/>
+      <ana>
+         <tok val="Felicitatis"/>
+         <tok val="felicitatis"/>
+         <tok val="felicitatisque"/>
          <lm cert="0.5">
             <l>felicito</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -382,8 +462,9 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Felicius felicius-->
-         <tok val="[fF]elicius"/>
+      <ana>
+         <tok val="Felicius"/>
+         <tok val="felicius"/>
          <lm>
             <l>felix</l>
             <m cert="0.25">d - - - - - - - - c</m>
@@ -392,8 +473,9 @@
             <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Felicula felicula-->
-         <tok val="[fF]elicula"/>
+      <ana>
+         <tok val="Felicula"/>
+         <tok val="felicula"/>
          <lm>
             <l>filicula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -401,8 +483,11 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Felis Felisque felis-->
-         <tok val="[fF]elis(que)?"/>
+      <ana>
+         <tok val="Felis"/>
+         <tok val="Felisque"/>
+         <tok val="felis"/>
+         <tok val="felisque"/>
          <lm cert="0.5">
             <l>felio</l>
             <m>v - 2 s p i a</m>
@@ -412,16 +497,19 @@
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Fellatorque fellator-->
-         <tok val="[fF]ellator(que)?"/>
+      <ana>
+         <tok val="Fellatorque"/>
+         <tok val="fellator"/>
+         <tok val="fellatorque"/>
          <lm>
             <l>fellator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Felleus felleus-->
-         <tok val="[fF]elleus"/>
+      <ana>
+         <tok val="Felleus"/>
+         <tok val="felleus"/>
          <lm>
             <l>felleus</l>
             <m>a - - s - - - m n</m>
@@ -429,6 +517,7 @@
       </ana>
       <ana>
          <tok val="Felsina"/>
+         <tok val="felsina"/>
          <lm>
             <l>Felsina</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -438,6 +527,7 @@
       </ana>
       <ana>
          <tok val="Felsinam"/>
+         <tok val="felsinam"/>
          <lm>
             <l>Felsina</l>
             <m>n e - s - - - f a</m>
@@ -494,17 +584,6 @@
          <lm>
             <l>filicatus</l>
             <m>a - - s - - - m n</m>
-         </lm>
-      </ana>
-      <ana><!--felici Felici-->
-         <tok val="[Ff]elici"/>
-         <lm>
-            <l>felix</l>
-            <m cert="0.2">a - - s - - - m b</m>
-            <m cert="0.2">a - - s - - - f d</m>
-            <m cert="0.2">a - - s - - - n d</m>
-            <m cert="0.2">a - - s - - - f b</m>
-            <m cert="0.2">a - - s - - - n b</m>
          </lm>
       </ana>
       <ana>
@@ -565,8 +644,9 @@
             <m cert="0.25">a - - p - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--felicissimos felicissimosque-->
-         <tok val="felicissimos(que)?"/>
+      <ana>
+         <tok val="felicissimos"/>
+         <tok val="felicissimosque"/>
          <lm>
             <l>felix</l>
             <m>a - - p - - - m a s</m>
@@ -850,8 +930,9 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--felicis felicisque-->
-         <tok val="felicis(que)?"/>
+      <ana>
+         <tok val="felicis"/>
+         <tok val="felicisque"/>
          <lm>
             <l>felix</l>
             <m>a - - s - - - n g</m>
@@ -872,8 +953,9 @@
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--felicia Felicia-->
-         <tok val="[Ff]elicia"/>
+      <ana>
+         <tok val="Felicia"/>
+         <tok val="felicia"/>
          <lm>
             <l>felix</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>

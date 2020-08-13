@@ -1,51 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspos">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:pos">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to pos</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-pos.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>POS</tok-starts-with>
       <tok-starts-with>POs</tok-starts-with>
       <tok-starts-with>Pos</tok-starts-with>
       <tok-starts-with>pos</tok-starts-with>
       <tok-starts-with>pós</tok-starts-with>
-      <ana><!--POSCO Posco posco-->
-         <tok val="[pP]?(osco|POSCO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:40:12.3-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:40:12.3-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-pos.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="POSCO"/>
+         <tok val="Posco"/>
+         <tok val="posco"/>
          <lm>
             <l>posco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--POSITI Positi Posti positi positique positiue posti-->
-         <tok val="[pP]?(os)?[i]?(ti)?[q]?(ue|POSITI)?"/>
+      <ana>
+         <tok val="POSITI"/>
+         <tok val="Positi"/>
+         <tok val="Posti"/>
+         <tok val="positi"/>
+         <tok val="positique"/>
+         <tok val="positiue"/>
+         <tok val="posti"/>
          <lm>
             <l>pono</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -54,8 +70,12 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--POSITVS Positus positus positusque-->
-         <tok val="[pP]?(ositus)?(que|POSITVS)?"/>
+      <ana>
+         <tok val="POSITVS"/>
+         <tok val="Positus"/>
+         <tok val="positus"/>
+         <tok val="positusque"/>
+         <tok val="positvs"/>
          <lm>
             <l>positus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -64,22 +84,35 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--POSITVS Positus positus positusque postus-->
-         <tok val="[pP]?(os)?[i]?(tus)?(que|POSITVS)?"/>
+      <ana>
+         <tok val="POSITVS"/>
+         <tok val="Positus"/>
+         <tok val="positus"/>
+         <tok val="positusque"/>
+         <tok val="positvs"/>
+         <tok val="postus"/>
          <lm>
             <l>pono</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--POSSE POsse Posse posse posseque pósse-->
-         <tok val="[P]?(o|O|po|pó)?(sse)?(que|POSSE)?"/>
+      <ana>
+         <tok val="POSSE"/>
+         <tok val="POsse"/>
+         <tok val="Posse"/>
+         <tok val="posse"/>
+         <tok val="posseque"/>
+         <tok val="pósse"/>
          <lm>
             <l>possum</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--POSSESSA Possessa possessa possessaque-->
-         <tok val="[pP]?(ossessa)?(que|POSSESSA)?"/>
+      <ana>
+         <tok val="POSSESSA"/>
+         <tok val="Possessa"/>
+         <tok val="possessa"/>
+         <tok val="possessaque"/>
          <lm>
             <l>possessus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -90,23 +123,29 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--POSSESSIONEM Possessionem possessionem possessionemque-->
-         <tok val="[pP]?(ossessionem)?(que|POSSESSIONEM)?"/>
+      <ana>
+         <tok val="POSSESSIONEM"/>
+         <tok val="Possessionem"/>
+         <tok val="possessionem"/>
+         <tok val="possessionemque"/>
          <lm>
             <l>possessio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--POSSESSOR Possessor possessor-->
-         <tok val="[pP]?(ossessor|POSSESSOR)"/>
+      <ana>
+         <tok val="POSSESSOR"/>
+         <tok val="Possessor"/>
+         <tok val="possessor"/>
          <lm>
             <l>possessor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--POSSESSORI possessori-->
-         <tok val="(possessori|POSSESSORI)"/>
+      <ana>
+         <tok val="POSSESSORI"/>
+         <tok val="possessori"/>
          <lm cert="0.5">
             <l>possessorius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -117,50 +156,90 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--POSSIDEO Possideo possideo-->
-         <tok val="[pP]?(ossideo|POSSIDEO)"/>
+      <ana>
+         <tok val="POSSIDEO"/>
+         <tok val="Possideo"/>
+         <tok val="possideo"/>
          <lm>
             <l>possideo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--POSSIT Possit possit possitne possitque-->
-         <tok val="[pP]?(ossit)?(ne|que|POSSIT)?"/>
+      <ana>
+         <tok val="POSSIT"/>
+         <tok val="Possit"/>
+         <tok val="possit"/>
+         <tok val="possitne"/>
+         <tok val="possitque"/>
          <lm>
             <l>possum</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--POSSUMUS Possumus Possumusne possumus possumusne possúmus-->
-         <tok val="[pP]?(oss)?[uú]?(mus)?(ne|POSSUMUS)?"/>
+      <ana>
+         <tok val="POSSUMUS"/>
+         <tok val="Possumus"/>
+         <tok val="Possumusne"/>
+         <tok val="possumus"/>
+         <tok val="possumusne"/>
+         <tok val="possúmus"/>
          <lm>
             <l>possum</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--POSSVM Possum Possumne possum possumne possúm póssum Possúm-->
-         <tok val="[pP]?(o|pó|Po)?(ss)?[uú]?[m]?(ne|POSSVM)?"/>
+      <ana>
+         <tok val="POSSVM"/>
+         <tok val="Possum"/>
+         <tok val="Possumne"/>
+         <tok val="Possúm"/>
+         <tok val="possum"/>
+         <tok val="possumne"/>
+         <tok val="possvm"/>
+         <tok val="possúm"/>
+         <tok val="póssum"/>
          <lm>
             <l>possum</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--POST Post Postque post postque postue postve póst POSTVE-->
-         <tok val="[pP]?(ost)?[q]?[uv]?(e|POSTVE|POST|Post|póst)?"/>
+      <ana>
+         <tok val="POST"/>
+         <tok val="POSTVE"/>
+         <tok val="Post"/>
+         <tok val="Postque"/>
+         <tok val="post"/>
+         <tok val="postque"/>
+         <tok val="postue"/>
+         <tok val="postve"/>
+         <tok val="póst"/>
          <lm>
             <l>post</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--POST Post Postque post postque postue postve-->
-         <tok val="[pP]?(ost)?[q]?[uv]?(e|POST)?"/>
+      <ana>
+         <tok val="POST"/>
+         <tok val="Post"/>
+         <tok val="Postque"/>
+         <tok val="post"/>
+         <tok val="postque"/>
+         <tok val="postue"/>
+         <tok val="postve"/>
          <lm>
             <l>post</l>
             <m>r</m>
          </lm>
       </ana>
-      <ana><!--POSTERA POstrema Postera Postrema postera posteraque postrema postremaque-->
-         <tok val="[P]?(o|O|po|Po)?(st)?[r]?[e]?[mr]?[a]?(que|POSTERA)?"/>
+      <ana>
+         <tok val="POSTERA"/>
+         <tok val="POstrema"/>
+         <tok val="Postera"/>
+         <tok val="Postrema"/>
+         <tok val="postera"/>
+         <tok val="posteraque"/>
+         <tok val="postrema"/>
+         <tok val="postremaque"/>
          <lm>
             <l>posterus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -171,22 +250,32 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--POSTERA Postera postera posteraque-->
-         <tok val="[pP]?(ostera)?(que|POSTERA)?"/>
+      <ana>
+         <tok val="POSTERA"/>
+         <tok val="Postera"/>
+         <tok val="postera"/>
+         <tok val="posteraque"/>
          <lm>
             <l>postero</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--POSTERIORIS Posterioris posterioris posteriorisque-->
-         <tok val="[pP]?(osterioris)?(que|POSTERIORIS)?"/>
+      <ana>
+         <tok val="POSTERIORIS"/>
+         <tok val="Posterioris"/>
+         <tok val="posterioris"/>
+         <tok val="posteriorisque"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--POSTERIS Posteris posteris posterisque postremis-->
-         <tok val="[pP]?(ost)?[r]?[e]?[rm]?(is)?(que|POSTERIS)?"/>
+      <ana>
+         <tok val="POSTERIS"/>
+         <tok val="Posteris"/>
+         <tok val="posteris"/>
+         <tok val="posterisque"/>
+         <tok val="postremis"/>
          <lm>
             <l>posterus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -197,59 +286,107 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--POSTERORVM Postremum posterorum posterorumque posterum postremorum postremum postremumst postremumue-->
-         <tok val="[pP]?(ost)?[e]?[r]?(e|u|oru|e)?[m]?(or)?(um)?(st|ue|que|POSTERORVM)?"/>
+      <ana>
+         <tok val="POSTERORVM"/>
+         <tok val="Postremum"/>
+         <tok val="posterorum"/>
+         <tok val="posterorumque"/>
+         <tok val="posterorvm"/>
+         <tok val="posterum"/>
+         <tok val="postremorum"/>
+         <tok val="postremum"/>
+         <tok val="postremumst"/>
+         <tok val="postremumue"/>
          <lm>
             <l>posterus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--POSTERVS Posterus Postremus posterus postremus postremusque-->
-         <tok val="[pP]?(ost)?[r]?[e]?[mr]?(us)?(que|POSTERVS)?"/>
+      <ana>
+         <tok val="POSTERVS"/>
+         <tok val="Posterus"/>
+         <tok val="Postremus"/>
+         <tok val="posterus"/>
+         <tok val="postervs"/>
+         <tok val="postremus"/>
+         <tok val="postremusque"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--POSTHAC Posthac posthac pósthac-->
-         <tok val="[pP]?(o|pó)?(sthac|POSTHAC)"/>
+      <ana>
+         <tok val="POSTHAC"/>
+         <tok val="Posthac"/>
+         <tok val="posthac"/>
+         <tok val="pósthac"/>
          <lm>
             <l>posthac</l>
             <m>d d</m>
          </lm>
       </ana>
-      <ana><!--POSTLIMINIO Postliminio postliminio-->
-         <tok val="[pP]?(ostliminio|POSTLIMINIO)"/>
+      <ana>
+         <tok val="POSTLIMINIO"/>
+         <tok val="Postliminio"/>
+         <tok val="postliminio"/>
          <lm>
             <l>postliminium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--POSTQUAM POSTQVAM POstquam Postquam postquam postquamst póstquam-->
-         <tok val="(postquam)?(st|POSTQVAM|POSTQUAM|Postquam|POstquam|póstquam)?"/>
+      <ana>
+         <tok val="POSTQUAM"/>
+         <tok val="POSTQVAM"/>
+         <tok val="POstquam"/>
+         <tok val="Postquam"/>
+         <tok val="postquam"/>
+         <tok val="postquamst"/>
+         <tok val="postqvam"/>
+         <tok val="póstquam"/>
          <lm>
             <l>postquam</l>
             <m>c</m>
          </lm>
       </ana>
-      <ana><!--POSTREMAM Postremam posteram postremam postremamve-->
-         <tok val="[pP]?(ost)?[r]?[e]?[mr]?(am)?(ve|POSTREMAM)?"/>
+      <ana>
+         <tok val="POSTREMAM"/>
+         <tok val="Postremam"/>
+         <tok val="posteram"/>
+         <tok val="postremam"/>
+         <tok val="postremamve"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--POSTREMO POstremo Postero Postremo postero posteroque posterove postremo postremoque póstremo-->
-         <tok val="[P]?(o|O|po|pó|Po)?(st)?[e]?[r]?(ov)?[e]?(mo|o|emo|emoque|oque|POSTREMO)?"/>
+      <ana>
+         <tok val="POSTREMO"/>
+         <tok val="POstremo"/>
+         <tok val="Postero"/>
+         <tok val="Postremo"/>
+         <tok val="postero"/>
+         <tok val="posteroque"/>
+         <tok val="posterove"/>
+         <tok val="postremo"/>
+         <tok val="postremoque"/>
+         <tok val="póstremo"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--POSTREMO POstremo Postero Postremo postero posteroque posterove postremo postremoque-->
-         <tok val="[P]?(o|O|po|Po)?(st)?[e]?[r]?(ov)?[e]?(mo|o|emo|emoque|oque|POSTREMO)?"/>
+      <ana>
+         <tok val="POSTREMO"/>
+         <tok val="POstremo"/>
+         <tok val="Postero"/>
+         <tok val="Postremo"/>
+         <tok val="postero"/>
+         <tok val="posteroque"/>
+         <tok val="posterove"/>
+         <tok val="postremo"/>
+         <tok val="postremoque"/>
          <lm>
             <l>posterus</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -257,23 +394,43 @@
             <m cert="0.333333333333333333">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--POSTREMO POstremo Postremo postremo postremoque-->
-         <tok val="[P]?(o|O|po)?(stremo)?(que|POSTREMO)?"/>
+      <ana>
+         <tok val="POSTREMO"/>
+         <tok val="POstremo"/>
+         <tok val="Postremo"/>
+         <tok val="postremo"/>
+         <tok val="postremoque"/>
          <lm>
             <l>postremo</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--POSTUMIO POSTVMIO Posthumio Postumio Postumioque Postvmio-->
-         <tok val="P(ost)?[h]?(umio|OSTVMIO|OSTUMIO|ostvmio|ostumioque)"/>
+      <ana>
+         <tok val="POSTUMIO"/>
+         <tok val="POSTVMIO"/>
+         <tok val="Posthumio"/>
+         <tok val="Postumio"/>
+         <tok val="Postumioque"/>
+         <tok val="Postvmio"/>
+         <tok val="posthumio"/>
+         <tok val="postumio"/>
+         <tok val="postumioque"/>
+         <tok val="postvmio"/>
          <lm>
             <l>Postumius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--POSTUMIO POSTVMIO Postumio Postumioque Postvmio-->
-         <tok val="P(OST)?[VU]?(MIO|ostvmio|ostumio|ostumioque)"/>
+      <ana>
+         <tok val="POSTUMIO"/>
+         <tok val="POSTVMIO"/>
+         <tok val="Postumio"/>
+         <tok val="Postumioque"/>
+         <tok val="Postvmio"/>
+         <tok val="postumio"/>
+         <tok val="postumioque"/>
+         <tok val="postvmio"/>
          <lm>
             <l>Postumius</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -282,8 +439,13 @@
             <m cert="0.25">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--POSTVLANTE Postulante postulante postulanti postulantique-->
-         <tok val="[pP]?(ostulant)?(e|i|ique|POSTVLANTE)"/>
+      <ana>
+         <tok val="POSTVLANTE"/>
+         <tok val="Postulante"/>
+         <tok val="postulante"/>
+         <tok val="postulanti"/>
+         <tok val="postulantique"/>
+         <tok val="postvlante"/>
          <lm>
             <l>postulo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -291,8 +453,13 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--POSTVLATA Postulata postulata postulataque postulataue-->
-         <tok val="[pP]?(ostulata)?[q]?(ue|POSTVLATA)?"/>
+      <ana>
+         <tok val="POSTVLATA"/>
+         <tok val="Postulata"/>
+         <tok val="postulata"/>
+         <tok val="postulataque"/>
+         <tok val="postulataue"/>
+         <tok val="postvlata"/>
          <lm cert="0.5">
             <l>postulo</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -309,22 +476,33 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--POSTVLATIONE postulatione-->
-         <tok val="(postulatione|POSTVLATIONE)"/>
+      <ana>
+         <tok val="POSTVLATIONE"/>
+         <tok val="postulatione"/>
+         <tok val="postvlatione"/>
          <lm>
             <l>postulatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--POSTVLO Postulo postulo postulone-->
-         <tok val="[pP]?(ostulo)?(ne|POSTVLO)?"/>
+      <ana>
+         <tok val="POSTVLO"/>
+         <tok val="Postulo"/>
+         <tok val="postulo"/>
+         <tok val="postulone"/>
+         <tok val="postvlo"/>
          <lm>
             <l>postulo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--POSTVMO Posthumo Postumo postumo-->
-         <tok val="[Pp]?(ost)?[h]?(umo|POSTVMO)"/>
+      <ana>
+         <tok val="POSTVMO"/>
+         <tok val="Posthumo"/>
+         <tok val="Postumo"/>
+         <tok val="posthumo"/>
+         <tok val="postumo"/>
+         <tok val="postvmo"/>
          <lm>
             <l>postumus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -333,8 +511,11 @@
             <m cert="0.25">a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--POSTVMO Postumo postumo-->
-         <tok val="[pP]?(ostumo|POSTVMO)"/>
+      <ana>
+         <tok val="POSTVMO"/>
+         <tok val="Postumo"/>
+         <tok val="postumo"/>
+         <tok val="postvmo"/>
          <lm cert="0.333333333333333333">
             <l>postumum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -350,29 +531,50 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--POSUIT POSVIT Posuit Posuitque posuit posuitque-->
-         <tok val="[pP]?(osuitque|POSVIT|POSUIT|posuit|Posuit)"/>
+      <ana>
+         <tok val="POSUIT"/>
+         <tok val="POSVIT"/>
+         <tok val="Posuit"/>
+         <tok val="Posuitque"/>
+         <tok val="posuit"/>
+         <tok val="posuitque"/>
+         <tok val="posvit"/>
          <lm>
             <l>pono</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--POSVERE POSVERVNT Posuere Posuerunt posuere posuerunt posueruntque-->
-         <tok val="[pP]?(osuer)?(unt|e|untque|POSVERVNT|POSVERE)"/>
+      <ana>
+         <tok val="POSVERE"/>
+         <tok val="POSVERVNT"/>
+         <tok val="Posuere"/>
+         <tok val="Posuerunt"/>
+         <tok val="posuere"/>
+         <tok val="posuerunt"/>
+         <tok val="posueruntque"/>
+         <tok val="posvere"/>
+         <tok val="posvervnt"/>
          <lm>
             <l>pono</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--POstea Postea postea posteaque posteaue póstea-->
-         <tok val="[pP]?(o|PO|pó)stea[q]?(ue)?"/>
+      <ana>
+         <tok val="POstea"/>
+         <tok val="Postea"/>
+         <tok val="postea"/>
+         <tok val="posteaque"/>
+         <tok val="posteaue"/>
+         <tok val="póstea"/>
          <lm>
             <l>postea</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Posca posca poscave-->
-         <tok val="[pP]osca(ve)?"/>
+      <ana>
+         <tok val="Posca"/>
+         <tok val="posca"/>
+         <tok val="poscave"/>
          <lm>
             <l>posca</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -382,6 +584,7 @@
       </ana>
       <ana>
          <tok val="Posca"/>
+         <tok val="posca"/>
          <lm>
             <l>Posca</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
@@ -389,36 +592,43 @@
             <m cert="0.333333333333333333">n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Poscant poscant-->
-         <tok val="[pP]oscant"/>
+      <ana>
+         <tok val="Poscant"/>
+         <tok val="poscant"/>
          <lm>
             <l>posco</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Poscat poscat poscatque-->
-         <tok val="[pP]oscat(que)?"/>
+      <ana>
+         <tok val="Poscat"/>
+         <tok val="poscat"/>
+         <tok val="poscatque"/>
          <lm>
             <l>posco</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Posce posce poscen-->
-         <tok val="[pP]osce[n]?"/>
+      <ana>
+         <tok val="Posce"/>
+         <tok val="posce"/>
+         <tok val="poscen"/>
          <lm>
             <l>posco</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Poscebatur poscebatur-->
-         <tok val="[pP]oscebatur"/>
+      <ana>
+         <tok val="Poscebatur"/>
+         <tok val="poscebatur"/>
          <lm>
             <l>posco</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Poscens poscens-->
-         <tok val="[pP]oscens"/>
+      <ana>
+         <tok val="Poscens"/>
+         <tok val="poscens"/>
          <lm>
             <l>posco</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -430,16 +640,20 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Poscentem poscentem poscentemque-->
-         <tok val="[pP]oscentem(que)?"/>
+      <ana>
+         <tok val="Poscentem"/>
+         <tok val="poscentem"/>
+         <tok val="poscentemque"/>
          <lm>
             <l>posco</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Poscentes poscentes poscentesque-->
-         <tok val="[pP]oscentes(que)?"/>
+      <ana>
+         <tok val="Poscentes"/>
+         <tok val="poscentes"/>
+         <tok val="poscentesque"/>
          <lm>
             <l>posco</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -448,16 +662,22 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Poscentes poscentes poscentesque poscentis-->
-         <tok val="[pP]oscent[ei]s(que)?"/>
+      <ana>
+         <tok val="Poscentes"/>
+         <tok val="poscentes"/>
+         <tok val="poscentesque"/>
+         <tok val="poscentis"/>
          <lm>
             <l>posco</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Poscenti Poscentique poscenti poscentique-->
-         <tok val="[pP]oscenti(que)?"/>
+      <ana>
+         <tok val="Poscenti"/>
+         <tok val="Poscentique"/>
+         <tok val="poscenti"/>
+         <tok val="poscentique"/>
          <lm>
             <l>posco</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -465,8 +685,12 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Poscenti Poscentique poscente poscenti poscentique-->
-         <tok val="[pP]oscent[i]?(que|e)?"/>
+      <ana>
+         <tok val="Poscenti"/>
+         <tok val="Poscentique"/>
+         <tok val="poscente"/>
+         <tok val="poscenti"/>
+         <tok val="poscentique"/>
          <lm>
             <l>posco</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -474,44 +698,54 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Poscere poscere-->
-         <tok val="[pP]oscere"/>
+      <ana>
+         <tok val="Poscere"/>
+         <tok val="poscere"/>
          <lm>
             <l>posco</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Poscere poscere póscere-->
-         <tok val="[pP]?(o|pó)scere"/>
+      <ana>
+         <tok val="Poscere"/>
+         <tok val="poscere"/>
+         <tok val="póscere"/>
          <lm>
             <l>posco</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Poscere poscere posceris-->
-         <tok val="[pP]oscer(e|is)"/>
+      <ana>
+         <tok val="Poscere"/>
+         <tok val="poscere"/>
+         <tok val="posceris"/>
          <lm>
             <l>posco</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Posci posci-->
-         <tok val="[pP]osci"/>
+      <ana>
+         <tok val="Posci"/>
+         <tok val="posci"/>
          <lm>
             <l>posco</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Poscimur Poscimvr poscimur-->
-         <tok val="[Pp]oscim[vu]r"/>
+      <ana>
+         <tok val="Poscimur"/>
+         <tok val="Poscimvr"/>
+         <tok val="poscimur"/>
+         <tok val="poscimvr"/>
          <lm>
             <l>posco</l>
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Poscimus poscimus-->
-         <tok val="[pP]oscimus"/>
+      <ana>
+         <tok val="Poscimus"/>
+         <tok val="poscimus"/>
          <lm>
             <l>posco</l>
             <m>v - 1 p p i a</m>
@@ -519,14 +753,17 @@
       </ana>
       <ana>
          <tok val="Poscis"/>
+         <tok val="poscis"/>
          <lm>
             <l>Posca</l>
             <m cert="0.5">n e - p - - - m b</m>
             <m cert="0.5">n e - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Poscis poscis poscisque-->
-         <tok val="[pP]oscis(que)?"/>
+      <ana>
+         <tok val="Poscis"/>
+         <tok val="poscis"/>
+         <tok val="poscisque"/>
          <lm cert="0.5">
             <l>posco</l>
             <m>v - 2 s p i a</m>
@@ -537,29 +774,35 @@
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Poscit poscit poscitque-->
-         <tok val="[pP]oscit(que)?"/>
+      <ana>
+         <tok val="Poscit"/>
+         <tok val="poscit"/>
+         <tok val="poscitque"/>
          <lm>
             <l>posco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Poscitur poscitur-->
-         <tok val="[pP]oscitur"/>
+      <ana>
+         <tok val="Poscitur"/>
+         <tok val="poscitur"/>
          <lm>
             <l>posco</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Poscor poscor-->
-         <tok val="[pP]oscor"/>
+      <ana>
+         <tok val="Poscor"/>
+         <tok val="poscor"/>
          <lm>
             <l>posco</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Poscunt poscunt poscuntque-->
-         <tok val="[pP]oscunt(que)?"/>
+      <ana>
+         <tok val="Poscunt"/>
+         <tok val="poscunt"/>
+         <tok val="poscuntque"/>
          <lm>
             <l>posco</l>
             <m>v - 3 p p i a</m>
@@ -567,6 +810,7 @@
       </ana>
       <ana>
          <tok val="Posidea"/>
+         <tok val="posidea"/>
          <lm>
             <l>Posideum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -576,6 +820,7 @@
       </ana>
       <ana>
          <tok val="Posiden"/>
+         <tok val="posiden"/>
          <lm>
             <l>Posides</l>
             <m>n e - s - - - m a</m>
@@ -583,6 +828,7 @@
       </ana>
       <ana>
          <tok val="Posideo"/>
+         <tok val="posideo"/>
          <lm>
             <l>Posideum</l>
             <m cert="0.5">n e - s - - - n b</m>
@@ -591,6 +837,7 @@
       </ana>
       <ana>
          <tok val="Posides"/>
+         <tok val="posides"/>
          <lm>
             <l>Posides</l>
             <m>n e - s - - - m n</m>
@@ -598,6 +845,7 @@
       </ana>
       <ana>
          <tok val="Posideum"/>
+         <tok val="posideum"/>
          <lm>
             <l>Posideum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -608,6 +856,7 @@
       </ana>
       <ana>
          <tok val="Posidianae"/>
+         <tok val="posidianae"/>
          <lm>
             <l>Posidianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -618,6 +867,7 @@
       </ana>
       <ana>
          <tok val="Posidianus"/>
+         <tok val="posidianus"/>
          <lm>
             <l>Posidianus</l>
             <m>a e - s - - - m n</m>
@@ -625,6 +875,7 @@
       </ana>
       <ana>
          <tok val="Posidonia"/>
+         <tok val="posidonia"/>
          <lm>
             <l>Posidonia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -634,6 +885,7 @@
       </ana>
       <ana>
          <tok val="Posidonii"/>
+         <tok val="posidonii"/>
          <lm>
             <l>Posidonius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -643,6 +895,7 @@
       </ana>
       <ana>
          <tok val="Posidonio"/>
+         <tok val="posidonio"/>
          <lm>
             <l>Posidonius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -651,6 +904,7 @@
       </ana>
       <ana>
          <tok val="Posidonios"/>
+         <tok val="posidonios"/>
          <lm>
             <l>Posidonius</l>
             <m>n e - p - - - m a</m>
@@ -658,6 +912,7 @@
       </ana>
       <ana>
          <tok val="Posidonium"/>
+         <tok val="posidonium"/>
          <lm>
             <l>Posidonius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -666,6 +921,7 @@
       </ana>
       <ana>
          <tok val="Posidonius"/>
+         <tok val="posidonius"/>
          <lm>
             <l>Posidonius</l>
             <m>n e - s - - - m n</m>
@@ -673,13 +929,18 @@
       </ana>
       <ana>
          <tok val="Posidorus"/>
+         <tok val="posidorus"/>
          <lm>
             <l>Posidorus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Posita posita positaque positast posta-->
-         <tok val="[pP]os[i]?ta(st|que)?"/>
+      <ana>
+         <tok val="Posita"/>
+         <tok val="posita"/>
+         <tok val="positaque"/>
+         <tok val="positast"/>
+         <tok val="posta"/>
          <lm>
             <l>pono</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -690,8 +951,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Positae positae positaeque-->
-         <tok val="[pP]ositae(que)?"/>
+      <ana>
+         <tok val="Positae"/>
+         <tok val="positae"/>
+         <tok val="positaeque"/>
          <lm>
             <l>pono</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -700,30 +963,37 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Positam positam positamque-->
-         <tok val="[pP]ositam(que)?"/>
+      <ana>
+         <tok val="Positam"/>
+         <tok val="positam"/>
+         <tok val="positamque"/>
          <lm>
             <l>pono</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Positio Position positio position-->
-         <tok val="[Pp]ositio[n]?"/>
+      <ana>
+         <tok val="Positio"/>
+         <tok val="Position"/>
+         <tok val="positio"/>
+         <tok val="position"/>
          <lm>
             <l>positio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Positionem positionem-->
-         <tok val="[pP]ositionem"/>
+      <ana>
+         <tok val="Positionem"/>
+         <tok val="positionem"/>
          <lm>
             <l>positio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Positiones positiones-->
-         <tok val="[pP]ositiones"/>
+      <ana>
+         <tok val="Positiones"/>
+         <tok val="positiones"/>
          <lm>
             <l>positio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -731,22 +1001,30 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Positionis positionis-->
-         <tok val="[pP]ositionis"/>
+      <ana>
+         <tok val="Positionis"/>
+         <tok val="positionis"/>
          <lm>
             <l>positio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Positionum positionum-->
-         <tok val="[pP]ositionum"/>
+      <ana>
+         <tok val="Positionum"/>
+         <tok val="positionum"/>
          <lm>
             <l>positio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Positis Postis Postisque positis positisque postis postisque-->
-         <tok val="[pP]os[i]?tis(que)?"/>
+      <ana>
+         <tok val="Positis"/>
+         <tok val="Postis"/>
+         <tok val="Postisque"/>
+         <tok val="positis"/>
+         <tok val="positisque"/>
+         <tok val="postis"/>
+         <tok val="postisque"/>
          <lm>
             <l>pono</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -757,15 +1035,18 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Positiuam positiuam positivam-->
-         <tok val="[pP]ositi[uv]am"/>
+      <ana>
+         <tok val="Positiuam"/>
+         <tok val="positiuam"/>
+         <tok val="positivam"/>
          <lm>
             <l>positivus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Positiuis positiuis-->
-         <tok val="[pP]ositiuis"/>
+      <ana>
+         <tok val="Positiuis"/>
+         <tok val="positiuis"/>
          <lm>
             <l>positivus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -776,8 +1057,10 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Positiuo positiuo positivo-->
-         <tok val="[pP]ositi[uv]o"/>
+      <ana>
+         <tok val="Positiuo"/>
+         <tok val="positiuo"/>
+         <tok val="positivo"/>
          <lm>
             <l>positivus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -786,15 +1069,21 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Positiuus positiuus positivus-->
-         <tok val="[pP]ositi[uv]us"/>
+      <ana>
+         <tok val="Positiuus"/>
+         <tok val="positiuus"/>
+         <tok val="positivus"/>
          <lm>
             <l>positivus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Posito posito positoque posto Positoque-->
-         <tok val="[pP]os[i]?to(que)?"/>
+      <ana>
+         <tok val="Posito"/>
+         <tok val="Positoque"/>
+         <tok val="posito"/>
+         <tok val="positoque"/>
+         <tok val="posto"/>
          <lm>
             <l>pono</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -803,45 +1092,62 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Positor positor-->
-         <tok val="[pP]ositor"/>
+      <ana>
+         <tok val="Positor"/>
+         <tok val="positor"/>
          <lm>
             <l>positor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Positu Postu positu postu-->
-         <tok val="[Pp]os[i]?tu"/>
+      <ana>
+         <tok val="Positu"/>
+         <tok val="Postu"/>
+         <tok val="positu"/>
+         <tok val="postu"/>
          <lm>
             <l>pono</l>
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Positu positu-->
-         <tok val="[pP]ositu"/>
+      <ana>
+         <tok val="Positu"/>
+         <tok val="positu"/>
          <lm>
             <l>positus</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Positum positum positumque postum-->
-         <tok val="[pP]os[i]?tum(que)?"/>
+      <ana>
+         <tok val="Positum"/>
+         <tok val="positum"/>
+         <tok val="positumque"/>
+         <tok val="postum"/>
          <lm>
             <l>pono</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Positum Postum positorum positum positumque postum-->
-         <tok val="[Pp]os[i]?t(or)?um(que)?"/>
+      <ana>
+         <tok val="Positum"/>
+         <tok val="Postum"/>
+         <tok val="positorum"/>
+         <tok val="positum"/>
+         <tok val="positumque"/>
+         <tok val="postum"/>
          <lm>
             <l>pono</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Positum Postum positum positumque postum-->
-         <tok val="[Pp]os[i]?tum(que)?"/>
+      <ana>
+         <tok val="Positum"/>
+         <tok val="Postum"/>
+         <tok val="positum"/>
+         <tok val="positumque"/>
+         <tok val="postum"/>
          <lm>
             <l>pono</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -849,22 +1155,33 @@
             <m cert="0.333333333333333333">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Positum Poste Postum posite positum positumque poste postum-->
-         <tok val="[Pp]os[i]?t(um|e|umque)"/>
+      <ana>
+         <tok val="Positum"/>
+         <tok val="Poste"/>
+         <tok val="Postum"/>
+         <tok val="posite"/>
+         <tok val="positum"/>
+         <tok val="positumque"/>
+         <tok val="poste"/>
+         <tok val="postum"/>
          <lm>
             <l>pono</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Positum positum positumque-->
-         <tok val="[pP]ositum(que)?"/>
+      <ana>
+         <tok val="Positum"/>
+         <tok val="positum"/>
+         <tok val="positumque"/>
          <lm>
             <l>positus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Positura positura posituraque-->
-         <tok val="[pP]ositura(que)?"/>
+      <ana>
+         <tok val="Positura"/>
+         <tok val="positura"/>
+         <tok val="posituraque"/>
          <lm cert="0.5">
             <l>pono</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -881,8 +1198,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Posituram posituram posituramque-->
-         <tok val="[pP]osituram(que)?"/>
+      <ana>
+         <tok val="Posituram"/>
+         <tok val="posituram"/>
+         <tok val="posituramque"/>
          <lm cert="0.5">
             <l>pono</l>
             <m>v - - s f p a f a</m>
@@ -892,51 +1211,67 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Possem possem possemne possemque-->
-         <tok val="[pP]ossem(ne|que)?"/>
+      <ana>
+         <tok val="Possem"/>
+         <tok val="possem"/>
+         <tok val="possemne"/>
+         <tok val="possemque"/>
          <lm>
             <l>possum</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Possemus possemus possemusque-->
-         <tok val="[pP]ossemus(que)?"/>
+      <ana>
+         <tok val="Possemus"/>
+         <tok val="possemus"/>
+         <tok val="possemusque"/>
          <lm>
             <l>possum</l>
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Possent possent possentne possentque-->
-         <tok val="[pP]ossent(ne|que)?"/>
+      <ana>
+         <tok val="Possent"/>
+         <tok val="possent"/>
+         <tok val="possentne"/>
+         <tok val="possentque"/>
          <lm>
             <l>possum</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Posses posses possesne-->
-         <tok val="[pP]osses(ne)?"/>
+      <ana>
+         <tok val="Posses"/>
+         <tok val="posses"/>
+         <tok val="possesne"/>
          <lm>
             <l>possum</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Possessio Possession possessio possession-->
-         <tok val="[Pp]ossessio[n]?"/>
+      <ana>
+         <tok val="Possessio"/>
+         <tok val="Possession"/>
+         <tok val="possessio"/>
+         <tok val="possession"/>
          <lm>
             <l>possessio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Possessione possessione-->
-         <tok val="[pP]ossessione"/>
+      <ana>
+         <tok val="Possessione"/>
+         <tok val="possessione"/>
          <lm>
             <l>possessio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Possessiones possessiones possessionesque-->
-         <tok val="[pP]ossessiones(que)?"/>
+      <ana>
+         <tok val="Possessiones"/>
+         <tok val="possessiones"/>
+         <tok val="possessionesque"/>
          <lm>
             <l>possessio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -944,15 +1279,18 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Possessionum possessionum possessionumque-->
-         <tok val="[pP]ossessionum(que)?"/>
+      <ana>
+         <tok val="Possessionum"/>
+         <tok val="possessionum"/>
+         <tok val="possessionumque"/>
          <lm>
             <l>possessio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Possessiuncula possessiuncula-->
-         <tok val="[pP]ossessiuncula"/>
+      <ana>
+         <tok val="Possessiuncula"/>
+         <tok val="possessiuncula"/>
          <lm>
             <l>possessiuncula</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -960,8 +1298,10 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Possessiuum possessiuum possessivum-->
-         <tok val="[pP]ossessi[uv]um"/>
+      <ana>
+         <tok val="Possessiuum"/>
+         <tok val="possessiuum"/>
+         <tok val="possessivum"/>
          <lm>
             <l>possessivus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -972,15 +1312,19 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Possessiuus possessivus-->
-         <tok val="[pP]ossessi[vu]us"/>
+      <ana>
+         <tok val="Possessiuus"/>
+         <tok val="possessiuus"/>
+         <tok val="possessivus"/>
          <lm>
             <l>possessivus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Possessum possessum possessumque-->
-         <tok val="[pP]ossessum(que)?"/>
+      <ana>
+         <tok val="Possessum"/>
+         <tok val="possessum"/>
+         <tok val="possessumque"/>
          <lm>
             <l>possessus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -990,16 +1334,20 @@
             <m cert="0.2">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Possessum possessorum possessum possessumque-->
-         <tok val="[pP]ossess(or)?um(que)?"/>
+      <ana>
+         <tok val="Possessum"/>
+         <tok val="possessorum"/>
+         <tok val="possessum"/>
+         <tok val="possessumque"/>
          <lm>
             <l>possessus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Possessus possessus-->
-         <tok val="[pP]ossessus"/>
+      <ana>
+         <tok val="Possessus"/>
+         <tok val="possessus"/>
          <lm>
             <l>possessus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -1009,15 +1357,20 @@
             <m cert="0.2">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Posset posset possetne possetque possét-->
-         <tok val="[pP]oss[eé]t(ne|que)?"/>
+      <ana>
+         <tok val="Posset"/>
+         <tok val="posset"/>
+         <tok val="possetne"/>
+         <tok val="possetque"/>
+         <tok val="possét"/>
          <lm>
             <l>possum</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Possibile possibile-->
-         <tok val="[pP]ossibile"/>
+      <ana>
+         <tok val="Possibile"/>
+         <tok val="possibile"/>
          <lm>
             <l>possibilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1025,8 +1378,9 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Possibilis possibilis-->
-         <tok val="[pP]ossibilis"/>
+      <ana>
+         <tok val="Possibilis"/>
+         <tok val="possibilis"/>
          <lm>
             <l>possibilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1038,30 +1392,37 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Possibilis possibiles possibilis-->
-         <tok val="[pP]ossibil[ie]s"/>
+      <ana>
+         <tok val="Possibilis"/>
+         <tok val="possibiles"/>
+         <tok val="possibilis"/>
          <lm>
             <l>possibilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Possideant possideant-->
-         <tok val="[pP]ossideant"/>
+      <ana>
+         <tok val="Possideant"/>
+         <tok val="possideant"/>
          <lm>
             <l>possideo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Possideat Possideatque possideat possideatque-->
-         <tok val="[pP]ossideat(que)?"/>
+      <ana>
+         <tok val="Possideat"/>
+         <tok val="Possideatque"/>
+         <tok val="possideat"/>
+         <tok val="possideatque"/>
          <lm>
             <l>possideo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Possident possident-->
-         <tok val="[pP]ossident"/>
+      <ana>
+         <tok val="Possident"/>
+         <tok val="possident"/>
          <lm cert="0.5">
             <l>possideo</l>
             <m>v - 3 p p i a</m>
@@ -1073,35 +1434,43 @@
       </ana>
       <ana>
          <tok val="Possidere"/>
+         <tok val="possidere"/>
          <lm>
             <l>possido</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Possidere possideris-->
-         <tok val="[pP]ossider(is|e)"/>
+      <ana>
+         <tok val="Possidere"/>
+         <tok val="possidere"/>
+         <tok val="possideris"/>
          <lm>
             <l>possido</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Possidere possidere possidereque possideris-->
-         <tok val="[pP]ossider[e]?(que|is)?"/>
+      <ana>
+         <tok val="Possidere"/>
+         <tok val="possidere"/>
+         <tok val="possidereque"/>
+         <tok val="possideris"/>
          <lm>
             <l>possido</l>
             <m>v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Possideri possideri-->
-         <tok val="[pP]ossideri"/>
+      <ana>
+         <tok val="Possideri"/>
+         <tok val="possideri"/>
          <lm>
             <l>possideo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Possidet possidet-->
-         <tok val="[pP]ossidet"/>
+      <ana>
+         <tok val="Possidet"/>
+         <tok val="possidet"/>
          <lm cert="0.5">
             <l>possido</l>
             <m>v - 3 s f i a</m>
@@ -1111,94 +1480,134 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Possim possim possimne-->
-         <tok val="[pP]ossim(ne)?"/>
+      <ana>
+         <tok val="Possim"/>
+         <tok val="possim"/>
+         <tok val="possimne"/>
          <lm>
             <l>possum</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Possint possint possintne possintque-->
-         <tok val="[pP]ossint(ne|que)?"/>
+      <ana>
+         <tok val="Possint"/>
+         <tok val="possint"/>
+         <tok val="possintne"/>
+         <tok val="possintque"/>
          <lm>
             <l>possum</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Possis possin possis possisne possisque possís-->
-         <tok val="[pP]oss[i]?[s]?[n]?(e|s|ís|isque)?"/>
+      <ana>
+         <tok val="Possis"/>
+         <tok val="possin"/>
+         <tok val="possis"/>
+         <tok val="possisne"/>
+         <tok val="possisque"/>
+         <tok val="possís"/>
          <lm>
             <l>possum</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Possitis possitin possitis-->
-         <tok val="[pP]ossiti[sn]"/>
+      <ana>
+         <tok val="Possitis"/>
+         <tok val="possitin"/>
+         <tok val="possitis"/>
          <lm>
             <l>possum</l>
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Possunt Possuntne possunt possuntne possuntque póssunt-->
-         <tok val="[pP]?(o|pó|po)ssunt(ne|que)?"/>
+      <ana>
+         <tok val="Possunt"/>
+         <tok val="Possuntne"/>
+         <tok val="possunt"/>
+         <tok val="possuntne"/>
+         <tok val="possuntque"/>
+         <tok val="póssunt"/>
          <lm>
             <l>possum</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Poste Posti poste posti-->
-         <tok val="[Pp]ost[ie]"/>
+      <ana>
+         <tok val="Poste"/>
+         <tok val="Posti"/>
+         <tok val="poste"/>
+         <tok val="posti"/>
          <lm>
             <l>postis</l>
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Poste posite poste-->
-         <tok val="[pP]os[i]?te"/>
+      <ana>
+         <tok val="Poste"/>
+         <tok val="posite"/>
+         <tok val="poste"/>
          <lm>
             <l>pono</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Posteaquam posteaquam-->
-         <tok val="[pP]osteaquam"/>
+      <ana>
+         <tok val="Posteaquam"/>
+         <tok val="posteaquam"/>
          <lm>
             <l>posteaquam</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Postem postem postemque-->
-         <tok val="[pP]ostem(que)?"/>
+      <ana>
+         <tok val="Postem"/>
+         <tok val="postem"/>
+         <tok val="postemque"/>
          <lm>
             <l>postis</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Posteri Postremi postremi postremique-->
-         <tok val="[pP]ost(r|)e[mr]i(que)?"/>
+      <ana>
+         <tok val="Posteri"/>
+         <tok val="Postremi"/>
+         <tok val="posteri"/>
+         <tok val="postremi"/>
+         <tok val="postremique"/>
          <lm>
             <l>posterus</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Posteri Postremi posteri posterique posteriue postremi postremique-->
-         <tok val="[pP]ost[r]?e[rm]i[q]?(ue|que)?"/>
+      <ana>
+         <tok val="Posteri"/>
+         <tok val="Postremi"/>
+         <tok val="posteri"/>
+         <tok val="posterique"/>
+         <tok val="posteriue"/>
+         <tok val="postremi"/>
+         <tok val="postremique"/>
          <lm>
             <l>posterus</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Posterior posterior posteriorque pósterior-->
-         <tok val="[pP]?(o|pó|po)sterior(que)?"/>
+      <ana>
+         <tok val="Posterior"/>
+         <tok val="posterior"/>
+         <tok val="posteriorque"/>
+         <tok val="pósterior"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - m v c</m>
          </lm>
       </ana>
-      <ana><!--Posterior posterior posteriorque-->
-         <tok val="[pP]osterior(que)?"/>
+      <ana>
+         <tok val="Posterior"/>
+         <tok val="posterior"/>
+         <tok val="posteriorque"/>
          <lm>
             <l>posterus</l>
             <m cert="0.333333333333333333">a - - s - - - f n c</m>
@@ -1206,8 +1615,9 @@
             <m cert="0.333333333333333333">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Posteriora posteriora-->
-         <tok val="[pP]osteriora"/>
+      <ana>
+         <tok val="Posteriora"/>
+         <tok val="posteriora"/>
          <lm cert="0.5">
             <l>posterus</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -1221,23 +1631,28 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Posteriore posteriore-->
-         <tok val="[pP]osteriore"/>
+      <ana>
+         <tok val="Posteriore"/>
+         <tok val="posteriore"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - - b c</m>
          </lm>
       </ana>
-      <ana><!--Posteriorem posteriorem posterioremque posterioremue-->
-         <tok val="[pP]osteriorem[q]?(ue)?"/>
+      <ana>
+         <tok val="Posteriorem"/>
+         <tok val="posteriorem"/>
+         <tok val="posterioremque"/>
+         <tok val="posterioremue"/>
          <lm>
             <l>posterus</l>
             <m cert="0.5">a - - s - - - f a c</m>
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--Posteriores posteriores-->
-         <tok val="[pP]osteriores"/>
+      <ana>
+         <tok val="Posteriores"/>
+         <tok val="posteriores"/>
          <lm cert="0.5">
             <l>posteriores</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1254,15 +1669,18 @@
             <m cert="0.166666666666666667">a - - p - - - f n c</m>
          </lm>
       </ana>
-      <ana><!--Posteriori posteriori posteriorique-->
-         <tok val="[pP]osteriori(que)?"/>
+      <ana>
+         <tok val="Posteriori"/>
+         <tok val="posteriori"/>
+         <tok val="posteriorique"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--Posterioribus posterioribus-->
-         <tok val="[pP]osterioribus"/>
+      <ana>
+         <tok val="Posterioribus"/>
+         <tok val="posterioribus"/>
          <lm cert="0.333333333333333333">
             <l>posteriores</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -1279,8 +1697,9 @@
             <m cert="0.5">a - - p - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--Posteriorum posteriorum-->
-         <tok val="[pP]osteriorum"/>
+      <ana>
+         <tok val="Posteriorum"/>
+         <tok val="posteriorum"/>
          <lm cert="0.25">
             <l>posteriores</l>
             <m>n - - p - - - m g</m>
@@ -1299,29 +1718,35 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Posteritas posteritas posteritasque-->
-         <tok val="[pP]osteritas(que)?"/>
+      <ana>
+         <tok val="Posteritas"/>
+         <tok val="posteritas"/>
+         <tok val="posteritasque"/>
          <lm>
             <l>posteritas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Posteritate posteritate-->
-         <tok val="[pP]osteritate"/>
+      <ana>
+         <tok val="Posteritate"/>
+         <tok val="posteritate"/>
          <lm>
             <l>posteritas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Posteritati posteritati posteritatique-->
-         <tok val="[pP]osteritati(que)?"/>
+      <ana>
+         <tok val="Posteritati"/>
+         <tok val="posteritati"/>
+         <tok val="posteritatique"/>
          <lm>
             <l>posteritas</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Posteritatis posteritatis-->
-         <tok val="[pP]osteritatis"/>
+      <ana>
+         <tok val="Posteritatis"/>
+         <tok val="posteritatis"/>
          <lm>
             <l>posteritas</l>
             <m>n - - s - - - f g</m>
@@ -1329,13 +1754,16 @@
       </ana>
       <ana>
          <tok val="Posterius"/>
+         <tok val="posterius"/>
          <lm>
             <l>posterus</l>
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Posterius posterius posteriusque-->
-         <tok val="[pP]osterius(que)?"/>
+      <ana>
+         <tok val="Posterius"/>
+         <tok val="posterius"/>
+         <tok val="posteriusque"/>
          <lm cert="0.5">
             <l>posterus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -1347,37 +1775,54 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Postero postero posteroque posterove-->
-         <tok val="[pP]ostero(ve|que)?"/>
+      <ana>
+         <tok val="Postero"/>
+         <tok val="postero"/>
+         <tok val="posteroque"/>
+         <tok val="posterove"/>
          <lm>
             <l>postero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Posteros posteros posterosque posterosue postremos postremosque-->
-         <tok val="[pP]ost[r]?e[rm]os[q]?(ue|que)?"/>
+      <ana>
+         <tok val="Posteros"/>
+         <tok val="posteros"/>
+         <tok val="posterosque"/>
+         <tok val="posterosue"/>
+         <tok val="postremos"/>
+         <tok val="postremosque"/>
          <lm>
             <l>posterus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Postes postes postesque-->
-         <tok val="[pP]ostes(que)?"/>
+      <ana>
+         <tok val="Postes"/>
+         <tok val="postes"/>
+         <tok val="postesque"/>
          <lm>
             <l>postis</l>
             <m cert="0.5">n - - p - - - m n</m>
             <m cert="0.5">n - - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Postes Postis Postisque postes postesque postis postisque-->
-         <tok val="[pP]o(st)?[ie]?s(que|tis|tes)"/>
+      <ana>
+         <tok val="Postes"/>
+         <tok val="Postis"/>
+         <tok val="Postisque"/>
+         <tok val="postes"/>
+         <tok val="postesque"/>
+         <tok val="postis"/>
+         <tok val="postisque"/>
          <lm>
             <l>postis</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Postgeniti postgeniti-->
-         <tok val="[pP]ostgeniti"/>
+      <ana>
+         <tok val="Postgeniti"/>
+         <tok val="postgeniti"/>
          <lm>
             <l>postgeniti</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -1386,13 +1831,15 @@
       </ana>
       <ana>
          <tok val="Posthabeo"/>
+         <tok val="posthabeo"/>
          <lm>
             <l>posthabeo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Posthabita posthabita-->
-         <tok val="[pP]osthabita"/>
+      <ana>
+         <tok val="Posthabita"/>
+         <tok val="posthabita"/>
          <lm>
             <l>posthabeo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -1405,20 +1852,25 @@
       </ana>
       <ana>
          <tok val="Posthabuit"/>
+         <tok val="posthabuit"/>
          <lm>
             <l>posthabeo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Posthaec posthaec-->
-         <tok val="[pP]osthaec"/>
+      <ana>
+         <tok val="Posthaec"/>
+         <tok val="posthaec"/>
          <lm>
             <l>posthaec</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Posthuma Postuma posthuma postuma-->
-         <tok val="[Pp]ost[h]?uma"/>
+      <ana>
+         <tok val="Posthuma"/>
+         <tok val="Postuma"/>
+         <tok val="posthuma"/>
+         <tok val="postuma"/>
          <lm>
             <l>postumus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1429,29 +1881,52 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Posthume Postume Postvme postumius-->
-         <tok val="[Pp]ost[h]?[uv]m(e|ius)"/>
+      <ana>
+         <tok val="Posthume"/>
+         <tok val="Postume"/>
+         <tok val="Postvme"/>
+         <tok val="posthume"/>
+         <tok val="postume"/>
+         <tok val="postumius"/>
+         <tok val="postvme"/>
          <lm>
             <l>postumus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Posthume Posthumum Postume Postumum Postvme posthumum postumum-->
-         <tok val="[Pp]ost[h]?(um|h)?[uv]m[e]?"/>
+      <ana>
+         <tok val="Posthume"/>
+         <tok val="Posthumum"/>
+         <tok val="Postume"/>
+         <tok val="Postumum"/>
+         <tok val="Postvme"/>
+         <tok val="posthume"/>
+         <tok val="posthumum"/>
+         <tok val="postume"/>
+         <tok val="postumum"/>
+         <tok val="postvme"/>
          <lm>
             <l>postumus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Posthume Postume Postvme-->
-         <tok val="Post[h]?[uv]me"/>
+      <ana>
+         <tok val="Posthume"/>
+         <tok val="Postume"/>
+         <tok val="Postvme"/>
+         <tok val="posthume"/>
+         <tok val="postume"/>
+         <tok val="postvme"/>
          <lm>
             <l>postumus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Posthumii Postumii-->
-         <tok val="Post[h]?umii"/>
+      <ana>
+         <tok val="Posthumii"/>
+         <tok val="Postumii"/>
+         <tok val="posthumii"/>
+         <tok val="postumii"/>
          <lm>
             <l>Postumius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -1459,8 +1934,11 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Posthumis Postumis posthumis postumis-->
-         <tok val="[Pp]ost[h]?umis"/>
+      <ana>
+         <tok val="Posthumis"/>
+         <tok val="Postumis"/>
+         <tok val="posthumis"/>
+         <tok val="postumis"/>
          <lm>
             <l>postumus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1471,50 +1949,67 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Posthumium Postumiorum Postumium-->
-         <tok val="Post[h]?umi(or)?um"/>
+      <ana>
+         <tok val="Posthumium"/>
+         <tok val="Postumiorum"/>
+         <tok val="Postumium"/>
+         <tok val="posthumium"/>
+         <tok val="postumiorum"/>
+         <tok val="postumium"/>
          <lm>
             <l>Postumius</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Posthumium Postumium-->
-         <tok val="Post[h]?umium"/>
+      <ana>
+         <tok val="Posthumium"/>
+         <tok val="Postumium"/>
+         <tok val="posthumium"/>
+         <tok val="postumium"/>
          <lm>
             <l>Postumius</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Posthumius Postumius Postumiusque-->
-         <tok val="Post[h]?umius(que)?"/>
+      <ana>
+         <tok val="Posthumius"/>
+         <tok val="Postumius"/>
+         <tok val="Postumiusque"/>
+         <tok val="posthumius"/>
+         <tok val="postumius"/>
+         <tok val="postumiusque"/>
          <lm cert="0.5">
             <l>Postumius</l>
             <m>n e - s - - - m n</m>
          </lm>
          <lm cert="0.5">
             <l>postumus</l>
-            <m>d - - - - - - - - c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Posthumius Postumius Postumiusque postumius-->
-         <tok val="[Pp]ost[h]?umius(que)?"/>
-         <lm>
-            <l>postumus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
-         </lm>
-      </ana>
-      <ana><!--Posthumorum Posthumum Postumorum Postumum posthumum postumorum postumum-->
-         <tok val="[Pp]ost[h]?um(or)?um"/>
+      <ana>
+         <tok val="Posthumorum"/>
+         <tok val="Posthumum"/>
+         <tok val="Postumorum"/>
+         <tok val="Postumum"/>
+         <tok val="posthumorum"/>
+         <tok val="posthumum"/>
+         <tok val="postumorum"/>
+         <tok val="postumum"/>
          <lm>
             <l>postumus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Posthumum Postumum posthumum postumum-->
-         <tok val="[Pp]ost[h]?umum"/>
+      <ana>
+         <tok val="Posthumum"/>
+         <tok val="Postumum"/>
+         <tok val="posthumum"/>
+         <tok val="postumum"/>
          <lm>
             <l>postumus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1522,15 +2017,19 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Posthumus Postumus posthumus postumus-->
-         <tok val="[Pp]ost[h]?umus"/>
+      <ana>
+         <tok val="Posthumus"/>
+         <tok val="Postumus"/>
+         <tok val="posthumus"/>
+         <tok val="postumus"/>
          <lm>
             <l>postumus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Posti posti-->
-         <tok val="[pP]osti"/>
+      <ana>
+         <tok val="Posti"/>
+         <tok val="posti"/>
          <lm cert="0.5">
             <l>posteo</l>
             <m>v - 2 s p m a</m>
@@ -1540,16 +2039,19 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Postibus postibus postibusque-->
-         <tok val="[pP]ostibus(que)?"/>
+      <ana>
+         <tok val="Postibus"/>
+         <tok val="postibus"/>
+         <tok val="postibusque"/>
          <lm>
             <l>postis</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Postica postica-->
-         <tok val="[pP]ostica"/>
+      <ana>
+         <tok val="Postica"/>
+         <tok val="postica"/>
          <lm cert="0.333333333333333333">
             <l>postica</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -1572,8 +2074,9 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Posticam posticam-->
-         <tok val="[pP]osticam"/>
+      <ana>
+         <tok val="Posticam"/>
+         <tok val="posticam"/>
          <lm cert="0.5">
             <l>posticus</l>
             <m>a - - s - - - f a</m>
@@ -1583,8 +2086,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Postico postico-->
-         <tok val="[pP]ostico"/>
+      <ana>
+         <tok val="Postico"/>
+         <tok val="postico"/>
          <lm cert="0.5">
             <l>posticus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1598,8 +2102,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Posticulum posticulum-->
-         <tok val="[pP]osticulum"/>
+      <ana>
+         <tok val="Posticulum"/>
+         <tok val="posticulum"/>
          <lm>
             <l>posticulum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1608,8 +2113,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Posticum posticum-->
-         <tok val="[pP]osticum"/>
+      <ana>
+         <tok val="Posticum"/>
+         <tok val="posticum"/>
          <lm cert="0.5">
             <l>posticus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -1625,8 +2131,10 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Posticum postice posticum-->
-         <tok val="[pP]ostic(um|e)"/>
+      <ana>
+         <tok val="Posticum"/>
+         <tok val="postice"/>
+         <tok val="posticum"/>
          <lm cert="0.5">
             <l>posticum</l>
             <m>n - - s - - - n v</m>
@@ -1636,8 +2144,9 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Posticus posticus-->
-         <tok val="[pP]osticus"/>
+      <ana>
+         <tok val="Posticus"/>
+         <tok val="posticus"/>
          <lm>
             <l>posticus</l>
             <m>a - - s - - - m n</m>
@@ -1645,13 +2154,15 @@
       </ana>
       <ana>
          <tok val="Postiemus"/>
+         <tok val="postiemus"/>
          <lm>
             <l>posteo</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Postilena postilena-->
-         <tok val="[pP]ostilena"/>
+      <ana>
+         <tok val="Postilena"/>
+         <tok val="postilena"/>
          <lm>
             <l>postilena</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1659,8 +2170,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Postiliones postiliones-->
-         <tok val="[pP]ostiliones"/>
+      <ana>
+         <tok val="Postiliones"/>
+         <tok val="postiliones"/>
          <lm>
             <l>postilio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1668,8 +2180,11 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Postis Postisque postis postisque-->
-         <tok val="[pP]ostis(que)?"/>
+      <ana>
+         <tok val="Postis"/>
+         <tok val="Postisque"/>
+         <tok val="postis"/>
+         <tok val="postisque"/>
          <lm cert="0.5">
             <l>posteo</l>
             <m>v - 2 s p i a</m>
@@ -1680,15 +2195,18 @@
             <m cert="0.5">n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Postliminii postlimini postliminii-->
-         <tok val="[pP]ostlimini[i]?"/>
+      <ana>
+         <tok val="Postliminii"/>
+         <tok val="postlimini"/>
+         <tok val="postliminii"/>
          <lm>
             <l>postliminium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postliminium postliminium-->
-         <tok val="[pP]ostliminium"/>
+      <ana>
+         <tok val="Postliminium"/>
+         <tok val="postliminium"/>
          <lm>
             <l>postliminium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -1696,15 +2214,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Postliminium postliminiorum postliminium-->
-         <tok val="[pP]ostlimini(or)?um"/>
+      <ana>
+         <tok val="Postliminium"/>
+         <tok val="postliminiorum"/>
+         <tok val="postliminium"/>
          <lm>
             <l>postliminium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postmeridiana postmeridiana-->
-         <tok val="[pP]ostmeridiana"/>
+      <ana>
+         <tok val="Postmeridiana"/>
+         <tok val="postmeridiana"/>
          <lm>
             <l>pomeridianus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1715,29 +2236,34 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Postmeridianas postmeridianas-->
-         <tok val="[pP]ostmeridianas"/>
+      <ana>
+         <tok val="Postmeridianas"/>
+         <tok val="postmeridianas"/>
          <lm>
             <l>pomeridianus</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Postmeridianus postmeridianus-->
-         <tok val="[pP]ostmeridianus"/>
+      <ana>
+         <tok val="Postmeridianus"/>
+         <tok val="postmeridianus"/>
          <lm>
             <l>pomeridianus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Postmodo postmodo-->
-         <tok val="[pP]ostmodo"/>
+      <ana>
+         <tok val="Postmodo"/>
+         <tok val="postmodo"/>
          <lm>
             <l>postmodo</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Postmodum postmodum postmodumque-->
-         <tok val="[pP]ostmodum(que)?"/>
+      <ana>
+         <tok val="Postmodum"/>
+         <tok val="postmodum"/>
+         <tok val="postmodumque"/>
          <lm>
             <l>postmodum</l>
             <m>d</m>
@@ -1745,20 +2271,23 @@
       </ana>
       <ana>
          <tok val="Postomidis"/>
+         <tok val="postomidis"/>
          <lm>
             <l>postomis</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Postomis postomis-->
-         <tok val="[pP]ostomis"/>
+      <ana>
+         <tok val="Postomis"/>
+         <tok val="postomis"/>
          <lm>
             <l>postomis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Postponere postponere-->
-         <tok val="[pP]ostponere"/>
+      <ana>
+         <tok val="Postponere"/>
+         <tok val="postponere"/>
          <lm>
             <l>postpono</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1769,13 +2298,15 @@
       </ana>
       <ana>
          <tok val="Postpono"/>
+         <tok val="postpono"/>
          <lm>
             <l>postpono</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Postposito postposito-->
-         <tok val="[pP]ostposito"/>
+      <ana>
+         <tok val="Postposito"/>
+         <tok val="postposito"/>
          <lm>
             <l>postpono</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -1786,13 +2317,16 @@
       </ana>
       <ana>
          <tok val="Postprincipium"/>
+         <tok val="postprincipium"/>
          <lm>
             <l>postprincipia</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postremae posterae postremae-->
-         <tok val="[pP]ost(r|)e[mr]ae"/>
+      <ana>
+         <tok val="Postremae"/>
+         <tok val="posterae"/>
+         <tok val="postremae"/>
          <lm>
             <l>posterus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1801,15 +2335,24 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Postremum posterum postremum postremumst postremumue póstremumst-->
-         <tok val="[p]?(ó|o|Po|po)st(r|)e[mr]um(st|ue)?"/>
+      <ana>
+         <tok val="Postremum"/>
+         <tok val="posterum"/>
+         <tok val="postremum"/>
+         <tok val="postremumst"/>
+         <tok val="postremumue"/>
+         <tok val="póstremumst"/>
          <lm>
             <l>posterus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Postremum posterum postremum postremumst postremumue-->
-         <tok val="[pP]ost(r|)e[mr]um(st|ue)?"/>
+      <ana>
+         <tok val="Postremum"/>
+         <tok val="posterum"/>
+         <tok val="postremum"/>
+         <tok val="postremumst"/>
+         <tok val="postremumue"/>
          <lm>
             <l>posterus</l>
             <m cert="0.333333333333333333">a - - s - - - n a</m>
@@ -1817,64 +2360,78 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Postridianus postridianus postriduanus-->
-         <tok val="[pP]ostrid[iu]anus"/>
+      <ana>
+         <tok val="Postridianus"/>
+         <tok val="postridianus"/>
+         <tok val="postriduanus"/>
          <lm>
             <l>postriduanus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Postridie postridie postridieque-->
-         <tok val="[pP]ostridie(que)?"/>
+      <ana>
+         <tok val="Postridie"/>
+         <tok val="postridie"/>
+         <tok val="postridieque"/>
          <lm>
             <l>postridie</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Postulabam postulabam-->
-         <tok val="[pP]ostulabam"/>
+      <ana>
+         <tok val="Postulabam"/>
+         <tok val="postulabam"/>
          <lm>
             <l>postulo</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Postulabant postulabant postulabantque-->
-         <tok val="[pP]ostulabant(que)?"/>
+      <ana>
+         <tok val="Postulabant"/>
+         <tok val="postulabant"/>
+         <tok val="postulabantque"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Postulabat postulabat postulabatque-->
-         <tok val="[pP]ostulabat(que)?"/>
+      <ana>
+         <tok val="Postulabat"/>
+         <tok val="postulabat"/>
+         <tok val="postulabatque"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Postulabatur postulabatur-->
-         <tok val="[pP]ostulabatur"/>
+      <ana>
+         <tok val="Postulabatur"/>
+         <tok val="postulabatur"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Postulabit postulabit-->
-         <tok val="[pP]ostulabit"/>
+      <ana>
+         <tok val="Postulabit"/>
+         <tok val="postulabit"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Postulant postulant-->
-         <tok val="[pP]ostulant"/>
+      <ana>
+         <tok val="Postulant"/>
+         <tok val="postulant"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Postulantibus postulantibus postulantibusque-->
-         <tok val="[pP]ostulantibus(que)?"/>
+      <ana>
+         <tok val="Postulantibus"/>
+         <tok val="postulantibus"/>
+         <tok val="postulantibusque"/>
          <lm>
             <l>postulo</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -1885,23 +2442,29 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Postulare postulare postulareue-->
-         <tok val="[pP]ostulare(ue)?"/>
+      <ana>
+         <tok val="Postulare"/>
+         <tok val="postulare"/>
+         <tok val="postulareue"/>
          <lm>
             <l>postulo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Postulare postulare postulareue postularis-->
-         <tok val="[pP]ostular[e]?(ue|is)?"/>
+      <ana>
+         <tok val="Postulare"/>
+         <tok val="postulare"/>
+         <tok val="postulareue"/>
+         <tok val="postularis"/>
          <lm>
             <l>postulo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Postulari postulari-->
-         <tok val="[pP]ostulari"/>
+      <ana>
+         <tok val="Postulari"/>
+         <tok val="postulari"/>
          <lm cert="0.5">
             <l>postularius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -1914,6 +2477,7 @@
       </ana>
       <ana>
          <tok val="Postularia"/>
+         <tok val="postularia"/>
          <lm>
             <l>postularius</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1924,23 +2488,33 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Postulat postulat postulatque postulát póstulat-->
-         <tok val="[pP]?(o|pó|po)stul[aá]t(que)?"/>
+      <ana>
+         <tok val="Postulat"/>
+         <tok val="postulat"/>
+         <tok val="postulatque"/>
+         <tok val="postulát"/>
+         <tok val="póstulat"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Postulate postulate-->
-         <tok val="[pP]ostulate"/>
+      <ana>
+         <tok val="Postulate"/>
+         <tok val="postulate"/>
          <lm>
             <l>postulo</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Postulate Postulatum postulate postulatum postulatumque postulatumst-->
-         <tok val="[pP]ostulat(um)?(st|e|umque)?"/>
+      <ana>
+         <tok val="Postulate"/>
+         <tok val="Postulatum"/>
+         <tok val="postulate"/>
+         <tok val="postulatum"/>
+         <tok val="postulatumque"/>
+         <tok val="postulatumst"/>
          <lm cert="0.5">
             <l>postulatum</l>
             <m>n - - s - - - n v</m>
@@ -1950,8 +2524,10 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Postulati postulati postulatique-->
-         <tok val="[pP]ostulati(que)?"/>
+      <ana>
+         <tok val="Postulati"/>
+         <tok val="postulati"/>
+         <tok val="postulatique"/>
          <lm cert="0.5">
             <l>postulo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1964,23 +2540,26 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postulatio postulatio-->
-         <tok val="[pP]ostulatio"/>
+      <ana>
+         <tok val="Postulatio"/>
+         <tok val="postulatio"/>
          <lm>
             <l>postulatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Postulationem postulationem-->
-         <tok val="[pP]ostulationem"/>
+      <ana>
+         <tok val="Postulationem"/>
+         <tok val="postulationem"/>
          <lm>
             <l>postulatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Postulationes postulationes-->
-         <tok val="[pP]ostulationes"/>
+      <ana>
+         <tok val="Postulationes"/>
+         <tok val="postulationes"/>
          <lm>
             <l>postulatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1988,16 +2567,19 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Postulationibus postulationibus-->
-         <tok val="[pP]ostulationibus"/>
+      <ana>
+         <tok val="Postulationibus"/>
+         <tok val="postulationibus"/>
          <lm>
             <l>postulatio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Postulato postulato postulatoque-->
-         <tok val="[pP]ostulato(que)?"/>
+      <ana>
+         <tok val="Postulato"/>
+         <tok val="postulato"/>
+         <tok val="postulatoque"/>
          <lm cert="0.5">
             <l>postulo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -2013,16 +2595,21 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Postulator postulator-->
-         <tok val="[pP]ostulator"/>
+      <ana>
+         <tok val="Postulator"/>
+         <tok val="postulator"/>
          <lm>
             <l>postulator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Postulatum postulatorum postulatum postulatumque postulatumst-->
-         <tok val="[pP]ostulat(or)?um(st|que)?"/>
+      <ana>
+         <tok val="Postulatum"/>
+         <tok val="postulatorum"/>
+         <tok val="postulatum"/>
+         <tok val="postulatumque"/>
+         <tok val="postulatumst"/>
          <lm cert="0.5">
             <l>postulo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -2033,8 +2620,11 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postulatum postulatum postulatumque postulatumst-->
-         <tok val="[pP]ostulatum(st|que)?"/>
+      <ana>
+         <tok val="Postulatum"/>
+         <tok val="postulatum"/>
+         <tok val="postulatumque"/>
+         <tok val="postulatumst"/>
          <lm cert="0.333333333333333333">
             <l>postulo</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -2051,29 +2641,36 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Postulatum postulatum postulatumque-->
-         <tok val="[pP]ostulatum(que)?"/>
+      <ana>
+         <tok val="Postulatum"/>
+         <tok val="postulatum"/>
+         <tok val="postulatumque"/>
          <lm>
             <l>postulo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Postulatur postulatur-->
-         <tok val="[pP]ostulatur"/>
+      <ana>
+         <tok val="Postulatur"/>
+         <tok val="postulatur"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Postulaturus postulaturus-->
-         <tok val="[pP]ostulaturus"/>
+      <ana>
+         <tok val="Postulaturus"/>
+         <tok val="postulaturus"/>
          <lm>
             <l>postulo</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Postulatus postulatus postulatusne postulatusque-->
-         <tok val="[pP]ostulatus(ne|que)?"/>
+      <ana>
+         <tok val="Postulatus"/>
+         <tok val="postulatus"/>
+         <tok val="postulatusne"/>
+         <tok val="postulatusque"/>
          <lm cert="0.5">
             <l>postulatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -2086,8 +2683,13 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Postulauit Postulavit postulauit postulauitque postulavit postulavitque-->
-         <tok val="[pP]ostula[vu]it(que)?"/>
+      <ana>
+         <tok val="Postulauit"/>
+         <tok val="Postulavit"/>
+         <tok val="postulauit"/>
+         <tok val="postulauitque"/>
+         <tok val="postulavit"/>
+         <tok val="postulavitque"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s r i a</m>
@@ -2095,13 +2697,15 @@
       </ana>
       <ana>
          <tok val="Postum"/>
+         <tok val="postum"/>
          <lm>
             <l>pono</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Postuma postuma-->
-         <tok val="[pP]ostuma"/>
+      <ana>
+         <tok val="Postuma"/>
+         <tok val="postuma"/>
          <lm cert="0.5">
             <l>postumum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2113,8 +2717,10 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Postumae postumae posthumae-->
-         <tok val="[pP]ost[h]?umae"/>
+      <ana>
+         <tok val="Postumae"/>
+         <tok val="posthumae"/>
+         <tok val="postumae"/>
          <lm>
             <l>postumus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2123,29 +2729,41 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Postumam postumam-->
-         <tok val="[pP]ostumam"/>
+      <ana>
+         <tok val="Postumam"/>
+         <tok val="postumam"/>
          <lm>
             <l>postumus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Postume Postumum Postvme postumum-->
-         <tok val="[pP]ost[uv]m(um|e)"/>
+      <ana>
+         <tok val="Postume"/>
+         <tok val="Postumum"/>
+         <tok val="Postvme"/>
+         <tok val="postume"/>
+         <tok val="postumum"/>
+         <tok val="postvme"/>
          <lm>
             <l>postumum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Postume Postvme-->
-         <tok val="Post[vu]me"/>
+      <ana>
+         <tok val="Postume"/>
+         <tok val="Postvme"/>
+         <tok val="postume"/>
+         <tok val="postvme"/>
          <lm>
             <l>postumus</l>
             <m>n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Postumi Postvmi postumi-->
-         <tok val="[Pp]ost[vu]mi"/>
+      <ana>
+         <tok val="Postumi"/>
+         <tok val="Postvmi"/>
+         <tok val="postumi"/>
+         <tok val="postvmi"/>
          <lm cert="0.5">
             <l>postumus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2157,8 +2775,12 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postumi Postvmi posthumi postumi-->
-         <tok val="[pP]ost[h]?[uv]mi"/>
+      <ana>
+         <tok val="Postumi"/>
+         <tok val="Postvmi"/>
+         <tok val="posthumi"/>
+         <tok val="postumi"/>
+         <tok val="postvmi"/>
          <lm>
             <l>postumus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -2169,6 +2791,7 @@
       </ana>
       <ana>
          <tok val="Postumi"/>
+         <tok val="postumi"/>
          <lm>
             <l>Postumius</l>
             <m>n e - s - - - m v</m>
@@ -2176,6 +2799,7 @@
       </ana>
       <ana>
          <tok val="Postumia"/>
+         <tok val="postumia"/>
          <lm cert="0.5">
             <l>Postumius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -2194,6 +2818,7 @@
       </ana>
       <ana>
          <tok val="Postumiae"/>
+         <tok val="postumiae"/>
          <lm cert="0.5">
             <l>Postumia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -2211,6 +2836,7 @@
       </ana>
       <ana>
          <tok val="Postumiam"/>
+         <tok val="postumiam"/>
          <lm cert="0.5">
             <l>Postumia</l>
             <m>n e - s - - - f a</m>
@@ -2222,6 +2848,7 @@
       </ana>
       <ana>
          <tok val="Postumiana"/>
+         <tok val="postumiana"/>
          <lm>
             <l>Postumianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -2234,6 +2861,7 @@
       </ana>
       <ana>
          <tok val="Postumianae"/>
+         <tok val="postumianae"/>
          <lm>
             <l>Postumianus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -2242,8 +2870,11 @@
             <m cert="0.25">a e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Postumiane Postumianum-->
-         <tok val="Postumian(um|e)"/>
+      <ana>
+         <tok val="Postumiane"/>
+         <tok val="Postumianum"/>
+         <tok val="postumiane"/>
+         <tok val="postumianum"/>
          <lm>
             <l>Postumianus</l>
             <m>a e - s - - - n v</m>
@@ -2251,6 +2882,7 @@
       </ana>
       <ana>
          <tok val="Postumiane"/>
+         <tok val="postumiane"/>
          <lm>
             <l>Postumianus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -2259,6 +2891,7 @@
       </ana>
       <ana>
          <tok val="Postumianum"/>
+         <tok val="postumianum"/>
          <lm>
             <l>Postumianus</l>
             <m cert="0.2">a e - p - - - m g</m>
@@ -2270,6 +2903,7 @@
       </ana>
       <ana>
          <tok val="Postumii"/>
+         <tok val="postumii"/>
          <lm>
             <l>Postumius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -2280,21 +2914,26 @@
       </ana>
       <ana>
          <tok val="Postumiorum"/>
+         <tok val="postumiorum"/>
          <lm>
             <l>postumus</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Postumiorum Postumium-->
-         <tok val="Postumi(or)?um"/>
+      <ana>
+         <tok val="Postumiorum"/>
+         <tok val="Postumium"/>
+         <tok val="postumiorum"/>
+         <tok val="postumium"/>
          <lm>
             <l>Postumius</l>
             <m cert="0.5">a e - p - - - m g</m>
             <m cert="0.5">a e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postumis postumis-->
-         <tok val="[pP]ostumis"/>
+      <ana>
+         <tok val="Postumis"/>
+         <tok val="postumis"/>
          <lm cert="0.5">
             <l>postumus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -2308,6 +2947,7 @@
       </ana>
       <ana>
          <tok val="Postumium"/>
+         <tok val="postumium"/>
          <lm>
             <l>Postumius</l>
             <m cert="0.25">a e - s - - - n v</m>
@@ -2316,15 +2956,21 @@
             <m cert="0.25">a e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Postumius Postumiusque-->
-         <tok val="Postumius(que)?"/>
+      <ana>
+         <tok val="Postumius"/>
+         <tok val="Postumiusque"/>
+         <tok val="postumius"/>
+         <tok val="postumiusque"/>
          <lm>
             <l>Postumius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Postumorum Postumum postumorum postumum-->
-         <tok val="[pP]ostum(or)?um"/>
+      <ana>
+         <tok val="Postumorum"/>
+         <tok val="Postumum"/>
+         <tok val="postumorum"/>
+         <tok val="postumum"/>
          <lm cert="0.5">
             <l>postumus</l>
             <m>n - - p - - - m g</m>
@@ -2334,16 +2980,18 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Postumos postumos-->
-         <tok val="[pP]ostumos"/>
+      <ana>
+         <tok val="Postumos"/>
+         <tok val="postumos"/>
          <lm>
             <l>postumus</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Postumum postumum-->
-         <tok val="[pP]ostumum"/>
+      <ana>
+         <tok val="Postumum"/>
+         <tok val="postumum"/>
          <lm cert="0.5">
             <l>postumum</l>
             <m cert="0.5">n - - s - - - n a</m>
@@ -2354,15 +3002,19 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Postumus postumus-->
-         <tok val="[pP]ostumus"/>
+      <ana>
+         <tok val="Postumus"/>
+         <tok val="postumus"/>
          <lm>
             <l>postumus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Postverta Postvertaque-->
-         <tok val="Postverta(que)?"/>
+      <ana>
+         <tok val="Postverta"/>
+         <tok val="Postvertaque"/>
+         <tok val="postverta"/>
+         <tok val="postvertaque"/>
          <lm>
             <l>Postverta</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2372,6 +3024,7 @@
       </ana>
       <ana>
          <tok val="Postvertam"/>
+         <tok val="postvertam"/>
          <lm>
             <l>Postverta</l>
             <m>n e - s - - - f a</m>
@@ -2379,6 +3032,7 @@
       </ana>
       <ana>
          <tok val="Postvota"/>
+         <tok val="postvota"/>
          <lm>
             <l>Postvota</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -2388,41 +3042,47 @@
       </ana>
       <ana>
          <tok val="Postvotam"/>
+         <tok val="postvotam"/>
          <lm>
             <l>Postvota</l>
             <m>n e - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Posuerat posuerat-->
-         <tok val="[pP]osuerat"/>
+      <ana>
+         <tok val="Posuerat"/>
+         <tok val="posuerat"/>
          <lm>
             <l>pono</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Posuimus posuimus-->
-         <tok val="[pP]osuimus"/>
+      <ana>
+         <tok val="Posuimus"/>
+         <tok val="posuimus"/>
          <lm>
             <l>pono</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Posuisse posuisse-->
-         <tok val="[pP]osuisse"/>
+      <ana>
+         <tok val="Posuisse"/>
+         <tok val="posuisse"/>
          <lm>
             <l>pono</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Posuisti posuisti-->
-         <tok val="[pP]osuisti"/>
+      <ana>
+         <tok val="Posuisti"/>
+         <tok val="posuisti"/>
          <lm>
             <l>pono</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Posuistis posuistis-->
-         <tok val="[pP]osuistis"/>
+      <ana>
+         <tok val="Posuistis"/>
+         <tok val="posuistis"/>
          <lm>
             <l>pono</l>
             <m>v - 2 p r i a</m>
@@ -2447,8 +3107,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--poscaenium postscaenium-->
-         <tok val="po(st)?scaenium"/>
+      <ana>
+         <tok val="poscaenium"/>
+         <tok val="postscaenium"/>
          <lm>
             <l>postscaenium</l>
             <m cert="0.25">n - - s - - - n a</m>
@@ -2483,8 +3144,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--poscarum póscarum-->
-         <tok val="p[óo]scarum"/>
+      <ana>
+         <tok val="poscarum"/>
+         <tok val="póscarum"/>
          <lm>
             <l>posca</l>
             <m>n - - p - - - f g</m>
@@ -2515,8 +3177,9 @@
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--poscebant poscebantque-->
-         <tok val="poscebant(que)?"/>
+      <ana>
+         <tok val="poscebant"/>
+         <tok val="poscebantque"/>
          <lm>
             <l>posco</l>
             <m>v - 3 p i i a</m>
@@ -2536,15 +3199,17 @@
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--poscebat poscebatque-->
-         <tok val="poscebat(que)?"/>
+      <ana>
+         <tok val="poscebat"/>
+         <tok val="poscebatque"/>
          <lm>
             <l>posco</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--poscen posces-->
-         <tok val="posce[sn]"/>
+      <ana>
+         <tok val="poscen"/>
+         <tok val="posces"/>
          <lm>
             <l>posco</l>
             <m>v - 2 s f i a</m>
@@ -2767,8 +3432,9 @@
             <m>v - 2 p f m a</m>
          </lm>
       </ana>
-      <ana><!--poscuntur Poscuntur-->
-         <tok val="[Pp]oscuntur"/>
+      <ana>
+         <tok val="Poscuntur"/>
+         <tok val="poscuntur"/>
          <lm>
             <l>posco</l>
             <m>v - 3 p p i p</m>
@@ -2784,22 +3450,25 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--positarum postarum-->
-         <tok val="pos[i]?tarum"/>
+      <ana>
+         <tok val="positarum"/>
+         <tok val="postarum"/>
          <lm>
             <l>pono</l>
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--positas positasque-->
-         <tok val="positas(que)?"/>
+      <ana>
+         <tok val="positas"/>
+         <tok val="positasque"/>
          <lm>
             <l>pono</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--positione positioneve-->
-         <tok val="positione(ve)?"/>
+      <ana>
+         <tok val="positione"/>
+         <tok val="positioneve"/>
          <lm>
             <l>positio</l>
             <m>n - - s - - - f b</m>
@@ -2820,8 +3489,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--positiua positiva-->
-         <tok val="positi[vu]a"/>
+      <ana>
+         <tok val="positiua"/>
+         <tok val="positiva"/>
          <lm>
             <l>positivus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2832,8 +3502,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--positiuae positivae-->
-         <tok val="positi[vu]ae"/>
+      <ana>
+         <tok val="positiuae"/>
+         <tok val="positivae"/>
          <lm>
             <l>positivus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -2849,16 +3520,20 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--positiue positive-->
-         <tok val="positi[vu]e"/>
+      <ana>
+         <tok val="positiue"/>
+         <tok val="positive"/>
          <lm>
             <l>positivus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--positiue positiuum positive positivum-->
-         <tok val="positi[vu]?(um|ve|ue)"/>
+      <ana>
+         <tok val="positiue"/>
+         <tok val="positiuum"/>
+         <tok val="positive"/>
+         <tok val="positivum"/>
          <lm>
             <l>positivus</l>
             <m>a - - s - - - n v</m>
@@ -2881,8 +3556,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--positiuum positivum-->
-         <tok val="positi[vu]um"/>
+      <ana>
+         <tok val="positiuum"/>
+         <tok val="positivum"/>
          <lm>
             <l>positivus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -2915,8 +3591,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--positos positosque-->
-         <tok val="positos(que)?"/>
+      <ana>
+         <tok val="positos"/>
+         <tok val="positosque"/>
          <lm>
             <l>pono</l>
             <m>v - - p r p p m a</m>
@@ -2987,8 +3664,9 @@
             <m cert="0.25">v - - s f p a n d</m>
          </lm>
       </ana>
-      <ana><!--posituros positurosque-->
-         <tok val="posituros(que)?"/>
+      <ana>
+         <tok val="posituros"/>
+         <tok val="positurosque"/>
          <lm>
             <l>pono</l>
             <m>v - - p f p a m a</m>
@@ -3006,8 +3684,9 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--positurus posturus-->
-         <tok val="pos[i]?turus"/>
+      <ana>
+         <tok val="positurus"/>
+         <tok val="posturus"/>
          <lm>
             <l>pono</l>
             <m>v - - s f p a m n</m>
@@ -3020,8 +3699,9 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--possedit Possedit-->
-         <tok val="[Pp]ossedit"/>
+      <ana>
+         <tok val="Possedit"/>
+         <tok val="possedit"/>
          <lm cert="0.5">
             <l>possido</l>
             <m>v - 3 s r i a</m>
@@ -3031,8 +3711,9 @@
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--possessae possessaeque-->
-         <tok val="possessae(que)?"/>
+      <ana>
+         <tok val="possessae"/>
+         <tok val="possessaeque"/>
          <lm>
             <l>possessus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -3087,8 +3768,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--possessionis possessionisue-->
-         <tok val="possessionis(ue)?"/>
+      <ana>
+         <tok val="possessionis"/>
+         <tok val="possessionisue"/>
          <lm>
             <l>possessio</l>
             <m>n - - s - - - f g</m>
@@ -3150,8 +3832,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--possessiuo possessivo-->
-         <tok val="possessi[vu]o"/>
+      <ana>
+         <tok val="possessiuo"/>
+         <tok val="possessivo"/>
          <lm>
             <l>possessivus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -3309,8 +3992,10 @@
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--possetin possetis possetisne-->
-         <tok val="posseti[s]?[n]?[es]?"/>
+      <ana>
+         <tok val="possetin"/>
+         <tok val="possetis"/>
+         <tok val="possetisne"/>
          <lm>
             <l>possum</l>
             <m>v - 2 p i s a</m>
@@ -3420,8 +4105,9 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--posside possiden-->
-         <tok val="posside[n]?"/>
+      <ana>
+         <tok val="posside"/>
+         <tok val="possiden"/>
          <lm>
             <l>possideo</l>
             <m>v - 2 s p m a</m>
@@ -3504,8 +4190,9 @@
             <m>v - 2 s i i a</m>
          </lm>
       </ana>
-      <ana><!--possidebat possidebatque-->
-         <tok val="possidebat(que)?"/>
+      <ana>
+         <tok val="possidebat"/>
+         <tok val="possidebatque"/>
          <lm>
             <l>possideo</l>
             <m>v - 3 s i i a</m>
@@ -3532,8 +4219,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--possidebit póssidebit-->
-         <tok val="p[óo]ssidebit"/>
+      <ana>
+         <tok val="possidebit"/>
+         <tok val="póssidebit"/>
          <lm>
             <l>possideo</l>
             <m>v - 3 s f i a</m>
@@ -3590,8 +4278,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--possiden possides-->
-         <tok val="posside[sn]"/>
+      <ana>
+         <tok val="possiden"/>
+         <tok val="possides"/>
          <lm cert="0.5">
             <l>possido</l>
             <m>v - 2 s f i a</m>
@@ -3637,8 +4326,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--possidendi possidendique-->
-         <tok val="possidendi(que)?"/>
+      <ana>
+         <tok val="possidendi"/>
+         <tok val="possidendique"/>
          <lm>
             <l>possideo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -3648,8 +4338,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--possidendis possidendisque-->
-         <tok val="possidendis(que)?"/>
+      <ana>
+         <tok val="possidendis"/>
+         <tok val="possidendisque"/>
          <lm>
             <l>possideo</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -3660,8 +4351,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--possidendo possidendoque-->
-         <tok val="possidendo(que)?"/>
+      <ana>
+         <tok val="possidendo"/>
+         <tok val="possidendoque"/>
          <lm>
             <l>possideo</l>
             <m cert="0.25">v - - s p g p m d</m>
@@ -3711,8 +4403,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--possidente possidenti-->
-         <tok val="possident[ie]"/>
+      <ana>
+         <tok val="possidente"/>
+         <tok val="possidenti"/>
          <lm>
             <l>possideo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -3738,8 +4431,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--possidentes possidentis-->
-         <tok val="possident[ie]s"/>
+      <ana>
+         <tok val="possidentes"/>
+         <tok val="possidentis"/>
          <lm>
             <l>possideo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3805,16 +4499,19 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--possidere possidereque-->
-         <tok val="possidere(que)?"/>
+      <ana>
+         <tok val="possidere"/>
+         <tok val="possidereque"/>
          <lm>
             <l>possideo</l>
             <m cert="0.5">v - - - p n a</m>
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--possidere possidereque possideris-->
-         <tok val="possider[e]?(que|is)?"/>
+      <ana>
+         <tok val="possidere"/>
+         <tok val="possidereque"/>
+         <tok val="possideris"/>
          <lm>
             <l>possideo</l>
             <m>v - 2 s p i p</m>
@@ -3848,15 +4545,17 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--possideres possideresue-->
-         <tok val="possideres(ue)?"/>
+      <ana>
+         <tok val="possideres"/>
+         <tok val="possideresue"/>
          <lm>
             <l>possideo</l>
             <m>v - 2 s i s a</m>
          </lm>
       </ana>
-      <ana><!--possideret possideretque-->
-         <tok val="possideret(que)?"/>
+      <ana>
+         <tok val="possideret"/>
+         <tok val="possideretque"/>
          <lm>
             <l>possideo</l>
             <m>v - 3 s i s a</m>
@@ -3902,8 +4601,9 @@
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--possidetur possideturque-->
-         <tok val="possidetur(que)?"/>
+      <ana>
+         <tok val="possidetur"/>
+         <tok val="possideturque"/>
          <lm cert="0.5">
             <l>possido</l>
             <m>v - 3 s f i p</m>
@@ -3927,8 +4627,9 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--possimus possimusne-->
-         <tok val="possimus(ne)?"/>
+      <ana>
+         <tok val="possimus"/>
+         <tok val="possimusne"/>
          <lm>
             <l>possum</l>
             <m>v - 1 p p s a</m>
@@ -3950,8 +4651,10 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--posteri posterique posteriue-->
-         <tok val="posteri[q]?(ue|)"/>
+      <ana>
+         <tok val="posteri"/>
+         <tok val="posterique"/>
+         <tok val="posteriue"/>
          <lm>
             <l>posterius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -3968,15 +4671,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--posteritatem posteritatemque-->
-         <tok val="posteritatem(que)?"/>
+      <ana>
+         <tok val="posteritatem"/>
+         <tok val="posteritatemque"/>
          <lm>
             <l>posteritas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--posterius posteriusque-->
-         <tok val="posterius(que)?"/>
+      <ana>
+         <tok val="posterius"/>
+         <tok val="posteriusque"/>
          <lm>
             <l>posterus</l>
             <m>d</m>
@@ -4132,8 +4837,9 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--posthabito Posthabito-->
-         <tok val="[Pp]osthabito"/>
+      <ana>
+         <tok val="Posthabito"/>
+         <tok val="posthabito"/>
          <lm>
             <l>posthabeo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -4209,8 +4915,9 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--posticas posticasue-->
-         <tok val="posticas(ue)?"/>
+      <ana>
+         <tok val="posticas"/>
+         <tok val="posticasue"/>
          <lm cert="0.5">
             <l>posticus</l>
             <m>a - - p - - - f a</m>
@@ -4636,8 +5343,9 @@
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--postprincipia póstprincipia-->
-         <tok val="p[óo]stprincipia"/>
+      <ana>
+         <tok val="postprincipia"/>
+         <tok val="póstprincipia"/>
          <lm>
             <l>postprincipia</l>
             <m>n - - p - - - n a</m>
@@ -4719,8 +5427,10 @@
             <m cert="0.5">n - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--postula postulan postulaue-->
-         <tok val="postula(n|ue)?"/>
+      <ana>
+         <tok val="postula"/>
+         <tok val="postulan"/>
+         <tok val="postulaue"/>
          <lm>
             <l>postulo</l>
             <m>v - 2 s p m a</m>
@@ -4754,8 +5464,9 @@
             <m>v - 2 p i i a</m>
          </lm>
       </ana>
-      <ana><!--postulabimus postulabimusque-->
-         <tok val="postulabimus(que)?"/>
+      <ana>
+         <tok val="postulabimus"/>
+         <tok val="postulabimusque"/>
          <lm>
             <l>postulo</l>
             <m>v - 1 p f i a</m>
@@ -4803,8 +5514,10 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--postulan postulas póstulas-->
-         <tok val="p[oó]stula[sn]"/>
+      <ana>
+         <tok val="postulan"/>
+         <tok val="postulas"/>
+         <tok val="póstulas"/>
          <lm>
             <l>postulo</l>
             <m>v - 2 s p i a</m>
@@ -4907,8 +5620,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--postulantem postulantemque-->
-         <tok val="postulantem(que)?"/>
+      <ana>
+         <tok val="postulantem"/>
+         <tok val="postulantemque"/>
          <lm>
             <l>postulo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -4925,16 +5639,18 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--postulantes postulantis-->
-         <tok val="postulant[ie]s"/>
+      <ana>
+         <tok val="postulantes"/>
+         <tok val="postulantis"/>
          <lm>
             <l>postulo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--postulanti postulantique-->
-         <tok val="postulanti(que)?"/>
+      <ana>
+         <tok val="postulanti"/>
+         <tok val="postulantique"/>
          <lm>
             <l>postulo</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -4967,15 +5683,18 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--postularant postulaverant-->
-         <tok val="postula(ve)?rant"/>
+      <ana>
+         <tok val="postularant"/>
+         <tok val="postulaverant"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--postularat postulauerat postulaverat-->
-         <tok val="postula[vu]?(e|)rat"/>
+      <ana>
+         <tok val="postularat"/>
+         <tok val="postulauerat"/>
+         <tok val="postulaverat"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s l i a</m>
@@ -5044,15 +5763,18 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--postularis postulaveris-->
-         <tok val="postula(ve)?ris"/>
+      <ana>
+         <tok val="postularis"/>
+         <tok val="postulaveris"/>
          <lm>
             <l>postulo</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--postularit postulauerit postulaverit-->
-         <tok val="postula[vu]?(e|)rit"/>
+      <ana>
+         <tok val="postularit"/>
+         <tok val="postulauerit"/>
+         <tok val="postulaverit"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s r s a</m>
@@ -5065,8 +5787,11 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--postularunt postulauerunt postulavere postulaverunt-->
-         <tok val="postula[vu]?(e|ve)?r(unt|e)"/>
+      <ana>
+         <tok val="postularunt"/>
+         <tok val="postulauerunt"/>
+         <tok val="postulavere"/>
+         <tok val="postulaverunt"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 p r i a</m>
@@ -5079,8 +5804,10 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--postulassem postulauissem postulavissem-->
-         <tok val="postula[vu]?(i|)ssem"/>
+      <ana>
+         <tok val="postulassem"/>
+         <tok val="postulauissem"/>
+         <tok val="postulavissem"/>
          <lm>
             <l>postulo</l>
             <m>v - 1 s l s a</m>
@@ -5100,22 +5827,26 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--postulasset postulassetque postulavisset-->
-         <tok val="postula(vi)?sset(que)?"/>
+      <ana>
+         <tok val="postulasset"/>
+         <tok val="postulassetque"/>
+         <tok val="postulavisset"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--postulasti postulavisti-->
-         <tok val="postula(vi)?sti"/>
+      <ana>
+         <tok val="postulasti"/>
+         <tok val="postulavisti"/>
          <lm>
             <l>postulo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--postulastis postulavistis-->
-         <tok val="postula(vi)?stis"/>
+      <ana>
+         <tok val="postulastis"/>
+         <tok val="postulavistis"/>
          <lm>
             <l>postulo</l>
             <m>v - 2 p r i a</m>
@@ -5340,15 +6071,17 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--postulauerit postulaverit-->
-         <tok val="postula[vu]erit"/>
+      <ana>
+         <tok val="postulauerit"/>
+         <tok val="postulaverit"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--postulaui postulavi-->
-         <tok val="postula[vu]i"/>
+      <ana>
+         <tok val="postulaui"/>
+         <tok val="postulavi"/>
          <lm>
             <l>postulo</l>
             <m>v - 1 s r i a</m>
@@ -5403,15 +6136,17 @@
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--postules póstules-->
-         <tok val="p[óo]stules"/>
+      <ana>
+         <tok val="postules"/>
+         <tok val="póstules"/>
          <lm>
             <l>postulo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--postulet postuletne-->
-         <tok val="postulet(ne)?"/>
+      <ana>
+         <tok val="postulet"/>
+         <tok val="postuletne"/>
          <lm>
             <l>postulo</l>
             <m>v - 3 s p s a</m>
@@ -5534,8 +6269,11 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--posui posuique posívi-->
-         <tok val="pos(u|ív)i(que)?"/>
+      <ana>
+         <tok val="posivi"/>
+         <tok val="posui"/>
+         <tok val="posuique"/>
+         <tok val="posívi"/>
          <lm>
             <l>pono</l>
             <m>v - 1 s r i a</m>
@@ -5569,14 +6307,16 @@
             <m>v - 2 s l s a</m>
          </lm>
       </ana>
-      <ana><!--posuisset posuissetque-->
-         <tok val="posuisset(que)?"/>
+      <ana>
+         <tok val="posuisset"/>
+         <tok val="posuissetque"/>
          <lm>
             <l>pono</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
       <ana>
+         <tok val="posthac"/>
          <tok val="posthác"/>
          <lm>
             <l>posthac</l>
@@ -5590,8 +6330,10 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--possederunt possedere possederuntque-->
-         <tok val="posseder(unt)?(que|e)?"/>
+      <ana>
+         <tok val="possedere"/>
+         <tok val="possederunt"/>
+         <tok val="possederuntque"/>
          <lm>
             <l>possideo</l>
             <m>v - 3 p r i a</m>

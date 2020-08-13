@@ -1,57 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfes">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fes">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fes</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fes.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FES</tok-starts-with>
       <tok-starts-with>Fes</tok-starts-with>
       <tok-starts-with>fes</tok-starts-with>
       <tok-starts-with>fés</tok-starts-with>
-      <ana><!--FES Fes fes-->
-         <tok val="[fF]?(es|FES)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:24:05.35-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:24:05.35-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fes.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FES"/>
+         <tok val="Fes"/>
+         <tok val="fes"/>
          <lm>
             <l>for</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--FESTINATVR festinatur-->
-         <tok val="(festinatur|FESTINATVR)"/>
+      <ana>
+         <tok val="FESTINATVR"/>
+         <tok val="festinatur"/>
+         <tok val="festinatvr"/>
          <lm>
             <l>festino</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--FESTVCA Festuca festuca-->
-         <tok val="[fF]?(estuca|FESTVCA)"/>
+      <ana>
+         <tok val="FESTVCA"/>
+         <tok val="Festuca"/>
+         <tok val="festuca"/>
+         <tok val="festvca"/>
          <lm>
             <l>festuca</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -59,8 +74,12 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--FESTVS Festus festus festús-->
-         <tok val="[fF]?(est)?[uú]?(s|FESTVS)"/>
+      <ana>
+         <tok val="FESTVS"/>
+         <tok val="Festus"/>
+         <tok val="festus"/>
+         <tok val="festvs"/>
+         <tok val="festús"/>
          <lm>
             <l>festus</l>
             <m>a - - s - - - m n</m>
@@ -68,6 +87,7 @@
       </ana>
       <ana>
          <tok val="FESVLANAE"/>
+         <tok val="fesvlanae"/>
          <lm>
             <l>Fesulanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -78,6 +98,7 @@
       </ana>
       <ana>
          <tok val="Fescenni"/>
+         <tok val="fescenni"/>
          <lm>
             <l>Fescennium</l>
             <m>n e - s - - - n g</m>
@@ -85,6 +106,7 @@
       </ana>
       <ana>
          <tok val="Fescennia"/>
+         <tok val="fescennia"/>
          <lm cert="0.5">
             <l>Fescennium</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -100,6 +122,7 @@
       </ana>
       <ana>
          <tok val="Fescennina"/>
+         <tok val="fescennina"/>
          <lm cert="0.5">
             <l>Fescennina</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -118,13 +141,17 @@
       </ana>
       <ana>
          <tok val="Fescenninas"/>
+         <tok val="fescenninas"/>
          <lm>
             <l>Fescenninus</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fescennine Fescenninum-->
-         <tok val="Fescennin(um|e)"/>
+      <ana>
+         <tok val="Fescennine"/>
+         <tok val="Fescenninum"/>
+         <tok val="fescennine"/>
+         <tok val="fescenninum"/>
          <lm>
             <l>Fescenninus</l>
             <m>a e - s - - - n v</m>
@@ -132,6 +159,7 @@
       </ana>
       <ana>
          <tok val="Fescennine"/>
+         <tok val="fescennine"/>
          <lm>
             <l>Fescenninus</l>
             <m cert="0.333333333333333333">a e - s - - - m v</m>
@@ -141,6 +169,7 @@
       </ana>
       <ana>
          <tok val="Fescennini"/>
+         <tok val="fescennini"/>
          <lm>
             <l>Fescenninus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
@@ -154,6 +183,7 @@
       </ana>
       <ana>
          <tok val="Fescennino"/>
+         <tok val="fescennino"/>
          <lm>
             <l>Fescenninus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -164,8 +194,11 @@
             <m cert="0.166666666666666667">a e - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Fescenninorum Fescenninum-->
-         <tok val="Fescennin(or)?um"/>
+      <ana>
+         <tok val="Fescenninorum"/>
+         <tok val="Fescenninum"/>
+         <tok val="fescenninorum"/>
+         <tok val="fescenninum"/>
          <lm cert="0.5">
             <l>Fescennina</l>
             <m>n e - p - - - n g</m>
@@ -179,6 +212,7 @@
       </ana>
       <ana>
          <tok val="Fescenninos"/>
+         <tok val="fescenninos"/>
          <lm>
             <l>Fescenninus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -187,6 +221,7 @@
       </ana>
       <ana>
          <tok val="Fescenninum"/>
+         <tok val="fescenninum"/>
          <lm>
             <l>Fescenninus</l>
             <m cert="0.25">a e - s - - - n n</m>
@@ -197,6 +232,7 @@
       </ana>
       <ana>
          <tok val="Fescenninus"/>
+         <tok val="fescenninus"/>
          <lm>
             <l>Fescenninus</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -205,6 +241,7 @@
       </ana>
       <ana>
          <tok val="Fescennium"/>
+         <tok val="fescennium"/>
          <lm>
             <l>Fescennium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -213,8 +250,11 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Fessa Fessaque fessa fessaque-->
-         <tok val="[fF]essa(que)?"/>
+      <ana>
+         <tok val="Fessa"/>
+         <tok val="Fessaque"/>
+         <tok val="fessa"/>
+         <tok val="fessaque"/>
          <lm cert="0.5">
             <l>fatisco</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -234,8 +274,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Fessae fessae fessaeque-->
-         <tok val="[fF]essae(que)?"/>
+      <ana>
+         <tok val="Fessae"/>
+         <tok val="fessae"/>
+         <tok val="fessaeque"/>
          <lm cert="0.5">
             <l>fessus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -251,8 +293,10 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Fessam fessam fessamque-->
-         <tok val="[fF]essam(que)?"/>
+      <ana>
+         <tok val="Fessam"/>
+         <tok val="fessam"/>
+         <tok val="fessamque"/>
          <lm cert="0.5">
             <l>fatisco</l>
             <m>v - - s r p p f a</m>
@@ -262,8 +306,10 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fessas fessas fessasque-->
-         <tok val="[fF]essas(que)?"/>
+      <ana>
+         <tok val="Fessas"/>
+         <tok val="fessas"/>
+         <tok val="fessasque"/>
          <lm cert="0.5">
             <l>fatisco</l>
             <m>v - - p r p p f a</m>
@@ -273,8 +319,10 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fessi fessi fessique-->
-         <tok val="[fF]essi(que)?"/>
+      <ana>
+         <tok val="Fessi"/>
+         <tok val="fessi"/>
+         <tok val="fessique"/>
          <lm cert="0.5">
             <l>fatisco</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -290,8 +338,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Fessis fessis fessisque-->
-         <tok val="[fF]essis(que)?"/>
+      <ana>
+         <tok val="Fessis"/>
+         <tok val="fessis"/>
+         <tok val="fessisque"/>
          <lm cert="0.5">
             <l>fatisco</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -311,8 +361,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Fesso fesso-->
-         <tok val="[fF]esso"/>
+      <ana>
+         <tok val="Fesso"/>
+         <tok val="fesso"/>
          <lm cert="0.5">
             <l>fessus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -330,6 +381,7 @@
       </ana>
       <ana>
          <tok val="Fessonia"/>
+         <tok val="fessonia"/>
          <lm>
             <l>Fessonia</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -337,8 +389,10 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Fessos fessos fessosque-->
-         <tok val="[fF]essos(que)?"/>
+      <ana>
+         <tok val="Fessos"/>
+         <tok val="fessos"/>
+         <tok val="fessosque"/>
          <lm cert="0.5">
             <l>fessus</l>
             <m>a - - p - - - m a</m>
@@ -350,13 +404,16 @@
       </ana>
       <ana>
          <tok val="Fessum"/>
+         <tok val="fessum"/>
          <lm>
             <l>fessus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Fessum fessum fessumque-->
-         <tok val="[fF]essum(que)?"/>
+      <ana>
+         <tok val="Fessum"/>
+         <tok val="fessum"/>
+         <tok val="fessumque"/>
          <lm cert="0.5">
             <l>fessus</l>
             <m cert="0.25">a - - p - - - n g</m>
@@ -373,8 +430,11 @@
             <m cert="0.2">v - - s r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Fessum fesse fessum fessumque-->
-         <tok val="[fF]ess(um)?(que|e)?"/>
+      <ana>
+         <tok val="Fessum"/>
+         <tok val="fesse"/>
+         <tok val="fessum"/>
+         <tok val="fessumque"/>
          <lm cert="0.5">
             <l>fessus</l>
             <m>a - - s - - - n v</m>
@@ -384,8 +444,10 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Fessus fessus fessusque-->
-         <tok val="[fF]essus(que)?"/>
+      <ana>
+         <tok val="Fessus"/>
+         <tok val="fessus"/>
+         <tok val="fessusque"/>
          <lm cert="0.5">
             <l>fatisco</l>
             <m>v - - s r p p m n</m>
@@ -395,8 +457,12 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Festa Festaque festa festaque festaue-->
-         <tok val="[fF]esta[q]?(ue)?"/>
+      <ana>
+         <tok val="Festa"/>
+         <tok val="Festaque"/>
+         <tok val="festa"/>
+         <tok val="festaque"/>
+         <tok val="festaue"/>
          <lm cert="0.5">
             <l>festum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -413,8 +479,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Festae festae festaeque-->
-         <tok val="[fF]estae(que)?"/>
+      <ana>
+         <tok val="Festae"/>
+         <tok val="festae"/>
+         <tok val="festaeque"/>
          <lm>
             <l>festus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -423,8 +491,10 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Festas festas festasque-->
-         <tok val="[fF]estas(que)?"/>
+      <ana>
+         <tok val="Festas"/>
+         <tok val="festas"/>
+         <tok val="festasque"/>
          <lm>
             <l>festus</l>
             <m>a - - p - - - f a</m>
@@ -432,20 +502,31 @@
       </ana>
       <ana>
          <tok val="Feste"/>
-         <lm>
+         <tok val="feste"/>
+         <lm cert="0.5">
             <l>Festus</l>
             <m>n e - s - - - m v</m>
          </lm>
+         <lm cert="0.5">
+            <l>festus</l>
+            <m>a - - s - - - m v</m>
+         </lm>
       </ana>
-      <ana><!--Feste feste festius-->
-         <tok val="[fF]est(e|ius)"/>
+      <ana>
+         <tok val="Feste"/>
+         <tok val="feste"/>
+         <tok val="festius"/>
          <lm>
             <l>festus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Feste Festum feste festum festumque-->
-         <tok val="[fF]est(um|e|umque)"/>
+      <ana>
+         <tok val="Feste"/>
+         <tok val="Festum"/>
+         <tok val="feste"/>
+         <tok val="festum"/>
+         <tok val="festumque"/>
          <lm cert="0.5">
             <l>festum</l>
             <m>n - - s - - - n v</m>
@@ -455,38 +536,34 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Feste feste-->
-         <tok val="[fF]este"/>
-         <lm>
-            <l>festus</l>
-            <m>a - - s - - - m v</m>
-         </lm>
-      </ana>
-      <ana><!--Festi Festiue-->
-         <tok val="Festi(ue)?"/>
-         <lm>
+      <ana>
+         <tok val="Festi"/>
+         <tok val="Festiue"/>
+         <tok val="festi"/>
+         <tok val="festiue"/>
+         <lm cert="0.333333333333333333">
             <l>Festus</l>
             <m cert="0.333333333333333333">n e - p - - - m v</m>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
             <m cert="0.333333333333333333">n e - s - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Festi Festiue festi festiue-->
-         <tok val="[fF]esti(ue)?"/>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>festus</l>
             <m cert="0.25">a - - s - - - m g</m>
             <m cert="0.25">a - - p - - - m v</m>
             <m cert="0.25">a - - p - - - m n</m>
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>festum</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Festina festina festinan festinaque-->
-         <tok val="[fF]estina(n|que)?"/>
+      <ana>
+         <tok val="Festina"/>
+         <tok val="festina"/>
+         <tok val="festinan"/>
+         <tok val="festinaque"/>
          <lm cert="0.5">
             <l>festinus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -501,22 +578,25 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Festinabit festinabit-->
-         <tok val="[fF]estinabit"/>
+      <ana>
+         <tok val="Festinabit"/>
+         <tok val="festinabit"/>
          <lm>
             <l>festino</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Festinamus festinamus-->
-         <tok val="[fF]estinamus"/>
+      <ana>
+         <tok val="Festinamus"/>
+         <tok val="festinamus"/>
          <lm>
             <l>festino</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Festinandum festinandum-->
-         <tok val="[fF]estinandum"/>
+      <ana>
+         <tok val="Festinandum"/>
+         <tok val="festinandum"/>
          <lm>
             <l>festino</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -528,8 +608,10 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Festinans festinans festinansque-->
-         <tok val="[fF]estinans(que)?"/>
+      <ana>
+         <tok val="Festinans"/>
+         <tok val="festinans"/>
+         <tok val="festinansque"/>
          <lm>
             <l>festino</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -541,30 +623,36 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Festinant festinant festinantque-->
-         <tok val="[fF]estinant(que)?"/>
+      <ana>
+         <tok val="Festinant"/>
+         <tok val="festinant"/>
+         <tok val="festinantque"/>
          <lm>
             <l>festino</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Festinantem festinantem festinantemque-->
-         <tok val="[fF]estinantem(que)?"/>
+      <ana>
+         <tok val="Festinantem"/>
+         <tok val="festinantem"/>
+         <tok val="festinantemque"/>
          <lm>
             <l>festino</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Festinanter festinanter-->
-         <tok val="[fF]estinanter"/>
+      <ana>
+         <tok val="Festinanter"/>
+         <tok val="festinanter"/>
          <lm>
             <l>festinanter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Festinantes festinantes-->
-         <tok val="[fF]estinantes"/>
+      <ana>
+         <tok val="Festinantes"/>
+         <tok val="festinantes"/>
          <lm>
             <l>festino</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -573,16 +661,20 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Festinantes Festinantis festinantes festinantis-->
-         <tok val="[Ff]estinant[ie]s"/>
+      <ana>
+         <tok val="Festinantes"/>
+         <tok val="Festinantis"/>
+         <tok val="festinantes"/>
+         <tok val="festinantis"/>
          <lm>
             <l>festino</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Festinantia festinantia-->
-         <tok val="[fF]estinantia"/>
+      <ana>
+         <tok val="Festinantia"/>
+         <tok val="festinantia"/>
          <lm>
             <l>festino</l>
             <m cert="0.333333333333333333">v - - p p p a n n</m>
@@ -590,8 +682,9 @@
             <m cert="0.333333333333333333">v - - p p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Festinantibus festinantibus-->
-         <tok val="[fF]estinantibus"/>
+      <ana>
+         <tok val="Festinantibus"/>
+         <tok val="festinantibus"/>
          <lm>
             <l>festino</l>
             <m cert="0.166666666666666667">v - - p p p a n b</m>
@@ -602,8 +695,9 @@
             <m cert="0.166666666666666667">v - - p p p a f d</m>
          </lm>
       </ana>
-      <ana><!--Festinantis festinantis-->
-         <tok val="[fF]estinantis"/>
+      <ana>
+         <tok val="Festinantis"/>
+         <tok val="festinantis"/>
          <lm>
             <l>festino</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -611,8 +705,10 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Festinare festinare FESTINARE-->
-         <tok val="[fF]?(estinare|FESTINARE)"/>
+      <ana>
+         <tok val="FESTINARE"/>
+         <tok val="Festinare"/>
+         <tok val="festinare"/>
          <lm>
             <l>festino</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -620,22 +716,27 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Festinasse festinasse festinavisse-->
-         <tok val="[fF]estina(vi)?sse"/>
+      <ana>
+         <tok val="Festinasse"/>
+         <tok val="festinasse"/>
+         <tok val="festinavisse"/>
          <lm>
             <l>festino</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Festinat festinat festinatque-->
-         <tok val="[fF]estinat(que)?"/>
+      <ana>
+         <tok val="Festinat"/>
+         <tok val="festinat"/>
+         <tok val="festinatque"/>
          <lm>
             <l>festino</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Festinata festinata-->
-         <tok val="[fF]estinata"/>
+      <ana>
+         <tok val="Festinata"/>
+         <tok val="festinata"/>
          <lm>
             <l>festino</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -646,45 +747,54 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Festinate festinate-->
-         <tok val="[fF]estinate"/>
+      <ana>
+         <tok val="Festinate"/>
+         <tok val="festinate"/>
          <lm>
             <l>festino</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Festinate festinate festinatum-->
-         <tok val="[fF]estinat(e|um)"/>
+      <ana>
+         <tok val="Festinate"/>
+         <tok val="festinate"/>
+         <tok val="festinatum"/>
          <lm>
             <l>festino</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Festinatio festinatio festinatioque-->
-         <tok val="[fF]estinatio(que)?"/>
+      <ana>
+         <tok val="Festinatio"/>
+         <tok val="festinatio"/>
+         <tok val="festinatioque"/>
          <lm>
             <l>festinatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Festinationem festinationem-->
-         <tok val="[fF]estinationem"/>
+      <ana>
+         <tok val="Festinationem"/>
+         <tok val="festinationem"/>
          <lm>
             <l>festinatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Festinationis festinationis-->
-         <tok val="[fF]estinationis"/>
+      <ana>
+         <tok val="Festinationis"/>
+         <tok val="festinationis"/>
          <lm>
             <l>festinatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Festinato festinato festinatoque-->
-         <tok val="[fF]estinato(que)?"/>
+      <ana>
+         <tok val="Festinato"/>
+         <tok val="festinato"/>
+         <tok val="festinatoque"/>
          <lm>
             <l>festino</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -695,22 +805,27 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Festinatus festinatus-->
-         <tok val="[fF]estinatus"/>
+      <ana>
+         <tok val="Festinatus"/>
+         <tok val="festinatus"/>
          <lm>
             <l>festino</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Festinavit festinauit festinavit festinavitque-->
-         <tok val="[fF]estina[vu]it(que)?"/>
+      <ana>
+         <tok val="Festinavit"/>
+         <tok val="festinauit"/>
+         <tok val="festinavit"/>
+         <tok val="festinavitque"/>
          <lm>
             <l>festino</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Festine festine-->
-         <tok val="[fF]estine"/>
+      <ana>
+         <tok val="Festine"/>
+         <tok val="festine"/>
          <lm>
             <l>festinus</l>
             <m cert="0.333333333333333333">d</m>
@@ -718,22 +833,25 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Festinemus festinemus-->
-         <tok val="[fF]estinemus"/>
+      <ana>
+         <tok val="Festinemus"/>
+         <tok val="festinemus"/>
          <lm>
             <l>festino</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Festinet festinet-->
-         <tok val="[fF]estinet"/>
+      <ana>
+         <tok val="Festinet"/>
+         <tok val="festinet"/>
          <lm>
             <l>festino</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Festino festino-->
-         <tok val="[fF]estino"/>
+      <ana>
+         <tok val="Festino"/>
+         <tok val="festino"/>
          <lm cert="0.5">
             <l>festinus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -748,20 +866,24 @@
       </ana>
       <ana>
          <tok val="Festinor"/>
+         <tok val="festinor"/>
          <lm>
             <l>festino</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Festinus festinus festinusque-->
-         <tok val="[fF]estinus(que)?"/>
+      <ana>
+         <tok val="Festinus"/>
+         <tok val="festinus"/>
+         <tok val="festinusque"/>
          <lm>
             <l>festinus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Festior festior-->
-         <tok val="[fF]estior"/>
+      <ana>
+         <tok val="Festior"/>
+         <tok val="festior"/>
          <lm>
             <l>festus</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -770,8 +892,10 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Festiua festiua festiva-->
-         <tok val="[fF]esti[uv]a"/>
+      <ana>
+         <tok val="Festiua"/>
+         <tok val="festiua"/>
+         <tok val="festiva"/>
          <lm cert="0.5">
             <l>festivum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -788,8 +912,11 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Festiui festiui festivi festivique-->
-         <tok val="[fF]esti[uv]i(que)?"/>
+      <ana>
+         <tok val="Festiui"/>
+         <tok val="festiui"/>
+         <tok val="festivi"/>
+         <tok val="festivique"/>
          <lm cert="0.5">
             <l>festivus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -802,29 +929,42 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Festiuitas festiuitas festivitas-->
-         <tok val="[fF]esti[uv]itas"/>
+      <ana>
+         <tok val="Festiuitas"/>
+         <tok val="festiuitas"/>
+         <tok val="festivitas"/>
          <lm>
             <l>festivitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Festiuitate Festivitate festiuitate festivitate-->
-         <tok val="[Ff]esti[vu]itate"/>
+      <ana>
+         <tok val="Festiuitate"/>
+         <tok val="Festivitate"/>
+         <tok val="festiuitate"/>
+         <tok val="festivitate"/>
          <lm>
             <l>festivitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Festiuitatis festiuitatis festivitatis-->
-         <tok val="[fF]esti[uv]itatis"/>
+      <ana>
+         <tok val="Festiuitatis"/>
+         <tok val="festiuitatis"/>
+         <tok val="festivitatis"/>
          <lm>
             <l>festivitas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Festiuum Festivom festiuum festiuumue festivom festivum festivumve-->
-         <tok val="[fF]esti[uv]?(u|vo)m(ue|ve)?"/>
+      <ana>
+         <tok val="Festiuum"/>
+         <tok val="Festivom"/>
+         <tok val="festiuum"/>
+         <tok val="festiuumue"/>
+         <tok val="festivom"/>
+         <tok val="festivum"/>
+         <tok val="festivumve"/>
          <lm cert="0.5">
             <l>festivus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -837,8 +977,12 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Festiuum festiuum festiuumue festivum festivumve-->
-         <tok val="[fF]esti[uv]um(ue|ve)?"/>
+      <ana>
+         <tok val="Festiuum"/>
+         <tok val="festiuum"/>
+         <tok val="festiuumue"/>
+         <tok val="festivum"/>
+         <tok val="festivumve"/>
          <lm cert="0.5">
             <l>festivus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -849,8 +993,17 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Festiuum Festive Festivom festiue festiuum festiuumue festive festivom festivum festivumve-->
-         <tok val="[fF]esti[uv]?(u|vo)?[m]?(ue|ve)?"/>
+      <ana>
+         <tok val="Festiuum"/>
+         <tok val="Festive"/>
+         <tok val="Festivom"/>
+         <tok val="festiue"/>
+         <tok val="festiuum"/>
+         <tok val="festiuumue"/>
+         <tok val="festive"/>
+         <tok val="festivom"/>
+         <tok val="festivum"/>
+         <tok val="festivumve"/>
          <lm cert="0.5">
             <l>festivum</l>
             <m>n - - s - - - n v</m>
@@ -860,29 +1013,43 @@
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Festiuus Festive festiue festiuius festiuus festive festivius festivus festíve-->
-         <tok val="[fF]est[i]?[u]?(i|v|vi|u)?(us|ve|ue|íve)"/>
+      <ana>
+         <tok val="Festiuus"/>
+         <tok val="Festive"/>
+         <tok val="festiue"/>
+         <tok val="festiuius"/>
+         <tok val="festiuus"/>
+         <tok val="festive"/>
+         <tok val="festivius"/>
+         <tok val="festivus"/>
+         <tok val="festíve"/>
          <lm>
             <l>festivus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Festiuus festiuus festivus-->
-         <tok val="[fF]esti[uv]us"/>
+      <ana>
+         <tok val="Festiuus"/>
+         <tok val="festiuus"/>
+         <tok val="festivus"/>
          <lm>
             <l>festivus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Festive festiue festive-->
-         <tok val="[fF]esti[vu]e"/>
+      <ana>
+         <tok val="Festive"/>
+         <tok val="festiue"/>
+         <tok val="festive"/>
          <lm>
             <l>festivus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Festo festo festoque-->
-         <tok val="[fF]esto(que)?"/>
+      <ana>
+         <tok val="Festo"/>
+         <tok val="festo"/>
+         <tok val="festoque"/>
          <lm cert="0.5">
             <l>festus</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -895,8 +1062,11 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Festo festo festoque fésto-->
-         <tok val="[fF]?(e|fé|fe)sto(que)?"/>
+      <ana>
+         <tok val="Festo"/>
+         <tok val="festo"/>
+         <tok val="festoque"/>
+         <tok val="fésto"/>
          <lm>
             <l>festus</l>
             <m>a - - s - - - n b</m>
@@ -904,14 +1074,20 @@
       </ana>
       <ana>
          <tok val="Festo"/>
+         <tok val="festo"/>
          <lm>
             <l>Festus</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Festorum Festum festorum festorumque festum festumque-->
-         <tok val="[fF]est(or)?um(que)?"/>
+      <ana>
+         <tok val="Festorum"/>
+         <tok val="Festum"/>
+         <tok val="festorum"/>
+         <tok val="festorumque"/>
+         <tok val="festum"/>
+         <tok val="festumque"/>
          <lm cert="0.5">
             <l>festus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -922,36 +1098,42 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Festorum Festum-->
-         <tok val="Fest(or)?um"/>
+      <ana>
+         <tok val="Festorum"/>
+         <tok val="Festum"/>
+         <tok val="festorum"/>
+         <tok val="festum"/>
          <lm>
             <l>Festus</l>
             <m>n e - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Festos Festosque festos festosque-->
-         <tok val="[fF]estos(que)?"/>
-         <lm>
+      <ana>
+         <tok val="Festos"/>
+         <tok val="Festosque"/>
+         <tok val="festos"/>
+         <tok val="festosque"/>
+         <lm cert="0.5">
             <l>festus</l>
             <m>a - - p - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Festos Festosque-->
-         <tok val="Festos(que)?"/>
-         <lm>
+         <lm cert="0.5">
             <l>Festus</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Festucarius festucarius-->
-         <tok val="[fF]estucarius"/>
+      <ana>
+         <tok val="Festucarius"/>
+         <tok val="festucarius"/>
          <lm>
             <l>festucarius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Festum festum festumque-->
-         <tok val="[fF]estum(que)?"/>
+      <ana>
+         <tok val="Festum"/>
+         <tok val="festum"/>
+         <tok val="festumque"/>
          <lm cert="0.5">
             <l>festus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -966,6 +1148,7 @@
       </ana>
       <ana>
          <tok val="Festum"/>
+         <tok val="festum"/>
          <lm>
             <l>Festus</l>
             <m>n e - s - - - m a</m>
@@ -973,6 +1156,7 @@
       </ana>
       <ana>
          <tok val="Festus"/>
+         <tok val="festus"/>
          <lm>
             <l>Festus</l>
             <m>n e - s - - - m n</m>
@@ -980,6 +1164,7 @@
       </ana>
       <ana>
          <tok val="Fesulae"/>
+         <tok val="fesulae"/>
          <lm>
             <l>Fesulae</l>
             <m cert="0.5">n e - p - - - f n</m>
@@ -988,6 +1173,7 @@
       </ana>
       <ana>
          <tok val="Fesulanus"/>
+         <tok val="fesulanus"/>
          <lm>
             <l>Fesulanus</l>
             <m>a e - s - - - m n</m>
@@ -1035,15 +1221,17 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--fessum fessumque-->
-         <tok val="fessum(que)?"/>
+      <ana>
+         <tok val="fessum"/>
+         <tok val="fessumque"/>
          <lm>
             <l>fatisco</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--festam festamque-->
-         <tok val="festam(que)?"/>
+      <ana>
+         <tok val="festam"/>
+         <tok val="festamque"/>
          <lm>
             <l>festus</l>
             <m>a - - s - - - f a</m>
@@ -1143,22 +1331,26 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--festinamque festinam-->
-         <tok val="festinam(que)?"/>
+      <ana>
+         <tok val="festinam"/>
+         <tok val="festinamque"/>
          <lm>
             <l>festinus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--festinan festinas féstinas-->
-         <tok val="f[eé]stina[sn]"/>
+      <ana>
+         <tok val="festinan"/>
+         <tok val="festinas"/>
+         <tok val="féstinas"/>
          <lm>
             <l>festino</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--festinan festinas-->
-         <tok val="festina[sn]"/>
+      <ana>
+         <tok val="festinan"/>
+         <tok val="festinas"/>
          <lm>
             <l>festinus</l>
             <m>a - - p - - - f a</m>
@@ -1209,8 +1401,10 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--festinante festinanti Festinanti-->
-         <tok val="[fF]estinant[ie]"/>
+      <ana>
+         <tok val="Festinanti"/>
+         <tok val="festinante"/>
+         <tok val="festinanti"/>
          <lm>
             <l>festino</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -1218,8 +1412,9 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--festinanti Festinanti-->
-         <tok val="[Ff]estinanti"/>
+      <ana>
+         <tok val="Festinanti"/>
+         <tok val="festinanti"/>
          <lm>
             <l>festino</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -1245,8 +1440,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--festinantius festinatius-->
-         <tok val="festina[n]?tius"/>
+      <ana>
+         <tok val="festinantius"/>
+         <tok val="festinatius"/>
          <lm>
             <l>festino</l>
             <m>d</m>
@@ -1317,8 +1513,10 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--festinarunt festinavere festinaverunt-->
-         <tok val="festina(ve)?r(unt|e)"/>
+      <ana>
+         <tok val="festinarunt"/>
+         <tok val="festinavere"/>
+         <tok val="festinaverunt"/>
          <lm>
             <l>festino</l>
             <m>v - 3 p r i a</m>
@@ -1432,8 +1630,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--festinatos festinatosque-->
-         <tok val="festinatos(que)?"/>
+      <ana>
+         <tok val="festinatos"/>
+         <tok val="festinatosque"/>
          <lm>
             <l>festino</l>
             <m>v - - p r p p m a</m>
@@ -1461,8 +1660,9 @@
             <m cert="0.25">v - - p f p a m n</m>
          </lm>
       </ana>
-      <ana><!--festinavi festinaui-->
-         <tok val="festina[uv]i"/>
+      <ana>
+         <tok val="festinaui"/>
+         <tok val="festinavi"/>
          <lm>
             <l>festino</l>
             <m>v - 1 s r i a</m>
@@ -1556,8 +1756,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--festis festisque-->
-         <tok val="festis(que)?"/>
+      <ana>
+         <tok val="festis"/>
+         <tok val="festisque"/>
          <lm cert="0.5">
             <l>festus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1607,8 +1808,9 @@
             <m cert="0.166666666666666667">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--festiuas festivas-->
-         <tok val="festi[vu]as"/>
+      <ana>
+         <tok val="festiuas"/>
+         <tok val="festivas"/>
          <lm>
             <l>festivus</l>
             <m>a - - p - - - f a</m>
@@ -1631,8 +1833,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--festiuissima festivissuma-->
-         <tok val="festi[vu]iss[ui]ma"/>
+      <ana>
+         <tok val="festiuissima"/>
+         <tok val="festivissuma"/>
          <lm>
             <l>festivus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -1643,29 +1846,37 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--festiuissimam festivissimam-->
-         <tok val="festi[vu]issimam"/>
+      <ana>
+         <tok val="festiuissimam"/>
+         <tok val="festivissimam"/>
          <lm>
             <l>festivus</l>
             <m>a - - s - - - f a s</m>
          </lm>
       </ana>
-      <ana><!--festiuissime festivissime-->
-         <tok val="festi[vu]issime"/>
+      <ana>
+         <tok val="festiuissime"/>
+         <tok val="festivissime"/>
          <lm>
             <l>festivus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--festiuissime festiuissimus festivissime festivissimus-->
-         <tok val="festi[vu]issim(us|e)"/>
+      <ana>
+         <tok val="festiuissime"/>
+         <tok val="festiuissimus"/>
+         <tok val="festivissime"/>
+         <tok val="festivissimus"/>
          <lm>
             <l>festivus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--festiuissime festiuissimum festivissime festivissimum-->
-         <tok val="festi[vu]issim(um|e)"/>
+      <ana>
+         <tok val="festiuissime"/>
+         <tok val="festiuissimum"/>
+         <tok val="festivissime"/>
+         <tok val="festivissimum"/>
          <lm>
             <l>festivus</l>
             <m>a - - s - - - n v s</m>
@@ -1681,8 +1892,9 @@
             <m cert="0.25">a - - p - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--festiuissimis festivissimis-->
-         <tok val="festi[vu]issimis"/>
+      <ana>
+         <tok val="festiuissimis"/>
+         <tok val="festivissimis"/>
          <lm>
             <l>festivus</l>
             <m cert="0.166666666666666667">a - - p - - - n d s</m>
@@ -1693,8 +1905,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--festiuissimum festivissimum-->
-         <tok val="festi[vu]issimum"/>
+      <ana>
+         <tok val="festiuissimum"/>
+         <tok val="festivissimum"/>
          <lm>
             <l>festivus</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -1704,22 +1917,25 @@
             <m cert="0.2">a - - p - - - m g s</m>
          </lm>
       </ana>
-      <ana><!--festiuissimus festivissimus-->
-         <tok val="festi[vu]issimus"/>
+      <ana>
+         <tok val="festiuissimus"/>
+         <tok val="festivissimus"/>
          <lm>
             <l>festivus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--festiuitatem festivitatem-->
-         <tok val="festi[vu]itatem"/>
+      <ana>
+         <tok val="festiuitatem"/>
+         <tok val="festivitatem"/>
          <lm>
             <l>festivitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--festiuitates festivitates-->
-         <tok val="festi[vu]itates"/>
+      <ana>
+         <tok val="festiuitates"/>
+         <tok val="festivitates"/>
          <lm>
             <l>festivitas</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -1734,16 +1950,18 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--festiuitatibus festivitatibus-->
-         <tok val="festi[vu]itatibus"/>
+      <ana>
+         <tok val="festiuitatibus"/>
+         <tok val="festivitatibus"/>
          <lm>
             <l>festivitas</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--festiuius festivius-->
-         <tok val="festi[vu]ius"/>
+      <ana>
+         <tok val="festiuius"/>
+         <tok val="festivius"/>
          <lm>
             <l>festivus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -1751,15 +1969,18 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--festiuo festivo festivó-->
-         <tok val="festi[vu]?(o|vó)"/>
+      <ana>
+         <tok val="festiuo"/>
+         <tok val="festivo"/>
+         <tok val="festivó"/>
          <lm>
             <l>festivus</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--festiuo festivo-->
-         <tok val="festi[vu]o"/>
+      <ana>
+         <tok val="festiuo"/>
+         <tok val="festivo"/>
          <lm cert="0.5">
             <l>festivus</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -1772,8 +1993,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--festiuos festivos-->
-         <tok val="festi[vu]os"/>
+      <ana>
+         <tok val="festiuos"/>
+         <tok val="festivos"/>
          <lm>
             <l>festivus</l>
             <m>a - - p - - - m a</m>
@@ -1820,8 +2042,9 @@
             <m cert="0.5">a - - s - - - m a c</m>
          </lm>
       </ana>
-      <ana><!--festivissimae festivissumae-->
-         <tok val="festiviss[ui]mae"/>
+      <ana>
+         <tok val="festivissimae"/>
+         <tok val="festivissumae"/>
          <lm>
             <l>festivus</l>
             <m cert="0.25">a - - s - - - f d s</m>

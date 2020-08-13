@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseussig">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:sig">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to sig</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-sig.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SIG</tok-starts-with>
       <tok-starts-with>Sig</tok-starts-with>
       <tok-starts-with>sig</tok-starts-with>
       <tok-starts-with>síg</tok-starts-with>
-      <ana><!--SIGILLUM SIGILLVM Sigillum sigillum-->
-         <tok val="(SIGILL)?[VU]?(M|sigillum|Sigillum)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:46:01.891-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:46:01.891-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-sig.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SIGILLUM"/>
+         <tok val="SIGILLVM"/>
+         <tok val="Sigillum"/>
+         <tok val="sigillum"/>
+         <tok val="sigillvm"/>
          <lm>
             <l>sigillum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -45,15 +57,27 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SIGILLUM SIGILLVM Sigillorum Sigillum-->
-         <tok val="S(igill)?(or)?(um|IGILLVM|IGILLUM)"/>
+      <ana>
+         <tok val="SIGILLUM"/>
+         <tok val="SIGILLVM"/>
+         <tok val="Sigillorum"/>
+         <tok val="Sigillum"/>
+         <tok val="sigillorum"/>
+         <tok val="sigillum"/>
+         <tok val="sigillvm"/>
          <lm>
             <l>sigillum</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SIGNA Signa Signaque signa signan signaque signaue-->
-         <tok val="[sS]?(igna)?[q]?(ue|n|que|SIGNA)?"/>
+      <ana>
+         <tok val="SIGNA"/>
+         <tok val="Signa"/>
+         <tok val="Signaque"/>
+         <tok val="signa"/>
+         <tok val="signan"/>
+         <tok val="signaque"/>
+         <tok val="signaue"/>
          <lm cert="0.5">
             <l>signum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -65,15 +89,18 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--SIGNANTO signanto-->
-         <tok val="(signanto|SIGNANTO)"/>
+      <ana>
+         <tok val="SIGNANTO"/>
+         <tok val="signanto"/>
          <lm>
             <l>signo</l>
             <m>v - 3 p f m a</m>
          </lm>
       </ana>
-      <ana><!--SIGNATVRAE signaturae-->
-         <tok val="(signaturae|SIGNATVRAE)"/>
+      <ana>
+         <tok val="SIGNATVRAE"/>
+         <tok val="signaturae"/>
+         <tok val="signatvrae"/>
          <lm>
             <l>signo</l>
             <m cert="0.25">v - - s f p a f d</m>
@@ -82,29 +109,65 @@
             <m cert="0.25">v - - s f p a f g</m>
          </lm>
       </ana>
-      <ana><!--SIGNVM Signe Signum signe signen signum signumque signumst signumue signumve-->
-         <tok val="[sS]?(ign)?(um)?[q]?(ue|en|e|umve|umst|um|SIGNVM)"/>
+      <ana>
+         <tok val="SIGNVM"/>
+         <tok val="Signe"/>
+         <tok val="Signum"/>
+         <tok val="signe"/>
+         <tok val="signen"/>
+         <tok val="signum"/>
+         <tok val="signumque"/>
+         <tok val="signumst"/>
+         <tok val="signumue"/>
+         <tok val="signumve"/>
+         <tok val="signvm"/>
          <lm>
             <l>signum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--SIGNVM Signum signum signumque signumst signumue signumve sígnum sígnumst-->
-         <tok val="[s]?(i|í|Si)?(gnum)?[q]?[uv]?(e|st|SIGNVM)?"/>
+      <ana>
+         <tok val="SIGNVM"/>
+         <tok val="Signum"/>
+         <tok val="signum"/>
+         <tok val="signumque"/>
+         <tok val="signumst"/>
+         <tok val="signumue"/>
+         <tok val="signumve"/>
+         <tok val="signvm"/>
+         <tok val="sígnum"/>
+         <tok val="sígnumst"/>
          <lm>
             <l>signum</l>
             <m>n - - s - - - n a</m>
          </lm>
       </ana>
-      <ana><!--SIGNVM Signum signum signumque signumst signumue signumve-->
-         <tok val="[sS]?(ignum)?[q]?[uv]?(e|st|SIGNVM)?"/>
+      <ana>
+         <tok val="SIGNVM"/>
+         <tok val="Signum"/>
+         <tok val="signum"/>
+         <tok val="signumque"/>
+         <tok val="signumst"/>
+         <tok val="signumue"/>
+         <tok val="signumve"/>
+         <tok val="signvm"/>
          <lm>
             <l>signum</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SIGNVM Signorum Signum signorum signorumque signum signumque signumst signumue signumve-->
-         <tok val="[sS]?(ign)?(or)?(um)?[qq]?(ue|ve|st|SIGNVM)?"/>
+      <ana>
+         <tok val="SIGNVM"/>
+         <tok val="Signorum"/>
+         <tok val="Signum"/>
+         <tok val="signorum"/>
+         <tok val="signorumque"/>
+         <tok val="signum"/>
+         <tok val="signumque"/>
+         <tok val="signumst"/>
+         <tok val="signumue"/>
+         <tok val="signumve"/>
+         <tok val="signvm"/>
          <lm>
             <l>signum</l>
             <m>n - - p - - - n g</m>
@@ -112,6 +175,7 @@
       </ana>
       <ana>
          <tok val="Sigalion"/>
+         <tok val="sigalion"/>
          <lm>
             <l>Sigalion</l>
             <m>n e - s - - - m n</m>
@@ -119,6 +183,7 @@
       </ana>
       <ana>
          <tok val="Sigambra"/>
+         <tok val="sigambra"/>
          <lm>
             <l>Sigambra</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -128,6 +193,7 @@
       </ana>
       <ana>
          <tok val="Sigambri"/>
+         <tok val="sigambri"/>
          <lm>
             <l>Sigambri</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -136,6 +202,7 @@
       </ana>
       <ana>
          <tok val="Sigambrorum"/>
+         <tok val="sigambrorum"/>
          <lm>
             <l>Sigambri</l>
             <m>n e - p - - - m g</m>
@@ -143,13 +210,17 @@
       </ana>
       <ana>
          <tok val="Sigambros"/>
+         <tok val="sigambros"/>
          <lm>
             <l>Sigambri</l>
             <m>n e - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Sigea Sigeaque-->
-         <tok val="Sigea(que)?"/>
+      <ana>
+         <tok val="Sigea"/>
+         <tok val="Sigeaque"/>
+         <tok val="sigea"/>
+         <tok val="sigeaque"/>
          <lm cert="0.5">
             <l>Sigeum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -168,6 +239,7 @@
       </ana>
       <ana>
          <tok val="Sigeasque"/>
+         <tok val="sigeasque"/>
          <lm>
             <l>Sigeus</l>
             <m>a e - p - - - f a</m>
@@ -175,6 +247,7 @@
       </ana>
       <ana>
          <tok val="Sigei"/>
+         <tok val="sigei"/>
          <lm cert="0.5">
             <l>Sigeus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -189,6 +262,7 @@
       </ana>
       <ana>
          <tok val="Sigeis"/>
+         <tok val="sigeis"/>
          <lm cert="0.5">
             <l>Sigeus</l>
             <m cert="0.166666666666666667">a e - p - - - n b</m>
@@ -204,8 +278,11 @@
             <m cert="0.5">n e - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sigeo Sigeon-->
-         <tok val="Sigeo[n]?"/>
+      <ana>
+         <tok val="Sigeo"/>
+         <tok val="Sigeon"/>
+         <tok val="sigeo"/>
+         <tok val="sigeon"/>
          <lm cert="0.5">
             <l>Sigeus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -219,8 +296,11 @@
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Sigeon Sigeos-->
-         <tok val="Sigeo[sn]"/>
+      <ana>
+         <tok val="Sigeon"/>
+         <tok val="Sigeos"/>
+         <tok val="sigeon"/>
+         <tok val="sigeos"/>
          <lm>
             <l>Sigeus</l>
             <m>a e - p - - - m a</m>
@@ -228,6 +308,7 @@
       </ana>
       <ana>
          <tok val="Sigeum"/>
+         <tok val="sigeum"/>
          <lm cert="0.5">
             <l>Sigeum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -247,6 +328,7 @@
       </ana>
       <ana>
          <tok val="Sigeus"/>
+         <tok val="sigeus"/>
          <lm>
             <l>Sigeus</l>
             <m>a e - s - - - m n</m>
@@ -254,6 +336,7 @@
       </ana>
       <ana>
          <tok val="Siggos"/>
+         <tok val="siggos"/>
          <lm>
             <l>Singos</l>
             <m cert="0.5">n e - s - - - f n</m>
@@ -262,6 +345,7 @@
       </ana>
       <ana>
          <tok val="Sigilla"/>
+         <tok val="sigilla"/>
          <lm>
             <l>sigillum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -269,8 +353,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Sigillata sigillata-->
-         <tok val="[sS]igillata"/>
+      <ana>
+         <tok val="Sigillata"/>
+         <tok val="sigillata"/>
          <lm>
             <l>sigillatus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -281,8 +366,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Sigillatus sigillatun sigillatus-->
-         <tok val="[sS]igillatu[sn]"/>
+      <ana>
+         <tok val="Sigillatus"/>
+         <tok val="sigillatun"/>
+         <tok val="sigillatus"/>
          <lm>
             <l>sigillatus</l>
             <m>a - - s - - - m n</m>
@@ -290,20 +377,17 @@
       </ana>
       <ana>
          <tok val="Sigillis"/>
+         <tok val="sigillis"/>
          <lm>
             <l>sigillum</l>
-            <m>n - - p - - - n d</m>
+            <m cert="0.5">n - - p - - - n d</m>
+            <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Sigillis sigillis-->
-         <tok val="[sS]igillis"/>
-         <lm>
-            <l>sigillum</l>
-            <m>n - - p - - - n b</m>
-         </lm>
-      </ana>
-      <ana><!--Sigillo sigillo sigilloque-->
-         <tok val="[sS]igillo(que)?"/>
+      <ana>
+         <tok val="Sigillo"/>
+         <tok val="sigillo"/>
+         <tok val="sigilloque"/>
          <lm>
             <l>sigillum</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -312,6 +396,7 @@
       </ana>
       <ana>
          <tok val="Sigimeri"/>
+         <tok val="sigimeri"/>
          <lm>
             <l>Sigimerus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -321,27 +406,31 @@
       </ana>
       <ana>
          <tok val="Sigimerus"/>
+         <tok val="sigimerus"/>
          <lm>
             <l>Sigimerus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Sigma sigma-->
-         <tok val="[sS]igma"/>
+      <ana>
+         <tok val="Sigma"/>
+         <tok val="sigma"/>
          <lm>
             <l>sigma</l>
             <m>n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Signabat signabat-->
-         <tok val="[sS]ignabat"/>
+      <ana>
+         <tok val="Signabat"/>
+         <tok val="signabat"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Signaculum signaculum-->
-         <tok val="[sS]ignaculum"/>
+      <ana>
+         <tok val="Signaculum"/>
+         <tok val="signaculum"/>
          <lm>
             <l>signaculum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -350,8 +439,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Signandi signandi-->
-         <tok val="[sS]ignandi"/>
+      <ana>
+         <tok val="Signandi"/>
+         <tok val="signandi"/>
          <lm>
             <l>signo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -363,20 +453,23 @@
       </ana>
       <ana>
          <tok val="Signandus"/>
+         <tok val="signandus"/>
          <lm>
             <l>signo</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Signant signant-->
-         <tok val="[sS]ignant"/>
+      <ana>
+         <tok val="Signant"/>
+         <tok val="signant"/>
          <lm>
             <l>signo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Signantes signantes-->
-         <tok val="[sS]ignantes"/>
+      <ana>
+         <tok val="Signantes"/>
+         <tok val="signantes"/>
          <lm>
             <l>signo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -385,8 +478,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Signantes signantes signantis-->
-         <tok val="[sS]ignant[ei]s"/>
+      <ana>
+         <tok val="Signantes"/>
+         <tok val="signantes"/>
+         <tok val="signantis"/>
          <lm>
             <l>signo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -395,6 +490,7 @@
       </ana>
       <ana>
          <tok val="Signanti"/>
+         <tok val="signanti"/>
          <lm>
             <l>signo</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -402,8 +498,10 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Signanti signante-->
-         <tok val="[sS]ignant[ei]"/>
+      <ana>
+         <tok val="Signanti"/>
+         <tok val="signante"/>
+         <tok val="signanti"/>
          <lm>
             <l>signo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -411,15 +509,19 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Signarat signarat signauerat signaverat-->
-         <tok val="[sS]igna[vu]?[e]?rat"/>
+      <ana>
+         <tok val="Signarat"/>
+         <tok val="signarat"/>
+         <tok val="signauerat"/>
+         <tok val="signaverat"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Signare signare-->
-         <tok val="[sS]ignare"/>
+      <ana>
+         <tok val="Signare"/>
+         <tok val="signare"/>
          <lm>
             <l>signo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -427,8 +529,11 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Signari signari signarique signariue-->
-         <tok val="[sS]ignari[q]?(ue)?"/>
+      <ana>
+         <tok val="Signari"/>
+         <tok val="signari"/>
+         <tok val="signarique"/>
+         <tok val="signariue"/>
          <lm cert="0.5">
             <l>signo</l>
             <m>v - - - p n p</m>
@@ -439,22 +544,28 @@
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Signas signan signas-->
-         <tok val="[sS]igna[sn]"/>
+      <ana>
+         <tok val="Signas"/>
+         <tok val="signan"/>
+         <tok val="signas"/>
          <lm>
             <l>signo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Signat signat signatque-->
-         <tok val="[sS]ignat(que)?"/>
+      <ana>
+         <tok val="Signat"/>
+         <tok val="signat"/>
+         <tok val="signatque"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Signata signata signataque-->
-         <tok val="[sS]ignata(que)?"/>
+      <ana>
+         <tok val="Signata"/>
+         <tok val="signata"/>
+         <tok val="signataque"/>
          <lm>
             <l>signo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -465,8 +576,9 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Signatae signatae-->
-         <tok val="[sS]ignatae"/>
+      <ana>
+         <tok val="Signatae"/>
+         <tok val="signatae"/>
          <lm>
             <l>signo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -475,30 +587,40 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Signatas signatas-->
-         <tok val="[sS]ignatas"/>
+      <ana>
+         <tok val="Signatas"/>
+         <tok val="signatas"/>
          <lm>
             <l>signo</l>
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Signate signate signateque-->
-         <tok val="[sS]ignate(que)?"/>
+      <ana>
+         <tok val="Signate"/>
+         <tok val="signate"/>
+         <tok val="signateque"/>
          <lm>
             <l>signo</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Signate Signatum signate signateque signatum signatumque-->
-         <tok val="[sS]ignat(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Signate"/>
+         <tok val="Signatum"/>
+         <tok val="signate"/>
+         <tok val="signateque"/>
+         <tok val="signatum"/>
+         <tok val="signatumque"/>
          <lm>
             <l>signo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Signati signati signatique-->
-         <tok val="[sS]ignati(que)?"/>
+      <ana>
+         <tok val="Signati"/>
+         <tok val="signati"/>
+         <tok val="signatique"/>
          <lm>
             <l>signo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -507,16 +629,18 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Signatio signatio-->
-         <tok val="[sS]ignatio"/>
+      <ana>
+         <tok val="Signatio"/>
+         <tok val="signatio"/>
          <lm>
             <l>signatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Signatis signatis-->
-         <tok val="[sS]ignatis"/>
+      <ana>
+         <tok val="Signatis"/>
+         <tok val="signatis"/>
          <lm>
             <l>signo</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -528,8 +652,9 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Signato signato-->
-         <tok val="[sS]ignato"/>
+      <ana>
+         <tok val="Signato"/>
+         <tok val="signato"/>
          <lm>
             <l>signo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -540,31 +665,38 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--Signator signator-->
-         <tok val="[sS]ignator"/>
+      <ana>
+         <tok val="Signator"/>
+         <tok val="signator"/>
          <lm>
             <l>signator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Signatorius signatorius-->
-         <tok val="[sS]ignatorius"/>
+      <ana>
+         <tok val="Signatorius"/>
+         <tok val="signatorius"/>
          <lm>
             <l>signatorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Signatum signatorum signatum signatumque-->
-         <tok val="[sS]ignat(or)?um(que)?"/>
+      <ana>
+         <tok val="Signatum"/>
+         <tok val="signatorum"/>
+         <tok val="signatum"/>
+         <tok val="signatumque"/>
          <lm>
             <l>signo</l>
             <m cert="0.5">v - - p r p p m g</m>
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Signatum signatum signatumque-->
-         <tok val="[sS]ignatum(que)?"/>
+      <ana>
+         <tok val="Signatum"/>
+         <tok val="signatum"/>
+         <tok val="signatumque"/>
          <lm>
             <l>signo</l>
             <m cert="0.333333333333333333">v - - s r p p n n</m>
@@ -574,41 +706,53 @@
       </ana>
       <ana>
          <tok val="Signatum"/>
+         <tok val="signatum"/>
          <lm>
             <l>signo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Signatur signatur-->
-         <tok val="[sS]ignatur"/>
+      <ana>
+         <tok val="Signatur"/>
+         <tok val="signatur"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Signatus signatus signatusque-->
-         <tok val="[sS]ignatus(que)?"/>
+      <ana>
+         <tok val="Signatus"/>
+         <tok val="signatus"/>
+         <tok val="signatusque"/>
          <lm>
             <l>signo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Signavit Signavitque signauit signauitque signavit signavitque-->
-         <tok val="[sS]igna[vu]it(que)?"/>
+      <ana>
+         <tok val="Signavit"/>
+         <tok val="Signavitque"/>
+         <tok val="signauit"/>
+         <tok val="signauitque"/>
+         <tok val="signavit"/>
+         <tok val="signavitque"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Signetur signetur signeturque-->
-         <tok val="[sS]ignetur(que)?"/>
+      <ana>
+         <tok val="Signetur"/>
+         <tok val="signetur"/>
+         <tok val="signeturque"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Signi signi-->
-         <tok val="[sS]igni"/>
+      <ana>
+         <tok val="Signi"/>
+         <tok val="signi"/>
          <lm>
             <l>signum</l>
             <m>n - - s - - - n g</m>
@@ -616,6 +760,7 @@
       </ana>
       <ana>
          <tok val="Signia"/>
+         <tok val="signia"/>
          <lm cert="0.5">
             <l>Signias</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -628,8 +773,11 @@
             <m cert="0.333333333333333333">n e - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Signia Signias-->
-         <tok val="Signia[s]?"/>
+      <ana>
+         <tok val="Signia"/>
+         <tok val="Signias"/>
+         <tok val="signia"/>
+         <tok val="signias"/>
          <lm>
             <l>Signias</l>
             <m>n e - s - - - m n</m>
@@ -637,6 +785,7 @@
       </ana>
       <ana>
          <tok val="Signiae"/>
+         <tok val="signiae"/>
          <lm cert="0.5">
             <l>Signia</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -654,6 +803,7 @@
       </ana>
       <ana>
          <tok val="Signiam"/>
+         <tok val="signiam"/>
          <lm cert="0.5">
             <l>Signia</l>
             <m>n e - s - - - f a</m>
@@ -665,6 +815,7 @@
       </ana>
       <ana>
          <tok val="Signias"/>
+         <tok val="signias"/>
          <lm cert="0.5">
             <l>Signias</l>
             <m>n e - p - - - m a</m>
@@ -674,16 +825,19 @@
             <m>n e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Signifer signifer signiferque-->
-         <tok val="[sS]ignifer(que)?"/>
+      <ana>
+         <tok val="Signifer"/>
+         <tok val="signifer"/>
+         <tok val="signiferque"/>
          <lm>
             <l>signifer</l>
             <m cert="0.5">a - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Signiferi signiferi-->
-         <tok val="[sS]igniferi"/>
+      <ana>
+         <tok val="Signiferi"/>
+         <tok val="signiferi"/>
          <lm>
             <l>signifer</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -692,8 +846,10 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Signifero signifero signiferoque-->
-         <tok val="[sS]ignifero(que)?"/>
+      <ana>
+         <tok val="Signifero"/>
+         <tok val="signifero"/>
+         <tok val="signiferoque"/>
          <lm>
             <l>signifer</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -702,8 +858,10 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Signiferum signiferum signiferumque-->
-         <tok val="[sS]igniferum(que)?"/>
+      <ana>
+         <tok val="Signiferum"/>
+         <tok val="signiferum"/>
+         <tok val="signiferumque"/>
          <lm>
             <l>signifer</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -714,8 +872,9 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Significans significans-->
-         <tok val="[sS]ignificans"/>
+      <ana>
+         <tok val="Significans"/>
+         <tok val="significans"/>
          <lm>
             <l>significo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -727,22 +886,25 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Significant significant-->
-         <tok val="[sS]ignificant"/>
+      <ana>
+         <tok val="Significant"/>
+         <tok val="significant"/>
          <lm>
             <l>significo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Significanter significanter-->
-         <tok val="[sS]ignificanter"/>
+      <ana>
+         <tok val="Significanter"/>
+         <tok val="significanter"/>
          <lm>
             <l>significanter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Significantes significantes-->
-         <tok val="[sS]ignificantes"/>
+      <ana>
+         <tok val="Significantes"/>
+         <tok val="significantes"/>
          <lm>
             <l>significo</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -751,88 +913,107 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--Significantes significantes significantis-->
-         <tok val="[sS]ignificant[ei]s"/>
+      <ana>
+         <tok val="Significantes"/>
+         <tok val="significantes"/>
+         <tok val="significantis"/>
          <lm>
             <l>significo</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Significare significare-->
-         <tok val="[sS]ignificare"/>
+      <ana>
+         <tok val="Significare"/>
+         <tok val="significare"/>
          <lm>
             <l>significo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Significare significare significaris-->
-         <tok val="[sS]ignificar(e|is)"/>
+      <ana>
+         <tok val="Significare"/>
+         <tok val="significare"/>
+         <tok val="significaris"/>
          <lm>
             <l>significo</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Significari significari-->
-         <tok val="[sS]ignificari"/>
+      <ana>
+         <tok val="Significari"/>
+         <tok val="significari"/>
          <lm>
             <l>significo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Significas significan significas-->
-         <tok val="[sS]ignifica[sn]"/>
+      <ana>
+         <tok val="Significas"/>
+         <tok val="significan"/>
+         <tok val="significas"/>
          <lm>
             <l>significo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Significasse significasse-->
-         <tok val="[sS]ignificasse"/>
+      <ana>
+         <tok val="Significasse"/>
+         <tok val="significasse"/>
          <lm>
             <l>significo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Significat significat significatque-->
-         <tok val="[sS]ignificat(que)?"/>
+      <ana>
+         <tok val="Significat"/>
+         <tok val="significat"/>
+         <tok val="significatque"/>
          <lm>
             <l>significo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Significatam significatam-->
-         <tok val="[sS]ignificatam"/>
+      <ana>
+         <tok val="Significatam"/>
+         <tok val="significatam"/>
          <lm>
             <l>significo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Significatio significatio signification-->
-         <tok val="[sS]ignificatio[n]?"/>
+      <ana>
+         <tok val="Significatio"/>
+         <tok val="significatio"/>
+         <tok val="signification"/>
          <lm>
             <l>significatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Significatione significatione significationeque-->
-         <tok val="[sS]ignificatione(que)?"/>
+      <ana>
+         <tok val="Significatione"/>
+         <tok val="significatione"/>
+         <tok val="significationeque"/>
          <lm>
             <l>significatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Significationem significationem significationemque-->
-         <tok val="[sS]ignificationem(que)?"/>
+      <ana>
+         <tok val="Significationem"/>
+         <tok val="significationem"/>
+         <tok val="significationemque"/>
          <lm>
             <l>significatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Significationes significationes-->
-         <tok val="[sS]ignificationes"/>
+      <ana>
+         <tok val="Significationes"/>
+         <tok val="significationes"/>
          <lm>
             <l>significatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -840,44 +1021,44 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Significatum significatum-->
-         <tok val="[sS]ignificatum"/>
+      <ana>
+         <tok val="Significatum"/>
+         <tok val="significatum"/>
          <lm cert="0.5">
             <l>significo</l>
-            <m cert="0.2">v - - p r p p m g</m>
-            <m cert="0.2">v - - s r p p m a</m>
-            <m cert="0.2">v - - s r p p n n</m>
-            <m cert="0.2">v - - p r p p n g</m>
-            <m cert="0.2">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - p r p p m g</m>
+            <m cert="0.166666666666666667">v - - s r p p m a</m>
+            <m cert="0.166666666666666667">v - - s r p p n n</m>
+            <m cert="0.166666666666666667">v - - p r p p n g</m>
+            <m cert="0.166666666666666667">v - - s r p p n a</m>
+            <m cert="0.166666666666666667">v - - - - u - - a</m>
          </lm>
          <lm cert="0.5">
             <l>significatus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Significatum significate significatum-->
-         <tok val="[sS]ignificat(um|e)"/>
+      <ana>
+         <tok val="Significatum"/>
+         <tok val="significate"/>
+         <tok val="significatum"/>
          <lm>
             <l>significo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
       <ana>
-         <tok val="Significatum"/>
-         <lm>
-            <l>significo</l>
-            <m>v - - - - u - - a</m>
-         </lm>
-      </ana>
-      <ana><!--Significatur significatur significaturque-->
-         <tok val="[sS]ignificatur(que)?"/>
+         <tok val="Significatur"/>
+         <tok val="significatur"/>
+         <tok val="significaturque"/>
          <lm>
             <l>significo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Significatus significatus-->
-         <tok val="[sS]ignificatus"/>
+      <ana>
+         <tok val="Significatus"/>
+         <tok val="significatus"/>
          <lm cert="0.5">
             <l>significatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -890,36 +1071,44 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Significauimus significauimus significavimus-->
-         <tok val="[sS]ignifica[uv]imus"/>
+      <ana>
+         <tok val="Significauimus"/>
+         <tok val="significauimus"/>
+         <tok val="significavimus"/>
          <lm>
             <l>significo</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Significavit significauit significavit-->
-         <tok val="[sS]ignifica[vu]it"/>
+      <ana>
+         <tok val="Significavit"/>
+         <tok val="significauit"/>
+         <tok val="significavit"/>
          <lm>
             <l>significo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Significer significer-->
-         <tok val="[sS]ignificer"/>
+      <ana>
+         <tok val="Significer"/>
+         <tok val="significer"/>
          <lm>
             <l>significo</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Significet significet significetque-->
-         <tok val="[sS]ignificet(que)?"/>
+      <ana>
+         <tok val="Significet"/>
+         <tok val="significet"/>
+         <tok val="significetque"/>
          <lm>
             <l>significo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Significo significo-->
-         <tok val="[sS]ignifico"/>
+      <ana>
+         <tok val="Significo"/>
+         <tok val="significo"/>
          <lm>
             <l>significo</l>
             <m>v - 1 s p i a</m>
@@ -927,6 +1116,7 @@
       </ana>
       <ana>
          <tok val="Signina"/>
+         <tok val="signina"/>
          <lm cert="0.5">
             <l>Signinum</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -945,6 +1135,7 @@
       </ana>
       <ana>
          <tok val="Signini"/>
+         <tok val="signini"/>
          <lm cert="0.333333333333333333">
             <l>Signinus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -964,6 +1155,7 @@
       </ana>
       <ana>
          <tok val="Signinis"/>
+         <tok val="signinis"/>
          <lm cert="0.333333333333333333">
             <l>Signini</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -986,6 +1178,7 @@
       </ana>
       <ana>
          <tok val="Signino"/>
+         <tok val="signino"/>
          <lm cert="0.5">
             <l>Signinus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -1001,6 +1194,7 @@
       </ana>
       <ana>
          <tok val="Signinum"/>
+         <tok val="signinum"/>
          <lm cert="0.333333333333333333">
             <l>Signinum</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1024,21 +1218,27 @@
       </ana>
       <ana>
          <tok val="Signinus"/>
+         <tok val="signinus"/>
          <lm>
             <l>Signinus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Signis signis signisque-->
-         <tok val="[sS]ignis(que)?"/>
+      <ana>
+         <tok val="Signis"/>
+         <tok val="signis"/>
+         <tok val="signisque"/>
          <lm>
             <l>signum</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Signo Signoque signo signoque-->
-         <tok val="[sS]igno(que)?"/>
+      <ana>
+         <tok val="Signo"/>
+         <tok val="Signoque"/>
+         <tok val="signo"/>
+         <tok val="signoque"/>
          <lm cert="0.5">
             <l>signo</l>
             <m>v - 1 s p i a</m>
@@ -1157,8 +1357,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--sigillis sigillisque-->
-         <tok val="sigillis(que)?"/>
+      <ana>
+         <tok val="sigillis"/>
+         <tok val="sigillisque"/>
          <lm>
             <l>sigilla</l>
             <m>n - - p - - - n d</m>
@@ -1171,15 +1372,17 @@
             <m>n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--sigillorum sigillum-->
-         <tok val="sigill(or)?um"/>
+      <ana>
+         <tok val="sigillorum"/>
+         <tok val="sigillum"/>
          <lm>
             <l>sigilla</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--sigla SIGLA-->
-         <tok val="(SIGLA|sigla)"/>
+      <ana>
+         <tok val="SIGLA"/>
+         <tok val="sigla"/>
          <lm>
             <l>sigla</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1187,8 +1390,9 @@
             <m cert="0.333333333333333333">n - - p - - - n n</m>
          </lm>
       </ana>
-      <ana><!--siglorum siglum-->
-         <tok val="sigl(or)?um"/>
+      <ana>
+         <tok val="siglorum"/>
+         <tok val="siglum"/>
          <lm>
             <l>sigla</l>
             <m>n - - p - - - n g</m>
@@ -1301,8 +1505,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--signaculis signaculisque-->
-         <tok val="signaculis(que)?"/>
+      <ana>
+         <tok val="signaculis"/>
+         <tok val="signaculisque"/>
          <lm>
             <l>signaculum</l>
             <m cert="0.5">n - - p - - - n d</m>
@@ -1324,8 +1529,9 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--signanda signandaque-->
-         <tok val="signanda(que)?"/>
+      <ana>
+         <tok val="signanda"/>
+         <tok val="signandaque"/>
          <lm>
             <l>signo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1403,8 +1609,9 @@
             <m cert="0.142857142857142857">v - - s p p a n n</m>
          </lm>
       </ana>
-      <ana><!--signantem signantemque-->
-         <tok val="signantem(que)?"/>
+      <ana>
+         <tok val="signantem"/>
+         <tok val="signantemque"/>
          <lm>
             <l>signo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -1506,8 +1713,10 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--signarit signauerit signaverit-->
-         <tok val="signa[vu]?(e|)rit"/>
+      <ana>
+         <tok val="signarit"/>
+         <tok val="signauerit"/>
+         <tok val="signaverit"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s r s a</m>
@@ -1520,8 +1729,11 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--signarunt signauerunt signavere signaverunt-->
-         <tok val="signa[vu]?(e|ve)?r(unt|e)"/>
+      <ana>
+         <tok val="signarunt"/>
+         <tok val="signauerunt"/>
+         <tok val="signavere"/>
+         <tok val="signaverunt"/>
          <lm>
             <l>signo</l>
             <m>v - 3 p r i a</m>
@@ -1590,8 +1802,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--signationis signationisque-->
-         <tok val="signationis(que)?"/>
+      <ana>
+         <tok val="signationis"/>
+         <tok val="signationisque"/>
          <lm>
             <l>signatio</l>
             <m>n - - s - - - f g</m>
@@ -1614,8 +1827,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--signatores signatoresque-->
-         <tok val="signatores(que)?"/>
+      <ana>
+         <tok val="signatores"/>
+         <tok val="signatoresque"/>
          <lm>
             <l>signator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1686,8 +1900,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--signatum signatumque-->
-         <tok val="signatum(que)?"/>
+      <ana>
+         <tok val="signatum"/>
+         <tok val="signatumque"/>
          <lm>
             <l>signo</l>
             <m>a - - s - - - n n</m>
@@ -1753,15 +1968,17 @@
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--signauerint signarint-->
-         <tok val="signa(ue)?rint"/>
+      <ana>
+         <tok val="signarint"/>
+         <tok val="signauerint"/>
          <lm>
             <l>signo</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--signauerit signaverit-->
-         <tok val="signa[vu]erit"/>
+      <ana>
+         <tok val="signauerit"/>
+         <tok val="signaverit"/>
          <lm>
             <l>signo</l>
             <m>v - 3 s t i a</m>
@@ -1774,8 +1991,9 @@
             <m>v - 1 s t i a</m>
          </lm>
       </ana>
-      <ana><!--signauimus signavimus-->
-         <tok val="signa[vu]imus"/>
+      <ana>
+         <tok val="signauimus"/>
+         <tok val="signavimus"/>
          <lm>
             <l>signo</l>
             <m>v - 1 p r i a</m>
@@ -1796,8 +2014,9 @@
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--signem signemque-->
-         <tok val="signem(que)?"/>
+      <ana>
+         <tok val="signem"/>
+         <tok val="signemque"/>
          <lm>
             <l>signo</l>
             <m>v - 1 s p s a</m>
@@ -1810,15 +2029,17 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--signen signes-->
-         <tok val="signe[sn]"/>
+      <ana>
+         <tok val="signen"/>
+         <tok val="signes"/>
          <lm>
             <l>signo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--signent signentque-->
-         <tok val="signent(que)?"/>
+      <ana>
+         <tok val="signent"/>
+         <tok val="signentque"/>
          <lm>
             <l>signo</l>
             <m>v - 3 p p s a</m>
@@ -1850,8 +2071,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--signiferis signiferisque-->
-         <tok val="signiferis(que)?"/>
+      <ana>
+         <tok val="signiferis"/>
+         <tok val="signiferisque"/>
          <lm>
             <l>signifer</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1869,8 +2091,9 @@
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--significa significan-->
-         <tok val="significa[n]?"/>
+      <ana>
+         <tok val="significa"/>
+         <tok val="significan"/>
          <lm>
             <l>significo</l>
             <m>v - 2 s p m a</m>
@@ -1883,8 +2106,9 @@
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--significaban significabas-->
-         <tok val="significaba[sn]"/>
+      <ana>
+         <tok val="significaban"/>
+         <tok val="significabas"/>
          <lm>
             <l>significo</l>
             <m>v - 2 s i i a</m>
@@ -2074,8 +2298,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--significante significanti-->
-         <tok val="significant[ie]"/>
+      <ana>
+         <tok val="significante"/>
+         <tok val="significanti"/>
          <lm>
             <l>significo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2151,8 +2376,9 @@
             <m cert="0.5">v - - s p p a m v s</m>
          </lm>
       </ana>
-      <ana><!--significantissime significantissimum-->
-         <tok val="significantissim(um|e)"/>
+      <ana>
+         <tok val="significantissime"/>
+         <tok val="significantissimum"/>
          <lm>
             <l>significo</l>
             <m>v - - s p p a n v s</m>
@@ -2188,8 +2414,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--significantius significantiusque-->
-         <tok val="significantius(que)?"/>
+      <ana>
+         <tok val="significantius"/>
+         <tok val="significantiusque"/>
          <lm>
             <l>significo</l>
             <m cert="0.25">d</m>
@@ -2212,8 +2439,10 @@
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--significarat significauerat significaverat-->
-         <tok val="significa[vu]?(e|)rat"/>
+      <ana>
+         <tok val="significarat"/>
+         <tok val="significauerat"/>
+         <tok val="significaverat"/>
          <lm>
             <l>significo</l>
             <m>v - 3 s l i a</m>
@@ -2261,22 +2490,27 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--significarim significauerim significaverim-->
-         <tok val="significa[vu]?(e|)rim"/>
+      <ana>
+         <tok val="significarim"/>
+         <tok val="significauerim"/>
+         <tok val="significaverim"/>
          <lm>
             <l>significo</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--significaris significaveris-->
-         <tok val="significa(ve)?ris"/>
+      <ana>
+         <tok val="significaris"/>
+         <tok val="significaveris"/>
          <lm>
             <l>significo</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--significarit significauerit significaverit-->
-         <tok val="significa[vu]?(e|)rit"/>
+      <ana>
+         <tok val="significarit"/>
+         <tok val="significauerit"/>
+         <tok val="significaverit"/>
          <lm>
             <l>significo</l>
             <m>v - 3 s r s a</m>
@@ -2420,8 +2654,9 @@
             <m cert="0.142857142857142857">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--significatiua significativa-->
-         <tok val="significati[vu]a"/>
+      <ana>
+         <tok val="significatiua"/>
+         <tok val="significativa"/>
          <lm>
             <l>significativus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -2477,11 +2712,16 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--significatu Significatu-->
-         <tok val="[Ss]ignificatu"/>
-         <lm>
+      <ana>
+         <tok val="Significatu"/>
+         <tok val="significatu"/>
+         <lm cert="0.5">
             <l>significatus</l>
             <m>n - - s - - - m b</m>
+         </lm>
+         <lm cert="0.5">
+            <l>significo</l>
+            <m>v - - - - u - - b</m>
          </lm>
       </ana>
       <ana>
@@ -2547,15 +2787,17 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--significauerit significaverit-->
-         <tok val="significa[vu]erit"/>
+      <ana>
+         <tok val="significauerit"/>
+         <tok val="significaverit"/>
          <lm>
             <l>significo</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--significaui significavi-->
-         <tok val="significa[vu]i"/>
+      <ana>
+         <tok val="significaui"/>
+         <tok val="significavi"/>
          <lm>
             <l>significo</l>
             <m>v - 1 s r i a</m>
@@ -2589,8 +2831,9 @@
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--significen significes-->
-         <tok val="significe[sn]"/>
+      <ana>
+         <tok val="significen"/>
+         <tok val="significes"/>
          <lm>
             <l>significo</l>
             <m>v - 2 s p s a</m>
@@ -2639,13 +2882,6 @@
             <m cert="0.25">a - - p - - - f v</m>
             <m cert="0.25">a - - s - - - f d</m>
             <m cert="0.25">a - - s - - - f g</m>
-         </lm>
-      </ana>
-      <ana>
-         <tok val="Significatu"/>
-         <lm>
-            <l>significo</l>
-            <m>v - - - - u - - b</m>
          </lm>
       </ana>
    </body>

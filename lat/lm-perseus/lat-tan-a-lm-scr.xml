@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusscr">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:scr">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to scr</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-scr.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>SCR</tok-starts-with>
       <tok-starts-with>SCr</tok-starts-with>
       <tok-starts-with>Scr</tok-starts-with>
       <tok-starts-with>scr</tok-starts-with>
-      <ana><!--SCRIBA Scriba scriba-->
-         <tok val="[sS]?(criba|SCRIBA)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:45:04.097-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:45:04.097-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-scr.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="SCRIBA"/>
+         <tok val="Scriba"/>
+         <tok val="scriba"/>
          <lm>
             <l>scriba</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -45,8 +55,11 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--SCRIBAS Scribas scribas scribasque-->
-         <tok val="[sS]?(cribas)?(que|SCRIBAS)?"/>
+      <ana>
+         <tok val="SCRIBAS"/>
+         <tok val="Scribas"/>
+         <tok val="scribas"/>
+         <tok val="scribasque"/>
          <lm cert="0.5">
             <l>scriba</l>
             <m>n - - p - - - m a</m>
@@ -56,8 +69,9 @@
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--SCRIBENDA scribenda-->
-         <tok val="(scribenda|SCRIBENDA)"/>
+      <ana>
+         <tok val="SCRIBENDA"/>
+         <tok val="scribenda"/>
          <lm>
             <l>scribo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -68,59 +82,92 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--SCRIBERE Scribere scribere scriberen-->
-         <tok val="[sS]?(cribere)?(n|SCRIBERE)?"/>
+      <ana>
+         <tok val="SCRIBERE"/>
+         <tok val="Scribere"/>
+         <tok val="scribere"/>
+         <tok val="scriberen"/>
          <lm>
             <l>scribo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--SCRIBERE Scribere Scriberis scribere scriberen scriberis-->
-         <tok val="[sS]?(criber)?[e]?(n|is|e|SCRIBERE)?"/>
+      <ana>
+         <tok val="SCRIBERE"/>
+         <tok val="Scribere"/>
+         <tok val="Scriberis"/>
+         <tok val="scribere"/>
+         <tok val="scriberen"/>
+         <tok val="scriberis"/>
          <lm>
             <l>scribo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--SCRIBO Scribo Scribon scribo scribone scriboque-->
-         <tok val="[Ss]?(cribo)?(n|ne|que|SCRIBO)?"/>
+      <ana>
+         <tok val="SCRIBO"/>
+         <tok val="Scribo"/>
+         <tok val="Scribon"/>
+         <tok val="scribo"/>
+         <tok val="scribon"/>
+         <tok val="scribone"/>
+         <tok val="scriboque"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--SCRIBONIVS Scribonius-->
-         <tok val="S(cribonius|CRIBONIVS)"/>
+      <ana>
+         <tok val="SCRIBONIVS"/>
+         <tok val="Scribonius"/>
+         <tok val="scribonius"/>
+         <tok val="scribonivs"/>
          <lm>
             <l>Scribonius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--SCRIPSI Scripsi scripsi scripsique-->
-         <tok val="[sS]?(cripsi)?(que|SCRIPSI)?"/>
+      <ana>
+         <tok val="SCRIPSI"/>
+         <tok val="Scripsi"/>
+         <tok val="scripsi"/>
+         <tok val="scripsique"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--SCRIPSIT Scripsit scripsit scripsitque scribsit-->
-         <tok val="[sS]?(cri)?[pb]?(sit)?(que|SCRIPSIT)?"/>
+      <ana>
+         <tok val="SCRIPSIT"/>
+         <tok val="Scripsit"/>
+         <tok val="scribsit"/>
+         <tok val="scripsit"/>
+         <tok val="scripsitque"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTA Scripta Scriptaque scripta scriptaque scrípta-->
-         <tok val="[sS]?(cr)?[ií]?(pta)?(que|SCRIPTA)?"/>
+      <ana>
+         <tok val="SCRIPTA"/>
+         <tok val="Scripta"/>
+         <tok val="Scriptaque"/>
+         <tok val="scripta"/>
+         <tok val="scriptaque"/>
+         <tok val="scrípta"/>
          <lm>
             <l>scribo</l>
             <m>v - - s r p p f b</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTA Scripta Scriptaque scripta scriptaque-->
-         <tok val="[sS]?(cripta)?(que|SCRIPTA)?"/>
+      <ana>
+         <tok val="SCRIPTA"/>
+         <tok val="Scripta"/>
+         <tok val="Scriptaque"/>
+         <tok val="scripta"/>
+         <tok val="scriptaque"/>
          <lm cert="0.5">
             <l>scriptum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -136,8 +183,11 @@
             <m cert="0.2">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTIS Scriptis scriptis scriptisque-->
-         <tok val="[sS]?(criptis)?(que|SCRIPTIS)?"/>
+      <ana>
+         <tok val="SCRIPTIS"/>
+         <tok val="Scriptis"/>
+         <tok val="scriptis"/>
+         <tok val="scriptisque"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -153,8 +203,11 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTORES SCriptores Scriptores scriptores-->
-         <tok val="[S]?(c|C|sc)?(riptores|SCRIPTORES)"/>
+      <ana>
+         <tok val="SCRIPTORES"/>
+         <tok val="SCriptores"/>
+         <tok val="Scriptores"/>
+         <tok val="scriptores"/>
          <lm>
             <l>scriptor</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -162,15 +215,33 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTORVM Scriptorum Scriptorvm scriptorum scriptorumque-->
-         <tok val="[Ss]?(criptor)?[vu]?[m]?(que|SCRIPTORVM)?"/>
+      <ana>
+         <tok val="SCRIPTORVM"/>
+         <tok val="Scriptorum"/>
+         <tok val="Scriptorvm"/>
+         <tok val="scriptorum"/>
+         <tok val="scriptorumque"/>
+         <tok val="scriptorvm"/>
          <lm>
             <l>scriptor</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTORVM SCRIPTVM Scriptorum Scriptorvm Scriptum scriptorum scriptorumque scriptum scriptumne scriptumque scriptumst SCRIPTUM-->
-         <tok val="[sS]?(cript)?(or)?(u|orv|oru)?[m]?(que|SCRIPTVM|SCRIPTORVM|Scriptum|scriptum|scriptumne|scriptumst|SCRIPTUM)?"/>
+      <ana>
+         <tok val="SCRIPTORVM"/>
+         <tok val="SCRIPTUM"/>
+         <tok val="SCRIPTVM"/>
+         <tok val="Scriptorum"/>
+         <tok val="Scriptorvm"/>
+         <tok val="Scriptum"/>
+         <tok val="scriptorum"/>
+         <tok val="scriptorumque"/>
+         <tok val="scriptorvm"/>
+         <tok val="scriptum"/>
+         <tok val="scriptumne"/>
+         <tok val="scriptumque"/>
+         <tok val="scriptumst"/>
+         <tok val="scriptvm"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -181,8 +252,16 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTVM Scriptum scripte scriptum scriptumne scriptumque scriptumst SCRIPTUM-->
-         <tok val="[sS]?(criptum)?(ne|st|SCRIPTUM|SCRIPTVM|scriptumque|scripte)?"/>
+      <ana>
+         <tok val="SCRIPTUM"/>
+         <tok val="SCRIPTVM"/>
+         <tok val="Scriptum"/>
+         <tok val="scripte"/>
+         <tok val="scriptum"/>
+         <tok val="scriptumne"/>
+         <tok val="scriptumque"/>
+         <tok val="scriptumst"/>
+         <tok val="scriptvm"/>
          <lm cert="0.5">
             <l>scriptum</l>
             <m>n - - s - - - n v</m>
@@ -192,8 +271,15 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTVM Scriptum scriptum scriptumne scriptumque scriptumst SCRIPTUM-->
-         <tok val="[sS]?(criptum)?(ne|st|SCRIPTUM|SCRIPTVM|scriptumque)?"/>
+      <ana>
+         <tok val="SCRIPTUM"/>
+         <tok val="SCRIPTVM"/>
+         <tok val="Scriptum"/>
+         <tok val="scriptum"/>
+         <tok val="scriptumne"/>
+         <tok val="scriptumque"/>
+         <tok val="scriptumst"/>
+         <tok val="scriptvm"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -206,29 +292,42 @@
             <m cert="0.5">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTVM Scriptum scriptum scriptumne scriptumque scriptumst-->
-         <tok val="[sS]?(criptum)?(ne|st|que|SCRIPTVM)?"/>
+      <ana>
+         <tok val="SCRIPTVM"/>
+         <tok val="Scriptum"/>
+         <tok val="scriptum"/>
+         <tok val="scriptumne"/>
+         <tok val="scriptumque"/>
+         <tok val="scriptumst"/>
+         <tok val="scriptvm"/>
          <lm>
             <l>scriptus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SCRIPTVM Scriptum-->
-         <tok val="S(criptum|CRIPTVM)"/>
+      <ana>
+         <tok val="SCRIPTVM"/>
+         <tok val="Scriptum"/>
+         <tok val="scriptum"/>
+         <tok val="scriptvm"/>
          <lm>
             <l>scribo</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--SCRVPVLOS scrupulos-->
-         <tok val="(scrupulos|SCRVPVLOS)"/>
+      <ana>
+         <tok val="SCRVPVLOS"/>
+         <tok val="scrupulos"/>
+         <tok val="scrvpvlos"/>
          <lm>
             <l>scrupulus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--SCrVtans scrutans-->
-         <tok val="(sc|SC)r[uV]tans"/>
+      <ana>
+         <tok val="SCrVtans"/>
+         <tok val="scrutans"/>
+         <tok val="scrvtans"/>
          <lm cert="0.5">
             <l>scrutans</l>
             <m>d</m>
@@ -246,6 +345,7 @@
       </ana>
       <ana>
          <tok val="Scraptae"/>
+         <tok val="scraptae"/>
          <lm>
             <l>scrapta</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -254,16 +354,18 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Screator screator-->
-         <tok val="[sS]creator"/>
+      <ana>
+         <tok val="Screator"/>
+         <tok val="screator"/>
          <lm>
             <l>screator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Screatus screatus-->
-         <tok val="[sS]creatus"/>
+      <ana>
+         <tok val="Screatus"/>
+         <tok val="screatus"/>
          <lm>
             <l>screatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -274,13 +376,16 @@
       </ana>
       <ana>
          <tok val="Screre"/>
+         <tok val="screre"/>
          <lm>
             <l>screo</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Scribae scribae scribaeque-->
-         <tok val="[sS]cribae(que)?"/>
+      <ana>
+         <tok val="Scribae"/>
+         <tok val="scribae"/>
+         <tok val="scribaeque"/>
          <lm>
             <l>scriba</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -289,8 +394,10 @@
             <m cert="0.25">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Scribam scribam scribamque-->
-         <tok val="[sS]cribam(que)?"/>
+      <ana>
+         <tok val="Scribam"/>
+         <tok val="scribam"/>
+         <tok val="scribamque"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.5">v - 1 s f i a</m>
@@ -301,78 +408,95 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Scribamus scribamus-->
-         <tok val="[sS]cribamus"/>
+      <ana>
+         <tok val="Scribamus"/>
+         <tok val="scribamus"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Scribant scribant scribantque-->
-         <tok val="[sS]cribant(que)?"/>
+      <ana>
+         <tok val="Scribant"/>
+         <tok val="scribant"/>
+         <tok val="scribantque"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Scribarum scribarum scribarumque-->
-         <tok val="[sS]cribarum(que)?"/>
+      <ana>
+         <tok val="Scribarum"/>
+         <tok val="scribarum"/>
+         <tok val="scribarumque"/>
          <lm>
             <l>scriba</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Scribat scribat-->
-         <tok val="[sS]cribat"/>
+      <ana>
+         <tok val="Scribat"/>
+         <tok val="scribat"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Scribatur scribatur-->
-         <tok val="[sS]cribatur"/>
+      <ana>
+         <tok val="Scribatur"/>
+         <tok val="scribatur"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Scribe scribe scriben-->
-         <tok val="[sS]cribe[n]?"/>
+      <ana>
+         <tok val="Scribe"/>
+         <tok val="scribe"/>
+         <tok val="scriben"/>
          <lm>
             <l>scribo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Scribebam scribebam-->
-         <tok val="[sS]cribebam"/>
+      <ana>
+         <tok val="Scribebam"/>
+         <tok val="scribebam"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Scribebamus scribebamus-->
-         <tok val="[sS]cribebamus"/>
+      <ana>
+         <tok val="Scribebamus"/>
+         <tok val="scribebamus"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Scribebat scribebat scribebatque Scribebatque-->
-         <tok val="[Ss]cribebat(que)?"/>
+      <ana>
+         <tok val="Scribebat"/>
+         <tok val="Scribebatque"/>
+         <tok val="scribebat"/>
+         <tok val="scribebatque"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Scribebatur scribebatur-->
-         <tok val="[sS]cribebatur"/>
+      <ana>
+         <tok val="Scribebatur"/>
+         <tok val="scribebatur"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Scribendi scribendi scribendique-->
-         <tok val="[sS]cribendi(que)?"/>
+      <ana>
+         <tok val="Scribendi"/>
+         <tok val="scribendi"/>
+         <tok val="scribendique"/>
          <lm>
             <l>scribo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -382,8 +506,11 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Scribendum scribendum scribendumque scribundumst-->
-         <tok val="[sS]crib[eu]ndum(que|st)?"/>
+      <ana>
+         <tok val="Scribendum"/>
+         <tok val="scribendum"/>
+         <tok val="scribendumque"/>
+         <tok val="scribundumst"/>
          <lm>
             <l>scribo</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -393,16 +520,22 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Scribendum scribendorum scribendum scribendumque scribundumst-->
-         <tok val="[sS]crib[eu]nd(or)?um(que|st)?"/>
+      <ana>
+         <tok val="Scribendum"/>
+         <tok val="scribendorum"/>
+         <tok val="scribendum"/>
+         <tok val="scribendumque"/>
+         <tok val="scribundumst"/>
          <lm>
             <l>scribo</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Scribens scribens scribensque-->
-         <tok val="[sS]cribens(que)?"/>
+      <ana>
+         <tok val="Scribens"/>
+         <tok val="scribens"/>
+         <tok val="scribensque"/>
          <lm>
             <l>scribo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -414,8 +547,10 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Scribente scribente scribenti-->
-         <tok val="[sS]cribent[ei]"/>
+      <ana>
+         <tok val="Scribente"/>
+         <tok val="scribente"/>
+         <tok val="scribenti"/>
          <lm>
             <l>scribo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -423,65 +558,81 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Scribentem scribentem-->
-         <tok val="[sS]cribentem"/>
+      <ana>
+         <tok val="Scribentem"/>
+         <tok val="scribentem"/>
          <lm>
             <l>scribo</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Scriberem scriberem-->
-         <tok val="[sS]criberem"/>
+      <ana>
+         <tok val="Scriberem"/>
+         <tok val="scriberem"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Scriberent scriberent-->
-         <tok val="[sS]criberent"/>
+      <ana>
+         <tok val="Scriberent"/>
+         <tok val="scriberent"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Scriberet scriberet-->
-         <tok val="[sS]criberet"/>
+      <ana>
+         <tok val="Scriberet"/>
+         <tok val="scriberet"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Scribes scriben scribes scribesque-->
-         <tok val="[sS]cribe(s|n|sque)"/>
+      <ana>
+         <tok val="Scribes"/>
+         <tok val="scriben"/>
+         <tok val="scribes"/>
+         <tok val="scribesque"/>
          <lm>
             <l>scribo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Scribetur scribetur-->
-         <tok val="[sS]cribetur"/>
+      <ana>
+         <tok val="Scribetur"/>
+         <tok val="scribetur"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Scribi scribi scribique-->
-         <tok val="[sS]cribi(que)?"/>
+      <ana>
+         <tok val="Scribi"/>
+         <tok val="scribi"/>
+         <tok val="scribique"/>
          <lm>
             <l>scribo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Scribimus Scribimvs scribimus-->
-         <tok val="[Ss]cribim[vu]s"/>
+      <ana>
+         <tok val="Scribimus"/>
+         <tok val="Scribimvs"/>
+         <tok val="scribimus"/>
+         <tok val="scribimvs"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Scribis scribis scribisne scribisque-->
-         <tok val="[sS]cribis(ne|que)?"/>
+      <ana>
+         <tok val="Scribis"/>
+         <tok val="scribis"/>
+         <tok val="scribisne"/>
+         <tok val="scribisque"/>
          <lm cert="0.5">
             <l>scriba</l>
             <m cert="0.5">n - - p - - - m b</m>
@@ -492,29 +643,34 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Scribit scribit scribitque-->
-         <tok val="[sS]cribit(que)?"/>
+      <ana>
+         <tok val="Scribit"/>
+         <tok val="scribit"/>
+         <tok val="scribitque"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Scribite scribite-->
-         <tok val="[sS]cribite"/>
+      <ana>
+         <tok val="Scribite"/>
+         <tok val="scribite"/>
          <lm>
             <l>scribo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Scribitur scribitur-->
-         <tok val="[sS]cribitur"/>
+      <ana>
+         <tok val="Scribitur"/>
+         <tok val="scribitur"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Scriblita scriblita-->
-         <tok val="[sS]criblita"/>
+      <ana>
+         <tok val="Scriblita"/>
+         <tok val="scriblita"/>
          <lm>
             <l>scriblita</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -524,6 +680,7 @@
       </ana>
       <ana>
          <tok val="Scriblitam"/>
+         <tok val="scriblitam"/>
          <lm>
             <l>scriblita</l>
             <m>n - - s - - - f a</m>
@@ -531,6 +688,7 @@
       </ana>
       <ana>
          <tok val="Scriboni"/>
+         <tok val="scriboni"/>
          <lm>
             <l>Scribonius</l>
             <m cert="0.5">n e - s - - - m v</m>
@@ -539,14 +697,18 @@
       </ana>
       <ana>
          <tok val="Scribonio"/>
+         <tok val="scribonio"/>
          <lm>
             <l>Scribonius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Scriboniorum Scribonium-->
-         <tok val="Scriboni(or)?um"/>
+      <ana>
+         <tok val="Scriboniorum"/>
+         <tok val="Scribonium"/>
+         <tok val="scriboniorum"/>
+         <tok val="scribonium"/>
          <lm>
             <l>Scribonius</l>
             <m>n e - p - - - m g</m>
@@ -554,6 +716,7 @@
       </ana>
       <ana>
          <tok val="Scribonios"/>
+         <tok val="scribonios"/>
          <lm>
             <l>Scribonius</l>
             <m>n e - p - - - m a</m>
@@ -561,27 +724,32 @@
       </ana>
       <ana>
          <tok val="Scribonium"/>
+         <tok val="scribonium"/>
          <lm>
             <l>Scribonius</l>
             <m>n e - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Scribunt scribunt-->
-         <tok val="[sS]cribunt"/>
+      <ana>
+         <tok val="Scribunt"/>
+         <tok val="scribunt"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Scribuntur scribuntur-->
-         <tok val="[sS]cribuntur"/>
+      <ana>
+         <tok val="Scribuntur"/>
+         <tok val="scribuntur"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Scrinia scrinia scriniaque-->
-         <tok val="[sS]crinia(que)?"/>
+      <ana>
+         <tok val="Scrinia"/>
+         <tok val="scrinia"/>
+         <tok val="scriniaque"/>
          <lm>
             <l>scrinium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -589,16 +757,18 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Scriniis scriniis-->
-         <tok val="[sS]criniis"/>
+      <ana>
+         <tok val="Scriniis"/>
+         <tok val="scriniis"/>
          <lm>
             <l>scrinium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Scriniolum scriniolum-->
-         <tok val="[sS]criniolum"/>
+      <ana>
+         <tok val="Scriniolum"/>
+         <tok val="scriniolum"/>
          <lm>
             <l>scriniolum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -607,8 +777,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scrinium scrinium-->
-         <tok val="[sS]crinium"/>
+      <ana>
+         <tok val="Scrinium"/>
+         <tok val="scrinium"/>
          <lm>
             <l>scrinium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -616,72 +787,91 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Scrinium scriniorum scrinium-->
-         <tok val="[sS]crini(or)?um"/>
+      <ana>
+         <tok val="Scrinium"/>
+         <tok val="scriniorum"/>
+         <tok val="scrinium"/>
          <lm>
             <l>scrinium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scripseram scripseram scripseramne-->
-         <tok val="[sS]cripseram(ne)?"/>
+      <ana>
+         <tok val="Scripseram"/>
+         <tok val="scripseram"/>
+         <tok val="scripseramne"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Scripserat scripserat scripseratque-->
-         <tok val="[sS]cripserat(que)?"/>
+      <ana>
+         <tok val="Scripserat"/>
+         <tok val="scripserat"/>
+         <tok val="scripseratque"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Scripseris scripseris-->
-         <tok val="[sS]cripseris"/>
+      <ana>
+         <tok val="Scripseris"/>
+         <tok val="scripseris"/>
          <lm>
             <l>scribo</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Scripserunt scripsere scripserunt scripseruntque Scripsere-->
-         <tok val="[sS]cripser(unt|e|untque)"/>
+      <ana>
+         <tok val="Scripsere"/>
+         <tok val="Scripserunt"/>
+         <tok val="scripsere"/>
+         <tok val="scripserunt"/>
+         <tok val="scripseruntque"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Scripsimus scripsimus-->
-         <tok val="[sS]cripsimus"/>
+      <ana>
+         <tok val="Scripsimus"/>
+         <tok val="scripsimus"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Scripsisse scripsisse scripsisseque-->
-         <tok val="[sS]cripsisse(que)?"/>
+      <ana>
+         <tok val="Scripsisse"/>
+         <tok val="scripsisse"/>
+         <tok val="scripsisseque"/>
          <lm>
             <l>scribo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Scripsisset scripsisset-->
-         <tok val="[sS]cripsisset"/>
+      <ana>
+         <tok val="Scripsisset"/>
+         <tok val="scripsisset"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Scripsisti Scripsistine scripsisti-->
-         <tok val="[Ss]cripsisti(ne)?"/>
+      <ana>
+         <tok val="Scripsisti"/>
+         <tok val="Scripsistine"/>
+         <tok val="scripsisti"/>
+         <tok val="scripsistine"/>
          <lm>
             <l>scribo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Scripti scripti-->
-         <tok val="[sS]cripti"/>
+      <ana>
+         <tok val="Scripti"/>
+         <tok val="scripti"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -694,23 +884,27 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scriptio scriptio-->
-         <tok val="[sS]criptio"/>
+      <ana>
+         <tok val="Scriptio"/>
+         <tok val="scriptio"/>
          <lm>
             <l>scriptio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Scriptito scriptito-->
-         <tok val="[sS]criptito"/>
+      <ana>
+         <tok val="Scriptito"/>
+         <tok val="scriptito"/>
          <lm>
             <l>scriptito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Scripto scripto scriptoque-->
-         <tok val="[sS]cripto(que)?"/>
+      <ana>
+         <tok val="Scripto"/>
+         <tok val="scripto"/>
+         <tok val="scriptoque"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -724,31 +918,37 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Scriptor scriptor-->
-         <tok val="[sS]criptor"/>
+      <ana>
+         <tok val="Scriptor"/>
+         <tok val="scriptor"/>
          <lm>
             <l>scriptor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Scriptorem scriptorem scriptoremque-->
-         <tok val="[sS]criptorem(que)?"/>
+      <ana>
+         <tok val="Scriptorem"/>
+         <tok val="scriptorem"/>
+         <tok val="scriptoremque"/>
          <lm>
             <l>scriptor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Scriptoribus scriptoribus-->
-         <tok val="[sS]criptoribus"/>
+      <ana>
+         <tok val="Scriptoribus"/>
+         <tok val="scriptoribus"/>
          <lm>
             <l>scriptor</l>
             <m cert="0.5">n - - p - - - m b</m>
             <m cert="0.5">n - - p - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Scriptorii scriptori scriptorii-->
-         <tok val="[sS]criptori[i]?"/>
+      <ana>
+         <tok val="Scriptorii"/>
+         <tok val="scriptori"/>
+         <tok val="scriptorii"/>
          <lm cert="0.5">
             <l>scriptorius</l>
             <m cert="0.5">a - - s - - - m g</m>
@@ -759,30 +959,34 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scriptorii scriptorii-->
-         <tok val="[sS]criptorii"/>
+      <ana>
+         <tok val="Scriptorii"/>
+         <tok val="scriptorii"/>
          <lm>
             <l>scriptorius</l>
             <m cert="0.5">a - - p - - - m v</m>
             <m cert="0.5">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scriptoris scriptoris-->
-         <tok val="[sS]criptoris"/>
+      <ana>
+         <tok val="Scriptoris"/>
+         <tok val="scriptoris"/>
          <lm>
             <l>scriptor</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Scriptorius scriptorius-->
-         <tok val="[sS]criptorius"/>
+      <ana>
+         <tok val="Scriptorius"/>
+         <tok val="scriptorius"/>
          <lm>
             <l>scriptorius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scriptu scriptu-->
-         <tok val="[sS]criptu"/>
+      <ana>
+         <tok val="Scriptu"/>
+         <tok val="scriptu"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m>a - - s - - - n d</m>
@@ -792,8 +996,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Scriptula scriptula-->
-         <tok val="[sS]criptula"/>
+      <ana>
+         <tok val="Scriptula"/>
+         <tok val="scriptula"/>
          <lm>
             <l>scriptula</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -801,8 +1006,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Scriptura scriptura-->
-         <tok val="[sS]criptura"/>
+      <ana>
+         <tok val="Scriptura"/>
+         <tok val="scriptura"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.166666666666666667">v - - p f p a n n</m>
@@ -819,8 +1025,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Scripturae scripturae-->
-         <tok val="[sS]cripturae"/>
+      <ana>
+         <tok val="Scripturae"/>
+         <tok val="scripturae"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m cert="0.25">v - - s f p a f d</m>
@@ -836,8 +1043,9 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Scripturam scripturam-->
-         <tok val="[sS]cripturam"/>
+      <ana>
+         <tok val="Scripturam"/>
+         <tok val="scripturam"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m>v - - s f p a f a</m>
@@ -847,8 +1055,9 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Scripturarii scripturarii-->
-         <tok val="[sS]cripturarii"/>
+      <ana>
+         <tok val="Scripturarii"/>
+         <tok val="scripturarii"/>
          <lm>
             <l>scripturarius</l>
             <m cert="0.142857142857142857">n - - p - - - m n</m>
@@ -860,16 +1069,18 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scripturarius scripturarius-->
-         <tok val="[sS]cripturarius"/>
+      <ana>
+         <tok val="Scripturarius"/>
+         <tok val="scripturarius"/>
          <lm>
             <l>scripturarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scripturarum scripturarum-->
-         <tok val="[sS]cripturarum"/>
+      <ana>
+         <tok val="Scripturarum"/>
+         <tok val="scripturarum"/>
          <lm cert="0.5">
             <l>scriptura</l>
             <m>n - - p - - - f g</m>
@@ -879,8 +1090,9 @@
             <m>v - - p f p a f g</m>
          </lm>
       </ana>
-      <ana><!--Scripturas scripturas-->
-         <tok val="[sS]cripturas"/>
+      <ana>
+         <tok val="Scripturas"/>
+         <tok val="scripturas"/>
          <lm cert="0.5">
             <l>scribo</l>
             <m>v - - p f p a f a</m>
@@ -890,8 +1102,9 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Scripturis scripturis-->
-         <tok val="[sS]cripturis"/>
+      <ana>
+         <tok val="Scripturis"/>
+         <tok val="scripturis"/>
          <lm cert="0.333333333333333333">
             <l>scripturio</l>
             <m>v - 2 s p i a</m>
@@ -911,8 +1124,9 @@
             <m cert="0.166666666666666667">v - - p f p a m d</m>
          </lm>
       </ana>
-      <ana><!--Scripturum scripturum-->
-         <tok val="[sS]cripturum"/>
+      <ana>
+         <tok val="Scripturum"/>
+         <tok val="scripturum"/>
          <lm>
             <l>scribo</l>
             <m cert="0.2">v - - p f p a n g</m>
@@ -922,22 +1136,26 @@
             <m cert="0.2">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--Scripturum scripturum scripture-->
-         <tok val="[sS]criptur(um|e)"/>
+      <ana>
+         <tok val="Scripturum"/>
+         <tok val="scripture"/>
+         <tok val="scripturum"/>
          <lm>
             <l>scribo</l>
             <m>v - - s f p a n v</m>
          </lm>
       </ana>
-      <ana><!--Scripturus scripturus-->
-         <tok val="[sS]cripturus"/>
+      <ana>
+         <tok val="Scripturus"/>
+         <tok val="scripturus"/>
          <lm>
             <l>scribo</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Scriptus scriptus-->
-         <tok val="[sS]criptus"/>
+      <ana>
+         <tok val="Scriptus"/>
+         <tok val="scriptus"/>
          <lm>
             <l>scriptus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -946,15 +1164,18 @@
             <m cert="0.25">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Scriptus scriptus scriptun-->
-         <tok val="[sS]criptu[sn]"/>
+      <ana>
+         <tok val="Scriptus"/>
+         <tok val="scriptun"/>
+         <tok val="scriptus"/>
          <lm>
             <l>scribo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Scripula scripula-->
-         <tok val="[sS]cripula"/>
+      <ana>
+         <tok val="Scripula"/>
+         <tok val="scripula"/>
          <lm>
             <l>scripulum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -962,24 +1183,28 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Scrobe scrobe scrobi-->
-         <tok val="[sS]crob[ei]"/>
+      <ana>
+         <tok val="Scrobe"/>
+         <tok val="scrobe"/>
+         <tok val="scrobi"/>
          <lm>
             <l>scrobis</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Scrobem scrobem-->
-         <tok val="[sS]crobem"/>
+      <ana>
+         <tok val="Scrobem"/>
+         <tok val="scrobem"/>
          <lm>
             <l>scrobis</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Scrobes scrobes-->
-         <tok val="[sS]crobes"/>
+      <ana>
+         <tok val="Scrobes"/>
+         <tok val="scrobes"/>
          <lm>
             <l>scrobis</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -988,16 +1213,19 @@
             <m cert="0.25">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Scrobes scrobes scrobis-->
-         <tok val="[sS]crob[ei]s"/>
+      <ana>
+         <tok val="Scrobes"/>
+         <tok val="scrobes"/>
+         <tok val="scrobis"/>
          <lm>
             <l>scrobis</l>
             <m cert="0.5">n - - p - - - m a</m>
             <m cert="0.5">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Scrobibus scrobibus-->
-         <tok val="[sS]crobibus"/>
+      <ana>
+         <tok val="Scrobibus"/>
+         <tok val="scrobibus"/>
          <lm>
             <l>scrobis</l>
             <m cert="0.25">n - - p - - - m b</m>
@@ -1006,25 +1234,24 @@
             <m cert="0.25">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Scrobiculus scrobiculus-->
-         <tok val="[sS]crobiculus"/>
+      <ana>
+         <tok val="Scrobiculus"/>
+         <tok val="scrobiculus"/>
          <lm>
             <l>scrobiculus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrofa scrofa-->
-         <tok val="[sS]crofa"/>
-         <lm>
+      <ana>
+         <tok val="Scrofa"/>
+         <tok val="scrofa"/>
+         <lm cert="0.5">
             <l>scrofa</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
-      </ana>
-      <ana>
-         <tok val="Scrofa"/>
-         <lm>
+         <lm cert="0.5">
             <l>Scrofa</l>
             <m cert="0.333333333333333333">n e - s - - - m b</m>
             <m cert="0.333333333333333333">n e - s - - - m v</m>
@@ -1033,17 +1260,15 @@
       </ana>
       <ana>
          <tok val="Scrofae"/>
-         <lm>
+         <tok val="scrofae"/>
+         <lm cert="0.5">
             <l>Scrofa</l>
             <m cert="0.25">n e - p - - - m v</m>
             <m cert="0.25">n e - s - - - m d</m>
             <m cert="0.25">n e - p - - - m n</m>
             <m cert="0.25">n e - s - - - m g</m>
          </lm>
-      </ana>
-      <ana><!--Scrofae scrofae-->
-         <tok val="[sS]crofae"/>
-         <lm>
+         <lm cert="0.5">
             <l>scrofa</l>
             <m cert="0.25">n - - s - - - f d</m>
             <m cert="0.25">n - - s - - - f g</m>
@@ -1053,27 +1278,27 @@
       </ana>
       <ana>
          <tok val="Scrofam"/>
-         <lm>
+         <tok val="scrofam"/>
+         <lm cert="0.5">
             <l>Scrofa</l>
             <m>n e - s - - - m a</m>
          </lm>
-      </ana>
-      <ana><!--Scrofam scrofam-->
-         <tok val="[sS]crofam"/>
-         <lm>
+         <lm cert="0.5">
             <l>scrofa</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Scrofipascus scrofipascus-->
-         <tok val="[sS]crofipascus"/>
+      <ana>
+         <tok val="Scrofipascus"/>
+         <tok val="scrofipascus"/>
          <lm>
             <l>scrofipascus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrotum scrotum-->
-         <tok val="[sS]crotum"/>
+      <ana>
+         <tok val="Scrotum"/>
+         <tok val="scrotum"/>
          <lm>
             <l>scrotum</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1082,15 +1307,17 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scrupeus scrupeus-->
-         <tok val="[sS]crupeus"/>
+      <ana>
+         <tok val="Scrupeus"/>
+         <tok val="scrupeus"/>
          <lm>
             <l>scrupeus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrupi scrupi-->
-         <tok val="[sS]crupi"/>
+      <ana>
+         <tok val="Scrupi"/>
+         <tok val="scrupi"/>
          <lm>
             <l>scrupus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1100,13 +1327,15 @@
       </ana>
       <ana>
          <tok val="Scruporum"/>
+         <tok val="scruporum"/>
          <lm>
             <l>scrupus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Scruposa scruposa-->
-         <tok val="[sS]cruposa"/>
+      <ana>
+         <tok val="Scruposa"/>
+         <tok val="scruposa"/>
          <lm>
             <l>scruposus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1117,8 +1346,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Scruposisque scruposis scruposisque-->
-         <tok val="[sS]cruposis(que|)"/>
+      <ana>
+         <tok val="Scruposisque"/>
+         <tok val="scruposis"/>
+         <tok val="scruposisque"/>
          <lm>
             <l>scruposus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1129,15 +1360,18 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Scruposus scruposus-->
-         <tok val="[sS]cruposus"/>
+      <ana>
+         <tok val="Scruposus"/>
+         <tok val="scruposus"/>
          <lm>
             <l>scruposus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrupularis scripularis scrupularis-->
-         <tok val="[sS]cr[ui]pularis"/>
+      <ana>
+         <tok val="Scrupularis"/>
+         <tok val="scripularis"/>
+         <tok val="scrupularis"/>
          <lm>
             <l>scripularis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -1151,15 +1385,18 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scrupulatim scripulatim scrupulatim-->
-         <tok val="[sS]cr[ui]pulatim"/>
+      <ana>
+         <tok val="Scrupulatim"/>
+         <tok val="scripulatim"/>
+         <tok val="scrupulatim"/>
          <lm>
             <l>scripulatim</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Scrupuli scrupuli-->
-         <tok val="[sS]crupuli"/>
+      <ana>
+         <tok val="Scrupuli"/>
+         <tok val="scrupuli"/>
          <lm>
             <l>scrupulus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1167,8 +1404,9 @@
             <m cert="0.333333333333333333">n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Scrupulosa scrupulosa-->
-         <tok val="[sS]crupulosa"/>
+      <ana>
+         <tok val="Scrupulosa"/>
+         <tok val="scrupulosa"/>
          <lm>
             <l>scrupulosus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1179,8 +1417,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Scrupulosae scrupulosae-->
-         <tok val="[sS]crupulosae"/>
+      <ana>
+         <tok val="Scrupulosae"/>
+         <tok val="scrupulosae"/>
          <lm>
             <l>scrupulosus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1189,15 +1428,18 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Scrupulose scrupulose scrupulosius-->
-         <tok val="[sS]crupulos(e|ius)"/>
+      <ana>
+         <tok val="Scrupulose"/>
+         <tok val="scrupulose"/>
+         <tok val="scrupulosius"/>
          <lm>
             <l>scrupulosus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Scrupulose scrupulose-->
-         <tok val="[sS]crupulose"/>
+      <ana>
+         <tok val="Scrupulose"/>
+         <tok val="scrupulose"/>
          <lm>
             <l>scrupulosus</l>
             <m cert="0.5">a - - s - - - n v</m>
@@ -1206,6 +1448,7 @@
       </ana>
       <ana>
          <tok val="Scrupulosissima"/>
+         <tok val="scrupulosissima"/>
          <lm>
             <l>scrupulosus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -1216,50 +1459,58 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Scrupulositas scrupulositas-->
-         <tok val="[sS]crupulositas"/>
+      <ana>
+         <tok val="Scrupulositas"/>
+         <tok val="scrupulositas"/>
          <lm>
             <l>scrupulositas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Scrupulosus scrupulosus-->
-         <tok val="[sS]crupulosus"/>
+      <ana>
+         <tok val="Scrupulosus"/>
+         <tok val="scrupulosus"/>
          <lm>
             <l>scrupulosus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrupulum scrupulorum scrupulum-->
-         <tok val="[sS]crupul(or)?um"/>
+      <ana>
+         <tok val="Scrupulum"/>
+         <tok val="scrupulorum"/>
+         <tok val="scrupulum"/>
          <lm>
             <l>scrupulus</l>
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Scrupulum scrupulum-->
-         <tok val="[sS]crupulum"/>
+      <ana>
+         <tok val="Scrupulum"/>
+         <tok val="scrupulum"/>
          <lm>
             <l>scrupulus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Scrupulus scrupulus-->
-         <tok val="[sS]crupulus"/>
+      <ana>
+         <tok val="Scrupulus"/>
+         <tok val="scrupulus"/>
          <lm>
             <l>scrupulus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrupus scrupus-->
-         <tok val="[sS]crupus"/>
+      <ana>
+         <tok val="Scrupus"/>
+         <tok val="scrupus"/>
          <lm>
             <l>scrupus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scruta scruta-->
-         <tok val="[sS]cruta"/>
+      <ana>
+         <tok val="Scruta"/>
+         <tok val="scruta"/>
          <lm>
             <l>scruta</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -1267,45 +1518,56 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Scrutabitur scrutabitur-->
-         <tok val="[sS]crutabitur"/>
+      <ana>
+         <tok val="Scrutabitur"/>
+         <tok val="scrutabitur"/>
          <lm>
             <l>scrutor</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Scrutamini scrutamini-->
-         <tok val="[sS]crutamini"/>
+      <ana>
+         <tok val="Scrutamini"/>
+         <tok val="scrutamini"/>
          <lm>
             <l>scrutor</l>
             <m cert="0.5">v - 2 p p i p</m>
             <m cert="0.5">v - 2 p p m p</m>
          </lm>
       </ana>
-      <ana><!--Scrutantemque scrutantem scrutantemque-->
-         <tok val="[sS]crutantem(que|)"/>
+      <ana>
+         <tok val="Scrutantemque"/>
+         <tok val="scrutantem"/>
+         <tok val="scrutantemque"/>
          <lm>
             <l>scrutor</l>
             <m cert="0.5">v - - s p p a f a</m>
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Scrutare scrutare-->
-         <tok val="[sS]crutare"/>
+      <ana>
+         <tok val="Scrutare"/>
+         <tok val="scrutare"/>
          <lm>
             <l>scrutor</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Scrutare Scrutaris scrutare scrutaris-->
-         <tok val="[sS]crutar(is|e)"/>
+      <ana>
+         <tok val="Scrutare"/>
+         <tok val="Scrutaris"/>
+         <tok val="scrutare"/>
+         <tok val="scrutaris"/>
          <lm>
             <l>scrutor</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Scrutari Scrutarique scrutari scrutarique-->
-         <tok val="[sS]crutari(que)?"/>
+      <ana>
+         <tok val="Scrutari"/>
+         <tok val="Scrutarique"/>
+         <tok val="scrutari"/>
+         <tok val="scrutarique"/>
          <lm cert="0.5">
             <l>scrutarius</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1318,8 +1580,9 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Scrutariam scrutariam-->
-         <tok val="[sS]crutariam"/>
+      <ana>
+         <tok val="Scrutariam"/>
+         <tok val="scrutariam"/>
          <lm cert="0.5">
             <l>scrutarius</l>
             <m>a - - s - - - f a</m>
@@ -1329,74 +1592,86 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Scrutaris scrutaris scrutaveris-->
-         <tok val="[sS]cruta(ve)?ris"/>
+      <ana>
+         <tok val="Scrutaris"/>
+         <tok val="scrutaris"/>
+         <tok val="scrutaveris"/>
          <lm>
             <l>scrutor</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--Scrutarius scrutarius-->
-         <tok val="[sS]crutarius"/>
+      <ana>
+         <tok val="Scrutarius"/>
+         <tok val="scrutarius"/>
          <lm>
             <l>scrutarius</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrutatio scrutatio-->
-         <tok val="[sS]crutatio"/>
+      <ana>
+         <tok val="Scrutatio"/>
+         <tok val="scrutatio"/>
          <lm>
             <l>scrutatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Scrutator scrutator-->
-         <tok val="[sS]crutator"/>
+      <ana>
+         <tok val="Scrutator"/>
+         <tok val="scrutator"/>
          <lm>
             <l>scrutator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Scrutatur scrutatur scrutaturque-->
-         <tok val="[sS]crutatur(que)?"/>
+      <ana>
+         <tok val="Scrutatur"/>
+         <tok val="scrutatur"/>
+         <tok val="scrutaturque"/>
          <lm>
             <l>scrutor</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Scrutatus scrutatus-->
-         <tok val="[sS]crutatus"/>
+      <ana>
+         <tok val="Scrutatus"/>
+         <tok val="scrutatus"/>
          <lm>
             <l>scrutor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Scrutemur scrutemur-->
-         <tok val="[sS]crutemur"/>
+      <ana>
+         <tok val="Scrutemur"/>
+         <tok val="scrutemur"/>
          <lm>
             <l>scrutor</l>
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Scrutentur scrutentur-->
-         <tok val="[sS]crutentur"/>
+      <ana>
+         <tok val="Scrutentur"/>
+         <tok val="scrutentur"/>
          <lm>
             <l>scrutor</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Scrutillus scrutillus-->
-         <tok val="[sS]crutillus"/>
+      <ana>
+         <tok val="Scrutillus"/>
+         <tok val="scrutillus"/>
          <lm>
             <l>scrutillus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Scrutinium scrutinium-->
-         <tok val="[sS]crutinium"/>
+      <ana>
+         <tok val="Scrutinium"/>
+         <tok val="scrutinium"/>
          <lm>
             <l>scrutinium</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1405,15 +1680,17 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Scrutor scrutor-->
-         <tok val="[sS]crutor"/>
+      <ana>
+         <tok val="Scrutor"/>
+         <tok val="scrutor"/>
          <lm>
             <l>scrutor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--scrapta scrattia-->
-         <tok val="scra[p]?t(ti)?a"/>
+      <ana>
+         <tok val="scrapta"/>
+         <tok val="scrattia"/>
          <lm>
             <l>scrapta</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -1487,8 +1764,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--scribendae scribundae-->
-         <tok val="scrib[ue]ndae"/>
+      <ana>
+         <tok val="scribendae"/>
+         <tok val="scribundae"/>
          <lm>
             <l>scribo</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -1518,8 +1796,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--scribendis scribundis-->
-         <tok val="scrib[ue]ndis"/>
+      <ana>
+         <tok val="scribendis"/>
+         <tok val="scribundis"/>
          <lm>
             <l>scribo</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -1530,8 +1809,10 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--scribendo scribendoque scribundo-->
-         <tok val="scrib[ue]ndo(que)?"/>
+      <ana>
+         <tok val="scribendo"/>
+         <tok val="scribendoque"/>
+         <tok val="scribundo"/>
          <lm>
             <l>scribo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -1573,8 +1854,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--scribentes scribentis-->
-         <tok val="scribent[ie]s"/>
+      <ana>
+         <tok val="scribentes"/>
+         <tok val="scribentis"/>
          <lm>
             <l>scribo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1634,8 +1916,9 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--scriberen scriberes-->
-         <tok val="scribere[sn]"/>
+      <ana>
+         <tok val="scriberen"/>
+         <tok val="scriberes"/>
          <lm>
             <l>scribo</l>
             <m>v - 2 s i s a</m>
@@ -1655,8 +1938,9 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--scribet scribetque-->
-         <tok val="scribet(que)?"/>
+      <ana>
+         <tok val="scribet"/>
+         <tok val="scribetque"/>
          <lm>
             <l>scribo</l>
             <m>v - 3 s f i a</m>
@@ -1730,8 +2014,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--scrinio scrinioque-->
-         <tok val="scrinio(que)?"/>
+      <ana>
+         <tok val="scrinio"/>
+         <tok val="scrinioque"/>
          <lm>
             <l>scrinium</l>
             <m cert="0.5">n - - s - - - n d</m>
@@ -1768,8 +2053,9 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--scripserim Scripserim-->
-         <tok val="[Ss]cripserim"/>
+      <ana>
+         <tok val="Scripserim"/>
+         <tok val="scripserim"/>
          <lm>
             <l>scribo</l>
             <m>v - 1 s r s a</m>
@@ -1791,8 +2077,9 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--scripserit scripseritque-->
-         <tok val="scripserit(que)?"/>
+      <ana>
+         <tok val="scripserit"/>
+         <tok val="scripseritque"/>
          <lm>
             <l>scribo</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -1848,8 +2135,9 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--scriptae scriptaeque-->
-         <tok val="scriptae(que)?"/>
+      <ana>
+         <tok val="scriptae"/>
+         <tok val="scriptaeque"/>
          <lm>
             <l>scribo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -1872,8 +2160,9 @@
             <m>v - - p r p p f g</m>
          </lm>
       </ana>
-      <ana><!--scriptas scriptasque-->
-         <tok val="scriptas(que)?"/>
+      <ana>
+         <tok val="scriptas"/>
+         <tok val="scriptasque"/>
          <lm>
             <l>scribo</l>
             <m>v - - p r p p f a</m>
@@ -1896,8 +2185,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--scriptiles scriptilis-->
-         <tok val="scriptil[ie]s"/>
+      <ana>
+         <tok val="scriptiles"/>
+         <tok val="scriptilis"/>
          <lm>
             <l>scriptilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -2028,8 +2318,9 @@
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--scriptitarunt scriptitaverunt-->
-         <tok val="scriptita(ve)?runt"/>
+      <ana>
+         <tok val="scriptitarunt"/>
+         <tok val="scriptitaverunt"/>
          <lm>
             <l>scriptito</l>
             <m>v - 3 p r i a</m>
@@ -2069,8 +2360,9 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--scriptitauit scriptitavit-->
-         <tok val="scriptita[vu]it"/>
+      <ana>
+         <tok val="scriptitauit"/>
+         <tok val="scriptitavit"/>
          <lm>
             <l>scriptito</l>
             <m>v - 3 s r i a</m>
@@ -2185,8 +2477,11 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--scriptum scriptumne scriptumque scriptumst-->
-         <tok val="scriptum(ne|st|que)?"/>
+      <ana>
+         <tok val="scriptum"/>
+         <tok val="scriptumne"/>
+         <tok val="scriptumque"/>
+         <tok val="scriptumst"/>
          <lm>
             <l>scribo</l>
             <m>a - - s - - - n n</m>
@@ -2237,8 +2532,9 @@
             <m>v - - p f p a m a</m>
          </lm>
       </ana>
-      <ana><!--scripulari scrupulari-->
-         <tok val="scr[ui]pulari"/>
+      <ana>
+         <tok val="scripulari"/>
+         <tok val="scrupulari"/>
          <lm>
             <l>scripularis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -2272,8 +2568,9 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--scripulorum scripulum-->
-         <tok val="scripul(or)?um"/>
+      <ana>
+         <tok val="scripulorum"/>
+         <tok val="scripulum"/>
          <lm>
             <l>scripulum</l>
             <m>n - - p - - - n g</m>
@@ -2421,8 +2718,9 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--scrupeda scrupipeda-->
-         <tok val="scru(pi)?peda"/>
+      <ana>
+         <tok val="scrupeda"/>
+         <tok val="scrupipeda"/>
          <lm>
             <l>scrupeda</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -2430,8 +2728,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--scrupedae scrupipedae-->
-         <tok val="scrup(ip)?edae"/>
+      <ana>
+         <tok val="scrupedae"/>
+         <tok val="scrupipedae"/>
          <lm>
             <l>scrupeda</l>
             <m cert="0.25">n - - s - - - f g</m>
@@ -2618,8 +2917,9 @@
             <m>v - 3 p i i p</m>
          </lm>
       </ana>
-      <ana><!--scrutabere scrutaberis-->
-         <tok val="scrutaber(is|e)"/>
+      <ana>
+         <tok val="scrutabere"/>
+         <tok val="scrutaberis"/>
          <lm>
             <l>scrutor</l>
             <m>v - 2 s f i p</m>
@@ -2720,8 +3020,10 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--scrutante scrutanti scrutantique-->
-         <tok val="scrutant(i|e|ique)"/>
+      <ana>
+         <tok val="scrutante"/>
+         <tok val="scrutanti"/>
+         <tok val="scrutantique"/>
          <lm>
             <l>scrutor</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -2739,16 +3041,18 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--scrutantes scrutantis-->
-         <tok val="scrutant[ie]s"/>
+      <ana>
+         <tok val="scrutantes"/>
+         <tok val="scrutantis"/>
          <lm>
             <l>scrutor</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--scrutanti scrutantique-->
-         <tok val="scrutanti(que)?"/>
+      <ana>
+         <tok val="scrutanti"/>
+         <tok val="scrutantique"/>
          <lm>
             <l>scrutor</l>
             <m cert="0.333333333333333333">v - - s p p a n d</m>
@@ -2794,8 +3098,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--scrutantur scrutanturque-->
-         <tok val="scrutantur(que)?"/>
+      <ana>
+         <tok val="scrutantur"/>
+         <tok val="scrutanturque"/>
          <lm>
             <l>scrutor</l>
             <m>v - 3 p p i p</m>
@@ -2923,8 +3228,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--scrutatores scrutatoresque-->
-         <tok val="scrutatores(que)?"/>
+      <ana>
+         <tok val="scrutatores"/>
+         <tok val="scrutatoresque"/>
          <lm>
             <l>scrutator</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -2964,8 +3270,9 @@
             <m>v - 2 p p s p</m>
          </lm>
       </ana>
-      <ana><!--scrutere scruteris-->
-         <tok val="scruter(is|e)"/>
+      <ana>
+         <tok val="scrutere"/>
+         <tok val="scruteris"/>
          <lm>
             <l>scrutor</l>
             <m>v - 2 s p s p</m>
@@ -3028,6 +3335,7 @@
       </ana>
       <ana>
          <tok val="SCRIPTUM"/>
+         <tok val="scriptum"/>
          <lm>
             <l>scribo</l>
             <m>n - - s - - - n n</m>

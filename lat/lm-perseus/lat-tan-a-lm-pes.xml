@@ -1,59 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuspes">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:pes">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to pes</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-pes.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>PES</tok-starts-with>
       <tok-starts-with>Pes</tok-starts-with>
       <tok-starts-with>pes</tok-starts-with>
       <tok-starts-with>pés</tok-starts-with>
       <tok-starts-with>Pés</tok-starts-with>
-      <ana><!--PES Pes pes pesque-->
-         <tok val="[pP]?(es)?(que|PES)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:39:14.018-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:39:14.018-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-pes.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="PES"/>
+         <tok val="Pes"/>
+         <tok val="pes"/>
+         <tok val="pesque"/>
          <lm>
             <l>pes</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--PESSOS pessos-->
-         <tok val="(pessos|PESSOS)"/>
+      <ana>
+         <tok val="PESSOS"/>
+         <tok val="pessos"/>
          <lm>
             <l>pessus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--PESTILENTIA Pestilentia pestilentia pestilentiaque-->
-         <tok val="[pP]?(estilentia)?(que|PESTILENTIA)?"/>
+      <ana>
+         <tok val="PESTILENTIA"/>
+         <tok val="Pestilentia"/>
+         <tok val="pestilentia"/>
+         <tok val="pestilentiaque"/>
          <lm cert="0.5">
             <l>pestilentia</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -67,22 +82,35 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--PESTIS Pestis pestis pestisque Péstis-->
-         <tok val="[pP]?(e|Pé|pe)?(stis)?(que|PESTIS)?"/>
+      <ana>
+         <tok val="PESTIS"/>
+         <tok val="Pestis"/>
+         <tok val="Péstis"/>
+         <tok val="pestis"/>
+         <tok val="pestisque"/>
+         <tok val="péstis"/>
          <lm>
             <l>pestis</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--PESTIS Pestis pestis pestisque-->
-         <tok val="[pP]?(estis)?(que|PESTIS)?"/>
+      <ana>
+         <tok val="PESTIS"/>
+         <tok val="Pestis"/>
+         <tok val="pestis"/>
+         <tok val="pestisque"/>
          <lm>
             <l>pestis</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--PESTIS Pestes Pestis pestes pestis pestisque-->
-         <tok val="[Pp]?(est)?[ie]?[s]?(que|PESTIS)?"/>
+      <ana>
+         <tok val="PESTIS"/>
+         <tok val="Pestes"/>
+         <tok val="Pestis"/>
+         <tok val="pestes"/>
+         <tok val="pestis"/>
+         <tok val="pestisque"/>
          <lm>
             <l>pestis</l>
             <m>n - - p - - - f a</m>
@@ -90,6 +118,7 @@
       </ana>
       <ana>
          <tok val="Pescennianam"/>
+         <tok val="pescennianam"/>
          <lm>
             <l>Pescennianus</l>
             <m>a e - s - - - f a</m>
@@ -97,6 +126,7 @@
       </ana>
       <ana>
          <tok val="Pescennianus"/>
+         <tok val="pescennianus"/>
          <lm>
             <l>Pescennianus</l>
             <m>a e - s - - - m n</m>
@@ -104,6 +134,7 @@
       </ana>
       <ana>
          <tok val="Pescennii"/>
+         <tok val="pescennii"/>
          <lm>
             <l>Pescennius</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -113,6 +144,7 @@
       </ana>
       <ana>
          <tok val="Pescennio"/>
+         <tok val="pescennio"/>
          <lm>
             <l>Pescennius</l>
             <m cert="0.5">n e - s - - - m b</m>
@@ -121,6 +153,7 @@
       </ana>
       <ana>
          <tok val="Pescennios"/>
+         <tok val="pescennios"/>
          <lm>
             <l>Pescennius</l>
             <m>n e - p - - - m a</m>
@@ -128,6 +161,7 @@
       </ana>
       <ana>
          <tok val="Pescennium"/>
+         <tok val="pescennium"/>
          <lm>
             <l>Pescennius</l>
             <m cert="0.5">n e - p - - - m g</m>
@@ -136,21 +170,24 @@
       </ana>
       <ana>
          <tok val="Pescennius"/>
+         <tok val="pescennius"/>
          <lm>
             <l>Pescennius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pesnis pesnis-->
-         <tok val="[pP]esnis"/>
+      <ana>
+         <tok val="Pesnis"/>
+         <tok val="pesnis"/>
          <lm>
             <l>penna</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Pessi pessi-->
-         <tok val="[pP]essi"/>
+      <ana>
+         <tok val="Pessi"/>
+         <tok val="pessi"/>
          <lm cert="0.5">
             <l>pessus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -162,15 +199,27 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pessima Pessimaque pessima pessiman Péssuma-->
-         <tok val="[pP]?(e|Pé)ss[iu]ma(n|que)?"/>
+      <ana>
+         <tok val="Pessima"/>
+         <tok val="Pessimaque"/>
+         <tok val="Pessuma"/>
+         <tok val="Péssuma"/>
+         <tok val="pessima"/>
+         <tok val="pessiman"/>
+         <tok val="pessimaque"/>
+         <tok val="pessuma"/>
+         <tok val="péssuma"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Pessima Pessimaque pessima pessiman-->
-         <tok val="[pP]essima(n|que)?"/>
+      <ana>
+         <tok val="Pessima"/>
+         <tok val="Pessimaque"/>
+         <tok val="pessima"/>
+         <tok val="pessiman"/>
+         <tok val="pessimaque"/>
          <lm cert="0.5">
             <l>malus</l>
             <m cert="0.2">a - - p - - - n n</m>
@@ -184,8 +233,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Pessimae pessimae-->
-         <tok val="[pP]essimae"/>
+      <ana>
+         <tok val="Pessimae"/>
+         <tok val="pessimae"/>
          <lm>
             <l>malus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -194,43 +244,65 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Pessimam pessimam-->
-         <tok val="[pP]essimam"/>
+      <ana>
+         <tok val="Pessimam"/>
+         <tok val="pessimam"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pessime Pessume Pessumest pessime pessimeque pessume pessumest péssime-->
-         <tok val="[pP]?(e|pé|pe)ss[ui]me(st|que)?"/>
+      <ana>
+         <tok val="Pessime"/>
+         <tok val="Pessume"/>
+         <tok val="Pessumest"/>
+         <tok val="pessime"/>
+         <tok val="pessimeque"/>
+         <tok val="pessume"/>
+         <tok val="pessumest"/>
+         <tok val="péssime"/>
          <lm>
             <l>malus</l>
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--Pessime Pessimum pessime pessimeque pessimum pessimumque-->
-         <tok val="[pP]essim(um|e|umque|eque)"/>
+      <ana>
+         <tok val="Pessime"/>
+         <tok val="Pessimum"/>
+         <tok val="pessime"/>
+         <tok val="pessimeque"/>
+         <tok val="pessimum"/>
+         <tok val="pessimumque"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Pessime pessime pessimeque-->
-         <tok val="[pP]essime(que)?"/>
+      <ana>
+         <tok val="Pessime"/>
+         <tok val="pessime"/>
+         <tok val="pessimeque"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Pessimi pessimi pessimique péssimi péssumi-->
-         <tok val="[pP]?(e|pé|pe)ss[iu]mi(que)?"/>
+      <ana>
+         <tok val="Pessimi"/>
+         <tok val="pessimi"/>
+         <tok val="pessimique"/>
+         <tok val="pessumi"/>
+         <tok val="péssimi"/>
+         <tok val="péssumi"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pessimi pessimi pessimique-->
-         <tok val="[pP]essimi(que)?"/>
+      <ana>
+         <tok val="Pessimi"/>
+         <tok val="pessimi"/>
+         <tok val="pessimique"/>
          <lm>
             <l>malus</l>
             <m cert="0.333333333333333333">a - - p - - - m v</m>
@@ -238,15 +310,21 @@
             <m cert="0.333333333333333333">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pessimo pessimo pessimoque Péssimo-->
-         <tok val="[pP]?(e|Pé|pe)ssimo(que)?"/>
+      <ana>
+         <tok val="Pessimo"/>
+         <tok val="Péssimo"/>
+         <tok val="pessimo"/>
+         <tok val="pessimoque"/>
+         <tok val="péssimo"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Pessimo pessimo pessimoque-->
-         <tok val="[pP]essimo(que)?"/>
+      <ana>
+         <tok val="Pessimo"/>
+         <tok val="pessimo"/>
+         <tok val="pessimoque"/>
          <lm cert="0.5">
             <l>malus</l>
             <m cert="0.333333333333333333">a - - s - - - m d</m>
@@ -258,8 +336,10 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Pessimum pessimum pessimumque-->
-         <tok val="[pP]essimum(que)?"/>
+      <ana>
+         <tok val="Pessimum"/>
+         <tok val="pessimum"/>
+         <tok val="pessimumque"/>
          <lm>
             <l>malus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -267,16 +347,21 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pessimum pessimorum pessimum pessimumque-->
-         <tok val="[pP]essim(or)?um(que)?"/>
+      <ana>
+         <tok val="Pessimum"/>
+         <tok val="pessimorum"/>
+         <tok val="pessimum"/>
+         <tok val="pessimumque"/>
          <lm>
             <l>malus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pessimus pessimus pessímus-->
-         <tok val="[pP]ess[ií]mus"/>
+      <ana>
+         <tok val="Pessimus"/>
+         <tok val="pessimus"/>
+         <tok val="pessímus"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - m n</m>
@@ -284,6 +369,7 @@
       </ana>
       <ana>
          <tok val="Pessinunte"/>
+         <tok val="pessinunte"/>
          <lm>
             <l>Pessinus</l>
             <m>n e - s - - - f b</m>
@@ -291,6 +377,7 @@
       </ana>
       <ana>
          <tok val="Pessinuntem"/>
+         <tok val="pessinuntem"/>
          <lm>
             <l>Pessinus</l>
             <m>n e - s - - - f a</m>
@@ -298,6 +385,7 @@
       </ana>
       <ana>
          <tok val="Pessinuntia"/>
+         <tok val="pessinuntia"/>
          <lm>
             <l>Pessinuntius</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -310,6 +398,7 @@
       </ana>
       <ana>
          <tok val="Pessinuntiam"/>
+         <tok val="pessinuntiam"/>
          <lm>
             <l>Pessinuntius</l>
             <m>a e - s - - - f a</m>
@@ -317,6 +406,7 @@
       </ana>
       <ana>
          <tok val="Pessinunticus"/>
+         <tok val="pessinunticus"/>
          <lm>
             <l>Pessinunticus</l>
             <m>a e - s - - - m n</m>
@@ -324,6 +414,7 @@
       </ana>
       <ana>
          <tok val="Pessinuntii"/>
+         <tok val="pessinuntii"/>
          <lm>
             <l>Pessinuntius</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -334,20 +425,25 @@
       </ana>
       <ana>
          <tok val="Pessinuntius"/>
+         <tok val="pessinuntius"/>
          <lm>
             <l>Pessinuntius</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pessuli pessuli péssuli Péssuli-->
-         <tok val="[pP]?(e|pé|Pé)ssuli"/>
+      <ana>
+         <tok val="Pessuli"/>
+         <tok val="Péssuli"/>
+         <tok val="pessuli"/>
+         <tok val="péssuli"/>
          <lm>
             <l>pessulus</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pessuli pessuli-->
-         <tok val="[pP]essuli"/>
+      <ana>
+         <tok val="Pessuli"/>
+         <tok val="pessuli"/>
          <lm cert="0.5">
             <l>pessulus</l>
             <m cert="0.5">n - - p - - - m v</m>
@@ -358,15 +454,18 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pessulus pessulus-->
-         <tok val="[pP]essulus"/>
+      <ana>
+         <tok val="Pessulus"/>
+         <tok val="pessulus"/>
          <lm>
             <l>pessulus</l>
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pessum pessum pessumque-->
-         <tok val="[pP]essum(que)?"/>
+      <ana>
+         <tok val="Pessum"/>
+         <tok val="pessum"/>
+         <tok val="pessumque"/>
          <lm cert="0.5">
             <l>pessus</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -380,15 +479,20 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pessum pesse pessum pessumque-->
-         <tok val="[pP]ess(um)?(que|e)?"/>
+      <ana>
+         <tok val="Pessum"/>
+         <tok val="pesse"/>
+         <tok val="pessum"/>
+         <tok val="pessumque"/>
          <lm>
             <l>pessum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Pessuma pessuma pessumast-->
-         <tok val="[pP]essuma(st)?"/>
+      <ana>
+         <tok val="Pessuma"/>
+         <tok val="pessuma"/>
+         <tok val="pessumast"/>
          <lm>
             <l>malus</l>
             <m cert="0.166666666666666667">a - - s - - - f n s</m>
@@ -399,22 +503,32 @@
             <m cert="0.166666666666666667">a - - s - - - f b s</m>
          </lm>
       </ana>
-      <ana><!--Pessume Pessumest pessume pessumest pessumum pessumumque-->
-         <tok val="[pP]essum(umqu)?[e]?(st|um)?"/>
+      <ana>
+         <tok val="Pessume"/>
+         <tok val="Pessumest"/>
+         <tok val="pessume"/>
+         <tok val="pessumest"/>
+         <tok val="pessumum"/>
+         <tok val="pessumumque"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Pessume Pessumest pessume pessumest-->
-         <tok val="[pP]essume(st)?"/>
+      <ana>
+         <tok val="Pessume"/>
+         <tok val="Pessumest"/>
+         <tok val="pessume"/>
+         <tok val="pessumest"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - m v s</m>
          </lm>
       </ana>
-      <ana><!--Pessumis pessumis pessumisque-->
-         <tok val="[pP]essumis(que)?"/>
+      <ana>
+         <tok val="Pessumis"/>
+         <tok val="pessumis"/>
+         <tok val="pessumisque"/>
          <lm>
             <l>malus</l>
             <m cert="0.166666666666666667">a - - p - - - n d s</m>
@@ -425,37 +539,48 @@
             <m cert="0.166666666666666667">a - - p - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--Peste Pesti peste pesti pestiue péste-->
-         <tok val="[pP]?(e|pé)st(iu)?[ei]"/>
+      <ana>
+         <tok val="Peste"/>
+         <tok val="Pesti"/>
+         <tok val="peste"/>
+         <tok val="pesti"/>
+         <tok val="pestiue"/>
+         <tok val="péste"/>
          <lm>
             <l>pestis</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Pestem pestem pestemque-->
-         <tok val="[pP]estem(que)?"/>
+      <ana>
+         <tok val="Pestem"/>
+         <tok val="pestem"/>
+         <tok val="pestemque"/>
          <lm>
             <l>pestis</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pestes pestes-->
-         <tok val="[pP]estes"/>
+      <ana>
+         <tok val="Pestes"/>
+         <tok val="pestes"/>
          <lm>
             <l>pestis</l>
             <m cert="0.5">n - - p - - - f v</m>
             <m cert="0.5">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Pesti pesti pestiue-->
-         <tok val="[pP]esti(ue)?"/>
+      <ana>
+         <tok val="Pesti"/>
+         <tok val="pesti"/>
+         <tok val="pestiue"/>
          <lm>
             <l>pestis</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Pestifer pestifer-->
-         <tok val="[pP]estifer"/>
+      <ana>
+         <tok val="Pestifer"/>
+         <tok val="pestifer"/>
          <lm>
             <l>pestifer</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -463,15 +588,20 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Pestifer Pestifere pestifer pestifere-->
-         <tok val="[Pp]estifer[e]?"/>
+      <ana>
+         <tok val="Pestifer"/>
+         <tok val="Pestifere"/>
+         <tok val="pestifer"/>
+         <tok val="pestifere"/>
          <lm>
             <l>pestifer</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Pestifera pestifera pestiferaque-->
-         <tok val="[pP]estifera(que)?"/>
+      <ana>
+         <tok val="Pestifera"/>
+         <tok val="pestifera"/>
+         <tok val="pestiferaque"/>
          <lm>
             <l>pestifer</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -482,8 +612,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Pestiferae pestiferae-->
-         <tok val="[pP]estiferae"/>
+      <ana>
+         <tok val="Pestiferae"/>
+         <tok val="pestiferae"/>
          <lm>
             <l>pestifer</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -492,22 +623,27 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Pestiferas pestiferas-->
-         <tok val="[pP]estiferas"/>
+      <ana>
+         <tok val="Pestiferas"/>
+         <tok val="pestiferas"/>
          <lm>
             <l>pestifer</l>
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pestifere Pestiferum pestifere pestiferum-->
-         <tok val="[pP]estifer(um|e)"/>
+      <ana>
+         <tok val="Pestifere"/>
+         <tok val="Pestiferum"/>
+         <tok val="pestifere"/>
+         <tok val="pestiferum"/>
          <lm>
             <l>pestifer</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Pestiferi pestiferi-->
-         <tok val="[pP]estiferi"/>
+      <ana>
+         <tok val="Pestiferi"/>
+         <tok val="pestiferi"/>
          <lm>
             <l>pestifer</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -516,8 +652,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Pestifero pestifero-->
-         <tok val="[pP]estifero"/>
+      <ana>
+         <tok val="Pestifero"/>
+         <tok val="pestifero"/>
          <lm>
             <l>pestifer</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -526,15 +663,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Pestiferos pestiferos-->
-         <tok val="[pP]estiferos"/>
+      <ana>
+         <tok val="Pestiferos"/>
+         <tok val="pestiferos"/>
          <lm>
             <l>pestifer</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pestiferum pestiferum-->
-         <tok val="[pP]estiferum"/>
+      <ana>
+         <tok val="Pestiferum"/>
+         <tok val="pestiferum"/>
          <lm>
             <l>pestifer</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -542,16 +681,20 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pestiferum pestiferorum pestiferum-->
-         <tok val="[pP]estifer(or)?um"/>
+      <ana>
+         <tok val="Pestiferum"/>
+         <tok val="pestiferorum"/>
+         <tok val="pestiferum"/>
          <lm>
             <l>pestifer</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Pestilens pestilens pestilensque-->
-         <tok val="[pP]estilens(que)?"/>
+      <ana>
+         <tok val="Pestilens"/>
+         <tok val="pestilens"/>
+         <tok val="pestilensque"/>
          <lm>
             <l>pestilens</l>
             <m cert="0.111111111111111111">a - - s - - - n n</m>
@@ -565,8 +708,9 @@
             <m cert="0.111111111111111111">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Pestilentem pestilentem-->
-         <tok val="[pP]estilentem"/>
+      <ana>
+         <tok val="Pestilentem"/>
+         <tok val="pestilentem"/>
          <lm>
             <l>pestilens</l>
             <m cert="0.333333333333333333">a - - s - - - f a</m>
@@ -574,8 +718,10 @@
             <m cert="0.333333333333333333">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Pestilentes pestilentes pestilentesque-->
-         <tok val="[pP]estilentes(que)?"/>
+      <ana>
+         <tok val="Pestilentes"/>
+         <tok val="pestilentes"/>
+         <tok val="pestilentesque"/>
          <lm>
             <l>pestilens</l>
             <m cert="0.166666666666666667">n - - p - - - m n</m>
@@ -586,8 +732,11 @@
             <m cert="0.166666666666666667">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Pestilentes pestilentes pestilentesque pestilentis-->
-         <tok val="[pP]estilent[ei]s(que)?"/>
+      <ana>
+         <tok val="Pestilentes"/>
+         <tok val="pestilentes"/>
+         <tok val="pestilentesque"/>
+         <tok val="pestilentis"/>
          <lm>
             <l>pestilens</l>
             <m cert="0.333333333333333333">n - - p - - - m a</m>
@@ -595,8 +744,9 @@
             <m cert="0.333333333333333333">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pestilentiae pestilentiae-->
-         <tok val="[pP]estilentiae"/>
+      <ana>
+         <tok val="Pestilentiae"/>
+         <tok val="pestilentiae"/>
          <lm>
             <l>pestilentia</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -605,15 +755,19 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Pestilentiam pestilentiam pestilentiamque-->
-         <tok val="[pP]estilentiam(que)?"/>
+      <ana>
+         <tok val="Pestilentiam"/>
+         <tok val="pestilentiam"/>
+         <tok val="pestilentiamque"/>
          <lm>
             <l>pestilentia</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Pestilitas pestilitas pestilitasque-->
-         <tok val="[pP]estilitas(que)?"/>
+      <ana>
+         <tok val="Pestilitas"/>
+         <tok val="pestilitas"/>
+         <tok val="pestilitasque"/>
          <lm>
             <l>pestilitas</l>
             <m>n - - s - - - f n</m>
@@ -682,8 +836,9 @@
             <m>v - 1 s f i p</m>
          </lm>
       </ana>
-      <ana><!--pessiman pessimas-->
-         <tok val="pessima[sn]"/>
+      <ana>
+         <tok val="pessiman"/>
+         <tok val="pessimas"/>
          <lm cert="0.5">
             <l>pessimo</l>
             <m>v - 2 s p i a</m>
@@ -700,15 +855,20 @@
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--pessimarum pessimarumque-->
-         <tok val="pessimarum(que)?"/>
+      <ana>
+         <tok val="pessimarum"/>
+         <tok val="pessimarumque"/>
          <lm>
             <l>malus</l>
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--pessimis péssumis Péssumis-->
-         <tok val="[Pp]?(é|pe)ss[ui]mis"/>
+      <ana>
+         <tok val="Pessumis"/>
+         <tok val="Péssumis"/>
+         <tok val="pessimis"/>
+         <tok val="pessumis"/>
+         <tok val="péssumis"/>
          <lm>
             <l>malus</l>
             <m>a - - p - - - n d</m>
@@ -745,8 +905,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--pessulis pessulisque-->
-         <tok val="pessulis(que)?"/>
+      <ana>
+         <tok val="pessulis"/>
+         <tok val="pessulisque"/>
          <lm>
             <l>pessulus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -796,8 +957,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--pessumae pessumaé-->
-         <tok val="pessuma[ée]"/>
+      <ana>
+         <tok val="pessumae"/>
+         <tok val="pessumaé"/>
          <lm>
             <l>malus</l>
             <m>a - - p - - - f v s</m>
@@ -860,15 +1022,18 @@
             <m>a - - p - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--pessumum pessumumque pessumúmque-->
-         <tok val="pessum[úu]?(mq|)u[em]"/>
+      <ana>
+         <tok val="pessumum"/>
+         <tok val="pessumumque"/>
+         <tok val="pessumúmque"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--pessumum pessumumque-->
-         <tok val="pessumum(que)?"/>
+      <ana>
+         <tok val="pessumum"/>
+         <tok val="pessumumque"/>
          <lm>
             <l>malus</l>
             <m cert="0.25">a - - s - - - n a s</m>
@@ -877,15 +1042,20 @@
             <m cert="0.25">a - - s - - - m a s</m>
          </lm>
       </ana>
-      <ana><!--pessumus Péssumu-->
-         <tok val="(Pé|pe)ssumu[s]?"/>
+      <ana>
+         <tok val="Pessumu"/>
+         <tok val="Péssumu"/>
+         <tok val="pessumu"/>
+         <tok val="pessumus"/>
+         <tok val="péssumu"/>
          <lm>
             <l>malus</l>
             <m>a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--pessun pessus-->
-         <tok val="pessu[sn]"/>
+      <ana>
+         <tok val="pessun"/>
+         <tok val="pessus"/>
          <lm>
             <l>pessus</l>
             <m>n - - s - - - m n</m>
@@ -954,8 +1124,9 @@
             <m cert="0.142857142857142857">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--pestilen pestilis-->
-         <tok val="pestil(is|en)"/>
+      <ana>
+         <tok val="pestilen"/>
+         <tok val="pestilis"/>
          <lm>
             <l>pestilis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -974,8 +1145,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--pestilente pestilenti-->
-         <tok val="pestilent[ie]"/>
+      <ana>
+         <tok val="pestilente"/>
+         <tok val="pestilenti"/>
          <lm>
             <l>pestilens</l>
             <m cert="0.25">a - - s - - - n b</m>

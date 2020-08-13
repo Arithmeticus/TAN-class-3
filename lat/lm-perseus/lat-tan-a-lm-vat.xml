@@ -1,65 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusvat">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:vat">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to vat</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-vat.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>Vat</tok-starts-with>
       <tok-starts-with>vat</tok-starts-with>
       <tok-starts-with>vát</tok-starts-with>
-      <ana><!--Vate vate-->
-         <tok val="[vV]ate"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T05:05:33.622-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T05:05:33.622-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-vat.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="Vate"/>
+         <tok val="vate"/>
          <lm>
             <l>vates</l>
             <m cert="0.5">n - - s - - - f b</m>
             <m cert="0.5">n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Vatem vatem vatemque-->
-         <tok val="[vV]atem(que)?"/>
+      <ana>
+         <tok val="Vatem"/>
+         <tok val="vatem"/>
+         <tok val="vatemque"/>
          <lm>
             <l>vates</l>
             <m cert="0.5">n - - s - - - m a</m>
             <m cert="0.5">n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Vates vates vatesque vatesve vátes-->
-         <tok val="[vV]?(a|vá)tes(ve|que)?"/>
+      <ana>
+         <tok val="Vates"/>
+         <tok val="vates"/>
+         <tok val="vatesque"/>
+         <tok val="vatesve"/>
+         <tok val="vátes"/>
          <lm>
             <l>vates</l>
             <m>n - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vates vates vatesque vatesve-->
-         <tok val="[vV]ates(ve|que)?"/>
+      <ana>
+         <tok val="Vates"/>
+         <tok val="vates"/>
+         <tok val="vatesque"/>
+         <tok val="vatesve"/>
          <lm>
             <l>vates</l>
             <m cert="0.142857142857142857">n - - s - - - f n</m>
@@ -71,24 +89,34 @@
             <m cert="0.142857142857142857">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Vati Vatin vati vatii vatique-->
-         <tok val="[Vv]ati(n|i|que)?"/>
+      <ana>
+         <tok val="Vati"/>
+         <tok val="Vatin"/>
+         <tok val="vati"/>
+         <tok val="vatii"/>
+         <tok val="vatin"/>
+         <tok val="vatique"/>
          <lm>
             <l>vatius</l>
             <m cert="0.5">a - - s - - - m g</m>
             <m cert="0.5">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vati Vatin vati vatique-->
-         <tok val="[Vv]ati(n|que)?"/>
+      <ana>
+         <tok val="Vati"/>
+         <tok val="Vatin"/>
+         <tok val="vati"/>
+         <tok val="vatin"/>
+         <tok val="vatique"/>
          <lm>
             <l>vates</l>
             <m cert="0.5">n - - s - - - m d</m>
             <m cert="0.5">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Vatia vatia-->
-         <tok val="[vV]atia"/>
+      <ana>
+         <tok val="Vatia"/>
+         <tok val="vatia"/>
          <lm cert="0.5">
             <l>vatia</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -105,8 +133,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Vatiae vatiae vatiaeque-->
-         <tok val="[vV]atiae(que)?"/>
+      <ana>
+         <tok val="Vatiae"/>
+         <tok val="vatiae"/>
+         <tok val="vatiaeque"/>
          <lm cert="0.5">
             <l>vatia</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -122,8 +152,9 @@
             <m cert="0.25">a - - p - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vatiam vatiam-->
-         <tok val="[vV]atiam"/>
+      <ana>
+         <tok val="Vatiam"/>
+         <tok val="vatiam"/>
          <lm cert="0.5">
             <l>vatius</l>
             <m>a - - s - - - f a</m>
@@ -133,8 +164,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vatibus vatibus-->
-         <tok val="[vV]atibus"/>
+      <ana>
+         <tok val="Vatibus"/>
+         <tok val="vatibus"/>
          <lm>
             <l>vates</l>
             <m cert="0.25">n - - p - - - m b</m>
@@ -145,6 +177,7 @@
       </ana>
       <ana>
          <tok val="Vaticana"/>
+         <tok val="vaticana"/>
          <lm>
             <l>Vaticanus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -157,6 +190,7 @@
       </ana>
       <ana>
          <tok val="Vaticanae"/>
+         <tok val="vaticanae"/>
          <lm>
             <l>Vaticanus</l>
             <m cert="0.25">a e - s - - - f g</m>
@@ -167,6 +201,7 @@
       </ana>
       <ana>
          <tok val="Vaticani"/>
+         <tok val="vaticani"/>
          <lm>
             <l>Vaticanus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -177,6 +212,7 @@
       </ana>
       <ana>
          <tok val="Vaticanis"/>
+         <tok val="vaticanis"/>
          <lm>
             <l>Vaticanus</l>
             <m cert="0.166666666666666667">a e - p - - - m b</m>
@@ -189,6 +225,7 @@
       </ana>
       <ana>
          <tok val="Vaticano"/>
+         <tok val="vaticano"/>
          <lm>
             <l>Vaticanus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -199,6 +236,7 @@
       </ana>
       <ana>
          <tok val="Vaticanos"/>
+         <tok val="vaticanos"/>
          <lm>
             <l>Vaticanus</l>
             <m>a e - p - - - m a</m>
@@ -206,6 +244,7 @@
       </ana>
       <ana>
          <tok val="Vaticanum"/>
+         <tok val="vaticanum"/>
          <lm>
             <l>Vaticanus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -218,13 +257,15 @@
       </ana>
       <ana>
          <tok val="Vaticanus"/>
+         <tok val="vaticanus"/>
          <lm>
             <l>Vaticanus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vaticinans vaticinans-->
-         <tok val="[vV]aticinans"/>
+      <ana>
+         <tok val="Vaticinans"/>
+         <tok val="vaticinans"/>
          <lm>
             <l>vaticinor</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -236,8 +277,9 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Vaticinantis vaticinantis-->
-         <tok val="[vV]aticinantis"/>
+      <ana>
+         <tok val="Vaticinantis"/>
+         <tok val="vaticinantis"/>
          <lm>
             <l>vaticinor</l>
             <m cert="0.333333333333333333">v - - s p p a n g</m>
@@ -245,23 +287,27 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--Vaticinantis vaticinantes vaticinantis-->
-         <tok val="[vV]aticinant[ie]s"/>
+      <ana>
+         <tok val="Vaticinantis"/>
+         <tok val="vaticinantes"/>
+         <tok val="vaticinantis"/>
          <lm>
             <l>vaticinor</l>
             <m cert="0.5">v - - p p p a m a</m>
             <m cert="0.5">v - - p p p a f a</m>
          </lm>
       </ana>
-      <ana><!--Vaticinari vaticinari-->
-         <tok val="[vV]aticinari"/>
+      <ana>
+         <tok val="Vaticinari"/>
+         <tok val="vaticinari"/>
          <lm>
             <l>vaticinor</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Vaticinata vaticinata-->
-         <tok val="[vV]aticinata"/>
+      <ana>
+         <tok val="Vaticinata"/>
+         <tok val="vaticinata"/>
          <lm>
             <l>vaticinor</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -272,16 +318,18 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Vaticinatio vaticinatio-->
-         <tok val="[vV]aticinatio"/>
+      <ana>
+         <tok val="Vaticinatio"/>
+         <tok val="vaticinatio"/>
          <lm>
             <l>vaticinatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Vaticinationes vaticinationes-->
-         <tok val="[vV]aticinationes"/>
+      <ana>
+         <tok val="Vaticinationes"/>
+         <tok val="vaticinationes"/>
          <lm>
             <l>vaticinatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -289,15 +337,17 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Vaticinatus vaticinatus-->
-         <tok val="[vV]aticinatus"/>
+      <ana>
+         <tok val="Vaticinatus"/>
+         <tok val="vaticinatus"/>
          <lm>
             <l>vaticinor</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Vaticinio vaticinio-->
-         <tok val="[vV]aticinio"/>
+      <ana>
+         <tok val="Vaticinio"/>
+         <tok val="vaticinio"/>
          <lm cert="0.5">
             <l>vaticinius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -311,15 +361,19 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Vaticiniorum vaticiniorum-->
-         <tok val="[vV]aticiniorum"/>
+      <ana>
+         <tok val="Vaticiniorum"/>
+         <tok val="vaticiniorum"/>
          <lm>
             <l>vaticinus</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Vaticiniorum Vaticinium vaticiniorum vaticinium-->
-         <tok val="[vV]aticini(or)?um"/>
+      <ana>
+         <tok val="Vaticiniorum"/>
+         <tok val="Vaticinium"/>
+         <tok val="vaticiniorum"/>
+         <tok val="vaticinium"/>
          <lm cert="0.5">
             <l>vaticinius</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -330,8 +384,9 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Vaticinium vaticinium-->
-         <tok val="[vV]aticinium"/>
+      <ana>
+         <tok val="Vaticinium"/>
+         <tok val="vaticinium"/>
          <lm cert="0.5">
             <l>vaticinius</l>
             <m cert="0.25">a - - s - - - n n</m>
@@ -348,40 +403,39 @@
       </ana>
       <ana>
          <tok val="Vaticinius"/>
-         <lm>
-            <l>vaticinus</l>
-            <m>d - - - - - - - - c</m>
-         </lm>
-      </ana>
-      <ana><!--Vaticinius vaticinius-->
-         <tok val="[vV]aticinius"/>
+         <tok val="vaticinius"/>
          <lm cert="0.5">
             <l>vaticinus</l>
-            <m cert="0.333333333333333333">a - - s - - - n a c</m>
-            <m cert="0.333333333333333333">a - - s - - - n v c</m>
-            <m cert="0.333333333333333333">a - - s - - - n n c</m>
+            <m cert="0.25">d - - - - - - - - c</m>
+            <m cert="0.25">a - - s - - - n a c</m>
+            <m cert="0.25">a - - s - - - n v c</m>
+            <m cert="0.25">a - - s - - - n n c</m>
          </lm>
          <lm cert="0.5">
             <l>vaticinius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vaticinor vaticinor vaticinorque-->
-         <tok val="[vV]aticinor(que)?"/>
+      <ana>
+         <tok val="Vaticinor"/>
+         <tok val="vaticinor"/>
+         <tok val="vaticinorque"/>
          <lm>
             <l>vaticinor</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Vaticinos vaticinos-->
-         <tok val="[vV]aticinos"/>
+      <ana>
+         <tok val="Vaticinos"/>
+         <tok val="vaticinos"/>
          <lm>
             <l>vaticinus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Vaticinus vaticinus-->
-         <tok val="[vV]aticinus"/>
+      <ana>
+         <tok val="Vaticinus"/>
+         <tok val="vaticinus"/>
          <lm>
             <l>vaticinus</l>
             <m>a - - s - - - m n</m>
@@ -389,13 +443,18 @@
       </ana>
       <ana>
          <tok val="Vatienus"/>
+         <tok val="vatienus"/>
          <lm>
             <l>Vatienus</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vatin Vatis vatis vatisque-->
-         <tok val="[Vv]ati(s|n|sque)"/>
+      <ana>
+         <tok val="Vatin"/>
+         <tok val="Vatis"/>
+         <tok val="vatin"/>
+         <tok val="vatis"/>
+         <tok val="vatisque"/>
          <lm>
             <l>vates</l>
             <m cert="0.5">n - - s - - - m g</m>
@@ -404,13 +463,17 @@
       </ana>
       <ana>
          <tok val="Vatini"/>
+         <tok val="vatini"/>
          <lm>
             <l>Vatinius</l>
             <m>n e - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vatini Vatinii-->
-         <tok val="Vatini[i]?"/>
+      <ana>
+         <tok val="Vatini"/>
+         <tok val="Vatinii"/>
+         <tok val="vatini"/>
+         <tok val="vatinii"/>
          <lm>
             <l>Vatinius</l>
             <m>n e - s - - - m g</m>
@@ -418,6 +481,7 @@
       </ana>
       <ana>
          <tok val="Vatiniana"/>
+         <tok val="vatiniana"/>
          <lm>
             <l>Vatinianus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -430,6 +494,7 @@
       </ana>
       <ana>
          <tok val="Vatiniani"/>
+         <tok val="vatiniani"/>
          <lm>
             <l>Vatinianus</l>
             <m cert="0.25">a e - p - - - m v</m>
@@ -440,6 +505,7 @@
       </ana>
       <ana>
          <tok val="Vatiniano"/>
+         <tok val="vatiniano"/>
          <lm>
             <l>Vatinianus</l>
             <m cert="0.25">a e - s - - - n d</m>
@@ -450,6 +516,7 @@
       </ana>
       <ana>
          <tok val="Vatinianum"/>
+         <tok val="vatinianum"/>
          <lm>
             <l>Vatinianus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -462,6 +529,7 @@
       </ana>
       <ana>
          <tok val="Vatinianus"/>
+         <tok val="vatinianus"/>
          <lm>
             <l>Vatinianus</l>
             <m>a e - s - - - m n</m>
@@ -469,6 +537,7 @@
       </ana>
       <ana>
          <tok val="Vatinii"/>
+         <tok val="vatinii"/>
          <lm>
             <l>Vatinius</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -477,14 +546,18 @@
       </ana>
       <ana>
          <tok val="Vatinio"/>
+         <tok val="vatinio"/>
          <lm>
             <l>Vatinius</l>
             <m cert="0.5">n e - s - - - m b</m>
             <m cert="0.5">n e - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Vatiniorum Vatinium-->
-         <tok val="Vatini(or)?um"/>
+      <ana>
+         <tok val="Vatiniorum"/>
+         <tok val="Vatinium"/>
+         <tok val="vatiniorum"/>
+         <tok val="vatinium"/>
          <lm>
             <l>Vatinius</l>
             <m>n e - p - - - m g</m>
@@ -492,6 +565,7 @@
       </ana>
       <ana>
          <tok val="Vatinios"/>
+         <tok val="vatinios"/>
          <lm>
             <l>Vatinius</l>
             <m>n e - p - - - m a</m>
@@ -499,6 +573,7 @@
       </ana>
       <ana>
          <tok val="Vatinium"/>
+         <tok val="vatinium"/>
          <lm>
             <l>Vatinius</l>
             <m>n e - s - - - m a</m>
@@ -506,13 +581,17 @@
       </ana>
       <ana>
          <tok val="Vatinius"/>
+         <tok val="vatinius"/>
          <lm>
             <l>Vatinius</l>
             <m>n e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vatio vatio vation vatione-->
-         <tok val="[vV]atio[n]?[e]?"/>
+      <ana>
+         <tok val="Vatio"/>
+         <tok val="vatio"/>
+         <tok val="vation"/>
+         <tok val="vatione"/>
          <lm>
             <l>vatius</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -521,15 +600,17 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Vatius vatius-->
-         <tok val="[vV]atius"/>
+      <ana>
+         <tok val="Vatius"/>
+         <tok val="vatius"/>
          <lm>
             <l>vatius</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Vatrax vatrax-->
-         <tok val="[vV]atrax"/>
+      <ana>
+         <tok val="Vatrax"/>
+         <tok val="vatrax"/>
          <lm>
             <l>vatrax</l>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -543,6 +624,7 @@
       </ana>
       <ana>
          <tok val="Vatreni"/>
+         <tok val="vatreni"/>
          <lm>
             <l>Vatrenus</l>
             <m cert="0.333333333333333333">n e - p - - - m n</m>
@@ -550,8 +632,10 @@
             <m cert="0.333333333333333333">n e - p - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Vatum vatum vatumque-->
-         <tok val="[vV]atum(que)?"/>
+      <ana>
+         <tok val="Vatum"/>
+         <tok val="vatum"/>
+         <tok val="vatumque"/>
          <lm>
             <l>vates</l>
             <m cert="0.5">n - - p - - - m g</m>
@@ -633,8 +717,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--vaticinante vaticinanti-->
-         <tok val="vaticinant[ie]"/>
+      <ana>
+         <tok val="vaticinante"/>
+         <tok val="vaticinanti"/>
          <lm>
             <l>vaticinor</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -704,8 +789,9 @@
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--vaticinare vaticinaris-->
-         <tok val="vaticinar(is|e)"/>
+      <ana>
+         <tok val="vaticinare"/>
+         <tok val="vaticinaris"/>
          <lm>
             <l>vaticinor</l>
             <m>v - 2 s p i p</m>
@@ -749,16 +835,18 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--vaticinationibus vaticinationibusque-->
-         <tok val="vaticinationibus(que)?"/>
+      <ana>
+         <tok val="vaticinationibus"/>
+         <tok val="vaticinationibusque"/>
          <lm>
             <l>vaticinatio</l>
             <m cert="0.5">n - - p - - - f d</m>
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--vaticinationis vaticinationisque-->
-         <tok val="vaticinationis(que)?"/>
+      <ana>
+         <tok val="vaticinationis"/>
+         <tok val="vaticinationisque"/>
          <lm>
             <l>vaticinatio</l>
             <m>n - - s - - - f g</m>
@@ -951,8 +1039,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--vation vatios-->
-         <tok val="vatio[sn]"/>
+      <ana>
+         <tok val="vation"/>
+         <tok val="vatios"/>
          <lm>
             <l>vatius</l>
             <m>a - - p - - - m a</m>

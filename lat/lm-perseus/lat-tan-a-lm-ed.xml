@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseused">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:ed">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to ed</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-ed.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>ED</tok-starts-with>
       <tok-starts-with>Ed</tok-starts-with>
       <tok-starts-with>ed</tok-starts-with>
       <tok-starts-with>éd</tok-starts-with>
       <tok-starts-with>Éd</tok-starts-with>
-      <ana><!--EDANTVR edantur edanturve-->
-         <tok val="(edantur)?(ve|EDANTVR)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:21:34.416-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:21:34.416-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-ed.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="EDANTVR"/>
+         <tok val="edantur"/>
+         <tok val="edanturve"/>
+         <tok val="edantvr"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 3 p p s p</m>
@@ -50,13 +61,17 @@
       </ana>
       <ana>
          <tok val="EDENTO"/>
+         <tok val="edento"/>
          <lm>
             <l>edento</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--EDI Edi edi edin-->
-         <tok val="[eE]?(di)?(n|EDI)?"/>
+      <ana>
+         <tok val="EDI"/>
+         <tok val="Edi"/>
+         <tok val="edi"/>
+         <tok val="edin"/>
          <lm cert="0.333333333333333333">
             <l>haedus</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -73,15 +88,20 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--EDICO Edico edico-->
-         <tok val="[eE]?(dico|EDICO)"/>
+      <ana>
+         <tok val="EDICO"/>
+         <tok val="Edico"/>
+         <tok val="edico"/>
          <lm>
             <l>edico</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--EDICTO Edicto edicto edictoque-->
-         <tok val="[eE]?(dicto)?(que|EDICTO)?"/>
+      <ana>
+         <tok val="EDICTO"/>
+         <tok val="Edicto"/>
+         <tok val="edicto"/>
+         <tok val="edictoque"/>
          <lm cert="0.333333333333333333">
             <l>edico</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -99,8 +119,16 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--EDICTUM EDICTVM Edictum Edictvm edictorum edictum edictumque edictumue-->
-         <tok val="(edict)?(or)?(um)?[q]?(ue|EDICTVM|EDICTUM|Edictvm|Edictum)?"/>
+      <ana>
+         <tok val="EDICTUM"/>
+         <tok val="EDICTVM"/>
+         <tok val="Edictum"/>
+         <tok val="Edictvm"/>
+         <tok val="edictorum"/>
+         <tok val="edictum"/>
+         <tok val="edictumque"/>
+         <tok val="edictumue"/>
+         <tok val="edictvm"/>
          <lm cert="0.5">
             <l>edico</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -111,8 +139,15 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--EDICTUM EDICTVM Edictum Edictvm edictum edictumque edictumue-->
-         <tok val="(edictum)?[q]?(ue|EDICTVM|EDICTUM|Edictvm|Edictum)?"/>
+      <ana>
+         <tok val="EDICTUM"/>
+         <tok val="EDICTVM"/>
+         <tok val="Edictum"/>
+         <tok val="Edictvm"/>
+         <tok val="edictum"/>
+         <tok val="edictumque"/>
+         <tok val="edictumue"/>
+         <tok val="edictvm"/>
          <lm cert="0.5">
             <l>edictum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -127,15 +162,23 @@
             <m cert="0.25">v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--EDICTUM EDICTVM Edictum Edictvm-->
-         <tok val="E(DICT)?[VU]?(M|dictvm|dictum)"/>
+      <ana>
+         <tok val="EDICTUM"/>
+         <tok val="EDICTVM"/>
+         <tok val="Edictum"/>
+         <tok val="Edictvm"/>
+         <tok val="edictum"/>
+         <tok val="edictvm"/>
          <lm>
             <l>edico</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--EDITA Edita edita editaque-->
-         <tok val="[eE]?(dita)?(que|EDITA)?"/>
+      <ana>
+         <tok val="EDITA"/>
+         <tok val="Edita"/>
+         <tok val="edita"/>
+         <tok val="editaque"/>
          <lm cert="0.333333333333333333">
             <l>edo2</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -156,30 +199,41 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--EDITIO Editio editio edition-->
-         <tok val="[eE]?(ditio)?(n|EDITIO)?"/>
+      <ana>
+         <tok val="EDITIO"/>
+         <tok val="Editio"/>
+         <tok val="editio"/>
+         <tok val="edition"/>
          <lm>
             <l>editio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--EDITIONIS Editionis editionis-->
-         <tok val="[eE]?(ditionis|EDITIONIS)"/>
+      <ana>
+         <tok val="EDITIONIS"/>
+         <tok val="Editionis"/>
+         <tok val="editionis"/>
          <lm>
             <l>editio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--EDITORIS editoris-->
-         <tok val="(editoris|EDITORIS)"/>
+      <ana>
+         <tok val="EDITORIS"/>
+         <tok val="editoris"/>
          <lm>
             <l>editor</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--EDO Edo Edon edo édo-->
-         <tok val="[Eeé]?(do)?(n|EDO)?"/>
+      <ana>
+         <tok val="EDO"/>
+         <tok val="Edo"/>
+         <tok val="Edon"/>
+         <tok val="edo"/>
+         <tok val="edon"/>
+         <tok val="édo"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 1 s p i a</m>
@@ -189,8 +243,12 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--EDO Edo Edon edo-->
-         <tok val="[Ee]?(do)?(n|EDO)?"/>
+      <ana>
+         <tok val="EDO"/>
+         <tok val="Edo"/>
+         <tok val="Edon"/>
+         <tok val="edo"/>
+         <tok val="edon"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.5">n - - s - - - m n</m>
@@ -202,16 +260,19 @@
             <m cert="0.5">n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--Edaces edaces edacis-->
-         <tok val="[eE]dac[ei]s"/>
+      <ana>
+         <tok val="Edaces"/>
+         <tok val="edaces"/>
+         <tok val="edacis"/>
          <lm>
             <l>edax</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Edaces edaces-->
-         <tok val="[eE]daces"/>
+      <ana>
+         <tok val="Edaces"/>
+         <tok val="edaces"/>
          <lm>
             <l>edax</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -220,15 +281,18 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Edacitas edacitas-->
-         <tok val="[eE]dacitas"/>
+      <ana>
+         <tok val="Edacitas"/>
+         <tok val="edacitas"/>
          <lm>
             <l>edacitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Edax edax edaxque-->
-         <tok val="[eE]dax(que)?"/>
+      <ana>
+         <tok val="Edax"/>
+         <tok val="edax"/>
+         <tok val="edaxque"/>
          <lm>
             <l>edax</l>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -240,8 +304,11 @@
             <m cert="0.142857142857142857">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Ede Eden eden ede-->
-         <tok val="[Ee]de[n]?"/>
+      <ana>
+         <tok val="Ede"/>
+         <tok val="Eden"/>
+         <tok val="ede"/>
+         <tok val="eden"/>
          <lm cert="0.333333333333333333">
             <l>edo</l>
             <m>v - 2 s p m a</m>
@@ -255,15 +322,22 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Edebat edebat-->
-         <tok val="[eE]debat"/>
-         <lm>
+      <ana>
+         <tok val="Edebat"/>
+         <tok val="edebat"/>
+         <lm cert="0.5">
             <l>edo</l>
             <m>v - 3 s i i a</m>
          </lm>
+         <lm cert="0.5">
+            <l>edo2</l>
+            <m>v - 3 s i i a</m>
+         </lm>
       </ana>
-      <ana><!--Edem edem edemque-->
-         <tok val="[eE]dem(que)?"/>
+      <ana>
+         <tok val="Edem"/>
+         <tok val="edem"/>
+         <tok val="edemque"/>
          <lm>
             <l>exdo</l>
             <m>v - 1 s p s a</m>
@@ -271,13 +345,18 @@
       </ana>
       <ana>
          <tok val="Edema"/>
+         <tok val="edema"/>
          <lm>
             <l>exdemeo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Eden Edes eden edes edés-->
-         <tok val="[Ee]d[e]?(s|n|és)"/>
+      <ana>
+         <tok val="Eden"/>
+         <tok val="Edes"/>
+         <tok val="eden"/>
+         <tok val="edes"/>
+         <tok val="edés"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 2 s f i a</m>
@@ -287,8 +366,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Edenda edenda-->
-         <tok val="[eE]denda"/>
+      <ana>
+         <tok val="Edenda"/>
+         <tok val="edenda"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -308,8 +388,10 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Edendi edendi edundi-->
-         <tok val="[eE]d[eu]ndi"/>
+      <ana>
+         <tok val="Edendi"/>
+         <tok val="edendi"/>
+         <tok val="edundi"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -327,8 +409,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Edendus edendus-->
-         <tok val="[eE]dendus"/>
+      <ana>
+         <tok val="Edendus"/>
+         <tok val="edendus"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - - s p g p m n</m>
@@ -338,8 +421,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Edent edent-->
-         <tok val="[eE]dent"/>
+      <ana>
+         <tok val="Edent"/>
+         <tok val="edent"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 3 p f i a</m>
@@ -351,6 +435,7 @@
       </ana>
       <ana>
          <tok val="Edentare"/>
+         <tok val="edentare"/>
          <lm>
             <l>edento</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -358,8 +443,9 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Edentatae edentatae-->
-         <tok val="[eE]dentatae"/>
+      <ana>
+         <tok val="Edentatae"/>
+         <tok val="edentatae"/>
          <lm>
             <l>edento</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -368,8 +454,9 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Edentem edentem-->
-         <tok val="[eE]dentem"/>
+      <ana>
+         <tok val="Edentem"/>
+         <tok val="edentem"/>
          <lm cert="0.333333333333333333">
             <l>edo</l>
             <m cert="0.5">v - - s p p a f a</m>
@@ -385,8 +472,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--Edentulae edentulae-->
-         <tok val="[eE]dentulae"/>
+      <ana>
+         <tok val="Edentulae"/>
+         <tok val="edentulae"/>
          <lm>
             <l>edentulus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -395,15 +483,18 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Edentuli edentuli edéntuli-->
-         <tok val="[eE]d[eé]ntuli"/>
+      <ana>
+         <tok val="Edentuli"/>
+         <tok val="edentuli"/>
+         <tok val="edéntuli"/>
          <lm>
             <l>edentulus</l>
             <m>a - - s - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Edentuli edentuli-->
-         <tok val="[eE]dentuli"/>
+      <ana>
+         <tok val="Edentuli"/>
+         <tok val="edentuli"/>
          <lm>
             <l>edentulus</l>
             <m cert="0.333333333333333333">a - - p - - - m v</m>
@@ -413,13 +504,18 @@
       </ana>
       <ana>
          <tok val="Edentulus"/>
+         <tok val="edentulus"/>
          <lm>
             <l>edentulus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Edepol edepol edepól édepol Édepol-->
-         <tok val="[eEéÉ]dep[oó]l"/>
+      <ana>
+         <tok val="Edepol"/>
+         <tok val="edepol"/>
+         <tok val="edepól"/>
+         <tok val="Édepol"/>
+         <tok val="édepol"/>
          <lm>
             <l>edepol</l>
             <m>i</m>
@@ -427,20 +523,26 @@
       </ana>
       <ana>
          <tok val="Eder"/>
+         <tok val="eder"/>
          <lm>
             <l>exdo</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Edere edere edereque ederunt-->
-         <tok val="[eE]der[e]?(que|unt)?"/>
+      <ana>
+         <tok val="Edere"/>
+         <tok val="edere"/>
+         <tok val="edereque"/>
+         <tok val="ederunt"/>
          <lm>
             <l>edo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--Edere edere edereque-->
-         <tok val="[eE]dere(que)?"/>
+      <ana>
+         <tok val="Edere"/>
+         <tok val="edere"/>
+         <tok val="edereque"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.5">v - 2 s p m p</m>
@@ -448,11 +550,16 @@
          </lm>
          <lm cert="0.5">
             <l>edo2</l>
-            <m>v - 2 s p m p</m>
+            <m cert="0.5">v - - - p n a</m>
+            <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Edere edere edereque ederis éderis-->
-         <tok val="[éeE]der(is|e|eque)"/>
+      <ana>
+         <tok val="Edere"/>
+         <tok val="edere"/>
+         <tok val="edereque"/>
+         <tok val="ederis"/>
+         <tok val="éderis"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -463,8 +570,9 @@
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Ederet ederet-->
-         <tok val="[eE]deret"/>
+      <ana>
+         <tok val="Ederet"/>
+         <tok val="ederet"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 3 s i s a</m>
@@ -476,6 +584,7 @@
       </ana>
       <ana>
          <tok val="Edessa"/>
+         <tok val="edessa"/>
          <lm>
             <l>Edessa</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -485,6 +594,7 @@
       </ana>
       <ana>
          <tok val="Edessae"/>
+         <tok val="edessae"/>
          <lm>
             <l>Edessa</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -495,6 +605,7 @@
       </ana>
       <ana>
          <tok val="Edessaeus"/>
+         <tok val="edessaeus"/>
          <lm>
             <l>Edessaeus</l>
             <m>a e - s - - - m n</m>
@@ -502,6 +613,7 @@
       </ana>
       <ana>
          <tok val="Edessam"/>
+         <tok val="edessam"/>
          <lm>
             <l>Edessa</l>
             <m>n e - s - - - f a</m>
@@ -509,6 +621,7 @@
       </ana>
       <ana>
          <tok val="Edessena"/>
+         <tok val="edessena"/>
          <lm>
             <l>Edessenus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -521,13 +634,15 @@
       </ana>
       <ana>
          <tok val="Edessenus"/>
+         <tok val="edessenus"/>
          <lm>
             <l>Edessenus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Edet edet-->
-         <tok val="[eE]det"/>
+      <ana>
+         <tok val="Edet"/>
+         <tok val="edet"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 3 s f i a</m>
@@ -537,8 +652,10 @@
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Edetur edetur edeturque-->
-         <tok val="[eE]detur(que)?"/>
+      <ana>
+         <tok val="Edetur"/>
+         <tok val="edetur"/>
+         <tok val="edeturque"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 3 s f i p</m>
@@ -548,15 +665,18 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Edice edic edice-->
-         <tok val="[eE]dic[e]?"/>
+      <ana>
+         <tok val="Edice"/>
+         <tok val="edic"/>
+         <tok val="edice"/>
          <lm>
             <l>edico</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Edicere edicere-->
-         <tok val="[eE]dicere"/>
+      <ana>
+         <tok val="Edicere"/>
+         <tok val="edicere"/>
          <lm>
             <l>edico</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -565,22 +685,27 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Edici edici-->
-         <tok val="[eE]dici"/>
+      <ana>
+         <tok val="Edici"/>
+         <tok val="edici"/>
          <lm>
             <l>edico</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Edicit edicit-->
-         <tok val="[eE]dicit"/>
+      <ana>
+         <tok val="Edicit"/>
+         <tok val="edicit"/>
          <lm>
             <l>edico</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edicta edicta edictaue EDICTA-->
-         <tok val="[eE]?(dicta)?(ue|EDICTA)?"/>
+      <ana>
+         <tok val="EDICTA"/>
+         <tok val="Edicta"/>
+         <tok val="edicta"/>
+         <tok val="edictaue"/>
          <lm cert="0.333333333333333333">
             <l>edico</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -601,8 +726,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Edictio edictio-->
-         <tok val="[eE]dictio"/>
+      <ana>
+         <tok val="Edictio"/>
+         <tok val="edictio"/>
          <lm>
             <l>edictio</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -611,64 +737,76 @@
       </ana>
       <ana>
          <tok val="Edictu"/>
+         <tok val="edictu"/>
          <lm>
             <l>edico</l>
             <m>v - - - - u - - b</m>
          </lm>
       </ana>
-      <ana><!--Edictus edictus-->
-         <tok val="[eE]dictus"/>
+      <ana>
+         <tok val="Edictus"/>
+         <tok val="edictus"/>
          <lm>
             <l>edico</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Ediderint ediderint-->
-         <tok val="[eE]diderint"/>
+      <ana>
+         <tok val="Ediderint"/>
+         <tok val="ediderint"/>
          <lm>
             <l>edo2</l>
             <m cert="0.5">v - 3 p t i a</m>
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--Ediderit ediderit-->
-         <tok val="[eE]diderit"/>
+      <ana>
+         <tok val="Ediderit"/>
+         <tok val="ediderit"/>
          <lm>
             <l>edo2</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--Edidi edidi édidi-->
-         <tok val="[eEé]didi"/>
+      <ana>
+         <tok val="Edidi"/>
+         <tok val="edidi"/>
+         <tok val="édidi"/>
          <lm>
             <l>edo2</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Edidissem edidissem-->
-         <tok val="[eE]didissem"/>
+      <ana>
+         <tok val="Edidissem"/>
+         <tok val="edidissem"/>
          <lm>
             <l>edo2</l>
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Edidit edidit ediditque-->
-         <tok val="[eE]didit(que)?"/>
+      <ana>
+         <tok val="Edidit"/>
+         <tok val="edidit"/>
+         <tok val="ediditque"/>
          <lm>
             <l>edo2</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Edim edam edim-->
-         <tok val="[eE]d[ia]m"/>
+      <ana>
+         <tok val="Edim"/>
+         <tok val="edam"/>
+         <tok val="edim"/>
          <lm>
             <l>edo</l>
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Ediscendum ediscendum-->
-         <tok val="[eE]discendum"/>
+      <ana>
+         <tok val="Ediscendum"/>
+         <tok val="ediscendum"/>
          <lm>
             <l>edisco</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -680,15 +818,17 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Ediscendus ediscendus-->
-         <tok val="[eE]discendus"/>
+      <ana>
+         <tok val="Ediscendus"/>
+         <tok val="ediscendus"/>
          <lm>
             <l>edisco</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Ediscere ediscere-->
-         <tok val="[eE]discere"/>
+      <ana>
+         <tok val="Ediscere"/>
+         <tok val="ediscere"/>
          <lm>
             <l>edisco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -697,43 +837,49 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Edisco edisco-->
-         <tok val="[eE]disco"/>
+      <ana>
+         <tok val="Edisco"/>
+         <tok val="edisco"/>
          <lm>
             <l>edisco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edisse edisse-->
-         <tok val="[eE]disse"/>
+      <ana>
+         <tok val="Edisse"/>
+         <tok val="edisse"/>
          <lm>
             <l>edo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Edissere edissere-->
-         <tok val="[eE]dissere"/>
+      <ana>
+         <tok val="Edissere"/>
+         <tok val="edissere"/>
          <lm>
             <l>edissero</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Edisseritur edisseritur-->
-         <tok val="[eE]disseritur"/>
+      <ana>
+         <tok val="Edisseritur"/>
+         <tok val="edisseritur"/>
          <lm>
             <l>edissero</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Edissero edissero-->
-         <tok val="[eE]dissero"/>
+      <ana>
+         <tok val="Edissero"/>
+         <tok val="edissero"/>
          <lm>
             <l>edissero</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edissertavit edissertavit-->
-         <tok val="[eE]dissertavit"/>
+      <ana>
+         <tok val="Edissertavit"/>
+         <tok val="edissertavit"/>
          <lm>
             <l>edisserto</l>
             <m>v - 3 s r i a</m>
@@ -741,6 +887,7 @@
       </ana>
       <ana>
          <tok val="Edisserto"/>
+         <tok val="edisserto"/>
          <lm cert="0.5">
             <l>edissero</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -753,59 +900,79 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edisseruntur edisseruntur-->
-         <tok val="[eE]disseruntur"/>
+      <ana>
+         <tok val="Edisseruntur"/>
+         <tok val="edisseruntur"/>
          <lm>
             <l>edissero</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Edisti edisti edísti-->
-         <tok val="[eE]d[ií]sti"/>
+      <ana>
+         <tok val="Edisti"/>
+         <tok val="edisti"/>
+         <tok val="edísti"/>
          <lm>
             <l>edo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Edit edat edit-->
-         <tok val="[eE]d[ia]t"/>
+      <ana>
+         <tok val="Edit"/>
+         <tok val="edat"/>
+         <tok val="edit"/>
          <lm>
             <l>edo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Edit edit-->
-         <tok val="[eE]dit"/>
-         <lm>
+      <ana>
+         <tok val="Edit"/>
+         <tok val="edit"/>
+         <lm cert="0.5">
             <l>edo</l>
             <m cert="0.5">v - 3 s r i a</m>
             <m cert="0.5">v - 3 s p i a</m>
          </lm>
-      </ana>
-      <ana><!--Edite edite-->
-         <tok val="[eE]dite"/>
-         <lm>
-            <l>edo</l>
-            <m>v - 2 p p m a</m>
-         </lm>
-      </ana>
-      <ana><!--Edite Editum edite editum editumque-->
-         <tok val="[eE]dit(um|e|umque)"/>
-         <lm>
-            <l>editum</l>
-            <m>n - - s - - - n v</m>
+         <lm cert="0.5">
+            <l>edo2</l>
+            <m>v - 3 s p i a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Edite"/>
-         <lm>
+         <tok val="edite"/>
+         <lm cert="0.5">
             <l>edo</l>
-            <m cert="0.5">v - - s r p p n v</m>
+            <m cert="0.333333333333333333">v - 2 p p m a</m>
+            <m cert="0.333333333333333333">v - - s r p p n v</m>
+            <m cert="0.333333333333333333">v - - s r p p m v</m>
+         </lm>
+         <lm cert="0.5">
+            <l>edo2</l>
             <m cert="0.5">v - - s r p p m v</m>
+            <m cert="0.5">v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Editi editi editique-->
-         <tok val="[eE]diti(que)?"/>
+      <ana>
+         <tok val="Edite"/>
+         <tok val="Editum"/>
+         <tok val="edite"/>
+         <tok val="editum"/>
+         <tok val="editumque"/>
+         <lm cert="0.5">
+            <l>editum</l>
+            <m>n - - s - - - n v</m>
+         </lm>
+         <lm cert="0.5">
+            <l>edo2</l>
+            <m>v - - s r p p n v</m>
+         </lm>
+      </ana>
+      <ana>
+         <tok val="Editi"/>
+         <tok val="editi"/>
+         <tok val="editique"/>
          <lm cert="0.5">
             <l>edo2</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -818,22 +985,26 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Editione editione-->
-         <tok val="[eE]ditione"/>
+      <ana>
+         <tok val="Editione"/>
+         <tok val="editione"/>
          <lm>
             <l>editio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Editionem editionem-->
-         <tok val="[eE]ditionem"/>
+      <ana>
+         <tok val="Editionem"/>
+         <tok val="editionem"/>
          <lm>
             <l>editio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Editiones editiones EDITIONES-->
-         <tok val="[eE]?(ditiones|EDITIONES)"/>
+      <ana>
+         <tok val="EDITIONES"/>
+         <tok val="Editiones"/>
+         <tok val="editiones"/>
          <lm>
             <l>editio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -841,8 +1012,10 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Editior editior editiorque-->
-         <tok val="[eE]ditior(que)?"/>
+      <ana>
+         <tok val="Editior"/>
+         <tok val="editior"/>
+         <tok val="editiorque"/>
          <lm>
             <l>edo2</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -851,8 +1024,9 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Editiora editiora-->
-         <tok val="[eE]ditiora"/>
+      <ana>
+         <tok val="Editiora"/>
+         <tok val="editiora"/>
          <lm>
             <l>edo2</l>
             <m cert="0.333333333333333333">a - - p - - - n n c</m>
@@ -860,8 +1034,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--Editissimis editissimis-->
-         <tok val="[eE]ditissimis"/>
+      <ana>
+         <tok val="Editissimis"/>
+         <tok val="editissimis"/>
          <lm>
             <l>edo2</l>
             <m cert="0.166666666666666667">a - - p - - - f d s</m>
@@ -872,8 +1047,9 @@
             <m cert="0.166666666666666667">a - - p - - - m d s</m>
          </lm>
       </ana>
-      <ana><!--Editor editor-->
-         <tok val="[eE]ditor"/>
+      <ana>
+         <tok val="Editor"/>
+         <tok val="editor"/>
          <lm>
             <l>editor</l>
             <m cert="0.333333333333333333">n - - s - - - m n</m>
@@ -881,8 +1057,11 @@
             <m cert="0.333333333333333333">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Editum editorum editum editumque-->
-         <tok val="[eE]dit(or)?um(que)?"/>
+      <ana>
+         <tok val="Editum"/>
+         <tok val="editorum"/>
+         <tok val="editum"/>
+         <tok val="editumque"/>
          <lm cert="0.5">
             <l>edo2</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -893,8 +1072,10 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Editum editum editumque-->
-         <tok val="[eE]ditum(que)?"/>
+      <ana>
+         <tok val="Editum"/>
+         <tok val="editum"/>
+         <tok val="editumque"/>
          <lm cert="0.333333333333333333">
             <l>edo2</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -911,29 +1092,25 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Editum edite editum editumque Edite-->
-         <tok val="[eE]dit(um)?(que|e)?"/>
-         <lm>
-            <l>edo2</l>
-            <m>v - - s r p p n v</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="Editum"/>
+         <tok val="editum"/>
          <lm>
             <l>edo2</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Editur editur-->
-         <tok val="[eE]ditur"/>
+      <ana>
+         <tok val="Editur"/>
+         <tok val="editur"/>
          <lm>
             <l>edo2</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Editus editus-->
-         <tok val="[eE]ditus"/>
+      <ana>
+         <tok val="Editus"/>
+         <tok val="editus"/>
          <lm cert="0.5">
             <l>editus2</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -948,6 +1125,7 @@
       </ana>
       <ana>
          <tok val="Ediuerso"/>
+         <tok val="ediuerso"/>
          <lm>
             <l>exdiverto</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -956,36 +1134,44 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Edixerat edixerat-->
-         <tok val="[eE]dixerat"/>
+      <ana>
+         <tok val="Edixerat"/>
+         <tok val="edixerat"/>
          <lm>
             <l>edico</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Edixin edixi edixin édixi-->
-         <tok val="[eEé]dixi[n]?"/>
+      <ana>
+         <tok val="Edixin"/>
+         <tok val="edixi"/>
+         <tok val="edixin"/>
+         <tok val="édixi"/>
          <lm>
             <l>edico</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Edixit edixit edixitque-->
-         <tok val="[eE]dixit(que)?"/>
+      <ana>
+         <tok val="Edixit"/>
+         <tok val="edixit"/>
+         <tok val="edixitque"/>
          <lm>
             <l>edico</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Edocebo edocebo-->
-         <tok val="[eE]docebo"/>
+      <ana>
+         <tok val="Edocebo"/>
+         <tok val="edocebo"/>
          <lm>
             <l>edoceo</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Edocentur edocentur-->
-         <tok val="[eE]docentur"/>
+      <ana>
+         <tok val="Edocentur"/>
+         <tok val="edocentur"/>
          <lm>
             <l>edoceo</l>
             <m>v - 3 p p i p</m>
@@ -993,13 +1179,15 @@
       </ana>
       <ana>
          <tok val="Edoceo"/>
+         <tok val="edoceo"/>
          <lm>
             <l>edoceo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edocere edocere-->
-         <tok val="[eE]docere"/>
+      <ana>
+         <tok val="Edocere"/>
+         <tok val="edocere"/>
          <lm>
             <l>edoceo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1007,15 +1195,17 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Edocet edocet-->
-         <tok val="[eE]docet"/>
+      <ana>
+         <tok val="Edocet"/>
+         <tok val="edocet"/>
          <lm>
             <l>edoceo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edoctae edoctae-->
-         <tok val="[eE]doctae"/>
+      <ana>
+         <tok val="Edoctae"/>
+         <tok val="edoctae"/>
          <lm>
             <l>edoceo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -1024,15 +1214,17 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--Edoctus edoctus-->
-         <tok val="[eE]doctus"/>
+      <ana>
+         <tok val="Edoctus"/>
+         <tok val="edoctus"/>
          <lm>
             <l>edoceo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Edocuit edocuit-->
-         <tok val="[eE]docuit"/>
+      <ana>
+         <tok val="Edocuit"/>
+         <tok val="edocuit"/>
          <lm>
             <l>edoceo</l>
             <m>v - 3 s r i a</m>
@@ -1040,20 +1232,24 @@
       </ana>
       <ana>
          <tok val="Edolo"/>
+         <tok val="edolo"/>
          <lm>
             <l>edolo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edom edum-->
-         <tok val="[eE]d[uo]m"/>
+      <ana>
+         <tok val="Edom"/>
+         <tok val="edom"/>
+         <tok val="edum"/>
          <lm>
             <l>haedus</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Edomiti edomiti-->
-         <tok val="[eE]domiti"/>
+      <ana>
+         <tok val="Edomiti"/>
+         <tok val="edomiti"/>
          <lm>
             <l>edomo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1062,8 +1258,9 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Edomitus edomitus-->
-         <tok val="[eE]domitus"/>
+      <ana>
+         <tok val="Edomitus"/>
+         <tok val="edomitus"/>
          <lm>
             <l>edomo</l>
             <m>v - - s r p p m n</m>
@@ -1071,20 +1268,24 @@
       </ana>
       <ana>
          <tok val="Edomo"/>
+         <tok val="edomo"/>
          <lm>
             <l>edomo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edomuit edomuit-->
-         <tok val="[eE]domuit"/>
+      <ana>
+         <tok val="Edomuit"/>
+         <tok val="edomuit"/>
          <lm>
             <l>edomo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Edon edos-->
-         <tok val="[eE]do[sn]"/>
+      <ana>
+         <tok val="Edon"/>
+         <tok val="edon"/>
+         <tok val="edos"/>
          <lm>
             <l>haedus</l>
             <m>n - - p - - - m a</m>
@@ -1092,13 +1293,17 @@
       </ana>
       <ana>
          <tok val="Edonas"/>
+         <tok val="edonas"/>
          <lm>
             <l>Edonus</l>
             <m>a e - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Edone Edonum-->
-         <tok val="Edon(um|e)"/>
+      <ana>
+         <tok val="Edone"/>
+         <tok val="Edonum"/>
+         <tok val="edone"/>
+         <tok val="edonum"/>
          <lm>
             <l>Edonus</l>
             <m>a e - s - - - n v</m>
@@ -1106,6 +1311,7 @@
       </ana>
       <ana>
          <tok val="Edone"/>
+         <tok val="edone"/>
          <lm cert="0.5">
             <l>Edonus</l>
             <m cert="0.5">a e - s - - - m v</m>
@@ -1116,15 +1322,19 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Edone Edonius-->
-         <tok val="Edon(ius|e)"/>
+      <ana>
+         <tok val="Edone"/>
+         <tok val="Edonius"/>
+         <tok val="edone"/>
+         <tok val="edonius"/>
          <lm>
             <l>Edonus</l>
             <m>d e</m>
          </lm>
       </ana>
-      <ana><!--Edones edones-->
-         <tok val="[eE]dones"/>
+      <ana>
+         <tok val="Edones"/>
+         <tok val="edones"/>
          <lm>
             <l>edo</l>
             <m cert="0.333333333333333333">n - - p - - - m n</m>
@@ -1134,7 +1344,8 @@
       </ana>
       <ana>
          <tok val="Edoni"/>
-         <lm>
+         <tok val="edoni"/>
+         <lm cert="0.5">
             <l>Edonus</l>
             <m cert="0.142857142857142857">a e - p - - - m v</m>
             <m cert="0.142857142857142857">a e - s - - - n g</m>
@@ -1144,17 +1355,15 @@
             <m cert="0.142857142857142857">a e - s - - - m g</m>
             <m cert="0.142857142857142857">n e - p - - - m v</m>
          </lm>
-      </ana>
-      <ana><!--Edoni edoni-->
-         <tok val="[eE]doni"/>
-         <lm>
+         <lm cert="0.5">
             <l>edo</l>
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
       <ana>
          <tok val="Edonis"/>
-         <lm cert="0.5">
+         <tok val="edonis"/>
+         <lm cert="0.333333333333333333">
             <l>Edonus</l>
             <m cert="0.125">n e - p - - - m b</m>
             <m cert="0.125">n e - p - - - m d</m>
@@ -1165,20 +1374,18 @@
             <m cert="0.125">a e - p - - - m b</m>
             <m cert="0.125">a e - p - - - m d</m>
          </lm>
-         <lm cert="0.5">
+         <lm cert="0.333333333333333333">
             <l>Edonis</l>
             <m>n e - s - - - f n</m>
          </lm>
-      </ana>
-      <ana><!--Edonis edonis-->
-         <tok val="[eE]donis"/>
-         <lm>
+         <lm cert="0.333333333333333333">
             <l>edo</l>
             <m>n - - s - - - m g</m>
          </lm>
       </ana>
       <ana>
          <tok val="Edonius"/>
+         <tok val="edonius"/>
          <lm>
             <l>Edonus</l>
             <m cert="0.333333333333333333">a e - s - - - n a c</m>
@@ -1188,6 +1395,7 @@
       </ana>
       <ana>
          <tok val="Edono"/>
+         <tok val="edono"/>
          <lm>
             <l>Edonus</l>
             <m cert="0.166666666666666667">n e - s - - - m b</m>
@@ -1200,6 +1408,7 @@
       </ana>
       <ana>
          <tok val="Edonum"/>
+         <tok val="edonum"/>
          <lm cert="0.5">
             <l>Edonus</l>
             <m cert="0.166666666666666667">a e - p - - - m g</m>
@@ -1216,14 +1425,16 @@
       </ana>
       <ana>
          <tok val="Edonus"/>
+         <tok val="edonus"/>
          <lm>
             <l>Edonus</l>
             <m cert="0.5">n e - s - - - m n</m>
             <m cert="0.5">a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Edor edor-->
-         <tok val="[eE]dor"/>
+      <ana>
+         <tok val="Edor"/>
+         <tok val="edor"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 1 s p i p</m>
@@ -1233,30 +1444,34 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Edormio edormio-->
-         <tok val="[eE]dormio"/>
+      <ana>
+         <tok val="Edormio"/>
+         <tok val="edormio"/>
          <lm>
             <l>edormio</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edormire edormire-->
-         <tok val="[eE]dormire"/>
+      <ana>
+         <tok val="Edormire"/>
+         <tok val="edormire"/>
          <lm>
             <l>edormio</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Edormiscam edormiscam-->
-         <tok val="[eE]dormiscam"/>
+      <ana>
+         <tok val="Edormiscam"/>
+         <tok val="edormiscam"/>
          <lm>
             <l>edormisco</l>
             <m cert="0.5">v - 1 s f i a</m>
             <m cert="0.5">v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Edormiscere edormiscere-->
-         <tok val="[eE]dormiscere"/>
+      <ana>
+         <tok val="Edormiscere"/>
+         <tok val="edormiscere"/>
          <lm>
             <l>edormisco</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1265,22 +1480,26 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Edormisco edormisco-->
-         <tok val="[eE]dormisco"/>
+      <ana>
+         <tok val="Edormisco"/>
+         <tok val="edormisco"/>
          <lm>
             <l>edormisco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Educ educ educe-->
-         <tok val="[eE]duc[e]?"/>
+      <ana>
+         <tok val="Educ"/>
+         <tok val="educ"/>
+         <tok val="educe"/>
          <lm>
             <l>educo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Educantur educantur-->
-         <tok val="[eE]ducantur"/>
+      <ana>
+         <tok val="Educantur"/>
+         <tok val="educantur"/>
          <lm cert="0.5">
             <l>educo2</l>
             <m>v - 3 p p i p</m>
@@ -1290,8 +1509,9 @@
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Educare educare-->
-         <tok val="[eE]ducare"/>
+      <ana>
+         <tok val="Educare"/>
+         <tok val="educare"/>
          <lm cert="0.5">
             <l>educo2</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1303,15 +1523,17 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Educari educari-->
-         <tok val="[eE]ducari"/>
+      <ana>
+         <tok val="Educari"/>
+         <tok val="educari"/>
          <lm>
             <l>educo2</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Educat educat-->
-         <tok val="[eE]ducat"/>
+      <ana>
+         <tok val="Educat"/>
+         <tok val="educat"/>
          <lm cert="0.5">
             <l>educo</l>
             <m>v - 3 s p s a</m>
@@ -1321,39 +1543,45 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Educatio educatio-->
-         <tok val="[eE]ducatio"/>
+      <ana>
+         <tok val="Educatio"/>
+         <tok val="educatio"/>
          <lm>
             <l>educatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Educatione educatione-->
-         <tok val="[eE]ducatione"/>
+      <ana>
+         <tok val="Educatione"/>
+         <tok val="educatione"/>
          <lm>
             <l>educatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Educator educator-->
-         <tok val="[eE]ducator"/>
+      <ana>
+         <tok val="Educator"/>
+         <tok val="educator"/>
          <lm>
             <l>educator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Educatrix educatrix educatrixque-->
-         <tok val="[eE]ducatrix(que)?"/>
+      <ana>
+         <tok val="Educatrix"/>
+         <tok val="educatrix"/>
+         <tok val="educatrixque"/>
          <lm>
             <l>educatrix</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Educatur educatur-->
-         <tok val="[eE]ducatur"/>
+      <ana>
+         <tok val="Educatur"/>
+         <tok val="educatur"/>
          <lm cert="0.5">
             <l>educo</l>
             <m>v - 3 s p s p</m>
@@ -1363,8 +1591,11 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Educatus educatus educatusque educatust-->
-         <tok val="[eE]ducatus(t|que)?"/>
+      <ana>
+         <tok val="Educatus"/>
+         <tok val="educatus"/>
+         <tok val="educatusque"/>
+         <tok val="educatust"/>
          <lm cert="0.5">
             <l>educatus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -1377,8 +1608,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Educenda educenda-->
-         <tok val="[eE]ducenda"/>
+      <ana>
+         <tok val="Educenda"/>
+         <tok val="educenda"/>
          <lm>
             <l>educo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1389,8 +1621,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Educentur educentur-->
-         <tok val="[eE]ducentur"/>
+      <ana>
+         <tok val="Educentur"/>
+         <tok val="educentur"/>
          <lm cert="0.5">
             <l>educo2</l>
             <m>v - 3 p p s p</m>
@@ -1400,8 +1633,9 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Educere educere-->
-         <tok val="[eE]ducere"/>
+      <ana>
+         <tok val="Educere"/>
+         <tok val="educere"/>
          <lm cert="0.5">
             <l>educo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -1414,8 +1648,9 @@
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Educet educet-->
-         <tok val="[eE]ducet"/>
+      <ana>
+         <tok val="Educet"/>
+         <tok val="educet"/>
          <lm cert="0.5">
             <l>educo</l>
             <m>v - 3 s f i a</m>
@@ -1425,15 +1660,17 @@
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Educit educit-->
-         <tok val="[eE]ducit"/>
+      <ana>
+         <tok val="Educit"/>
+         <tok val="educit"/>
          <lm>
             <l>educo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Educo educo-->
-         <tok val="[eE]duco"/>
+      <ana>
+         <tok val="Educo"/>
+         <tok val="educo"/>
          <lm cert="0.5">
             <l>educo</l>
             <m>v - 1 s p i a</m>
@@ -1443,15 +1680,18 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Educta educta edúcta-->
-         <tok val="[eE]d[uú]cta"/>
+      <ana>
+         <tok val="Educta"/>
+         <tok val="educta"/>
+         <tok val="edúcta"/>
          <lm>
             <l>educo</l>
             <m>v - - p r p p n a</m>
          </lm>
       </ana>
-      <ana><!--Educta educta-->
-         <tok val="[eE]ducta"/>
+      <ana>
+         <tok val="Educta"/>
+         <tok val="educta"/>
          <lm cert="0.5">
             <l>educo</l>
             <m cert="0.2">v - - s r p p f b</m>
@@ -1465,15 +1705,18 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Eductam eductam-->
-         <tok val="[eE]ductam"/>
+      <ana>
+         <tok val="Eductam"/>
+         <tok val="eductam"/>
          <lm>
             <l>educo</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Eductum eductum eductumque-->
-         <tok val="[eE]ductum(que)?"/>
+      <ana>
+         <tok val="Eductum"/>
+         <tok val="eductum"/>
+         <tok val="eductumque"/>
          <lm>
             <l>educo</l>
             <m cert="0.142857142857142857">v - - p r p p m g</m>
@@ -1485,8 +1728,9 @@
             <m cert="0.142857142857142857">v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Eductus eductus-->
-         <tok val="[eE]ductus"/>
+      <ana>
+         <tok val="Eductus"/>
+         <tok val="eductus"/>
          <lm>
             <l>educo</l>
             <m>v - - s r p p m n</m>
@@ -1494,6 +1738,7 @@
       </ana>
       <ana>
          <tok val="Edula"/>
+         <tok val="edula"/>
          <lm>
             <l>Edula</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1503,18 +1748,23 @@
       </ana>
       <ana>
          <tok val="Edulco"/>
+         <tok val="edulco"/>
          <lm>
             <l>edulco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Edulia edulia-->
-         <tok val="[eE]dulia"/>
+      <ana>
+         <tok val="Edulia"/>
+         <tok val="edulia"/>
          <lm cert="0.5">
             <l>Edulia</l>
-            <m cert="0.333333333333333333">n e - p - - - n n</m>
-            <m cert="0.333333333333333333">n e - p - - - n v</m>
-            <m cert="0.333333333333333333">n e - p - - - n a</m>
+            <m cert="0.166666666666666667">n e - p - - - n n</m>
+            <m cert="0.166666666666666667">n e - p - - - n v</m>
+            <m cert="0.166666666666666667">n e - s - - - f n</m>
+            <m cert="0.166666666666666667">n e - p - - - n a</m>
+            <m cert="0.166666666666666667">n e - s - - - f v</m>
+            <m cert="0.166666666666666667">n e - s - - - f b</m>
          </lm>
          <lm cert="0.5">
             <l>edulis</l>
@@ -1524,16 +1774,8 @@
          </lm>
       </ana>
       <ana>
-         <tok val="Edulia"/>
-         <lm>
-            <l>Edulia</l>
-            <m cert="0.333333333333333333">n e - s - - - f n</m>
-            <m cert="0.333333333333333333">n e - s - - - f v</m>
-            <m cert="0.333333333333333333">n e - s - - - f b</m>
-         </lm>
-      </ana>
-      <ana>
          <tok val="Edulica"/>
+         <tok val="edulica"/>
          <lm>
             <l>Edulica</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1543,15 +1785,13 @@
       </ana>
       <ana>
          <tok val="Edulis"/>
-         <lm>
+         <tok val="edulis"/>
+         <lm cert="0.5">
             <l>Edula</l>
             <m cert="0.5">n e - p - - - f d</m>
             <m cert="0.5">n e - p - - - f b</m>
          </lm>
-      </ana>
-      <ana><!--Edulis edulis-->
-         <tok val="[eE]dulis"/>
-         <lm>
+         <lm cert="0.5">
             <l>edulis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
             <m cert="0.142857142857142857">a - - s - - - f n</m>
@@ -1562,16 +1802,20 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Edulis edules edulis-->
-         <tok val="[eE]dul[ie]s"/>
+      <ana>
+         <tok val="Edulis"/>
+         <tok val="edules"/>
+         <tok val="edulis"/>
          <lm>
             <l>edulis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Edulium edulium eduliumque-->
-         <tok val="[eE]dulium(que)?"/>
+      <ana>
+         <tok val="Edulium"/>
+         <tok val="edulium"/>
+         <tok val="eduliumque"/>
          <lm cert="0.5">
             <l>Edulia</l>
             <m>n e - p - - - n g</m>
@@ -1583,15 +1827,22 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Edunt edunt édunt-->
-         <tok val="[eEé]dunt"/>
-         <lm>
+      <ana>
+         <tok val="Edunt"/>
+         <tok val="edunt"/>
+         <tok val="édunt"/>
+         <lm cert="0.5">
             <l>edo</l>
+            <m>v - 3 p p i a</m>
+         </lm>
+         <lm cert="0.5">
+            <l>edo2</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
       <ana>
          <tok val="Edura"/>
+         <tok val="edura"/>
          <lm cert="0.5">
             <l>edurus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1606,8 +1857,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Edurare edurare-->
-         <tok val="[eE]durare"/>
+      <ana>
+         <tok val="Edurare"/>
+         <tok val="edurare"/>
          <lm>
             <l>eduro</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1617,6 +1869,7 @@
       </ana>
       <ana>
          <tok val="Edure"/>
+         <tok val="edure"/>
          <lm>
             <l>edurus</l>
             <m cert="0.333333333333333333">d</m>
@@ -1624,8 +1877,9 @@
             <m cert="0.333333333333333333">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Eduro eduro-->
-         <tok val="[eE]duro"/>
+      <ana>
+         <tok val="Eduro"/>
+         <tok val="eduro"/>
          <lm cert="0.5">
             <l>edurus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1640,6 +1894,7 @@
       </ana>
       <ana>
          <tok val="Edurus"/>
+         <tok val="edurus"/>
          <lm>
             <l>edurus</l>
             <m>a - - s - - - m n</m>
@@ -1647,6 +1902,7 @@
       </ana>
       <ana>
          <tok val="Edusa"/>
+         <tok val="edusa"/>
          <lm>
             <l>Edusa</l>
             <m cert="0.333333333333333333">n e - s - - - f n</m>
@@ -1656,6 +1912,7 @@
       </ana>
       <ana>
          <tok val="Edusae"/>
+         <tok val="edusae"/>
          <lm>
             <l>Edusa</l>
             <m cert="0.25">n e - p - - - f n</m>
@@ -1664,22 +1921,28 @@
             <m cert="0.25">n e - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Eduxerant eduxerant-->
-         <tok val="[eE]duxerant"/>
+      <ana>
+         <tok val="Eduxerant"/>
+         <tok val="eduxerant"/>
          <lm>
             <l>educo</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--Eduxi eduxi eduxique éduxi-->
-         <tok val="[eEé]duxi(que)?"/>
+      <ana>
+         <tok val="Eduxi"/>
+         <tok val="eduxi"/>
+         <tok val="eduxique"/>
+         <tok val="éduxi"/>
          <lm>
             <l>educo</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Eduxit eduxit eduxitque-->
-         <tok val="[eE]duxit(que)?"/>
+      <ana>
+         <tok val="Eduxit"/>
+         <tok val="eduxit"/>
+         <tok val="eduxitque"/>
          <lm>
             <l>educo</l>
             <m>v - 3 s r i a</m>
@@ -1687,6 +1950,7 @@
       </ana>
       <ana>
          <tok val="Edyllium"/>
+         <tok val="edyllium"/>
          <lm>
             <l>Idyllium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1741,7 +2005,7 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--edacis-->
+      <ana>
          <tok val="edacis"/>
          <lm>
             <l>edax</l>
@@ -1809,22 +2073,29 @@
             <m cert="0.5">v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--edamus edamusque edimus-->
-         <tok val="ed[ia]mus(que)?"/>
+      <ana>
+         <tok val="edamus"/>
+         <tok val="edamusque"/>
+         <tok val="edimus"/>
          <lm>
             <l>edo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--edan edas edin edis edisne-->
-         <tok val="ed[i]?[s]?[n]?(e|s|as|an)?"/>
+      <ana>
+         <tok val="edan"/>
+         <tok val="edas"/>
+         <tok val="edin"/>
+         <tok val="edis"/>
+         <tok val="edisne"/>
          <lm>
             <l>edo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--edant edint-->
-         <tok val="ed[ia]nt"/>
+      <ana>
+         <tok val="edant"/>
+         <tok val="edint"/>
          <lm>
             <l>edo</l>
             <m>v - 3 p p s a</m>
@@ -1843,8 +2114,9 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--edatis editis-->
-         <tok val="ed[ia]tis"/>
+      <ana>
+         <tok val="edatis"/>
+         <tok val="editis"/>
          <lm>
             <l>edo</l>
             <m>v - 2 p p s a</m>
@@ -1951,8 +2223,9 @@
             <m cert="0.25">v - - p p g p f v</m>
          </lm>
       </ana>
-      <ana><!--edendam edendamque-->
-         <tok val="edendam(que)?"/>
+      <ana>
+         <tok val="edendam"/>
+         <tok val="edendamque"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - - s p g p f a</m>
@@ -1973,8 +2246,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--edendis edundis-->
-         <tok val="ed[ue]ndis"/>
+      <ana>
+         <tok val="edendis"/>
+         <tok val="edundis"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -1994,8 +2268,9 @@
             <m cert="0.166666666666666667">v - - p p g p m b</m>
          </lm>
       </ana>
-      <ana><!--edendo edendoque-->
-         <tok val="edendo(que)?"/>
+      <ana>
+         <tok val="edendo"/>
+         <tok val="edendoque"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.166666666666666667">v - - s p g p m d</m>
@@ -2015,8 +2290,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--edendorum edendum-->
-         <tok val="edend(or)?um"/>
+      <ana>
+         <tok val="edendorum"/>
+         <tok val="edendum"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -2121,8 +2397,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--edentes edentis-->
-         <tok val="edent[ie]s"/>
+      <ana>
+         <tok val="edentes"/>
+         <tok val="edentis"/>
          <lm cert="0.5">
             <l>edo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -2305,8 +2582,9 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--ederent ederentque-->
-         <tok val="ederent(que)?"/>
+      <ana>
+         <tok val="ederent"/>
+         <tok val="ederentque"/>
          <lm cert="0.5">
             <l>edo</l>
             <m>v - 3 p i s a</m>
@@ -2368,8 +2646,9 @@
             <m cert="0.5">v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--ederis éderis-->
-         <tok val="[ée]deris"/>
+      <ana>
+         <tok val="ederis"/>
+         <tok val="éderis"/>
          <lm>
             <l>edo</l>
             <m cert="0.5">v - 2 s t i a</m>
@@ -2507,8 +2786,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--edicendum Edicendum-->
-         <tok val="[Ee]dicendum"/>
+      <ana>
+         <tok val="Edicendum"/>
+         <tok val="edicendum"/>
          <lm>
             <l>edico</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -2608,8 +2888,9 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--edictales edictalis-->
-         <tok val="edictal[ie]s"/>
+      <ana>
+         <tok val="edictales"/>
+         <tok val="edictalis"/>
          <lm>
             <l>edictalis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -2668,8 +2949,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--edictionem edictiónem-->
-         <tok val="edicti[óo]nem"/>
+      <ana>
+         <tok val="edictionem"/>
+         <tok val="edictiónem"/>
          <lm>
             <l>edictio</l>
             <m>n - - s - - - f a</m>
@@ -2684,8 +2966,9 @@
             <m cert="0.333333333333333333">n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--edictis edictisque-->
-         <tok val="edictis(que)?"/>
+      <ana>
+         <tok val="edictis"/>
+         <tok val="edictisque"/>
          <lm cert="0.5">
             <l>edico</l>
             <m cert="0.166666666666666667">v - - p r p p f d</m>
@@ -2701,8 +2984,10 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--edictum edictumque edictumue-->
-         <tok val="edictum[q]?(ue|)"/>
+      <ana>
+         <tok val="edictum"/>
+         <tok val="edictumque"/>
+         <tok val="edictumue"/>
          <lm>
             <l>edico</l>
             <m>a - - s - - - n n</m>
@@ -2762,8 +3047,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--edidere ediderunt-->
-         <tok val="edider(unt|e)"/>
+      <ana>
+         <tok val="edidere"/>
+         <tok val="ediderunt"/>
          <lm>
             <l>edo2</l>
             <m>v - 3 p r i a</m>
@@ -2829,8 +3115,9 @@
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--edidici edidicique-->
-         <tok val="edidici(que)?"/>
+      <ana>
+         <tok val="edidici"/>
+         <tok val="edidicique"/>
          <lm>
             <l>edisco</l>
             <m>v - 1 s r i a</m>
@@ -2850,15 +3137,17 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--edidicisti edídicisti-->
-         <tok val="ed[íi]dicisti"/>
+      <ana>
+         <tok val="edidicisti"/>
+         <tok val="edídicisti"/>
          <lm>
             <l>edisco</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--edidicit edidicitque-->
-         <tok val="edidicit(que)?"/>
+      <ana>
+         <tok val="edidicit"/>
+         <tok val="edidicitque"/>
          <lm>
             <l>edisco</l>
             <m>v - 3 s r i a</m>
@@ -2922,8 +3211,10 @@
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--edin edis edisne-->
-         <tok val="edi[s]?[n]?[es]?"/>
+      <ana>
+         <tok val="edin"/>
+         <tok val="edis"/>
+         <tok val="edisne"/>
          <lm cert="0.333333333333333333">
             <l>haedus</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -3378,8 +3669,9 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--editae editaeque-->
-         <tok val="editae(que)?"/>
+      <ana>
+         <tok val="editae"/>
+         <tok val="editaeque"/>
          <lm>
             <l>edo2</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -3409,19 +3701,12 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--editas editasque-->
-         <tok val="editas(que)?"/>
+      <ana>
+         <tok val="editas"/>
+         <tok val="editasque"/>
          <lm>
             <l>editor</l>
             <m>v - 2 s p i a</m>
-         </lm>
-      </ana>
-      <ana><!--edite Edite-->
-         <tok val="[Ee]dite"/>
-         <lm>
-            <l>edo2</l>
-            <m cert="0.5">v - - s r p p m v</m>
-            <m cert="0.5">v - 2 p p m a</m>
          </lm>
       </ana>
       <ana>
@@ -3505,8 +3790,9 @@
             <m cert="0.5">a - - p - - - - d c</m>
          </lm>
       </ana>
-      <ana><!--editis editisque-->
-         <tok val="editis(que)?"/>
+      <ana>
+         <tok val="editis"/>
+         <tok val="editisque"/>
          <lm cert="0.5">
             <l>edo2</l>
             <m cert="0.142857142857142857">v - - p r p p n d</m>
@@ -3523,8 +3809,9 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--editisque edatis-->
-         <tok val="ed[ai]tis(que)?"/>
+      <ana>
+         <tok val="edatis"/>
+         <tok val="editisque"/>
          <lm>
             <l>edo2</l>
             <m>v - 2 p p s a</m>
@@ -3576,8 +3863,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--editissimorum editissimum-->
-         <tok val="editissim(or)?um"/>
+      <ana>
+         <tok val="editissimorum"/>
+         <tok val="editissimum"/>
          <lm>
             <l>edo2</l>
             <m cert="0.5">a - - p - - - n g s</m>
@@ -3668,8 +3956,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--editos editosque-->
-         <tok val="editos(que)?"/>
+      <ana>
+         <tok val="editos"/>
+         <tok val="editosque"/>
          <lm>
             <l>edo2</l>
             <m>v - - p r p p m a</m>
@@ -3693,8 +3982,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--editum editumque-->
-         <tok val="editum(que)?"/>
+      <ana>
+         <tok val="editum"/>
+         <tok val="editumque"/>
          <lm>
             <l>edo2</l>
             <m>a - - s - - - n n</m>
@@ -3772,8 +4062,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--edixe edixisse-->
-         <tok val="edix(iss)?e"/>
+      <ana>
+         <tok val="edixe"/>
+         <tok val="edixisse"/>
          <lm>
             <l>edico</l>
             <m>v - - - r n a</m>
@@ -3800,8 +4091,9 @@
             <m>v - 2 s l i a</m>
          </lm>
       </ana>
-      <ana><!--edixere edixerunt-->
-         <tok val="edixer(unt|e)"/>
+      <ana>
+         <tok val="edixere"/>
+         <tok val="edixerunt"/>
          <lm>
             <l>edico</l>
             <m>v - 3 p r i a</m>
@@ -3822,8 +4114,10 @@
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--edixerit edixeritne edixeritque-->
-         <tok val="edixerit(ne|que)?"/>
+      <ana>
+         <tok val="edixerit"/>
+         <tok val="edixeritne"/>
+         <tok val="edixeritque"/>
          <lm>
             <l>edico</l>
             <m cert="0.5">v - 3 s r s a</m>
@@ -3865,8 +4159,9 @@
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--edoce edocen-->
-         <tok val="edoce[n]?"/>
+      <ana>
+         <tok val="edoce"/>
+         <tok val="edocen"/>
          <lm>
             <l>edoceo</l>
             <m>v - 2 s p m a</m>
@@ -3879,8 +4174,9 @@
             <m>v - 1 s p s a</m>
          </lm>
       </ana>
-      <ana><!--edoceant edoceantque-->
-         <tok val="edoceant(que)?"/>
+      <ana>
+         <tok val="edoceant"/>
+         <tok val="edoceantque"/>
          <lm>
             <l>edoceo</l>
             <m>v - 3 p p s a</m>
@@ -3935,8 +4231,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--edocen edoces-->
-         <tok val="edoce[sn]"/>
+      <ana>
+         <tok val="edocen"/>
+         <tok val="edoces"/>
          <lm>
             <l>edoceo</l>
             <m>v - 2 s p i a</m>
@@ -4110,8 +4407,9 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--edocto edoctoque-->
-         <tok val="edocto(que)?"/>
+      <ana>
+         <tok val="edocto"/>
+         <tok val="edoctoque"/>
          <lm>
             <l>edoceo</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -4147,8 +4445,9 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--edocuere edocuerunt-->
-         <tok val="edocuer(unt|e)"/>
+      <ana>
+         <tok val="edocuere"/>
+         <tok val="edocuerunt"/>
          <lm>
             <l>edoceo</l>
             <m>v - 3 p r i a</m>
@@ -4197,8 +4496,9 @@
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--edocuisset edocuissetque-->
-         <tok val="edocuisset(que)?"/>
+      <ana>
+         <tok val="edocuisset"/>
+         <tok val="edocuissetque"/>
          <lm>
             <l>edoceo</l>
             <m>v - 3 s l s a</m>
@@ -4436,8 +4736,9 @@
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--edormierunt edormiverunt-->
-         <tok val="edormi[v]?erunt"/>
+      <ana>
+         <tok val="edormierunt"/>
+         <tok val="edormiverunt"/>
          <lm>
             <l>edormio</l>
             <m>v - 3 p r i a</m>
@@ -4498,8 +4799,10 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--edormiui edormivi édormivi-->
-         <tok val="[eé]dormi[vu]i"/>
+      <ana>
+         <tok val="edormiui"/>
+         <tok val="edormivi"/>
+         <tok val="édormivi"/>
          <lm>
             <l>edormio</l>
             <m>v - 1 s r i a</m>
@@ -4602,8 +4905,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--educandis educandisque-->
-         <tok val="educandis(que)?"/>
+      <ana>
+         <tok val="educandis"/>
+         <tok val="educandisque"/>
          <lm>
             <l>educo2</l>
             <m cert="0.166666666666666667">v - - p p g p f d</m>
@@ -4626,8 +4930,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--educandorum educandum-->
-         <tok val="educand(or)?um"/>
+      <ana>
+         <tok val="educandorum"/>
+         <tok val="educandum"/>
          <lm>
             <l>educo2</l>
             <m cert="0.5">v - - p p g p m g</m>
@@ -4722,8 +5027,10 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--educarat educauerat educaverat-->
-         <tok val="educa[vu]?(e|)rat"/>
+      <ana>
+         <tok val="educarat"/>
+         <tok val="educauerat"/>
+         <tok val="educaverat"/>
          <lm>
             <l>educo2</l>
             <m>v - 3 s l i a</m>
@@ -4750,22 +5057,26 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--educaret éducaret-->
-         <tok val="[ée]ducaret"/>
+      <ana>
+         <tok val="educaret"/>
+         <tok val="éducaret"/>
          <lm>
             <l>educo2</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--educaretur educareturque-->
-         <tok val="educaretur(que)?"/>
+      <ana>
+         <tok val="educaretur"/>
+         <tok val="educareturque"/>
          <lm>
             <l>educo2</l>
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--educarunt educauerunt educaverunt-->
-         <tok val="educa[vu]?(e|)runt"/>
+      <ana>
+         <tok val="educarunt"/>
+         <tok val="educauerunt"/>
+         <tok val="educaverunt"/>
          <lm>
             <l>educo2</l>
             <m>v - 3 p r i a</m>
@@ -4847,15 +5158,18 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--educate educatum educatumque-->
-         <tok val="educat(um)?(que|e)?"/>
+      <ana>
+         <tok val="educate"/>
+         <tok val="educatum"/>
+         <tok val="educatumque"/>
          <lm>
             <l>educo2</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--educati educatique-->
-         <tok val="educati(que)?"/>
+      <ana>
+         <tok val="educati"/>
+         <tok val="educatique"/>
          <lm>
             <l>educo2</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -5001,8 +5315,9 @@
             <m>n - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--educatum educatumque-->
-         <tok val="educatum(que)?"/>
+      <ana>
+         <tok val="educatum"/>
+         <tok val="educatumque"/>
          <lm cert="0.5">
             <l>educo2</l>
             <m cert="0.166666666666666667">v - - - - u - - a</m>
@@ -5068,15 +5383,17 @@
             <m cert="0.5">v - 2 p t i a</m>
          </lm>
       </ana>
-      <ana><!--educaui educavi-->
-         <tok val="educa[vu]i"/>
+      <ana>
+         <tok val="educaui"/>
+         <tok val="educavi"/>
          <lm>
             <l>educo2</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--educauit educavit-->
-         <tok val="educa[vu]it"/>
+      <ana>
+         <tok val="educauit"/>
+         <tok val="educavit"/>
          <lm>
             <l>educo2</l>
             <m>v - 3 s r i a</m>
@@ -5166,8 +5483,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--educendi educendique-->
-         <tok val="educendi(que)?"/>
+      <ana>
+         <tok val="educendi"/>
+         <tok val="educendique"/>
          <lm>
             <l>educo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -5252,8 +5570,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--educente educenti-->
-         <tok val="educent[ie]"/>
+      <ana>
+         <tok val="educente"/>
+         <tok val="educenti"/>
          <lm>
             <l>educo</l>
             <m cert="0.333333333333333333">v - - s p p a n b</m>
@@ -5279,8 +5598,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--educentes educentis-->
-         <tok val="educent[ie]s"/>
+      <ana>
+         <tok val="educentes"/>
+         <tok val="educentis"/>
          <lm>
             <l>educo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -5394,8 +5714,9 @@
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--educi educier-->
-         <tok val="educi(er)?"/>
+      <ana>
+         <tok val="educi"/>
+         <tok val="educier"/>
          <lm>
             <l>educo</l>
             <m>v - - - p n p</m>
@@ -5437,8 +5758,9 @@
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--educitur educiturque-->
-         <tok val="educitur(que)?"/>
+      <ana>
+         <tok val="educitur"/>
+         <tok val="educiturque"/>
          <lm>
             <l>educo</l>
             <m>v - 3 s p i p</m>
@@ -5451,8 +5773,9 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--eductae eductaeque-->
-         <tok val="eductae(que)?"/>
+      <ana>
+         <tok val="eductae"/>
+         <tok val="eductaeque"/>
          <lm>
             <l>educo</l>
             <m cert="0.25">v - - s r p p f g</m>
@@ -5509,8 +5832,9 @@
             <m cert="0.166666666666666667">v - - p r p p f b</m>
          </lm>
       </ana>
-      <ana><!--educto eductoque-->
-         <tok val="educto(que)?"/>
+      <ana>
+         <tok val="educto"/>
+         <tok val="eductoque"/>
          <lm cert="0.5">
             <l>eductor</l>
             <m>v - 1 s p i a</m>
@@ -5541,8 +5865,9 @@
             <m cert="0.333333333333333333">n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--eductos eductosque-->
-         <tok val="eductos(que)?"/>
+      <ana>
+         <tok val="eductos"/>
+         <tok val="eductosque"/>
          <lm>
             <l>educo</l>
             <m>v - - p r p p m a</m>
@@ -5669,8 +5994,9 @@
             <m>n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--edun edus-->
-         <tok val="edu[sn]"/>
+      <ana>
+         <tok val="edun"/>
+         <tok val="edus"/>
          <lm>
             <l>haedus</l>
             <m>n - - s - - - m n</m>
@@ -5708,8 +6034,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--eduram eduramque-->
-         <tok val="eduram(que)?"/>
+      <ana>
+         <tok val="eduram"/>
+         <tok val="eduramque"/>
          <lm>
             <l>edurus</l>
             <m>a - - s - - - f a</m>
@@ -5768,8 +6095,11 @@
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--eduxere eduxerunt eduxeruntque eduxérunt-->
-         <tok val="edux[ée]r(unt)?(que|e)?"/>
+      <ana>
+         <tok val="eduxere"/>
+         <tok val="eduxerunt"/>
+         <tok val="eduxeruntque"/>
+         <tok val="eduxérunt"/>
          <lm>
             <l>educo</l>
             <m>v - 3 p r i a</m>
@@ -5863,13 +6193,6 @@
             <m>v - 2 p r i a</m>
          </lm>
       </ana>
-      <ana><!--edere Edere edereque-->
-         <tok val="[Ee]dere(que)?"/>
-         <lm>
-            <l>edo2</l>
-            <m>v - - - p n a</m>
-         </lm>
-      </ana>
       <ana>
          <tok val="edant"/>
          <lm>
@@ -5882,27 +6205,6 @@
          <lm>
             <l>edo2</l>
             <m>v - 3 s p s a</m>
-         </lm>
-      </ana>
-      <ana><!--edebat Edebat-->
-         <tok val="[Ee]debat"/>
-         <lm>
-            <l>edo2</l>
-            <m>v - 3 s i i a</m>
-         </lm>
-      </ana>
-      <ana><!--edunt Edunt édunt-->
-         <tok val="[Eeé]dunt"/>
-         <lm>
-            <l>edo2</l>
-            <m>v - 3 p p i a</m>
-         </lm>
-      </ana>
-      <ana><!--edit Edit-->
-         <tok val="[Ee]dit"/>
-         <lm>
-            <l>edo2</l>
-            <m>v - 3 s p i a</m>
          </lm>
       </ana>
       <ana>
@@ -5919,22 +6221,27 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Edere edere edereque ederis-->
-         <tok val="[eE]der[e]?(que|is)?"/>
+      <ana>
+         <tok val="Edere"/>
+         <tok val="edere"/>
+         <tok val="edereque"/>
+         <tok val="ederis"/>
          <lm>
             <l>edo2</l>
             <m>v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--edamus edamusque-->
-         <tok val="edamus(que)?"/>
+      <ana>
+         <tok val="edamus"/>
+         <tok val="edamusque"/>
          <lm>
             <l>edo2</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--edan edas-->
-         <tok val="eda[sn]"/>
+      <ana>
+         <tok val="edan"/>
+         <tok val="edas"/>
          <lm>
             <l>edo2</l>
             <m>v - 2 s p s a</m>

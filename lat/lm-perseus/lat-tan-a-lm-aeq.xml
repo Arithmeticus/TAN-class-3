@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusaeq">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:aeq">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to aeq</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-aeq.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>AEQ</tok-starts-with>
       <tok-starts-with>AEq</tok-starts-with>
@@ -38,22 +15,67 @@
       <tok-starts-with>aeq</tok-starts-with>
       <tok-starts-with>aéq</tok-starts-with>
       <tok-starts-with>Aéq</tok-starts-with>
-      <ana><!--AEQUES Aeques-->
-         <tok val="A(eques|EQUES)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:09:13.292-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:09:13.292-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-aeq.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="AEQUES"/>
+         <tok val="Aeques"/>
+         <tok val="aeques"/>
          <lm>
             <l>aequo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--AEQUUS AEQVVS AEquus Aequus aequus aequusque aequusue aequusve-->
-         <tok val="[aA]?(e|AE)?(quus)?[q]?[uv]?(e|AEQVVS|AEQUUS)?"/>
+      <ana>
+         <tok val="AEQUUS"/>
+         <tok val="AEQVVS"/>
+         <tok val="AEquus"/>
+         <tok val="Aequus"/>
+         <tok val="aequus"/>
+         <tok val="aequusque"/>
+         <tok val="aequusue"/>
+         <tok val="aequusve"/>
+         <tok val="aeqvvs"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEQVALIVM AEqualium Aequalium aequalium-->
-         <tok val="[A]?(e|E|ae)?(qualium|AEQVALIVM)"/>
+      <ana>
+         <tok val="AEQVALIVM"/>
+         <tok val="AEqualium"/>
+         <tok val="Aequalium"/>
+         <tok val="aequalium"/>
+         <tok val="aeqvalivm"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -61,15 +83,26 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEQVO AEquo Aequo aequo aequoque aéquo-->
-         <tok val="[A]?(e|E|ae|aé)?(quo)?(que|AEQVO)?"/>
+      <ana>
+         <tok val="AEQVO"/>
+         <tok val="AEquo"/>
+         <tok val="Aequo"/>
+         <tok val="aequo"/>
+         <tok val="aequoque"/>
+         <tok val="aeqvo"/>
+         <tok val="aéquo"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--AEQVO AEquo Aequo aequo aequoque-->
-         <tok val="[A]?(e|E|ae)?(quo)?(que|AEQVO)?"/>
+      <ana>
+         <tok val="AEQVO"/>
+         <tok val="AEquo"/>
+         <tok val="Aequo"/>
+         <tok val="aequo"/>
+         <tok val="aequoque"/>
+         <tok val="aeqvo"/>
          <lm cert="0.5">
             <l>aequus</l>
             <m cert="0.333333333333333333">a - - s - - - m b</m>
@@ -81,16 +114,29 @@
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AEQuales AEquales AEqualis Aequales Aequalis aequales aequalesque aequalis aequalisque aequalisue-->
-         <tok val="(ae|AE)?(q|AEQ|AEq|Aeq|aeq)ual[ie]?[s]?[q]?(ue|is|es)"/>
+      <ana>
+         <tok val="AEQuales"/>
+         <tok val="AEquales"/>
+         <tok val="AEqualis"/>
+         <tok val="Aequales"/>
+         <tok val="Aequalis"/>
+         <tok val="aequales"/>
+         <tok val="aequalesque"/>
+         <tok val="aequalis"/>
+         <tok val="aequalisque"/>
+         <tok val="aequalisue"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEQuales AEquales Aequales aequales aequalesque-->
-         <tok val="[A]?[E]?(q|Q|eq|aeq)uales(que)?"/>
+      <ana>
+         <tok val="AEQuales"/>
+         <tok val="AEquales"/>
+         <tok val="Aequales"/>
+         <tok val="aequales"/>
+         <tok val="aequalesque"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -99,15 +145,30 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEQuinoctiorum AEquinoctiorum AEquinoctiorumque AEquinoctium Aequinoctium aequinoctiorum aequinoctium-->
-         <tok val="(AE)?(q|Q|aeq|Aeq|AEq)uinocti(or)?um(que)?"/>
+      <ana>
+         <tok val="AEQuinoctiorum"/>
+         <tok val="AEquinoctiorum"/>
+         <tok val="AEquinoctiorumque"/>
+         <tok val="AEquinoctium"/>
+         <tok val="Aequinoctium"/>
+         <tok val="aequinoctiorum"/>
+         <tok val="aequinoctiorumque"/>
+         <tok val="aequinoctium"/>
          <lm>
             <l>aequinoctium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEqua Aequa Aequane Aequaque aequa aequan aequaque aequaue-->
-         <tok val="[aA]?(e|AE)qua[q]?(ue|n|que|ne)?"/>
+      <ana>
+         <tok val="AEqua"/>
+         <tok val="Aequa"/>
+         <tok val="Aequane"/>
+         <tok val="Aequaque"/>
+         <tok val="aequa"/>
+         <tok val="aequan"/>
+         <tok val="aequane"/>
+         <tok val="aequaque"/>
+         <tok val="aequaue"/>
          <lm cert="0.5">
             <l>aequo</l>
             <m>v - 2 s p m a</m>
@@ -122,8 +183,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEquabile Aequabile aequabile-->
-         <tok val="[A]?(e|E|ae)quabile"/>
+      <ana>
+         <tok val="AEquabile"/>
+         <tok val="Aequabile"/>
+         <tok val="aequabile"/>
          <lm>
             <l>aequabilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -131,24 +194,33 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEquabilem aequabilem-->
-         <tok val="(ae|AE)quabilem"/>
+      <ana>
+         <tok val="AEquabilem"/>
+         <tok val="aequabilem"/>
          <lm>
             <l>aequabilis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--AEquabiles AEquabilis Aequabilis aequabiles aequabilesque aequabilis aequabilisque-->
-         <tok val="(ae|AE|Ae)quabil[ie]s(que)?"/>
+      <ana>
+         <tok val="AEquabiles"/>
+         <tok val="AEquabilis"/>
+         <tok val="Aequabilis"/>
+         <tok val="aequabiles"/>
+         <tok val="aequabilesque"/>
+         <tok val="aequabilis"/>
+         <tok val="aequabilisque"/>
          <lm>
             <l>aequabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEquabiles aequabiles aequabilesque-->
-         <tok val="(ae|AE)quabiles(que)?"/>
+      <ana>
+         <tok val="AEquabiles"/>
+         <tok val="aequabiles"/>
+         <tok val="aequabilesque"/>
          <lm>
             <l>aequabilis</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -157,8 +229,11 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEquabilis Aequabilis aequabilis aequabilisque-->
-         <tok val="[A]?(e|E|ae)quabilis(que)?"/>
+      <ana>
+         <tok val="AEquabilis"/>
+         <tok val="Aequabilis"/>
+         <tok val="aequabilis"/>
+         <tok val="aequabilisque"/>
          <lm>
             <l>aequabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -170,29 +245,37 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquabilitas Aequabilitas aequabilitas-->
-         <tok val="[A]?(e|E|ae)quabilitas"/>
+      <ana>
+         <tok val="AEquabilitas"/>
+         <tok val="Aequabilitas"/>
+         <tok val="aequabilitas"/>
          <lm>
             <l>aequabilitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--AEquabilitatem aequabilitatem aequabilitatemve-->
-         <tok val="(ae|AE)quabilitatem(ve)?"/>
+      <ana>
+         <tok val="AEquabilitatem"/>
+         <tok val="aequabilitatem"/>
+         <tok val="aequabilitatemve"/>
          <lm>
             <l>aequabilitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEquabiliter Aequabiliter aequabiliter aequabiliterque-->
-         <tok val="[A]?(e|E|ae)quabiliter(que)?"/>
+      <ana>
+         <tok val="AEquabiliter"/>
+         <tok val="Aequabiliter"/>
+         <tok val="aequabiliter"/>
+         <tok val="aequabiliterque"/>
          <lm>
             <l>aequabiliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--AEquabilium aequabilium-->
-         <tok val="(ae|AE)quabilium"/>
+      <ana>
+         <tok val="AEquabilium"/>
+         <tok val="aequabilium"/>
          <lm>
             <l>aequabilis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -200,8 +283,10 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEquae aequae aequaeue-->
-         <tok val="(ae|AE)quae(ue)?"/>
+      <ana>
+         <tok val="AEquae"/>
+         <tok val="aequae"/>
+         <tok val="aequaeue"/>
          <lm>
             <l>aequus</l>
             <m cert="0.333333333333333333">a - - p - - - f v</m>
@@ -209,15 +294,20 @@
             <m cert="0.333333333333333333">a - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--AEquae aequae aequaeue aequain-->
-         <tok val="(ae|AE)qua[e]?(ue|in|e)?"/>
+      <ana>
+         <tok val="AEquae"/>
+         <tok val="aequae"/>
+         <tok val="aequaeue"/>
+         <tok val="aequain"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEquaeuo aequaeuo aequaevo-->
-         <tok val="(ae|AE)quae[vu]o"/>
+      <ana>
+         <tok val="AEquaeuo"/>
+         <tok val="aequaeuo"/>
+         <tok val="aequaevo"/>
          <lm>
             <l>aequaevus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -226,8 +316,12 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--AEquale Aequale aequale aequaleque aequalest-->
-         <tok val="[aA]?(e|AE|ae)quale(st|que)?"/>
+      <ana>
+         <tok val="AEquale"/>
+         <tok val="Aequale"/>
+         <tok val="aequale"/>
+         <tok val="aequaleque"/>
+         <tok val="aequalest"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -235,8 +329,11 @@
             <m cert="0.333333333333333333">a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEquali Aequali aequali aequalique-->
-         <tok val="[A]?(e|E|ae)quali(que)?"/>
+      <ana>
+         <tok val="AEquali"/>
+         <tok val="Aequali"/>
+         <tok val="aequali"/>
+         <tok val="aequalique"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -247,8 +344,12 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AEqualia Aequalia aequalia aequaliaque aequaliave-->
-         <tok val="[aA]?(e|AE|ae)qualia(ve|que)?"/>
+      <ana>
+         <tok val="AEqualia"/>
+         <tok val="Aequalia"/>
+         <tok val="aequalia"/>
+         <tok val="aequaliaque"/>
+         <tok val="aequaliave"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -256,8 +357,11 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--AEqualibus Aequalibus aequalibus aequalibusque-->
-         <tok val="[A]?(e|E|ae)qualibus(que)?"/>
+      <ana>
+         <tok val="AEqualibus"/>
+         <tok val="Aequalibus"/>
+         <tok val="aequalibus"/>
+         <tok val="aequalibusque"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -268,8 +372,12 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEqualis Aequalis aequalis aequalisque aequalisue-->
-         <tok val="[aA]?(e|AE)qualis[q]?(ue)?"/>
+      <ana>
+         <tok val="AEqualis"/>
+         <tok val="Aequalis"/>
+         <tok val="aequalis"/>
+         <tok val="aequalisque"/>
+         <tok val="aequalisue"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -281,50 +389,63 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEqualitas Aequalitas aequalitas aequalitasque-->
-         <tok val="[A]?(e|E|ae)qualitas(que)?"/>
+      <ana>
+         <tok val="AEqualitas"/>
+         <tok val="Aequalitas"/>
+         <tok val="aequalitas"/>
+         <tok val="aequalitasque"/>
          <lm>
             <l>aequalitas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--AEqualitatem aequalitatem aequalitatemque-->
-         <tok val="(ae|AE)qualitatem(que)?"/>
+      <ana>
+         <tok val="AEqualitatem"/>
+         <tok val="aequalitatem"/>
+         <tok val="aequalitatemque"/>
          <lm>
             <l>aequalitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEqualitatis Aequalitatis aequalitatis-->
-         <tok val="[A]?(e|E|ae)qualitatis"/>
+      <ana>
+         <tok val="AEqualitatis"/>
+         <tok val="Aequalitatis"/>
+         <tok val="aequalitatis"/>
          <lm>
             <l>aequalitas</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEqualiter aequaliter-->
-         <tok val="(ae|AE)qualiter"/>
+      <ana>
+         <tok val="AEqualiter"/>
+         <tok val="aequaliter"/>
          <lm>
             <l>aequalis</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--AEquanimus aequanimus-->
-         <tok val="(ae|AE)quanimus"/>
+      <ana>
+         <tok val="AEquanimus"/>
+         <tok val="aequanimus"/>
          <lm>
             <l>aequanimus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEquantur Aequantur aequantur-->
-         <tok val="[A]?(e|E|ae)quantur"/>
+      <ana>
+         <tok val="AEquantur"/>
+         <tok val="Aequantur"/>
+         <tok val="aequantur"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--AEquare Aequare aequare-->
-         <tok val="[A]?(e|E|ae)quare"/>
+      <ana>
+         <tok val="AEquare"/>
+         <tok val="Aequare"/>
+         <tok val="aequare"/>
          <lm>
             <l>aequo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -332,22 +453,30 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AEquari Aequari aequari-->
-         <tok val="[A]?(e|E|ae)quari"/>
+      <ana>
+         <tok val="AEquari"/>
+         <tok val="Aequari"/>
+         <tok val="aequari"/>
          <lm>
             <l>aequo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--AEquat Aequat aequat aequatque-->
-         <tok val="[A]?(e|E|ae)quat(que)?"/>
+      <ana>
+         <tok val="AEquat"/>
+         <tok val="Aequat"/>
+         <tok val="aequat"/>
+         <tok val="aequatque"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AEquata Aequata aequata aequataque-->
-         <tok val="[A]?(e|E|ae)quata(que)?"/>
+      <ana>
+         <tok val="AEquata"/>
+         <tok val="Aequata"/>
+         <tok val="aequata"/>
+         <tok val="aequataque"/>
          <lm>
             <l>aequo</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -358,8 +487,10 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--AEquatae Aequatae aequatae-->
-         <tok val="[A]?(e|E|ae)quatae"/>
+      <ana>
+         <tok val="AEquatae"/>
+         <tok val="Aequatae"/>
+         <tok val="aequatae"/>
          <lm>
             <l>aequo</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -368,30 +499,35 @@
             <m cert="0.25">v - - p r p p f v</m>
          </lm>
       </ana>
-      <ana><!--AEquatio Aequatio aequatio-->
-         <tok val="[A]?(e|E|ae)quatio"/>
+      <ana>
+         <tok val="AEquatio"/>
+         <tok val="Aequatio"/>
+         <tok val="aequatio"/>
          <lm>
             <l>aequatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--AEquatione aequatione-->
-         <tok val="(ae|AE)quatione"/>
+      <ana>
+         <tok val="AEquatione"/>
+         <tok val="aequatione"/>
          <lm>
             <l>aequatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AEquationem aequationem-->
-         <tok val="(ae|AE)quationem"/>
+      <ana>
+         <tok val="AEquationem"/>
+         <tok val="aequationem"/>
          <lm>
             <l>aequatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEquationes aequationes-->
-         <tok val="(ae|AE)quationes"/>
+      <ana>
+         <tok val="AEquationes"/>
+         <tok val="aequationes"/>
          <lm>
             <l>aequatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -401,20 +537,25 @@
       </ana>
       <ana>
          <tok val="AEquationi"/>
+         <tok val="aequationi"/>
          <lm>
             <l>aequatio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--AEquationis aequationis-->
-         <tok val="(ae|AE)quationis"/>
+      <ana>
+         <tok val="AEquationis"/>
+         <tok val="aequationis"/>
          <lm>
             <l>aequatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEquato Aequato aequato aequatoque-->
-         <tok val="[A]?(e|E|ae)quato(que)?"/>
+      <ana>
+         <tok val="AEquato"/>
+         <tok val="Aequato"/>
+         <tok val="aequato"/>
+         <tok val="aequatoque"/>
          <lm>
             <l>aequo</l>
             <m cert="0.166666666666666667">v - - s r p p n d</m>
@@ -425,36 +566,76 @@
             <m cert="0.166666666666666667">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--AEquatus Aequatus aequatus-->
-         <tok val="[A]?(e|E|ae)quatus"/>
+      <ana>
+         <tok val="AEquatus"/>
+         <tok val="Aequatus"/>
+         <tok val="aequatus"/>
          <lm>
             <l>aequo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--AEque Aeque aeque aequeque aequest aequé aéque AEQUIUS-->
-         <tok val="[aA]?(e|AE|ae|aé)?(qu)?[e]?(st|é|e|eque|AEQUIUS)?"/>
+      <ana>
+         <tok val="AEQUIUS"/>
+         <tok val="AEque"/>
+         <tok val="Aeque"/>
+         <tok val="aeque"/>
+         <tok val="aequeque"/>
+         <tok val="aequest"/>
+         <tok val="aequius"/>
+         <tok val="aequé"/>
+         <tok val="aéque"/>
          <lm>
             <l>aequus</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--AEque AEquum Aeque Aequom Aequum Aeqvvm aeque aequeque aequest aequom aequomque aequomst aequum aequumne aequumque aequumst Aequumne-->
-         <tok val="[aA]?(e|AE|Ae|ae)q[u]?[uo]?[m]?(que|st|ne|est|e|eque|vvm)?"/>
+      <ana>
+         <tok val="AEque"/>
+         <tok val="AEquum"/>
+         <tok val="Aeque"/>
+         <tok val="Aequom"/>
+         <tok val="Aequum"/>
+         <tok val="Aequumne"/>
+         <tok val="Aeqvvm"/>
+         <tok val="aeque"/>
+         <tok val="aequeque"/>
+         <tok val="aequest"/>
+         <tok val="aequom"/>
+         <tok val="aequomque"/>
+         <tok val="aequomst"/>
+         <tok val="aequum"/>
+         <tok val="aequumne"/>
+         <tok val="aequumque"/>
+         <tok val="aequumst"/>
+         <tok val="aeqvvm"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEque Aeque aeque aequeque aequest-->
-         <tok val="[aA]?(e|AE|ae)que(st|que)?"/>
+      <ana>
+         <tok val="AEque"/>
+         <tok val="Aeque"/>
+         <tok val="aeque"/>
+         <tok val="aequeque"/>
+         <tok val="aequest"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--AEqui Aequi Aequicumque Aequine Aequique aequi aequin aequique-->
-         <tok val="[aA]?(e|AE)qui(n|que|cumque|ne)?"/>
+      <ana>
+         <tok val="AEqui"/>
+         <tok val="Aequi"/>
+         <tok val="Aequicumque"/>
+         <tok val="Aequine"/>
+         <tok val="Aequique"/>
+         <tok val="aequi"/>
+         <tok val="aequicumque"/>
+         <tok val="aequin"/>
+         <tok val="aequine"/>
+         <tok val="aequique"/>
          <lm>
             <l>aequus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -463,8 +644,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquilateri aequilateri-->
-         <tok val="(ae|AE)quilateri"/>
+      <ana>
+         <tok val="AEquilateri"/>
+         <tok val="aequilateri"/>
          <lm>
             <l>aequilaterus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -473,8 +655,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquilibrata aequilibrata-->
-         <tok val="(ae|AE)quilibrata"/>
+      <ana>
+         <tok val="AEquilibrata"/>
+         <tok val="aequilibrata"/>
          <lm>
             <l>aequilibratus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -485,23 +668,29 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AEquilibrio Aequilibrio aequilibrio-->
-         <tok val="[A]?(e|E|ae)quilibrio"/>
+      <ana>
+         <tok val="AEquilibrio"/>
+         <tok val="Aequilibrio"/>
+         <tok val="aequilibrio"/>
          <lm>
             <l>aequilibrium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEquilibritas Aequilibritas aequilibritas-->
-         <tok val="[A]?(e|E|ae)quilibritas"/>
+      <ana>
+         <tok val="AEquilibritas"/>
+         <tok val="Aequilibritas"/>
+         <tok val="aequilibritas"/>
          <lm>
             <l>aequilibritas</l>
             <m>n - - s - - - f n</m>
          </lm>
       </ana>
-      <ana><!--AEquilibrium Aequilibrium aequilibrium-->
-         <tok val="[A]?(e|E|ae)quilibrium"/>
+      <ana>
+         <tok val="AEquilibrium"/>
+         <tok val="Aequilibrium"/>
+         <tok val="aequilibrium"/>
          <lm cert="0.5">
             <l>aequilibris</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -516,8 +705,9 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctia aequinoctia-->
-         <tok val="(ae|AE)quinoctia"/>
+      <ana>
+         <tok val="AEquinoctia"/>
+         <tok val="aequinoctia"/>
          <lm>
             <l>aequinoctium</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -525,16 +715,18 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctialem aequinoctialem-->
-         <tok val="(ae|AE)quinoctialem"/>
+      <ana>
+         <tok val="AEquinoctialem"/>
+         <tok val="aequinoctialem"/>
          <lm>
             <l>aequinoctialis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctiali aequinoctiali-->
-         <tok val="(ae|AE)quinoctiali"/>
+      <ana>
+         <tok val="AEquinoctiali"/>
+         <tok val="aequinoctiali"/>
          <lm>
             <l>aequinoctialis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -545,8 +737,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctialia Aequinoctialia aequinoctialia-->
-         <tok val="[A]?(e|E|ae)quinoctialia"/>
+      <ana>
+         <tok val="AEquinoctialia"/>
+         <tok val="Aequinoctialia"/>
+         <tok val="aequinoctialia"/>
          <lm>
             <l>aequinoctialis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -554,8 +748,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctialibus aequinoctialibus-->
-         <tok val="(ae|AE)quinoctialibus"/>
+      <ana>
+         <tok val="AEquinoctialibus"/>
+         <tok val="aequinoctialibus"/>
          <lm>
             <l>aequinoctialis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -566,8 +761,10 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctialis Aequinoctialis aequinoctialis-->
-         <tok val="[A]?(e|E|ae)quinoctialis"/>
+      <ana>
+         <tok val="AEquinoctialis"/>
+         <tok val="Aequinoctialis"/>
+         <tok val="aequinoctialis"/>
          <lm>
             <l>aequinoctialis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -579,16 +776,20 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctialis Aequinoctialis aequinoctiales aequinoctialis-->
-         <tok val="[A]?(e|E|ae)quinoctial[ie]s"/>
+      <ana>
+         <tok val="AEquinoctialis"/>
+         <tok val="Aequinoctialis"/>
+         <tok val="aequinoctiales"/>
+         <tok val="aequinoctialis"/>
          <lm>
             <l>aequinoctialis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctialium aequinoctialium-->
-         <tok val="(ae|AE)quinoctialium"/>
+      <ana>
+         <tok val="AEquinoctialium"/>
+         <tok val="aequinoctialium"/>
          <lm>
             <l>aequinoctialis</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -596,31 +797,39 @@
             <m cert="0.333333333333333333">a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctii Aequinoctii aequinoctii-->
-         <tok val="[A]?(e|E|ae)quinoctii"/>
+      <ana>
+         <tok val="AEquinoctii"/>
+         <tok val="Aequinoctii"/>
+         <tok val="aequinoctii"/>
          <lm>
             <l>aequinoctium</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctiis aequinoctiis aequinoctiisque-->
-         <tok val="(ae|AE)quinoctiis(que)?"/>
+      <ana>
+         <tok val="AEquinoctiis"/>
+         <tok val="aequinoctiis"/>
+         <tok val="aequinoctiisque"/>
          <lm>
             <l>aequinoctium</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctio aequinoctio Aequinoctio-->
-         <tok val="[A]?(e|E|ae)quinoctio"/>
+      <ana>
+         <tok val="AEquinoctio"/>
+         <tok val="Aequinoctio"/>
+         <tok val="aequinoctio"/>
          <lm>
             <l>aequinoctium</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEquinoctium Aequinoctium aequinoctium-->
-         <tok val="[A]?(e|E|ae)quinoctium"/>
+      <ana>
+         <tok val="AEquinoctium"/>
+         <tok val="Aequinoctium"/>
+         <tok val="aequinoctium"/>
          <lm>
             <l>aequinoctium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -628,8 +837,9 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AEquiparabilis aequiparabilis-->
-         <tok val="(ae|AE)quiparabilis"/>
+      <ana>
+         <tok val="AEquiparabilis"/>
+         <tok val="aequiparabilis"/>
          <lm>
             <l>aequiparabilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -641,16 +851,20 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquiparabilis aequiparabilis aequiperabiles-->
-         <tok val="(ae|AE)quip[ae]rabil[ie]s"/>
+      <ana>
+         <tok val="AEquiparabilis"/>
+         <tok val="aequiparabilis"/>
+         <tok val="aequiperabiles"/>
          <lm>
             <l>aequiparabilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--AEquiparans aequiperans-->
-         <tok val="(ae|AE)quip[ea]rans"/>
+      <ana>
+         <tok val="AEquiparans"/>
+         <tok val="aequiparans"/>
+         <tok val="aequiperans"/>
          <lm>
             <l>aequiparo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -662,8 +876,11 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--AEquiparare Aequiparare aequiparare aequiperare-->
-         <tok val="[A]?(e|E|ae)quip[ae]rare"/>
+      <ana>
+         <tok val="AEquiparare"/>
+         <tok val="Aequiparare"/>
+         <tok val="aequiparare"/>
+         <tok val="aequiperare"/>
          <lm>
             <l>aequiparo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -673,29 +890,36 @@
       </ana>
       <ana>
          <tok val="AEquiparate"/>
+         <tok val="aequiparate"/>
          <lm>
             <l>aequiparo</l>
             <m cert="0.5">v - 2 p p m a</m>
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--AEquiparate aequiperatum-->
-         <tok val="(ae|AE)quip[ea]rat(um|e)"/>
+      <ana>
+         <tok val="AEquiparate"/>
+         <tok val="aequiparate"/>
+         <tok val="aequiperatum"/>
          <lm>
             <l>aequiparo</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--AEquiparatio aequiparatio aequiperatio-->
-         <tok val="(ae|AE)quip[ea]ratio"/>
+      <ana>
+         <tok val="AEquiparatio"/>
+         <tok val="aequiparatio"/>
+         <tok val="aequiperatio"/>
          <lm>
             <l>aequiparatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--AEquipondium Aequipondium aequipondium-->
-         <tok val="[A]?(e|E|ae)quipondium"/>
+      <ana>
+         <tok val="AEquipondium"/>
+         <tok val="Aequipondium"/>
+         <tok val="aequipondium"/>
          <lm>
             <l>aequipondium</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -703,15 +927,23 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AEquipondium Aequipondium aequipondiorum aequipondium-->
-         <tok val="[aA]?(e|AE)quipondi(or)?um"/>
+      <ana>
+         <tok val="AEquipondium"/>
+         <tok val="Aequipondium"/>
+         <tok val="aequipondiorum"/>
+         <tok val="aequipondium"/>
          <lm>
             <l>aequipondium</l>
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquis Aequis Aequisque aequin aequis aequisque-->
-         <tok val="[aA]?(e|AE|ae)qui[s]?(que|n)?"/>
+      <ana>
+         <tok val="AEquis"/>
+         <tok val="Aequis"/>
+         <tok val="Aequisque"/>
+         <tok val="aequin"/>
+         <tok val="aequis"/>
+         <tok val="aequisque"/>
          <lm>
             <l>aequus</l>
             <m cert="0.166666666666666667">a - - p - - - f b</m>
@@ -722,8 +954,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEquissimo aequissimo-->
-         <tok val="(ae|AE)quissimo"/>
+      <ana>
+         <tok val="AEquissimo"/>
+         <tok val="aequissimo"/>
          <lm>
             <l>aequus</l>
             <m cert="0.25">a - - s - - - n b s</m>
@@ -732,8 +965,9 @@
             <m cert="0.25">a - - s - - - m b s</m>
          </lm>
       </ana>
-      <ana><!--AEquitare aequitare-->
-         <tok val="(ae|AE)quitare"/>
+      <ana>
+         <tok val="AEquitare"/>
+         <tok val="aequitare"/>
          <lm>
             <l>aequitas</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -741,29 +975,29 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AEquitas Aequitas aequitas-->
-         <tok val="[A]?(e|E|ae)quitas"/>
+      <ana>
+         <tok val="AEquitas"/>
+         <tok val="Aequitas"/>
+         <tok val="aequitas"/>
          <lm>
             <l>aequitas</l>
-            <m>n - - s - - - f n</m>
+            <m cert="0.5">n - - s - - - f n</m>
+            <m cert="0.5">v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--AEquitas Aequitas-->
-         <tok val="A[eE]quitas"/>
-         <lm>
-            <l>aequitas</l>
-            <m>v - 2 s p i a</m>
-         </lm>
-      </ana>
-      <ana><!--AEquitati aequitati-->
-         <tok val="(ae|AE)quitati"/>
+      <ana>
+         <tok val="AEquitati"/>
+         <tok val="aequitati"/>
          <lm>
             <l>aequitas</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--AEquor Aequor aequor aequorque-->
-         <tok val="[A]?(e|E|ae)quor(que)?"/>
+      <ana>
+         <tok val="AEquor"/>
+         <tok val="Aequor"/>
+         <tok val="aequor"/>
+         <tok val="aequorque"/>
          <lm cert="0.5">
             <l>aequor</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -775,8 +1009,12 @@
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--AEquora Aequora Aequoraque aequora aequoraque-->
-         <tok val="[aA]?(e|AE|ae)quora(que)?"/>
+      <ana>
+         <tok val="AEquora"/>
+         <tok val="Aequora"/>
+         <tok val="Aequoraque"/>
+         <tok val="aequora"/>
+         <tok val="aequoraque"/>
          <lm>
             <l>aequor</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -784,15 +1022,19 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--AEquore Aequore aequore-->
-         <tok val="[A]?(e|E|ae)quore"/>
+      <ana>
+         <tok val="AEquore"/>
+         <tok val="Aequore"/>
+         <tok val="aequore"/>
          <lm>
             <l>aequor</l>
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--AEquorei Aequorei aequorei-->
-         <tok val="[A]?(e|E|ae)quorei"/>
+      <ana>
+         <tok val="AEquorei"/>
+         <tok val="Aequorei"/>
+         <tok val="aequorei"/>
          <lm>
             <l>aequoreus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -801,15 +1043,20 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquoreos Aequoreos Aequoreosque aequoreos aequoreosque-->
-         <tok val="[aA]?(e|AE|ae)quoreos(que)?"/>
+      <ana>
+         <tok val="AEquoreos"/>
+         <tok val="Aequoreos"/>
+         <tok val="Aequoreosque"/>
+         <tok val="aequoreos"/>
+         <tok val="aequoreosque"/>
          <lm>
             <l>aequoreus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--AEquoreum aequoreum-->
-         <tok val="(ae|AE)quoreum"/>
+      <ana>
+         <tok val="AEquoreum"/>
+         <tok val="aequoreum"/>
          <lm>
             <l>aequoreus</l>
             <m cert="0.166666666666666667">a - - s - - - n n</m>
@@ -820,81 +1067,138 @@
             <m cert="0.166666666666666667">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--AEquoreus Aequoreus Aequoreusque aequoreus aequoreusque-->
-         <tok val="[aA]?(e|AE|ae)quoreus(que)?"/>
+      <ana>
+         <tok val="AEquoreus"/>
+         <tok val="Aequoreus"/>
+         <tok val="Aequoreusque"/>
+         <tok val="aequoreus"/>
+         <tok val="aequoreusque"/>
          <lm>
             <l>aequoreus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--AEquoris Aequoris aequoris-->
-         <tok val="[A]?(e|E|ae)quoris"/>
+      <ana>
+         <tok val="AEquoris"/>
+         <tok val="Aequoris"/>
+         <tok val="aequoris"/>
          <lm>
             <l>aequor</l>
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--AEquum Aequom Aequum Aeqvvm aequom aequomque aequomst aequum aequumne aequumque aequumst aequóm aéquom aequómst aéquomst Aéquom Aequumne-->
-         <tok val="[a]?(e|é|Ae|ae|aé|AE|Aé)q[u]?[uoó]?[m]?(que|st|ne|vvm)?"/>
+      <ana>
+         <tok val="AEquum"/>
+         <tok val="Aequom"/>
+         <tok val="Aequum"/>
+         <tok val="Aequumne"/>
+         <tok val="Aeqvvm"/>
+         <tok val="Aéquom"/>
+         <tok val="aequom"/>
+         <tok val="aequomque"/>
+         <tok val="aequomst"/>
+         <tok val="aequum"/>
+         <tok val="aequumne"/>
+         <tok val="aequumque"/>
+         <tok val="aequumst"/>
+         <tok val="aequóm"/>
+         <tok val="aequómst"/>
+         <tok val="aeqvvm"/>
+         <tok val="aéquom"/>
+         <tok val="aéquomst"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--AEquum Aequorum Aequorumque Aequum Aeqvvm aequorum aequorumque aequum aequumne aequumque aequumst Aequumne-->
-         <tok val="[aA]?(e|AE|Ae)q[u]?(or)?(u|vv)m(que|ne|st)?"/>
+      <ana>
+         <tok val="AEquum"/>
+         <tok val="Aequorum"/>
+         <tok val="Aequorumque"/>
+         <tok val="Aequum"/>
+         <tok val="Aequumne"/>
+         <tok val="Aeqvvm"/>
+         <tok val="aequorum"/>
+         <tok val="aequorumque"/>
+         <tok val="aequum"/>
+         <tok val="aequumne"/>
+         <tok val="aequumque"/>
+         <tok val="aequumst"/>
+         <tok val="aeqvvm"/>
          <lm>
             <l>aequus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--AEquum Aequom Aequum Aeqvvm aequom aequomque aequomst aequum aequumne aequumque aequumst Aequumne-->
-         <tok val="[aA]?(e|AE|Ae)q[u]?[uo]?[m]?(que|st|ne|vvm)?"/>
+      <ana>
+         <tok val="AEquum"/>
+         <tok val="Aequom"/>
+         <tok val="Aequum"/>
+         <tok val="Aequumne"/>
+         <tok val="Aeqvvm"/>
+         <tok val="aequom"/>
+         <tok val="aequomque"/>
+         <tok val="aequomst"/>
+         <tok val="aequum"/>
+         <tok val="aequumne"/>
+         <tok val="aequumque"/>
+         <tok val="aequumst"/>
+         <tok val="aeqvvm"/>
          <lm>
             <l>aequus</l>
             <m cert="0.5">a - - s - - - n a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aequabat aequabat-->
-         <tok val="[aA]equabat"/>
+      <ana>
+         <tok val="Aequabat"/>
+         <tok val="aequabat"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Aequaeuus aequaeuus aequaevus-->
-         <tok val="[aA]equae[uv]us"/>
+      <ana>
+         <tok val="Aequaeuus"/>
+         <tok val="aequaeuus"/>
+         <tok val="aequaevus"/>
          <lm>
             <l>aequaevus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aequalem aequalem aequalemque-->
-         <tok val="[aA]equalem(que)?"/>
+      <ana>
+         <tok val="Aequalem"/>
+         <tok val="aequalem"/>
+         <tok val="aequalemque"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.5">a - - s - - - f a</m>
             <m cert="0.5">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Aequalitate aequalitate-->
-         <tok val="[aA]equalitate"/>
+      <ana>
+         <tok val="Aequalitate"/>
+         <tok val="aequalitate"/>
          <lm>
             <l>aequalitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aequaliter aequaliterque-->
-         <tok val="[aA]equaliter(que)?"/>
+      <ana>
+         <tok val="Aequaliter"/>
+         <tok val="aequaliter"/>
+         <tok val="aequaliterque"/>
          <lm>
             <l>aequaliter</l>
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--Aequam aequam aequamque-->
-         <tok val="[aA]equam(que)?"/>
+      <ana>
+         <tok val="Aequam"/>
+         <tok val="aequam"/>
+         <tok val="aequamque"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - f a</m>
@@ -902,6 +1206,7 @@
       </ana>
       <ana>
          <tok val="Aequana"/>
+         <tok val="aequana"/>
          <lm>
             <l>Aequana</l>
             <m cert="0.333333333333333333">n e - p - - - n n</m>
@@ -909,15 +1214,17 @@
             <m cert="0.333333333333333333">n e - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Aequandas aequandas-->
-         <tok val="[aA]equandas"/>
+      <ana>
+         <tok val="Aequandas"/>
+         <tok val="aequandas"/>
          <lm>
             <l>aequo</l>
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--Aequanimis aequanimis-->
-         <tok val="[aA]equanimis"/>
+      <ana>
+         <tok val="Aequanimis"/>
+         <tok val="aequanimis"/>
          <lm>
             <l>aequanimus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -928,8 +1235,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Aequanimitas aequanimitas-->
-         <tok val="[aA]equanimitas"/>
+      <ana>
+         <tok val="Aequanimitas"/>
+         <tok val="aequanimitas"/>
          <lm>
             <l>aequanimitas</l>
             <m>n - - s - - - f n</m>
@@ -937,20 +1245,25 @@
       </ana>
       <ana>
          <tok val="Aequanum"/>
+         <tok val="aequanum"/>
          <lm>
             <l>Aequana</l>
             <m>n e - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Aequaret aequaret aequaretque-->
-         <tok val="[aA]equaret(que)?"/>
+      <ana>
+         <tok val="Aequaret"/>
+         <tok val="aequaret"/>
+         <tok val="aequaretque"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Aequas aequan aequas-->
-         <tok val="[aA]equa[sn]"/>
+      <ana>
+         <tok val="Aequas"/>
+         <tok val="aequan"/>
+         <tok val="aequas"/>
          <lm cert="0.5">
             <l>aequo</l>
             <m>v - 2 s p i a</m>
@@ -960,15 +1273,18 @@
             <m>a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aequasset aequasset-->
-         <tok val="[aA]equasset"/>
+      <ana>
+         <tok val="Aequasset"/>
+         <tok val="aequasset"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--Aequati aequati aequatique-->
-         <tok val="[aA]equati(que)?"/>
+      <ana>
+         <tok val="Aequati"/>
+         <tok val="aequati"/>
+         <tok val="aequatique"/>
          <lm>
             <l>aequo</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -977,8 +1293,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Aequatis aequatis aequatisque-->
-         <tok val="[aA]equatis(que)?"/>
+      <ana>
+         <tok val="Aequatis"/>
+         <tok val="aequatis"/>
+         <tok val="aequatisque"/>
          <lm>
             <l>aequo</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -990,29 +1308,34 @@
             <m cert="0.142857142857142857">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--Aequavit aequauit aequavit-->
-         <tok val="[aA]equa[vu]it"/>
+      <ana>
+         <tok val="Aequavit"/>
+         <tok val="aequauit"/>
+         <tok val="aequavit"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Aequent aequent-->
-         <tok val="[aA]equent"/>
+      <ana>
+         <tok val="Aequent"/>
+         <tok val="aequent"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Aequer aequer-->
-         <tok val="[aA]equer"/>
+      <ana>
+         <tok val="Aequer"/>
+         <tok val="aequer"/>
          <lm>
             <l>aequo</l>
             <m>v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--Aequetur aequetur-->
-         <tok val="[aA]equetur"/>
+      <ana>
+         <tok val="Aequetur"/>
+         <tok val="aequetur"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s p s p</m>
@@ -1020,6 +1343,7 @@
       </ana>
       <ana>
          <tok val="Aequicula"/>
+         <tok val="aequicula"/>
          <lm>
             <l>Aequiculus</l>
             <m cert="0.166666666666666667">a e - p - - - n n</m>
@@ -1032,6 +1356,7 @@
       </ana>
       <ana>
          <tok val="Aequiculam"/>
+         <tok val="aequiculam"/>
          <lm>
             <l>Aequiculus</l>
             <m>a e - s - - - f a</m>
@@ -1039,6 +1364,7 @@
       </ana>
       <ana>
          <tok val="Aequiculis"/>
+         <tok val="aequiculis"/>
          <lm>
             <l>Aequiculus</l>
             <m cert="0.125">n e - p - - - m b</m>
@@ -1053,6 +1379,7 @@
       </ana>
       <ana>
          <tok val="Aequiculos"/>
+         <tok val="aequiculos"/>
          <lm>
             <l>Aequiculus</l>
             <m cert="0.5">n e - p - - - m a</m>
@@ -1061,6 +1388,7 @@
       </ana>
       <ana>
          <tok val="Aequiculus"/>
+         <tok val="aequiculus"/>
          <lm>
             <l>Aequiculus</l>
             <m cert="0.5">n e - s - - - m n</m>
@@ -1069,6 +1397,7 @@
       </ana>
       <ana>
          <tok val="Aequicum"/>
+         <tok val="aequicum"/>
          <lm>
             <l>Aequicus</l>
             <m cert="0.166666666666666667">a e - s - - - n v</m>
@@ -1081,13 +1410,15 @@
       </ana>
       <ana>
          <tok val="Aequicus"/>
+         <tok val="aequicus"/>
          <lm>
             <l>Aequicus</l>
             <m>a e - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aequidiale aequidiale-->
-         <tok val="[aA]equidiale"/>
+      <ana>
+         <tok val="Aequidiale"/>
+         <tok val="aequidiale"/>
          <lm>
             <l>aequidiale</l>
             <m cert="0.25">n - - s - - - n v</m>
@@ -1096,16 +1427,18 @@
             <m cert="0.25">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Aequilatatio aequilatatio-->
-         <tok val="[aA]equilatatio"/>
+      <ana>
+         <tok val="Aequilatatio"/>
+         <tok val="aequilatatio"/>
          <lm>
             <l>aequilatatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Aequilateris aequilateris-->
-         <tok val="[aA]equilateris"/>
+      <ana>
+         <tok val="Aequilateris"/>
+         <tok val="aequilateris"/>
          <lm>
             <l>aequilaterus</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -1116,8 +1449,9 @@
             <m cert="0.166666666666666667">a - - p - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Aequilibris aequilibris-->
-         <tok val="[aA]equilibris"/>
+      <ana>
+         <tok val="Aequilibris"/>
+         <tok val="aequilibris"/>
          <lm>
             <l>aequilibris</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1129,8 +1463,10 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Aequilibris aequilibres aequilibris-->
-         <tok val="[aA]equilibr[ie]s"/>
+      <ana>
+         <tok val="Aequilibris"/>
+         <tok val="aequilibres"/>
+         <tok val="aequilibris"/>
          <lm>
             <l>aequilibris</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -1139,14 +1475,18 @@
       </ana>
       <ana>
          <tok val="Aequimaelio"/>
+         <tok val="aequimaelio"/>
          <lm>
             <l>Aequimaelium</l>
             <m cert="0.5">n e - s - - - n b</m>
             <m cert="0.5">n e - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--Aequimaelium Aequimelium-->
-         <tok val="Aequim[a]?elium"/>
+      <ana>
+         <tok val="Aequimaelium"/>
+         <tok val="Aequimelium"/>
+         <tok val="aequimaelium"/>
+         <tok val="aequimelium"/>
          <lm>
             <l>Aequimaelium</l>
             <m cert="0.25">n e - s - - - n a</m>
@@ -1155,22 +1495,25 @@
             <m cert="0.25">n e - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Aequimanus aequimanus-->
-         <tok val="[aA]equimanus"/>
+      <ana>
+         <tok val="Aequimanus"/>
+         <tok val="aequimanus"/>
          <lm>
             <l>aequimanus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Aequiparo aequiparo-->
-         <tok val="[aA]equiparo"/>
+      <ana>
+         <tok val="Aequiparo"/>
+         <tok val="aequiparo"/>
          <lm>
             <l>aequiparo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Aequipollentia aequipollentia-->
-         <tok val="[aA]equipollentia"/>
+      <ana>
+         <tok val="Aequipollentia"/>
+         <tok val="aequipollentia"/>
          <lm>
             <l>aequipollens</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -1178,8 +1521,9 @@
             <m cert="0.333333333333333333">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Aequissima aequissima-->
-         <tok val="[aA]equissima"/>
+      <ana>
+         <tok val="Aequissima"/>
+         <tok val="aequissima"/>
          <lm>
             <l>aequus</l>
             <m cert="0.166666666666666667">a - - p - - - n a s</m>
@@ -1190,8 +1534,12 @@
             <m cert="0.166666666666666667">a - - p - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Aequissimum aequissimum aequissimumst aequissimumve aequissumum-->
-         <tok val="[aA]equiss[iu]mum(st|ve)?"/>
+      <ana>
+         <tok val="Aequissimum"/>
+         <tok val="aequissimum"/>
+         <tok val="aequissimumst"/>
+         <tok val="aequissimumve"/>
+         <tok val="aequissumum"/>
          <lm>
             <l>aequus</l>
             <m cert="0.2">a - - p - - - n g s</m>
@@ -1201,29 +1549,39 @@
             <m cert="0.2">a - - s - - - n n s</m>
          </lm>
       </ana>
-      <ana><!--Aequissimum aequissime aequissimum aequissimumst aequissimumve aequissumum-->
-         <tok val="[aA]equiss[iu]m(um)?(st|ve|e)?"/>
+      <ana>
+         <tok val="Aequissimum"/>
+         <tok val="aequissime"/>
+         <tok val="aequissimum"/>
+         <tok val="aequissimumst"/>
+         <tok val="aequissimumve"/>
+         <tok val="aequissumum"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - n v s</m>
          </lm>
       </ana>
-      <ana><!--Aequitate aequitate-->
-         <tok val="[aA]equitate"/>
+      <ana>
+         <tok val="Aequitate"/>
+         <tok val="aequitate"/>
          <lm>
             <l>aequitas</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aequitatem aequitatem aequitatemque-->
-         <tok val="[aA]equitatem(que)?"/>
+      <ana>
+         <tok val="Aequitatem"/>
+         <tok val="aequitatem"/>
+         <tok val="aequitatemque"/>
          <lm>
             <l>aequitas</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Aequitatis aequitatis aequitatisque-->
-         <tok val="[aA]equitatis(que)?"/>
+      <ana>
+         <tok val="Aequitatis"/>
+         <tok val="aequitatis"/>
+         <tok val="aequitatisque"/>
          <lm>
             <l>aequitas</l>
             <m>n - - s - - - f g</m>
@@ -1231,6 +1589,7 @@
       </ana>
       <ana>
          <tok val="Aequiti"/>
+         <tok val="aequiti"/>
          <lm>
             <l>aequio</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -1239,8 +1598,10 @@
             <m cert="0.25">v - - s r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Aequiualere aequiualere aequivalere-->
-         <tok val="[aA]equi[uv]alere"/>
+      <ana>
+         <tok val="Aequiualere"/>
+         <tok val="aequiualere"/>
+         <tok val="aequivalere"/>
          <lm>
             <l>aequivaleo</l>
             <m cert="0.333333333333333333">v - 2 s p m p</m>
@@ -1248,8 +1609,10 @@
             <m cert="0.333333333333333333">v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Aequiuoca aequiuoca aequivoca-->
-         <tok val="[aA]equi[uv]oca"/>
+      <ana>
+         <tok val="Aequiuoca"/>
+         <tok val="aequiuoca"/>
+         <tok val="aequivoca"/>
          <lm>
             <l>aequivocus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1260,15 +1623,24 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aequius aequius aequiusne aequiust aequíus aéquius-->
-         <tok val="[aA]?(e|aé)qu[ií]us(t|ne)?"/>
+      <ana>
+         <tok val="Aequius"/>
+         <tok val="aequius"/>
+         <tok val="aequiusne"/>
+         <tok val="aequiust"/>
+         <tok val="aequíus"/>
+         <tok val="aéquius"/>
          <lm>
             <l>aequus</l>
             <m>d - - - - - - - - c</m>
          </lm>
       </ana>
-      <ana><!--Aequius aequius aequiusne aequiust AEQUIUS-->
-         <tok val="[aA]?(equius)?(t|ne|AEQUIUS)?"/>
+      <ana>
+         <tok val="AEQUIUS"/>
+         <tok val="Aequius"/>
+         <tok val="aequius"/>
+         <tok val="aequiusne"/>
+         <tok val="aequiust"/>
          <lm>
             <l>aequus</l>
             <m cert="0.333333333333333333">a - - s - - - n a c</m>
@@ -1276,8 +1648,9 @@
             <m cert="0.333333333333333333">a - - s - - - n n c</m>
          </lm>
       </ana>
-      <ana><!--Aequorea aequorea-->
-         <tok val="[aA]equorea"/>
+      <ana>
+         <tok val="Aequorea"/>
+         <tok val="aequorea"/>
          <lm>
             <l>aequoreus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1288,8 +1661,10 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Aequoreae aequoreae aequoreaeque-->
-         <tok val="[aA]equoreae(que)?"/>
+      <ana>
+         <tok val="Aequoreae"/>
+         <tok val="aequoreae"/>
+         <tok val="aequoreaeque"/>
          <lm>
             <l>aequoreus</l>
             <m cert="0.25">a - - p - - - f v</m>
@@ -1298,8 +1673,9 @@
             <m cert="0.25">a - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Aequoreo aequoreo-->
-         <tok val="[aA]equoreo"/>
+      <ana>
+         <tok val="Aequoreo"/>
+         <tok val="aequoreo"/>
          <lm>
             <l>aequoreus</l>
             <m cert="0.25">a - - s - - - n b</m>
@@ -1308,16 +1684,21 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Aequoribus aequoribus aequoribusque-->
-         <tok val="[aA]equoribus(que)?"/>
+      <ana>
+         <tok val="Aequoribus"/>
+         <tok val="aequoribus"/>
+         <tok val="aequoribusque"/>
          <lm>
             <l>aequor</l>
             <m cert="0.5">n - - p - - - n d</m>
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Aequos Aequosque aequos aequosque-->
-         <tok val="[aA]equos(que)?"/>
+      <ana>
+         <tok val="Aequos"/>
+         <tok val="Aequosque"/>
+         <tok val="aequos"/>
+         <tok val="aequosque"/>
          <lm>
             <l>aequus</l>
             <m>a - - p - - - m a</m>
@@ -1344,8 +1725,9 @@
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--aequabili aequabilique-->
-         <tok val="aequabili(que)?"/>
+      <ana>
+         <tok val="aequabili"/>
+         <tok val="aequabilique"/>
          <lm>
             <l>aequabilis</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -1442,8 +1824,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--aequabit aequabitque-->
-         <tok val="aequabit(que)?"/>
+      <ana>
+         <tok val="aequabit"/>
+         <tok val="aequabitque"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s f i a</m>
@@ -1484,8 +1867,9 @@
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--aequaeua aequaeva-->
-         <tok val="aequae[vu]a"/>
+      <ana>
+         <tok val="aequaeua"/>
+         <tok val="aequaeva"/>
          <lm>
             <l>aequaevus</l>
             <m cert="0.166666666666666667">a - - s - - - f n</m>
@@ -1496,30 +1880,38 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--aequaeuam aequaevamque-->
-         <tok val="aequae[vu]am(que)?"/>
+      <ana>
+         <tok val="aequaeuam"/>
+         <tok val="aequaevamque"/>
          <lm>
             <l>aequaevus</l>
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aequaeue aequaeve-->
-         <tok val="aequae[vu]e"/>
+      <ana>
+         <tok val="aequaeue"/>
+         <tok val="aequaeve"/>
          <lm>
             <l>aequaevus</l>
             <m cert="0.5">d</m>
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--aequaeue aequaeuum aequaeuumque aequaevum aequaevumque aequaeve-->
-         <tok val="aequae[vu]?(um)?(que|ve|ue)?"/>
+      <ana>
+         <tok val="aequaeue"/>
+         <tok val="aequaeuum"/>
+         <tok val="aequaeuumque"/>
+         <tok val="aequaeve"/>
+         <tok val="aequaevum"/>
+         <tok val="aequaevumque"/>
          <lm>
             <l>aequaevus</l>
             <m>a - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--aequaeui aequaevi-->
-         <tok val="aequae[vu]i"/>
+      <ana>
+         <tok val="aequaeui"/>
+         <tok val="aequaevi"/>
          <lm>
             <l>aequaevus</l>
             <m cert="0.25">a - - s - - - m g</m>
@@ -1528,8 +1920,11 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--aequaeuum aequaeuumque aequaevum aequaevumque-->
-         <tok val="aequae[vu]um(que)?"/>
+      <ana>
+         <tok val="aequaeuum"/>
+         <tok val="aequaeuumque"/>
+         <tok val="aequaevum"/>
+         <tok val="aequaevumque"/>
          <lm>
             <l>aequaevus</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1537,16 +1932,21 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--aequaeuum aequaeuumque aequaevum aequaevumque aequaevorum-->
-         <tok val="aequae(v|u|vor)um(que)?"/>
+      <ana>
+         <tok val="aequaeuum"/>
+         <tok val="aequaeuumque"/>
+         <tok val="aequaevorum"/>
+         <tok val="aequaevum"/>
+         <tok val="aequaevumque"/>
          <lm>
             <l>aequaevus</l>
             <m cert="0.5">a - - p - - - n g</m>
             <m cert="0.5">a - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--aequalior aequaliorque-->
-         <tok val="aequalior(que)?"/>
+      <ana>
+         <tok val="aequalior"/>
+         <tok val="aequaliorque"/>
          <lm>
             <l>aequalis</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -1630,8 +2030,9 @@
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--aequanda aequandaque-->
-         <tok val="aequanda(que)?"/>
+      <ana>
+         <tok val="aequanda"/>
+         <tok val="aequandaque"/>
          <lm>
             <l>aequo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1741,8 +2142,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--aequanime aequanimum-->
-         <tok val="aequanim(um|e)"/>
+      <ana>
+         <tok val="aequanime"/>
+         <tok val="aequanimum"/>
          <lm>
             <l>aequanimus</l>
             <m>a - - s - - - n v</m>
@@ -1758,8 +2160,9 @@
             <m cert="0.25">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--aequanimitate Aequanimitate-->
-         <tok val="[Aa]equanimitate"/>
+      <ana>
+         <tok val="Aequanimitate"/>
+         <tok val="aequanimitate"/>
          <lm>
             <l>aequanimitas</l>
             <m>n - - s - - - f b</m>
@@ -1851,8 +2254,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--aequantes aequantis-->
-         <tok val="aequant[ie]s"/>
+      <ana>
+         <tok val="aequantes"/>
+         <tok val="aequantis"/>
          <lm>
             <l>aequo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1898,8 +2302,10 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--aequarat aequauerat aequaverat-->
-         <tok val="aequa[vu]?(e|)rat"/>
+      <ana>
+         <tok val="aequarat"/>
+         <tok val="aequauerat"/>
+         <tok val="aequaverat"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s l i a</m>
@@ -1933,15 +2339,19 @@
             <m>v - 3 s i s p</m>
          </lm>
       </ana>
-      <ana><!--aequarint aequauerint aequaverint-->
-         <tok val="aequa[vu]?(e|)rint"/>
+      <ana>
+         <tok val="aequarint"/>
+         <tok val="aequauerint"/>
+         <tok val="aequaverint"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--aequarit aequauerit aequaverit-->
-         <tok val="aequa[vu]?(e|)rit"/>
+      <ana>
+         <tok val="aequarit"/>
+         <tok val="aequauerit"/>
+         <tok val="aequaverit"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s r s a</m>
@@ -1954,15 +2364,18 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--aequarunt aequauere aequavere-->
-         <tok val="aequa[vu]?(e|)r(e|unt)"/>
+      <ana>
+         <tok val="aequarunt"/>
+         <tok val="aequauere"/>
+         <tok val="aequavere"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--aequasse aequauisse-->
-         <tok val="aequa(ui)?sse"/>
+      <ana>
+         <tok val="aequasse"/>
+         <tok val="aequauisse"/>
          <lm>
             <l>aequo</l>
             <m>v - - - r n a</m>
@@ -2011,8 +2424,10 @@
             <m cert="0.5">v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--aequate aequatum aequatumque-->
-         <tok val="aequat(um)?(que|e)?"/>
+      <ana>
+         <tok val="aequate"/>
+         <tok val="aequatum"/>
+         <tok val="aequatumque"/>
          <lm>
             <l>aequo</l>
             <m>v - - s r p p n v</m>
@@ -2060,8 +2475,10 @@
             <m cert="0.25">a - - s - - - n g s</m>
          </lm>
       </ana>
-      <ana><!--aequatorum aequatum aequatumque-->
-         <tok val="aequat(or)?um(que)?"/>
+      <ana>
+         <tok val="aequatorum"/>
+         <tok val="aequatum"/>
+         <tok val="aequatumque"/>
          <lm>
             <l>aequo</l>
             <m cert="0.5">v - - p r p p m g</m>
@@ -2082,8 +2499,9 @@
             <m>a - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--aequatum aequatumque-->
-         <tok val="aequatum(que)?"/>
+      <ana>
+         <tok val="aequatum"/>
+         <tok val="aequatumque"/>
          <lm>
             <l>aequo</l>
             <m cert="0.25">v - - s r p p n n</m>
@@ -2135,8 +2553,9 @@
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--aequauerint aequaverint-->
-         <tok val="aequa[vu]erint"/>
+      <ana>
+         <tok val="aequauerint"/>
+         <tok val="aequaverint"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 p t i a</m>
@@ -2150,23 +2569,26 @@
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--aequauerit aequaverit-->
-         <tok val="aequa[vu]erit"/>
+      <ana>
+         <tok val="aequauerit"/>
+         <tok val="aequaverit"/>
          <lm>
             <l>aequo</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--aequaueritis aequaveritis-->
-         <tok val="aequa[vu]eritis"/>
+      <ana>
+         <tok val="aequaueritis"/>
+         <tok val="aequaveritis"/>
          <lm>
             <l>aequo</l>
             <m cert="0.5">v - 2 p r s a</m>
             <m cert="0.5">v - 2 p t i a</m>
          </lm>
       </ana>
-      <ana><!--aequaui aequavi-->
-         <tok val="aequa[vu]i"/>
+      <ana>
+         <tok val="aequaui"/>
+         <tok val="aequavi"/>
          <lm>
             <l>aequo</l>
             <m>v - 1 s r i a</m>
@@ -2260,8 +2682,9 @@
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--aequiformes aequiformis-->
-         <tok val="aequiform[ie]s"/>
+      <ana>
+         <tok val="aequiformes"/>
+         <tok val="aequiformis"/>
          <lm>
             <l>aequiformis</l>
             <m cert="0.5">a - - p - - - m a</m>
@@ -2357,8 +2780,9 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--aequilatere aequilaterum-->
-         <tok val="aequilater(um|e)"/>
+      <ana>
+         <tok val="aequilatere"/>
+         <tok val="aequilaterum"/>
          <lm>
             <l>aequilaterus</l>
             <m>a - - s - - - n v</m>
@@ -2374,8 +2798,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--aequilaterorum aequilaterum-->
-         <tok val="aequilate(ro)?rum"/>
+      <ana>
+         <tok val="aequilaterorum"/>
+         <tok val="aequilaterum"/>
          <lm>
             <l>aequilaterus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -2391,8 +2816,9 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--aequilaterus aequilaterusque-->
-         <tok val="aequilaterus(que)?"/>
+      <ana>
+         <tok val="aequilaterus"/>
+         <tok val="aequilaterusque"/>
          <lm>
             <l>aequilaterus</l>
             <m>a - - s - - - m n</m>
@@ -2497,8 +2923,9 @@
             <m cert="0.166666666666666667">a - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--aequilibri aequilibrii-->
-         <tok val="aequilibri[i]?"/>
+      <ana>
+         <tok val="aequilibri"/>
+         <tok val="aequilibrii"/>
          <lm>
             <l>aequilibrium</l>
             <m>n - - s - - - n g</m>
@@ -2608,8 +3035,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a c</m>
          </lm>
       </ana>
-      <ana><!--aequiore Aequiore-->
-         <tok val="[Aa]equiore"/>
+      <ana>
+         <tok val="Aequiore"/>
+         <tok val="aequiore"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - - b c</m>
@@ -2658,8 +3086,9 @@
             <m>a - - s - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--aequiparabile aequiperabile-->
-         <tok val="aequip[ea]rabile"/>
+      <ana>
+         <tok val="aequiparabile"/>
+         <tok val="aequiperabile"/>
          <lm>
             <l>aequiparabilis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -2722,8 +3151,9 @@
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--aequiparat aequiperat-->
-         <tok val="aequip[ea]rat"/>
+      <ana>
+         <tok val="aequiparat"/>
+         <tok val="aequiperat"/>
          <lm>
             <l>aequiparo</l>
             <m>v - 3 s p i a</m>
@@ -2858,8 +3288,9 @@
             <m>d - - - - - - - - s</m>
          </lm>
       </ana>
-      <ana><!--aequissime aequissimus-->
-         <tok val="aequissim(us|e)"/>
+      <ana>
+         <tok val="aequissime"/>
+         <tok val="aequissimus"/>
          <lm>
             <l>aequus</l>
             <m>a - - s - - - m v s</m>
@@ -2975,43 +3406,49 @@
             <m cert="0.142857142857142857">v - - s r p p m a</m>
          </lm>
       </ana>
-      <ana><!--aequiualeant aequivaleant-->
-         <tok val="aequi[vu]aleant"/>
+      <ana>
+         <tok val="aequiualeant"/>
+         <tok val="aequivaleant"/>
          <lm>
             <l>aequivaleo</l>
             <m>v - 3 p p s a</m>
          </lm>
       </ana>
-      <ana><!--aequiualeat aequivaleat-->
-         <tok val="aequi[vu]aleat"/>
+      <ana>
+         <tok val="aequiualeat"/>
+         <tok val="aequivaleat"/>
          <lm>
             <l>aequivaleo</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--aequiualebit aequivalebit-->
-         <tok val="aequi[vu]alebit"/>
+      <ana>
+         <tok val="aequiualebit"/>
+         <tok val="aequivalebit"/>
          <lm>
             <l>aequivaleo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--aequiualebunt aequivalebunt-->
-         <tok val="aequi[vu]alebunt"/>
+      <ana>
+         <tok val="aequiualebunt"/>
+         <tok val="aequivalebunt"/>
          <lm>
             <l>aequivaleo</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--aequiualent aequivalent-->
-         <tok val="aequi[vu]alent"/>
+      <ana>
+         <tok val="aequiualent"/>
+         <tok val="aequivalent"/>
          <lm>
             <l>aequivaleo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--aequiualenteque aequivalente-->
-         <tok val="aequi[vu]alente(que)?"/>
+      <ana>
+         <tok val="aequiualenteque"/>
+         <tok val="aequivalente"/>
          <lm>
             <l>aequivaleo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -3029,8 +3466,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--aequiualentes aequiualentis-->
-         <tok val="aequiualent[ie]s"/>
+      <ana>
+         <tok val="aequiualentes"/>
+         <tok val="aequiualentis"/>
          <lm>
             <l>aequivaleo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3067,15 +3505,17 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--aequiualeret aequivaleret-->
-         <tok val="aequi[vu]aleret"/>
+      <ana>
+         <tok val="aequiualeret"/>
+         <tok val="aequivaleret"/>
          <lm>
             <l>aequivaleo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--aequiualet aequivalet-->
-         <tok val="aequi[vu]alet"/>
+      <ana>
+         <tok val="aequiualet"/>
+         <tok val="aequivalet"/>
          <lm>
             <l>aequivaleo</l>
             <m>v - 3 s p i a</m>
@@ -3089,8 +3529,10 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--aequiuoce aequiuocum aequivocum-->
-         <tok val="aequi[vu]oc(um|e)"/>
+      <ana>
+         <tok val="aequiuoce"/>
+         <tok val="aequiuocum"/>
+         <tok val="aequivocum"/>
          <lm>
             <l>aequivocus</l>
             <m>a - - s - - - n v</m>
@@ -3106,8 +3548,9 @@
             <m cert="0.25">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--aequiuocum aequivocum-->
-         <tok val="aequi[vu]ocum"/>
+      <ana>
+         <tok val="aequiuocum"/>
+         <tok val="aequivocum"/>
          <lm>
             <l>aequivocus</l>
             <m cert="0.2">a - - s - - - n n</m>
@@ -3151,8 +3594,9 @@
             <m>a - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--aequoreas aequoreasque-->
-         <tok val="aequoreas(que)?"/>
+      <ana>
+         <tok val="aequoreas"/>
+         <tok val="aequoreasque"/>
          <lm>
             <l>aequoreus</l>
             <m>a - - p - - - f a</m>
@@ -3283,6 +3727,7 @@
       </ana>
       <ana>
          <tok val="Aequitius"/>
+         <tok val="aequitius"/>
          <lm>
             <l>Aequitius</l>
             <m>n e - s - - - m n</m>
@@ -3290,6 +3735,7 @@
       </ana>
       <ana>
          <tok val="Aequitium"/>
+         <tok val="aequitium"/>
          <lm>
             <l>Aequitius</l>
             <m>n e - s - - - m a</m>
@@ -3297,6 +3743,7 @@
       </ana>
       <ana>
          <tok val="Aequitii"/>
+         <tok val="aequitii"/>
          <lm>
             <l>Aequitius</l>
             <m>n e - s - - - m g</m>
@@ -3304,6 +3751,7 @@
       </ana>
       <ana>
          <tok val="Aequitio"/>
+         <tok val="aequitio"/>
          <lm>
             <l>Aequitius</l>
             <m cert="0.5">n e - s - - - m d</m>
@@ -3312,6 +3760,7 @@
       </ana>
       <ana>
          <tok val="Aequumne"/>
+         <tok val="aequumne"/>
          <lm cert="0.5">
             <l>aequum</l>
             <m cert="0.25">n - - p - - - n g</m>

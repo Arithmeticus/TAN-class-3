@@ -1,74 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscog">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:cog">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to cog</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-cog.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>COG</tok-starts-with>
       <tok-starts-with>COg</tok-starts-with>
       <tok-starts-with>Cog</tok-starts-with>
       <tok-starts-with>cog</tok-starts-with>
       <tok-starts-with>cóg</tok-starts-with>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:15:35.044-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:15:35.044-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-cog.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
       <ana>
          <tok val="COGIMINI"/>
+         <tok val="cogimini"/>
          <lm>
             <l>cogo</l>
             <m cert="0.5">v - 2 p p i p</m>
             <m cert="0.5">v - 2 p p m p</m>
          </lm>
       </ana>
-      <ana><!--COGITEMVS COgitemus Cogitemus cogitemus-->
-         <tok val="[C]?(o|O|co)?(gitemus|COGITEMVS)"/>
+      <ana>
+         <tok val="COGITEMVS"/>
+         <tok val="COgitemus"/>
+         <tok val="Cogitemus"/>
+         <tok val="cogitemus"/>
+         <tok val="cogitemvs"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--COGITO Cogito cogito cogitó cógito-->
-         <tok val="[cC]?(o|có)?(git)?(o|ó|COGITO)"/>
+      <ana>
+         <tok val="COGITO"/>
+         <tok val="Cogito"/>
+         <tok val="cogito"/>
+         <tok val="cogitó"/>
+         <tok val="cógito"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--COGITO Cogito cogito-->
-         <tok val="[cC]?(ogito|COGITO)"/>
+      <ana>
+         <tok val="COGITO"/>
+         <tok val="Cogito"/>
+         <tok val="cogito"/>
          <lm>
             <l>cogo</l>
             <m cert="0.5">v - 2 s f m a</m>
             <m cert="0.5">v - 3 s f m a</m>
          </lm>
       </ana>
-      <ana><!--COGNITVRVM Cogniturum cogniturum-->
-         <tok val="[cC]?(ogniturum|COGNITVRVM)"/>
+      <ana>
+         <tok val="COGNITVRVM"/>
+         <tok val="Cogniturum"/>
+         <tok val="cogniturum"/>
+         <tok val="cognitvrvm"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.166666666666666667">v - - p f p a n g</m>
@@ -79,85 +101,113 @@
             <m cert="0.166666666666666667">v - - p f p a m g</m>
          </lm>
       </ana>
-      <ana><!--COGNOSCATVR Cognoscatur cognoscatur-->
-         <tok val="[cC]?(ognoscatur|COGNOSCATVR)"/>
+      <ana>
+         <tok val="COGNOSCATVR"/>
+         <tok val="Cognoscatur"/>
+         <tok val="cognoscatur"/>
+         <tok val="cognoscatvr"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--COGNOSCO Cognosco cognosco cógnosco-->
-         <tok val="[cC]?(o|có)?(gnosco|COGNOSCO)"/>
+      <ana>
+         <tok val="COGNOSCO"/>
+         <tok val="Cognosco"/>
+         <tok val="cognosco"/>
+         <tok val="cógnosco"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--COGNOSSET cognosset cognossetque cognouisset cognovisset cognovissetque-->
-         <tok val="(cogno)?(vi|ui)?(sset)?(que|COGNOSSET)?"/>
+      <ana>
+         <tok val="COGNOSSET"/>
+         <tok val="cognosset"/>
+         <tok val="cognossetque"/>
+         <tok val="cognouisset"/>
+         <tok val="cognovisset"/>
+         <tok val="cognovissetque"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s l s a</m>
          </lm>
       </ana>
-      <ana><!--COGO Cogo cogo-->
-         <tok val="[cC]?(ogo|COGO)"/>
+      <ana>
+         <tok val="COGO"/>
+         <tok val="Cogo"/>
+         <tok val="cogo"/>
          <lm>
             <l>cogo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--COgnoscemus cognoscemus-->
-         <tok val="(co|CO)gnoscemus"/>
+      <ana>
+         <tok val="COgnoscemus"/>
+         <tok val="cognoscemus"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--Cogantur Coganturque cogantur coganturque Cogántur-->
-         <tok val="[cC]og[aá]ntur(que)?"/>
+      <ana>
+         <tok val="Cogantur"/>
+         <tok val="Coganturque"/>
+         <tok val="Cogántur"/>
+         <tok val="cogantur"/>
+         <tok val="coganturque"/>
+         <tok val="cogántur"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p p s p</m>
          </lm>
       </ana>
-      <ana><!--Cogas cogan cogas-->
-         <tok val="[cC]oga[sn]"/>
+      <ana>
+         <tok val="Cogas"/>
+         <tok val="cogan"/>
+         <tok val="cogas"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Coge coge cogen-->
-         <tok val="[cC]oge[n]?"/>
+      <ana>
+         <tok val="Coge"/>
+         <tok val="coge"/>
+         <tok val="cogen"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Cogebant cogebant-->
-         <tok val="[cC]ogebant"/>
+      <ana>
+         <tok val="Cogebant"/>
+         <tok val="cogebant"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p i i a</m>
          </lm>
       </ana>
-      <ana><!--Cogebat cogebat-->
-         <tok val="[cC]ogebat"/>
+      <ana>
+         <tok val="Cogebat"/>
+         <tok val="cogebat"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Cogebatur cogebatur-->
-         <tok val="[cC]ogebatur"/>
+      <ana>
+         <tok val="Cogebatur"/>
+         <tok val="cogebatur"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--Cogendi cogendi cogendique-->
-         <tok val="[cC]ogendi(que)?"/>
+      <ana>
+         <tok val="Cogendi"/>
+         <tok val="cogendi"/>
+         <tok val="cogendique"/>
          <lm>
             <l>cogo</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -167,15 +217,17 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--Cogendus cogendus-->
-         <tok val="[cC]ogendus"/>
+      <ana>
+         <tok val="Cogendus"/>
+         <tok val="cogendus"/>
          <lm>
             <l>cogo</l>
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--Cogens cogens-->
-         <tok val="[cC]ogens"/>
+      <ana>
+         <tok val="Cogens"/>
+         <tok val="cogens"/>
          <lm>
             <l>cogo</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -187,128 +239,168 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Cogentur cogentur-->
-         <tok val="[cC]ogentur"/>
+      <ana>
+         <tok val="Cogentur"/>
+         <tok val="cogentur"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Cogere cogere cogeren cogereque cógere-->
-         <tok val="[cC]?(o|có|co)gere(n|que)?"/>
+      <ana>
+         <tok val="Cogere"/>
+         <tok val="cogere"/>
+         <tok val="cogeren"/>
+         <tok val="cogereque"/>
+         <tok val="cógere"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--Cogere cogere cogeren cogereque-->
-         <tok val="[cC]ogere(n|que)?"/>
+      <ana>
+         <tok val="Cogere"/>
+         <tok val="cogere"/>
+         <tok val="cogeren"/>
+         <tok val="cogereque"/>
          <lm>
             <l>cogo</l>
             <m>v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Cogere Cogeris cogere cogeren cogereque cogeris-->
-         <tok val="[cC]oger[e]?(n|is|e|eque)?"/>
+      <ana>
+         <tok val="Cogere"/>
+         <tok val="Cogeris"/>
+         <tok val="cogere"/>
+         <tok val="cogeren"/>
+         <tok val="cogereque"/>
+         <tok val="cogeris"/>
          <lm>
             <l>cogo</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Cogerent cogerent-->
-         <tok val="[cC]ogerent"/>
+      <ana>
+         <tok val="Cogerent"/>
+         <tok val="cogerent"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p i s a</m>
          </lm>
       </ana>
-      <ana><!--Cogerere cogereris-->
-         <tok val="[cC]ogerer(is|e)"/>
+      <ana>
+         <tok val="Cogerere"/>
+         <tok val="cogerere"/>
+         <tok val="cogereris"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s i s p</m>
          </lm>
       </ana>
-      <ana><!--Cogeret cogeret cogeretque-->
-         <tok val="[cC]ogeret(que)?"/>
+      <ana>
+         <tok val="Cogeret"/>
+         <tok val="cogeret"/>
+         <tok val="cogeretque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Coges cogen coges-->
-         <tok val="[cC]oge[sn]"/>
+      <ana>
+         <tok val="Coges"/>
+         <tok val="cogen"/>
+         <tok val="coges"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Coget coget cogetque-->
-         <tok val="[cC]oget(que)?"/>
+      <ana>
+         <tok val="Coget"/>
+         <tok val="coget"/>
+         <tok val="cogetque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cogetur cogetur cogeturque-->
-         <tok val="[cC]ogetur(que)?"/>
+      <ana>
+         <tok val="Cogetur"/>
+         <tok val="cogetur"/>
+         <tok val="cogeturque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Cogi cogi cogique-->
-         <tok val="[cC]ogi(que)?"/>
+      <ana>
+         <tok val="Cogi"/>
+         <tok val="cogi"/>
+         <tok val="cogique"/>
          <lm>
             <l>cogo</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Cogimur cogimur-->
-         <tok val="[cC]ogimur"/>
+      <ana>
+         <tok val="Cogimur"/>
+         <tok val="cogimur"/>
          <lm>
             <l>cogo</l>
             <m>v - 1 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Cogis cogis-->
-         <tok val="[cC]ogis"/>
+      <ana>
+         <tok val="Cogis"/>
+         <tok val="cogis"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cogit Cogitque cogit cogitque-->
-         <tok val="[cC]ogit(que)?"/>
+      <ana>
+         <tok val="Cogit"/>
+         <tok val="Cogitque"/>
+         <tok val="cogit"/>
+         <tok val="cogitque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cogita cogita cogitan cogitaue cogitá cógita-->
-         <tok val="[cC]?(o|có)git[a]?(n|ue|á|a)?"/>
+      <ana>
+         <tok val="Cogita"/>
+         <tok val="cogita"/>
+         <tok val="cogitan"/>
+         <tok val="cogitaue"/>
+         <tok val="cogitá"/>
+         <tok val="cógita"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Cogitabam cogitabam-->
-         <tok val="[cC]ogitabam"/>
+      <ana>
+         <tok val="Cogitabam"/>
+         <tok val="cogitabam"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Cogitabat cogitabat cogitabatque-->
-         <tok val="[cC]ogitabat(que)?"/>
+      <ana>
+         <tok val="Cogitabat"/>
+         <tok val="cogitabat"/>
+         <tok val="cogitabatque"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s i i a</m>
          </lm>
       </ana>
-      <ana><!--Cogitabilis cogitabilis-->
-         <tok val="[cC]ogitabilis"/>
+      <ana>
+         <tok val="Cogitabilis"/>
+         <tok val="cogitabilis"/>
          <lm>
             <l>cogitabilis</l>
             <m cert="0.111111111111111111">a - - s - - - f g</m>
@@ -322,22 +414,25 @@
             <m cert="0.111111111111111111">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cogitabo cogitabo-->
-         <tok val="[cC]ogitabo"/>
+      <ana>
+         <tok val="Cogitabo"/>
+         <tok val="cogitabo"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cogitabundus cogitabundus-->
-         <tok val="[cC]ogitabundus"/>
+      <ana>
+         <tok val="Cogitabundus"/>
+         <tok val="cogitabundus"/>
          <lm>
             <l>cogitabundus</l>
             <m>a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cogitanda cogitanda-->
-         <tok val="[cC]ogitanda"/>
+      <ana>
+         <tok val="Cogitanda"/>
+         <tok val="cogitanda"/>
          <lm>
             <l>cogito</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -348,8 +443,10 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--Cogitandum cogitandum cogitandumque-->
-         <tok val="[cC]ogitandum(que)?"/>
+      <ana>
+         <tok val="Cogitandum"/>
+         <tok val="cogitandum"/>
+         <tok val="cogitandumque"/>
          <lm>
             <l>cogito</l>
             <m cert="0.142857142857142857">v - - s p g p n a</m>
@@ -361,8 +458,9 @@
             <m cert="0.142857142857142857">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--Cogitans cogitans-->
-         <tok val="[cC]ogitans"/>
+      <ana>
+         <tok val="Cogitans"/>
+         <tok val="cogitans"/>
          <lm>
             <l>cogito</l>
             <m cert="0.142857142857142857">v - - s p p a m n</m>
@@ -374,8 +472,11 @@
             <m cert="0.142857142857142857">v - - s p p a n v</m>
          </lm>
       </ana>
-      <ana><!--Cogitanti cogitanti cogitantique cogitantive-->
-         <tok val="[cC]ogitanti(ve|que)?"/>
+      <ana>
+         <tok val="Cogitanti"/>
+         <tok val="cogitanti"/>
+         <tok val="cogitantique"/>
+         <tok val="cogitantive"/>
          <lm>
             <l>cogito</l>
             <m cert="0.333333333333333333">v - - s p p a f d</m>
@@ -383,8 +484,12 @@
             <m cert="0.333333333333333333">v - - s p p a m d</m>
          </lm>
       </ana>
-      <ana><!--Cogitanti cogitante cogitanti cogitantique cogitantive-->
-         <tok val="[cC]ogitant(iv)?(e|i|ique)"/>
+      <ana>
+         <tok val="Cogitanti"/>
+         <tok val="cogitante"/>
+         <tok val="cogitanti"/>
+         <tok val="cogitantique"/>
+         <tok val="cogitantive"/>
          <lm>
             <l>cogito</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -392,44 +497,57 @@
             <m cert="0.333333333333333333">v - - s p p a f b</m>
          </lm>
       </ana>
-      <ana><!--Cogitarat cogitarat cogitauerat cogitaverat-->
-         <tok val="[cC]ogita[vu]?[e]?rat"/>
+      <ana>
+         <tok val="Cogitarat"/>
+         <tok val="cogitarat"/>
+         <tok val="cogitauerat"/>
+         <tok val="cogitaverat"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Cogitare cogitare-->
-         <tok val="[cC]ogitare"/>
+      <ana>
+         <tok val="Cogitare"/>
+         <tok val="cogitare"/>
          <lm>
             <l>cogito</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Cogitare cogitare cogitaris cogitarisne-->
-         <tok val="[cC]ogitar(is)?(ne|e)?"/>
+      <ana>
+         <tok val="Cogitare"/>
+         <tok val="cogitare"/>
+         <tok val="cogitaris"/>
+         <tok val="cogitarisne"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cogitasse cogitasse cogitassene cogitavisse-->
-         <tok val="[cC]ogita(vi)?sse(ne)?"/>
+      <ana>
+         <tok val="Cogitasse"/>
+         <tok val="cogitasse"/>
+         <tok val="cogitassene"/>
+         <tok val="cogitavisse"/>
          <lm>
             <l>cogito</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Cogitat cogitat cogitatque-->
-         <tok val="[cC]ogitat(que)?"/>
+      <ana>
+         <tok val="Cogitat"/>
+         <tok val="cogitat"/>
+         <tok val="cogitatque"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cogitata cogitata-->
-         <tok val="[cC]ogitata"/>
+      <ana>
+         <tok val="Cogitata"/>
+         <tok val="cogitata"/>
          <lm cert="0.333333333333333333">
             <l>cogito</l>
             <m cert="0.166666666666666667">v - - s r p p f b</m>
@@ -455,8 +573,10 @@
             <m cert="0.166666666666666667">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Cogitate cogitate cogitateque-->
-         <tok val="[cC]ogitate(que)?"/>
+      <ana>
+         <tok val="Cogitate"/>
+         <tok val="cogitate"/>
+         <tok val="cogitateque"/>
          <lm cert="0.5">
             <l>cogito</l>
             <m cert="0.5">v - 2 p p m a</m>
@@ -468,8 +588,14 @@
             <m cert="0.5">a - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Cogitate Cogitatum cogitate cogitateque cogitatum cogitatumque cogitatumst-->
-         <tok val="[cC]ogitat(um)?(st|e|umque|eque)?"/>
+      <ana>
+         <tok val="Cogitate"/>
+         <tok val="Cogitatum"/>
+         <tok val="cogitate"/>
+         <tok val="cogitateque"/>
+         <tok val="cogitatum"/>
+         <tok val="cogitatumque"/>
+         <tok val="cogitatumst"/>
          <lm cert="0.333333333333333333">
             <l>cogitatum</l>
             <m>n - - s - - - n v</m>
@@ -483,30 +609,42 @@
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Cogitatio Cogitation cogitatio cogitation cogitatioque-->
-         <tok val="[Cc]ogitatio(n|que)?"/>
+      <ana>
+         <tok val="Cogitatio"/>
+         <tok val="Cogitation"/>
+         <tok val="cogitatio"/>
+         <tok val="cogitation"/>
+         <tok val="cogitatioque"/>
          <lm>
             <l>cogitatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cogitatione cogitatione cogitationenque cogitationeque-->
-         <tok val="[cC]ogitatione[n]?(que)?"/>
+      <ana>
+         <tok val="Cogitatione"/>
+         <tok val="cogitatione"/>
+         <tok val="cogitationenque"/>
+         <tok val="cogitationeque"/>
          <lm>
             <l>cogitatio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Cogitationem cogitationem cogitationemque-->
-         <tok val="[cC]ogitationem(que)?"/>
+      <ana>
+         <tok val="Cogitationem"/>
+         <tok val="cogitationem"/>
+         <tok val="cogitationemque"/>
          <lm>
             <l>cogitatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cogitationes cogitationenque cogitationes cogitationesque-->
-         <tok val="[cC]ogitatione[sn]?(que|s)"/>
+      <ana>
+         <tok val="Cogitationes"/>
+         <tok val="cogitationenque"/>
+         <tok val="cogitationes"/>
+         <tok val="cogitationesque"/>
          <lm>
             <l>cogitatio</l>
             <m cert="0.333333333333333333">n - - p - - - f v</m>
@@ -514,37 +652,44 @@
             <m cert="0.333333333333333333">n - - p - - - f n</m>
          </lm>
       </ana>
-      <ana><!--Cogitationi cogitationi-->
-         <tok val="[cC]ogitationi"/>
+      <ana>
+         <tok val="Cogitationi"/>
+         <tok val="cogitationi"/>
          <lm>
             <l>cogitatio</l>
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cogitationibus cogitationibus cogitationibusque-->
-         <tok val="[cC]ogitationibus(que)?"/>
+      <ana>
+         <tok val="Cogitationibus"/>
+         <tok val="cogitationibus"/>
+         <tok val="cogitationibusque"/>
          <lm>
             <l>cogitatio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cogitationis cogitationis-->
-         <tok val="[cC]ogitationis"/>
+      <ana>
+         <tok val="Cogitationis"/>
+         <tok val="cogitationis"/>
          <lm>
             <l>cogitatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Cogitationum cogitationum-->
-         <tok val="[cC]ogitationum"/>
+      <ana>
+         <tok val="Cogitationum"/>
+         <tok val="cogitationum"/>
          <lm>
             <l>cogitatio</l>
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Cogitato cogitato cogitatoque-->
-         <tok val="[cC]ogitato(que)?"/>
+      <ana>
+         <tok val="Cogitato"/>
+         <tok val="cogitato"/>
+         <tok val="cogitatoque"/>
          <lm cert="0.333333333333333333">
             <l>cogitatus</l>
             <m cert="0.25">a - - s - - - m d</m>
@@ -567,8 +712,12 @@
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Cogitatum cogitatorum cogitatum cogitatumque cogitatumst-->
-         <tok val="[cC]ogitat(or)?um(st|que)?"/>
+      <ana>
+         <tok val="Cogitatum"/>
+         <tok val="cogitatorum"/>
+         <tok val="cogitatum"/>
+         <tok val="cogitatumque"/>
+         <tok val="cogitatumst"/>
          <lm cert="0.333333333333333333">
             <l>cogitatus</l>
             <m cert="0.5">a - - p - - - n g</m>
@@ -584,8 +733,11 @@
             <m cert="0.5">v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Cogitatum cogitatum cogitatumque cogitatumst-->
-         <tok val="[cC]ogitatum(st|que)?"/>
+      <ana>
+         <tok val="Cogitatum"/>
+         <tok val="cogitatum"/>
+         <tok val="cogitatumque"/>
+         <tok val="cogitatumst"/>
          <lm cert="0.333333333333333333">
             <l>cogito</l>
             <m cert="0.333333333333333333">v - - s r p p m a</m>
@@ -604,15 +756,19 @@
             <m cert="0.333333333333333333">a - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cogitatum cogitatum cogitatumque-->
-         <tok val="[cC]ogitatum(que)?"/>
+      <ana>
+         <tok val="Cogitatum"/>
+         <tok val="cogitatum"/>
+         <tok val="cogitatumque"/>
          <lm>
             <l>cogito</l>
             <m>v - - - - u - - a</m>
          </lm>
       </ana>
-      <ana><!--Cogitatus cogitatus cogitatusque-->
-         <tok val="[cC]ogitatus(que)?"/>
+      <ana>
+         <tok val="Cogitatus"/>
+         <tok val="cogitatus"/>
+         <tok val="cogitatusque"/>
          <lm cert="0.5">
             <l>cogitatus</l>
             <m cert="0.2">n - - p - - - m n</m>
@@ -626,50 +782,68 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Cogitavi cogitaui cogitavi cogitávi Cogitaui-->
-         <tok val="[cC]ogit[a]?[vu]?(i|ávi|aui)"/>
+      <ana>
+         <tok val="Cogitaui"/>
+         <tok val="Cogitavi"/>
+         <tok val="cogitaui"/>
+         <tok val="cogitavi"/>
+         <tok val="cogitávi"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Cogitavit cogitauit cogitavit cogitavitque-->
-         <tok val="[cC]ogita[vu]it(que)?"/>
+      <ana>
+         <tok val="Cogitavit"/>
+         <tok val="cogitauit"/>
+         <tok val="cogitavit"/>
+         <tok val="cogitavitque"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Cogite cogite-->
-         <tok val="[cC]ogite"/>
+      <ana>
+         <tok val="Cogite"/>
+         <tok val="cogite"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Cogites cogites cogitesque-->
-         <tok val="[cC]ogites(que)?"/>
+      <ana>
+         <tok val="Cogites"/>
+         <tok val="cogites"/>
+         <tok val="cogitesque"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Cogitet cogitet-->
-         <tok val="[cC]ogitet"/>
+      <ana>
+         <tok val="Cogitet"/>
+         <tok val="cogitet"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Cogitur cogitur cogiturque-->
-         <tok val="[cC]ogitur(que)?"/>
+      <ana>
+         <tok val="Cogitur"/>
+         <tok val="cogitur"/>
+         <tok val="cogiturque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cognata cognata cognataque cognatast cognataue cognatave-->
-         <tok val="[cC]ognata[q]?[uv]?(e|st)?"/>
+      <ana>
+         <tok val="Cognata"/>
+         <tok val="cognata"/>
+         <tok val="cognataque"/>
+         <tok val="cognatast"/>
+         <tok val="cognataue"/>
+         <tok val="cognatave"/>
          <lm cert="0.5">
             <l>cognata</l>
             <m cert="0.333333333333333333">n - - s - - - f n</m>
@@ -686,8 +860,10 @@
             <m cert="0.166666666666666667">a - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cognatam cognatam cognatamque-->
-         <tok val="[cC]ognatam(que)?"/>
+      <ana>
+         <tok val="Cognatam"/>
+         <tok val="cognatam"/>
+         <tok val="cognatamque"/>
          <lm cert="0.5">
             <l>cognatus</l>
             <m>a - - s - - - f a</m>
@@ -697,8 +873,11 @@
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cognatas Cognatasque cognatas cognatasque-->
-         <tok val="[cC]ognatas(que)?"/>
+      <ana>
+         <tok val="Cognatas"/>
+         <tok val="Cognatasque"/>
+         <tok val="cognatas"/>
+         <tok val="cognatasque"/>
          <lm cert="0.5">
             <l>cognatus</l>
             <m>a - - p - - - f a</m>
@@ -708,8 +887,11 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cognati Cognatique cognati cognatique-->
-         <tok val="[cC]ognati(que)?"/>
+      <ana>
+         <tok val="Cognati"/>
+         <tok val="Cognatique"/>
+         <tok val="cognati"/>
+         <tok val="cognatique"/>
          <lm>
             <l>cognatus</l>
             <m cert="0.142857142857142857">a - - s - - - m g</m>
@@ -721,30 +903,38 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cognatio cognatio cognation-->
-         <tok val="[cC]ognatio[n]?"/>
+      <ana>
+         <tok val="Cognatio"/>
+         <tok val="cognatio"/>
+         <tok val="cognation"/>
          <lm>
             <l>cognatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cognationem cognationem cognationemque-->
-         <tok val="[cC]ognationem(que)?"/>
+      <ana>
+         <tok val="Cognationem"/>
+         <tok val="cognationem"/>
+         <tok val="cognationemque"/>
          <lm>
             <l>cognatio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cognationis cognationis-->
-         <tok val="[cC]ognationis"/>
+      <ana>
+         <tok val="Cognationis"/>
+         <tok val="cognationis"/>
          <lm>
             <l>cognatio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Cognatis cognatis cognatisque cognatisue-->
-         <tok val="[cC]ognatis[q]?(ue)?"/>
+      <ana>
+         <tok val="Cognatis"/>
+         <tok val="cognatis"/>
+         <tok val="cognatisque"/>
+         <tok val="cognatisue"/>
          <lm cert="0.5">
             <l>cognatus</l>
             <m cert="0.125">n - - p - - - m d</m>
@@ -762,8 +952,9 @@
             <m cert="0.5">n - - p - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Cognato cognato-->
-         <tok val="[cC]ognato"/>
+      <ana>
+         <tok val="Cognato"/>
+         <tok val="cognato"/>
          <lm>
             <l>cognatus</l>
             <m cert="0.166666666666666667">a - - s - - - n b</m>
@@ -774,15 +965,22 @@
             <m cert="0.166666666666666667">a - - s - - - m b</m>
          </lm>
       </ana>
-      <ana><!--Cognatum cognatum cognatumque cognatúm-->
-         <tok val="[cC]ognat[uú]m(que)?"/>
+      <ana>
+         <tok val="Cognatum"/>
+         <tok val="cognatum"/>
+         <tok val="cognatumque"/>
+         <tok val="cognatúm"/>
          <lm>
             <l>cognatus</l>
             <m>a - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Cognatum cognatorum cognatorumque cognatum cognatumque-->
-         <tok val="[cC]ognat(or)?um(que)?"/>
+      <ana>
+         <tok val="Cognatum"/>
+         <tok val="cognatorum"/>
+         <tok val="cognatorumque"/>
+         <tok val="cognatum"/>
+         <tok val="cognatumque"/>
          <lm>
             <l>cognatus</l>
             <m cert="0.333333333333333333">a - - p - - - n g</m>
@@ -790,8 +988,10 @@
             <m cert="0.333333333333333333">n - - p - - - m g</m>
          </lm>
       </ana>
-      <ana><!--Cognatum cognatum cognatumque-->
-         <tok val="[cC]ognatum(que)?"/>
+      <ana>
+         <tok val="Cognatum"/>
+         <tok val="cognatum"/>
+         <tok val="cognatumque"/>
          <lm>
             <l>cognatus</l>
             <m cert="0.25">a - - s - - - n a</m>
@@ -800,16 +1000,23 @@
             <m cert="0.25">n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cognatus cognatus cognatusque cognatusue-->
-         <tok val="[cC]ognatus[q]?(ue)?"/>
+      <ana>
+         <tok val="Cognatus"/>
+         <tok val="cognatus"/>
+         <tok val="cognatusque"/>
+         <tok val="cognatusue"/>
          <lm>
             <l>cognatus</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">a - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Cognita cognita cognitane cognitaque cognitast-->
-         <tok val="[cC]ognita(ne|st|que)?"/>
+      <ana>
+         <tok val="Cognita"/>
+         <tok val="cognita"/>
+         <tok val="cognitane"/>
+         <tok val="cognitaque"/>
+         <tok val="cognitast"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -820,66 +1027,82 @@
             <m cert="0.166666666666666667">v - - p r p p n n</m>
          </lm>
       </ana>
-      <ana><!--Cognitam cognitam-->
-         <tok val="[cC]ognitam"/>
+      <ana>
+         <tok val="Cognitam"/>
+         <tok val="cognitam"/>
          <lm>
             <l>cognosco</l>
             <m>v - - s r p p f a</m>
          </lm>
       </ana>
-      <ana><!--Cognite Cognitum cognite cognitum cognitumque-->
-         <tok val="[cC]ognit(um|e|umque)"/>
+      <ana>
+         <tok val="Cognite"/>
+         <tok val="Cognitum"/>
+         <tok val="cognite"/>
+         <tok val="cognitum"/>
+         <tok val="cognitumque"/>
          <lm>
             <l>cognosco</l>
             <m>v - - s r p p n v</m>
          </lm>
       </ana>
-      <ana><!--Cognite cognite-->
-         <tok val="[cC]ognite"/>
+      <ana>
+         <tok val="Cognite"/>
+         <tok val="cognite"/>
          <lm>
             <l>cognosco</l>
             <m>v - - s r p p m v</m>
          </lm>
       </ana>
-      <ana><!--Cognitio cognitio cognition cognitioque-->
-         <tok val="[cC]ognitio(n|que)?"/>
+      <ana>
+         <tok val="Cognitio"/>
+         <tok val="cognitio"/>
+         <tok val="cognition"/>
+         <tok val="cognitioque"/>
          <lm>
             <l>cognitio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Cognitione cognitione-->
-         <tok val="[cC]ognitione"/>
+      <ana>
+         <tok val="Cognitione"/>
+         <tok val="cognitione"/>
          <lm>
             <l>cognitio</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Cognitionem cognitionem cognitionemque-->
-         <tok val="[cC]ognitionem(que)?"/>
+      <ana>
+         <tok val="Cognitionem"/>
+         <tok val="cognitionem"/>
+         <tok val="cognitionemque"/>
          <lm>
             <l>cognitio</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cognitionibus cognitionibus-->
-         <tok val="[cC]ognitionibus"/>
+      <ana>
+         <tok val="Cognitionibus"/>
+         <tok val="cognitionibus"/>
          <lm>
             <l>cognitio</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Cognitionis cognitionis cognitionisque-->
-         <tok val="[cC]ognitionis(que)?"/>
+      <ana>
+         <tok val="Cognitionis"/>
+         <tok val="cognitionis"/>
+         <tok val="cognitionisque"/>
          <lm>
             <l>cognitio</l>
             <m>n - - s - - - f g</m>
          </lm>
       </ana>
-      <ana><!--Cognitionum cognitionum-->
-         <tok val="[cC]ognitionum"/>
+      <ana>
+         <tok val="Cognitionum"/>
+         <tok val="cognitionum"/>
          <lm>
             <l>cognitio</l>
             <m>n - - p - - - f g</m>
@@ -887,6 +1110,7 @@
       </ana>
       <ana>
          <tok val="Cognitior"/>
+         <tok val="cognitior"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.25">a - - s - - - m v c</m>
@@ -895,8 +1119,10 @@
             <m cert="0.25">a - - s - - - f v c</m>
          </lm>
       </ana>
-      <ana><!--Cognitis cognitis cognitisque-->
-         <tok val="[cC]ognitis(que)?"/>
+      <ana>
+         <tok val="Cognitis"/>
+         <tok val="cognitis"/>
+         <tok val="cognitisque"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.166666666666666667">v - - p r p p n d</m>
@@ -909,14 +1135,18 @@
       </ana>
       <ana>
          <tok val="Cognitissimus"/>
+         <tok val="cognitissimus"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">a - - s - - - m v s</m>
             <m cert="0.5">a - - s - - - m n s</m>
          </lm>
       </ana>
-      <ana><!--Cognito Cognitoque cognito cognitoque-->
-         <tok val="[cC]ognito(que)?"/>
+      <ana>
+         <tok val="Cognito"/>
+         <tok val="Cognitoque"/>
+         <tok val="cognito"/>
+         <tok val="cognitoque"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.25">v - - s r p p n d</m>
@@ -925,30 +1155,38 @@
             <m cert="0.25">v - - s r p p m d</m>
          </lm>
       </ana>
-      <ana><!--Cognitor cognitor-->
-         <tok val="[cC]ognitor"/>
+      <ana>
+         <tok val="Cognitor"/>
+         <tok val="cognitor"/>
          <lm>
             <l>cognitor</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Cognitorem cognitorem-->
-         <tok val="[cC]ognitorem"/>
+      <ana>
+         <tok val="Cognitorem"/>
+         <tok val="cognitorem"/>
          <lm>
             <l>cognitor</l>
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cognitum cognitorum cognitum cognitumque cógnitum-->
-         <tok val="[cC]?(o|có|co)gnit(or)?um(que)?"/>
+      <ana>
+         <tok val="Cognitum"/>
+         <tok val="cognitorum"/>
+         <tok val="cognitum"/>
+         <tok val="cognitumque"/>
+         <tok val="cógnitum"/>
          <lm>
             <l>cognosco</l>
             <m>v - - p r p p m g</m>
          </lm>
       </ana>
-      <ana><!--Cognitum cognitum cognitumque-->
-         <tok val="[cC]ognitum(que)?"/>
+      <ana>
+         <tok val="Cognitum"/>
+         <tok val="cognitum"/>
+         <tok val="cognitumque"/>
          <lm cert="0.5">
             <l>cognosco</l>
             <m cert="0.25">v - - s r p p m a</m>
@@ -961,22 +1199,28 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Cognitum cognitorum cognitum cognitumque-->
-         <tok val="[cC]ognit(or)?um(que)?"/>
+      <ana>
+         <tok val="Cognitum"/>
+         <tok val="cognitorum"/>
+         <tok val="cognitum"/>
+         <tok val="cognitumque"/>
          <lm>
             <l>cognosco</l>
             <m>v - - p r p p n g</m>
          </lm>
       </ana>
-      <ana><!--Cogniturus cogniturus-->
-         <tok val="[cC]ogniturus"/>
+      <ana>
+         <tok val="Cogniturus"/>
+         <tok val="cogniturus"/>
          <lm>
             <l>cognosco</l>
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--Cognitus cognitus cognitusque-->
-         <tok val="[cC]ognitus(que)?"/>
+      <ana>
+         <tok val="Cognitus"/>
+         <tok val="cognitus"/>
+         <tok val="cognitusque"/>
          <lm cert="0.5">
             <l>cognitus</l>
             <m cert="0.25">n - - p - - - m n</m>
@@ -989,8 +1233,9 @@
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Cognobilis cognobilis-->
-         <tok val="[cC]ognobilis"/>
+      <ana>
+         <tok val="Cognobilis"/>
+         <tok val="cognobilis"/>
          <lm>
             <l>cognobilis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1002,16 +1247,20 @@
             <m cert="0.142857142857142857">a - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cognobilis cognobiles cognobilis-->
-         <tok val="[cC]ognobil[ie]s"/>
+      <ana>
+         <tok val="Cognobilis"/>
+         <tok val="cognobiles"/>
+         <tok val="cognobilis"/>
          <lm>
             <l>cognobilis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cognomen cognomen cognomenque-->
-         <tok val="[cC]ognomen(que)?"/>
+      <ana>
+         <tok val="Cognomen"/>
+         <tok val="cognomen"/>
+         <tok val="cognomenque"/>
          <lm>
             <l>cognomen</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -1019,16 +1268,18 @@
             <m cert="0.333333333333333333">n - - s - - - n n</m>
          </lm>
       </ana>
-      <ana><!--Cognomento cognomento-->
-         <tok val="[cC]ognomento"/>
+      <ana>
+         <tok val="Cognomento"/>
+         <tok val="cognomento"/>
          <lm>
             <l>cognomentum</l>
             <m cert="0.5">n - - s - - - n d</m>
             <m cert="0.5">n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Cognomentum cognomentum-->
-         <tok val="[cC]ognomentum"/>
+      <ana>
+         <tok val="Cognomentum"/>
+         <tok val="cognomentum"/>
          <lm>
             <l>cognomentum</l>
             <m cert="0.333333333333333333">n - - s - - - n a</m>
@@ -1036,15 +1287,19 @@
             <m cert="0.333333333333333333">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cognomentum cognomentum cognómentum cógnomentum-->
-         <tok val="[cC]?(o|có)gn[oó]mentum"/>
+      <ana>
+         <tok val="Cognomentum"/>
+         <tok val="cognomentum"/>
+         <tok val="cognómentum"/>
+         <tok val="cógnomentum"/>
          <lm>
             <l>cognomentum</l>
             <m>n - - s - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Cognomine cognomine-->
-         <tok val="[cC]ognomine"/>
+      <ana>
+         <tok val="Cognomine"/>
+         <tok val="cognomine"/>
          <lm cert="0.5">
             <l>cognominis</l>
             <m cert="0.333333333333333333">a - - s - - - n n</m>
@@ -1056,8 +1311,9 @@
             <m>n - - s - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Cognominis cognominis-->
-         <tok val="[cC]ognominis"/>
+      <ana>
+         <tok val="Cognominis"/>
+         <tok val="cognominis"/>
          <lm cert="0.5">
             <l>cognominis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -1073,207 +1329,262 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--Cognominis cognomines cognominis-->
-         <tok val="[cC]ognomin[ie]s"/>
+      <ana>
+         <tok val="Cognominis"/>
+         <tok val="cognomines"/>
+         <tok val="cognominis"/>
          <lm>
             <l>cognominis</l>
             <m cert="0.5">a - - p - - - m a</m>
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Cognomino cognomino-->
-         <tok val="[cC]ognomino"/>
+      <ana>
+         <tok val="Cognomino"/>
+         <tok val="cognomino"/>
          <lm>
             <l>cognomino</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscamus cognoscamus-->
-         <tok val="[cC]ognoscamus"/>
+      <ana>
+         <tok val="Cognoscamus"/>
+         <tok val="cognoscamus"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscat cognoscat-->
-         <tok val="[cC]ognoscat"/>
+      <ana>
+         <tok val="Cognoscat"/>
+         <tok val="cognoscat"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Cognosce cognosce cognoscen-->
-         <tok val="[cC]ognosce[n]?"/>
+      <ana>
+         <tok val="Cognosce"/>
+         <tok val="cognosce"/>
+         <tok val="cognoscen"/>
          <lm>
             <l>cognosco</l>
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscentur cognoscentur-->
-         <tok val="[cC]ognoscentur"/>
+      <ana>
+         <tok val="Cognoscentur"/>
+         <tok val="cognoscentur"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 p f i p</m>
          </lm>
       </ana>
-      <ana><!--Cognoscere cognoscere-->
-         <tok val="[cC]ognoscere"/>
+      <ana>
+         <tok val="Cognoscere"/>
+         <tok val="cognoscere"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscere cognoscere cognosceris-->
-         <tok val="[cC]ognoscer(e|is)"/>
+      <ana>
+         <tok val="Cognoscere"/>
+         <tok val="cognoscere"/>
+         <tok val="cognosceris"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - 2 s p i p</m>
             <m cert="0.5">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Cognoscerentur cognoscerentur-->
-         <tok val="[cC]ognoscerentur"/>
+      <ana>
+         <tok val="Cognoscerentur"/>
+         <tok val="cognoscerentur"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--Cognosceret cognosceret cognosceretne-->
-         <tok val="[cC]ognosceret(ne)?"/>
+      <ana>
+         <tok val="Cognosceret"/>
+         <tok val="cognosceret"/>
+         <tok val="cognosceretne"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s i s a</m>
          </lm>
       </ana>
-      <ana><!--Cognosces cognoscen cognosces-->
-         <tok val="[cC]ognosce[sn]"/>
+      <ana>
+         <tok val="Cognosces"/>
+         <tok val="cognoscen"/>
+         <tok val="cognosces"/>
          <lm>
             <l>cognosco</l>
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscet cognoscet-->
-         <tok val="[cC]ognoscet"/>
+      <ana>
+         <tok val="Cognoscet"/>
+         <tok val="cognoscet"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s f i a</m>
          </lm>
       </ana>
-      <ana><!--Cognosci cognosci cognoscin cognoscique cognosciue-->
-         <tok val="[cC]ognosci[q]?(ue|n)?"/>
+      <ana>
+         <tok val="Cognosci"/>
+         <tok val="cognosci"/>
+         <tok val="cognoscin"/>
+         <tok val="cognoscique"/>
+         <tok val="cognosciue"/>
          <lm>
             <l>cognosco</l>
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--Cognoscimus cognoscimus-->
-         <tok val="[cC]ognoscimus"/>
+      <ana>
+         <tok val="Cognoscimus"/>
+         <tok val="cognoscimus"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscis cognoscin cognoscis-->
-         <tok val="[cC]ognosci[sn]"/>
+      <ana>
+         <tok val="Cognoscis"/>
+         <tok val="cognoscin"/>
+         <tok val="cognoscis"/>
          <lm>
             <l>cognosco</l>
             <m>v - 2 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscit Cognoscitne cognoscit cognoscitne cognoscitque-->
-         <tok val="[cC]ognoscit(ne|que)?"/>
+      <ana>
+         <tok val="Cognoscit"/>
+         <tok val="Cognoscitne"/>
+         <tok val="cognoscit"/>
+         <tok val="cognoscitne"/>
+         <tok val="cognoscitque"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscite cognoscite-->
-         <tok val="[cC]ognoscite"/>
+      <ana>
+         <tok val="Cognoscite"/>
+         <tok val="cognoscite"/>
          <lm>
             <l>cognosco</l>
             <m>v - 2 p p m a</m>
          </lm>
       </ana>
-      <ana><!--Cognoscitur cognoscitur-->
-         <tok val="[cC]ognoscitur"/>
+      <ana>
+         <tok val="Cognoscitur"/>
+         <tok val="cognoscitur"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cognoscuntur cognoscontur cognoscuntur-->
-         <tok val="[cC]ognosc[uo]ntur"/>
+      <ana>
+         <tok val="Cognoscuntur"/>
+         <tok val="cognoscontur"/>
+         <tok val="cognoscuntur"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--Cognosti cognosti-->
-         <tok val="[cC]ognosti"/>
+      <ana>
+         <tok val="Cognosti"/>
+         <tok val="cognosti"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Cognoui Cognovi cognoui cognovi cognovique cógnovi-->
-         <tok val="[Cc]?(o|có|co)gno[vu]i(que)?"/>
+      <ana>
+         <tok val="Cognoui"/>
+         <tok val="Cognovi"/>
+         <tok val="cognoui"/>
+         <tok val="cognovi"/>
+         <tok val="cognovique"/>
+         <tok val="cógnovi"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Cognouisse Cognovisse cognouisse cognovisse-->
-         <tok val="[Cc]ogno[vu]isse"/>
+      <ana>
+         <tok val="Cognouisse"/>
+         <tok val="Cognovisse"/>
+         <tok val="cognouisse"/>
+         <tok val="cognovisse"/>
          <lm>
             <l>cognosco</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Cognoverat cognorat cognouerat cognoverat-->
-         <tok val="[cC]ogno[vu]?(e|)rat"/>
+      <ana>
+         <tok val="Cognoverat"/>
+         <tok val="cognorat"/>
+         <tok val="cognouerat"/>
+         <tok val="cognoverat"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s l i a</m>
          </lm>
       </ana>
-      <ana><!--Cognovit cognouit cognouitque cognovit cognovitque-->
-         <tok val="[cC]ogno[vu]it(que)?"/>
+      <ana>
+         <tok val="Cognovit"/>
+         <tok val="cognouit"/>
+         <tok val="cognouitque"/>
+         <tok val="cognovit"/>
+         <tok val="cognovitque"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 s r i a</m>
          </lm>
       </ana>
-      <ana><!--Cogor cogor-->
-         <tok val="[cC]ogor"/>
+      <ana>
+         <tok val="Cogor"/>
+         <tok val="cogor"/>
          <lm>
             <l>cogo</l>
             <m>v - 1 s p i p</m>
          </lm>
       </ana>
-      <ana><!--Cogressus cogressus-->
-         <tok val="[cC]ogressus"/>
+      <ana>
+         <tok val="Cogressus"/>
+         <tok val="cogressus"/>
          <lm>
             <l>cogradior</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Cogunt cogunt coguntque-->
-         <tok val="[cC]ogunt(que)?"/>
+      <ana>
+         <tok val="Cogunt"/>
+         <tok val="cogunt"/>
+         <tok val="coguntque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p p i a</m>
          </lm>
       </ana>
-      <ana><!--Coguntur coguntur cogunturque-->
-         <tok val="[cC]oguntur(que)?"/>
+      <ana>
+         <tok val="Coguntur"/>
+         <tok val="coguntur"/>
+         <tok val="cogunturque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--cogam cogamque-->
-         <tok val="cogam(que)?"/>
+      <ana>
+         <tok val="cogam"/>
+         <tok val="cogamque"/>
          <lm>
             <l>cogo</l>
             <m cert="0.5">v - 1 s f i a</m>
@@ -1294,15 +1605,17 @@
             <m>v - 1 p p s p</m>
          </lm>
       </ana>
-      <ana><!--cogamus cogamusque-->
-         <tok val="cogamus(que)?"/>
+      <ana>
+         <tok val="cogamus"/>
+         <tok val="cogamusque"/>
          <lm>
             <l>cogo</l>
             <m>v - 1 p p s a</m>
          </lm>
       </ana>
-      <ana><!--cogant cogantque-->
-         <tok val="cogant(que)?"/>
+      <ana>
+         <tok val="cogant"/>
+         <tok val="cogantque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p p s a</m>
@@ -1316,15 +1629,17 @@
             <m cert="0.5">v - 1 s p s p</m>
          </lm>
       </ana>
-      <ana><!--cogare cogaris-->
-         <tok val="cogar(is|e)"/>
+      <ana>
+         <tok val="cogare"/>
+         <tok val="cogaris"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s p s p</m>
          </lm>
       </ana>
-      <ana><!--cogat cogatque-->
-         <tok val="cogat(que)?"/>
+      <ana>
+         <tok val="cogat"/>
+         <tok val="cogatque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s p s a</m>
@@ -1337,15 +1652,17 @@
             <m>v - 2 p p s a</m>
          </lm>
       </ana>
-      <ana><!--cogatur cogaturque-->
-         <tok val="cogatur(que)?"/>
+      <ana>
+         <tok val="cogatur"/>
+         <tok val="cogaturque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 s p s p</m>
          </lm>
       </ana>
-      <ana><!--cogeban cogebas-->
-         <tok val="cogeba[sn]"/>
+      <ana>
+         <tok val="cogeban"/>
+         <tok val="cogebas"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s i i a</m>
@@ -1379,8 +1696,9 @@
             <m>v - 1 p f i a</m>
          </lm>
       </ana>
-      <ana><!--cogenda cogendaque-->
-         <tok val="cogenda(que)?"/>
+      <ana>
+         <tok val="cogenda"/>
+         <tok val="cogendaque"/>
          <lm>
             <l>cogo</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -1391,8 +1709,9 @@
             <m cert="0.166666666666666667">v - - s p g p f n</m>
          </lm>
       </ana>
-      <ana><!--cogendae Cogendae-->
-         <tok val="[Cc]ogendae"/>
+      <ana>
+         <tok val="Cogendae"/>
+         <tok val="cogendae"/>
          <lm>
             <l>cogo</l>
             <m cert="0.25">v - - p p g p f n</m>
@@ -1415,8 +1734,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--cogendis cogundis-->
-         <tok val="cog[ue]ndis"/>
+      <ana>
+         <tok val="cogendis"/>
+         <tok val="cogundis"/>
          <lm>
             <l>cogo</l>
             <m cert="0.166666666666666667">v - - p p g p f b</m>
@@ -1439,8 +1759,9 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--cogendorum cogendum-->
-         <tok val="cogend(or)?um"/>
+      <ana>
+         <tok val="cogendorum"/>
+         <tok val="cogendum"/>
          <lm>
             <l>cogo</l>
             <m cert="0.5">v - - p p g p n g</m>
@@ -1465,15 +1786,17 @@
             <m cert="0.2">v - - s p g p n n</m>
          </lm>
       </ana>
-      <ana><!--cogent cogentque-->
-         <tok val="cogent(que)?"/>
+      <ana>
+         <tok val="cogent"/>
+         <tok val="cogentque"/>
          <lm>
             <l>cogo</l>
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--cogente cogenti-->
-         <tok val="cogent[ie]"/>
+      <ana>
+         <tok val="cogente"/>
+         <tok val="cogenti"/>
          <lm>
             <l>cogo</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -1499,8 +1822,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--cogentes cogentis-->
-         <tok val="cogent[ie]s"/>
+      <ana>
+         <tok val="cogentes"/>
+         <tok val="cogentis"/>
          <lm>
             <l>cogo</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1546,8 +1870,9 @@
             <m cert="0.333333333333333333">v - - s p p a f g</m>
          </lm>
       </ana>
-      <ana><!--cogentium cogentiumque-->
-         <tok val="cogentium(que)?"/>
+      <ana>
+         <tok val="cogentium"/>
+         <tok val="cogentiumque"/>
          <lm>
             <l>cogo</l>
             <m cert="0.333333333333333333">v - - p p p a m g</m>
@@ -1555,8 +1880,9 @@
             <m cert="0.333333333333333333">v - - p p p a n g</m>
          </lm>
       </ana>
-      <ana><!--cogerem cogeremque-->
-         <tok val="cogerem(que)?"/>
+      <ana>
+         <tok val="cogerem"/>
+         <tok val="cogeremque"/>
          <lm>
             <l>cogo</l>
             <m>v - 1 s i s a</m>
@@ -1576,8 +1902,9 @@
             <m>v - 1 p i s a</m>
          </lm>
       </ana>
-      <ana><!--cogeren cogeres-->
-         <tok val="cogere[sn]"/>
+      <ana>
+         <tok val="cogeren"/>
+         <tok val="cogeres"/>
          <lm>
             <l>cogo</l>
             <m>v - 2 s i s a</m>
@@ -1691,8 +2018,9 @@
             <m>v - 2 s f i a</m>
          </lm>
       </ana>
-      <ana><!--cogitabit cogitábit-->
-         <tok val="cogit[áa]bit"/>
+      <ana>
+         <tok val="cogitabit"/>
+         <tok val="cogitábit"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s f i a</m>
@@ -1752,15 +2080,17 @@
             <m cert="0.25">n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--cogitamus Cogitamus-->
-         <tok val="[Cc]ogitamus"/>
+      <ana>
+         <tok val="Cogitamus"/>
+         <tok val="cogitamus"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 p p i a</m>
          </lm>
       </ana>
-      <ana><!--cogitan cogitas-->
-         <tok val="cogita[sn]"/>
+      <ana>
+         <tok val="cogitan"/>
+         <tok val="cogitas"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s p i a</m>
@@ -1773,8 +2103,9 @@
             <m>v - - s p g p f a</m>
          </lm>
       </ana>
-      <ana><!--cogitandi cogitandique-->
-         <tok val="cogitandi(que)?"/>
+      <ana>
+         <tok val="cogitandi"/>
+         <tok val="cogitandique"/>
          <lm>
             <l>cogito</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -1784,8 +2115,9 @@
             <m cert="0.2">v - - s p g p m g</m>
          </lm>
       </ana>
-      <ana><!--cogitando cogitándo-->
-         <tok val="cogit[áa]ndo"/>
+      <ana>
+         <tok val="cogitando"/>
+         <tok val="cogitándo"/>
          <lm>
             <l>cogito</l>
             <m>v - - s p g p m d</m>
@@ -1809,8 +2141,9 @@
             <m>v - - s p g p m n</m>
          </lm>
       </ana>
-      <ana><!--cogitant Cogitant-->
-         <tok val="[Cc]ogitant"/>
+      <ana>
+         <tok val="Cogitant"/>
+         <tok val="cogitant"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 p p i a</m>
@@ -1824,8 +2157,9 @@
             <m cert="0.5">v - - s p p a m a</m>
          </lm>
       </ana>
-      <ana><!--cogitantes cogitantesque-->
-         <tok val="cogitantes(que)?"/>
+      <ana>
+         <tok val="cogitantes"/>
+         <tok val="cogitantesque"/>
          <lm>
             <l>cogito</l>
             <m cert="0.25">v - - p p p a m n</m>
@@ -1834,8 +2168,10 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--cogitantes cogitantis cogitantesque-->
-         <tok val="cogitant[ie]s(que)?"/>
+      <ana>
+         <tok val="cogitantes"/>
+         <tok val="cogitantesque"/>
+         <tok val="cogitantis"/>
          <lm>
             <l>cogito</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -1879,8 +2215,10 @@
             <m>v - 3 p p i p</m>
          </lm>
       </ana>
-      <ana><!--cogitaram cogitaveram cogitaueram-->
-         <tok val="cogita[uv]?(e|)ram"/>
+      <ana>
+         <tok val="cogitaram"/>
+         <tok val="cogitaueram"/>
+         <tok val="cogitaveram"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 s l i a</m>
@@ -1893,8 +2231,9 @@
             <m>v - 1 p l i a</m>
          </lm>
       </ana>
-      <ana><!--cogitaras cogitaveras-->
-         <tok val="cogita(ve)?ras"/>
+      <ana>
+         <tok val="cogitaras"/>
+         <tok val="cogitaveras"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s l i a</m>
@@ -1928,8 +2267,9 @@
             <m>v - 3 p i s p</m>
          </lm>
       </ana>
-      <ana><!--cogitares cogitaresque-->
-         <tok val="cogitares(que)?"/>
+      <ana>
+         <tok val="cogitares"/>
+         <tok val="cogitaresque"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s i s a</m>
@@ -1963,36 +2303,47 @@
             <m>v - - - p n p</m>
          </lm>
       </ana>
-      <ana><!--cogitarim cogitaverim cogitauerim-->
-         <tok val="cogita[uv]?(e|)rim"/>
+      <ana>
+         <tok val="cogitarim"/>
+         <tok val="cogitauerim"/>
+         <tok val="cogitaverim"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cogitarint cogitauerint-->
-         <tok val="cogita(ue)?rint"/>
+      <ana>
+         <tok val="cogitarint"/>
+         <tok val="cogitauerint"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 p r s a</m>
          </lm>
       </ana>
-      <ana><!--cogitaris cogitarisne cogitaueris cogitaveris-->
-         <tok val="cogita[vu]?[e]?ris(ne)?"/>
+      <ana>
+         <tok val="cogitaris"/>
+         <tok val="cogitarisne"/>
+         <tok val="cogitaueris"/>
+         <tok val="cogitaveris"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cogitarit cogitauerit cogitaverit-->
-         <tok val="cogita[vu]?(e|)rit"/>
+      <ana>
+         <tok val="cogitarit"/>
+         <tok val="cogitauerit"/>
+         <tok val="cogitaverit"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cogitarunt cogitauerunt cogitavere cogitaverunt-->
-         <tok val="cogita[vu]?(e|ve)?r(unt|e)"/>
+      <ana>
+         <tok val="cogitarunt"/>
+         <tok val="cogitauerunt"/>
+         <tok val="cogitavere"/>
+         <tok val="cogitaverunt"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 p r i a</m>
@@ -2005,15 +2356,17 @@
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--cogitassent cogitavissent-->
-         <tok val="cogita(vi)?ssent"/>
+      <ana>
+         <tok val="cogitassent"/>
+         <tok val="cogitavissent"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--cogitasset cogitavisset-->
-         <tok val="cogita(vi)?sset"/>
+      <ana>
+         <tok val="cogitasset"/>
+         <tok val="cogitavisset"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s l s a</m>
@@ -2111,8 +2464,9 @@
             <m>d</m>
          </lm>
       </ana>
-      <ana><!--cogitatis cogitatisque-->
-         <tok val="cogitatis(que)?"/>
+      <ana>
+         <tok val="cogitatis"/>
+         <tok val="cogitatisque"/>
          <lm cert="0.333333333333333333">
             <l>cogito</l>
             <m cert="0.142857142857142857">v - 2 p p i a</m>
@@ -2173,8 +2527,9 @@
             <m>n - - s - - - m d</m>
          </lm>
       </ana>
-      <ana><!--cogitatumst cogitátumst-->
-         <tok val="cogit[áa]tumst"/>
+      <ana>
+         <tok val="cogitatumst"/>
+         <tok val="cogitátumst"/>
          <lm>
             <l>cogito</l>
             <m>a - - s - - - n n</m>
@@ -2223,15 +2578,17 @@
             <m>v - - s f p a m n</m>
          </lm>
       </ana>
-      <ana><!--cogitauerant cogitaverant-->
-         <tok val="cogita[vu]erant"/>
+      <ana>
+         <tok val="cogitauerant"/>
+         <tok val="cogitaverant"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 p l i a</m>
          </lm>
       </ana>
-      <ana><!--cogitauerimus cogitaverimus-->
-         <tok val="cogita[vu]erimus"/>
+      <ana>
+         <tok val="cogitauerimus"/>
+         <tok val="cogitaverimus"/>
          <lm>
             <l>cogito</l>
             <m cert="0.5">v - 1 p t i a</m>
@@ -2245,22 +2602,25 @@
             <m>v - 3 p t i a</m>
          </lm>
       </ana>
-      <ana><!--cogitaueris cogitaveris-->
-         <tok val="cogita[vu]eris"/>
+      <ana>
+         <tok val="cogitaueris"/>
+         <tok val="cogitaveris"/>
          <lm>
             <l>cogito</l>
             <m>v - 2 s t i a</m>
          </lm>
       </ana>
-      <ana><!--cogitauerit cogitaverit-->
-         <tok val="cogita[vu]erit"/>
+      <ana>
+         <tok val="cogitauerit"/>
+         <tok val="cogitaverit"/>
          <lm>
             <l>cogito</l>
             <m>v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--cogitauimus cogitavimus-->
-         <tok val="cogita[vu]imus"/>
+      <ana>
+         <tok val="cogitauimus"/>
+         <tok val="cogitavimus"/>
          <lm>
             <l>cogito</l>
             <m>v - 1 p r i a</m>
@@ -2374,8 +2734,9 @@
             <m>a - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--cognatione cognationeue-->
-         <tok val="cognatione(ue)?"/>
+      <ana>
+         <tok val="cognatione"/>
+         <tok val="cognationeue"/>
          <lm>
             <l>cognatio</l>
             <m>n - - s - - - f b</m>
@@ -2397,8 +2758,9 @@
             <m>n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--cognationibus cognationibusque-->
-         <tok val="cognationibus(que)?"/>
+      <ana>
+         <tok val="cognationibus"/>
+         <tok val="cognationibusque"/>
          <lm>
             <l>cognatio</l>
             <m cert="0.5">n - - p - - - f b</m>
@@ -2412,22 +2774,28 @@
             <m>n - - p - - - f g</m>
          </lm>
       </ana>
-      <ana><!--cognatos cognatosque cognatosue cógnatos-->
-         <tok val="c[oó]gnatos[q]?(ue)?"/>
+      <ana>
+         <tok val="cognatos"/>
+         <tok val="cognatosque"/>
+         <tok val="cognatosue"/>
+         <tok val="cógnatos"/>
          <lm>
             <l>cognatus</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--cognatos cognatosque cognatosue-->
-         <tok val="cognatos[q]?(ue|)"/>
+      <ana>
+         <tok val="cognatos"/>
+         <tok val="cognatosque"/>
+         <tok val="cognatosue"/>
          <lm>
             <l>cognatus</l>
             <m>n - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--cognitae cognitaeque-->
-         <tok val="cognitae(que)?"/>
+      <ana>
+         <tok val="cognitae"/>
+         <tok val="cognitaeque"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.25">v - - s r p p f d</m>
@@ -2450,8 +2818,9 @@
             <m>v - - p r p p f a</m>
          </lm>
       </ana>
-      <ana><!--cogniti cognitique-->
-         <tok val="cogniti(que)?"/>
+      <ana>
+         <tok val="cogniti"/>
+         <tok val="cognitique"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.25">v - - s r p p n g</m>
@@ -2618,8 +2987,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--cognitu cognituque-->
-         <tok val="cognitu(que)?"/>
+      <ana>
+         <tok val="cognitu"/>
+         <tok val="cognituque"/>
          <lm cert="0.5">
             <l>cognitus</l>
             <m>n - - s - - - m b</m>
@@ -2736,8 +3106,9 @@
             <m>n - - s - - - n g</m>
          </lm>
       </ana>
-      <ana><!--cognomina cognominaue-->
-         <tok val="cognomina(ue)?"/>
+      <ana>
+         <tok val="cognomina"/>
+         <tok val="cognominaue"/>
          <lm cert="0.5">
             <l>cognomen</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -2810,8 +3181,9 @@
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--cognominare cognominaris-->
-         <tok val="cognominar(is|e)"/>
+      <ana>
+         <tok val="cognominare"/>
+         <tok val="cognominaris"/>
          <lm>
             <l>cognomino</l>
             <m>v - 2 s p i p</m>
@@ -2852,8 +3224,10 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cognominarunt cognominavere cognominaverunt-->
-         <tok val="cognomina(ve)?r(unt|e)"/>
+      <ana>
+         <tok val="cognominarunt"/>
+         <tok val="cognominavere"/>
+         <tok val="cognominaverunt"/>
          <lm>
             <l>cognomino</l>
             <m>v - 3 p r i a</m>
@@ -2880,8 +3254,9 @@
             <m>v - 3 s p i a</m>
          </lm>
       </ana>
-      <ana><!--cognominata cognominatast-->
-         <tok val="cognominata(st)?"/>
+      <ana>
+         <tok val="cognominata"/>
+         <tok val="cognominatast"/>
          <lm>
             <l>cognomino</l>
             <m cert="0.166666666666666667">v - - p r p p n a</m>
@@ -2993,15 +3368,17 @@
             <m>v - 3 s p i p</m>
          </lm>
       </ana>
-      <ana><!--cognominatus cognominatusque-->
-         <tok val="cognominatus(que)?"/>
+      <ana>
+         <tok val="cognominatus"/>
+         <tok val="cognominatusque"/>
          <lm>
             <l>cognomino</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--cognominauit cognominavit-->
-         <tok val="cognomina[vu]it"/>
+      <ana>
+         <tok val="cognominauit"/>
+         <tok val="cognominavit"/>
          <lm>
             <l>cognomino</l>
             <m>v - 3 s r i a</m>
@@ -3049,8 +3426,9 @@
             <m>n - - s - - - n d</m>
          </lm>
       </ana>
-      <ana><!--cognominibus cognominibusque-->
-         <tok val="cognominibus(que)?"/>
+      <ana>
+         <tok val="cognominibus"/>
+         <tok val="cognominibusque"/>
          <lm cert="0.5">
             <l>cognominis</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -3066,22 +3444,28 @@
             <m cert="0.5">n - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--cognoram cognoueram cognoveram-->
-         <tok val="cogno[vu]?(e|)ram"/>
+      <ana>
+         <tok val="cognoram"/>
+         <tok val="cognoueram"/>
+         <tok val="cognoveram"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 s l i a</m>
          </lm>
       </ana>
-      <ana><!--cognoramus cognoueramus cognoveramus-->
-         <tok val="cogno[vu]?(e|)ramus"/>
+      <ana>
+         <tok val="cognoramus"/>
+         <tok val="cognoueramus"/>
+         <tok val="cognoveramus"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 p l i a</m>
          </lm>
       </ana>
-      <ana><!--cognorant cognouerant cognoverant-->
-         <tok val="cogno[vu]?(e|)rant"/>
+      <ana>
+         <tok val="cognorant"/>
+         <tok val="cognouerant"/>
+         <tok val="cognoverant"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 p l i a</m>
@@ -3101,16 +3485,20 @@
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cognorimus cognouerimus cognoverimus-->
-         <tok val="cogno[vu]?(e|)rimus"/>
+      <ana>
+         <tok val="cognorimus"/>
+         <tok val="cognouerimus"/>
+         <tok val="cognoverimus"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - 1 p t i a</m>
             <m cert="0.5">v - 1 p r s a</m>
          </lm>
       </ana>
-      <ana><!--cognorint cognouerint cognoverint-->
-         <tok val="cogno[vu]?(e|)rint"/>
+      <ana>
+         <tok val="cognorint"/>
+         <tok val="cognouerint"/>
+         <tok val="cognoverint"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - 3 p t i a</m>
@@ -3131,8 +3519,10 @@
             <m>v - 3 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cognoro cognouero cognovero-->
-         <tok val="cogno[vu]?(e|)ro"/>
+      <ana>
+         <tok val="cognoro"/>
+         <tok val="cognouero"/>
+         <tok val="cognovero"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 s t i a</m>
@@ -3232,8 +3622,9 @@
             <m>v - 3 s i i p</m>
          </lm>
       </ana>
-      <ana><!--cognoscenda cognoscendaque-->
-         <tok val="cognoscenda(que)?"/>
+      <ana>
+         <tok val="cognoscenda"/>
+         <tok val="cognoscendaque"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.166666666666666667">v - - s p g p f b</m>
@@ -3254,8 +3645,9 @@
             <m cert="0.25">v - - s p g p f g</m>
          </lm>
       </ana>
-      <ana><!--cognoscendam cognoscendamque-->
-         <tok val="cognoscendam(que)?"/>
+      <ana>
+         <tok val="cognoscendam"/>
+         <tok val="cognoscendamque"/>
          <lm>
             <l>cognosco</l>
             <m>v - - s p g p f a</m>
@@ -3268,8 +3660,9 @@
             <m>v - - p p g p f a</m>
          </lm>
       </ana>
-      <ana><!--cognoscendi cognoscendique-->
-         <tok val="cognoscendi(que)?"/>
+      <ana>
+         <tok val="cognoscendi"/>
+         <tok val="cognoscendique"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.2">v - - p p g p m v</m>
@@ -3303,16 +3696,19 @@
             <m cert="0.166666666666666667">v - - s p g p m b</m>
          </lm>
       </ana>
-      <ana><!--cognoscendorum cognoscendum cognoscendumque-->
-         <tok val="cognoscend(or)?um(que)?"/>
+      <ana>
+         <tok val="cognoscendorum"/>
+         <tok val="cognoscendum"/>
+         <tok val="cognoscendumque"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - - p p g p n g</m>
             <m cert="0.5">v - - p p g p m g</m>
          </lm>
       </ana>
-      <ana><!--cognoscendum cognoscendumque-->
-         <tok val="cognoscendum(que)?"/>
+      <ana>
+         <tok val="cognoscendum"/>
+         <tok val="cognoscendumque"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.2">v - - s p g p n a</m>
@@ -3349,8 +3745,9 @@
             <m>v - 3 p f i a</m>
          </lm>
       </ana>
-      <ana><!--cognoscente cognoscenti-->
-         <tok val="cognoscent[ie]"/>
+      <ana>
+         <tok val="cognoscente"/>
+         <tok val="cognoscenti"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.333333333333333333">v - - s p p a m b</m>
@@ -3376,8 +3773,9 @@
             <m cert="0.25">v - - p p p a f v</m>
          </lm>
       </ana>
-      <ana><!--cognoscentes cognoscentis-->
-         <tok val="cognoscent[ie]s"/>
+      <ana>
+         <tok val="cognoscentes"/>
+         <tok val="cognoscentis"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - - p p p a m a</m>
@@ -3553,29 +3951,35 @@
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--cognossem cognouissem cognovissem-->
-         <tok val="cogno[vu]?(i|)ssem"/>
+      <ana>
+         <tok val="cognossem"/>
+         <tok val="cognouissem"/>
+         <tok val="cognovissem"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 s l s a</m>
          </lm>
       </ana>
-      <ana><!--cognossemus cognovissemus-->
-         <tok val="cogno(vi)?ssemus"/>
+      <ana>
+         <tok val="cognossemus"/>
+         <tok val="cognovissemus"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 p l s a</m>
          </lm>
       </ana>
-      <ana><!--cognossent cognouissent cognovissent-->
-         <tok val="cogno[vu]?(i|)ssent"/>
+      <ana>
+         <tok val="cognossent"/>
+         <tok val="cognouissent"/>
+         <tok val="cognovissent"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 p l s a</m>
          </lm>
       </ana>
-      <ana><!--cognosses cognovisses-->
-         <tok val="cogno(vi)?sses"/>
+      <ana>
+         <tok val="cognosses"/>
+         <tok val="cognovisses"/>
          <lm>
             <l>cognosco</l>
             <m>v - 2 s l s a</m>
@@ -3610,45 +4014,53 @@
             <m cert="0.166666666666666667">v - - p r p p m b</m>
          </lm>
       </ana>
-      <ana><!--cognouere cognouerunt cognovere cognoverunt-->
-         <tok val="cogno[vu]er(unt|e)"/>
+      <ana>
+         <tok val="cognouere"/>
+         <tok val="cognouerunt"/>
+         <tok val="cognovere"/>
+         <tok val="cognoverunt"/>
          <lm>
             <l>cognosco</l>
             <m>v - 3 p r i a</m>
          </lm>
       </ana>
-      <ana><!--cognouerim cognoverim-->
-         <tok val="cogno[vu]erim"/>
+      <ana>
+         <tok val="cognouerim"/>
+         <tok val="cognoverim"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cognoueris cognoveris-->
-         <tok val="cogno[vu]eris"/>
+      <ana>
+         <tok val="cognoueris"/>
+         <tok val="cognoveris"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - 2 s t i a</m>
             <m cert="0.5">v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--cognouerit cognoverit-->
-         <tok val="cogno[vu]erit"/>
+      <ana>
+         <tok val="cognouerit"/>
+         <tok val="cognoverit"/>
          <lm>
             <l>cognosco</l>
             <m cert="0.5">v - 3 s r s a</m>
             <m cert="0.5">v - 3 s t i a</m>
          </lm>
       </ana>
-      <ana><!--cognouimus cognovimus-->
-         <tok val="cogno[vu]imus"/>
+      <ana>
+         <tok val="cognouimus"/>
+         <tok val="cognovimus"/>
          <lm>
             <l>cognosco</l>
             <m>v - 1 p r i a</m>
          </lm>
       </ana>
-      <ana><!--cognouisti cognovisti-->
-         <tok val="cogno[vu]isti"/>
+      <ana>
+         <tok val="cognouisti"/>
+         <tok val="cognovisti"/>
          <lm>
             <l>cognosco</l>
             <m>v - 2 s r i a</m>

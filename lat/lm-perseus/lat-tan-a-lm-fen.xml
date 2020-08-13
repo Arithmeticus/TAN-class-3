@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseusfen">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:fen">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to fen</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-fen.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>FEN</tok-starts-with>
       <tok-starts-with>Fen</tok-starts-with>
       <tok-starts-with>fen</tok-starts-with>
       <tok-starts-with>fén</tok-starts-with>
-      <ana><!--FENESTRAS Fenestras fenestras fenestrasque fenestrasue-->
-         <tok val="[fF]?(enestras)?[q]?(ue|FENESTRAS)?"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:24:00.86-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:24:00.86-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-fen.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="FENESTRAS"/>
+         <tok val="Fenestras"/>
+         <tok val="fenestras"/>
+         <tok val="fenestrasque"/>
+         <tok val="fenestrasue"/>
          <lm cert="0.5">
             <l>fenestro</l>
             <m>v - 2 s p i a</m>
@@ -47,15 +59,17 @@
             <m>n - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fen fen-->
-         <tok val="[fF]en"/>
+      <ana>
+         <tok val="Fen"/>
+         <tok val="fen"/>
          <lm>
             <l>for</l>
             <m>v - 2 s p s a</m>
          </lm>
       </ana>
-      <ana><!--Fenestella fenestella-->
-         <tok val="[fF]enestella"/>
+      <ana>
+         <tok val="Fenestella"/>
+         <tok val="fenestella"/>
          <lm>
             <l>fenestella</l>
             <m cert="0.333333333333333333">n - - s - - - f b</m>
@@ -63,8 +77,9 @@
             <m cert="0.333333333333333333">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Fenestellae fenestellae-->
-         <tok val="[fF]enestellae"/>
+      <ana>
+         <tok val="Fenestellae"/>
+         <tok val="fenestellae"/>
          <lm>
             <l>fenestella</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -73,22 +88,26 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Fenestellam fenestellam-->
-         <tok val="[fF]enestellam"/>
+      <ana>
+         <tok val="Fenestellam"/>
+         <tok val="fenestellam"/>
          <lm>
             <l>fenestella</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fenestra fenestra fénestra-->
-         <tok val="[fF]?(e|fé)nestra"/>
+      <ana>
+         <tok val="Fenestra"/>
+         <tok val="fenestra"/>
+         <tok val="fénestra"/>
          <lm>
             <l>fenestra</l>
             <m>n - - s - - - f b</m>
          </lm>
       </ana>
-      <ana><!--Fenestra fenestra-->
-         <tok val="[fF]enestra"/>
+      <ana>
+         <tok val="Fenestra"/>
+         <tok val="fenestra"/>
          <lm cert="0.5">
             <l>fenestra</l>
             <m cert="0.5">n - - s - - - f n</m>
@@ -99,8 +118,9 @@
             <m>v - 2 s p m a</m>
          </lm>
       </ana>
-      <ana><!--Fenestrae fenestrae-->
-         <tok val="[fF]enestrae"/>
+      <ana>
+         <tok val="Fenestrae"/>
+         <tok val="fenestrae"/>
          <lm>
             <l>fenestra</l>
             <m cert="0.25">n - - p - - - f v</m>
@@ -109,15 +129,19 @@
             <m cert="0.25">n - - s - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Fenestram fenestram fénestram-->
-         <tok val="[fF]?(e|fé)nestram"/>
+      <ana>
+         <tok val="Fenestram"/>
+         <tok val="fenestram"/>
+         <tok val="fénestram"/>
          <lm>
             <l>fenestra</l>
             <m>n - - s - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Fenestrarum fenestrarum fenestrarumque-->
-         <tok val="[fF]enestrarum(que)?"/>
+      <ana>
+         <tok val="Fenestrarum"/>
+         <tok val="fenestrarum"/>
+         <tok val="fenestrarumque"/>
          <lm>
             <l>fenestra</l>
             <m>n - - p - - - f g</m>
@@ -125,21 +149,25 @@
       </ana>
       <ana>
          <tok val="Fenestratus"/>
+         <tok val="fenestratus"/>
          <lm>
             <l>fenestro</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Fenestris fenestris fenestrisque-->
-         <tok val="[fF]enestris(que)?"/>
+      <ana>
+         <tok val="Fenestris"/>
+         <tok val="fenestris"/>
+         <tok val="fenestrisque"/>
          <lm>
             <l>fenestra</l>
             <m cert="0.5">n - - p - - - f b</m>
             <m cert="0.5">n - - p - - - f d</m>
          </lm>
       </ana>
-      <ana><!--Fenestro fenestro-->
-         <tok val="[fF]enestro"/>
+      <ana>
+         <tok val="Fenestro"/>
+         <tok val="fenestro"/>
          <lm>
             <l>fenestro</l>
             <m>v - 1 s p i a</m>
@@ -147,6 +175,7 @@
       </ana>
       <ana>
          <tok val="Fenni"/>
+         <tok val="fenni"/>
          <lm>
             <l>Fenni</l>
             <m cert="0.5">n e - p - - - m n</m>
@@ -155,6 +184,7 @@
       </ana>
       <ana>
          <tok val="Fennis"/>
+         <tok val="fennis"/>
          <lm>
             <l>Fenni</l>
             <m cert="0.5">n e - p - - - m b</m>
@@ -163,6 +193,7 @@
       </ana>
       <ana>
          <tok val="Fennorum"/>
+         <tok val="fennorum"/>
          <lm>
             <l>Fenni</l>
             <m>n e - p - - - m g</m>
@@ -170,6 +201,7 @@
       </ana>
       <ana>
          <tok val="Fennosque"/>
+         <tok val="fennosque"/>
          <lm>
             <l>Fenni</l>
             <m>n e - p - - - m a</m>
@@ -302,8 +334,9 @@
             <m cert="0.5">v - 2 s p m p</m>
          </lm>
       </ana>
-      <ana><!--fendere fenderis-->
-         <tok val="fender(is|e)"/>
+      <ana>
+         <tok val="fendere"/>
+         <tok val="fenderis"/>
          <lm>
             <l>fendo</l>
             <m cert="0.5">v - 2 s p i p</m>
@@ -475,8 +508,9 @@
             <m>v - - p r p p m a</m>
          </lm>
       </ana>
-      <ana><!--fenestrauit fenestravit-->
-         <tok val="fenestra[vu]it"/>
+      <ana>
+         <tok val="fenestrauit"/>
+         <tok val="fenestravit"/>
          <lm>
             <l>fenestro</l>
             <m>v - 3 s r i a</m>

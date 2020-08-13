@@ -1,56 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
-<?xml-model href="../../../TAN-2018/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../../../../TAN-2020/schemas/TAN-A-lm.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TAN-A-lm xmlns="tag:textalign.net,2015:ns"
-          TAN-version="2018"
-          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseuscompi">
+          TAN-version="2020"
+          id="tag:kalvesmaki.com,2015:tan-a-lm:lat:perseus:compi">
    <head>
       <name>Perseus lexico-morphological permutations devoted exclusively to compi</name>
       <master-location href="https://raw.githubusercontent.com/Arithmeticus/TAN-lexico-morphology/master/lat/lm-perseus/lat-tan-a-lm-compi.xml"/>
-      <license which="Attribution-ShareAlike 3.0 Unported"/>
-      <licensor who="perseus"/>
-      <key>
-         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
-         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology files</name>
-         <location href="../../lm.TAN-key.xml" when-accessed="2018-03-24"/>
-      </key>
-      <definitions>
-         <lexicon xml:id="LS" which="Lewis and Short"/>
-         <morphology xml:id="perseus-dik" which="Perseus Latin morphology"/>
-         <organization xml:id="perseus" which="Perseus Project"/>
-         <person xml:id="dik" which="Helma Dik"/>
-         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
-         <role which="creator" xml:id="creator"/>
-         <role which="sponsor" xml:id="sponsor"/>
-         <role which="editor" xml:id="editor"/>
-      </definitions>
-      <resp who="perseus dik" roles="creator"/>
-      <resp who="perseus" roles="sponsor"/>
-      <resp who="kalvesmaki" roles="editor"/>
-      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
-      <change who="kalvesmaki" when="2018-03-24">Cleaned file for publication.</change>
-   </head>
-   <body lexicon="LS" morphology="perseus-dik">
+      <license which="Attribution-ShareAlike 3.0 Unported" licensor="perseus"/>
       <for-lang>lat</for-lang>
       <tok-starts-with>COMPI</tok-starts-with>
       <tok-starts-with>Compi</tok-starts-with>
       <tok-starts-with>compi</tok-starts-with>
-      <ana><!--COMPILO Compilo compilo-->
-         <tok val="[cC]?(ompilo|COMPILO)"/>
+      <vocabulary>
+         <IRI>tag:kalvesmaki.com,2014:tan-key:lm</IRI>
+         <name>General keywords associated with Kalvesmaki's collection of lexico-morphology
+                files</name>
+         <location href="../../lm.TAN-voc.xml" accessed-when="2018-03-24"/>
+      </vocabulary>
+      <vocabulary-key>
+         <algorithm xml:id="xslt1">
+            <IRI>tag:textalign.net,2015:stylesheet:convert:perseus-raw-xml-to-tan-a-lm</IRI>
+            <name>An unnamed stylesheet</name>
+            <location href="../../../TAN-2020/applications/convert/private-convert%20perseus%20raw%20xml%20to%20TAN-A-lm.xsl"
+                      accessed-when="2019-04-29T04:16:13.178-04:00"/>
+         </algorithm>
+         <role xml:id="stylesheet" which="stylesheet"/>
+         <lexicon xml:id="LS" which="Lewis and Short"/>
+         <morphology xml:id="perseus-dik"
+                     which="Perseus Latin morphology"
+                     accessed-when="2020-03-05"/>
+         <organization xml:id="perseus" which="Perseus Project"/>
+         <person xml:id="dik" which="Helma Dik"/>
+         <person xml:id="kalvesmaki" which="Joel Kalvesmaki"/>
+      </vocabulary-key>
+      <file-resp who="kalvesmaki"/>
+      <resp who="xslt1" roles="stylesheet"/>
+      <resp who="perseus dik" roles="creator"/>
+      <resp who="perseus" roles="sponsor"/>
+      <change when="2018-01-11" who="kalvesmaki">Started template file.</change>
+      <change who="xslt1" when="2019-04-29T04:16:13.178-04:00">Created TAN-A-lm from file:/E:/Joel/Dropbox/TAN/pre-TAN/language-specific%20morphology/lat/LatinMorph16-compi.xml</change>
+      <to-do/>
+   </head>
+   <body lexicon="LS" morphology="perseus-dik" claimant="xslt1">
+      <ana>
+         <tok val="COMPILO"/>
+         <tok val="Compilo"/>
+         <tok val="compilo"/>
          <lm>
             <l>compilo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--COMPINGO Compingo compingo-->
-         <tok val="[cC]?(ompingo|COMPINGO)"/>
+      <ana>
+         <tok val="COMPINGO"/>
+         <tok val="Compingo"/>
+         <tok val="compingo"/>
          <lm>
             <l>compingo</l>
             <m>v - 1 s p i a</m>
          </lm>
       </ana>
-      <ana><!--COMPITUM COMPITVM Compitum compitorum compitum-->
-         <tok val="(compit)?(or)?(um|COMPITVM|COMPITUM|Compitum)"/>
+      <ana>
+         <tok val="COMPITUM"/>
+         <tok val="COMPITVM"/>
+         <tok val="Compitum"/>
+         <tok val="compitorum"/>
+         <tok val="compitum"/>
+         <tok val="compitvm"/>
          <lm cert="0.5">
             <l>compitus</l>
             <m>n - - p - - - m g</m>
@@ -60,8 +77,12 @@
             <m>n - - p - - - n g</m>
          </lm>
       </ana>
-      <ana><!--COMPITUM COMPITVM Compitum compitum-->
-         <tok val="(COMPIT)?[VU]?(M|compitum|Compitum)"/>
+      <ana>
+         <tok val="COMPITUM"/>
+         <tok val="COMPITVM"/>
+         <tok val="Compitum"/>
+         <tok val="compitum"/>
+         <tok val="compitvm"/>
          <lm cert="0.5">
             <l>compitum</l>
             <m cert="0.333333333333333333">n - - s - - - n v</m>
@@ -73,16 +94,19 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Compilare compilare-->
-         <tok val="[cC]ompilare"/>
+      <ana>
+         <tok val="Compilare"/>
+         <tok val="compilare"/>
          <lm>
             <l>compilo</l>
             <m cert="0.5">v - 2 s p m p</m>
             <m cert="0.5">v - - - p n a</m>
          </lm>
       </ana>
-      <ana><!--Compilare compilare compilaris-->
-         <tok val="[cC]ompilar(e|is)"/>
+      <ana>
+         <tok val="Compilare"/>
+         <tok val="compilare"/>
+         <tok val="compilaris"/>
          <lm>
             <l>compilo</l>
             <m>v - 2 s p i p</m>
@@ -90,36 +114,41 @@
       </ana>
       <ana>
          <tok val="Compilasse"/>
+         <tok val="compilasse"/>
          <lm>
             <l>compilo</l>
             <m>v - - - r n a</m>
          </lm>
       </ana>
-      <ana><!--Compilatio compilatio-->
-         <tok val="[cC]ompilatio"/>
+      <ana>
+         <tok val="Compilatio"/>
+         <tok val="compilatio"/>
          <lm>
             <l>compilatio</l>
             <m cert="0.5">n - - s - - - f n</m>
             <m cert="0.5">n - - s - - - f v</m>
          </lm>
       </ana>
-      <ana><!--Compilator compilator-->
-         <tok val="[cC]ompilator"/>
+      <ana>
+         <tok val="Compilator"/>
+         <tok val="compilator"/>
          <lm>
             <l>compilator</l>
             <m cert="0.5">n - - s - - - m n</m>
             <m cert="0.5">n - - s - - - m v</m>
          </lm>
       </ana>
-      <ana><!--Compilatus compilatus-->
-         <tok val="[cC]ompilatus"/>
+      <ana>
+         <tok val="Compilatus"/>
+         <tok val="compilatus"/>
          <lm>
             <l>compilo</l>
             <m>v - - s r p p m n</m>
          </lm>
       </ana>
-      <ana><!--Compingere compingere-->
-         <tok val="[cC]ompingere"/>
+      <ana>
+         <tok val="Compingere"/>
+         <tok val="compingere"/>
          <lm>
             <l>compingo</l>
             <m cert="0.25">v - 2 s p m p</m>
@@ -128,8 +157,9 @@
             <m cert="0.25">v - 2 s f i p</m>
          </lm>
       </ana>
-      <ana><!--Compita compita-->
-         <tok val="[cC]ompita"/>
+      <ana>
+         <tok val="Compita"/>
+         <tok val="compita"/>
          <lm>
             <l>compitum</l>
             <m cert="0.333333333333333333">n - - p - - - n a</m>
@@ -137,8 +167,9 @@
             <m cert="0.333333333333333333">n - - p - - - n v</m>
          </lm>
       </ana>
-      <ana><!--Compitales compitales-->
-         <tok val="[cC]ompitales"/>
+      <ana>
+         <tok val="Compitales"/>
+         <tok val="compitales"/>
          <lm cert="0.5">
             <l>compitales</l>
             <m cert="0.5">n - - p - - - m n</m>
@@ -152,8 +183,11 @@
             <m cert="0.25">a - - p - - - m n</m>
          </lm>
       </ana>
-      <ana><!--Compitales Compitalis compitales compitalis-->
-         <tok val="[Cc]ompital[ie]s"/>
+      <ana>
+         <tok val="Compitales"/>
+         <tok val="Compitalis"/>
+         <tok val="compitales"/>
+         <tok val="compitalis"/>
          <lm cert="0.5">
             <l>compitales</l>
             <m>n - - p - - - m a</m>
@@ -164,8 +198,9 @@
             <m cert="0.5">a - - p - - - f a</m>
          </lm>
       </ana>
-      <ana><!--Compitalia compitalia-->
-         <tok val="[cC]ompitalia"/>
+      <ana>
+         <tok val="Compitalia"/>
+         <tok val="compitalia"/>
          <lm>
             <l>compitalis</l>
             <m cert="0.333333333333333333">a - - p - - - n n</m>
@@ -173,8 +208,9 @@
             <m cert="0.333333333333333333">a - - p - - - n a</m>
          </lm>
       </ana>
-      <ana><!--Compitalibus compitalibus-->
-         <tok val="[cC]ompitalibus"/>
+      <ana>
+         <tok val="Compitalibus"/>
+         <tok val="compitalibus"/>
          <lm cert="0.5">
             <l>compitales</l>
             <m cert="0.5">n - - p - - - m d</m>
@@ -190,8 +226,9 @@
             <m cert="0.166666666666666667">a - - p - - - n b</m>
          </lm>
       </ana>
-      <ana><!--Compitaliciis compitaliciis-->
-         <tok val="[cC]ompitaliciis"/>
+      <ana>
+         <tok val="Compitaliciis"/>
+         <tok val="compitaliciis"/>
          <lm>
             <l>compitalicius</l>
             <m cert="0.166666666666666667">a - - p - - - n d</m>
@@ -204,20 +241,23 @@
       </ana>
       <ana>
          <tok val="Compitalicios"/>
+         <tok val="compitalicios"/>
          <lm>
             <l>compitalicius</l>
             <m>a - - p - - - m a</m>
          </lm>
       </ana>
-      <ana><!--Compitaliorum compitaliorum-->
-         <tok val="[cC]ompitaliorum"/>
+      <ana>
+         <tok val="Compitaliorum"/>
+         <tok val="compitaliorum"/>
          <lm>
             <l>compitalis</l>
             <m>a - - p - - - - g c</m>
          </lm>
       </ana>
-      <ana><!--Compitalis compitalis-->
-         <tok val="[cC]ompitalis"/>
+      <ana>
+         <tok val="Compitalis"/>
+         <tok val="compitalis"/>
          <lm>
             <l>compitalis</l>
             <m cert="0.142857142857142857">a - - s - - - f g</m>
@@ -290,8 +330,9 @@
             <m>v - 2 s r s a</m>
          </lm>
       </ana>
-      <ana><!--compilarit compilaverit-->
-         <tok val="compila(ve)?rit"/>
+      <ana>
+         <tok val="compilarit"/>
+         <tok val="compilaverit"/>
          <lm>
             <l>compilo</l>
             <m>v - 3 s r s a</m>
@@ -360,8 +401,9 @@
             <m>n - - s - - - m a</m>
          </lm>
       </ana>
-      <ana><!--compilauerunt compilaverunt-->
-         <tok val="compila[vu]erunt"/>
+      <ana>
+         <tok val="compilauerunt"/>
+         <tok val="compilaverunt"/>
          <lm>
             <l>compilo</l>
             <m>v - 3 p r i a</m>
@@ -664,7 +706,7 @@
             <m>n - - s - - - m n</m>
          </lm>
       </ana>
-      <ana><!--compilassent-->
+      <ana>
          <tok val="compilassent"/>
          <lm>
             <l>compilo</l>
